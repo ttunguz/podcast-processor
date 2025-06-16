@@ -1,0 +1,765 @@
+--- METADATA START ---
+Show: Training Data
+Episode: From Data Centers to Dyson Sph…
+Host: Unknown
+GUESTS: Paul Aramenko 
+Guests: Paul Aramenko
+Source URL: https://podcasts.apple.com/us/podcast/from-data-centers-to-dyson-spheres-p-1-ais-path-to/id1750736528?i=1000710077365
+--- METADATA END ---
+
+1
+Again, when I was asking the question over the last couple of years of like, why isn't anybody working on AI for building the physical world?
+2
+The answer was training data, right?
+3
+Fundamentally, if you want an AI engineer that can help you design an airplane or modify an airplane and you say, hey, what happens if I change the wing on an A320 by 10%, increase the wing area by 10%?
+4
+In order to be able to answer that, your model has to be trained on millions of airplane designs, ideally.
+5
+And there just haven't been millions of airplanes designed since the Wright brothers, even if you did magically have access to all of them, which you don't.
+6
+And if they were all modeled in a coherent, sort of semantically integrated way, which they aren't, right?
+7
+But even hypothetically, you would have maybe a thousand designs since the birth of aviation.
+8
+And so nowhere near enough to train a large model.
+9
+Today, we're excited to welcome Paul Aramenko, CEO of P1AI.
+10
+Paul was a director at DARPA and the youngest CTO of Airbus at age 35.
+11
+And now he's getting to turn his science fiction dreams into reality at P1AI.
+12
+P1AI is attempting to build engineering AGI for the physical world.
+13
+So we already have fantastic companies like Anthropic, Cursor, and Devon that are transforming software engineering.
+14
+But hardware engineering in the physical world, whether it's data center, pullers, or airplanes, has yet to be transformed radically by AI.
+15
+We talked to Paul about the opportunity, the key bottlenecks in gathering data, and how he envisions their agent, Archie, evolving to help build the physical world around us from fighter jets to starships.
+16
+Paul, thank you so much for joining us today.
+17
+And we're delighted to have both you and your Jack Russell Terrier Beagle mix, Lee, on the show.
+18
+Welcome.
+19
+Let's start off with: we just had our AI conference, AI Ascent, and at the conference, Jeff Dean was talking about the potential for vibe coding and how a 24-7 junior software engineer is going to be possible through AI within the next year or so.
+20
+So it seems like software engineering is really going through this vertical takeoff moment right now.
+21
+What do you think is happening in the physical world as it pertains to physical engineering?
+22
+So, not a lot, is the short answer.
+23
+And one of the reasons we founded P1AI is because I grew up on hard sci-fi, and I was promised AI that would help us build the physical world, the world around us, and eventually Starships and Dyson spheres.
+24
+And when the kind of deep learning revolution really started to take off, I asked the question of, well, who's building this stuff?
+25
+Like, who is doing that AI that's going to help us build the physical world?
+26
+And the answer was nobody was working on it.
+27
+And it really wasn't even on the agenda of the kind of foundation labs.
+28
+And some years later, today, 2025, it still isn't.
+29
+And so we asked the question of why that is.
+30
+We can talk about why that is maybe later in the podcast.
+31
+And we think we have a solution to remedying some of the reasons, some of the challenges, and actually bringing it to market.
+32
+So I think, and Jeff, by the way, we're very grateful to have him as an angel investor in the company.
+33
+And I think the, you know, coding AI has been a long time coming.
+34
+One of my co-founders, Sushma Jad, did his PhD in 2011 on program synthesis, right?
+35
+So this is not a new technology.
+36
+But it's just now, I think, finding that product market fit.
+37
+I think physical AI, we have the benefit of standing on the shoulders of a lot of the coding AI work.
+38
+So if you can have a programmatic representation of your physical system, you can use some of the program synthesis type techniques to create physical designs.
+39
+So we're not, you know, it's not going to take a decade or 15 years.
+40
+We think that we can put the technology bricks together this year and hopefully start finding product market fit as early as next year.
+41
+Yeah, can we double-click on that a little bit?
+42
+What are those technology bricks?
+43
+What pieces need to be in place for this to become a reality?
+44
+Yeah, so the biggest one, right, and again, when I was asking the question over the last couple of years of like, why isn't anybody working on AI for building the physical world, the answer was training data.
+45
+Fundamentally, if you want an AI engineer that can help you design an airplane or modify an airplane, and you say, hey, what happens if I change the wing on an A320 by 10%, increase the wing area by 10%?
+46
+In order to be able to answer that, your model has to be trained on millions of airplane designs, ideally.
+47
+And there just haven't been millions of airplanes designed since the Wright brothers, even if you did magically have access to all of them, which you don't, and if they were all modeled in a coherent, sort of semantically integrated way, which they aren't, right?
+48
+But even hypothetically, you would have maybe 1,000 designs since the birth of aviation.
+49
+And so nowhere near enough to train a large model.
+50
+And so the most sort of foundational technology brick for us is creating this training data set.
+51
+It is synthetic, that is physics-based and supply chain-informed.
+52
+So it could be airplanes, could be something else, and making it large enough and making it interesting enough.
+53
+So the design space for most physical products is almost infinitely large, right?
+54
+Like it's huge.
+55
+And so you can't randomly sample it.
+56
+You can't evenly sample it.
+57
+You have to very cleverly sample it.
+58
+You want to sample kind of densely around dominant designs, but you want to sample sparsely around the corners and edges of the design space because that teaches you something.
+59
+Even if that corner edge of the design space is not somewhere where you would ever want to go, it teaches your model something about why that is, right?
+60
+And so creating these data sets for training models, that was sort of the core of our approach.
+61
+Then of course, if you just take, if you now have a million airplane designs and a performance vector for each one, and you throw it at an LLM in post-training or even in pre-training, you're not going to magically get a good engineer.
+62
+So then there's the question of what does the model architecture look like?
+63
+And today we use a federated approach of a bunch of different models, and we can talk more about them, that do different parts of engineering reasoning.
+64
+And then they're all orchestrated by kind of an orchestrator reasoner LLM that also acts as the interface to the user.
+65
+Actually, can you say more about that?
+66
+How do you get your models to be capable of doing the physics-based reasoning?
+67
+And is this stuff done in kind of design software today?
+68
+Is this stuff inside an engineer's brain?
+69
+And how do you kind of put that knowledge into a model?
+70
+And can I add to that the supply chain-informed piece of the equation?
+71
+How does all that come into play?
+72
+Sure.
+73
+So, first, let me maybe describe what the product actually is, right?
+74
+Because I think that that'll help answer part of the question.
+75
+So, we are focused very narrowly in some ways on cognitive automation of what a human engineer does in designing physical systems.
+76
+And so, what does a human engineer do?
+77
+So, humans are very good at taking a bunch of requirements and distilling what are the key design drivers that come out of those requirements, postulating one or more possible solutions that meet those design drivers, doing first-order sizing of what does the answer look like roughly, right?
+78
+And what is the relevant phenomenology in doing that sizing.
+79
+And by phenomenology, I mean like what are the different physics?
+80
+Because it's not just about geometry, right?
+81
+These are multi-physics systems, so they have electrical and thermal and vibrations and electromagnetic interference.
+82
+And sometimes those matter, sometimes they don't, right?
+83
+And humans are very good at, good engineers, right, are very good at selecting which modalities matter in doing this first-order sizing.
+84
+And is this really going to close, and is this really going to be a viable design?
+85
+And then, humans are very good at knowing what tools there are for detailed design and analysis.
+86
+What is the range of applicability of those tools, and how do you use them?
+87
+How do you set up the problem for those tools?
+88
+And that's exactly what we're trying to tackle: that cognitive automation.
+89
+So, the first product's called Archie.
+90
+So, if I refer to Archie, that's not Lee.
+91
+Archie is the agent.
+92
+And a really important consequence of this focus on cognitive automation is that we are not trying to play at the tools layer.
+93
+There are existing detailed design and analysis and simulation tools, and we want Archie to know how to use those tools the same way that a human knows how to use them.
+94
+But we don't try to replace the tool, we don't try to make it better, we don't try to compete with it, we don't try to supplant it anymore.
+95
+Right on top, just like a human.
+96
+That's right.
+97
+Yeah.
+98
+So, your question was around: so, what are the different models, right?
+99
+And how do you do the engineering reasoning?
+100
+And basically, all of the things that I just described-distilling requirements, picking key design drivers, sizing, et cetera, they all simplify to a couple of primitive operations.
+101
+And the operations are design evaluation, right?
+102
+So, if you have a particular design, what is the performance of that design?
+103
+Again, modeling the relevant phenomenology that's in the design.
+104
+Another one is design synthesis.
+105
+So, if I have a specified performance or specified requirements vector, what is the design?
+106
+And a third class is a little more complicated, which is finding errors and infilling inside a design.
+107
+But basically, any engineering query, any engineering task that a human engineer does reduces to some sequence of these operations.
+108
+And so, what we then have to do is, first of all, have a reasoner orchestrator that's good at taking tasking from humans in an organization and decomposing them into the right sequence of primitive operations.
+109
+And then, models, some models are neural and some don't need to be neural, that are actually good at them carrying out those operations.
+110
+And so, some of the things that are behind the orchestrator reasoner are, for instance, a graph neural network that's just very good at being a physics-based surrogate model over the performance space.
+111
+That's one example.
+112
+Another one is a geometric reasoner model that allows you to answer questions about relative positioning and packing and interference and things like that.
+113
+Some of those geometric reasoning operations are very easy to do just algorithmically, like software 1.0 style, right?
+114
+You don't need neural capability.
+115
+Some of the more complex ones you can do with VLMs.
+116
+I think that there is yet another category of physical reasoning operations that we don't yet know how to solve.
+117
+And I think that there will be a generation of AI models that's coming that are physical world models that will have better intuition for spatial, for some of the more complex higher-order spatial reasoning tasks.
+118
+And then you have physics reasoning, right?
+119
+You have sort of your multi-physics reasoning.
+120
+There's a few different, again, approaches, some of them software 1.0, some of them are neural.
+121
+One example is we have what I call a lobotomized LLM, which is an LLM.
+122
+It's no longer good at English, but it is very good at doing programmatic representations of multi-physics representations of physical system designs and reasoning over those.
+123
+So that's kind of a federated assembly of models.
+124
+They're all orchestrated by an LLM reasoner that is also the interface to the user.
+125
+What is Archie capable of doing today?
+126
+How does that compare to your average hardware systems engineer today, and what's ahead for Archie?
+127
+Yeah, that's a great question.
+128
+So, what we've done today, so we're about nine months old as a company.
+129
+What we did in our pre-seed is basically a toy demo around residential cooling systems, right?
+130
+So, it's like air conditioning units.
+131
+So, you have fluid flows, you have air flows, you have thermal interactions, you have electrical systems, right?
+132
+So it's rich, but the number of components in a system is not very large.
+133
+And a lot of the physics phenomenology is pretty linearizable, right?
+134
+Like, you can simplify it.
+135
+So, it's kind of rich enough to be convincing, but not so complex that we're bogged down in data generation, for instance, right?
+136
+Or the supply chain piece, which I want to come back to, getting that right.
+137
+And so, that demo exists.
+138
+We've put it out publicly.
+139
+And the question, of course, is: so, what is, like, how good is it?
+140
+And there is no, other than a VIBE test, right, where you have a human interact with it, and you're like, oh, that's pretty good.
+141
+There isn't really a good answer today.
+142
+And so, one of the things that we've invested quite a bit of energy into is evals for physical system AIs, for physical engineering AIs.
+143
+And by the time this airs, I think we'll have an archive paper out that describes our approach to evals.
+144
+We call it ArchieIQ.
+145
+And the goal is to administer the evals to humans, so an entry-level human engineer, average human engineer, expert-level human engineer, and to Archie, and for us to have a closed-loop process of improving Archie to move up that IQ scale.
+146
+Do you think you'll keep pushing on residential cooling systems and you'll have a residential cooling system agent?
+147
+There'll eventually be an airplane design agent.
+148
+Is that the right way to think about this, or is this a single agent that you're building?
+149
+No, I think it's the right way to think about it: at least initially, we have to create distinct training data sets for each product domain, for each product vertical.
+150
+How do you guys think about that map?
+151
+You know, if the map starts with the residential cooling systems, how does it progress from there?
+152
+Like, what does that overall map look like to get to the point of engineering AGI for the physical world?
+153
+What's on that map?
+154
+Yeah, so first of all, residential for us was just kind of a toy problem that we chose.
+155
+Our first market where we plan to deploy with a customer, with a design partner, is actually data center cooling systems, which are still thermodynamic engines, right?
+156
+So they're not that different from residential HVAC, but they are an order of magnitude more complex, obviously much larger, and a very interesting market because they're having trouble coping with demand from data center customers.
+157
+And we're at a point where cooling systems are like the long lead item, right, pacing data center development, which is kind of wild.
+158
+So it is an acute pain point.
+159
+It is in many ways, the delivery of those systems is in many ways limited by engineering bandwidth of being able to deliver sort of semi-custom solutions to each data center.
+160
+And so we have a very enthusiastic customer base for that early deployment.
+161
+And these systems are, you know, these are now order a thousand unique parts in the system.
+162
+Okay.
+163
+Right.
+164
+The physics domains are quite rich, but the physics, again, are still pretty linearizable.
+165
+So from a synthetic data generation perspective, it's a fairly manageable problem, which is why we like it as a first vertical.
+166
+And then we progress, and I think we progress principally on the basis of.
+167
+And so, our expectation is that we will go roughly an order of magnitude up in product complexity every year.
+168
+So, the second vertical is probably industrial systems, so things that go into a factory from material handling, industrial robots, mills, lathes, right, those kinds of things.
+169
+Then, we move into mobility domains, which could be automotive, it could be agriculture, mining equipment, right?
+170
+Those kind of automotive and heavy machinery, and then aerospace and defense.
+171
+But, just to give you sort of the order of magnitude progression, data center cooling systems, roughly 1,000 unique parts, airplane, roughly a million unique parts, right?
+172
+So, three orders of magnitude between them.
+173
+And we think, based on sort of our current projections, is roughly one year for each order of magnitude.
+174
+How much of the data that's required to train the system comes from the usage of the system, such that the simple use cases start to bootstrap the more complex use cases?
+175
+How much of it is fed to the system from some other training data generation technique that you have?
+176
+So, we think we can train Archie to be at the level of an entry-level engineer, so like college-educated, but not particularly savvy in a specific company's products or some of the in-depth processes and practices, or a lot of the detailed supply chain, you know, cost data.
+177
+That's not something you learn in college.
+178
+So, we think we can do that just based on non-proprietary synthetic data that we produce, meaning non-proprietary to a customer.
+179
+And so, the goal is to get Archie hired as an entry-level engineer, get him in the door.
+180
+We then have a relationship with the customer.
+181
+And then Archie can start learning on the things behind the firewall.
+182
+Obviously, subject to the customer's acquiescence, but we can then ingest their PLM system.
+183
+We can ingest all of their model-based tools and models.
+184
+We can ingest a lot of the real-world performance of that system.
+185
+Quality escapes, there is a bunch of stuff there.
+186
+And so we think that Archie can move up the expertise scale fairly rapidly from entry-level to kind of average to expert engineer on the basis of a lot of that real-world data.
+187
+And of course, improvements in the AI models as well.
+188
+And do you have a definition, when you talk about engineering AGI, we haven't found sort of a generally agreed upon definition of AGI.
+189
+What's your definition of AGI and how does it fit into the test of someday when you have an engineering AGI, you know, how will you know you have it?
+190
+Yeah, so back to the evals.
+191
+We have adopted what's called Bloom's taxonomy, which is a cognitive knowledge taxonomy for human learning developed in the 50s and has been applied to LLMs in recent years.
+192
+We have adapted it kind of to the engineering task.
+193
+And so the taxonomy is kind of a pyramid, right?
+194
+The lowest level, you have just recall of information, right?
+195
+That's relatively straightforward.
+196
+Then you have semantic understanding of the design.
+197
+So in addition to recall, like what does this part do?
+198
+Then you have the ability to evaluate a design or a change to a design.
+199
+So what is the performance impact of changing this component, for instance, or resizing something?
+200
+Then there is the ability to find mistakes in a design.
+201
+Then, to synthesize a brand new design or a significant change to an existing design.
+202
+And then, kind of the highest, the pinnacle, which we call EAGI engineering AGI, is reflection, which is some degree of self-awareness of what process did I just use to do the preceding five levels in this hierarchy?
+203
+What process did I use?
+204
+What are the limitations of that process?
+205
+Is there an alternative process?
+206
+Where could I have gone wrong?
+207
+These are the kinds of things that actually most engineers in the field don't do very well, and is reserved for kind of the senior levels, the experts, or the technical fellows, right, in large industrial companies.
+208
+And so, to us, that is certainly the pinnacle of human engineering intelligence: the self-awareness and your own limitations of the engineering process.
+209
+And then there is a different dimension, which is: can it generalize across domains without us having to train it on the domain?
+210
+So, I would say those are the two axes, and you could argue that you can accomplish sort of AGI on one axis, AGI on the other axis, or AGI on both axes.
+211
+Pick your poison.
+212
+We hope to do both.
+213
+What do you think it's going to take to be able to solve systems of the current order of magnitude of parts complexity all the way up to airplanes and more in terms of the number of parts?
+214
+Is it simply a matter of scaling laws, and the LLMs will get better, you're going to be able to generate more synthetic data, and more data, more computes, bigger models?
+215
+You're going to be able to kind of solve these much more complex systems in the future?
+216
+Or do you think there's going to be research breakthroughs that are needed to get there?
+217
+No research breakthroughs needed.
+218
+I think we operate squarely in the kind of applied research domain, right, of where we take existing research that the Frontier labs are doing and applying it to our very specific problem.
+219
+We don't see, I mean, so obviously there are limitations in scaling in terms of compute, right, to generate.
+220
+So there's CPU compute to generate the synthetic data, because that's a lot of simulation and sampling and things like that.
+221
+And then there's GPU compute to train, GPU compute for inference.
+222
+And all of those today, I don't think we could do for a million-part system, right?
+223
+Because if you think about it, and maybe to tie back to your question, Pat, about where does the supply chain come in, is, so how do we create these synthetic data sets?
+224
+So if you have a million unique parts in a system, in order to compose, to kind of span the design space and create a very large number of adjacent systems and some faraway systems, you need a catalog of components, a catalog of component models, and some rules by which you can compose those components into systems.
+225
+And your component catalog needs to be a couple orders of magnitude bigger than a typical system design.
+226
+So if you have a million unique parts in a system, your component catalog maybe needs to be 100 million or a billion parts.
+227
+And so, A, you need to create that component catalog.
+228
+Today we do it manually.
+229
+We are building a lot of automation and a lot of actually AI tools to help us build that component catalog of component models.
+230
+Then you have to intelligently assemble those components.
+231
+So it's not a tornado going through a junkyard and assembling a 747.
+232
+And then you have to simulate each of those and get a performance vector, right?
+233
+That's the training data set.
+234
+And so it's supply chain informed because in theory, all of the components in your catalog either reflect a real component in the supply chain, or you can introduce hypothetical components, right?
+235
+Because sometimes innovation is not just assembling things that exist, but saying, hey, I need a new motor, I need a new compressor, I need a new this, I need a new that.
+236
+And so you can introduce new components that don't exist, but you know what those are and how you plan to get them.
+237
+Yes.
+238
+So that's what we mean by supply chain-informed.
+239
+And physics-based means that the rules of composing those components model all of the relevant modalities of interaction that you care about, the phenomenology of how they interact, and that the designs that are produced are, in fact, realizable designs.
+240
+I'd love to hear the customer back perspective.
+241
+So you were previously, you know, you've been the customer before, notably, you were the CTO of Airbus.
+242
+Maybe can you just walk us through, for those of us that haven't been inside the belly of the beast of an industrial heavyweight, what is the process like to design a new airplane?
+243
+Or, you know, what are all the engineers at these companies doing?
+244
+And what does their life look like before and after engineering AGI?
+245
+Yeah, it's a very good question.
+246
+So I think I gave you a reasonable abstraction of what an engineer does, which is they operate with some set of requirements.
+247
+They may not be system-level requirements, right?
+248
+The engineer may be working on a subsystem or an assembly or a widget, but they still have requirements.
+249
+They still need to pick the key design drivers from those requirements, figure out what are the solutions, do first-order sizing, and then do the detailed analysis.
+250
+That workflow gets replicated in kind of a fractal way throughout the system and throughout the engineering organization, which is designed to mirror roughly the product that you're building.
+251
+And one of the reasons that we position Archie as both an agent, meaning that he's fairly autonomous, so it's not an assistant.
+252
+He's really designed to augment a team versus helping an individual.
+253
+So we are trying to position Archie as an employee that joins a team.
+254
+One of our sort of mission statements is an Archie on every team in every major industrial company in the world.
+255
+And Archie joins the team, and the goal is to sell work, not software, to these companies.
+256
+It is very, very difficult to sell software, engineering software to a company like Airbus.
+257
+There are hundreds, if not thousands, of engineering tools in the ecosystem, and they are connected in various intricate, to put it politely, sometimes inelegant, right, kind of glue-ware ways.
+258
+And introducing a new tool into that ecosystem is very, very complex.
+259
+On top of it, the labor budget of these companies is much bigger than the methods and tools, sort of software budget.
+260
+So you want to tackle the labor piece, not the tools piece.
+261
+And so Archie is really designed to show up on the team and be a remote engineer.
+262
+So obviously, there's no embodiment, but he shows up on Slack or on Teams or whatever collaboration tool you're using.
+263
+And you task him as you would a junior engineer who happens to be maybe at an offshore engineering center.
+264
+And you interact with him that way.
+265
+So there's really minimum.
+266
+You just have this lower-cost entity that shows up.
+267
+Archie will probably be better at some things, maybe worse at other things, but the goal is to position him as a worker.
+268
+Why Archie?
+269
+Where did the name come from?
+270
+Well, so it's letter A, so it allows us to have a Bob and a Charlotte and a Daniel right down the road.
+271
+Archimedes, architect, right?
+272
+All of those are, I think, connotations that are relevant to what we're doing.
+273
+What sorts of problems do you think Archie will be tackling, and how do you expect that changes what the human engineers on the team are doing?
+274
+So in the data center application, which is the first one that we expect to pilot this year, we think that the probably most promising but also the most applicable use case for Archie as we bring him to other domains is doing basically product customization.
+275
+So semi-custom, they call it specials in the data center cooling world.
+276
+And this is taking an existing product platform and customizing it for a specific customer's use case.
+277
+And so to meet architectural requirements, right, to meet functional requirements, to meet building codes, et cetera.
+278
+And that tends to be different and fairly bespoke on a case-by-case basis.
+279
+And that's where most of the engineering hours go.
+280
+And so that's the problem that we're tackling first with Archie.
+281
+But that problem translates to other domains pretty well.
+282
+Airbus, for instance, very seldom does a clean sheet airplane design, but does a lot of derivatives or a lot of what's called HEDA variants, which are a particular product for an airline, right, with a specific cabin, specific in-flight configuration, in-flight entertainment configuration, specific cockpit requirements, et cetera.
+283
+So that's what most engineers at most industrial companies do, is semi-custom, sort of semi-customization.
+284
+If we go to like 2030, 2040, some long-term time horizon, and there are millions and millions and millions of Archies and maybe Bobs and Charlottes and Daniels out there in the world, and you've achieved engineering AGI for the physical world, how will sort of the average person feel the impact of that?
+285
+Like, how will they notice that their life is different as a result of engineering AGI becoming a thing?
+286
+So I think it's a time horizon question, right?
+287
+And I'm hesitant to predict anything that's more than like three years out, especially in these steeply exponential times.
+288
+But I think in the first instance where Archie shows up on engineering teams and makes the team more productive and maybe helps the team do things more efficiently, one use case that we've talked about is if you have an Archie on every team, can the Archies coordinate amongst themselves better than the humans between the teams and sort of speak their own shorthand and do those kinds of things.
+289
+So that's really about improving the efficiency and the efficacy of existing engineering organizations.
+290
+So for the average person, the impact is lower cost goods and products.
+291
+So you're saying I can buy an airplane?
+292
+Perhaps.
+293
+I think the really interesting stuff starts when Archie can design things that we can't.
+294
+And that's kind of the super intelligence part, where it's not just about efficiencies of existing organizations or increasing the bandwidth of existing organizations, but really designing the stuff that was promised to us in the sci-fi books.
+295
+Yeah, yeah.
+296
+So, the starships and Dyson spheres and Matsyushka brains and those kinds of things.
+297
+So, ultimately, I'm a dreamer.
+298
+That's why I started this company.
+299
+And that's the future that I want.
+300
+And that's squarely the North Star that guides us.
+301
+But, of course, we want to build a pragmatic and profitable business in the meantime.
+302
+Our partner, Constantine, has this term, the stochastic mindset, which is if you think about working with computers in the past, it was predetermined, you asked for this, you get this back, versus with models, there's a stochastic part of the nature by definition.
+303
+How do you think about managing around that in your domain?
+304
+Because if I think about it, I can vibe code a web app and it's okay if it breaks.
+305
+Not great if I vibe code an airplane and it breaks, right?
+306
+That's disastrous.
+307
+And so, how do you think about managing around the stochastic nature for the physical world?
+308
+Well, humans are pretty stochastic as well, right?
+309
+So, if you have a junior engineer working on a task, they'll make mistakes, they may not do the right thing, they may not be repeatable.
+310
+So, I think the question that we need to quantify and we expect to quantify in our pilot later this year is: what is the error rate coming out of Archie?
+311
+And if that error rate is comparable to human error, then there are a lot of checks and balances built into the existing engineering organizations to ensure that a mistake that a junior engineer makes doesn't bring down an airplane.
+312
+So, there's layers of review, there's milestones, there's tests, right?
+313
+There's a lot of those layers.
+314
+And so, if Archie has a comparable error rate or better error rate, then it should be a pretty seamless slotting into the existing processes.
+315
+What does the engineering org of the future look like?
+316
+Do you think we'll have one-person Airbus equivalents in the future?
+317
+So, again, I'm reluctant to forecast the future beyond sort of three years out.
+318
+And I think in the next couple of years, our goal is, again, an Archie on every team.
+319
+So, 10% of the workforce is Archie's.
+320
+They do the work that humans maybe find boring, dull, right, repetitive.
+321
+And maybe there's additional value adds like InjureArchie's coordination and things like that.
+322
+And then I can imagine a super intelligence where you tell it, I want you to start building a Dyson sphere, and it starts building the Dyson sphere.
+323
+The what's in between, difficult to forecast.
+324
+Okay, lightning rounds.
+325
+I'll go first.
+326
+What application or application category do you think will break out this year?
+327
+So, I think we're getting close to physical AIs, not in the sense that we're talking about them, but in the sense of robotics, as well as foundation models for ingesting real-world sensor data.
+328
+And I think both of those are actually quite important, important building blocks to what we're trying to build.
+329
+And I think they're very, very close.
+330
+Humanoids, yes.
+331
+On the same basis that we are trying to build an agent that slots into existing teams.
+332
+I think humanoid robots can slot into existing environments much more easily, even if they're not the optimal, sort of the optimal configuration.
+333
+What one piece of content should AI people consume?
+334
+I think everybody should read or go reread Asimov's robot series.
+335
+Ah, good one.
+336
+Because I think the laws of robotics were very carefully thought out and are a lot of what actually needs to be built somehow very deeply into these models to ensure alignment.
+337
+Very good one.
+338
+What other startups do you admire?
+339
+I think that a lot of the work that is being done on models for ingesting physical world data, I think are kind of unsung, but are incredibly important.
+340
+And the reason, if you don't mind, a slightly longer answer to the question, the reason I think they're important is, like, look, we don't know why neural networks work fundamentally, right?
+341
+But we have a vague, like, neuromorphic or anthropomorphic kind of view that, oh, we're trying to kind of replicate what a human neuron does, and then you do enough of them and you get these wonderful emergent properties.
+342
+But then if you take that further and you say, well, how do humans acquire knowledge, like a human baby?
+343
+The very first thing they do is touch, right?
+344
+The taste, hearing, eventually vision, then language, then higher order engineering reasoning, spatial reasoning, right?
+345
+Those kinds of things that are maybe built on top of language or maybe built on top of some of the other perception and sensory.
+346
+With LLMs, or with deep learning, we've replicated the neural structure, right, to some approximation.
+347
+But then we said, because of data availability, we're going to go language first.
+348
+And we're going to scrape the whole internet, right?
+349
+And then we're going to do video, we're also going to do imagery, right?
+350
+So vision.
+351
+But we've skipped touch, taste, hearing, et cetera, right?
+352
+And touch, I think, is particularly important for building a sense of perception.
+353
+And I keep coming back to spatial reasoning and the ability to abstractly think about three-dimensional objects and three-dimensional structures.
+354
+And so I'm very bullish on, there's a number of companies.
+355
+One Archetype is a good example, founded by one of my former colleagues at Google, that's working on a foundation model for ingesting sensor data.
+356
+And that foundation model has actually demonstrated that it can infer some of the physics underlying that data, right?
+357
+Which I think is immensely cool.
+358
+And I think all of those building blocks ultimately may need to be there for the engineering AGI to happen, that just language and vision is not enough.
+359
+All right, last question.
+360
+What AI app is your personal favorite to use?
+361
+The less interesting answer would be like ChatGPT and Cursor, which are both there.
+362
+The perhaps more interesting answer is we just recently, you know, as we were coming out of stealth, we wanted to produce a video that kind of shows that North Star vision that we've been talking about of ultimately engineering AGI and the path to get there.
+363
+So we worked with a studio called iMix, which is an Israeli LA kind of kind of thing.
+364
+They did the Trump Gaza video.
+365
+If you guys know that went viral maybe a month or so ago.
+366
+And they did a fully AI-generated kind of two-minute Archie biopic clip, which is on our people who can see it on our website.
+367
+And it was completely AI-generated.
+368
+It was done in two weeks, and it was done at about, I would say, a 50th of the cost of what a comparable piece of content would have been without AI.
+369
+But everything, voice, video, music, everything in that short film is completely AI-generated using a variety of models, some of which are their own, many of which they stitch together from the ecosystem.
+370
+But to me, I was absolutely blown away.
+371
+Very cool.
+372
+Wonderful.
+373
+Paul Lee, thank you so much for joining us today to share more about your vision for the future of engineering AGI for the physical world.
+374
+We're excited for the day where you bring down the cost of buying an airplane.
+375
+And in the meantime, excited to see what Archie can do.
+376
+It's our pleasure.
+377
+Thanks for inviting us.
+378
+Thank you.

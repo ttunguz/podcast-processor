@@ -1,0 +1,384 @@
+
+process of I was there for like a few months left to get my visa and I'm
+grateful for the visa process to get done and then flying back so I live in
+near San Jose which is about an hour and a half south of the city yeah no I
+stayed meet up yeah hundred percent I stay in H Street like in the hot every
+near today yeah are you grateful dead fan am I what are you a grateful dead
+fan no I'm not I started on hate-naspberries
+interesting I didn't know that I still got to learn a lot of my U.S. history like
+I feel like a baby in the U.S. I don't know much about history like and the
+culture and I don't know they are baseball vendors well and every week I
+used to see like the trains crowded with baseball no more about our our history
+than I know about your history so yeah
+anyway I've started the recording everybody welcome to my broadcast this is
+our fourth episode we've got Yovan on and he's the founder of jigsaw jigsaw
+stack calm so Jay real quick introduce yourself and then we'll let Yovan take
+over and give his 10 minutes not 10 yeah 10 thousand foot speech then we can
+get into your app and all that okay I'm Jay Shukla doing this fun little podcast
+with Anthony we're both into startups and hustling businesses and we'd like to
+know we'd love to hear more about what's going on with jigsaw yovan so please go
+ahead and give us a quick introduction about jigsaw rupper said hey guys you
+have been here so jigsaw stack we focus on building really really small models
+that can run really fast across the world so that people can plug these
+models into different parts of the attack in easy cheap and fast way without
+having to you know spin up understand how the model works or I think today if
+we look in the AI world it's so messy and so difficult for most engineers to get
+started this hundred one ways to do something right we just want to make
+that super simple and be like that center spot for you to just get started
+with different AI tools plugged into your back end or your front end yeah so
+you have like an SDK where we can integrate from our code exactly we start
+with the jigsaw the jar master SDK and the Python SDK that you can plug in play
+but at the end of the day it's an API so you could just fetch it from any framework
+or any website that you want to yeah that's awesome I was well I first got
+introduced to you from eric who runs dailypings.com and yet mentioned you
+are an advertiser and Jane I were looking at your you're offering because we're
+you know we're pretty up to speed on the latest trends and tech and all that he's
+more a hardware guy but I've been a software engineer in Silicon Valley for
+30 years and you know let's say I should it's just it's it's it's completely
+changing how it is I'm doing I'm using cursor well I was using cursor now I
+switched to windsurf and I'm using windsurfing.
+Windsurf what's that? It's another competitor cursor. Okay let's get out.
+15 bucks a month instead of 20 it's still it's still pretty good I think it's
+better than cursor actually okay but yeah I mean I don't even write code
+anymore. AI doesn't all for me you have to act like an architect now right yeah
+you know if you treat AI like you're an intern asking to build you an app and
+not giving like any technical details you're gonna get a bunch of garbage but
+if you can narrow it down very specific I found very specific short concise
+changes committed by the way yeah when that features Don start a new chat
+because I want hallucinate. I find after about two hours it starts I love that
+you brought it up because hallucination is one of the biggest pain points that
+we are trying to solve I think we have solved to an extent I think one of the
+biggest use case for AI right now is code completion or human in the loop
+code completion right like what you're talking about very small precise ways of
+getting code generated in different parts of your code base it's great if
+you're doing a lot of front-end applications or applications that can
+have you there all the time to kind of like be the guy that makes the decision
+does this code make sense or not but when it comes to back-end use cases for
+example using OpenAI to do OCR on passport information in a consistent
+manner or having translation that you can validate that you know that open
+GPD for one break those are things that get really scary right to use in the
+real application because hallucination at least such a big part in breaking those
+things and that's why one of the things that we focus in our models it's very
+specialized models it's not hyper generic stuff so if you launch an OCR
+model it's very much fine-tuned trained to prevent hallucination when it comes
+to OCR applications or translation for the translation model so you're actually
+training your own models we are we are so we get our own data sets we train the
+models to be very specific so that you can use it in back-end operations that
+run yeah where you doing training on like Amazon Web Services DCR Microsoft
+yeah so AWS we use all of them because a bunch of them gives us credit so we
+try to use one when we're done with that credit we go to the next one and but we
+mostly use it on AWS nowadays and I don't know if you heard of this company
+called base then we train on DR in four eyes well which under the hood is AWS as
+well but it just they make it a lot easier to train what's it called base
+then base base what 10 10 like 10 number 10 or base 10 okay yeah I think I've
+seen it briefly I haven't used it though when you go down quantization levels
+like FP 24 16 yeah usability do you see like a do you see a lot of do you see a
+lot of issues at lower FP levels what kind of stuff do you know the reason I'm
+asking you said that's being a hardware guy I'm chiefly interested in stuff like
+that and 100% I think like lower FP levels are definitely viable in some in
+some use cases you know so if you're making really small models if you have
+FP4 makes sense no really small model they could stay in a cell phone for
+example 100% now that that's one of the most recent topic that we've been
+exploring quite a bit because we are launching a embedding model as a service
+and the pain point is most embedding models objective is to be really quick
+they typically run on the CPU they should run very fast but if you look at
+like the new realm of embedding models they mostly run on GPUs which then cost
+a lot right like you do not want an embedding model be running there so then
+then we'd look into content how do we quantize these models into F 16 F 24
+make them a lot smaller run them on the edge in different CPU networks so what
+we realized is that if you fine-tune a model to be very specific and then you
+quantize it it has it tends to have a lot lower error rate compared to using a
+generic LLM and then quantizing it when you do that then you typically see a
+higher error rate because the use case has kind of broadened and when you
+quantize it you're kind of losing a lot of the data sets that initially was in
+that model and now it's being removed so it really depends on the use case it
+does make sense especially in edge networks or hardware level stuff and I've
+seen this happen where people built really small and I think people keep
+forgetting like LLMs is not just AI so many other models that aren't LLMs that
+are being used at hardware level products to do to do a lot of interesting
+things so exactly exactly I looked at your I looked at your website I really got
+into the idea of kind of using it as deployment for multiple small models as
+agents to do things exactly we immediately told you get this guy see if
+we could talk to him right now it's not a very big theme it's just
+four of us including myself but we are hiring right now so I don't know if this
+is a good place to show I'm looking for a job what are you hiring for we're
+looking for I mean we're looking for two AI roles one is a full-stack engineer
+that basically think of it like an indie hacker just build a lot of site
+projects around Jixar stack integrations partnership integrations like we work
+with companies like Grokling chain we are integrated with a lot of them so
+just maintaining those stuff and getting more integrations out there this I think
+you all know right that I'm of agentic platforms I hate that we're agentic
+right now but like there's so many agentic platforms in the market I'm using
+agentic that's quite right out the agent think the term because everybody's
+using that term it's a pretty broad film yeah yeah so that's one the second
+thing is AI research so big because we are fine-tuning models we implement a
+lot of research being done by different companies the thing that we
+realize in the field today is that there's so much research being done but not
+being implemented one example is recently there was this paper that talks
+about how you can increase the output of whisper tree models by using an LLM
+after you quantize the model so if you quantize the model to like a one-third
+size it gives you a horrible output but then you take that output and then you
+pass it an LLM to kind of teen it up you can get a better quality and result
+than using a full whisper tree model and it was interesting yeah that's yeah
+that's amazing what so if you can link me to a paper that would be great let me
+find out what your plans how do you how do you plan to go jigsaw and what do
+you see yourself trying to do in a year or two yeah I think this year our focus
+has really been on develop experience year one was figuring out our models our
+workflows and that's what that's when 24 right that's when we launched it that's
+when we kind of went into beta we were figuring out what we wanted to do how
+we gonna build our models we've got that settled in 2024 2025 is really focus on
+the develop experience and this is why we are working with partners building our
+SDK in a way that's super simple right you don't have to think you just plug
+and play and you're getting the best of both worlds plugged into your your your
+into your text type right so you don't have to kind of stuck we stuck to LLM's
+just pure LLM's anymore this is whole suite of AI tools so my goal is to
+really get users to understand that hey if you want to do other things besides
+LLM's that you can add into your through to add AI into your text type this is
+why range of tools available and the goal is just to get it out there I think
+for 2025 right true better develop experience through integrations through
+partnerships hackathons and I think the best place to be is Silicon Valley for
+those kind of things yeah yeah there's a lot going on here I think with the new
+administration coming in we're gonna see a lot more oh yeah I hope so I'm being
+coming to coming back it's been dead the last two years I've been out of work
+for a year and a half and anyway I'll hit you up offline because I'm
+interested in that position where you build projects because that's what I've
+been doing a lot of two years using AI trying to get some stuff off the ground
+I don't have any customers yet but Jay and I are working on global threat
+that info which uses a llama under the hood and that's pretty good it we
+basically script data not looking for real-time events that could be of
+interest for some sort of global threat notification app yep so reason they
+had to sort of apply and classify the stuff we find and you know the threat
+level what what sort of industry it's regarding if it's shipping or terrorist
+attack or gun shooting or whatever we we try to categorize that and then
+when I first saw your side I thought I wonder if I could build something like
+this using system prompts on a llama I'm curious if you guys tried that first
+it just sucked and you decided to train your own models so I mean when we
+launched it's like we initially thought like hey cool LMS exists can we just use
+LLMs to build a suite of these tools and now we tried we tried so it's with like
+GPT4 like you know proprietary models we try using GAT1 fine-tuning systems as
+well then we try using LAMAR 3.1 then when 3.2 came out we tried that the
+output always never worked and we tried variations of it right like Lava
+which is like their vision model almost all of them don't work really well when
+you want to go into deep vertical use cases like translation or OCR exactly
+so like it's a it's a cheap version of open AI well free it is it is I mean I
+rent the GPU it's still cheaper than paying for open AI that is true that is
+true and that's the thing it's great for chat applications or anything that
+requires a human in that process the moment you remove the human and that's
+where the whole bucket of back-end use cases come in automation workflows they
+suck and that's where that's where we want to fit in yeah yeah yeah your pricing
+is not too bad I mean I don't know how long of what is it a hundred credits or
+something hold on on the free tier hundred yeah it is yeah when I'm 27 a
+month to scale up from there that's pretty good good pricing to start out
+I'm a developer and I hate I hate like commitment here so I'm just like I
+like usage based pricing so I try to keep the price as low as possible and keep
+it to your usage as much as possible so you just pay for what you use rather
+than yeah yeah I like the one-time lifetime plans but they don't work with
+AI software so yeah if GPUs are one time then I would offer that yeah that gets
+expensive running AI I mean they're even talking about building nuclear power
+plans now and all that you know but this is really cool stuff we're gonna we're
+gonna start this use your stuff here now and see what we could run with maybe
+we could come up with something interesting percent and percent are you
+thinking of a lot new interesting ideas this year I think some that every
+still kind of figuring out some things that we want to do like some frameworks
+that we can use we realize one of the use case that a lot of people use
+Jigsaw stack with is chaining them up like very agentic stuff right you know
+tool calling function calling and stuff so we're thinking of ideas where we can
+have a platform called workflows where you can chain multiple Jigsaw stack
+tools together and then you know you can change it with other LLMs and stuff to
+build a more accurate pipeline for it because right now if you tell for example
+an LLM extract this text from this image from me it will work but at the
+end of the day you don't have structured data that you can actually use in a
+reproductive reproducible manner so now can I take a smaller model like a 7B
+model a 7B model that doesn't have this capability but then can offload this
+capabilities to like Jigsaw stack to do the actual work and then act as that
+small model on the edge to do the human the loop stuff and you off yeah this is
+very interesting stuff man I have to connect you with a couple people so the
+other company that I'm kind of working with we're doing training on just and
+not just GPUs but different kinds of processor stacks and this idea of using
+see what you hit hit it out of the park with me with is it's not just LLM's
+people don't take into account that we have all of these other models that we
+could do a ton of stuff at lower rates and teaming up with LLMs which is
+exactly you're doing basically and making that LLM actually do something much
+more tangible and useful other than just a bunch of rubbish at times yeah
+oh regarding your ad on daily pings is that working out for you or what do you
+think I think um no it's good give us a huge set of referrals initially I think
+right now what we want to do is also support people who are building things
+in developer community and that's one way for us to get our name out there we
+can do Twitter ads we can do you know those kind of stuff as well but I value
+platforms like daily being a lot more because you get those early developers
+that like platforms very early in the pipeline so that's where I see products
+built like my Eric and you know other engineers that focus on I think recently
+there's this guy building mini plex that competes with perplexity and stuff like
+that there's a bunch of this like you know indie hacker developer projects that
+I like to support a lot more they corporate projects because they stay
+true to the engineers at the end of the day and I think that's where I want to
+be have you tried Reddit advertising on like startups our startups and our
+entrepreneurs not advertising but organic post here so organically if we
+think we can do stuff that we want to but not pain at this point we don't at
+this point we don't see the value in paying because we're so early we want
+to really get like clear and honest feedback and like really early developers
+that use us but I think at the latest stage has something we might explore
+there's this website we're actually gonna have the guy on next weekend on
+episode six a TISCO ATISKO and it's kind of using AI to generate Reddit posts to
+sort of go viral and not not so much spammy and not promotional so you don't
+get you know banned I just started using that today and I invited him on a
+podcast you should do it but check out those guys they're pretty cool they have
+a free tier when you click the subreddit so you basically enter your URL it goes
+out and scrapes it and tries to figure out what you know what industry you're
+in and all the keyboards and shit I think suggests a bunch of subreddits for
+you to post on so as soon as you click one of the subreddits it generates a
+pose for you that doesn't preach but that's where they charge it's also usage
+based but I think you get like a hundred credits in the beginning for free I'm
+gonna give no let's check it out pricing plan is pretty good I don't know how
+well works but I think read the way to go I'm getting more and more traction on
+Reddit and I tell you nobody interacts with me on Twitter yeah X is pretty much
+I don't know it just seems some right-wing echo chamber now it's pretty cool
+I'm Eric some blues guy I talked to him once in a while on there we just created
+a blue sky account today like this organization all accounts I'm nice I mean
+is not sure you know that's what noster no that's not notes and strings over
+relays oh it's an open source distributed platform kind of like Twitter but
+okay they run off relays and anybody can work run a relay and that's how they
+do their moderation if somebody spamming they just kick off the delay but
+check it out go to like primal.net is the one I use it uses like coin so the
+difference is like you can zap people micro payments in Satoshi's and you can
+earn them as well so it's kind of cool where like you're not the product in
+more you know like on Twitter yeah yeah like crazy websites so I'm kind of
+thinking about playing around with Jigsaw and using it for the for the
+global threat product that Anthony and I are working on I guess yeah doing some
+couple things so we'll we'll be we'll definitely be in touch for that and see
+if we can actually launch 100% we're currently doing with Jigsaw yeah no let
+me know yeah let me wish you specific API could help I can see what I can do
+there as well yeah cuz we do because if you help build up a product that and
+then get some sales and that definitely will get raise some eyebrows for you
+yeah no 100% that sounds good man yeah I mean if you guys know somebody that's
+using our work cuz we have not launched the embedding model officially yet but
+we're benchmarking the shit out of it and it's super difficult to benchmark
+embedding models because you need real world actual data set so we have a few
+companies that has integrated our embedding models tested it out give me
+yeah if you know more companies that's willing to do that and we're giving it
+for free by the way to kind of run it and stuff because we just need a lot more
+testing to be done compared to every amount of other models we can benchmark
+it's super easy right embedding is it's one it was difficult just because you're
+doing training and there's not a lot of you I there's one person I really want
+to connect you with and we'll talk offline about that I think he's gonna
+have a blast kind of talking to you you guys are doing some wonderful wonderful
+stuff and like I said I'm gonna with Anthony here offline we're gonna start
+seeing if we could do something with global threat and what you're doing with
+jigsaw yeah augment what we're doing because I think it's a really cool idea
+oh that's amazing have you heard of I think it's clever that AI clever clever
+something as almost exactly what you're doing I did not use them but I can't
+across them well let me check is it clever or something like that no that's
+not it man I wish I could remember where I saw that it was posted on
+reddit a couple weeks ago yeah but they were more expensive and then Jay and I
+were looking at your website like a week ago we're locked in this seems just as
+good as little guys but a lot cheaper yeah yeah we'll also check it out what's
+what's better for for you is like I mean that at least from the developer
+perspective is you're not using a lot of buzzworthy stuff like agentic and
+yeah workflows we're trying to implement and and it's pretty it's I mean it's
+fun I wouldn't say it's super novel but it cuz everybody's just like trying to
+run with oh what rapper you could build on top of GPT but you're exactly that
+you could take a bunch of different workflows with a bunch of different
+models is is kind of yeah what what's interesting is that we aren't trying to
+compete with most of the new day AI companies that come in being created
+today that like you know they try to wrap llama or like GPT for some LLM but
+instead we're trying to compete with the big tree cloud providers right like
+AWS cloudflare not Azure and you know those guys the reason is because if you
+look into the business model they have two big sectors they have DR server
+infrastructure stuff like EC2 instances their GPUs they make billions from that
+the other half of the business that I that I believe that they aren't doing
+very well is their service business if you go into Google AWS and Azure all of
+them provide some sort of API for OCR or translation or text to speech speech
+to text and they suck they really really suck but that's where developers kind
+of like hit the the kind of stuck with those providers right it's difficult to
+leave those big cloud providers because they provide a suite of tools that you
+just read it in AWS you're kind of using that suite of tools so you're in Azure
+using that suite of tools so we benchmark ourselves significantly against those
+providers as we're trying to say hey can we take over that service side of that
+business from Azure AWS and stuff we provide better OCR model or better
+translation model like your Google translate for example it's so far
+behind even an LLM could beat the translations today right so we're using
+a llama for translations I started to we we first we searched Google in the last
+day using different keywords and then we translate those keywords to like Russian
+Chinese Korean yeah Arabic to find out like the hotspots you know the
+axis of evil so yeah and we use llama 3.1 7b to translate yeah and then we
+scrape the articles and then we translate those back to English and then we
+classify them I don't have sentiment we should add sentiment to yeah double
+threat but that would be a good one to have yeah you should try to translate
+it could be better than the one they're using yeah let's use jigsaw to do it yeah
+yeah but I added you on LinkedIn if you connect with me I'll connect you with
+the person I want to yeah you guys will hit it off especially with the services
+thing that you talk about I think it might be worthwhile but we're makes
+that we're definitely you know right after this on you and I were talking
+Anthony about how we can use this really really interesting product idea
+perfect perfect no I love that let me know if any other issues you're happy
+tough I wanted to ask you have you heard a diffi.ai
+diffi diffi like different the I F D I know I don't AI no it's it's a self-hosted
+AI agent platform now I can get it to work with Docker but I'm just curious if
+you look at it I'm looking at it right now yeah it's like it's basically like
+length graph right like this it just kind of orchestrates different models
+together so you can kind of organize all the models yeah in one plug yeah yeah
+that's a yeah there's so many of these I have seen we try to integrate as much as
+we can like crew.ai that's one of those guys that do something similar but not
+self-hosted I think this looks like they're doing rag off the default models
+that are popular right now yeah is they're talking about vector storage as part
+of the pricing plan that's that's usually rag stuff right that is yeah
+you're probably way ahead of these guys if you're training yourself and the
+thing is we don't provide like so these I think there's more
+orchestration so usually we add tools within a platform like diffi so some of
+it but we don't provide vector storage or this kind of infrastructure side of
+things which there's hundreds of different providers you can pick from
+yeah yeah yeah I wish I could figure out that one that I saw the other day I'm
+curious for what your opinion was of them but that's cool man I mean yeah we
+definitely has your marketing and how are you guys making money yet or how many
+users you got right now we are hitting closer to 5,000 active users monthly and
+trying to scale that number up we have on average we have our own three million
+API request a month we want to get three billion a day so that's that's the goal
+yeah I think so I think marketing is going good we just got an angel our dev
+rel just joined the team as well so I think he's gonna be upping the game when
+it comes to content creation writing more blog posts a lot more content and we
+were exploring AI generated SEO content as well so that's something that we're
+looking into and yeah do you guys have a discord we do actually not very active
+but we do is mostly used for support right now I just saw it on your website I
+have to join yeah do do join us try to make it active give us some give us some
+love there I swear I find companies that use discord they're definitely ahead of
+the game I think oh yeah I I keep using slack to be honest when it comes to
+it comes to develop a related at least what's looks but I was a year's ago it's
+not cool anymore yeah no but we're still forced to use it unfortunately because
+some companies right for partnerships the only way to use it is to select so
+yeah I still use it when I work usually they're either on slack or
+discord it's like a lot of the newer companies are in this car but yeah the
+ones are a few years old are still stuck on slack the worst is when you got one
+that wants to use teams I'm just like no cuz I run Linux we we had one
+enterprise customer from Mexico of like all country that they want to kind of
+want to get they basically work with the government to scan the documents and
+get it mapped into their database and stuff and yeah because they work with
+the government they use teams and the only way to communicate with them for
+any sort of documents or steam so that was my like first time installing teams
+after years yeah I did a contract with the agency a couple years ago and they
+used teams and it was terrible let me ask you a question how are you picking up
+these customers that was mainly through daily pings no I don't think it's a very
+recent most of it was through YouTube videos we did a bunch of videos that we
+did in collaboration with like companies like Superbase, Vercel I think those
+hit a lot more views and that get us a lot more traction we do hack and use
+hack and use gives us a lot as well yeah and benchmarks I think when we do a lot
+of benchmarking articles that tends to help a lot more for example released a
+benchmark where we showed our whispered model like for our text to speech to
+text model is faster than grok not being the fast yeah so we launched that
+benchmark now and we kind of showcase our the open source the code and
+everything and yeah and yeah so those kind of things really give us a lot more
+traction I think just doing a lot more content really helps and more I think
+for some reason I think block articles have given us less traction than video
+so video content really helps a lot for us very cool yeah awesome man this was
+great yeah I have to run I don't know if you guys want to end this here or you
+want to keep talking without without me but it's up to you guys but if you want
+Anthony I'll click the leave button here instead of closing it out so it ends
+benignly how about that no we can end it we don't have to go past I mean I'd like
+to get these podcasts up to an hour but we're kind of running out stuff to talk
+about so it's all good yeah I think you know everyone listening check out jigsaw
+stack calm pretty cool and join their discord check us out share you can
+subscribe to our newsletter it's free if you want to comment you have to be a
+paid member but yeah we don't have a lot of users yet
+you oven but we're gonna get there we've been doing this a month so we'll have to
+back months and see where you're at hopefully sounds good take care all right
+nice to meet you guys cheers you guys no wait let me stop the recording guys don't
+

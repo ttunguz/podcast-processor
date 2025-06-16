@@ -1,0 +1,1407 @@
+--- METADATA START ---
+Show: How Mini-Apps Are… - Unchained
+Episode: Linda Xie
+Host: Laura Shin
+GUESTS: Linda Xie 
+Guests: Linda Xie
+Source URL: https://podcasts.apple.com/us/podcast/linda-xie-on-how-mini-apps-are-helping-farcaster-take/id1123922160?i=1000709157750
+--- METADATA END ---
+
+1
+If you're building a consumer app, like the single most important thing is getting your initial user base.
+2
+And so it's a really hard, like cold start problem.
+3
+And we went through that ourselves: of like, hey, like, now I've released this app, and now I'm just going to start posting about it non-stop and like getting people to download it or use it.
+4
+But if it's within something like Farcaster, where it's, you know, you're never leaving the app, a user doesn't have to drop off and like download something, it's using the wallet that's already embedded to like participate in the app.
+5
+And then users can now share the mini app within the feed.
+6
+Like, we help with that virality for these users.
+7
+And so, this has been like a really huge selling point for a lot of developers.
+8
+Plus, like, Coinbase Wallet is being a Firecaster client as well.
+9
+So, they have like millions of users.
+10
+So, you're just getting in front of so many more users as a developer.
+11
+And so, to me, like, that's just been like a really like huge selling point to them.
+12
+Hi, everyone.
+13
+Welcome to Unchained, your new hype resource for all things crypto.
+14
+I'm your host, Laura Shin.
+15
+We love reading your thoughts on Unchained.
+16
+In every episode, we feature your reviews or comments on the show.
+17
+Here's what SS Harvey Dude Muffin had to say on Apple Podcasts: I don't know much about crypto, but want to know literally everything about crypto people going rogue in crypto.
+18
+Laura, you're my new favorite podcast, especially because you talk like me and make me laugh as these wild details unfold.
+19
+Thank you.
+20
+We'd love to know your thoughts on our show or a specific episode.
+21
+Leave a comment on Apple Podcasts, YouTube, Farcaster, or X.
+22
+This is the May 20th, 2025 episode of Unchained.
+23
+Crypto moves fast.
+24
+It's why Bitwise launched the weekly CIO memo, a jargon-free summary of what's moving crypto markets, written by one of the best in the business, CIO Matt Hogan.
+25
+Get up to speed in five minutes or less.
+26
+Check it out at bitwiseinvestments.com/slash CIO memo.
+27
+Carefully.
+28
+Today's guest is Linda Shea, developer ecosystem lead at Farcaster.
+29
+Welcome, Linda.
+30
+Thanks.
+31
+Thanks for having me.
+32
+I've wanted to have you on the show for years, so I'm very excited to have this chat.
+33
+I know you're doing things with Farcaster now.
+34
+Previously, you were a crypto VC, but I want to start at the very beginning.
+35
+So take us all the way back.
+36
+How did you even get into crypto?
+37
+Oh, wow.
+38
+Okay.
+39
+I first came across crypto in 2011.
+40
+I was in college, and my friend came up to me and was like, hey, have you heard of the Silk Road?
+41
+And have you heard of Bitcoin?
+42
+And I was like, no, what is that?
+43
+And I was very intrigued by the concept, but thought it was pretty shady at the time because it was all associated with dark net markets.
+44
+And so I didn't end up getting us like buying it or anything, but I thought the technology was really interesting.
+45
+And I ended up writing an econ paper with the same person in it in college and kind of just like followed it along over time.
+46
+And then the pivotal moment for me was when Overstock announced they were accepting Bitcoin as payment.
+47
+And I looked at who did that and that was Coinbase.
+48
+And so that was like a very pivotal moment for me because I was like, this is the first time a legit company was willing to associate themselves with Bitcoin.
+49
+And this is the company enabling it.
+50
+So I got to join them.
+51
+And so just applied online, told them I would work in any role and then ended up joining them.
+52
+And that was my start to crypto.
+53
+That was 214.
+54
+And what were you doing there?
+55
+I told them I would work in any role.
+56
+So they said that what we need right now is someone to work on regulatory compliance investigations.
+57
+And so that was like working with regulators, law enforcement, and kind of on the compliance side.
+58
+I didn't really have a background in that, but I was like, I'm down to do.
+59
+And that was like a really interesting role doing like cyber crime investigations.
+60
+And so like in between that time you wrote the paper and then like you applied for the job at Coinbase, like were you just kind of watching Bitcoin or like why were you so certain that you wanted to work in Bitcoin once you found a legitimate company interested?
+61
+Yeah, so there was a few things that I think got me interested.
+62
+So one was my parents had been sending money out of China to the U.S.
+63
+for like decades.
+64
+Like it was just like, hey, there's caps on how much that can be sent out.
+65
+This is going to just take a really long time.
+66
+And that didn't really make sense to me as a concept of like you don't have control of your own money and it doesn't move across borders and governments have control over it.
+67
+So that was already something I just like grew up with.
+68
+And then during the cultural revolution, my parents were pretty young then and they would tell me stories how the government actually came and seized their assets because they were well educated and relatively wealthy.
+69
+Like they ran their own businesses.
+70
+And that also didn't make sense to me.
+71
+So I was like, that's crazy.
+72
+Like just some arbitrary education is bad by the government and all of a sudden you've lost your assets.
+73
+So I was already a little bit like crypto-killed in the sense that I was like, wow, you can control your own money and like Bitcoin enables this for the first time, but it's super shady and like I don't think it's going to take off.
+74
+So that was kind of just my thought and I was just keeping an eye on it over time.
+75
+And then not that this is super important.
+76
+Maybe it's too personal.
+77
+So we can cut it.
+78
+But like I'm confused about your, so your parents were here, but they were.
+79
+Like, they went even when they left China, they couldn't bring it, or oh, yeah, yeah, yeah.
+80
+So, they have like Chinese bank accounts, just like any Chinese citizen.
+81
+And then, when they moved to America, like my dad moved for grad school, they just had money locked up in their bank accounts in China because there were withdrawal limits on how much they could actually move out.
+82
+And so, to this day, there's still money being moved out from their bank accounts.
+83
+Oh, my gosh.
+84
+Yeah.
+85
+And it's like this, like, really slow.
+86
+Wait, they must have been here for like decades by this point.
+87
+Yeah, yeah.
+88
+And there's like a cap on how much you can withdraw.
+89
+I don't know the exact cap, but like, we're not like insanely wealthy.
+90
+So, it's probably not too high of a cap.
+91
+But, okay.
+92
+I guess the other thing, and sorry if this gets just too personal, but I'm assuming by now they're American citizens.
+93
+So, I'm still confused.
+94
+Like, how?
+95
+Well, my mom is not, but my dad is.
+96
+And so, it's my mom's accounts that are still being pulled out.
+97
+Well, then, why doesn't she just become a U.S.
+98
+citizen?
+99
+And then she could probably just take the money, right?
+100
+No, it doesn't, it does not work that way, unfortunately.
+101
+In China, I don't know like all the logistics, but like, like they also inherited money from their parents.
+102
+And so, there's this huge process to like get the money from them to you.
+103
+And it's easier if you're a Chinese citizen and then you can get money to the U.S.
+104
+Like, it's a whole other deal, and it's like something that has been like the backdrop of me growing up for a really long time.
+105
+And so, I'm always hearing just like what of a painful process this is.
+106
+So, to me, just like digital currency and being able to move it across borders instantly without permission just like really resonates with me and with my parents too.
+107
+Like, when I told them about Bitcoin, they're like, oh my gosh, that makes a lot of sense.
+108
+This reminds me, I'm sure you have had this experience, like people from the US or Canada or whatever, they kind of like will shit on Bitcoin or something.
+109
+And then you're just like, okay, yeah, you are like showing your privilege here.
+110
+Yeah.
+111
+Yeah.
+112
+Exactly.
+113
+Because you're like, why would anyone use this?
+114
+Why would anyone need this?
+115
+And it's like, okay, go to a lot of other different countries and you'll see why, especially like, I mean, in Argentina, I spent a month there because I really wanted to get to know the crypto community more.
+116
+And like, it was so much more prevalent there as a use case in terms of actually using cryptocurrency.
+117
+So I think it just is so dependent on your upbringing and what you were exposed to.
+118
+Well, yeah.
+119
+So, but what's interesting is you started in regulatory compliance.
+120
+So like, did that change your view on crypto or what it could do?
+121
+Or like, what were your thoughts on that?
+122
+Because that must have been such a different experience.
+123
+Yeah.
+124
+I mean, the way that I viewed it is that it was really important to have a legitimate company in the cryptocurrency industry because it had been marred by so many scandals like Mt.
+125
+Gox and dark net markets.
+126
+And so I was really excited that Coinbase was taking the approach of, hey, we are regulated, we are going down the compliant routes.
+127
+And now, you know, they're part of the SP 500.
+128
+To me, this was a way of helping legitimize the whole industry and onboarding newcomers into the space.
+129
+So I was like, not, you know, I didn't like live and breathe compliance like before, but going through that process, realizing how critical it was to the company succeeding, I was happy to do that work.
+130
+And I also learned like through the process, yeah, like it is.
+131
+So, if I was a criminal, I wouldn't use a lot of these cryptocurrencies to be moving funds around.
+132
+Like, it's like it's all traceable.
+133
+And if people can't catch you now, they can maybe catch you like five years from now.
+134
+So, it was always something that I was like, I don't feel like this makes the most sense for a criminal to be using Bitcoin.
+135
+Yeah, yeah.
+136
+I've said this on the show before, but and I'm sure we've had prosecutors on the show say this, but I'm sure you know there are so many former prosecutors, federal prosecutors, who prosecuted crypto cases, and they'll all say things like, I would rather prosecute a crypto case than one involving the traditional banks any day.
+137
+And they would talk about how even to just get one hop in a transaction could take months from a traditional bank.
+138
+But, you know, with like the Bitfinex, you know, RazzleCon and Dutch, the way they like, you know, followed that, they could do it in real time.
+139
+And that just like blew their minds.
+140
+Yes.
+141
+Yeah.
+142
+That it's, it's, I mean, I think like when people talk, like, if they're anti-crypto, they'll be like, oh, there's all this like bad activity and money laundering.
+143
+And it's like a consistently point to like, well, people do that with, you know, the US dollar and they do that with cash.
+144
+And that's actually like way harder to trace and way longer of a process.
+145
+So I think, yeah, also goes back to like different perspectives.
+146
+You know.
+147
+So after you worked at Coinbase, you ended up founding a crypto VC firm, Scalar Capital.
+148
+Why did you decide to become a VC at that point?
+149
+Yeah.
+150
+So this was an era where like Ethereum was having like a bunch of these like ICOs on the network.
+151
+And it was a really interesting time where people were like, I'm building this decentralized project on top of Ethereum.
+152
+And I was just really excited by that as a concept of like, wow, if we extend this beyond just money and like, you know, the equivalent of payments, like we could apply this to everything, basically.
+153
+And so I wanted to just be able to spend my days like focusing on the cutting edge of what was being built in the space.
+154
+And so a VC role is great for that because you're constantly meeting with like the smartest founders and getting to your job is to just keep up with the space.
+155
+So I felt like that was something I wanted to do.
+156
+And I started with Jordan, who I worked with at Coinbase.
+157
+Did not really, like in retrospect, did not realize like what exactly like Intel's like starting a fund.
+158
+I think that process was like a very painful learning experience of like, okay, well, now people have to give you money to invest on their behalf.
+159
+And this was 2017 and there wasn't a ton of appetite for that on the institutional side.
+160
+And so I literally did 1,000 fundraising meetings and ended up with like 70 investors to get the $20 million fund going.
+161
+Wow.
+162
+And so like in retrospect, I wish I had learned more about the process where it's just like, oh, it'd be so fun.
+163
+Like my day is just spent researching all these cool tokens and projects.
+164
+And it was like, no, actually, you're just in institutional LP meetings all day.
+165
+So learned that process as well.
+166
+And so I'm assuming that's why you decided to leave and go back to becoming a founder?
+167
+Yeah, I miss the building side.
+168
+Like for me, just being like, first of all, like best part of the job is like just meeting with like the smartest people.
+169
+Like they're willing to talk to you.
+170
+But the part that was a little challenging for me was like, okay, now you're going to be spending time thinking about raising your next fund or getting that going or thinking through like managing LP relationships and making sure that they're going to be contributing more.
+171
+And that was just pulling away from the stuff I actually cared about.
+172
+Overall, I had a very positive experience for VC, but decided I need to be back on the building side and just hands-on.
+173
+Before we launch into what you're doing now, I did want to ask you because you talked about how you spent a month in Argentina.
+174
+And I know you were nomadic for quite a long time.
+175
+And I'm assuming you went to a bunch of different crypto communities globally.
+176
+So I'd just be kind of interested to hear maybe, yeah, what place seems to have the most crypto adoption to you?
+177
+Oh, I mean, so, yeah, I was nomadic for four years, and we would spend, like, my husband and I, Will, we would spend a month at a time in a different location.
+178
+And so we did the whole thing, like, people are saying there's the big LA crypto scene, there's big Miami, Austin, Argentina.
+179
+So we like Lisbon, we went to every place.
+180
+So people are like, there's a great crypto community here.
+181
+And for me, like, Argentina, like Buenos Aires specifically, really stuck out to me.
+182
+Like, that was where I just met so many people who actually use crypto.
+183
+And like, it is like in their genetics at this point to understand why something like this actually matters.
+184
+And so it just really resonated with me.
+185
+And I'm glad that DevConnect this year for the Ethereum.
+186
+And what were the four years where you were doing this travel?
+187
+I mean, I just settled six months ago in New York.
+188
+So it's four years up until then.
+189
+And I was just out of my backpack and living the nomadic, minimalist lifestyle.
+190
+So you basically started during the pandemic.
+191
+Yeah, it was right when people were like ready to leave their house.
+192
+And so the way it started was Will and I, we just left San Francisco to take a weekend trip to Santa Barbara because we've been cooped up for so long.
+193
+And we drove down there and then we were like, do you never, do you want to just like never go back?
+194
+And so we never ended up going back.
+195
+Wait, you must have gone back to like pack up your stuff.
+196
+No, I learned that you can actually hire people to pack up everything for you and put it in storage.
+197
+So I hadn't seen my stuff for four years and we were like, oh, maybe it's not even there.
+198
+How do we even know the storage unit exists?
+199
+We pay monthly.
+200
+So yeah, we literally never saw our stuff and never saw our place again.
+201
+Wow, that's so funny.
+202
+So I'm so curious because that really scrambled the crypto kind of community landscape in the U.S.
+203
+So what's your perspective on how the pandemic changed the crypto hotspots in the US?
+204
+I do feel like a lot of people ended up, like because you're not having to work an office anymore, a lot of people ended up just going wherever they wanted to live.
+205
+So SF, like, I felt like over time no longer became like the hub for crypto.
+206
+There's still a lot of people there, but I think it actually over time shifted to New York.
+207
+So that's, I'm, I'm living in New York now and like I literally run into people.
+208
+I don't know if that's good or bad, but it reminds me of San Francisco, actually, in terms of the crypto density here.
+209
+Okay.
+210
+Any other thing you want to mention from your travels during that time that pertains to crypto?
+211
+I mean, like Lisbon, or yeah, or I don't know where you went in Asia, or I don't think anything in particular, to be honest.
+212
+Yeah, it was just cool just meeting so many different people around, and there were crypto communities everywhere.
+213
+Like, I would go to Iceland, and I've met up with several crypto people there.
+214
+So, there's just crypto people, I mean, it's a global decentralized community, so it really reflected whenever I went somewhere.
+215
+That's so cool.
+216
+All right, so when you decided that you wanted to build again, how did you end up choosing to focus on Farcaster?
+217
+Yeah, so we built, my co-founder and I, Daniel, we built on top of Farcaster, so that was the first thing we did.
+218
+But to take a step back, knew that I wanted to go back to building, was kind of like casually looking for a co-founder.
+219
+I actually feel like for me personally, like co-founder matters like so, so much.
+220
+And that was what I wanted to find first before I had the idea.
+221
+I know a lot of people like do the other way around, and they're like, wow, I live and breathe this idea.
+222
+But like, for me, I'm not an engineer, so I definitely needed a co-founder to help me build it out.
+223
+And you're basically like married to this person for like a very long time, you know.
+224
+And so, for me, it was really important to make sure that we had values aligned.
+225
+Like, starting a company, in my opinion, is significantly harder than starting a fund, way, way more ups and downs.
+226
+And so, yeah, and it's a very important thing.
+227
+We couldn't align on like timelines.
+228
+One of them was like, oh, I'm actually, I'm down with crypto forever.
+229
+And I was like, okay, well, that doesn't work.
+230
+And Daniel, he used to work at 0x, where Will started 0x.
+231
+And so we were just eating a meal in New York for dinner.
+232
+And he was just talking about how hard it was to do co-founder dating.
+233
+He had already left 0x and had left Phantom already.
+234
+And he was just like, yeah, it's like so hard to find the right match.
+235
+And then I was just listening the whole time.
+236
+And then I asked Will that night, and I was like, is Daniel a good engineer?
+237
+And then Will was like, oh, he's really good.
+238
+And so then I just reached out to him.
+239
+And then we basically did the whole co-founder dating process.
+240
+So there's First Found has a set of 50 questions that all co-founders should ask each other.
+241
+So we went through all of that.
+242
+And you get to know someone really, really well through that process.
+243
+I highly recommend it to anyone.
+244
+And then we just did like hour-long walks, like daily for a long time, just syncing on values.
+245
+And we ended up deciding to work together.
+246
+And then from there, once we decided to work together, we came up with these, like, okay, here are all the things that we've wanted to see built in the past.
+247
+You know how like VCs have their like, you know, requests for startups list?
+248
+So I, I put, I had my list already of like, these are things I've always wanted to see built.
+249
+Okay, well, there's a reason they were never built.
+250
+Like, I went through that process and I speffed out a bunch of them and they were just not viable businesses.
+251
+It's like, this is a cool hackathon project.
+252
+And so that is something I also learned.
+253
+It's like, you.
+254
+So, we like narrowed down a few things of like, okay, these are things that we just aren't even interested in working on.
+255
+Like, they could be good businesses, but like, I'm not going to wake up every day getting excited by that.
+256
+So, we like knocked those out.
+257
+And then we refined it down to a few things.
+258
+And then we interviewed, like, okay, who's our user base?
+259
+So we would go reach out to like, you know, a small business, medium-sized business, large business, and see if this was something that even pay money for.
+260
+And those were no.
+261
+So we kind of like narrowed it down further.
+262
+And the one that like kept sticking was like building on Farcaster and building some sort of bounties product where you're helping people get paid.
+263
+Because the thing that is really beautiful to me about crypto is like, you know, the digital payments are global, permissionless, instantaneous.
+264
+And that means that if you are doing a really great job, no matter where you live, if you won the, you know, didn't win the geographic lottery, no matter where you live, if you're good, you can get paid out in crypto and build up a reputation for doing great work.
+265
+And so that's something both Daniel and I cared like so deeply about.
+266
+But this had been done a lot in the past before.
+267
+There have been like bounties platforms and it didn't end up working out.
+268
+So we felt like there was enough that had changed, specifically Farcaster, that would be worth trying again.
+269
+And what's amazing about Farcaster, so Farcaster is a decentralized social network.
+270
+So anyone can build on top of this network.
+271
+And so we've seen in the past with like Facebook, Reddit, Twitter, and other platforms, like sometimes people will build on top of them and they'll just get rugged, right?
+272
+It'll be like, yeah, we no longer support you or we're changing our pricing.
+273
+So it's really extreme and you can no longer afford it.
+274
+Farcaster is a network, like, why don't we try to do bounties on top of Farcaster as a go-to-market distribution?
+275
+So we did that for a little over a year.
+276
+And we got our first few thousand users going.
+277
+And it was like, we felt really proud of the product.
+278
+Ultimately, we were running to the issue of like, okay, now we just need more users.
+279
+And so we ended up joining the Farcaster team to accelerate user growth on top of Farcaster.
+280
+And so that's both Daniel and I ended up joining like two months ago.
+281
+Because like right now, so you know, both you and I have been in crypto for so long.
+282
+And as you probably recall, back when we first met, there was kind of just like a sliver of things.
+283
+And then now it's like, there are so many avenues.
+284
+So just to imagine you kind of, you know, making that decision, it's just so interesting how you narrow that down.
+285
+But you knew for, like, did you know that you wanted to do something that was more like a user app?
+286
+Or because you could have done, oh, I think I even heard you say in another interview that you were thinking about doing an L2 or like.
+287
+Oh, no, no, not an L2.
+288
+Oh my, that would be so hard.
+289
+Not an L2.
+290
+But we were thinking of infra for sure because we were willing to approach it from different angles.
+291
+Like I said, we narrowed it down and we were like, no one's going to pay for this.
+292
+And we just wanted to save our time really early and not even take that shot if we felt like no one was going to pay off the bat.
+293
+And then one thing, I spent a few, so I watched this A16Z talk that was really good.
+294
+And it was like, just run this exercise.
+295
+If this market were to 100x and you were to get 100% of that market share, is that still a viable business?
+296
+And there's a lot of cases where it's actually just no.
+297
+So running that exercise early on was really valuable in knocking some things out.
+298
+I mean, we ultimately, like, we weren't able to build like, you know, some giant company, but like, we certainly saved us some dead ends that we like knew for sure.
+299
+And this one was more of like, who knows?
+300
+And so, yeah, that was one approach that we took of just like, let's just run the knack and math like way ahead of time.
+301
+So, what are kind of like the main problems with social media today that you think Farcaster could resolve?
+302
+Yeah, if there's a few problems.
+303
+So, one of them I mentioned, like, developers building on top can just get frogged.
+304
+And I think that actually is a really painful process.
+305
+There's, you know, people spending like years of their time building.
+306
+They have many, many users, and all of a sudden there's platform risk where it's pulled out from under them.
+307
+And by that, you mean the classic example of like Farmville taking off on Facebook and then, okay.
+308
+Yes, exactly.
+309
+Or it could even be the platform seeing that you're doing so well, and then they're just going to charge you a ton because they know that they have that power dynamic over you.
+310
+And so we've seen this time and time again.
+311
+So I think that's just like from a developer standpoint, that's really risky.
+312
+And there was one recently where the Shapes team were building on Discord and they said they brought 100,000 users to Discord for building their AI agents.
+313
+And Discord just pulled them off the platform.
+314
+And so now that, you know, now that's like platform risk.
+315
+So I think from the developer standpoint, that's really concerning.
+316
+The other part that's really concerning too is like when you are a user just on like any social platform, let's say that you get kicked off the platform or you get shadow banned for some reason, which happens all the time on Twitter or X, you actually like to leave the platform, you have to now start over with your entire follower account, right?
+317
+Like no one, no one follows you over to this other platform unless you're like posting about it, but you're already shadow banned or banned, so you can't even continue to post about it.
+318
+Whereas on Farcaster, that I think is really, really special is that you have all of these accounts on chain where anyone can access this data.
+319
+So anyone can see who's following who.
+320
+And so any client built on top of Farcaster, so it could be like a Twitter equivalent, it could be TikTok, Instagram, Threads, like whatever, LinkedIn, all of them share the same follower graph.
+321
+And so as you switch across these different platforms, you're retaining your followers as you go to different platforms.
+322
+So let's say you're not even shadow banned, like, and you just want to start using the LinkedIn equivalent.
+323
+Instead of having to bootstrap everything from scratch, you can now just use this exact follower graph and just start with your same follower account.
+324
+And so I think that is just really powerful from a user perspective because distribution is so important at the end of the day for doing anything in the space.
+325
+And so I think from both developer and user standpoint, a permissionless social graph is immensely powerful.
+326
+Yeah, this is really interesting because I think of how, let's say that I discover somebody and I really start following them on like Instagram or something and I really like their content and then eventually I realize like, oh, they have a YouTube channel.
+327
+And then sometimes it's shocking.
+328
+Like I'll see, oh, the number of followers they have on like this one platform is like triple on the other platform or whatever.
+329
+Yeah.
+330
+So I imagine for them, it's kind of like, oh, you know, maybe I started this one platform later, but like I'm sure all my followers on the one would be interested in following me on the other.
+331
+Yeah, exactly.
+332
+And I have a concrete example where, so Coinbase Wallet is building a client on top of Farcaster.
+333
+And so it's in beta now and will be out in like a couple months or something.
+334
+But they're building like an entire social feed and social product within Quinbase Wallet.
+335
+So now when I make an account on Coinbase Wallet, it's actually the exact same follower graph.
+336
+So I don't even have to start from scratch.
+337
+So this is like already happening.
+338
+And I think over time as more and more people build clients on top of Farcaster, it's going to be really valuable to be able to just tap into that same user base.
+339
+And so one question is: you know, there have been news reports of different kind of blockchain-based, or really just blockchains that are trying to acquire TikTok.
+340
+So I have to admit, I haven't been following super closely like the flow blockchain's interest in TikTok, like how what they're planning to do with that.
+341
+And I don't know how closely you've been following it, but is that kind of a similar idea that you could port your users and things like that?
+342
+Or are there other ways of having a blockchain-based social media platform that isn't the way that Farcaster is designed?
+343
+I'm sure, I mean, there already exists other platforms out there that are decentralized structure, so I'm sure that that can exist.
+344
+I mean, I'm really excited by Farcaster for a few reasons in particular, and this is what I'm working on on the Farcaster team.
+345
+Like, this is what excites me so much: we actually have, so first, like, leaning into on-chain transactions.
+346
+So, by default, every user has a crypto address.
+347
+So, I think that's a powerful component that you don't even see on these like centralized platforms.
+348
+And this is global and instantaneous.
+349
+And so, Farcaster itself, like the team, we actually give out like $28,000 in weekly rewards for users.
+350
+And this just goes directly into their crypto wallets without them having to be like, here's all my, you know, like payment information, here's like my wire instructions, coordinating like, you know, cross-border and stuff like that.
+351
+So, that's really powerful.
+352
+And you see this like magical moment where people receive their first like crypto and they get really excited.
+353
+So, that part we're leaning into that I think that makes us really different than some of these like other decentralized social networks that maybe aren't doing on-chain crypto.
+354
+The other piece that I'm working on is like mini-apps.
+355
+And so, these are basically like WeChat or Telegram mini apps where you can just open up a full-on app within the social feed.
+356
+And so, this is like the early days of like Farmville on top of Facebook, but without Facebook being able to rug the Farmville developers.
+357
+And so, now we have this whole ecosystem of people building mini apps.
+358
+And it's really cool because now, in these like mini apps, when you open up the mini app, like it already knows who you are, so you're not having to like be like, enter your email address, and now, like, you know, check the email code that you just received.
+359
+Like, you just open it up, you can start using it immediately.
+360
+You have a crypto address connected, so they can start sending you rewards instantaneously, or you can just send funds to this mini app and make purchases.
+361
+So, that combination plus the social graph to me is like really, really powerful.
+362
+That makes a lot of sense.
+363
+So, in a moment, we're going to talk.
+364
+Hi, I'm Matt Hogan, CIO of Crypto Asset Manager Bitwise.
+365
+Look, crypto can be confusing.
+366
+There's so much noise and the space changes so quickly.
+367
+That's why, every week, I write a five-minute memo on the biggest stories impacting crypto in plain English.
+368
+Why is Bitcoin up or down?
+369
+What are people missing?
+370
+Where should investors look next?
+371
+Get the lowdown every week.
+372
+Sign up to get the weekly CIO memo delivered straight to your inbox.
+373
+Go to bitwiseinvestments.com/slash CIO memo.
+374
+That's bitwiseinvestments.com/slash CIO memo.
+375
+Carefully consider the extreme risks associated with crypto before investing.
+376
+Here's another review of the podcast from Dutch Ladle on Apple Podcasts.
+377
+Dutch Ladle writes: I listen to about a dozen podcasts, none more journalistically, in the old-fashioned quality sense of the world, sound than Laura's.
+378
+She is a rock of Gibraltar in the killer seas of crypto.
+379
+If you want to hear a comment or a view featured on the show, leave your remarks on Apple Podcasts or read her a comment on an episode of YouTube, Farcaster, or X.
+380
+Back to my conversation with Linda.
+381
+In March, you announced that you were now going to work on growing Farcaster's developer ecosystem.
+382
+Why did you choose to work on that particular area?
+383
+Okay, well, first, I also said to Dan and Varun, because I was like, when I see something, and this is like Coinbase, I was, I'm all in.
+384
+Like, I will do anything for them.
+385
+Like, I secretly would have been like Dan's EA.
+386
+So, I was like, first of all, Dan, if you're lying, but this is Dan Romero, and Varun, is it Srini?
+387
+Srini Room.
+388
+Like, over a decade later, getting to work with them again.
+389
+We're both much older and slightly wiser.
+390
+So, yeah, so I was like, I know I want to work on Farcaster with them, like take any role.
+391
+But like here, you know, we did talk through like where I actually could be a fit.
+392
+And the thing that I was like really excited by was like the mini-app side.
+393
+And so I feel like that is just such a special component that does not exist like literally anywhere else in terms of the combo of like, you know, permissionless social craft plus on-chain payments plus the mini app.
+394
+And so to be able to like talk to developers and just help them build this out and like get distribution through Farcaster like to me is really exciting because like I went through that process already building on top of Farcaster.
+395
+And so that was really appealing to me.
+396
+And then it's actually like a pretty similar role to VC in a weird way because like you are just like talking to so many founders in the space and you are helping them just not with capital but with distribution, which in my opinion, distribution is going to be more valuable because capital, there's so many funds and you can kind of get that anywhere.
+397
+But we view it as like, the pitch has been, and I'm working with a lot of teams on this, is like get your first 1,000 users through Farcaster by building this mini app.
+398
+And when people use this mini app, they can then share it directly within the social feed.
+399
+So it helps with virality as well.
+400
+So basically, so did they just say this is where we really have a need and or something more interest?
+401
+Yeah, we kind of just like crafted it together.
+402
+It was really quick.
+403
+Like it was, it all happened within like a week or so.
+404
+And so we just put together like, here's Linda's role.
+405
+And it was just like listing out different things.
+406
+And I was like, I probably.
+407
+It's like, I forgot the exact quote, but it's like, if you're asked to join a rocket ship, you know, don't ask which seat, just get on.
+408
+And so that's kind of how I view Farcaster.
+409
+Like, I'm like all in, you know, double down on Farcaster because like I really think that this is just a much better situation for users and developers.
+410
+And so we just need to grind and like grow the network because it's only valuable as a social network if there's enough people on it.
+411
+And so right now we have like a really healthy user base of like, maybe it's like 60, 70,000 daily active users.
+412
+There's about 1 million accounts created total.
+413
+But that pales in comparison to the larger social media networks.
+414
+And so we as a team, there's 19 people on the team, just have to grind to get there.
+415
+And so to me, that's really fun to just get to grow it.
+416
+Yeah, is the theory that you will attract these developers and then they'll get creative and build apps and some of them take off.
+417
+And then for the ones that take off, they'll kind of go viral and then bring more users to Farcaster.
+418
+Is that kind of the theory?
+419
+Yeah, that's one theory.
+420
+And that's the side I'm working on.
+421
+We're kind of working in parallel of like, so Ted on the team, she's doing like new user onboarding, where it's like, okay, we're actually trying to onboard a lot of non-crypto people as well.
+422
+And so they've been bringing in journalists and different people who maybe won't talk as much about crypto.
+423
+Like I try to onboard my sister-in-law and like she just like the moment she landed on the page, she was like, I don't understand any of this stuff.
+424
+And so we're trying to improve that side of it.
+425
+And then the side I'm working on is, yes, I really believe that like people will come to Farcaster to use specific mini apps.
+426
+And we actually are seeing some of this happen at a small scale where people told me, like, so there's games like Farcade, which is literally you can just play like arcade games within these mini apps, or Farville is the Farmville equivalent.
+427
+And so people actually come to this, of course, they're going to recreate that.
+428
+They come to this to actually just play the mini apps and they don't spend as much time on the social feed.
+429
+So if we can bring in more and more of these, that's going to be compelling for users.
+430
+And if on top of that, you can start earning directly into your account for playing these games.
+431
+Like let's say it's giving you rewards for participating in like streaks or daily like prizes or something like that, you're going to keep coming back even more.
+432
+And when you have crypto payments, it's easier to facilitate that.
+433
+So I'm like so bullish on this.
+434
+Okay, yeah.
+435
+So you have like rewards.
+436
+You're trying to also like increase usage of the WarpCast wallet.
+437
+So that's all like with frames.
+438
+Yeah, actually, let's talk about that because that was kind of a breakout moment for Farcaster in the winter of 2024.
+439
+So describe what Frames is.
+440
+And then it looks like mini apps was kind of like a natural extension from that.
+441
+Yeah, so frames, so Frames V1 was announced and there was like this like huge excitement around it.
+442
+What it was at the time was four buttons and like a static image, which is what we actually had built our platform Bounty Caster using.
+443
+And so people kind of saw that vision of like, whoa, now instead of just like pure text, I can now have these like little applications where I can have people click on buttons, like do an NFT mint or send an on-chain payment or things like that.
+444
+And so I think everyone like kind of saw that vision.
+445
+But the problem at that time is, well, it is only four buttons and a static image.
+446
+And the image took quite a while to load.
+447
+And so there's no way you can actually really build anything close to what it is today, where we have mini-apps where it's a full-fledged, basically web app.
+448
+So you can convert any web app into a mini-app now.
+449
+And so the design space is immensely larger now.
+450
+And so you can have full-on games in this mini-app version.
+451
+Whereas Frames We won, you couldn't have had these kind of games.
+452
+Okay, yeah.
+453
+And so we've kind of talked about the problems that developers face on traditional social media platforms.
+454
+But there are certain ones it sounds like they're kind of already solved.
+455
+Like the thing about porting your users or your followers to different apps or things like that.
+456
+So do developers kind of just continue to reach out to you with new features that they want?
+457
+Yeah, they reach out with features we want.
+458
+We're doing a lot of work.
+459
+So Worbcast Wallet got released a few months ago, and that was a really big game changer.
+460
+It's an embedded wallet within the Worbcast app.
+461
+And so you actually, anytime you connect to your wallet, you don't have to get kicked out of the app to then connect something, which we've all experienced that pain point and then brought back.
+462
+There's a lot of user drop-off there.
+463
+So it's actually just a click within the app itself.
+464
+And so we think that that's a really powerful mechanism for developers to retain users.
+465
+And so we've been doing a lot of work on Worbcast Wallet and making it better.
+466
+And we actually are right now adding more chain support.
+467
+And so that's something we've been focused on because if you are a really good app developer, we want to be able to support.
+468
+So that's something we've also been working on as well.
+469
+We added Monad Testnet recently.
+470
+I've been chatting with a lot of developers in that ecosystem and have been really impressed by the developers there.
+471
+So that's been another approach that we've had as well.
+472
+And so how do you decide which chains you're going to add?
+473
+Yeah, so EVM is definitely the easiest because we already have that support.
+474
+Non-AVM is a lot harder, but we actually are like in the middle of looking at working on Solana.
+475
+So hopefully that should be ready as well.
+476
+But yeah, things like that just take a lot more work and we want to make sure it's a smooth experience for people.
+477
+So the team is so, so good.
+478
+Like I really want to emphasize how fast the team ships.
+479
+Like they like to add like a non-EVM like wallet and mini-app support, it's been like the timeline has been like the two-week kind of mark versus months.
+480
+And that's a result of the structure that Farcaster team has had where, I mean, just for context, most of the people on the team are staff software engineers.
+481
+So they actually just are very autonomous and can kind of just like run something from start to finish.
+482
+And then a lot of the people that were hired recently too, which has been really cool, is like former founders building on top of Farcaster, like us.
+483
+And so people are just like so stoked to just like see Farcaster grow and just like ship really fast.
+484
+So anyways, so we're working on it.
+485
+But yeah, the timelines are in the weeks.
+486
+So at the end of March, Farcaster launched Snapchain.
+487
+Explain what that is.
+488
+Yeah, so all of the accounts that were created on top of Farcaster.
+489
+But when you actually have all of this cast data and who's following who, we use another layer called Snapchain.
+490
+And so you can kind of think of those as just nodes in the network that people are running to then access this data.
+491
+So developers can run their own nodes in Snapchain or there are services like Nainar that help developers run for them.
+492
+We used Nainar when I was running my company.
+493
+And so Snapchat, you can kind of think as this blockchain node layer that stores all of this decentralized social network data.
+494
+Okay.
+495
+Yeah, I didn't know.
+496
+So on Dune, it looks like some of the different little kind of actions on Farcaster, like a cast or a reaction or a link, there were these big drops suddenly, like at different points.
+497
+But I didn't know if it had to do with the rollout of things like that.
+498
+Like if that was kind of making some of that more efficient.
+499
+Yeah, it might have been the rollout just because this just got released and we're still making improvements to it.
+500
+So I'm not sure exactly the reference there, but like I would say there's going to be more like stability and improvements like in the future.
+501
+But the team that ships Snapchain, which is literally like a blockchain, is two people.
+502
+So it's just insane.
+503
+Wow.
+504
+Well, so as you mentioned, you guys are so you're you know, Farcaster's on Optimism.
+505
+And just the account creation is on OP Mainnet, but then everything else is chain agnostic.
+506
+Okay.
+507
+Yeah, so so that's how you support all these other different chains.
+508
+But, you know, do you find that like most of the developers that are interested are also Ethereum developers?
+509
+Or like who?
+510
+So I think that there's a really, really strong base community.
+511
+And they've done such a great job of helping consumer app builders and just growing their ecosystem.
+512
+So I'm not surprised at all that there's such a heavy base community.
+513
+I am also seeing a lot of developers reaching out to me that are from the Telegram ecosystem actually that have been like, we're being kind of like forced into the ton ecosystem and we just want to be able to reach users without worrying about like them pushing us into some ecosystem.
+514
+We're interested in building on top of Farcaster.
+515
+There's also people that are in other ecosystems, the whole in crypto that are like, we just want users for our app and we're built on these other chains.
+516
+That's the most important thing to us is distribution.
+517
+So it's really like a wide mix, but at the end of the day, if you're building a consumer app, the single most important thing is getting your initial user base.
+518
+And so it's a really hard cold start problem.
+519
+And we went through that ourselves of like, hey, like now I've released this app and now I'm just going to start posting about it non-stop and like getting people to download it or use it.
+520
+But if it's within something like Farcaster, where it's, you know, you're never leaving the app, a user doesn't have to drop off and like download something.
+521
+It's using the wallet that's already embedded to participate in the app.
+522
+And then users can now share the mini app within the feed.
+523
+Like we help with that virality for these users.
+524
+And so this has been like a really huge selling point for a lot of developers.
+525
+Plus like Coinbase Wallet is being a Farcaster client as well.
+526
+So they have millions of users.
+527
+So you're just getting in front of so many more users as a developer.
+528
+I was also wondering, so for these different developers, like, you know, when you talk about the ton developers, I was thinking earlier in the conversation that some of what you were talking about reminded me of that.
+529
+But, so it feels to me, like, Farcaster and the ton ecosystem are starting kind of with the same goal, but like, it's super, like, your advantages are like very flipped or something.
+530
+Yeah, it is.
+531
+And ours is different in that it's like we do have this like social feed.
+532
+Like, people are coming to the app just to use the feed just like you would Twitter.
+533
+And so, you're meeting users where they already are.
+534
+I'm not like going through Telegram personally beyond people messaging me to just spend a lot of time there.
+535
+Like, I know there are a lot of people that do mini-apps, but like, I spend way more time as a crypto Twitter user on a text-based social network.
+536
+And so, the idea is like meet users where they already are.
+537
+But, yeah, I have played around with a bunch of Telegram mini-apps, and they do look like a lot of them are really cool.
+538
+But, yeah, the ton ecosystem push, like I think that's just really hard for developers because they just want to not have to be pigeonholed into some ecosystem there.
+539
+So, I noticed in your Twitter feed, you're doing things like live streaming your onboarding sessions and stuff.
+540
+How do you think about your job?
+541
+What are kind of all the different ways that you think about approaching your job?
+542
+Yeah, I mean, I think that it really is important to explain to people why Farcaster is valuable to them either as a user or developer.
+543
+And I definitely acknowledge like it's off the bat you're like why would I switch to a way smaller social network if I already have a following on Twitter.
+544
+And so like I just do a lot of just like public educating in the space.
+545
+And if I'm already having like the same conversation with someone, might as well live stream it.
+546
+That's how I'm thinking.
+547
+And then people can watch the video if they have the same kind of questions.
+548
+Like for example, really common questions that people ask is like, why is it called Forecast?
+549
+Like why am I downloading Warpcast?
+550
+But the network's called Farcaster.
+551
+And so we then have to be like, oh, well, it's actually the client built on top.
+552
+And then you start getting to this decentralization angle that we've talked about.
+553
+But if we can actually make it easier to just have people download the app and just like start using the product, like that's going to reduce drop-off and confusion.
+554
+So we're actually in the process of like, okay, we're going to rename Warpcast to Farcaster in terms of the app so that now when people hear Farcaster, which already has the most brand recognition, they go to the app store, they just download Farcaster, and then they don't get confused.
+555
+So having more and more of these conversations is really valuable.
+556
+For example, having a lot of conversations with developers, trying to get them to build on Farcaster, they were like, what is a frame?
+557
+Like what's a Farcaster frame?
+558
+I've never heard of that before.
+559
+And I was like, well, it's this, you know, like the web app, you convert it.
+560
+And then if you just use the term mini-app, a lot of developers are familiar with that term because they've seen that in Telegram or World or somewhere else.
+561
+And so just like terminology matters a lot.
+562
+So like as we have more and more of these like conversations, I think just like realizing where there are drop-off points is really valuable.
+563
+And so yeah, that's kind of how I think about approaching.
+564
+Like, are there things that are like potential quick wins of like explaining?
+565
+Okay, yeah, I do feel like there's just a lot of ways that social media exists today.
+566
+That I almost realize that in a Farcaster world, those distinctions may not exist or be needed.
+567
+And so, you know, earlier when I was talking about like Instagram versus YouTube, or we could even think about X, like right now, already X is, yeah, it's mostly text-based, but people put like full-on podcast videos in there, like we do.
+568
+Or, you know, they'll put like little mini shorts where, so it's kind of like a mix between YouTube and Instagram and or TikTok or whatever and text-based.
+569
+And so I started realizing, like, oh, the way we think of our current social media, where it's like videos are on YouTube, and then, you know, shorter form visual content is on Instagram or TikTok, and then text is on X.
+570
+Like, on Farcaster, I could see those distinctions maybe not even happening that way.
+571
+And so, do you like, like, I almost, what I'm trying to say is, like, we talked about how Farcaster is trying to solve for this problem of like, you want to be able to port your users wherever you go.
+572
+But could it, couldn't it also just kind of build this sort of like app where there's multiple different ways you could use it?
+573
+And so then you wouldn't even need to port your users.
+574
+I mean, you could, but it is really hard to be really good at a lot of different things.
+575
+Like, I think the same team that's building TikTok maybe is not as good as building LinkedIn because you just have a really different audience and vibe.
+576
+So I do think that there are going to be specialized clients and platforms.
+577
+They're leaning way more into videos than we are doing on Workcast.
+578
+And so that's actually really cool where users can discover videos a lot better than we're doing right now.
+579
+And so I think that each client is going to specialize or just have different ways or opinions of approaching how they want to interact with their users.
+580
+And I think that's awesome because now the user just has more choice and they don't have to like worry about losing followers wherever they go.
+581
+So I think that's just giving users the choice.
+582
+Okay, so since you spend a lot of your time exploring the different mini apps and things, what are some of the mini apps that you're most excited about on Farcaster?
+583
+Yeah, there's so many, honestly, because I could talk about this for hours.
+584
+But one of them that's that's just going viral right now within the feed is actually just like crossword, like a New York Times Crossword Puzzle equivalent mini app.
+585
+And so people are just like racing and there's a leaderboard.
+586
+And what's cool is like because anyone can pull in the social graph, the leaderboard built by the developer just pulls in like all the Farcaster users automatically and what scores they got.
+587
+And so people have just been like comparing like their scores and like competing against each other.
+588
+So that's been really fun.
+589
+And I'm like so bad at crossword puzzles.
+590
+And so it's been fun seeing like I literally am like 10x worse than like some of my teammates.
+591
+And so that's been like just going like completely viral.
+592
+In terms of recent mini app that I've gotten really excited by is Pay-per-view.
+593
+And so they're actually doing a mini app where you can pay to unlock content.
+594
+And so you can pay people to like five cents to view a photo or to like view any like writing that they are doing.
+595
+Because I'm just paying through my WordCast wallet.
+596
+I never had to leave the app itself.
+597
+I'm able to now do an on-chain transaction that's like five cents.
+598
+It would not be worth any other platform to be facilitating.
+599
+They live in another country.
+600
+They're receiving these funds instantly into their wallet.
+601
+And now I'm able to unlock this content and view it.
+602
+And then once I view it, I can now share that image into my feed for other people to unlock.
+603
+And I can earn a percentage of that revenue from people using my link to view it.
+604
+And I just receive micropayments from that.
+605
+So I think that is just like a use case that highlights what's powerful about crypto and permissionless social really, really well.
+606
+The other one that I play regularly is Fargesser, which is like GeoGuesser, but built on top of Farcaster.
+607
+So every day there's a geographic location that it shows like a very small snapshot of it and you have to guess where that is.
+608
+And so that one's really fun to, yeah, also similarly there's a social leaderboard and you can, there's literally a map where you can see where everyone guessed with their like little Farcaster profile icon.
+609
+And you can just see like how far off you are with your friends and things like that.
+610
+Is that like that Google Maps person who can freakishly look at a set of pixels and then know where in the world that is?
+611
+Or is it literally like an image of the place?
+612
+It's an image of the place.
+613
+I have no idea what you're talking about.
+614
+There's literal competitions for GeoGuesser where people can just like in a moment, it's just like grass and they're like, this is like, this isn't Russia.
+615
+Like and it's just like, I don't know how they do this, but it's the equivalence game on Farcaster, which is really cool.
+616
+And then there's others like DeFi, like Morpho has a mini app where you can deposit your USDC and start earning yield on it.
+617
+I showcase that a lot because it's like, hey, like, never have to leave the app and you now are just like earning yield on your USDC and it's like 6% yield.
+618
+So there's a lot of different apps right now that I'm super excited by.
+619
+So it's like, I feel like it's a dream job just to be able to like play around with mini apps all day and like talk about something I'm already so excited by, which is like crypto and Farcaster.
+620
+So dream job.
+621
+So you are Farcaster's third most popular user.
+622
+What advice would you give to people who are interested in joining Farcaster?
+623
+I didn't even know that I was, but I looked this up on Dune.
+624
+Oh, wow.
+625
+Okay.
+626
+Yeah, I didn't even know.
+627
+But I mean, the advice is like, yeah, just treat it as like any other social network where you don't just want to shill for something and not like engage with other people.
+628
+But one thing on Farcaster is like people are so, so nice.
+629
+So it's a result of like also just like an early community, but also Dan seeded the community by literally getting on video calls with like the first few hundred Farcaster users.
+630
+And so it's just built like a really nice like user base of like the most followed accounts are generally nice people and not people that just like rage fate and just get a lot of followers.
+631
+And so it incentivizes like it like nice behavior.
+632
+People sometimes call it Christian rap.
+633
+And so we're trying to work on like, it's okay to have it be like hot takes every once in a while.
+634
+But anyways, my point is like because people are so nice, like I think that works really well where it's like if you're helping others, like if they have a product and someone's launching a mini app, you can reply to them, use it, give feedback on the product.
+635
+Like, you're connecting with builders directly, and some of these are like really great builders, VC funded, and you can give feedback and support others, share things that you've learned, kind of treat it as a way of just helping others in the network.
+636
+And I think that that lands really well.
+637
+Because I'm always building in public, like when we're building Bounty Caster, it was all about these are the pain points we're running into, and this is how we're thinking about things, and we don't have an answer, but like, this is like the struggles you have as a founder.
+638
+And there's like a founder's channel, there's a channel for basically everything, and you kind of like document your journey of just building public or doing something in crypto in public.
+639
+And I think those kind of things land really well.
+640
+And actually, I was curious: do you feel like most people on Farcaster are more like Ethereum community members?
+641
+Because that was definitely the perception for quite a while.
+642
+And I don't know if that's still currently the majority of the community.
+643
+Yeah, that's definitely the early user base.
+644
+But as we've been expanding to more chains, and that's something that I've been working on directly, we are bringing in more ecosystems to me.
+645
+Like, if like we really should be getting like the entire crypto community onto Farcaster, like, if we want to have conversations that are actually meaningful about crypto and moving the space forward, like having it only be like a segment of the community to me is such a, it's a kind of a waste, honestly.
+646
+And so, like, bringing in like all kinds of different voices is really valuable.
+647
+So, over time, it's not going to be just Ethereum.
+648
+And I think that's valuable in the same way that people, as much as they hate crypto Twitter, still spend a lot of time on it because that's where there are so many different voices and perspectives.
+649
+So, over time, that'll change.
+650
+And do you know kind of what the percentages of users are?
+651
+Oh, I mean, that is like the vast majority right now.
+652
+Like, I don't even have the exact percentage, but it's like you land in the feed, and right now, it's more likely to be an Ethereum user for sure.
+653
+Okay.
+654
+And then, just this bit about like people being nice on a platform.
+655
+I'm sure you're very well aware there's been a lot of criticism of like the direction that X has taken, where it feels like it's kind of more rage baite-y.
+656
+What are you guys prioritizing in the algorithm in Farcaster?
+657
+We're not even like prioritizing the algo in that sense, but it's like the most, like, it's like you're seeding this like early community of really nice people, and those are like the most influential accounts.
+658
+So, to get them to engage with you is not going to be through like rage baiting.
+659
+Like, so I think it's just like it's like a behavioral community aspect, where it's like, imagine, like, it's like you're, it's like, there's like 50 really nice people, and then you're like a super mean person.
+660
+You walk into the group and you just start yelling at all of them.
+661
+Like, they're going to be like, whoa, like, why are you doing that?
+662
+You know?
+663
+So, I think that it's just a matter of community and how it was built early on.
+664
+And so, yeah, I don't think it's an algo thing.
+665
+But another thing that also I think helps a lot is sharing links on Farcaster.
+666
+You don't get de-boosted in the algo.
+667
+And so, that allows people to cross-pollinate ideas as a whole.
+668
+And it's like okay to push people out to different platforms if they want.
+669
+And so, I think that also lends to like more sharing.
+670
+Like, I'll share like, you know, like Reddit articles, a Reddit post that I read or news article I read.
+671
+And, like, that just helps with more sharing of ideas versus just sheer rage bait text.
+672
+Yeah, yeah.
+673
+So, last question is just about the identity of Farcaster.
+674
+You know, there are elements of it that are similar to us and elements that are more similar to Reddit.
+675
+Why were those the two social media platforms that you decided to emulate?
+676
+So, this was done like well before I joined the team, but in terms, I would say it's like closest to Twitter by a long shot.
+677
+The Reddit piece comes in because there are channels in the network, and so you can kind of think of that like as a subreddit.
+678
+So, if you're really into gardening or you live in New York, you can join the New York channel.
+679
+And so, this is where it's like a Twitter feed, but contained in a certain topic where everyone has the same interest.
+680
+And so, that kind of reminds people like subreddit, but by far, people treat it more as like a Twitter than a subreddit, subreddit.
+681
+But that's kind of how I explained channels.
+682
+But not everyone uses channels.
+683
+Okay.
+684
+All right.
+685
+What have I not asked you that you would want people to know about?
+686
+No, I feel like it was very comprehensive.
+687
+I'm just really passionate about Farcaster, and like people can message me anytime, like on Twitter or on Farcaster itself.
+688
+I'm at Linda on Farcaster and at LJXIE on Twitter.
+689
+Awesome.
+690
+Well, thank you so much for joining Unchained.
+691
+Oh, and tell me where.
+692
+So, oh, you, sorry, you gave your handles.
+693
+Oh, yeah, parents.
+694
+I realized you actually asked people at the end, but I just realized you gave that information, you know, so well.
+695
+All right, well, it's been such a pleasure having you on Unchained.
+696
+Thanks for having me.
+697
+Thank you so much for joining us today.
+698
+To learn more about Linda and Farcaster, check out the show notes for this episode.
+699
+Unchained is produced by me, Laura Shin, with help from Matt Pilchard.

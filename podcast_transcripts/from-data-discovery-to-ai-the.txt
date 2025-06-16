@@ -1,0 +1,583 @@
+--- METADATA START ---
+Show: Data Engineering Podcast
+Episode: From Data Discovery to AI: The…
+Host: Tobias Macy
+GUESTS: Shinji Kim 
+Guests: Shinji Kim
+Source URL: https://podcasts.apple.com/us/podcast/from-data-discovery-to-ai-the-evolution-of-semantic-layers/id1193040557?i=1000709305644
+--- METADATA END ---
+
+1
+Hello, and welcome to the Data Engineering Podcast, the show about modern data management.
+2
+Data migrations are brutal.
+3
+They drag on for months, sometimes years, burning through resources and crushing team morale.
+4
+DataFold's AI-powered migration agent changes all that.
+5
+Their unique combination of AI code translation and automated data validation has helped companies complete migrations up to 10 times faster than manual approaches.
+6
+And they're so confident in their solution, they'll actually guarantee your timeline in writing.
+7
+Ready to turn your year-long migration into weeks?
+8
+Visit dataengineeringpodcast.com slash datafolds today for the details.
+9
+Your host is Tobias Macy, and today I'd like to welcome back Shinji Kim to talk about the role that semantic layers are playing in the era of AI.
+10
+So, Shinji, can you start by introducing yourself for anybody who hasn't heard your past appearances?
+11
+Sure.
+12
+Well, thanks for having me back here, Tobias.
+13
+Really excited to chat with you again.
+14
+So, hi, everyone.
+15
+I'm Shinji Kim.
+16
+I'm the founder and CEO of SelectStar.
+17
+SelectStar is an automated data discovery and governance platform for cloud data warehouses, data lakes, and pretty much all your data ecosystem.
+18
+That's kind of what we do primarily.
+19
+And yeah, I think through the data engineering podcast, we've been chatting about overall needs of data discovery, where it can be applied for both data democratization and data governance in the past.
+20
+And yeah, I'm excited to dive into more of the other use cases that we are starting to find with this world of metadata and metadata management.
+21
+And do you remember how you first got started working in data?
+22
+Yes, it was a long time ago, back in 2007.
+23
+I was a data scientist at, or at the time, the title was Statistical Analyst at Sun Microsystems.
+24
+I built a Markov chain Monte Carlo models for sales forecasting and also kind of like almost like an interactive dashboard that sales and operations teams can use for projecting their quarter-by-quarter sales models.
+25
+That's kind of how I got into data.
+26
+And I guess the rest is history.
+27
+I've worked with a number of startups as a product manager as well as a software engineer.
+28
+In the past, I started a company prior to SelectStar called Concord Systems, focused on distributed stream processing, which was acquired by Akamai back in 2016 and started SelectStar five years ago.
+29
+I would say the biggest part that kind of got me to where I am, especially related to data discovery and data governance and data democratization, is because I've noticed a lot of companies, especially enterprises, spending a lot of effort and resources on collecting, storing, and running computes on data, building up all the data lakes and systems and buying all the tools.
+30
+But the end users, whether that's a data analyst or product managers, folks that want to gain answers from their data or build a new product on top of the data, usually spend, end up taking weeks to find the right data that they could use for those purposes.
+31
+And this is why I started SelectStar five years ago and has been the main capability that's been driving the core of our product, which is around data discovery, providing the context of data and your data ecosystem.
+32
+And the last time we talked, data discovery, metadata management, those were very active topics.
+33
+There were a number of different companies and open source projects entering the ecosystem around that time, particularly because of the rise of the modern data stack and the number of different tools that were being brought in to work with data, the variety of data sources that were being brought into the context of data warehousing and business intelligence.
+34
+And obviously, the term modern data stack has faded from use.
+35
+And a number of the companies that started around that time have either changed focus or been acquired or they've ceased to be in operation anymore.
+36
+And now there's the age of AI that is adding new stressors to the different data stacks that teams are running, as well as the requirements around contextual information, data discovery.
+37
+And I'm curious what you've seen as some of the main shifts in the ecosystem and in your business over the period since we last spoke.
+38
+Yeah, that's a great question and also a big question.
+39
+A lot of things have happened in the last two years in the data ecosystem and the specific area that we play in.
+40
+First and foremost, we do see a lot of data teams that have been, I guess, more efficient in their operations in terms of their operation perspective, tooling, as well as how some of the customers that we have worked with just over the last two years, they have really gone from very centralized data team to more decentralized data team.
+41
+And we've also seen the other way of the shift as well, kind of more decentralization to more.
+42
+So, just overall, like we are seeing a more shift from the phase between the data engineering teams, analytics engineering teams, and then data analyst/slash BI teams, how they work together.
+43
+We are starting to see that.
+44
+This is also driven by a lot of advancements and new features that are being added and being more consolidated on the platform side.
+45
+So, both Snowflake, Databricks, DBT, a lot of these platforms are starting to provide a lot more capabilities than the specific data warehousing or the transformation capabilities, such as documentation, data catalog, lineage.
+46
+A lot of these are starting to get merged into those platforms, also as features.
+47
+So, there is definitely the market shift from independent vendors, you know, and for the companies.
+48
+Having the best of breed tools versus getting more of a platform support, I would say, has definitely come up a number of times.
+49
+I would say, though, in terms of like just kind of like bubbling back up on where we stand at Selectstar, from the beginning, we believe that providing this type of single source of truth of your metadata, how your data is being created, being transformed, and being utilized within your organization, is not something that you should only get the information from one platform.
+50
+Most of the companies use multiple platforms and would require the cross-platform visibility, a way to manage and gain insights cross-platform as your whole data ecosystem.
+51
+So, we are starting to provide a lot more capabilities where you can truly manage and govern those information across platform and then also sharing certain metadata from one platform to another.
+52
+So we can be the Google or the bridge and you, as an end user, are just have to work with one platform on the metadata management perspective.
+53
+So that's one part of it.
+54
+The other big part of it that I guess I missed out, left out here, was the AI.
+55
+So a ton more services and products that I see in the market that are from like AI analyst or AI data engineer to a lot of, I guess, features around co-pilots type of things that we are definitely seeing a lot.
+56
+For SelectStar perspective, we also had a lot of updates along with AI, including automatically documenting all of your data assets without you having to lift up the finger, but you can also merge and easily approve what is the right documentation to providing with an AI assistant that can do semantic search, answer any questions that you might have on your data, create SQL queries or editing your SQL queries that you are trying to execute but may have some blockers on.
+57
+And I would say where we are starting to head in, and especially with AI really getting better at understanding natural language and then being able to also do more direct translation to the code and SQL that we use day to day, we are starting to, I am starting to see this expansion for how data is starting to get leveraged even beyond the data teams with this trend.
+58
+So this is definitely one area there that we are starting to see a lot of traction and have a lot of features that we've built towards supporting this true data technocratization and self-service analytics to enable more people to use data.
+59
+Semantic modeling, as a concept and as a term, has gained a lot of attention, particularly around four or five years ago with the growth of the modern data stack and the idea that you wanted to have one canonical source of truth for the key business metrics that previously lived in the BI system and now you wanted to be able to use across different data clients or data consumption use cases.
+60
+And there were also a number of overlapping terms around that, where there was the semantic layer, the metrics layer, headless BI.
+61
+And I'm wondering what you see as the overlap across those terms and whether there's any notable distinction between them as far as the actual application of those ideas.
+62
+I guess to start with the motivation side of semantic layer, like you mentioned, there is the part around, oh, like let's we can virtualize all the data sources and you can use one thing to query data.
+63
+I think that is definitely still there, and there are a lot of companies that do this, not necessarily through always through a semantic layer, but ways to just translate SQL even.
+64
+Because most of the time, those queries are primarily designed for physical data querying.
+65
+I would say with modern data stack, the part that has really bubbled up is defining that single source of truth metric.
+66
+When you say revenue and when I say revenue, are we actually talking?
+67
+And I think that's definitely one of the reasons why a lot of companies wanted to implement or have a semantic layer.
+68
+Now, today, and what I've been seeing in the last, I would say, you know, three to six months or so, is starting to really leverage semantic layer for AI analysts or AI agents to be able to provide a better analysis or text to SIFO from the business perspective.
+69
+So, pre-semantic layer, LLMs, and you know, we've seen this a lot in SelectStar.
+70
+Customers ask a very semantic type of question, and we give them a SQL query to run, and that's all great.
+71
+But it gets you so far as more of like maybe 75 to 80 percent.
+72
+And that's mainly because, and we've thought about this a lot: like, why is that?
+73
+What is missing?
+74
+We have all the metadata of the customer, and we also know, like, out of let's say 10 different orders table, which table is the right one to use and which column is the right one to use because we can see the previous query history to determine which ones are being utilized the most by whom, their query patterns, so on and so forth.
+75
+The part that I've noticed is that as you get to the business-level questions, there's a lot more nuance underneath the question that's not always defined in the SQL layer or the physical data layer.
+76
+These are logical layers and the more of what do we mean when we say active in active users.
+77
+When somebody asks a question, give me all the contracts that are pending, or what is the total number of contracts that are pending in this quarter.
+78
+Now, for LLM to understand and define whether they should get contracts pending from a defined column called contracts pending versus if they need to look at a status column and do an aggregation based on contracts pending value, those are very, like, very direct and simple reasons why having some of this definition and formula underneath semantic layer can really be helpful because those are not necessarily defined.
+79
+And most of the time, when you build your data warehouse and your data physical models, you're thinking about reusability of data and the ways that data can be joined and queried together, not necessarily sufficing every single business questions that could be answered and driven on that side.
+80
+So this is a kind of a finding that I had recently.
+81
+Why semantic model is an important layer that you need to have if you want to invest in having an AI analyst that can generate and execute queries on behalf of business users.
+82
+Sorry, that got a little bit long, but you also asked about what's the difference between semantic layer, metric layer, headless BI, what does that even mean?
+83
+I see them all as like different, but you know, similar.
+84
+It's all around that area of semantic models.
+85
+The way that I think about it is that semantic models are kind of like the logical model data.
+86
+Most of the time, this is entity-based.
+87
+And NTT-based models is different from when you do like physical entity modeling or Kimball modeling.
+88
+It is on semantic models, it is a lot more important to have the ways that things can be like things are named in a unique manner as well.
+89
+Because each field you will have to define, let's say, not even just like a joint condition or primary key, foreign key.
+90
+Sometimes you might want to define whether this is one to many or many to many, like that type of relationship.
+91
+But that's just the model side.
+92
+Semantic layer would be the implementation of those models.
+93
+So this can be done on DVT semantic layer or cube or at scale.
+94
+I think that those are all semantic layer companies and tooling anyone can use to implement semantic models.
+95
+And then I think you also mentioned metrics layer.
+96
+I think metric layer is almost like the same as semantic layer, but maybe focused on just calculated metrics.
+97
+So you can see primarily the core KPIs and the ones that always have some aggregation only.
+98
+I've recently found out that Snowflake's definition of metrics in their semantic view or semantic model, YAML files, it is mandatory for any metric to always have an aggregation.
+99
+If not, then it should be a measure with an expression, for example.
+100
+So I think some people may get into that difference as well.
+101
+And then last but not least, headless VI.
+102
+I feel like I've heard a lot more about headless VI during the modern data stack era, but headless BI is really just the VI capabilities like querying or exploration of data analysis, but really exposed as an API instead of having a visual UI that's really tied to it.
+103
+I think the biggest part about headless BI that I think about is that it can still be a BI, but there is a very clear separation of concern of the visualization layer versus the data layer with the semantic models.
+104
+And the other interesting aspect of all of these concepts of semantic modeling, semantic layer, headless BI, et cetera, is that data warehousing and business intelligence as a use case and an industry goal have been around for decades at this point.
+105
+There are many established patterns for doing the data modeling, such as star schema, data vault, et cetera, as well as methods for being able to gain better performance in the form of things like OLAP.
+106
+All of those are intended to be built around the business entities, business objects, business concerns.
+107
+And I'm curious, what are the differences that are added on or the new capabilities that are introduced by virtue of using these semantic models or semantic layers that sit on top of the data warehouse and one level above the core star schema, data vault schema, et cetera?
+108
+Yeah, I would say the core difference that semantic layer and semantic modeling really brings on is the business logic perspective of how metrics should be calculated and what specific dimension, time dimensions, those can be applied to.
+109
+It is technically doable from building star schema or others too, but what we see is that it's still on the set of physical data models that happens and the naming of things or the way that things get joined.
+110
+It usually requires some level of aggregation or filtering because the end dimension or the end measure is a representation of some type of business KPI or metric.
+111
+So that's really the main difference that I would define it.
+112
+And then there is the part around entities.
+113
+So if we think about like data modeling, data modeling really comes from understanding first there are lots of the sources that we define.
+114
+And then we may pull some of those sources, source data, to build the original physical data models so that it can be joined and queried together to get the answers.
+115
+At the same time, entity models are, for semantic layer perspective, usually come from how the businesses look at data.
+116
+So it's starting from what is the revenue and then just as an example, and within revenue, how do we define, are we doing it based on like region or product line?
+117
+And what are some of the exceptions that we might have to put in?
+118
+And it's driven by the business process and the reporting that you may need to do.
+119
+So it's approaching from the other end of the spectrum.
+120
+And that's why the entity usually ends up looking a little bit different than the physical models where it gets designed from.
+121
+I've definitely seen companies that have mainly without necessarily a quote-unquote separate semantic layer, like YAML files, they've implemented their own views and tables and call that a this is kind of our semantic model, and these are the semantic model tables that we should use for BI purposes, and so on and so forth.
+122
+And now, bringing us back around to the role of AI in all of this modeling, the additional layers, the ways that we need to think about the presentation and access of data, what are some of the ways that building these semantic models helps when brought into the context of LLM use cases, whether that is the English-to-SQL transformations where everybody wants to be able to just talk to their BI, or being able to use your existing data assets to power things like RAG use cases, where you want to be able to feed the appropriate contextual information to the LLM at request time, and some of the ways that you need to think about the additional attributes that you want to feed into your semantic model when you are building it with AI in mind.
+123
+I think an easy way to think about semantic layer for AI is to think of it as it's like almost your configuration and guardrails that you're providing the AI to know how certain things should be calculated rather than letting it infer from all the raw metadata and queries that you might have had in the past.
+124
+I think that's the main difference.
+125
+If you have those metrics dimensions, some expressions of those relationships defined within the semantic model.
+126
+It's a lot easier and straightforward for AI to just refer to that.
+127
+And I'm not saying that it's impossible for reg systems and having just the AI to run on top of your metadata.
+128
+And there is, you know, without semantic layer, and if you already have a really clear data model, you may not actually need semantic layer.
+129
+But most of the time, you're working on top of very messy data where you get to a point where you're not sure which tables should be the certified tables for AI to query because you're not sure if you've included all of them.
+130
+And either you might be feeling like, oh, I'm missing something, or I am including something that might introduce some noise.
+131
+So semantic layer just gives you that more clear direction and guardrails.
+132
+Almost like when you're using ChatGPT, if you provide ChatGPT with the, you know, if I'm asking it to write an email or paragraph or a blog post, if I give them more structure or the purpose or the audience who I'm writing it for, it will give me a lot better result.
+133
+So I see semantic layer playing that type of role for AI analysts.
+134
+We've definitely, from SelectStar, as we were testing semantic layer for, specifically for AI analysts, and we've done a ton of iterations with Cortex analysts on Snowflake in particular.
+135
+We've seen a lot of step change differences in terms of quality.
+136
+When you provide the semantic model, especially when you can provide the more complete semantic model that has not just the metadata, but also the relationships, which are the primary keys and foreign keys, what the joint conditions actually look like, as well as which are the dimensions, time dimensions, metrics, aggregations, how does that happen, and sample values.
+137
+Things like this really make the end result to be a lot more accurate and shows up as you really intended than leaving the AI to do as is.
+138
+I think there is definitely some benefit of having just the RAG system as well, but it gets to this, you know, when you are trying to get from 80% to 95%, 98%, some of these, having these definitions will play a big role.
+139
+And then another angle to the question of RAG and semantic models is the fact that virtually every database at this point has added some sort of vector storage capability and vector indexing, obviously at varying levels of capability and varying feature sets.
+140
+But I'm curious how you've seen that additional data type incorporated into the semantic definitions and ways that you're using that as an additional avenue for LLMs and AI systems to be able to access the, or as a starting point for accessing the different semantic models for then understanding, okay, either, yes, this is exactly the model I want, and the K-nearest neighbor search or HSW gave me the thing that was most applicable, or hey, I landed on this model, but now that I see the additional contextual information, it's actually not what I want and I need to start over.
+141
+Yeah, I think.
+142
+And it is possible to, I guess, generating the semantic layer from the vector model that your database is providing.
+143
+At the same time, the part that we found the most accurate and interesting is when you are starting, if you can bring on any usage data historically, and whether that is coming from primarily analyst select queries or from the usage of the BI side.
+144
+So I think that is definitely one way to get there.
+145
+But again, most of the time, what defines semantic layer, which is primarily the business logic side, is not always really parsable from just looking at what the metadata that databases have only.
+146
+And then the other aspect of building semantic models is that it is a non-zero effort required to actually create and maintain them.
+147
+It requires a certain amount of contextual knowledge about the business, the specifics about what the data means, how it's being applied, and some of the cases where it can be misapplied.
+148
+And I'm curious how you're seeing teams incorporate LLMs into that discovery and development piece of the puzzle for being able to actually accelerate the creation and reduce some of the manual toil involved with the maintenance of those definitions.
+149
+Yeah, for sure.
+150
+And I think the tooling is really starting to improve in this perspective as well.
+151
+But even just by using cloud or chat GPT, we've seen teams actually building their semantic layer just by feeding in how they are defining their metrics as well as like along with the list of tables and columns that exist to kind of get output the first version of YAML file that they wanted to create.
+152
+So I think that constructing the models and also maintaining those models is possible.
+153
+The part that I would say is really hard today is kind of the continue, the maintenance of the models as well as having those models to stay true as the models get used, which requires, just like any, you know, AI agents or applications may require the monitoring and evaluation that needs to happen along with the versions of the semantic models that you're implementing.
+154
+But the part that we see as kind of like a really a good place to start, and this is the part that we've been spending a lot of time on for helping our customers implementing semantic models, is starting from the models that you, semantic models that you might have already implemented within your BI tool.
+155
+Within your BI tools, the ones that are your certified dashboards, dashboards that your end users, business stakeholders are using, a lot of them are already connected to the critical data elements of data warehouses, data lakes.
+156
+It kind of will give you the subset of the tables that should be part of the semantic layer.
+157
+I think that's a really great place to start because you will also see that a lot of those tables are well maintained, has the quality check.
+158
+And so, if you can feed in the LLM with those lists of metadata, I think it is a good place to start.
+159
+And then you can build upon that as you look at other dashboards or you're updating it as these dashboards also evolve on the business side.
+160
+The other piece of the equation, when dealing with the semantic layers, is which underlying technology you should use for actually being able to maintain and expose the models that you define, where most of them are using some sort of YAML definition for this is the SQL query that translates to this particular metric.
+161
+Maybe these are the parameters that can be fed in to aggregate along different axes, et cetera.
+162
+And there are different engines to be able to actually execute those.
+163
+You already mentioned Cube is one of the leading ones, also being marketed as a headless BI system.
+164
+You know that the folks at Soda Data have a semantic layer capability.
+165
+Obviously, DBT has acquired a metrics layer and they've incorporated that as part of their product suite.
+166
+I'm curious what you see as some of the useful heuristics and selection criteria for teams who are starting to evaluate how am I actually going to build and expose these semantic models.
+167
+Yeah, that's a great question.
+168
+I would say the first of all, the BI side of the house, most of the time, does have some type of semantic models.
+169
+Their own semantic layer that is proprietary.
+170
+So it's just hard to get those logic out.
+171
+But I think there are some VI tools.
+172
+Like, you know, LookML is that case, hex has a way to like implement or accept other semantic models.
+173
+And then for Power BI and Tableau, like these are things that you will have to stitch in together, but like through the API, like you should be able to get the business logic that are built on underneath.
+174
+And that's primarily kind of how at Selectstar we are reverse engineering these semantic models and business logic from the BI tool as well.
+175
+Now, if we're talking about the third-party semantic layer, yes, like the ones that you've mentioned are primary ones.
+176
+There is also a vendor called AtScale.
+177
+I found the approach that Snowflake and Databricks are taking also very interesting.
+178
+So, if you think about semantic layer, for the perspective of DBT and Q, for example, these are a layer that is getting, it runs its queries and execution on still on top of the data lake and data warehouse.
+179
+You have decoupled it out of BI, but it is still, and now you put that onto the more, I guess, transformation layer or some type of one more place where you still have to define the YAML file and define those on a third-party on top of the data warehouse or lake house that you have.
+180
+What Snowflake is doing is first they started with the YAML file as a semantic model to be fed into the Cortex analyst, and now they are moving towards allowing users to have a quote-unquote semantic view that contains all of the YAML file, the previous YAML file for semantic models.
+181
+But it's a view that can be queried and acts and lives like another tables and views in your schema.
+182
+And I thought that was also really interesting because it's a lot more native in that case.
+183
+And it also follows the same security measures you have, the rules and permissions, and dynamic masking and tagging if you have it.
+184
+And that gets all applied natively.
+185
+So I thought that was a really interesting approach.
+186
+Now, Semantic View, right now, for the time being, is under public preview.
+187
+So it's very early.
+188
+But I think there is a really optimistic promise there if you can have that natively on the data warehouse side.
+189
+And then you can also just point your BI dashboards to run on top of that.
+190
+And for Databricks, they also have, I don't think that there is a public documentation on this yet because it's so early, but they have a Unity catalog metrics that looks very similar to also something like Semantic View.
+191
+But I think they've also recognized the need of semantic layer on top of Unity catalog in order to power Databricks Gini for AI BI.
+192
+So it will be really interesting to see what that would look like and how that really impacts the AI analyst performance.
+193
+One part that I haven't seen, but is an I get I think another worthwhile mentioning is companies like Cube, one of the added benefits that I've seen from the semantic layer and also I think one of the more of the reasons why DVT brought on Transform as a proprietary feature is because there is, once you have that, once you have almost like or like OLAPCUBE, you can potentially cache these calculations, aggregations, things that are happening because it's defined.
+194
+You know that it's going to get queried.
+195
+And you can make those queries a lot more efficient, you know, because it's already defined that way.
+196
+And I think that is almost right now added benefit when you have a semantic layer like Cube today, but should be more of the table stakes.
+197
+And one of the reasons why more companies should consider having a semantic layer in their toolchain, I would say.
+198
+One of the things that you mentioned earlier as far as the work that you're doing when working with systems like Tableau or Power BI is that you said that because you're able to ingest the metadata from those business intelligence systems, you can reverse engineer some of the business logic that goes into the underlying dashboards, et cetera.
+199
+And I'm curious how you're thinking about that as a potential on-ramp for data teams who want to more explicitly define these semantic models in a separate technology layer that is divorced from their data visualization system so that they can expose it to more use cases and expose it to more of these LLMs, et cetera.
+200
+Yeah, that is definitely the main use case that we're trying to support.
+201
+So today we are actually providing the YAML file to the end customers so that they can modify it as they want or put it on their GitHub.
+202
+The part that I would say like the role that we initially play today is to give you that quick start and bootstrap the semantic layer without having to do any hard work of looking at all the physical law models to figure out what the metrics should be, dimensions should be, and also filling in the details to make it work.
+203
+The part where we see is going is as we start putting more support on providing this semantic layer YAML file in many different formats, whether that's for DBT semantic layer, cube, or data breaks on and so forth, is continuing to also provide a system that can maintain and update the semantic layer portion.
+204
+So, this part I think is something that is important.
+205
+I think in the BI side, one of the parts that you end up running into is multiple different teams defining their own KPIs and metrics definitions that are different from one another.
+206
+So, there's a discovery aspect of people who may not be aware of the metric already defined, but also it's also because they might not have used it in the past.
+207
+So, that is one of the roles that we see that we can also help with for our customers.
+208
+So, today, when we are generating metrics, we will indicate to the user, hey, there is another metric that looks exactly the same.
+209
+It might even within your same dashboard, they are named different, but underlying measure and the dimension exactly the same.
+210
+So, would you like to combine these or have them as this name?
+211
+And here is the documentation.
+212
+So, that's kind of like something that we saw really adding value because this really allows customers to understand the ways that kind of metrics and how the data has been used on the business side proliferated on its own, and it gives them the opportunity to really organize them and having.
+213
+And in your work of building SelectStar, working with some of your customers, helping them to bootstrap these semantic models, what are some of the most interesting or innovative or unexpected ways that you've seen that new single source of truth, the semantic representation applied either with or without AI use cases?
+214
+Yeah.
+215
+In the beginning, any customers that were using semantic models or implemented the semantic layer, we've seen the production use cases primarily for embedded dashboards, but not for their core analytic.
+216
+It's really with the AI analysts that more companies are considering to have the semantic layers for their core data mark and analytics use cases.
+217
+The part that CN, the ones that we start envisioning with some of our customers, is how this semantic models to be utilized for not just for the AI analysts that they've defined, but for AI agents that they are building.
+218
+So that the agents could be related to the MCP client, how this can be embedded in their application layer is another way that we are starting to see that customers are ideating towards.
+219
+But the core, I would say, the use case has been answering business questions.
+220
+And just on that, I think there's a lot that can be touched.
+221
+We've seen customers that wanted to and are deploying kind of like their revenue office teams or marketing teams to start using Cortex Analyst instead of having to always go to their analyst teams directly, as well as for companies that are like more running like a retail chains for their branch managers to be able to check out how their store is doing and being able to ask more strategic questions on what they could do differently or better, specifically for that location that they are managing, for example.
+222
+And in your work of building SelectStar, working with end users and data teams who are tackling the semantic modeling challenge, what are some of the most interesting or unexpected or challenging lessons that you've learned personally?
+223
+I think two things.
+224
+One is like starting with the model and getting the first POC, whether that's through forward embedded dashboard case or for just testing out if you know your first set of business questions get answered.
+225
+That part is easy.
+226
+Now the scaling side and actual governance and maintenance, like as your business models change, as you are starting to add more new data sets or creating more models underneath, how do you actually govern and maintain those?
+227
+I think that is a real challenge that is upcoming.
+228
+I think related to that, I think the second part that I was also going to mention is just like any data modeling, I think the semantic model can also fall into this trap of over-modeling the data and that can be a big time suck.
+229
+So being able to actually put it in practice and continue to iterate will be an important part.
+230
+Because we've also seen some of our customers that have implemented a semantic layer in the past, they've spent a lot of effort to model.
+231
+But like, how much of their model is actually being leveraged and used today by AI or from their querying, you know, not 100%.
+232
+And then their data team got very tired of keep having to update it, or some of them just weren't fully updated.
+233
+So once it goes out of date, then it's not also relevant anymore.
+234
+So I think that that's one main area that we believe that having more of a systematic way to continuously update semantic model file, I think if it's a file, we feel like it's a little bit harder if it's if it can be a system or view or if there are ways to drill API or ways to update that model, I think is a much better way.
+235
+I think as an industry, that is just kind of a, we have some ways to go.
+236
+And for teams who are starting to think about tackling this body of work, what are the situations where you would say that building a semantic model or investing in a semantic layer are the wrong choice and the reward is not going to be worth the cost?
+237
+I think it always comes down to one, is there a use case that physical model currently cannot solve?
+238
+Because it doesn't matter how well you document your data, you're still not getting the right SQL query back from your AI.
+239
+Then I think that's definitely one of the reasons why to implement semantic model.
+240
+If not, then if physical model is clean and simple enough, I think then you don't really always have to do this.
+241
+Yeah, otherwise it's really where the end usage would really come from to make it worthwhile, which goes back to, can you test it out with the end user that's going to leverage this?
+242
+And I think the use case perspective, like AI, I think, should definitely be in mind.
+243
+I just haven't seen other use cases that truly gives you the ROI of doing the semantic model implementation beyond that, just because data teams are always very busy getting their work done as well.
+244
+You mentioned some of the work that Snowflake and Databricks are doing to incorporate semantic modeling more closely into the core experience of the underlying warehouse engine.
+245
+I'm wondering what you see as the potential future for this concept of semantic modeling becoming more of a native construct of the underlying data layer or compute engines and maybe any other areas of expansion or ecosystem investment that you would like to see.
+246
+Yeah, I think that's a good way to put it.
+247
+Like this, having that native construct on where the data exists.
+248
+I think it is a very interesting movement as an industry.
+249
+We'll have to see how well that gets improved as more customers adopt it.
+250
+The other big part that I would love to see and that I predict will need to happen is more of this automated operational way to update the semantic models.
+251
+Especially if I think about how semantic models will look like in the future when the end user, primarily the AI agents and the AI applications, not humans, today semantic models are fully designed to be consumed and operated and edited by humans, not AI agents.
+252
+So a way to self-update the model as well as maintain it so that it is more of a system instead of a YAML file, probably is where it needs to go.
+253
+Now, the other piece that I think would be also important is the integration outside of the semantic model itself.
+254
+So, a lot of semantic layer companies, like one of the biggest parts that they provide is this centralizing, consolidating, doesn't matter which source and destination you're talking about, like you know, you should be able to query it using same DSL or natural language.
+255
+I think the integration between the BI tools, where the business logics all live, and the user interaction, and how that translates and impacts and self-updates the semantic layer side would be kind of like more idealistic future than I would envision.
+256
+Yeah, I think that the fact that semantic models as a technology have so far largely been manifested as these collection of YAML files is, well, it has a fairly low barrier to entry.
+257
+I think that it also speaks to the lack of maturity in the space where that is effectively the only way that you can represent them and they are not a core concern of the underlying data systems.
+258
+They're more of a bolt-on addendum.
+259
+And I think that I would like to see them become more of an integrated piece of the actual core compute capability.
+260
+That's right.
+261
+Yeah, very well said.
+262
+Are there any other aspects of semantic modeling, the ways that it empowers more of these AI systems and AI use cases, or the work that you're doing at SelectStar to help teams address these complexities that we didn't discuss yet that you'd like to cover before we close out the show?
+263
+I think anyone that's actually considering to make sure that they are also not just considering the definition of the tables, columns, and dimensions or metrics, but the other aspect that we also found very helpful and important to add into the semantic layer implementation were first the relationships of the entities or relationships between the columns, as well as the sample values of and the synonyms.
+264
+These are things that initially, as on the metadata perspective, we weren't sure how much it impacts the model.
+265
+But for the AI perspective, these are things that really made a big difference on the quality of the results that we've gotten.
+266
+So, I wanted to kind of share that as a quick tip on whoever that wants to go run a semantic layer for AI use.
+267
+And I also say this because some of the comments I've got in the past when I've talked about this on LinkedIn was that, oh, like I tried it, but didn't really work.
+268
+AI analyst isn't that good anymore.
+269
+And I would say that's mainly because you really will have to look at how your semantic models look like.
+270
+If the quality of that semantic model determines there's a huge range of what AI will do based on how complete your semantic layer is.
+271
+All right.
+272
+Well, for anybody who wants to get in touch with you and follow along with the work that you're doing and the ways that you're helping to address this challenge of semantic modeling, I'll have you add your preferred contact information to the show notes.
+273
+And as the final question, I'd like to get your perspective on what you see as being the biggest gap in the tooling or technology that's available for data management today.
+274
+The data management and data governance side, a lot of the things that we have now seen, now being in the business for more than five years, we see the biggest gap after getting the good amount of tooling is always around like actually implementing it and operationalizing it, putting it into processes and having everyone to actually leverage the tool.
+275
+And I think this is an area that I cannot say that this is like a segment of the tool that we need in the market, but more so in the area of where AI agents and how internal teams can really make the tooling embedded more onto day-to-day of the employees and everyone that they work with.
+276
+So that's kind of like what I would say.
+277
+All right.
+278
+Well, thank you very much for taking the time today to join me and share your thoughts and experiences and hard-won lessons about semantic modeling, particularly in this context of AI systems and the ways that AI is being applied to the challenges of data analysis and end-user use cases.
+279
+I appreciate all of the time and energy that you're putting into that, and I hope you enjoy the rest of your day.
+280
+Thanks so much, Tobias.
+281
+This was great.
+282
+Thank you for listening, and don't forget to check out our other shows.
+283
+Podcast.inet covers the Python language, its community, and the innovative ways it is being used.
+284
+And the AI Engineering Podcast is your guide to the fast-moving world of building AI systems.
+285
+Visit the site to subscribe to the show, sign up for the mailing list, and read the show notes.
+286
+And if you've learned something or tried out a project from the show, then tell us about it.
+287
+Email hosts at dataengineeringpodcast.com with your story.

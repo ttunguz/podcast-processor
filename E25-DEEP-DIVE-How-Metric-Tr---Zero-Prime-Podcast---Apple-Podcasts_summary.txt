@@ -1,0 +1,171 @@
+1. EPISODE CONTEXT
+
+Podcast Name and Focus: Zero Prime podcast, exploring the early stories of top startups by the experiences of their engineer founders.
+
+Host: Pete Soderling
+
+Guest: Vijay Supramanian, Founder and CEO of Trace (metrics layer/metric trees startup)
+
+Featured Company Overview: 
+- Trace is a startup using metric trees to create better cross-functional alignment and enable improved business outcomes. 
+- Early stage startup, no funding details provided.
+
+2. KEY INSIGHTS
+
+1. Insight: Metrics layers are a new standard for defining, calculating and serving up business metrics that can enable true data operationalization within organizations.
+
+Supporting Quote: "I think of a metrics layer as a narrower, maybe a higher level abstraction. So it's really focused on metrics, business metrics...I got very excited about the idea that if there is a metrics layer, it'd be very very powerful for enabling how data is truly operationalized within organizations."
+
+Significance: Introduces the core concept of metrics layers and highlights their potential to move beyond just governance to actively enabling data-driven workflows and operations.
+
+2. Insight: The use cases around metrics are expanding beyond just dashboards, driving the need for more robust metrics infrastructure.
+
+Supporting Quote: "There was a time when generating a dashboard was just sufficient. That was a metric. Here's a dashboard, here's a metric, but now the use cases are just so much more nuanced and varied."
+
+Significance: Explains the evolving landscape and increasing demands placed on metrics, justifying the need for dedicated metrics layers/stores.
+
+3. Insight: Metrics trees model the core business processes visually, aligning data, business and executive teams while enabling easier monitoring, root cause analysis and optimization.
+
+Supporting Quote: "Metric trees, what are they really capturing? They are capturing the core business processes...because they're really pushing the abstraction up from tables, columns to metrics to now really a metric tree, which is really the business, right?"
+
+Significance: Introduces the core value proposition of metrics trees as a system of record capturing the business model itself, enabling diverse use cases.
+
+4. Insight: Data teams need to move beyond just building to operating and advising, by deeply understanding the business domains they support.
+
+Supporting Quote: "data folks, yes, retain the builder mindset...but definitely get out of your technical box, really you have to understand the domain, you have to understand how marketing works, how they think, what the incentives are..."  
+
+Significance: Highlights the need for data teams to bridge technical and business knowledge, which metric trees can facilitate.
+
+5. Insight: Generative AI's role may be in generating narratives from rich metrics backends rather than directly querying data.
+
+Supporting Quote: "If you model your business through metric trees, you have the systems of record, it gets very powerful because now GenAI can do what is good at, which is it can utilize this rich metrics backend...And what it can focus on really is generating narratives."
+
+Significance: Provides a perspective on how generative AI could leverage the structured data in metrics trees/layers.
+
+3. TECHNOLOGY & PRODUCT DEVELOPMENTS 
+
+Key Technical Points:
+- Metrics layers define business logic mappings to data and calculate/serve metrics
+- Metrics trees model business processes by connecting related metrics hierarchically
+- Proposed components like caching for performant metric serving
+
+Core Differentiations:
+- Not coupled to any BI tool, a separate standard infrastructure layer
+- Model full business, not just join descriptors
+- Enable diverse operational workflows beyond governance
+
+Future Plans:
+- Build out rich ecosystem of apps/integrations around the metrics backend
+- Potentially standardize metrics for different business models
+
+4. COMPETITIVE LANDSCAPE
+
+Companies Mentioned:
+- DBT (building semantic layer)
+- Looker (BI tool with LookML modeling layer)
+- Uber, DoorDash, Airbnb (built internal metric stores)
+
+Positioning: 
+Trace is building a dedicated metrics backend and framework using metric trees to model the full business. This is differentiated from BI semantic layers that just describe data relationships, and from internal one-off metric stores at large companies.
+
+5. TEAM & CULTURE SIGNALS
+
+Leadership Philosophy:
+- Get out of the technical silo and deeply understand business domains 
+- Bridge between being a "builder" and an "operator/advisor"
+
+Values/Priorities:
+- Aligning data, business and leadership through visible models 
+- Optimizing business processes and outcomes through data
+
+6. KEY METRICS & BUSINESS DETAILS 
+
+Growth/User Metrics:
+- Airbnb mentioned having 12,000 metrics (showing scale)
+
+Go-to-Market: 
+- Positioning as a supplier to analytics/data teams vs. end user tool
+- Competing with internal build over buy decision
+
+7. NOTABLE TECHNOLOGIES 
+
+- Metric trees (novel hierarchical business process modeling)
+- Generative AI integration potential for narrative building
+
+8. COMPANIES MENTIONED
+
+Uber: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."
+
+DoorDash: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."  
+
+Airbnb: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics. And by the way, metrics, I remember the Airbnb article that came out mentioned 12,000 metrics, thousands of dimensions."
+
+Facebook: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."
+
+Snapchat: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."
+
+DBT: "So DBT has a big investment in DBT semantic layer."
+
+Looker: "Looker, obviously, famously, the most recent one has Lucamel and these tools sort of again, describe how you can join the tables to each other."
+
+Rent the Runway: "Vijay was a founding member of the team at Rent The Runway, who successfully IPO'd in 2021."
+
+9. PEOPLE MENTIONED  
+
+Vijay Supramanian (Founder & CEO of Trace): "I chat with Vijay Supramanian, the founder and CEO of Trace, a company that's using metric trees to create better cross-functional alignment and enable improved business outcomes."
+
+Pete Soderling (Host): "I'm Pete Soderling and welcome to the Zero Prime podcast..."
+
+Ben Stansell: "Ben Stansell had originally introduced the world, the idea of a metrics layer potentially as a missing piece in the data infrastructure stack or the data analytics stack."
+
+# Named Entities
+
+## PERSON
+- ##mel
+- Ben
+- Ben Stansell
+- Jana
+- Luca
+- Pete Soderling
+- S
+- Trace
+- Vijay
+- Vijay Supramanian
+
+## ORGANIZATION
+- ##cha
+- Airbnb
+- DB
+- DBT
+- DoorDash
+- Dordash
+- EBIT
+- Facebook
+- Hawk
+- IP
+- KPI
+- Look
+- Medium
+- Red The Runway
+- Ren
+- SAP
+- Tableau
+- Trace
+- Uber
+- X
+
+## LOCATION
+- SaaS
+
+## PRODUCT
+
+## EVENT
+
+## WORK_OF_ART
+
+## DATE
+
+## MONEY
+
+## QUANTITY
+

@@ -1,0 +1,57 @@
+I, [2025-04-06T15:29:21.025027 #51795]  INFO -- : Starting Parallel Podcast Orchestrator...
+I, [2025-04-06T15:29:21.030692 #51795]  INFO -- : Ensured processed_podcasts table exists (with summary_filename).
+I, [2025-04-06T15:29:21.030709 #51795]  INFO -- : Database connection established to podcast_processing.duckdb
+I, [2025-04-06T15:29:21.030864 #51795]  INFO -- : Found 11 unique podcast landing pages to check.
+I, [2025-04-06T15:29:21.030870 #51795]  INFO -- : Fetching landing page markdown concurrently (Pool Size: 2)...
+E, [2025-04-06T15:30:12.411309 #51795] ERROR -- : Firecrawl API Error for https://podcasts.apple.com/us/podcast/bg2pod-with-brad-gerstner-and-bill-gurley/id1727278168: 429 Too Many Requests
+E, [2025-04-06T15:30:12.411402 #51795] ERROR -- : Response body: {"success":false,"error":"Rate limit exceeded. Consumed (req/min): 11, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Sun Apr 06 2025 22:30:21 GMT+0000 (Coordinated Universal Time)"}
+I, [2025-04-06T15:30:18.414354 #51795]  INFO -- : Finished fetching markdown for 11/11 pages.
+I, [2025-04-06T15:30:18.414436 #51795]  INFO -- : Extracting and filtering new episodes...
+I, [2025-04-06T15:30:18.414466 #51795]  INFO -- : Processing episodes published after 2025-04-04 22:30:18 UTC
+I, [2025-04-06T15:30:18.417779 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/invest-like-the-best-with-patrick-oshaughnessy/id1154105909.
+I, [2025-04-06T15:30:18.420296 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/lennys-podcast-product-growth-career/id1627920305.
+I, [2025-04-06T15:30:18.421321 #51795]  INFO -- : Found new episode: https://podcasts.apple.com/us/podcast/become-a-better-communicator-specific-frameworks-to/id1627920305?i=1000702370844 (Published: 2025-04-06 11:30:18 UTC)
+I, [2025-04-06T15:30:18.422733 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711.
+I, [2025-04-06T15:30:18.424416 #51795]  INFO -- : Extracted 0 potential episodes from Markdown for https://podcasts.apple.com/us/channel/sequoia-capital/id6504629184.
+I, [2025-04-06T15:30:18.425852 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/dwarkesh-podcast/id1516093381.
+I, [2025-04-06T15:30:18.427344 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/the-ai-daily-brief-formerly-the-ai-breakdown/id1680633614.
+I, [2025-04-06T15:30:18.428370 #51795]  INFO -- : Found new episode: https://podcasts.apple.com/us/podcast/why-ai-will-take-over-the-%2420t-professional-services/id1680633614?i=1000702385096 (Published: 2025-04-06 16:30:18 UTC)
+I, [2025-04-06T15:30:18.428989 #51795]  INFO -- : Found new episode: https://podcasts.apple.com/us/podcast/openai-says-next-reasoning-model-coming-in-a-couple-of-weeks/id1680633614?i=1000702308322 (Published: 2025-04-05 07:00:00 UTC)
+I, [2025-04-06T15:30:18.430552 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/data-engineering-podcast/id1193040557.
+I, [2025-04-06T15:30:18.432028 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/web3-with-a16z-crypto/id1622312549.
+I, [2025-04-06T15:30:18.433325 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/all-in-with-chamath-jason-sacks-friedberg/id1502871393.
+I, [2025-04-06T15:30:18.433974 #51795]  INFO -- : Found new episode: https://podcasts.apple.com/us/podcast/doge-updates-liberation-day-tariff-reactions-with-ben/id1502871393?i=1000702331467 (Published: 2025-04-05 07:00:00 UTC)
+I, [2025-04-06T15:30:18.435424 #51795]  INFO -- : Extracted 8 potential episodes from Markdown for https://podcasts.apple.com/us/podcast/the-knowledge-project-with-shane-parrish/id990149481.
+W, [2025-04-06T15:30:18.435469 #51795]  WARN -- : No markdown content fetched for https://podcasts.apple.com/us/podcast/bg2pod-with-brad-gerstner-and-bill-gurley/id1727278168, skipping.
+I, [2025-04-06T15:30:18.435479 #51795]  INFO -- : Found 4 unique new episodes published within the last 48 hours to process.
+I, [2025-04-06T15:30:18.435488 #51795]  INFO -- : Processing new episodes concurrently (Pool Size: 4)...
+I, [2025-04-06T15:30:18.435906 #51795]  INFO -- : Starting processing for: https://podcasts.apple.com/us/podcast/become-a-better-communicator-specific-frameworks-to/id1627920305?i=1000702370844
+I, [2025-04-06T15:30:18.436352 #51795]  INFO -- : Starting processing for: https://podcasts.apple.com/us/podcast/why-ai-will-take-over-the-%2420t-professional-services/id1680633614?i=1000702385096
+I, [2025-04-06T15:30:18.436388 #51795]  INFO -- : Starting processing for: https://podcasts.apple.com/us/podcast/openai-says-next-reasoning-model-coming-in-a-couple-of-weeks/id1680633614?i=1000702308322
+I, [2025-04-06T15:30:18.436407 #51795]  INFO -- : Starting processing for: https://podcasts.apple.com/us/podcast/doge-updates-liberation-day-tariff-reactions-with-ben/id1502871393?i=1000702331467
+I, [2025-04-06T15:33:04.428737 #51795]  INFO -- : Finished processing https://podcasts.apple.com/us/podcast/become-a-better-communicator-specific-frameworks-to/id1627920305?i=1000702370844 successfully in 165.99 seconds.
+I, [2025-04-06T15:33:51.566951 #51795]  INFO -- : Finished processing https://podcasts.apple.com/us/podcast/why-ai-will-take-over-the-%2420t-professional-services/id1680633614?i=1000702385096 successfully in 213.13 seconds.
+I, [2025-04-06T15:34:50.669223 #51795]  INFO -- : Finished processing https://podcasts.apple.com/us/podcast/openai-says-next-reasoning-model-coming-in-a-couple-of-weeks/id1680633614?i=1000702308322 successfully in 272.23 seconds.
+I, [2025-04-06T15:38:37.959495 #51795]  INFO -- : Finished processing https://podcasts.apple.com/us/podcast/doge-updates-liberation-day-tariff-reactions-with-ben/id1502871393?i=1000702331467 successfully in 499.52 seconds.
+I, [2025-04-06T15:38:37.959882 #51795]  INFO -- : Finished concurrent processing of all episodes.
+I, [2025-04-06T15:38:37.959904 #51795]  INFO -- : Marking processed episodes in database sequentially...
+E, [2025-04-06T15:38:37.960719 #51795] ERROR -- : DuckDB insert error (mark_as_processed): Binder Error: Table "processed_podcasts" does not have a column with name "summary_filename"
+W, [2025-04-06T15:38:37.960732 #51795]  WARN -- : Processed https://podcasts.apple.com/us/podcast/become-a-better-communicator-specific-frameworks-to/id1627920305?i=1000702370844 successfully but failed to mark as processed in DB.
+E, [2025-04-06T15:38:37.960834 #51795] ERROR -- : DuckDB insert error (mark_as_processed): Binder Error: Table "processed_podcasts" does not have a column with name "summary_filename"
+W, [2025-04-06T15:38:37.960839 #51795]  WARN -- : Processed https://podcasts.apple.com/us/podcast/why-ai-will-take-over-the-%2420t-professional-services/id1680633614?i=1000702385096 successfully but failed to mark as processed in DB.
+E, [2025-04-06T15:38:37.960901 #51795] ERROR -- : DuckDB insert error (mark_as_processed): Binder Error: Table "processed_podcasts" does not have a column with name "summary_filename"
+W, [2025-04-06T15:38:37.960905 #51795]  WARN -- : Processed https://podcasts.apple.com/us/podcast/openai-says-next-reasoning-model-coming-in-a-couple-of-weeks/id1680633614?i=1000702308322 successfully but failed to mark as processed in DB.
+E, [2025-04-06T15:38:37.960963 #51795] ERROR -- : DuckDB insert error (mark_as_processed): Binder Error: Table "processed_podcasts" does not have a column with name "summary_filename"
+W, [2025-04-06T15:38:37.960970 #51795]  WARN -- : Processed https://podcasts.apple.com/us/podcast/doge-updates-liberation-day-tariff-reactions-with-ben/id1502871393?i=1000702331467 successfully but failed to mark as processed in DB.
+I, [2025-04-06T15:38:37.960981 #51795]  INFO -- : Finished marking database. Final counts - Processed: 0, Failed: 4
+I, [2025-04-06T15:38:37.960983 #51795]  INFO -- : Orchestration finished processing episodes.
+I, [2025-04-06T15:38:37.960991 #51795]  INFO -- : Attempting to generate daily summary...
+I, [2025-04-06T15:38:37.961111 #51795]  INFO -- : Generating daily summary document: /Users/tomasztunguz/Documents/coding/whisper.cpp/podcast_summaries/daily_summary_podcasts_2025-04-06.md
+E, [2025-04-06T15:38:37.961310 #51795] ERROR -- : DuckDB query error (get_episodes_processed_since): Binder Error: Referenced column "summary_filename" not found in FROM clause!
+Candidate bindings: "episode_url"
+
+LINE 1: SELECT episode_url, summary_filename FROM processed_podcasts WHERE processed_at...
+                            ^
+I, [2025-04-06T15:38:37.961321 #51795]  INFO -- : Found 0 episodes processed on or after 2025-04-06
+I, [2025-04-06T15:38:37.961324 #51795]  INFO -- : No episodes processed today. Skipping summary generation.
+I, [2025-04-06T15:38:37.963500 #51795]  INFO -- : Database connection closed.

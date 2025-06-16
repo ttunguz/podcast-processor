@@ -1,0 +1,49 @@
+<div class="container mx-auto px-4 py-8">
+  <% if @podcast %>
+    <h1 class="text-3xl font-bold mb-2 text-gray-800"><%= @podcast.podcast_name || 'Podcast Summary' %></h1>
+    <p class="text-sm text-gray-600 mb-4 break-all">Episode URL: <%= link_to @podcast.episode_url, @podcast.episode_url, target: "_blank", class: "text-blue-600 hover:underline" %></p>
+
+    <div class="mb-6 p-4 bg-gray-50 rounded-lg shadow-inner">
+      <h2 class="text-xl font-semibold mb-2 text-gray-700">Details</h2>
+      <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+        <div class="md:col-span-1">
+          <dt class="text-gray-500 font-medium">Processed At:</dt>
+          <dd class="text-gray-800"><%= @podcast.processed_at ? @podcast.processed_at.strftime('%Y-%m-%d') : 'N/A' %></dd>
+        </div>
+        <div class="md:col-span-1">
+          <dt class="text-gray-500 font-medium">Summary File:</dt>
+          <dd class="text-gray-800 break-all"><%= @podcast.summary_filename ? File.basename(@podcast.summary_filename) : 'N/A' %></dd>
+        </div>
+        <% if @podcast.host.present? && @podcast.host != 'Unknown' && @podcast.host != 'N/A' %>
+          <div class="md:col-span-1">
+            <dt class="text-gray-500 font-medium">Host(s):</dt>
+            <dd class="text-gray-800"><%= @podcast.host %></dd>
+          </div>
+        <% end %>
+        <% if @podcast.guests.present? && @podcast.guests != 'None' && @podcast.guests != 'N/A' %>
+          <div class="md:col-span-1">
+            <dt class="text-gray-500 font-medium">Guest(s):</dt>
+            <dd class="text-gray-800"><%= @podcast.guests %></dd>
+          </div>
+        <% end %>
+      </dl>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold mb-4 text-gray-700">Summary</h2>
+      <div class="prose max-w-none text-gray-800">
+        <%# Use simple_format to preserve line breaks from the text file %>
+        <%= simple_format(@podcast.summary_content) %>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <%= link_to '← Back to List', processed_podcasts_path, class: "text-blue-600 hover:underline" %>
+    </div>
+
+  <% else %>
+    <%# This case should be handled by the controller redirect, but adding a fallback %>
+    <p class="text-red-600">Podcast details could not be loaded.</p>
+    <%= link_to '← Back to List', processed_podcasts_path, class: "text-blue-600 hover:underline mt-4 inline-block" %>
+  <% end %>
+</div> 

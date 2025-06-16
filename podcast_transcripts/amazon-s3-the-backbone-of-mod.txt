@@ -1,0 +1,972 @@
+--- METADATA START ---
+Show: Data Engineering Podcast
+Episode: Amazon S3: The Backbone of Mod…
+Host: Unknown 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/amazon-s3-the-backbone-of-modern-data-systems/id1193040557?i=1000710953996
+--- METADATA END ---
+
+1
+Hello, and welcome to the Data Engineering Podcast, the show about modern data management.
+2
+Data migrations are brutal.
+3
+They drag on for months, sometimes years, burning through resources and crushing team morale.
+4
+DataFolds' AI-powered migration agent changes all that.
+5
+Their unique combination of AI code translation and automated data validation has helped companies complete migrations up to 10 times faster than manual approaches.
+6
+And they're so confident in their solution, they'll actually guarantee your timeline in writing.
+7
+Ready to turn your year-long migration into weeks?
+8
+Visit dataengineeringpodcast.com slash datafolds today for the details.
+9
+This is a pharmaceutical ad for Soda Data Quality.
+10
+Do you suffer from chronic dashboard distrust?
+11
+Are broken pipelines and silent schema changes wreaking havoc on your analytics?
+12
+You may be experiencing symptoms of undiagnosed data quality syndrome, also known as UDQS.
+13
+Ask your data team about SODA.
+14
+With Soda Metrics Observability, you can track the health of your KPIs and metrics across the business, automatically detecting anomalies before your CEO does.
+15
+It's 70% more accurate than industry benchmarks and the fastest in the category, analyzing 1.1 billion rows in just 64 seconds.
+16
+And with collaborative data contracts, engineers and business can finally agree on what done looks like, so you can stop fighting over column names and start trusting your data again.
+17
+Whether you're a data engineer, analytics lead, or just someone who cries when a dashboard flatlines, SODA may be right for you.
+18
+Side effects of implementing SODA may include increased trust in your metrics, reduced late-night Slack emergencies, spontaneous high-fives across departments, peer meetings and less back-and-forth of business stakeholders, and in rare cases, a newfound love of data.
+19
+Sign up today to get a chance to win a $1,000-plus dollar custom mechanical keyboard.
+20
+Visit dataengineeringpodcast.com slash SODA to sign up and follow SODA's launch week, which starts on June 9th.
+21
+Your host is Tobias Macy, and today I'm interviewing Mylon Thompson-Bukovic about the evolutions of S3 and how it has transformed data architecture.
+22
+So, Mylan, for anybody who isn't familiar with your work, can you start by introducing yourself?
+23
+Yeah, absolutely.
+24
+My name is Mylon Thompson-Bukovic, and I am a vice president of technology here in AWS.
+25
+I run AWS services that are basically the data stack.
+26
+So, everything from the bottom of the stack, the bottom turtle, if you will, which is Amazon S3 and our file systems, through to the streaming and messaging services like Kinesis, Mavishka, SQS SNS, and then the analytics capabilities of Athena, Redshift, EMR, and basically the whole top-to-bottom of the data stack.
+27
+And I am delighted to be here.
+28
+Tobias, I've been listening to your podcast for many years, and I'm excited to talk about how S3 fits into data systems.
+29
+Absolutely.
+30
+And do you remember how you first got started working in data?
+31
+Well, to be honest, I came into data management and data storage by way of S3.
+32
+And I've been working on AWS since 2010, but I was mostly a compute person.
+33
+I used to run the web server engineering for IAS at Microsoft.
+34
+And the way I came to AWS is that I used to spend a lot of time working on making PHP run on the Microsoft web server.
+35
+And so I had to run all these PHP open source applications like Drupal and WordPress and Windows Server.
+36
+And I have to go and get demos and show customers and show folks at conferences how to do this.
+37
+And so, you know, this is back in the day, okay, Tobias and I.
+38
+And so, way back in 2008, late 2008, I started to use EC2.
+39
+And I did it because I didn't want to ship hardware to conferences and to customer sites.
+40
+And it just kind of made me realize that this is going to be the wave of the future.
+41
+And so, you know, I reached out to some folks that I knew in AWS in 2010.
+42
+And I joined, you know, again, on the compute side.
+43
+I was actually hired by that same guy that I work for today.
+44
+And I joined to run a set of services like EC2 auto-scaling and simple workflow.
+45
+And that gave me a crash course in distributed systems, as you might imagine.
+46
+I was coming from client-server architectures.
+47
+And it was in 2013, it was early in 2013 that I joined S3 as a general manager.
+48
+And that meant that I was running the S3 service from all the development and operations, we operate in a DevOps model, to product.
+49
+And that is what brought me to data systems, data management, and then data systems, because it was pretty clear in 2013 that everybody was using S3 not just for backup, not just for storage of website assets, but they were using it for Hadoop-based systems and analytics and things like that.
+50
+Now, luckily, we have tons of amazing customers like Netflix who have data leaders like Avase, who sat me down in 2013, and they gave me a crash course in what does it mean to be the storage substrate for essentially everything.
+51
+And we weren't using the terms data lake in 2013, but that's what leaders like Avisay at Netflix.
+52
+They were using S3 as what they call the source of truth for all of their systems.
+53
+And whether that was Hadoop-based systems or it was streaming or it was what have you, that is how S3 has been used for years and years.
+54
+And that is how I learned about data.
+55
+Yeah, S3 is definitely, as you said, one of those core services that the internet, as we know it today, probably wouldn't be able to operate without, at least not as efficiently or as effectively.
+56
+And because of the fact that it is such a generalized system with such a, I don't want to say simplistic, but a very simple, from a conceptual perspective, set of capabilities, which makes it applicable to a broad range of use cases.
+57
+Many of those use cases do exist within the data ecosystem.
+58
+And with a focus on that, I'm wondering if you can just give a bit of a summary about some of the role that you see it playing in the kind of data management, data engineering use case, maybe leaving to the side some of the more application-oriented roles that it plays.
+59
+Yeah, the story of S3 is, I think, a fascinating story.
+60
+And it's really one that is told by customers who have used S3, you know, basically to write their own story of data.
+61
+Okay.
+62
+And so, like, if I think about when S3 launched, you know, launched over 18 years ago, like, our whole goal was to focus on how can we give elastic storage?
+63
+How can we use, how can we provide a storage solution that has all the traits that you want for durability and security, and basically an economic model, a cost point, where if you have rapidly growing data sets, you can store them and use them without really thinking about scale.
+64
+And what happened is application developers, as you say, kind of jumped on this pretty quickly because they started to say, okay, how can I use this capability as providing a shared data set that is operated on by different compute applications?
+65
+And so application owners really were the ones that adopted S3 super rapidly in those first few years after we launched in 2006.
+66
+But what started off as being a place to store images and web page assets and application storage has really expanded.
+67
+And if you take a look at that, you can see that the journey of storage is really evolved into storage for any type of data.
+68
+And that could be operational data that's stored in Parquet format.
+69
+It can be PDFs if you're using it for RAG.
+70
+It could be log files that your application generates.
+71
+It could be really anything that you think of.
+72
+And so with the growth of the storage, so too has grown the data processes around that storage.
+73
+And if you think about that, 10 years ago, we had just under 100 S3 customers that were storing more than a petabyte of data.
+74
+But now we have thousands of customers that are storing that much data.
+75
+In fact, if you look at the storage in S3, we have over 400 trillion objects.
+76
+We have exabytes of data, and we're averaging 150 million requests per second.
+77
+And if you think about that scale, if you think about, for example, that we process over a quadrillion requests every single year, the volume of that data means that it is essentially being used as multi-purpose storage.
+78
+And when it's being used as multi-purpose storage, we have to think about a few things when we're thinking about how do we build storage for basically all of those different use cases, all of those different types of personas and customers, whether it's a data engineer, a data analyst, an application developer.
+79
+We have to think about how do we obsess not just about the details of security and scale and reliability, but how do we remove the distracting things that stand between developers and data scientists and creative professionals and their data?
+80
+And it all just kind of comes down to us to how do you build the best storage in the planet, on the planet, for any application developer or data engineer, whether you're an expert in it or you're not.
+81
+You simply want to use it.
+82
+And this is super important because if you look at the growth of data, IDC, they run these studies.
+83
+And one of them, which is what they call the global data sphere, says that the amount of data generated is going to grow at over 27% per year.
+84
+If you think about that, Tobias, if you think about, wow, think about all of that growth of the data.
+85
+Where is it going right now?
+86
+And what is going into cloud storage?
+87
+And it's being operated on as a shared data set across many different types of applications.
+88
+To that point of S3 being a shared substrate for all data use cases and the fact that customers use it in such novel and unexpected ways, regardless of whether it's something that you ever intended to support, that has driven a number of generational shifts in terms of the feature set and capabilities from the early days of I can just put an object in a bucket and I can get it back.
+89
+And maybe I don't even have read after write consistency, so I maybe have to pull to make sure that I get it back to where we are now, where we have that read-after-write consistency and many other capabilities besides.
+90
+Given the focus on data use cases from an analytical or ML and AI perspective, what do you see as some of those major generational epochs in terms of the capabilities that S3 has provided and how that has both enabled as well as been driven by some of those different stresses on the ways that customers are applying that fundamental technology?
+91
+Yeah, Tobias, I got to say, if you're going to use the word generation epochs, you're going to make me feel super old.
+92
+Okay, so let's just call it the story of S3.
+93
+And if you go to the story of S3, you got to go all the way back to 2006.
+94
+And 2006 is a super interesting year for multiple reasons.
+95
+It's a year that both S3 launched, but it was also the year that Hadoop started as an open source implementation.
+96
+And MapReduce kind of came into the world, right?
+97
+And both of these shifts are super influential because it's the rise of this, what I think of as the modern data pattern, which is where you aggregate vast amounts of your data and it gets operated on a shared storage.
+98
+And what that means is that you're running different clusters of compute.
+99
+You could be running compute for analytics, you could be running compute for applications, you could be running compute for inference or pre-training, but you're doing it in parallel against a shared storage.
+100
+And so Amazon S3, it made that all possible in 2006 because we brought in multimodal data.
+101
+We brought in text, image, and backup and video at a scale with the kind of cost point, the low-cost economics that I talked about, but also what we think about as S3 traits, right?
+102
+And the S3 traits of durability and security and availability and all of that.
+103
+So if you're going back into 2006, you think about the first, I would say, six years of S3, between 2006 and 2012, you had frontier thinking companies like Netflix and Pinterest and Lyft and a lot of the startups in that timeframe.
+104
+They were the ones that jumped on the super fast.
+105
+They were really, really quick to see that if you could combine those traits of S3 and you could combine open source, you can combine Hadoop and MapReduce and these new patterns that were starting to emerge on these shared data sets, you could build a new data pattern and you could do things at scale you could never do before.
+106
+And Tobias, I'm going to send you a link if you want to post it for your readers, where Netflix talked about how, this is way back in January 2013, how they used S3 as their source of truth for all of their data processes in the company.
+107
+And this was way back in January 2013, which means that they had adopted it in the years beforehand.
+108
+And they were some of the first that started to adopt this aggregation modern data pattern.
+109
+And that was not just unique to Netflix.
+110
+You had other companies like Pinterest, which was founded in 2010.
+111
+And I remember, I actually remember when we were looking at the metrics of usage and we were looking at the metrics of I/O, and we started to see these super highly concurrent requests coming into a shared data set.
+112
+And it was pretty different from the traffic patterns of website assets and backups.
+113
+And so, as you mentioned, we had to make a fair number of changes under the hood.
+114
+And you talked a little bit about consistency.
+115
+S3 was launched as an eventually consistent system.
+116
+And we moved to a strongly consistent system because of what people were doing rapidly in those first few years of S3 and moving to using MapReduce and doing analytics and doing those concurrent requests.
+117
+And it's not just the consistency model that we had to change.
+118
+We had to do automatic key partitioning deep within our index system.
+119
+We had to introduce new storage capabilities like intelligent tiering that had dynamic pricing built in.
+120
+And we had to do this not just because these born-in-the-cloud companies like Pinterest and how Netflix reinvented itself.
+121
+We started to see in about 2013 the first wave of enterprise customers really start to do the same thing.
+122
+And it was JPL NASA, which was one of the first customers that started to adopt the same pattern.
+123
+It was FINRA, the regulatory body of the stock exchanges.
+124
+And so around 2000 and I would say 12 to 2016, we started to see this wave of enterprises start to adopt the same patterns that Netflix and Pinterest.
+125
+And so if you think about this time between 2006 and 2018, That was really when we started to see this pattern of data aggregation on shared data sets become super common.
+126
+And people call that the data lake.
+127
+Right now we have over a million of these data lakes running on S3.
+128
+But the adoption of the data aggregation pattern was really customer driven.
+129
+And it was customer driven because it was a combination of the rise of open source analytics with the combination of the growth of storage.
+130
+And customers just started to do that.
+131
+And so in the aggregation model, you have producers of data, and they're generating the data that's stored in S3.
+132
+And it's applications like everything from applications that are generating log files to sensors that are setting in data to ETL workflows.
+133
+And then you have consumers.
+134
+And the consumers are operating on that shared aggregated data set, like the scientists or the app builders or the data engineers.
+135
+And these two concepts of production and consumption are basically, they're disaggregated, much like how the shared data set model disaggregates compute and storage.
+136
+And that is the pattern that has really grown up over the last set of years.
+137
+And it is the one that is being adopted by scale.
+138
+And it's being adopted by customers in every single industry.
+139
+And it has been the pattern that's driven everything from us adding object versioning in 2008 to cross-region storage replication in 2015, to what we talked about, what you brought up, which is the introduction of strong consistency.
+140
+And most recently, S3 tables for people who are investing in iceberg as their core relational format.
+141
+Yeah, I mean, you know, if you think about the evolution here, Tobias, and you know, iceberg is just fascinating.
+142
+I mean, if you think about iceberg, iceberg was a project that was started by developers from Netflix and Apple in 2017, and these are developers that grew up on S3.
+143
+They grew up on S3 being the source of truth.
+144
+And so when they looked at how they were using S3, they were just like, okay, how do we kind of reimagine the whole hive concept, right?
+145
+And they contributed Iceberg as an OTF into Apache, and I think it was 2018, and by 2020, it was a first-level project.
+146
+And if you think about, you know, you connect the dots there, Tobias, with the growth of, for example, Parquet data.
+147
+So S3 today stores exabytes of Parquet data.
+148
+And as you know, Parquet is a very compressible format.
+149
+So exabytes is a lot of Parquet data.
+150
+And today, we have over 15, we have an average of over 50 million requests per second just to Parquet data type.
+151
+It is actually one of my fastest-growing data types in S3.
+152
+And so if you think about iceberg as something that has really emerged as a very, very popular way of interacting with structured data in S3, we looked at that and we said, okay, how can we make that better?
+153
+And it was in December of 2024 we launched S3 Tables, which is basically a new bucket type, but it's a built-in S3 native support for iceberg table access to your Parquet data that you want to store in your bucket.
+154
+And it's super, super popular.
+155
+You know, we're making tons of changes to it.
+156
+We just added support for KMS.
+157
+We now support the iceberg REST Endpoint.
+158
+We have integration for S3 Tables with AWS Analytics Services, but we also have integration with Snowflake and DuckDB.
+159
+And we think this is going to be a major step forward for a lot of folks who want to interact with their Parquet data in S3.
+160
+And going back to your point of this being a shared pool of data, a single source of truth, something that can easily be aggregated across different use cases, there have been shared data solutions for decades, far predating the cloud, thinking in terms of things like NFS and Samba from the protocol layer, and then implementations around things like Gluster and Ceph that allow you to have this shared pool of data.
+161
+And I'm wondering what you see as the fundamental differences between those protocols and technical implementations that allow for that sharing, also shared network drives, versus what S3 and all of its copycats have enabled in terms of being able to build these massively scalable, massive throughput data systems.
+162
+Well, you know, I got to say, Tobias, I really do think that there's nothing quite like S3, right?
+163
+And, you know, I mean, I have worked on it for a while now.
+164
+And I know there's other approaches on premises, and there's plenty of applications out there that talk about having S3 compatible APIs.
+165
+But it's kind of, it's what's under the hood that matters.
+166
+And, you know, if you just take some of those storage protocols that you mentioned, they had to kind of decide they were done at some point, and they've been very slow to move and evolve.
+167
+And some of the things that we just talked about, including up to S3 tables, it points to the rate of evolution and the degree of change that S3 has done over the last 18 years.
+168
+And don't get me wrong, like in S3, the team is totally fixated on not breaking existing customer workloads, but we've also been able to quickly learn and adapt and improve at just about every single layer of S3.
+169
+And I gave you some scale numbers, the 400 trillion objects, exabytes of data.
+170
+But we also daily send over 200 billion event notifications.
+171
+And in total at peak, we're serving over a petabyte per second of traffic worldwide through our front end.
+172
+One petabyte per second, and we are doing over 10 billion checksums of computation per second.
+173
+And so if you think about scale, it's kind of like what's under the hood of S3 that makes it so, it just makes it so unique.
+174
+So I've mentioned in our conversation is that S3 customers write the story of data with S3.
+175
+And I'll just take one example.
+176
+So FINRA is a regulatory body of the U.S.
+177
+Stock Exchanges, and they're a big customer of AWS and S3.
+178
+And so what FINRA does is they regulate member broker dealers in the security markets, and they're responsible for collecting, processing, and analyzing every single transaction across all of our US-based equity and option markets to look for improper behavior, to start proceedings against examples of fraud within 24 hours of it happening.
+179
+And so, if you think about that whole mission, think about it from a data perspective, they have to ingest hundreds of billions of records every single day.
+180
+They have had peak days where they have processed over 906 billion records, multiple days in a row.
+181
+And on average, if you think about that from a data perspective, it kind of comes down to 30 terabytes of data they have to process in a single day.
+182
+And they have this super strict four-hour SLA for processing their data.
+183
+And their workload is very bursting because they're accessing their data very, very hard for a short period of time, this four-hour period I talked about, and then they're idle for another 20 hours a day.
+184
+Not purely idle, they're ingesting new records, but they're doing all of their bulk processing within a four-hour window.
+185
+So they have 20-hour windows of relatively light activity.
+186
+Okay, so if you take a data workload like that and you think about a storage system that has to support it, what is under the hood, that's what matters.
+187
+And S3 is very, very unique because of the way that we approach scale.
+188
+All right, so let's kind of talk about a few numbers.
+189
+And Tovise, you are going to have to pull me out of the weeds if you think I'm in there too much, okay?
+190
+Wouldn't dream of it.
+191
+Okay, thanks, Tovise.
+192
+All right, so let's just take a customer.
+193
+It can be FINRA or whatever, but let's just take a customer that wants to hold a petabyte of data and they want to process all that data in a one-hour period.
+194
+Okay, bursting customer.
+195
+So if I were to access a petabyte over a one-hour period, the access rate, the intended access rate, is going to be 275 gigabytes per second across that data.
+196
+And if it's about a megabyte per object, that's about a billion objects.
+197
+So if you think about that, take a step back, it's pretty good workload.
+198
+And if you go back to the numbers and tie it together, if you say I have a petabyte of data that I want to access at 275 gigabytes per second MP, if I were just storing that data and not accessing, I would need under the hood 50 drives if they were about 20 terabytes per drive, which is roughly the drive size that we're landing nowadays in S3.
+199
+But if I were going to access 275 gigabytes per second at 50 megabytes per drive, I would need over 5,000 drives in my system to just support that one workload.
+200
+So there's a 100x amplification.
+201
+If you're thinking about a drive count, if you think about the access rates over the storage rates, and those drives end up being idle, you know, 23 hours of a day in this particular example, because I'm only using the capacity, that IO capacity, for an hour a day.
+202
+So if you take a step back and you think about, okay, you know, what does that mean?
+203
+That means there's a huge amount of inefficiency if you were trying to do that yourself.
+204
+You're paying for 100x the capacity, but you're not using it for 95 plus percent of the time.
+205
+So what would this workload look like?
+206
+And if S3 has millions of active customers, isn't this a problem that would be like massively worse, a million times worse for S3 as a service?
+207
+But this is where it comes down to what is under the hood of S3.
+208
+The really cool part of what you get, and it's very differentiated, is how S3 works at scale.
+209
+Again, there is no compression algorithm for experience.
+210
+And S3 has been doing this for over 18 years.
+211
+And what we do is we have certain patterns that we think about.
+212
+And when individual workloads are really bursty, but we make sure that independent workloads.
+213
+Okay, so yeah, younger data tends to be hot, smaller objects tend to be hot, we have lots of young and small objects, we have over 400 trillion objects, but you know what?
+214
+We also have a lot of older and very, very large objects.
+215
+And when you layer those two things together, those super hot, super small objects for, let's say, analytics, suddenly the system, you know, layered with these really large, cold objects, becomes a lot more predictable.
+216
+And as we aggregate them, even though our peak demand progressively grows in S3, the peak to mean is collapsing, and the workloads become more predictable.
+217
+And that is really awesome.
+218
+If you think about the physics of how hard drives work, which we do, we're actually fairly obsessed about them.
+219
+Because we can spread millions, thousands and millions of customers across many more drives than if they ran their storage alone.
+220
+And we can do that because we can overlap the peaks of some workloads against the quiet periods of others.
+221
+And that is really what differentiates S3 from everything else out there.
+222
+It's how we make scale to work to our advantage.
+223
+We have tens of thousands of customers, probably some of who are listening in today, who have data that's spread out across a million drives each, even if their storage footprint does not require that much.
+224
+Which means if you're able to spread across a vast number of spindles of these spinning hard drives, you're able to burst to throughputs offered in aggregate by those spindles, even if the space that you're taking up for storage doesn't really fill up a drive.
+225
+And because any single customer is a very small portion of a given disk in S3, we have this like really nice workload isolations where we decorrelate different customers across their peaks and valleys.
+226
+Okay, so I mean, like, honestly, Tobias, I could go on and on.
+227
+Sorry to geek out on this.
+228
+It's kind of the essence of S3 and why it's so unique.
+229
+But, you know, this is the team that geeks out on every last detail of that massive scale, right down to how we, I'm not kidding you, wheel in a new rack to a data center.
+230
+Okay, so some of the rack types we use, they weigh upwards of 4,000, 5,000 pounds.
+231
+That's over two tons.
+232
+And so if you think about a rack, and there are thousands of pounds, they weigh more than a car.
+233
+They are so big that when we have to consider, you know, a data center in the design of our data centers for AWS, we consider the weight of the S3 rack because when we have to land them in a loading dock, they have to be able to be wheeled into their final location without literally collapsing the floor along the way.
+234
+And so in our AWS data centers, we have reinforced flooring to support the weight of moving our S3 data racks around.
+235
+And when you think about where you put your storage and you think about all the engineering right down to the floor of the AWS data center, that's what you get when you put your bite in S3.
+236
+And in terms of the architectural patterns that are enabled, because of the massive throughput, the reliability, the other features that are baked into S3 as a core primitive, and also the fact of being able to use it as a single source of truth across boundaries of application data, so blog files, as you mentioned, user uploads of different images, various other unstructured object storage, as well as use cases for analytical data, going back to the iceberg use case and the increasing growth of ML and AI use cases on top of that.
+237
+What are some of the ways that that shared pool of data and the unified access pattern that it offers change the ways that teams have approached the architectural primitives of the systems that they're building, given that the fact that they do have S3 as that core backing store without having to worry about so much of the, for better or worse, having to worry so much about some of the data patterns that go into it?
+238
+Well, one of the reasons why I think that data aggregation took off is because when you have an aggregated set of storage, you have a federated data ownership model.
+239
+And a lot of companies really like that, right?
+240
+And, you know, I mean, you can talk about these companies that were born in the cloud like Pinterest.
+241
+You know, they, yeah, you know, David Shaiken, who's one of their engineering leaders, says that they swim in data.
+242
+It's like, you know, it's like the elements.
+243
+It's water, it's air to them.
+244
+And when you have a capability to swim in data, the consumers of that data have a lot of control of how they want to use the data.
+245
+Okay, and because so much integrates with S3, you can have the consumers of the data decide what they want to use.
+246
+They can use an AWS service to process the data through, for example, our managed Kafka service.
+247
+They can use DuckDB.
+248
+They can use, basically, this whole rich ecosystem.
+249
+And if I think about the patterns that I've seen emerge, I mean, I think Parquet has definitely emerged as a default for a lot of different companies for how they want to interact with their structured data.
+250
+It's why we introduced S3 tables.
+251
+But I would say, Tobias, that one of the things that I find super interesting is in the last five years, metadata has really started to take a central role in how either data practitioners or application developers interact with their data.
+252
+And I mean, this has been true for a long time.
+253
+If you go back to Netflix, Netflix has always talked about how critical metadata and metadata systems have been for their data practitioners.
+254
+It is actually one of the reasons why we launched S3 metadata in an S3 table so you can navigate your metadata through an iceberg-compatible client.
+255
+But I think Tobias said, metadata is going to be the data lake of the future.
+256
+As customers add more and more metadata around data lineage and data processing and data governance and all the things that our data practitioner listeners know is super critical about not just finding your data, but also being able to use it and interact with it over time.
+257
+I think that's where you're going to see these systems really evolve.
+258
+And for us, putting metadata at the S3 storage layer as a native construct is really important because we know that customers are going to want to have those same traits of storage.
+259
+They're going to want to have durability.
+260
+They're going to want to have availability.
+261
+They're going to want to have S3 kind of openness to interacting with the data while still having the security and the ability to protect it and use it.
+262
+And so, if you think about that, and you think about, let's just take, for example, in late 2022, you had the rise of these generative AI models come out.
+263
+And if you think about some of the fastest companies to put into production their AI-based solutions, a lot of those companies were using S3 as the backing store, and they had a very good understanding of what data they were going to use for it.
+264
+And I'll give you an example.
+265
+In 2023, Photoshop introduced generative fill, and they introduced it pretty quickly based on the capabilities in Firefly.
+266
+And in Adobe Firefly, they create their own models that are powering the generative fill application in Photoshop.
+267
+And they're doing that because they're training on all the stock images, et cetera, that are stored in S3.
+268
+But they were able to get that capability out really quickly because they were already operating with their data systems in S3.
+269
+They were already operating with a deep understanding of metadata that they were managing for understanding how they were doing their training.
+270
+And they were able to get generative fill out there, which was super popular, fastest adopted feature in Photoshop history.
+271
+And they were able to do it in the first part of 2023.
+272
+And that's just one example of companies that were out there with production experiences.
+273
+Booking.com is another one.
+274
+Intuit launched AI Assistant in their properties like TurboTax, so that in the first quarter of 2024, customers were using TurboTax, AI Assistant, and they were using it with data sets that were stored in S3.
+275
+And those data sets ranged from obviously the history of your tax returns, but it was an understanding of the changes of the tax model, which was a data set that AI Assistant used.
+276
+And the decades of understanding that Intuit has built up over best practices, those three different data sets were going into AI-assisted tax filing for customers in the first quarter of 2024.
+277
+And so, you know, the shared aggregation model, combined with an understanding of metadata, has really been behind the scenes driving a lot of what customers are doing with the latest capabilities of, for example, generative AI models.
+278
+To that point, of metadata being such a critical element of understanding what are your data assets, how are they being used, how can they be used, there are also many anti-patterns that can grow up through the use of S3 because it doesn't enforce any structure in and of itself.
+279
+And I'm curious how you've seen companies hamstring themselves as a result of being a little bit more careless in terms of how they employ S3, the various patterns and best practices that they either fail to establish or establish in a manner that is blocking them from being able to unlock some of those more advanced ML and AI use cases and some of the ways that teams should be thinking about some of those core design principles of how to structure the storage and access controls and access patterns of the particularly application generated data assets that they are managing in order to be able to then consume them for.
+280
+You know, if I think about it, we talked a little bit about just the growth of overall data device a little bit earlier.
+281
+You know, that we look at some of the patterns that are out there generally.
+282
+And, you know, if you look at, IDC did one survey on this one, and they found that enterprise organizations, they're generating nearly 60% of the world's data, and that's expected to grow to 70% actually by 2026.
+283
+And it's driven by everything from the influx of IoT sensor data to the installabase of video cameras to AI ML to applications.
+284
+There's just like, you know, I mean, there's so much data and it's coming from all of these different sources.
+285
+And as you say, there's some pretty basic stuff that you have to do from a security perspective.
+286
+And, you know, S3 is secure by default.
+287
+When you set up a bucket, the only person who can access it is the person who set up the bucket.
+288
+But we found pretty quickly that one of the things that was important is to create this capability.
+289
+We call it block public access.
+290
+We launched it many years ago, where it's a control.
+291
+It's not a setting, it's a control.
+292
+And the control basically that you can set at a bucket level, an account level, an organizational level is to say, for anything that you add to this bucket now and in the future, you never have public access to it.
+293
+Super important for enterprises.
+294
+And what we've done for S3 is that we've actually made it a default now for buckets, right?
+295
+And so we will always block your public access until you go in and do, you know, like you can change it.
+296
+We don't recommend you change it, but you can change it if you absolutely must change it.
+297
+It's just actually pretty hard because it's a control that we put in place.
+298
+And, you know, if you think about that growth of data and you think about a lot of it's happening in the enterprises, the enterprise really cares about a data perimeter.
+299
+That's what they call it.
+300
+How can I enforce my data perimeter?
+301
+Controls like block public access are part of that, but we have many other things in AWS that help you with that.
+302
+We have this capability called AWS Access Analyzer.
+303
+And what Access Analyzer does is use automated reasoning, which is sort of like, you know, math got married to computer science and they had kids.
+304
+They would be automated reasoning kids.
+305
+And automated reasoning as a science powers this whole Access Analyzer, which will go analyze all the rules that you have in place on S3 or EC2 resources, and I'll tell you where the rule isn't actually doing what you think it is.
+306
+It tests the correctness of the rules.
+307
+And so that concept of starting first with security and having the capabilities like Access Analyzer to help you with it is actually one of the reasons why so many enterprises actually do use S3 is because you can establish a data perimeter, you can put these controls in place.
+308
+Now, that said, what customers often do is they add this layer.
+309
+We talked about metadata and how metadata is really, you know, taking off, really, as a data pattern of not just discovery, but understanding the usage of data.
+310
+And a lot of customers, like BMW Group and Clock Automotive, they're actually building on top of the aggregation pattern and they're creating something that I call curation.
+311
+It's basically data products.
+312
+And in the concept of this data product, they're taking subsets of data in the aggregated model and they're cleaning the data, they're processing the data, they're doing all this stuff.
+313
+Again, this is just data in S3, so it's, you know, at the end of the day, it's data in a bucket, right?
+314
+Or it's an S3 access point or what have you.
+315
+But they're offering those clean data sets as quote-unquote the S3 data to the marketing team, to the application team, to people who want to use it.
+316
+Now, you're always going to have organizations in your business who need access to everything in S3, right?
+317
+Like your front team or your scientists or your researchers, right?
+318
+Because they can do all kinds of things if they have access to structured and unstructured data and they're super inventive and they can come up with stuff.
+319
+But the pattern that we've really been seeing in the last two to three years is that on top of this aggregated model where you can provide access to a subset of your users, right, who need the raw data set, people are curating the data and they're providing it through data marts or, you know, sometimes internal portals.
+320
+And those subset of data products are then the ones that are driving the business.
+321
+And they're the ones that the majority of the compliance and the governance is acting on because those are the data sets that are approved for enterprise use.
+322
+And that has been super interesting.
+323
+That is, again, one of the reasons why we built S3 metadata and we're iterating super fast on it.
+324
+Because we want people to be able to run an iceberg query on their metadata and really understand how to find objects, how to, you can put user metadata into an S3 metadata table.
+325
+And that trend, I think, is really going to pick up because those same data sets are being used for analytics workloads as they're being used for AI workloads.
+326
+And customers are going to want to base their business.
+327
+And on the point of AI workloads, the fact that there are so many unstructured data assets that live in S3 that have been accrued over multiple years, starting from the initial big data era of just store everything and maybe it'll be useful sometime.
+328
+And I think that that time is becoming now.
+329
+And I'm wondering how that has added new stressors to S3 as a service, as well as some of the ways that it has unlocked new architectural patterns for the teams that are building some of those solutions on top of the data that lives in S3.
+330
+If I think about the last few years, Tobias, I mean, it is kind of interesting.
+331
+I mean, if I think about it, you know, Adobe trains their own models, right?
+332
+You know, we work pretty closely with Anthropic.
+333
+You know, we have our own models, Nova models, that Amazon produces as well.
+334
+And, you know, the source of the pre-training data is often S3, right?
+335
+But the inference-driven experience is also driven off of data sets in S3.
+336
+And, you know, like a recent example of that is LexisNexis just recently launched a capability they call Protege.
+337
+And Protege is an AI-driven capability which uses AWS cloud services, including S3.
+338
+And the goal for Protege was to create this AI-driven assisted experience that can change how legal teams work.
+339
+Okay.
+340
+And that's corporate legal departments, it's law firms, it's law schools.
+341
+And the generative part of that is using AI to draft transactional documents, right?
+342
+Litigation, motions, briefs, complaints.
+343
+You can upload from a data set.
+344
+And a lot of the interesting things about the capabilities of Protege is that it's not just using AI to speed up these legal tasks, it's actually customizing the AI experience based on the personal style of the user that's using it.
+345
+And so if you think, you bring that back to a data perspective, when you're using a capability like Protege from LexisNexis, it's taking into account the user style.
+346
+It's taking into account the firm's style.
+347
+It's taking into account the firm's work requirements so that all of that custom data is actually going to customize the AI-assisted output.
+348
+And if you think about it under the hood, these are all Agentic systems.
+349
+And the Agentic system that's under the hood is basically doing everything from taking those data sets and it's personalizing the output, but it's also doing things like their AI system is, for example, have a planner agent in their AI system.
+350
+And the planner agent is basically taking a legal question and it's breaking it down into several steps that can then be processed by other agents.
+351
+Or it's having an interactive agent that lets the user modify the agent's plan and choose the best course of action.
+352
+Or it has a self-reflection agent.
+353
+And the self-reflection agent is self-evaluating and it's refining the work of what it's doing to make sure it's drafting a better document.
+354
+And so if you think about sort of the patterns of the future, we have a lot of humans working with data right now in S3.
+355
+And so how those humans work with data is they work with metadata and they work with the underlying data and they do icebergs.
+356
+But the evolution of where the data is going with S3 is that more and more agents are going to process the data.
+357
+It's not just going to be humans.
+358
+The humans are always going to be in the loop.
+359
+But in these systems like Protege, you have agents that are processing the data.
+360
+And you have agents that are reflecting upon the quality of the response and how they're using the data.
+361
+And that is absolutely where companies are going in the future.
+362
+And whether it's a human interacting with the data or it's an agent interacting with the data, they're all going to want to interact with these data sets to either customize the inference or do the data hygiene, the data processing of those data products that we talked about.
+363
+That is a super exciting evolution.
+364
+And I am always fascinated and inspired by what customers are doing with this vast amount of data that we have in S3.
+365
+And in terms of the most interesting, innovative, or unexpected ways that you've seen the S3 capabilities and product used, I'm wondering what are some of the ones that stand out to you?
+366
+Well, I don't know, Tobias.
+367
+I am a mom, and I have three kids, and I don't have favorites, Tobias.
+368
+Okay, so I have so many different customers doing so many different things.
+369
+I think I've always been super impressed with what Netflix has done with data.
+370
+When they pivoted to their streaming model, they did it in a way where they just instrument everything, just everything.
+371
+And it's like what Pinterest talked about, where they swim in data.
+372
+Customers like Netflix and Pinterest, they're so agile and they're so fast because they've really aggregated all their data in S3 and they're able to use it in super interesting ways.
+373
+In fact, if you think about Pinterest, a very, very small percentage of Pinterest data is actually the PINs.
+374
+The rest of it is the operational and the analytical data that drives everything in their super targeted visual search experience.
+375
+You know, I think what FINRA has done over the years, I remember the first conversation I had with the FINRA team back in 2013, and we were talking about a bucket.
+376
+We're talking about bucket taxonomy.
+377
+And you look at how they've evolved over time, and it's actually super amazing what they've done.
+378
+And, you know, really right down to kind of the economics.
+379
+I mean, between 2019 and 2021, they were able to grow their data grew, I believe it was threefold in that time frame, but they dropped their unit costs by 50% just by using our storage classes of Glacier Instant Retrieval and Intelligent Tiering.
+380
+And so, you know, I think that's amazing.
+381
+You know, I think what Adobe has done and how they've really transformed the digital professionals experience by generative fill and all their different capabilities recently, I think that's amazing.
+382
+You know, I think I was spending time with Min Chen, who's the chief AI officer of LexisNexis, and talking to her about how they built Protege, and I think that is going to change how legal professionals work.
+383
+And, you know, I mean, honestly, I could go on and on to bias, but I am not allowed to pick a favorite.
+384
+And in your own experience of working on such a foundational product for so many people, what are some of the most interesting or unexpected or challenges?
+385
+I mean, just so many, so many of them.
+386
+I've been working on these AWS systems for 15 years now and S3 for over 12.
+387
+And, you know, I think for us, it kind of goes back to really how do you think, what are your mental models, and how do you think about these really, really large-scale systems, really large-scale systems?
+388
+And Tobias, I'll send you a link.
+389
+Your readers might find this interesting.
+390
+We have these principal engineering tenants in S3 that our engineers use as a guide, right?
+391
+And they use it as a guide insofar that it helps them break ties or pick how they want to operate or how they show up in a project.
+392
+And, you know, I personally think that tenants are the most interesting when they're slightly in conflict.
+393
+Okay.
+394
+And so here are the two that I always think of when I work on S3.
+395
+One of them is called, you know, as a principal engineer, you have to be technically fearless.
+396
+Okay.
+397
+And so in the wording of the technically fearless tenant, we say, we acquire expertise as needed.
+398
+We pioneer new spaces and we inspire others as to what's possible.
+399
+Okay, so if you take a step back and you think about a system like S3 and you think about how many people depend on it as a system of record, you know, you have to be technically fearless.
+400
+You have to be able to say, you know, what we have today is not enough.
+401
+It's not enough for tomorrow.
+402
+We have to keep reinventing what we are and how we can provide the best storage on the planet.
+403
+And these capabilities that we added, you know, like S3 tables and S3 metadata, we have so many other capabilities that we've added in the amount of buckets that you can have.
+404
+You can have a million buckets in your account.
+405
+Like, there's so many things that we've done in S3 over the years because we have to be technically fearless.
+406
+But there's another principal engineering tenant, and that tenant is called respect what came before.
+407
+Okay?
+408
+And in the words of that tenant, we say we appreciate the value of working systems and the lessons they embody.
+409
+We understand that most problems are not essentially new.
+410
+And so that tenant is really interesting for S3 because in S3, we have over 18 years of experience building and operating systems.
+411
+And we know that customers don't want to re-architect.
+412
+They want to build, they want to expand and evolve their existing capabilities and take advantage of the latest without having to, you know, change what they're doing.
+413
+And it's why, for example, when we introduce strong consistency, we introduce strong consistency at no extra cost, at no performance deficit for every single request that you make to S3.
+414
+Because we know that we have to respect what came before.
+415
+And so, if I think about the most interesting and challenging thing that I have learned while working on S3, it's how do you take those two engineering tenets of being technically fearless and respect what came before and make sure that everything you do on S3, whether it's some of the geeky stuff I talked about under the hood or it's the new capabilities that we talked about, how do you make sure you deliver that in every change you make to S3?
+416
+And how do you do that in a way that adopts the latest science?
+417
+And we talked about the storm consistency thing.
+418
+I mentioned the automated reasoning.
+419
+We have built automated reasoning in so many different parts of S3.
+420
+In fact, when you do a check-in in our index layer, we're checking to make sure, using a proof, we're checking to make sure that you aren't introducing a regression to our consistency model.
+421
+And we're doing that with automated reasoning.
+422
+And so, if you think about the challenges of being technically fearless and respecting what came before, the challenge for us is how we do things like use math to help us.
+423
+The challenge for us is to make sure that we keep these S3 traits, these principles of durability and availability, security, and make sure they're built into the mental models and really the culture of everything that this team does.
+424
+And that's a challenge, and that is a challenge that every single member of the team of S3, including myself, is what we wake up and do every day with S3.
+425
+And for people who are building data systems, they're designing their data architecture, what are the situations where you would advise against using S3 at least as a primary store?
+426
+Well, you know, we see S3 used for just about everything.
+427
+So that's kind of a hard question to answer, Tobias.
+428
+But if you want sub-millisecond capabilities for latency, you know, it's not ideal as a direct store.
+429
+But I'll tell you, you know, the next generation of these infrastructure startups and these SaaS providers of infrastructure, what we're seeing happen right now is that they're building that sub-millisecond layer on top of S3.
+430
+And they're using S3 as a substrate of data for the durability and the throughput, but they're caching the data at a higher layer for that super low latency access.
+431
+Because if you're using S3 directly, you don't have that sub-millisecond latency.
+432
+But if you think about all of the new infrastructure startups out there now, a lot of them are assuming S3 as a substrate below that cache.
+433
+And as you continue to build and iterate on and expand the capabilities of S3, what are some of the features or problem areas that you have planned for the near to medium term or areas that you're excited to explore?
+434
+I think what we're doing with iceberg is super interesting.
+435
+It's super interesting.
+436
+And it's super interesting for a couple of reasons.
+437
+One is because so many of the data lay customers that we have on S3, they have all really moved to iceberg and Parquet as a standard, right, for how they interact with structured data.
+438
+And so we are investing pretty hard in our iceberg support.
+439
+We're doing lots of different capabilities there, so you're just going to have to stay tuned because we're trying to launch many of them across the course of this year and then keep on going from there.
+440
+I think you should keep an eye on the metadata capabilities in S3.
+441
+That's another area that we're investing in very deeply.
+442
+And if you think about it, Tobias, we could have built metadata with its own API, but we didn't.
+443
+We built it on top of S3 tables because we know as we expand the capabilities of metadata, what won't change is that customers are still going to want to use an iceberg client to query it.
+444
+So this idea of bringing sort of metadata and make it accessible to a SQL query.
+445
+Super excited about that.
+446
+Really excited to see these new data types that are emerging in generative AI, and whether it's a checkpoint for a frontier model developer or if it's how people are doing vector search on top of S3.
+447
+I think that is really exciting.
+448
+But at the end of the day, one of the things that will always be true about S3, we will keep on working on these new capabilities, but we have such a commitment to the fundamentals and the fundamentals of durability and security and availability and throughput and all of that.
+449
+I mean, that is something that is what we call an invariant.
+450
+We hold that to be true no matter what we do.
+451
+And so, whatever we do in the future of S3, that commitment to the S3 traits, that is always going to be a fact.
+452
+And I say that on behalf of every engineer that works on S3.
+453
+We wake up every day knowing how deep that commitment is to the bite that you put into the storage service.
+454
+Are there any other aspects of your work on S3, its applications as a shared data substrate for data-intensive workloads or any of the other work that you're doing in that ecosystem that we didn't discuss yet that you would like to cover before we close out the show?
+455
+No, I think we covered a lot, Tobias.
+456
+I will say that the story of data has always been written by customers in S3 that have just started to use S3 in different ways.
+457
+And we have evolved it to all.
+458
+We've been doing this for 18 years, over 18 years now.
+459
+But this story of data is still being written.
+460
+And it's one of the reasons I listen to your podcast.
+461
+It's because you have so many guests that are doing so many interesting things with data and how they're helping companies and developers unlock that data.
+462
+And so, you know, we're just super excited to be the substrate of data for the story that is being written today by the data practitioners and the application developers and the people who are listening to this podcast.
+463
+All right.
+464
+Well, for anybody who wants to get in touch with you and follow along with the work that you and your team are doing, I'll have you add your preferred contact information to the show notes.
+465
+And as the final question, I'd like to get your perspective on what you see as being the biggest gap in the tooling or technology that's available for data management today.
+466
+I do have to say, Tobias, there are so many tools out there, right?
+467
+And I think that is one of the reasons why I really like where Iceberg and the community is going, is Iceberg really gives this nice capability of being able to make a choice of whatever tool you want to use, but have some consistency as well.
+468
+And so, you know, I don't know.
+469
+I don't think I would.
+470
+I think choice is great, but I think Iceberg as a standard way to interact with your data makes that choice even more powerful because you can make a tooling choice, but still have a standard that you use.
+471
+And I think that is why so many of our customers have moved to Iceberg, and that is why we have built this nation.
+472
+Well, thank you very much for taking the time today to join me and share your thoughts and experiences on S3, the role that it plays in the data ecosystem, and all of the work that you and your team are putting into making that such a reliable and substantial portion of the data substrate that exists.
+473
+So I appreciate all the time and energy you're putting into that, and I hope you enjoy the rest of your day.
+474
+You too, Tobias.
+475
+Great to talk to you.
+476
+Thank you for listening, and don't forget to check out our other shows.
+477
+Podcast.inet covers the Python language, its community, and the innovative ways it is being used.
+478
+And the AI Engineering Podcast is your guide to the fast-moving world of building AI systems.
+479
+Visit the site to subscribe to the show, sign up for the mailing list, and read the show notes.
+480
+And if you've learned something or tried out a project from the show, then tell us about it.
+481
+Email hosts at dataengineeringpodcast.com with your story.
+482
+Just to help other people find the show, please leave a review on Apple Podcasts and tell your friends and co-workers.

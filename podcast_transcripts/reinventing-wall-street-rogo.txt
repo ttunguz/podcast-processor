@@ -1,0 +1,1046 @@
+--- METADATA START ---
+Show: Generative Now | AI Builders on Creating the Future
+Episode: Reinventing Wall Street: Rogo’…
+Host: Michael McNano
+GUESTS: Gabe Stengel 
+Guests: Gabe Stengel
+Source URL: https://podcasts.apple.com/us/podcast/reinventing-wall-street-rogos-ai-revolution-with/id1709773028?i=1000711707600
+--- METADATA END ---
+
+1
+Hey, everyone, welcome to Generative Now.
+2
+I am Michael McNano.
+3
+I am a partner at Lightspeed, and this week I'm talking with Gabe Stengel, the founder and CEO of Rogo.
+4
+Rogo is a platform that uses AI to do what junior bankers usually spend sleepless weeks, days, and nights doing: analyzing earnings, benchmarking companies, and building pitch decks.
+5
+And it does it all in seconds.
+6
+Gabe was a former analyst at the investment bank Lazard.
+7
+And so he saw firsthand just how inefficient finance can be.
+8
+And so he and his co-founders built Rogo to fix that.
+9
+Now the world's top banks and hedge funds are using the product, and investors are betting big on their success.
+10
+Gabe and I talked about his time working in investment banking, how that led him to the idea for Rogo, and where he sees AI fitting into the future of banking moving forward.
+11
+Let's dive in.
+12
+Hey, Gabe, how's it going?
+13
+Good.
+14
+How are you?
+15
+Thanks for having me.
+16
+Doing well.
+17
+Thanks for doing this.
+18
+Been really looking forward to this and talking to you about Rogo.
+19
+Obviously, well, I don't know.
+20
+How long is it?
+21
+How long has it been?
+22
+When did you guys found the company?
+23
+Late 2021.
+24
+So three and a half years-ish.
+25
+So it's been a little while.
+26
+From what I know about it, it's got a pretty cool inception story, especially given your background as an investment banker.
+27
+Tell us a little bit about how you guys got started.
+28, I guess the LLC that we rolled into the C Corp that is Rogo was started in 2019 because John, who's my co-founder, is one of my best friends at Princeton, where we both went to school.
+29
+And we collaborated on our senior thesis, which was a research project.
+30
+I was computer science, John was econ, and we basically jointly created an AI chatbot for financial econometrics.
+31
+It was not very good.
+32
+It was using old hat techniques, semantic parsing, context-free grammars, but it was very exciting to us.
+33
+And it was a tool we could put in front of our less tech-savvy econ friends and have them use it to do their theses and their work.
+34
+And so that's when we first had the idea and got excited about this idea of a natural language interface.
+35
+We tried to commercialize it at the time and couldn't really figure anything out.
+36
+So we ended up both going into finance.
+37
+I was an investment banker at Lazard.
+38
+John went to Barclays, then J.P.
+39
+Morgan.
+40
+And my experience at Lazard, I got a pretty unique position.
+41
+I got to be both on an investment banking team and then later on a data science team, helping find internal tools for the bank to roll out to make junior bankers more productive, senior bankers a little bit smarter.
+42
+And so just had unique visibility into both what the work junior bankers were doing were, but also how were these institutions even thinking about solving it.
+43
+And we left that job and those jobs and got started with building this company.
+44
+Tell us a little bit about a word you used early on in your story, econometrics.
+45
+Explain for the layman viewer, what are econometrics?
+46
+And also, how is the product, well, it sounds it was rooted in some early work you did in Princeton where this was really focused on econometrics to where you are now.
+47
+And we'll get deep into the history of the product and all that, but would love to understand the journey there.
+48
+There's absolutely no econometrics in the product now.
+49
+Back then, our product was really built for post-grads and undergrads doing econometric research, i.e., the simplest version is run a regression of X on Y or run an auto regression or find an instrumental variable, helping economics post-grads do,, do their work.
+50, it's not really what we do now.
+51
+Today, the product is much more helping investors, investment bankers do research on companies, diligence companies, come up with unique investment theses.
+52
+We also still analyze structured data, but instead of analyzing economic structured data so much, we analyze company structured data, right?
+53
+So, you might say, run a regression of revenue multiples on margin expansion at big healthcare companies to see what's really been driving valuation over the past year.
+54
+Or just show me,, the share price returns year to date for this basket of companies.
+55
+But yeah, we don't really do that econometrics as much anymore.
+56
+But we had to put a spin on the project to make sure that John could log it as his senior thesis.
+57
+So we had to do the econometrics.
+58
+That's so funny.
+59
+Talk a little bit about your experience at Lazard.
+60
+And it sounds your co-founder had some similar experience that shaped the vision for what you wanted to do with Rogo.
+61, at Lazard, were you doing the same types of analysis and research that you imagine users of Rogo doing now?
+62
+Oh, 100%.
+63
+Yeah, I was a banking analyst.
+64
+I was putting together models for potential buy-side acquisitions.
+65
+I was putting together PowerPoint decks.
+66
+I was doing research on industries.
+67
+I was putting together PIBs, public information books, which if you have any banking listeners on this podcast, they will understand what that is all too well.
+68
+Yeah, what is a PIB?
+69
+A PIB is basically a senior banker says, Hey, we're going to meet with, let's call it, data dog.
+70
+Give me a PIB on the company, i.e., put together all the resources I would need to get smart on this company over 24 hours.
+71
+So you pull, each MD has their own formula, but maybe the last two 10Ks, last 10Q, some initiating broker research coverage, some recent broker research coverage that's good, any interesting news articles that have come out recently into one,, 200-page condensed PDF that you email to them, and then they can leaf through and see if there's anything interesting or write you a follow-up.
+72
+So it's just an information packet to get started, which now is a little bit dated, right?
+73 you don't need this 200-page research packet when you can just go into a tool Rogo or ChatGPT and say, hey, tell me about Datadog and what's been going on.
+74
+But yeah, I was doing the very basic banking work.
+75
+And I loved it.
+76, I think there's this perception that no one likes investment banking.
+77
+I don't think that's true at all.
+78, I think you get access to some of the most interesting executives, companies, see how they think, see how they think about MA capital allocation.
+79
+And I really enjoyed it.
+80
+Putting together a PIB, especially without AI, a couple of years ago,, it sounds a ton of work, especially if you're telling me these things need to come together in 24 hours.
+81
+And this is a 200-page PDF.
+82, was the initial thinking, hey, this is a lot of manual work.
+83
+AI is obviously helping to give people leverage on work and units of intelligence.
+84
+Let's make this a PIP creator.
+85
+Was that the basic idea?
+86
+Yeah, I would say it's funny.
+87, the basic idea was, yeah, there's all these types of work, benchmarking revenue multiples, putting together PIBs that are so basic and not interesting.
+88
+And there should be an AI tool that can do it.
+89
+But I would say the thesis then, and the thesis still now was always more so, how do we empower people to do things they can't do?
+90
+Right.
+91
+And that goes back to our original senior thesis, which was giving our peers the power of writing Python code through a natural language interface chatbot to do their econometrics work.
+92
+And even now, I want to make sure we're doing all the mundane work that junior bankers and junior investors do, but I also want to empower them to do things they've never done before, right?
+93
+I want to help them do all sorts of new types of analysis, new types of insight-generating work that wasn't possible before.
+94
+And so, even at the time, I think we had loftier aspirations.
+95
+It took us a while to even get to the mundane automation, but it was always focused on, hey, how can I give you, Mike, a tool that allows you to do the types of analysis that before you couldn't really do if you didn't have a team of data scientists or a team of juniors underneath you?
+96
+Got it.
+97
+So, it almost seems the thing that really becomes accessible with a tool Rogo, at least in the early days, was sort almost the data science function and the real deep analytical work.
+98
+Not necessarily the stuff that,, as you said, you can do a lot of this stuff in ChatGPT now through a deep research query.
+99
+Deep research, I'm sure, isn't doing a lot of the data science work, but it's probably doing some of the basic, just pulling of existing data and records to keep somebody just generally more high-level informed.
+100, look, Rogo is in many ways deep research, except plugged into financial data sources and financial tools.
+101
+And so, instead of only having access to the web and a Python code interpreter environment, our deep research has access to the bank's internal data, their CRM, their SharePoint, their precedent transactions analyses.
+102
+And then it also has access to tools Excel, filings, FactSet, CapIQ, Pitchbook, all the financial data sources that they use.
+103
+And so, it's basically just deep research that's been trained to be a Wall Street analyst as opposed to just anyone's research analyst.
+104
+Yeah.
+105
+So, all right, let's talk about that a little bit.
+106
+So, you mentioned things Pitchbook.
+107
+These are,, these are data sources that are out there on the web.
+108
+You have to pay for them, but they're out there.
+109
+And then you mentioned the company's data.
+110
+Is that really the secret sauce there in that it takes your internal data that's proprietary, and then it links it up with all this stuff that's on the web, but maybe hard to get, and something ChatGPT can't just go and grab?
+111
+I would say there's three things that make Rogo special and our IP and make it a valuable product.
+112
+One, yes, is the content, the data that you have access to, right?
+113
+We work with providers SP Global CapIQ to make sure that we have,, if they, if we have mutual customers, they can query the CapIQ data through Rogo.
+114
+That is a business data licensing problem.
+115
+The second is the actual tools that the model has access to, right?
+116
+Even if you have this ingenious LLM, if it doesn't have access to a tool Excel, can it really build a full three-statement model?
+117
+It can in Python, but that's not auditable and it's not really built for that.
+118
+Can it make a PowerPoint output?
+119
+Maybe, but probably not the one that's up to your output specification.
+120
+The final thing that's different is our reasoning and the actual model quality.
+121
+And the same way that if you look at Cloud4 or Gemini 2.5 Pro or GPT 04 or 03, they're ingenious, super smart models, but they don't know how to use the tools, the data sets, and do the workflows that bankers and investors do.
+122
+And if you had Albert Einstein start at light speed on Monday, just because he's smarter than everyone at light speed, which may or may not be true, doesn't mean he'll be a valuable thing.
+123
+Maybe.
+124
+Maybe.
+125
+I don't think he would be valuable on day one.
+126
+He needs to learn how you guys think about a company, how you think about investments, how you use tools, what your formatting is, right?
+127
+And that's learning.
+128
+And so we teach the model how to do that by using a technique called post-training or reinforcement fine-tuning to learn how to use the tools that finance professionals use.
+129
+So these are your own models.
+130
+You're not using,, GPT.
+131
+Well, we build on top of those.
+132
+So it's okay, a lot of these platforms now offer fine-tuning on top of their models.
+133
+So you can fine-tune 4.0, you can fine-tune 2.5 Pro.
+134
+You can also distill these models into open source and then run reinforcement learning.
+135, so we're not doing any pre-training,, but we are then,, doing post-training on these models.
+136
+Yeah, and you mentioned that you're you're fine-tuning them to work with the tools that people in this industry are working with.
+137
+Talk a little bit about that.
+138, do you mean agentically using these tools?
+139, oh, yeah, yeah, yeah, yeah.
+140
+If you were an analyst at Goldman and you started on Monday and someone said, Hey, find the precedent transactions for the Microsoft Activision deal, you would probably go to Edgar's, which is the SEC's list of filings, and start looking, Microsoft, Activision.
+141
+Look for the DEF 14A.
+142
+Okay, I found it.
+143
+Now I'm going to control F through the DEF 14A for the precedent transactions.
+144
+Okay, great.
+145
+There they are.
+146
+That's not a tool that an agent has access to.
+147
+I think we more and more see agents that have browser capabilities and so do that hypothetically.
+148
+That's a lot less efficient than just giving an agent access to a filing search tool where it can put in the ticker of a company, filter by a filing type and a date range, and then control F through those documents.
+149
+And so we both build the tools and then we teach the model how to use it.
+150
+And so for each different type of tool, we can have specialized models that query those documents more effectively, right?
+151
+They do the right keywords, or a specialized tool for formatting Excels.
+152
+And so we have to teach the models how to use these in a much lower latency, much higher accuracy way.
+153
+Yeah, I'm sure you're asked this all the time.
+154, a common question for I feel any AI startup.
+155, how do you think about the role of Rogo in using all these tools and accessing all these data sources that we talked about versus the role of an OpenAI, an Anthropic,, an XXAI that probably want access to many of the same data sources and maybe over time have the capability to do perform many of the same agenda tasks.
+156
+The better the next generation of models is, the better Rogo will be, right?
+157
+We can very quickly take those models and take that intelligence and have it build into our system almost immediately based on the way that we architect.
+158
+So it's great for us.
+159
+And the difference will be we are spending all of our time on financial tools and financial workflows.
+160
+And so when GPT-5 comes out and we already have access to all this tool data and how they're used most effectively and evals over how to do these financial workflows, we're going to be able to more quickly distill that into an end-to-end system that can generate a SIM, generate a PIB, analyze an S1 than they will.
+161
+And they'll have to collect those evals and create those tools over time.
+162
+And finance is a big enough market where they will likely start to focus on it.
+163
+But there's been more focus on generic consumer applications competing with the Microsoft Office suite, coding.
+164
+And I think finance is a domain where there's a lot more intricacy from the product layer and the workflow error than people expect.
+165
+And so I think we're going to have a distinct advantage for a while.
+166
+And ideally, by the point where they're turning their attention on finance, we have a lot of actual user data and evals and sense of what the workflows are such that we'll always be a step ahead.
+167
+Yeah, that seems to be the big debate, right?
+168
+Obviously, the word moat, we talk about so much in AI.
+169
+And it's constantly this question of, oh, do you want to be the model provider?
+170
+Do you want to be at the application layer?
+171
+And I think the logic that I hear often, and I frankly agree with, and it sounds it's similar to yours, it's, well, you need to specialize in something and you need to run really, really far ahead, right?
+172
+And as you said, unlock the proprietary data and lock in the different workflows that are going to be really, really hard for someone else who's very horizontal to specialize in.
+173
+Is that how you guys think about it?
+174
+Yeah, 100%.
+175, I think more and more so the value is in the application layer.
+176
+Even if I look at my own usage of ChatGPT versus Gemini versus Claude, at this point, because I have a history of threads on ChatGPT, it responds in a more personalized way.
+177
+That's really helpful.
+178
+And I don't need to go in and explain to Gemini, hey, I'm Gabe Stengel.
+179
+I have a company called Rogo.
+180
+This is what we do.
+181
+Use that context to answer the question.
+182
+ChatGPT does a very good job of personalizing responses, reporting what I'm doing, having a good sense of the types of answers I.
+183
+And now it's a pain for me to switch.
+184
+Totally.
+185
+And that, even if the model is slightly worse,, I think that's an advantage of application and product layer.
+186
+At the model layer,, I'm not an expert on these models at all, but my sense is,, no one's ever going to be more than six months ahead of anyone else.
+187
+And so the distinct advantage you'll have as a model provider is just,, how low are your costs?
+188
+How reliable are your services?
+189
+How low latency is that?
+190
+That thing.
+191
+Let's go back a little bit.
+192
+So we talked about your role as an investment banker.
+193
+We talked about some of the early theses.
+194
+We talked about when you got started.
+195
+Take us back to that moment.
+196
+It sounds 2021, 2022.
+197
+Obviously, ChatGPT has just burst onto the seam the beginning of 2023.
+198
+What was it then starting this company and maybe even talking to investors and your first customers about what you were trying to do at a time where people had far less understanding about AI and the impending implications than they do now?
+199
+So we started the company before ChatGPT came out.
+200
+GPT-3 was out.
+201
+And so for those paying attention, it was obvious that this was a profound leap in technology.
+202
+But all the banks and hedge funds and private equity firms we spoke to, I think they thought.
+203
+this guy gave us full of snake oil, not this is going to change the way we work.
+204
+It was a long time until the market was receptive to what we were building.
+205
+And it was frankly also a long time until we figured out what exactly the market wanted too, right?
+206
+It's easy to say, great, let's make people smarter and more efficient with AI.
+207
+How does that manifest itself in a product?
+208
+What are the use cases?
+209, how are people going to use it?
+210
+How important are these use cases versus those use cases?
+211
+How do you pitch it properly?
+212
+Who do you sell it to?
+213
+Those were all the things that we slowly had to learn over our first, let's call it 18, 24 months, where,, the market was not that receptive to us.
+214
+What were you promising them?
+215, what would you say to your early customers?
+216, there weren't that many early customers.
+217
+We didn't have real customers until 2023, late 2023.
+218
+And even then,,, you, as a founder, you're trying to get someone to use what you're building at all costs, right?
+219
+And so you'll do a whole song and dance just to get someone to be hands-on keyboard in your platform just for the product to break after 25 minutes.
+220
+The initial pitch was, hey, what if you could ask questions over your data and get answers in five seconds as opposed to using a clunky interface one of these old tools Bloomberg or the Edgar SEC filings database, or, pinging an analyst on your team?
+221
+And so that was the pitch, and it was pretty simple.
+222
+Yeah.
+223
+But it was hard to build and then hard to expect what folks were going to ask, right?
+224
+When you're pitching a generic search or chatbot, it means you have to build everything in on day one.
+225
+Otherwise, people are going to try the one thing you're expecting and then the five things you aren't, and the product is going to not suffice.
+226
+Right.
+227
+What about the early investor pitches?
+228, what were you telling them and what resonated and what didn't?
+229
+Kevin Ryan, who led our Pre-C ground from a firm called AlleyCorp, based in New York, but Kevin himself is a self-proclaimed godfather of New York City tech, started MongoDB and Guild and Business Insider and was the CEO of DoubleClick.
+230
+He got it immediately.
+231
+But his function, his routing function, I don't think was AI is going to change the world.
+232
+I think his routing function was Gabe and John are two guys who are smart and understand technology and intimately understand investment banking.
+233
+And,, being from New York, I know investment banking is a domain that is ripe for disruption.
+234
+Did him from Mongo?
+235
+I knew him from growing up in New York.
+236
+So I had met his children a long time when I was going to school here.
+237
+And then I met him again at Mongo.
+238
+Yeah.
+239
+So I interned at Mongo and he came to speak and I would send him a few one-off messages.
+240
+And then he got in the routine of,, and to his credit as an investor, every six months, he would send me an email being, hey, what are you thinking about?
+241
+Do you still Lazard?
+242, what are you doing next?
+243
+And so when I had this idea, well, at Lazar, he was the first person I messaged.
+244
+And it was a very natural start.
+245
+That's awesome.
+246
+Yeah, yeah.
+247
+That's that's really cool.
+248
+You talked early on about how early on it was it was tough to get customers to take this thing seriously.
+249
+You said you didn't really have any.
+250
+What was the moment in the product that flipped to product market fit and getting your first early sticky customers?
+251
+There were two core things.
+252
+One was changing our focus from just structured data to structured and unstructured data.
+253
+So from because the original product was econometrics, unstructured data, that's what we pitched, right?
+254
+It was, hey, make a chart of revenue multiples,, create a scatter plot of this versus that.
+255
+And we weren't taking advantage of what LLMs are best at and most magical with, which is unstructured data.
+256
+And we were too stubborn before,, opening the aperture.
+257
+The second thing was we just changed the way we were pitching the product.
+258, I distinctly remember being on a call with a large private equity firm and it going,, the product demo going better than I'd seen a product demo going a while, in part because we'd added this unstructured data lens.
+259
+And they asked for pricing.
+260
+And I was, well, firms this big never asked for pricing.
+261
+They normally race to get off the call.
+262
+Right.
+263
+And so I have no sense of what to charge.
+264
+And so I took,, 10 seconds in my head and thought, okay,, I'm going to, let's push the full core advantage here.
+265
+$2 million a year, right?
+266
+Just pull a number out of thin air.
+267
+And they go, okay, makes sense.
+268
+And I, and as soon as I got off that call, I called my co-founder and I said, hey,, this firm didn't laugh at that number.
+269
+This, we might be on to something.
+270, if someone hears $2 million a year and goes, oh, that,, that could make sense, it means you're pitching something that they think is very valuable.
+271
+And so it was those two moments in changing how we were pitching and what we were building that really started to unlock customer traction.
+272
+The unstructured data.
+273, I think that makes sense.
+274, you're seeing this on a lot of products right now where not just the use case of it and the value it provides to be able to just throw a bunch of stuff into the model and have it come back at you with something structured, but also just the time to you spend building an architecture and a database structure and the old way of doing it, I would say, the amount of time and cost that must that must save your startup is insane.
+275
+And we see this at a lot of startups.
+276
+Yeah.
+277
+No,, to query structured data well with an LLM, you still need a beautiful database that's documented well with data dictionaries.
+278
+To query unstructured data well,, you need some elastic search indices and a smart keyword search prompts and a big context window and just throw it in there.
+279
+Yeah, exactly.
+280
+When you're talking to this big firm and you're 2 million bucks, clearly that's a big contract, especially given your state.
+281
+It didn't end up being 2 million bucks.
+282
+But I'm glad it was tethered, anchored to that as a starting point.
+283
+For sure, for sure.
+284, I'm guessing what,, what they start to think and customers at their scale must think is: okay, obviously,, this product has value such that we're considering paying for it, but it also better have things rock solid security, encryption, all this stuff that you associate with,, big, robust financial tools.
+285
+And at the time, you're a small startup.
+286, you're investing in features and moving quickly.
+287
+How much are you thinking about that enterprise-grade stuff at the same time?
+288
+So we,, we were forced to think about it early on by the nature of our customer set, right?
+289 we were forced to think about what it meant to be multi-cloud, what it meant to deploy on-prem, what it meant to have these enterprise-grade permissioning systems and R-backed systems and governance systems.
+290
+And so we had to do that much earlier than a startup would in typical life cycle.
+291
+And it slows you down, right?
+292 it takes attention away from feature velocity and into enterprise stuff, but it's a prerequisite for us.
+293
+And I think it was also a mindset thing, right?
+294 we didn't think of security as a side dish and the main dish being the product.
+295
+We thought of security as one of the main value propositions about what we were building.
+296
+And so if you treat it that,, you treat it the product, right?
+297
+And it's not, oh, we have to build out this enterprise permissioning system.
+298
+It's, oh, this is a feature.
+299, this is something our clients want and it's just as part, just as much a part of our product market fit as the way that we respond to user questions is.
+300
+Yeah, got it.
+301
+Makes sense.
+302
+Did you have that capability on your team?
+303, how do you go about solving for that?
+304,, you figure CISO.
+305
+Yeah, tell us about it.
+306
+You figure it out.
+307, it's all of these things.
+308
+You trial by fire.
+309
+Can you execute?
+310
+Bring in the expertise where necessary.
+311
+Otherwise, a lot of engineering problems, you can think about them from first principles and there's a lot of resources and you can work with your partners and stakeholders to solve them.
+312
+But it's interesting.
+313 you said, it slows you down.
+314
+And the name of the game, it feels right now for all AI startups is speed.
+315, we even talked about it early on.
+316
+In order for a company Rogo to succeed, you've got to race far enough ahead of the model providers before they decide that finance is a vertical they care about.
+317
+How do you balance that?
+318
+How do you move fast in a world where the cost of moving fast and making a mistake in your industry is really, really high?
+319, we move slower than if we were a consumer company, for sure, from a feature perspective.
+320 we just have to.
+321, it's a a,, threading the needle constantly and thinking about trade-offs constantly and allocating as much bandwidth as you can to all your problems at the same time and just staying disciplined.
+322
+There's no,, there's no silver bullet for execution.
+323
+It's execution.
+324
+Yeah, totally.
+325
+It's tough.
+326, it's crazy the pace of innovation and shipping you're seeing from startups right now.
+327
+And it seems it's just by necessity, right?
+328
+Yeah.
+329
+Well, and it's also thinking about: look, if I was a horizontal company, let's take a glean, you have different trade-offs.
+330
+And you say, hey, am I willing to build an on-prem version or a cloud-prem version or build in this security stuff?
+331
+Probably not because I'm racing more against ChatGPT and I'm going to be slower to these other verticals.
+332
+Whereas if you're a finance company and the race is to get into the largest financial institutions, well, focusing on security is the thing that allows you to move faster and get into customers' hands rather than the thing that's slowing you down.
+333
+And so it depends on what company you are.
+334
+And for us, it's all about the trade-off of,, is this functionality and enterprise great security a speed up in the near term and the long term?
+335
+Or is it something that's going to slow us down?
+336
+And I think for a company OpenAI, a lot of the security stuff is a slowdown, right?
+337
+Because they're not competing with us selling into large investment banks.
+338
+They're competing with,, Perplexity and Copilot and Anthropic to get to all consumers.
+339
+Yeah, totally.
+340
+So, okay, so now you've got a bunch of customers, you're post-PMF.
+341
+Walk us through maybe the day-to-day for some of your customers in terms of some use cases.
+342 the people that sit in Rogo all day,, what are they doing today?
+343
+So I'll give you a great example, which is when I was an investment banking analyst and we were,, showing a bunch of great potential acquisitions to a large healthcare company.
+344
+You would have a list of 10 company profiles in slides and you would say, hey, look at this company, look at this biotech, look at this research company.
+345
+And you would say, this is their CEO.
+346
+This is what they focus on.
+347
+This is why it's strategic to you.
+348
+This is the,, what their snapshot financials look.
+349
+And that would take hours and hours and hours.
+350
+One, because,, if I'm, let's take some random biotech name, maybe I'm looking at a company Regeneron or Vertex.
+351
+I don't know what they do.
+352
+I'm an investment banking analyst.
+353
+I'm not,, an oncology expert.
+354
+And so it takes a while for you to read, synthesize, figure out what's in their RD pipeline and write it up.
+355
+In Rogo, you can say, hey, take these 10 companies, make 10 PowerPoint slide pages, and you can get an output in 30 seconds.
+356
+And so that saves a huge amount of time.
+357
+On the other end of the spectrum, not just junior bankers,, there's senior investors and bankers who go in and instead of having to ping an analyst on their team and say, hey, Gabe, I need a PIB on Datadog, they can just go into Rogo and say, hey, news run on Datadog.
+358
+Okay, cool.
+359
+What are they doing in this market?
+360
+Why are they down in that market?
+361
+What has their product focus been?
+362
+What's their MA strategy been?
+363
+And just have a thread where they get answers that they can work with immediately and dive deeper instead of asking for some deliverables just to help them prepare for a meeting.
+364
+Yeah, that makes a lot of sense.
+365
+The thing that people have been talking about across every industry, but also finance and capital allocation is,, is AI going to replace X?
+366
+What do you think of the role of a product Rogo in ultimately displacing human-powered work that it augments today?
+367
+It's going to replace workflows.
+368
+I don't think it's going to replace people.
+369
+Yeah.
+370
+In the same way that,, that workflow I described of creating a PIB for my managing director, 10 years before me,, you would create the pib and then you would go and print it out and bind it and go deliver it to your managing director's apartment at 11 p.m.
+371
+so that they could read it in the morning.
+372
+You're not doing the printout work.
+373
+You're not doing the binding.
+374
+You're not delivering it.
+375
+Right.
+376
+You're still working pretty hard.
+377
+You filled up your time with other things, right?
+378 these are institutions that work hard.
+379
+They want to,, compete with each other.
+380
+They're not trying to rest on just healthier margins.
+381
+There's going to be more and more work.
+382
+That said, it's going to be different work, right?
+383 you might not spend as much time data cubing and preparing presentations and, in the thick of an Excel, and you might spend more time thinking about a company or a problem.
+384
+You might spend more time meeting with stakeholders and founders and executives, forming those relationships.
+385
+One of the industries I see parallels and similarities to, I wonder if you do as well, is legal work and law firms.
+386, one of the things we see and we hear about law firms, big law firms, the really big ones, is they're taking all of their data, their years and years of contracts and variables from within those contracts that they have unique proprietary insight into, and they're building their own models, right?
+387
+They're building their own tools.
+388
+They don't want to give that stuff up to an open AI or an Anthropic to build tools that ultimately displace them.
+389
+Are you seeing the same thing happening from big investment banks, the Lazards of the world?
+390
+Are they building their own tools?
+391
+Do you view them as competitors?
+392
+I think a lot of professional services organizations know what they're good at and have a sense for what they're not as good at.
+393
+And building really strong technology and AI models and products is not what has made an investment bank great.
+394
+It's the relationships, it's the business acumen, it's the ability to negotiate and get a great outcome for a client.
+395
+I think we're going to work with those sorts of banks to produce tools that mutually enrich us and make them more effective and help change their business models.
+396
+But I think it's much more of the partner scenario than the either build yourself or just buy an off-the-shelf tool.
+397
+And by the way, I think that's been core to some of the large legal AI companies as well.
+398
+If you speak to someone Winston at Harvey, a large part of his vision is working with law firms to produce products that they can jointly offer to customers.
+399
+Yeah, that makes a ton of sense.
+400
+Yeah, I imagine there's a tension, right?
+401
+And again, I see this with law firms.
+402
+I'm not even speaking to investment banks or Rogo, but it seems there's a tension when we go and we talk to lawyers at some of these big firms.
+403
+It's, oh, of course we know AI is coming, but we'd rather use our own tools and our own data rather than,, some startup or even again, one of the big models who is clearly specializing in this stuff.
+404
+There definitely will be a tension.
+405, I think that folks in finance have not woken up to the reality that more and more of their day jobs are going to are going to be automated in the way that folks in legal have.
+406
+And so I think it's partly just going to be a mindset shift over the next coming years, five years.
+407
+And then I think the other reality is people, firms have not really seen job replacement yet, right?
+408,, there haven't been big banks or big professional services organizations or big companies of any size,,, Apple or Disney or Microsoft who have really replaced jobs with AI yet.
+409
+And so I think until we start seeing that,, these firms are going to start continue functioning as business as usual, but maybe with slightly healthier margins or a slightly better product.
+410
+And when you start seeing the ability for AI to really automate human work, well, then these professional services organizations are going to have to take a step back and say, well, how does this change my business model?
+411
+And that's when I think we'll start to see the tension you're talking about.
+412
+Yeah, I totally agree.
+413
+And I think there's probably,, look i don't i don't know anything about running a law firm or an investment bank, but there's probably an opportunity right now where if you run ahead you can you can totally just, you can arm your staff with these superpowers.
+414
+And you said, get massive increases on your margins it almost make i don't know if i was running a law firm i'd probably do that right now yeah no i know it's not simple but there's also people who are starting to build law firms or banks but right from the bottoms up with technology there's a great company called offdeal started by a friend ori who was an investment banker and his idea is hey how do i start a the next goldman sachs just with technology And have fewer bankers so i think people are going to attack it from both ends from large incumbents who figure out how to digitize their workforce versus upstarts that figure out how to just build ai natively from day one but not as tech companies but as professional services organizations yeah and this is part of the trend you're seeing where vcs are are levering up and buying typical cash flow private equity businesses and then tech enabling them yeah these roll-ups yeah totally what do you think about looking ahead what do you think about the future of rogo how do the types and flavors of your customers start to change and evolve how do the use cases start to change and evolve right now it's investment bankers pee etc do you imagine a world which in the future it's anyone who's doing financial analysis finance departments of every flavor of company help us think through that yeah i i get asked about this internal corporate fpna stuff a lot my really maybe i will regret this when someday we're a huge company and we're we're eking out more tam in an investor day presentation but i'm not that interested in fp a departments at corporates right that's just that's less exciting to me helping it's more accounting workflows than it is,, thinking an investor would about what companies are exciting.
+415
+What are the great business models you want to invest in?
+416
+Who are the founders you want to back?
+417
+Or as a banker, what's the most strategic way for someone bob iger at Disney to think about capital allocation or acquisitions or the land or The market?
+418
+So it's more his corp dev team than his FPA.
+419
+Yeah, exactly.
+420
+Yeah.
+421
+But that said,, look, I, if when I look at the companies, I'm some companies I model us off of and most admire, admire, companies Bloomberg.
+422
+Bloomberg never said, okay, great,, we've had we have a good enough hold of the finance market.
+423
+Let's start selling to everyone.
+424
+They said, no, let's continue to innovate for this one buyer type in this one market that has almost a limitless ability to pay for tools that make them smarter and more effective, right?
+425, I would always continue to invest in creating better and better tools for investors and bankers than try and veer off course, just because I think,, it's the one market on earth where there's an unconstrained ability to pay for something that makes you smarter.
+426
+You can go to a great hedge fund investor and say, hey, I'll make you a 20% better investor.
+427
+They will pay you whatever you want.
+428
+Whereas if I go to a corp dev or FPNA team and say, hey, I'll make your life a lot easier, there's a ceiling on what they're willing to pay, right?
+429 they're not, they don't have unconstrained upside in their decision making.
+430
+Investors do.
+431
+Right, right.
+432
+Yeah, that's totally true.
+433, imagine if I went to Lightspeed and I said, hey, I'll make you guys a 20% better investment firm.
+434
+How much would you guys pay for that?
+435
+Yeah.
+436
+Well, $3 million.
+437
+Yeah.
+438
+I imagine where you could probably see a ton of market expansion and maybe you're already doing this then is in consulting.
+439
+The McKinseys of the world, Accenture.
+440, are you thinking about that?
+441
+Is that already part of what you do?
+442
+Yeah.
+443
+No, we already have a few consulting firms on the platform.
+444
+We have one of the big three who is rolling out the product, not just for their front office consultants, but for the,, the research teams they have internally, which is a funny thing to me because you would think that Rogo would replace the replace research teams that service consultants rather than be used by research teams to further help consultants.
+445
+But yeah, I think that professional services work is right, in the bullseye of what we can do.
+446
+Totally.
+447
+So when you go to sell this product into any of these organizations, professional services, investment banks, et cetera, do you think about it from a pure sales top-down motion?
+448
+Or is there something here where you can have a bit of a a PLG flywheel where one banker uses it and then shares the data with somebody else and that unlocks a new seat?
+449
+Help us think that.
+450
+I would love to have more of a PLG flywheel.
+451
+And it's funny, our new investors thrive.
+452
+There's an investor there, Vince, Vince Hanks, who's awesome and super smart and has always pushed me to have a PLG product.
+453
+Bankers, the domain is going to be blacklisted.
+454
+They have such strict infosec policies that if you could just go to app.rogo.ai and log in, you still wouldn't be able to do it.
+455, you have to sell the hard way.
+456
+Things just can't be shown per second.
+457
+And I think that there's PLG possibilities on the buy side.
+458
+At a place Lightspeed, I'm sure people just go and use ChatGTM for personal devices.
+459
+And then the firm thinks, okay, great, we may as well get an enterprise account now because we don't really want people using personal devices.
+460
+But throughout financial services, it's a harder market to sell into from a PLG point of view.
+461, you can use PLG or some product-led things as a way to generate top of funnel, but I don't think you're going to see the same type of sales motion that a Notion or an Airtable has where it just gets some bottoms up adoption and significant revenue traction, too.
+462
+And then you parlay it into enterprise.
+463
+I guess all those sharing and viral loops just get broken, right?
+464
+Even if you, even if you had a URL and you shared it in Slack, it just wouldn't even unfurl, it wouldn't show you any kind, you would just have to have the MD on your team would say, I can't open this, there's a firewall, right?
+465
+Exactly.
+466
+Yeah, that's got to be really hard.
+467, and maybe again, going back to how you learned security, how did it, how did you, as a small team, learn sales?
+468, how'd you guys do that?
+469
+Sales was a hard learning experience.
+470
+Really?
+471
+Yeah, tell us about it.
+472
+Oh, yeah.
+473, I was computer science in undergrad.
+474
+I went worked as an investment banker.
+475
+I never met someone who worked in sales.
+476, I just had never been surrounded by that archetype.
+477
+It's hard.
+478
+Enterprise sales is difficult.
+479, it is not an easy thing that,, oh, sales is not that hard.
+480
+You just show the product, you get people signed up.
+481
+Selling to enterprise is there's 40 stakeholders.
+482
+They all care.
+483
+It's political.
+484
+You have to figure out what people want to hear.
+485
+What are the pain points?
+486
+How to thread the needle.
+487
+It's a difficult thing.
+488, it was all learning.
+489
+We were lucky to hire some great, great folks early on who had experience selling into this market.
+490
+And that really expedited my learning and our success.
+491
+But it's not,, enterprise sales is not something to trivialize.
+492
+Yeah.
+493
+And because you don't have things PLG, you can't even employ this land and expand motion where some random person starts using it.
+494
+And then you go and you convince the CIO or whatever to buy it for the whole org.
+495
+I'm guessing you're literally just doing top-down sales, just banging on doors.
+496
+Yeah, more and more now we can sell five seats to an investment firm, and that's a little bit easier.
+497
+And then we go back,, in three months and say, hey, you have five seats, but these 20 other people have asked to get on too.
+498
+Why don't you just get an enterprise license?
+499
+So we see that more on the buy side.
+500
+For banks, yeah.
+501
+Yeah,, you're running pilot.
+502
+You have big stakeholder conversations, you need to prove out the ROI.
+503
+It is not the thing that can be PLG-led.
+504
+Yeah, totally makes sense.
+505
+So we talked a little bit about what you would and wouldn't do in the future in terms of potential customers and TAM expansion.
+506
+But maybe where do you see the company in five years, 10 years from now?
+507
+And maybe the banking industry more broadly as a result of AI?
+508
+I think that five years from now, 10 years from now, Rogo is going to be the most effective analyst on Wall Street.
+509, I think it will be very hard to run an investment firm or a bank if you don't employ Rogo, right?
+510
+If you don't literally have an army of Rogo analysts helping you be smarter and more effective.
+511
+You won't be able to submit a bid in the first round of a transaction fast enough because you won't have this army of AI analysts doing diligence.
+512
+You won't be able to win The best one bake-off because you'll be a little bit less sophisticated in how you pitch to clients without a tool Rogo.
+513
+It'll be every firm's smartest, most productive analyst.
+514
+The flip side of that is we will also be able to offer financial services to types of companies that beforehand didn't get those types of financial services, right?
+515 giving MA advice, running fundraising processes, that's a type of high finance financial service, right?
+516
+We don't think of it that way because it's not a checking account that you can get through QIIME or a financial service being able to buy and sell your own stocks through something Robinhood.
+517
+But these are still important financial services that a lot of companies don't have access to.
+518
+If you have a $20 million EV HVAC business, who's running your sell-side process?
+519
+No one.
+520
+So you're getting a 20% worse price when you sell it to some private equity-backed roll-up.
+521
+If we have the technology to help folks do that, I'd love to directly offer it and help make private markets more efficient and help democratize some of these high-finance financial services that not everyone has access to today because you can't pay Goldman Sachs $5 million to run the process or give you advice or help you fundraise.
+522
+That's super interesting.
+523
+So, yeah,, we talked earlier about, you don't want to get into FPA, but I think we were talking about Disney and Bob Iger, and we're, oh, his corp dev team, could you use this?
+524
+When you look at it through that lens, I think to your point,, this is something startups could use, small businesses, small, medium-sized businesses, again, to get access to the types of services they might only get access to if they're a really big company and have internally, or they're hiring somebody Lazard.
+525
+Is that what you mean?
+526
+Yeah, well,, look, if you're Bob Iger and you're thinking about maybe you're selling the company to Apple and you're thinking about who should I hire as my investment bank?
+527
+Should I hire Lazard or Goldman or whoever?
+528
+What if you don't need to hire a banker to produce a fairness opinion, right?
+529 what if you don't need to pay $25 million to do that?
+530
+Or what if you can use,, let's say Lazard has an AI product that can help generate fairness opinions and it's at a quarter of the price and double the quality.
+531
+Could you just use that?
+532
+And so there are types of financial services where I think firms will be able to go direct with technology.
+533
+And then there's others that you can't, right?
+534 if you're brokering a transaction and it takes a human in the loop and you want to shake someone's hand and you want to trust who you're partnering with and negotiating with, that's when a banker is going to be invaluable, especially a banker with a Rolodex and one that knows your business and your industry and all the counterparties.
+535
+Makes total sense.
+536
+Gabe, this has been fascinating.
+537
+I really, really appreciate all the time you spent with us.
+538
+And yeah, wishing you and Rogo all the best of luck.
+539
+And we should do this again sometime.
+540
+Mike, appreciate it.
+541
+Thanks for having me.
+542
+Thank you for listening to Generative Now.
+543
+If you liked this episode, please rate and review the show.
+544
+And of course, subscribe.
+545
+It really does help.
+546
+And if you want to learn more, follow Lightspeed at LightspeedVP on X, YouTube, or LinkedIn.
+547
+Generative Now is produced by Lightspeed in partnership with Pod People.
+548
+I am Michael McNano and we will be back next week.
+549
+See you then.

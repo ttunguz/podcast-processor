@@ -2,6 +2,7 @@ require 'open3'
 require 'tempfile'
 require 'json'
 require 'net/http'
+require 'benchmark'
 
 # Set up audio recording parameters
 format = 'wav'
@@ -35,37 +36,43 @@ def transcribe_audio(audio_file)
   puts "\n=== Starting Transcription Process ==="
   converted_file = Tempfile.new(['converted', '.wav'])
   
-  convert_command = [
-    'ffmpeg',
-    '-y',
-    '-i', audio_file,
-    '-ar', '16000',
-    '-ac', '1',
-    '-c:a', 'pcm_s16le',
-    '-v', 'verbose',
-    converted_file.path
-  ]
-  
-  stdout, stderr, status = Open3.capture3(*convert_command)
-  unless status.success?
-    puts "Error converting audio: #{stderr}"
-    return nil
+  conversion_time = Benchmark.measure do
+    convert_command = [
+      'ffmpeg',
+      '-y',
+      '-i', audio_file,
+      '-ar', '16000',
+      '-ac', '1',
+      '-c:a', 'pcm_s16le',
+      '-v', 'verbose',
+      converted_file.path
+    ]
+    
+    stdout, stderr, status = Open3.capture3(*convert_command)
+    unless status.success?
+      puts "Error converting audio: #{stderr}"
+      return nil
+    end
   end
+  puts "Audio conversion took: #{conversion_time.real.round(2)} seconds"
 
-  whisper_command = [
-    WHISPER_CPP_PATH,
-    "-m", MODEL_PATH,
-    "-l", "en",
-    "-f", converted_file.path
-  ]
-  
-  stdout, stderr, status = Open3.capture3(*whisper_command)
-  if status.success?
-    return stdout.strip
-  else
-    puts "Error transcribing audio: #{stderr}"
-    return nil
+  transcription_time = Benchmark.measure do
+    whisper_command = [
+      WHISPER_CPP_PATH,
+      "-m", MODEL_PATH,
+      "-l", "en",
+      "-f", converted_file.path
+    ]
+    
+    stdout, stderr, status = Open3.capture3(*whisper_command)
+    if status.success?
+      return stdout.strip
+    else
+      puts "Error transcribing audio: #{stderr}"
+      return nil
+    end
   end
+  puts "Transcription took: #{transcription_time.real.round(2)} seconds"
 ensure
   converted_file.close
   converted_file.unlink
@@ -97,17 +104,20 @@ def refine_text_with_ollama(text)
     stream: false
   }.to_json
 
-  response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-    http.request(request)
-  end
+  refinement_time = Benchmark.measure do
+    response = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      http.request(request)
+    end
 
-  if response.is_a?(Net::HTTPSuccess)
-    result = JSON.parse(response.body)
-    return result['response'].strip
-  else
-    puts "Error from Ollama: #{response.body}"
-    return text
+    if response.is_a?(Net::HTTPSuccess)
+      result = JSON.parse(response.body)
+      return result['response'].strip
+    else
+      puts "Error from Ollama: #{response.body}"
+      return text
+    end
   end
+  puts "Text refinement took: #{refinement_time.real.round(2)} seconds"
 rescue => e
   puts "Error calling Ollama: #{e.message}"
   return text
@@ -116,31 +126,34 @@ end
 def type_text(text)
   return if text.nil? || text.empty?
   
-  # Remove timestamps
-  cleaned_text = text.gsub(/\[\d{2}:\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}:\d{2}\.\d{3}\]/, '')
-  
-  # Keep letters, numbers, spaces, basic punctuation (,.!?-) and apostrophes
-  cleaned_text = cleaned_text.gsub(/[^a-zA-Z0-9\s,.!?'\-]/, '')
-                            .strip
-                            .squeeze(" ") # Remove multiple spaces
-  
-  # Refine text with Ollama
-  refined_text = refine_text_with_ollama(cleaned_text)
-  
-  puts "\n=== Debug: Text Processing ==="
-  puts "Original text: #{text}"
-  puts "Cleaned text: #{cleaned_text}"
-  puts "Refined text: #{refined_text}"
-  puts "==========================="
-  
-  # Use osascript to type the refined text
-  apple_script = <<~SCRIPT
-    tell application "System Events"
-      keystroke "#{refined_text.gsub('"', '\"')}"
-    end tell
-  SCRIPT
-  
-  system('osascript', '-e', apple_script)
+  processing_time = Benchmark.measure do
+    # Remove timestamps
+    cleaned_text = text.gsub(/\[\d{2}:\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}:\d{2}\.\d{3}\]/, '')
+    
+    # Keep letters, numbers, spaces, basic punctuation (,.!?-) and apostrophes
+    cleaned_text = cleaned_text.gsub(/[^a-zA-Z0-9\s,.!?'\-]/, '')
+                              .strip
+                              .squeeze(" ") # Remove multiple spaces
+    
+    # Refine text with Ollama
+    refined_text = refine_text_with_ollama(cleaned_text)
+    
+    puts "\n=== Debug: Text Processing ==="
+    puts "Original text: #{text}"
+    puts "Cleaned text: #{cleaned_text}"
+    puts "Refined text: #{refined_text}"
+    puts "==========================="
+    
+    # Use osascript to type the refined text
+    apple_script = <<~SCRIPT
+      tell application "System Events"
+        keystroke "#{refined_text.gsub('"', '\"')}"
+      end tell
+    SCRIPT
+    
+    system('osascript', '-e', apple_script)
+  end
+  puts "Text processing and typing took: #{processing_time.real.round(2)} seconds"
 end
 
 puts "Press F7 to start/stop recording (Ctrl+C to exit)"
@@ -157,9 +170,12 @@ begin
         stop_recording
         puts "\nRecording stopped"
         sleep 0.5
-        transcription = transcribe_audio(temp_file.path)
-        sleep 1
-        type_text(transcription) if transcription
+        total_time = Benchmark.measure do
+          transcription = transcribe_audio(temp_file.path)
+          sleep 1
+          type_text(transcription) if transcription
+        end
+        puts "Total processing time: #{total_time.real.round(2)} seconds"
       else
         @recording = true
         start_recording(temp_file, format)

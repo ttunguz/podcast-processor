@@ -1,0 +1,575 @@
+
+(upbeat music)
+- Hey listeners, welcome back to No Priers.
+This episode marks a special milestone.
+Today is our 100th show.
+Thank you so much for tuning in each week with me and Alad.
+And it's been an exciting last couple of weeks in AI.
+So we have lots to talk about.
+Why don't we start with the news of the hour
+or really the last month at this point and Deepseek?
+Alad, what's your overall reaction?
+- Deepseek is one of those things
+which is both really important in some ways
+and then also kind of what you'd expect would happen
+from a online perspective.
+And I think there was a lot of interest around Deepseek
+for sort of three reasons.
+Number one, it was a state-of-the-art Chinese model
+that suit differently caught up with a number of things
+on the reasoning side and in other areas
+relative to some of the Western models.
+And it was open source.
+Number two, there was a claim that it was done very cheaply.
+So I think the paper talked about like a $5.5 million run.
+It's sort of the end.
+And then lastly, I think there's this broader narrative
+of who's really behind it and what's going on
+and some perception of mystery which may or may not be real.
+And as you kind of walk through each one of those things,
+I think on the first one, you know,
+state-of-the-art open source model
+with some recent capabilities built in,
+they actually did some really nice work.
+You read through the paper,
+there's some novel techniques in RL that they worked on
+and that, you know, I know some other labs
+just started to adapt.
+I think some other labs had also come up
+with some similar things over time,
+but I think it was clear they'd done some real work there.
+On the cost side, everybody that I've at least talked to
+who's savvy to it basically views every sort of final run
+for a model of this type to roughly be in that kind of
+dollar range, you know, $5 to $10 million or something like that.
+And really the question is how much work
+when in behind that before they distill down this smaller model.
+And by sense, is everybody thinks that they were spending
+hundreds of millions of dollars on compute leading up to this?
+And so from that perspective, it wasn't really novel.
+And I think that sort of 20% drop in NVIDIA stock
+and everything else that happened is news
+of this model spread was a bit unwarranted.
+And then the last one, which is sort of speculation
+of what's going on.
+Is it really a hedge fund?
+Is something else happening?
+Like, you know, thoughts a little bit while speculative.
+There's all sorts of reasons that it is exactly
+what they say it is.
+And then there's some circumstances in which you get
+rid of things more broadly.
+So that does kind of my read on it.
+I mean, what do you think?
+Yeah, I think it's interesting sort of the delayed reaction
+to it, but to your point, it's also like what you might expect,
+especially given historical precedent with like GPT 335
+and then chat GPT.
+So like deep-seek V3, like the base model, big AI model,
+pre-trained on a lot of internet data to predict next tokens.
+Like that was out in December, right?
+And NVIDIA stock did not crash based on that use.
+So I think it's just interesting to recognize that like people
+obviously do not just want raw likelihood of next word
+in a streaming way.
+And the work of post-training and making it more useful
+for human feedback or more specific data,
+like high quality examples of prompts and responses
+just like we've seen with the chat models,
+like chat GPT, the instruction fine-tuning
+that made this such a breakthrough experience.
+Like that really mattered.
+And then the, as you said, the like narrative violation,
+release of R1, reasoning model as a parallel model
+to like open AI's O1.
+I think that was also the breakthrough moment
+in terms of people's understanding of this.
+Well, it's also like 20 years
+of China-America technology dominance narrative, right?
+Yes.
+I think it was also kind of this like iced around US
+versus China, you know, worse to, you know,
+the West as far ahead.
+And so, you know, will they ever catch up, et cetera?
+And this kind of showed that Chinese models
+can get there really fast,
+but I do think the cost thing was a huge component of it.
+And again, I think cost may have been, in some sense,
+misstated or misunderstood at least.
+It's not clear to me that like final model runs at scale
+are in this price range,
+but I think what you were saying before I completely
+agree with experimentation tends to be a multiple.
+Like you need to have tooling and data work
+and the experimentation and the pre-training run
+and data generation cost and post-training and inference, right?
+I'm sure I'm missing something here.
+It seems very unlikely that there hasn't been
+a large multiple of $6 million spent in total,
+but I think there was also a narrative violation here
+in that like even at a multiple of $6 million,
+it's not like a multi-billion dollar entry price
+or a stargate sized entry price to go compete.
+And I think that is something that really shook the market.
+That should be expected because if you look at the cost
+of training a GPT4 level model today versus two years ago,
+it's a massive drop in cost.
+And if you look at, for example, inference costs
+for a GPT4 level model, somebody at my team kind of worked out
+and then in the last 18 months we saw a 180X decrease
+in cost per token for equivalent level models, 180X,
+not 180%, 180 times.
+So the cost collapse on these things is already quite clear.
+That's true in terms of training equivalent models.
+That's true in terms of inference.
+And so again, I kind of just do this roughly on trend
+and maybe it's a little bit better
+and they come up with some advanced techniques,
+which they absolutely have,
+but it does feel to me a little bit
+overstated from the perspective of how radical it is.
+I do think it's striking what they did
+and it kind of pushes US open source forward as well,
+which I think will be really important.
+But I think people need to really look
+at the broader picture of these curves
+that are already happening.
+- Do you think it's proof that models are commoditizing?
+The fact that they are so much cheaper
+for a given level of capability over the last 18 months?
+- There's this really great website
+called the artificialanalysis.ai
+that actually allows you to look at the various models
+and their relative performance
+across a variety of different benchmarks.
+And the people who run this
+actually do the benchmarks themselves.
+They'll go ahead and retest their process,
+just take the paper or at face value.
+And you see that for a variety of different areas,
+these models have been growing closer
+and closer in performance.
+And there's different aspects of reasoning and knowledge,
+scientific reasoning and knowledge,
+quantitative reasoning and math,
+coding, multilinguality, cost per token,
+relative to performance.
+And they kind of graph this all out for you.
+And they show you by provider,
+by state of the art model, how do things compare?
+And things are getting closer over time
+versus more dispersed over time.
+So I think in general, the trend line is already
+in this direction where it seems like a lot of people
+have moved closer and closer to clevency
+than they were, say 18 months ago,
+where I think there was enormous disparities.
+And obviously, there are certain areas
+where different models are quite a bit ahead still.
+But on the average, things are starting
+to net out a little bit more.
+And that may change, right?
+Maybe somebody comes out with an amazing breakthrough model
+and they leapfrog everybody else for a while.
+But it does seem like the market
+has gotten closer than it was even just like a year ago.
+- What do you think is the value
+of being the leader at the frontier?
+- I think there's three or four different types of value.
+I mean, one is capturing market share.
+So do you just get more people using you
+and then they kind of stick those areas to it?
+Or they've optimized prompts for other things
+for what you're doing or other tooling?
+I think the second thing is if you're actually using the model
+to help advance the next model,
+then having something is dramatically better
+can make a difference.
+So that could be data labeling.
+It could be artificial data generation.
+It could be other aspects of post-training.
+So I think there's lots of things that you could start doing
+when you have a really good model to help you.
+It could be coding and sort of coding tools.
+It could be all sorts of things.
+You know, there isn't an argument that some people make
+that at some point as you move closer and closer
+to some foreground flip-off,
+that the more data the art, the model is,
+the more it bootstraps into the next model faster
+and then it just accelerates for you and you stay ahead.
+I don't know if that's true or not.
+I'm just saying that's something
+that some people spike it way down sometimes.
+Are there other things that you can think of?
+- No, I think one thing you mentioned,
+maybe if I just extend it is like kind of underpriced
+or like not yet understood enough the market as a theory,
+which is the idea that if you have a like high quality
+enough base model to be doing synthetic data generation
+for like a next generation of model,
+that is actually like a big leveler, right?
+And if you believe that there'll be continued availability
+of like more and more powerful base models
+that that's a big leveler of the playing field
+in terms of having like, you know, self-improving models.
+And so that's an interesting thing
+that people have not really, really talked about.
+There are different ways to have value
+from being at the frontier.
+One of the things that was really interesting to me
+was that like the DeepSeq mobile app
+became like, you know, cop contender
+in the app store for a little bit.
+I think there's one belief that most like cheapest,
+most capable model in the market actually matters
+to consumers and they can tell
+and that will drive consumer adoption.
+And that's what happened.
+And like, that's why you need to have the soda model
+to create these new experiences.
+And there's a competing view, which is just like,
+well, like this whole drama is quite interesting
+and people are trying it as much
+because like they want to see what the leading Chinese AI model
+is like if it's as good as open AI and anthropic and such.
+I definitely believe that leading capability
+can lead to novel product that draws consumer attention.
+But I think in this case, it's more the latter.
+- So other things that kind of happened this past week
+was on the opening eyesight,
+one is they release deep research.
+So speaking of really interesting advancements
+and capabilities and then secondly,
+they announced Stargate, which was, you know,
+a massive series of investments across AI infrastructure
+that was announced with Trump at the White House.
+What are your views on those two things
+that in some sense kind of overlap
+in terms of open AI really advancing different aspects
+of state of the art in terms of what's happening right now?
+- Deep research is a really cool product.
+I encourage everybody to try it.
+The biggest deal to me is that it immediately raises the bar
+for a number of different types of knowledge work
+where I might have hired a median intern or analyst
+before, I mean, we don't do that here,
+but like where one could hire a median analyst or intern,
+I'm gonna immediately comp a bunch of their work
+to what you could do with deep research
+and like your ability to do better with deep research.
+And like the comp is hard.
+I'd say it is a really valuable product.
+I expect other people to adopt this pattern too,
+but I think it's a really novel innovation
+kudos to the team.
+I would say I think it is more useful,
+at least to me upon first blush.
+I'm sure they're working on this in domains.
+I understand less to do surveying
+and to like make sure I have a comprehensive view
+and understand who the experts are versus like in an area
+where I feel like I have a lot of depth.
+I take issue with its implicit authority ranking
+and its ability to determine like what ideas out there,
+what on the web is good and not when it's doing its search
+from at least my initial prompting and experimentation
+in domain.
+I'm like, oh man, like you're really gonna have
+to audit the outputs here.
+It will orient you, but you can't take as given
+like many of the claims here.
+- This is the AI form of Murray Gellman Amnesia,
+which was coined by the guy who wrote Jurassic Park.
+I think our of his name is pronounced Gellman or Gellman.
+Murray Gellman was a physicist who came up with Orcs
+and a few other things.
+He was a Nobel Prize winner and was considered widely brilliant.
+And it was named after him by Michael Kriton,
+which was basically the idea is if you're reading a page
+in the New York Times about something
+you really understand and you're like,
+oh, this is like so dumb and how could they write this?
+And I don't believe it.
+And then you just turn the page and you look at something
+you don't know anything about.
+And you assume that they get it all right.
+Why would you do that?
+You instantly forgot that they got everything
+you know about wrong.
+Why would they get the other thing right?
+Maybe they also got that wrong.
+And so it's just really interesting kind of cognitive
+dissonance around, you know, what is this thing?
+Actually, no, we're not know.
+And you know, if it's getting sort of expertise wrong
+in a domain, I understand, does that mean
+they're also getting it wrong?
+And domains I don't understand, but of course,
+we never apply that as people.
+We just assume, of course, it's right.
+In the domains that we don't understand,
+which I think is really interesting psychologically,
+but it also has real implications
+in terms of how people will use AI in the future in general.
+Because these things will become the definitive source
+of a lot of people's primary information, right?
+It's in some senses really overlapping
+some of the search use cases in really deep ways.
+And you have something where the sources
+traditionally have been less evident.
+I know that people are working on different ways to surface
+but the primary sources are for some of these things.
+But it does have really interesting implications
+for how you think about knowledge in the modern era.
+As you're using AI, and especially as you're using agents,
+so they just go and do stuff and then report back
+and you don't even know what they did.
+So I think it's a very interesting topic.
+- I'm not sure how you solve that from like a UX perspective
+or maybe it's like somewhat unsolvable given.
+It also reflects like what is knowledge on the web.
+- It really does feel like a really dangerous thing
+from sort of a propaganda and censorship perspective.
+And so social networks, we're kind of view one of that
+or maybe certain aspects of the web where V1
+and social networks are V2.
+And this is kind of the big version
+because it's a mix of search.
+It's like if you mix Google with Twitter or with Facebook
+with everything else that you're using
+with all the media outlets, all into one single device
+that you interrogate, that's kind of where these AIs are going.
+And so the ability to control the output of these things
+is extremely powerful but also very dangerous.
+So, that's why I'm kind of happy
+that we're in this multi AI world, multi company world.
+There's a way to offset that
+and that's where Open Source becomes incredibly important
+if you worry about civil liberties.
+What do you think about Stargate?
+- Maybe there's like a couple different implied questions
+in like Stargate, right?
+One is how much does it matter in the race
+like to continue to have access to the largest infrastructure?
+I'm gonna skip the question about like whether or not
+it's real, like there's a lot of money involved here.
+I think another question is how deep are the capital markets
+to continue funding this stuff?
+Maybe a final one is like just the involvement
+of different sovereigns or quasi sovereigns in this.
+Like, I don't know if I have a strong opinion
+on the latter two, the way I think about the dynamic
+of like how much does the capital matter
+and like the implied like how like,
+do we continue to see scaling on pre-training
+be a dominant factor is?
+I think that really as like uncertainty
+rather than risk, right?
+Like if you think about capabilities as emergent
+and people not being sure what sort of algorithmic efficiencies
+counteract like the, you know, improvements
+that will come for more scale
+and the things you can do to generate new data,
+to improve in other vectors
+and what we're gonna get out of test time scaling.
+Like, I just think it's a very hard to predict,
+but I failed to see a scenario
+where anybody trying to build AGI,
+any of the large research labs wouldn't want
+the biggest cluster that they could have if it was free, right?
+Or if the capital was available to them
+and that to me says more than anything else,
+like we are going to get more out of pre-training.
+Is it gonna be as efficient?
+Like, I think that's unlikely.
+We're like a little bit delayed on this
+but we'll just give ourselves a free pass
+given it's episode 100.
+Predictions for 2025.
+- Happy New Year.
+It's February, but it's not gonna say happy new.
+It's like the Larry David episode.
+Yeah, basically there's some statute of limitations
+of how late into the year you can say happy new year.
+We're now a month in, so of course we're way over that.
+We should probably say happy Valentine's Day,
+even though we're like two weeks early.
+- No, a lot.
+You don't like, what was the vibe?
+The vibe for 2025 is you can just do things.
+You can just say happy new year, happy new year a lot.
+- Yeah, I'm gonna do another fuck I want a whole year.
+It's gonna be amazing.
+Yeah, so on 2025, I think it was a few things
+that are likely to happen.
+First, the foundation model market
+should at least partially consolidate.
+And it may be in the sort of an ciliary area,
+so that's image gen, video, voice,
+a few other areas like that.
+Maybe some secondary LLMs or foundation models
+will also consolidate.
+So I do think we're gonna see a lot of consolidation,
+particularly if the FTC is a little bit more friendly
+than the prior regime.
+We'll also see some expansion of sort of new races
+and physics, biology and materials and the like.
+So I think that that will happen
+alongside just general scaling
+of foundation models will continue.
+And that includes reasoning and that includes other things.
+So that's one big area.
+I think the second area is we're gonna see vertical AI
+apps continue to work at scale.
+It's hard to be for legal, back and gone,
+and Sierra for customer success,
+and a variety of folks for CodeGen,
+for medical scribing, et cetera.
+So I think it'll be the era of vertical apps.
+And I think a subset of those will start adding
+more and more agentic things to them.
+You know, some folks like cognition are already doing that.
+Third would be self-driving will get a lot of attention.
+Obviously, Tesla and Waymo are starting
+to see really interesting adoption on full site driving,
+on robo, taxis, et cetera.
+Applied intuition, I think is kind of a dark horse
+to watch more generally on the automotive stock.
+And then I guess fourth is that some consumer things
+I think will get really large-scale experiments happening
+in a way that hasn't happened until now.
+So I'm starting to see consumer startups.
+I'm starting to see more consumer applications
+from incumbents.
+Like I actually think we're gonna see a little bit
+of a resurgence of consumer.
+It may take a while, but I think that'll happen.
+And then lastly, I think there's things
+that we all know will happen.
+And they're really early.
+But we may start to see some interesting behavior
+around agents, maybe some early robot stuff, you know,
+but it'll be one of those things where it's more
+gonna be the glimmer of how this thing will work
+versus the whole thing.
+But I think some of those developments will be very exciting.
+So those would be my five predictions for 25.
+How about you, what do you got?
+- We agree on a number of different things.
+I think the whole like definition for agent is super fuzzy,
+but if we just think of it as like do multi-step tasks
+successfully in some sort of end user environment
+and take action beyond just generate content.
+So like, we're already seeing that.
+I think we're gonna see that more broadly.
+As people figure, you know,
+reasoning models get better and product companies
+or vertically integrated companies,
+they get better at handling failure cases
+and managing state intelligently.
+And so we're already seeing that in security and support
+and SRE.
+And I think that will continue to happen.
+This already happened in CodeGen as you,
+as you were sort of alluding to,
+but I think companies doing co-pilot products
+will naturally extend to agents.
+They'll just try to do more, right, and take more on.
+I think one of the inputs to broader consumer experimentation
+as you describe is just like way more capable,
+like small low latency models.
+I don't think we have like any monotonic movement
+toward compute at the edge.
+Like I think when people are like edge compute
+for the sake of edge compute, I'm like nobody cared, right?
+But if you can make that transparent to the user
+and it's free, then I think your ability to ship things
+that are free is obviously unlocked and I think that's cool.
+- This also can be a lot of web apps, you know?
+So I don't think it has to necessarily be on device.
+Consumer products, undoubtedly at your point,
+there won't be some, but I also just think
+it's just gonna be things running on the internet
+that just become part of your application,
+stack on your browser.
+That will do really interesting over time.
+- Yeah, well stuff in the browser can also use the GPU,
+but I just think that the ability to run locally
+might be a big unlock for them.
+I don't know if you and I disagree on timeline.
+I think we're gonna see technical proof of breakthroughs
+in robotics and in generalization this year,
+though not deployments.
+I think one thing that's like maybe missed price
+just because it's very new is like people
+don't really know how to think about reasoning.
+I would claim that one thing is as much improvement
+in reliability as complexity of task.
+One like mistake that entrepreneurs and investors make
+that I have made is like you look at something
+and it's not working and the issue is a technical issue
+and then you assume it's not gonna work,
+but I think in AI you have to keep looking again and again
+because stuff can begin to work really quickly.
+Maybe one last one that I've seen small examples of
+with our embed program and also broadly in the portfolio
+is because you have this diffusion of innovation,
+not just with customers, but with the types of entrepreneurs
+that go take something on and we're beyond just the tip
+of the spear now and more and more people who are like,
+I can use stuff with AI.
+I think we're gonna get more smart data generation strategies
+for different domains where you need like domain knowledge
+as well as understanding of AI.
+So examples here could be like biology and material science.
+Like you needed the set of scientists who are capable
+of innovating on data capture, which might literally be
+like a biotech innovation versus a computer science innovation
+to understand the potential of deep learning
+and that the bottleneck was data
+and then the type of data you were like looking for.
+And I think that is happening.
+And so I think that's really exciting.
+- This may be the year where we see something really interesting
+happen on the health side as an example
+where you need specialized data, but it's not as hard
+as, you know, the atomic world of, you know,
+bio-molecular design or something.
+Hey, they always should talk about this facial hair.
+- We can't, should I bring it back?
+- I liked the beard.
+I liked the beard and hat era.
+- Oh, interesting.
+Yeah, maybe I should go back to that.
+The last question for today, we're on episode 100.
+What do you think the state of the world will be relative to AI
+when we're at episode 200?
+- I don't think we're part of this anymore.
+I think it's just like two agents going back and forth,
+teaching us stuff and like you and I are no longer the hosts
+or the choosers of topics were just like nodes
+into the network.
+- Will they be as good looking as us?
+- Yeah, and they'll be better computers.
+We'll see, still like some art more than some mid-journey art
+of those and beautiful things on there.
+- Okay, episode 200, that's like what?
+- Well, it's almost two years, it's weekly, so.
+- I think we're either in the RHLF farm
+or we're like sitting on a beach in Ibiza post abundance.
+That's a prediction, you heard it here first.
+- Well, hopefully I'll see you at episode 200 or Ibiza.
+I think that their alternative is not as great.
+- Okay, and all the listeners too.
+Thanks guys.
+- All right, thanks everybody.
+- Find us on Twitter at NoPryersPod.
+Subscribe to our YouTube channel if you want to see our faces.
+Follow the show on Apple podcasts, Spotify,
+or wherever you listen.
+That way you get a new episode every week.
+And sign up for emails or find transcripts
+for every episode at no-priers.com.
+(upbeat music)
+

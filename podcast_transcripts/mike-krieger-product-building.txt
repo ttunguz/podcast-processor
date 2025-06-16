@@ -1,0 +1,1317 @@
+--- METADATA START ---
+Show: Generative Now | AI Builders on Creating the Future
+Episode: Mike Krieger: Product Building…
+Host: Michael McNano
+GUESTS: Mike Krieger 
+Guests: Mike Krieger
+Source URL: https://podcasts.apple.com/us/podcast/mike-krieger-product-building-lessons-from-instagram/id1709773028?i=1000710406242
+--- METADATA END ---
+
+1
+Hey everyone, welcome to Generative Now.
+2
+I am Michael McNano, a partner at Lightspeed, and this week we're revisiting a conversation with the one and only Mike Krieger, Anthropic's chief product officer and former co-founder and CTO of Instagram.
+3
+Mike has one of the most impressive resumes imaginable in tech in Silicon Valley.
+4
+And so this was an awesome conversation.
+5
+Mike and I talked about his journey to Anthropic, the lessons he's taken away with him from Instagram, and how he thinks about differentiating Claude from their competitors.
+6
+Here's the conversation.
+7
+Hey, Mike.
+8
+Hey, good to see you.
+9
+Good to see you.
+10
+Thank you so much for doing this.
+11
+Thanks so much for having me.
+12
+Man, I have like so many things I want to ask you.
+13
+And we have limited time.
+14
+So I'm sure I'm just going to like rapid fire at you.
+15
+The biggest question I have had since I learned that you were joining Anthropic was: how did you go from building one of the most beloved consumer apps in the history of technology to building at a place like Anthropic, so focused on research and technology and building sort of state-of-the-art AI models?
+16
+It was such an inspiring and surprising move.
+17
+I would love to just start with the story of the transition.
+18
+So I lasted two months in semi-retirement, which was not as long as I lasted.
+19
+Between Instagram, the second company I did was called Artifact, a year and a half off this time around.
+20
+I think the difference was Instagram, I kind of felt complete at the end of that journey and needed some rest.
+21
+It was like a very intense eight years.
+22
+The artifact was like, you know, the product was really good.
+23
+We didn't hit product market fits.
+24
+I was like champing up the bit.
+25
+Like, I want to get back in the seat and I want another swing.
+26
+But I'm a builder.
+27
+I love building.
+28
+I love building both products and teams.
+29
+And so as that was ramping up and I was thinking about what was next, I realized like, I mean, there's things I absolutely love about doing that zero-to-one startup journey, this huge sort of uncertainty bar.
+30
+We actually did that on Instagram, didn't really get to do that article.
+31
+I think we peeked at 13 people.
+32
+And I realized I just missed being in that sort of larger, you know, multiple teams doing multiple things at the same time, like feeling like you've got all these parallel threads happening.
+33
+And I started seeking out where will I get to do, and I thought it might be impossible, where do I get to do zero-to-one product building, but in the context of something that is more of like an existing team and a company that's already got some momentum and some energy going and a culture that I'm aligned with.
+34
+And, you know, the kind of two options that kind of leads to is you go start a brand new initiative at a much larger company, which has its benefits, but then you always have to ask the question like, why hasn't this existed before?
+35
+You know, like, why is this company finally investing in this now?
+36
+And, you know, their trade-offs.
+37
+Or, you know, in Anthropic's case, which was the company existed, the research team was already world class and product was still really early.
+38
+So there's a really good confluence of what I wanted to do next.
+39
+I wanted to get closer to AI, the kind of company I wanted to be at, which is one that had some momentum, but was still really nascent on product.
+40
+And then just the need from Anthropic, like they've been looking for a head of product and it kind of all coalesced really beautifully.
+41
+Like, you know, it was meant to be.
+42
+When I think about a company like Anthropic, especially as someone who has also built product and led product strategy, I feel like it must be challenging to build a product strategy around just constant model and research innovations, right?
+43
+Like you're working very, very closely with the founders who are researchers, and you're building strategy based on whatever is state of the art, whatever is cutting edge, which I imagine was probably much different than building, say, an Instagram or an artifact, where I think probably in real time, you're sort of inventing, you know, product dynamics and new social experiences and new UX paradigms.
+44
+It feels like a different type of innovation.
+45
+Just talk us through some of how that strategy comes together working hand in hand with research.
+46
+The closest parallel, I think, in the Instagram days was like the yearly drop of things that would happen at Google I/O or WWDC.
+47
+We're like, okay, this has been delivered to me, you know, from Cooper Tino, and then I get to go figure out if there's some product to be built around that.
+48
+This is like that, but on a monthly basis, and it's inside the building.
+49
+So it has that similar sort of thing in the WWDC case, you kind of plan around those moments, right?
+50
+There's going to be a new phone or there's a new OS.
+51
+Here it's on unfamiliar and unpredictable timelines in both directions, right?
+52
+Sometimes you say, Great, I'm going to have my beautifully lined up, you know, three months, like three months, and something on research hits sooner than you expected.
+53
+And, you know, computer use, for example, for us, like it was October or November, as we were getting ready to launch the model refresh for Sonnet, we realized computer use was actually at the point where we wanted to at least put it in the API as a beta.
+54
+And we went from, yeah, that's probably like early next year to, yeah, let's actually get this out once it gets through all the safety testing in like three weeks.
+55
+So, you know, that sort of can pull forward, but also it's research.
+56
+So it also could take longer, right?
+57
+So it's a lot of sort of dynamic reprioritization.
+58
+And I like to joke with the product team that, like, if we froze our researchers, we shouldn't, we love them and they shouldn't be cryogenically frozen, which we did.
+59
+Like, we should still have like a year of roadmap ahead.
+60
+Like, I think the models still have a tremendous amount of sort of juice left in them, even for the current generation.
+61
+And so, what it's meant is.
+62
+And the idea there is if research hits sooner than expected or on the timeline we expect, we're not waiting for them and it's starting the product process.
+63
+At that point, you're you know, months behind where you could be.
+64
+Then we have like model-dependent or model-adjacent features that are either in the current model or upcoming features, but still require a lot of research-product collaboration.
+65
+Something like artifacts, which we launched last year, you know, ongoing improvements to that often require some fine-tuning of the model.
+66
+So, you got to stay close to research and product.
+67
+And then there's stuff that's just like good product work that is like probably using the model in some way, but not requiring some model lead or some model like customization.
+68
+And I've learned over the last year, here's having that portfolio of those is healthy because at any given moment, you'll either need a spike on one that you didn't expect to, or if something's taking a little bit longer, great, you could put that time into product polish or rounding out our mobile features or doing some other work that is a little bit outside of the model.
+69
+So, would you say like the biggest steps forward in the product often come from a certain product vision that then drives the research work?
+70
+Or is it the research, you know, there's some breakthrough, and then you and the team are like, hmm, what's something amazing we can do with this?
+71
+Oh, it can write code, let's turn this into artifacts.
+72
+In what direction does it normally go for the biggest product innovations?
+73
+The way I would put it is the sort of model gets you to like another sort of like level of capabilities, and then it's a loop of what product ideas do you have, and can you fine-tune them into the model?
+74
+So, I'll use an example of like Agentic capabilities, um, like in Cloud Curve, Sonnet, especially the refresh, which unlocked a bunch of coding startups doing a lot of interesting work around Agentic coding and code editing.
+75
+Um, and then, you know, it's sort of these step changes that happen probably at model release time, and then you can do some incremental work, sometimes even in just prompting examples, but often in customizing the model as well.
+76
+And so, it ends up going in both directions.
+77
+But the research team has more of, you know, sort of a three, six, nine-month roadmap that they're trying to deliver on.
+78
+And then we can do tight loops on top of each of those.
+79
+Speaking of tight loops, another thing I was thinking about with building product at a place like Anthropic is: I have to imagine, given all of the safety considerations I'm sure you all are constantly making, it's probably really hard to do the type of rapid iteration that products and companies like Instagram and Meta were famous for.
+80
+Like, ship fast, move fast, break things.
+81
+Like, you know, Meta is famously testing, you know, however many different variants all at the same time.
+82
+I guess with the constraints of safety, that's got to be really, really hard to do.
+83
+Is that right?
+84
+The way that we think about it is there's kind of two ways in which I think that ends up being plays out in the day-to-day.
+85
+Like, one is for like model releases.
+86
+You know that there's like a safety sort of testing and responsible scaling kind of evaluation that happens there.
+87
+And that's, you know, when you just think about timelines, you know that model releases anyway don't end up happening so quickly that that ends up being like the difference between being able to do like one or four in a month.
+88
+You know, they're more deliberate anyway.
+89
+And so there's that component there.
+90
+Then there's the piece that I think is also really interesting around the relationship people have with the model.
+91
+And what I mean by that, and this goes into the testing question, you know, because in some ways you can imagine, well, maybe we train like five model variants and we A-B-test them and we do some of that.
+92
+But we also find that people become very attached and like how it talks to them.
+93
+And so people will catch, I love this, all these, you know, sort of cloud-related Reddits.
+94
+And you go on Reddit and people are definitely like, Are they testing a new model?
+95
+And sometimes we are, sometimes they're not, and people are just like looking for changes when they don't exist.
+96
+But it means we have like, we have to take an extra level of care in terms of like how we treat experimentation and the sort of like commitment people have, a relationship people have with some of these things.
+97
+The other piece is, you know, versus an Instagram, where people, you know, some people rely on it for business, but the vast majority are using it for more of like a end and consumption and entertainment use case.
+98
+You know, here people are getting like work done.
+99
+And like if you like change too much about the model or even the UI from day from one day to the next, and it totally breaks their workflow, you've gotten in their way.
+100
+And so I'm still trying to find that balance between, you know, at Instagram at any given point, we probably had like 50, you know, different A-B tests to run, right?
+101
+And then you get into that combinatorial thing of like, have you sliced the possible universe of users into like enough slices where you even though you're not intersecting different treatments with the like extreme of like, hey, we ship software once a year and we don't want to mess with people's workflow.
+102
+And the answer is definitely neither extreme.
+103
+And maybe there's more UI experimentation we can do on the scrap editoration.
+104
+And then maybe model release has form a nice cadence of, right, this is a time where we're like getting people to see that there is a different way that they might want to get work done or we're okay disrupting work or at least like offering an upgrade about how we might do things, but know that there's a reason and there's like a name that we're putting around those things.
+105
+But you're identifying something that is definitely true, which is the nature of experimentation looks quite different here.
+106
+Yeah, it has to be.
+107
+And that's surprising, but also, I guess, not so surprising that your users are noticing even the slightest differences in the model.
+108
+It makes sense.
+109
+These models, they seem to have different flavors in some sense.
+110
+One of the things I've been thinking about, especially as it relates to models coming out of different labs, and we'll talk about things like DeepSeek.
+111
+It feels like the pace of model release and leapfrogging, it's such that it's moving so quickly.
+112
+And so I guess my question for you is, do you think we end up in a place where there actually is not a lot of difference between all the different models in the end?
+113
+Or do you think the things that make something like Claude unique or a ChatGPT unique will remain?
+114
+And that will become a key differentiator between the models.
+115
+Yeah.
+116
+And I think it's probably worth talking about like models and products.
+117
+We had Instagram's kind of most interesting kind of like competition with Snapchat at the time.
+118
+For sure.
+119
+And people would ask, like, well, like, you know, you took, you know, this stories approach that they took and made it more Instagram.
+120
+You put it in Instagram.
+121
+Then things went the other way as well.
+122
+And I had this like non-mathematical formula.
+123
+I always joke by non-mathematical formulas here as like the non-researcher in the room.
+124
+Like, what makes a social network?
+125
+And to me, it was like formats.
+126
+First we had fee, and then we had, you know, stories, eventually we had reels.
+127
+Now they have like, you know, shopping.
+128
+And then there's audience, who's actually, you know, visiting your network.
+129
+And then there's vibe, which like I realize is a fuzzy term, but is also really important.
+130
+And so like, I would compare like us and Snapchat where formats were similar in a lot of places, right?
+131
+The audience, maybe they skewed younger, but over in the fullness of time, there was quite a bit of overlap.
+132
+And the same people would actually use both.
+133
+But the vibes could not be more different.
+134
+And then with stories, we maybe took that a little bit, but you took the stories from Instagram and Snapchat, and they still felt quite different, right?
+135
+I think there's a similar thing, and I haven't formalized my non-mathematical formula yet for LLM and AI-related applications, but I think there's something similar at play where I see people go on X and talk about how Claude is their therapist or Claude is their like, you know, trusted friend, or like they delegate decisions to Claude because it's like a trusted person, right?
+136
+Our friend was having a medical situation, and Claude eventually, like, all caps was like, go to the hospital now, like, shut up, leave.
+137
+And like, Claude just has like a bit more personality perhaps than some of the other models.
+138
+And so I think that'll continue to be really important, which is even as, you know, we'll all co-evolve what the right UI is around these things.
+139
+I think, you know, like artifacts, ChatGPT is Canvas.
+140
+I think we'll both continue to evolve it.
+141
+Like, we'll see what Gemini does.
+142
+I think there's lots of Google teams experimenting with different ways in which they could use these models in different product applications.
+143
+You see a DeepSeek come in and like have a different take on whether you show the reasoning versus not.
+144
+Like these, these things will all happen.
+145
+They're not absolutely different.
+146
+And sometimes the team here is like, well, like, anything about differentiation, like any kind of product differentiation in the short term is fairly short-lived because you're going to see, you know, different ideas get borrowed.
+147
+I think that that's fine and actually probably healthy for the ecosystem.
+148
+I think what is different over time is probably two things in this case.
+149
+One is actually vibe, which is like, what does it feel like to use a Claude versus a Gemini versus the ChatGPT versus the DeepSeek?
+150
+That's going to, I think, those things I think should probably evolve to be quite different over time because the people that gravitate to one or the other will like want more of that.
+151
+And I think that will naturally lead the product.
+152
+So, right now, you know, Cloud 25 Sonnet and coding is like one really clear sweet spot.
+153
+Cloud and creative writing is the other one that we hear a lot, where like the model does a good job of producing alpha that way, or even just content creation.
+154
+I think over time, it's likely that those differences become more acute rather than less acute.
+155
+And even if on the eval side of things, you get a lot more parity where we're all chasing some, you know, similar evals.
+156
+I see the disconnection between what the evals are measuring and what's valuable to individuals or even companies like get wider over time until maybe we have some different way of evaluating these models.
+157
+Evals are super important for the training parts.
+158
+Don't get me wrong.
+159
+They'll continue to be really important, but they're not the full picture, is what I've experienced on the product side.
+160
+So you're saying customers more and more will come to associate certain products and models with certain capabilities.
+161
+Like, oh, Claude is great at programming and ChatGPT is not.
+162
+I'm making that up as an example.
+163
+You think that actually becomes more pronounced over time?
+164
+I think that's what will happen.
+165
+And this is how I feel when I use this versus the other.
+166
+I want this experience versus the other one, too.
+167
+Right.
+168
+The vibes, the vibes.
+169
+That's super interesting.
+170
+I mean, I do feel like you said formats are easily, you know, ported over to different products.
+171
+But I do feel like Anthropic has done a really, really good job sort of at the presentation kind of application layer.
+172
+I feel like you have, in many ways, out-innovated or at least outpaced in terms of innovation at the product layer, things like artifacts, projects, computer use.
+173
+How important is that to you and your strategy?
+174
+And I guess in the context of what you just said, will that remain an important part of your strategy?
+175
+The way I see it is: are you unlocking something novel that somebody can do?
+176
+This journey is 1% finished.
+177
+I think we're even less than that in terms of how these AI products kind of manifest.
+178
+We're so early.
+179
+And so, can you build these sort of product primitives that are going to unlock some novel behavior?
+180
+I'll give you like a specific example.
+181
+We have projects, and everything you can do with projects, you could cobble together either with just regular chats or you're doing your own thing.
+182
+But the fact that we have this container for it means that we hear from people that say, Hey, I have a project for all my health records.
+183
+It's like one place where I know they're going to put like every single thing.
+184
+I definitely do too.
+185
+Like, I talk to Claude all the time about, hey, I've got this new blood mortgage.
+186
+Like, what did it posit in me?
+187
+I was having low blood pressure for a while, and I was like tracking all that.
+188
+It gives people like sort of like a container and a shortcut for how to use it.
+189
+A lot of what we're thinking about over the next couple of months in the product is what are the sort of surfaces or capabilities we unlock that help people like take what is a expert use case or something that if you absolutely know how to prompt it and get the right data in, it's great.
+190
+And then just get Claude to do it for more people so that it can unlock value for others.
+191
+And like, that's like a lot of what I think we need to be doing on product overall, not even just that anthropologic, like industry-wide around like lowering that barrier.
+192
+And, like, the state of the art on lowering that barrier mid-last year was like suggestion, you know, chips around, like, ask them all about this things.
+193
+But even that, without the actual right context, you're actually not going to get a satisfying answer.
+194
+You're going to get some like fun entertainment use case, like, tell me a joke or write me a poem.
+195
+Sure, that was great.
+196
+And like, the beginning of 2024.
+197
+Now, I think it's much more like, and it's a challenge because this is like not an instant thing, but you know, is it connected to the right data sources?
+198
+Does it have the right context about you?
+199
+Do you know how to then use it?
+200
+Like, is it producing useful work?
+201
+Those things become much more important.
+202
+And we build products in service of that versus just as additional ideas on top of Cloud AI.
+203
+Shifting gears a little bit, arguably one of the most successful ads-based products ever with Instagram.
+204
+It feels like something that is happening with the internet and sort of the business model of ads and the internet up until this point is it's shifting as a result of AI and agents.
+205
+Is this something you all think about, especially you again, given your history and given your background?
+206
+Like how do consumer products, especially those that are ads-based, start to evolve when more and more non-human agents are starting to access the world on the internet?
+207
+Yeah, I think you look at it in a couple of different ways.
+208
+In one way, if we deliver on the promise of these tools collectively as an industry, it should ideally save people quite a bit of time that is, you know, maybe can be spent on like a more entertainment use cases.
+209
+So like ads and like that sort of like set of media might actually become more important because maybe we have more free time.
+210
+We'll see how that ends up working out.
+211
+Then there's the other piece, which is how does the web evolve?
+212
+Our primary user, if not the primary user of the web, ends up being like more automated agent-wise.
+213
+And we started seeing this with Artifacts.
+214
+Artifact was an AI-powered news recommendation app on iOS and Android.
+215
+And I think what we're experiencing there was like peak, like overly, you know, and nobody's individual fault, just like the way things have approached.
+216
+But like the mobile web is just, you know, you land on a website and it's like full-screen video ad, pop-up, subscribe to a newsletter.
+217
+And ultimately, like, interesting question, like, why didn't Artifact work?
+218
+Like, I have lots of thoughts on it.
+219
+One of it, the kind of like content behind the click was not very easy to consume or good.
+220
+There's systematic reasons why that was the case.
+221
+You know, I think local news is really hollowed out.
+222
+I don't think anybody at these local news decks wakes up and is like, how do I put more ads in here?
+223
+Like, we've got to do it to stay afloat.
+224
+So I absolutely get how we got there.
+225
+But then I think the next leap is like from different sites that can browse the web and summarize them, et cetera.
+226
+Like you're not even seeing that content.
+227
+And so, regardless of whether it's agents or whether it's perplexity going and doing summarization or any non-release search places, we're going to have to see a shift in business models for these sites anyway.
+228
+We're going to have to see a shift from this relationship between a writer, publisher, and an individual around what does it mean to have, even if it's not a pure agent, it might be like a short-term browser.
+229
+And I don't think anybody has the answer there yet, but also a world where we're so detached from the writers by the content, I think, is like a not great world.
+230
+And so how can AI products actually be better conduits?
+231
+I tweeted about this email product called Quora built by the folks at Every.
+232
+And I get newsletters in my inbox and it does summarize them, but I actually find it really valuable because before, you know, you get like, you know, no opinion, the latest no opinion.
+233
+You're like, okay, there's a subject line in the first line.
+234
+Like, do I want to read this?
+235
+Like, I don't know, I've got a lot going on.
+236
+But actually, now I get like a paragraph of what it's about because it's like summarized around the rest of my email.
+237
+And I'm finding I'm reading more because I'm like, oh, that actually sounds great.
+238
+I actually am in a click through.
+239
+I'm confident that like it's going to probably be worth my time because it has a lot of things that I'm interested in.
+240
+So there is a way in which it's symbiotic.
+241
+It'd be foolish to believe it's like purely going to be additive in terms of like read time and clicks, but there's a way it can be more symbiotic.
+242
+Do you think that publishers on the web, whether, you know, writers, publishers, or really just anyone that's hosting a website or a service on the web, like, do you think there's going to be resistance to agents or computer use going out there and browsing on behalf of users, either because, you know, whatever, it's going to break their business models or, you know, it's going to overload them with traffic.
+243
+Like, do you think they're going to try to fight that maybe at the CDN layer?
+244
+The tactics we'll have to sort of see and see how that evolves.
+245
+I think the relationship one is really the question I come back to, which is like, you know, I read The Verge a bunch and I saw that I started subscribing to their sort of monthly subscription.
+246
+And like the impetus for it was like, I wanted to read one of their newsletters.
+247
+But now it's like, I feel like I have a different relationship to that site where I read Defector for sports news, right?
+248
+And so I think there is that evolution happening.
+249
+And while that's happening, maybe there's, you know, resistance on some sides, innovation in some other places, you know, a different sort of approach to monetization, a different approach to meeting people where they are.
+250
+Email's actually been an interesting one where like that's where a lot of content gets consumed now.
+251
+We'll be in shifting stands for sure over the next couple of years.
+252
+Speaking of this topic and Artifact, you know, I know Artifact was somewhat recent.
+253
+I think it was only, you know, you started only maybe two years ago, but it feels like the world was completely different.
+254
+Do you think you would have done things differently if that company had been started today?
+255
+Like, do you have, are there far more capabilities today through AI that maybe would have made that product and business work as you originally envisioned?
+256
+Yeah, and it's interesting just watching how quickly things evolve.
+257
+I think the final version of Artifact, we eventually sold it to Yahoo, but if you take like the version that we had right before we shut down, had started incorporating a lot more of what had become available.
+258
+So we could do summarization, we could do clickbait rewriting, we could add AI in hopefully value add and user sort of focused ways.
+259
+But you're doing it off a base that doesn't assume that, right?
+260
+So the product has to evolve.
+261
+I was playing with particle.news, which is like another take on AI Power News.
+262
+And they feel like if you had started Artifact in 2024 rather than in 2021, like we did, where would you start?
+263
+Well, you know, you'd have a lot more around AI aggregation and you'd have even the ability for AI to reach you like the top news in the day.
+264
+Like you would approach the product in a different way.
+265
+But I think the really fascinating question is like, is that going to be true on like a yearly basis?
+266
+Like a year from now, you're like, oh, that was like great for 2024 and maybe it continued to evolve.
+267
+But actually now we've got this, you know, this different approach.
+268
+It's just the capabilities that you have access to that previously might have taken you like years to build out as a startup might not have even been achievable without a much larger research team or a much larger data set are now available and like they get cheaper by the month it feels like so like how do you like think about that in product and and be willing to like actually question a lot of fundamental assumptions about how a product works like i think i would have been interesting to do with artifact was like in the last few months like actually like pare it down completely actually that's great because at this point we'd ingested like three years of news data we had like a really rich corpus um we had one prototype that was fun which was all right like what if it was more around like conversing with that knowledge base and asking questions and maybe some of the other canned questions and some of them aren't and it was fun it was very different super fascinating so artifact obviously consumer product instagram obviously massive massive consumer product we talked a little bit about product strategy inside of anthropic but but overall like what's it like for you to be building inside a product that I think in many ways is now catering to enterprise customers?
+269
+Completely different type of customer than, say, Instagram in some respects.
+270
+What has that been like?
+271
+Yeah, it's interesting to kind of build both at once because, you know, there's plenty of people that go to Cloud AI and sign up for free and a pro subscription.
+272
+You learn from them in some ways.
+273
+But what's really interesting is our enterprise customers, because two things are happening simultaneously.
+274
+Like one, it's often not the individuals at a company that are making the decision about which LLM, like enterprise software are they adopting.
+275
+And instead, they might get CIO or CTO buys it for them.
+276
+So the buyer is a bit different.
+277
+But then what's really interesting is actually the opportunity for feedback and engagement is much greater because we're really hopefully mutually invested in the success of that sort of partnership.
+278
+And so in some ways, we're getting richer, like actually much richer feedback on the ground from some of our enterprise deployments.
+279
+And it's great because then you could send our applied AI team and go on your troubleshooter, go learn from those things.
+280
+And like Instagram, the science team, and they could try to find the, in aggregate, what's happening across all of the United States, which is an interesting societal question, but it's much harder to get at that texture of the individual product.
+281
+And so that was a difference in what I expected.
+282
+I was like, ah, like one of the things that's going to be hard with enterprise is like you're going to lose that touch of the customer because it's going to be like, no, the buyer is different.
+283
+Actually, it's been quite different.
+284
+We've been able to lean in there.
+285
+The other piece, too, is you start from a different place of, all right, your company's paying for this for you.
+286
+At least it will be, you know, while they're doing this, you know, either trial or like this engagement.
+287
+How do you prove value to people there?
+288
+And so that it's actually become successful.
+289
+Because the worst thing would be like a year in, be like, oh, I guess we subscribe to Cloud for Enterprise.
+290
+And not that many people are using.
+291
+And so shifting the balance of what user education looks like and what, it's a term I didn't even know before I really started here, which is like enablement.
+292
+You know, there's a lot of like sales and enterprise terms that I've like ramped up quickly on or I'd heard tangentially.
+293
+With principles of the same, you want to build things that are useful to people and then learn from what they're using and then iterate on that.
+294
+But the like approach is a bit different.
+295
+Do you think about products and the product strategy?
+296
+Do you separate it by sort of consumer and enterprise?
+297
+Or are you sort of just building stuff and it's like, oh, let's now build the enterprise version of this or maybe vice versa?
+298
+How does that all work?
+299
+It's flowed the other way in a couple of ways that I think is interesting as well.
+300
+Like as an example, like we enterprise first, we built out Google Drive and Google Suite integration.
+301
+We have GitHub integration.
+302
+And those are great starting points for enterprise because hopefully the admin can configure that once and then everybody at the company has access to it.
+303
+There's like some onboarding that you can do there.
+304
+But ideally, like individuals can use GitHub just as much or connect their Gmail or connect their Google Drive.
+305
+And so it's flown sort of in both ways where some more like general purpose features mentioned projects and artifacts, like those started like fairly general purpose and then might have some customization for the enterprise.
+306
+But then also like these like knowledge integrations, I think are ultimately like how we succeed is like, can we connect cloud to the knowledge at your company and actually help you do real work?
+307
+That's a company problem.
+308
+That's an enterprise problem.
+309
+But like individuals are trying to do that as well just as much.
+310
+And so you'll see that cross-pollination for sure in the product.
+311
+And an active product strategy question I have and the team brings up is, you know, right now there's manifestations of the similar product, but maybe with different feature sets.
+312
+Like, do they drift further apart over time or do they stay fairly similar?
+313
+And, you know, there's differences of opinion internally.
+314
+I think from the coming like six months, they stay pretty similar.
+315
+I think where they might start to diverge is in the kinds of work you might delegate to cloud over time, right?
+316
+Where if you're actually automating parts of your workflow, we think a lot about like how cloud can be a virtual collaborator for you.
+317
+That looks quite different, I think, for somebody working in marketing or somebody, you know, working as an engineer versus somebody using cloud for their personal life.
+318
+Yeah, totally.
+319
+I mean, even if you think about when I've tested computer use or you know, some of the other products that are doing this, like the ideas of things I want to test it for always jump to more productivity or work-oriented stuff.
+320
+Like, it feels like the things I want to do as a consumer are things I actually want to invest my time in.
+321
+Yeah, it feels like in work, I have all this stuff I want to delegate.
+322
+Yeah, so yeah, it feels like that would be a surface area that would get far more investment in the enterprise.
+323
+Yeah, I think that that's right.
+324
+And I think there's also sort of a modality to it as well, where you're like, you're doing work to probably have an organized task list.
+325
+I try to do it in my personal life, I don't always succeed.
+326
+I do a better job of it at work.
+327
+It kind of lends itself more to like, all right, these are the kinds of things I want to carve off or like help me organize my thoughts on this.
+328
+I actually think there's a lot that can be done in people's personal lives as well.
+329
+Like, we have two kids, they're going to two different schools because they're different ages.
+330
+And I was talking to a founder of a successful productivity company that uses cloud a bunch.
+331
+And he's like, he's like, let me share a project for you.
+332
+I've got this whole workflow that ingests, we know kids go to the same school, ingest all these emails because emails are very, very dense, and like actually produces an action list out of it.
+333
+I'm like, that's really smart.
+334
+I should use AI for more things for my personal life just around like family life management as well.
+335
+That's fascinating.
+336
+By the way, I'm in the same situation as you.
+337
+Two young kids, two different schools, two different like school newsletters and all this stuff.
+338
+It's surprising.
+339
+We haven't really yet entered that moment where products easily integrate with our personal.
+340
+But yeah, that level of productivity hasn't really crept into personal and home life yet.
+341
+I imagine that's coming soon.
+342
+In October or November, we open sourced the model of context protocol, which is our take on how do you bring data into LLMs and how do you get data out of them.
+343
+And we made it open source.
+344
+Do we want to just sort of foster an open ecosystem people building on top of it?
+345
+So you can use it with Cloud.
+346
+You can also use it with several editors that have integrated MCP as well.
+347
+Like Block just open sourced their Gentic coding tool called Goose and also has an MCP component built in.
+348
+So it's gotten adoption even beyond Cloud.
+349
+What's really cool is seeing what are the MCP servers that people build.
+350
+So if you get cloud for desktop, you can write your and integrate your own MCP servers.
+351
+And if you look at the sort of things that people have built, it's things like Apple Notes.
+352
+So being able to talk to your Apple Notes using Cloud, like Google Calendar, like these things are actually personal.
+353
+Even if they're productivity-oriented, they're still like, they're pretty personal in nature.
+354
+And I think that's pretty neat.
+355
+And like, especially as these models, like, we think a lot about these models coding, and maybe in the first instance, people think, oh, great, it's going to help software engineers write code, but actually, it's going to help everybody solve problems that can be uniquely solved by writing code, right?
+356
+And so that might be, you know, today writing an MCP server or like, that's a pretty technical term, but like helping you connect to something that you already use, like Apple reminders or Apple Notes, right?
+357
+But in the future, it could also be, hey, I need to do some data analysis on this, you know, things I collected.
+358
+Cloud can actually write code to do that data analysis and give you that response.
+359
+And that is cloud coding, even if you're not producing software.
+360
+Well, yeah, that's what I was going to say.
+361
+Like, yeah, these things sound technical and challenging for your average person today, but also creating software and creating products is going to get far easier as a result of cloud or AI writing code for you.
+362
+And I haven't yet been able to fully wrap my head around like what shape and what format that ends up coming in.
+363
+Like at what point does somebody who's not technical at all start creating these workflows out of software using AI?
+364
+I'm really fascinated to see what that looks like and where that all goes.
+365
+I mean, is that something you're all thinking about?
+366
+Like, for sure.
+367
+What does Claude do when consumer behavior intersects with software creation?
+368
+Exactly.
+369
+Or what, you know, one, like, what problem we can solve for people.
+370
+And then two, how do you help people sort of take an idea in their head and express it visually?
+371
+I think the thing that was really fun over the holiday break is a couple of people on our go-to-market team, so not engineers, like people without a coding background, started using things like vZero by Result to put in some ideas they had for Claude.
+372
+And they came back from their break and they were like, hey, I've never written a line of code in my life, but I actually built a fully functioning web application.
+373
+And I can talk about like what Cloud could do in this situation.
+374
+I think that's really interesting, right?
+375
+I think the ability for AI, not just like LLMs, but also more of these media creation ones as well, to help take ideas in people's head and then bring them to life so that they can then either become sparks for further like human creativity or something else downstream.
+376
+I think is like a very cool flywheel.
+377
+Speaking of that, how has AI assisted you in your role as CPO?
+378
+I mean, obviously you're dog fooding Claude all day long, but maybe in what ways and maybe what other AI tools are you using?
+379
+So I'll talk a little bit about course.
+380
+I think it's like a really interesting take on like how LLMs can like break up a traditional workflow, but even in the CPO role, I think two things that have really stood out.
+381
+One is being a great sort of like critic/slash sounding board slash, you know, just external voice.
+382
+So, I'll often be writing alongside Claude.
+383
+So, maybe I'll like run an outline and have Claude produce something for like a you know, requirements doc break or just like a product strategy document.
+384
+But even if I'm like writing my own things, I rely on Claude now to be like, all right, what am I not thinking about?
+385
+Like, what did I forget?
+386
+Or like, you know, what are the holes in this argument?
+387
+And I think it does quite well.
+388
+You know, it's not at the point right now where it's going to produce a like flawless strategy from whole claw, you know, but it is very good at like seeing what you've written and saying, like, hmm, you know, you haven't thought this through.
+389
+You know, we actually did this as a leadership team.
+390
+We did our whole like OKRing process late last year.
+391
+And the first thing I did, like, fed it to the cloud.
+392
+And I was like, great, what are we not going on that we should be going?
+393
+Like, what are we missing?
+394
+And it had three very good answers.
+395
+Like, this is really interesting.
+396
+So, it's cool.
+397
+Critic and then we are filling in.
+398
+Also, accelerants, I use this.
+399
+We have our Google Docs integration now.
+400
+And I was filling out a table.
+401
+It was actually relevant to your question, which was, how can Cloud help accelerate product development itself?
+402
+And I started building out this end-by-end table.
+403
+And I did half the cells.
+404
+Almost time to me, I was like, I bet Claude can actually do the rest of these cells.
+405
+It's gotten great examples now at this point.
+406
+I was basically just like, please just fill out the rest.
+407
+And it did a great job.
+408
+And I was like, okay, great.
+409
+And then add some of the cells I added, again, it had better ideas than I had in a lot of cases.
+410
+So this companion assistant sort of piece has been absolutely valuable.
+411
+And I use that all the time.
+412
+But some of our newer knowledge integrations, even stuff that we have internally, those have just been valuable in preparing for the day.
+413
+Help me get ready for the day.
+414
+We've got these MCP integrations.
+415
+And I was actually talking to this more.
+416
+Like, great, like, now I'm in that in that mindset.
+417
+That's so cool as well.
+418
+So, as they are increasingly aware of my work and the conversations that we're having, it's just a very valuable, like, additional sounding board.
+419
+Do you find a lot of people on the team are doing similar things?
+420
+Like, are people using it in this way, or is it, or is it mostly just you?
+421
+It's been interesting because three months in, I wrote like observations about Anthropics so far.
+422
+And one of the things is like, we need to do a much better job of like using Claude internally to accelerate our own selves because it's not that it's not happening, it's very unevenly distributed.
+423
+It actually goes back to the conversation we were having earlier around like what's the role of product design and product strategy and improving the ability of people to use these models to their maximum capacity.
+424
+I think we could do that just even internally.
+425
+And so, we had a really fun hackathon in November.
+426
+And one of the things that was really cool is that we took one of the go-to-market people and they had a whole workflow around, like, all right, I'm meeting with these three prospective, you know, prospects that I want to, you know, talk about Cloud for Enterprise 2.
+427
+I go through the same process every time around researching the people who are matter, getting more context on this company, you know, what's going on with them, reading their S1, like all of these things.
+428
+Like, a lot of that can be done really well by Claude in terms of like summarization.
+429
+And so, they partnered with an engineer and they basically built that out in an automated way.
+430
+It was awesome.
+431
+And it was like, that's so cool.
+432
+We need to do those kinds of things to take the steed of what is a good use of LLMs in the workplace and then make it so that it's like, you don't even have to think about it.
+433
+It just actually happens for you.
+434
+And that's like a push I've been having.
+435
+I actually shifted a lot more of my own attention towards internal products and internal productivity more recently because I think there's a lot we can learn from, hey, have we actually made our sales team more productive?
+436
+Have we made our engineering team more productive using some more like cutting-edge things that we can do with cloud?
+437
+And then can we externalize those ideas into like actual products?
+438
+That's really, really cool.
+439
+I meant to ask about the team.
+440
+I mean, obviously, after you all sold Instagram to Facebook at the time, probably experienced massive hypergrowth, not only in the product, but the team, scaling up the team.
+441
+I'm imagining you're experiencing something very similar right now.
+442
+Anthropic has gotten very, very big, very, very quickly, you know, still scaling massively, it seems, all the time.
+443
+What's that been like scaling up the team inside of Anthropic?
+444
+Also, while you're still, you know, I'm sure, acclimating in some sense to this new type of company, a new type of product.
+445
+Yeah, tell us a little bit about that journey.
+446
+Yeah, I mean, I think there's a few things that are different even from the compare contrast.
+447
+Like, one is you're scaling a team that is more distributed than Instagram was.
+448
+Like, with Instagram, we were doubling basically year on year, but for most of that growth, it was all in Melo Park, right?
+449
+We moved on Mellow Park post-acquisition.
+450
+We wanted to stay close to the Facebook technical teams that we were collaborating with.
+451
+It just gave you, you visually saw how big the team was getting.
+452
+It's much harder to see that when it's primarily growing in like Google Meet, Hollywood Square style, or like Slack, you know, so with participants for better and for worse.
+453
+Like, in some ways, like one sort of ritual that I did at Instagram with Kevin was we had product reviews.
+454
+We realized that like if too many people in the product review room started feeling a lot more it was like a presentation rather than like a place where we could have like deeper nuanced like kind of like hard talk about like whether this thing was on the right direction or not.
+455
+And here what I found is since a fair amount of people are like in New York or joining remotely, they's like one very notable difference that we that we've had here.
+456
+And then the second piece is even though product has grown a lot, it is like a small chunk compared to like our research teams, the people working on trust and safety, the people thinking about all of like the threat modeling and like societal impacts.
+457
+Like there's a lot more that gets into Anthropic.
+458
+And so as much as we've grown, I think I still feel like, oh, we're like, we're a small part of the company, even though, you know, proportionally we're growing similarly.
+459
+And it's a different feeling to have that as well.
+460
+Have you been able to take lessons from Instagram, either in terms of building out the team like we're talking about now, or even specific product lessons that you've been able to apply to Anthropic?
+461
+Yeah, I think one of them has been thinking about what is the ultimate problem that you're solving and remaining obsessed with that.
+462
+I actually think it's much harder to do.
+463
+It's not as hard on Instagram to you.
+464
+On Instagram, you'd have people that internally that would come up with fantastic ideas that were interesting applications of technology, but weren't on the path of what we were like ultimately wanted to solve for like the most people as possible.
+465
+In AI, I feel like it's even more tempting because there's no shortage of like very cool ideas that people come up with, you know, a prototype using Cloud.
+466
+And I think if we like staff teams are on all of them, we'd like have like, you know, one, a pretty complex product, but two, I don't think we'd make enough progress because we'd be like sort of like peanut buttering ourselves over a lot of things.
+467
+And so it's harder to say no, but even more important, you know, and having that focus within the team.
+468
+And like, it's a discipline we've had to build up.
+469
+And I don't think we've gotten it quite right yet around like harnessing bottoms of excitement.
+470
+I think that's really important.
+471
+And like, I'm definitely not going to have all the best ideas.
+472
+I might not even have like most of them.
+473
+Like there's going to be, they're fundamentally solving, it is just as important, but maybe twice as hard in this space.
+474
+That's like, I think, one lesson that we've carried.
+475
+The second one is something that I learned at Instagram.
+476
+And somebody told me, every time your company doubles, your processes will break and your culture will break in some way.
+477
+And Instagram, we basically doubled every year in engineering.
+478
+And so it kind of like we had to evolve and unbreak ourselves constantly.
+479
+We've grown even faster at Anthropic in the last year since I've drawn on the product side.
+480
+I'll have a smaller base than Instagram's growing, but still.
+481
+And I think we're probably like one organizational and process refactor-wise away from things really humming.
+482
+At any given point, I'm like, oh, that part's feeling good.
+483
+That part's not feeling good.
+484
+One thing I learned at the time at Instagram was you can put all the processes and like organizational stuff in place.
+485
+Nothing beats like either getting on the ground and trying to do some work yourself.
+486
+Like I would still I see engineer at Instagram until the year I left, or just like having really high like bandwidth communication with like ICs on the ground.
+487
+So like immediately after our conversation, like I have like a couple of one-on-ones with people that are like, you know, all over the place on the org chart, but like I want to hear from like what is like on the ground building product at Anthropic today and like how can we make that better?
+488
+And I think you need to maintain that contact.
+489
+It's harder as a non-co-founder.
+490
+Like Instagram, I knew who everybody was.
+491
+So I started there.
+492
+I hired up a lot of that team.
+493
+I was still engineering.
+494
+I think one of the challenges coming in is like, I don't know everybody yet.
+495
+Still, I probably know most of the people that I'm going to interact with.
+496
+But two, like, I don't have as much that on-the-ground tactile feeling of like, what is the state of our code base?
+497
+And like, what's it like building at Anthropic?
+498
+Yeah, that's fascinating.
+499
+Maybe zooming out a little bit, you know, thinking a little bit broadly about AI and sort of the future.
+500
+Obviously, you know, one very topical thing is DeepSeek, especially in the beginning of the week, seemed like the only thing anyone was talking about.
+501
+What did you take away from that whole moment for, I guess, the state of AI and sort of model development moving forward and maybe Anthropic more specifically?
+502
+My wife's great aunt texted us and I was like, okay, let's definitely.
+503
+Oh, yeah.
+504
+My parents were asking me about it.
+505
+Crossed over to something.
+506
+We had three takeaways, like in no particular order.
+507
+Like, one, open people's eyes up.
+508
+You know, Cloud, I think we've gotten great business penetration.
+509
+RFI is used, you know, really well, but I think we still have a lot of ways to go on like just getting the word out about Cloud AI and like getting people to at least experience and like make a choice for themselves.
+510
+I think it was interesting for people to like see that there was more to the world than just transparently.
+511
+I think that's like a good thing that people like experiment with these different tools.
+512
+So I think that I see some positives there.
+513
+Two, like many sort of like personal over-reactions that I've like watched in the market over the last 10 years, like it was fascinating watching it.
+514
+Like one of my favorite writers is John Odlis.
+515
+He writes for Bloomberg and he's like a finance writer.
+516
+And he has a great column once where he was like, if you had like fallen asleep two weeks ago and woken up today, and it had been like some like market swoon.
+517
+And you'd be like, wow, the market moved like half a percent, like not that much.
+518
+And like you're awake for all of it.
+519
+It was like the whole sort of like bumpiness.
+520
+I really try to take that perspective, which is like that short-term ability to like over-correct and snowball is like very real, you know, and so now that nowadays I've seen this, he was like, okay, like, we'll thread it out.
+521
+Like, what's actually changed?
+522
+Like, we need more compute than ever over here.
+523
+So like the role of chip companies and the role of scaling up on, you know, if previously it was purely on free training, now more on the RL side is like absolutely more important than ever.
+524
+And then Dari made this point this weekend really resonated with me too, which is if you now have an even more like sort of high-value scaling opportunity around RL, you should be incentivized to do that for even longer, you know, and like if you can train for five times as long now and have, you know, five times the intelligent, that's a very worthwhile investment to make.
+525
+So that fundamentally has not changed at all.
+526
+But the third piece is like just perhaps the four sort of like the geopolitical implications of all these in the way that they've been bubbling over and is now like unignorable.
+527
+And like, it's great.
+528
+Let's have that conversation now because it's as timely a time as ever to have.
+529
+And I think like it's sparking the right conversation.
+530
+By WhatsApp groups or anything to be seen.
+531
+And beyond just like the broader sort of reach that it's had for society, like it definitely sparked some real, I think, very timely conversations around that.
+532
+And I think that's a plus.
+533
+On the last point, it definitely seems like it's forcing conversations and forcing people to kind of like confront how or why this happened.
+534
+And I agree, like that's probably a conversation we should have.
+535
+And yeah, it's forcing people to ask questions like, you know, did a major distillation happen?
+536
+And what's your thinking on that?
+537
+It's really hard to say.
+538
+I mean, I think the whole separate topic, I think, is just on like model tells.
+539
+Like we, not the refresh Sonic, but the previous one used to start a lot of answers with.
+540
+Certainly, it became like an internal meme where we'd be like, I can't tell if a model's been distilled from it.
+541
+If you ever saw like a, you know, instantly started like a certainly like, that sounds like Sonic-ish.
+542
+So I don't know if the OpenIA model is well enough to know if like some of those kind of tells were present or not.
+543
+But yeah, I think it's things that we need to lock down and protect, or at least detect, like that work to be done.
+544
+And then the imperative to continue innovating and scaling is more important than ever, I would say.
+545
+And then, yeah, I totally agree on the second point.
+546
+And as far as the overreaction goes, Anthropic OpenAI, these are companies, they're products.
+547
+They're more than just models.
+548
+And yet, it feels somewhat reductionist to be like, oh, there's another model here.
+549
+Let's wipe a trillion dollars worth of value off NVIDIA just like that.
+550
+There are lots of other factors here.
+551
+I spoke to the CEO summit on Monday and people are like, well, what do you think the sort of impact is on the enterprise?
+552
+And my honest answer was little to none, because every enterprise conversation I have is not, we want to buy your model or like, we want to exchange input tokens for output tokens.
+553
+Like, that's not what people are looking for.
+554
+Like, they're like, we want an AI partner that will help us co-design our big bet on our internal transformation and also assist with getting our products to be more AI focused and also be part of your customer advisory board.
+555
+So we're also part of the community of excellence around using AI.
+556
+It's like that is the relationship that you want to have.
+557
+You're picking an AI partner, which just transparently, the list that you're going to choose from is going to be quite small.
+558
+And that's a lot of the capability that we've been building up in the last year is going beyond that tokens and tokens out and being more of like a partner that can connect you to the right solution as things evolve.
+559
+And that's going to continue to be more and more important.
+560
+And if you look at the valuations of these AI companies, you think it's just purely on model quality.
+561
+Model quality absolutely matters, but it's also the company and the sort of support and the infrastructure that you build around that is equally important.
+562
+Yeah.
+563
+People have not only recognized and acknowledged exactly what you just said, but it feels like it's put a whole new spotlight on like the product, which obviously you're in charge of, and the application layer in general.
+564
+Do you think like now is the moment in AI where the application layer is going to start getting a lot more attention and people will be more and more excited about the products, which is something I think people have been waiting for for some time.
+565
+I think there's a lot that will happen there in two ways.
+566
+One is as the models get more and more intelligent, and especially as they think for longer, the things that they excel at, like competition math, and like what a lot of people are using them for, are going to be more and more disconnected.
+567
+I think we have a really interesting product challenge just to find what are the real problems we can solve for people that are solved by models that use more tests on compute.
+568
+Nobody has an answer to that.
+569
+That's really solved yet.
+570
+If you've talked to most people, how are you using these reading models in your daily life?
+571
+They're like, I don't know.
+572
+Asked it to check them out something for a long time.
+573
+And I guess, you know, it's like, that's an unsolved problem.
+574
+So I think it's an exciting problem still.
+575
+But then the second part is, how do these models actually start playing longer and longer sort of roles in people's lives?
+576
+Because it's not just the ability to reason about something for a while.
+577
+It's also the ability to sort of agentically act and then sort of reflect on that action and go off and do things like our computer use thing or operate the open hand put out.
+578
+Like that's really interesting.
+579
+That's a whole new front on the consumer and business product that we'll definitely see over the next few months.
+580
+Looking back, your former life building in the age of social media, you know, you experienced that whole, whole cycle.
+581
+And now like you're right in the center of this sort of next cycle around AI.
+582
+Again, sort of with a zoomed out view, like what parallels are you seeing between these two eras?
+583
+A Cambrian, maybe, explosion of companies that happen in social media kind of mirrors a lot of what's happening somewhat in AI as well.
+584
+Like, either companies like doing their own models or building software, take your incubator or startup accelerator, like AI, AI, AI, AI, right?
+585
+And like, we saw that actually in social media as well.
+586
+And definitely some breakthrough and become sort of an important long-term company that is like self-sustaining.
+587
+And then lots like get absorbed and or good ideas end up somewhere else or they consolidate or they sell.
+588
+Like, I think that parallel is definitely real as well.
+589
+You know, whenever we're like, what's who's going to be the Instagram of video?
+590
+And it turns out Instagram being the Instagram video, but also like emerged and became a little bit more.
+591
+Yeah, exactly.
+592
+But like other apps like did emerge in cargo and space.
+593
+And so the moment I think is definitely one of like the sort of outward sort of ideation and creation engine is great.
+594
+And then there's inevitable consolidation that we saw in social media.
+595
+We see it in every wave, but like we'll see in AI as well.
+596
+And then another one of these and it will expose.
+597
+So that's one piece.
+598
+The second one is like, and in some way, the deep seek part contributed to this too.
+599
+Like you would have these moments of like greater awareness, right?
+600
+Like for us, Instagram was like the first time Instagram was in like a major hip-hop song.
+601
+You're like, this has now emerged beyond like early adopter, you know, Instagram photographer.
+602
+It's now culture beyond that.
+603
+Right.
+604
+And so that's cool.
+605
+Like, you know, the first time it signed it in a movie, you know, it's in a trailer.
+606
+So we're like, okay, great.
+607
+You know, and I think it only ratchets up because like it gets ever sort of wider reaching implications.
+608
+And like the name DeepSeek did that, but like not the usage, right?
+609
+Like regardless of who they were in the store, I don't think like, you know, then it couldn't be.
+610
+Like, they're not like everyday people being like, I'm going to compare and contrast the chain of thought between 35 signs.
+611
+I don't want that happening, right?
+612
+But like, that will happen, it'll continue to happen.
+613
+And I think the really exciting part being in product, in person, social media, now here is that you get to play a part in shaping what that sort of looks like and how you introduce it to people.
+614
+And then, also, like, one of the reasons I joined Anthropic was like, hopefully, shaping in a way that is really positive for people and solve their problems in a way that they feel is like really serving them.
+615
+And that sort of, you know, step by step is it mirrors it.
+616
+It's probably going to happen faster than it did in social media.
+617
+I mean, the whole journey for me was years that obviously continued afterwards.
+618
+But, you know, I'm yearning here.
+619
+And how do you feel like we've got like four of those moments in the last year?
+620
+Last question.
+621
+If we were to look out into the future, maybe 10 years, as we sort of race towards AGI or ASI or wherever we're going to end up with that, what role do you envision Anthropic playing in that future?
+622
+There's two things I think a lot about.
+623
+One is, have we helped people be their maximal versions of themselves?
+624
+So if you're a person that is creative and you want to explore that creativity 10 years from now, is there basically no impediment to realize ideas or realized creations other than your creativity, your time, your effort, et cetera, and multiplied by Anthropic?
+625
+I think we'll be serving people well if we are doing that piece.
+626
+And then I often joked, you read Machine the Learning Grace, which is an essay that Dario wrote.
+627
+In some ways, it's like manifesto or sort of like visionary piece.
+628
+And I joke with him.
+629
+Like, we should be helping in life sciences, and we should be helping in civic society, and we should be helping in like helping the economy drive and all of those things.
+630
+And that's not today, you know.
+631
+But I think the greatest challenge, and I think the reason I am here is: can you translate the model capabilities and potential?
+632
+They're not going to magically have societal impact.
+633
+They need products, they need people using them, and they need to be put into the context that they're actually going to be successful.
+634
+They need the right guardrails.
+635
+That's how we succeed.
+636
+You know, like there's a word I learned last year is viscosity, at least as applied to society.
+637
+Like, the world has a fair amount of viscosity, and like the way that you get ideas to penetrate.
+638
+And so, it's not just the future tiered unevenly, just unevenly distributed, but actually evenly distributed or more evenly distributed, I think, is through good design and good product and good building.
+639
+That's how those two things coalesce.
+640
+Love ending on optimism.
+641
+Mike, thanks so much.
+642
+This has been a blast.
+643
+Really, really appreciate you joining.
+644
+Same, really enjoyed it as well.
+645
+Great to see you.
+646
+Me too.
+647
+Thanks so much for listening to Generative Now.
+648
+If you liked what you heard, please rate and review the show on Spotify, Apple Podcasts, and YouTube.
+649
+And of course, subscribe.
+650
+All that stuff really, really does help.
+651
+And if you want to learn more, follow Lightspeed at Lightspeed VP on X, YouTube, or LinkedIn.
+652
+Generative Now is produced by Lightspeed in partnership with Pod People.
+653
+I am Michael McNano, and we will be back next week.
+654
+See you then.

@@ -1,0 +1,559 @@
+--- METADATA START ---
+Show: a16z Podcast
+Episode: Fei-Fei Li: World Models and t…
+Host: Unknown
+GUESTS: Fei-Fei Li, Martin Casado 
+Guests: Fei-Fei Li, Martin Casado
+Source URL: https://podcasts.apple.com/us/podcast/fei-fei-li-world-models-and-the-multiverse/id842818711?i=1000711158447
+--- METADATA END ---
+
+1
+That space, the 3D space, the space out there, the space in your mind's eye, the spatial intelligence that enable people to do so many things that's beyond language is a critical part of intelligence.
+2
+Feyn leans over to me.
+3
+She's like, you know what we're missing?
+4
+I said, what are we missing?
+5
+She said, we're missing a world, mom.
+6
+I'm like, yes.
+7
+We can actually create infinite universes.
+8
+Some are for robots, some are for creativity, some are for socialization, some are for travel, some are for storytelling.
+9
+It suddenly will enable us to live in a multiverse way.
+10
+The imagination is boundless.
+11
+When we talk about AI today, the conversation is dominated by language.
+12
+LLMs, tokens, prompts.
+13
+But what if we're missing something more fundamental?
+14
+Not words, but space.
+15
+The physical world we move through in shape.
+16
+My guests today think we are.
+17
+Fei Fei Lee, a pioneer in modern AI, helped usher in the deep learning era by putting data at the center of machine learning.
+18
+Now she's co-founder and CEO of World Labs, Building World Models, AI systems that perceive and act in 3D space.
+19
+She's joined by A16Z general partner Martine Casado, computer scientist, repeat founder, and one of the first people Feifei called when forming the company.
+20
+Today, they explain why spatial intelligence is core to general intelligence and why it's time to go beyond language.
+21
+Let's get into it.
+22
+As a reminder, the content here is for informational purposes only, should not be taken as legal business, tax, or investment advice, or be used to evaluate any investment or security, and is not directed at any investors or potential investors in any A16Z fund.
+23
+Please note that A16Z and its affiliates may also maintain investments in the companies discussed in this podcast.
+24
+For more details, including a link to our investments, please see a16z.com forward slash disclosures.
+25
+Fey, thank you so much for joining us here.
+26
+Martin, why don't you really brag on behalf of Feife a little bit?
+27
+And how would you summarize her contributions to AI for people unfamiliar?
+28
+Yeah, someone that doesn't need a lot of introduction, and she's done so many things that I can't fill in.
+29
+So maybe I'll just do the ones that's appropriate to this.
+30
+Of course, she was on the Twitter board.
+31
+She was a Google tech.
+32
+Founder and CEO of World Labs.
+33
+But very, very importantly, like we all know AI and we all talk about kind of neural networks and there's a number of people that focused on making those effective.
+34
+But Feife really singularly brought in data to the equation, which now we're recognizing is actually probably the bigger problem, the more interesting one.
+35
+And so she truly is the godmother of AI, as everybody calls her.
+36
+And Feife, why did you have to have Martine as the first investor?
+37
+Well, first of all, I knew Martin for more than a decade.
+38
+You know, I joined Stanford in 2009 as a young assistant professor, and Martin was finishing his PhD there.
+39
+So I always know, and of course, Martine's advisor, Nick McHugh, was a good friend.
+40
+And I always know Martin Wenton to become a very successful entrepreneur and very successful investor.
+41
+So we see each other, we talk about things.
+42
+But as I was formulating the idea of World Labs, I was looking for what I would call my unicorn investor.
+43
+I don't know if that's a word, but that's how I talked about this.
+44
+Who is not only obviously a very established and successful investor who can be with entrepreneurs on this journey through the ups and downs, who can be very insightful, who can bring a kind of knowledge, advice, resource, but I was also particularly looking for an intellectual partner.
+45
+Because what we are doing at World Labs is very deep tech.
+46
+We are trying to do something no one else has done.
+47
+We know with a lot of conviction it will change the world.
+48
+But I need someone who is a computer scientist, who is a student of AI, understand product, market, commerce, go-to-market, and just can be on the phone or in person with me every moment of the day as an intellectual partner.
+49
+And here we are.
+50
+We talk almost every single day.
+51
+It is true.
+52
+Yeah.
+53
+Amazing.
+54
+Actually, the origin story of us first connecting is actually pretty interesting.
+55
+So Vivi has clearly been thinking about this idea for a very long time, like well before I started, so maybe years even.
+56
+And she has this very deep intuition of what AI needs in order to basically navigate the world, right?
+57
+But we were at one of Mark's fancy lunches, and there's a bunch of AI people, and everybody was so excited about LLMs, right?
+58
+And it was talking about language.
+59
+And I come to this independent conclusion just because I've actually done a lot of image investing that like that wasn't the end of the story.
+60
+And so if I remember at the end of this table, all these people talking about it.
+61
+And Vivi leans over to me and she's like, you know what we're missing?
+62
+I said, what are we missing?
+63
+She said, we're missing a world model.
+64
+And I'm like, yes.
+65
+And it fell into place then because I've been like thinking about stuff at a high level.
+66
+But as she does, she just kind of perfectly articulated this.
+67
+So she had a year's worth of thinking about this and talked to people, et cetera.
+68
+And so in some way, we kind of in our own crooked past had arrived at a very similar intuition.
+69
+Hers was like way more filled out.
+70
+Mine was just this kind of fancy thing.
+71
+But then after that, we actually had a number of conversations where we both agreed that we were aligned on this kind of idea.
+72
+Actually, I don't know if you know this.
+73
+So of course, during that lunch, we hit it off on this world model idea.
+74
+But I was at that point already talking to various people, not just computer scientists, technologists, but also investors, potentially business partners.
+75
+And to be honest, most people didn't get it.
+76
+You know, when I say world model, they nod.
+77
+So I called Martin, I'm like, do you mind coming over to Stanford campus and have coffee with me?
+78
+Cup of coffee.
+79
+And then as soon as Martin came and sat down, I said, Martin, can you define your world model to me?
+80
+I really wanted to hear if Martin actually meant it.
+81
+And the way he defined it about an AI model that truly understands the 3D structure, shape, and the compositionality of the world was exactly what I was talking about.
+82
+And I was like, wow, he's the only person so far I've talked to who actually meant it.
+83
+It's not just nodding.
+84
+Wow.
+85
+Okay, so we're going to get to World Labs and the specifics of this.
+86
+But first, I want to take you back both to your PhD days, your professor days, and reflect on if you could go back in time and sort of have knowledge of what's happened the preceding 10 years in AI, what do you think would have been the biggest surprises?
+87
+Or was the thing that you didn't see coming that would have shocked your younger self?
+88
+Or did you have a good sense of how this field is going to play out?
+89
+Yeah, it's ironic to say because, as Martin said, I was the person who brought data into the AI world, but I still continue to be so surprised-not surprised intellectually, but surprised emotionally that the data-hungry models, the data-driven AI, can come this far and genuinely have incredible emergent behaviors of thinking machine, right?
+90
+Yeah.
+91
+Let's get into the specifics.
+92
+Why start another foundation model company?
+93
+Why aren't LLMs?
+94
+Why not?
+95
+My intellectual journey is not about company or papers, it's about finding the North Star problem.
+96
+So it's not like I woke up.
+97
+I woke up every day, day after day for the past few years, thinking that there is so much more than language.
+98
+Language is an incredibly powerful encoding of thoughts and information, but it's actually not a powerful encoding of what the 3D physical world that all animals and living things live in.
+99
+And if you look at human intelligence, so much is beyond the realm of language.
+100
+Language is a lossy way to capture the world.
+101
+And also, one subtlety of language is purely generative.
+102
+Language doesn't exist in nature.
+103
+We look around, there's not a syllabus or word.
+104
+Whereas the entire physical, perceptual, visual world is there.
+105
+And animals' entire evolutionary history is built upon so much perceptual and eventually embody intelligence.
+106
+Humans, not only we survive, live, work, but we build civilization beyond language, upon constructing the world and changing the world.
+107
+So that's the problem I want to tackle.
+108
+And in order to tackle that problem, obviously research was important and I spent years doing that as an academic.
+109
+And it's still fun, but I do realize, and especially talking to Martine, that the time has come that concentrated industry-grade effort, focused effort in terms of compute, data, talent is really the answer to bringing this to life.
+110
+And that's why I wanted to start World Labs.
+111
+Amazing.
+112
+So if I put you in a room and I blindfolded you and I just described the room and then I asked you to do a task, the chances of you being able to do it are very little.
+113
+I'm like, oh, 10 foot in front of you is like a cup.
+114
+And like, you know, like this, it's just, it's this very inaccurate way to convey reality because reality is so complex and it's so exact, right?
+115
+On the other hand, if I took off the blindfold and you can see the actual space, right?
+116
+And what your brain is doing is actually reconstructing the 3D, right?
+117
+Then you can actually go and manipulate things and touch things, right?
+118
+And so one way to think about it is we do a lot of language processing and we use that to communicate and the high-level ideas, et cetera.
+119
+But when it comes to navigating the actual world, we really, really rely on the world itself and our ability to reconstruct that.
+120
+And how and when did you realize that language weren't enough?
+121
+Because it seems like it's not super widely known.
+122
+I don't hear about this all the time.
+123
+Well, Sydney, if you ask me, like, what is this surprising breakthrough?
+124
+It's that language went first because we've worked so hard on robotics, right?
+125
+I mean, I feel like even look at autonomous vehicles as an industry, we've invested like $100 billion in it.
+126
+I remember when Sebastian Thrun like actually won like the DARPA Grand Challenge in 2006 and we're like, hooray, AV is done, right?
+127
+And then 20 years later, like we're finally there, $100 billion in, et cetera.
+128
+This is like a 2D problem.
+129
+And so that was the path we were going on: is do you actually solve like world navigation?
+130
+And it's hard.
+131
+And then out of nowhere comes these LLMs.
+132
+And they are unit economic positive.
+133
+They solve all of these language problems like basically immediately.
+134
+And so it just took me a moment.
+135
+I actually Feyfay said it beautifully early on when we were talking, which is the part of our brain.
+136
+And so we're actually pretty inefficient at it, right?
+137
+And so the fact that a computer does it better is not super surprising.
+138
+But the part of the brain that actually does the navigation, you know, the spatial has been around, it's a million brains.
+139
+Maybe the reptilian brains, what, four million years?
+140
+Well, it's even more than that.
+141
+It's a trilobite break.
+142
+Yeah, yeah, right.
+143
+Triloby had break.
+144
+Right.
+145
+500 million years.
+146
+Yeah.
+147
+So it's almost like we're unrolling evolution, right?
+148
+So the language part is actually very, very important for like high-level concepts and like the laptop class type work, which is what it's impacting right now.
+149
+But when it comes to space, and this is everything from robotics to anything where you're trying to construct something physical, you have to solve this problem.
+150
+And then we know from A-B that it's a very tough problem.
+151
+And then maybe this is what is worth talking about.
+152
+Like the generative wave gave us some insight in how you might want to do it.
+153
+So it really felt like that was the time.
+154
+My journey is very different because I've always been in vision, right?
+155
+So I feel like I didn't need LLM to convince me LWM is important.
+156
+I do want to say we're not here bashing language.
+157
+I'm just so excited.
+158
+In fact, seeing ChatGPT and LLMs and these foundation models having such breakthrough success inspires us to realize the moment is closer for world models.
+159
+But Martin said it so beautifully.
+160
+It's that space, the 3D space, the space out there, the space in your mind's eye, the spatial intelligence that enable people to do so many things that are beyond language is a critical part of intelligence.
+161
+It goes from ancient animals all the way to humanity's most innovative findings, such as the structure of DNA, right?
+162
+That double helix in 3D space.
+163
+There's no way you can use language a lot.
+164
+Another one of my favorite scientific examples is buckyball.
+165
+Carbon molecule structure that is so beautifully constructed.
+166
+That kind of example shows how incredibly profound space and 3D world is.
+167
+Let's paint even more of a picture.
+168
+When World Labs has achieved its vision or Language One Law has achieved their vision, what are some applications or use cases that we can present to the audience to help make it concrete?
+169
+Yeah, there is a lot, right?
+170
+For example, creativity is very visual.
+171
+We have creators from design to movie to architecture to industry design.
+172
+Creativity is not just only for entertainment.
+173
+It could be for productivity, for machinery, for many things.
+174
+That alone is a highly visual, perceptual, spatial area or areas of work.
+175
+Of course, we mentioned robotics.
+176
+Robotics to me is any embodied machines.
+177
+It's not just humanoids or cars.
+178
+There's so much in between, but all of them have to somehow figure out the 3D space it lives in, have to be trained to understand the 3D space and have to do things, sometimes even collaboratively with humans.
+179
+And that needs spatial intelligence.
+180
+And of course, I think one thing that's very exciting for me is that for the entirety of human civilization, we all collectively, as people, lived in one 3D world, and that is the physical Earth 3D world.
+181
+A few of us went to the moon, but you know, very small number.
+182
+With this technology, which we should talk about, it's the combination of generation and reconstruction.
+183
+Suddenly, we can actually create infinite universes.
+184
+Some are for robots, some are for creativity, some are for socialization, some are for travel, some are for storytelling.
+185
+It suddenly will enable us to live in a multiverse way.
+186
+The imagination is boundless.
+187
+I think it's very important because these conversations can sound abstract, but they're actually not.
+188
+But the reason they sound abstract is because it's truly horizontal, just like LLMs are, right?
+189
+So, like maybe I say, like, what are LLMs good at?
+190
+The same LLM we use for like an emotional conversation.
+191
+We use it to write code.
+192
+We use to do lists.
+193
+We use it for self-actualization, right?
+194
+And so, I think we can get actually pretty concrete about what these models do, right?
+195
+And so, let me just give it a shot.
+196
+And then, Fabia is the expert, of course.
+197
+So, with these models, you can take a view of the world, like a 2D view of the world, and then you can actually create a 3D full representation, including what you're not seeing, like the back of the table, for example, within the computer.
+198
+So, given just a 2D view, you have the full thing, and then you ask, okay, well, what can you do with that thing, for example?
+199
+Well, you can manipulate it, you can move it, you can measure it, you can stack it.
+200
+So, anything that you would do is space you could do, right?
+201
+That means you could do architecture, you could do design.
+202
+But it turns out the ability to fill out the back of the table means that you can fill out stuff that was never there to begin with, right?
+203
+So, let's say that I just had a 2D picture of this.
+204
+I could create a 360 of everything, right?
+205
+And so, now you have fully generative.
+206
+And so, what does that mean?
+207
+That means that's video games, that's creativity.
+208
+And so, it's a super horizontal piece that takes basically a computer with a single view.
+209
+And so, you can see that that's a very concrete, pivotal thing from everything from like robotics to video games to art and design.
+210
+Yeah.
+211
+It seems like we haven't fully been appreciating sort of 3D components until now.
+212
+Is that fair to say?
+213
+It is fair to say.
+214
+In fact, I think it took evolution a long time.
+215
+3D is not an easy problem, but I always come back to the fact that I had a conversation with my six-year-old years ago about why trees don't have eyes.
+216
+And the fundamental thing is trees don't move.
+217
+They don't need eyes.
+218
+So, the fact that the entire basis of animal life is moving and doing things and interacting gives life to perception and spatial intelligence.
+219
+And in turn, spatial intelligence is going to reinvent horizontally, as Martin said, so many of the ways of work and life that humans are doing.
+220
+Yeah, fascinating.
+221
+But it is definitely worth asking the question: why can't you just use 2D video for this, right?
+222
+Like, 3D is very, very fundamental to this.
+223
+Vivi, you suggested let's get deeper into the technology.
+224
+What can we share more about how it works or what the breakthrough is, or what's worth commenting on the technology?
+225
+To Martine's point, does it need to be 3D or why can't you just use 2D?
+226
+I think you can do a lot of things using 2D.
+227
+But the fact is that 2D won't get you very far.
+228
+In fact, today's multimodal LLMs is already making a big difference in the robotic learning world, helping guiding you to know what's next, the state of the world.
+229
+But fundamentally, physics happens.
+230
+Navigating behind the back of the table needs to happen in 3D.
+231
+Composing the world, whether physically, digitally, needs to happen in 3D.
+232
+So, fundamentally, the problem is a 3D problem.
+233
+One way to think about it is: if it's a human being looking at, say, a 2D video, the human being can reconstruct the 3D in their head, right?
+234
+But let's say I've got a robot that has the output of the model.
+235
+If that's 2D, and then you ask the robot to do, I don't know, distance or to grab something, that information is missing.
+236
+You've got the XYZ plane, the Z-plane just isn't there at all, right?
+237
+And so, for many things that are spatial, you need to provide that information to the computer so that you can actually navigate in 3D space.
+238
+And so, 2D video is great if it's a human because we already can turn it into 3D, but like for any computer program, it'll need to be 3D.
+239
+Actually, I want to tell you a personal story.
+240
+About five years ago, ironically, I lost my stereo vision for a few months because I had a cornea injury.
+241
+And that means I was literally seeing with one eye.
+242
+And like Martin said, my whole life has been trained with stereo vision.
+243
+So, even if I was seen with one eye, I kind of know what the 3D world looked like.
+244
+But it was a fascinating period as a computer vision scientist for me to experiment what the world is.
+245
+And one thing that truly drove home literally was I was frightened to drive.
+246
+Wow.
+247
+First of all, I couldn't get on highway.
+248
+That speed, I could not, you know.
+249
+But I was just driving in my own neighborhood, and I realized I don't have a good distance measure between my car and the parked car on a local small road.
+250
+Even though I have a perfect understanding of how big is my car almost, how big is the neighbors, the parked cars, I know the roads for years and years, but just driving there, I had to be so slow, like almost 10 miles an hour, so that I don't scratch the cars.
+251
+And that was exactly why we needed stereo vision.
+252
+That's actually a great articulation of why 3D is just actually key if you're doing some processing, right?
+253
+Yeah, so I don't recommend it, but you can park your car one and drive your car two with one eye and feel it.
+254
+That's your own car.
+255
+On the tech side, with LLMs, a lot of the research was done at the big companies.
+256
+What's the state of the research here?
+257
+This is definitely a newer area of research compared to LLM.
+258
+It's not totally fair to say new because in computer vision as a field, we have been doing bits and pieces.
+259
+For example, one important revolution that has happened in 3D computer vision was Neuradian Field or NERF.
+260
+And that was done by our co-founder, Ben Mildenhall and his colleagues at Berkeley.
+261
+And that was a way to do 3D reconstruction using deep learning that was really taking the world by storm about four years ago.
+262
+We've also got a co-founder, Christoph Lasner, whose pioneering work was part of the reason Gaussian Splat representation started to, again, become really popular as a way to represent volumetric 3D.
+263
+And of course, Justin Johnson, who was my former student, also co-founder of World Labs, were among the first generation of deep learning computer vision students who did so much foundational work in image generation when before Transformer were out, we were using gas to do image generation and then style transfer, which was really popularized some of the components or ingredients of what we're doing here.
+264
+So things were happening in academia, things were happening in industry.
+265
+But I agree what is exciting now is that at World Lab, we just have the conviction that we're going to be all in on this one singular big North Star problem, concentrating on the world's smartest people in computer vision, in diffusion models, in computer graphics, in optimization, in AI, in data, all of them coming into this one team and try to make this work and to productize this.
+266
+I will say from an outsider standpoint, and so I'm not an expert in any of these spaces, but it really feels like to solve this problem, you need experts both in AI, and that's like the data and the models, like the actual model architecture, and graphics, which is like how do you actually represent these things in memory in a computer and then on the screen.
+267
+So it takes a very special team to actually crack this problem, which Feyfe has managed to put together.
+268
+Well, that's an inspiring note.
+269
+To wrap on, Fefe, thank you so much for joining us.
+270
+Thank you.
+271
+Thank you, Eric.
+272
+Thanks for listening to the A16Z podcast.
+273
+If you enjoyed the episode, let us know by leaving a review at rate thispodcast.com/slash A16Z.
+274
+We've got more great conversations coming your way.
+275
+See you next time.

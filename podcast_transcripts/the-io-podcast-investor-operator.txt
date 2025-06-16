@@ -1,0 +1,1641 @@
+--- METADATA START ---
+Show: Podcast
+Episode: The IO Podcast: Investor + Operator
+Host: Tyler Hoag
+GUESTS: Eric Vishria 
+Guests: Eric Vishria
+Source URL: https://podcasts.apple.com/us/podcast/the-io-podcast-investor-operator/id1678642609
+--- METADATA END ---
+
+1
+AI companies that we're working with that have gone like zero to 10 plus in a year.
+2
+And contrast that with me, you've never seen that before?
+3
+Never saw that before.
+4
+We had zero to 30, 0 to 40, 0 to 100 in like 15 months.
+5
+These are insane growth.
+6
+Customers are like, they see these products and are like, holy shit, this is magic.
+7
+Thanks for joining us, Eric.
+8
+Thank you for having me.
+9
+We've known each other on Twitter for many years.
+10
+First time we've actually met in person.
+11
+Thanks for having us at the Benchmark office here at SF.
+12
+I thought I'd kick it off by telling a quick story.
+13
+All right.
+14
+Hope you don't mind.
+15
+Yeah.
+16
+So I'm pulling up an email from February of 2019.
+17
+So I guess six years ago, almost exactly.
+18
+And again, we knew each other from Twitter, but I sent you this cold email.
+19
+Hey, Eric, I'm Tyler Hoag.
+20
+Here's who I am.
+21
+Quick background.
+22
+We haven't met in person.
+23
+I admire Benchmark because of Andy Ratcliffe.
+24
+I'm reaching out because a few weeks ago I had lunch with Matt Miller at Sequoia.
+25
+And I asked Matt which investor he admires most, all in Silicon Valley.
+26
+He immediately said your name.
+27
+And then I saw your head-shave tweet about Confluent.
+28
+And it was pretty clear why I mentioned you.
+29
+Anyways, I went on to ask you a couple questions.
+30
+And I wondered if you'd be willing to tell the story here.
+31
+Basically, how did you pick Confluent early on?
+32
+And why did the founders end up going with Benchmark?
+33
+And we have a couple follow-ups there, but I'd love to start it off with a story if you're open to sharing.
+34
+Yeah, totally.
+35
+So a friend of mine who's actually cousins or second cousins with Neha, one of the Confluent founders, is the one who introduced me, JP.
+36
+And JP introduced me.
+37
+I was two weeks into my investing career.
+38
+You just barely started.
+39
+And you were a founder before, right?
+40
+Yeah, I was a founder before, and so I was like literally two weeks into Benchmark.
+41
+And, you know, but you're meeting all these companies.
+42
+And I had some experience with Kafka from my startup, Ryan.
+43
+And so we had used Kafka and it was like this great piece of technology.
+44
+And so we had some familiarity with the space, or at least with what it did.
+45
+And I kind of thought going into the meeting, like, hey, that's kind of this nichey thing.
+46
+It's a pipeline.
+47
+You know, it's a pipeline.
+48
+It's a messaging bus that puts data into a data warehouse or into, at that time, Hadoop.
+49
+And the thing that happened was, you know, Jay, Jay and Neha and June, but Jay, Jay led the conversation, he articulated a vision of why, like, yeah, it looks like this pipeline thing, but it's actually much, much more than that.
+50
+And there's going to be this big real-time data hub.
+51
+And this was, they were still, they still worked at LinkedIn when we first met.
+52
+So it was the initial pitch.
+53
+And it was developed internally on LinkedIn, right?
+54
+The technology.
+55
+Yeah, it was developed and open sourced while they were at LinkedIn.
+56
+And you're sitting there and you're like listening to this and you're like, huh, I never thought of it that way.
+57
+Nobody really has talked about it that way that I've talked to, or that I've talked to, at least in the investor community.
+58
+And yet it seems totally credible.
+59
+And it's a cogent view.
+60
+And then you kind of dig into it and you're like, you ask questions and everything else.
+61
+And you're like, you know, the idea, Chris Dixon's idea maze concept is so good.
+62
+And like, they know everything, including the things that they don't know, right?
+63
+Like, it's like, we don't know how fast dream processing will happen.
+64
+We don't know how this is.
+65
+Like, we think this is our theory of how it monetizes, right?
+66
+This isn't, it's not even a company yet.
+67
+And so I walked out and I sent a note to my partners.
+68
+I have that email in here.
+69
+I won't read the whole thing, but I would love it.
+70
+Can I share one or two sentences from it?
+71
+So this was really cool.
+72
+Because by the way, you're just engaging with me over a cold email and you said, thanks for giving me the trip down memory lane.
+73
+I also forwarded you the email I sent to Peter, Peter Fenton, after that meeting.
+74
+And here's what's cool about this: you said, Peter, Zach and I met with the three Kafka founders today, and we both walked away thinking we have to do this deal in bold.
+75
+So you got to conviction pretty quick, it seems.
+76
+Would really value your thoughts and help on this one.
+77
+It will go fast.
+78
+So can we meet as soon as you're back?
+79
+And then you go on.
+80
+It's a much longer email.
+81
+But what stuck out to me, and this will get into the benchmark model, is like you're immediately reaching out to your partner to help on this deal.
+82
+And that feels very, I don't know if that's super common in venture or not, but at benchmark, it's like second nature.
+83
+You guys are equal partners.
+84
+You're doing it as a team.
+85
+Can you talk about that and what you did here with Kafka and why you reached out to Peter?
+86
+Yeah, keep in mind, I'm two weeks in.
+87
+This is like, you know, like a lot of this is like just better lucky than good, right?
+88
+Like it's just better lucky than good.
+89
+Peter's one of the great, um, great investors, great venture capitalists in the history of the business, but but certainly amongst the top, I don't know, two greatest open source investors.
+90
+And so he was like a perfect, perfect person to reach out to.
+91
+And he replied and they set up a meeting right away.
+92
+And he actually said, I can't remember the exact timeline, but it was like a Wednesday or something.
+93
+He's like, hey, we should just get everybody, like, get everybody to meet together.
+94
+So the other, the other, there are four other people besides me at that time.
+95
+And so, like, let's just everyone go meet.
+96
+And so it's just like, you get the benefit of everyone's experience on it and their assessments.
+97
+No competition between the partnerships, no, like, like, I own this deal, you don't.
+98
+Yeah, nobody cares.
+99
+I mean, I think there's just like not a, not a, nobody cares about that.
+100
+The economic model is set up that way, so we should, we shouldn't care.
+101
+And, you know, and you kind of like, and through that, I still serve on Confluent's board, and it's been like an amazing thing to partner with Jay and the team from three people to, I don't know, 3,000 or whatever, from zero to 10 to, you know, a billion in revenue and more to go.
+102
+And like, I think it's just like when you get to go on those journeys, it's so special.
+103
+So it's a perfect segue, by the way, because I think at the time, you can fact-check me here.
+104
+Confluent was one of, if not the fastest-growing tech startups Silicon Valley had ever seen.
+105
+I think Sequoia said this the fastest growing company in their portfolio.
+106
+And then you tweeted just like two, three weeks ago this tweet, which I think should be the bulk of FunConvo here.
+107
+You said, hey, do you remember when triple, triple, double, double, double was the gold standard for annual growth in SaaS companies?
+108
+And Kafka maybe isn't a SaaS company, but I think the point stands.
+109
+And then you said, that was cute.
+110
+I assume you mean that's a remnant of the past and things are different now.
+111
+What's different?
+112
+What are you seeing?
+113
+So, I don't know how many AI companies that we're working with that have gone like zero to 10 plus in a year, but it's like eight or nine.
+114
+Like, it's some meaningful number.
+115
+Like, it's really like a lot.
+116
+And contrast that with you've never seen that before?
+117
+Never saw that before.
+118
+Like, zero to, like, you'd see zero to two, maybe.
+119
+Like, you see, like, those kinds of things, but like, this, this is like zero to 10.
+120
+We had zero to 30, 0 to 40, like, you know, 0 to 100 in like 15 months.
+121
+Like, I mean, these are insane, insane growth.
+122
+And, and we should just like be really clear that it's not the same.
+123
+Okay.
+124
+And it's not the same in good ways and bad ways.
+125
+Okay.
+126
+It's not the same in good ways in the sense that there's a lot of experimental revenue.
+127
+A lot of it is like, you know, MRR that's run rated.
+128
+And so it's not like ARR.
+129
+Like, it's not what I think of as ARR and what anybody should think of as ARR, really.
+130
+So it's like, it's not that necessarily in a bunch of cases.
+131
+There's going to be more churn.
+132
+There's like people are figuring out value and like all these things.
+133
+So that's the bad side, right?
+134
+The good side is like it's like real customers.
+135
+Like it's not like hokey.
+136
+A bunch of it isn't, you know, and each of these companies is different.
+137
+And I think like at the end of the day, customers.
+138
+So you do think it's driven by actual product magic, not some experimental AI budgets just to test it out.
+139
+There's real product value.
+140
+I think there's real perceived value, and some of it will get realized and some of it won't, but there's real perceived value for sure.
+141
+And it feels magical.
+142
+And the products feel magical to the customers.
+143
+And so they're spending money.
+144
+And I think this idea of magic and a magical experience is just like where people are like, whoa, here's my money.
+145
+And like, that could be, whoa, here's my money.
+146
+And then three months later, like, yeah, it didn't quite work for me.
+147
+And there's the churn you're talking about.
+148
+And then there's a churn and everything else.
+149
+But I was talking to an investor about this, and I was like, look, okay, take 30% off it, 40%, whatever.
+150
+Like, it's still insane.
+151
+And so there's still something happening and we shouldn't be dismissive of it.
+152
+And the irony is, to me, that we also have some AI companies that are like zero, like that are still zero in revenue and they're a year, two years, three years into development.
+153
+And I'm not actually bearish on those either.
+154
+Like part of me, I can make the case both ways.
+155
+Or is that old phrase of lemons ripen early, right?
+156
+Like you find success to child star syndrome.
+157
+You like don't grow into it.
+158
+Is this all?
+159
+I think that's real.
+160
+And I think there's a defensibility question that's really important here, which is, you know, some of these companies that are ripping are based, are like riding on top of the billions of dollars of investment going into LLMs.
+161
+And I think that's one of the things you're saying.
+162
+Like, you don't want to be fighting that.
+163
+That's for sure.
+164
+Great if you're riding it, but like, you do have to make sure, like, in most of these spaces, it's not like one company working.
+165
+In some of these spaces, it's like four, five.
+166
+Now, like, generally speaking, as we all know through as students of history, like that doesn't end well, like, even though four or five are initially working.
+167
+And that's because the market usually has one big winner, generally speaking.
+168
+Is that what you're saying?
+169
+Yeah.
+170
+And you just get the gorilla.
+171
+So this is, this is what's interesting to me.
+172
+Because Tyler and I were actually talking about this before.
+173
+We're like, this year, we're saying zero to 10, how many?
+174
+We put the over-under at 100.
+175
+If Benchmark has eight or nine, that, you know, okay, maybe 100.
+176
+That's probably a 10X over what it was, you know, ever before.
+177
+It's all-time high.
+178
+So here's the question.
+179
+Because that is, it's a really cool thing.
+180
+It's real.
+181
+It's going to be around.
+182
+It should change how founders think about things, change how investors think about things.
+183
+But does that mean you're like not a venture-scale business if you're not doing that going forward?
+184
+No, I don't think so.
+185
+I don't think so.
+186
+Because I don't either.
+187
+But I think a lot of people are saying that's T2D3 was the formula and now it's speed of zero to 10 or 0 to 100.
+188
+And that's like where I kind of like, that kind of rubs me wrong.
+189
+I think that's stupid.
+190
+I think that's stupid too.
+191
+I think that's dumb.
+192
+And I've never like the D2T or whatever that was, like the D2T3 thing.
+193
+Like I like, just to be clear, people talk about it and everything else, but it's never, never, ever how we looked at things.
+194
+And like, it just would never look at things that way.
+195
+We've talked about Confluent.
+196
+I think about Cerebris or Fireworks or some of these others that I work on or, you know, Sierra, which Peter works on.
+197
+And like, those are all.
+198
+And those were like founders in a deck, and we just did them and we did them with conviction.
+199
+Like we took a portion of them.
+200
+Pre-revenue, generally speaking.
+201
+Yeah, all those are pre-revenue.
+202
+They're all pre-revenue.
+203
+They're pre-company.
+204
+Yeah.
+205
+And so I don't think that is it.
+206
+I think there are different dynamics in each of these companies that have to be like torn apart.
+207
+But, you know, ultimately, for these in competitive spaces where they're riding the LLM thing and they have momentum, some of those will work.
+208
+But you need to make sure, double and triple sure, that the founder is an absolute assassin and that they are shipping fast and they have some theory of how the like quick sugar high turns into something durable.
+209
+For some of the others, you know, that where they're like developing maybe their own AI and it's not in conflict with the LLM stuff, but it is also not necessarily benefiting in the same way from the LLM stuff and the billions of dollars investment there.
+210
+It's going to take time.
+211
+And that's okay.
+212
+But I think what you end up with on the other side of that, if the market works and the AI works and everything else, is like, I think you might end up with something that's much, much more durable.
+213
+And there's not going to be like five of them.
+214
+There's going to be like one in most cases.
+215
+You brought up something twice there, and maybe I'm reading too much into it, but you used the phrase.
+216
+Feels like, how do you determine that?
+217
+And one thought I've had is: the more vertical you are, the more insulated you are from competing with the LLM.
+218
+And so potentially vertical applications might be a place to benefit from the LLM as opposed to fighting it.
+219
+How do you think about that?
+220
+Yeah, I think this is, I think it's a right question.
+221
+I kind of just think of it as like, okay, can I imagine if I fast forward to, I don't know, GPT-6, GPT-7, like if you start thinking in that context, like, you know, we're DeepSeek R4, like, is that going to do this?
+222
+Is it going to do a lot of what this product does?
+223
+Is it just going to eat it?
+224
+You know, and we saw a lot of this with the marketing copywriting stuff early, right?
+225
+Like, it's just like, it was like amazing.
+226
+Yeah, it was amazing.
+227
+And then it was like just cannibalized by the thing it was built on.
+228
+And, you know, and I think some of them are continuing to do all right, but like, like, but it's tough.
+229
+Like, it's tough in that space.
+230
+So I think there's things like, just to be concrete, like, I work with a company, Quilter AI, that does printed circuit board layout.
+231
+And like, they, they're building their own AI for it, and it's been a work in progress.
+232
+Like, and it's just, and its capability is kind of 10x'd over the last year.
+233
+And I think there's like another maybe order of magnitude to go before you start getting to like real, like, oh my God.
+234
+And I think that's coming soon because we have a clear path for it.
+235
+But it's not related to the LLM stuff.
+236
+And I'm really confident that like GPT-7 isn't going to do like PCB layout.
+237
+Like you're, it's just like it doesn't, that's not part of the training set.
+238
+It's not something that it.
+239
+And so, like, you know, that feels like it's like once you cross over, you get to something really defensible.
+240
+Um, and so those are like maybe concrete examples.
+241
+Super helpful.
+242
+Um, so if the triple, triple, double, double, double thing's not my question, too.
+243
+What is that?
+244
+What do you get excited about?
+245
+Yeah, what is the new one?
+246
+What, what, what is the standard?
+247
+And let's take, let's take those, like, you know, when you're at zero and you're building for a long time, it's just take it off the table.
+248
+When you are scaling, what should you be doing?
+249
+Yeah, what should, like, when you sit down and you're doing an AOP and a board meeting, it's like, when do you say, hey, guys, like, we got to go, we got to be more aggressive.
+250
+We got to be faster.
+251
+What's in the AOP?
+252
+Annual operating cost.
+253
+Oh, yeah.
+254
+Okay.
+255
+So I think this is just like very company specific.
+256
+And I think one of the things that happened in the SaaS world is it became a little formulaic.
+257
+Yeah.
+258
+And so the investor bankery type investors, like the banker type of financier investors, like they figured it out and they have to be.
+259
+It's like the alpha market.
+260
+And it's like, oh, the magic number and like blah, blah, blah.
+261
+And I don't even think it's just like, and you know, they're like, eh, and the pencil, and then therefore it should trade at like 13.2 times.
+262
+And it's just like, okay.
+263
+And you know what?
+264
+Like they were right and they made a ton of money investing in those companies because there was like an, there, there was an arbitrage between people who understood this business model and how like the really power of the business wasn't reflected in the income statement and like the durability and all these things and like different gross retention, net retention, all these things.
+265
+So there was like, there was an arbitrage from like, I don't know, 2012 to 2018 that just like these and these growth funds and like everything.
+266
+Like it, you know, everyone figured it out and like whatever.
+267
+So it's over, as ARBs tend to tend to do.
+268
+And I think this new and this new AI one, maybe there is like, maybe there's just an ARB on AI generally because like it's just like so powerful.
+269
+And if you just project it, like it's just so incredible.
+270
+But I don't, but I don't think it's like, but it's not formulaic in that way.
+271
+And so I just have trouble, more trouble with the plan and just kind of saying like, this is the standard on them.
+272
+It's fair to say like benchmark class is classic, but like game on the field.
+273
+So it's like a little dependent on like which wave you're riding.
+274
+And so you're like, hey, this plan and how we're thinking about growth, how do we think about it in terms of how does it position us to win and be one of the, you know, it's still more like that.
+275
+That makes sense.
+276
+Yeah, it's just, and you kind of think about it and you can look around and you can say, like, well, are there competitors dominating?
+277
+Are there adjacencies that are crushing?
+278
+Like, how are we, you know, cannibalizing?
+279
+What are the different things?
+280
+I was talking to a really smart investor yesterday.
+281
+And, you know, one of the things that he made the point on, which I thought was like, which I had never thought about, was one of the reasons that Cursor, which is obviously doing incredibly well, one of the reasons he thinks the adoption was so quick on it was that for the three years prior, Microsoft was like carpet bombing the market with Copilot and CopyK.
+282
+And so then this thing came along that was like actually really worked well for this thing.
+283
+And so like everybody was prepped.
+284
+And so these are things that we don't, you just have to really look at them.
+285
+Tyler and I were talking about this on the way over, but that's like there's a big difference between cursor and like Devon, for example, right?
+286
+And one of the things that you're talking about is the entry point and how prepped is the market.
+287
+And they tend to move, you know, an inch or two at a time, sometimes a foot at a time.
+288
+Don't move like 10 feet at one time.
+289
+You actually have a tweet.
+290
+Oh, Finch Robin.
+291
+No, no.
+292
+And so I'm just like, that to me is the point that you're making.
+293
+You have a tweet on this that I think similar concept, Eric.
+294
+You said, well, the co-pilot approach is all the rage.
+295
+I think we're going to see a bunch of areas where the AI just does, like completely does tedious work.
+296
+So let's talk about that for a second.
+297
+Co-pilot versus maybe pilot, or like it just does.
+298
+Do you think they graduate or can you, in many cases, are we going to see them skip to kind of the final version?
+299
+I think there's this, I have this idea in my head, which is a co-pilot.
+300
+I think there's a set of areas where co-pilot is the right approach.
+301
+And there's a set of areas where we're going to be AI and done.
+302
+And maybe some crossover as the AI becomes more capable.
+303
+The AI and done thing is like this PCB layout company where it's just like, you know what you don't really want?
+304
+Like you don't want to do that.
+305
+Like you just don't want to do it.
+306
+Like it's just better for a computer, go do that and come back and just be done with it.
+307
+But there are other things where the human guiding it or getting kind of superpowered on it is really powerful.
+308
+Or getting comfortable with it and then being able to.
+309
+I think that's another important part of this enterprise adoption thing that's going to.
+310
+It's like, oh, I'm going to check it.
+311
+I'm going to check it.
+312
+I'm going to check it.
+313
+And it's like, you know, it takes about 30 days before people are like, oh, I didn't really check it anymore.
+314
+And so I think both models will be there.
+315
+I think for code, we're going to get to a place.
+316
+You know, Dario made some comments, I think, today or yesterday about how much code generated is going to be actually by AI versus people.
+317
+I think that is clearly working and it's working really well.
+318
+On the other hand, you do have these cases, like there's one company I was talking to had hired a relatively junior engineer, and like 90% of the code was written by AI, and it was garbage.
+319
+It's just like garbage.
+320
+And so there's this other kind of irony of this, which is like the great engineer is going to actually be more valuable.
+321
+Like the truly great engineer, it's an amplifier for them in the future.
+322
+And there are other areas like accounting, or which we have company digits or, you know, legal work, like I think a lay of law, and like other things where it's like in that stack, like constructing a brilliant agreement and a legal contract, I just, I think that's like a, at least for the time being, like, that's a, that's a task for a human.
+323
+But there's a lot of underlying execution and rote legal work and paperwork and whatever that is like clearly AI can just do, right?
+324
+And so like those are kind of the dynamics to me.
+325
+You mentioned something earlier.
+326
+You basically, these companies that have scaled so well, a lot of them you funded just a deck and a team, pre-product, pre-revenue.
+327
+What is Benchmark looking for in order to fund somebody pre-product, pre-revenue?
+328
+Are these second-time founders only?
+329
+Are they, are there certain, like, how does it work at Benchmark for the partnership to get excited about a deck, an idea, and a founder?
+330
+You know, our former partner, Mitch Lasky, he's described it to me.
+331
+He's like teaching me in the, you know, whatever, 10 years getting started.
+332
+And he's like, it's not, there's no bar.
+333
+It's not objective.
+334
+He's like, the better analogy is it's falling in love.
+335
+Yeah.
+336
+It's falling in love.
+337
+I call it spiritual conversion.
+338
+Yeah, it's feeling true.
+339
+You like baptized.
+340
+You're just, you feel a connection.
+341
+You know, each of us will articulate it a bit different, and I think each of us has like different tastes and whatever.
+342
+But for me, you know, there's obviously this like big market thing.
+343
+Like, what's happening in the market that is going to allow this thing that really the world doesn't want to have succeed to like break through?
+344
+So like that's just like a big market thing and like what's shifting and like is there a seam and all this stuff.
+345
+You know, then you're like looking at the founder and you know, I just am like, is this is this the founder that is going to grow and scale and grow with this company?
+346
+And I think that that's actually a really important thing to me is like, is the founder a hyper-learner?
+347
+Because I find like, you know, the job at three people is really different than 30, than 300, than 3,000.
+348
+It's different at different scales.
+349
+Like these are really dynamic jobs and they're changing.
+350
+And it's really tough.
+351
+It's like, I said this before, like, I just, in some ways, it would be better if there was like CEO one and then CEO two and then you graduated CEO three, because it's the same title and same thing the whole time, but it's a totally different job, like every six months.
+352
+And then the third thing is really like, can't be, you know, can't be overstated is an insight.
+353
+And, you know, and we kind of talked about the J example with Kafka and the real-time data hub and like, hey, this is going to be a thing.
+354
+I think of that almost for every investment, probably for every investment, there was an insight.
+355
+There was somebody who, the founder came in, had seen stuff, and they were just like, no, but this.
+356
+And you're sitting here and like, we meet companies, all of us meet companies every week, right?
+357
+We're meeting companies every week, and you're talking to smart people all the time, and you're like reading all this content on Twitter and everything else.
+358
+And then like someone comes in in a domain that you know a little bit about at least and says something you've never heard.
+359
+And you're like, wait a minute.
+360
+And then you think about it and then you ask questions about it and you're like, that's totally urgent.
+361
+I don't know if it's right.
+362
+I don't know if it's right.
+363
+But it's at least logical.
+364
+It's well thought through.
+365
+It's well thought through.
+366
+And you're like, if that's right, and this person has an insight and they're a killer and like this market is big, like that's the, that's the formula.
+367
+That's the formula.
+368
+And, you know, on those kinds of things, we've, we've written really big checks like, just like that.
+369
+And I think like that to me is, it's rare.
+370
+It doesn't happen that often when you like fall in love and you have those three things and like all this stuff.
+371
+But when it happens, it's magic.
+372
+I mean, like, first meeting, you fall in love, or do you buy that, or does it take a while to get to the conviction?
+373
+Each of us is different for me.
+374
+I feel like I just am like, I'm a romantic, yeah.
+375
+So, I'm there, and I'm I think about um you know, Lynn and Fireworks.
+376
+So, um, they made they made the list two years in a row, right?
+377
+The exceptional startups listed.
+378
+It's an exceptional company, and hyper growth, and um, you know, one of these crazy like revenue-scale growth.
+379
+But she ran, um, she ran the PyTorch team inside of Facebook, the PyTorch engineering team, and and and the founding team, Kane, kind of came from, from, from the PyTorch team.
+380
+And she came in, and I generally don't like people from these oil state companies.
+381
+Like, I just find in well, you did LinkedIn and I did Facebook, so I think you might like it.
+382
+I would say LinkedIn to me was not a company.
+383
+It wasn't a oil estate company in the sense that like they were commercial, they grounded out like you know, like Google and Facebook was like monopolies because they were like, They were really duking it out.
+384
+No, I actually agree.
+385
+Yeah, LinkedIn had to do some hard stuff, Google just collected money so much, so much hard state.
+386
+You know, these other peak companies just like they poke a hole in the ground and the oil starts coming out, and it's like, okay.
+387
+Um, so I generally don't like them, and so you know, she comes in, and I tell her that in like the first 10 minutes in the meeting, that you don't like Facebook people, basically.
+388
+I just don't.
+389
+It's not they're incredibly smart and very talented.
+390
+But not great founders, and zero to one thing's a different skill set.
+391
+Zero to one's a different skill set, yeah.
+392
+Yeah, and and that, that's that's a much better PC way, a very euphemistic way to say it.
+393
+Um, and so, like, I, and, this is what we're doing.
+394
+This is how we did it in PyTorch, and this is how PyTorch came from behind and like beat TensorFlow and like, and everything else.
+395
+And I was like, 10 minutes in, I walked out and told the receptionist, I was like, please call Chloe, my assistant, and just, and, and, like, push my next meeting.
+396
+Like, push my next meeting because I need all the time I can because I'm doing this investment.
+397
+And then it took like six more weeks, and like, she still worked at Facebook, and like, you know, the team was leaving.
+398
+She hadn't even left Facebook yet.
+399
+She hadn't even left Facebook yet.
+400
+That's the other part of your playbook.
+401
+They're still employed.
+402
+Yeah.
+403
+And they work at Old Estate companies.
+404
+And so I, you know, I feel like that doesn't always happen, but when it happens, you feel like this.
+405
+And, you know, she subsequently pivoted, the companies pivoted.
+406
+So was the insight wrong?
+407
+Or was it wrong?
+408
+You know, the insight changed.
+409
+In this AI world, it was like a PyTorch cloud idea.
+410
+And then she was like, well, Gen AI is happening.
+411
+And really what people need help on is not building, not this like base layer, but one layer abstraction up.
+412
+And they kind of moved to that.
+413
+So was it the fact that she pushed back on you and was inquisitive and like stood her ground?
+414
+Like, what was it that she did well there that caused you to be like, man, I'm kind of in love?
+415
+And part two to that is like, is it the insight or is it that they have the ability to have an insight?
+416
+And you're like, even if this isn't the one, the way you got to this one will lead you to the next one.
+417
+You know, they're all, you know, they're all different.
+418
+Like, this is, this is the law of small numbers.
+419
+Like, nothing is particularly significant.
+420
+In that case, there was an insight.
+421
+Like, I always, I never understood why PyTorch, like, TensorFlow came, so I guess for your audience, like, hey, and TensorFlow came out of Google and it was totally dominant.
+422
+And if you look at like the NeuroIPS papers from, I don't know, like when TensorFlow was, it was like 99% of the NeuroIPS papers were like built on TensorFlow, like the things.
+423
+And then, like, three or four years later, it's like 90% PyTorch.
+424
+And, like, this, these are, these are big projects that are relevant to really good companies.
+425
+And so, like, how is it that a new framework came along and just beat it?
+426
+Like, I understand Cafe Antiano and some of the previous ones before TensorFlow, because they didn't have that kind of backing, but like, this is a totally different thing.
+427
+And she explained why, and she just articulated why.
+428
+So, that's part of the insight.
+429
+And, and, and then, why that insight would turn into something else.
+430
+So, I think that was like a really important part of it.
+431
+And, and you're just like learning.
+432
+It is the inquisitiveness part of it.
+433
+It's, it's the, it's the back and forth.
+434
+Like, um, one of the most important things is, like, why do we do this?
+435
+You know, and each of us has our own things, but for me, I want to work with entrepreneurs.
+436
+Like, that's the part that gets me out of bed.
+437
+Like, the investing part is like, whatever.
+438
+Like, it kind of like, that's a means to an end for me, but I want to work with entrepreneurs.
+439
+So, like, one of my other things is like, if this person calls me at 9 p.m.
+440
+on a Saturday, like, am I going to look at my phone and be like, uh-uh, where am I going to pick it up?
+441
+And I just like, that to me is like, that's such a good test.
+442
+You know, another kind of question I always ask myself on these investments is we've all worked with these amazing people in our lives that you trust and you feel, I feel a lot of loyalty to all the people at Rock Melt, for example, who stuck with me through thick and thin.
+443
+And I think they're excellent and I want the best for them.
+444
+And I was unable to deliver or lead us to, you know, an amazing company.
+445
+And I want them to have that opportunity.
+446
+And so one of the things I think about is like, would I, would I, would I talk Rock Melt people into like working here?
+447
+Would you send a friend to this?
+448
+Would I send a friend to this?
+449
+Or would you work for them?
+450
+Maybe age-adjusted.
+451
+Would you go there?
+452
+Yeah, would I work for them?
+453
+Or would I, and would I, do I believe that like I could very authentically convince people or sell people that this could be their life's work?
+454
+And like, there's a lot of businesses, like good businesses, which are, which I'm totally fine passing on and not working with, even though they're good businesses and they'll be good returns and they'll generate like venture returns because they like I wouldn't want to work with that person maybe, or like I don't have good chemistry with that person is probably a better way to say it.
+455
+Or I just find like it's just like, I'm just not a business that I get excited about.
+456
+Yeah, for whatever reason.
+457
+For whatever reason.
+458
+I'm actually very curious too.
+459
+What's the founder of Fireworks?
+460
+What's her name?
+461
+Lynn.
+462
+How did you meet Lynn?
+463
+Because the sourcing part of this job is tricky because was she meeting with five other firms that day or was it just you?
+464
+She's still at Facebook.
+465
+So how did you source this meeting?
+466
+So in that case, another founder introduced me.
+467
+Yeah.
+468
+Which is generally the best.
+469
+Which is the best.
+470
+I think I get a lot of introductions from other founders.
+471
+Was the other founder someone you had invested in?
+472
+Jay Kreps.
+473
+Oh, okay.
+474
+I think a lot of stuff comes from founders, like other founders.
+475
+And it's founders that I've invested in and founders I haven't invested in.
+476
+And that's so nice when they come and you get that.
+477
+It's the highest compliment that a founder can pay you.
+478
+And so, it's really special.
+479
+I do cold outreach, too.
+480
+You know, I like doing that.
+481
+I don't do it as much as I should anymore, but you'll see things.
+482
+Like, there was a company called Octant Bio, and it's outside of my domain, but I really respected the founders, followed him on Twitter, and he said, Hey, one of his early employees was going off to start a company, and he was so excited about it, and he thinks it was going to be amazing.
+483
+And I just like DM'd him right away, and I was like, Hey, I'd love an intro.
+484
+Like, that sounds amazing.
+485
+And I got to meet Nicholas Laura Stone through that.
+486
+And he came in as EIR and he started a company.
+487
+And, like, you know, it's a pleasure to serve on his board.
+488
+Like, I just, and so, like, that's a really special thing that happened.
+489
+That's awesome.
+490
+How often do you do the EIR play?
+491
+Is that a common thing here?
+492
+You know, it goes in fits and spurts.
+493
+I think, like, right now, I don't know if we have any, I don't think we have any EIRs, but in different periods, yeah, we'll have them.
+494
+I've done it three or four times.
+495
+Cool.
+496
+Any other questions we should dig on on AI or this other stuff before we switch topics?
+497
+Oh, you know, just the classic.
+498
+You know, you've.
+499
+And it's hard to know.
+500
+It is very hard.
+501
+Like, actually, I will ask one: venture capital.
+502
+Like, these founders are famously scaling much more efficiently.
+503
+You know, fewer people at least.
+504
+Maybe they're still raising big rounds, but do they need to?
+505
+The direct question is: is venture capital even needed in a lot of this case?
+506
+Will there be fewer firms in the future?
+507
+Is there, how does the landscape change?
+508
+And Sterling's point usually is like, won't it be the case that almost there's an adverse selection effect of the worst founders will raise venture capital now?
+509
+Because the best ones can just get so far without it, because you can create something much easier than you ever could before.
+510
+Now it's the stupid ones who need to raise venture capital.
+511
+It's also to your point earlier about, I love this, the investment bankification of, like, that doesn't exist right now.
+512
+No, it does not.
+513
+And so a lot of people aren't going to know how to deal with that.
+514
+A lot of firms aren't going to know how to deal with that.
+515
+So at the same time, as they're going to be struggling to adapt, you're having founders that there's a totally new way of building this stuff.
+516
+And yeah, I love, love that question.
+517
+I hope not.
+518
+Maybe is one way to say it.
+519
+I think it varies.
+520
+Like, I think there's going to be some amazing bootstrapped companies like Amazing that will get very big and very large and be able to leverage AI to like, to just like rip.
+521
+I think there'll be lots of things.
+522
+But to me, there's something that's lost in that, in the question, which is venture capital is two things.
+523
+It's, I put a lot of value in the partnership part.
+524
+It's both a part that I personally love, but I think I believe in it.
+525
+I believe in that value proposition.
+526
+And there are other ways to get that.
+527
+There are other ways to get that for sure.
+528
+And most of the great companies, if you talk to those founders, they had partners, like what we think of as partners around who help them and help them make the business better and push them and asked questions and were sounding boards, which is my favorite analogy for it.
+529
+But I think that's a really important part of it.
+530
+In some ways, the whole business of venture capital kind of artificially tied these two things together.
+531
+Yeah, they're bundled.
+532
+They're bundled.
+533
+And they don't necessarily have to be.
+534
+And so maybe there's some future evolution that is where there's.
+535
+Well, you answer another question we debate, which is like, what are the good reasons to raise venture capital?
+536
+And do you need, and is the money a pro or a con or a neutral part of it?
+537
+And what I'm hearing you say is one good reason that apparently some really, you know, obviously some fantastic founders have believed is that the value is in the partnership because they can get money from anywhere, but they choose to have this non-executive partner called a venture capitalist on the journey with them.
+538
+And so to believe that doesn't exist in the future would mean that you don't think that partnership's valuable.
+539
+You can get it another way.
+540
+Or you can get it another way without the money, perhaps.
+541
+But I think the partnership component is pretty like, yeah, if that didn't exist, then it's just money.
+542
+But if you have that, you can see why founders prefer that.
+543
+Yeah, I think it's a very special part of the job, and it's a privilege to get to do that.
+544
+We've got a bunch of early stage founders that listen to this.
+545
+Some may pitch benchmark at some point, some may not.
+546
+But for those who don't know much about how the firm works and some of the unique cultural aspects, can you talk about a couple of things?
+547
+So, one, for example, I talked with Chatham at Sundance a couple years ago, and he mentions the famous Monday partner meeting.
+548
+All day, free-flowing, unstructured.
+549
+Is this right?
+550
+Talk about why, and it's a little different than other firms, right?
+551
+How do you guys do Monday partner meetings?
+552
+We do like five or six hours of just us in a room.
+553
+And we're just partners.
+554
+Just partners, and that's all that's here.
+555
+And we're just talking.
+556
+Like, there'll be a company pitch, you know, maybe every other Monday or something.
+557
+There'll be sometimes a company comes in to update.
+558
+Sometimes there's a lunch guest or something.
+559
+But it's really just, and there's no agenda.
+560
+No one, there's never an agenda.
+561
+You just show up.
+562
+You just show up.
+563
+You just show up and you're talking about companies, what happened in the week, what did you see?
+564
+You know, things that are going on in your portfolio companies, like executive searches that you're working on.
+565
+Just.
+566
+So why not structure it?
+567
+Why not have five topics and go through, you know, like what's the reason to keep it?
+568
+One of the advantages of it is there's five of us, right?
+569
+They're five GPs and our operating partner or lawyer in the room.
+570
+And so there's no, like, the nice thing about that is like, you don't need to.
+571
+Like, you can, you can just, like, talk about what is most important.
+572
+I'll tell you what Chaden said at Sundance.
+573
+He said, people have proposed or talked about changing things, but then the fear is that you'll break something that's working and so no one will actually go through with it.
+574
+And you just kind of keep doing it.
+575
+Yeah, I don't, like, you know, and if we're done, like yesterday, I think we were done like 30 or 40 minutes early, and just like, well, it's like, fine, okay, we're done.
+576
+Like, you just move on.
+577
+So I don't know that there's any, and I think that part of what happens is like these firms aren't companies.
+578
+Like, we're not a company, actually.
+579
+And you want a loose and wandering exchange of ideas.
+580
+Like, that's what our job is to do, to see the present very clearly.
+581
+And to see the present very clearly, you have to just wander.
+582
+And like, you have to understand.
+583
+You have to debate points and you have to like do that.
+584
+And so that's kind of what we do.
+585
+And then we go and we go do some work.
+586
+And then we typically have a dinner guest or have a dinner with a guest here around this table or a similar one in Woodside.
+587
+And yeah, and it's like just a really, just another opportunity to learn, exchange ideas.
+588
+You brought up that quote: the job is to not predict the future, but to see the present clearly.
+589
+I think it's Peter.
+590
+It's Kohler's.
+591
+Oh, it's Kohler.
+592
+It's Kohler's.
+593
+Talk about that because a lot of people would say you're actually, you're trying to predict future markets and invest for markets that don't exist yet.
+594
+What does he mean by that?
+595
+Well, I think we should say, like, I think there are different venture capital models work.
+596
+Like, there's not just one model that works.
+597
+A few weeks ago, I was talking to Mike Spicer from Snowflake and Pure Sword.
+598
+We've been trying to get him on the podcast for two years now.
+599
+Yeah, he's unbelievable, like, and just an unbelievable track record and unbelievable investor.
+600
+You know, what are these?
+601
+He's like, he likes to.
+602
+He likes to start them and be the initial CEO of the companies and everything else.
+603
+And, you know, I think he'd say he doesn't like investing in other people's companies.
+604
+That is, that is a capability and here, which I, you know, like, what something to aspire to, but like, I can't do that.
+605
+Yeah.
+606
+And, and, and so, like, it's amazing that, that he does that.
+607
+I find it amazing to partner with founders in their earliest stages of development.
+608
+But I, you know, I can't help them, like, figure out the product.
+609
+Like, I can't do that.
+610
+I can't help them figure out the technology.
+611
+I can't do that either.
+612
+Like, and so, like, you know, that's that's a different element of it.
+613
+Um, I think I can say at times, like, that's not right.
+614
+You know, like, that's not going to work.
+615
+Or, like, we, you know, there's something busted here.
+616
+Like, you can say that and have that pushback, but I can't actually help them figure it out that part of it.
+617
+But then there are other parts where I think we can help a lot.
+618
+And so, like, that's the, that's the, that's the system.
+619
+And so, I think there's like different models that work.
+620
+Um, my mind is going somewhere around this.
+621
+Oh, oh, uh, I would love it.
+622
+Eric, would you mind sharing one thing you've learned from your other four general partners if we go through them all?
+623
+Like, what have you learned from Peter?
+624
+What have you learned from Sarah?
+625
+What have you learned from Chatham?
+626
+And then the fourth partner, fifth partner is Victor.
+627
+He's the newest, right?
+628
+Victor's the newest.
+629
+Anything you can say for each of them?
+630
+Sure.
+631
+Like, so I'll go in reverse chronological order.
+632
+So, you know, Victor is our newest partner.
+633
+He's a founder of Wildlife Studios, which is a game company, and with his brother, who now runs.
+634
+And then partnered with us actually as well.
+635
+And one of the things I think Victor is so, he's pushed me on so much is just like the job is like to work with excellent people and like period full stuff.
+636
+He's like, this is like, that's the beginning and end of it.
+637
+And he is also, and I just think that the clarity of that articulation is very useful.
+638
+Like I intuitively knew that, do that, but it's just like the clarity of it.
+639
+And so I love that.
+640
+And he has really pushed and continues to push me on like the risk taking.
+641
+Am I taking enough risk?
+642
+And I appreciate that.
+643
+You know, Chathan is pushing in a lot of ways too, but he is, I think he characterized me by his resourcefulness on figuring things out.
+644
+We cover a lot of the same stuff.
+645
+And so his ability to see like what is moving early and like what has actually started to break out and like what's interesting, what's getting developer mind share, everything else, he's maybe two or three levels more technical than I'm.
+646
+And it's so powerful, I think.
+647
+Sarah is kind of a, she's been a venture capitalist.
+648
+She started as an associate at Besmer and then.
+649
+And yeah, she found Pinterest there.
+650
+And then she joined Pinterest.
+651
+And I think the thing that she has through that training is like coverage, like meet companies.
+652
+One of the conversations Sarah and I have all the time is: if I have free time, I tend to call a CEO that I work with.
+653
+But the right thing to do, which is like nice, I think it's nice.
+654
+But like, but like, part of what it should be doing is like just like casting a wide net and spending time on that.
+655
+And then Peter, who's been here the longest, there's, there are so many things to have learned for him.
+656
+But I think the most valuable from an investing perspective is, you know, we don't do memos and we don't do this.
+657
+And Peter always jokes: if you have a data room, we probably wouldn't open it.
+658
+And like, and like, you know, and so, but so the question is, like, why?
+659
+And I think that the key thing is for most of these companies, there's really only one or two questions that matter.
+660
+Like, after you get through your founder thing, there's really only one or two questions that matter.
+661
+And I think his superpower is just like figuring out what those questions are.
+662
+That's the whole game.
+663
+And if you, everything else is bullshit.
+664
+And like, and so you go through these long memos and you go through the data rooms and all this stuff, and it's just a bunch of, it's just, it's just a bunch of pollution in your mind of really what you need to figure out, which is what are the one or two questions that matter.
+665
+You know, it's an interesting insight from, you know, Keith was saying the same thing.
+666
+He's like, I like to invest early because anybody can see and read the numbers.
+667
+And that actually like makes me worse than if I am, because I'm not focused on what actually matters.
+668
+It's the same point you're making.
+669
+It makes me, it makes me worse.
+670
+And again, I think probably worth clarifying that this is for early stage investing, right?
+671
+Like, that's data rooms start to matter a whole hell of a lot, you know, you know, when you're in your CED, you know, IPO kind of stuff.
+672
+But, but sometimes the initial momentum or lack thereof is pollution in your brain.
+673
+I think that's amazing.
+674
+And I think you're also saying the one or two things that matter after you've set aside the founder.
+675
+Like, the founder is like table stakes.
+676
+What are the key things that matter of them being a big company?
+677
+In addition, right, did I understand that correctly?
+678
+Absolutely.
+679
+Yeah, that's a great point.
+680
+It's just like what we care about is being part of the handful of companies that can turn into giants and that can be multi-billion, multi-tens of billion, maybe multi-hundreds of billion public companies.
+681
+Like that's what we, that's what we're here to do and like be part of those at the earliest stages that we can.
+682
+And, you know, thinking through that's like a very difficult, difficult task.
+683
+And each one of them is different.
+684
+I joke, it's like you're looking at kindergarten playground and trying to like pick out LeBron.
+685
+And it's like, you know, you're just like looking at the playground.
+686
+You're like, that one, that one's going to be, like, put up 50,000 points.
+687
+That's funny because the analogy holds because you'd probably go for the tallest one.
+688
+And that would, you know, probably be wrong.
+689
+Like, you want to look at other things.
+690
+You want to look at other things too.
+691
+And there's elements of it.
+692
+But it's, you know, there's a lot of luck involved and a lot of, you know, but there's some really cool things that you can pick up on.
+693
+One question I have, because, you know, don't do memos, don't like data rooms, got it.
+694
+How do you keep yourself honest about if your reason for investing, if that proved out, and regardless of the outcome, because it's all about the process and how do you go?
+695
+Again, it's the right question.
+696
+So, Sarah actually writes notes on the meaning she has so she can keep herself intellectually honest on it.
+697
+I think she does it, and she has a whole system around it so she can go back and back-check and everything else.
+698
+Um, I, you know, I understand that I am telling backstories when I like reflect on things and I think about them all the time.
+699
+So, I, you know, I don't know, there has to be an element of intellectual honesty.
+700
+Yeah, I sent you that.
+701
+I think when on our initial exchange with Confluent, part of the reason that was fun for me to dig up that old email is because it was like, what did I really think then?
+702
+And I ask myself that all the time.
+703
+For the ones that work, you know, and might kind of go off to the moon, I ask myself that.
+704
+And for the ones that don't, I also ask myself that.
+705
+Like, what did I see and what did I get wrong in the read?
+706
+And would I do it again?
+707
+Like, one, you know, one company, so Alex from Scale AI, I met him at the A and I spent time on it.
+708
+And I, like, I loved him.
+709
+And it was just so clear that he was like, and then he was like 20 or 21, like, he was so young.
+710
+And he was such a killer.
+711
+And, and he had this like autonomous driving, like, labeling revenue at the time, like, it, you know, and it's like people in the Philippines and like, oh, this stuff.
+712
+And I was like, that revenue is not here for this.
+713
+Like, I just did not feel like that revenue was long for this world.
+714
+And, and we kind of talked about it and everything else.
+715
+And I'm so dumb.
+716
+And, and so I didn't pursue it.
+717
+And I think I was like, I think I should have said yes.
+718
+Obviously, obviously, I should have said yes.
+719
+But I think if I had said yes, he would have gone with me.
+720
+I think.
+721
+And, like, idiot.
+722
+Like, I'm such an idiot.
+723
+And, like, I know better.
+724
+Like, you, so what you missed.
+725
+You know what I missed?
+726
+Is that like, was the pollution?
+727
+That guy.
+728
+Yeah.
+729
+Like, it is like, you had him.
+730
+He was such a winner, and he was going to figure it out.
+731
+You had Lisan Al-Khaib at the table, and you said, I don't like your business model.
+732
+I was so dumb.
+733
+It was so dumb.
+734
+And just like, so dumb.
+735
+And I, and I, and, like, I know better.
+736
+I know better.
+737
+I know better than that.
+738
+And I know I, and, and so you're, you're sitting there with someone at that age and that sophistication and talent level.
+739
+Like, their curve is like this.
+740
+There's no chance.
+741
+And, and you know what?
+742
+And even to go one step further, even if it didn't work, even if it didn't work, which obviously it has, but even if it didn't work, there's no chance I wouldn't have learned a ton.
+743
+Yeah.
+744
+And like, because of him.
+745
+Because of him.
+746
+I would have learned a ton from him.
+747
+And so just so dumb.
+748
+Can I ask this question?
+749
+And then I think I know the answer.
+750
+We got to wrap up soon.
+751
+You're out of time.
+752
+I know.
+753
+This is awesome.
+754
+I'll miss a buff light for this.
+755
+Do you regret the ones you didn't do, like the Alex ones that in hindsight you feel like process, independent of the outcome you should have?
+756
+Or do you regret the ones you did do and you're like, oh, I ignored X, Y, and Z, and I did it.
+757
+And I don't like, which one, which one hurts the worst?
+758
+Definitely Alex ones hurt the worst for you.
+759
+Because you only miss out.
+760
+You only lose one X.
+761
+You only lose one.
+762
+You know, I like, like I said, I've been very lucky in that the people I've worked with, I'm like happy to work with.
+763
+Like, I just, whether it works or it doesn't work, you know, Campbell said this to me, like, Bill Campbell was one of my mentors a long time ago before he passed and is a role model for me.
+764
+Like, that's what I want to be.
+765
+I think in time, 20 years from now, if people talk about me like one-sixth or one-tenth the way they talk about Bill, I'll be like, fuck, I did it.
+766
+I think my career was successful.
+767
+And, you know, he said this to me, and he was part of Apple and he was part of Google, and everyone talks about those, like, those stories.
+768
+But you know what is like forgotten when people talk about it is he worked with like schmucks like me also.
+769
+And he gave us time.
+770
+And he gave us time and he gave us guidance.
+771
+And he, and it, like, and I don't think it didn't matter to him that it like, you know, that like, I mean, it didn't matter.
+772
+It mattered, of course, but like it didn't, like, it wasn't like his, his, like, north star.
+773
+His north star was like the people, do I want to work with that person or not?
+774
+And like, that was his north star on it.
+775
+And to me, like, I, I just, that's how I'm oriented.
+776
+Like, I just want to work with, and so I don't, I don't feel bad about that.
+777
+Love it.
+778
+So we have three questions to ask everybody.
+779
+And you've actually talked about this throughout, so I think I could answer this one for you.
+780
+But what, what we call it the golden spur question, and it's like, what makes you the way you are?
+781
+What, what motivates you?
+782
+Why are you doing this?
+783
+I do it to work with the people.
+784
+Like, I do it to work with entrepreneurs.
+785
+Like, that's what I do.
+786
+This is a vehicle to do that.
+787
+And it's just like to be part of Benchmark.
+788
+I think that's the ethos of Benchmark from the very beginning is partnering with entrepreneurs and working with them.
+789
+And I just get so much joy out of that.
+790
+And, you know, and I think my partners directly push back, hey, you know, you want to be partnered with companies that don't need your help.
+791
+I don't know.
+792
+I think that you spend a lot of time on the companies that aren't working and a lot of time on the companies that are really working because like small improvements or small enhancements on those make a big difference.
+793
+And so like, I really like love that model.
+794
+I could have guessed you were going to say that.
+795
+All right.
+796
+The last two are pretty easy, I think.
+797
+The I/O podcast, that's what we call it, investor-operator.
+798
+So who is an investor you admire most outside of Benchmark?
+799
+And then who is an operator you admire most outside your portfolio?
+800
+Well, the investor, I have to say, Jim Goetz from Snequoya and Excel previously, but he, for a few things.
+801
+One, I'm hugely grateful to him because he told me to be a venture capitalist.
+802
+And like he told me that in 2008, and it took me six years to figure out he was right and like all this stuff.
+803
+But I just am like super grateful for him for that.
+804
+And then two, you know, there are very, very few people who had successful enterprise companies and successful consumer companies like WhatsApp and Palo Alto, I guess.
+805
+And so just an absolute winner and does it with class.
+806
+Love it.
+807
+What about operator, a founder that you just love?
+808
+You know, I mean, Alex, there's so many founders, but it would be, you know, like Mark and Ben gave me my career and they gave me my start and my career.
+809
+And Mark sat on my board at Rockmount and, you know, I was Ben's assistant.
+810
+And they're operators, they're entrepreneurs as investors.
+811
+And so I have a ton of respect and gratefulness to those guys.
+812
+Eric, this has been a fun combo, man.
+813
+Thanks for taking an hour with us.
+814
+We owe you.
+815
+We appreciate it.
+816
+Thank you.

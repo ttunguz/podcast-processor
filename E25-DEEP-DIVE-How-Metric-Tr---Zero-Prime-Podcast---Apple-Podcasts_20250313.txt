@@ -1,0 +1,669 @@
+1. EPISODE CONTEXT
+
+Podcast Name and Focus: Zero Prime podcast, exploring the early stories of top startups by the experiences of their engineer founders.
+
+Host: Pete Soderling
+
+Guest: Vijay Supramanian, Founder and CEO of Trace (metrics layer/metric trees startup)
+
+Featured Company Overview: 
+- Trace is a startup using metric trees to create better cross-functional alignment and enable improved business outcomes. 
+- Early stage startup, no funding details provided.
+
+2. KEY INSIGHTS
+
+1. Insight: Metrics layers are a new standard for defining, calculating and serving up business metrics that can enable true data operationalization within organizations.
+
+Supporting Quote: "I think of a metrics layer as a narrower, maybe a higher level abstraction. So it's really focused on metrics, business metrics...I got very excited about the idea that if there is a metrics layer, it'd be very very powerful for enabling how data is truly operationalized within organizations."
+
+Significance: Introduces the core concept of metrics layers and highlights their potential to move beyond just governance to actively enabling data-driven workflows and operations.
+
+2. Insight: The use cases around metrics are expanding beyond just dashboards, driving the need for more robust metrics infrastructure.
+
+Supporting Quote: "There was a time when generating a dashboard was just sufficient. That was a metric. Here's a dashboard, here's a metric, but now the use cases are just so much more nuanced and varied."
+
+Significance: Explains the evolving landscape and increasing demands placed on metrics, justifying the need for dedicated metrics layers/stores.
+
+3. Insight: Metrics trees model the core business processes visually, aligning data, business and executive teams while enabling easier monitoring, root cause analysis and optimization.
+
+Supporting Quote: "Metric trees, what are they really capturing? They are capturing the core business processes...because they're really pushing the abstraction up from tables, columns to metrics to now really a metric tree, which is really the business, right?"
+
+Significance: Introduces the core value proposition of metrics trees as a system of record capturing the business model itself, enabling diverse use cases.
+
+4. Insight: Data teams need to move beyond just building to operating and advising, by deeply understanding the business domains they support.
+
+Supporting Quote: "data folks, yes, retain the builder mindset...but definitely get out of your technical box, really you have to understand the domain, you have to understand how marketing works, how they think, what the incentives are..."  
+
+Significance: Highlights the need for data teams to bridge technical and business knowledge, which metric trees can facilitate.
+
+5. Insight: Generative AI's role may be in generating narratives from rich metrics backends rather than directly querying data.
+
+Supporting Quote: "If you model your business through metric trees, you have the systems of record, it gets very powerful because now GenAI can do what is good at, which is it can utilize this rich metrics backend...And what it can focus on really is generating narratives."
+
+Significance: Provides a perspective on how generative AI could leverage the structured data in metrics trees/layers.
+
+3. TECHNOLOGY & PRODUCT DEVELOPMENTS 
+
+Key Technical Points:
+- Metrics layers define business logic mappings to data and calculate/serve metrics
+- Metrics trees model business processes by connecting related metrics hierarchically
+- Proposed components like caching for performant metric serving
+
+Core Differentiations:
+- Not coupled to any BI tool, a separate standard infrastructure layer
+- Model full business, not just join descriptors
+- Enable diverse operational workflows beyond governance
+
+Future Plans:
+- Build out rich ecosystem of apps/integrations around the metrics backend
+- Potentially standardize metrics for different business models
+
+4. COMPETITIVE LANDSCAPE
+
+Companies Mentioned:
+- DBT (building semantic layer)
+- Looker (BI tool with LookML modeling layer)
+- Uber, DoorDash, Airbnb (built internal metric stores)
+
+Positioning: 
+Trace is building a dedicated metrics backend and framework using metric trees to model the full business. This is differentiated from BI semantic layers that just describe data relationships, and from internal one-off metric stores at large companies.
+
+5. TEAM & CULTURE SIGNALS
+
+Leadership Philosophy:
+- Get out of the technical silo and deeply understand business domains 
+- Bridge between being a "builder" and an "operator/advisor"
+
+Values/Priorities:
+- Aligning data, business and leadership through visible models 
+- Optimizing business processes and outcomes through data
+
+6. KEY METRICS & BUSINESS DETAILS 
+
+Growth/User Metrics:
+- Airbnb mentioned having 12,000 metrics (showing scale)
+
+Go-to-Market: 
+- Positioning as a supplier to analytics/data teams vs. end user tool
+- Competing with internal build over buy decision
+
+7. NOTABLE TECHNOLOGIES 
+
+- Metric trees (novel hierarchical business process modeling)
+- Generative AI integration potential for narrative building
+
+8. COMPANIES MENTIONED
+
+Uber: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."
+
+DoorDash: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."  
+
+Airbnb: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics. And by the way, metrics, I remember the Airbnb article that came out mentioned 12,000 metrics, thousands of dimensions."
+
+Facebook: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."
+
+Snapchat: "I mean, you look at Airbnb, Uber, DoorDash, and these companies, Facebook, Snapchat, they have such scale of data, such scale of metrics."
+
+DBT: "So DBT has a big investment in DBT semantic layer."
+
+Looker: "Looker, obviously, famously, the most recent one has Lucamel and these tools sort of again, describe how you can join the tables to each other."
+
+Rent the Runway: "Vijay was a founding member of the team at Rent The Runway, who successfully IPO'd in 2021."
+
+9. PEOPLE MENTIONED  
+
+Vijay Supramanian (Founder & CEO of Trace): "I chat with Vijay Supramanian, the founder and CEO of Trace, a company that's using metric trees to create better cross-functional alignment and enable improved business outcomes."
+
+Pete Soderling (Host): "I'm Pete Soderling and welcome to the Zero Prime podcast..."
+
+Ben Stansell: "Ben Stansell had originally introduced the world, the idea of a metrics layer potentially as a missing piece in the data infrastructure stack or the data analytics stack."
+
+# Named Entities
+
+## PERSON
+- ##mel
+- Ben
+- Ben Stansell
+- Jana
+- Luca
+- Pete Soderling
+- S
+- Trace
+- Vijay
+- Vijay Supramanian
+
+## ORGANIZATION
+- ##cha
+- Airbnb
+- DB
+- DBT
+- DoorDash
+- Dordash
+- EBIT
+- Facebook
+- Hawk
+- IP
+- KPI
+- Look
+- Medium
+- Red The Runway
+- Ren
+- SAP
+- Tableau
+- Trace
+- Uber
+- X
+
+## LOCATION
+- SaaS
+
+## PRODUCT
+
+## EVENT
+
+## WORK_OF_ART
+
+## DATE
+
+## MONEY
+
+## QUANTITY
+
+
+
+# Transcript
+
+
+I'm Pete Soderling and welcome to the Zero Prime podcast, where we explore the early
+stories of top startups by the experiences of their engineer founders.
+This week, I chat with Vijay Supramanian, the founder and CEO of Trace, a company that's
+using metric trees to create better cross-functional alignment and enable improved business outcomes.
+Vijay was a founding member of the team at Red The Runway, who successfully IPO'd in
+2021. We discussed the origin and future metrics layers, drawing from his past experiences,
+and discuss how those experiences have shaped his vision for how they're using metric trees
+at Trace.
+So Vijay, welcome to the show.
+Thank you for having me.
+I wanted to let our audience know that today we're going to follow a little bit of a different
+format than our typical interview, because Vijay, you wrote a very interesting newsletter
+piece for data council in the last few months that explored the history of metrics layers
+and how you see them evolving.
+So the purpose and sort of the strategy behind our chat today is to take that piece and expand
+on it, since I thought that it'd be very helpful for our audience to understand in
+your words, a bit of an expanded version, as to sort of what you've seen in this market
+and how it's merged over the last several years.
+So with that, we're basically going to focus on sort of a background of how people are
+using them in practice today, where you think the market is heading, and so forth.
+So why don't we just jump in?
+Perfect.
+Let's go.
+So overall understanding of the concept, what is a metrics layer for any of our listeners
+who aren't yet familiar with what that term might mean?
+Sure.
+Yeah.
+So I think of metric, a metrics layer has a piece of software that defines, calculates,
+and serves up metrics.
+So really the, those three components to that, right?
+So let's just break that down.
+First is define.
+So it's a place where you can map your business logic to the data.
+You can tell the system how to calculate metrics, revenue, churn, acquisition, engagement,
+what have you.
+This is calculation.
+So you can ask the system to calculate the metrics for you, and it does its magic and
+returns the right data reliably.
+And then the third is a serving.
+So whether it's inside your existing tools, APIs, tables, views, Google sheets, spread
+sheets, it's able to deliver the output of these metrics to whatever place you need it.
+Those are three key components.
+I might just add a fourth optional one where a robust metrics layer may have a caching
+component as part of the infrastructure so that it can deliver these things performant.
+But that's basically the core pieces of a metrics layer.
+Got it.
+And how do you distinguish between a metrics layer and a semantic layer?
+Because I hear these terms thrown around, sometimes perhaps interchangeably, do they
+mean the same thing?
+I suppose it comes down to the semantics.
+No pun intended.
+I'll probably, you know, I think the market will probably rationalize these terminologies.
+But in my opinion, this could be just this subjective.
+I think of the metrics layer as a narrower, maybe a higher level abstraction.
+So it's really focused on metrics, business metrics, but a semantic layer, historically,
+the way it's been used is, well, here's all these tables.
+Here's the primary key of this table that you can join to the fond of that table.
+Like you described the semantics of the data.
+So it can be used for almost any data operations, a bit lower level, but also broader.
+So that's sort of how we think about it.
+So like in, if you were to think about the, let's say, DB semantic layer, it looks more
+like a metrics layer today, I would think, I would say maybe the Lucamel thing that the
+Lucar has probably more of a true semantic layer, but that's just like my, my pure subject
+to interpretation.
+And why are metrics layers important?
+This actually is a really important question because when you look at the market and the
+positioning of vendors or just the general discussion, the main pitch that you hear is
+governance, right?
+I mean, we've all been in meetings.
+We look at some numbers, like it doesn't add up to what you remember revenue, churn,
+whatever.
+Right.
+So, and then sometimes the definitions are real.
+I mean, the differences are meaningful for good reasons.
+But oftentimes the analysts may have just used their, used a different table or different
+business logic.
+So the promise of governance is you put this into the system and no matter where, when
+you consume it, how you consume it, you're going to get the same numbers, right?
+So it's really well governed metrics.
+Now, obviously, I think it's important to do that because metrics are the operating
+language of organizations.
+But I do think that metrics layer in terms of its value prop can be so much more than
+just governance, right?
+It actually can enable how the organization fundamentally functions.
+It can be a true back end for all the common operations, the data-driven workflows that
+businesses need.
+So that's what I'm really excited about down the road.
+And we'll talk about probably, I'm sure, in more detail as we go into this.
+So the idea here is that we want to prevent analytics teams from thrashing or sort of
+redoing existing work or potentially having different stakeholders in the organization,
+sort of pulling from different metrics definitions or maybe doing them at Hawk.
+And the idea is that if you need a uniform place to sort of establish your metrics definitions
+across the entire business so that one person wants to figure out how to calculate, you
+know, gross monthly sales, for instance, that can be done in a really specific, documented,
+consistent way instead of people trying to recompute those metrics based on raw data that
+they might all have access to and do it slightly different each time.
+Exactly.
+So that was sort of the primary governance positioning, right?
+So it's well governed, it's well defined.
+However, as I said, like once that exists, now software can talk to it and do a lot more
+with it to support the workflows in a more active way than the value to be just about
+governance.
+So I think we also can drive enablement in a way that I think can be really powerful
+in an organization.
+Now you mentioned in the newsletter that you wrote that Ben Stansell had originally introduced
+the world, the idea of a metrics layer potentially as a missing piece in the data infrastructure
+stack or the data analytics stack.
+I guess, you know, what those of us who've studied this world also understand is that
+we've had semantic layers around for a while, typically they're tightly coupled with business
+intelligence tools like Looker or Tableau, for instance.
+But Ben, of course, is arguing for basically a separate block for the metric store in the
+modern data in for diagram.
+So talk to me a little bit about how this article resonated with you and your previous experience
+that run through online.
+Yeah, I think you're absolutely right.
+And the semantic layer, right, to be to be very broad about it, it's definitely existed
+for a while.
+I mean, tools have had their own sort of internal modeling layers.
+Looker, obviously, famously, the most recent one has Lucamel and these tools sort of again,
+describe how you can join the tables to each other, how can you aggregate them, how can
+you filter them, et cetera.
+But I think the point that Ben made, which I think was interesting, was just talking
+about this not connected to an existing tool, like not being sort of subservient to a specific
+application, but almost like a separate standard, right?
+A separate, clean piece of infrastructure that the entire ecosystem could rub all around.
+So I think that's kind of what the article, I think why the article resonated, but I also
+probably thrown a few more elements to it.
+Like one, I think, just the zeitgeist, right?
+I feel like it came at a time because we spent like seven to 10 years working on data infrastructure.
+We've had a big shift.
+We've gone to the cloud.
+We have these modern cloud platforms.
+We have all these new tools for ingestion, for cleaning and transformation.
+And there is sort of this question of like, what's next for data, right?
+How do we truly operationalize data?
+How do we make it useful to the business and the idea of a metrics layer, which really
+is the language of the business, I think was kind of appealing.
+So I think that was the big part, why I think the conversation got ignited when you mentioned
+this concept.
+And then for me, when I personally heard that term, because I've definitely heard the
+term semantic layer, but when someone talked about metrics, I can, I thought of it as a
+narrower terminology.
+It's really our own business metrics.
+I almost interpreted it sort of two ways, really.
+One was like, hey, this could be the beginning of how we think about metric standards, right?
+I mean, at the end of the day, there's the different kinds of business models, right?
+From commerce to SaaS to marketplaces, and for sure, there are a lot of nuances and variations,
+but there is a chance now for us as the industry matures to start standardizing what the metrics
+look like.
+So the idea of a metrics layer to me immediately in my head was like, well, this is the first
+place we can start standardizing and almost out of the box computing metrics for different
+businesses, right?
+And even pushing it further, which is kind of which I may have alluded to earlier, if
+we have this metric back in a well-defined standard structure, why can't SAP software
+start streamlining?
+Even automating a lot of the common workflows that businesses need, monitoring metrics, detecting
+anomalies, supporting business reviews and whatnot.
+So I got very excited about the idea that if there is a metrics layer, it'd be very
+very powerful for enabling how data is truly operationalized within organizations.
+It seems at the time, like you weren't alone because other companies started to catch a
+vision for the need for this type of solution, and they sort of craved their analytics teams
+and business teams, craved this kind of standardization.
+So from running data council, obviously, we have a unique perspective in the industry,
+and we started to see teams from Uber, DoorDash, Airbnb, all start to talk about projects
+that they had underway, essentially becoming the early adopters of these metrics store
+concepts, sometimes rolling their own, basically essentially rolling their own internally because
+I'm not sure that there was any third party tools that existed on the scene at the time.
+So what was it beyond your personal insights that you think made all these companies get
+excited about the metrics layer all at once?
+Yeah, I mean, I think I would say at a macro level, it's probably just the industry maturing.
+I think everyone is starting to be data-driven, data-informed, whatever your terminology is.
+And obviously, the ones that have scale are usually the ones to first truly embrace it.
+I mean, it's happened before in engineering, right, when code gets complex, it requires
+tooling to manage it and version control and test it, but eventually, it percolates over
+to the entire ecosystem where you're going to start up is embracing it.
+So I would say similarly, you look at Airbnb, Uber, DoorDash, and these companies, Facebook,
+Snapchat, they have such scale of data, such scale of metrics.
+And by the way, metrics, I remember the Airbnb article that came out mentioned 12,000 metrics,
+thousands of dimensions.
+So it's just like, it's just scale that I think is really often necessitates building
+a robust metric store to just enable the data operation of the company.
+But I think beyond scale, beyond scale of data and metrics, I probably think the biggest,
+this is my own subject opinion, is the biggest, I think, the reason is that use cases are growing.
+So there was a time when generating a dashboard was just sufficient.
+That was a metric.
+Here's a dashboard, here's a metric, but now the use cases are just so much more nuanced
+and varied.
+As I mentioned before, you want to detect anomalies, right?
+You want to understand what's happening, you want to root cause, you want to run a business
+review, a feature review, you want to report to your board and the finance team wants to
+do variation analysis, you want to do analytics all the time on the data, you want to experiment,
+you want to plan on a forecast, there's just so many things that business wants to do around
+data.
+So it does make sense that there'll be some kind of a infrastructure layer that's sort
+of being your backbone on which you can define the metrics and then operate on it.
+So for sure, the large companies, when you combine scale plus all these use cases, it
+makes sense that they're one of the first ones to really build that internally.
+And where would you say the market is at in terms of development now?
+I guess it seems to me that the adoption of the metrics layer as a standalone piece of
+infra has been somewhat muted.
+I feel like there are certain roadblocks that companies experienced when attempting
+to adopt such a solution, but what's your take on sort of where the market is now and
+how things have evolved since those early days of 2021 when Ben, for instance, wrote
+the article?
+That's a totally fair point.
+I mean, things go through initial hype, if you will, and then reality sets in, and then
+we keep marching along to figure out where things end up, right?
+So I think the way I think about it is like, I mean, things are definitely slower than
+I think what people expected.
+I'm sure the macro economic environment has not helped here because that probably provided
+headwinds to a new technology being adopted.
+But end of the day, I mean, these metrics layer is a new standard, standards take time
+to adopt.
+I probably will point out maybe two things around this, right?
+So one is like, why is your adoption slow, right?
+So one, I would say like any infrastructure, it's only as good as the applications around
+it.
+So and this is a classic chicken on egg problem.
+So I think when you, if you have a metrics layer, but it doesn't talk to these five things,
+but only three things, that's already a problem.
+So I think I think it's going to take time for the standard and for the ecosystem to really
+develop.
+It might might take seven, 10 years, to be honest, but there are, as you know, players
+out there building it, of course, DBT has a big investment in DBT semantic layer.
+So I think we just March along, we keep building and hoping that the market will sort of adopt
+and there'll be some acceleration as this chicken on egg problem gets resolved.
+I would say on a practical sense, as I mentioned, two points on our adoption.
+If you, a lot of companies have invested already, right, in building pipelines and metrics and
+dashboards like a tableau, for example, I mean, we had 100 tableaus under tableau dashboards
+or on the runway, if you came to me when I was a data tech leader and said, Hey, now
+here's a new thing and adopt it.
+And if I thought I have to spend a lot of time refactoring the code, implementing a new solution
+and the end of it, what I do get is well-governed metrics, but I don't have all the endpoints
+consuming it.
+I probably will be hesitant, right?
+Because like the value case is a bit weaker.
+So I do think like it's value has to be stronger, it's got to be a rich ecosystem applications.
+And then as that happens, I think, and the cost of also deployment gets easier.
+I think over time, you're going to see, you're going to see this get adopted more and more,
+but I'm sort of cautiously optimistic that in the fullness of time you look at there.
+Well, one other new angle to this that's popped up, again, a data council over the past
+year or two has been this notion of metrics trees.
+And I feel like metrics trees are a logical extension of a lot of things that came before
+it, especially around in sort of uniform uniformity and trying to simplify your business intelligence
+and analytics.
+Talk to us about metrics trees from your perspective and what they are and where you think they
+fit in.
+Well, thank you for that question, because metrics is what we're working on, right?
+So I do think unlike sort of a metrics layer, which is really about governance and well-defined
+metrics, metric tree is really about actioning the power of metrics, because really what
+is a metric tree?
+A metric tree is saying I'm going to take this business that we have.
+It has a bunch of these processes, acquisition, retention, operations, and I'm going to model
+them as related processes, related metrics.
+And that alone, by the way, just if you think about that idea conceptually, it immediately
+starts to align the data team, the business team and the execs, right?
+They can visually see, okay, this is how the business works.
+And every single node that's there in that metric tree graph has been mapped to something
+real.
+So off the bat, you're now actioning metrics, right?
+You're actually in the metrics back, and it's not just a passive metrics layer that's
+starting a metrics.
+So to me, that's what's very exciting about it.
+I do think metrics can be the system that starts to really action and bring these metrics
+back into life.
+And not only is it just a visual representation, as I mentioned before, I think it can support
+all kinds of workflows.
+And that's what I'm excited about.
+So your company trace is focusing on bringing the power of metrics trees to businesses everywhere.
+How is it that you honed in on metrics trees and what are some of the scenario that lets
+you up to this in your own career?
+Well, I mean, my most recent background, as you mentioned in the intro, I joined Rendon
+Way very early at this heat stage.
+I was there for almost nine years and a bit of a nontraditional data background because
+I obviously I let data.
+I was the chief data Slack analytics officer, but because I was so early, I worked so closely
+and in many cases, even led other teams in the process operations early on growth later
+on.
+I mean, I built the first financial models.
+I thought deeply about how the metrics ladder up to financial outcomes, reporting to the
+board on what is, you know, what the performance is like, why, what are the variances how to
+explain it.
+So in many sense, like, you know, the data team that I was leading was obviously producing
+all the assets, right?
+But me as a leader was also the single largest consumer operator, if you will, right, as
+somebody helping the business functions.
+So I spent all my time just thinking about metrics, the connections, the drivers.
+And obviously, as said, we have people hundreds of reports in Tableau and this sort of slice
+the business down into bits and pieces, I sort of had a view of what's happening, but
+not a holistic view.
+It was quite hard to decompose the why.
+I mean, in my head, I had equations running, but the equations were not manifested in the
+dashboards, right?
+Because they were sort of sliced down like one dashboard at traffic and the other one
+had customers and the third one had retention and whatnot, right?
+But these are all one equation in my mind.
+So it's kind of difficult to decompose the why, what to do, how to operate or the things
+that we're doing working or not.
+And then, of course, I saw the data team constantly responding to questions and churning through
+more and more queries and more and more data sets and more and more dashboards.
+So when I heard when I read Ben's article going back to the initial question on metrics
+layer, I immediately immediately got excited about the idea that that could be the backend
+on which we could build something new and exciting.
+And honestly, like metric trees, KPI trees, dashboards, these terms have been used around
+before.
+We obviously did analysis quite often.
+I ran the runway by doing by sort of decomposing metrics.
+So the metrics layer is kind of what really triggered in my mind, an opportunity to build
+a framework and really production is a framework where we can take all the data assets, we
+can map it to metrics, we can connect them and really have the business now operate on
+that as a as a as a core piece of infrastructure.
+And as a founder, you sort of had to analyze the build versus buy decision at least on behalf
+of your, your presumed customer.
+So why did you decide to make the bet that the rest of the market was going to try to
+build their own in-house tooling in this area similar to what Uber and Dordash have done?
+I mean, that's a relatively easy question because I saw firsthand both at my company
+and I spoke with many companies, generally building internal tools is not the highest
+priority for any organization.
+They want to invest their resources in serving their customers.
+So it's always one of the things that gets deprioritized, right?
+So I'm, of course, large organizations, when they had large engineering teams, probably
+could build some of these things.
+But that's even that has changed now.
+I mean, people are obviously much more tightly watching budgets and whatnot.
+So I'm not, I mean, I'm fundamentally just not concerned that people will have the bandwidth
+and the resources to truly build these kind of internal tools to operate on better.
+But what, but, but I will say this though, I, I, you know, good products do come from
+watching people try to do some things internally and there's like spark there.
+And then if there is enough of a spark and enough of a value, I think it could become
+a real product.
+So I have, I mean, obviously, as mentioned, we, we built KPI trees and root causing around
+the runway manually.
+I've definitely seen data scientists and notebooks sort of take one slice of the business and
+try to model something like an equation and do some analysis.
+I've even seen people build some interesting stuff into this part of business reviews
+in Excel that has sort of a graphical format.
+So it's already, it's already happening out there.
+I see sparks of it.
+I think really building it as a product that they can maintain, operate on, serve various
+use cases.
+I think it's just fundamentally time consuming and cumbersome.
+And I'm not, I just don't see how they're going to devote their resources to that.
+And you've written about the potential for metrics trees to serve essentially as a system
+of record, supporting a range of applications around metrics like monitoring and anomaly
+detection, as well as experimentation and even some of these business review, planning,
+goal setting, use cases that you mentioned, can you share a bit more about what your ultimate
+vision is for how metrics trees can transform an organization?
+I think you've, I think you're pretty much articulated, but yeah, because I, you know,
+metric trees, what, what are they really capturing?
+They are capturing the core business processes, right?
+Whether it's the growth model through acquisition to retention, whether it's the consumer engagement
+model for a consumer company, it's the, it's how these metrics all ladder up to financial
+metrics like revenue, margin, even EBITDA and whatnot.
+So I think the trees are capturing the business process, which is why I, I talk about them
+as, as potential systems of record, because they're really pushing the abstraction up
+from tables, columns to metrics to now really a metric tree, which is really the business,
+right?
+It's really the business model.
+And once you have them, a lot of things become, I would say easier and even elegant.
+Like let's say you want a root cause, why a output metric at the very top is behaving
+a certain way.
+You have the relationships all the way underneath, right?
+You have the relation model.
+So the root causing just falls out by traversing the tree, decomposing, asking, you know,
+when you're doing some analysis, doing some math, running some algorithm, you have the
+answer and almost instantly the software can provide to say, well, you're, you're down
+on revenue by 5% because it's coming from this specific customer growth problem that
+you're seeing in this specific channel, right?
+So the debugging is almost instantaneous.
+And again, like you even pointed to the other applications, right?
+So like detecting anomalies automatically, because we have the full tree, we don't just
+have one dashboard.
+We can see how changes in one thing affects the other.
+So detecting anomalies, root causing experimentation, pre post analysis, our launch of feature,
+I want to wear which metrics are being affected because it's very rare that only one metric
+gets affected.
+Often you see one, one do better.
+The second one do worse.
+You want to know what the net impact of that is, right?
+So all that just falls out very naturally.
+And this is all by the way, just I'm talking purely about diagnostic analysis on respect
+to data, not to mention what it can do in terms of a proactive or a predictive sense,
+right?
+Because you're like 15 days in and you want to know what's going to happen end of the
+month.
+You want to forecast that you have, you basically have the relationship of all the metrics.
+You can forecast that.
+You can ask yourself, if I move this metric at the bottom of the tree by 5%, how does
+it cascade all the way up to revenue?
+You can ask that question.
+A lot of things that we'll probably take today, a team to pull some data, build a model in
+a spreadsheet and maintain it, you pretty much falls out the moment you map the data
+to a metric tree.
+So I'm pretty excited as becoming a fundamental piece of infrastructure as to a record on
+which if we do these applications, so much, so much things, so many common world flows
+just fall out very naturally.
+Yeah, the root causing stuff is obviously very interesting and I know there's been several
+people I did a council over the last year or so that we've been talking about such benefits
+of metric trees as well.
+So I think that's particularly exciting when you start to develop this organized kind of
+opinionated way about the ontology of the business, if you will.
+These are some of the side effects, the happy, happy accidents, if you will, that followed
+at such a process and seems to be quite powerful.
+So you wrote a piece on Medium right after Rent the Runway IPO, where you reflected on
+how important it is for both data nerds like us to get up to the technical silo and interact
+and learn with the business side of things.
+So I was wondering, do you feel that metric trees are a good tool in the street guard?
+I mean, obviously you do, but maybe expound upon how they help bridge the gap between
+some of the technical folks and the business folks.
+I mean, this has been the biggest learning for me in my career and I'm a POR and I started
+my career thinking very technical, building models, solving technical problems.
+But the thing I realized over time is different functions just have a different mix of personality
+traits or attributes, if you will, like builders, operators, advisors, kind of three things
+I think about a lot.
+So engineering is a builder function, customer support is an operator function primarily.
+I think data is one of the interesting functions in a business where data and finance teams
+are advisory functions, right?
+We're trying to inform how to make the best decision possible, but what's interesting
+about data, I will say, is like in the last seven, ten years, as I mentioned, as we've
+made a huge shift to the cloud, a new plethora of tools have emerged to make data modeling
+easier and data operations easier.
+I definitely noticed that data teams and data leaders have, maybe I'll say, regressed.
+They've regressed on the advisory side of the equation on the operator side of the equation
+and being more like, well, I'm going to just build these things and would enable you,
+you business user to figure out what to do, right?
+I mean, here's all these dashboards, here's all these pieces I've built together.
+All my data models are here, all my fact tables are here and the dim tables are there, and
+now you go have at it.
+I think that's not bad necessarily.
+I think it's good.
+It's good to have a builder mindset, but I do think there's a bit of regression in that
+they've lost some of the advisory versus the operational elements in their job, because
+ultimately like a data team is not rewarded for producing more dashboards, right?
+I mean, that's not the goal of the data team is rewarded for optimizing the business, right?
+Like we're really utilizing data to make an impact.
+So, yeah, so I do think data folks, yes, retain the builder mindset, think about, you know,
+not repeating yourself, think about building blocks and all of that, but definitely get
+out of your technical box, really you have to understand the domain, you have to understand
+how marketing works, how they think, what the incentives are, sales, finance, operations,
+product, the functions you're supporting, you really have to think about that functions
+and really, you know, you know, you know, you know, think like an operator.
+I mean, and that's, and if you do more that more and more, I think you will be more successful
+in your career, you'll be very effective and sort of bringing it back to the metric tree,
+yeah, I mean, the metric tree is, in my opinion, the right framework for this, because it is
+the system of record to use that phrase again, that connects the data to the business in
+a very explicit way.
+So it's like it brings the language of understanding a common opportunity between data teams and
+business teams, so that can be very powerful for both parties, not just the data team.
+And so to summarize, what benefits do companies get from adopting metrics trees?
+So one, you get, as I said, violent alignment across the data exec and business teams on
+how the input metrics connect and ladder up to the outcomes for the business.
+Two, it supports the scientific process of understanding what drives what, and you keep
+refining these input output equations.
+So these trees are actually fluid.
+And three, in a very practical sense, every data operation in the business is just easier,
+faster, richer, monitoring performance, root causing, business reviews, feature reviews,
+pacing, forecasting, planning, all the leading up to really optimizing the business process.
+And of course, in today's world, we can't not talk about the implications of AI.
+So I was wondering when that's going to come.
+You were waiting for it, and you got it.
+So how does the recent rise of generative AI impact your thoughts on the space?
+Well, I'm sure the investor, you're probably more plugged into what the different folks
+are working on, but from where I sit, I see folks trying to solve the problem of asking
+questions and getting answers on data using generative AI, which has basically been
+called text to SQL, right?
+Because the business team doesn't know SQL, they don't know the data structures.
+I'm sort of skeptical that that is actually possible in a general sense, without a very,
+very good backend, a good metrics layer, or a good metrics or semantic backend.
+But moreover, what I would say is, if you model your business through metric trees,
+you have the systems of record, it gets very powerful because now Janae can do what is good at,
+which is it can utilize this rich metrics backend, which already runs and produces
+data and explains what's going on.
+And what it can focus on really is generating narratives.
+Because ultimately, narrative is a very critical output of a data team.
+So telling stories around what is happening in the business.
+So I think what Janae can truly shine is probably framing the narratives more so than doing the
+heavy lifting around the backend, the data, the metrics and the calculations.
+I think that's probably better left to a different kind of software.
+This is my humble opinion.
+Well, your intents have been really valuable, Vijay, and I've appreciated you taking the time to
+share with us your thoughts on the space, wishing you the best of luck with Trace.
+And I'm sure we'll see you around the data community sometime soon.
+Thank you so much for the time.
+This has been a pleasure.
+Thanks for listening to the Zero Prime podcast.
+I hope you enjoyed our deep dive into the metrics world with Vijay.
+Follow Vijay on X at vjsubr or learn more about Trace at hellotrace.io.
+If you like hearing from engineer founders on the cutting edge of enterprise startups
+and developer tools, please leave us a review on your favorite podcast app
+and subscribe to the show.
+We'll see you next time.
+[MUSIC]
+

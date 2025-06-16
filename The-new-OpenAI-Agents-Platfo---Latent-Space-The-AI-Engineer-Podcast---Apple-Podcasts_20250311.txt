@@ -1,0 +1,802 @@
+1. EPISODE CONTEXT
+
+- Podcast name and episode focus: "Late in Space" podcast, focused on discussing OpenAI's new API offerings and tools like web search, file search, computer vision, and the new Agents SDK.
+
+- Hosts: 
+Laleso [Partner and Site Lead, no company affiliation provided]
+Spix [Founder of Smal AI]
+
+- Guests:
+Romain [No additional details provided]
+Nikunj [Most famously known as the contact for getting API access at OpenAI, according to the hosts]
+
+- Featured company: OpenAI
+Stage: Established AI research company
+Core business: Developing advanced AI models and APIs
+
+2. KEY INSIGHTS
+
+- OpenAI is launching a new "Responses API" that unifies capabilities from previous APIs like Chat Completions and the Assistants API, while adding support for new built-in tools.
+
+"We're launching this new API called the responses API. It works with tools. We think it'll be like a great option for all the future agentic products that we build." - Romain
+
+- Three new built-in tools are being released: web search, improved file search, and computer vision tools for automating user interfaces.
+
+"We're launching a web search tool. This is basically a jadivity for search, but available in the API. We're launching an improved file search tool...And then we're also launching our computer use tools." - Romain  
+
+- The web search tool utilizes a fine-tuned GPT model optimized for search quality, citation accuracy, and real-time querying of internet data.
+
+"Their main goal is to like get information...from all of our data sources that we use to gather information for search, and then pick the right things and then cite them as accurately as possible." - Romain
+
+- The Agents SDK (previously called Swarm) is being relaunched with new capabilities like tracing, type support, and guard railing to assist developers in building multi-agent AI systems.
+
+"We're calling it the agents SDK. It's gonna have built-in tracing in the OpenAI dashboard." - Romain
+
+3. TECHNOLOGY & PRODUCT DEVELOPMENTS  
+
+- Key technical innovations:
+   - Responses API: A unified API supporting new agentic workflows and built-in tools
+   - Web search tool: Fine-tuned GPT model for high-quality web search and citations
+   - Computer vision tool: Model optimized for automating user interfaces and browsers
+   - Agents SDK: Framework for orchestrating multi-agent AI systems with tracing
+
+- Core differentiation: 
+   - Combining large AI models with integrated access to latest web data, private docs, and automation capabilities
+   - Visual observability into agent workflows via tracing in the OpenAI dashboard
+
+- Future plans:
+   - Merge research preview models into main model lines once stable
+   - Integrate Agents SDK traces with OpenAI's Reinforcement Learning products
+
+4. COMPETITIVE LANDSCAPE
+
+- Companies mentioned:
+   - Hebbia: "they were able to build with the file search, like, you know, take all of the FAQ and travel policies, for instance, that you have you, you put that in file search tool and then you don't have to think about anything."
+
+OpenAI positions its offering as an integrated solution combining large language models, real-time data access, file management capabilities, and multi-agent orchestration tools.
+
+5. TEAM & CULTURE SIGNALS
+
+- Leadership philosophy: Learn quickly from developer feedback to continuously improve offerings.
+
+"we can't wait to see what developers will build with these tools and how we can like learn as quickly as we can from them to make them even better over time." - Romain
+
+6. KEY METRICS & BUSINESS DETAILS  
+
+- No specific metrics were shared, but some insights on pricing/monetization:
+   - Responses API storage of state/logs is free for 30 days
+   - Web search tool costs $30 per 1000 queries (implying need to manage costs)
+
+7. NOTABLE TECHNOLOGIES
+
+- No specific technologies mentioned outside of OpenAI's own AI models and APIs.
+
+8. COMPANIES MENTIONED
+
+Hebbia: "they were able to build with the file search, like, you know, take all of the FAQ and travel policies, for instance, that you have you, you put that in file search tool and then you don't have to think about anything."
+
+9. PEOPLE MENTIONED  
+
+Corey Quinn: "All I'll say is that my friend, Corey Quinn, says that anything that can be used as a database will be used as a database, so be prepared for some abuse."
+
+# Named Entities
+
+## PERSON
+- ##es
+- ##in
+- ##ke
+- ##o
+- Cloud
+- Corey Quinn
+- Lal
+- Nik
+- Nikho
+- Nikun
+- Po
+- Roma
+- S
+
+## ORGANIZATION
+- ##I
+- ##SDK
+- API
+- Assistant
+- GPD
+- Gemini
+- H
+- Hebb
+- Hebbia
+- Navan
+- Open
+- OpenAI
+- Response
+- Responses API
+- SDK
+- Smal AI
+- Spix
+
+## LOCATION
+
+## PRODUCT
+
+## EVENT
+
+## WORK_OF_ART
+
+## DATE
+
+## MONEY
+
+## QUANTITY
+
+
+
+# Transcript
+
+
+(upbeat music)
+- Hey everyone, welcome back to another
+"Late in Space" sliming episode.
+This is Laleso, partner and sitio adhesible,
+and I'm joined by Spix, founder of Smal AI.
+- Hi, and today we have a super special episode
+because we're talking with our old friend Romain.
+Hi, welcome.
+- Thank you, thank you for having me.
+- And Nikunj, who is most famously,
+is if anyone has ever tried to get any access
+to anything on the API, Nikunj is the guy.
+So I know your email says I look forward to them.
+- Yeah, nice to meet all of you.
+- Yeah, I think that we're basically commuting today
+to talk about the new API.
+So perhaps you guys wanna just kick off
+what is opening and launching today?
+- Yeah, so I can kick it off.
+We're launching a bunch of new things today.
+We're gonna do three new built-in tools.
+So we're launching a web search tool.
+This is basically a jagivity for search,
+but available in the API.
+We're launching an improved file search tool.
+So this is you bringing your data to OpenAI,
+you upload it, we take care of parsing it,
+chunking it, embedding it, making it searchable,
+give you this ready vector store that you can use.
+So that's the file search tool.
+And then we're also launching our computer use tools.
+So this is the tool behind the operator product in chat GPD.
+So that's coming to developers today.
+And to support all of these tools,
+we're gonna have a new API.
+So we launched that completions,
+like I think March 23 or so.
+It's been a while.
+So we're looking for an update over here
+to support all the new things that the models can do.
+And so we're launching this new API
+called the responses API.
+It works with tools.
+We think it'll be like a great option
+for all the future agentic products that we build.
+And so that is also launching today.
+Actually, the last thing we're launching is the agents SDK.
+We launched this thing called Swarm last year
+where it was an experimental SDK
+for people to do multi-agent orchestration
+and stuff like that.
+It was supposed to be like educational experimental,
+but like people really loved it.
+They like ate it up.
+And so we're like, all right, let's upgrade this thing.
+Let's give it a new name.
+And so we're calling it the agents SDK.
+It's gonna have built-in tracing in the OpenAI dashboard.
+So that's a cool stuff going out.
+So yeah, sorry about it.
+- That's a lot.
+But we said 2025 was a year of agents.
+So there you have it.
+Like a lot of new tools to build these agents for developers.
+- Okay, I guess we'll just kind of go one by one
+and leave the agents SDK towards the end.
+So responses API.
+I think the sort of primary concern that people have
+and something I think I've voiced to you guys
+when I was talking with you in the planning process
+was is chat completion is going away?
+So I just wanted to let you guys respond
+to the concerns that people might have.
+- Chat completion is definitely like here to stay.
+It's a bare metal API we've had for quite some time.
+Lots of tools built around it.
+So we wanna make sure that it's maintained
+so that people can confidently keep on building on it.
+At the same time, it was kind of optimized
+for a different world, right?
+It was optimized for a free multi-modality world.
+You also optimize for kind of single-term text to prompt,
+text prompt in, text response out.
+And now with these agentic workflows,
+we noticed that like developers and companies
+wanna build longer horizon tasks, you know,
+like things that require multiple turns
+to get the task accomplished.
+And computer use is one of those, for instance.
+And so that's why the responsive API came to life
+to kind of support these new agentic workflows.
+But chat completion is definitely here to stay.
+- And Assistant's API, we've had to target sunset data
+first half of 20, 26.
+So this is kind of like, in my mind,
+there was kind of very poetic mirroring
+of the API with the models.
+This, I kind of view this as like kind of the merging
+of Assistant's API and chat completions, right?
+Into one unified responses.
+So it's kind of like how GPT and the old series models
+are also unifying.
+- Yeah, that's exactly the right framing, right?
+Like I think we took the best of what we learned
+from the Assistant's API, especially like being able
+to access tools very conveniently.
+But at the same time, like simplifying the way
+you have to integrate, like you no longer have to think
+about six different objects to kind of get access
+to these tools with the Responses API,
+you just get one API request.
+And so you can sweep in those tools, right?
+- Yeah, absolutely.
+And I think we're gonna make it really easy
+and straightforward for Assistant's API users
+to migrate over to Responses API
+without any loss of functionality or data.
+So our plan is absolutely to add, you know,
+assistant-like objects and thread-like objects
+to that work really well with the Responses API.
+We'll also add like the core interpreter tool,
+which is not launching today, but it comes soon.
+And we'll add async mode to Responses API
+'cause that's another difference with assistance.
+I will have web hooks and stuff like that.
+But I think you're gonna be like a pretty smooth transition
+once we have all of that in place
+and we'll give folks like a full year to migrate
+and help them through any issues they face.
+So overall, I feel like assistants users
+are really gonna benefit from this longer term
+with this more flexible primitive.
+- How should people think about when to use each type of API?
+So I know that in the past, the assistance was maybe more
+stateful, kind of like long-running, many tool use,
+kind of like file-based things.
+And the chat completion is more stateless, you know,
+kind of like traditional completion API.
+Is that still the mental model that people should have?
+Or like, should you by default
+always try and use the Responses API?
+- So the Responses API is gonna support everything
+that it's at launch, gonna support everything
+that chat completion supports.
+And then over time, it's gonna support everything
+that assistance supports.
+So it's gonna be a pretty good fit
+for anyone starting out with OpenAI.
+They should be able to like go to Responses.
+Responses, by the way, also has a stateless mode.
+So you can pass in storefalls and they'll make
+the whole API stateless, just like chat completions.
+We're really trying to like get this unification story in
+so that people don't have to juggle multiple endpoints.
+That being said, like chat completions,
+just like the most widely adopted API, it's so popular.
+So we're still gonna like support it for years
+with like new models and features.
+But if you're a new user, you wanna,
+or if you wanna like existing user,
+you wanna tap into some of these like built-in tools
+or something, you should feel totally fine migrating
+to Responses and you'll have more capabilities
+and performance than chat completions.
+- I think the messaging that I agree that I think
+resonated the most when I talk to you was
+that it is a strict superset, right?
+Like you should be able to do everything that you could do
+in chat completions and with assistance.
+The thing that I just assumed that because you're now,
+by default, it's stateful.
+You're actually storing the chat logs
+or the chat state.
+I thought you'd be charging me for it.
+So, you know, to me it was very surprising
+that you figured out how to make it free.
+- Yeah, it's free, we store your state for 30 days.
+You can turn it off, but yeah, it's free.
+Interesting thing on state is that it just like makes,
+particularly for me, it makes like debugging things
+and building things so much simpler,
+where I can like create a Responses object.
+It's like pretty complicated and part of this
+more complex application that I've built.
+And I can just go into my dashboard
+and see exactly what happened, did I mess up my prompt,
+did it like not call one of these tools
+that I misconfigured one of the tools,
+like the visual observability of everything
+that you're doing is so, so helpful.
+So, I'm excited about people trying that out
+and getting benefits from it too.
+- Yeah, it's really, I think, really nice to have.
+But all I'll say is that my friend, Corey Quinn,
+says that anything that can be used as a database
+will be used as a database, so be prepared for some abuse.
+(laughing)
+- All right, yeah, that's a good one.
+With some of that, I'll try with the metadata,
+that some people were very, very creative
+and stuff things that made the object.
+- Yeah, and we do have metadata with responses.
+- Exactly, yeah, yeah.
+(laughing)
+- Let's get through all of these.
+So, web search, I think when I first said web search,
+I thought you were gonna just expose a API
+to then return kind of like a nice list of things,
+but the way it's name is a GPD 4.0 search preview.
+So, I'm guessing you have, you're using basically
+the same model that is in the chat GPD search,
+which is fine-tuned for search, I'm guessing.
+It's a different model than the base one,
+and it's impressive the jump in performance.
+So, just to give an example, in simple QA,
+GPD 4.0 is 30% accuracy, 4.0 search is 90%,
+but we always talk about how tools are like,
+models is not everything you need,
+like tools around it are just as important.
+So, yeah, maybe give people a quick preview
+and like the work that went into making this special.
+- Should I do that, yeah, go for it.
+So, firstly, we're launching web search in two ways.
+One, in Responses API, which is our API for tools,
+it's gonna be available as a web search tool itself.
+So, you'll be able to like go tools,
+turn on web search, and you're ready to go.
+We still wanted to give chat completions,
+people access to real-time information.
+So, in that chat completions API,
+which does not support built-in tools,
+we're launching the direct access to the fine-tuned model
+that chat GPD for search users,
+and we call it GPD 4.0 search preview.
+And how is this model built?
+Basically, we have our search research team
+has been working on this for a while.
+Their main goal is to like get information,
+like get a bunch of information from all of our data sources
+that we use to gather information for search,
+and then pick the right things
+and then cite them as accurately as possible.
+And that's what the search team has really focused on.
+They've done some like pretty cool stuff.
+They use like synthetic data techniques.
+They've done like all series model distillation
+to like make these four or fine-tuned really good.
+But yeah, the main thing is like, can it remain factual?
+Can it answer questions based on what it retrieves
+and can it cite it accurately?
+And that's what this like fine-tuned model really excels at.
+And so yeah, so we're excited that like,
+it's gonna be directly available in chat completions
+along with being available as a tool.
+- Yeah, just to clarify,
+if I'm using the Responses API, this is a tool.
+But if I'm using chat completions, I have to switch model.
+I can now use O1 and call search as a tool.
+- That's right, exactly.
+I think what's really compelling,
+at least for me and my own uses of it so far
+is that when you use like web search as a tool,
+it combines nicely with every other tool
+and every other feature of the platform.
+So think about this for a second, for instance.
+Imagine you have like a Responses API call
+with the web search tool,
+but suddenly you turn on function cooling
+and also turn on, let's say, structured outputs.
+Now you can have like the ability to structure
+any data from the web in real time
+in the JSON schema that you need for your application.
+So it's quite powerful when you start combining
+those features and tools together.
+It's kind of like an API for the internet almost,
+you know, like you get like access
+to the precise schema you need for your app.
+- Yeah, and then just to wrap up
+on the infrastructure side of it,
+I read on the post that people,
+publisher can choose to appear in the web search.
+So are people by default in it?
+Like, how can we get a latent space in the web search API?
+- Yeah, yeah, I think we have some documentation
+around how websites publishers can control
+like what shows up in a web search tool.
+And I think you should be able to like read that.
+I think we should be able to get latent space in for sure.
+- Yeah, you know, I think so I compare this
+to a broader trend that I started covering last year
+of online algorithms.
+Actually, perplexity, I think was the first to say,
+to offer an API that is connected to search
+and then Gemini had the sort of search grounding API.
+And I think you guys, I actually didn't,
+I missed this in the original reading of the docs,
+but you even give like citations
+with like the exact sub paragraph that is matching,
+which I think is the standard nowadays.
+I think my question is how do we take
+what a knowledge cutoff is for something like this, right?
+Because like now basically there's no knowledge cutoff
+is always live, but then there's a difference
+between what the model has sort of internalized
+in its back propagation and what is searching up as drag.
+- I think it kind of depends on the use case, right?
+And what you want to showcase as the source.
+Like for instance, you take a company like Hebbia
+that has used this like web search tool,
+they can combine like for credit firms or law firm,
+they can find like, you know, public information
+from the internet with the live sources and citation
+that sometimes you do want to have access to
+as opposed to like the internal knowledge.
+But if you're building something different,
+well like you just want to have an assistant
+that relies on the deep knowledge that the model has,
+you may not need to have these like direct citations.
+So I think it kind of depends on the use case a little bit,
+but there are many, many companies like Hebbia
+that will need that access to these citations
+to precisely know where the information comes from.
+- Yeah, yeah, for sure.
+And then one thing on like the breadth, you know,
+I think a lot of the deep research,
+open deep research implementations have this sort
+of hyper parameter about, you know,
+how deep they're searching and how wide they're searching.
+I don't see that in the docs,
+but is that something that we can tune?
+Is that something you recommend thinking about?
+- Super interesting.
+It's definitely not a parameter today,
+but we should explore that.
+It's very interesting.
+I imagine like how you would do it
+with the web search tool and responsive API
+as you would have some form of like, you know,
+agent orchestration over here where you have a planning step
+and then each like web search call that you do
+like explicitly goes a layer deeper and deeper and deeper,
+but it's not a parameter that's available out of the box.
+- That's a cool thing to think about, yeah.
+- The only guidance I'll offer there is a lot
+of these implementations offer top K,
+which is like, you know, top 10, top 20,
+but actually you don't really want that.
+You want like sort of some kind of similarity cut off, right?
+Like some matching score cut cut off
+because if there's only five things,
+five documents that match fine,
+if there's 500 that match, maybe that's what I want.
+- Right, yeah.
+- But also then I make my cost very unpredictable
+'cause the costs are something like $30 per thousand queries.
+- Right, so, yeah.
+- Yeah. (laughs)
+- Yeah, I guess you could have some form
+of like a context budget and then you're like,
+go as deep as you can and pick the best stuff
+and put it into like X number of tokens.
+There could be some creative ways of managing cost,
+but yeah, the super interesting thing to explore.
+- Do you see people using the files and the search API
+together where you can kind of search
+and then store everything in the file
+so the next time I'm not paying for the search again
+and like, yeah, how should people balance that?
+- That's actually a very interesting question.
+Let me first tell you about how I've seen,
+a really cool way of seeing people use files
+in search together is they put their user preferences
+or memories in the vector store.
+And so a query comes in, you use the file search tool
+to like get someone's like reading preferences
+or like fashion preferences and stuff like that.
+And then you search the web for information or products
+that they can buy related to those preferences
+and you then render something beautiful
+to show them like, here are five things
+that you might be interested in.
+So that's how I've seen like file search,
+web search work together.
+And by the way, that's like a single responses API call
+which is really cool.
+So you just like configure these things, go boom
+and like everything just happens.
+But yeah, that's how I've seen like files
+in web work together.
+- But I think that what you're pointing out
+is like interesting and I'm sure developers will surprise us
+as they always do in terms of how they combine these tools
+and how they might use file search as a way
+to have memory and preferences like Nikus says.
+But I think like zooming out
+what I found very compelling and powerful here
+is like when you have these like neural nets
+that have like all of the knowledge that they have today
+plus real-time access to the internet
+for like any kind of real-time information
+that you might need for your app and file search
+where you can have a lot of company, private documents,
+private details.
+You combine those three and you have like very, very compelling
+and precise answers for any kind of use case
+that your company or your product might want to enable.
+- There's a difference between sort of internal documents
+versus the open web, right?
+Like you're going to need both.
+- Exactly, exactly.
+- I never thought about it doing memory as well.
+I guess, again, you know, anything that's a database
+you can store it and you will use it as a database.
+That sounds awesome.
+But I think also you've been, you know,
+expanding the file search, you have more file types,
+you have query optimization, custom re-ranking.
+So it really seems like, you know, it's been fleshed out.
+And obviously I haven't been paying a ton of attention
+to the file search capability,
+but it sounds like your team has added a lot of features.
+- Yeah, metadata filtering was like the main thing
+people were asking us for for a while
+and that's the one I'm super excited about.
+I mean, it's just so critical once your like,
+vector store size goes over, you know,
+more than like, you know, 5, 10,000 records,
+you kind of need that.
+So yeah, metadata filtering is coming too.
+- Yeah, for most companies, it's also not like a competency
+that you're on a real building house necessarily, you know,
+like, you know, thinking about ambidings and chunking
+and, you know, how of that?
+Like, it sounds like very complex for something very,
+like obvious to ship for your users,
+like companies like Navan, for instance,
+they were able to build with the file search, like, you know,
+take all of the FAQ and travel policies, for instance,
+that you have you, you put that in file search tool
+and then you don't have to think about anything.
+Now your assistant becomes naturally much more aware
+of all of these policies from the files.
+- The question is like, there's a very, very vibrant
+rag industry already, as you well know.
+So there's many other vector databases,
+many other frameworks, probably if it's an open source stack,
+I would say like a lot of the AI engineers that I talk to
+want to own this part of the stack.
+And it feels like, you know, like, when should we DIY
+and when should we just use whatever opening offers?
+- Yeah, I mean, like, if you're doing something completely
+from scratch, you're gonna have more control, right?
+Like, so super supportive of, you know, people trying to,
+like, roll up their sleeves, build their like super custom
+chunking strategy and super custom retrieval strategy
+and all of that.
+And those are things that like will be harder to do
+with open-air tools.
+Open-air tool has like, we have an out-of-the-box solution.
+We give you some knobs to customize things,
+but it's more of like a managed rag service.
+So my recommendation would be like, start with the open-air
+thing, see if it like meets your needs.
+And over time, we're gonna be adding more and more knobs
+to make it even more customizable.
+But, you know, if you want like the completely custom thing,
+you want control over every single thing,
+then you'd probably want to go and handle it
+using other solutions.
+So we're supportive of both like engineers should be, yeah.
+- And then we got computer use,
+which I think operator was obviously one of the hot releases
+of the year and we're only two months in.
+- Let's talk about that.
+And that also seems like a separate model
+that has been fine-tuned for operator
+that has browser access.
+- Yeah, absolutely.
+I mean the computer use models are exciting.
+The cool thing about computer use
+is that we're just so, so early.
+It's like the GPD-2 of computer use
+or maybe GPD-1 of computer use right now.
+But it is a separate model that has been, you know,
+that the computer use team has been working on.
+You send it screenshots and it tells you what action to take.
+So the outputs of it are almost always tool calls
+and you're inputting screenshots based on whatever computer
+you're trying to operate.
+- Maybe it's doing out for a second
+'cause like I'm sure your audience is like super super,
+like AI native obviously,
+but like what is computer use as a tool, right?
+And what's operator?
+So the idea for computer use is like,
+how do we let developers also build agents
+that can complete tasks for the users
+but using a computer or a browser instead?
+And so how do you get that done?
+And so that's why we have this custom model,
+like optimized for computer use
+that we use like for operator ourselves.
+But the idea behind like putting it as an API
+is that imagine like now you wanna,
+you wanna automate some tasks for your product
+or your customers, then now you can have like the ability
+to spin up one of these agents
+that will look at the screen and act on the screen.
+So that means the ability to click, the ability to scroll,
+the ability to type and to report back on the action.
+So that's what we mean by computer use
+and wrapping it as a tool also in the Responses API.
+So now like that gives a hint also at the multi-turn thing
+that we were hinting at earlier.
+The idea that like, yeah, maybe one of these actions
+can take a couple of minutes to complete
+because there's maybe like 20 steps
+to complete that task, but now you can.
+- Do you think computer use can play Pokemon?
+(laughs)
+- Oh, interesting.
+- I guess we should try it.
+I guess we should try it, you know?
+(laughs)
+- Yeah.
+- There's a lot of interest.
+I think Pokemon really is a good agent benchmark,
+to be honest, like it seems like Cloud is running
+into a lot of trouble.
+- So we should make that a new eval, it looks like.
+- Yeah, yeah, yeah.
+Oh, and then one more thing before we move on to agent SDK,
+I know you have a hard stop.
+There's obviously, you know, blah, blah, dash preview, right?
+Like search preview, computer use preview, right?
+And you see all like fine tunes of 4.0.
+I think the question is, are we,
+are they all going to be merged into the main branch?
+Or are we basically always going to have subsets
+of these models?
+- Yeah, I think in the early days,
+research teams that over there I like operate
+with like fine-tuned models.
+And then once the thing gets like more stable,
+we sort of merge it into the main line.
+So that's definitely the vision,
+like going out of preview as we get more comfortable
+with and learn about all the developer use cases.
+And then we're doing a good job at them.
+We'll sort of like make them part of like the core models
+so that you don't have to like deal with the bifurcation.
+- You should think of it this way as exactly what happened
+last year when we introduced vision capabilities.
+You know, vision capabilities were in like a vision preview
+model based off of GPT-4 and then vision capabilities
+now are like obviously built into GPT-4-0.
+You can think about it the same way for like the other
+modalities like audio and those kind of like models
+like optimized research and computer use.
+- HSDK, we have a few minutes left.
+So let's just assume that everyone has looked at swarm.
+- Sure.
+- I think that swarm has really popularized
+the hand-off technique, which I thought was, you know,
+really interesting for sort of a multi-agent world.
+What is new with the SDK?
+- Yeah, for sure, yeah, for sure.
+So we've basically added support for types.
+We've made this like a lot, yeah, like we've added support
+for types, we've added support for guard railing,
+which is a very common pattern.
+So in the guard rail example, you basically have two things
+happen in parallel.
+The guard rail can sort of block the execution.
+It's a type of like optimistic generation that happens.
+And I think we've added support for tracing.
+So you can basically look at the traces
+that the agents SDK creates in the OpenAI dashboard.
+We also like made this pretty flexible.
+So you can pick any API from any provider
+that supports the chat completion's API format.
+So it supports responses by default,
+but you can like easily plug it into anyone
+that uses the chat completion's API.
+And similarly on the tracing side,
+you can support like multiple tracing providers by default.
+It sort of points to the OpenAI dashboard,
+but you know, there's like so many tracing companies out there
+and will announce some partnerships on that front too.
+So just like adding lots of core features
+and making it more usable,
+but still centered around like handoffs,
+it's like the main, main concept.
+And by the way, it's interesting, right?
+Because Swarm just came to life out of like learning
+from customers directly that like
+orchestrating agents in production was pretty hard.
+You know, simple ideas could quickly turn very complex,
+like what are those guard rails,
+what are those handoffs, et cetera.
+So that came out of like learning from customers
+and was initially shipped as a like low key experiment,
+I'd say, but we were kind of like taken by surprise
+at how much momentum there was around this concept.
+And so we decided to learn from that and embrace it.
+So be like, okay, maybe we should just embrace that
+as a core primitive of the OpenAI platform.
+And that's kind of what led to the agents SDK.
+And I think now, as Nikhoo mentioned,
+it's like adding all of these new capabilities to it,
+like leveraging the handoffs that we had,
+but tracing also.
+And I think what's very compelling for developers
+is like instead of having one agent to rule them all
+and you stuff like a lot of tool calls in there
+that can be hard to monitor.
+Now you have the tools you need to kind of like
+separate the logic, right?
+And you can have a triage agent that based on an intent
+goes to different kind of agents.
+And then on the OpenAI dashboard,
+we're releasing a lot of new user interface logs as well.
+So you can see all of the tracing UIs.
+Essentially, you'll be able to troubleshoot
+like what exactly happened in that workflow
+when the triage agent did a handoff to a secondary agent
+in the third and see the tool calls, et cetera.
+So we think that the agents SDK combined
+with the tracing UIs will definitely help users
+and developers build better agent workflows.
+- And just before we wrap,
+are you thinking of connecting this with also the RFT API?
+Because I know you already have,
+you kind of store my tax completions
+and then I can do fine tuning of that.
+It's going to be similar for agents
+where you're storing kind of like my choices
+and then help me improve the agents.
+- Yeah, absolutely.
+Like you're going to tie the traces to the emails product
+so that you can generate good emails.
+Once you have good emails and graders and tasks,
+you can use that to do reinforcement fine tuning
+and lots of details to be figured out over here,
+but that's the vision.
+And I think we're going to go after it like pretty hard
+and hope we can like make this whole workflow
+a lot easier for developers.
+- Awesome.
+Thank you so much for the time.
+I'm sure you'll be busy in Twitter tomorrow
+without the developer feedback flow.
+- Yeah, thank you so much for having us.
+And as always, we can't wait to see
+what developers will build with these tools
+and how we can like learn as quickly as we can from them
+to make them even better over time.
+- Awesome.
+- Thank you guys.
+- Thank you.
+- Thank you both.
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+

@@ -1,0 +1,893 @@
+--- METADATA START ---
+Show: AI + a16z
+Episode: Giving New Life to Unstructure…
+Host: Derek
+GUESTS: Anant Bhardwaj, Guido Appenzeller 
+Guests: Anant Bhardwaj, Guido Appenzeller
+Source URL: https://podcasts.apple.com/us/podcast/giving-new-life-to-unstructured-data-with-llms-and-agents/id1740178076?i=1000711840577
+--- METADATA END ---
+
+1
+Robotic process automation is literally: if human had to do something, you basically open some browser or whatever, take some data, put it into some other system, click some button, and all that stuff.
+2
+So, it records that human clicks on that desktop and tries to keep repeating it.
+3
+So, you kind of like get that automated.
+4
+And the hard part that they had is you can't do robotic process for unstructured data because it's not fixed.
+5
+They change it.
+6
+So, anything will be very, very brutal.
+7
+The bet that we are taking is that AI will drive automation in a significant way.
+8
+RPA will be fully eaten by AI automation, and the future is likely going to be more of decentralized federated execution.
+9
+Thanks for listening to the A16Z AI podcast.
+10
+I'm Derek, and I hope you're ready to talk unstructured data.
+11
+For a long time, optimally managing and utilizing, and even being able to locate unstructured data was a holy grail of enterprise IT.
+12
+And what is unstructured data?
+13
+As this episode's guest, Instabase founder and CEO Anant Bardwash explains, it's basically everything that's not nicely housed in rows and columns in a SQL database: text files, bank statements, passport photos, you name it.
+14
+It's the stuff that's critical for any number of business operations, but that, until recently, was quite difficult to process or even search for without significant manual effort.
+15
+So, in this episode, Anant sits down with A16Z Infra partner Guido Appenzeller to talk through Instabase's history with automating the management of unstructured data.
+16
+From Anant's early research at MIT through to the revolutionary advances brought by large language models, he shares some exciting new use cases like an Indian bank approving loans via WhatsApp, and as you just heard, his vision of and a strategy for building a future where AI agents can make the leap from analyzing documents to acting on them.
+17
+You'll hear it all, starting with some of Anant's personal journey after these disclosures.
+18
+As a reminder, please note that the content here is for confirmational purposes only, should not be taken as legal, business, tax, or investment advice, or be used to evaluate any investment or security, and is not directed at any investors or potential investors in any A16Z fund.
+19
+For more details, please see a16z.com/slash disclosures.
+20
+I'll just give you a little bit of history when I was doing research at MIT.
+21
+And I think big data was a big thing in 2015.
+22
+Everybody was doing this.
+23
+And so, first, let me just define unstructured data because people have different definitions of unstructured data.
+24
+So, my definition is very simple: anything that cannot be put into nice database tables where you can run SQL, anything that is not that is unstructured data.
+25
+So, like a PDF document or an image or anything, yeah, anything that cannot be put into a nice table that you can run query.
+26
+And we already knew how to answer questions when data is nicely in structured format.
+27
+So, at MIT, the question that they were trying to ask was, how do you answer questions when data is not in that format?
+28
+So, and that's very heterogeneous, that basically doesn't have any schema, you don't even know what questions are relevant or not.
+29
+So, that was the key sort of hypothesis.
+30
+And we were building this product called Data Hub, and this has the ability to mount different kinds of things.
+31
+So, you could mount file systems, you could mount databases, and you can mount something called application node.
+32
+So, because some data also lives in random applications, and can you ask any question?
+33
+So, that was a big research project.
+34
+I was like, this could be very valuable.
+35
+So, I dropped out.
+36
+I didn't solve the whole problem and came here in Silicon Valley.
+37
+And then I started talking to a bunch of companies.
+38
+Tell me what is your unstructured data problem?
+39
+Because we have to figure out business or where to sell and where is the real real value for the for the organizations, especially enterprises.
+40
+And we got pulled into this gnarly problem, which is here are all my images and documents in Excel and PowerPoint.
+41
+And can you help me answer questions?
+42
+So my first question was, why do you even care?
+43
+What question do you want to answer?
+44
+We need to understand that.
+45
+And they're like, we do a bunch of processes that receive a ton of unstructured data and we have to make a decision.
+46
+Like, for example, if immigration, when somebody applies for immigration, they submit a bunch of things and they have to make a decision whether they should give you visa or not.
+47
+Or you apply for a loan, you submit a bunch of things and they have to make a decision whether you should get a loan or not.
+48
+So we were like, sounds interesting.
+49
+So let's think about how to solve it.
+50
+And you won't believe it.
+51
+The techniques at that time were very rudimentary.
+52
+So there were four common techniques that people use.
+53
+Number one, they call this like templates, where they will simply say, here is a template for passport.
+54
+And if you want a passport number, go look 10 pixel below and 10 pixels from the right and draw a 20 pixel long box.
+55
+And whatever you find is your passport number.
+56
+Good luck with that.
+57
+Yeah.
+58
+It's very, very brittle, right?
+59
+Because as soon as you scan differently and think things will break.
+60
+Second techniques were basically people writing different kind of rules, like go and look for the keyword, period, beginning, and anything right of that is your start date.
+61
+It doesn't work, like it just breaks.
+62
+Our third technique, people were trying to train these ML models by writing features for a specific document type.
+63
+And what feature do you write for like paste?
+64
+It was just very, very hard.
+65
+So those also didn't work.
+66
+So we basically at that time started doing research, which we killed in two years, which called program synthesis, which is, we were basically like, if I had access to amazingly intelligent people, how do I solve the unstructured data problem?
+67
+I will ask them to write code for, you know, on the fly.
+68
+So, can I basically ask a computer to synthesize a program on the fly?
+69
+It's very, very hard for the computer to write a program at that time.
+70
+LLM wasn't the thing, but we would like most of the data can be extracted from documents and all that by writing some form of regular expression and those kind of things.
+71
+So, let's do the synthesis of these regular expression based on what input-output combination that you give, and that is the answer.
+72
+And that worked reasonably well as long as your input is in the similar kind of structure, because the problem with program is it's deterministic.
+73
+So, if your input changes, it will break.
+74
+So, but it still produces reliable results, but not good enough that we could solve many problems, but we could solve some part of the problems.
+75
+So, this was 2017, and Transformer paper came.
+76
+And I think with Transformer paper, they also released a model called BERT at that time.
+77
+So, we were super excited.
+78
+We were like, because that was like state of the art and like best sort of model to understand natural language.
+79
+So, we basically applied BERT on these unstructured documents.
+80
+We took a bunch of those tokens and put that, and that produced really bad results.
+81
+Really, really bad results.
+82
+So, we were like, at that time, actually, I sent a note which Martin should have a copy of, which we were like, seems like this problem is not solvable.
+83
+Unless somebody solves AI-complete problems, which they call AGI.
+84
+But we were like, there is nothing else that is promising enough.
+85
+So, what do we do?
+86
+So, we basically tried to use some creative approach that if you look at the BERT language model, they were encoding the token as the position of the word in the sentence, and that's how the attention mechanism would work and would do the fill mask problem.
+87
+So, we were like, what if we also start encoding in addition to the position of the word in the sentence, x and y coordinate 2?
+88
+So, we basically took 110 million documents, took every single word or the token, and encoded with the position in the sentence, but more importantly, X and Y coordinate, and then tried to basically solve the fill mask problem by basically blocking and see that if that box can be filled by the model, and trained a model which is similar to BERT.
+89
+We call this in style M.
+90
+And that produced great results because the attention is now not just looking at the sequence of tokens, but also XY coordinate in the two-dimensional space, which is really, really cool from the perspective of the document layout understanding.
+91
+And I think it's fair to say that has become, I mean, this is much later today, but today is sort of a standard technique almost, right?
+92
+If you're looking at two-dimensional data, you have some road-free encoding of X and Y or something like that.
+93
+Yeah, yeah, yeah.
+94
+So at that time, that was not the case.
+95
+So actually, Rafal, who was one of our ML engineers, you will see those two or three papers being in the top of the arena during that time.
+96
+So we were very happy.
+97
+We started winning a lot of deals.
+98
+We tripled our revenue that year, 2021 to 2022.
+99
+But then OpenAI launched ChatGPT, which is November 2022.
+100
+It turns out the bitter lesson held size matters.
+101
+So, and we were like, oh man, like there is a better, basically you could actually pass the documents.
+102
+And at that time, they didn't support documents in the first row age, but you could basically take the text with the positions like preserve and pass, and it did a reasonably good, good job.
+103
+And we were like, it's this end of Instagram.
+104
+You can now seems like solve this whole problem.
+105
+And then we realized that there is just a ton of things.
+106
+And I think there's a paper by Databricks, which is Compound AI System, that LLMs are very good, but you need a bunch of systems before and after this for that to be reliable.
+107
+And we can get into the details, but that is the history of how we are where we are today.
+108
+Yeah, amazing.
+109
+Very small personal anecdote.
+110
+I have a lot of PDF files.
+111
+Everything, a piece of paper I get, I just scan and dump into a folder.
+112
+And I recently wrote myself a little tool that basically, first I ask an LLM to come up with a hierarchy of documents.
+113
+You know, we're a family of five.
+114
+You know, here's some things about our, you know, about our family, and then give me a document hierarchy.
+115
+And then basically, by taking a document and just taking the summary of the document, giving to an LM saying, which folder should this go into?
+116
+That's an amazingly efficient sorting algorithm.
+117
+It's really impressive what LMs can do.
+118
+So today you have a solution that basically allows enterprises or companies to work with unstructured data.
+119
+Can you talk a little bit about what this does, what some of the use cases are?
+120
+So the use case is pretty simple, which is, let's say, I'll take a simple example of a bank that wants to do lending or an insurance company that wants to basically process your claims.
+121
+Let's take one of these two use cases.
+122
+So when people apply for, let's say, application of home loan, it's like literally a hundred page long packet and you don't even know where is what.
+123
+It could be that first 10 page is their bank statement.
+124
+Here's a shoebox of the information.
+125
+And in between, there might be cat's picture.
+126
+In between, there might be some random letter from somebody.
+127
+And so the issue, I think, is there is no one structure.
+128
+What bank says, hey, I need to something that can verify your income.
+129
+I need something that verifies your identity.
+130
+So it's not that they tell you, here is my passport and here is my driver license.
+131
+Here is the application packet and go and process it.
+132
+You have to do this reliably because you cannot make a single error.
+133
+You can just think about like, how do you solve this?
+134
+So there are two techniques.
+135
+And that's what, you know, one of the, I think, paper that we wrote is LLMs is not all you need.
+136
+Because one thing that you can do is put that into some stuff and ask LLMs the question, but the problem is if it goes beyond the context window, then that's a problem.
+137
+You can do rag, because rag is a technique where you put that into some vector database, figure out for what question, what are the relevant chunks that could be useful, and then produce that.
+138
+But how do you know something you did not miss?
+139
+You might get precision, but if you miss something, then that's a problem.
+140
+And LLMs are great, but they make surprising errors.
+141
+So for example, let's say you have a 10-page long bank statement with tables.
+142
+Somehow they will get a lot of things right, but miss like four random cells with the value, and you don't even know that they missed it.
+143
+And that just changes the whole thing.
+144
+So these are very surprising kind of errors.
+145
+So we looked at like, how do you solve this reliably?
+146
+Because reliability part is important because these are complex decisions that banks or insurance companies or immigration make.
+147
+So the right way to solve this is how do you know how to split this particular packet into a bunch of things we care about?
+148
+So you have to analyze every single thing in detail.
+149
+Once you have done this, then how do you get all of these structures that we care about?
+150
+Like, for example, we run separate table to text an algorithm rather than passing the whole thing to LLM because how do you know you didn't miss four things?
+151
+How do you make sure all the cells are correct?
+152
+Similar thing for checkboxes and the signatures and other things that basically matter.
+153
+Once you have classified, then what are the relevant schema that we need?
+154
+Then you basically go and do those things.
+155
+How do you validate that each of those things are correct?
+156
+Then write validations.
+157
+And then do cross-validate validation because is the pay step saying the same thing that W-2 does?
+158
+Because if not, then that's so.
+159
+Basically, what we provide is this interface where people can build all of those things without writing a single line of code.
+160
+And then you build this application.
+161
+And now you can run this application as part of deployment, which will integrate with your upstream and downstream.
+162
+So now you can do lending in less than five seconds rather than earlier.
+163
+That would have taken several weeks.
+164
+The one very interesting use case is intelligence use case, for example.
+165
+So let's say, and that's what I talk about, why the approaches are critically important.
+166
+So let's say you are a country and you want to collect bunch of intelligence, you collect a bunch of intelligence data and you want to answer if there is any threat to the country.
+167
+So, and you receive like, let's say, millions of documents per day.
+168
+One way to dump that all into some RAG system and ask a question, how do you know you didn't miss anything?
+169
+Because they care about that.
+170
+And maybe the right way to answer that question is not putting all the documents into a search.
+171
+Rather, looking at every single page of the document.
+172
+Look for the things that you care about, like which is terrorism threat or money laundering or whatever, and then extract that, put that into a database, run SQL query, once the things that match, then go and do the deeper analysis, because now you guarantee completeness.
+173
+So I think that what we have seen is that while RAG is good for casual search, you need a complex workflow under the hood that is explainable, that is auditable, that is guaranteed to be accurate and correct, is important for solving many of these enterprise problems.
+174
+So that's what we do.
+175
+We help basically enterprises take any kind of unstructured data and make decisions from it for reliable, 100% complete and accurate use case.
+176
+There are cases where we can make error.
+177
+And in that case, we have to pass to humans, like, hey, seems like something is wrong.
+178
+Can you go and look at it?
+179
+Totally.
+180
+And look, I mean, I think this is the trend with current AI systems, right?
+181
+I've not encountered an AI system yet that is perfect.
+182
+And by some metric, I think we never will, right?
+183
+I think what you need is finding things with reasonable error rates and then a good escalation path to humans to deal with this.
+184
+Exactly.
+185
+And even humans, humans are not 100% correct, right?
+186
+And you have to build the right processes to catch it.
+187
+So that's why I think sometimes when people say this AI didn't work, it's just that AI is not supposed to work reliably 100% of the time.
+188
+You have to build a system around it so that, and that is going to be a lot of investment that you will see across the board, which is how do we build the right systems around AI and LLMs that solves the problem.
+189
+Is there a shift in how enterprises or general, I think, consumers of AI think about reliability?
+190
+I mean, look, look, classically, if I'm a chief compliance officer in a bank or so, and I have a new piece of software, and my take is this software can never do X because that puts us out of compliance.
+191
+I recently spoke to a bank that basically said, well, we tried that, it doesn't work with AI, right?
+192
+So now we're saying, you know, the well-trained human gets us out of compliance about X times every X hours or so, right?
+193
+And so the AI has to be 10x better, and then we're going to sign off on it.
+194
+You cannot have absolute perfection.
+195
+So we have to sort of change the acceptance criteria.
+196
+Is that something you're seeing as well?
+197
+I think more important is predictability.
+198
+I think people are fine with errors as long as errors are predictable.
+199
+When errors are not predictable, that's where the problem is.
+200
+So when basically somebody makes an error and you don't even know the error was made, that's when, because in humans, they will make 3%, 4% error, but if you put the second human by default, the chance of that is low and I think with AI, the issue is that they're pretty accurate.
+201
+They're very good.
+202
+But they make mistakes in a surprisingly unpredictable way.
+203
+And that is a bigger problem.
+204
+And that's where I think the tooling and systems around it to detect them, to be able to explain when the error was made, to be able to figure out how to catch them, or building systems that allow you to minimize that effect, that is the critical part.
+205
+So I think in general, what we have seen is that enterprises are fine using AIs as long as we show them predictability.
+206
+They don't care about 99% accuracy.
+207
+You can be 90% accurate or even 80% accurate, but just tell us which 20% need to be reviewed or which 20% need to go somewhere.
+208
+And that requires a lot of systems around these tools to get there.
+209
+So I think we sometimes misunderstand what enterprises want.
+210
+They don't want 100% accuracy.
+211
+They want particularly, yeah, that makes sense.
+212
+Isn't this the future that essentially, you know, in the future, if an organization receives a document, that typically humans will no longer see the document, but will primarily look at it in AI-generated summary, or, you know, I will pre-parse it and, you know, I can reason about it at a higher layer.
+213
+Whenever unstructured data like documents come in, humans will still see some kind of dashboard with like whatever stuff is, and only the thing of interest they will go and double-click on.
+214
+And AI will do a lot of things to minimize their time to get to that thing of interest very, very quickly.
+215
+Like Google is a great example.
+216
+When you search, you don't read every single thing.
+217
+Google gives you like, hey, here is maybe three or four things of interest that you want to double-click and do research on.
+218
+And I think AI will play a similar important role where in many cases.
+219
+Gets rid of the boilerplate and introduces the thing to the actual essential essence.
+220
+Are we looking at a world where my system will take my couple of key key points or key phrases and generate a PDF document?
+221
+Then your system will take the PDF document and reduce it back on the couple of key points and phrases.
+222
+Exactly.
+223
+I guess not a better way to operate in the future.
+224
+What's the most interesting use case you've seen for your technology so far?
+225
+Anything sort of out of the ordinary?
+226
+I think what we are seeing, customers being a lot more creative than we had ever imagined.
+227
+So just think of: I was working with a bank in India.
+228
+And now, given that AI has become reasonably reliable, they are offering entire lending over WhatsApp.
+229
+So you go to WhatsApp, you say, like, hey, I'm a business and I want a loan.
+230
+And then on WhatsApp, you get a response back saying, hey, can you upload these things, your last 30 days of like all the, you know, your PL statement and whatever those things?
+231
+Look, and you basically piecemeal, you submit these three posts, like, oh, this looks good.
+232
+Can you also do this?
+233
+And I've never seen like lending being done conversationally over WhatsApp.
+234
+This is insane.
+235
+Like the customer experience is like fundamentally very different.
+236
+And I think that I do believe that over the coming years, it is going to change the user experience in a very, very significant way.
+237
+Currently, I think a lot of people think AI is a technology and how we can use this inside software.
+238
+I think that the biggest impact would be with the degree of affordance that it gives you, you can completely build a new class of interaction with your customers that would never have been possible.
+239
+And we are seeing more and more of those.
+240
+Currently, like all of these processes, like insurance clients and all, it's pretty painful process, right?
+241
+And I think America is slightly more conservative in those things.
+242
+But if you go to the developing world where digitization is more of a new thing and people are already using all the stuff on phone, things are just moving in a way where, you know, AI makes you feel like you're talking to humans.
+243
+Nobody loves chatbots before, but now you feel good because they basically are conversing with you in pretty similar to human-like behavior.
+244
+And that interface, coupled with all the customer interaction that they have, of course, one of the big use cases that everybody's trying to go after is a call center.
+245
+But just think of every other things too: like, how do you create open an account?
+246
+How do you do lending?
+247
+How do you do processing?
+248
+It will have a significant impact on how the user experience is going to change in a very, very significant way.
+249
+Yeah, totally.
+250
+And I think there's even, I think, an opportunity here to take some processes, which currently were very, you know, I take a lot of documents, I throw them over a wall, and back comes a response really turn to something more interactive, right?
+251
+Where it's like, hey, Guido, you know, tell me more about your use case.
+252
+Okay, then I need these documents, and I send them.
+253
+It's like, well, that document is missing something.
+254
+And, you know, you can do this interactive with very, very short latency.
+255
+Everything, even immigration, right?
+256
+Like, you send the stuff and you don't even know.
+257
+You know, two months later, you hear like your stuff is rejected, or we need something like this.
+258
+All of those things can fundamentally be changed.
+259
+I just got a letter back from the IRS.
+260
+I submitted a long application with lots of supporting documents.
+261
+I got a form letter saying the documentation is not complete without any mention of what is not complete.
+262
+What does this mean?
+263
+This can be just much more interactive.
+264
+And because now you can do things in real time.
+265
+And so I'm pretty optimistic on the impact of this on every single business on how they interact with their customers.
+266
+That makes no sense.
+267
+What do you see as the main barriers for companies to adopt this?
+268
+It's like, you know, I mean, I've seen many classic enterprise adopting AI.
+269
+There's discussions around compliance and legal, and where does my data go?
+270
+And, you know, like a long list of sort of concerns that are being expressed.
+271
+What are the top sort of items that you've seen?
+272
+The enterprises are not historically known for moving very quickly.
+273
+So that's number one.
+274
+So I think expecting that, like, you know, I would say they're moving a little quicker in the AI regulation than they did previously.
+275
+So exactly.
+276
+In general, I think each of these large enterprises have to get approval from their compliance committee and the regulations committee, you know, and they all basically, and none of them really understand things.
+277
+And sometimes you get regulations that might, or questions that might not even be applicable.
+278
+Like, for example, tell me every time you change the feature, how did LLMs like we LLM developers don't change features, right?
+279
+But you get like all of those things that basically is a massive time sink.
+280
+But I think the two key things that they care about is how do you guarantee that my data is safe and secure?
+281
+So that's number one.
+282
+And second is, how do you give me auditability and predictability?
+283
+That's the two more, like if you boil down to all their questions, they eventually boil down to those two things.
+284
+Like nobody wants like AI making a decision, even if it is correct, if they cannot explain, here are the set of steps that it took.
+285
+Because if something wrong happened, they have to explain.
+286
+Because in the human world, you can explain.
+287
+Something came, this went to these five different teams where they did this part, and this particular error was made, and that's why we will correct in future so that this kind of mistake would not happen.
+288
+If AI becomes a black box with no instrumentation of how things get done internally, that basically has hard time, especially for customer-centric use cases.
+289
+For simple casual search and those kind of things, it's fine.
+290
+But the runtime has to be something that is auditable.
+291
+And you should be able to find if something went wrong, where it went wrong.
+292
+And they don't tell you directly.
+293
+They ask the question that eventually boils down to this.
+294
+But that's what we have seen as a major requirement.
+295
+Makes sense.
+296
+Let me switch taxi a little bit.
+297
+We've seen, you know, one of the, I think, hottest buzzwords at the moment are agents, right?
+298
+And we're sort of, you know, it's an overused term.
+299
+It's sometimes used as a marketing term for a glorified set of prompts, basically.
+300
+But we're also seeing it as an essentially different user interface paradigm, right?
+301
+Where I no longer walk through a transaction step by step, but basically I give a high-level instruction to an agent, an agent acts autonomously.
+302
+We're even seeing it sort of as a software design paradigm where I now have multiple agents that work together and make decisions more autonomously.
+303
+How do you think this will change with how enterprises process data, how we work with unstructured data, and then this entire space?
+304
+So let's look at what we already know that has worked well.
+305
+So what we already know that has worked well is enterprises already know how to run some workflow that is created by some developer and they define a bunch of steps using some workflow management tool and you can run it.
+306
+So people already know how to run this.
+307
+Argument you can make is can we just tell the agent, like give me the answer and they do it.
+308
+The problem with currently the agents are if you just give them the same goal and same set of tools and they might choose different paths two different times.
+309
+So they are not guaranteed to deterministically always go in one path.
+310
+So in general, people don't like runtime inconsistencies.
+311
+So runtime has to be consistent.
+312
+So I think where I have seen things work well within enterprises, during build time, when somebody has to define the control path and the logic and all of those kind of things, you can maybe have agent produce the first draft where they're like, hey, this is how I plan to execute.
+313
+This is what it looked like.
+314
+Because otherwise, human might have taken like a long period of time.
+315
+Pretty similar to cursor, right?
+316
+If you want to build something, they can write the first draft of the code.
+317
+The human can look, make some minor edits.
+318
+But then you run that code deterministically.
+319
+Yeah, exactly.
+320
+So, my point is, I think it's the same way.
+321
+So, I do not believe that an autonomous agent would be a runtime phenomenon.
+322
+However, there would be a build-time or compile-time phenomena, which basically means that during build phase, they can do the 90% of the work, humans make some changes, and that's a huge, huge, huge value.
+323
+Because the reason why things don't scale at the enterprise is because there is either lack of enough developers or skills or drive or whatever.
+324
+If AI agents can do things and make it so easy that you can build those, and then once it is approved, then we know what is running.
+325
+Then it is auditable, and you can also add steps and checkpoints, whatever that is needed.
+326
+Like, for example, cursor generated code, but you want more logging, so you can add logs in between, whatever those things could be.
+327
+So, once you have that deterministic artifact that can run in production, so that's what I think the world is going to move towards, which is a compile-time phenomenon and the runtime phenomena.
+328
+Runtime phenomena has to be deterministic, something that is auditable, debuggable.
+329
+You exactly know what is happening, you should be able to see the logs and all that kind of stuff.
+330
+At compile-time, agent can play an important role because they can help with the reasoning and create the first draft where a human can participate with the agent to produce the artifact that he's going to run.
+331
+It makes a lot of sense.
+332
+I mean, this is a super hot debate at the moment, right?
+333
+I think we've everything from this AGI vision where it's like, no, this is going to be a fully agentic loop when it decides when it wants to terminate, decides what tools to use.
+334
+And it's just, you know, you give your credit card and let it run, right?
+335
+And I personally agree.
+336
+I don't think we're there yet, right?
+337
+These most freeform agentic systems that we've seen, they typically don't work yet.
+338
+This approach of saying, let the LLM generate the flow, but then freeze the flow once it works.
+339
+I think, at least in the short term, it's a much more problematic vision.
+340
+Also, basically, I think we can take a lot of lessons from what works in the human world.
+341
+Let's assume every human is an agent.
+342
+You don't allow every single employee in your company to make an autonomous decision.
+343
+No, some person at the top says, Here is the set of things that we are going to do.
+344
+You can only do these set of things.
+345
+And then, so basically, the runtime is pretty deterministic.
+346
+Most of the reasoning and agency and all that cool stuff is used.
+347
+So, LLM process re-engineering is a thing now.
+348
+Yeah, I guess that's fantastic.
+349
+So, what are you excited about?
+350
+Looking forward, what are you excited about in your space?
+351
+AI at the moment is hard to predict what's happening in six months, right?
+352
+But if you try to stretch your crystal ball to the absolute limits here, what things do you think we'll see 12 months out, two years out in your space?
+353
+So, we've been debating and reasoning on this for quite a period of time.
+354
+And maybe my answer will be slightly controversial because different people have different views of what would be the future.
+355
+So, I do believe that AI will continue to improve and the capabilities.
+356
+And I think they will play an important role in compile time, building things, reasoning, and all that.
+357
+Although, runtime is going to be much more deterministic and predictable and controllable.
+358
+Now, the question is: what is going to be the execution pattern?
+359
+There are two different views of the world.
+360
+One is that does it make my data management problem easier, that it allows compile time, move all the things into one place, and be able to answer and do things?
+361
+Or you basically keep the tooling and the world the way it is, siloed everywhere, and AI would become smart enough to have multi-agent communication where each agent can do things and figure out how to, you know, if one makes an error and affects how to do the communication.
+362
+So, we've been working on this idea of federated AI execution, where how you can, as an organization, you can define these thousands of agents in a very federated way, but dynamically are able to discover other agents through some platform or whatever that could be, and then able to communicate.
+363
+So if you give a bigger goal, somehow they basically, you don't need one central person to decide everything.
+364
+Dynamically, all the agents can discover, they all consider the capabilities.
+365
+Then you can figure out the control path, then you can figure out how to run.
+366
+So we are trying to build a federated decentralized automation framework, which basically means that can I take any process in any organization and figure out the federated decentralized execution framework and that can run.
+367
+And that's where I believe that the automation world would move.
+368
+There are still a lot of open questions, a lot of unknowns.
+369
+A lot of work to do, yeah.
+370
+But the bet that we are taking is that AI will drive automation in a significant way.
+371
+RPA would be fully eaten by AI automation.
+372
+And the future is likely going to be more of decentralized federated execution.
+373
+And so that's what we're doing.
+374
+That's one helmet of vision there.
+375
+I'm excited about it.
+376
+So AI is progressing very rapidly.
+377
+How have the technical advances of AI impacted what you can deliver to your end customers?
+378
+I mean, there must be changing business constantly, is that right?
+379
+Yeah, yeah.
+380
+So I think the earlier we focused primarily on the unstructured data problem as part of the automation, because that's one of the long tens in the poll: how do you even understand them?
+381
+Because once you get data in the structured format, you know how to do next steps.
+382
+So we primarily focused until now, which is if you get a bunch of unstructured data, how to get you the things that you need to make the next step of the decision.
+383
+We did not touch the next step of the decision.
+384
+Like, let's say you are a lending company or you are an insurance company.
+385
+Once you get all the data, you might have to, you know, trigger some other tool like their lending system or some sort of fraud system or whatever, the risk system and things like that, because that requires knowing about those systems, how to interpret their results and all that kind of stuff.
+386
+So we are like, data in, we will do everything, give you valuable data out, and after that, you are responsible for all the other integrations.
+387
+And the way these guys solve those problems was by using this technology called RPA.
+388
+You might have heard robotic process automation.
+389
+So robotic process automation is literally: if a human had to do something, you basically open some stuff, browse it or whatever, take some data, put it into some other system, click some button, and all that stuff.
+390
+So it records that human clicks on that desktop and tries to keep repeating it.
+391
+So you kind of like get that automated.
+392
+And the hard part of the day had is you can't do robotic process for unstructured data because it's not fixed.
+393
+They change it.
+394
+So anything will be very, very brutal.
+395
+But if the things are exactly the same after that, you can actually record the screen and replay.
+396
+It has been very, very brittle.
+397
+Like the problem with the RPA is, even though they add value, I think there are some big players there, UIPath, automation anywhere, and many of them have reasonable, you know, massive market market cap.
+398
+Now, with AI, the argument that we make, and we might be wrong, is once the data comes out, which we are very, very good at until that point, can we also start operating those other systems?
+399
+Now, this makes a massive adjustment, which is AI will help us operate those systems.
+400
+And there are some interesting protocols that have come, which is model context protocol that allows you to dynamically discover capabilities, call those functions.
+401
+It has a ton of problems still, which is, does all the system even support MCP?
+402
+What if they don't?
+403
+They sort of punted on authentication, but we'll figure that out over time.
+404
+Then, authentication, then how do you know if something breaks?
+405
+One of the arguments that we're making is that maybe in the future, as we basically go broader, can we do entire end-to-end workflow?
+406
+So, once data comes out, do we have a way to plan and region during the compile time, which AI agent can do, how to operate those systems, how to call them, how to get the data, then call some other system if something gets wrong, how to involve humans?
+407
+So, create all that stuff with the AI agent during compile time, and then extend our offering to do this entire thing end-to-end.
+408
+Like, can RPA be fully replaced with AI automation?
+409
+RPA had some stuff that is easier to solve because some user logs in, so it always runs in the context of the user.
+410
+If you're clicking on desktop and all that, one of the hacks that we believe might work is called identity pass-through.
+411
+It can be assumed the user identity that can be provided during runtime and then let that user identity get passed to all of the MCPs.
+412
+Do I always want an agent to have the same capabilities that I have?
+413
+An agent is like today, like a good intern, right?
+414
+So, I trust the intern up to a point.
+415
+I don't necessarily want, I'm just spending on my credit card, maybe I may want to cap that at $50 or something like that.
+416
+And you can decide that during compile time.
+417
+So, basically, you can say that, like, hey, even if, like, let's say this user context is with this, but as soon as it gets to this operating tool, maybe like we create some like user divided by half fake identity that will have less permissions or things like that.
+418
+So the good thing is, and that's why I said the AI agent should only be you during compile time so that it gives humans all the control that what the runtime behavior should be.
+419
+Yeah, makes sense.
+420
+This problems come when AI agent is making runtime decisions because then you have no control where things are going.
+421
+So the separation is critically important.
+422
+So during the initial build, you can choose if you want to curb what agency they have and what limits and constraint that they have.
+423
+And that's what it will go and do during the runtime.
+424
+Right, Anar.
+425
+Thanks for being here today.
+426
+That was absolutely amazing.
+427
+I think we're on a very exciting journey with AI.
+428
+And looking back, I think the last big wave that I was a part of was probably the dot-com boom.
+429
+And I think if there's one lesson learned for enterprises in general back in those days, was that these big technological shifts happen?
+430
+You have to jump on the wave early.
+431
+It may be complicated, maybe still a little weird, your compliance, your legal folks, they don't know how to deal with it.
+432
+But if you don't, you may end up like Barnes <unk> Noble, right?
+433
+The downside is substantial.
+434
+And I think it is clear today that there's a huge opportunity for enterprises here to both have more efficient workflows for themselves, but also have a much, much better end customer experience and partner experience.
+435
+And in addition, it does three things, which is it saves you a lot of cost.
+436
+It does.
+437
+It allows you to do things much, much faster.
+438
+And the third one, it fundamentally changes customer experience in a very significant way so i think i think there are there are all the business reasons for enterprises to adopt these things.
+439
+Now it's just about how to make this work.
+440
+I don't think i have any question on whether this you know whether this will work or is this the right decision it's about how to make it work that that is the bigger question i think fantastic well thank you so much and that's it for this episode Maybe it's the years I spent covering the data space and thinking about big data, but I thought that was a great discussion.
+441
+If you agree, please do share the podcast and rate it wherever you listen.
+442
+And keep listening for more great stuff in the weeks to come.

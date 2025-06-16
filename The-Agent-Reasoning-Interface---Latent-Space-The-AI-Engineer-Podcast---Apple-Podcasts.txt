@@ -1,0 +1,744 @@
+
+Welcome back. From Sam Altman to Satya Nadella, many people are saying that 2025 is the year of
+agents. Since our podcast conversations about DeepSeek, the mainstream narrative has become
+obsessed with DeepSeek R1 and what it means to have a competitive open weights reasoning model from
+China. Swix wrote a viral blog post about the reasoning price war of January 2025 and today,
+open AI has responded by slashing the price of 0.01 mini from $12 per million tokens to $4.40
+and also released 0.03 mini in chat GPT and to level 3 and above API users for the exact same price.
+Given the 0.03 mini matches or exceeds 0.01 especially with medium or high reasoning effort,
+this is an enormous leap in performance per dollar. In the meantime,
+the rest of open AI has been busy shipping. Chat GPT has slowly accelerated from shipping
+canvas during the 12 days of ship mass last month to shipping recurring tasks and most recently
+operator, the hosted virtual agent response to Claude's computer use. We are very proud to host
+today's guest, Karina Nguyen, who was at anthropic for the launch of Claude 3 and wrote the first
+50,000 lines of Claude.ai before joining open AI to work on the future of what she calls
+reasoning interfaces. We are very proud to also announce that Karina will be the closing keynote
+speaker for the second AI engineer summit in New York City from February 20 to 22. This is the
+last call for applications for the AI leadership track for CTOs and VPs of AI. If you are building
+agents in 2025, this is the single best conference of the year. Our new website now lists our speakers
+and talks from DeepMind, Anthropic, OpenAI, Meta, Jane Street, Bloomberg, BlackRock, LinkedIn,
+and more. Look for more sponsor and attendee information at apply.ai.engineer and see you there.
+Watch out and take care. Hey everyone. Welcome to the Latent Space Podcast.
+This is Alessio, partner and CEO at Desable, and I'm joined by my usual cohost, Swix.
+Hey, and today we're very, very blessed to have Karina Nguyen in the studio. Welcome.
+Nice to meet you. We finally made it happen. My finally made it happen. First time we tried
+this, you were working in a different company and now we're here. Fortunately, you had some time,
+so thank you for joining us. Karina, your website says you lead a research team in OpenAI, creating
+new interaction paradigms for reasoning interfaces and capabilities like ChatchPT Canvas and most
+recently, ChatchPT TAS, streaming chain of thought for O1 models and more via novel synthetic model
+training. What is this research team? Yeah, I need to clarify this a little bit more. I think
+it changed a lot since the last time we launched, so we launched Canvas and it was like the first
+project that I was attacking basically, and then I think over time I was trying to refine what my
+team is, and I feel like it's at an intersection of human computer interaction, defining what's
+the next interaction paradigms might look like with some of the most recent reasoning models,
+as well as actually trying to come up with novel methods, how to improve those models for certain
+tasks that you want to. For Canvas, for example, one of the most common use cases is basically
+writing and coding, and we continually working on how do we make Canvas coding to go beyond
+what is possible right now, and that requires us to actually do our all training and coming up
+with new methods of synthetic data generation. The way I'm thinking about it is that my team is
+going from very full stock from training models all the way up to deployment and making sure that
+we create novel product features that is coherent to what ChatchPT can become. There are different
+types of features like Canvas, Tasks, but all those components that they compose together to
+evolve ChatchPT into something completely new, I think, in the new year.
+It's evolving. I like your tweet about that. It's like kind of modular. You can compose it with
+the stocks feature, the creative writing feature. I forget what else. We have a list of other use
+cases, but we don't have to go into that yet. Can we maybe go back to when you first started
+working with LLMs? I know you have some early UX prototypes with GPD3 as well, and maybe how
+that is informed, the way you build products. I think my background was mostly working on computer
+vision applications for investigative journalism back when I was at school at Berkeley, and I was
+working in a lot with Human Rights Center and investigative journalists from various media,
+and that's how I learned more about AI, with vision transformers. At that time, I was working with
+some of the professors at Berkeley AI research. There are some Pulitzer Prize winning professors
+that teach there. No, so it's mostly reporting for teams like the New York Times, the AP associate
+press. It was all in the context of the Human Rights Center. That was like in computer vision,
+and then I saw Chris Sallow's work around capability from Google, and that's how I found out about
+an topic. At that time, I think it was the year when Ukraine's war happened, and I was trying
+to find a full-time job, and I was all got distracted. It was like spraying, and I was very
+focused on figuring out what to do, and then my best option at that time was just to continue
+my internship at the New York Times and convert to full-time. At the New York Times, it was just
+working on mostly product engineering work around R&D prototypes, storytelling, features on the mobile
+experience. At that time, you were thinking about how do you employ NLD techniques to scrape some
+of the archives from the New York Times or something, but then I always wanted to get into AI,
+and I knew open AI for a while since I was in Berkeley. It applied to Antarctic,
+just on the website, and I was rejected the first time, but then at that time, they were not hiring
+for anything like product engineering or a frontline engineering, which was something that was like,
+at that time I was interested in, and then there was a new opening at that topic, which was kind of
+frontline engineers, and so I applied, and that's how my journey began. But the earlier prototypes
+was mostly like, I used like CLIP for like fashion and recommendation search, so it was like one of those
+success projects, I think, and I was like, before even coming to Antarctica, I was like thinking maybe
+I should just like, do my own startup, but I feel like I didn't have like enough confidence and
+conviction in myself that I could do that, but it was like one of the early like prototypes,
+and I think Twitter is a good platform to like, for side projects. That's fantastic.
+Yeah, we'll briefly mention that the Ukrainian crisis actually hit home more for you than most
+people because you're from the Ukraine, and you moved here like, for school, I guess? Yeah,
+we'll come back to that if it comes up, but then you join in topic, not just as a frontline
+engineer, you were the first, is that true? As a designer? Yeah, yes, I think like I did both
+product design and frontline engineering together, and like at that time, it was like pre-time
+JPT was like, I think August 2022, and that was the time when Antarbe really decided to like,
+do more product related things, and the vision was like, we need to like, find research and like,
+building product is like the best way to like, find a safety research, which I found it quite
+admirable. So the really first product that Antarbe was like cloud and Slack, and it was
+since I did, not long after, but like, it was like one of the first, I think I still come back to that
+idea of like, cloud operating inside some of the organizational workplace, like Slack, and
+something magical in there, and I remember we built like, ideas like, summarize the thread,
+but you can like imagine having automated like, ways of like, maybe cloud should like, summarize,
+multiple channels every week, custom for what you like, or for what you want, and then we built
+some like, really cool features, like tag cloud, and then ask to summarize what's, what happened
+in the thread, suggest like, new ideas, but you didn't quite double down, because you could like,
+imagine like, cloud having access to like, the files, or like, Google Drive that you can upload,
+and just connectors, like, connections in the Slack, also the UX was kind of constraining.
+At that time, I was thinking like, oh, we wanted to do this feature, but like, Slack interface,
+kind of like, constrain us to like, do that, and we didn't want to like, be dependent on the platform,
+like, Slack, and then after like, chat PhD came out, I remember the first two weeks,
+my manager made me this challenge, like, can I like, reproduce, kind of like, similar interface
+in like, two weeks, and one of the early mistakes being in the engineering is like, I said, yes,
+instead I should have said like, you know, it's double, 2x the time, um, and this is how like,
+cloud that AI was kind of like, born. Oh, so you actually wrote club.ai as your first job?
+Yeah, like, I think like, the first like, 50,000 code of lines, without any reviews at that time,
+because there's no one, um, yeah, it was like, very small team, it was like, six, seven team,
+who we were called like, deployment team. Yeah.
+On my, I actually interviewed for an topic around that time, I was given cloud in sheets,
+and that was my other form factor, I was like, oh, yeah, this needs to be in a table, so we can,
+we can just copy paste and just span it out, which is kind of cool. The other rumor that, um,
+we might also just mention this, uh, Raza Habib from Human Loop, uh, often says that,
+you know, there was some, there's some version of chat TBT in endopic. Like, you had the chat
+interface already. Like, you had Slack. Why not launch a web UI? Like, basically, like, how did,
+how did open AI beat endopic to a chat TBT, basically?
+Well, I think it's kind of obvious to have it.
+I think chat TBT model itself came out way before then we decided to launch cloud tool necessarily,
+and I think like, at that time, cloud 1.3 had a lot of hallucinations, actually. So I think there's like,
+one of the concerns is like, I don't think like the leadership was convinced, had a conviction that
+this is the model that you need to like, you want to like deploy or something. So it was a literal
+discussion around, around that time. But cloud 1.3 was like, I don't know if you
+play with that, but it's like extremely creative, and it was like really cool.
+Nice. It's still creative.
+And you had a tweet recently that you said things like Canvas and Task could have happened two
+years ago, but they were not. Do you know why they were not? Was it too many researchers at the
+labs not focused on UX? Was it just not a priority for the labs?
+Yeah, I come back to that question a lot. I guess like, I was working on something similar to like,
+Canvas-y, but for cloud at that time, in like 2023, it was the same similar idea of like,
+cloud workspace where a human and a cloud could have like a shared workspace.
+And that's part of that. Right. No, no, no. This is cloud projects.
+All right. I think it kind of evolved. I think like, at that time, I was like in product engineering
+team, and then I switched to like, research team, and the product engineering team grew so much.
+They had their own ideas of like, artifacts and like, projects, and that necessarily,
+maybe they had, they looked at my like, previous explorations, but like, you know, when I was
+exploring like, cloud documents or like, cloud workspace was like, I don't think anybody was
+thinking about UX as much, or like, not many like, researchers understood that.
+And I think the inspiration actually for, I still have like all the sketches, but the inspiration
+was like from the Harry Potter, like, Tom Riddler, Diary. That was an inspirational, like having
+cloud writing into the document or something and communicate back.
+So like, in the movie, you write a little bit and then it answers you.
+Yeah. Okay. Interesting.
+But that was like, in the only in the context of like writing, I think Canvas is like, more
+also serves like coding one of the most common use cases. But yeah, I think like those, those
+ideas could have happened like two years ago, just like, maybe, I don't think it was like a
+priority at that time. It was like very unclear. I think like, AI landscape at that time was very
+nascent, it didn't make sense. Like, nobody like, even when I would talk to like, some of the
+designers at that time, like, product designers, they were not even thinking about that at all.
+They did not have like, AI in mind and like, it's kind of interesting, except for one of my
+designer friends, his name is Jason Yuan. Hey, yeah, who was thinking about that?
+And Jason now is a new computer. Yes.
+We'll have them on at some point. I had them speak at my first summit. And we're speaking
+the second one, which will be really fun. Nice.
+It was still in topic for a bit and then we'll move on to more recent things.
+I think the other big project that you were involved with was just Cloud3.
+Just tell us the story. Like, was it like to launch one of the biggest launches of the year?
+Yeah, I think like, I was so Cloud3.
+This is haiku sonnet opus all at once, right?
+Yes, it was a Cloud3 family. I was a part of the post training, fine-tuning team. We only had like,
+what, like 10, 12 people involved. And it was really, really fun to like, work together as friends.
+So, yeah, I was mostly involved in like, Cloud3 haiku post training side and then evaluations,
+like developing new evaluations and like literally writing the entire like model card.
+And I had a lot of fun. I think like, the way you train the models, like very different,
+obviously, but I think what I've learned is that like, you will end up with like, I don't know,
+like 70 models and every model will have its own like brain damage and like,
+like personality-wise or performance benchmarks.
+I think every model is very different. And I think like, it's like, one of the interesting
+like, research questions is like, how do you understand like the data interactions as you
+like train the model? It's like, if you train the model on like, contradictory data sets,
+how can you make sure that there won't be like, any like, weird like side effects?
+And sometimes you get like side effects. And like, the learning is that you have to like,
+iterate very rapidly and like, have to like, debug and detect it and make like,
+address it with like interventions. And actually, some of the techniques from like,
+software engineering is very like, useful here is like, how do you?
+Get for data. Yeah, exactly.
+So I really empathize with this because data sets, if you put in the wrong one,
+you can basically kind of screw up like the past month of training.
+The problem with this for me is the existence of YOLO runs. I cannot square this with YOLO runs.
+If you're telling me like, you're taking such care about data sets, then every day,
+I'm going to check in running files and do that stuff.
+But then we also know that YOLO runs exist. Yes.
+So how do you square that? Well, I think it's like dependent on how much compute you have,
+right? So it's like, it's actually a lot of questions and like, researchers aren't like,
+how do you most effectively use the compute that you have? And maybe you can have like,
+two to three runs that is only like YOLO runs. But if you don't have a luxury of that, like,
+you kind of want you to like prioritize ruthlessly and like, what are the experiments
+that are most important to like run. I mean, this is what like research management is basically,
+is like, how do you... Funding efforts, yeah. Prioritizing.
+Take like research bets and make sure that you build the conviction and those bets rapidly,
+such that if they work out, you like double down on them.
+Yeah. You almost have to like kind of ablate data sets too.
+Yeah. And like doing on the side channel with immersion. Yeah, it's kind of super interesting.
+So tell us more, like, what's your favorite? So you, I have this in front of me, the model card.
+You say constructing this painful. This table was slightly painful.
+Just pick a benchmark and what's an interesting story behind one of them.
+I would say in TPK, it was kind of interesting. I think it was like the first...
+I think we were the first lab, like on topic was the first lab to like run.
+Oh, because it was like relatively new after new rips. Yeah, yeah.
+Published to TPK like numbers. And I think one of the things that we learned was that I personally
+learned about that, like any evolves is like, some vitals are like very like high variance and
+like, TPK is like, happened to be like a huge like, high variance, like evaluation. So like,
+one thing that you did is like having like, run the average of like, five and like, take the average.
+But like, the hardest thing about like, the model card is like, none of the numbers are like,
+apples to apples. So actually we need to like, go back to like, I don't know, like,
+GPD for model card, like read the appendix, just to like, make sure that like,
+their settings are the same as you're running the settings. Two sets like, never an apples to apples.
+Yeah. But it's interesting how like, you know, when you market models as products,
+like, customers don't necessarily know, like, they're just like, my MMU is 99. What do you mean?
+Why isn't there an industry standard harness? Right. There's this elutors thing,
+which it seems like none of the model labs use. And then opening up, put on simple eval and
+nobody uses that. Why isn't there just one standard way everyone runs this? Because the
+alternative approach is you rerun your emails on their models. And obviously the numbers,
+your numbers will be lower. Yeah. And they'll be unhappy. So that's why you don't do that.
+I think it operates on an assumption that like, the models, the next generation of the model,
+or the model that you produce next is going to behave the same. So for example, like,
+I think the way you prompt a one or like clogged three is going to be very different from each
+other. I feel like there's a lot of like, prompting that you need to do to get the emails to run
+correct. So sometimes the model will just like output like new lines. And the way you parse
+will be like incorrect or something. And this has happened with like Stanford. I remember like when
+Stanford had this also like, they were like running benchmarks. Yeah, home. And somehow like
+cloud was like always like, not performing well. And that's because like the way they prompted it
+was the kind of wrong. So it's like a lot of like techniques. It's just like very hard because
+like nobody even knows. Has that gone away with chat models instead of, you know, just wrong
+completion models? Yeah, I guess like each you also can be run in a very different way. Sometimes
+you can like ask the model to output and like XML tags. But some models are not really good at
+XML tags. And so it's like, do you change the formatting per model? Like, do you run the same
+format across all models? And then like the metrics themselves, right? Like maybe, you know,
+accuracy is like one thing, but maybe you care about like some other metrics, like F score or
+like some other like things, you know, it's so hard. I don't know.
+And talking about a one prompting, which is at a one prompting posts on the newsletter,
+which I think was apparently went viral within open AI. Yeah, I got I got paid by other open AI
+people. They were like, it is helpful to us. I'm like, okay, I think it's like maybe one of the
+top three most read posts now. Yeah. And I didn't write it.
+Exactly. What are your tips on a one versus like cloud prompting or like, what are things that
+you took away from that experience? And especially now, I know that with four over canvas, you've done
+RL after on the model. So yeah, just general learning. So now to think about prompting these
+models differently. I actually think like a one, I did not even harness the magic of like a one
+prompting, but like one thing that I found is that like, if you give a one like hard like constraints
+of like what you're looking for, basically the model will be will have a much easier time to like
+kind of like select the candidates and match like the candidate that is most like fulfill
+the criteria that you gave. And I think there's a class of problems like this that a one excels
+that, for example, if you have a question, like a bio question on like some, or like in chemistry,
+right? Like if you have like very specific criteria with the protein or like some of the
+chemical bindings or something, like then the model will be really, will be really good at like
+determining the exact candidate that will match the certain criteria.
+I have often thought that we need a new IFE valve for this, because this is basically kind of
+instruction following, isn't it? Yes. But I don't think IFE valve has like multi step IFE
+valve. Yeah. So that's what basically I use AI news for. I have a lot of problems and a lot of
+steps and a lot of criteria. And all one just kind of checks through each kind of systematically.
+And we don't have any vels like that. Yeah, that's opening. I know how to prompt or one.
+I think that's kind of like that. That's the, you know, Sam is always talking about incremental
+deployments and kind of like getting having people getting used to it. When you release a model,
+you obviously do all the safety testing. But do you feel like people internally know how to
+get 100% out of the model? Or like, are you also spending a lot of time learning from like the outside
+on how to better prompt a one and like all these things? Yeah, I certainly think that you learn
+so much from like external feedback to on how people use like a one. I think like a lot of
+people use a one for like really hardcore like coding questions. I feel like I don't fully know
+how to. Yeah, you release the model. A one, except for like, I use the one to just like
+do some like synthetic data explorations. But that's that. Do people inside of opening eye?
+Once the model is coming out, do you get like a company, one memo of like, Hey,
+this is how you should try and prompt this, especially for people that might not be close
+to it during development, you know, or I don't know if you can share anything. But I'm curious,
+I will internally, these things kind of get shared. I feel like I'm like in my own little corner
+in like research, I don't really like look at some of these like it's very, very big.
+So I don't know if something like this exists, probably it might be exist because we need to share
+to like customers or like, you know, like some of the guides and like how to use this model. So
+probably there is. I often say this, the reason that AI engineering can exist outside of the model
+labs is because the model labs release models with capabilities that they don't even fully know
+because you never train specifically for it. It's emergent. And you can rely on basically
+crowdsourcing the search of that space or the behavior space to the rest of us. Yeah. So like,
+you don't have to know. Yeah. I think like, and then just saying a thing about like,
+Oh, one is that like it's really for like average human. Sometimes I don't even know whether the
+model like produced the correct output or not. Like it's really hard for me to like verify
+even like hard like stem questions. I don't know if I'm not an expert, like I usually don't know.
+So it's like the question of like alignment is actually more important like for these like
+complex reasoning models to like, how do we help humans to like verify the outputs of these models?
+It's quite important. And they feel like, yeah, like learning from external feedback is kind of cool.
+For sure. One last thing on cloud three, you had a section on behavioral design. Yes.
+And topics very famous for the HH goals. What was your insights there? Or, you know,
+maybe just talk a little bit about what you explored. Yeah, I think like behavioral design is like,
+a really cool, I'm glad that I made it like a section around this. And it's like really cool.
+I think like, like you weren't going to publish one and then you insisted on it or what?
+I just like put the section inside it and like, yeah, Jared might like one of my most favorite
+researchers like, yeah, that's cool. Let's let's do that, I guess. Yeah, like nobody had this like
+terminal like behavioral design necessarily for the models. It's kind of like a new little field
+of like, extending like product design into like the model design, right? Like, so how do you
+create a behavior for the model in certain contexts? So as, for example, like in Canvas, right? Like,
+one of the things that we had to like think about is like, okay, like now the model enters like
+more collaborative environment, more collaborative context. So like, what's the most appropriate
+behavior for the model to act like as a collaborator? Should it ask like more follow up questions? Should
+it like change? What's the tone should be? Like, what is the collaborators tone? It's different
+from like a chat, like conversationalist versus a collaborator. So how do you shape the persona
+and the personality around that? It has like some philosophical questions too. Like, yeah,
+behavioral, I mean, like, I guess like, I can talk more about like the methods of like creating
+the personality. It's the same thing as like, you would create like a character in a video game
+or something. It's kind of like charisma, intelligence, wisdom. What are the core principles?
+Helpful harmless on this. Yeah. And obviously for cloud, this was my is much easier than I would
+say, like for charge PD for cloud is like, it's like baked in and like the machine, right? It's
+like honest harmless. Helpful. Helpful. But the most complicated thing about like the model
+behavior or like the behavioral design is that like, sometimes two values would contradict each
+other. I think this happened in Claudia, one of the main things that we were thinking about is like,
+how do we balance this like honesty versus like homelessness or like helplessness?
+It's like, we don't want the model to always like refuse, even to like innocuous queries,
+like some like creative writing prompts. But also if you don't want the model to be
+act like a be harmful or something. So it's like, there's always a balance between those two.
+And it's more like art than the science necessarily. And this is what data sets
+craft is is like more of an art than the literal science. You can definitely do like empirical
+research on this. But it's actually like, like this is the idea like synthetic data. Like if you
+look back to like constitutional AI paper is around like, how do you create completions such
+that you would agree to certain like principles that you want your model to agree on. So it's like,
+if you create the core values of the models, how do you decompose those core values into like
+specific scenarios or like, so how does the model need to express its honesty in a variety
+kind of like scenarios. And this is where like generalization happens when you craft the persona
+of the model. Yeah, it seems like what you describe behavior modification or shaping as a
+side job that was done. I mean, I think anthropic has always focused on it the first and the most.
+But now it's like every lab has sort of vibes officer. For you guys, it's Amanda, for opening
+eye it's room. And then for for Google, it's Stephen Johnson and Riza, who we had on the podcast.
+Do you think this is like a job? Like it's like a like every every company needs a tastemaker.
+I think the model's personality is actually the reflection of the company or the reflection of
+the people who created that model. So like for Claude, I think Amanda was doing a lot of
+a Claude character work and I was working with her at the time. But there's no team, like Claude
+character team. And now there's a little bit of a team. Isn't it cool? But before that, there was
+none. I think like actually with Claude three, he was like, we kind of doubled down on the feedback
+from Claude two. Like people, we didn't even like think, but like people said like Claude two is
+like so much better at like writing and like has certain personality, even though it was like
+unintentional at all. And we did not pay that much attention. And didn't know even how to like
+productionize this property of model being better like personality until like it was Claude three,
+we kind of like had to like double down because we knew the viewed launch like in chat. We wanted
+to like Claude honesty is like really good for like enterprise customers. So we kind of wanted
+to like make sure the host nations went like factuality would like go up or something.
+We didn't have a team until after like Claude three, I guess. Yeah, I mean, it's it's going
+now. And I think everyone's taking seriously. I think what I'm putting either is a team called
+model design. It's John, the PM. She's leading that team and I work very closely with those teams
+that we were working on like actually writing performance that we did was touch PT last year.
+And then I was working on like this collaboration, like how do you make
+touch PT alkali's collaborator for canvas? And then yeah, we worked on some of the projects.
+I don't think it's publicly known as his actual name other than Ruud. But he's mostly docs.
+We'll beep it. And then people can guess.
+Do we want to move on to open AI? And some of the reason work, especially you mentioned canvas.
+So the first thing about canvas is like, it's not just a UX thing. You have a different model
+in the back end, which you post trained on or one preview distilled data, which was pretty
+interesting. Can you maybe just run people through? You come up with the feature idea, maybe, then
+how do you decide what goes in the model, what goes in the product and just that process?
+Yeah, I think the most unique thing about try to put the canvas was that it was also the team
+formed out of the air. So I was like, July 4th or something, during break.
+Wow, like independence day, they just like, okay.
+I think it was there's some like company break or something. And I remember I was just like
+taking a break. And then I was like pitching this idea to like Barrett.
+So who's my manager at that time? Just like, I just want to like create this like canvas or
+something. And I really didn't know how to like navigate opening eyes. It was like my first like,
+I don't know, like first months, I don't have any eye. And I really didn't know how to like
+navigate, how to get product to work with me or like some of the ideas, like some of the things
+like this was like, so I'm really grateful for like actually Barrett and Mira who helped me to like
+staff this project basically. And I think that was really cool. And it was like this 4th of July,
+and like Barrett was like, yeah, actually, who's like an engineering manager is like,
+yeah, we should like staff this project was like five, six engineers or something. And then Karina
+can be like researcher on this project. And I think like, this is how the team was formed.
+This was kind of like out of the air. And so like, I didn't know anyone there at that time,
+except for Thomas Dimson, he did like the first like initial like engineering prototype of the
+canvas and it kind of like ripped off. But I think the first you learned a lot on the way how to work
+together as product and research. And this is one of the first projects out of an AI where
+research and product work together from the very beginning, and which has made it like
+a successful project in my opinion is because like designers, engineers, pm, and research team
+were all together. And we would like push back on each other. Like if like it doesn't make sense
+to do it on a model side, like we had to like collaborate with like applied engineers to like
+make sure this is being had all the more applied side. But the idea is you can go that far with
+like prompted baseline, prompted charge PTE was kind of like the first thing that we tried.
+It was like a canvas as a tool or something. So how do we define the behavior of the canvas?
+But then like we've we've found a bunch of like different like edge cases that we wanted to like
+fix. And the only way to like fix some of those edge cases is actually throughput screening. So we
+actually what we did was actually retrain the entire four O plus our canvas stuff.
+And this is like there are like two reasons why we did this is because like the first one is that
+we wanted to ship this as a better model in the dropdown menu because like rapidly iterate on
+users feedback as we ship it and not going through the entire like integration process into like
+this like new one model or something, which took some time. Right. So I'm like from beta to like
+GA it took I think three months. So we kind of wanted to like ship our own model with that
+teacher to like learn from the user feedback very quickly. So that was like one of the decisions
+that we made. And then with canvas itself, we just like had a lot of like different like
+behavioral, it's again like the behavioral engineering. It's like in like various behavioral
+craft around like when does canvas needs to write comment? When does it need to like update
+or like edit the document? When does it need to edit the entire like rewrite the entire document
+versus like edit very specific section of the user asks? And when does it need to like trigger
+the canvas itself was one of those those like behavioral engineering questions that we had.
+At that time I was also working like writing quality. So that was like the perfect way for us to like
+literally both teach the model how to use canvas but also like improve writing quality if writing
+was like one of the main use cases for charge P. So I think that was like the reasoning around that.
+There's so many questions. Oh my god. Quick one. What does improve writing quality mean?
+What are the emails? What are the evolves? Yeah. So the way I'm thinking about it is like have
+two various directions. The first direction is like how do you improve the quality of the
+writing of the current use cases of charge P. And those most of the use cases are basically like
+non-fiction writings. It's like email writing or like some of the maybe you've blog posts, cover
+letters is like one of the main use cases. But then the second one is like how do we teach the model
+to literally think more creatively or like write in a more creative manner such that it will like
+just create novel forms writing. And I think the second one is like much of a longer term like
+research question while the first one is more like okay we just need to improve data quality
+for the writing use cases that between the models are. It is more straightforward question but the way
+we evaluated the writing quality actually I worked with Jan's team on the model design. So they had
+a team of like model writers and we would work together. And it's just like a human evil. It's
+like internal human evil where we just always like that. Yeah, on the prompt distribution that we
+cared about like we want to make sure that the models that we like use that we trained were
+always like better or something. Yeah. So like some tests out of like 100 prompts that you want to
+make sure you're good on. I don't know how big the prompt distribution needs to be because you
+are literally catering to everyone. Right. Yeah. I think it was much more opinionated way of like
+improving writing quality because we worked together as like model designers to like come up with
+like core principles of what makes this particular writing good. Like what does make email writing
+good? And we had to like craft like some of the literally like rubric on like what makes it good
+and then make sure during the evil we check the marks on this like rubric. Yeah. That's what I do.
+Yeah. That's what school teachers do. Yeah. Yeah. It's really funny. Like yeah, that's exactly how
+we create essays. Yes. Yeah. I guess my question is when do you work the improvements back in the
+model? So the canvas model is better writing. Why not just make the core model better too? So for
+example, I built this small podcast thing for a podcast and I have the photo API and I asked it to
+write a write up about the episode based on the transcript and then I done the same in Canvas.
+The Canvas one is a lot better. Like the one from the raw photo starts the podcast delves
+and it's like, no, I'm not involved in the third word. Why not put them back in for all core or is
+there just like- I hope you put it back in the corner. Yeah. So like so the for all Canvas now
+is the same as for all. Yeah. You must have missed that update. Yeah. What's the what's the
+what's the process to a little bit different? It's just like an AB test almost, right?
+To me it feels, I mean, I've only tried it like three times, but it feels the canvas. The canvas
+output feels very different than the API output. Yeah. Yeah. I think like there's always like a
+difference in the model quality. I would say like the original better model that we released
+this canvas was actually much more creative than even right now when they use like for oh,
+with Canvas. I think it's just like the complexity of like the data and the complexity of the it's
+kind of like versioning issues right here. It's like, okay, like your version 11 will be very
+different from like version eight, right? It's like even though like the stuff that you put in
+is like the same or something. It's a good time to say that I have used it a lot more than three
+times. I'm a huge fan of Canvas. I think it is like it's weird when I talk to my other friends,
+they don't really get it yet, or they don't really use it yet. I think because it's maybe sold as
+like sort of writing help when really like it's kind of it's the scratch pad. Yeah. What are the
+core use cases or like, yeah, I'm curious literally drafting anything like I want to draft like
+copy from my conference that I'm running like I'll put it there first and then I like it'll just
+have the canvas up and I'll just say what I don't like about it and it changes. I will maybe edit
+stuff here and paste in. So, for example, like I wanted to draft a brainstorm list of reasons of
+signs that you may be an NPC just for fun. Just like a blog post for fun. Nice. And I was like,
+okay, I'll do 10 of these and then I want you to generate the next 10. So I wrote 10,
+I placed it into to charge a BT and they generated the next 10 and they all sucked all horrible,
+but they also spun up the canvas with the blog post. And I was like, okay, self critique,
+why your output sucks. Yeah. And then try again. And it just kind of just iterates on the blog
+post with me as a writing partner. And it is so much better than I don't know, like intermediate
+steps. It's like that would be my primary use case. It's like literally drafting anything.
+I think the other way that I'll put it, I'm not putting words in your mouth. This is how I view
+what canvas is and why it's important. It's basically an inversion of what Google Docs is
+wants to do with Gemini. It's like Google Docs on the main screen and then Gemini on the side.
+And what not what Chatsuf T has done is do the chat thing first and then the docs on the side.
+But it's kind of like a reversal of what is the main thing. Like Google Docs starts with the canvas
+first that you can edit and whatever. And then you maybe sometimes you call in the AI assistance,
+but Chatsuf T, what you are now is your kind of AI first with the side output being Google Docs.
+I think we definitely want to improve like writing use case in terms of like,
+how do we make it easier for people to format or like do some of the editing.
+I think there is still like a lot of room for improvement to be honest.
+I think the other thing is like coding, right? I feel like one of the things that we like doubling
+down is actually like executing code inside the canvas. And there's a lot of questions like,
+how do you evolve this? It's kind of like IDE for both. And I feel like this is where I'm kind
+of coming from. The chat BTE evolves into this blank interface, which can morph itself in whatever
+you're trying. The model should try to like derive your intent and then modify the interface based
+on your intent. And then if you like writing, it should become like the most powerful like writing
+IDE possible. If it's like coding, it should become like a coding IDE or something.
+I think it's a little bit of an odd decision for me to call those two things the same product name
+because they're basically two different UIs. One is code interpreter plus bus.
+I don't know if you have other thoughts on canvas.
+No, I'm just curious, maybe some of the harder things. So when I was reading, for example,
+forcing the model to do target edits versus like four rewrite sounds like it was like really hard.
+In the AI engineer mind, maybe sometimes it's like just past one sentence in the prompt.
+It's just going to rewrite that sentence, right? But obviously it's harder than that.
+What are maybe some of the like hard things that people don't understand from the outside and
+building products like this? I think it's always hard with any new like product feature,
+like canvas or tasks or like any other new features that you didn't know how people would use this
+feature. And so how do you even like build evaluations that would simulate how people would
+use this feature? And it's always like really hard for us. Therefore, like we try to like lean on
+to like iterative deployment this in order to like learn from user feedback as much as possible.
+Again, it's like, we didn't know that like code diffs was very difficult for a model, for example.
+Again, it's like, do we go back to like fundamentally improve like code diffs as a model capability?
+Or do you like do a workaround where the model will just like rewrite the entire document which
+is eeled to like higher accuracy? And so those are like some of the decisions that we had to like
+make as yeah, how do you like improve the bar to the product quality, but also make sure the model
+quality is also a part of it. And like what kind of like cheetahs you're okay to do? Again, I think
+it thinks it's like new way of product development is more like product research model training and
+like product development goes like together hand in hand. This is like one of the hardest
+things like defining the entire like model behaviors. I think just like, is there so many edge cases
+that might happen, especially when you like do canvas with like other tools, right? Like canvas
+plus dolly canvas plus search. If you like select certain section and then like ask for search,
+like how do you build such evolves? Like what kind of like features or like behaviors that
+you care the most about? And this is how you build evolves. You tested against every feature of
+chat your beauty? Oh, no. Okay. I mean, I don't think there's that many that you can
+write and it will take forever. But it's the same is in decision boundary between like Python 80
+advanced data analysis versus canvas is one of the most trickiest like decision boundary
+behaviors that we had to like figure out like how do you derive the intent from the human
+user query? Yeah. And how do I say this? Deriving the intent meaning does the user expect canvas
+or some other tool and then like make sure that it's like maximally like the intent was
+is like actually still one of the hardest problems, especially with like agents, right? Like you
+don't want like agents to go for like five minutes and do something on the background and then come
+back with like some mid answer that you could have gotten from like a normal model or like the
+answer that you didn't even want because it didn't have enough contact. So I didn't like follow up
+correctly. You said the magic word. We have to take a shot every time you say it. You said agents.
+So let's move to tasks. You just launched tasks. What was that like? What was the story? I mean,
+it's your baby. So now that I have a team, I actually like tasks was purely like my residence
+projects. I was mostly a supervisor. So I kind of like delegated a lot of things to
+my resident, his name is like Vivek. And I think this is like one of the projects where I learned
+management, I would say. Yeah. But it was really cool. I think it's very similar model. I'm trying
+to replicate canvas operational model. How do you operate with product people or like product
+applied orgs with research? And the same happened. I was trying to replicate like the methods and
+replicate the operational process was tasks. And actually tasks was developed less than like two
+months. So if canvas took like, I don't know, four months, then tasks took like two months.
+And I think again, like it's kind of a very similar process of like, how do we build evolves?
+You know, some people like ask for like reminders in actual chat GPT, but then like,
+obviously, even though they know it doesn't work. Yeah. So like there was some like demand or like
+desire from users to like do this. And actually, I feel like task is like, simple feature in my
+opinion is something that you would want from any model, right? But then the magic is like when,
+actually, because the model is so general, it knows how to use search or like canvas or like
+create sci-fi stories and create Python puzzles. When coupled with tasks, it actually becomes like
+really, really powerful. It was like the same ideas of like, how do we shape the behavior of
+the model? Again, we shipped it as like as a beta model in the model drop down. And then we are
+working towards like making that feature integrated and like the core model. So I feel like the
+principles that like everything should be like in one model. But because of some of the operational
+difficulties, it's much easier to like deploy as a separate model first to like learn from the
+user feedback and then it will be very quickly and then improve into the core model, basically.
+Again, this is a project was also like together at the beginning from the very beginning,
+designers, engineers, researchers, we're working all together. And together with model designers,
+we were like trying to like come up with like evolves evaluations and like testing and like
+back bashing and it's like a lot of cool, like synergy. It falls back bashing. I'm trying to
+distill, I would love a canvas for this, for distill what the ideal product management or
+research management process is, right? Start from like, do you have a PRD? Do you have a doc that
+likes these these things? Yes. And then from PRD, you get funding, maybe, or like, you know,
+staffing resources, whatever. Yes. And then prototype, maybe. Yeah, prototype. I would say like,
+prototype was prompted baseline. It's all always prompted baseline and then like we craft like
+certain like evaluation that you want to like capture. They want to like measure progress at
+least with the model and then make sure that you also good and make sure that the prompted
+baseline actually fails on those like evolves because then you have like, if you allow to like
+hill climb on. And then once you start iterating on the model training, it's still very iterative.
+So like every time you train the model, you like look at the bench, like look at your evolves and
+like goes up. It's like good. But then also you don't want to like, even to make sure it's not
+like super overfitting. Like that's where you run on other evolves, right? Like intelligence
+evolves and then like, you don't want regressions on the other stuff. Yes. Okay.
+Is that your job? Or is that like the rest of the company's job? I think it's mainly my like,
+really job of the people who like, because regressions are going to happen and you don't
+necessarily own the data for the other stuff. What's happening right now is that like you
+basically you only like a blade your your datasets, right? So it's like, you compare on the baseline,
+you compare like the regressions on the baseline model, model training in the book bash. And that's
+that's about it. And then ship. Actually, I did the course with Andrew and you who,
+there's like one little lesson around this. Okay. I haven't seen product research. You treated
+a picture with him and it wasn't clear if you were working on the course. I mean, it looked like
+the standard course picture with enjoying. Yes. Okay. It was a course with him. What was that
+like working with him? No, I'm not working with him. I were like, I just like did the course with
+them. Yeah. How do you think about the tasks? So I started creating a bunch of them. Like, do you
+see this as being going back to like the composability, like composable together later? Like, you're
+going to be scheduled one task that does multiple tasks trained together. What's the vision?
+I would say task is like a foundational module. Obviously, it's generalized to all sorts of like
+behaviors that you want. Like sometimes like I see like people have like three tasks in one
+query. And right now, I don't think like the model handles this very well. I think that
+ideally, we learn from like the user behavior. And ideally, the model will just be more proactive
+in suggesting of like, Oh, I can either do this for you every day because I've observed that you do
+that every day or something. So it's like more becomes like a proactive behavior. I think right
+now you have to be more explicit like, Oh, yeah, like every day, like remind me this. But I think
+like the ideally, the model will always think about you on the background and like kind of
+suggests, okay, like, I noticed you've been reading some of this particular like, how can you use
+articles? Maybe I can try to suggest you like every day or something. So it's like, it's just
+like much more like of a natural like friend, I think. Well, there is an actual startup called
+friend that is trying to do that. We'll have interview, obviously. But like, it sounds like
+the guiding principle is just what's useful to you. It's a little bit B2C. You know, is there any B2B
+push at all? Or you don't think about that? I personally don't think about that as much. But I
+definitely feel like B2B is cool. Again, I come back to the clock and slack is like one of the
+like the first like interfaces where like the model was operating inside your organization,
+right? It would be very cool for the model to like handle, to like become like a productive member
+of your organization. And then either like even like even process, like right now, like I'm thinking
+like processing like user feedback, I think it would be very cool if the model would just like
+start doing this for us. And like, we don't have to hire a new person on this just for this or
+something. And like you have like very simple like data analysis, like data analytics. So like
+how to switch yours like. Do you do this analysis yourself or do you have a data science team that
+tells you insights? I think there are some data scientists. Okay. I've often wondered, I think
+there should be some startup or something that does automate a data insights. Like I just throw
+you my data. You tell me. Yeah, exactly. Because that's what a data team at any company does,
+right? Which is just give us your data. We'll like make PowerPoint. Yeah. Yeah, that would be very
+cool. That's I think that's a that's a really good vision. You had thoughts on agents in general.
+There's a more proactive stuff. You actually had tweeted a definition, which is kind of interesting.
+I did. Well, I'll read it out to you. Tell me, you can double agree with yourself. This is five
+days ago. Agents are a gradual progression of tasks starting off with one of actions moving to
+collaboration. Ultimately, fully trustworthy, long horizon. I know it's uncomfortable to have your
+tweets read to you. I have had this done to me. Ultimately, fully trustworthy, long horizon
+delegation in complex environments, like multiplayer, multi agents, tasks, and canvas for within the
+first two. One of my weaknesses is like, I like writing long sentences. I feel like I need to
+like. No, that's fine. That's fine. Is that your definition of agents? Like, what are you looking
+for? I'm not sure if this is my definition of agents, but I feel like it's more like how I think
+it makes sense. I feel like for me to trust an agent with my passwords or my credit card,
+I actually need to build trust with an agent that it will handle my tasks correctly and reliably.
+The way I would go about this is how I would naturally collaborate with other people.
+We first, even with any project, we first came. When we first come, we don't even know each other.
+We don't know how each other's working style, what I prefer, what do they prefer, how do they
+prefer to communicate, et cetera, et cetera. You spend the first two weeks to just learn their style
+of working. Over time, you adapt to their working style, and then this is how you create the
+collaboration. At the beginning, you don't have much trust. How do you build more trust? It's the
+same thing with a manager. How do you build trust with your manager? What do you need to know about
+you? What do you need to know about them? Over time, as you build trust and trust builds
+either through collaboration, which is why I feel like building canvas was the first steps
+towards more collaborative agents. I think with humans, you need to show consistent effort
+to each other. Consistent effort that you care about each other is that you work together very
+well or something. Consistency and collaboration is what creates trust. Then I will naturally
+will try to delegate tasks to a model because I know the model will not fail me or something.
+Building out the intuition for the form factor of new agents. Sometimes I feel like a lot of
+researchers or people in AI community are so into agents, delegate everything, blah, blah,
+but on the way towards that, I think collaboration is actually one of the main roadblocks or milestones
+to get over, because then you will learn some of the implicit preferences that would help you,
+that would help towards this full delegation model. Yeah, trust is very important.
+I have an AGI working for me and we're still working on the trust issues.
+We are recording this just before the launch of operator. The other side of agents that is
+very topical recently is computer use and topic launch, computer use recently. You're not saying
+this, but OpenAI is rumored to be working on things. There's a lot of labs that are exploring
+this, sort of drive a computer generally. How important is that for agents?
+I think it would be one of the core capabilities of agents. Yeah, agents using desktop or your
+computer is the delegation part. When you might want to delegate an agent to order a book for me,
+or order a flight, or search for a flight, and then order things. I feel like this idea was flying
+around for a long time since at least 2022 or something. Finally, we are here. There's a lot of
+lag between idea and full execution in the orders two to three years. The vision models
+had to get better a lot better. The perception and something. But I think it's really cool. I
+feel like it has implications for consumers, definitely. Delegation but again, I think
+legencies is one of the most important factors here. You don't want to make sure that the model
+correctly understands what you want, and then if it doesn't understand, if it doesn't know full
+context, it should ask for a full-up question and then use that to perform the task. The agent should
+know if it has enough information to complete the task of the maximal success or not. I think
+this is still an open research question here. The second idea is I think it also enables new
+causal research questions of computer use agents. Can we use it in ARAL? This is
+kind of a very cool, nascent area of research. What's one thing that you think, by the end of
+this year, people will be using computer use agents a lot for? It's really hard to predict.
+Maybe for coding? I don't know. For coding? I think right now with Canvas, we are thinking
+about this paradigm of real-time collaboration to asynchronous collaborations. It would be cool
+if I can just delegate to a model. Okay, can you figure out how to do this feature or something?
+And then the model can just test out that feature in its own virtual environment or something.
+I don't know. Maybe this is a weird idea. Obviously, there will be a lot of use cases around
+the consumer use cases. Hey, shop for me or something. Everyone goes to booking plane tickets.
+That's the worst example, because you only booked plane tickets two or three times a year.
+Oh, concert tickets? I don't know, yeah. Concert tickets, yeah. I want a Facebook
+marketplace bot that just scrolls for free stuff and then just go and get it.
+I don't know. What do you think? I have been very bearish in computer use because they're slow,
+they're expensive, they're imprecise. Like the accuracy is horrible.
+Still, even with end-topics new stuff, I'm really waiting to see what opening I might do to
+change my opinions. And really, what I'm trying to do is like Jan last year versus December last
+year, I changed a lot of opinions. What am I wrong about today? And computer use is probably
+one of them where I'm like, I don't think, I don't know if by end of the year I was still
+using them. Every GBT instance, will they have a virtual computer? Maybe. I don't know.
+Coding, yes. Because he invested in a company that does that for the code sign boxes,
+they're a bunch of code sign box companies. E2B is the name. But then in browsers, yes.
+Computer use is like coding plus browsers plus everything else. There's a whole operating system.
+And it's very, you have to be pixel precise. I think OCR is basically solved. But like pixel
+precise and like understand the UI of what you're operating. And like, I don't know if the models
+are there yet. Yeah, yeah. Two questions. Like, do you think the progress of like mini models,
+like O3 mini, like O1 mini, I guess like it came back to like the cloud, cloud 3 high school,
+cloud 1.2 instance, like this like gradual progression of like small models becoming really
+powerful, which are very also like fast. Like I'm sure like the computer use agents,
+like would be able to like couple with like those like small models. That was like some of the
+agency issues, in my opinion. I think in terms of like other operating system, I think a lot about
+it. This is just like, if you're entering this like task oriented, like operating system or
+something, we're also a generator OS, like in my opinion, like people in like few years will click
+on like websites way less. I want to see the plot of like website clicks over time. But then my
+prediction is like it will go down and like people's access to the internet will be through the
+model's lens. Either you see what the models are, or you don't see what the models are on the internet.
+Yeah, I think my personal benchmark for computer use this year is expense reports.
+So I have to do my expense report every month. But what you need to do. So for example, I
+expense a lunch. I have to go back on the calendar and see who I was having lunch with. Then I
+interrupt the receipt of the lunch and I need to tag the person the expense report blah blah blah.
+Yeah, it's very simple on a task by task basis. But like you have to go to every app that I use,
+you have to go to like the you know, over app, you have to go to the camera roll to get the
+foot of the receipt on these things. It's not you cannot actually do it today. But it feels like
+a tractable problem. You know that probably by the end of the year, we should be able to do it.
+Yeah, this reminds me of like the idea of you kind of want to show to computer use agents,
+how you would want how you want or how you like booking your flights. It's kind of like a few
+shots. Yeah, demonstration of like maybe there is more efficient way that you do things that
+the model should learn to do it in that way. And so it's kind of like, again, comes back to like
+personalized tasks to is like right now task is just like very like rudimentary. But in the future,
+tasks should become like much more personalized for your preferences.
+Okay, what we mentioned that I will also say that I think one takeaway I got from your
+this conversation is that chat GPT will have to integrate a lot more with my life. Like you
+you will need my calendar. You will need my email, like for sure. And maybe use MCP. I don't know.
+Have you looked at MCP? No, I haven't. It's good. It's got a lot of adoption.
+Anything else that we're forgetting about or like maybe something that people should use more.
+Yeah, I don't know before we wrap on like the open AI side of things.
+I think like search product is kind of cool, like chat GPT search. I think this idea of like,
+you know, like right now, I'm thinking a lot of us like, you know, the magic of chat GPT,
+when it first came out was like, you know, you ask something and you like instruction,
+and then like it would like follow the instruction that you gave to a model, like write and poem,
+I would give you a poem. But I think like the magic of the next generation of chat GPT is like
+actually, and we like we are marching towards that. It's like when you ask a question, it's not just
+going to be in the text output. The ideal output might be like in some form of like a react app
+on the fly or something. So like this is happening with like search, right? Like give me like Apple
+stock. And then it gives you the chart and gives you like this like generative UI. And I feel like
+this is what I mean by like the evolution of chat GPT becomes like more of a generative OS
+with a task orientation or something. So it's like, and then UI will adapt to what you like. So like,
+if you really like 3D visualizations, I think the model should give you as much
+as realization as possible. Like, you know, if you really like certain way of like the UIs,
+like maybe you like round corners, or I don't know, it's just like some color schemes that you're
+like, it's just like the UI becomes like more dynamic and like becomes like a custom model,
+like personal model, right? Like from a personal computer, it's like a personal model, I think.
+Yeah, takes overall. You are one of the rare few people, actually, maybe not the rare,
+to work at both OpenAI and in topic. Not anymore, yeah. And what's the cultural difference? What
+are general takes that people like you only like you see? I love both places. I think I've learned
+so much at an topic and I'm really, really grateful to the people and I'm still like friends with a
+lot of people there. And I was really sad when John left OpenAI because I came to OpenAI because
+I wanted to work with him the most or something. What are you doing? What are you doing now?
+But I think it changed a lot. So I think like when they first joined on topic, they were like,
+I don't know, 60, 70 people, when they left, they were like 700 people. So it's like a massive
+growth. OpenAI and on topic is different in terms of like more like maybe like product, mindset,
+maybe OpenAI is much more willing to take some of the product risks and explore different
+bets. And I think on topic is much more focused and they have, I think it's fine. Like they have
+to like prioritize, but they definitely double downing on like enterprise might be more than
+like consumers or something. I don't know, it's just like some of the product mindsets might be
+different. I would say like research have enjoyed like both like research culture is
+both on topic and like opening. I feel like they are more on the daily basis. I feel like it's
+more similar than different. I mean, no surprise. Like how you run experiments is kind of like
+very similar. I'm sure the topic, I mean, you know, Dari used to be VP research, right? So
+he said the culture of OpenAI. So it makes sense. Maybe quick takes on people that you
+mentioned, Barrett, you mentioned Mira. Like what's one thing you learn from Barrett Mira Sam, maybe
+something like that? Like one lesson that you would share to others. I wish I like worked with
+them way longer. I think what I've learned from Mira is actually her like interdisciplinary mindset.
+It's just really good like connecting dots between like product and like kind of balancing like
+product research and like create this like comprehensive like coherent story because sometimes like
+there are like researchers who like really hate doing product and there are researchers who really
+love doing product and it's like kind of dichotomy between two and also like safety is like a part
+of this process. So kind of you kind of want to like create this coherent like think from like
+systems perspective or like think about like bigger picture. And I think I learned a lot from her
+and that I definitely feel like I have much more creative freedom at OpenAI and that's because
+the environment that the leaders set like enables me to do that. So it's like, if I have an idea,
+if I want to propose it. Yeah, exactly. There's like more like creative freedom and like
+resource relocation, especially in the researchers like being adaptable to like new technologies and
+like change your views based on like empirical results or kind of like changed research directions.
+I've seen a lot of like sometimes I've seen researchers who would just like get stuck on the
+same directions for like two to three years and it would never like work out or something,
+but they would still be like stubborn. So it's like adaptability to like new directions and like
+new paradigms. It's kind of like one of those things that this is a Barrett thing, what is the
+general culture like general kind of culture. Okay, cool. Yeah. And just to wrap up, we just usually
+have a call to action founders usually want people to work at their companies. Do you want
+people to give you feedback? Do you want people to join your team? Oh, yeah, of course, I'm definitely
+hiring for like research engineers who are like more product minded people. So it's like people who
+know how to change the models, but also like interested in like deploying into like the products
+and developing like new product features. I'm just looking for those archetypes like research
+engineers or like research scientists. So yeah, if you're like looking for a job, if you're like
+interested in joining my team, I'm like really happy to just reach out, I guess. And then just like
+generally, what do you want people to do more of in the world? Whether or not they work with you,
+like, you know, call to action is in like everyone should be doing this. I think there's something
+that I tell to a lot of like designers is that like, I think people should like spend more time
+just like play around with the models. And the more you play with the model, the more creative ideas
+you'll get around like what kind of like new potential features of the products or like new
+kind of interaction paradigms that you might want to create with those models. I feel like
+you have bottlenecked by like human creativity on like completely changing the way if you think
+about the internet or like some of the the way you think about software, like AI right now pushes
+us to like rethink everything that we've done before in my view. And if you're like, not enough
+people either double down on like those ideas, or I'm just like not seeing a lot of human creativity
+in this like interface design or like product design mindsets. So I feel like if you really
+agree with people, she's like, do that. And especially right now is like research, some research becomes
+like much more product rewinded. So it's like, you actually can train the models for the things
+that you want to do in a product or something. Yeah, then you define the process now. This is my
+go-to for how to manage a process. I think it's pretty common sense, but it's nice to hear from you
+that because you actually did it. That's nice. Thank you for driving innovation is interface design
+and then the new models that open the eye and drop it. And we're looking forward to what you're
+going to talk about in New York. Yeah, thank you so much for inviting me here. I hope my job will not
+be automated by the time. Well, I hope you automate yourself. We'll do whatever else you want to do.
+That's it. Thank you also. Thanks.
+

@@ -1,0 +1,1623 @@
+--- METADATA START ---
+Show: Unchained
+Episode: Decentralization Used to Mean …
+Host: Haseeb
+GUESTS: Tom, Robert, Tarun 
+Guests: Tom, Robert, Tarun
+Source URL: https://podcasts.apple.com/us/podcast/decentralization-used-to-mean-something-now-its-just/id1123922160?i=1000710444998
+--- METADATA END ---
+
+1
+Haseeb, are you okay?
+2
+Hasib, do we need to get you a therapist?
+3
+I am not doing well.
+4
+Like a decentralization therapist?
+5
+Please, please.
+6
+Who is a decentralization therapist for you?
+7
+Vitalik, you and Vitalik need to go on a, on a, you go on a 10-day hike.
+8
+Vitalik doesn't have the EQ, though.
+9
+No, I need somebody with a softer touch than Vitalik.
+10
+Vitalik's a little too hard for me.
+11
+Not a dividend.
+12
+It's a tale of two ponds.
+13
+Now, your losses are on someone else's balance sheet.
+14
+Generally speaking, airdrops are kind of pointless anyways.
+15
+I managed trading firms who are very involved.
+16
+Vitalik.
+17
+The ultimate ponytail.
+18
+DeFi protocols are the antidote to this problem.
+19
+Hello, everybody.
+20
+Welcome to the Chopping Block.
+21
+Every couple of weeks, the four of us get together and give the industry insider perspective on the crypto topics of the day.
+22
+So quick intros.
+23
+First, we got Tom, the DeFi Maven and Master of Names.
+24
+Hello, everyone.
+25
+Next, we got Robert, the crypto connoisseur and czar of Superstate.
+26
+Salutations.
+27
+Next, we've got Tarun, the Giga Brain, and Grand Pubah at Gauntlet.
+28
+Yo.
+29
+And finally, I'm Haseb the head hype man at Dragonfly.
+30
+We're at real estate investors in crypto, but I want to caveat that nothing we say here is investment advice, legal advice, or even life advice.
+31
+Please see choppingblock.xyz for more disclosures.
+32
+So we finally got the gang back together.
+33
+It feels like crypto once again is humming, and we are now seemingly out of this Bitcoin consolidation cycle.
+34
+Bitcoin's at pretty close to an all-time high.
+35
+It's roughly in the order of 110K, kind of bouncing around up and down.
+36
+But alts are finally starting to move again.
+37
+And kind of on queue, alongside Alts moving, we have a gigantic hack that is now worth talking about.
+38
+So this hack took place on Sui.
+39
+Sui, of course, has been one of the standout winners of the cycle, has been growing like crazy.
+40
+And the main DEX on Sui is a protocol called CEDUS, C-E-T-U-S.
+41
+So CEDUS is a concentrated AMM liquidity protocol.
+42
+It's a DEX.
+43
+You can trade random tokens on Sui.
+44
+And CEDUS was hacked using a bug in their smart contract math library.
+45
+There was some bug around them trying to check the wrong byte length on the integers they were using.
+46
+So, instead of using 256-bit math, it was supposed to be 192-bit math, or maybe vice versa.
+47
+Whatever, it doesn't really matter.
+48
+Point is, the hacker was able to hack $223 million.
+49
+And using the hacked funds, they started bridging them over immediately to move them into Ethereum to start trying to get away with the money.
+50
+But, not so fast, SWE validators decided to freeze the accounts of the smart contract hacker to make it so that all other SWE protocols could continue operating and all other addresses could continue operating.
+51
+But the validators would, quote-unquote, agree to ignore transactions from the hacker.
+52
+So, this basically means that the validators agreed to freeze the accounts until further notice.
+53
+Right now, the accounts are still frozen.
+54
+No decision yet on what the validators are going to do until they come together with governance and decide to stop ignoring transactions from the attacker.
+55
+So far, there's 162 million of that 223 million, so the majority of it is still sitting frozen on Sui.
+56
+And as a result of this, there was one, a lot of people getting angry on Twitter saying that, hey, this is centralization.
+57
+This is not the way the blockchain is supposed to work.
+58
+There was also accusations toward the team that they were responsible for another protocol before on Solana, which also was a concentrated liquidity AMM that also suffered a similar kind of flash loan-style attack based on some bug in the smart contracts.
+59
+So, all in all, it seems like a very messy situation in Sui land.
+60
+And you saw a large drawdown in SWEEE assets that has since partially recovered, and SWEE as a protocol has mostly recovered the losses since this hack took place.
+61
+And I think there's a negotiation going on to try to get at least the hacked funds out in exchange for a $5 million bounty.
+62
+But that has so far seemingly not been claimed.
+63
+So that's the high level.
+64
+What are your thoughts so far on this hack and what it means for this whole situation about, I remember it was a few years ago there was a big hack on Blast, and people were talking about, you know, would it make sense for the bridge to freeze the stolen funds and basically play a vigilante or like, you know, try to come in there and make the people whole who'd gotten hacked?
+65
+This is the reality that we were talking about hypothetically at that time, which is that they have the hacker red-handed.
+66
+They're holding on to the money.
+67
+They're not letting the hacker go.
+68
+What should be done here?
+69
+And is it time to just go ahead and play it forward and say, look, this is not the Wild West anymore.
+70
+These are not the days of the DAO.
+71
+You just do the right thing when the right thing is available to be done.
+72
+Or do we feel like, hey, this is a norm that's going to lead to more and more of an on-chain, quote-unquote, police state?
+73
+And that's going to be the reality going forward.
+74
+What are your guys' thoughts?
+75
+Well, this is kind of a throwback conversation, right?
+76
+This was a very popular conversation in 2016, 2018, 2019.
+77
+And we haven't been having it as a community as much recently.
+78
+And that's because over time, because most of the DeFi activity and most of the hacks were sort of centered on Ethereum for the most part, there was no rollback.
+79
+There was no freezing.
+80
+There was no chain-level response and mitigation.
+81
+And because in some ways, Ethereum macro, right?
+82
+Like if there's a hack of a DeFi protocol today on Ethereum, nothing's happening besides the protocol itself or the application has to deal with it.
+83
+And so, you know, I think society in general has settled on the fact that L1s should be decentralized as much as possible and not really in the business of censoring specific addresses, specific transactions, and being responsible for figuring out where to draw the line.
+84
+Because it's a slippery slope and it starts off relatively easy.
+85
+Like, this is obviously a bad guy.
+86
+This is obviously a hacker.
+87
+This is obviously, you know, someone that should be stopped.
+88
+But, you know, what an end user wants from an L1, what an application developer wants from an L1, is a transaction environment that is completely predictable and the rules are extremely clear.
+89
+When you start getting into hazy rules about how consensus operates or how address censorship operates, it's less appealing to build there.
+90
+And so I think the result of all of this is that they'll figure it out.
+91
+They'll figure out what to do with the funds.
+92
+They'll figure out how to get it back.
+93
+They'll figure out how to negotiate with the guy.
+94
+They'll do all of that stuff.
+95
+And either they outgrow censorship as a chain permanently, or it becomes a part of the culture.
+96
+And it's like, hey, if you do business here, just understand that we have the ability to have the validator censure users, you know, applications, use cases, whatever.
+97
+And so I think they'll go.
+98
+Do you think it was a mistake?
+99
+Or do you think, like, hey, you're on Training Wheels, you're an early ecosystem, this is the right move?
+100
+Well, I mean, it was the largest application on the chain, right?
+101
+I mean, it was equivalent in that respect to the DAO on Ethereum back in the day, right?
+102
+Kind of, right?
+103
+In absolute terms, it's not that much of the market cap of Sui, whereas for the DAO, it actually was like 8% of all ETH or something like that in the DAO.
+104
+So it was in the DA.
+105
+Whereas in this case, literally the guy was just trying to dump the SWE and get into Ether.
+106
+Totally.
+107
+So I think they'll solve this.
+108
+I think at the end of the day, if they don't get back into the business of censoring addresses, this will sort of go away.
+109
+It'll be water underneath.
+110
+But do you think right decision or wrong decision?
+111
+What's your verdict?
+112
+Personally, I think wrong decision.
+113
+I think you want a culture of absolutely robust transactions and validators that don't have to be listening for special instructions manually in response to crises.
+114
+So I kind of think it's the wrong direction personally, but both outcomes work.
+115
+I will say, I was in the SWE group chat and I made a joke about Sui Classic and no one understood it.
+116
+That's so sad.
+117
+You know what I mean?
+118
+It's like the whole generation of people who use SWEE probably don't know what Ethereum Classic is.
+119
+Do you want to explain that joke for those in the audience who don't get it?
+120
+Yeah, so when the DAO happened, there was a fork of Ethereum called Ethereum Classic, which still exists and in fact has exchange-traded products.
+121
+No, it was not the fork of Ethereum, actually.
+122
+Really Ethereum.
+123
+Sorry, Ethereum.
+124
+Sorry, sorry, sorry, sorry.
+125
+Ethereum, the current Ethereum is the fork.
+126
+Correct, correct, correct.
+127
+The current Ethereum is the fork that removed that DAO hack.
+128
+But then there was a group that wanted to keep the DAO hack in and not censor.
+129
+And it still continues to this day under the ticker ETC.
+130
+And it's certainly one of the boomer coins that you see at like sometimes you will see like ETC on like CNBC or Bloomberg or something and you're like, why is that getting listed on this TV screen?
+131
+But it's like a non-trivial market cap coin.
+132
+I don't think it has any real usage.
+133
+The last time I remember hearing anything about ETC was, if you remember, around the Ethereum merge when Ethereum switched to proof of stake, there were all these people who were like...
+134
+trying to avoid doing it.
+135
+That was led by a bunch of old Ethereum Classic miners.
+136
+But anyway, my point is, no one got the joke.
+137
+So I think crypto does have this funny thing where like...
+138
+Does this mean we're getting old through it?
+139
+That might be what that means.
+140
+The lessons just keep getting relearned.
+141
+You know what I mean?
+142
+Like, there's no collective memory in decentralized systems, which can sometimes be.
+143
+Well, but I want to know, because you're closer to the Suite.
+144
+You guys are investors in Sui, if I'm not mistaken.
+145
+Yeah.
+146
+So you guys are closer to the Sui world.
+147
+Is there, like, my perception of this is that it's not actually like Ethereum and Ethereum Classic, because with Ethereum and Ethereum Classic, there was this real philosophical rift at the center of the community.
+148
+And my sense is that there's a lot of people on Twitter saying, oh my God, how can you do this?
+149
+Like the kind of sentiment similar to what Robert articulated.
+150
+But my sense is that people within Sui are not feeling like that's not happening within Sui.
+151
+That's like an outsider thing of people saying like, oh, screw you.
+152
+People in Sui are like, yeah, that was the right answer.
+153
+Of course, we should get the money back and like not let our ecosystem fall into the ocean.
+154
+I think you're probably correct, although I don't think it's like uniformly accepted in Suite.
+155
+But I do think it's more, the majority probably agrees with that sentiment.
+156
+But is there like a civil war happening within Sui?
+157
+Because I don't sense that that's happening.
+158
+I don't see, yeah, yeah.
+159
+In fact, it seems like everyone's pretty unified and like we need to spend more on security, right?
+160
+Like this, Mistin and a bunch of projects like announced they're like spending more on security.
+161
+Misten, I think, is going to now sponsor audits for like every sufficiently big protocol and stuff like that.
+162
+So I think actually the interesting thing is the response I thought was actually quite good of like, hey, we're going to spend more on security, which you don't often see.
+163
+in response to hacks.
+164
+You know, like exceptions are like Euler Finance, right?
+165
+Where like they got an incredible number of audits after their hack, right?
+166
+But like that's a rarity.
+167
+There's a lot of hacks where the hack happens and someone just hits restart and doesn't really, they don't really update stuff.
+168
+And so I think like, I thought that was like an interesting community response.
+169
+So yeah, that's sort of the vibe I got also.
+170
+But there are people who I think are a little militant about it.
+171
+Actually, the interesting thing was like everyone who was complaining about the censorship that I observed was like an Ethereum or Solana person.
+172
+Like there, I didn't see that many people who had .sui in their username complaining, which is like what you're saying.
+173
+But that goes for a collective memory.
+174
+Yeah.
+175
+I mean, yeah, I guess maybe a point of clarification.
+176
+Is it that the basically the validators and Zoom been updated to the leader rejects transactions from this address?
+177
+Or is it literally like every single client is rejecting any block that has a transaction from this address?
+178
+Because if it's the latter, I mean, I feel like you've basically done a fork already versus the former.
+179
+I mean, it's a little bit kind of what happens in Ethereum land with MevBoost, right?
+180
+Of, hey, we're going to block all OFAC addresses from sending transactions to this builder.
+181
+And yeah, I mean, granted, if you're already in the network, you're going to accept those blocks, but it's difficult to even get in.
+182
+I think it's only like 8% of blocks.
+183
+Yeah, I mean, clearly it's not that, because if it was that, then the attacker would already be home-free, right?
+184
+Because it's not a super majority.
+185
+Yeah.
+186
+Yeah, I mean, I feel like you've basically forked already then, right?
+187
+Like, well, you're also sort of forgetting that Sui has three slot finalizations.
+188
+So, like, once you think about the finalization, that's like you only really need three slots to be fully done.
+189
+So, I think like that, in fact, this is an interesting thing that I hadn't quite thought about.
+190
+And I guess Cosmos people were not very good at articulating the benefit of finalization: is that like, yeah, you don't have to think about the arbitrary fork length stuff that you're describing.
+191
+Yeah, I did see some good memes of, you know, it's like the hello human resources meme, but it's for the hyperliquid hacker versus SUI.
+192
+And I do think it is, I mean, obviously, there's like bagholder bias where I think a lot of people who were pro hyperliquid were just large pipe holders.
+193
+And if anything, that was less egregious than exactly.
+194
+It wasn't even like a hack.
+195
+The system wasn't even at fault.
+196
+It was like an HLP loss.
+197
+But I think it was kind of lauded.
+198
+And it is like, it feels like there's been a little bit of a loss of, I mean, kind of this cypherpunk philosophical ethos where the, I mean, Ethereum DAO hack, I think it was the right decision, but like I said, it was very contentious.
+199
+Maybe the stuff is slightly contentious, but I don't even get the sense it's nearly as contentious as the original DAO hack was.
+200
+It's basically just people who had a token being in support of, being supportive of whatever is going to be long-term good for the chain, which in this case, I guess, is rolling back hacks or rolling back bad trades or freezing funds.
+201
+Yeah, it's interesting because I think Sui very much follows in the footsteps of Solana here, which is this embrace of the shifting overtime window around what, you know, what is an emerging ecosystem or an emerging L1 supposed to look like?
+202
+How it's supposed to behave, how muscular it's supposed to be, how much are they supposed to choose favorites and kind of be like the ethos of Ethereum back in 2015 is so unrecognizable from what emerging L1s look like today.
+203
+It's just like the wrong comparison to say, well, you know, what Ethereum was doing back then compared to what a new L1, a challenger L1, is expecting to behave like today.
+204
+The interesting thing, though, if you, if you rewind back to the history of Solana, even Solana in the heyday when Solana was getting criticized for being centralized, remember the, what was the bridge?
+205
+Wormhole hack.
+206
+The wormhole hack was in the billions.
+207
+And they were just like, yeah, we're just going to fill the hole.
+208
+You know, this was 200 million in a protocol that I think was worth more.
+209
+Like, Sui, I believe, is worth more than Solana was worth at the time that the wormhole hack took place.
+210
+And they were just like, well, you fill the hole.
+211
+The whole wormhole was filled by jump.
+212
+It wasn't filled by Solana blockchain.
+213
+It was filled by jump, although I would bet that there was a little more to that story than just stuff that people felt.
+214
+Yeah, yeah.
+215
+Well, I'll almost certainly wait that in the middle of the day.
+216
+Wait, wait, I thought they also.
+217
+Do you remember the jump lawsuit in the UK over the Oasis hacker where they were able to like there was like sort of some very weird censorship?
+218
+Yeah.
+219
+Somehow that's related to the wormhole hacker.
+220
+And like, I think like, I think they recovered some, like, I wish I, you know, this was the 2022 haze of FTX blowing up, so my memory is not like so great.
+221
+But there was like something related to the.
+222
+Yeah.
+223
+This whole episode is like four VCs who were super old.
+224
+Like China.
+225
+Yeah.
+226
+Well, it's shocking.
+227
+Remember that's China.
+228
+But so, okay, I guess the question is like the fact that this is, it really, it feels to me, I mean, I could be wrong, but it feels to me like this is a old versus young thing of how much people care about this.
+229
+Right.
+230
+For me, I'm like, this is the most interesting thing that happened this last week is the philosophical underpinnings of this conversation feel so different than what I remember them being, right?
+231
+Even with the BLAST hack, when that was, again, that was hypothetical.
+232
+They didn't actually have the time to go in and freeze the bridge to freeze the attacker.
+233
+And that was for an L2.
+234
+That wasn't even L1, right?
+235
+And that was like fucking, you know, it was a multi-sig.
+236
+So the whole argument about BLAST was like, well, it's a multi-sig anyway.
+237
+You might as well own the fact that it's centralized.
+238
+In this case, it's an L1.
+239
+It's supposed to be decentralized.
+240
+It's supposed to be a set of validators who are not able to just get together in a Zoom call and say, hey, let's freeze this guy right now.
+241
+Screw this person.
+242
+They were able to react very quickly to this hack.
+243
+And overwhelmingly, I'm just like, maybe I'm just out of touch.
+244
+Maybe like this sense that I have that these kind of decentralized, neutral, cypherpunk values, that I'm like, in a way, it's like probably important to get a gut check on that of like, am I just fucking totally lost in this conversation that like I think people think the way they did five years ago?
+245
+And if they don't at all, that's an important update to make as an investor is that, yeah, you should actually expect that there's a put on a major protocol from an emerging L1.
+246
+And that that will be true whether it's on Aptos, whether it's on Monad, whether it's on whatever, any new L1, you should expect that there's built-in insurance into the protocol.
+247
+Is that the world that we live in today?
+248
+And should we all just kind of assume that that's correct instead of walking around pretending that it's not?
+249
+You know what I mean?
+250
+Like the answer to this question is actually really important.
+251
+Part of it is like the expectation of better UX at a trade-off for decentralization.
+252
+I think fundamentally, people getting used to single sequencers and UX that resembles Web 2.
+253
+apps and inevitably means that people are willing to take more trade-offs than they were five to seven years ago.
+254
+And yeah, I guess the chopping boomers, you're like, you know, you're learning via podcasts that this might be true.
+255
+Yeah, I think this is something that's been in decline for a long time.
+256
+Even Ethereum, right, was like sacrilegious, or the idea of not running your own node or front-end or software.
+257
+And you get these sort of point-in-time reality checks.
+258
+And does it just sort of...
+259
+Do you remember when Eric Wall would be like, can I run an archive?
+260
+Every month he would write a Twitter thread of him trying to run an Ethereum archive?
+261
+I remember that.
+262
+I don't see anyone being like, oh no, I have to reload a proof-of-stake blockchain from a checkpoint.
+263
+I can't load from Genesis.
+264
+I don't see anyone complaining about that, for instance.
+265
+Yeah.
+266
+And so maybe that just really should inform the way you think about blockchains.
+267
+And maybe it should even inform the way that validators think about validating blockchains.
+268
+Is that like, hey, if there's a big hack, you kind of need to have the ability to do what Sweet just did.
+269
+Is this the beginning of the process under which it's not just that, hey, there's a big hack, it's that, hey, guys, new sanctions just dropped or law enforcement just hit up all the validators?
+270
+And in a world where there's more RWAs on chain, isn't this like inevitable?
+271
+But what we're talking about is that I agree, but I sort of think if RWA issue were you've written, you in fact have written this blog post a long time ago about Ethereum being unforkable effectively due to Oracles and RWAs.
+272
+And if their size is so much larger than the main chain, then they kind of control some of the censorship properties indirectly.
+273
+There's a lot of people I know who disagree with you, and I see you every once in a while fighting with someone on the internet about it.
+274
+But I think that there is a lot of truth to your post.
+275
+And I think arguably when the validators do this, they are more like that, right?
+276
+It's like closer to that in some ways.
+277
+And I think that's sad, but I think the nice thing about crypto is there's tons of chains, so you can go find a chain that is not that, if you want.
+278
+So it's like years 2030.
+279
+Like the DOJ has a direct line to every validator, Discord, and every single thing.
+280
+And the moment I see a bad hacker, boom, transaction just gets uploaded directly into their blacklist.
+281
+Pretty sure Doge cut the sounds getting frozen.
+282
+Doge cut the Discord account subscription, so they probably can't do that.
+283
+Well, speaking of the DOJ, do you see the judge vacated the Eisenberg mega markets thing?
+284
+Oh, yeah, that was crazy.
+285
+So maybe code is law, actually.
+286
+I mean, would they let it?
+287
+He's still in jail because of child city.
+288
+He's still in jail for CP.
+289
+Yeah.
+290
+Yeah.
+291
+I think it was just a procedural issue.
+292
+Yeah, there wasn't.
+293
+There was nothing about that case that was like, this is just such a nice person.
+294
+How could he be stuck in jail?
+295
+Did anyone read this sort of thing?
+296
+It was vacated because of jurisdiction, because he had no nexus in New York.
+297
+So they brought the case to New York, but he was in Puerto Rico.
+298
+He never stepped for it in New York, and they had some bullshit thing of like, oh, there are Ethereum nodes in New York.
+299
+Mango Markets.
+300
+It's in the cloud, and New York is in the cloud.
+301
+Yeah, exactly.
+302
+Something like that.
+303
+Something like that.
+304
+Anyway, okay.
+305
+Speaking of other ways in which we have fallen as an industry, last week we had Haseeb are you okay?
+306
+National Golf Jersey.
+307
+Haseeb, do we need to get you a therapist?
+308
+I am not doing what.
+309
+Like a decentralization therapist?
+310
+Please, please.
+311
+Who is a decentralization therapist for you?
+312
+Vitalik.
+313
+You and Vitalik need to go on a go-hike.
+314
+You go on the queue, though.
+315
+No, I need somebody with a softer touch than Vitalik.
+316
+Vitalik's a little bit of a vote for me.
+317
+Who do you think can lead you to the path of lightness?
+318
+I don't know, man.
+319
+You know what I need is I need a good Eric Voorhees, like just pep talk.
+320
+That's what I need.
+321
+Maybe we should get Eric Voorhees on next week and get him to talk about the crypto values and get all these youngsters to listen to what we grew up on instead of listening to fucking Ansom and meme coin hawkers.
+322
+Anyway, all right, so let's talk about the Trump youth.
+323
+Let's talk about the Trump dinner.
+324
+We've done a lot of dinner.
+325
+It's a little bit of dark there.
+326
+We got a limited schedule.
+327
+We've got to get through this.
+328
+All right.
+329
+Let's talk about the Trump dinner.
+330
+So, as you well know, people who hold the Trump token for long enough, for some period of time, they were invited to a Trump National Golf Club dinner.
+331
+This was for 220 top Trump token holders.
+332
+They met in D.C.
+333
+Trump arrived via Marine One, stayed for 20 minutes, gave a campaign and crypto speech.
+334
+Trump took a certain time.
+335
+Senator Elizabeth Warren called it an orgy of corruption, which, now, there's a lot of reporting about the actual dinner itself.
+336
+There were some protests going on outside.
+337
+It was very, very controversial, got a lot of attention from the media.
+338
+So this does feel like one of these moments that probably in the press is going to be coming back again and again: oh, Trump, the dinner, da-da-da-da, the meme coin.
+339
+So we had some people who were present at the dinner, including Justin Sun, of course, the number one holder, Kane, Sengro-O, If Guinea, who's been on the show, Matthew Leo, a bunch of other market maker types and Chinese investors and so on.
+340
+Apparently, the food was very bad.
+341
+They complained of like Walmart steak and like some freeze-dried mashed potatoes.
+342
+The pictures looked like it was like microwaved.
+343
+Yeah, they said, the food was trash, and the speech was, quote, unquote, bullshit.
+344
+So this does seem like vindication of what we were claiming, which is that Trump doesn't give a shit about any of these people.
+345
+And in a way, like the real story here is that Trump fucked over all these people.
+346
+But Justin Sun got his money's worth.
+347
+The number of articles I saw that were like, this crypto billionaire going to the Trump dinner, like he, he easily got his value in free PR from just like showing up and taking pictures.
+348
+And you know, Justin loves that.
+349
+So I'm not sure Justin was fucked over.
+350
+Does he need more PR?
+351
+I feel like no one's going to be like, oh, I've never heard of this.
+352
+Have you looked at it?
+353
+Did you look at his Twitter where he's like advertising this like Trump watch that he's like making?
+354
+Justin loves this shit.
+355
+There's no way he doesn't.
+356
+I did not see the Trump watch, but he bought a watch.
+357
+He bought a watch and Cufflin said.
+358
+Justin is all remember the Warren Buffett thing?
+359
+He like loves this type of thing.
+360
+I think this, Justin Sun probably got more utility out of this than anybody.
+361
+But nobody even spoke to Trump.
+362
+Like literally.
+363
+It doesn't matter.
+364
+Justin's got...
+365
+I literally saw the coverage, I agree.
+366
+Okay, he got a lot of people.
+367
+The coverage.
+368
+Every news agency had some mysterious crypto billionaire who was once thought to not be able to step foot in the U.S.
+369
+shows up to Trump dinner.
+370
+It does feel like you can't have it both ways.
+371
+It can't be both.
+372
+This is a vehicle for corruption, and Trump showed up and gave a speech and left.
+373
+If anything, this is actually the better outcome.
+374
+It would have been way worse if he had actually been giving people real FaceTime and this actually was a venue towards being able to whisper and sort of coerce the president.
+375
+But yeah, like you buy the token and he gives you a bad stake and leaves.
+376
+That just feels like he's got completely played.
+377
+It's a real corruption.
+378
+Yeah.
+379
+I think everyone sort of got what they wanted out of it, which is Trump is able to demonstrate to the crypto community that he cares, right?
+380
+Enough to do something like this.
+381
+I don't know that he demonstrated that he cares.
+382
+I mean, cares about what exactly?
+383
+Cares about the Trump token having some utility in some variety.
+384
+Okay.
+385
+Okay, fine.
+386
+I mean, Justin Sun creates his own utility.
+387
+Exactly.
+388
+And the crypto community that went there, I'm sure, clear-eyed and open-minded about what they were getting.
+389
+I don't think anyone there was expecting that they were going to smoke cigars with Trump and have a run at the golf after.
+390
+You want to bring back Evgeny next week and get an interview him?
+391
+I guarantee you that's what people were imagining.
+392
+Also, there was something about a White House tour, and that did not happen, clearly.
+393
+Well, that's because people complained about the food, and he just called it off.
+394
+Well, no, I think it's because it was fucking illegal because he's not allowed to profit from it.
+395
+Like, that was originally in the description is that they were going to do that, and then they were like, no, no, no, never mind.
+396
+We're not doing that.
+397
+We're going to give you a self-guided tour of the public part of the White House, which you can already go to.
+398
+You don't need anybody to give you permission to go there.
+399
+So, basically, he sort of realized that, like, hey, what I'm offering is very illegal, and obviously, a president cannot pan away from the office in that area.
+400
+Emoluments are sometimes too hard of a word to spell for a president.
+401
+So, I get it.
+402
+Yeah.
+403
+So, long story short, the dinner itself was kind of a nothing burger, literally, in that they were failed.
+404
+Wait, wait, wait, wait.
+405
+We should really get a guest to come on the show and walk us through the campaign.
+406
+I don't know that we want to spend more time on it.
+407
+I don't know that we want to spend more time on this.
+408
+Yeah, we all need it.
+409
+It's not that new story.
+410
+It's not really.
+411
+But it would be funny.
+412
+We're already getting blasted for the fact that every story we cover is already old news by the time it's on here.
+413
+Yeah, we're not the New York Times.
+414
+The chopping numbers.
+415
+The chopping the jumpers strikes again.
+416
+I think at this point, yeah, we might need to change up the game at this point.
+417
+But the thing is, the way in which this story has metamorphosed into the press, because I think we were calling this for a while, is that anybody who's buying the Trump token, actually thinking you're going to curry favor with the president, is probably out of your mind, right?
+418
+And the reality is, okay, yeah, this stuff Justin Sun, blah, blah, blah.
+419
+But Justin's son, first of all, he's bought multiple things from Trump.
+420
+He's bought Worldly Financial, and he's a single largest holder of Trump token.
+421
+And remember, Richard Hart's case was also dropped, which means it's not even clear he needed to do anything.
+422
+Maybe he just would have just.
+423
+Clearly, that he's all gotten through, very legitimate means.
+424
+And I think the real story here, which is not the story that the press has picked up on, the story the press has picked up on is, okay, this is this orgy of corruption.
+425
+And I agree, it looks like that.
+426
+The reality is that it's even worse, which is that there's no corruption here.
+427
+The corruption is somewhere else.
+428
+The corruption is not accessible to the people who buy Trump token.
+429
+Like the people who buy Trump token are the idiots who are getting played.
+430
+And the real people who are playing in the corruption, there are grown-up channels for that.
+431
+It's not buying new coins.
+432
+It's a new Air Force One that costs hundreds of millions of dollars.
+433
+Right.
+434
+Exactly.
+435
+Exactly.
+436
+So that, anyway, all right.
+437
+I think that's as far as we're going to get on this Trump dinner story, but expect this to come back.
+438
+There's probably going to be a lot more here.
+439
+And my guess is that there will also be more stuff happening with Trump Token.
+440
+Somehow, Trump Token still seems to be holding on to quite a lot of its value, even though this seemed like the central thing.
+441
+I can't imagine there's going to be another one of these dinners after everybody was so disappointed by the first.
+442
+The other thing that was really funny about this is that there was a lot of stories of people who were present who, I think, Tom, you had mentioned this before, were fully hedged.
+443
+So they were holding the spot Trump token, and they shorted the futures.
+444
+And as a result, they had no Delta exposure to Trump token.
+445
+And so they ended up coming for the grand total of like a couple thousand dollars in hedging costs or something like that.
+446
+So relatively cheap way to get a crappy dinner with the at present with the president.
+447
+Yeah, none of us went.
+448
+None of us went, unfortunately.
+449
+Okay.
+450
+So moving on to other news.
+451
+Actually, last week about Coinbase, but it's kind of still ongoing as people are pulling at the threads.
+452
+So story about Coinbase.
+453
+Brian Armstrong came out with a video saying that Coinbase had been basically held ransom.
+454
+And what was this ransom?
+455
+There were attackers who said, we have access to a bunch of customer data on Coinbase.
+456
+If you do not pay us this big, juicy ransom, I believe it was on the order of $20 million, we are going to release this data into the internet.
+457
+And Coinbase said, okay, you know what?
+458
+Screw you.
+459
+We are going to disclose that this thing happened, and we are going to instead offer a counter, instead of paying the ransom, we're going to offer a bounty of $20 million to any information that can lead to the arrest and capture of these hackers.
+460
+Okay, so the whole thing was immediately greeted with a lot of huzzah and like, oh my God, you know, Coinbase is so brave.
+461
+What an amazing counterplay.
+462
+But as more and more data has come to light about what really happened, there's been more raised eyebrows about this whole Coinbase insider breach.
+463
+So the claim was that less than 1% of users overall were affected.
+464
+No passwords, private keys, or funds were exposed.
+465
+This is purely a kind of data, KYC data, as well as customer data, like metadata leak.
+466
+So basically, they were able to bribe customer service agents, which I believe are mostly in India, and get access to their control panel, look up the accounts of people, and just kind of mess with them, especially when you get these calls that are like, hey, I'm a customer support agent at Coinbase.
+467
+That's very likely what a lot of these things were pulling on from when they were able to access insider data.
+468
+Actually, can I ask a dumb question?
+469
+People were posting all these pictures of Raj, one of the co-founders of Solana's KRC documents.
+470
+Was that from this leak?
+471
+No, no, no.
+472
+No, that just happened.
+473
+I mean, it's possible that the Coinbase.
+474
+I believe it was confirmed there was a different hack.
+475
+I believe it was confirmed there was a different hack.
+476
+Like some rapper's Instagram got hacked.
+477
+Migos.
+478
+Yeah.
+479
+Yeah.
+480
+They hacked Migos' Instagram, I guess, to broaden visibility.
+481
+Because this data is already on the dark web, right?
+482
+So presumably this is already out there.
+483
+So, you know, re-ransoming somebody, there would be no point in doing that.
+484
+So apparently, there was a phishing spike that happened a long time ago.
+485
+At least $46 million was stolen in March.
+486
+This hack supposedly was discovered a couple weeks ago, but apparently, in one of the disclosures that was given, I believe in the state of Maine, which in the state of Maine, you have to publicly file some information about a breach.
+487
+And when you do that, you have to show when the breach began.
+488
+Apparently, the breach began in December of last year is when this quote-unquote breach began.
+489
+And it was only very recently that this data actually, or this breach was disclosed to the public, or supposedly that Coinbase discovered it.
+490
+However, there's at least some insinuation that maybe this was not true because Coinbase recently changed the terms of service such that there's changes in the way that arbitration works and that class actions are no longer allowed.
+491
+So there's all these question marks about, hey, did Coinbase know about this for longer than they claimed?
+492
+And there's claims also from Seal and from some of the white hats that have been working with this that they knew that this had been going on for quite a while.
+493
+That there were a lot of script kitties who had been dropping screenshots and showing, demonstrating on the dark web that they had access to insider information at Coinbase.
+494
+They had access to customer service panels, and they were able to go in and systematically call up Coinbase customers and demand, basically try to do some kind of social engineering to get them to give up information.
+495
+So now, to be clear, all this is insinuation.
+496
+Nothing is totally proven at this point, but there is proof that on January 11th, Coinbase fired 300-plus support staff at one of their customer service support sites in, I think it was India, and rotated to a new site, presumably because of something like this, of some kind of systematic stealing/slash bribery, slash something, something else going on.
+497
+So, a lot of the conversation about this has been around the regime of a KYC to begin with.
+498
+Because the reason why this is all a problem is because of the fact that companies like Coinbase, obviously, Coinbase is not the only one.
+499
+To be clear, this happened many, many times in the past, but Coinbase is particularly vulnerable because of the nature of crypto custody.
+500
+But it's the nature of KYC in particular: our KYC regime requires every single financial counterparty that you have to own your KYC data.
+501
+And every single financial counterparty has that data duplicated.
+502
+It doesn't live in one repository, and everybody asks for it when they need to look at it.
+503
+Literally, everybody needs to have their own copy of your data.
+504
+And so, if any actor, whether it's a credit bureau, as it's happened many times before, or you know, a bank or any financial institution or Coinbase, every single one of them has your financial data and has your KYC data.
+505
+And any single one of them, if they get popped, then that data is going back out there into the wild and into the hands of hackers.
+506
+So, we're now in a situation where many of the most high-profile victims have their data out there swirling among attackers.
+507
+What are you guys' thoughts on this story?
+508
+It seems like, for the most part, Wall Street was kind of ignoring it, and then it kind of thought, hey, maybe this is more serious than we thought.
+509
+I don't know where things landed.
+510
+I've been a little bit out of the loop.
+511
+But Robert, why don't we get your quick reaction to this Coinbase hack story?
+512
+Yeah, so the hack is unfortunate because there's a lot of risk that has been put onto the users of Coinbase unnecessarily, right?
+513
+There's been a huge increase in phishing and attack outreach to Coinbase customers.
+514
+Whether or not people lose money, the annoyance and the threat has gone up to pretty much every single user impacted in this league.
+515
+So the cost is not just what's already been stolen.
+516
+The cost is they've hoisted attackers onto a huge portion of their user base.
+517
+And the information that's out there, it's not just KYC information, it was also Coinbase information.
+518
+It was your trading history, it was your deposits and withdrawals, right?
+519
+The users that were compromised in this, you know, sophisticated attackers could sort rank them by how much money they have and where they live, right?
+520
+Like really scary stuff.
+521
+Like the physical threat that's been created by this is significant.
+522
+Almost guaranteedly, someone is going to get killed over this, right?
+523
+If they haven't already.
+524
+It was funny that it happened the same week as someone was kidnapped and tortured in New York over the over crypto.
+525
+Yeah.
+526
+I mean, that was an Italian tourist, you know.
+527
+No, no, yeah.
+528
+I know it was totally different, but my point is, like, it was crazy how the timing was like almost the same day.
+529
+So I think the real harm of this is actually incredibly high.
+530
+And I think it's a really, really, really unfortunate event to have occurred.
+531
+And so much of Coinbase's value comes at the end of the day from trust, right?
+532
+That they're not going to lose stuff that they're supposed to hold, right?
+533
+The incredibly important information about their customers is it's bad, right?
+534
+As a user, it makes me feel really, really, really unhappy and really uncomfortable.
+535
+So, you know, I think they've handled the crisis comms well, but the fact that this happened in the first place is completely embarrassing.
+536
+It's bad.
+537
+Do you think there's like an alternative, alternative regime that we should be contemplating here?
+538
+Or like, how do you, I just want to stop this besides, okay, Hasib, have you not heard of our Lord and Savior world coin?
+539
+I'm familiar with it, but that is not going to work for everybody.
+540
+I'm just kidding.
+541
+I'm just kidding.
+542
+But there is some irony that blockchains are built around, like in theory, could be private and do a lot of this stuff.
+543
+But yet, 99% of users of tokens lose their KYC docs.
+544
+Yeah, I agree that the KYC complex that's been created over decades of slow evolution sucks, right?
+545
+It doesn't actually protect people.
+546
+At this point, it jeopardizes people probably more than it helps them, right?
+547
+There's now a surface area where hundreds of companies all have to protect your personal information and they're not really in the business of IT security.
+548
+Yeah, Italian security is the weakest among all the companies you use.
+549
+And any company can join this fray of like being required through a whole variety of reasons, required to take everyone's personal data and hope that they can do a good job keeping it.
+550
+And like, if Coinbase can't do it, why do you think that everyone else in the supply chain can, right?
+551
+And so, you know, I do think it requires a bigger conversation about what's the point of all this anyway and like what's actually being achieved and when do the costs outweigh the benefits?
+552
+I'm trying to remember.
+553
+There actually was once an even crazier story that was like this, whereas I forget who it was, Chinese or North Korea.
+554
+So then they then really act.
+555
+They were like a third-party consultant, and they did this for like small to medium-sized crypto exchanges who didn't want to do their own.
+556
+That's crazy.
+557
+And that was like how a bunch of keys were stolen from small exchanges.
+558
+This was a while ago, but all I'm saying is, yeah, the KYC stuff is, it has like, it's the most attackable system ever.
+559
+And it's even more attackable with generative AI now.
+560
+Like, what I literally can be like, hey, make me a passport photo from this, you know, from this picture.
+561
+And like, yeah, so I feel like the KYC regime, I don't know how it breaks.
+562
+I guess maybe what are your predictions on like what happens to it in five years?
+563
+Because clearly it's like fraying at the seams right now.
+564
+I mean, my prediction is that nothing changes and things just keep getting worse.
+565
+Like, I don't give a lot of credit.
+566
+Thank you, Dr.
+567
+Doom, for seeing problems.
+568
+It's just, I mean, it's been just 20 plus years of it just being like this.
+569
+And I don't think the acceleration, like, there may be like, okay, more and more passports are scannable, right?
+570
+And they're purely digital, and you can get some kind of the cryptographic, the chip, the RFC chip.
+571
+You can just, you know, use your NFC scanner and just be like, okay, cool, do this instead of actually sending us a photo of your passport.
+572
+That clearly is going away, especially with generative AI.
+573
+That's just trivial now to generate anything.
+574
+So any kind of eyeballing it as the symbol resistance.
+575
+World coin.
+576
+No, World's Coin.
+577
+We're not showing World's Coin.
+578
+I think the answer is that nothing changes for a really, really long time until it gets unbearably bad.
+579
+And it's not a bad thing.
+580
+But I think unbearably bad is like next year.
+581
+I don't think it's next year.
+582
+Or now.
+583
+We might already be unbearably bad.
+584
+This is definitely not unbearably bad.
+585
+If you're not getting senators, then it's not unbearably bad.
+586
+Well, I agree with Tarun that very quickly people will start stealing the identity of senators and stuff using AI, right?
+587
+Like you can generate almost anything you want at this point.
+588
+There's enough models out there that I agree.
+589
+And I think that means that the security systems for these companies will adapt, but the laws will not adapt.
+590
+The laws will not change for a long, long time until senators start getting their money stolen.
+591
+Wow, that's a long arc of lobbying.
+592
+Like you make an entity that purposely tries to steal a sender's identity to prove a point that they need to write a law.
+593
+Hold on, I just do that.
+594
+I do not, that is Tarun advocating that.
+595
+I said nothing of the sort.
+596
+I think that was the implication I got from the implication.
+597
+The implication, you say.
+598
+Yeah, but I actually don't think that'll work because my hunch would be if a senator gets their identity stolen, they're going to blame the institution that leaked their data.
+599
+They're not going to say the KYC in general is broken.
+600
+They're going to say, Bank of America sucks.
+601
+How could you?
+602
+Very hard to remove rules in a democracy.
+603
+It's kind of the way it works.
+604
+Tom, what's your take?
+605
+Yeah, I tend to agree.
+606
+I mean, I do think hopefully we'll move to a system that relies more on cryptography means of verifying identity soon, not a WorldCoin shell, more any document to use.
+607
+I mean, there's like even ZK passport stuff today, but I agree, like, that is really interesting.
+608
+WorldCoin does have a ZK passport.
+609
+No, all right.
+610
+This episode is sponsored by Super Time.
+611
+This episode is sponsored by a company that none of the four of us invested in.
+612
+Hey, not too late, not too late.
+613
+We'll take some free WorldCoin tokens, though.
+614
+I want Red Bulls, not World Coins.
+615
+Come on.
+616
+Yeah, it's true.
+617
+Yeah.
+618
+Maybe it worked.
+619
+We are formerly, the show is formerly sponsored by Red Bull.
+620
+Maybe someday again.
+621
+We just need to mention like F1 more or something.
+622
+Then maybe we'll get Red Bull sponsors back.
+623
+I don't know if I can't.
+624
+The chopping F1 block.
+625
+Okay.
+626
+All right.
+627
+Well, that was a little strange.
+628
+All right.
+629
+We're flagging here.
+630
+We're flagging here.
+631
+We got one more.
+632
+Okay, wait, wait.
+633
+We got to talk before.
+634
+I know we got a hard limit, so we got to talk about the most important topic of the week, which is James Wynn.
+635
+James Wynn.
+636
+Yes.
+637
+Oh, yes.
+638
+Finally.
+639
+I am not.
+640
+All right.
+641
+Okay.
+642
+I've got a little write-up here.
+643
+I have not been following the story very closely, so I guess I'll just...
+644
+Robert, you guys.
+645
+Has he?
+646
+Okay, James Wynn, UK-born trader.
+647
+He got $6,000 in ETH from Alameda in 2020.
+648
+He became an icon for his training in Pepe, later accused of some pump and dumps and random meme coin tokens.
+649
+In March 2025, he shifted over to hyperliquid, deposited $6 million, and began high-leverage trading, trading with as much as 40x leverage.
+650
+His peak PL, he reached $87 million in profit, has paid over $2 million in fees.
+651
+In May of 2024, or sorry, in May of 2025, he opened a $1.25 billion long position on Hyperliquid, lost a very small amount, $13 million after Trump's tariff shock, and then shorted BTC with another absolutely massive billion-dollar position.
+652
+Right now, his cumulative P<unk>L has dropped to minus $13 million net after some losses.
+653
+Hasin' you found $13.
+654
+Haseeb, you're still positive.
+655
+Hasid, your YouTube crypto trader arc is coming through, the way you read that.
+656
+You were like, you had another.
+657
+In total, he's up $9 million.
+658
+In total, he's up $9 million.
+659
+Okay, so he's a notional.
+660
+This is great.
+661
+This is current information.
+662
+Yeah.
+663
+That's crazy.
+664
+Okay.
+665
+So, I'm sorry, $13 million net.
+666
+Nine.
+667
+It's nine now.
+668
+Current position.
+669
+Nine.
+670
+It's nine now.
+671
+Okay.
+672
+Got it.
+673
+So this guy is just moving markets.
+674
+He's totally insane.
+675
+He is captivating the world.
+676
+Reminds me a little bit of the polymarket trader.
+677
+I mean, my favorite folks in the P<unk>L.
+678
+My favorite thing about him is that Suzu was like, this guy is irresponsible and taking too much long.
+679
+Yes, when Suzu is calling you out publicly for taking too much risk in your trading, okay, you know that you have gone too far.
+680
+For Suzu to do this, Suzu is probably one of the most risk-seeking traders of all time.
+681
+He blew up three AEC and lost billions of dollars of other people's money that was fraudulently borrowed slash traded away.
+682
+For Suzu to call you out and say you're too risky, this guy needs to look in the mirror and listen because that is something.
+683
+But to Haseib's summary, which is phenomenal, the part that you missed was the Moonpig showing.
+684
+So he's also the creator of some stupid meme coin called Moonpig.
+685
+And a lot of people believe that this is simply a marketing exercise for Moonpig.
+686
+What?
+687
+How could this be a marketing exercise?
+688
+Because all he does is tweet about it.
+689
+All he does is tweet about Moonpig.
+690
+And so one of the many sort of like half-joking conspiracy theories about this guy is that either A, he is one of the former FTX employees, B, this is actually not trading losses or gains at all, that he's using a mirror account that takes the opposite side of every one of the trades.
+691
+And there was a really interesting tweet today by, I think it was like the look on chain accounts or something like that that was like, look, we found an account that's like the exact mirror opposite of him.
+692
+And interesting, interesting.
+693
+And third, it's that, you know, he's whatever he's making or losing, he's making more on the Moonpig meme coin that he owns a crazy amount of that he's, you know, how big is Moonpig?
+694
+Good question.
+695
+Let's look it up.
+696
+I bet you this is going to be like the lowest market cap coin we've ever talked about on the show.
+697
+Moonpig?
+698
+Market cap is 64 million.
+699
+It's not, you know, that's in the lowest.
+700
+That's in the range of lowest market cap.
+701
+It is.
+702
+I mean, trades 29 million a day.
+703
+That's not nothing.
+704
+Right.
+705
+It's not much, but.
+706
+So the guy is crazy.
+707
+On the classic chopping block, hinged to unhinged scale.
+708
+He is very far out on the unhinged side.
+709
+Okay.
+710
+What if it turns out that the mirror account actually is his?
+711
+Does that change your yeah, then he's more hinged.
+712
+Actually, then he starts to get into like just rational and cumulative, you know, manipulative tier.
+713
+Yeah.
+714
+Yeah.
+715
+I mean, this mirror account idea is fascinating because it is a very, very capital-intensive way to run a marketing campaign, which is usually not the forte of meme coin boosters, is that they have a lot of money with which to run it.
+716
+But the beauty of having a public order book in the sense that it's on hyperliquid, you can see everything, is that that becomes the marketing.
+717
+In fact, Suzu was one of the first, I feel like, in 2020 to really take advantage of this, where like you would just publicly buy a ton of stuff on Suzu.eth, and you just see this trail of people copying all the time, right?
+718
+And so I think there is some truth to this social trading thing kind of working as well as.
+719
+Becoming the single bat signal for crypto Twitter, that is powerful.
+720
+But you can't just buy, you can't just launch a short Bitcoin.
+721
+You have to actually do something with it besides be like the man of one token, right?
+722
+If you're just like, okay, moon pig all day long, fine.
+723
+But if you're like, no, no, no, virtuals, this week is virtuals, and you buy virtuals and you front run your own.
+724
+That would make sense as a way to monetize becoming the anointed one and having everybody paying attention to your account.
+725
+But that doesn't seem like what he's doing.
+726
+That's normally what I see when somebody becomes the main character.
+727
+You're Suzu, you're Ansom, you're whoever that everybody's copy trading.
+728
+That's how you monetize that, is by making calls and being early and getting out early.
+729
+Well, everyone I know is following James Wynn, right?
+730
+I mean, he doubled his follower account from like $100,000 to $200,000 a day.
+731
+Right, because for multiple reasons, right?
+732
+Everyone's following him for different reasons.
+733
+One is entertainment.
+734
+It's insane to watch somebody.
+735
+That's me.
+736
+Yeah.
+737
+Like somebody trading a billion dollars against like 20 million of equity is insane, right?
+738
+Maximum absolute leverage.
+739
+The second is the, I'm worried about hyperliquid/slash blow-up risk, right?
+740
+Hyperliquid has been changing its rules of the platform to start to reduce margin as a function of size because he's basically found a loophole in the risk management algorithm, right?
+741
+And lastly, it's the people that are interested in how he moves markets.
+742
+I mean, he's literally buying or selling a billion dollars of Bitcoin publicly, pretty often at this point.
+743
+And, you know, there's a lot of people trying to trade around him as someone who doesn't care about slippage.
+744
+And he's just like going long or shorter, you harder Bitcoin every time he feels like it is wild.
+745
+And so, you know, he's picked up a huge amount of visibility.
+746
+A lot of people have rooted for him to blow up.
+747
+A lot of people are rooting for him to make $100 million.
+748
+I just can't.
+749
+What are you guys rooting for him to do?
+750
+I'm rooting for him to demonstrate the failure of risk controls of an exchange that lets you trade a billion dollars.
+751
+You want him to basically blow up hyperliquid.
+752
+Not to blow up hyperliquid.
+753
+No, no, no, no.
+754
+But for everyone to learn from this, right?
+755
+Like, I actually hope it leads to lessons for all of the analysts to say, like, okay, this is where the risk controls were inadequate, and this is how to improve them, not just for Hyperliquid, but for the ecosystem at large.
+756
+This guy's Trump.
+757
+He is a stress test.
+758
+Dr.
+759
+What are you rooting for?
+760
+I'm long entertainment.
+761
+And like, this guy is like, this is a good thing.
+762
+So what's the most entertaining outcome?
+763
+Is the question.
+764
+I think an HLP blow-up that then somehow gets covered by hype getting like, you know, like some type of, some type of like, some part of the system on Bitcoin, right?
+765
+If he's just doing Bitcoin, is HLP on the other side of Bitcoin?
+766
+Not in sufficient size, yeah.
+767
+But I meant, I meant, you asked what outcome.
+768
+I'm just saying.
+769
+I'm just, yeah, it would be funny if like HLP kind of blew up because, like, the HLP liquidator vault actually is way smaller than the overall HLP vault, and that might not be sufficient size.
+770
+I think it was like 8 million or something.
+771
+So, like, it could be hard.
+772
+Although, there's a lot of people, I mean, at the end of the day, it's like, there's like, what's the equity shortfall that could occur?
+773
+How much demand is there to buy or sell around?
+774
+This guy, he was partially liquidated last night, like, also, like, FYI.
+775
+He was partially liquidated.
+776
+Like, literally, the price hit his actual liquidation price by like a millimeter, right?
+777
+And he was partially liquidated, and the market handled it quite well.
+778
+I think it would just be funny to see another version of this, but then also basically see a decentralized exchange recover from such a thing very quickly.
+779
+Because, like, in centralized exchange lands, you've definitely had this thing where like users have figured out how to manipulate the liquidation engine.
+780
+FTX, obviously, being very famous for the mobile coin incident, amongst others.
+781
+But this has happened in multiple exchanges.
+782
+And how they recover from that is like a sign of how windy the exchange is, in my opinion.
+783
+And I think if hyperliquid can prove they can recover from that, then it's like it has cemented its position for a long time.
+784
+Fair enough.
+785
+Tom, what are you rooting for?
+786
+I just love to watch a man lose $80 million on a Monday night, you know?
+787
+But that's entertaining.
+788
+It's true.
+789
+He wants him to lose.
+790
+If he made 80 mil too, it would be great, but we just, we just love the thrill of it.
+791
+Any giant winner, giant losses.
+792
+Yeah, it has to just be big.
+793
+That's all it matters.
+794
+All right, fine.
+795
+I'm hoping that we don't have to keep talking about this for multiple weeks because I think the thing that I'm getting tired of is these recurring stories that we come back to week over week.
+796
+But we'll see.
+797
+He might be.
+798
+I hope James Wynn stays the story for me.
+799
+You hope he stays the story?
+800
+All right, fine.
+801
+Yeah, okay.
+802
+We gotta wrap.
+803
+Thanks, everybody.
+804
+We'll be back next week.
+805
+See you all.
+806
+That's good.
+807
+See ya.

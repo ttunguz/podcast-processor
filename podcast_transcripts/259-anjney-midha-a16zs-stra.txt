@@ -1,0 +1,923 @@
+--- METADATA START ---
+Show: Eye On A.I.
+Episode: #259 Anjney Midha: a16z’s Stra…
+Host: Unknown
+GUESTS: Anjney Midha 
+Guests: Anjney Midha
+Source URL: https://podcasts.apple.com/us/podcast/259-anjney-midha-a16zs-strategy-to-turn-ai-startups/id1438378439?i=1000710873617
+--- METADATA END ---
+
+1
+We're entering a regime where the model is taking action versus just producing words.
+2
+We're starting to get into an agentic system.
+3
+The more autonomy you give that model, the ability to call those tools on its own and self-learn, the more agentic I guess it is.
+4
+But we're squarely already in the middle of agents.
+5
+I would say, you know, a lot of code workflows is probably where I'm most excited about agents actually working.
+6
+The last few years have been the unabashed growth of transformer pre-training scaling.
+7
+And that meant for a long time, people thought that meant that general models would win.
+8
+And I think actually now we're transitioning to an era where general models with specific last miles are winning.
+9
+Building multi-agent software is hard.
+10
+Agent-to-agent and agent-to-tool communication is still the wild west.
+11
+How do you achieve accuracy and consistency in non-deterministic agentic apps?
+12
+That's where agency, AGNTCY, comes in.
+13
+The agency is an open source collective building the internet of agents.
+14
+And what's the internet of agents?
+15
+It's a collaboration layer where AI agents can communicate, discover each other, and work across frameworks.
+16
+For developers, this means standardized agent discovery tools, seamless protocols for inter-agent communication, and modular components to compose and scale multi-agent workflows.
+17
+Build with other engineers who care about high-quality multi-agent software.
+18
+Visit agency.org and add your support.
+19
+That's agntcy.org.
+20
+Visit them today to support high-quality multi-agent software.
+21
+So, yeah, I'm sneaking.
+22
+Can you talk about your background before A16Z and about the Anthropic Angel investment?
+23
+That's pretty fascinating.
+24
+I got my start a long time before that in machine learning as a graduate student at Stanford.
+25
+I was in the bioinformatics department there, and this was when there was an earlier wave of machine learning around 2011 and 12, where everybody in Silicon Valley thought they needed a machine learning strategy.
+26
+But I was mostly on my way to a career in academia.
+27
+I was really fascinated by using some of the new techniques that were becoming possible in deep learning in healthcare.
+28
+And being at Stanford at the time in the med school meant that I got access to tons and tons of really fantastic, really valuable data, sort of clinical data, healthcare data, patient data.
+29
+And I thought I was going to go be an academic when I got a chance to spend a summer at a firm called Kleiner Perkins, basically helping their portfolio companies get started with their machine learning pipelines at a time when everybody in Silicon Valley thought they needed it.
+30
+So one of the partners there said, look, we need somebody to be our first machine learning engineer.
+31
+And that's kind of how I first learned about venture capital.
+32
+I ended up spending four and a half years there at Kleiner as an investor.
+33
+They ended up asking me to come over from the engineering side to investing both at the early stage and the growth stages in what now we would call developer infrastructure businesses.
+34
+But at the time, it was basically companies that were figuring out how to build new products and services on top of GPUs that had only recently become available in the cloud, on places like AWS and so on.
+35
+And then around 2017 is when I decided to leave and start my own company called Ubiquiti 6.
+36
+And our goal was to try to use some of these modern deep learning techniques, primarily in computer vision, to allow high-precision 3D mapping for applications like indoor robotics and self-driving cars.
+37
+At the time, there was this explosion in computer-visioned AI techniques that made it very possible to do high-precision 3D reconstruction on commodity hardware like smartphones.
+38
+It turns out that there's a little app that took over the world called Pokemon Go that you might remember around that time.
+39
+And that ended up being one of our primary sources of customer demand: developers, game developers, trying to build applications, augmented reality applications in real-world spaces.
+40
+And in trying to build, we ended up serving millions of users who were walking around the world mapping real-world locations for us.
+41
+And one of the biggest bottlenecks that we had to solve for them was massively multiplayer networking, which meant when you had hundreds of people in one physical location, how do you keep everybody's physical coordinates updated in real time?
+42
+It's a very, it's kind of a hard networking problem to update everybody's positions in real time.
+43
+And so we built a fair amount of interesting technology to allow that.
+44
+And it turns out when the pandemic happened a couple of years later and everybody was online, not walking around in the real world, but doing a bunch of multiplayer experiences online, that infrastructure became really valuable because we had built essentially a form of networking called serverless networking, which meant it was really easy for thousands and thousands of people to get together in the same sort of virtual experience very quickly without it costing the developer a ton of capital.
+45
+And so I ended up selling that business to Discord at the end of 2020, which had also exploded in the pandemic from being primarily a chat application for gamers to being used by all kinds of groups.
+46
+And there, my job was to both integrate our back-end infrastructure into the company and launch the company's developer platform business.
+47
+They wanted to allow developers to build third-party applications on top of that infra we'd built.
+48
+And this was around the time when I got the call from friends who were running research at OpenAI.
+49
+Tom Brown, who was one of the leads on GPT-3 and had been a long-time personal friend, gave me a call and said, we're thinking about leaving and starting this new company.
+50
+We'd love your help on figuring out how to fundraise and do all the foundery things you've done as a CEO and founder who sold this company.
+51
+And so for the first six months of 2021, Dario, Tom, and I just did many, many working sessions on business plan, capital fundraising, how to assemble sort of the commercial side of Anthropic.
+52
+And then a few months later is when I was, I came on as their angel investor and helped them then go raise the first $100 million seed round.
+53
+And then later we got fairly involved in acquiring lots of compute for the company.
+54
+It was a sort of net, you know, today it's well understood that foundation model businesses need hundreds of millions of dollars in compute to get.
+55
+And around the end of that year, 2021, is when I started realizing that the scaling laws in language models that we were seeing at Anthropic were going to hold for other modalities like image and video.
+56
+And I had the chance to, you know, in building the developer platform business at Discord, one of the things you always have to do is figure out what are the early killer apps that you think will drive value on the platform.
+57
+And I had the chance to team up with an old friend who was working on a little text-to-image app called MidJourney.
+58
+And we created an app store front page at Discord where we put Midjourney on the front page and helped them launch one of the world's first text-to-image models.
+59
+And the MidJourney team did an extraordinary job taking that business from ACP zero to many tens of millions of dollars in revenue very quickly.
+60
+And that kind of gave me the inkling that we were in the middle of a new platform shift fundamentally where entirely new startups could be built in new modalities, whether that was video or audio or code.
+61
+And I left then Discord in early 2023 to start investing in companies full-time and helping researchers and scientists take their research out of the lab and turn them into new foundation model infrastructure businesses.
+62
+And since then, I've had the chance to work with some amazing folks like the founders of Mistral and who are working on open source language models, Robin Rombach, and team, who are the creators of Stable Diffusion, and then founder of a company called Black Forest Labs that I'm on the board of.
+63
+And that's what I spent most of my days doing, is working with researchers and scientists.
+64
+That's why I joined Andreessen Horowitz shortly after I left Discord to do that full-time.
+65
+And that's what I spend most of my days doing now.
+66
+Yeah, wow.
+67
+Going back to the Pokemon Go, you weren't involved in building that, were you?
+68
+No, no, no.
+69
+I was not at Niantic, but they were one of the developers who wanted to use our technology.
+70
+And early on, actually, John Henke gave me a call and said, this is exactly what we've been looking for.
+71
+How quickly can you get the service up and running?
+72
+So I really owe it to him.
+73
+Gaming was not at all on our roadmap.
+74
+Indoor robotics, indoor navigation was kind of our primary focus.
+75
+And I credit Niantic entirely for opening our eyes to the world of location-based gaming.
+76
+Yeah.
+77
+And then from Anthropic, you stayed focused on foundation models, I mean, at least for a time.
+78
+Just maybe to jump ahead a little bit, what I'm interested in hearing is how you see, I mean, we're all familiar at this point with foundation models and that they raise some issues that I'd like to hear your thoughts on, you know, the open source versus proprietary debate and then distillation and small models, models for the edge.
+79
+But recently, I've been talking to people about, you know, kind of backwaters in AI research that have been passed.
+80
+But when you started, you were talking about vision.
+81
+Right.
+82
+You know, that was a supervised learning.
+83
+phase.
+84
+And that's all anybody talked about.
+85
+And everyone was, you know, drilling down and these incremental improvements.
+86
+And then Transformers came along.
+87
+Now everyone's working on how to tweak foundation models to do this or that.
+88
+But there are these other strategies.
+89
+I had on the podcast a bit ago Seb Hochreider.
+90
+That's not how the Germans pronounce it, but the guy who came up with LSTM.
+91
+And he's still pursuing that architecture and doing really interesting things with it and things there's a lot of promise.
+92
+Reinforcement learning was kind of in the background for a long time and it's being talked about again because it's being used to train foundation models.
+93
+But you talk to the guys up in Alberta and they're doing amazing things and have great optimism about building intelligence using RL alone or at least as the primary strategy.
+94
+And then I was talking to yesterday, Dave, this guy, Friston, with his free energy principle and energy-based models.
+95
+You know, there's Mamba now, and that's opened up.
+96
+You know, I had a call with, I'm not going to be a remember, I'll cut that out.
+97
+But anyways, the guys who have productized that in a model called Jamba.
+98
+So, I mean, are you focused on sort of transformer-based models, or are you scanning the horizon for these other strategies to see which ones might become important in the product space?
+99
+No, look, I'm constantly looking for new architectures because the idea that a one-size-fits-all architecture just works is deeply counterintuitive.
+100
+And this is why I think it's called a bitter lesson, which is that if you get your training as a machine learning in sort of classical machine learning, what you learn is that there should be specialized architectures.
+101
+If you value efficiency, that there should be a more efficient architecture for every different use case or task.
+102
+That task-specific architectures historically have been more efficient when it comes to production.
+103
+And that's just turned out to be unintuitively, frustratingly untrue, right?
+104
+Like the transformer has just marched ahead.
+105
+And I think what's going on is that the bitter lesson is just turning out to be true because Moore's Law continues being one of the biggest drivers of efficiency.
+106
+And what we're learning is that, you know, to be honest, these transformer models are so efficient at extracting sort of latent representations of knowledge that, in a sense, the architecture, you don't have to get that fancy on architecture if you can process and filter the data correctly.
+107
+Now, the big question I think is the right one you're asking is where's the limit, right?
+108
+How far do transformers get us?
+109
+And I have been shocked basically by how good RL is at improving performance.
+110
+Let me put it more clearly.
+111
+I do think that the last few years have been the unabashed growth of transformer pre-training scaling.
+112
+And that meant for a long time, people thought that meant that general models would win.
+113
+And I think actually now we're transitioning to an era where general models with specific last miles are winning.
+114
+That last mile can often be a combination of an LSTM, an SSM, a completely different non-transformer-based approach.
+115
+And in some cases, they're diffusion models.
+116
+So if you take the case of multimodal image generation, I think we're heading to an era of transfusion where you take a transformer which is autoregressive and then you combine it with some of the best parts of diffusion so that you get quality in image generation.
+117
+And that's where we're headed.
+118
+I do think we're headed to an era of hybrid architectures.
+119
+I'm not a transformer maximalist, but I do think the network effects of infrastructure, where a lot of the world's inference-serving pipelines are now designed to be for auto-aggressive workflows makes the bar higher and higher for a new architecture to try to jump over before it gets adopted.
+120
+Yeah.
+121
+But you're hopeful or you anticipate that there will be a new architecture.
+122
+I mean, no one saw transformers coming.
+123
+You know, this is where, depending on who you ask, if you ask a traditional machine learning researcher, they'll tell you there are no new architectures.
+124
+They've all been invented before.
+125
+And Hawkwriter will tell you that.
+126
+So will the in the entire, there's a whole body of sort of European researchers who will tell you that the transformers is basically just sequence-to-sequence learning, which was invented 40 years ago, you know, with Boltzmann machines.
+127
+And so I think there's two sides of the argument.
+128
+One side, one school will tell you, no way, Craig, there are no new architectures.
+129
+We've all invented them before.
+130
+This is just the new kids on the block inventing stuff we've done 40 years ago.
+131
+And then there'll be the other school of thought, which is often non-traditional researchers.
+132
+The Anthropic guys actually came from physics backgrounds.
+133
+Dario has a PhD in biophysics.
+134
+Jared Kaplan, who's the chief scientist and did the formative sort of seminal work around scaling laws, was a physicist by training, not a computer scientist.
+135
+And they'll tell you, of course, these are new architectures.
+136
+And of course, we'll have this is fundamentally a new body of work.
+137
+And we might have new representation learning.
+138
+And to be honest with you, where I follow the debate is: does it even matter?
+139
+Because the thing that continues sort of being the most important is that they just work.
+140
+And they're driving such incredible advancements in the end user's experience that none of us expected that it doesn't really matter to me very much.
+141
+Even though my training is in machine learning, I have learned to let go of the ML purist in me and stop worrying about the architecture and asking, you know, do we have enough training data for the models to keep improving?
+142
+Yeah.
+143
+So what kind of things are you looking at now that are sort of beyond the horizon?
+144
+Look, the number one thing that keeps me up at night right now is evaluation.
+145
+How do you actually tell how good these models are?
+146
+We're well past the era of the low-hanging fruit, right?
+147
+Where when GPT-3 first came out and Daria and Tom sent me a screenshot of their ablations that showed just by increasing the compute by 100x on a bunch of tasks like they had a chart showing how well a human could detect if a piece of, if a news article had been written by an AI model or not.
+148
+And just by 100xing the compute, they basically crossed the Turing test on that task.
+149
+And there were these low-hanging fruits sort of tasks all around us two years ago, four years ago, actually at this point, where in coding, for example, just by 100xing the compute, GPT-3 relative to GPD-2.
+150
+Even if there was no Python code in the training data and there was only JavaScript, it was able to still solve Python problems during inference time, which is what they'd call in-context learning.
+151
+I think now we're headed to the era where those academic benchmarks like MMLU and so on are no longer really we have moved from the research era to the deployment era.
+152
+And for the deployment era, you need benchmarks and evaluation to tell you how good these models are in the real world.
+153
+And to do that, you need a completely different mindset and methodology than I think the previous era, which is you'd have these sort of static benchmarks, you'd kind of train a model to beat those benchmarks, then you'd present at a research conference, and that was good for the low-hanging fruit era.
+154
+Now we're in the era where if you want to know if a new model actually solves a physician's problem in the field or a scientist's problem in the field, well, you need these models to be trained in that real-world evaluation loop.
+155
+And that's what I'm looking for right now.
+156
+Yeah.
+157
+And benchmarks from a layman's point of view, you know, you can train to a benchmark.
+158
+And, you know, I don't necessarily trust these companies to be doing it correctly.
+159
+Exactly.
+160
+So everyone comes out with their chart and their model is like the middle finger pointing up there against everybody else.
+161
+And who knows how they got around to that.
+162
+Well, Goodhart's law is real, right?
+163
+Which is that when a measure starts becoming a target, it ceases to become a good measure, which is exactly what happened.
+164
+So now I've become much more partial to crowdsource the wisdom of the crowd, things like LMSIS, right?
+165
+Where you have real-world users show up and rank two side-by-side responses from LLMs.
+166
+And that's much, much harder to try to sort of, I think it's much harder for that to be overfitted on.
+167
+Now, a bunch of, you know, you could debate that you can still overfit on that.
+168
+Sure, but it gets harder and harder to do that at scale.
+169
+It gets harder and harder to do that in real-world tasks.
+170
+And therefore, I'm much more a fan of sort of that type of evaluation.
+171
+To solve, look, the big problem to answer here is AI reliability.
+172
+The biggest problem holding back AI models from being useful, I would say, in the most mission-critical industries of life, defense, healthcare, financial services, is reliability.
+173
+And I'm just very convinced that the answer there lies in good, robust measurement.
+174
+And that means evaluation with real users in real-world contexts, because otherwise the measurements from sort of academic setting are not reliable benchmarks or measures of performance, ultimate performance.
+175
+Are you looking at any of these?
+176
+You mentioned LSTM.
+177
+Huck, right, or am I saying it right?
+178
+Has a new company.
+179
+I'm not going to be able to remember, NXAI or something like that, where he's trying to productize the advances he's made on LSTM architecture.
+180
+I haven't talked to him about the company.
+181
+I'm not familiar with what their particular plan is, but I would say there's a number of companies in that vein who believe that specialized non-transformer architectures are more reliable because they're more interpretable in the real world.
+182
+As opposed to transformer is a black box.
+183
+Right.
+184
+And so there's only two solutions, I think.
+185
+Either you have an architectural change that makes these black boxes transparent.
+186
+And there's plenty of work there called, broadly speaking, interpretability that I think is fantastic.
+187
+I spend a lot of time paying attention to what's happening in interpretability.
+188
+There's actually a couple of great papers that came out last week from Anthropic that show that we're beginning to peer into what's going on in the transformer.
+189
+So that's either you've turned a black box into a clear box, or the second approach is you start measuring the output of the models to be sufficiently predictable that they're reliable.
+190
+And I'm kind of bullish on both.
+191
+I don't think you need an architectural shift like LSTMs to solve that.
+192
+I think if you could make transformers more interpretable, you could get the same benefit.
+193
+Yeah, you're talking about Anthropic's work on, I can't remember now, intelligence graphs or what did they call it?
+194
+But they've developed a tool to kind of like a functional MRI to be able to look in and see which nodes.
+195
+And the idea is that you can group the parts of a neural network that are activated when you ask it something into these clusters they call features.
+196
+And seeing which clusters of these features fire for a particular topic, you can start to trace why a language model says what it does.
+197
+And you're exactly right.
+198
+The analogy would be inventing a microscope for what's going on in the LLM.
+199
+Once you have a microscope, then you can move on to the part, the next step, which is, okay, can we start actually gene editing?
+200
+If you don't have a microscope to look at the genes, then you can't actually start editing.
+201
+But once you have a microscope, then you can start talking about how to actually do steering and control.
+202
+Yeah, and it seems to me that they were able to do that in those experiments.
+203
+I'm thinking there was one of the examples was they started a poem with a word that rhymes with rabbit, I can't remember.
+204
+Well, that's exactly right.
+205
+That's right.
+206
+Yeah, and they could see that the model was looking at habits and, or no, it was carrots, or a habit and carrots, and they could sort of direct the model toward one or the other.
+207
+Exactly.
+208
+I think what they identified was that the models plan ahead for where they're going to go.
+209
+And if you can kind of trace the circuits that the model uses to plan ahead, and you can block out.
+210
+And so the idea was that they could get it to write a different second line of the poem than it was originally planning to by kind of masking the original plan.
+211
+And I think it's very interesting.
+212
+I think we're starting to get finally starting to get with interpretability going from research to engineering.
+213
+Because it's obviously a toy example, but this is how we do engineering.
+214
+You first try to prove it in a petri dish, and then if it works, then you start scaling it up.
+215
+And so my understanding is the next step now is to try to scale it up to prove that they can actually steer it in a useful enough fashion outside of those toy examples.
+216
+It's very exciting.
+217
+But until that happens, and it may be yours, I'm a big fan of evaluation in real-world scenarios like LMSys and Chat Arena.
+218
+I think that move is positive.
+219
+I do think one of the core tensions in reliability, in LLMs, is control over the weights, which is why we're entering an era where geopolitics is obviously pretty important.
+220
+Lots of sovereign nations now want their own AI stack.
+221
+They want their own models because ultimately, unless the models are fully interpretable, there's no other real way to control them unless you have the weights.
+222
+And so I'm seeing this.
+223
+So I guess I would say there's three big solutions to AI reliability.
+224
+One is mechanistic interpretability or just making the models more interpretable.
+225
+In general, you could have side-by-side evaluation things like ARENA, or you could have open source open weight models.
+226
+And I'm going to spend my time thinking about all three of those things right now.
+227
+Yeah, what about agents?
+228
+That's the other hot area that everyone's talking about.
+229
+I would think that you guys would be all over that, or is that someone else at the firm?
+230
+Oh, I think that everybody's got to contend with models going from being next word prediction machines to next action prediction machines, right?
+231
+And the beauty of the bitter, or the bitter lesson playing out with Transformers is that it's not that hard to fine-tune a model to take action on what we call tool calling.
+232
+So, the first kind of generation of agents we're seeing right now is just LLMs trained to call APIs when they need help.
+233
+And so, you can tell an LLM, hey, tell me the time today.
+234
+And if you don't know what the time is, then that's fine.
+235
+Just call out to a clock.
+236
+Now, some people will tell you that's not really an agent, but I'm not that dogmatic about these definitions.
+237
+To me, basically, if we're entering a regime where the model is taking action versus just producing words, we're starting to get into an agentic system.
+238
+The more autonomy you give that model, the ability to call those tools on its own and self-learn, the more agentic, I guess, it is.
+239
+But we are squarely already in the middle of agents.
+240
+I would say a lot of code workflows is probably where I'm most excited about agents actually working.
+241
+You know, the reality is for things like browsing, general-purpose agents are very brittle.
+242
+But in workflows like coding, where the outcomes actually quite easy to verify and score, we have unit tests, right, in software.
+243
+So that's why in software engineering and code generation, it's quite easy for agents to actually be told whether they're given a scorecard.
+244
+And I think if your question is, how do you measure AI reliability with agents?
+245
+I think it's very simple.
+246
+The general heuristic is exactly how you would score a human being on that task, right?
+247
+You write a bunch of tests and you figure out whether it passes those evaluations or not.
+248
+And the good thing about programming and software is that a lot of those tests are automated by design.
+249
+Building multi-agent software is hard.
+250
+Agent-to-agent and agent-to-tool communication is still the wild west.
+251
+How do you achieve accuracy and consistency in non-deterministic agentic apps?
+252
+That's where agency, A-G-N-T-C-Y, comes in.
+253
+The agency is an open source collective building the Internet of agents.
+254
+And what's the Internet of Agents?
+255
+It's a collaboration layer where AI agents can communicate, discover each other, and work across frameworks.
+256
+For developers, this means standardized agent discovery tools, seamless protocols for inter-agent communication, and modular components to compose and scale multi-agent workflows.
+257
+Build with other engineers who care about high-quality multi-agent software.
+258
+Visit agency.org and add your support.
+259
+That's agntcy.org.
+260
+Two questions for someone in your position.
+261
+One, how do you keep your finger on all of this?
+262
+Are you like me?
+263
+You subscribe to a million newsletters, you have a million meetings, and you're capturing the conversations with some AI like Otter.
+264
+I use Otter, other people use other things.
+265
+And then you're kind of constantly, you know, summarizing and looking through for ideas.
+266
+Or are you relying on deal flow and what people are coming to you with?
+267
+I think, so the answer is yes, all of the above.
+268
+But there's just no substitute, I find, for deep, long-form conversations with scientists.
+269
+Yeah, that's right.
+270
+And so this was the moment, you know, when three, four years ago, when Dario and Tom first gave me that call after GPT-3 and said, you know, we think we're, we've discovered this thing called scaling laws.
+271
+And we are, we think there's a new lab to be built that prioritizes interpretability first.
+272
+And I said, sure.
+273
+And they said, you know, can you help us out as an investor?
+274
+And I said, sure.
+275
+How much do you need to get started?
+276
+And Dario said, I think we can get by with five.
+277
+And I said, okay, look, five million, not a problem.
+278
+I should be wired over next week.
+279
+And he said, well, you're off by a couple of zeros there.
+280
+I'm going to need 500 million.
+281
+Usually I find that when some of the most leading scientists kind of challenge a base assumption you have, it's usually a good and you feel uncomfortable.
+282
+It's a good, I find it's a good practice to dig into that discomfort and kind of dig, ask the five whys on from a first principles basis, why are they so convicted in that, right?
+283
+And, you know, in his case, Dario, Tom, and I spent many weeks unpacking why they felt they needed 500 million.
+284
+At the end of that conversation, I realized actually that 500 million was extraordinarily efficient to train, to build a lab of a capital raise to build a lab around because by then, OpenAI had spent over $4 billion getting to that point.
+285
+And that's when we really got into the idea of compute multipliers and why having compute multipliers allows you to train models for six times more efficient compute spans than the first generation.
+286
+And I find those long-form conversations you just can't substitute.
+287
+No amount of reading a paper can explain, okay, can compensate for those in-person working sessions.
+288
+And that's what I love doing with all the founders I work with.
+289
+I often find it most rewarding to be the first call for a scientist or a researcher about commercializing their research before there even is a company.
+290
+And that's what I spend my days usually filling.
+291
+And I find that often means you're quite early.
+292
+The problem with spending your days with scientists who are living two steps ahead is that most of the world today is not ready for their realizations.
+293
+And so when I introduced them to Dario to 22 other investors up and down Sandhill Road, he got 21 no's.
+294
+And the reactions were everything from borderline, this is snake oil, to it just doesn't make sense.
+295
+There's no way that just throwing more compute will eventually produce models that will be able to solve all intelligence problems under the sun.
+296
+It's so absurd.
+297
+Now, they turned out to be right.
+298
+And so I often find it's not easy to communicate my excitement about these realizations to other people in the field.
+299
+So I actually try to spend as little of my time talking to other investors as I can because I find by the time other investors have conviction in something, it's already consensus.
+300
+What I'd like to spend most of my days is in long-form conversations with scientists and researchers who are in the lab.
+301
+And I find the most exciting moment is when science is going from being, or some kind of, or some strain of technology is going from being inevitable to being imminent.
+302
+Because that's what I can be most useful to them, because they're often looking for my help to commercialize their work and scale the impact that they can have by turning their research into a product that could be used by millions of people.
+303
+And there's no papers you can really read on that.
+304
+It's often the hard work of sitting down and discussing face-to-face the technology, the capital required, the compute needs, what the industry needs.
+305
+And that messy search for product market fit is what I find most exciting.
+306
+Yeah.
+307
+And how many was this?
+308
+Yeah, and I read a lot of papers, and I'm a journalist, and I'm not.
+309
+And a lot of times I'll see something and I'll think, wow, you could build a product off of that.
+310
+And a lot of that research just gets shelved or buried in archive and no one ever does anything.
+311
+And maybe the idea is rediscovered 10 years later and someone says, oh, yeah, well, so-and-so wrote that 10 years ago.
+312
+Is most of your, I mean, are you investing?
+313
+I mean, that is your role, right?
+314
+Yeah, that's right.
+315
+I'm a general partner.
+316
+I spend my days investing.
+317
+But I think the discipline of investing, weirdly, has changed so dramatically in the last few years that it actually looks, at least in the world that I spend my time in, which is AI infrastructure, you know, at the earliest stages of taking AI technology out of the lab, it looks much more like the early days of the venture capital industry than, let's say, the 2010s, which were, you know, in the earliest days in the 1970s, when you had firms like Kleiner Perkins and Sequoia getting started, these were founded by former semiconductor engineers, right?
+318
+You know, Eugene Kleiner and Tom Perkins, obviously, from the Fairchild line, right?
+319
+Genentech, for example, as a company, was founded literally in the basement of Kleiner Perkins by a former Kleiner partner and her boyer, right?
+320
+A scientist at UCSF.
+321
+And the way these companies were formed is often you'd have a leading scientific mind who felt like their research was ready to leave the lab, who'd often team up with a former operator who understood that capital could be used.
+322
+And when I got to Kleiner, you know, I was at 19 at the time.
+323
+I was really lucky that Brooke Byers, who was the B in KPCB, took me under his wing and kind of gave me a crash course into how venture capital used to be practiced.
+324
+And that was quite different from the way it was being practiced by some of the newer partners there because we had gotten into this era where I think fueled largely by the rise of cloud and mobile, a lot of the technology that businesses that were being built did not really have a heavy scientific component.
+325
+And so I think, yeah, so you're right, I do spend my days investing, but it often looks kind of like quite different.
+326
+Even though these businesses that I end up helping these scientists start are often software businesses, you know, Anthropic, Mistral, Black Forest Labs, Sesame is one that we just took out of stealth that is building a conversational voice companion.
+327
+They look, on the surface, they look like software businesses.
+328
+But under the hood, the early days, the practice of investing in these companies is often actually looks like building a biotechnology business.
+329
+It's like discovering a new drug.
+330
+These foundation models are, training these models look more like discovering and developing a new drug than they do building traditional software.
+331
+Because frankly, training a model off of data is actually a research process.
+332
+It's not really traditional software engineering where you write up a list of features and you give that to a group of engineers.
+333
+So, yes, that's what I spend most of my days doing is often the earliest days working with these scientists of investing in them.
+334
+It often means I'm having to do things like procure 2,000 H-100s and actually set up a cluster before there even is a company for them.
+335
+In the case of Black Forest Labs, which is an open source image and video model lab that I got involved with last year as a founding investor, where there was a group of scientists, they had trained and created a model called Stable Diffusion before.
+336
+They wanted to start a new company.
+337
+They were still trying to figure out what that would even look like.
+338
+And they gave me a call and said, would you invest in us and would you help us build a commercially viable business around open source image models?
+339
+And so I sat down, we spent many weeks kind of planning what it would take to train a frontier image model.
+340
+I think I even set up the cluster and we repurchased the cluster before the company was even formed so that on day one, they could hit the ground running.
+341
+And so, yes, it is investing, but I find it's not sort of the kind of investing that I was seeing a lot of venture firms do 10 years ago.
+342
+It feels like closer to the kind of investing that the 1970s and 80s era was common for.
+343
+But let me ask, I mean, Black Forest Labs and Sesame, those are interesting examples.
+344
+I've looked at Sesame.
+345
+I've played around a little bit with its public interface.
+346
+And it's good.
+347
+But I've seen a lot of companies that do, you know, there's a company called Speechify, is it Speechify or Speech Mattix or somebody, Speech?
+348
+It's in the British outfit.
+349
+You know, with these incredible human-sounding voices.
+350
+I don't, I mean, how do you build a business?
+351
+11 Labs does a great job as it is.
+352
+I mean, how it's a crowded space.
+353
+I just, that it amazes me, frankly, that they can raise money because what's the differentiator?
+354
+In Black Forest Labs, maybe you can explain it to me, but Stable Diffusion is open source, right?
+355
+And yeah, I mean, what is the new?
+356
+What's new there that gives you confidence to put money in it?
+357
+Or is it that it's not the underlying science?
+358
+It's the go-to-market strategy.
+359
+It's how professional the management, how strong the team is, and there's going to be a shakeout at some place.
+360
+So you're not going to bet on one horse.
+361
+You're going to bet across the field.
+362
+Yeah, no, look, the reality is the answer, and this is why I love doing what I get to do, which is the answer is always different for every different company.
+363
+And so let's, you know, we can take a couple of examples to break this down.
+364
+So it's Sesame, right?
+365
+You know, you brought a company up called 11 Labs, which is an extraordinarily successful company, which I'm an angel investor, and I had the chance to invest in Maddie and Peter years ago.
+366
+And while on the surface, it might seem today like all audio models are the same, if you actually start looking into the research that Sesame and 11 Labs are doing, what you'll realize is actually within the field of audio, text-to-speech is completely different from the modality of conversational speech.
+367
+And this is something I realized early on when I was running the platform team at Discord, where something like 60% of daily active sessions were spent in voice channels.
+368
+People just spent time on the platform talking in voice.
+369
+And we actually tried to use 11 Labs to create a voice companion that you can talk to.
+370
+And while 11 Labs is extraordinary for workflows like dubbing of your favorite Netflix show, which is a largely asynchronous text-to-speech pipeline where you give it a ton of text or you give it a ton of audio and then ask it to convert that into some other audio in batch to be consumed later, conversational speech, which is real time, can be approached in a completely different way.
+371
+So you could get to something good enough with 11 Labs for that use case, but 11 Labs was not designed for that.
+372
+They are the world's best at the modality of text-to-speech.
+373
+Sesame approaches their problem as a different modality, which is what they call conversational speech.
+374
+When you need to train a model to be a two-way companion that can talk to you in real time, that can understand my speech tokens as I'm talking to it, convert that into audio, and play that back to me in a way that's both realistic enough that I feel like I'm talking to a human and is fast enough to proxy human speech, the kinds of decisions you end up making to build a product off of that are completely different from what.
+375
+So I think this is the biggest, one of the biggest changes from four years ago where people were thinking about AI in largely modalities like language, image, video, and code.
+376
+And actually, within each of those modalities, you have a ton of different sub-modalities that are completely different when you get down to it.
+377
+And each of these, by the way, I think each of these modalities can be ginormous spaces in and of themselves.
+378
+So in the case of, so that's one answer for why these are all different.
+379
+The second is that I don't think models have ever really been products.
+380
+Models are phenomenal components.
+381
+You can think of them almost like chips or transistors.
+382
+They're critical components of bigger products, but ultimately, customers don't buy components, they buy solutions.
+383
+And so in the case of Mistral, people think of them as a lab that puts out models, but that's not actually what their customers use.
+384
+Their customers use a product called Law Platform, which is an end-to-end service that allows a customer to show up and say, I want to use, my problem is that I'm a logistics and shipping company, and I'd like an AI agent that can handle the entire workflow of logistics for us.
+385
+And here's my data, which is, because it's regulated, it sits on my own warehouse, and I don't want to send that to somebody else's cloud.
+386
+And so I have Law Platform coming and being deployed on my warehouse with a number of hooks that learn my enterprise's context, how we do business, and then customizes one of their models off the shelf for my company.
+387
+That end-to-end solution is what they actually sell.
+388
+Now, the research community loves them for all the open source models they put out, but those models are just a component of their overall solution.
+389
+So, where I think we're going, and I've always believed this, is the businesses that end up winning are the ones that have a world-class scientific and research team to know how to leverage new models and how to improve them, but ultimately have the product vision to then turn it into some end solution for a customer.
+390
+And that's where I get really excited.
+391
+In the case of Anthropic, right, early on, their vision was an AI pair programmer.
+392
+What they wanted to build, their belief was that, hey, there's about 30 million programmers in the world.
+393
+If you assume each programmer creates about $100,000 of economic value, if we can build AGI that can improve the productivity of those engineers by even 10%, that's $3 trillion of GDP we've created.
+394
+And their vision was AGI as expressed through the market of coding.
+395
+Now, they happened, when ChatGPT came out later, about a year later, they realized: okay, this is much larger than just coding.
+396
+But early on in the earliest days, I get really excited about scientists who also have a very specific view for how their technology can get expressed to the world as a product or solution.
+397
+Yeah.
+398
+Yeah, and certainly they're not in the lead necessarily, but they're at the front of the pack on coding today, on generated code with Sonnet.
+399
+Right, right.
+400
+I think Sonnet was an extraordinary model that then allowed a bunch of other new products to be built, right?
+401
+Like there's a bunch of AI-native code editors that are now possible that got a huge boost through models like Sonnet.
+402
+So I think a lot of the debate and discourse, because we're technologists, we like to talk about models, but in reality, models are not products.
+403
+And Sonnet can be expressed in completely different ways for different products that can all, I think, be large, massive, standalone businesses.
+404
+But it kind of sometimes confuses the conversation where people think models are the end product, but they're for the end.
+405
+Let me just, we could talk forever.
+406
+You're being very generous with your time.
+407
+I would guess you're seeing a lot of people building deep-seek-like models that are much cheaper to train than Anthropics or OpenAIs.
+408
+I would also guess you're seeing a lot of MANOS-type multi-agent systems, autonomous multi-agent systems.
+409
+Rabbit AI just came out with this thing, Rabbit OS Intern was one of the things they're calling it, or Large Action Model Playground.
+410
+I don't know if you've looked at that, but it's like MANUS.
+411
+I mean, you give it a task and it has access to a lot of tools and can go out and do things autonomously on the web.
+412
+Those two categories, those big multi-agent systems and the more inexpensively trained models like DeepSeek?
+413
+Are you seeing a lot of activity in those two spaces?
+414
+Yeah, so I think the answer or the way the space is developing right now is that it seems to be that in any domain where you can write a pretty good verifier for a task, whether a task was done well or not, in an automated fashion, there seems to be no end in sight for reinforcement learning to improve progress there in that domain.
+415
+So as long as a domain can, if the task or the sequence of tasks that you would ask a human to perform can be codified in some way in a formal verification process, like we are seeing every flavor of entrepreneur attack that flow with RL.
+416
+And the more data you have there that's high quality and verifiable, there seems to be no diminishing sort of returns to investing in that type of research.
+417
+Now, I think where things are much more brittle is in things like general browsing, where it's very hard to verify whether somebody clicked on the right part of a page that you arbitrarily give it.
+418
+And so I think I'm familiar with Rabbit and Manus.
+419
+I haven't spoken to those teams directly, but I'm very excited that they're pursuing that research because for a long time, if the bitter lesson ends up being true, then all you'll need to do is give a model a keyboard, a mouse, and a screen, right, and say, just observe enough human beings browsing their day.
+420
+Right now, I think the regimes that are working are where there is a workflow where you can write a verifier for.
+421
+And the agents in that kind of area, like customer service and coding, obviously, is the biggest one.
+422
+Where if you can, let's take a place that we're seeing a ton of great progress in, which is front-end development.
+423
+Front-end web dev, it's quite easy to write unit tests for.
+424
+You can write automated verifications on whether a website and a web app compiled successfully and kind of did some basic, you know, hit some basic unit tests that you've written for it.
+425
+Agents are working phenomenally well there.
+426
+I'm a huge believer that within a year, you will be able to ask an AI-assisted agent to, or an AI agent to create a website for you end-to-end.
+427
+And we're almost already there, to be honest.
+428
+But if you ask an agent to just sort of end-to-end plan a trip for you and go ahead and book all the reservations and so on, which is kind of a user story that you see often from a number of these companies, in practice, I find it's still quite brittle.
+429
+And we're just not there yet.
+430
+And it's still faster for me to just go do it myself.
+431
+And I think that mark for general browsing is very, very high.
+432
+Yeah.
+433
+Yeah.
+434
+And actually, there's another sort of industry that's developing that fascinates me because one of the reasons.
+435
+But there's these companies now that are developing agent identity verification systems so that your bank or Amazon or something, when an agent comes to it, it's not going to ask for two-factor identification or for it to complete a captcha.
+436
+There will be some exchange of tokens to verify the identity of the agent and the permissions.
+437
+And that'll really unlock a lot of value, I think.
+438
+But I don't want to keep on going.
+439
+I just have so much I could talk to you about.
+440
+Fortunately, I do need to have.
+441
+So hopefully we feel like we got, you know, maybe we can wrap with however you end these episodes.
+442
+But I'm going to go ahead and...
+443
+Well, what I want to know, just how many deals do you invest in a year?
+444
+I get quite involved with each company at the founding stages.
+445
+And so I find at most I help start one company a year.
+446
+Yeah.
+447
+Okay, that's.
+448
+And that's roughly been the speed at which I've been able to help founders out for the last few years.
+449
+You know, Anthropic was 2020.
+450
+One, Mistral was 2 Mistral was okay.
+451
+You can edit this part out, but I'd say roughly one a year is the pace at which I'm able to help founders get their, turn their research into new companies.
+452
+And the early days, there's just so much to do that can end up consuming the entire year.
+453
+Yeah.
+454
+Yeah.
+455
+Okay, great.
+456
+And it's really fascinating and I do hope we get a chance to talk again.
+457
+I'll be a little more focused in my questioning, but but this is fascinating.

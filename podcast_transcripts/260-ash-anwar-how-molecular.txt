@@ -1,0 +1,752 @@
+--- METADATA START ---
+Show: Eye On A.I.
+Episode: #260 Ash Anwar: How Molecular …
+Host: Unknown 
+Guests: Ash Anwar
+Source URL: https://podcasts.apple.com/us/podcast/260-ash-anwar-how-molecular-you-uses-ai-for-early-disease/id1438378439?i=1000712147173
+--- METADATA END ---
+
+1
+The data sets we started with are exactly what we said, labeled data sets that usually accompany a lot of the published information, too.
+2
+So, definitely the deep scientific literature, clinical literature.
+3
+We're able to acquire the data sets of patients either from the authors or the publications that have used this.
+4
+And a lot of biobanks will also have this information available as well.
+5
+So, being able to use that data as a basis to kind of develop the models and then also battle test this and see how accurate the models are at predicting disease as well with validating through real patients.
+6
+The research is to curate and identify novel biomarkers that we want to incorporate into our platform.
+7
+We are also constantly evolving the different disease areas and biological mechanisms that we're including into our platform as well.
+8
+Build the future of multi-agent software with agency, AGNTCY.
+9
+The agency is an open source collective building the internet of agents.
+10
+It's a collaboration layer where AI agents can discover, connect, and work across frameworks.
+11
+For developers, this means standardized agent discovery tools, seamless protocols for interagent communication, and modular components to compose and scale multi-agent workflows.
+12
+Join Crew AI, LangChain, Lama Index, BrowserBase, Cisco, and dozens more.
+13
+The agency is dropping code, specs, and services, no strings attached.
+14
+Build with other engineers who care about high-quality multi-agent software.
+15
+Visit agency.org and add your support.
+16
+That's agntcy.org.
+17
+Join other engineers who care about building the internet of agents.
+18
+So go ahead.
+19
+Yeah.
+20
+Sure.
+21
+So I'm Ash Anwar.
+22
+I'm the co-founder and senior director of scientific research and development at Molecular U.
+23
+My educational background is rooted in science and business.
+24
+So I did my undergraduate degree at Simon Fraser University in molecular biology and biochemistry.
+25
+Then I went to the University of British Columbia to do my graduate degree in experimental medicine, where I did research in neurological conditions like Alzheimer's disease, multiple sclerosis.
+26
+And then I went on to Harvard Med School to do my research fellowship in ophthalmology.
+27
+I was really interested in transitioning from neurology to vision disorder.
+28
+So my research project at Harvard was around age-related macular degeneration, which is the leading cause of blindness in older adults.
+29
+And once I was complete there in Boston, I decided to come back to my hometown, which is Vancouver, and look at opportunities to transition from academia into more of an industry scientific role.
+30
+That's when I met Rob, and he mentioned that we are starting up this company in experimental, in looking at translating scientific information and getting into the hands of individuals.
+31
+And that's what my entire program in experimental medicine was all about, to go from bench to bedside, as they call it, go from scientific research to the bedside.
+32
+And so, I got really passionate about that.
+33
+And we joined the company, got it off the ground, and everything.
+34
+And so, I joined Molecular U.
+35
+And that was back in 200015, I believe.
+36
+And yeah, and you know, we're bringing all that information together.
+37
+I was really able to work on this information from the ground up and really help build that.
+38
+And while I was at Molecular U, as I was growing in the company, growing the team, and we were growing the organization, I saw that there was a need for translating not just the science information, but also understanding how science can play a business role in industry as well.
+39
+So, I also ended up doing my MBA from the University of British Columbia as well to help wrap up on that aspect and get that knowledge base of business too.
+40
+Yeah.
+41
+And the premise is that there are biomarkers out there, and now we have enough data and enough powerful enough algorithms and compute to see what effect those biomarkers or what those biomarkers can tell us about the emergence of disease and longevity.
+42
+Is that right?
+43
+And I got to say to listeners, I interviewed Eric Topol, who's a well-known doctor in the AI space, about a book he has coming out.
+44
+I think I mentioned to you last time we spoke, called Super Agers.
+45
+And it's specifically about this, about that there exists this technology that can be applied to the data regarding these biomarkers, and that we should be able to predict the onset of the major disease classes that limit longevity.
+46
+And if you can predict them, then you can address them, even though we know how to address them anyway.
+47
+But people don't necessarily follow doctors' advice without a deadline, so to speak, in a very real sense.
+48
+So can you talk about, which so I'm going to run this episode in, you know, back to back with the one about Eric, because you guys are doing precisely that.
+49
+Can you talk about how the how well how molecular you works, first of all?
+50
+Yeah, absolutely.
+51
+I think the premise is exactly what you mentioned.
+52
+Like we are looking at the early indicators of disease.
+53
+Like traditional medicine with the biomarkers that they're looking at really is in this diagnostic classification.
+54
+So what the physicians are looking at are the biomarkers that signal that disease and damage has already occurred.
+55
+Symptomatically, the patient is exhibiting certain symptoms of the disease, basically.
+56
+And so that's really, if you think about a flow flowchart of how disease works, that's really at the end when things have created damage, something is wrong in the system.
+57
+Then the patient goes to the physician and says, Hey, I think I feel bad.
+58
+They look at the biomarker and say, Okay, you have you know this disease potentially, and I'm going to give you a medication to correct the factor that's happening or the symptom that's usually treatment of the symptoms that's occurring.
+59
+What molecular U is looking at is we're looking at the early stages of that disease, and this is where our bodies are actually quite resilient.
+60
+So, there might be damage occurring in our bodies, but our bodies are essentially maintaining what's known as homeostasis, maintaining a state of normality as best as it can while the damage is still occurring.
+61
+And over time, what happens is this damage can accumulate.
+62
+And if you think about like dominoes, like the first domino may start to fall, but it's only until you get to that last few dominoes where the entire thing collapses and then you are in the full thoroughs of the disease.
+63
+And so, we're looking at those early root causes of the disease.
+64
+This is where these biomarkers come into play.
+65
+And that's where not only are we getting an indication of the specific early indicators of the disease, but a lot of times diseases work through multiple different pathways.
+66
+So, developing diabetes or cardiovascular disease, for example, one individual may one individual may go down a certain biological pathway to develop that disease, but another individual might go through another set of biomarkers that leads down to the same diseases.
+67
+And this is where molecular U looks at the combination of those biomarkers and is able to inform that: okay, this is the path that potentially can lead to a risk of having that disease.
+68
+And as you, as you mentioned, with the super agents, if we could look at those biomarkers that impact our longevity, impact our ability to maintain a disease-free life, we can actually target those during those early cases of damage and then reverse at that stage where things are very reversible and get us back on track to a healthy longevity state rather than waiting until symptoms occur.
+69
+And that's when you've had so much accumulation of damage, it becomes much, much harder to get back to a healthy state.
+70
+Right.
+71
+So, and the idea is that you track a patient over time.
+72
+This is a longitudinal study where you would have a blood test annually and see how the biomarkers are changing.
+73
+Is that right?
+74
+Correct, correct.
+75
+Yes.
+76
+I mean, and that's really powerful because looking at how we uniquely change over time and how our biomarkers are dynamically changing with our environment, you know, the stresses we have in our environment, what we eat, what our exercise habits are, things like that, that is all going to have a significant impact on our biomarkers.
+77
+And being able to longitudinally track how we change and how the dynamicism of that works gives us an unparalleled resolution into how our bodies are trajectorying over the health landscape, essentially.
+78
+Right.
+79
+And presumably, this is, you know, you train the model and then you backtest it with known data to improve the model or optimize the model, fine-tune the model.
+80
+How effective has this process been in identifying when you look back over time?
+81
+It's been very, very quite effective actually.
+82
+I mean, being able to retrospectively look at the data when we understand the endpoints of where an individual has gone towards, we're able to essentially trace back the path that certain biomarkers have taken to go out of that normal range.
+83
+And we've been able to look at the different biological processes that have gone awry in the early stages.
+84
+So, looking at having a model that enables us to predict a certain chronic disease, for instance, and then looking at data where the individual or the group of individuals has developed the disease enables us to be able to identify those different tracks, not just one, but multiple different tracks, and at what stages these biomarkers have gone out of the normal ranges.
+85
+And being able to feed that beta data back into the model has increased the accuracy in our predictive value of these models.
+86
+So, it's been a really boom for that.
+87
+Yeah.
+88
+And how many markers do you track?
+89
+As of now, more than 250 biomarkers.
+90
+So, and these biomarkers are the metabolites and proteins.
+91
+So, metabolites are essentially the chemical byproducts of the chemical reactions that occur in our bodies.
+92
+So, anytime we exercise or eat or have stress, if we're not sleeping very well, the chemical reactions in our body will result in these metabolites that were very dynamic and will change.
+93
+And then, also, this other omic as well, which we'll analyze, which is the proteins.
+94
+And these are the structural and functional elements of our body.
+95
+So, these are the things that make up our musculoskeletal system.
+96
+Proteins are essentially a big part of the enzymatic components that enable these chemical reactions to occur as well.
+97
+So it's 250 biomarkers plus right now.
+98
+And we're looking to increase to around 800 plus within this year as well, which will give us a wider panel.
+99
+And you said that you only need a vial or two vials of blood to track, is that possible, 800 biomarkers?
+100
+Yes, yes.
+101
+So it is a full vial of blood, just like you go to the doctor and they take one vial of blood.
+102
+The technology we use is MassSpec, so it enables us to be able to use essentially use this sample and go through a high-throughput panel that enables us to analyze a lot of these biomarkers at the same time.
+103
+So this is the process that gives us the ability to increase the number of biomarkers while still not exponentially increasing the amount of collection that we would need to do for the patient.
+104
+And how frequently do you need to sample the blood to track changes in the biomarkers?
+105
+Yeah, this is a really great question.
+106
+I think it's a great question because the answer is it depends.
+107
+It depends on the situation.
+108
+Very often, I think a very common way of doing this longitudinal assessment really is an annual checkup where the individual comes in and does essentially an annual test to look at where they are in terms of their health state.
+109
+And then in the next year, they will go and do another test to see has there been changes, what is the delta of the changes of these risk trajectories that we're looking at in terms of these different chronic diseases that we're output on.
+110
+So that's, I would say, a very good default situation.
+111
+However, there are a few, I would say, a few cases where if an individual is already been diagnosed with a certain disease, maybe they have diabetes already or they've had a cardiovascular event in the past, like a heart attack, that's when having a shorter or more increased frequency of testing will lead to the benefit of being able to track even more quicker changes that may occur and actually taking interventions even quickly to have even maximum benefit in those specific individuals.
+112
+Yeah.
+113
+You know, you showed a presentation when we first spoke, and it had a case of a woman who you had followed for some time, I don't remember how many years.
+114
+And in the visualization that you showed, you could see something was starting to happen around 2019.
+115
+I think by 2022, there was clearly something wrong.
+116
+And she subsequently, or as a result, had a full body.
+117
+I think it was a CT scan or an MRI, I'm not sure which.
+118
+Yeah, it was a CT scan.
+119
+Yeah, and they identified a lesion on her pancreas.
+120
+It turned out to be malignant, but it was stage one.
+121
+And so they were able to operate.
+122
+I don't know if she had chemo or radiation, but that I'm sure it resonates with a lot of listeners.
+123
+I just had a friend die very suddenly and unexpectedly of pancreatic cancer.
+124
+And one of the problems is that it's asymptomatic until it's stage four and then it's too late to do anything.
+125
+So, yeah, can you talk about that?
+126
+Was that unusual?
+127
+How often are you able?
+128
+Well, first of all, how many people are you tracking?
+129
+We're tracking we're talking about in the thousands of individuals right now and exponentially increasing now that we've done our launch into the U.S.
+130
+market as well.
+131
+So we have a lot of clinics on board and are deploying this test to their individuals, individual patients as well.
+132
+So it's, you know, it's increasing a lot, the number of individuals we're tracking at the moment.
+133
+And yeah, I'm very sorry to hear about your friend.
+134
+I mean, cancer is a very devastating illness and very often, especially in the case of like pancreatic cancer, it is very hidden until the very end where the cancer becomes really aggressive and really there isn't a lot of interventions that can occur.
+135
+We were actually quite lucky with this patient as well.
+136
+I mean, she's been with us for a very long time and has been doing these annual testing as well, more so from a curiosity standpoint and wanting to be in the space of longevity.
+137
+She's 60 years old, so she really wanted to think about, like, oh, how do I have a good quality of life well into my later years as well?
+138
+And I want to make sure that I optimize my health.
+139
+I want to make sure that I understand what is the lifestyle that I need to maintain to keep this high quality of life or even optimize the quality of life that she has.
+140
+And it was during the time of COVID, actually, where she started complaining about fatigue, excessive fatigue, not being able to work as effectively as she did, shortness of breath, things like that.
+141
+So she approached her doctor around some of these symptoms, and they were very nonspecific, and they weren't really able to indicate what could be happening other than maybe overwork or something.
+142
+However, in her molecular U-test, this is where we had the ability to look into it.
+143
+And we saw that there were quite a number of biomarkers that I know from my biochemistry background that these are indicators of cancer environment, like a tumor type of environment.
+144
+And several of these biomarkers were orders of magnitude higher than what we would expect in the normal range for a healthy individual.
+145
+And this is what really flagged for us: that hey, something is really going wrong here.
+146
+And taking a deeper dive into it, we noticed that these biomarkers are related to cancer.
+147
+And there were a number of, you know, the thing with biomarkers as well is they follow a certain path of disease mechanisms that may overlap with different diseases.
+148
+So, we noticed that, you know, with pancreatic cancer being one of the risk factors, there was also ovarian and breast that may also be a risk factor as well.
+149
+So, we relayed this information to her doctor to say that, hey, we're seeing cancer biomarkers that are relevant in her profile.
+150
+And, you know, kudos to her, her doctor.
+151
+He was very receptive to this information.
+152
+He spoke to her.
+153
+There's a family history that she had with a sibling who passed away from ovarian cancer.
+154
+And so the doctor decided that, hey, we're going to do a CT scan to see what's going on.
+155
+And that's when they found the lesion, did a biopsy.
+156
+And that's when, after doing the biopsy of the lesion, they noticed that the biomarker for pancreatic cancer was a thousand times higher.
+157
+And we're like, okay, this needs to be surgically removed.
+158
+Luckily, it was at a stage one where the cancer hadn't become aggressive yet.
+159
+And so they were able to remove it just through surgery.
+160
+No chemo was needed to be done.
+161
+And it was just after the surgery recovery, that's all that she needed to do.
+162
+Now she's doing fine.
+163
+And we've done follow-up tests to also verify that all these cancer-associated biomarkers are now back within normal ranges.
+164
+And now it's just monitoring.
+165
+Now it's making sure that once an individual has had cancer, there's an increased risk of cancer coming again.
+166
+So we just want to make sure we monitor her.
+167
+And anytime we see another signal or something, we know right away we can put her on that clinical path to getting that normalized.
+168
+Build the future of multi-agent software with Agency, AGNTCY.
+169
+The Agency is an open source collective building the internet of agents.
+170
+It's a collaboration layer where AI agents can discover, connect, and work across frameworks.
+171
+For developers, this means standardized agent discovery tools, seamless protocols for interagent communication, and modular components to compose and scale multi-agent workflows.
+172
+Join Crew AI, LangChain, Lama Index, BrowserBase, Cisco, and dozens more.
+173
+The agency is dropping code, specs, and services, no strings attached.
+174
+Build with other engineers who care about high-quality multi-agent software.
+175
+Visit agency.org and add your support.
+176
+That's agntcy.org.
+177
+Join other engineers who care about building the internet of agents.
+178
+You know, there are a number of companies that are offering, you know, screening, biomarker screening now.
+179
+And it's difficult to know which really have the models capable of doing the analysis, which biomarkers are meaningful.
+180
+Eric Topol was, I mean, I had not spoken to you yet when I spoke to him, but he was cautious about a lot of these companies because he wasn't confident that they're following the correct biomarkers.
+181
+Frankly, how do, I mean, have you published a lot of this?
+182
+I mean, how do people, how do you engender confidence, particularly after, you know, blood biomarker scandals in the past, that this is real?
+183
+Yeah, yeah, no, of course, I think that's a very, very valid question.
+184
+I mean, even here us at Molecular U, we're only scratching the surface when it comes to biomarker testing, too.
+185
+I mean, there's thousands of biomarkers, if not hundreds of thousands of biomarkers in our body.
+186
+And they're relevant to a lot of different degrees.
+187
+And it's really about picking the biomarkers that we believe have the highest value.
+188
+And even then, it's going to have value only in specific, perhaps niche areas of interest as well.
+189
+We have published on a number of our studies that are looking at these biomarkers and models and predictions of disease.
+190
+And a lot of this is also classified into different, I would say, different omics.
+191
+A lot of the early companies had focused on genetic testing because that was a really hot topic.
+192
+You know, could we look at someone's genetics and be able to predict diseases that they are predisposed to down the road?
+193
+And so a lot of this personalized medicine and precision medicine really bore out of that genetic testing.
+194
+Unfortunately, one of the things that we've seen with genetic testing is that there's a lot of misinformation with the genomic information as well.
+195
+And secondly, the genes themselves don't exist, like being able to predict disease from genomics alone is not a very strong way of going about this process.
+196
+Some individual could have a genetic predisposition, but that could potentially not be expressed, and the individual may not end up having that disease.
+197
+And so, where molecular U is really uniquely positioned is we actually don't do genetic testing, we are looking at the dynamic biomarkers in the blood that change as things progress just naturally through healthy aging, but also through any of the stressors or any life events that an individual is having as well.
+198
+And these are the biomarkers that would directly affect the mechanisms that govern health and disease.
+199
+The other aspect of molecular U that is, I would say, uniquely positioned is that the biomarkers we're looking at, first of all, is a very, I think we have the largest panel of biomarkers that we are looking at, but we also have an active scientific research team where we're constantly surveying the literature to identify any new biomarkers that are of significant interest and high value, and then working towards experimentally bringing that into our panel to incorporate and boost up our ability to make predictions on a number of different chronic diseases as well.
+200
+But again, I'm not going to say that we are catching everything because there's a lot of areas that I'm sure we have gaps we're working towards identifying and being able to fill those gaps as well.
+201
+Yeah.
+202
+When was Molecular U, I'm sorry for if you've already said, when was it founded?
+203
+I believe it was founded in 2014, 2015.
+204
+I see.
+205
+And so you have an early cohort that you've been tracking since then.
+206
+Yeah.
+207
+Correct.
+208
+Yes, yes.
+209
+And the analysis is there enough backdated data on various biomarkers tied to patients that you can make some assumption about how they're tied to various diseases?
+210
+Yes, yes.
+211
+And when we've been working, we call them the Pathfinders because they were the initial cohort that we used to help us validate a lot of our models or systems and being able to measure the accuracies of what we're predicting.
+212
+And absolutely, like being able to track them over such a long time and to see kind of the endpoints that have occurred has enabled us to retroactively go back and look at the data and understand the trajectories of the different combinatorial biomarkers that have resulted in different health outcomes for these individuals.
+213
+So yeah, it's been really great to be able to have access to that information and being able to almost, I would say, simulate what another patient with a similar profile biomarkers could be potentially along that track of disease, essentially.
+214
+Yeah.
+215
+What is the model?
+216
+What are the models that you're using?
+217
+Yeah, it's a great question.
+218
+We have a number of different models that we use depending on the disease and the type of biomarkers that are associated with it.
+219
+Essentially, it is like supervised machine learning, right?
+220
+So we supervised machine learning classification model.
+221
+We have biomarkers that enable us as a signature or a set of features to be able to classify whether a person is going to be in the class of a healthy class group or are they aligning with the important features that we've identified in the biomarkers that put them in the class of disease, essentially.
+222
+The specific type of model that we use, again, it can change support vector machines is something we use quite often.
+223
+We have a publication around that where we've used support vector machines to develop a model for cardiovascular disease to identify patients at high risk of coronary artery disease.
+224
+So I've actually published that with the team back in, I can't remember the year, but 2019, 2018, perhaps around there.
+225
+And so a lot of those models, as I mentioned, could be support vector machines.
+226
+We will use neural nets as well.
+227
+And as the machine learning models or AI has become more and more sophisticated, we've adopted more and more of the more cutting edge tools to see if we can enhance the prediction of the models.
+228
+Can we make the model better?
+229
+Can we incorporate other data inputs as well?
+230
+Currently, the team is looking at incorporating not only, so at the current moment, we ingest a lot of information from the scientific research literature, which is constantly increasing.
+231
+Every year, I think there's more than millions of papers that are published every year.
+232
+So, we have an AI engine that's able to scour all the scientific and clinical literature and pull out the key pieces of information for our scientists to evaluate and consider incorporating into the model.
+233
+So, that's one data input that we use.
+234
+Second data input that we use currently as well is this real-time patient data.
+235
+As we go through patients, they input their information as they go through their longitudinal health journeys.
+236
+We're able to use that information as well, that data to help make our models better as well.
+237
+But especially this year, the third aspect of data that we're really looking forward to is how do we integrate other data inputs?
+238
+Can we look into integrating electronic health records into our data?
+239
+Things that the clinics are routinely taking a note of every time they see a patient, whether that's doctor's notes, electronic health information, perhaps in the future, wearables as well.
+240
+But this is where things become a little bit complicated because there is a lack of data standardization when it comes to information and wearable information.
+241
+So, that's a big challenge for us right now to incorporate the data.
+242
+But it's kind of an active area of research, and the more modalities we can put into the models, hopefully, that will enhance our ability to predict this even better.
+243
+Yeah, and the you know, supervised learning takes an enormous amount of label data to train an accurate model.
+244
+What were the data sets that you started with?
+245
+The data sets we started with are exactly what you said, labeled data sets that usually accompany a lot of the published information, too.
+246
+So, definitely the deep scientific literature, clinical literature, we're able to acquire the data sets of patients either from the authors or the publications that have used this.
+247
+And a lot of biobanks will also have this information available as well.
+248
+So, being able to use that data as a basis to kind of develop the models and then also battle test this and see how accurate the models are at predicting disease as well with validating through real patients.
+249
+Yeah.
+250
+And where are you on the product journey?
+251
+Are you, is this fully productized?
+252
+Is it still in the research stage?
+253
+Yeah, we have a product that is out in market right now and we believe has a good product market fit, especially with clinics that are and institutions that are looking at deploying this in a longevity and wellness kind of space.
+254
+We also work with a lot of the product is also very useful for clinics that are in, I would say, call them specialty clinics as well.
+255
+We work with, we've done work with neurology clinics, for example, where they have patients that have certain varying degrees of cognitive decline, and they want to do an analysis to understand: is it a cognitive perhaps a cognitive impairment that is coming through a nutritional issue or a metabolic issue, or is this something along the lines of a neurological component like Alzheimer's disease?
+256
+So, our product is developed as well for these specialty clinics that want to look at specific niche disease areas as well.
+257
+So, we do have a good product side that is able to work B2B with the clinics.
+258
+We do have a D2C angle as well.
+259
+So, patients, if they're interested, are able to directly order the tests and get the results and have an actual platform that they're able to look at all these biomarkers, understand what these biomarkers mean for their health and trajectories for different diseases as well.
+260
+And this is very the very commercial side of molecular U.
+261
+Where I'm also really actively involved is this very deep research side of molecular U as well.
+262
+And that really feeds into the product, right?
+263
+As we develop things on the research end and validated, we can actually feed it into the product and into the commercial space.
+264
+But the research side of it is really involved heavily with a lot of academics, for example, that are involved in research into different diseases, looking at novel biomarkers, and we provide our ability to our panels to look at these, but also our machine learning and AI capabilities to help them ramp up their modeling efforts on the research side as well.
+265
+Yeah.
+266
+As I said, I've seen a lot of companies doing similar things.
+267
+Who do you regard as your biggest competitor?
+268
+It's a good question.
+269
+Very good question.
+270
+Function health, I would say, comes to mind.
+271
+They just closed a big round as well.
+272
+And if I'm not mistaken, I think are valued in the billions of dollars.
+273
+So I think function is probably our biggest competitor.
+274
+The unique differentiator, again, with Molecular U is that function focuses a lot on a lot of standard clinical tests that are routinely available to doctors already.
+275
+However, they're able to take those standard tests and combine them and come up with these health areas of interest that the clinicians find useful as well.
+276
+Where Molecular U is very uniquely positioned is we go much more beyond just the standard clinical tests and look at the plethora of these biomarkers that are more pre-diagnostic and really giving you that early indicator of disease before things are going awry.
+277
+But yeah, function, I believe, is our, if I was to pin my hat on our competitor, it would be function health.
+278
+Yeah.
+279
+And then where are you in funding?
+280
+I mean, you mentioned function just had a big round.
+281
+How much have you guys raised?
+282
+It seems like there'd be a lot of money for this kind of activity.
+283
+Yeah, no, absolutely.
+284
+I think we're in the midst of our series A right now.
+285
+In terms of the actual number, I don't know the actual number that we've raised, but I can say that, you know, comparatively to what function has managed to close on, I would say that investors looking at our technologies are getting a significant discount in terms of the potential for where we're at.
+286
+And so I think the Series A funding round right now is going relatively well.
+287
+And we're always open to more investors to having a look, and they're free to contact our, I guess, investor line from like Lear U to get more information on exactly how much we've raised and what our performance is looking at right now.
+288
+Yeah.
+289
+So the research you're doing is to try and refine or curate the number of biomarkers that you track.
+290
+Is that right?
+291
+Or is there something else going on?
+292
+The research is to, yeah, it's to curate and identify novel biomarkers that we want to incorporate into our platform.
+293
+We're also constantly evolving the different disease areas and biological mechanisms that we're including into our platform as well.
+294
+The information, the algorithms that make it into our commercial product need to be vetted and validated to a high standard before we put them in.
+295
+And this is where the research aspect of it is very key.
+296
+A good example is that pancreatic cancer case study, which we did, right?
+297
+And it is solely in the space of the research side of it because that's where we're able to really deep dive into that information and understand and actually being able to predict that pancreatic cancer stage one diagnosis.
+298
+However, the cancer signature is not something we readily put into our commercial product for clinics and DTC.
+299
+This is right now, cancer is really a complex subject, and it's something that we take with all seriousness.
+300
+And we want to have an ability to really make sure that we are providing the best information we can on that cancers, but also we don't want to scare patients as well.
+301
+We want to make sure they're able to look at that information and understand it in the context with a clinician to understand what the risks actually mean.
+302
+So, cancers is something that is not currently in the product right now, but it is something we're working on to actively put into the product within this year as well.
+303
+And it's just something we're really cognizant of the patient journey too.
+304
+We want to understand and work with our clinic partners and our patients as well who trust in the science and the work that we're doing in a way to give them the transparency and the best information possible as well.
+305
+So, this is where the research side of things is really almost as a big sieve in a way of doing a lot of innovative work, but only giving information that is highly validated, highly transparent, accurate, and evidence-based towards our clinics and patients.
+306
+Yeah, yeah, and on the case of the woman whose pancreatic cancer was caught at stage one, the things that were changing were not specific to pancreatic cancer, right?
+307
+You could just see that there was something going on.
+308
+And is that because the cancer was affecting other organs or other processes in the body?
+309
+Correct, correct.
+310
+Yeah.
+311
+So a lot of the biological processes that occur with cancer are conserved with other biological processes for other diseases as well.
+312
+So for example, with the pancreatic cancer, the biological processes or the disease mechanisms we were seeing were things like angiogenesis, which is the development of new blood vessels, for example.
+313
+So in that case, we were seeing a significant rise in the biomarkers associated with new blood vessel development.
+314
+In the context of cancer, that makes a lot of sense because the tumor wants to grow and is going to hijack the system to be able to get as much nutrients and resources to itself so that the tumor can grow, right?
+315
+So angiogenic biomarkers are a big signal for that cancer disease mechanism.
+316
+However, if you're somebody who is training for a marathon or working out really heavily, well, guess what?
+317
+Your angiogenic biomarkers are going to be up because you are in the active process of building muscle.
+318
+And so your normal biological system is going to increase those levels of angiogenic biomarkers to develop the new blood vessels to feed your increased muscle growth as well.
+319
+So looking at just individual biomarkers or just looking at individual biological pathways is not going to be enough to give you that differentiation between what is actually happening, or whether that's a disease process.
+320
+In the case of the individual pancreatic cancer, that was one of the biological factors that we were seeing, one of the pathways that we're seeing.
+321
+But along that, we also saw metabolic dysfunction.
+322
+We also saw changes in the extracellular matrix.
+323
+So that's where the cells lie on the surface, and the changes in the matrix allow the cells to actually round up.
+324
+And so this is just the stage of metastasis where they're able to disconnect from the matrix and start being able to, you know, migrate or metastasize to another area and then start growing as well.
+325
+So it's the multitude of signals that have allowed us to, again, not signal cancer directly, but almost to have the signals that say that in this patient, the environment is highly conducive to cancer.
+326
+And this is where I think we really supplement the medical system where the clinician was able to now be like, okay, I'm going to investigate by using cancer diagnostic tools to understand what stage this is happening.
+327
+And so that was a very good success story for us in that regard.
+328
+Yeah.
+329
+One test is not going to tell you that much, right?
+330
+Just as you said, if you're training for a marathon, maybe some biomarkers will be out of normal range.
+331
+It's really doing it over time.
+332
+And how often do you guys recommend that patients who are tracking biomarkers have their blood sampled?
+333
+Yeah, if they're actively changing habits and training for a marathon, for example, health optimization every six months is a really good turnaround to see how quickly the biomarkers are shifting.
+334
+And as I mentioned, an annual checkup is probably something that most individuals would probably opt for as well.
+335
+But individuals like individuals who like to essentially hack their biology, right?
+336
+Biohackers that are really interested in understanding and optimizing their health and saying that, okay, I'm going to make this change this month.
+337
+I'm going to start working out.
+338
+I want to know what effect is happening anywhere between every three months to six months enables them to get much more precise windows into their changes that we're making in terms of their health and being able to get that much more resolution into these biomarkers and trajectories as well, which would be my recommendation.
+339
+Yeah.
+340
+And so you guys are, the products are fully launched, but you're concentrating on B2B.
+341
+I'm sorry, that's what it sounded like.
+342
+But consumers can, what, log on to Molecular U and buy a test or how does that work?
+343
+Yeah, absolutely.
+344
+So we are focusing on with clinics because it is something that I think has been really beneficial to be able to work with health practitioners that are interpreting a lot of this information and they have the knowledge and understanding to be able to translate a lot of this information to the patients as well.
+345
+But yes, patients, individuals who are interested in getting the test themselves, don't have to go through clinic.
+346
+They're able to log into our website, go to our online store, and purchase the test directly.
+347
+If they're in the United States, they will get a kit that will come right to their door.
+348
+They can schedule a phlebotomy blood collection with our partner, where they will come in to the individual's home and take the blood sample, and then we'll get it shipped into our labs to be able to analyze and get a report back to that individual.
+349
+Okay.
+350
+Is there anything I didn't cover that you think listeners should know?
+351
+That's a good question.
+352
+I think the one aspect I would say as well is that we talked a lot about biomarkers and the science about the early detection and things like that.
+353
+One of the things that we also do here at Molecular U is the information that we have is also translated into actionable insights that an individual can gain.
+354
+Oh, that's right.
+355
+Yeah.
+356
+Yeah.
+357
+So being able to look at these very same biomarkers, they're heavily influenced by how we live our lives.
+358
+So we also provide in our commercial, in our product, we also provide an action plan that details specific dietary actions, exercise, and supplements that are specifically targeted towards these individuals' biomarkers that might be out of range.
+359
+We're working on enhancing that action plan with a lot more information as well.
+360
+Perhaps looking at things like sleep patterns, perhaps integrating some wearable information, as I mentioned as well.
+361
+But right now, the lifestyle action plan really is targeted around optimizing diet, exercise, and supplements as well.
+362
+And the other thing I will mention about this is I think a key thing that I would want people to know about this type of testing, about molecular U, is why the ability to differentiate away from genetic tests is really important to myself, that I believe that this is really important.
+363
+I feel like with genetic testing, there is almost like we're able to offset the accountability.
+364
+You know what I mean?
+365
+With like genetic testing, it's like, okay, I have a family history of this disease, diabetes or something, and oh, I have some biomarkers for genetic biomarkers for diabetes.
+366
+Unfortunately, there isn't anything I can do about it.
+367
+So, you know, you kind of shift that accountability away.
+368
+But the thing is, we actually have a lot of control over our disease and longevity and healthy aging and that.
+369
+And I think what with molecular U, we're really able to bring that science and data and ability to live your best life at the fingertips of individuals and being able to see information, track that information, make targeted decisions about what you could do with the biomarkers in your body and how they're shifting to make active decisions on your health and really take control and be able to make the correct the correct changes, be able to see how those changes are reflecting in real time and not just like, you know, oh, my weight didn't change.
+370
+I'm exercising, but nothing's happening with biomarkers.
+371
+You actually see that effect, that beneficial positive effect that's occurring, and then being able to take that and eventually lead to a really amazing, like, healthy aging, longevity aspect as well.
+372
+Yeah, well, that's fascinating.

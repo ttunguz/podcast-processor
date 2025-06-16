@@ -1,0 +1,671 @@
+--- METADATA START ---
+Show: No Priors: Artificial Intelligence | Technology | Startups
+Episode: Teaching AI to Understand the …
+Host: Unknown
+GUESTS: Dr. Fei-Fei Li 
+Guests: Dr. Fei-Fei Li
+Source URL: https://podcasts.apple.com/us/podcast/teaching-ai-to-understand-the-physical-world-with-dr/id1668002688?i=1000711476459
+--- METADATA END ---
+
+1
+Hi, listeners, and welcome back to No Priors.
+2
+Today's guest is Dr.
+3
+Fei Fei Lee, a pioneer in computer vision and deep learning.
+4
+She created ImageNet, the groundbreaking data set that helped spark the deep learning revolution.
+5
+Fei Fei is a Stanford professor and the co-director of the Stanford Institute for Human-Centered AI.
+6
+She's also led AI Google Cloud, advised international policymakers, and recently co-founded World Labs, a company dedicated to developing spatially intelligent AI.
+7
+Fei Fei, thank you for joining us today.
+8
+Well, thanks for inviting me.
+9
+This is going to be fun.
+10
+So you have made extraordinary contributions to science and policy over the past two decades.
+11
+I'll start with the biggest question, like, why start a company now?
+12
+Because in my heart, I want to build.
+13
+I see this as such a critical and fun and exciting moment to build some extraordinary technology that everybody can use.
+14
+And I believe so much in spatial intelligence and the kind of 3D world models that can empower so many people as well as so many use cases.
+15
+And I think that's just, it's going to be really exciting.
+16
+And I can do that with an extraordinarily brilliant group of young technologists.
+17
+I want to come back to the people you're working with because I know some of your co-founders and was trying to convince them desperately to start a company a while back.
+18
+And then they were like, oh no, we have a bigger mission now with Fei Fei.
+19
+What is spatial intelligence?
+20
+Can you define it for a broader audience?
+21
+Spatial intelligence to me is the ability to understand, reason, and interact, and generate 3D worlds, because our world fundamentally, no matter how you say we can project it, fundamentally is 3D.
+22
+And it's 3D because physically it's 3D.
+23
+And digitally, if there is a true 3D representation, then we can make a lot of things happen more easily, whether it's designing or creation or navigation or simulation or the experiencing of AR VR.
+24
+All this to me is part of spatial intelligence.
+25
+And again, I think it's what really excites me is that humans have spatial intelligence.
+26
+It's part of our core intelligent capabilities.
+27
+Animals have spatial intelligence.
+28
+The entire journey of evolution also is deeply intertwined with the evolution of spatial intelligence.
+29
+So it's so fundamental.
+30
+Without spatial intelligence, AI would be incomplete.
+31
+How does that translate into what you're doing with your company?
+32
+Or is there anything you can share in terms of what that means relative to what you're building?
+33
+Yeah, so we're cracking one of the hardest problems in AI, which is actually making world models that are fundamentally 3D.
+34
+Because once you can crack that problem, you can unlock a lot of spatial intelligence problems.
+35
+So we are the first company we know of that is solving the 3D generation foundation model problem.
+36
+I have many questions, but since you are describing this first as 3D's criticality to just sort of understanding the world.
+37
+Does that imply you feel that the world models that world labs will create or others in academia or in companies will create will someday be like realistically accurate, like represent physics and understand the world that we can do many more things with?
+38
+Yeah, it should.
+39
+It should be realistically accurate or plausible.
+40
+So you can create a fantastical world, but it should be plausible because the geometry and the physics of it need to be plausible and that is fundamental to spatial intelligence.
+41
+Does that imply you have a particular point of view from a neuroscience perspective of like you know how fundamental visual intelligence?
+42
+I mean, you've always been a leader in computer vision, right?
+43
+But in how important visual intelligence is versus, let's say, like large language models and textual intelligence?
+44
+I actually do.
+45
+I think from a neural and cognitive science point of view, that spatial intelligence is a really hard problem that evolution has to solve for animals.
+46
+And what's really interesting is I think animals have solved it to an extent, but not fully solved it.
+47
+It's one of the hardest problems because what is the problem animal has to solve?
+48
+Animals have to evolve the capability of collecting lights in something, which we call eyes mostly.
+49
+And then with that collection of eyes, it has to reconstruct a 3D world in their mind somehow so that they can navigate and they can do things.
+50
+And of course, they can interact.
+51
+For humans, we're the most capable animal in terms of manipulation.
+52
+We can do a lot of things.
+53
+And all this is spatial intelligence.
+54
+To me, that's just rooted in our intelligence.
+55
+What is interesting is it's not a fully solved problem, even in animals.
+56
+For example, for humans, right?
+57
+If I ask you to close your eyes right now and draw out or build a 3D model of the environment around you, it's not that easy.
+58
+We don't have that much capability to generate extremely complicated 3D model till we get trained.
+59
+You know, there are some of us, whether they're architects or designers or just people with a lot of training and a lot of talent.
+60
+And that's a hard thing to do.
+61
+And imagine you do it at your fingertip much more easily and allow much more fluid interactivity and editability.
+62
+That would just be a whole different world for people, no pun intended.
+63
+Are there other big areas like spatial intelligence that you feel haven't been as developed as they could be from a model perspective or other sort of missing gaps that you think in general, as we think, as we build this sort of AI future, we should focus on over time or people should build out?
+64
+I was just wondering, in addition to sort of 3D and world generation, and are there other big problems like that, because it feels like there are a few big things that we've solved for over time and other things we're working on.
+65
+We're sort of solving language.
+66
+I would say language is solved to a huge extent.
+67
+And 3D to me is as critical and difficult as language.
+68
+So, what else that's not solved?
+69
+I mean, the entire space of emotional intelligence is something that I don't even know how to begin to solve.
+70
+I know a lot of people who haven't solved it.
+71
+That's when AGI is achieved.
+72
+Yeah, so that's another one.
+73
+And I can tell you the training data for that is not going to come from Silicon Valley people.
+74
+Don't underestimate Silicon Valley.
+75
+Yeah, so I'll put myself in this bucket, but I think we probably need a broader set of people.
+76
+Yeah, no, that I agree.
+77
+But these are the three big buckets.
+78
+To be honest, I don't know.
+79
+What do you think, Elon, and the Sarah?
+80
+I think it depends a lot on what you encapsulate in each model.
+81
+So I agree with your framework in terms of those three.
+82
+And then certain things like, you know, the spatial intelligence, I'm assuming, also delves into different types of physics simulation and simulation of the world.
+83
+And, you know, like those are big areas that I think a lot of people aren't working on that I think are really interesting or important.
+84
+So and there's sort of the macro and the micro scale of that.
+85
+The micro scale eventually becomes material sciences and other very different types of things from what you're talking about, where it's more molecular modeling or, yeah.
+86
+Right.
+87
+And also somewhat goes out the current definition of AI, which I do think they'll be empowered by AI.
+88
+Of course, there's robotics, but robotics is very much a system integration problem as much as a, you know, even if you look at animals, it's not just the compute in the brain per se, right?
+89
+Yeah, a lot of these things seem much more distributed in terms of spatial intelligence relative to specific systems that animals have.
+90
+And in some cases, to your point, not as centralized as one would think.
+91
+So it's very interesting to start thinking in terms of those models of more distributed intelligence across an organism versus the CNS.
+92
+Yeah, I think it's very interesting stuff.
+93
+You've also done work in this field, Feife, of robotics and like physical intelligence.
+94
+I think of the data hierarchy for robotics foundation models and actuation as, you know, people want to, of course, use video, right?
+95
+Because that is what is available to us.
+96
+There's a big question on like simulation and how much you can get from that today.
+97
+Perhaps people do not see the future of like the quality and the physics that are going to be available to us.
+98
+And then there's, you know, close to embodied, like different forms of teleop and then like embodied data collection.
+99
+Is that the hierarchy in your mind, or do you think people underestimate simulation and world models for the future?
+100
+Yeah, great question.
+101
+First of all, I, like you said, I do work in robotics, especially in my lab at Stanford.
+102
+I have no doubt that humanity will move into an age where we cohabit with robots.
+103
+And also the world robot is not humanoid per se.
+104
+Robots take in all kinds of forms and shapes.
+105
+Actually, a few years ago, my lab wrote a really fun paper about morphological intelligence, is where the morphology of an agent actually can change by optimizing the tasks they're trying to achieve.
+106
+So we should be a little more imaginative than just humanoids.
+107
+Having said that, how to train robot, you mentioned this whole data, some people call it data pyramids or data cakes or whatever.
+108
+I agree.
+109
+I think it's going to be a hybrid of many different forms of data.
+110
+I also think simulation is underrated.
+111
+Actually, it's not underrated by a lot of experts and people in the field.
+112
+If you look at a lot of robotics companies, they are working on simulation and synthetic data.
+113
+I also think we have to be also aware that unlike language models or even unlike spatial intelligence foundation models, robotics is a highly multimodal system that I think what is truly underappreciated in my opinion is haptics.
+114
+There's so much, especially if we want to do manipulation, not just navigation.
+115
+I think haptics data and the ability to really integrate haptics into vision and perception and spatial data is absolutely critical.
+116
+One thing that you said that I thought was really interesting is how many different, what are the different morphological forms that a robot may adapt or adopt?
+117
+And there's sort of two counter-arguments people make in terms of the potential future.
+118
+One argument is that from a supply chain perspective and managing builds and scale of manufacturing, you're going to have many fewer form factors.
+119
+And the other argument is the economic value of specialization is very high.
+120
+And therefore, there'll be, you know, thousands and thousands of different form factors as we move to sort of a robot-driven future.
+121
+Do you have a point of view on sort of where we're likely to land between those two viewpoints?
+122
+I think we're going to gradient descending to optimization of productivity and efficiency.
+123
+My hypothesis is that the requirements of different tasks are so vast that having very few forms or sticking with one form is energy inefficient.
+124
+And a lot of tasks can be done and should be done by much more energy-efficient form factors.
+125
+Just an extreme and trivial example.
+126
+If we put robots underwater, they should not be in the shape of humans.
+127
+They better be in the shape of fish, right?
+128
+Just think about energy efficiency.
+129
+And the same with flying.
+130
+I don't think human form is our airplanes are becoming more and more robots.
+131
+And so I do think there's going to be diversity.
+132
+Robotics is one potential application for the future.
+133
+You're scientists first, but also, you know, did the Twitter board involved in startups.
+134
+What are the near-term commercial applications that you can imagine for generating 3D worlds?
+135
+I believe creativity is a vastly exciting area where humans can be superpowered by AI and by spatial intelligence.
+136
+And here I draw an analogy with software engineering.
+137
+If you look at today's success of LLMs in software engineering, including applications like Cursor and Windsurf and all that, what you see is a lot of collaboration between AI and humans.
+138
+And then the collaboration comes in different levels of skill sets and all that.
+139
+And I think creativity will be similar: whether we're talking about designers, 3D artists, VFX artists, or even marketing talents and game developers, there's so much need in designing and creating 3D space.
+140
+And this is fundamentally such a hard problem, even for the trained, skilled people, that having a collaborator will be extremely fun if we do it right.
+141
+And so I see creativity as an area that is really exciting.
+142
+I also do think that a lot of what we're waiting for for metaverse or XR ARVR is content creation.
+143
+I understand hardware itself needs to continue to evolve, but I also think software we're looking for content creation and that lends itself so naturally to 3D modeling and 3D or generative spatial models.
+144
+And that's another interesting area to look into.
+145
+Do you have a strong point of view on whether or not world models are like an interesting answer to scalable RL for like more generalizable agents?
+146
+I actually do think this is like I said, AI is not complete without spatial intelligence because humans interact in 3D worlds and in the digital world we need all kinds of interaction.
+147
+You know, take design as an example.
+148
+It's a deeply, you know, it has when we are thinking about design, there's so much we are optimizing for in our mind's eye, whether it's beauty or efficiency or optimization or whatever it is.
+149
+And that lends itself pretty naturally to RL settings.
+150
+What are the biggest challenges in, I guess, trying to go down this path of designing and training world models?
+151
+I imagine one is like you worked on images, you worked on video, but we have images and we have video, and we don't have lots of 3D worlds in a format I assume you're building.
+152
+Yeah, data is absolutely a challenge.
+153
+You're totally right about that.
+154
+To create world models, 3D foundation models, we require more and more sophisticated data engineering, data acquisition, data processing, and data synthesis.
+155
+So I am envious of my NLP LLM colleagues that the data is so abundant on the internet and we don't necessarily have that luxury.
+156
+So that's definitely one challenge.
+157
+Another one challenge is that 3D, this is kind of ironic, right?
+158
+Every one of us use 3D every day, like in so many settings.
+159
+Basically, you open your eye and the whole life that you experience is 3D.
+160
+Even when we type on the computer or stare at a screen all the time, yet it's still not as easy a form factor to deliver in a hands of people compared to language.
+161
+The language is just so easy.
+162
+And it's also a very active form of, it's not a passive consumption of viewing.
+163
+Nobody wakes up and say, I'm just going to sit here and watch 3D, you know?
+164
+So that creates challenges for productization and how to do it in the right way.
+165
+Were you ever like a Second Life player?
+166
+I'm not a gamer, but my kids love Minecraft.
+167
+I was going to ask you if there was like a world that you want to experience or imagine.
+168
+That's a great question, Sarah.
+169
+You know, I would love to see worlds.
+170
+I love seeing worlds I don't see.
+171
+For example, like zooming in and in and into like microscopic worlds or, you know, going to the inside of an engine, you know, knowing how the actual engine is, I know, of course, I know theoretically how it works, but seeing it with my own eyes, experiencing it, or even you might laugh at this, I want to be inside a dishwasher and just experience what that is.
+172
+All this can be done in a virtual way if we manage to create world models of anything.
+173
+Okay, I think a lot and I both want to talk a little bit about your past career and maybe some insights for anyone doing research or trying to have an impact within AI.
+174
+Right before this, I asked Andre Kropathy what I should ask you.
+175
+And he said, Fei Fei is really magic about ambition and thinking about data.
+176
+You should ask her about her PhD and the creation of that 101 data set with Pietro because it's instructive.
+177
+So I have to ask you about that.
+178
+You know, first of all, I have to say it's always really the greatest thing when your student is more well-known and achieving so much more than you can.
+179
+It makes me so proud.
+180
+So very proud of Andre.
+181
+I'm surprised he remembers my PhD work.
+182
+So yes, it's true.
+183
+It's, well, gosh, it goes back to 2003-ish, and the world was just barely scratching the surface of the internet, and data was not much of a thing.
+184
+But doing computer vision, my PhD work was really trying to get object recognition to work.
+185
+That's the problem of calling out cats and dogs and microwaves and chairs and all that when you're presented with a picture.
+186
+And we were beginning to hypothesize that data matters, but we had no idea.
+187
+There's no scaling law.
+188
+We had no idea how far data can go.
+189
+All we wanted is if we have a machine learning algorithm, whether it's a neural network or Bayesnet at that time, it was very popular, or a support vector machine, we need some data to train.
+190
+And there was no data to train.
+191
+And as a PhD student, you want to graduate.
+192
+And Pietro is like, well, Feife, if I curate a data set, and I and you know, I was thinking, yeah, I do need to curate a data set because every data set out there is so tiny.
+193
+I'm just not convinced.
+194
+And Pietro and I were just talking, you know, is it 15 different things or 30 different things?
+195
+And then, God forbid, the PhD advisor said the three-digit number 100.
+196
+And I was like, you know, that's a lot of work, but I deep in my heart, I know he's right from a mathematical point of view, is pushing the model to generalize.
+197
+We need enough data at least.
+198
+So, you know, I did write about this process in my book, The Worlds I See, that I stumbled upon a dictionary somehow, and it really was for my own English study.
+199
+That the dictionary, I think it's the Webster dictionary, if I'm not wrong.
+200
+It just kind of randomly has depiction of a visual depiction of some words.
+201
+I don't even know what rule they follow, to be honest.
+202
+Some are flowers, some are bicycles, some are dogs.
+203
+I was like, okay, this is actually, you can call it a cheat or a tool.
+204
+I grabbed 101 of those words, and that really made my PhD advisor kind of chuckle because he's like, ah, yeah, you just want to do one more than I asked for to, you know, dare me.
+205
+So that's what I did.
+206
+And I got to say that I still remember I downloaded or, you know, tried, you know, from Google.
+207
+And Google was so new at that point.
+208
+And the Google image search were so terrible at that point, you know, compared to today.
+209
+And I had to do so much cleaning.
+210
+At some point, I got so desperate.
+211
+I just asked my mom to do clean the image cleaning because I wrote a little interface on the computer.
+212
+She doesn't know computer, but at least she knows click, click.
+213
+So she helped me to do some of that.
+214
+I mean, you've had one of the most storied careers in AI.
+215
+And to your point, many of your students have similarly gone on to do really great things across the field, across industry, across the world.
+216
+What are two or three moments that you think of when you think back on your career to date?
+217
+And obviously, there's still a lot of career to come, but I'm just sort of curious.
+218
+I mean, obviously, there's a lot of things that you did in terms of sort of image and visual recognition-related systems.
+219
+But I'm just sort of curious, like when you think of the last 20 years, what stands out the most, just given everything that you've done.
+220
+Oh, thank you for asking that question.
+221
+Of course, ImageNet is one of those ImageNet is consists of multiple moments from the early struggles and being told I will not get tenure to actually realizing Amazon Mechanical Turk comes to rescue to the moment of AlexNet winning.
+222
+And also to a couple of years ago, I was at an event in Toronto with Jeff Hinton, and he said publicly like how that was so defining.
+223
+And he was almost a little bit apologetic, that image that was not as recognized as neural networks.
+224
+So that journey is very validating.
+225
+And for scientists, the validation is not about recognition or awards.
+226
+It's that you made a difference.
+227
+Like that conjecture that no one believed in, that hypothesis that no one believed in, we were able to make it happen.
+228
+So that's one thread.
+229
+Just to make sure, for any like you know, people from the business world that are not familiar with it, ImageNet was a large scale, is a large-scale data set with millions of labeled images across thousands of categories, not just a hundred and one, right?
+230
+15 million label images.
+231
+15 million labeled images.
+232
+Thank you, Fei, Fei.
+233
+That you know, led to amazing breakthroughs in deep learning, in particular, AlexNet, and lots of progress in the field of vision for it.
+234
+And I actually remember in 2016 or 2017, I used to show a slide which was the history of AI, or you know, back then it was CNNs and RNNs, and just scans were kind of going.
+235
+And I had ImageNet and AlexNet as like one of the seminal moments of this very small number of events that really defined AI progress.
+236
+And obviously, now we have transformers as part of that, and maybe diffusion models or something.
+237
+But it was such a big breakthrough.
+238
+Yeah, thank you.
+239
+Another moment I'm very proud of was actually Andre and also Justin Johnson and their dissertations.
+240
+It's where, in my opinion, the first time that language and images converged by captioning and writing stories of the visual world, it was significant for me for two reasons.
+241
+One is that I literally thought, I kid you not, at the end of my PhD, I thought if I can live till 100-year-old, that was the problem we might be able to solve, which is storytelling of pictures.
+242
+So I entered my career, like my first year assistant professor, thinking, okay, I'm going to do image debt to solve object recognition, and then I'm going to spend the rest of my entire career solving this problem of storytelling.
+243
+And then by the time Andre and then a little later, Justin Jensen entered my lab, that was around 2013, 2014, the beginning of deep learning.
+244
+And then suddenly the combination of sequential model, at that point is LSTM, it's not transformer models, but LSTM and CNN just had this lasted open, the image captioning work.
+245
+And Andrea and my work were the first together with Google's that was out of the door.
+246
+And that was really, to me, I almost had, it made me so proud, I almost had a crisis, which is like, what am I going to do for the rest of my 70 years or 65 years?
+247
+So that was really exciting how fast the field has evolved.
+248
+Can I ask you one more question about this just because you have made this amazing progress very efficiently, right?
+249
+Like you and I have offline talked before about how you feel it's really important for there to be moonshots and creativity in AI research beyond like very large funded corporate labs, let's say.
+250
+And you pointed to several moments that they come from like creativity and research in academia.
+251
+What advice do you have for people about whether or not there's still opportunity for that, or you know, it's all just $10 billion training runs from here?
+252
+My singular advice, and I still say that in my company, in my lab, is be fearless.
+253
+I think scientists and technologists and entrepreneurs have to be fearless.
+254
+You know, eventually you have to figure out: do you need $10 billion runs?
+255
+Or then you come to Sarah and ask for funding.
+256
+Probably a lot, but both.
+257
+Or you have to figure out, you know, I don't know, data.
+258
+Sometimes fearless is this very interesting position where you're somewhat delusional and crazy, but somewhat just rationally bold.
+259
+And it kind of is in between, because if you're too rational, it's not courageous enough.
+260
+You're not identifying problems that are big enough.
+261
+But if you're completely crazy, then I don't know, there's many things that can go wrong.
+262
+So be fearless, be courageous.
+263
+To me, that is, you know, even as old as I am, that's how I feel.
+264
+I started my startup world labs: I want to be fearless and solve this problem of spatial intelligence.
+265
+As part of problem solving, you've worked with some of the best AI researchers in the world over time and best engineers.
+266
+How do you think about that in the context of your company?
+267
+Like what sorts of people are you trying to hire?
+268
+Are there open roles currently.
+269
+Undoubtedly, it's an amazing team.
+270
+I'm just curious, like, what sorts of folks you want to add and how you're thinking about that over time?
+271
+Yes, we have open roles, and we would love to hire the best engineers as well as product thinkers at this point for our company.
+272
+So, if you're an engineer or AI researcher or product talent out there, passionate about joining the most talented team and solving this problem, please join us.
+273
+So, who do we hire?
+274
+First of all, we really do hire in diversity of thinking.
+275
+And this is where, you know, you call us an AI company, but if you look under the hood, we've got computer graphics experts, we've got computer vision experts, we've got data experts, we've got, you know, generative AI experts, we've got machine learning infra experts, we've got optimization, we've got, so it's actually really important to hire a diverse group of really talented people because a problem as hard as spatial intelligence is not a homogeneous problem.
+276
+Like it takes talents of all kinds of background to solve it.
+277
+And then I also just, I look for fearlessness.
+278
+Like, you know, we all have.
+279
+How do you do that?
+280
+Like, how do you identify if somebody has fearlessness in their background or in their thinking processes?
+281
+It's in their background.
+282
+You talk to them.
+283
+You can sense someone is fearless.
+284
+You know, you can sense what drives them.
+285
+You know, you can sense the questions they ask.
+286
+If they start to ask you a lot of things about, I don't know how to get this done.
+287
+And I mean, of course, you have to ask those questions because you want to get it done.
+288
+But if you sense that it comes from the point of view of being scared of solving that, then that's not fearlessness.
+289
+But those fearless people, they are creative, they're ambitious, they're not afraid of the uncertainty or the unknown.
+290
+And I really love that.
+291
+Well, I think a lot and I, you know, we try to make a business of doing business with fearless people and hopefully those that are technically creative.
+292
+One last broader question for you, because I think an important part of your work has been also thinking how to bring more people into AI, you know, co-directing the Stanford Center for Human-Centered and Artificial Intelligence.
+293
+What is your most, like if you picture, you know, not to use a pun on the book, but if you picture the world like several years out from your last set of predictions, what's your most optimistic view of what human-centered AI looks like?
+294
+Yeah, thanks for asking.
+295
+In fact, that is another point of my career I feel very proud of: the founding of Human-Centered AI Institute, HAI, and also the continued movement towards that way of thinking.
+296
+I think I want to build a world that AI collaborates and superpowers people.
+297
+I still believe our world, our human world needs to be human-centered, you know, where love, relationship, just prosperity across, you know, all communities.
+298
+These are really important, justice, and these are really important values.
+299
+And I don't think any piece of machinery, whether it's AI or airplane or biotech, should take those away.
+300
+But with those critical values in mind, having AI to superpower us is really, really important because there's so many unsolved problems.
+301
+One application area I had worked on is healthcare, for example, at Stanford, right?
+302
+If you look at healthcare, from drug discovery to cure diseases, to diagnosis that can reach all people in the world, to treatment that can be accessible to all people in the world, to the whole healthcare delivery, how to make aging better, how to take care of chronic diseases, how to deal with mental health.
+303
+All of this, we do not have an issue of excessive humans or anything.
+304
+We're lacking help.
+305
+We are lacking scientific discovery.
+306
+We're lacking diagnosis.
+307
+We're lacking precision medicine.
+308
+We're lacking safer and more effective ways of healthcare delivery and aging help and all that.
+309
+And that's what I believe.
+310
+I think AI is a tool to help people.
+311
+Yeah, I think a lot and I are collectively invested in a series of companies that I hope will be useful here from Abridge to Open Evidence to Latent.
+312
+But as you said, there's a huge spectrum of problems.
+313
+And honestly, I've been less optimistic about the adoption of, you know, generally technology in healthcare for the last 15 years.
+314
+But it does feel like this time it's different.
+315
+And actually, it's just massively net good here.
+316
+Yeah, I actually started a digital health company before this.
+317
+So my hope is finally a lot of the things that people have been talking about for decades will come to fruition.
+318
+And it seems like AI is a great delivery mechanism for that.
+319
+So totally.
+320
+Totally.
+321
+Well, thank you so much, Fei Fei.
+322
+It was fantastic.
+323
+This has been inspiring and great to hear a little bit more about World Labs as well.
+324
+Thank you.
+325
+Thank you, La.
+326
+Thank you, Sarah.
+327
+Find us on Twitter at no priors pod.
+328
+Subscribe to our YouTube channel if you want to see our faces.
+329
+Follow the show on Apple Podcasts, Spotify, or wherever you listen.
+330
+That way you get a new episode every week.
+331
+And sign up for emails or find transcripts for every episode at no-priors.com.

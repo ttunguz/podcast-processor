@@ -1,0 +1,2523 @@
+--- METADATA START ---
+Show: web3 with a16z crypto
+Episode: AI vs. ID: Proving human in a …
+Host: Sonal
+GUESTS: Eddie Lazarin, Adrian Ludwig, Remko Blumen 
+Guests: Eddie Lazarin, Adrian Ludwig, Remko Blumen
+Source URL: https://podcasts.apple.com/us/podcast/ai-vs-id-proving-human-in-a-world-of-ai-agents/id1622312549?i=1000710531275
+--- METADATA END ---
+
+1
+Hi everyone, welcome to this week's episode of Web3 with A6NZ Podcast.
+2
+I am Sonal and today we're talking about a hot topic, which is also very evergreen because we're entering a world where AI, including AI agents, bots, deepfakes, and so on, are changing the internet and our online lives very drastically.
+3
+And so we will need proof of who's human or not online, aka proof of human, as Tools for Humanity and World app call it.
+4
+The theme is actually represented on the latest cover of Time magazine, which features the Tools for Humanity org, a ball-like hardware device that maps your eyes, iris code to an app on your phone to verify you're human.
+5
+It's actually only the fifth time in the past decade that hardware tech's been on the cover.
+6
+The other times are the iPhone, Oculus, Consumer Drones, and SpaceX.
+7
+Since the technology and network story here draws on both existing and new tech to help solve what's actually a very difficult problem and in a way where privacy is by default, we begin with the why it matters, then go into some common questions, and finally, how it all works under the hood.
+8
+Our expert guests are Eddie Lazarin, CTO at A6NC Crypto, Adrian Ludwig, Chief Architect and CISO at Tools for Humanity, and Remko Blumen, head of protocol at World.
+9
+As a reminder, none of the following is investment, business, legal, or tax advice.
+10
+Please see a6nc.com/slash disclosures for more important information, including link to Elizabeth Our Investments.
+11
+You guys, welcome.
+12
+Super excited to have you.
+13
+Thanks.
+14
+Looking forward to the conversation.
+15
+Great to be here.
+16
+I know, I am too.
+17
+And we'll talk about the technology in a moment.
+18
+But before we talk about that, though, I'd love for you guys to help do the kind of a lay of the land about the world we're about to enter with this changing internet.
+19
+Like, I don't think most people know how quickly and drastically our internet's going to be changing in the next, in this coming decade, like in the next few years, in fact, if you think about AI and agents, Eddie, if you don't mind kicking off, there's this little Twitter thread that I've been adding to over the last few years, right?
+20
+Where right around the time we started getting very convincing images, like AI to generate images and video that's very compelling, like for the use in deep fakes.
+21
+I started appending really interesting examples, really compelling examples that easily kind of fool the eye or examples that or the ear, right?
+22
+And I've been kind of adding one every couple months, you know, as time has gone by.
+23
+And I think it has taken about two years to go from, wow, this could definitely fool a naive person to I'm not sure I can tell the difference anymore as someone who closely follows the space, right?
+24
+We're getting, we're like right at the edge and we're starting to get into like a comical corner where the most useful ways to identify that an image has been AI generated involve weird tricks regarding the context of the image, like asking someone at the other end to like touch their face in a funny way or requiring that the video or image have like specific objects in it that are difficult for AIs to generate, right?
+25
+We're starting to go really far down the rabbit hole in terms of AIs being able to generate context, video images, written text, audio clips, things that are useful, things that are visible on a device.
+26
+We're starting to get to the point where it will be extremely difficult to distinguish permanently, become extremely difficult to distinguish between something that's been made by sophisticated actors using.
+27
+Being able to distinguish between those real things is becoming more and more difficult.
+28
+And it's going in one direction, right?
+29
+It's obviously not going to get easier.
+30
+It's inevitable.
+31
+It's exploding.
+32
+It's explosive.
+33
+And we're in a new moment.
+34
+Like, Remco and Adrian, like, what, how do you guys look at this problem?
+35
+Like, what is the thing that you are trying to solve in this coming internet age?
+36
+Yeah, I think we're not trying to stop people from using tools to become better people.
+37
+Like, that's what we've always done and definitely need to continue doing.
+38
+But the specific thing that we want to tackle is someone using these tools to seem way more influential than they really are.
+39
+Someone using these tools to suddenly present themselves as a very large audience, even though it's just a single person.
+40
+And that, I think, can be very dangerous because online discourse can easily be manipulated using these mechanisms.
+41
+And that's something we should really seek to address.
+42
+I mean, bots is one of the most obvious words and examples of that.
+43
+Exactly.
+44
+People know what bots are, and they've heard about bots influencing elections, influencing, you know, if you follow any of the Hollywood gossip, like politicians, if you follow Blake Lively, Megan Markle, anything online, there's like an army of bots involved in just about anything.
+45
+So let me add, like, there's many dimensions to this type of adversarial uses of these tools.
+46
+Remco's getting to the case where a well-resourced, small group, or even an individual, can, using a variety of AIs that they just have to pay for the compute costs, right?
+47
+A relatively low cost in the scheme of things, can appear to be a large correlated, influential group in a social network.
+48
+That is a very, very interesting kind of attack.
+49
+And candidly, it's a type of attack that we have less visibility into because these are the ones that are harder to detect for an individual.
+50
+The types of bots that we usually see, like you see in your day-to-day life, are like spammy text, right?
+51
+Where you get some ridiculous link that you're supposed to click and definitely put all your private information into.
+52
+That's like an attack we're familiar with, or on a social media post, seeing a bunch of fake replies that are trying to goad you into clicking something or trying to make you buy something or whatever.
+53
+Those types of attacks, those are the more obvious ones, but there are whole categories of less obvious ones, like very sophisticated actors trying to move entire communities in one direction or another.
+54
+People just trying, not trying to sell you anything.
+55
+That's very obvious when someone's trying to get you to send your money somewhere.
+56
+It's maybe less obvious when someone's just trying to change your mind or to support a complex advertising campaign or political campaign.
+57
+There's all kinds of categories where the general through line through all these things is where a person or group of people, something that appears to be a person or a group of people, actually can be a fully automated system that can continue to operate at low cost.
+58
+That's the common thing.
+59
+The part that amuses me in all of these conversations with people that I work with, and I with the utmost respect for Eddie and Remco, is like technologists love to turn technology into these giant things, right?
+60
+There's going to be attacks, and there's going to be like governments are going to be coming after you, and it's going to be giant ad networks that are trying to like.
+61
+The reality right now is every single day you interact with a piece of software and you look at tweets that are happening on whatever social network you're on and you get annoyed and you say, I think that's not real.
+62
+Or you're playing a game and you're interacting with something.
+63
+You're like, that move like clearly is not a thing that a human would do.
+64
+It was so dumb and so random.
+65
+And you see a picture and you're like, that can't be real.
+66
+That type of tree doesn't grow in that state.
+67
+And it's the perpetual increasing number of times that you distrust a piece of content.
+68
+And yes, there will be dramatic examples of one government trying to manipulate the democratic process another.
+69
+But really what it comes down to is, I want to know that if I'm going to spend my time online and I'm going to be interacting with stuff, that it's a reasonably trustworthy place.
+70
+Like I would not hang out in a neighborhood physically in the real world with everybody lying to me all the time.
+71
+Why would I hang out in an online world where everybody's lying to me all the time?
+72
+And that's not nearly so dramatic, but like it's death by a thousand cuts.
+73
+And that's what we're facing right now.
+74
+No, yes, I'm so glad you said that too, Adrian, because I think both extremes of this, like the big scale, matter as well as it's down to the very individual day-to-day level.
+75
+Like you're just saying at a very human level, like individual level, like this is your day-to-day.
+76
+This is what happens in your interactions.
+77
+And I also just want to make a note that I don't think it's necessarily all bad and scary.
+78
+Like one example in the gaming example is there are actually cases where you might want NPCs to be agents.
+79
+And that's actually very interesting, especially if you're like, say, playing like after hours and there's no one else to play with in a game and it's like scarcely scary.
+80
+But to your guys' point, you want to know if it's human or AI.
+81
+And that's that's important to know.
+82
+Yeah, absolutely.
+83
+Yeah, and to be fair, I think that this day-to-day example is the best example, right?
+84
+This is the example that most people are going to deal with.
+85
+But sketching the extremes, I think, is really important as well.
+86
+Yeah.
+87
+You have to design the technology to incorporate the extremes, but you also have to realize that every single day, little things are going to happen.
+88
+And that's where it has to be usable.
+89
+It has to be intuitive.
+90
+It has to be private.
+91
+Because otherwise, you only use it in those extreme cases.
+92
+Which, when I look at some of the types of approaches that people have used in the past to try to solve security problems, they don't incorporate that element of usability.
+93
+And that's because they're only worried about the extremes.
+94
+And so it's just really important for us as we're designing the protocol to think: if it's going to be woven into, if AI is going to be woven into every interaction that you have every day, what do you need to have work well in order for those to be net positive interactions?
+95
+I think it's funny that in the internet space, because of anonymity and because of the sort of number of maybe people, maybe not that you interact with, you feel like you have to be 100% armed to the teeth.
+96
+Whereas like when I walk outside in my neighborhood, I don't feel like I need to be defending against the potential like foreign adversary.
+97
+And so that similar type of thing in terms of how you have to protect yourself online and what types of technology you need online to do that.
+98
+That's a very good baseline.
+99
+And do we have any sense of the scale and concreteness of what this problem is?
+100
+Like, let's get a little concrete about that.
+101
+You know, dating apps today are starting to require people to upload images of their IDs.
+102
+Like, you have to upload your passport to meet new people.
+103
+Why is that?
+104
+That's because the setting of a dating app is a setting that's easily exploited.
+105
+People feel a little bit vulnerable.
+106
+They want to trust the other person.
+107
+They don't want to turn someone away through a socially awkward, hey, are you a real person?
+108
+Hey, are you a real human being?
+109
+Is this serious?
+110
+You know, those types of behaviors interfere with a dating app.
+111
+And for video games, now video games require people to install incredibly invasive, incredibly potent software in order to scrutinize every aspect of your computer just to make sure that you're not cheating in a competitive setting.
+112
+That's something that a lot of different businesses are working on and trying to get better at and trying to root out cheating to preserve the real, you know, real multiplayer gaming experience.
+113
+Yes, exactly.
+114
+As you go through the internet, you're starting to see more and more and more.
+115
+I saw like five of these today.
+116
+I was just like regular logging into Coinbase.
+117
+I now see almost every other screen, I get a checking you're a human little pop-up.
+118
+And that now, it doesn't, this is not a CAPTCHA.
+119
+It's not requiring me to like solve a little puzzle.
+120
+But what it's doing is it's inspecting the browser session and a bunch of other information that's kind of been tagged on to my usage of the internet today and deciding statistically whether it's plausible that this is really me on my laptop, right?
+121
+And it's doing that before it even shows anything.
+122
+These types of checks.
+123
+And the attackers who want to exploit each of these systems aren't even using cutting-edge software.
+124
+I had a, for me, hilarious.
+125
+I don't know if it's actually that funny conversation about a week ago.
+126
+I was in Austin, Texas, and I was at a developer meetup.
+127
+And I asked this kid, he's like 24, 25, he's an entrepreneur, what his business is.
+128
+And he's like, oh, I'm buying phones and building a bot farm because I've realized that advertising for small baked goods products like bakeries and things like that is not very effective.
+129
+And so it's much more effective for me to automate my interactions on Reddit.
+130
+And so I've got 5,000 phones that I'm deploying to do spamming on Reddit.
+131
+And I was like, wow.
+132
+Hang on.
+133
+Like, legit.
+134
+You're thinking existing.
+135
+You're the guy who exists.
+136
+And it was like, totally honest, like, he thinks these are people who need to be able to do advertising, and advertising is no longer working.
+137
+So he's building a bot farm.
+138
+And it just like blew my mind.
+139
+How earnest is that?
+140
+And that's probably one of many people like that that are doing exactly that in various forms.
+141
+And they're probably right.
+142
+Like, if everyone else is using these techniques, you're kind of forced to.
+143
+Yes, exactly.
+144
+So, okay, so we have a sense now of the problem.
+145
+And to sum it up, AI is real.
+146
+It's inevitable.
+147
+It's everywhere.
+148
+But more importantly, Eddie, you said the magic word low cost multiple times.
+149
+Yeah, just very, very briefly, is that strictly speaking, at almost like a philosophical level, all the things that we were talking about aren't new.
+150
+You've been able to hire a voice actor or a production studio or something and fake a phone call or.
+151
+There have been ways to create impersonations and facsimiles to mimic people.
+152
+for as long as there have been computers and before then even.
+153
+The difference is that that required a significant upfront investment, a lot of work and a lot of money and a lot of other people and a lot of pros had to get involved to do these things.
+154
+And now, as a result of AI, we can generate these facsimiles and the evidence needed for impersonation at an extremely low cost.
+155
+And that means that it becomes incredibly available and affordable and economically worthwhile for an attacker, even if they know that the gains are very, very small and delayed.
+156
+It just makes it economically feasible to do it.
+157
+So the key conceit is that we need to raise the cost.
+158
+We need to raise the cost for the attacker to do the attack, but without raising the cost for the normal person to do normal people things.
+159
+That's the setup that we're in.
+160
+And so what a proof of human is, a proof of human engages with this idea by saying, maybe we can make a kind of ID, a kind of credential that a person can get at a very, very low cost.
+161
+They can go from having zero to having one at a low or even hopefully negative cost.
+162
+Maybe it's free, maybe we even pay them a little bit.
+163
+And that's one of the conceits around the world project.
+164
+But then getting the second ID going from one to two is nearly impossible.
+165
+The marginal cost of getting an ID is persistently and permanently high in a way that AI cannot readily decrease.
+166
+The AI can't fake making a new world ID in the same way that it can fake a voice, fake a video, fake a chain of emails, fake a high-quality social media account or something like that.
+167
+I think what's really fascinating when you guys were talking earlier about this problem and the scale is that it's a little bit like asymmetric guerrilla warfare.
+168
+And what's really interesting about what you're saying, Eddie, it sort of inverts that model where it's now making the asymmetry on the side of being an individual human extremely low friction, but then the friction on the other side is asymmetrically harder, like much, much harder.
+169
+And I think that's really interesting inversion.
+170
+That's a really powerful way of putting it.
+171
+Like we're using a lot of the cryptographic breakthroughs of recent years to basically give people incredibly strong proofs to prove their human uniqueness.
+172
+And it just flips the equation on how this competition is going between the bots and the humans.
+173
+And I think there's some history here that's useful too, just to help people frame it, right?
+174
+When I was in college, which was 30 years ago, going to the mailbox to see what I had received in the mail was fun because the people that would send me stuff were like my mom or somebody else, right?
+175
+And they would have to pay a couple bucks to mail me something.
+176
+Now, going to the mailbox is a disaster because all I get is bulk mail.
+177
+It's all junk.
+178
+Yes.
+179
+The exact same thing happened with email, right?
+180
+You start with, it's very human and it's scaled to humans and then automation takes over and then now you would never open your email and you spend all of your time in Slack.
+181
+And so the history of networks is networks are at a human scale and then automation is introduced.
+182
+And it turns out the economics of that automation is such that the provider of the network only wants to service the high volume clients because those are the ones that they can service profitably.
+183
+And then it destroys the value of the network for the people.
+184
+So we're saying, let's not do that to the entire internet.
+185
+And the only way that you can do that is to make sure that you flip the economics so that there's an economic advantage to being low-scale, aka human, and operating at a human scale as opposed to at an AI or bot or fully automated scale.
+186
+And that's going to play out lots of places, right?
+187
+There's another area where we're starting to see it play out in the economic space as well, right?
+188
+You can't get a low-cost home loan at the same price as a billionaire can because a normal human who doesn't have a billion dollars doesn't have access to the same types of capital markets.
+189
+And so this same pattern of big things and automation win is the type of model that we're trying to subvert.
+190
+And just to kind of put a little fine point on that, when you talk, because you said this earlier, but I want to really underscore it.
+191
+When you talk about a network of proven humans, like a proof-of-human network, that is about greater connection.
+192
+It's like taking you to the real true, like what is the thing that you are connecting for without all that noise.
+193
+I mean, I think maybe it's just me living out in the country sometimes, but like a quieter place where you have some time for your thoughts and you interact with other people is a really nice place.
+194
+And so much of the noise is introduced by all of these systems being overlaid onto what is a slower, a slower speed.
+195
+Like, what are the things that matter to you most and how do you make sure that those are the things that you're seeing and interacting with?
+196
+And I'd unpack it one more click.
+197
+I totally agree with that framing.
+198
+I'd say the future here, what I think is being envisioned, isn't an internet without automation, without bots.
+199
+No, that's definitely not what's being envisioned.
+200
+Yeah, I want to spell it out a little bit.
+201
+Is that with such a tech, you can segment, right?
+202
+You can segment which parts of the internet are working fully automated, and you could even potentially identify on whose behalf they are functioning.
+203
+And you can segment the human part of the internet just so that users can have control, users and applications can have control over those flows, right?
+204
+It's basically the most important audience segmentation ever performed in human history, right?
+205
+It's to separate who are the humans who want to be seen as humans, where are all the machines and the bots living, and how can we ensure that they interact and interact with each other in the way that is most beneficial for people possible.
+206
+That's the end state.
+207
+I want to add a middle option to that, too, in that, like the example you gave with CAPCCAS, a CAPCHA prevents you from using tooling.
+208
+This prevents bots, but it also prevents a genuine human being from using automating and tooling for their account.
+209
+If you actually had a way of verifying that this bot is operated with the authority of the human behind it, then you can let these tools go and do their thing.
+210
+And you find yourself in a world where you allow these tools.
+211
+And kind of the way I see it is that where now you have an internet where everything is an amorphous blob and you can't really identify the humans in this blob, you get to an internet where everything is like really centered on the humans in it and it flows out from there.
+212
+And like start with the human individual and everything like derives from that.
+213
+That's a really good point, Remco, because the other example I was thinking of when you think of living alongside or with a network that includes AI and humans is agents working on behalf of humans, agents working on behalf of other agents, and essentially allowing you to do a lot of things that we want to get done.
+214
+It can be very useful.
+215
+It can also be very unlocking of creativity when you think of people having multiple agents representing different parts of their identity in different ways.
+216
+So I think that's a really, really key thing.
+217
+The analogy that comes to mind for me is a little bit like, and this is actually going to get to now the solution.
+218
+Like, what is the solution?
+219
+What does it mean to build proof of human?
+220
+Like, what does that mean technologically?
+221
+Because the simplest version of this, and this is a gross oversimplification, but just for the sake of segueing into talking about the tech, when I think of like food that we eat, the simplest thing was to just throw a nutrition label on everything.
+222
+Like, this is organic, this is synthetic, this is GMO modified, this is not, this is, you know, X.
+223
+But you can't just do that.
+224
+Like, that's actually not the easiest thing to do.
+225
+Like, what is the it here?
+226
+What is the thing that we are building here to solve this problem?
+227
+Is it a nutrition labeling system?
+228
+I'm trying to really understand like, what do we mean when we say proof of human?
+229
+Like, I understand it in the abstract, and it's a collection of technologies, but what is it?
+230
+Is it a label?
+231
+Is it X?
+232
+Like, someone needs to walk me through the mechanics.
+233
+Yeah, I mean, I think happy to hear your guys' simplest conceivable analogy, but it's kind of like, I think it's like having a little passport, except it has some funny properties, right?
+234
+Is that if someone's holding one, you can check that it's real.
+235
+It's very hard to get a second one and it doesn't show you their private information on it.
+236
+But somehow you know whether you've seen it before.
+237
+That's probably my simplest conceivable explanation.
+238
+So like a passport, okay?
+239
+Any other?
+240
+It's like a passport, but you look at it.
+241
+Well, yeah, I mean, another one might be like, you know, it's like a very hard, I don't know, like a hard-to-issue badge, you know, like back in the old movies, you see like the sheriff has a big shiny badge and somehow people trust that immediately, even though it can be never verified.
+242
+I always found that on the screen.
+243
+But I think the assumption is that it's hard and expensive to make one of those badges.
+244
+Yeah.
+245
+You kind of know what a real one looks like.
+246
+And so all the apps can look at that badge and without extra personal identifying information, they can look at that badge and say, yeah, it's really hard to fake one of these badges.
+247
+It's impossible.
+248
+And if you've got one, you're a real person.
+249
+So like a passport, like a badge, a beacon, great.
+250
+Those are great.
+251
+Any other, any other analogies or ways you guys might describe this?
+252
+I think it's funny, actually, that we try to find an analogy.
+253
+Like, I think it's we're trying to actually project a human and know that it's a human and all of the elements of that projection to be as accurate as possible in the online world.
+254
+While realizing that, unfortunately, your projection is always going to go through a software layer.
+255
+And that software layer can't manipulate it in such a way that it can somehow either produce a human out of thin air.
+256
+But everything else is just, it's a human, but it's on the network.
+257
+Because I think in the physical world, we're pretty comfortable.
+258
+It's like, that's an actual person, that's an actual frog, and they're different.
+259
+It's just online that you can't tell.
+260
+What's the old Gary Larson online?
+261
+You can't tell who's a dog.
+262
+Yes.
+263
+And that's the challenge: so it's, it's not, because really, a passport was the way that you projected like a human into this network for travel.
+264
+And these are other efforts to do the same thing.
+265
+So I guess they're appropriate metaphors where we've tried to project the sense of human identity into some other network where people can then verify that it's accurate and true.
+266
+So let's now talk about what world is.
+267
+And at a very high level, you know, we'll go into more detail about what it really is, what happens step by step, and break down the mechanics of what happens behind the scenes and really what it means to have privacy as like the core primitive at the heart of all this and what that means.
+268
+In many ways, I think often as technologists, we tend to think like this is a brand new problem.
+269
+And it's useful to step back and ask, is there an existing problem and how does a human solve it in a normal human way?
+270
+If you get a message from your friend that says, I'm lost somewhere, send me money, you say, how do I know this is really from my friend?
+271
+How do I know that this is trustworthy?
+272
+And so you do a couple of different things.
+273
+One is you might say, like, prove to me that you're from my friend, show me your ID, or something like that.
+274
+Another might be you, you know, call some of your other friends and ask questions about where this person is to determine where they are.
+275
+And the third thing that you might do is say, hey, get on your phone, call me, talk to me, and I'll have a conversation with you.
+276
+And those are basically the three models that exist for proving whether someone is who you expect they're going to be, right?
+277
+You can either use a government document, you can use some kind of social verification, or you can use what I'll call euphemistically is a biometric, right?
+278
+Which is an interaction with their physicality to understand that they're real.
+279
+And the fancy version of that is you get in a video call and then you make them touch their nose and you make them do a dance in order to validate that.
+280
+And that's what we're trying to build: a system that does that.
+281
+And it does it continuously and it does it all the time so that you always can have that trust.
+282
+And this is where people freak out and appropriately so, because there's two reasons that you don't want it to be happening continuously.
+283
+The first is that that implies that every single party knows who you are and knows biometrics and social and these other elements about you.
+284
+So we have to figure out how to build that type of system, but have it be private for every single interaction that you have.
+285
+And then the second reason is right now, all of those systems are intermediated by software.
+286
+Right?
+287
+You get on a social network and you show video and that can be manipulated.
+288
+And so they're not resistant to AI.
+289
+So those are the two challenges that we have to introduce: how do you have it be private so that it can happen all the time?
+290
+And how do you have it be resistant to AI?
+291
+And those two things are what we've tried to solve.
+292
+And the way we've done it is by breaking proving that you're human into the first step and doing that in a very private way.
+293
+And we'll get into the details of that.
+294
+And then the second is using zero-knowledge proof so that that proof can be used for each of your different applications without them needing.
+295
+So they never need to look at your voice, they never need to look at a picture, they never look at the government ID, they don't need to know your social graph.
+296
+They have a proof that was generated by an incredibly private system that's AI-resistant, and that proof can then be extended to each of the applications.
+297
+And so there's a huge privacy gain there.
+298
+And then we can dig into all the details.
+299
+Yeah, it's like literally zero-knowledge proof.
+300
+Like you, you know, you can do it without any knowledge of what's being proved in the simplest way.
+301
+Perfect.
+302
+Let's just talk about some common myths and misconceptions when people even hear about what this thing is and what it and does it matter.
+303
+So the first thing is, as I think a common myth or misconception is that it's just like Clear ID.
+304
+This is a very obvious one.
+305
+Like people go to the airport, they get their retina scanned, and you can check in.
+306
+And a lot of people have this as a way to get through security lines faster.
+307
+How would you guys quickly tackle that?
+308
+Obviously, it's not the same as Clear ID, but what are the differences specifically?
+309
+Well, I'm not really an expert on Clear.
+310
+I don't know exactly how Clear works, but my assumption is that they take images of your face or video and they store it.
+311
+And what they do is they store it in some back end, and that backend does some kind of comparison with the footage they've seen before.
+312
+I really don't know the nature of it, but they have a bunch of data about you, your passport, your facial images.
+313
+And when it passes those tests in their centralized system, they let you through at the airport.
+314
+That's my understanding.
+315
+By contrast, I'd say, and we'll get into this in a lot more detail soon, I'm sure, but the world system, the World ID system, has specifically been designed to be private by default at every layer.
+316
+And the reason is that you cannot conceivably solve the problem for many, many, many, many applications.
+317
+You cannot conceivably provide a general-purpose solution for human identification without being incredibly private at every step.
+318
+Not just because people wouldn't use it, that's true, but also because you'd undermine the very thing that you're trying to do, which is to make sure that only this person can prove to a given application that they are this person and that they are unique at a given time.
+319
+If you jumped halfway through into this podcast, you'd think we're talking about a privacy network and nothing to do with AI and civil resistance and proofs of human, right?
+320
+You'd think we were just describing a privacy system, right?
+321
+And I think the reality is, if you want to design the right system for AI and you want to design the right system for humans, those two things become the same problem.
+322
+They literally become the same problem.
+323
+Because if all your information is out there, you have provided exactly what the AI systems need to mimic you and to impersonate you, right?
+324
+It's the same problem.
+325
+The problem is the challenge of obscuring information at every turn and ensuring that only human beings can sufficiently produce the information that they need to authenticate with different systems and AIs cannot.
+326
+That's fantastic, Eddie.
+327
+I'm glad you added that.
+328
+Yeah, I think architecturally with Clear, there is this entity called Clear who does a whole bunch of infrastructure, and you approach it, and it makes a decision about you, right?
+329
+Whereas in our system, we really put the human center and we give the human the tools so that they can go on and prove things about themselves.
+330
+That's fabulous.
+331
+I'm so glad you said that because we take that so for granted that that inversion is not even something we normally expect in our world.
+332
+Yeah, we're always in the default defensive view.
+333
+Yes.
+334
+Exactly.
+335
+Let's also quickly tease apart the decentralization versus centralized aspect now.
+336
+Yeah.
+337
+So obviously, Clear is centralized.
+338
+I mean, I don't know how they're architecturally structuring all their data.
+339
+Like, is it in a centralized database?
+340
+Is it X, Y, or Z?
+341
+Either way, I can't really make decisions with my data as a user.
+342
+So there's a couple different parts here.
+343
+I think a first one is our expectation is in the long run, there should not be any one entity.
+344
+So, for example, the World Foundation or Tools for Humanity that you would need to trust in order to trust the system.
+345
+And that's fundamentally different from Clear, where you have to trust Clear because they are the system.
+346
+And so that's what we mean when we say decentralization is our goal is to get to a point where anybody can use it and anybody can interact with the system and they don't need to trust us as organizations.
+347
+So that trustlessness is really, really important.
+348
+And that's, I think, the core element of centralization versus decentralization from a trust standpoint.
+349
+One way that that plays out that I think is very important is you conceptually could go to Clear and say, give me the images of all of the people who are enrolled, and they can answer that.
+350
+And we designed our system both not to have it, but also not to have anybody able to answer that question.
+351
+So multi-party compute, both technically and organizationally, through legal contracts and through having it be different organizations that are in different parts of the world, means that it's simply not possible for anyone to answer the question, give me all the data, please, with here you go.
+352
+And so that's a sort of second element of decentralization is that there's no one party that can cause a leak of that information.
+353
+One consequence of the design of the multi-party, the anonymous multi-party compute network, is that none of the individual nodes actually have the IRIS code data.
+354
+They only have shards.
+355
+And even then, the shards that they have aren't tied to a specific user.
+356
+So it's actually totally not straightforward how you would design the system to just go and delete information for a specific user.
+357
+That's not a straightforward design consideration like in a conventional database.
+358
+Like if you wanted to delete your data from Clear, they could probably just go and find it.
+359
+It's next to your name, right?
+360
+And just delete that row.
+361
+In this case, the data is obfuscated by so many cryptographic tricks that it's not even straightforward how one would identify.
+362
+That's why it's private by default.
+363
+Yeah, I think we'll talk about it technically in a moment, like what that really is underneath to make that happen.
+364
+But I read a really good analogy that a reporter used, which is describing the data storage as like not even data storage.
+365
+Actually, it's probably even a misleading phrase, but the data being exploded across all the shards is like a glitter bomb, like just and you have this essential vision of that.
+366
+I think that's such an interesting way of thinking about it.
+367
+It's a very tempting one, but it actually doesn't go far enough because, like, even with a glitter bomb, you could hypothetically assemble the pieces.
+368
+You're right.
+369
+Oh, my God.
+370
+And learn something from just a partial result.
+371
+And no such thing exists here, which is why we try to avoid the phrase shards because it's not that.
+372
+It's something much stronger in the sense that you need.
+373
+It isn't until you add the very last glitter that suddenly the whole image appears.
+374
+Wow.
+375
+I'm so glad you said that, Remco, because that really kind of nailed it for me.
+376
+That's amazing.
+377
+One of the critiques that people give that I think you should address is that the world ID, the iris code, is not deletable, is not deleted, actually, from the system currently.
+378
+Can you guys address that one?
+379
+I'm happy to talk a little bit about how that works.
+380
+The core challenge, if you will, is how do you find the data?
+381
+So first, let's list off some things that can be deleted.
+382
+So you can delete the world app, which is the thing that holds your private keys.
+383
+You can delete whatever accounts you have associated with your world ID.
+384
+So if you've used it to log into other services, you can delete those.
+385
+You can delete your private key.
+386
+And you can delete all the images that were taken by the orb and given to the user.
+387
+So it is possible for a user to delete everything that connects them in any meaningful way to the system.
+388
+It's actually pretty easy to do that.
+389
+And there certainly are people who have done it.
+390
+And importantly, you're the only one who has these images in the first place.
+391
+So once you delete them, they're gone.
+392
+Yeah.
+393
+So you don't have to ask us to delete them because we couldn't because we don't have them.
+394
+And that's sort of.
+395
+So it's actually architecturally not possible for us to delete it because we don't know how to find it.
+396
+And so that's the element of anonymity that the system provides.
+397
+And so that's basically the challenge there.
+398
+Great.
+399
+So the data is already in what is arguably one of the most secure and privacy-preserving states it could conceivably be in.
+400
+It is possible, probably, to design it so that users could trigger a deletion of those shards.
+401
+I think that that's possible, but it comes with some trade-offs.
+402
+And I'm sure that people will explore those trade-offs in the future and they should.
+403
+Cryptographically, it may be possible to design a multi-party compute system that allows users to delete stored data like the IRS code.
+404
+That is a possibility, but it does have some drawbacks in terms of the design of the system.
+405
+For example, if users can arbitrarily delete themselves from the system and then re-add themselves, they may be able to exploit applications that depend on the uniqueness of the IRS code, or not on the IRS code, but on the world ID that is linked in zero knowledge to the IRS code by appearing to be a new user, right?
+406
+One of the benefits of the system is that applications can know whether the user is new and unique or not.
+407
+That's the whole purpose without knowing who that user is.
+408
+So naturally, if a user could remove themselves and re-add themselves, or move themselves, re-add themselves, then they would look like a sequence of new.
+409
+There may be compromises, like a system that rate limits deletions or only does deletions in batches so that users can delete themselves, but without attackers being able to exploit this property of the system.
+410
+But that's something that I think that the network may need to decide in the future.
+411
+It may be the case that the World Foundation or network participants in World token holders themselves even may want to decide that in some way.
+412
+It's just a hard trade-off that I think we'll need to come to address.
+413
+Yeah, I mean, I think we've hewn very closely to the idea that privacy and anonymity are the most important principle to have in the network to start with.
+414
+In the longer term, there may be adjustments that we don't think should be made by the World Coin Foundation or by World or by TFH.
+415
+And so, if there is a decision to modify the architecture in the future made by sort of the world at large once it's being managed, that's reasonable.
+416
+But it's not something that we want to be in a position right now where it's being done by a central organization.
+417
+Trevor Burrus, Jr.: Yeah, this gets to the case for why decentralization matters and the choices that people can make instead of a centralized entity, which is fabulous.
+418
+So, the other kind of magic word you guys have said multiple times, and I want to address this as one of the misconceptions or opportunities, however we want to frame it, is the word network.
+419
+And obviously, we've talked, you know, we'll talk more in more detail about the technical networks, but so far you guys have referenced a number of technical networks like multi-party networks, multi-party computing networks, and you've been referring to them primarily in a technical way, which we're going to get into a lot more detail, like the, you know, secure, the anonymous multi-party computation network, other networks, networks securing this.
+420
+But at the end of the day, you're also talking about proof of human and world as a network itself of humans interacting with each other and a network of apps.
+421
+When you think about the mini-app ecosystem, can we talk about what that is and then also the inevitable question that follows from that, which is how do you make money?
+422
+Everybody has to ask that question.
+423
+Yeah, there are multiple networks here, right?
+424
+And when I say network, I mean something that has multiple participants, like a marketplace, right, where there are different specialized participants who perform a role in the facilitation of some type of exchange, data exchange, commercial exchange.
+425
+That's kind of what a network is at the abstract.
+426
+That's often how it's used in crypto, at least, or in the web.
+427
+One network here is the World Chain Network, and that's currently an L2, a so-called L2 in Ethereum.
+428
+It's a part of the Optimism network, and it is kind of like a blockchain that relies on other blockchains.
+429
+I think I'm comfortable saying, you know, it's a blockchain that is integrated into the Ethereum blockchain.
+430
+Yeah.
+431
+Right.
+432
+So it's the maximist version of kind of like a blockchain where it is actually a blockchain.
+433
+Yeah.
+434
+People will debate that, but I just call it, and L2 is a blockchain, whatever.
+435
+So on this network, users, it's like a conventional crypto network.
+436
+Users have balances, accounts, they can hold tokens, they can trade those tokens, which can take the form of sending and receiving.
+437
+Also on the network, on this network, exists the data of the aggregation of all the world IDs.
+438
+So we know what the current set of world IDs is.
+439
+That leads me to the second network, which is the world ID network.
+440
+So this is all the world IDs that people have that are registered into the system that applications rely on users proving they are members of in order to authenticate those users.
+441
+That's a whole other network, right?
+442
+Is all the applications and the way the users have authenticated themselves.
+443
+Then there's the anonymous multi-party compute network.
+444
+And this is a network that's currently three nodes, three entities in that.
+445
+I forget the list, like Berkeley, University of Zurich.
+446
+FAU is the one that I always get, which is in Germany.
+447
+And they are all running these big, beefy nodes in this anonymous multi-party compute network to verify that a new user, when they submit their sharded IRIS codes, is in fact a new user in a privacy-preserved way.
+448
+That is what that network does.
+449
+That network may be upgraded in the future.
+450
+And this is what the world team alludes to in a recent blog post about world fees.
+451
+This network could be upgraded to store other types of credentials.
+452
+And relying parties, which is just a term used to describe applications that need to read some parts of that data, may pay in world tokens, or I'll say more about that in a minute, may pay to read from that anonymous multi-party compute network or that private network to verify different facts about users, including their humanity.
+453
+So, those are the key networks in the system.
+454
+Fabulous.
+455
+And then the second half of that is, now, how does the world make money from those networks?
+456
+I think I would rephrase that question as how do the networks sustain themselves?
+457
+Yeah, how does the network, how is the network sustainable?
+458
+That is a critical crypto-native question.
+459
+That's great.
+460
+So, how does a network, which is owned and operated by its community of users, sustain itself?
+461
+It's totally natural and normal, and is the right question for users to ask, how does such and such thing make money?
+462
+That is an important way to understand how the world works.
+463
+You should always try to understand how different services make money.
+464
+Once these networks are mature and up and running, it is not us that need to be compensated.
+465
+It is the people building the orbs.
+466
+It's the people running the MPC nodes.
+467
+It's the people keeping the Ethereum blockchain secure.
+468
+Now, the last one is actually already a solved problem.
+469
+There's transaction fees there, and there's a network of miners and sequencer operators, and you name it.
+470
+That's kind of a solved model.
+471
+And that model decently extrapolates to how we solve it for the other networks, except we need to introduce more layers of privacy, which we can do because that's what the system already does.
+472
+So, I put it like this.
+473
+In any network, especially in a decent, well, in any network, there are supply sides, demand sides.
+474
+I mean, that is a little bit of a crude way to put it sometimes in complicated networks where there's multiple types of participants.
+475
+But the network needs to be sustained, right?
+476
+The network needs to be able to foster its own growth and to maybe secure itself and to continue to pay the actors who are ongoing, performing critical tasks for the network.
+477
+So, World is really interesting, and like many other projects, like other projects in crypto, has the ability to issue a token.
+478
+Now, on this podcast and on the A16C Crypto site, we've been talking a lot this year about token design and network design and how these things work.
+479
+One way to look at World is that World is building a very, very large, high-quality group of human IDs, real people who have real credentials, who want to use the real internet, right?
+480
+And one of its distinguishing features is that it is a really high-quality set of people.
+481
+It's not bots, they're not fake, it's private, real people.
+482
+And on the other side, we have, as exists today on the web, we have applications that want to interact with those people.
+483
+And those applications want to know facts about them, whether it's their uniqueness, whether it's other specific facts relevant to that application.
+484
+And we want those two groups to come together.
+485
+To facilitate their coming together, there's a bunch of this technology that preserves privacy and all these things.
+486
+And one of the key activities is when an application wants to read information about a user, they should pay a little fee.
+487
+And the network can verify that that fee is paid if and only if the application receives that information produced by the user.
+488
+And those fees, like in many other crypto networks, can be collected into a pool.
+489
+And that pool could be used to, for example, buy and burn world tokens permanently in order to create a deflationary pressure on the supply of the token.
+490
+So that on the other side, when the world token is emitted to grow the network, secure the network, compensate the operators of the network, it remains valuable.
+491
+Because without that deflationary pressure, burning the token with the fees, the token supply would grow infinitely at the limit.
+492
+And so we slow that growth and potentially even reverse that growth and capture value for the token by capturing fees when the network is used.
+493
+That would be a candidate economic model for the system that simultaneously preserves the decentralization of the system and preserves the sustainability of the network or creates sustainability for the network.
+494
+And I was going to add productive use cases because it's non-speculative when you're making it based on what's used.
+495
+Like it's actually useful applications that are you're incenting in that model.
+496
+Yeah, well, from the perspective of an application developer who's paying to use the network, yeah, they are paying, like it's not speculative for them.
+497
+They're paying to read various credentials or to ascertain facts about their users.
+498
+I don't actually think it's necessary for payment to necessarily be denominated in the world token.
+499
+It could be paid in other tokens like USDC or native currencies, wherever the network is used.
+500
+But those fees could be used to capture value for the world token by buying and burning them in programmatic auctions, basically in programmatic buybacks.
+501
+It's a token business model in a sense.
+502
+And that's really the way that the world would make money.
+503
+I mean, I think the phrase token business model, I don't really know what that means.
+504
+That's like saying, you know, when I go to an amusement cart park and I pay for my ticket in cash, that it's a US dollar business model.
+505
+Like, that's the point.
+506
+Yeah.
+507
+Like, I go there and I have fun and I would pay money to have fun.
+508
+So, like, I think, I think token is just like a thing.
+509
+In many ways, the critical element here is it's a network.
+510
+There are parties that benefit from using the network, and as a result, they're willing to pay.
+511
+And there are parties that benefit from contributing to the network.
+512
+And the way that they benefit is they get paid.
+513
+And in our system, for the most part, applications that have other revenue streams, whether that's advertising or sales or whatever, they benefit from having proof about who is participating and they're using their service.
+514
+And so we have built a model to privately give applications that insight to make their services better.
+515
+So they get value from it.
+516
+Yeah.
+517
+And they'll have to pay for it.
+518
+Which is very, very straightforward.
+519
+Like, as soon as we throw in there's tokens and they're like, yeah.
+520
+Yes.
+521
+Those things are all true and there are reasons that they're there.
+522
+But it's been a long time since I thought of like, are you a US dollar business or are you a Euro business?
+523
+And you're like, you're just a.
+524
+What kind of uses and like mini-apps and applications are we talking about that are already built or being built?
+525
+Like, what are some of them, just to make it a bit more concrete?
+526
+And also, I'd love to hear a little bit more concretely what kind of user base we're talking about.
+527
+We haven't even said the scope of this.
+528
+Like, this is real.
+529
+This is a lot of users that are already signed up and a lot of people that are already transacting and doing things.
+530
+So, let's make that a little concrete.
+531
+I think we're in the early days still of the mini-apps.
+532
+There's already some pretty cool little ones.
+533
+You can do some basic lending and borrowing.
+534
+You can do some payments, things like that.
+535
+There's some funny little poll applications.
+536
+Messaging is going to become a really big one.
+537
+I think we're still in the early days of the mini-apps.
+538
+It kind of feels like the very early days of the App Store, right?
+539
+Like, really goofy, but also unique.
+540
+Like, I think that there's some interesting early design patterns that we're starting to see.
+541
+So, human-only flashlight.
+542
+Yeah.
+543
+Yeah.
+544
+Like, that's kind of where we're at now.
+545
+But, you know, but I mean, how big is the network now?
+546
+Is it like 26 million of which are verified, unique humans?
+547
+So, it's growing rapidly.
+548
+It's a very large base.
+549
+And it's definitely not like crypto users or anything like that.
+550
+These are real human beings from all over the world, really, that have signed up for this.
+551
+Coming back to the app store, it kind of also reminds me a lot of what happens in the early days of blockchains because we suddenly had this really powerful new primitive that we could play around with, and people just made like the dumbest things before we actually got to incredibly valuable and serious use cases like decentralized exchanges and so on.
+552
+It only came on Monday.
+553
+And right now, we're experiencing the same thing where we have this really powerful new primitive that suddenly you can build new trustless and now also privacy-preserving business models around.
+554
+And yeah, kind of eager to see the experimentation going on here.
+555
+Well, with 27 million people or users signed up, that's a pretty amazing base already.
+556
+And what you said about them not necessarily all being crypto native and frankly dominantly global because you didn't even launch in US, even though people could obviously do it.
+557
+That's pretty significant.
+558
+It's important as well because there's kind of this critical mass effect, right?
+559
+If you're building a new app and you want to make sure that you have strong civil protection, you don't want to limit your users to like a small set of, I don't know, like a couple hundred thousand that happen to have signed up for a world ID.
+560
+No, like you, you don't want to artificially limit your addressable market that way.
+561
+But now it's sort of, we've hit this point where it's flipped.
+562
+Now it's like, hey, when you build an app and launch it, it comes into this app store and gets exposure to like tens of millions of users.
+563
+Yeah.
+564
+And can we also argue that government is a potential user?
+565
+Like when I think of Aadhaar and India's identity system and like other countries doing similar things, like wouldn't they be incented to also be users of a system, a network like this?
+566
+We've actually spoken to people who've worked on Aadhaar and they said that, well, if we had to build it again, we would do it like this because this is so much more privacy-preserving.
+567
+Yes, exactly.
+568
+People tend to think of government as like it's just another app builder, right?
+569
+That's why I think of it.
+570
+Yes.
+571
+It happens that it produces benefits as one of the apps that it offers.
+572
+So Social Security in the United States or pension funds in other countries, things like that.
+573
+And anytime you have some kind of program like that, you need to have some mechanism for identifying who it is that should be receiving it, just the same way that when you set up a social network, you need to have a list of users.
+574
+They've had to build their own infrastructure.
+575
+And so, yeah, we've definitely had conversations with governments that are thinking about building infrastructure to connect more effectively to the digital.
+576
+And so they're interested in our ability to do that in a way that's private.
+577
+They're also thinking about gaps that exist in their existing systems.
+578
+One of the things that came out of Ad HAR was a realization of how many people commit fraud and have multiple identities.
+579
+And so that's a hard problem that governments have struggled with since governments were founded.
+580
+And so we can potentially help with that as well.
+581
+But we don't really view governments as different from any other slow-moving application developer.
+582
+Right.
+583
+Well, it also kind of reinforces your point that at the end of the day, you guys are also kind of like infrastructure as a service for people trying to build privacy by default.
+584
+So one of the themes, you know, you said earlier, Eddie, that like, you know, I mean, when you guys answered the question earlier about the network and like networks had to be maintained, that was assuming essentially a little bit more of a decentralized network because theoretically a big corporate entity like Facebook or Google can maintain a network with its resources and the money it makes and sustain that.
+585
+But does this necessarily need to be built on blockchains?
+586
+Like we haven't really answered that question very clearly.
+587
+Like what are the specific properties of blockchains?
+588
+Whether people know it or not, that they're engaging on some level in blockchains?
+589
+What specifically in blockchains allows you to do the things that you do without necessarily doing that?
+590
+When you use your world ID to prove to a third party that you're a unique human being that is about to do this thing, right?
+591
+This verifying party that you're proving it to only has to go interact with the user and the blockchain in order to verify this claim.
+592
+There is no centrally hosted infrastructure involved in that verification at all.
+593
+We do offer this as a service for like traditional companies that prefer calling an API than interact with a blockchain.
+594
+But it's very important that where it's necessary, this whole system operates just between the user and the party that they're interacting with and common infrastructure that is accessible to everyone.
+595
+Because this is what makes it a lot more decentralized than the alternatives that are out there.
+596
+And this makes it such that it cannot be taken down, it cannot be stopped, it cannot fail in this sense.
+597
+Yeah, there's actually a lot of reasons in my mind why it has to be crypto, right?
+598
+It has to use blockchains.
+599
+Remco's alluding to the fact that it needs to be censorship resistant in some way.
+600
+Yeah.
+601
+And it needs to be unstoppable, as in it's always online.
+602
+Those are two critical things.
+603
+You can't have an ID system that intermittently fails because a single actor didn't do their job or had a problem.
+604
+But you critically, every time a central point of failure is added, you're actually adding the risk, not just of a system failure, but you're also adding the risk that a gatekeeper might introduce additional requirements that subvert the initial privacy characteristics.
+605
+To make a thing that is truly disintermediated between the user and the application, you need the infrastructure in between to act in a predictable way that cannot change its behavior to suit its individual goals.
+606
+And only blockchains can have that behavior.
+607
+Yeah, I tend to take a really simplistic view on this.
+608
+Like people say, why do you use the blockchain?
+609
+And I say, well, where else would you put it?
+610
+Would you have a government tell you that this person is human and that government gets to decide?
+611
+Well, it turns out sometimes governments disagree on who's human.
+612
+Sometimes they disagree on who gets rights.
+613
+Sometimes there are private citizens that don't agree with their government or with some other government.
+614
+So I can't have governments do it.
+615
+Okay.
+616
+Would I trust an organization to do it, like a company?
+617
+Well, there are competitors.
+618
+So one company can't trust the other company determining who is a real human.
+619
+So you can't be companies.
+620
+Well, what about like NGOs?
+621
+You know, maybe it would be a, you know, the UN would do this.
+622
+It's like, okay, except that some sub-set of countries don't trust the UN.
+623
+So ultimately it comes down to like there is no other.
+624
+And there's a lot more reasons why we wouldn't want the UN to do it.
+625
+But go on, Adrian.
+626
+Go on.
+627
+There's a functional requirement, not a trust one.
+628
+But like ultimately it comes down to like there is no other place to do it.
+629
+And we might wish there were another place, but the one place that has been designed so that everybody in the world can interact with it and have the highest.
+630
+It's almost a proof by exclusion of all of these other ones.
+631
+And there are categories of reasoning, like Idea described censorship or resistance to manipulation and trustworthiness and having an auditable history, and all of those properties come down to like there's just nowhere else to do it.
+632
+Yeah.
+633
+Is how I think about it.
+634
+But if somebody else has a better place than the blockchain, let me know.
+635
+That's great.
+636
+The other question that says maybe both tied to how you make money and also just really the privacy side and hardening the system to be incredibly private and secure.
+637
+You're open source and you're open sourcing everything, like software, the things you built, the hardware.
+638
+And we'll talk more about what hardware is in it later.
+639
+But why?
+640
+And what do you get out of that?
+641
+Like, is that actually not insecure in some way?
+642
+Or is it more secure?
+643
+And also, does that affect your money-making ability?
+644
+Like, talk about the open source part a little bit.
+645
+It is tremendously more secure this way because this allows anyone who has any question about, hey, how does this part work precisely?
+646
+How did you defend against this particular mishap that could happen?
+647
+They can go dig into the source code and find this out, see how we solved it.
+648
+Or if not, even better, then they can raise this.
+649
+We have a bug bounty program for that.
+650
+And they can let us know that, hey, maybe you want to harden this part a little bit more.
+651
+And then we can address that.
+652
+So yeah, for me, it's about creating something that is transparent, trustworthy, and resilient, and kind of can create a community around it that can take care.
+653
+Yeah.
+654
+And you'll notice in the way I describe that hypothetical business model regarding the fees, at no point does the network require limiting who can run the software in order to charge the fee.
+655
+That's not the dispositive fact in terms of where the fee can be charged.
+656
+The fee is charged by the anonymous multi-party compute network because that's where the data is held, and that is where the user can control who can read their data and rate various aspects of their data.
+657
+Nothing about that software needs to be hidden.
+658
+Nothing about that software's code needs to be hidden to allow that to happen.
+659
+So it's just a matter of a different type of business model.
+660
+I mean, I'd argue that there's actually a lot of business models that the code itself being obscured is not a critical prerequisite of its ability to make money.
+661
+I think if, you know, I'm not speaking for them or whatever, but if Uber shared the open source, shared their app code fully open source, I don't think that would be like the critical.
+662
+I don't think someone could just spin up an Uber fork and then start making money.
+663
+Like the money comes from the network.
+664
+The money comes from the fact that the users trust the network, the riders trust the network, the drivers and the riders trust the network, et cetera.
+665
+Not that it's decentralized, but I'm talking, it's not.
+666
+Obviously, Uber is not decentralized, but I'm talking about the open source characteristics.
+667
+Same with much of the software that Amazon runs, right?
+668
+Amazon makes its money not because everything's closed.
+669
+So I think that those are kind of orthogonal things.
+670
+Yeah.
+671
+No, I'm glad you answered that, though, because I think a lot of people have a lot of misconceptions around open source.
+672
+Let's also clarify that where we take a radically transparent approach when it comes to open source, and we're like open source maximalist, like if this information can be public, we make it public.
+673
+That only goes to like the technical design of the system.
+674
+The actual data that goes through the system is the complete opposite.
+675
+That one is maximally protected.
+676
+And part of the reason it is maximally protected is that the way it is protected itself is documented.
+677
+That is the open source code that's doing that.
+678
+It's a principle known in security as, I think, Kerrhoff's Law.
+679
+Like a secure system is such that everyone is allowed to know how the lock works.
+680
+No one is allowed to know what the key looked like.
+681
+Yeah, that's fabulous.
+682
+And I also really like what you said because it emphasizes again, because I just want to keep reminding people that our notions, our ways of building things are so being inverted here that most systems that are proprietary that do this, the company knows where people's data is or they know how to do that.
+683
+Like you guys don't even have that proprietary ability to, like you said earlier, to go find someone's, delete someone's thing.
+684
+I often think of open source as a mechanism for forcing doing the right thing.
+685
+Like if an organization is able to not have their content be open, then they can kind of cut the corner over and over again on, well, maybe we won't protect that in a private way.
+686
+Maybe we won't fix the bugs that we know about.
+687
+And so force ourselves to make sure that we're designing in the cleanest possible.
+688
+Yes, I love that.
+689
+It goes beyond don't be evil and can't be evil to do the right thing.
+690
+It's actually taking it in a more positive direction, which I love.
+691
+So, just super quick, when I was at the World SF event, which is super exciting, we all got, it was very Oprah, like, you get one and you get one, it's under your seat.
+692
+Like, very exciting moment.
+693
+Like, we all get a mini orb.
+694
+I have my card verified to get that mini-orb.
+695
+So, the key innovation in the mini-orb, because obviously you guys had these orbs set up in multiple places, you know, throughout the world.
+696
+And to be clear, this is millions and millions and millions of users have already done this around the world.
+697
+And in the U.S., we started a bunch more after launching the U.S.
+698
+launch.
+699
+The mini-orb is essentially the same thing, but miniaturized.
+700
+Or I don't want to grossly simplify it.
+701
+It looks honestly a lot like a phone.
+702
+It's just not a phone.
+703
+It's just an orb.
+704
+We actually referred to it internally as not a phone for a while.
+705
+That's funny.
+706
+So, there's a couple things here.
+707
+One is recognizing that a proprietary hardware stack or a custom hardware stack, it's not actually proprietary, but a custom hardware stack is expensive.
+708
+And so, the orb cost is pretty high from both a physical manufacturing standpoint, but also from a software maintenance standpoint.
+709
+And so, over the last six years, there's been a pretty continuous acceleration of investment in the Android ecosystem, but more generally, the mobile ecosystem.
+710
+And so, some of the hardware decisions that were made six years ago can now be replicated by a hardware stack, which is an Android hardware stack.
+711
+And so, that's part of what's going on here: the ability to achieve similar performance.
+712
+The actual camera, it remains to be seen whether things like computational analysis on that hardware will give us the ability to replicate some of the things that used to have to be done with a very purpose-built camera.
+713
+Now, there are still some purpose-built elements in the or mini, but there also is a use of things that are much more commercial off the shelf.
+714
+This reminds me so much.
+715
+I was at Wired when we would cover the trend of drones.
+716
+And one of the things we used to talk a lot about is how the phone ecosystem enabled drones to become very cheap and scalable and small scale.
+717
+And it's so fascinating because you're basically describing the exact same thing.
+718
+Like as the supply chain becomes more accessible, the bomb, the bill of materials costs can go down significantly and allow how efficient the phone ecosystem is.
+719
+Like you can get a very functional device in the United States for like 20 bucks.
+720
+Yeah, what?
+721
+I know, I know.
+722
+It is crazy.
+723
+And this is, again, on a meta-theme, something I completely love and marvel about with this kind of innovation, that everything else creates everything else in the same way that gaming created more GPUs at scale, that then created AI.
+724
+And then we're coming full circle into this world, or the phone ecosystem, Android in particular, and all those costs being driven down, and the miniaturization and the form factor and now being able to be used in so many different ways.
+725
+I find this incredibly exciting and very, very interesting.
+726
+Love it.
+727
+So how do you guys do that?
+728
+Like, what are the steps?
+729
+How do you ingest the physical human into the software?
+730
+Let's just walk people through.
+731
+Basically, I went and installed an app on my phone, you know, just my conventional phone, a conventional app in a conventional manner, right?
+732
+And I downloaded it, and the app I downloaded was the World app, right?
+733
+And so, I have this World app on my phone, and you know, and the World app helps you find where some orbs are and sign up to get verified.
+734
+I paired, in order to sign up, I paired my app with the orb.
+735
+And what that meant is getting a QR code on the app and showing it to the orb.
+736
+The orb has like this little kind of portal in it, like an eye, like an aperture, yeah.
+737
+Yeah, and it can scan things.
+738
+So, you show it the orb, and now the app and the orb are connected.
+739
+Then you look at the orb for a couple seconds, and your app tells you, okay, like now things have worked, you're good to go.
+740
+And you wait, there's a little bit of spinning, a couple screens go by, it tells you your images have been deleted, and you're done.
+741
+Like, now you have a world ID, right?
+742
+And what that world ID can be used for is to sign into different things.
+743
+To start, you can, in the app, you can sign in to these mini-apps, which you know, you press go, it face IDs you, like on my iPhone, and authenticates you into the app without presenting other information.
+744
+Now, note during this process, I didn't describe entering my email address, entering my name, nothing like that.
+745
+I was just kind of leaving those out of the story.
+746
+Those parts didn't happen because that's not part of the process.
+747
+And the same thing with logging into the mini apps once I had the world ID.
+748
+Now, that's basically the story at the highest level.
+749
+That is really what happens end to end.
+750
+But of course, this is leaving out a lot of critical details, a lot of critical details about all the complicated stuff that's happening underneath the hood.
+751
+One is that this is a very private system.
+752
+And to appreciate the privacy, and candidly, I think the privacy is the most important part.
+753
+It's the part I like talking the most about because it's the hardest thing.
+754
+And it's the thing that there are no analogs for.
+755
+There are no other systems that take all the steps and perform all the gymnastics and convolutions needed to protect user privacy.
+756
+That's just not an analog.
+757
+So to appreciate the privacy, I think we have to go through it step by step and kind of get a sense of what's actually happening underneath the hood.
+758
+Yeah, and I also really want to hear about that on the behalf of the listeners because we are talking about technology that has never existed in the world before, that now does as a result of this.
+759
+Like that's very, and it could very well be like the way future technology is built.
+760
+I mean, not to overstate it, but it's a very new, important thing to think about.
+761
+I just want to pause there and say that for a moment.
+762
+And also before we dig a layer deeper, Eddie, that there's a visual that comes up in the app that says like it's deleting your images.
+763
+As a, when I got verified, that was the most powerful thing for me in the interface was it's almost like this like speckly like, you know, thing that just sort of speckles off, kind of like in the Avengers Infinity and Endgame where like, you know, the humans kind of dissipate, but in the coolest.
+764
+You're saying your images got Thanos.
+765
+Yeah, in a good way, not in a bad way.
+766
+I see.
+767
+Okay.
+768
+And it basically says very clearly, deleting your data.
+769
+And I think this is incredibly important because until then, as a lay person, this is.
+770
+I mean, of course, there's a lot different happening underneath technologically and whatnot, but just from a pure interface layer.
+771
+Yeah, let's just talk about what is happening.
+772
+So when you install the app, it kind of acts like a wallet app, a crypto wallet app, in the sense that it will create a unique cryptographic key pair for you.
+773
+So it has like a public ID to it, and then there is a private key that only you hold and never leaves your device.
+774
+Now you approach the orb, you show a little QR code.
+775
+This QR code lets the orb identify the phone in the internet, and then they connect with each other in the internet, and they establish a secure connection so that they can talk to each other.
+776
+So now your phone talks directly to the orb with no one being able to see the communication in between.
+777
+This is very important because we want this to be a process between you and the orb and no one else.
+778
+The orb, after that, takes a good look at your face and a good look at your eyes, takes images of them and signs these with a key that it has inside of it.
+779
+And this signature basically shows that, hey, these are genuine images.
+780
+These are not deepfake images.
+781
+This is how the system can ultimately detect that these images were real.
+782
+Now, what then happens is that, in this case, the orb, in some future update, also the wallet itself, will take these images of your eyes and from that compute the iris code, which is a short vector of zeros and ones that kind of captures.
+783
+The way to think about what the iris code is, is it's not the image of your irises.
+784
+It's not the same thing.
+785
+Instead, it is a mathematical representation of some of the structures in the irises that are very likely to be stable between images, right?
+786
+Of course, we all know that when you take an image and you take a picture of someone, the lighting's different, angle's different, time of day is different, the haircut's different.
+787
+Any two images of the same thing can vary very significantly.
+788
+But if instead, so if we just compare the images, there'd be too many differences for us to be able to say very, very clearly that these are two images of the same thing.
+789
+So instead, what the iris code is, is it tries to look, and that's why we need this special orb.
+790
+That's why you need this special piece of hardware that's very, very high resolution, can capture a very fine picture.
+791
+It looks for structures in the iris and then creates a special mapping of a special mathematical description of those structures in such a way that you could not look at the iris code and discern what the iris would actually look like.
+792
+The metaphor that I like to think about is a map, right?
+793
+I can take a picture of North America from a satellite, or I can walk around and then I can draw where I think lakes are and I can draw where I think rivers are.
+794
+And it turns out two different people can walk around and end up with drawings that are relatively similar, that are maps, but neither of them is an actual photo of the Earth.
+795
+Neither of them went to a satellite.
+796
+And that's what we're trying to do: produce a map of the structure of the front of the eye that has the absolute minimal fidelity necessary to differentiate all people.
+797
+And we don't want any more than that because the goal is to have the minimal fidelity to differentiate all the people.
+798
+And so it's the lowest resolution map that's possible to meet that goal.
+799
+Will it tell you where every tree is?
+800
+No.
+801
+Will it tell you where every house is?
+802
+No.
+803
+Will it tell you where the demographics of particular neighborhoods are?
+804
+No.
+805
+Does it even necessarily acknowledge that there are buildings?
+806
+No.
+807
+But a map of North America 100 years ago, hand-drawn, will look pretty similar to a map today, hand-drawn by a cartographer.
+808
+And that's what we're aiming for, is to serve just that one purpose of what is this person?
+809
+Is it a person?
+810
+And are they unique?
+811
+So once the iris code is computed in the orb, derived from the high-resolution images, it is signed and shared with your phone and no one else.
+812
+But on top of that, it also creates secret shares.
+813
+And this is where you take a piece of information and you encrypt it in such a way that you don't end up with one encrypted file, but actually you end up with multiple encrypted files.
+814
+And individually, they absolutely reveal nothing about the contents.
+815
+You need all three pieces in order to do anything meaningful with the data.
+816
+These three secret shares are then further encrypted in a way that they can only be opened with the participants in our AMPC, which we'll get into in a moment.
+817
+But basically, there are distinct entities spread out, unrelated to each other, that each can only see one of these shares, which reveals them nothing because they're still secret shares.
+818
+So, again, the orb never sends anything other than to your device when it comes to this information.
+819
+You store this on your phone.
+820
+And now you have all the evidence you need to prove to our AMPC that you're a unique human being.
+821
+You go to, you contact the three parties of the AMPC, you give each of them their share, then they engage in a multi-party computation protocol, a kind of very challenging technical thing, involves a lot of computation.
+822
+But this allows these three parties to reach agreement on whether they've seen someone with the IRIS code stored in the secret shares, whether they've seen someone like that before or not, without any one of the three actually being able to learn anything about the IRIS code they just received or anyone, any of the ones they've seen before.
+823
+When these three parties reach agreement that this is a unique new human, they will give this evidence back to the user, and the user can now use this to take the public key that they created way back when they installed the app, at least five seconds ago or something, take this public key and send it to a sequencing service that we operate that adds this key on the Ethereum blockchain for the whole world to see.
+824
+So, this is a fully trustless, decentralized tree that contains all these public keys.
+825
+I just want to make sure we summarize kind of what happened there, because that's one of the cores of the system, right?
+826
+Is those IRIS code secret shares, the split up representation of the IRS code where no one share actually contains the IRS codes, those are sent from your device to this AMPC network.
+827
+And that AMPC network does some really cool stuff where multiple, these three nodes in it today can calculate collaboratively whether or not they've seen this IRS code before without looking at the IRIS code.
+828
+None of them actually see it, but they can still calculate whether they've seen it.
+829
+And if they're confident they've never seen it, then they give the user a little ticket that says you're new.
+830
+And that user can take that ticket and request inclusion in the big map, the big table of all the keys, the wallet keys, like think of them as a conventional crypto key a little bit, that are now part of the network.
+831
+So now you're brand new.
+832
+That's how we've, the first step, that's how we know that all the keys in this big tree, this is the on-chain Merkle tree of all the world ID keys, how everyone in this tree is new.
+833
+Yeah.
+834
+All right, that's step one.
+835
+Let's also address a common misconception.
+836
+The public key has nothing to do with the iris code or anything that happens there.
+837
+The completely disjunct and just random numbers like any other good cryptographic key should be.
+838
+Yeah.
+839
+And so the kind of crypto way to say this, it's not a great explanation, but the crypto way to say this is that the new key that's been added into the master table of all the new worlds.
+840
+We make a zero-knowledge proof so that this key in the tree and the IRIS code, which is sharded and hidden in the AMPC network, there's no direct relationship.
+841
+So even if you were to recover the IRIS code somehow, you were to take over the entire AMPC network, you still wouldn't be able to say, here's this IRIS code and here's the key that corresponds to it.
+842
+So the link is completely opaque.
+843
+And that sounds like magic stuff, but that's kind of the magic of cryptography.
+844
+We don't stop there.
+845
+This is just the start of anonymity, because at this point, we've established human uniqueness without asking you any questions about your identity.
+846
+But we still have this public key that you have, and we also want to anonymize that.
+847
+We don't want this public key to be used everywhere now and be able to track this single human across all apps.
+848
+So there we use another cryptographic invention where whenever you use the system, instead of signing a message with your private key, you prove that you would be able to sign a message using any one of the private keys in this set that exist on the blockchain.
+849
+So you don't reveal which specific key you use, you just prove the fact that you know at least one of them.
+850
+So Remco explained first how the user's wallet ID, the thing that's in their world app, ends up being in the tree, the map or the table.
+851
+The Virgo tree, of all the new humans, all the unique humans.
+852
+And we showed how we got.
+853
+We got my world app key into that tree in a way that's completely private and requires no one person to see any of the information about my IRS code.
+854
+Yeah.
+855
+Now that I'm in that tree, how do I use my ID to authenticate with an application?
+856
+Yes.
+857
+Well, the most naive way, the simplest way would be I show which ID is mine and I log into A and I log into B and I log into C with that.
+858
+The problem, of course, is that each of those applications can then see that ID and track that ID across all the applications and basically link all of my usage of each of those applications to that one ID.
+859
+And then I may have been private on the creation of the ID side, but then I'm not private where I'm actually using it in like the real world where it's accumulating data from each application.
+860
+By the way, I would inject here is exactly how existing authentication systems work, right?
+861
+You go to a Google or an Apple, you log in with them, and then they end up with a record of everywhere that you've interacted.
+862
+So this is a big, this is a very big shift here in terms of where you're going to be able to do that.
+863
+I'm describing like a terrible system, but that's actually the system that exists today that sucks ass, right?
+864
+That's what I'm actually describing.
+865
+And the concrete example is you enter your phone number into all these things.
+866
+You enter your same email address into all these things, right?
+867
+And they can all tie you across apps.
+868
+There's entire businesses who exist to de-anonymize you by linking you across apps and make what they think are useful business guesses about your behavior.
+869
+So how do we solve that problem?
+870
+How do we make it so we still know the user is unique, but we allow them to authenticate with different apps without the apps tying them together?
+871
+So the way that we do this is when the user authenticates with a new app, instead of revealing which world ID they used, you know, this is mine, so let me in, instead of requiring that the user ID prove that a world ID is theirs, and the app sees that ID, knows they've never seen that ID, and lets you make a new account, instead, world uses some cryptographic tools so that they make a new unique ID for that user without ever showing what the world ID was for that specific app.
+872
+So the way to think of it is the app plus the world ID are wrapped together using some cryptography and out a new ID comes and that ID is the unique ID for that user for that application.
+873
+Now, that doesn't mean that each user can only ever have one ID for that application.
+874
+An application could actually be designed, if the application wanted, to give new what's called context in this system so that the user could create multiple IDs for that app, but the app could still rate limit or determine the conditions under which the user can make new IDs.
+875
+Just like, and this is also, this is a common pattern that, you know, Facebook and Twitter and all these.
+876
+They'll even allow it up to some point.
+877
+You know, they'll let you reuse the same phone number sometimes or the same email sometimes, knowing that it's a person with multiple accounts, because that's how they envision their system being used.
+878
+Like they want the system to have pseudonyms for use.
+879
+But the point is that the app gets to control the conditions under which users make accounts, and the user gets to control who knows what about their world ID.
+880
+And then the third point, because you started with this, but to just drive it home, at no point are all these different apps linked together in one unifying ID because every app has its own unique ID.
+881
+So you literally do not know based on your behaviors, activities, like the world of information that Google and Facebook know about you and.
+882
+Yeah, and to be fair, different apps could try to link, you know, could work together to try to figure out who a user is, just like they do today.
+883
+They already do that, actually.
+884
+They could try to do that.
+885
+But the world system is by default making no link between those.
+886
+And the app would have to go out of its way to do that.
+887
+Yeah, I mean, I think the key there is: could two apps link?
+888
+Sure.
+889
+But they're going to have to do it with data they got somewhere else.
+890
+It's going to have to be they've asked the user for the phone number, they've asked for a credit card number, or something else.
+891
+So it's not world that gives them the ability to link.
+892
+There's a key difference there.
+893
+I want to add to that.
+894
+Like we offer an even stronger things that apps who really care about privacy might want to use.
+895
+For example, if you were having an app that is handing out freebies, we have some apps like that in the mini app store, or if you have an app that collects votings, like it does those occasional polls, the way we've set up the system is that you can have a guarantee that every user can only participate once in these things, but you wouldn't even be able to track the user within the app.
+896
+Like, let's say you have a voting model in there and you're running multiple rounds of vote.
+897
+Let's say you do a vote every Sunday.
+898
+You wouldn't be able to tell what the person who voted today voted on last week.
+899
+Those even are dislinked from each other.
+900
+Interesting.
+901
+So, not only are there the differences, but even the same user in different instances cannot be linked to themselves.
+902
+So, just to be clear, it's like the application now gets a new capability.
+903
+They get to ensure that each user has one account.
+904
+Maybe they want that, but they also want the user to be able to vote every Sunday or something on something, but not have any relationship between this Sunday's vote and last Sunday's vote, but while still guaranteeing that each user could only vote once, because that's a key part of the voting system.
+905
+So, it's actually giving a new capability to app developers to offer very interesting types of services, not just authentication, but services in the application that are still civil resistant, which is the thing we've been talking about, resistant to the making of arbitrarily many new accounts, but also privacy-preserving, which would have been more challenging for them to do individually.
+906
+When what you're also talking about is, and this is very interesting to me as a historian of technology and innovation, for the first time, I feel like I'm hearing, I've covered privacy and security for decades.
+907
+I feel like I'm hearing about it not only in a defensive way, like we're building something that protects, but also enables new things, which I think is very exciting and interesting.
+908
+Like you can build with this into creating new applications and use cases.
+909
+I think some of this is like it's a shift in architecture.
+910
+So could an application that is a legacy application offer the ability to have users vote every week and not correlate those?
+911
+Yes.
+912
+But ultimately you would have had to have logged into the application and then they would have to go out of their way to build an additional technology to separate the login event from the recording of your vote, which is where they end up being defensive because they have to explain we've done a lot of work to keep them separate.
+913
+Whereas here, what we give you is you can know at an architectural level that they are separate.
+914
+And so it is much less defensive.
+915
+It's super interesting in that regard.
+916
+It's trustless.
+917
+And this is a really, really key thing.
+918
+Like we've seen it with DeFi, where a couple people in a garage could build like a world-class exchange where previously this would require years of building up trust.
+919
+You don't need that anymore.
+920
+You now have this technology to just, hey, we've implemented it this way.
+921
+It's open source.
+922
+You can check it for yourself.
+923
+And just by the way it's designed, you know it's going to be perfect in terms of the guarantees that it provides.
+924
+So we covered how we get a unique ID, a world ID, that's not linked with the IRS codes into the table of all users.
+925
+We also covered how we can use that ID in that table without it being visible to the application which ID we're using.
+926
+Now, the next stage we need to cover is when someone uses that ID, how can we ensure that they haven't just handed the ID off?
+927
+for some other system or for some other person to use.
+928
+There's actually many layers to this one because it's a very nuanced and complicated situation, but we need to figure out how we can avoid the case where I just made an ID, I chuck it over to somebody else, and that's it.
+929
+I never see it again.
+930
+I don't care.
+931
+Someone else is just using it for whatever they want, maybe some nefarious purpose, maybe, you know, who knows, right?
+932
+It could be that you give it away.
+933
+It could also be that it gets stolen, right?
+934
+Yeah, exactly.
+935
+Either of those happens all the time.
+936
+Which, by way of analogy, it's like you have a passport, you don't just easily hand it off to someone.
+937
+I mean, it takes a lot of work to let someone use your passport.
+938
+And when your passport's stolen, it's not easy for someone to use it.
+939
+I actually think credit cards are super interesting for this analogy because when you get a credit card, you go through a very lengthy credit process and get a credit check.
+940
+And then you have an ID.
+941
+And it used to be that you would use that same ID with every different store that you would go to.
+942
+And only in the last several years have we realized that tokenizing that credit card so that every merchant you're interacting with gets a different representation is a useful privacy attribute.
+943
+But it's still the case that the underlying card issuer can track all of your behavior.
+944
+And so there's room for privacy improvement, even though we're really excited about the advancement that's already been made with tokenization.
+945
+And so we've done the tokenization with zero-knowledge proofs and separating all of the users, but we've also done the privacy on the backside that credit cards haven't gotten to yet, which is pretty interesting.
+946
+Yeah, and I think this is where the analogy with a passport comes in handy, because it's very hard to use someone else's passport because you don't look like the picture, usually.
+947
+And this is the key to how we've tackled this problem.
+948
+Because as you remember, the orb takes a picture of your face and of your eyes and sends it signed to you.
+949
+Now, no one else has this, it's just you on your phone.
+950
+But now we can do a clever little trick.
+951
+We can have the phone take another picture of you, and then we can have the phone create a proof that these are indeed the same person.
+952
+So now we know that the person currently holding the phone is the person that was standing in front of the orb, as in they're the same human being, and this was not a matter of like the phone being stolen or the account being sold or anything of that nature.
+953
+And by doing this, using a combination of phones, trusted sensors, and zero-knowledge proofs, we can make this proof such that a third party that you're interacting with would have an assurance that, hey, the person currently operating the wallet is indeed the person that already has been signed up.
+954
+Right.
+955
+But you don't learn anything else.
+956
+You literally just learn that one fact.
+957
+So think of this as like a replacement for the CAPTCHA in a way.
+958
+This is the just-in-time check that not only did the person go and do all this enrollment and get themselves in the tree, like they did all that work up front, but the same person who did all that work is now holding the device right now.
+959
+And they're not doing it by solving a puzzle.
+960
+Remember, the puzzle only tests that you have more cognitive ability than we've expected a bot to have until now.
+961
+It doesn't make any assurances that it's a human being or the right, let alone the right human being, right?
+962
+It just does that.
+963
+Instead, now we can see that the person holding the device through the use of the face ID software, the face ID hardware, I mean, is the same person that originally enrolled.
+964
+But critically, we did not have to give the application your picture.
+965
+We didn't have to show the application your enrollment data.
+966
+We didn't have to show them the selfie you took.
+967
+We didn't have to show them information from Face ID.
+968
+We didn't give them any of that.
+969
+Instead, we just prove that right now, they're all the same.
+970
+And that's the only thing that we show.
+971
+This is that person, and that's all you need to know.
+972
+Yes.
+973
+It's funny to me hearing the description of it because we've spent the last close to 30 years in the security space trying to get to the point where multi-factor authentication is normal.
+974
+And we do that by using like SMS and by using YubiKeys and all of these things.
+975
+And authenticator apps.
+976
+Yeah.
+977
+Yeah.
+978
+This is that.
+979
+This is a multi-factor authentication because it's a key that's held in a secure place on their device.
+980
+And we check in real time that it's a real person and that it's the same person that originally registered that key.
+981
+And so you get that 30 years of trying to get multi-factor rolled out, basically for free, enabled for any application that wants to use it and do so in a way that's private where it doesn't reveal who that person is.
+982
+It's just that it's the same person.
+983
+So it's extraordinarily elegant, actually, and pretty proud of it in that regard.
+984
+It is elegant.
+985
+And it sounds like a really hard problem to solve.
+986
+How did you guys solve stuff like faces looking similar?
+987
+You know, like there's a lot of people that have the same faces.
+988
+Well, there's, yeah, there's two things to it, right?
+989
+There's uniqueness and there's authentication that we care about.
+990
+For the Iris code, we need uniqueness.
+991
+We need to make sure that this Iris code doesn't match any of the ones that we've seen before in order to know that this is a new unique human being.
+992
+And this is also why we ended up using Iris codes and not, let's say, fingerprints, because fingerprints actually aren't that unique.
+993
+It kind of like all collapses on itself in about a million people, and then they start all looking like previous ones.
+994
+Faces are kind of the same way.
+995
+There are definitely people that look sufficiently like you that it would fool even the most sophisticated algorithms.
+996
+And you get there quite quickly.
+997
+But the critical thing here is, and this goes for all face-authentic algorithms.
+998
+I think even Apple's face ID is only good up until like 10,000 people or something.
+999
+But it doesn't matter there because there's not 10,000 people attempting to get into your phone.
+1000
+Like it would get caught after the 10th person or something.
+1001
+So it's not a real risk.
+1002
+And this is the difference between uniqueness and authentication and why uniqueness is so much harder than just implementing authentication.
+1003
+So when we're talking about our face auth and the process we just described where you make sure it's the same person that originally signed up, this is just a one-to-one matching.
+1004
+And we can use a much lower fidelity signal like faces here.
+1005
+Got it.
+1006
+That's super interesting.
+1007
+Yeah, and to add to what Adrian is saying, like about the multi-factor, this is kind of the best multi-factor, right?
+1008
+Like this is the multi-factor I want to have, want to have in my toolkit because someone could take your Yubi key.
+1009
+That is a risk vector.
+1010
+Of course, there's advantages to a hardware key because you might lock it up someplace that you wouldn't go.
+1011
+So I'm not saying that it's a strict replacement, but someone can take a Yubi key, someone can break a YubKey, someone can enroll a new Yubi key in your device.
+1012
+Don't even get me started on phone, right?
+1013
+So swaps and all those things.
+1014
+Same hacking, that's like totally and unacceptable.
+1015
+So vulnerable.
+1016
+Yep.
+1017
+Yeah.
+1018
+So this type of multi-factor is, at a minimum, in my mind, something that you'd want to add to any authentication system, should it work the way that it's supposed to work.
+1019
+It really does offer the right types of guarantees.
+1020
+You know, we talked about how one of the myths is that this is not, the IRIS codes are not stored on the blockchain.
+1021
+Where does the crypto come in?
+1022
+Like, where does the blockchain come in at all in any of this?
+1023
+The blockchain comes in as the public, transparent route of trust for what is the current set of verified unique humans.
+1024
+And we deliberately choose blockchains for this because they are the only technology we currently have that allows such a thing to be fully trustless and transparent.
+1025
+Got it.
+1026
+Yeah.
+1027
+Yeah.
+1028
+So a lot of people think, and I understand why they might think this, that all this information, you know, the IRIS codes, the world IDs, everything, all just is parked on a public blockchain.
+1029
+Right.
+1030
+And we don't, you know, we don't currently have.
+1031
+So this makes sense as a baseline assumption.
+1032
+But the truth is that there are two networks at play here.
+1033
+And it's really important to illustrate that there are two networks.
+1034
+One network is the network that has the root, as Remco was saying, the root of all the IDs, all the world IDs that have been registered privately.
+1035
+That blockchain is also useful in the world app in general, the app that has world coin, like the token, the world token, USDC, and other things that you can use as a conventional blockchain, send and receive payments, wallet addresses, things like that.
+1036
+So there is that blockchain.
+1037
+Separately, there is the anonymous multi-party compute or AMPC network.
+1038
+That right now is not a blockchain by the standard definition.
+1039
+It's not really a blockchain.
+1040
+It is a separate network.
+1041
+And in this network is where we store the IRIS codes in their sharded private form, where each of the separate nodes have this and can do their calculation to verify that a new IRIS code in sharded form is unique.
+1042
+So these are two separate networks.
+1043
+Now, in the future, the world team alluded to it in some recent blog posts, and they talked about it at their recent event, their recent US launch event.
+1044
+But this private network is probably going to be upgraded to have some new interesting capability.
+1045
+And one of those capabilities would be the ability to register new types of credentials.
+1046
+One of the capabilities it will have will be to allow relying parties, these are third parties who want to read specific aspects of credentials, to read those credentials with the permission of users.
+1047
+So you'll be able to store private secrets, completely encrypted secrets, into this network, like for example, your passport.
+1048
+And you'll be able to allow a third party to read some part of that passport, like the fact that it's a unique one that they haven't seen, where your birthday is such that you're greater than 18 years old and it's American, right?
+1049
+They'll be able to read that without reading any of the other facts, and they'll be able to know that those facts are true.
+1050
+So I really like the two networks.
+1051
+I think you should go further.
+1052
+I think there's another set of networks, which is the interactions that a user has with each one of its applications.
+1053
+And what's fascinating is all of those networks, whether it be the AMPC network or the Proof of Humanity Identity Commitment Network or Facebook, Meta, like all the rest of your networks, we've cryptographically separated them.
+1054
+And the only way that they can be connected is if a user chooses to connect them for a particular purpose with their consent.
+1055
+And that isolation is, in general, using zero-knowledge proofs.
+1056
+But thinking of them as distinct networks and being very, very explicit that nothing goes between them without the user expressly saying, yes, I want that thing to go between.
+1057
+And even then, when it goes through, it goes through.
+1058
+I mean, this is a completely new way to build things.
+1059
+This is literally subverting how everything on the internet works today.
+1060
+The goal for most networks is like connect to all the other networks and link them with an identifier that can show that they're connected.
+1061
+And then I'm going to extract value out of that by hooking ads to it or hooking transactions to it or hooking something else to it.
+1062
+And we're doing a completely different thing.
+1063
+Yes.
+1064
+Exactly.
+1065
+Very, very decentral in the sense that you want to have minimal pieces of information contained in the most distributed way possible, living entirely separate from each other.
+1066
+And I think you alluded to the passport as a means of verifying uniqueness.
+1067
+The interesting thing there is that you can make it much stronger, even, where the only person that ever needs to know the contents of the passport is the owner of the passport.
+1068
+Everything else, including uniqueness, you can do from there.
+1069
+So one key component in how we design our system is we always start with the user.
+1070
+We always start with the user and what they know about themselves that they have on a device that they trust.
+1071
+And whenever anything outside of the user needs to know anything about it, we try to first get rid of it.
+1072
+Like, do you actually need to know this in the first place?
+1073
+And we seriously need to ask all our existing services whether they need to know all the things they want to know.
+1074
+But once we get to the core of what they actually want to know, you try to minimize it into an actual fact.
+1075
+Like, do you really need to know the face of this person?
+1076
+Or do you only need to know if it's the same one that you saw before?
+1077
+Things of that nature.
+1078
+And once you've done everything you can to squeeze out the minimum, minimum fact that you need to prove, then you can go to the user and say, hey, can you use, can you produce a proof of this fact?
+1079
+And here we have access to this wonderful tool set of zero-knowledge proofs and modern cryptography.
+1080
+That actually means that, yes, if it's a computable fact, then we can compute it and then prove that this computation was done correctly.
+1081
+So this, for example, allows us to build a document-based uniqueness system where you don't have to share anything about your document except sort of a unique number, unique hash that is derived from it, that then gets checked from uniqueness.
+1082
+But even that number, we want to treat with the utmost privacy in the same way that we do iris codes.
+1083
+So even that number is only ever shared in secret shared form, sent to multiple parties that are reputable, distinct entities, and so on, such that the uniqueness can be established without anyone outside of the user learning anything other than the uniqueness itself.
+1084
+Yeah, so this network, this AMPC network or the private network, depending how it will be evolved, it suggests a specific design pattern, right?
+1085
+And that design pattern is when I have an application that I need to learn facts about a user, I need to specify very clearly what the fact is that I want to know.
+1086
+For example, if I'm running a bank-like service, maybe I need to know whether this user has a specific citizenship, whether this person is on a sanctions list, whether they have an account list.
+1087
+That request for those facts actually, in this design, gets sent to the user's device, and the user is the one who forwards the description of what's needed to the AMPC network to collaboratively get a proof of the answer.
+1088
+The answer answers the specific question asked and not more.
+1089
+And then the user who has been seeing this on their device may forward that to the third party who wanted that question answered as a condition of serving them.
+1090
+So you can see how every step along the way, we're trying to minimize the amount of information gathered, give transparency to the user about what is being shared, and allow the user to determine the conditions and exact facts or what are shared by actually having them send the information after it has been processed.
+1091
+Yeah, and to highlight the minimization of the information shared also extends to the relation between the user and the AMPC, where we also try to minimize the amount of information you actually need to retrieve from the AMPC.
+1092
+For example, you don't store your documents there, you only store this document hash, and you retrieve from it just a pure fact of uniqueness and nothing else.
+1093
+One thing that I think is curious is as services have been built on the internet and they've had to answer these questions.
+1094
+So, say every financial institution has to answer the question of: is this a person that's allowed to interact with financial services?
+1095
+They've had to build their own solution.
+1096
+And the history of this is they then think about how I would do that in a private way, and they're like, Well, I'll get to that next.
+1097
+And so, every one of these organizations ends up with a repository of data that's probably more data than they really need, but the easiest way to get it was to ask for more and make sure that they were inclusive of whatever their actual need was.
+1098
+And then they were less private than they needed to be, but you know, they'll get to that eventually because that's the next thing down the road.
+1099
+And that has had the effect of there being lots of separate repositories with too much data that has been minimized.
+1100
+Now, because we were thinking about a service to be used by all of these applications, and because we were very concerned about privacy from the get-go, we've built it to be absolutely minimal.
+1101
+And the result is these other organizations that had to build their own bespoke, kind of crappy solution, could now use infrastructure that we're providing that immediately satisfies their business need and immediately also gives them that privacy promise that they always thought they would eventually get to, but never really had the time to do it.
+1102
+And so, it's a little bit of an inversion to have this as infrastructure because identity and user has not traditionally been infrastructure, it's been a thing added to each individual application.
+1103
+So, you guys have described so far is incredible.
+1104
+And the fact that privacy is not an afterthought, privacy is synonymous with protecting human humanity, and frankly, even against nefarious humans, so AI or human, bad actor, period.
+1105
+And then there's also a layer here of it being by default, and that's a big inversion because right now it's not.
+1106
+I maybe would add one more quick note on this, which is when you talk about like the user chooses and they have the transparency in which data gets and it comes from them.
+1107
+It also occurred to me that this is a very different way of designing privacy apps in general because for the longest time, for the last three, four decades, a lot of security and privacy people have always tried to tell users, like, you need more privacy.
+1108
+And I've always felt like, I don't really care as long as it's easy for me to use, personally.
+1109
+That's all I care about, is convenience.
+1110
+And what you guys have done is essentially really invert that model too, because the user doesn't have to be making all these choices in a menu.
+1111
+They don't have to have the friction at every turn.
+1112
+Like all of this is essentially designed by default into the system.
+1113
+You can choose to see what's happening and forward things, but essentially you haven't put all the onus onto the user either to have to make like a million decisions to protect their privacy at the interface level.
+1114
+It's like happening at the network level in the system.
+1115
+Yeah, I mean there's a bit of friction in the initial signup, but after that you're safe from CAPTCHAS and having to fill in your email address in every other form and so on.
+1116
+Yep, exactly.
+1117
+That's like the biggest thing for me, like just thinking about how these systems have been designed for decades.
+1118
+Like it's actually kind of, I'm having an aha moment on this podcast.
+1119
+Like, wow, this is really different.
+1120
+I think another under-highlighted aspect is like how much of a liability all this data is to the parties that are collecting it.
+1121
+Because it only takes one leak or one hack or something awkward to happen.
+1122
+And suddenly your business is at risk.
+1123
+Yeah, exactly.
+1124
+There's no question that it's kind of scary how all that information is exposed and out there in the world already.
+1125
+A couple of quick notes.
+1126
+So you guys have described a lot of technologies that are already existing.
+1127
+We have some of the top zero knowledge researchers working with us.
+1128
+Like, that's like a thing that's been around for decades, but has only accelerated in the last 10, really five years in the context of blockchains and crypto.
+1129
+We've talked about MPC, multi-party computation.
+1130
+We've talked about public keys and key infrastructure, Merkle trees.
+1131
+We've talked about a lot of technology that have been in existence for a while and that you guys are now really putting in use in a new context and a new time.
+1132
+So, I have two questions for you about this.
+1133
+One, why now?
+1134
+Like, what made that possible now?
+1135
+Is it just to solve this problem or the technology readiness?
+1136
+That's one question.
+1137
+The second is: what are some of the new and novel things you had to do in order to build this system?
+1138
+So, let's talk about the existing technologies and then also some of the novelty that you had to come up with, or even like the idea space.
+1139
+I think we're just very lucky that CK matured around the same time that AI did.
+1140
+Yeah, maybe that's not an accident.
+1141
+Innovation always kind of happens on the same trajectory in some ways, like all the things mature at once.
+1142
+So, yeah, can you guys tell me a little bit more?
+1143
+Like, is it that you guys, like, how did you solve these things?
+1144
+Like, did you think to yourself, here's the toolkit of existing tools, or no, we have to develop something new?
+1145
+Like, I'm just kind of interested in the meta of how you got there.
+1146
+We started from first principles.
+1147
+Like, like, I, like I said, like, you kind of don't want to have this data, it's a liability.
+1148
+So, when we were thinking about what we're trying to build, this concept of uniqueness, we quickly realized, like, we, from the start, we knew that we need to completely rethink privacy and how you build infrastructure, maximizing privacy.
+1149
+And with that perspective, we were immediately led down the path of the innovations in zero-knowledge proofs and so on.
+1150
+But when we, for example, came to hey, how do you actually do and maximally privacy-preserving biometric uniqueness mechanism?
+1151
+We did go through all the existing literature and we just found it not meeting our requirements, to be honest.
+1152
+They just seemed like none of the existing solutions would actually hold up to the privacy that we demanded from a system at the scale that we demanded from the system.
+1153
+So that led us through what we actually led us through a couple of different approaches.
+1154
+We did initially explore fully homomorphic encryption and we came up with some quite clever optimizations there as well.
+1155
+But ultimately, the security guarantees of such a system wouldn't be too amazing because you kind of seem to have a single master decryption key that you can threshold share, but it's like a very tiny piece of information that would reveal everything.
+1156
+It just feels very scary.
+1157
+So we rethought everything and then we got to multi-party computation, which is, it feels to me that it's still a relatively underexplored field compared to where we are currently with zero-knowledge proofs and the amount of innovation that has happened there.
+1158
+It's like you can kind of catch up on the literature of at least linear MPC in like a couple of weeks.
+1159
+You cannot do the same for zero-knowledge proofs.
+1160
+So we quickly found ourselves at the frontier of multi-party computation, designing new ways of secret sharing that were more efficient.
+1161
+We, I think, were amongst the first to implement it fully in CUDA and have it running on H100 clusters with terabit interconnects.
+1162
+But we've definitely pushed the state of art in multi-party computing to solve this problem that we have.
+1163
+And in effect, have pushed the state of art and just any kind of biometric protection way beyond where it was before we attempted this.
+1164
+I mean, I think for me, what's been striking is we have lots of conversations about privacy and biometrics, and there's sort of a history of most places would say, huh, we've hit a privacy concern.
+1165
+Let's just give up.
+1166
+And what we have done is actually, we're not going to give up on privacy.
+1167
+We're going to try to figure out how to actually make that work at scale.
+1168
+We're going to try to make that work against a threat that is like the fully homomorphic encryption is a perfect example, right?
+1169
+Where everybody says, well, you can't, you have to have it fully homomorphically encrypted so that you don't have the key.
+1170
+It's like, okay, but who does?
+1171
+Because ultimately, someone does in that system.
+1172
+And so, in that sense, it's not actually that much better because you have to trust that party.
+1173
+And so, trying to build a trustless private system and have that be sort of the first principle of what we're building is novel because everybody else basically at some point gives up and says, just trust us.
+1174
+You have to, because we can't figure out how to do it.
+1175
+Yeah, and I think that the FHE example is interesting to me, the fully homomorphic encryption, because the theme that I'm hearing as a layperson listening is it's a unique combo of privacy maximization with pieces of data minimization.
+1176
+And like one solution would privilege privacy maximization, but not the data minimization.
+1177
+The last quick question on the text section I have is the orb itself.
+1178
+What happens to these orbs?
+1179
+Like the hardware part.
+1180
+So we've talked a ton about the software and the promises and the exchanges and the networks upon networks and separate networks.
+1181
+AMPC, the anonymous multi-party communication, potentially later, you know, anyway, private multi-party.
+1182
+There's so many different ways to think about this.
+1183
+What happens to the orbs themselves?
+1184
+What do you mean by what happens to them?
+1185
+Well, like, are the.
+1186
+Like, where do they rest when they're retired?
+1187
+Yeah, kind of does the data get stored on the orbs?
+1188
+Are they going in like a big landfill?
+1189
+And are people like secretly able to go on the corner?
+1190
+They go on your bookshelf.
+1191
+It's funny.
+1192
+The orb is such a sort of mystique that surrounds it that I think people make all kinds of assumptions about it.
+1193
+And it's useful to go back to, I hate the phrase first principles, but like, what is this thing?
+1194
+It's a camera.
+1195
+It takes some pictures.
+1196
+It gives those pictures to a user.
+1197
+It analyzes those pictures to make an evaluation.
+1198
+And in particular, what it's analyzing for.
+1199
+It's very, very specific.
+1200
+Is this a real human?
+1201
+And if so, then let's generate an iris code that can be used to differentiate that human from other humans.
+1202
+Like you have a camera in your phone.
+1203
+You have a camera in your laptop.
+1204
+I have a camera that's attached to my laptop that's attached to my phone.
+1205
+I have a DSLR.
+1206
+I have a lensless camera.
+1207
+Like, cameras are all over the freaking place.
+1208
+And we've sort of taken a minimalist approach to what it is that the camera can do.
+1209
+It can only take one type of photo and make one type of calculation and come to one conclusion.
+1210
+And then the other thing that we've gone maximalist on is security and privacy.
+1211
+So this camera can only produce signed images.
+1212
+They have to be two keys: one that's in a secure element and one that's inside of a TEE.
+1213
+It can't produce images without that sort of mechanism.
+1214
+And it doesn't even, on the newer versions, have storage in it because the only software it needs to run comes on a SIM card or on an SD card.
+1215
+It takes those images and then it hands the images to the user who's going to retain them.
+1216
+So there's not even a place on the orb for it to store data in much the same way that a standalone camera that you might buy to be a camera doesn't tend to have internal storage on it because it doesn't need it.
+1217
+So I think there's a lot of just assumptions that people make about what this thing is that are because they're expecting that it's a robot or it's something else, but it's just a camera that happens to take some pictures for a specific purpose.
+1218
+I do want to highlight a little bit the engineering complexity of the kind of camera that it is because it's interesting and it's actually reassuring in a way that I'll get to at the end.
+1219
+Because it's really hard to take a high-resolution picture from two meters away through something like the size of the size of your thumb, right?
+1220
+While it's bouncing around and, I don't know, giggling and having fun and whatever.
+1221
+And it has eyelashes in front of it.
+1222
+Exactly.
+1223
+Keeping the focus on that and tracking it and getting this good quality image is completely new optics, actually.
+1224
+There are optic lenses in there that are custom designed and engineered specifically for the orb to be able to do that.
+1225
+And it went to many iterations.
+1226
+Another interesting thing is that it's not just your standard color image, it's actually taking images in in a range of different wavelengths outside of the physical spectrum even and then it has a range of other sensors in there like thermal sensors depth of field and so on just to make sure that it is actually a real human being that is standing in front of it Now, why am I saying all this?
+1227
+Because, well, first of all, it's impressive engineering, but also it just goes to show how hard it is really to get someone's iris code.
+1228
+This is not trivial.
+1229
+An iris code is not something someone can just lift off a glass you just held in your hand like your fingerprints can.
+1230
+An iris code is almost something you can only give away consensually.
+1231
+And I think that's a very powerful and kind of underrated aspect of it.
+1232
+Yeah, even DNA, right, is like easier to get, right?
+1233
+Oh, yeah.
+1234
+You got some of the hair.
+1235
+Yeah, things like that.
+1236
+Yeah, whereas a conventional iPhone picture, like you and your friends are standing or, you know, there are people having dinner or you're at the ball game or something, that's not going to have nearly enough information.
+1237
+So it needs to be a highly, highly specialized image that you probably need to get really close to a machine for.
+1238
+Not saying it's impossible for someone to do, but just it's not something that you are emitting all the time by accident through your day-to-day activities in such a way that a somewhat sophisticated person could try to get from you.
+1239
+Yeah.
+1240
+I want to throw in one more thing because it is custom optics and there was a lot of engineering that went into that, but it's also optics at this point that we've opened.
+1241
+There's no desire by either Tools for Humanity or world to be the sole owner of that.
+1242
+We think this is something that other manufacturers should be able to build their own devices and that that's important.
+1243
+So we get questioned about that quite a bit.
+1244
+Yes, we had to be the first to build it, but we really hope we're not the last.
+1245
+Definitely check it out because of the engineering involved.
+1246
+Software firmware is also open source.
+1247
+We're currently working on giving the user an ability to actually verify the entire supply chain from the GitHub repo down to the software currently running on the orb that you're interacting with.
+1248
+I wish there was an easy way to do the same thing for hardware as well.
+1249
+Fortunately, this is a little bit of a more challenging open research problem, but yeah, we're always open to ideas.
+1250
+And if someone feels inclined to build their own orb using the open source schematics and firmware we have, definitely reach out and maybe we'll just bless the key.
+1251
+That's amazing because you guys are putting out so much of this world into the open source so that people can really like what we're talking about here is a new future for how people think about privacy by default, everything being built in in a complete inversion, as we've talked about throughout this podcast.
+1252
+And by open sourcing it, you're allowing the rest of the world to build applications, not only on world and in the world app mini-app ecosystem, but well beyond using all these primitives, the hardware, et cetera.
+1253
+That's incredible.
+1254
+So, you guys, thank you so much for joining this episode of Web3 with A6 and Z on the A6 and Z podcast.
+1255
+Really enjoy you guys being here and sharing all these thoughts.
+1256
+People can actually go now and get themselves scanned if they're interested, and they can go online to your website to check out and download the app right now and find out more.
+1257
+Thank you so much for joining, Adrian, Remco, and Eddie.

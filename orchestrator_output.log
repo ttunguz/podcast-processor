@@ -1,0 +1,60 @@
+I, [2025-05-30T13:29:00.222239 #22866]  INFO -- : Starting Parallel Podcast Orchestrator...
+I, [2025-05-30T13:29:00.228307 #22866]  INFO -- : Ensured processed_podcasts table exists (with summary_filename, podcast_name, host, guests).
+I, [2025-05-30T13:29:00.228567 #22866]  INFO -- : Database connection established and table verified for podcast_processing.duckdb
+I, [2025-05-30T13:29:00.228623 #22866]  INFO -- : Found 30 unique podcast source URLs to check.
+I, [2025-05-30T13:29:00.228640 #22866]  INFO -- : Identified 0 direct episode URLs and 30 landing page URLs.
+I, [2025-05-30T13:29:00.228643 #22866]  INFO -- : Fetching landing page HTML concurrently (Pool Size: 4)...
+I, [2025-05-30T13:29:04.816092 #22866]  INFO -- : Finished fetching HTML for 30/30 pages.
+I, [2025-05-30T13:29:04.816129 #22866]  INFO -- : Parsing HTML and extracting episodes...
+I, [2025-05-30T13:29:04.837196 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/invest-like-the-best-with-patrick-oshaughnessy/id1154105909.
+I, [2025-05-30T13:29:04.846796 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/lennys-podcast-product-growth-career/id1627920305.
+I, [2025-05-30T13:29:04.855886 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/a16z-podcast/id842818711.
+I, [2025-05-30T13:29:04.865439 #22866]  INFO -- : Extracted 0 potential episodes via HTML parsing for https://podcasts.apple.com/us/channel/sequoia-capital/id6504629184.
+I, [2025-05-30T13:29:04.871922 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/dwarkesh-podcast/id1516093381.
+I, [2025-05-30T13:29:04.878655 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/the-ai-daily-brief-formerly-the-ai-breakdown/id1680633614.
+I, [2025-05-30T13:29:04.886789 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/data-engineering-podcast/id1193040557.
+I, [2025-05-30T13:29:04.893873 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/web3-with-a16z-crypto/id1622312549.
+I, [2025-05-30T13:29:04.907448 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/all-in-with-chamath-jason-sacks-friedberg/id1502871393.
+I, [2025-05-30T13:29:04.914126 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/the-knowledge-project-with-shane-parrish/id990149481.
+I, [2025-05-30T13:29:04.920520 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/bg2pod-with-brad-gerstner-and-bill-gurley/id1727278168.
+I, [2025-05-30T13:29:04.924644 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/decentralized/id1376769592.
+I, [2025-05-30T13:29:04.930067 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/the-analytics-engineering-podcast/id1574755368.
+I, [2025-05-30T13:29:04.935970 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/in-depth/id1535886300.
+I, [2025-05-30T13:29:04.941602 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/the-mad-podcast-with-matt-turck/id1686238724.
+I, [2025-05-30T13:29:04.945936 #22866]  INFO -- : Extracted 7 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/the-generalist/id1805868710.
+I, [2025-05-30T13:29:04.951010 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/ca/podcast/stray-reflections/id1723951474.
+I, [2025-05-30T13:29:04.956221 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/ai-a16z/id1740178076.
+I, [2025-05-30T13:29:04.968767 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/training-data/id1750736528.
+I, [2025-05-30T13:29:04.974270 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/no/podcast/epicenter-learn-about-crypto-blockchain-ethereum-bitcoin/id792338939.
+I, [2025-05-30T13:29:04.985546 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465.
+I, [2025-05-30T13:29:04.991765 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/unchained/id1123922160.
+I, [2025-05-30T13:29:05.006113 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/liquid-web3-crypto-investing/id1543419198.
+I, [2025-05-30T13:29:05.011634 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/ai-innovators/id1558589105.
+I, [2025-05-30T13:29:05.017822 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/no-priors-artificial-intelligence-technology-startups/id1668002688.
+I, [2025-05-30T13:29:05.023807 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/generative-now-ai-builders-on-creating-the-future/id1709773028?utm_source=chatgpt.com.
+I, [2025-05-30T13:29:05.029493 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/eye-on-a-i/id1438378439?utm_source=chatgpt.com.
+I, [2025-05-30T13:29:05.035507 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/venture-unlocked-the-playbook-for-venture-capital/id1535501313?utm_source=chatgpt.com.
+I, [2025-05-30T13:29:05.041973 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/practical-ai/id1406537385?utm_source=chatgpt.com.
+I, [2025-05-30T13:29:05.048151 #22866]  INFO -- : Extracted 8 potential episodes via HTML parsing for https://podcasts.apple.com/us/podcast/the-io-podcast-investor-operator/id1678642609.
+I, [2025-05-30T13:29:05.048301 #22866]  INFO -- : Filtering all potential episodes (direct + extracted)...
+I, [2025-05-30T13:29:05.053340 #22866]  INFO -- : Found 0 total unique new episodes to process.
+I, [2025-05-30T13:29:05.053349 #22866]  INFO -- : No new episodes to process.
+I, [2025-05-30T13:29:05.053353 #22866]  INFO -- : Marking processed episodes in database sequentially...
+I, [2025-05-30T13:29:05.053357 #22866]  INFO -- : Finished marking database. Final counts - Processed: 0, Failed: 0
+I, [2025-05-30T13:29:05.053360 #22866]  INFO -- : Orchestration finished processing episodes.
+I, [2025-05-30T13:29:05.053363 #22866]  INFO -- : Attempting to generate daily summary...
+I, [2025-05-30T13:29:05.053437 #22866]  INFO -- : Generating daily summary document: /Users/tomasztunguz/Documents/coding/whisper.cpp/podcast_summaries/daily_summary_podcasts_2025-05-30.md
+I, [2025-05-30T13:29:05.053897 #22866]  INFO -- : Found 11 episodes processed on or after 2025-05-30
+I, [2025-05-30T13:29:05.054086 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054154 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054208 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054259 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054303 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054501 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054541 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054586 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054639 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054684 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.054728 #22866]  INFO -- : Removed metadata block from processor's summary content.
+I, [2025-05-30T13:29:05.055575 #22866]  INFO -- : Successfully generated daily summary: /Users/tomasztunguz/Documents/coding/whisper.cpp/podcast_summaries/daily_summary_podcasts_2025-05-30.md
+I, [2025-05-30T13:29:05.055583 #22866]  INFO -- : Attempting to email daily summary to tt@theory.ventures...

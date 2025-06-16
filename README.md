@@ -865,3 +865,93 @@ If you have any kind of feedback about this project feel free to use the Discuss
 You can use the [Show and tell](https://github.com/ggerganov/whisper.cpp/discussions/categories/show-and-tell) category
 to share your own projects that use `whisper.cpp`. If you have a question, make sure to check the
 [Frequently asked questions (#126)](https://github.com/ggerganov/whisper.cpp/discussions/126) discussion.
+
+# Podcast Intelligence Analyzer
+
+This tool analyzes podcast transcripts to extract key insights, named entities, and enrich the data using the Attio API. It provides a comprehensive analysis of podcast content including business insights, technical details, and relationship mapping.
+
+## Features
+
+- Automated podcast transcript analysis
+- Named entity extraction (people, organizations, locations, etc.)
+- Integration with Attio API for entity enrichment
+- Structured summary generation covering:
+  - Episode context
+  - Key insights
+  - Technology & product developments
+  - Competitive landscape
+  - Team & culture signals
+  - Key metrics & business details
+  - Notable technologies
+  - Companies mentioned
+  - People mentioned
+
+## Prerequisites
+
+- Ruby 2.7+
+- Python 3.8+ (for entity extraction)
+- ffmpeg (for audio processing)
+- Anthropic API key
+- Attio API key
+
+## Installation
+
+1. Clone the repository
+2. Install Ruby dependencies:
+   ```bash
+   bundle install
+   ```
+3. Set up environment variables:
+   ```bash
+   export ANTHROPIC_API_KEY='your_anthropic_api_key'
+   export ATTIO_API_KEY='your_attio_api_key'
+   ```
+
+## Usage
+
+### Process a podcast from URL:
+```bash
+ruby claude_podcast_processor.rb <podcast_url>
+```
+
+### Process a direct MP3 link:
+```bash
+ruby claude_podcast_processor.rb --mp3 <mp3_url>
+```
+
+### Generate summary from existing transcript:
+```bash
+ruby claude_podcast_processor.rb --summarize <transcript_file>
+```
+
+## Output
+
+The tool generates three files:
+1. `<title>.txt` - Raw transcript
+2. `<title>_summary.txt` - Structured summary with:
+   - Podcast analysis
+   - Named entities
+   - Attio enrichment data
+3. `<title>_<date>.txt` - Combined file with both summary and transcript
+
+## Entity Extraction
+
+The tool uses a combination of:
+- Hugging Face Transformers for named entity recognition
+- Custom rules for identifying business-specific entities
+- Attio API for entity enrichment and relationship mapping
+
+## Attio Integration
+
+The tool enriches extracted entities by:
+- Matching companies against Attio's company database
+- Matching people against Attio's person database
+- Providing relationship context where available
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT License - see LICENSE file for details

@@ -1,0 +1,484 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: What's the Bigger Deal for AI:…
+Host: Unknown 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/whats-the-bigger-deal-for-ai-o3-pro-or-o3s-80-price-drop/id1680633614?i=1000712483281
+--- METADATA END ---
+
+1
+This podcast is supported by Google.
+2
+Hey everyone, David here, one of the product leads for Google Gemini.
+3
+If you dream it and describe it, VO3 and Gemini can help you bring it to life as a video, now with incredible sound effects, background noise, and even dialogue.
+4
+Try it with a Google AI Pro plan or get the highest access with the Ultra Plan.
+5
+Sign up at Gemini.google to get started and show us what you create.
+6
+Today on the AI Daily Brief, OpenAI drops O3 Pro and drops the price of O3 by 80%.
+7
+Before that in the headlines, Meta's biggest acquisition ever, well, sort of acquisition at least, appears to be for data labeling startup Scale AI.
+8
+Coming along with it looks like a major leadership shake-up.
+9
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+10
+Hello, friends.
+11
+Back with quick announcements today.
+12
+First of all, thank you to today's sponsors, Gemini, Blitzy, Vanta, and agency.org.
+13
+And of course, to get an ad-free version of the show, you can go to patreon.com/slash AI Daily Brief.
+14
+I continue to be on the road, but the AI news continues to be rolling.
+15
+So with no further ado, let's dive in.
+16
+Welcome back to the AI Daily Brief Headlines Edition, all the daily AI news you need in around five minutes.
+17
+It's rare that we have a day that is chock full of headlines and has a big, thick, juicy main, but that is exactly the story of today.
+18
+In our main episode, we will of course be talking about O3's cost reduction and O3 Pro being released.
+19
+But when it comes to mainstream media covering AI, it is in fact a different story that is dominating headlines.
+20
+That is, of course, the report that Meta is about to pay about $15 billion for 49% of data labeling startup scale.
+21
+The company is taking non-voting shares, and obviously, that 49% is very clearly designed to get around antitrust scrutiny, which is just a fact of life for all big tech companies now, despite the shift in administrations.
+22
+One thing that has not really changed between the two is that big tech is very much in the antitrust hot seat.
+23
+Importantly, though, this is not just an acquisition, and it's not even really that it would be Meta's biggest acquisition to date that's causing attention.
+24
+The New York Times broke that this is also part of a larger shake-up in AI leadership at Meta.
+25
+They wrote that Meta is preparing to unveil a new super intelligence lab with 28-year-old Scale AI CEO Alexander Wang at the helm.
+26
+Several other Scale AI employees are expected to join Meta, and sources say that multiple seven to nine figure offers have been made to dozens of researchers from other leading AI labs.
+27
+In other words, if this report is correct, Meta is rolling out compensation packages ranging up to hundreds of millions of dollars to poach top AI talent.
+28
+The news, of course, comes in the context of multiple changes to AI leadership at Meta.
+29
+After reportedly being panicked by the release of DeepSeek and failing to impress with their own Lama 4 model, some have seen Meta as being in a bit of a crisis.
+30
+Bloomberg reports that Mark Zuckerberg himself is personally overseeing this new team, writing, Zuckerberg has prioritized recruiting for the secretive new team, referred to internally as a superintelligence group.
+31
+He has an audacious goal in mind.
+32
+In his view, Meta can and should outstrip other tech companies in achieving AGI.
+33
+Bloomberg sources say that the team is being hired up to around 50 people, including presumably Wang at the head of it.
+34
+Now, what we don't have is information about current leadership at Facebook like Jan Lakun, but Zuckerberg's focus definitely appears to be this team.
+35
+Those same Bloomberg sources say that Zuckerberg has rearranged desks so the new staff will sit nearer to him.
+36
+Now, interestingly, a lot of folks privately asked me what I thought the deal was here.
+37
+While Scale AI's business is very successful and seems to be growing, they reportedly had $870 million in revenue last year and are on track for $2 billion this year, that's very clearly not the reason for Zuck to make this acquisition.
+38
+It also doesn't seem like the natural place to go hunting for research talent as that's not really what Scale does.
+39
+The narrative that people have settled on quite quickly is about competition around data.
+40
+Scale AI is somewhat unique as the largest startup providing data labeling services at scale.
+41
+They have over 100,000 global contractors working on labeling images, video, and text.
+42
+Now, at the beginning, that was mostly about pre-training, but increasingly it's about higher order reinforcement learning from human feedback, which continues to be a key part of not only model advancement, but also things like compliance in new regimes like the EU's AI Act.
+43
+Many other people have the same thought that maybe this is Zuckerberg's way of cutting off competition from data.
+44
+And who knows, that may be part of it.
+45
+It does feel to me from the outside, though, that if that is a part of it, it is only one part of it.
+46
+For whatever reason, it feels to me like Zuck is fairly convinced that Alexander Wang is the new force in the new energy that he needs to bring in from a leadership position for AI inside of Meta to write the ship.
+47
+The price that we're seeing may simply be the cost that it took to get him there, with Zuckerberg being able to justify all the rest, based on, yes, their business model, of course, but also the privileged position it puts them in vis-a-vis others who need their services.
+48
+I would say overall, the tone and tenor of the response is skeptical.
+49
+Signal writes, so let me get this straight.
+50
+Meta's AI strategy is just brute forcing with cash again?
+51
+What's the vision?
+52
+Just spending their way into the super intelligence race?
+53
+Feels a lot like the metaverse play.
+54
+Overfunded, underthought, and wildly disconnected from how people perceive these experiences.
+55
+Am I missing something?
+56
+Flooding the zone with capital just breeds distorted incentives and likely shallow execution.
+57
+Indeed, on that incentive line, some people pointed out that the payday for Alexander Wang on this is going to be something like $4.2 billion.
+58
+And so, is he actually going to show up at Meta with fire in his belly, or is he going to be just wanting to go off and gallivant and party?
+59
+For that, we will have to wait and see, but that was far from the only news over the last day or so.
+60
+One story that is getting some traction is that it appears that Elon Musk's feud with Donald Trump is weighing on his AI fundraising.
+61
+Last week, it was reported that XAI was looking to raise $5 billion in debt funding.
+62
+The Wall Street Journal reports that Morgan Stanley had gathered XAI executives on Thursday afternoon to pitch the debt to investors.
+63
+That is the same Thursday afternoon that Musk himself was teeing off against the administration.
+64
+The journal even reported that investors were following Elon's tweets on their phones while the presentation was underway.
+65
+Now, so far, this doesn't really seem to have affected things.
+66
+The journal writes: So far, buyers who showed initial interest haven't backed off.
+67
+Indeed, demand for both the debt and equity sale has actually increased since Thursday, said one advisor to the company.
+68
+Now, it feels like a pretty big grain of salt, as that's obviously the narrative that you would want.
+69
+But maybe it's all an overblown story, given that Elon is officially starting to walk back his position, tweeting this morning, I regret some of my posts about President Donald Trump last week.
+70
+They went too far.
+71
+For a very long time, Elon has had a basically blank check when it comes to his companies, and so it will be very interesting indeed to see if that is starting to run out.
+72
+Or, as it seems might be the case, this ends up being just a very temporary bump.
+73
+One company that is not having any trouble getting interest for fundraising is Lovable.
+74
+The company is apparently in talks to raise $100 million at a $1.5 billion valuation, which honestly, I could argue is kind of cheap.
+75
+At the end of May, CEO Antona Sika shared that the company had crossed 60 million ARR and that growth was up 50% week over week.
+76
+This is a company that still only has like 28 employees.
+77
+And obviously, if you listen to this show regularly, you know how central I think Vibecoding will be to our future.
+78
+And so it makes total sense to me that there's this big interest.
+79
+And for those wondering why they would raise this money given how much money they're making, the short answer is that this is going to be one of the most hotly contested spaces in all of AI, and it's just going to take resources to compete.
+80
+If the story gets confirmed, I will of course share it here, but for now, that is going to do it for today's AI Daily Brief Headlines Edition.
+81
+Next up, the main episode.
+82
+This episode is brought to you by Blitzy.
+83
+If you're a technology leader, here's something that probably sounds familiar.
+84
+Your organization's competitive edge is buried in legacy code that desperately needs modernization, but the resources required feel out of reach.
+85
+That was the case for a global investment analysis firm.
+86
+They needed to migrate 70,000 lines of complex MATLAB financial algorithms to Python.
+87
+Algorithms that drive investment decisions for trillions in assets.
+88
+Their estimate, months of high-cost specialized engineering work.
+89
+Instead, they partnered with Blitzy.
+90
+Blitzy's autonomous AI preserved mathematical precision and generated over 80% of the new code base, completing the migration with just five days of engineering time.
+91
+They cut the timeline by 95% and saved 880 engineering hours.
+92
+If your organization is facing similar modernization challenges, visit blitzy.com to schedule a consultation and discover how AI-powered development can transform your technical capabilities.
+93
+Today's episode is brought to you by Vanta.
+94
+In today's business landscape, businesses can't just claim security, they have to prove it.
+95
+Achieving compliance with a framework like SOC2, ISO 27001, HIPAA, GDPR, and more is how businesses can demonstrate strong security practices.
+96
+The problem is that navigating security and compliance is time-consuming and complicated.
+97
+It can take months of work and use up valuable time and resources.
+98
+Vanta makes it easy and faster by automating compliance across 35 plus frameworks.
+99
+It gets you audit ready in weeks instead of months and saves you up to 85% of associated costs.
+100
+In fact, a recent IDC white paper found that Vanta customers achieve $535,000 per year in benefits, and the platform pays for itself in just three months.
+101
+The proof is in the numbers.
+102
+More than 10,000 global companies trust Vanta.
+103
+For a limited time, listeners get $1,000 off at Vanta.com/slash NLW.
+104
+That's vanta.com/slash NLW for $1,000 off.
+105
+Today's episode is brought to you by Agency, an open source collective for interagent collaboration.
+106
+Agents are, of course, the most important theme of the moment right now, not only on this show, but I think for businesses everywhere.
+107
+And part of that is the expanded scope of what agents are starting to be able to do.
+108
+While single agents can handle specific tasks, the real power comes when specialized agents collaborate to solve complex problems.
+109
+However, right now there is no standardized infrastructure for these agents to discover, communicate with, and work alongside one another.
+110
+That's where Agency, spelled AGNTCY, comes in.
+111
+Agency is an open source collective building the internet of agents, a global collaboration layer where AI agents can work together.
+112
+It will connect systems across vendors and frameworks, solving the biggest problems of discovery, interoperability, and scalability for enterprises.
+113
+With contributors like Cisco, Crew AI, Langchain, and MongoDB, Agency is breaking down silos and building the future of interoperable AI.
+114
+Shape the future of enterprise innovation, visit agency.org to explore use cases now.
+115
+That's agntcy.org.
+116
+Welcome back to the AI Daily Brief.
+117
+Boy, you know that you are owning a news cycle when the title of the podcast is Which of your two announcements was the bigger deal?
+118
+Yesterday I tweeted an O3 Pro that's more agentically capable, an 80% cost reduction in existing O3, a massive acquisition light that could reshape competitive dynamics regarding data, multiple multi-billion dollar fundraises, a viral singularity prognostication, and a huge debate on reasoning, and it's barely Wednesday.
+119
+Yes, of course, based on the inscrutable and immutable laws of the universe, when I am traveling, it has to be the biggest week in AI we've had in some time.
+120
+Luckily for all of us, I've got all the equipment on the road and we are going to dig into this.
+121
+In a surprise announcement, yesterday Sam Altman tweeted, We dropped the price of O3 by 80%.
+122
+Excited to see what people will do with it now.
+123
+Think you'll also be happy with O3 Pro pricing for the performance.
+124
+A couple of hours later, the official OpenAI account confirmed OpenAI O3 Pro today.
+125
+And so these are, of course, the two big stories that we're going to focus on in this main episode: a highly performant new model that, spoiler alert, seems even more tuned for the agentic era that we're moving into, and a massive cost reduction that could have significant implications for what people build.
+126
+So let's talk first about this price reduction.
+127
+Chubby at Kiminismus summed up many people's feelings when they tweeted this is the real revolution with a chart of the 87% price reduction between O3 Pro and O1 Pro.
+128
+Now, keep in mind, this is not even the 80% reduction that we were talking about with O3.
+129
+This is just the base cost of O3 Pro as it came out as compared to where 01 Pro was just a few months ago.
+130
+But in terms of that big O3 price drop, many people could hardly believe it.
+131
+Now, the specifics here were that it went from $40 per million output tokens to just $8.
+132
+And on top of that, they also announced that they were going to double the rate limits for O3 for plus users.
+133
+Now, this led many to assume that this must be a distilled version of the model.
+134
+Not so, said Adam, who does go to market at OpenAI.
+135
+He tweeted in response: it's not distilled, same model.
+136
+When someone said, is it quantized though?
+137
+Adam responded, it's the same model, full stop.
+138
+And when someone asked, then how was it done?
+139
+Were there major improvements on the software side of things?
+140
+Is this because of increased resources?
+141
+Or did nothing change and you can just incur the cost now?
+142
+Adam responded to that one: as my teenage daughters would say, the inference engineers ate.
+143
+Basically, then, it seems like these are actual efficiency gains, not just competitive pressure in a bigger balance sheet.
+144
+You'll remember that OpenAI also has jumped from $5.5 billion in NRR at the end of last year all the way to $10 billion now.
+145
+Now, the claim here, at least, is that this is actual technical improvement.
+146
+What's more, OpenAI researcher Noam Brown reinforced that businesses need to be skating to where the puck is going in terms of cost, posting, input is now $2 per $1 million and output is now $8 per $1 million.
+147
+The cost versus intelligence curve will continue to improve rapidly.
+148
+Some people, though, despite the protestations of OpenAI staffers, think that this is at least a little bit about competitive pressure.
+149
+Lassan Al-Ghaib, who featured prominently in our breakdown of the Apple Intelligence report from yesterday, tweeted: Gemini 2.5 Pro and Sonnet might actually be forcing OpenAI to lower their ridiculous O3 prices.
+150
+However, others were just excited.
+151
+Edwin Arvis writes: O3 is 20% cheaper than GPT-4.0.
+152
+Rethink everything.
+153
+Benu Ready celebrated the competition, saying O3 price just dropped by 80%.
+154
+This makes it less expensive than Sonnet 4.
+155
+Finally, we have choice.
+156
+Now, not to be petty here, but I do for just one moment want to bring things back to almost exactly a year ago.
+157
+You might remember that as summer was taking hold in 2024, people were getting a little bit bored.
+158
+And we had a whole slate of articles that wanted to discuss how AI was never going to pay back the big investment that was going on in it.
+159
+Now, some part of that conversation was CapEx and Wall Street valuations, all things that I said were firmly in the realm of investors to decide how they should value things.
+160
+But you might remember that there was one part of a Goldman Sachs report that really ground my gears.
+161
+The report was called Gen AI: Too Much Spend, Too Little Benefit.
+162
+And while if you go back and listen to the show, I'm actually arguing that the report is not nearly as negative as the title suggests.
+163
+One person who was very negative was Goldman Sachs head of global equity research, Jim Covello.
+164
+One thing that was particularly notable to me, and I called out then, was that when the interviewer asked, even if AI technology is expensive today, isn't it often the case that technology costs decline dramatically as the technology evolves?
+165
+Jim first argued that that's revisionist history.
+166
+But he also said, even beyond that misconception, the tech world is too complacent in its assumption that AI costs will decline substantially over time.
+167
+Moore's Law and Chips that enabled the smaller, faster, cheaper paradigm driving the history of technology innovation only proved true because competitors to Intel like AMD forced Intel and others to reduce costs and innovate over time to remain competitive.
+168
+The starting point for costs, he continued, is also so high that even if costs decline, they would have to do so dramatically to make automating tasks with AI affordable.
+169
+And so, obviously, I think you know where I'm heading here.
+170
+In three months, we have seen an 80% decline in arguably the most performant model, at least the most performant model when it comes to many agentic use cases.
+171
+Not only is that a faster price decline than Jim predicted, it's faster than anything that anyone predicted.
+172
+Simply put, whether you are skeptical of AI in general or not, cost will not be the constraining factor in how much impact it has.
+173
+But what about this new model, O3 Pro?
+174
+If you are a regular listener, you'll know that I am a huge fan of O3.
+175
+It is my default model for a huge amount of the sort of business strategy and ideation type of use cases that are my day in and day out.
+176
+And so, I, even more than most, have a particular interest in digging in deep around O3 Pro.
+177
+That said, I've only just barely scratched the surface.
+178
+I'm planning on doing a top five use case type of show later in the week, and I'm still learning exactly what O3 Pro is really good for as compared to O3.
+179
+But in the meantime, we do have some folks who have spent time with the models who shared some really interesting thoughts.
+180
+The most notable of these comes from AI entrepreneur Ben Hilak, who wrote a guest post for Latent Space.
+181
+The piece, by the way, has the phenomenal title of God is Hungry for Context.
+182
+But here's how Ben summed up his time with O3 Pro: He said, The problem with evaluating O3 Pro, it's smarter, much smarter.
+183
+But in order to see that, you need to give it a lot more context.
+184
+There was no simple test or question I could ask that blew me away.
+185
+But then, I took a different approach.
+186
+My co-founder Alexis and I took the time to assemble a history of all of our past planning meetings at Raindrop, all of our goals, even recorded voice memos, and then asked O3 Pro to come up with a plan.
+187
+We were blown away.
+188
+It spit out the exact kind of concrete plan and analysis I've always wanted an LLM to create, complete with target metrics, timelines, what to prioritize, and strict instructions on what to absolutely cut.
+189
+But the plan O3 Pro gave us was specific and rooted enough that it actually changed how we are thinking about our future.
+190
+This, Ben points out, is hard to capture in an eval.
+191
+Now, this is hugely resonant for me.
+192
+I can, in very simple language, describe how different it is to talk about business strategy and ideas with O3 as compared to, for example, 4.0 or 4.5.
+193
+But it's huge.
+194
+It is incalculable.
+195
+There is, in most situations, very little of value when sharing and trying to get feedback on an idea or processing a particular business problem when just chatting with 4.0 and 4.5.
+196
+O3, on the other hand, is so frequently useful, if not for its blistering insight, then for different things like the way that it structures thinking through the answer to a particular problem, that it's very rare that when I'm brainstorming or ideating or thinking about something, I don't have a sort of ongoing dialogue with some combination of O3 RAW and deep research with O3.
+197
+And it sounds like from what Ben is arguing in this piece, that the glow-up and change between O3 and O3 Pro might even be more significant.
+198
+It seems to resonate with Sam Altman, who tweeted that particular quote about how it changed how they're thinking about their future.
+199
+Now, the other thing that I think is really important to note about Ben's review of O3 Pro, and something which relates directly back to the conversation we were having earlier this week about the Apple paper and whether and in what ways it mattered or not, is that O3 Pro's power is a real-world contextual power.
+200
+It's about application and interaction with the real world, not just raw power in the lab.
+201
+Ben writes, trying out O3 Pro made me realize that models today are so good in isolation, we're running out of simple tests.
+202
+The real challenge is integrating them into society.
+203
+It's almost like a really high IQ 12-year-old going to college.
+204
+They might be smart, but they're not a useful employee if they can't integrate.
+205
+Today, this integration primarily comes down to tool calls, how well the model collaborates with humans, external data, and other AIs.
+206
+It's a great thinker, but it's got to grow into being a great doer.
+207
+O3 Pro makes real jumps here.
+208
+It's noticeably better at discerning what its environment is, accurately communicating what tools it has access to, when to ask questions about the outside world rather than pretending it has the information or access, and choosing the right tool for the job.
+209
+In other words, this is a model that is meant to be in the real world with real context.
+210
+He even says that on the flip side, its big shortcoming is that if you don't give it enough context, which could be anything from meeting notes to call transcripts to PDFs to you name it, he says it tends to overthink.
+211
+Quote, it's insanely good at analyzing, amazing at using tools to do things, not so good at doing things directly itself.
+212
+I think it would be a fantastic orchestrator.
+213
+Now, as an example of that type of overthinking and why it's so important with new models to figure out what use cases they open up and what use cases they're good for, is that investor Eric Wall demonstrated the other case.
+214
+He pitted O3 against O3 Pro in selecting a group of animals to defend the user against the rest of the menagerie.
+215
+There were selections like 50 eagles, 10,000 rats, 5 gorillas, and a single human rifleman to give you an idea of what we're dealing with here.
+216
+After making their choice, the models then argue against each other to determine the winner.
+217
+Wall writes, O3 Pro lost to O3 in this test despite thinking for 10 minutes.
+218
+O3 thought for 25 seconds.
+219
+Interestingly, more telling was O3 Pro's explanation of why it lost.
+220
+The model wrote, thinking longer is only an advantage when the extra cycles surface new decisive information.
+221
+Here, they mostly amplified a hidden assumption and buried the robustness check.
+222
+The lighter model's quick heuristic, minimize single point of failure, maximize coverage, was enough to nail the best answer faster.
+223
+The point is once again that context is everything.
+224
+If O3 Pro doesn't have enough context to chew on, it will actually use the extra inference to confuse itself by overthinking.
+225
+Now for a somewhat more substantive evaluation, one of the few sets of evals that aren't totally washed at this point is the Arc AGI tests.
+226
+Now on this test, the TLDR basically of it is that O3 Pro is performing pretty much in line with O3 on ArcAGI 1, but for a much higher cost.
+227
+However, what's worth noting is that Arc has intentionally started to limit the inference deployed against their tests as they're looking for sparks of AGI at the consumer level.
+228
+This means that O3 Pro probably isn't performing at the level you would use it in in high value tasks during this testing.
+229
+So what does this all mean for O3 Pro?
+230
+I'm not sure yet, but my strong guess is that if Ben's right and that the real majesty of this model is in how it understands context and uses tools, it's going to take just a little while for us to really understand when you should be using O3 Pro and for what as opposed to O3 or a different model.
+231
+I am going to myself surely take some time even though I'm traveling this week to try to suss that out, and I will be back here to share what I've learned later in the week.
+232
+For now, a very exciting day with big implications for the long term.
+233
+As to this question of which of these is a bigger deal, the short answer is that they both are in totally different ways.
+234
+They both show how things are trending in totally different aspects.
+235
+Model capabilities and practical utility, even more, continue to increase, costs continue to decrease.
+236
+The net of all of that is a straight line to intelligence too cheap to meter and incredible new capabilities for all of us to deploy.
+237
+For now, though, that is going to do it for today's AI Daily Brief.
+238
+Until next time, peace.

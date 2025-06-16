@@ -1,0 +1,1023 @@
+--- METADATA START ---
+Show: The MAD Podcast with Matt Turck
+Episode: AI That Ends Busy Work — Hebbi…
+Host: Matt Turck
+GUESTS: George Sivulka 
+Guests: George Sivulka
+Source URL: https://podcasts.apple.com/us/podcast/ai-that-ends-busy-work-hebbia-ceo-on-agent-employees/id1686238724?i=1000710418806
+--- METADATA END ---
+
+1
+You'll actually have hybrid AI and human employees working alongside each other.
+2
+People that are really good at prompting be the best managers.
+3
+Intelligence will become too cheap to meter.
+4
+Welcome back to the Mad Podcast.
+5
+In this episode, I'm thrilled to sit down once again with George Sivulka, a Stanford prodigy who walked away from a fully funded PhD when the launch of GPT-3 convinced him that the real action was outside the lab.
+6
+Instead, he decided to launch Hebia and became one of the very few founders to get a pre-seed investment from Peter Thiel.
+7
+Fast forward to today, Hebia has become an AI platform that chews through billions of pages for top Wall Street asset managers and tier one law firms and has raised $160 million in venture capital.
+8
+In this episode, we explore why generalist AI beats vertical AI.
+9
+The best investors reading really crazy data sources that have nothing to do with finance.
+10
+The best lawyers have backgrounds that are way outside of law.
+11
+You don't want specialization, you want generalization.
+12
+The power of inference time super scaling.
+13
+And actually, the whole scaling at inference paradigm was pioneered at Hebia.
+14
+We're one of the first people to say, hey, you get way better accuracy from using more large language model calls at runtime.
+15
+And how AI is already redesigning org charts.
+16
+And when you think of that from an organizational design perspective, you can start to define the agent employee as another node in your org chart.
+17
+It will probably have to have an email.
+18
+It'll probably have to have a Slack.
+19
+It'll probably be doing things the wrong way, and you'll have to manage it in the right direction.
+20
+This episode was recorded live at a recent data-driven NYC, the in-person monthly event we run in New York in partnership with our friends at Foursquare.
+21
+Please enjoy this energizing chat with George Sivulka.
+22
+Good to see you.
+23
+It was, I think, almost two years ago to this day where we started talking about Matrix in a very similar setting.
+24
+Actually, Matrix was, if I remember correctly, not even the name of the early ideas, and you were my first podcast ever.
+25
+So I'm very excited to be back.
+26
+Wonderful.
+27
+Well, welcome back.
+28
+So, maybe for anybody that did not attend that event or does not yet know about Hebia, what is the 45-second elevator pitch for what you do and why it matters?
+29
+If we're in an elevator, Hebia is, we actually build AI agents for finance, for investors, bankers, and lawyers.
+30
+So, anyone that does white-collar work, whether you're doing or you're discovering as part of what you work on, we build an AI agent platform so that you can leverage some of the latest and the greatest.
+31
+And rewinding back to that chat from a couple of years ago, I remember that you had a very powerful kind of mission statement, which was to keep smart people from doing stupid tasks.
+32
+And if you watch that back, and if you sort of fast forward to today, are you still doing exactly that?
+33
+In what way has the mission evolved?
+34
+I think when we started Hebia, I think that one of the fundamental insights was that you had a lot of the smartest people in the world doing the stupidest tasks.
+35
+And that it seemed like there was an arbitrage opportunity there to save them some time or some effort or some sweat.
+36
+And the goal of Hebia was never to just stop at really highly paid knowledge professionals, the investor or the finance guy, the lawyer.
+37
+It was actually always to go much more broad.
+38
+And our vision and mission have solidified really over the last couple of years into building a capable AI platform for ability.
+39
+And the idea is that there's lots of consumer AI products, products where you can go and talk about your sushi restaurant and wine in San Francisco, but there's actually not very horizontal, general-purpose workplace AI products.
+40
+And what we mean when we talk about capable AI and AI that can do things is actually something much more horizontal.
+41
+It's something that's much richer in its interaction.
+42
+It's actually not as verticalized as you might think, but it still has the depth of what an expert platform would do.
+43
+So if you think about how that vision and mission have evolved, we started on Wall Street.
+44
+We started with lawyers.
+45
+We started with investors and bankers.
+46
+But now we've built an AI platform for experts that lets anyone, whether you can code or you don't know how to code or you can only use cursor to code, to build whatever kind of knowledge work application or agent you'd like.
+47
+Could you rewind back to the initial sort of light bulb moment when I guess you were a student at Stanford, if I remember correctly?
+48
+How did that all come about?
+49
+I was 2020, and at the time, around June or May of 2020, no one was talking about AI.
+50
+No one was talking about large language models.
+51
+And I remember, I think the topic of what I was studying at the time was meta-learning, or the idea that you could figure out how to build a machine that could learn how to learn or generalize to any task.
+52
+And I thought that meta-learning would become the most important software of all time.
+53
+And at the same time, I was working out in my research, and then all of a sudden, June of 2020 comes around.
+54
+And OpenAI actually released GPT-3.
+55
+So before ChatGPT, I remember using it.
+56
+It has beaten me to the research punch that I was working on.
+57
+And if I couldn't actually play a part in creating that fundamental technology or that technological revolution, I knew I wanted to be a part of applying that in a really interesting and meaningful way.
+58
+And I made the bet that, hey, this would be worth basically throwing my whole life, my whole research career away on and starting a company from scratch.
+59
+And not to make you blush, but so you were doing like a PhD, you were like 21 or 22 when you were starting a PhD this summer.
+60
+I'm blushing.
+61
+Stop.
+62
+Stop now.
+63
+Not already.
+64
+Stop telling people.
+65
+Stop forcing me to tell people how smart I am.
+66
+No, but there was something like that.
+67
+But like you graduated super early from Stanford.
+68
+You went into your PhD.
+69
+Just tell that story in two senses.
+70
+I was a young hustler, is the reality of the story.
+71
+But I was one of the youngest people to graduate Stanford and was the youngest person in my PhD program.
+72
+I was fully funded.
+73
+So I was throwing away at the time like millions of dollars of research grants and not having to be a TA for the extent of my graduate school, which was actually quite the luxury.
+74
+Didn't know I could raise, didn't know we'd be able to build a company that we built and the team that we built.
+75
+Great.
+76
+So speaking of that, so what's happened over the last couple of years?
+77
+Like any metric, including vanity metrics that you can share, fundraising history, number of customer, number of documents, whatever it is that you want to share to give a sense to people for the reality of the company as of today.
+78
+I can't forget that you're a VC, so I'm not allowed to share any metrics over here.
+79
+But there's some public ones.
+80
+And I think things that I'm really proud of are really lasting.
+81
+So we built a team of 100 amazing, incredibly smart folks, all five days a week, sometimes six in office in New York City.
+82
+And we are now just starting to become a multinational corporation.
+83
+And so we're opening SF and we've already opened a London office, which is incredibly exciting with goals to end the year at 300 to 400 employees.
+84
+Lots of exciting growth, a lot of it here in Silicon Alley.
+85
+And unfortunately, Silicon Valley there.
+86
+We have to move out there a little bit.
+87
+But I think on AI metrics or a little bit more about the product and how it's used, one of our favorite things to track is the amount of unstructured data, the amount of pages that are processed by the platform.
+88
+And a really interesting thing is: hey, last year, Hebia and probably all of the other major consumer model providers processed around 100 million pages, probably around whatever hundreds of years, maybe thousands of years of reading.
+89
+This year, we're already on track to process around four to five billion pages.
+90
+So, you know, somewhere around 50,000 years of reading for a human that's taking the right amount of breaks.
+91
+And that exponential is just one of the most phenomenal curves that you've ever seen.
+92
+It's like in a big board in our office.
+93
+And I think the reason we're so proud of it is, whereas other AI platforms, you're having a bit of a transactional relationship with the AI.
+94
+You ask a question, you get a response.
+95
+With Hebia, you can give it these complex tasks, and it really churns through vast quantities of data and does work the way you work.
+96
+It's much more of an agent than a chatbot.
+97
+And so when you're actually looking at the work that it's doing, or that it would take in people hours a team of really highly paid professionals to do, it's actually having a massive impact with the organizations we've rolled out.
+98
+Now, we're deployed at, I think, between 40 and 50 percent of the world's largest asset managers, some of the tier one investment banks in the world.
+99
+We have an incredibly fast-growing legal segment.
+100
+So, I think even just sort of the share of our revenue that's in law is increasing at an exponential clip.
+101
+And so, it's just an incredibly exciting time at Hebia and in AI.
+102
+So, we're going to go into all these Hebia, the product, the tech, and all the things.
+103
+But before we do that, just maybe six or seven days ago, you had a really interesting blog post that you published where you talked about the concept of agent-employee.
+104
+Yes.
+105
+So, according to that, what is an agent-employee in your world?
+106
+I think that the idea behind the blog post and talking about an agent-employee actually stemmed from a way that I think organizational design is starting to change our customers.
+107
+And I actually likened it to an old organizational trichotomy of remote work, where the internet actually came out and it took, you know, it basically decoupled the output of labor from where you were.
+108
+So, you could be all in the same room in New York, or you could be across the world, and the internet basically democratized access to talent.
+109
+With AI and these agent employees, you're actually also starting to see: hey, I'm going to have full-time things, whether they're employees or not employees, or whatever you want to call them, where instead of actually having output or work or labor coupled with personhood, it will now be completely decoupled, not only from location, but from whether or not you can pay salaries or have humans doing the jobs.
+110
+And so the entire essence of the piece was: hey, just as we have remote employees, we have hybrid organizations, fully remote organizations, and in-person organizations, you're going to start to have fully human organizations, actually fully AI organizations like the one-person billion-dollar startup or these things that are effectively just APIs.
+111
+And you'll actually have, and this will be the most common thing, hybrid AI and human employees, agent and human employees working alongside each other.
+112
+And when you think of that from an organizational design perspective, you can start to define the agent employee as another node in your org chart.
+113
+And it becomes very clear that if that's a node in your org chart, it will probably have to have an email.
+114
+It'll probably have to have a slack.
+115
+It'll probably be doing things the wrong way, and you'll have to manage it in the right direction.
+116
+And the makeup, whether you're 50% agents, or 10% agents, or 90% agents, or 0% agents, will actually define the output of the organization.
+117
+Amazon is a perfect example of how this happened, how org design shaped what they built.
+118
+If you look at AWS's offerings, every single offering in that big menu is a different startup altogether with its own GM.
+119
+And that intentional organizational decision impacts their product, it impacts how it works, it impacts whether or not those products work together really elegantly.
+120
+The same will be true as you start to think through these agent employees as nodes and how you organize them.
+121
+So, fast forward a few years, what does that all look like?
+122
+Whether you call it 2030, let's say, not 20 years out, 2030.
+123
+So, we all, what, AI managers, we spend half hour days interacting with agents.
+124
+Do we still interact with humans?
+125
+What does that look like?
+126
+I think that right now we're already AI managers.
+127
+The only difference is the AI takes a single step.
+128
+So, if you are a AI modern organization, you probably are using some sort of chat or rag application.
+129
+And how good you are at prompting that AI is how good you are at managing that AI.
+130
+And instead of kind of letting the AI go and prosecute a task over and over and over and self-correct, it can only take a single step.
+131
+As agents are rolled out, you'll actually start to see people that are really good at prompting, really good at defining a process, be the best managers and actually be the best at extending whatever their agenda is in the organization or making their function the best.
+132
+And so, I think that everyone will be prompting, and prompting is managing, and it will all blur pretty soon.
+133
+As a quick reality check, I think you mentioned somewhere that AI agents will contribute more to GDP than human workers within a decade.
+134
+How backloaded is that?
+135
+In other words, what's your sense as somebody who's in the proverbial trenches every day of the reality of agents in the enterprise in terms of what they can do and what's overhyped?
+136
+We will still be deploying AI in its current form as a chat.
+137
+I think the way to think about that is: there's actually still plenty of businesses in New York that don't take credit cards.
+138
+They only take cash.
+139
+And organizational change and technological change will take a lot of time and a lot of effort.
+140
+At the same time, most people use credit cards.
+141
+And when things work and they're not just experiments, they actually happen very fast.
+142
+You're starting to see that with certain AI companies that are massively penetrating markets that have gone from zero to some double-digit percentage of their SAM.
+143
+And we're fortunate that Hevia is one of them.
+144
+But at the end of the day, the stragglers, the long tail of adopters, will still take time.
+145
+And I think that to answer your question on the nose, everything is going to be backloaded, right?
+146
+I think it'll happen in the decade.
+147
+Like the change to credit cards happened over five to ten years.
+148
+And now this change to just point and click from credit cards happen even faster than that.
+149
+But there will still be stragglers.
+150
+It'll still take time.
+151
+One last question before we get into Hevia in detail.
+152
+What do you find particularly interesting in AI today, AI research, open source, reasoning models that you may or may not sort of import into Hevia directory, but what do you find interesting in terms of what's happening in research?
+153
+There seems to be a new model every other day, a new thing every other day.
+154
+What catches your attention?
+155
+It's a good question.
+156
+There's the felt sense, I think, in communities like this one and then maybe the larger AI community that the scaling laws for training have slowed down a little bit.
+157
+And we really haven't had a massive paradigm shift that has been released recently.
+158
+At the same time, there's a lot of really interesting research direction in scaling laws for scaling during inference.
+159
+And what that means is: hey, maybe we have a fundamental unit of compute, and that is a single inference, a single forward pass on a large language model.
+160
+How do we actually now use that or run lots of inference like an agent, like OpenAI 03, 04, and all of these kind of more agentic, more reasoning models to actually get better at doing these difficult tasks?
+161
+And actually, the whole scaling at inference paradigm was pioneered at Hebia.
+162
+So, our early matrix product two years ago, we're one of the first people to say, hey, you get way better accuracy from using more large language model calls at runtime.
+163
+And so, we built lots of infrastructure to scale that up.
+164
+We actually built an agents team before it was even called agents to actually go out and run these larger jobs.
+165
+And I think that's probably the most interesting research direction moving forward: hey, let's go and say this current scaling law of training has slowed down.
+166
+The scaling law of inference or test time compute is very interesting.
+167
+Let's double-click there.
+168
+There's lots going on with multimodal research.
+169
+Obviously, context windows there, how you apply them, how you tie them in to the larger ecosystem of foundation models that are used for text applications is very interesting.
+170
+And I think the number one problem in all of AI is elongating the context window.
+171
+And so, we have a few different metrics.
+172
+It's now a focus.
+173
+You've got these needle in the haystack Twitter threads that measure how good they are.
+174
+One of the areas that Hevia has actually been doing a lot of research has been in artificially extending the context window or effectively extending it.
+175
+And that's been a massive.
+176
+Since we're on the topic, I cannot resist asking for a double-click on this.
+177
+What does that mean?
+178
+How do you artificially extend a context window?
+179
+Well, the idea of a context window is that you can think about all of the things in the context window.
+180
+So, as humans, we currently can remember whatever, the last 10 minutes of conversation, maybe not this entire conversation.
+181
+But we also have bits and pieces over our life and our training and our early careers that we've collected that make us really good employees.
+182
+AI, you've got a system prompt and then whatever, up to a million tokens to jam as much context as you can in there.
+183
+When you think about what you actually want AI to do, you want it to reason over all of your data.
+184
+Applications like RAG can jam the context window with as many search results as you want, but it's not going to reason over that data.
+185
+It'll just search for stuff that exists.
+186
+By elongating the context window, ideally, you'd be able to connect the dots, find stuff that's there, but also stuff that's not there, stuff that's missing.
+187
+And what that means, actually, tangibly from a product perspective is how do we very elegantly use the current context window, scale that up, right, or jam as much of a current maximum context window runs into a single question to get the right answer.
+188
+And so it's actually more of an infrastructure problem.
+189
+It's more of a kind of patchwork or convolution problem of how you actually apply that with the current length of context windows.
+190
+And then it's actually kind of an information theory thing where you have to think through how, you know, what I get out of each of these runs can be maximized every time, but also maximally compressive so that I'm, you know, every single future iteration gets just the right information, nothing that's not relevant.
+191
+As you mentioned a year or two ago, you released Matrix, which is the flagship product for Hebbia.
+192
+So let's get into it.
+193
+What does that actually do?
+194
+I think it was billed as the interface to AGI.
+195
+What's almost my reality as a user of the product?
+196
+What do I have in front of me?
+197
+What does it do for me?
+198
+If the most important job in the future will be how you actually manage AI agents or how you prompt these things at scale, you can think of Matrix as actually running a bunch of sub-agents or an interface like even a Trello board where you can assign a lot of tasks and then a bunch of agents will do these things.
+199
+And so it could be a network or a multi-agent platform where you can basically say, hey, I want all of these things done.
+200
+They all are related to each other in some specific way.
+201
+And every cell in what looks like a grid output ends up becoming a task that's completed by an agent.
+202
+And you mentioned you started in finance and then you expanded to law and consulting.
+203
+How do you customize something like this?
+204
+And relatedly, how do you even decide which next vertical you need to go into?
+205
+One of the things that is a massive fallacy in AI applications today is verticalization as paragraph.
+206
+All of the VCs, a lot of entrepreneurs as well, believe, because it's been true for the last 20 years, that building a very verticalized piece of software is the only answer.
+207
+And so you've got plenty of startups that are like, okay, I'm only going to be AI for blank, AI for compliance, or AI for law, or AI for X, Y, or Z.
+208
+When you have a capabilities, like AI capabilities approach to the problem, you actually start to realize that generalization will beat specialization every single time.
+209
+And what I mean by that is, if you, let's say you want an investing agent, your investing agent will become a researching agent, and the researching agent should become a learning agent.
+210
+And then you get to something closer to AGI.
+211
+If you want a legal agent, right, your legal agent will become maybe like a diligence agent or like something that's like very hyper-logical.
+212
+And if it's really logical, it'll be like basically the smartest possible agent and it'll end up at AGI.
+213
+Or if you're a banker, your banking agent will become a marketing agent because banking is effectively dressing up a company to be sold.
+214
+And then the marketing agent will become, okay, the persuasion agent.
+215
+And the persuasion agent will become something closer to AGI.
+216
+And what I'm trying to highlight here is that it's a way to hack, like to prompt one or two things for a specific set of customers at this point in time today.
+217
+But as AGI comes closer or is actually here, as these models improve, and as we as people get better at using them, we're going to get way more interested in actually extending the context window or pulling these expert knobs or taking something that's general and writing our own prompts and building our own agents.
+218
+And the reason why you as a lawyer are getting paid $2,000 an hour isn't because, oh, I have the same shortcuts from AI for a law company.
+219
+It's because you are an expert and you can customize the greatest and the best tools to the way that your firm works, to the way that you actually can find an edge.
+220
+And that's not specific.
+221
+The best investors aren't only looking at SEC filings.
+222
+They're like reading really crazy data sources that have nothing to do with finance.
+223
+The best lawyers, whether they're persuasive or logical, they have backgrounds that are way outside of law.
+224
+You don't want specialization.
+225
+You want generalization.
+226
+And a lot of our customers are realizing that.
+227
+That's actually the superpower of Hebia.
+228
+And that's why so many people are buying us.
+229
+You don't seem to be a huge fan of Chatbot as an interface.
+230
+Nothing against chatbots.
+231
+Talk about how different the Hebia interface is and what you're trying to achieve there.
+232
+I think.
+233
+Chatbots are, in my eyes, like the TI-84 or like the HP12C, like a calculator.
+234
+It's a one-off, you know, I'm going to go and put in my equation and then get a response.
+235
+Nobody does their taxes in a calculator.
+236
+Nobody, you know, computes a DCF or like does serious knowledge work in a TI-84.
+237
+You like stop using them in high school.
+238
+You might have a simulator on your laptop to like, because it's novel.
+239
+The way that we work is we have these really broad, flexible interfaces called spreadsheets.
+240
+It's flexible, it's highly modular.
+241
+You could call it an expert system.
+242
+And that's actually the way that humans, billions of people, use capable computing today.
+243
+The spreadsheet in Excel is the most important software to have ever been invented.
+244
+Hebia takes an approach that's not dissimilar.
+245
+Just like a single cell in Excel is a calculator, a single cell in Hebia could be a chat or it could be a variety of other AI operations.
+246
+But the Matrix platform, how people use it, is so much broader.
+247
+It's so much more flexible.
+248
+It's an expert platform.
+249
+And we're building that expert platform for how humans will interface with AI agents.
+250
+And so the way they interact with the product and realizing it's difficult to talk about an interface verbally, but it's...
+251
+You could have invited me for a demo.
+252
+I would have done it to show you guys that.
+253
+Next time.
+254
+But it's a spreadsheet, right?
+255
+I mean, it's talk about it.
+256
+One of the mods.
+257
+So we think we're building effectively the new Microsoft Office suite.
+258
+And just as Microsoft Office had Word and PowerPoint and Excel, we have Matrix and then actually a variety of other applications, some of which I can talk about, some of which I can't.
+259
+And we have a chat bot.
+260
+And we think that there's going to be an entirely new productivity suite for how humans, how experts want to interface with AI without having to get in the weeds and code.
+261
+And it's one of those applications.
+262
+Great.
+263
+All right.
+264
+If that's okay with you, a little bit of a technical deep dive into how that all works behind the scenes.
+265
+So presumably to start with, you need to connect with a bunch of sources of enterprise data and process the data.
+266
+So how does that stage of ingestion work?
+267
+Ingestion and indexing is.
+268
+There's many, there's different steps to it.
+269
+So, first is just like collecting the data sources and hooking into as many providers as possible, and that's not fun or not technical.
+270
+The more interesting thing is, actually, once you have the data, how you index it.
+271
+We believe that you can do a lot of pre-processing.
+272
+And I'm not talking about like keyword search and building a BM25 index or like having some sort of semantic search index with embeddings, even your super long embeddings that are coming out.
+273
+That's not actually that interesting to our users.
+274
+Again, that's good at doing searches, it's good at finding things in the data, but you want to start to process information before the user even asks a question.
+275
+You want these agents to be doing work ahead of time.
+276
+What we do instead is we actually ingest documents and pre-process, pre-populate, depending on the doc type, depending on the context in the document, a really rich schema and understanding of each document.
+277
+That ideally would be: hey, we've pre-indexed and pre-done 90% of the work.
+278
+At the same time, that's not enough for asking and running user questions on the fly.
+279
+And for the 10% of the work, i.e., okay, this war just broke out here, or this crisis is happening here, or this event that you couldn't have predicted is happening, we use the same indexing engine and the same infrastructure to run things on the fly.
+280
+And so, you can consider any query that goes through Hebia or that goes through Matrix as a combination of a lot of pre-indexed work and then some stuff that's on the fly and custom.
+281
+And the pipeline to do that from parsing documents, sometimes using multimodal documents to figure out formatting and structure and images, actually, how we then go and run.
+282
+All of those are interesting search problems that I could talk about for a while.
+283
+That's a bit of the thesis behind how we index.
+284
+And then perhaps that's part of what you just described, but I wrote down something about what you call the ISD architecture.
+285
+So that's the rag part.
+286
+After that, you were saying that somewhere that rag doesn't cut it for very hard problems.
+287
+So what is your approach to rag?
+288
+And I assume a lot of people here know, but maybe use the opportunity to define what rag is in the first place.
+289
+Sure.
+290
+RAG is an architecture for using AI.
+291
+That's retrieval augmented generation.
+292
+It was first coined in a paper in March of 2020 by a bunch of Facebook researchers.
+293
+Hebia were actually the first to turn that into a product.
+294
+So it's like a very close thing to my heart.
+295
+So back in 2020, we were the first people to actually productionize it, roll it out.
+296
+And the idea is that you could hook a search engine up to an LLM.
+297
+It's basically what Perplexity uses.
+298
+It's like search engine to LLM.
+299
+Except over the web, you always have an answer.
+300
+Over offline and unstructured and private documents, you don't always have an answer.
+301
+And what we say when we say RAG doesn't cut it, or that Hebia, actually, after making that as our baby, we had to kill the baby and we turned away from RAG to what we call ISD, is we said, well, we need an architecture that's closer to extending the context window versus just searching or calling an external tool.
+302
+And ISD leverages that index, so a lot of work that has been done ahead of time.
+303
+But then also it leverages a way of recursively kind of reading.
+304
+And it's really a decomposition agent at its core.
+305
+So you ask a question, instead of it just pinging a search tool, it can ping a variety of different tools, does rich decomposition, shows its work in the matrix, and then synthesizes a complete response towards the end.
+306
+And do you have pieces still of like this almost classical reg architecture, like re-rankers and that type of stuff somewhere?
+307
+Or were you completely funny thing?
+308
+And my first five employees will get a laugh of this and no one, laugh out of this and no one else.
+309
+But we have, to this day, the most accurate re-ranker that has ever been released, and we do not use it.
+310
+We spent a lot, like the first year, year and a half, just training embedding algorithms, training different versions of Colbert with like multi-embedding architectures for a single passage, and then training re-rankers.
+311
+And we came up with a novel re-ranker architecture, which four years later, academia and industry have not beat.
+312
+And we do not use it.
+313
+And the reason we don't use it is because a lot of the time search isn't what's important.
+314
+If we were building a public web API LLM, like re-rankers would be important.
+315
+But we scrapped all of that for a really heavy infrastructure play that uses tons of large language model calls, is really expensive from a latency and just latent dollar costs perspective, but achieves really accurate answers for deep research, for deep diligence tasks that people can only do in the heavy of platforms.
+316
+Great.
+317
+Let's talk about the model part.
+318
+So I think you guys are very close to OpenAI.
+319
+So do you use multiple OpenAI models?
+320
+Do you use all this stuff that you can talk about, open source, what have you?
+321
+Yeah, we've got partnerships with OpenAI, but also Anthropic and also Amazon.
+322
+So we're playing the field.
+323
+Don't tell Sam Altman.
+324
+But the idea behind HEBIA is we believe the model layer will become commoditized.
+325
+It's no longer a hot take.
+326
+So whatever models you want to use, and hopefully eventually computing on the edge will be the way that you run these things, just like you don't paying the cloud to run your Excel model unless you're in Google Sheets.
+327
+And then you've built some very smart stuff.
+328
+What I can tell around sort of scaling all of this.
+329
+So you have this concept of Maximizer, which sounds like it's a router but smarter.
+330
+What is it?
+331
+Yeah, I think that some of the most interesting stuff at Hebia isn't actually only the agents research, but actually the cure systems problems, where like running, I think we run around 250 billion large language model calls a month.
+332
+And our workflows, I think, before we had Maximizer with all the rate limits that we had, we could run a million tokens a minute, and now we can do 500 or 450 million tokens a minute.
+333
+All of that actually wasn't an AI problem, it was a systems problem.
+334
+And like you mentioned, it is a router.
+335
+You can think of it as a two-sided marketplace.
+336
+But one of our systems there is called Maximizer.
+337
+We liken it from an analogous perspective to an air traffic controller, where just like an air traffic controller basically tells you who can fly, where and when.
+338
+And apparently you're not supposed to fly out of Newark right now.
+339
+I hope it's fixed.
+340
+Maximizer basically has a handshake between license grants and licensing.
+341
+So if a user or a job has a really high or low priority and wants to go and use GPT 4.0, it can make a license request.
+342
+And license grant will say, okay, you have to use Azure or you have to use X, Y, or Z models.
+343
+And it actually ends up with the theoretic, the information theoretic maximum utilization of any rate limits.
+344
+And so not only are we running the most amounts of pages, the most amounts of tokens through our platform, but we're doing that in the most efficient, perfect way.
+345
+And that's all our infrastructure, which is no problem.
+346
+I could get into more, but yeah, I don't want to bore everyone.
+347
+Inevitable question about hallucinations, you know, high-stakes professional context where people have paid a lot of money to provide very reliable results to the customers.
+348
+Is that something that in 2025 is as much of a problem as it was?
+349
+I think it's old news.
+350
+And I think the only reason we still talk about it, it's like everyone talks about hallucinations and no one knows if it's happening or what's going on.
+351
+It's like fugazi, fugazi.
+352
+Like it was a problem back when the models were stupid, but they're obviously not stupid now.
+353
+And I would even say that they're way better than any human.
+354
+So when we start to think about like hallucinations, it's like, well, where does that come up?
+355
+Like, have we actually seen a lot of that happen?
+356
+Probably not recently.
+357
+But the place where it does come up is actually a limitation of rack.
+358
+It's when you've got the wrong documents, or you're searching for something and it finds something that's broken.
+359
+And what you're realizing is that the models are actually pretty good at doing reasoning.
+360
+They're really good meta-learners.
+361
+Like the hallucination, whether it's a problem or not, no one really cares.
+362
+What people care about is when these things fail because they don't have the right context or they're not reading the documents in the right way.
+363
+And that's why we've done a lot of research on how to feed the right stuff at the right time.
+364
+And if that's really, really expensive, we don't care because models are going to become, intelligence will become too cheap to meter.
+365
+That's what our industry is predicated upon.
+366
+So yeah, we'll spend $10,000 in model costs per user a year.
+367
+We don't care.
+368
+We don't, but indicative.
+369
+You just mentioned research.
+370
+How does that work?
+371
+Do you guys have a concept of an AI lab within the company, or is it distributed across the team?
+372
+And how important is research, especially in a context where, again, there seems to be something new every other day?
+373
+How do you think about doing your own research versus just free writing whatever comes?
+374
+Yeah, it feels like there's something new every day, but also if you've been tracking the field, it also doesn't.
+375
+It kind of doesn't feel that different.
+376
+I don't know if I'm allowed to say that, but it doesn't for me.
+377
+Like there's new models, but they don't feel that different.
+378
+Like, you know, some of them are more sycophantic.
+379
+Like, you know, that's the news.
+380
+I think not a lot of people are saying it, but I think like SF has a really big group think where it's like, okay, everyone's going to go out and work on the same things.
+381
+And like there's like this sort of like mimetic attraction rivalry between OpenAI and Anthropic.
+382
+And like, you know, what are they going to do next?
+383
+And like, oh, they have a new interface.
+384
+So like the chat bar got a little bit jumpier with the animation.
+385
+And you, you know, we kind of know like, okay, they can make videos and it's too slow and they can make images.
+386
+The issue is to come up with new interfaces and AI that can really do new things, I think you kind of have to avoid the groupthink.
+387
+And so, we currently don't have any AI researchers hired out in San Francisco.
+388
+We don't even listen a lot to what people are requesting and really try to think about: okay, what is the tool that AGI would use?
+389
+Like, if you actually had AI that could choose any other AI tool to use, what would that look like?
+390
+And we have that guide, what the interfaces look like.
+391
+That's kind of how we came up with Matrix and a lot of the other interfaces that we're talking about.
+392
+That's how we came up with ISD versus RAG and what the rest of the industry uses.
+393
+It's kind of by like, you know, avoiding what is going on on Twitter and just keeping our heads down.
+394
+So, we do have a research lab.
+395
+It is not a standard research lab.
+396
+It does spend a lot of time on information retrieval and context for no problems.
+397
+So, do you think that to take the extreme of what you said that research is actually slowing down?
+398
+So, this test time compute that we're talking about that sort of felt like the major innovation of the last six months.
+399
+But after we're done with test time compute, are we sort of running out of tricks?
+400
+I think there will be more tricks.
+401
+I do believe that AI will start to work on itself.
+402
+I think that I don't mean to be relatively pessimistic, but I wouldn't start a company in AI right now.
+403
+I mean that from the perspective of like the alpha is gone.
+404
+Like, you know, when I was starting the company, there was everyone was like working on crypto, and it was like, you know, the alpha was gone.
+405
+I was like, okay, we're going to work on AI.
+406
+They'll get way faster.
+407
+And the user experience will improve.
+408
+I think longer term, just as I'm talking about how generalization beats specialization, you saw over the last 20 years of enterprise SaaS, Excel get unbundled into a million specialization things.
+409
+It only made Excel more powerful.
+410
+But there will still be specialization as a second wave to create a lot of value.
+411
+But I don't see lots of very large changes in the near future.
+412
+But maybe I've also gotten spoiled from how much stuff has changed.
+413
+So I'll have to think about that one.
+414
+Great.
+415
+Sorry, everyone.
+416
+Pivot to crypto right now.
+417
+Announcing the rebranding of the event.
+418
+Crypto-driven crypto, New York City.
+419
+Exactly.
+420
+There we go.
+421
+I wouldn't come.
+422
+Switching tax a little bit and talking about go-to-market.
+423
+You've innovated there as well.
+424
+I think, among other things, you have a very different take on who salespeople should be for a company like Hebia in terms of backgrounds.
+425
+Do you want to talk to that?
+426
+Yeah, I'm happy to.
+427
+I don't know if this audience is interested in like sales playbook and lineages and all that stuff.
+428
+Yeah, I think there's a fair amount of people building companies.
+429
+So, you know, one of the things that I commonly think about is the best enterprise SaaS selling organizations over the last, whatever, two, three decades all come from the same lineage or the same DNA.
+430
+So they all come from like BMC and App Dynamics, and now they went to MongoDB, and they're all kind of like the same thing.
+431
+They have the same playbook.
+432
+They have a framework called Medic or MedPic, which is all around how you sell value.
+433
+AI is very different from those organizations' products.
+434
+If you actually try to apply this standard, okay, like we're going to do this type of discovery and we're going to do this exact sort of medic sale, there's some things that will take and that you can extend to AI.
+435
+But right now, it's less around paying, it's less around like standard enterprise SaaS cycles, and probably more around FOMO, around missed upside, around value cases that are really hard to define.
+436
+And so the profile of a traditional seller that would excel at these best-in-class quote-unquote playbook organizations, you know, we'll see if that takes for Hebia, and if that takes for our peers in B2B AI application spaces, the jury's still out.
+437
+At the same time, one of the things that we've seen really work are people with domain expertise, people that can speak to the customer's lingo, vernacular, processes, and work.
+438
+And honestly, people that are very similar to consultants.
+439
+And kind of having that playbook consulting muscle together is, I believe, what will work when there's a true paradigm shift over when the last two years of Enterprise SaaS, it's really just unbundling of things that people already know exist.
+440
+So interesting, right, to that concept of like FOMO buying.
+441
+Do people still ask you about ROI to justify your price?
+442
+And if so, how do you do it?
+443
+Part of the beauty of Hebia is that I think we're one of the only AI companies that builds value cases and that is really significantly upselling our customers.
+444
+We actually build a really strong understanding of if you're spending this much, this is what you're getting in return, or these are the expenses that you can actually remove.
+445
+And we commonly partner with the world's best financial firms, not to just give them an AI tool like our competitors, but to actually go out and understand and say, okay, at the board level, you're trying to impact your PL to the tune of $100 million.
+446
+These are the ways that we've seen it done.
+447
+And it's like, you know, a bit of technology and a bit of consulting.
+448
+Yeah.
+449
+Is your ROI based on cost saving, meaning hours not spent doing the task, or is it based on increased revenue?
+450
+There's cost saving.
+451
+It's not only hours spent.
+452
+Sometimes it's removing third-party legal expenses or third-party consulting expenses or third-party expert network spend.
+453
+But a lot of what really is driving value and capturing the imagination of customers is the idea of: hey, you can actually make way more money with AI.
+454
+If I had an infinite number of employees that were experts at a task, maybe I could end up really reading every single SEC filing and finding a bunch of red flags and finding a place where the markets really are inefficient.
+455
+Or if I had a bunch of expert employees an infinite amount of time, maybe my law firm could actually litigate a case better than any other law firm in the world.
+456
+And that's much harder to capture.
+457
+We can't defend it with an ROI calculation, but it's part of the reason people buy.
+458
+Do you come across actual cases where people will say, well, we're not going to hire X-Many junior consultant, analyst, bank.
+459
+I think we're running out of time, but I think it's a really interesting story, and it kind of talks about the future and whether or not we'll have juniors.
+460
+I think we will have juniors.
+461
+I've seen some people that talk about it.
+462
+I haven't seen a lot of people that do it.
+463
+I've seen a lot of third-party expenses, like legal fees.
+464
+I'm very short, Accenture and consultancies, but and the big four.
+465
+But in terms of juniors, Morgan Stanley and some of the folks there always claim that they invented the analyst.
+466
+And the story behind that is: one day they got a bunch of computers at a computer room and they said, Hey, you know, we don't know how to use these computers, all the bankers.
+467
+And they hired a bunch of kids that were like nerds from Columbia, and they brought them down into the computer room and they said, Hey, we're going to go and have you use the computers.
+468
+And the person that made that decision came back to Morgan Stanley, whatever, 20, 30, 40 years later, and said, Hey, you still haven't figured out how to use computers?
+469
+And I think the intuition or like the underlying sentiment there is when technology is created like the computer or like AI, and it's a true revolution, you end up actually having lots of people come in and do those jobs, like do jobs related to the technology.
+470
+So I firmly believe that being an investment banking junior won't look the same as it looked five years ago.
+471
+I definitely believe the same for investors, for lawyers, for everyone else.
+472
+But I actually don't really think that that will decrease the amount of jobs.
+473
+I think that someone like Morgan Stanley will claim to invent the prompt end.
+474
+Can I ask a personal question?
+475
+Always.
+476
+So, you are, in the grand scheme of things, incredibly young, and you're building an incredibly impressive company.
+477
+Perhaps that's inspirational for anyone in the room that's thinking about building their own company.
+478
+How do you do it?
+479
+Like, how do you, you know, maybe not in front of investors because investors like very young founders, but you know, you're going to go to the top people at some huge asset manager and whatever, and you're going to say, hey, you know, I'm going to revolutionize your business.
+480
+Like, how do you lead as a young founder?
+481
+I think naivet is a superpower because it's incredibly hard and a terrible existence to be a founder.
+482
+Everyone always says, like, oh, I wouldn't do it if I knew what it was like.
+483
+And I think that's actually true.
+484
+And so I think that young people end up changing the world because you just don't know how hard it will be.
+485
+And then you're like, oh, I'm here.
+486
+I don't have any other option.
+487
+But I think it definitely demands a lot.
+488
+I'm not the person that does everything at HEPIA.
+489
+I do a lot of things at HEPIA, but we have a lot of talented later in their career folks that I learn from every day that I'm incredibly fortunate to work with and that I'm incredibly grateful that they believe in me.
+490
+But still learning about sales playbooks and information retrieval and all the rest from people that I love working with.
+491
+So I think that's a superpower is the team, always.
+492
+Great.
+493
+And maybe just to zoom out to finish next two to three years, whether that's product roadmap or what have you, what does success look like in three years from now?
+494
+I think the only thing that I care about is, again, like putting capable, true.
+495
+And in three years, if the same amount of people that use chatbots today are using much more adept, agentic applications and driving them to do things to create value, to start businesses, to discover new information, that's what gets me going.
+496
+That's like my dream.
+497
+And I really want to at least play a small part in that.
+498
+All right.
+499
+On this note, George, this was fantastic.
+500
+Thank you so much.
+501
+Thank you guys for coming.
+502
+Appreciate it.
+503
+Hi, it's Matt Turk again.
+504
+Thanks for listening to this episode of the Matt Podcast.
+505
+If you enjoyed it, we'd be very grateful if you would consider subscribing if you haven't already or leaving a positive review or comment on whichever platform you're watching this or listening to this episode from.
+506
+This really helps us build a podcast and get great guests.
+507
+Thanks and see you at the next episode.

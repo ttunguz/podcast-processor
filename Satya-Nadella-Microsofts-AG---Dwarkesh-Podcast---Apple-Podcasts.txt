@@ -1,0 +1,770 @@
+
+Satya, thank you so much for coming on the podcast. So just in a second, we're going to get to
+the two breakthroughs that Microsoft has just made. And congratulations, same day in nature,
+Majorana Zero Chip, which we have in front of us right here, and also the world human action
+models. But can we just continue the conversation we were having a second ago? So you were describing
+the ways in which the things you were seeing in the 80s and 90s, you're seeing them happen again.
+Yeah, I mean, the thing that is exciting for me to watch first of all, it's fantastic to be
+on your podcast. I'm a big listener, and it's just fun to be. And I love the way that you do
+these interviews and the broad topics that you explore. It's sort of to me, it reminds me a
+little bit of my, I'd say first few years even in the tech industry starting in the 90s,
+where there was like real debate about whether it's going to be risk or risk or hey, are we
+really going to be able to build servers using even x86 or, you know, we, when I joined Microsoft,
+that is the, you know, in the beginning of what was Windows NT. So everything from the core
+silicon platform to the operating system to the app tier, that full stack approach, I mean,
+it's being, the entire thing is being litigated. And that's, I think perhaps, you know, you could
+say cloud did a bunch of that and obviously distributed computing and cloud did change clients
+over the web changed massively. But this does feel a little more like maybe more full stack
+than even the past that at least I've been involved in.
+When you think about what actually, which decisions ended up being the long term winners in the 80s
+and 90s and which ones didn't, and especially when you think about, you know, you were at Sun Microsystems,
+they had an interesting experience with the 90s.com bubble. People will talk about this data center
+build out as being a bubble. But at the same time, we have the internet today as a result of what
+was built out then. What are the lessons about what will stand the test of time? What is an
+inherent secular trend? What is just ephemeral? What's the answer?
+Yeah, it's interesting. I mean, I think the, if I sort of go back even at least the four big
+transformations that I've been part of, right, if you say the client and the client server,
+so that's the birth of the graphical user interface and the x86 architecture, basically,
+even allowing us to build servers, it was very clear to me. I remember going to PDC in '91.
+In fact, I was at Sun at that time. And in '91, I went to Masconi, went to, basically, that's when
+Microsoft first described Win32 interface. And I said, it was pretty clear to me what was going
+to happen where the server was also going to be an x86 thing, right? So that, when you have the
+scale advantages accruing to something, that's the secular bet you have to place, right? So that,
+and so what happened in the client was going to happen on the server side, and then you were
+able to then actually build client server application, so the app model and it became clear.
+Then the web was the big thing for us, which we had to deal with in starting, in fact, as soon
+as I joined Microsoft, I think, what is it? The browser, the Netscape browser or the Mosaic browser
+came out what, December, November of '93, right? I think it's when Andreessen and Crue sort of had
+that, and so that was a big game changer. I mean, an interesting way, just as we were going on,
+what was the client's server wave, and it was clear that we were going to win it as well,
+we had the browser moment, and so we had to adjust. And we did a pretty good job of adjusting to it,
+because the browser was a new, I'd say, app model, and we were able to embrace it
+with everything we did, right? Whether it was HTML in Word or build a new thing called the browser
+ourselves and compete for it and then build a web server on our server stack and sort of go
+after it, except, of course, we missed what turned out to be the biggest business model on the web,
+because we all assumed the web is all about being going to be distributed. Who would have thought
+that search would be the biggest winner in organizing the web? And so that's where we obviously didn't
+see it, and Google saw it and executed super well. So that's kind of one lesson learned for me is
+like, hey, you've got to really not only get the tech trend right, you also have to get
+where is the value going to be created with that trend? And these business model shifts
+are probably tougher than even the tech trend changes.
+Where is the value going to be created, in AI?
+That's a great one. So I think the, at least in my current thing is there are two places where I
+can say with some confidence. One is the hyperscalers are do well, because the fundamental thing is,
+if you sort of go back to even how Sam and others describe it, I mean, if intelligence is log of
+compute, whoever can do lots of compute is a big winner. And the other interesting thing is,
+if you look at underneath even any AI workload, take chat GPT. It's not like everybody's excited
+about what's happening on the GPU side. It's great. But it's like the ratio, like in fact,
+I think of my fleet even as a ratio of the AI accelerator storage to compute.
+And at scale, you've got to grow it. And so that infrastructure need for the world
+is just going to be exponentially growing. So in fact, it's mana from heaven to have
+these AI workloads, because guess what? They're more hungry for more compute, right? Not just for
+training, but we now know for test time. And as I said, test, I'm like, here's an interesting
+thing. When you think of an AI agent, it turns out the AI agents is going exponentially increase
+compute usage, because you now are not even bound by just one human invoking a program. It's
+one human invoking programs that invoke lots more programs. And so that's going to create
+massive, massive demand and scale for compute infrastructure. So our hyperscale business,
+Azure business, I think that's like another hyperscalers, I think that's a big thing.
+Then after that, it becomes a little fuzzy, because you could sort of say, hey, there is a
+winner take all model. I just don't see it, because this, by the way, is the other thing I've learned
+is being very good at understanding what our winner take all markets and what are not winner
+take all markets is, in some sense, everything. Like I remember in the even in the early days,
+when I was getting into Azure, I mean, Amazon had a very significant lead and people would come to
+me and investors would come to me and say, oh, it's a game over, you'll never make it.
+Amazon's it's winner take all. And having competed against Oracle and IBM and client server,
+I knew that, look, the buyers will not tolerate winner take all, right? I structurally, hyperscale
+will never be a winner take all, because buyers are smart. Consumer markets sometimes can be
+winner take all, but anything there, the buyer is a corporation, an enterprise, an IT department
+to beat, they will want multiple suppliers. And so you got to be one of the multiple suppliers.
+And so that, I think, is what will happen even in the model side. So there will be open source,
+there will be a governor just like on Windows, one of the big lessons learned for me was,
+if you have an up close source operating system, there will be a compliment to it,
+which will be open source. And so to some degree, that's a real check on what happens. And so,
+I think in models, there is one dimension of maybe there will be a few close source,
+there will definitely be an open source alternative. And the open source alternative will actually
+make sure the close source winner take all is mitigated. So that's kind of at least my
+feeling on the model side. And by the way, let's not discount. If this thing is really as powerful
+as people make it out to be, the state is not going to sit around and wait for private companies
+to go around and all over the world. So I don't see it as a winner take all. Then about that,
+I think it's going to be the same old stuff, which is in consumer in some categories,
+there may be some winner take all network effect. After all, chat GPT is a great example. It's an
+at scale consumer property that has already got real escape velocity. I go to the app store and
+I see it's always like there in the top five. And I say, wow, that's pretty unbelievable.
+So they were able to use that early advantage and correlate that into an app advantage.
+And so when consumer that could happen in the enterprise again, I think they will be
+by category different winners. So that's sort of at least how I analyze it.
+I have so many follow up questions. We got to get to quantum in just a second. But
+so on the idea that maybe the models get commoditized,
+look, maybe somebody could have made a similar argument a couple of decades ago about the
+cloud that fundamentally is just like a chip and a box. But in the end, of course, you and
+many others figured out you guys have amazing profit margins in the cloud and you figured out
+ways to get economies of scale and add up their value add. And fundamentally, even for getting
+the jargon, like if you've got AGI and it's like helping you make better EIs, right now it's
+synthetic data in RL, maybe in the future, it's an automated AI researcher. That seems like a good
+way to entrench your advantage there. I'm curious what you make of that just data that like it really
+matters to be right there. At scale, nothing is commodity, right? So to your point about cloud,
+I mean, everybody would say, oh, cloud's a commodity, except, you know, when you scale,
+that's why the know how of running a hyperscaler, right? Like you would say, well, what the heck?
+I mean, I can just rack and stack silvers, right? In fact, like in the early days of hyperscale,
+most people thought like God, you know, they're all these hosters. So and those are not great businesses.
+Will there be anything like, is there a business even in hyperscale? And it turns out there is a
+real business, just because the know how of running, you know, whatever, in the case of Azure,
+the world's computing of 60 plus regions. And with all the compute, it's just it's a tough thing
+to duplicate. So the thing that I was more making the point was, is it one winner,
+right? Or is it a winner take all or not? Like, because that you got to get right,
+because categories you want you, I like to enter categories, which are big tamps, where you don't
+have to even have the risk of it all being winner take all right, right? I mean, so if you're running,
+like the best news to be is in a big market that can accommodate a couple of winners,
+and you're one of them, right? So that's what I was, I meant by the hyperscale.
+In the model layer, one is models need ultimately to run on some hyperscale compute, right? So that's
+sort of that nexus, I feel, is sort of going to be there forever, right? Because again, it's just
+not the model, but the model needs state. That means it needs storage, and it needs to regular
+compute for running these agents in the agent environments. And so that's kind of how I think
+about why the limit of one person running away with one model and building it all may not happen.
+On the hyperscaler side, and by the way, it's also interesting the advantage you as a hyperscaler
+would have in the sense that especially with inference time scaling, and if that's involved in
+training future models, you can amortize your data centers and GPUs, not only for the training,
+but then use them again for inference. I'm curious what kind of hyperscaler you consider
+Microsoft and Azure to be? Is it on the pre-training side? Is it on providing the O3 type inference,
+or are you just, we're going to host and deploy any single model that's out there in the market,
+and we are sort of agnostic about that? It's a good point. I mean, the way
+we are built out, and at least the way we want to build out the fleet is,
+in some sense, ride Moore's law. I think that this will just be like what we have done with
+everything else in the past, which is you kind of every year sort of keep refreshing the fleet.
+You depreciate it over whatever the lifetime value of these things are, and then get very,
+very good at the placement of the fleet such that you can run different jobs at it with high
+utilization. So sometimes they are very big training jobs that need to have highly
+concentrated peak flops that are provisioned to it, that also need to cohere or what have you,
+that's great. So we should have enough data center footprint to be able to give that,
+but at the end of the day, these are all anyway becoming so big, even in terms of, if you say,
+take pre-training scale, and if it needs to keep going, even pre-training scale at some point
+has to cross data center boundaries, it's all more or less there. So great, when once you start
+crossing pre-training data center boundaries, is it that different than anything else,
+right? So therefore, so the way I think about it is, hey, distributed computing will remain
+distributed. So go build out your fleet such that it's ready for large training jobs,
+it's ready for test time compute, it's ready. In fact, if this RL thing, the thing that might
+happen is you build one large model, and then after that, there's tons of like this RL going on
+and test it to me, it's kind of like, again, more training flops, because you want to create these
+highly specialized distill models for different tasks. So you want that fleet, and then the serving
+needs, right? At the end of the day, speed of light is speed of light. So you can't sort of have
+one data center in Texas and say, I'm going to serve the world from there. You got to serve the
+world based on having an inference fleet everywhere in the world. So that's kind of how I think of
+our build out a true hyperscale fleet. Oh, and by the way, I want my storage and compute also
+close to all of these things, because it's not just AI accelerators that are stateless,
+because I need to be able to have not just my training data itself needs storage.
+And then I want to be able to multiplex multiple training jobs. They want to be able to then have
+memory. I want to be able to have these environments in which these agents can go
+execute programs. And so that's kind of how I think about it.
+You recently reported that your yearly revenue from AI is $13 billion. But if you look at your
+you're on your growth on that, in like four years, it'll be 10x that you will have $130 billion
+revenue from AI if the trend continues. If it does, what do you anticipate we're doing with all
+that intelligence? Like this industrial scale is it going to be like through office, is it going to
+be you deploying it for others to host, is it going to be you got to have the AGI to have $130
+billion in revenue? What does it look like? Yeah, it's the way I come out of Dorkish. It's a
+great question because at some level, if you're going to have this sort of explosion abundance,
+whatever commodity of intelligence available, you know, the first thing we have to observe
+is GDP growth, right? Before I get to what Microsoft's sort of revenue will look like. I mean, there's
+only one governor in all of this, right, which is this is where a little bit of we get ahead of
+ourselves with all this AGI hype, which is, Hey, you know what, let's first see if let's say
+develop what I mean, like remember, like the developed world is what 2% growth? And if you adjust
+for inflation, it's zero. So in 2025, as we sit here, I'm not an economist, at least I look at it
+and say, man, we have a real growth challenge. So the first thing that we all have to do is let
+when we say, Oh, this is like the Industrial Revolution, blah, blah, blah. Oh, let's have that
+Industrial Revolution type of growth. That means to me, 10%, 7% developed world,
+inflation adjusted growing at 5%. That's the real marker, right? So it's not just it can't just be
+supply side, right? It has to be out. In fact, that's the thing, right? I think there's a lot
+of people are writing about it. I'm glad they are, which is the big winners here are not going to be
+tech companies. The winners are going to be the broader industry that uses this commodity that
+by the way is abundant. And suddenly, productivity goes up and the economy is growing at a faster rate.
+When that happens, we'll be fine as an industry, but that's to me the moment, right? So it costs
+self-claiming some AGI milestone. That's just nonsensical benchmark hacking to me.
+The real benchmark is the world growing at 10%.
+Okay. So if the world economy is 100 trillion or something, the world grew at 10%, that's like
+extra 10 trillion in value produced every single year. If that is the case, you as a hyperscaler,
+it seems like 80 billion is a lot of money. Shouldn't you be doing like 800 billion? If you really
+think in a couple of years, we could be really growing the world economy at this rate. And the
+key bottleneck would be, do you have the compute necessary to deploy these AIs to do all this work?
+I mean, that is correct. And so therefore, by the way, the balance is like, I think a little bit
+of it is right now is like, hey, the classic supply side is, oh, let me build it and they'll
+come. I mean, that's an argument. And after all we've done that, we've taken enough risk to go do it.
+But at some point, the supply and demand have to map. And so that's what I think, and that's why
+I'm tracking both sides of it. So that's why I think you can go off rails completely when you're
+like all hyping yourself with all the supply side versus really understanding how to translate that
+into real value to customers. And so, unless and that's why I look at my inference revenue,
+that's one of the reasons why even the disclosure on the inference revenue, it's interesting that
+not many people are talking about their real revenue. But to me, that I think is important
+as a governor for how you think about it, right? And you're not going to say, oh, they have to
+symmetrically meet at any given point in time, but you need to have existence proof
+that you are able to parlay yesterday's, let's call it capital into today's demand so that then
+you can again invest maybe exponentially even knowing that you're not going to be completely
+rate mismatched. Yeah, I wonder if there's a contradiction in these two different viewpoints,
+because look, I mean, one of the things you've done wonderfully is you make these early bets when
+there's you invested in OpenAI in 2019, even before there was co-pilot and any applications.
+If you look at the Industrial Revolution, these six, 10% build outs of real ways and whatever
+things, many of those were not like we've got revenue from the tickets and now we're going to
+whatever. There's a lot of money lost. That's true. So if you really think like there's some
+potential here to 10x or 5x the growth rate of the world, and then you're like, well, what is
+of revenue from GVD4? I mean, like, if you really think that that's the possibility from the next
+level up, shouldn't you just like, let's go crazy, let's do the hundreds of billions of dollars of
+compute? I mean, there's like some chance to get that. The thing is like, I mean, like, here's
+the interesting thing, right? The real question, quite frankly, to answer is, is this just about,
+like, that's why even that balanced approach to the fleet, at least, is to be very important to me,
+right? Which is, it's not about building compute. It's about building compute that can actually
+help me not only train the next big model, but also serve the next big model. And you,
+understand until you do those two things, you're not going to be able to really be in a position
+to take advantage of even your investment, right? So that's kind of where it's not a race to just
+building a model. It's a race to creating a commodity that is getting used in the world to
+drive. So you have to have a complete thought, not just one thing that you're thinking about.
+And so that's at least in my view of saying, and by the way, one of the things is they will be
+overbuilt. To your point about you sort of said, what happened in the dot com era? And I look at it
+and say, now the memo has gone out that, hey, you know, you need more energy and you need more
+compute. Thank God for it. And so everybody's going to race. In fact, I look at the number of,
+it's not just companies deploying, countries are going to deploy capital. And they will be
+clearly like, I want to, I'm really hope, I'm so excited to be a Lisa, because by the way,
+I build a lot, I lease a lot. I am thrilled that I'm going to be leasing a lot of capacity in 27,
+28, because I look at the bills. And I'm saying, this is fantastic. The only thing that's going to
+happen with all the compute bills is the prices are going to come down.
+Yeah. I mean, speaking of prices coming down, you recently tweeted after the DeepSeq model
+came out about Jevin's paradox. And I'm curious if you can flesh out. So Jevin's paradox occurs
+when there's like the demand for something is highly elastic. Is intelligence that bottlenecked
+on prices going down? Because when I think about at least my use cases as a consumer,
+it's like intelligence is already so cheap. It's like two cents per million tokens. Like,
+do I really needed to go down to point zero two cents? I'm just like really bottlenecked on
+it becoming smarter. And if you need to do charging me 100x, do 100x bigger training run,
+I'm happy for companies to take that. But maybe you're seeing something different on the
+enterprise side or something. What is the key use case of intelligence that really requires
+you to get a point zero zero two cents per million tokens? I mean, I think the real thing is the
+utility of the tokens, right? So which is in some sense, both need to happen. One is,
+intelligence needs to get better and cheaper. And anytime there's a breakthrough, like even
+what deep seek did or what have you with the efficient frontier of let's say performance
+per token changes, and the curve gets bent, and the frontier moves that just brings more
+demand. And so that's sort of how I look at it. And that's what happened with cloud right by the
+way. Here's an interesting thing. We used to think, Oh my God, we've sold all the servers in the
+client server era, except once we started putting servers in the cloud, suddenly people started
+consuming more, because they could buy it cheaper and by it was elastic. And they could buy it as
+a meter versus a license. And it completely expanded. Like, I mean, I remember like, you know, going
+let's say to a country like India and sort of talking about, Oh, he had a SQL server. We sold
+a little, but man, the cloud in India is so much bigger than anything that we were able to do in
+the server era. And that I think is going to be true. Like, if you think about like, if you want to
+really have in a in the global south in a developing country, if you had these tokens that were
+available for healthcare, that were really cheap, that'll be like the biggest change ever.
+A quick word from our sponsor scale AI, publicly available data is running out. So major labs like
+meta and Google DeepMind and open AI, all partner with scale to push the boundaries of what's
+possible. Through scale's data foundry, major labs get access to high quality data to fuel
+post training, including advanced reasoning capabilities. As AI races forward, we must also
+strengthen human sovereignty. Scales research team seal provides practical AI safety frameworks,
+evaluates frontier AI system safety via public leaderboards and creates foundations for integrating
+advanced AI into society. Most recently, in collaboration with the Center for AI safety,
+scale published Humanities Last Exam, a groundbreaking new AI benchmark for evaluating AI systems,
+expert level knowledge and reasoning across a wide range of fields. If you're an AI researcher
+or engineer and you want to learn more about how scale's data foundry and research team can help
+you go beyond the current frontier of capabilities, go to scale.com/duarkesh. I think it's like quite
+reasonable for somebody to hear people like me in San Francisco and think like, look, they're
+kind of silly. They don't know what it's actually like to deploy things in the real world.
+As somebody who works with these Fortune Play hundreds and is working with them to deploy
+things for hundreds of millions, billions of people, what's your sense of how fast deployment
+of these capabilities will be? Even when you have working agents, even when you have things
+that can do a remote work for you and so forth, with all the compliance and with all the inherent
+bottlenecks, is that going to be a big bottleneck or is that going to move past pretty fast?
+It is going to be a real challenge because the real issue is change management or process
+change. Here's an interesting thing, which is one of the analogies I use is just imagine how a
+multinational corporation like us did forecasts, pre-PC and email and spreadsheets. I mean,
+faxes went around. Somebody then got those faxes and then did an interoffice memo that then went
+around and people entered numbers and then ultimately a forecast came maybe just in time for the next
+quarter. Then somebody said, "Hey, I'm just going to take an Excel spreadsheet, put it an email,
+send it around. People will go edit it and I'll have a forecast." The entire forecasting business
+process changed because the work, the work artifact and the workflow changed. That is what needs to
+happen with AI being introduced into knowledge work. In fact, when we think about even all these
+agents, the fundamental thing is there's a new work in workflow. For example, for me, even prepping
+for our podcast, I go to my co-pilot and I say, "Hey, I'm going to talk to Dvar Keshe about our
+quantum announcement and this new model that we built for game generation and just kind of give
+me a summary of all the stuff that I should read up before going." Even knew the two nature
+papers, it took that. In fact, I even said, "Hey, go give it to me in a podcast format." It sort of
+even did a nice job of two of us chatting about it. That became, and in fact, then I shared it with
+my team. I took it and put it into pages, which is our artifact, and then shared. The new workflow
+for me is I think with AI and work with my colleagues. That's a fundamental change management of everyone
+who's doing knowledge work, suddenly figuring out these new patterns of how am I going to get my
+knowledge work done in new ways. That is going to take time. It's going to be something like in
+sales and in finance, in supply chain. For an incumbent, I think that this is going to be
+one of those things where let's take one of the analogies I like to use is what manufacturers did
+with Lean. I love that because in some sense, if you look at it, Lean became a methodology of how
+one could take an end-to-end process in manufacturing and become more efficient. It's that continuous
+improvement, which is reduce, waste, and increase value. That's what's going to come to knowledge.
+This is lean for knowledge work in particular, and that's going to be the hard work of management
+teams and individuals who are doing knowledge work, and that's going to take its time.
+Can I ask you briefly about that analogy? One of the things Lean did is physically
+transform what a factory for looks like. It revealed bottlenecks that people didn't realize until you're
+really paying attention to the processes and workflows. You mentioned briefly how your own
+workflow has changed as a result of AI's. I'm curious if we can add more color to what would
+it be like to run a big company when you have these AI agents that are getting smarter and
+smarter over time? It's interesting to ask that. I was thinking about it. For example,
+today, if I look at it, we are very email-heavy. I got in in the morning and I'm like, "Man,
+my inbox is full and I'm responding." I can't wait for some of these co-pilot agents to automatically
+populate my drafts so that I can start reviewing and sending. That's what I do feel. I already
+have in co-pilot at least 10 agents, which I do as I query them as different things for different
+tasks. I feel like there's a new inbox that's going to get created, which is my millions of
+agents that I'm working with will have to invoke some exceptions to me, notifications to me,
+ask for instructions. At least what I'm thinking is that there's a new scaffolding,
+which is the agent manager. It's not just a chat interface. I need a smarter thing than chat
+interface to manage all the agents and their dialog. That's why I think of this co-pilot as the
+UI for AI is a big, big deal. Each of us is going to have it. Basically, think of it as
+there is knowledge work and there's a knowledge worker. The knowledge work may be done by many,
+many agents, but you still have knowledge worker who is dealing with all the knowledge workers.
+That, I think, is the interface that one has to be. I'm curious about,
+you're one of the few people in the world who can say that you have access to 200,000. You have
+this swarm of intelligence around you in the form of Microsoft the company and all its employees.
+You have to manage that. You have to, how to interface with that, how to make best use of that.
+Hopefully, more of the world will get to have that experience in the future.
+I'd be curious about how your inbox, if that means everybody's else's inbox will look like.
+Yours in the morning. Before we get to that, I want to keep asking you more about AI,
+but I really want to ask you about the big breakthrough in quantum that Microsoft
+researchers announced. Can you explain what's going on here?
+This has been another 30-year journey for us. It's unbelievable. I'm the third CEO
+of Microsoft who is being excited about quantum. I think the fundamental breakthrough here,
+or the vision that we've always had is you need a physics breakthrough in order to build a utility
+scale quantum computer that works. We took that path, which was the path of saying,
+look, the one way for having that less noisy or the more reliable qubit is to bet on a physical
+property that by definition is more reliable. That's what led us to this Meyer on a zero mode.
+The question was, can we actually physically fabricate these things? Can we actually build them?
+The big breakthrough, effectively, and I know you talked to Chatham, was that we now finally
+have existence proof and a physics breakthrough of Meyer on zero modes in a new phase of matter
+effectively. This is why I think we like the analogy of thinking of this as the transistor
+moment of quantum computing, where we effectively have a new phase, which is the topological phase
+where which means we can even now reliably hide the quantum information and measure it,
+and then we can fabricate it. Now that we have it, we feel like with that core foundational
+fabrication technique out of the way, we can start building a Meyer on a chip,
+that Meyer on a one, which I think is going to basically be the first chip that will be capable
+of a million cubits physical, and then on that, thousands of logical cubits are corrected,
+and then it came on. Then you suddenly have got the ability to build a real utility square quantum
+computer, and that to me is now so much more feasible. Without something like this, you will
+still be able to achieve milestones, but you will never be able to build a utility-scale computer,
+and so that's why we are excited about it. And by the way, I believe this is it right here.
+That is it. I forget now, are we calling it Meyer on a one? I'm glad we named it after that,
+and to think of the fact that we are able to build something like a million
+cubit quantum computer in a thing of this size is just unbelievable. And that's
+I think the crux of it, which is unless and until we could do that, you can't dream of building
+a utility-scale quantum computer. And you're saying the eventual million cubits will go on
+a chip the size. That's amazing. So other companies have announced 100 physical cubits,
+Google's, IBM's, others. When you say, and you've announced one, but you're saying that yours is
+way more scalable in the limit. Yeah. So by the way, the one thing that we have also done is we've
+taken sort of an approach where we sort of separate our software and our hardware, right? So we're
+building out our software stack. So in fact, we now have with a couple of different with the
+neutral atom folks with the ion trap folks. We're also working with others who even have, I think,
+pretty good approaches, even with photonics and what have you. So that means there will be different
+types of quantum computers. And in fact, we have what 20, I think the last thing that we announced
+was 24 logical cubits. So we have also got some fantastic breakthroughs on error correction.
+And that's what is allowing us even on a neutral atom and an ion trap quantum computers to build
+these 20 plots and that I think that'll keep going even in throughout the year you'll see us
+improve that yardstick. But we also then said, let's go to the first principles and build our own
+super quantum computer that is betting on the topological qubit. And that's what this this
+breakthrough is about. Amazing. The the million topological qubits, thousands of logical qubits,
+what is the estimated timeline to scale up to that level? What is the Moore's law here? If you've
+got the first transistor look like like we've obviously been working on this for 30 years,
+I'm glad we now have the fabrication, the physics breakthrough and the fabrication
+breakdown. I mean, this is I mean, I wish we had a quantum computer, because by the way,
+the first thing the quantum computer will allow us to do is build quantum computers,
+because it's going to be so much easier to simulate atom by atom construction of these new quantum
+gates, essentially. But in any case, to me, I think the next real thing is now that we have
+the fabrication technique, let us go build that first fault tolerant quantum computer.
+And that'll be the logical thing. So I would say now I can say, oh, maybe 27, 28, 29, we will be
+able to actually build this, right? So now that we have this one gate, can I put the thing into
+an integrated circuit and then actually put these integrated circuits into a real computer,
+that I think is where the next logical step is. And what do you see as 27, 28,
+you've got it working? Is it like a thing you access through the API? Is it something you're
+using internally for your own research and materials and chemistry? See, one thing that
+I've been excited about is even in today's world, right? Because we were we had this quantum program
+and we had H we could say, hey, here's some API's to it. The breakthrough we had maybe two years ago
+was to sort of think of this HPC stack and AI stack and quantum together. In fact, if you think
+about it, right? AI is like an emulator of the simulator. Like quantum is like a simulator of
+nature. Like what is what quantum going to do? By the way, quantum is not going to replace classical,
+right? Quantum is great at what quantum can do. And classical will be also because you can't like,
+I mean, like to be able to quantum is going to be fantastic for anything that is not data heavy,
+but it's got more exploration heavy in terms of the state space, right? So which is it should
+be data light, but exponential states that you want to explore. And you know, simulation is a
+great one. Chemical physics, what have you biology. So one of the things that we've started doing is
+really using AI as the emulation engine. But you can then train. So the way I think of it as,
+you know, if you have AI plus quantum, maybe you will use quantum to generate synthetic data that
+then gets used by AI to train better models that know how to model something like chemistry or
+physics or what have you. And these two things will get used together. So even today, that's kind
+of effectively what we're doing with the combination of HPC and AI. And I hope to replace some of the
+HPC pieces with quantum computers. Great products come from teams that have full visibility
+into their development. As your company grows, the levels of process start slowing you down.
+And that's where linear comes in. They've built the project management tool that's quickly becoming
+the default for startups, as well as larger companies who want to move fast. I've heard from a ton
+of my friends in Silicon Valley who tell me that they really love linear. And that's why I was
+excited to work with them. Ram, cash app, open AI and scale have all made the switch. And remarkably,
+this is often the result of a grassroots campaign from their engineers who love linear and are
+really frustrated with the current tools. Product teams love using it because everything exists
+where you'd expect to find it. The whole experience is lightweight, intuitive, and fast. Linear
+is dedication to quality and craft or obvious from the moment you start using it. And everything just
+works. So maybe you should chat with your team. Or if you want to use it yourself, go to linear.app/thorkesh
+to learn more. All right, back to Satya. Can you tell me a little bit about how you make these
+research decisions, which in 20 years time, 30 years time will actually pay dividends,
+especially at a company of Microsoft's scale. Obviously, you're in great touch with the technical
+details in this project. Is it feasible for you to do that with all the things Microsoft
+research does? And how do you like the current venture making that will pay out in 20 years?
+Does it have to decide to emerge organically through the org? Or are you like, how are you
+keeping track of all this? Yeah, I mean, the thing that, you know, I feel, which was fantastic,
+is what Bill, sort of when he started MSR back in '95, I guess, you know, it's like, look, I think
+in the long history of these curiosity driven research organizations to just sort of just
+do a research org that is about fundamental research. And MSR over the years has built up that
+institutional strength. So when I even think about capital allocation or budgets or what have you,
+you kind of sort of first put the chips in and say, hey, look, here is MSR's budget.
+And we got to go at it each year, knowing that some, you know, most of these bets are not going
+to pay off in any finite timeframe. It may be the sixth CEO of Microsoft will benefit from it.
+And that's, I think, you know, that's kind of an tech that is, I think, a given. The real thing
+that I think about is when the time has come for something, like quantum or a new model or what
+have you, can you capitalize? So as an incumbent, if you sort of look at history of tech, it's not
+that people would invest. It is like you need to have a culture that knows how to take an innovation
+and scale it. That's the hard part, quite frankly, for CEOs and management teams,
+which is kind of like fascinating, right, which is it's as much about good judgment and it's about
+good culture. And, you know, sometimes we've gotten it right. Sometimes we've gotten it wrong,
+right? I mean, I can tell you the 1000 projects from MSR that were, you know, we should have
+probably led with, but we didn't. And I always ask myself, why? And it's because we were not able
+to get enough sort of conviction and that complete thought of how to not only take the innovation,
+but make it into a useful product with a business model that we can then go to market with. Like,
+that's the job of CEOs and management teams is not to just be excited about any one thing,
+but to be able to actually execute on a complete thing. And that's easier said than not.
+When you mentioned the possibility of six, or I guess three subsequent to use of Microsoft,
+if each of them increases the market cap, I don't order magnitude, but you know, by the time you've
+got the next breakthrough, you'll be like the world economy or something. The world is going
+to be growing at 10%. So we'll be fine. Let's dig into the other big breakthrough you've just
+made. And it's amazing that you have both of them coming out the same day in your gaming world
+models. I'd love you. You can tell me. I think we're going to call it Muse, as what I learned,
+is they're going to be the model of this world action or human action model. And this is very
+cool. See, one of the things that obviously Dolly and Sora have been unbelievable and what they've
+been able to do in terms of generated models. And so one thing that we wanted to go after was
+using game play data. Can you actually generate games that are both consistent and then have the
+ability to generate the diversity of what that game represents? And then I'll persist into user
+mods, right? So that's what this is. And so they were able to work with one of our game studios.
+And this is the other publication in nature. And the cool thing is what I'm excited about is
+bringing. And so we're going to have a catalog of games soon that we will start sort of using
+these models or we're going to train these models to generate and then start playing them.
+And in fact, when Phil Spencer first showed it to me, where he had an Xbox controller and
+this model basically took the input and generated the output based on the input. And it was consistent
+with the game. And that to me is a massive, massive, you know, moment of wow, it's kind of like,
+you know, the first time we saw chat GPT complete sentences or Dolly draw or Sora. This is kind of
+one such moment. Yeah. And I only got a chance to see some of the videos in the real time demo
+this morning with your lead researcher Katya on this. And only once I talked to her did it really
+hit me how incredible this is in the sense that we've used AI in the past to model agents and
+just using that same technique to model the world around the agent and give this consistent real time.
+Well, superimposed videos of what this looks like atop this podcast that people can get a
+chance to see it for themselves. I guess it'll be out by then so they can also watch it there.
+This in itself is incredible. You through your span of CEO have invested tens hundreds of billions
+of dollars in building up Microsoft gaming and acquiring IP. And in retrospect, if you can just
+merge every all of this data into one big model that can give you this experience of visiting and
+going through multiple worlds at the same time. And if this is a direction gaming is headed,
+seems like a pretty good investment we haven't made. Did you have any
+pre-medition about this or good coincidence? I mean, I wouldn't say that we invested in
+gaming to build models. We invest quite frankly. Here's an interesting thing about our history.
+We built our first game before we built Windows. Flight simulator was a Microsoft product long
+before we even built Windows. So gaming has got a long history at the company and we want to be
+in gaming for gaming's sake. And that's I always start by I hate to be in businesses
+where their means to some other end, they have to be ends onto themselves. And then yes, we're not
+a conglomerate. We are a company where we have to bring all these assets together and be better owners
+off by adding value. So for example, cloud gaming is a natural thing for us to invest in because
+that'll just expand the TAM and expand the ability for people to play games everywhere.
+Same thing with AI and gaming. We definitely think that it can be helpful and maybe
+changing. It's kind of like the CGI moment even for gaming long term. And it's great as the
+biggest world's largest publisher. This would be helpful. But at the same time, we're going to
+produce great quality games. I mean, you can't be a gaming publisher without sort of first and
+foremost being focused on that. But the fact that this data asset is going to be interesting,
+not just in gaming context, but it's going to be a general action model and a world model.
+It's fantastic. I mean, I think about gaming data as perhaps what YouTube is perhaps to Google,
+gaming data is to Microsoft. And so therefore, I'm excited about that.
+Yeah. And that's what I meant. And just a sense of you can have one unified experience
+across many different kinds of games. How does this fit into the other separate from AI?
+The other things that Microsoft has worked on in the past, like mixed reality, maybe giving
+smaller game studios a chance to build these AAA action games and just like five, 10 years from
+now, what kinds of ways could you know, I've thought about these three things as sort of the
+cornerstones, right of in an interesting way. Even I got a five, six, seven years ago is when I said
+like the three big bets that we want to place is AI quantum and mixed reality. And I still believe
+in them, right? Because even some sense, like, what are the big problems to be solved presence?
+That's the dream of mixed reality, which is, you know, can you create real presence? Like you and I
+doing a podcast like this, I think we're still like it's proving out to be the heart of one of
+those challenges, quite honestly, I thought it is going to be more solvable. It's tougher,
+perhaps, just because of the social side of it, right, which is wearing things and so on.
+We're excited about, in fact, what we're going to do with Adderall and Palmer now with even
+how they'll take forward the iOS program and because that's a fantastic use case. And so we'll
+continue on that front. But also the 2D surfaces, it turns out things like teams, right, thanks to
+the pandemic. We've really gotten like the ability to create essentially presence through even 2D.
+And that I think will continue. That's one secular piece, the quantum we talked about and the AI is
+the other one. So these are the three things that I look at and say, how do you bring these
+things together? Ultimately, not as tech for tech sake, but solving some of the fundamental
+things that we as humans want in our life and more, we want them in our economy driving our
+productivity. And so if we can somehow get that right, then I think we would have really made
+progress. When you write your next book, you've got to have some explanation of why those three
+pieces all came together around the same time, right? There's no intrinsic reason you within
+quantum and AI should happen in 2028 and 2025 and so forth. That's right. At some level,
+I kind of look at it and say the simple model I have is, hey, is there a systems breakthrough?
+And to me, the systems breakthrough is the quantum thing. Is there a business logic breakthrough?
+That's kind of like AI to me, which is like, can the logic tier be fundamentally
+reason differently? And instead of, you know, imperatively writing code, can you have a learning
+system and that's sort of the AI one? And then the UI side of it is presence.
+Yeah. Going back to the eye for a second. So in your 2017 book, 2019, you invest in open AI
+very early 2017 is even earlier. And you say in your book, one might also say that we're birthing
+a new species, one whose intelligence may have no upper limits. Now super early, of course,
+to be talking about this in 2017, we so far have been talking in sort of like a granular fashion
+about Asians and office, co-pilot and catbacks and so forth. But you just zoom out and consider
+this statement you've made. And you think about like you as somebody as a hyperscaler, as the
+person doing research in these models as well, providing training inference research for building
+a new species, like in the grand scheme of things, how do you think about this? Or do you think
+we're headed towards superhuman intelligence in your time of sale?
+I think even Mustafa uses that term. In fact, he's used that term more recently around what
+this new species. The way I come at it is you definitely need trust. I think the one thing that
+before we kind of claim it is something as big as a species, the fundamental thing that I think
+that we've got to get right is that there is real trust, whether it's personal or societal level,
+trust that's big dead. That's the hard problem. Because I think the one biggest rate limiter
+to the power here will be, how does our legal call it infrastructure? We're talking about all
+the compute infrastructure. How does the legal infrastructure evolve to deal with this?
+Like entire world is constructed with things like humans owning property, having rights,
+and being liable. That's the fundamental thing that one has to first say, okay, what does that
+mean for anything that now humans are using as tools? If humans are going to delegate more
+authority to these things, then how does that structure evolve? Until that really gets resolved,
+I think just talking about the tech capability, I don't think it's going to happen.
+As in we won't be able to deploy these kinds of intelligences until we figure out how to--
+Because at the end of the day, today you cannot deploy these intelligences unless and until
+there's someone indemnifying it as a human. To your point, that's one of the reasons why I
+think about it, even the most powerful AI is essentially working with some delegated authority
+from some human. You can sort of say, oh, that's all the alignment that's done in the
+other. And that's why I think you have to sort of really get these alignments to actually work and
+be verifiable in some way. But I just don't think that you can deploy intelligences that are out.
+So for example, does AI take off problem? Maybe a real problem. But before it is a real problem,
+the real problem will be in the courts. Because the courts-- I mean, no society is going to allow
+for some human to say AI did that. Yes. Well, there's a lot of societies in the world,
+and I wonder if any one of them might not have a legal system that might be more amenable.
+And if you can't have a take-off, then you might worry. It doesn't have to happen in America,
+right? Even if the-- Yeah, it's a good one. But even-- It's sort of like even if in any--
+One thing that we think that no society cares about it, right? They can be rogue actors. I'm
+not saying they won't be rogue actors. I mean, they're cyber criminals and rogue states. They're
+going to be there. But to think that sort of the human society at large doesn't care about it is
+also not going to be true, right? So I think we all will care, right? We know how to deal with
+rogue states and rogue actors today. The world doesn't sit around and say we'll tolerate that.
+So therefore, you know, that's why I'm glad that we have a world order in which
+even such-- anyone who is a rogue actor in a rogue state has consequences.
+But if you have this picture where you could have 10% economic growth, it really I think like
+depends on actually getting like something like AGI working, right? Because tens of trillions of
+dollars of value, that sounds closer to like humans or human wages or $60 trillion of the economy.
+Getting that magnitude is just like you kind of have to automate labor or supplement labor in
+a very significant way. If that is possible and once you figure out the legal ramifications for it,
+it's like seems quite plausible even within your tenure that we figure that out.
+Are you thinking about super room intelligence like the big the biggest thing you do in your
+career is this or-- Yeah, by the way, you bring up another one. I mean, I know David
+Otter and others have talked a lot about this, which is that 60% of labor, like what I think
+with the other question that needs to happen is let's at least talk about our democratic societies.
+I think that in order to have a stable social structure and democracy's function,
+you just can't have a return on capital and no return on labor. You can talk about it, but you
+know that 60% has to be something that has to be revalued, right? So in my own simple sort of way,
+not maybe call it naive is hey, we'll start valuing different types of human labor.
+What is today considered high value human labor may be commodity. They may be new things that we
+will value, including that sort of person who comes to me and helps me with my physical therapy
+or whatever. I mean, it's like whatever is going to be the case that we value, but ultimately,
+if we don't have return on labor and there's meaning in work and dignity in work and all of that,
+that's another rate limiter to any of these things being deployed.
+On the alignment side, so two years ago, you guys released Sydney Bing. And just to be clear,
+I think given the level of capabilities at the time, I think it was like sort of like a charming
+and daring kind of funny example of misalignment, but that was because at the time, you just like
+chatbots, they can go think for 30 seconds and give you some funny slash inappropriate response
+back. But if you think about that kind of system that can like, I think to a New York Times reporter
+try to get him to like leave his wife or something. If you think about that going forward and you
+have these agents that are for hours, weeks, months going forward, just like autonomous swarms
+of AGIs who could be in similar ways, misaligned and just screwing stuff up, maybe coordinating
+with each other. What's your plan going forward to like when you get the big one, you get it right?
+Yeah, that is correct. And so that's sort of that's one of the reasons why I think
+we are sort of, you know, when we even allocate compute, let's allocate compute for what is that
+alignment challenge? And then more importantly, what is the runtime environment in which you are
+really going to be able to monitor these things, the observability around it? Like that, by the way,
+you know, like we do deal with a lot of these things today in the classical side of the things
+as well, like cyber, right? We just don't like, we just don't write software and then just let it
+go, right? You have software and then you monitor it, you monitor it for cyber attacks, you monitor it
+for, you know, fault injections and what have you. And so therefore, I think we will have to build
+enough software engineering around the deployment side of these. And then inside the model itself,
+what's the alignment? And these are all some of them are real science problems,
+some of them are real engineering problems, and then we will have to tackle it. And then by the
+way, that's also means that like take our own liability in all of this. So that's why I'm more
+interested in deploying these things in where, you know, you can actually govern what the scope
+of these things is and the scale of these things is. And so you just can unleash something out there
+in the world that creates harm, because the social permission for that is not going to be there.
+Yeah, what is when you really get the agents that can like really just do
+weeks worth of tasks for you, what is like the sort of like minimum assurance you want
+before you can let like at a random fortune, I think like when I when I use something like deep
+research, even the minimum assurance, I think we want is before we especially have physical
+embodiment of anything that I think is kind of one of those thresholds where you cross.
+That might be one place. Then the other one is, for example, the permissions of the runtime
+environment in which this is operating. You may want guarantees that it's sandboxed,
+it is not going and out of that sandbox. I mean, we already have like web search and, you know,
+we already have the out of the sandbox now. But even the web, what it does with web search
+and what it writes, sort of like, for example, like to your point about like, hey, if it's just
+going to write a lunch or code in order to do some computation, where is that code deployed?
+And is that code ephemeral for just creating that output versus just going and springing that
+code out into the world? Those are the things that you could in the action space actually go
+control. Yep. And separate from the safety issues, as you think about your own product suite,
+and you think about like, if you do have EIS as powerful, at some point, it's not just like
+co-pilot. In the example you mentioned about how you're preparing for this podcast, it's a bit
+more similar to like how you actually delegate work or work to your colleagues. What does it
+look like given your current suite to add that in? And I mean, you know, there's one question about
+whether LLMs get commodified by other things. I wonder if these like databases or canvases or
+accelerates or whatever, if the LLM is your main gate point into accessing all these things,
+is it possible that the LLMs commodify office? Yeah. I mean, it's possible to see it's an
+interesting one, right? I think the way I think about the first phase, at least of it would be,
+can the LLM help me do my knowledge work using all of these tools or canvases more effectively?
+Like one of the best demos that I've seen is a doctor getting ready for a tumor board workflow,
+right? So she's going in to a tumor board meeting. And so one of the first things she uses co-pilot
+for is to create an agenda for the meeting because the LLM helps reason about all the cases,
+which are in some SharePoint site and says, hey, these cases, obviously, you know, a tumor board
+meeting is a high stakes meeting where you want to be mindful of the differences in cases so that
+you can then allocate the right time, right? So even that reasoning task of creating an agenda
+that knows even how to split time super. So I use LLM to do that. Then I go into the meeting,
+I'm in a team's call with all my colleagues. Guess what? I'm focused on the actual case
+versus taking notes because you now have this AI co-pilot doing a full transcription of all of
+this. And just basically an intelligent is not just a transcript, but it's a think of it as a
+database entry of what is in the meeting that is recallable for all time, right? So that's,
+then she comes out of the meeting having sort of discussed the case and not been distracted by
+note-taking. And she's a teaching doctor. She wants to go and prep for her class. And so she
+takes and she goes into co-pilot and says, hey, take my tumor board meeting and then to create a
+PowerPoint slide deck out of it so that I can talk to my students about it. So that's the type.
+So the UI and the scaffolding that I have are canvases that are now getting populated
+using a LLM's and the workflow itself is being reshaped. Knowledge work is getting done.
+Like here's an interesting thing, right? If somebody is like, one of the ways I think about it is,
+if someone came to me in the late 80s and said, you're going to have a million documents on your desk,
+you know, we would say, what the heck is that? I mean, I would literally sort of thought, oh,
+there's going to be a literally, you know, a million physical copies of things on my desk.
+Except we do have a million spreadsheets and a million documents.
+I know you do. And they're all there. And so I think that's kind of what's going to happen
+with even agents. So there will be a UI layer. To me, office is not just about the office of
+today. It's the UI layer for knowledge work. It'll evolve as the workflow's evolved. That's what
+we want to build. I do think the SaaS applications that exist today, right, these CRUD applications
+are going to fundamentally be changed because the business logic will go more into this
+agentic tier. In fact, one of the other cool things today in my co-pilot experience is when I say,
+hey, I'm getting ready for a meeting with a customer, I just go and say, give me all the notes for it
+that I should know. And it pulls from my CRM database, it pulls from my Microsoft Graph,
+creates a composite, essentially artifact. And that means, and then it applies even logic on it,
+right? And that, to me, is going to transform the SaaS applications as we know of it today in a big
+way. So SaaS as an industry might be worth hundreds of billions to trillions of dollars a year,
+depending on how you count. If really, that can just get collapsed by AI, like, is a next step up
+in your next decade, 10xing the market cap of Microsoft again? Because, you know, if you're like
+really talking about trillions of dollars, I think it also would create a lot of value. So
+in the SaaS, remember, one of the big issues was, one thing that we don't pay as much attention to,
+perhaps, is the amount of IT backlog there is in the world, right? So one of the ways is,
+these code gen things, plus the fact that I can interrogate all of my SaaS applications using
+agents and get more utility, will be the greatest explosion of apps. They'll be called agents.
+So that you can, for every vertical, in every industry here, in every category,
+we're suddenly going to have the ability to be serviced. So there's going to be a lot of value.
+I think you can't stay still, like, which is, you can't say the old thing of, "Oh, I schematize
+some narrow business process, and I have a UI in the browser, and that's my thing." That
+ain't going to be the case. You have to sort of go up stack and say, "What's the task that I have
+to participate in?" And so you will want to be able to take your SaaS application and make it
+a fantastic agent that participates in a multi-agent world. And as long as you can do that,
+then I think you can even increase the value. Can I ask you about some questions about your
+time at Microsoft? Yeah. Is being a company man underrated. So you've spent most of your career
+at Microsoft, and look, you could say, maybe one of the reasons you've been able to add so much
+value, as you've seen, the culture, and the history, and the technology, and have all this context by
+rising up to the ranks. Should more companies be run by people who have this level of context?
+That's a great question. I mean, I've not thought about it that way. But yeah, I have sort of,
+you know, through my, whatever, 34 years now of Microsoft, it has basically been that
+each year I felt more excited about being at Microsoft versus thinking that, "Oh, I'm a company
+person," or what have you, right? I mean, that is not like, I didn't go in there and saying is,
+it is about, and I think that seriously even for anybody joining Microsoft, that means it's not like
+they're joining Microsoft as long as they feel that they can use this as a platform for their
+both economic return, but also a sense of purpose and a sense of mission that they can accomplish
+by using us as a platform, right? So therefore, that's the contract. So I think, yes, companies
+can have to create a culture that allows people to come in and become company people, like me.
+And Microsoft got it more right than wrong, at least in my case. And I hope that remains the case.
+How do you, like the six CEO that you're talking about that will get to you is the
+researcher starting now, what are you doing to retain the future Satya Nadella so that they're
+in a position to become future leaders? Yeah, it's kind of fascinating. This is our 50th year,
+and I think a lot about it, right? And the way to think about, you know, I think longevity is not
+a goal, relevances. And so I think the thing that I have to do and all 200,000 of us have to do
+every day is are we doing things that are useful and relevant for the world as we see it evolving,
+not just today, but tomorrow, like we have to basically, you know, and we live in an industry
+where there's no franchise value, right? So that's the other hard part, which is, if you think the
+R&D budget that we will spend this year is all about what is, it's all speculation on what's going
+to happen five years from now. And so you got to basically go in with that attitude that saying,
+look, we're doing things that we think are going to be relevant. And so that's what you got to focus
+on. And then know that there's a batting average and you're not going to get. You have to have high
+tolerance for failure. That's the other thing, which I think is unlike you have to be able to sort
+of take enough shots on goal to be able to say, okay, we will make it to the other side as a
+company. And that's what makes it tricky in this industry. And speaking of, you just mentioned that
+you were two months away from your 50th anniversary of Microsoft's founding. If you look at the top
+10 companies by market cap or top five, depending on how you count Saudi Ramco, basically everybody
+else, but Microsoft is younger than Microsoft. And it's a really interesting observation about like
+why the most accessible companies often are quite young. The average Fortune 500 company will last
+10, 15 years. What does Microsoft done to remain relevant for this many years? How do you keep
+refounding? That is I love that even read Hoffman uses that term. I love that refounding. And I
+think that that's the mindset. Like I mean, people talk about founder mode. And I sort of,
+I think for us, more model CEOs and others, it's more like, Hey, the refound the mode.
+And I think that it's to be able to see things again in a fresh way. I think it's the key to me.
+And so, you know, to your question, can we culturally create an environment where refounding becomes
+a habit thing, right? Which is like every day we come in and say, yeah, we feel we have that
+stake in this place to be able to change the core assumptions of what it is that we do and how we
+relate to the world around us. And do we give ourselves permission? I think many times companies
+feel over constrained by either business model, or what have you, and you just have to unconstrain
+yourself. If you did leave Microsoft, what company would you start? Company, I would start.
+Man, like that's where the company man and my me, so I'll never leave Microsoft. I think that if I
+were thinking of doing something, like I think picking a domain that has, like when I look at
+the dream of tech, right, we've talked, we always have said technologies about the biggest,
+greatest democratizing force. I feel like finally, we have that ability. If you sort of say those
+tokens per dollar per watt is sort of what we can generate, I would love to find like some domain
+in which that can be applied, where it is so underserved. That's where healthcare, education,
+public service, public sector would be a none of the place where if you take those domains,
+which are the underserved places where my life as a citizen of this country or a member of this
+society or anywhere, what would I be better off if somehow all these abundance translated into
+better healthcare, better education and better public sector institutions serving me as citizens,
+that would be a place. One thing I'm not sure about hearing your answers on different questions
+is whether you think AGI is a thing in the sense of like, will there be a thing which
+automates all, at least like starting with all cognitive labor, like anything that anybody can
+do on a computer? See, this is where I, my problem with the definitions of how people talk about it
+is cognitive labor is not a static thing, right? Like there is cognitive labor today.
+If I have an inbox that is managing all my agents, is that new cognitive labor?
+And, and so today's cognitive labor may be automated. What about, what is the new cognitive labor
+that gets created? Both of those things have to be thought of, right? Which is the shifting. So
+that's why I think this distinction, at least in my head, I make is don't conflate knowledge
+worker with knowledge work. The knowledge work of today could probably be automated.
+Who said my life's goal is to triage my email, right? Let an AI agent triage my email.
+But after having triage my email, give me a higher level cognitive labor task of, hey,
+these are the three drafts I really want you to review. Like that's a different abstraction.
+But will AI ever get to the second thing? May. But as soon as it gets to that second thing,
+there will be a third thing, right? So this is where I think why are we sort of thinking somehow
+that we have dealt with tools that have changed what is cognitive labor in history.
+Why are we worried that that all cognitive labor goes away? I mean,
+I'm sure you've heard these examples before, but the idea that like horses can still be good for
+certain things, there are certain terrains, you can't take a car on. But the idea that like,
+you're going to see horses around the street, they're going to employ millions of horses.
+It's just like, it's not happening, right? And then the idea is could a similar thing happen with
+humans? But in one very narrow dimension, right, it's only 200 years of history of humans where we
+have valued some narrow sort of things called cognitive labor as we understand it. Let's take
+something like chemistry, right? If this thing like quantum plus AI really helped us sort of do
+a lot of novel material science and so on. Yeah, that's fantastic to have novel material science
+being done by it. Does that really somehow take away from sort of all the other things that humans
+can do, right? So why can't we exist in a world where there are powerful cognitive machines,
+knowing that our cognitive agency has not been taken away?
+I'll ask this question, not about you, but in a different scenario, some of you can answer it
+without embarrassment. Suppose on the Microsoft board, could you ever see adding an AI to the
+board? Could it ever have the sort of like judgment and context and holistic understanding to be a
+useful advisor? It's a great example. One of the things we added was this facilitator agent in
+teams. The goal there, it's in the early stages of it is he can that facilitator agent with long-term
+memory, not just on the context of the meeting, but with context of projects that I'm working on
+and the team and what have you, be a great facilitator, right? I would love even in a board
+meeting, right? But it's easy to get distracted after all board members come once a quarter and
+they're trying to digest what the heck is happening with a complex company like Microsoft. I think
+a facilitator agent that actually helped human beings all stay on topic, focus on the issues that
+matter. That's fantastic. That's literally having, to your point about even going back to your
+previous question, having something that has infinite memory and then that can even help us,
+after all, what is that Herbert Simon thing, which is we are all bounded rationality, right? So if
+the bounded rationality of humans can actually be sort of dealt with because there is a cognitive
+amplifier outside, that's great. Speaking of the materials and chemistry stuff, I think you said
+recently that you want in the next 250 years of progress in those fields to happen in the next 25
+years. Now, when I think about what's going to happen to be possible in the next 250 years,
+I'm thinking space travel and space elevators and immortality and cure all diseases. Next 25 years,
+you think? I think one of the reasons why I brought that up was I love that thing of, hey,
+look, the Industrial Revolution, if you say, was the 250 year, right? I mean, if you sort of even
+take this entire change from a carbon-based system to something different, then that means you have
+to fundamentally lean when all of what has happened with chemistry over the poor 50 years. And that's
+where I hope we have this quantum computer. This quantum computer helps us get to new materials
+and then we can fabricate those new materials that help us with all of the challenges we have
+on this planet. And then I'm all for interplanetary travel. Amazing. Satya, thank you so much for
+your time. This was wonderful. Thanks. Great.
+[end]
+You
+You
+

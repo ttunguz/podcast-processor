@@ -1,0 +1,935 @@
+--- METADATA START ---
+Show: Generative Now | AI Builders on Creating the Future
+Episode: Arvind Jain: Why Now Is the Ti…
+Host: Michael McNano
+GUESTS: Arvind Jain 
+Guests: Arvind Jain
+Source URL: https://podcasts.apple.com/us/podcast/arvind-jain-why-now-is-the-time-to-solve-enterprise/id1709773028?i=1000709404233
+--- METADATA END ---
+
+1
+Hey, everyone, and welcome to Generative Now.
+2
+I am Michael McNano, a partner at Lightspeed, and this week we're revisiting a conversation with Arvin Jane from a few months back.
+3
+Arvin is the founder and CEO of Glean, one of the most sophisticated AI workplace assistants that's now a massive player in the enterprise search space.
+4
+Arvin is an alum of Microsoft and Google, and he previously co-founded Rubrik, which he took public in the high-stakes world of data security.
+5
+Arvin and I had a great conversation about the early days of Glean, how he sees AI shifting the way we work in the future, and what's next for the company.
+6
+Check it out.
+7
+Hey, Arvind, good to see you.
+8
+Good to see you too.
+9
+Glean has been, you know, an obvious success story in the world of AI and generative AI.
+10
+The interesting thing about Glean is it seems to have started well before the current wave of generative AI and the AI explosion that we've now been going through, really since kind of the launch of ChatGPT.
+11
+I figure a good place to start would be to hear the story of Glean and how it got started in 2019, you know, from your journey at Rubrik to starting this and like really what you saw before others did before the AI wave took off.
+12
+So we started in early 2019, and at that time, you know, we didn't have, you know, that much of an idea of how AI was going to take over the world like it has today.
+13
+But the problem that you know we wanted to solve was an important one.
+14
+We started with this vision of building a really powerful search experience inside businesses for people in their work lives.
+15
+Before Gleam, I was one of the founders of Rubrik, which is an enterprise data security company.
+16
+And one of the things, you know, like at that company,000 employees, we started to see a big drop in productivity across all of our different teams.
+17
+And part of it is you sort of take it for granted that, yeah, as companies get bigger, things become more complex and slower.
+18
+But I felt there was more to it.
+19
+We were actually seeing very, very steep drops in productivity.
+20
+And I think part of it was caused by this issue of the company has so much knowledge, so much data, spread across so many different systems.
+21
+And also as the companies grow fast, people's roles, it's not always clear who works on what, who's an expert, who can help me on any given topic.
+22
+And these were actually the largest complaints that we were seeing in our Pulse surveys at Rubrik.
+23
+People were complaining about these.
+24
+People were saying that I'm not enabled.
+25
+I can't actually get my work done because of these issues.
+26
+And so me being a search engineer, before Rubrik, I spent over a decade of my career building Google search.
+27
+I said, well, people are complaining about not being able to find things.
+28
+And well, we should go and buy a search product that can connect our enterprise data that's fragmented and spread across all these different systems so that it's easy for people to find things.
+29
+And also it's easy for people to find other people who can help them do their work.
+30
+So we decided to, that was sort of the origins of we were trying to solve a problem internally at our company.
+31
+And that's when I realized that there's no good search product that we could buy.
+32
+And so we wanted to go and solve that.
+33
+And one of the interesting things is that in 2018, we were already seeing the power of the transformer-based neural nets and these models.
+34
+Like, you know, the there were some language models, you know, they're small, like, you know, the BERT family of models that were already out there.
+35
+And in Google search, we were seeing how you could take every component of the search technology and you could actually build a new system using these transformer-based models.
+36
+And they would actually perform better than these previous generation of models that we've built over the last 15 years.
+37
+And so we knew that Transformers was going to completely change how search works.
+38
+You can actually do search at a much more conceptual and semantic level.
+39
+And so that was an opportunity to actually also leverage and build a really good product in the industry.
+40
+So that's how we sort of got started.
+41
+In fact, Glean became the first company, I believe, that has brought the Transformer technology to the enterprise in that sense.
+42
+It's so cool.
+43
+And it's such a great insight.
+44
+I mean, even relating to my own experience, I was building a small startup, got it to a couple dozen employees, and then we sold to a much bigger company.
+45
+And we show up at this big company, and there's thousands of employees, and there's all this context that we're missing.
+46
+And you go and grab it in Slack or in email or in Google Drive or in any number of these systems, Confluence, Okta, but it's all disconnected.
+47
+And there's no way to sort of bring it back together and bundle it.
+48
+And it sounds like that's the opportunity you saw.
+49
+I mean, even though you saw that this opportunity was coming for LLMs, I imagine that you weren't necessarily leveraging them from day one in the product.
+50
+So, like, how were you tying all these systems together that I just mentioned?
+51
+Like, what was the actual technical approach to connecting all these endpoints?
+52
+Yeah.
+53
+So, like, if you think about the search stacks, number one, like, to be able to search over information, you need to have access to that information.
+54
+If you look at a modern enterprise, like most of their systems, where their knowledge and data is, is a SaaS, like, cloud-hosted system.
+55
+And typically, like, SaaS systems interoperate well with each other.
+56
+They have good APIs available to them.
+57
+We started to build these integrations with products like Confluence and Jira and Google Drive, you know, SharePoint, whatnot, right?
+58
+And all of these integrations were built using the already published APIs that these systems expose to us.
+59
+You can actually connect with these systems, you could see all the data inside them, and then you can bring it together in one common search system.
+60
+So, that was the first step of building the technology: building these integrations.
+61
+But you have to also understand that, like, enterprise search is very different from search on the web.
+62
+On the internet, we can all access all information, you know, everything is available to us.
+63
+In an enterprise, like information is privileged, it's secure.
+64
+Like, there are certain documents you can access, but then there are many others that you can't.
+65
+So, when you actually build a search product, you have to actually build a safe version of search.
+66
+You can't actually start to leak information to people from this search experience.
+67
+So, you have to, so you have to sort of think about the problem differently.
+68
+You have to figure out how you're going to actually solve secure permission-aware access within the search results.
+69
+So, we have to sort of build a lot of security.
+70
+But to actually, on your question about transformers, actually, the transformer models were part of our first version of the product.
+71
+It was one.
+72
+Yeah.
+73
+So from day one, that's really cool.
+74
+Because the technology was in front of us.
+75
+We saw these models were so powerful.
+76
+And you can build a much more smarter search.
+77
+You can actually come in and you can ask questions in natural language.
+78
+And we could actually match it much better at a conceptual and semantic level to those documents in Confluence or Google Drive as opposed to doing the brittle keyword-based search.
+79
+So this is a great technology and it was available to us.
+80
+So what we did there was we took BERT, which was a model that Google had put in open domain for startups like ours to use.
+81
+And then we would take that model and for every enterprise customer of ours, we would actually build a model customized to that company.
+82
+We would actually train, we would actually train, you know, retrain these models on the enterprise corpus, on that data, in a safe and secure way again.
+83
+So that the model starts to understand your company, your lingo, your code names, acronyms, all of that stuff.
+84
+And then in our core search stack, we would use both traditional search techniques to figure out what's the best information to return given a question, but we'll also use this transformer-based semantic matching technology.
+85
+So it was a hybrid search stack that we built from day one.
+86
+So what was sort of finding product market fit for that?
+87
+I think about all the startups that have launched over the past couple of years, they almost have this truly magical experience the first time you experience them because the AI is just so powerful, right?
+88
+It's like the first time you use ChatGPT or the first time you use one of these image generators.
+89
+Going back to 2019 or 2020, when you started to go to the market, the concept of Transformer must have been so new for all these enterprise companies.
+90
+Did you find that same sort of magical experience where you're like, oh, hey, enterprise, let us show you how you now can prompt semantically against your entire organization and just have it come back to them like a human being?
+91
+I mean, that must have just been really, really powerful for them.
+92
+Yeah, actually, it's interesting that we didn't actually talk about transformers as a cool thing.
+93
+It was not a hot thing.
+94
+People are not talking about it.
+95
+I think what they cared about was what you could do with it, which was that, well, glean, you can ask questions in natural language and it will conceptually match the information with your question.
+96
+You don't have to remember the exact keywords.
+97
+And that was sort of one of the big pain points of the previous generation search systems: that, well, I know I'm looking for this email, like it's in my Outlook, but I still cannot get to it because I don't remember the exact words.
+98
+So I think it appealed to people, but you actually asked a very interesting question.
+99
+I don't think we had a product market fit for a long time, in the sense that somehow the industry felt that search was a vitamin and not a painkiller.
+100
+Yeah, everybody would acknowledge that, yes, we have a problem.
+101
+We have lots of information.
+102
+It's spread and fragmented across many different systems.
+103
+And people do struggle with finding.
+104
+Like, you know, they're not buying a search product that we would say that, hey, look, you know, we have a better one than what you buy.
+105
+There was no concept of them buying technology like this.
+106
+So we had to create a market.
+107
+And it took us time.
+108
+We had to do a lot of evangelism.
+109
+We had to talk about why it is important.
+110
+Like, you know, it reduces frustration.
+111
+It makes your employees happier.
+112
+You know, they spend a third of their time just looking for information.
+113
+So you'll save a lot of time.
+114
+And so it took us some time before we started to gain that traction and gain that word of mouth from our initial customers.
+115
+And what was the moment that it all flipped?
+116
+Was it just, you know, but you reached some moment that you had enough people talking about it in the market that it just sort of snowballed from there?
+117
+Or was it a key customer or a key sort of product unlocked?
+118
+Like, what really did it?
+119
+Yeah, I would say there were two, like I would say, two distinct moments.
+120
+Like, one is where we actually had about 30 or so companies, and we were first focused on the tech sector.
+121
+So we got most, like, you know, the most iconic tech companies.
+122
+You know, they started to use our product and at scale, and the word of mouth started to happen from there, which sort of created that further momentum and inbound to us in terms of more interest in the company.
+123
+And then there was another big moment, which was ChatGPT.
+124
+In some ways, you can think of Glean as the enterprise version of ChatGPT.
+125
+Like, you know, it does everything that ChatGPT does, but it does it like, you know, with that knowledge and context of your company.
+126
+When the world saw ChatGPT and the power that it, you know, it has, as an enterprise, my employees, you know, my internal data, and it could also answer questions for me using all of that.
+127
+That would be fascinating, right?
+128
+So, so that actually, you know, started to create that, you know, organic demand, you know, it was a second wave of like, you know, massive momentum for us.
+129
+Yeah, that's really, really interesting.
+130
+It's almost like ChatGPT kind of did a lot of the external marketing for you.
+131
+That's right.
+132
+But all the things you had previously been working on, like security and safety, and like you mentioned, permissioning between different users, obviously, like so, so important to bring that technology into an enterprise.
+133
+So that's fascinating.
+134
+You mentioned early on that you started out, the first transformer-based model you're using was Bird.
+135
+Since then, how do you manage the sort of model component of the product?
+136
+Do you train your own models now?
+137
+Are you hot swapping things under the hood between OpenAI, Anthropic, et cetera?
+138
+Like, how's that all work?
+139
+Yeah, more of the latter.
+140
+So, let me explain the architecture of this.
+141
+We're not a foundation model company.
+142
+We don't train these super large models.
+143
+When you think about the product, how does Glean actually work?
+144
+So, it looks and feels like ChatGPT, right?
+145
+You come in, you ask questions, and Glean will actually use either all of the world's knowledge and context to answer those questions for you, or it's going to actually use your internal company's data and knowledge to answer those questions for you.
+146
+Now, the way like the models themselves, like you know, when you think about GPD or Cloud or Gemini or X or DeepSeq and whatnot, like you know, none of those models are trained on your enterprise information, right?
+147
+So, they don't know anything about.
+148
+And so, how do you, how do you actually answer questions, make these models answer questions, you know, you know, using data and knowledge that's inside your company.
+149
+You know, the architecture for that is you know rag, right?
+150
+Where you actually, you know, you know, it's a two-step process, like, you know, given any task or any question that a user comes and asks, you know, first we use our core retrieval and search technology to assemble like some relevant pieces of information from inside our company, and then we give all of that to the model so that the model can actually reason over it and actually generate the appropriate answers or responses back to you.
+151
+So, that's the architecture that's typical.
+152
+Like, you know, most enterprise agents or applications are built in this rack-style architecture where search is the first leg, I mean, not search or retrieval, whatever you want to call it, and then the model reasoning and inferencing is the second part.
+153
+Now, our architecture, you know, is so we do build models and they're still built on like you know BERT on modern BERT, like, you know, these small, you know, I guess these are SLMs, you know, is what the industry calls them now.
+154
+So we actually still train models on your enterprise corpus, but that is done mostly to actually do semantic matching of people's tasks with your enterprise knowledge.
+155
+So it is used for that, you know, you know, retrieval task.
+156
+But then for reasoning and generation, we use the formulation models.
+157
+And our architecture is like, no, we're not tied to one particular model.
+158
+Like what we're seeing in the industry is that there are many, many model providers.
+159
+They're all in different models, are getting better at different things.
+160
+For example, like you know, these days you'll hear a lot.
+161
+For reasoning, GPT is doing better than others.
+162
+And so they're all like all these models are getting better at different things.
+163
+And our goal at Glean is to make sure that for our enterprise customers, we can bring all the amazing innovation that's happening in the industry to our customers.
+164
+They should not have to choose what model to use.
+165
+And so that's how the architecture is: that underneath, we have access to all these different models.
+166
+And given the task, we can actually help an enterprise choose what's the right model to use for that.
+167
+Yeah.
+168
+And what's really cool about that is as these models keep getting better, and you know, and I'm sure everyone in the audience knows, like, it feels like every week these things are getting better.
+169
+Your product just keeps getting better and better as a result, right?
+170
+Anything these models can do, you get to now offer to your customers, your enterprise customers.
+171
+What must that be like?
+172
+Because I have to imagine that as these models improve in capabilities, they probably unlock completely new feature sets for you.
+173
+One thing I keep thinking about with Glean is like, as these models become truly agentic and they move from individual sort of retrieval of information to more sequential task-oriented things like that, that's got to open up a huge service area for Glean and your customers.
+174
+Is that how you think about it?
+175
+Absolutely.
+176
+I mean, I think the, and these features are actually coming every day.
+177
+Like, you know, like, you know, like, you know, you saw in the last month, you know, with, you know, operators, like, you know, is a new thing, you know, which actually really unlocks.
+178
+One of the important things, like the way I think about AI and its impact in the enterprise is that if I'm a business user, and I have a question or I have a task which requires me to play with or work with some data inside my enterprise, like AI is supposed to make it super seamless for me.
+179
+Like, you know, like, I don't want, like, you know, we're not going to be in a world anymore where we know that the data exists, but accessing it is hard.
+180
+Like, you know, AI is going to make it super easy.
+181
+Like, you know, a lot of it, you know, we do through our integrations, but a lot of it we can also do through these new LLM capabilities like computer use, you know, operators where you don't even need those systems to have APIs.
+182
+You can still sort of go and drive a browser and sort of get that data that you need to work on for your agents.
+183
+So the innovation is going to keep happening at the fast pace.
+184
+Like, you know, our strategy at Green is always very clear.
+185
+Everything that the model providers, that the cloud hyperscalers, all the technology that they are building, we basically don't compete with them.
+186
+We leverage that technology and we do the remaining part, which is like, you know, how do you make it easy to access all that technology and make it work on your data in your enterprise?
+187
+The third thing that you can do with Green, so we have a Google like search, we have HIG GPT like AI Assistant, but then we also have an agent-building platform.
+188
+So you can actually build all kinds of agents to transform your business processes using AI.
+189
+And in fact, I think the best thing with AI is that it's actually bringing that power to every business user.
+190
+You don't have to be a developer anymore.
+191
+You don't need developers for everything anymore.
+192
+There are a lot of agents that you can actually just build by expressing a business process in natural language to AI.
+193
+And then AI sort of like, you know, like does things like what you mentioned, like, you know, it will do the reasoning.
+194
+It will actually take the business process.
+195
+It will create a multi-step workflow that you can then go and review and execute.
+196
+So I think, yeah, we are definitely going towards a world where a lot of just how work happens is going to fundamentally change.
+197
+And yeah.
+198
+Yeah, so this agent builder, which you mentioned, like what does that require from the models to work?
+199
+Like, does that require models that are specifically capable of reasoning or being able to browse the web like operator computer use?
+200
+Or is glean really the product and the system that enables to take these LLMs and sort of piece them in a way together that they're actually executing on tasks on behalf of your enterprise?
+201
+Yeah, it's a combination of that.
+202
+Like the like today, like, you know, if you just work with an LLM, that's not enough for you to actually build an agent and automate a business process with it.
+203
+You know, you do need some more work that needs to happen on top of it.
+204
+Like, for example, you need to figure out how to actually bring the right data to these models that's in your enterprise.
+205
+And over time, there's going to be more and more features that you will get from the LLM providers.
+206
+Like, you know, computer use, for example, is an example of that.
+207
+You know, this is a feature.
+208
+This is not really the model, but it's a feature that the LLM company is actually providing to you.
+209
+You know, it's a mechanism for you to sort of bring more data into the models, into the LLM reasoning.
+210
+The way things will evolve is today, I think you still need agent-building frameworks and platforms that will actually sit on top of LLMs.
+211
+The way we are helping our customers build agents is, you get this agent-builder UI, where you can just talk in natural language, converse with clean to build an agent together.
+212
+Behind the scenes, we're using both our API-based integrations to enterprise data sources.
+213
+But that's the overall orchestration is being done by us.
+214
+Got it.
+215
+That makes a lot of sense.
+216
+Speaking of computer use and again, these models getting more agentic, and the fact that it does seem like a lot of the big sort of model providers, the OpenAIs, the Anthropics, et cetera, they are leaning more and more over time into the enterprise, offering more and more ways to connect different parts of your business.
+217
+How do you think about the landscape of competition when I'm sure many of your competitors are sort of building kind of like at the application layer on top of the models?
+218
+And now there's also this, I don't know, new sort of a front from the model layer where they're coming at it as well.
+219
+How do you keep the product sort of competitive when you have, you know, you have this competition coming from all different angles?
+220
+Yeah, it's true.
+221
+From a technology, you know, you're going to have the LLMs and model capabilities at the base level.
+222
+You're going to have a data connectivity layer and a retrieval and search system.
+223
+And then you have basically the overall agent building and the reasoning flows that you're going to build on top of them.
+224
+First, I make this assertion.
+225
+A lot of things are going to change about work.
+226
+In five to ten years from now, majority of the work that we do today, we won't do anymore.
+227
+It's going to be done by AI assistants and agents that are going to be helping us perform those tasks.
+228
+Our work is not going to go away.
+229
+It's just going to change a little bit.
+230
+It's going to become maybe more creative, more thinking-oriented.
+231
+And the base level, working with data, doing some research analysis on it, the models can actually do a lot of that work for us.
+232
+So the majority of our work is going to change.
+233
+The way the organizations are built, the business processes, most of these business processes are going to actually also get automated with AI.
+234
+So one thing that I feel is that the body of work that needs to get done versus the companies that are actually doing that work, there's a big delta between that.
+235
+The white space is huge.
+236
+And if all of us work super hard, we're still only getting 1% of what needs to happen done in the next one year.
+237
+This is not the time where there are too many players and not enough problems.
+238
+And so therefore, we don't feel like any sort of...
+239
+concern like you know with competition.
+240
+Our strategy will remain what it is today, which is we will continue to partner with all of these players.
+241
+We'll continue to partner with the language model companies, with the cloud hyperscalers, and we'll fully leverage all the innovation that they are making because they won't be able to cover more than 10% of what needs to get done.
+242
+And so we have enough for us to work on.
+243
+And so basically think of us as sitting on top of the core technology from these players.
+244
+As they build more, we also rise and we start to build the other things that we haven't built yet.
+245
+So we think of all of these companies more as our partners, not as our competitors.
+246
+But now, practically, if you think about as a customer, you're being pitched agents from 300 different vendors.
+247
+And who do you pick?
+248
+Who do you choose?
+249
+I think Glean has a very unique architecture and a position in the marketplace where, well, we're telling our vendors that we're not a LLM company.
+250
+So when you actually think about your AI stack, you have to work with the language model companies anyway.
+251
+And you can work with them through us or directly.
+252
+We'll find with both those options.
+253
+But what we are doing is we're giving our customers a horizontal AI platform, a platform that's connected to all of your enterprise information and data.
+254
+So you can actually use this as a way to consolidate your AI work, as opposed to sort of buying AI agents, like you know, function by function, product by product.
+255
+And like if you use a thousand SaaS applications, you're going to probably use, you know, you're going to have 10,000 agents in your company in the future.
+256
+And so one model is that you actually go very, you know, functional and you get a lot of these vertical agents.
+257
+The other approach is you pick us as the horizontal AI layer and then use us as a central platform to build many of these agents.
+258
+So I think right now we definitely are unique compared to like any other approach that you see from other vendors in the enterprise.
+259
+And it remains to be seen how many of these agents will be built on a horizontal platform like us versus like you know fully dedicated verticalized agent solutions.
+260
+Yeah, it's kind of like that classic saying that like you know the only money to be made in software is sort of bundling and unbundling.
+261
+You're taking both the you know the the unbundled SaaS products that exist and now all the different models and you're bundling it up into one experience, which makes a ton of sense.
+262
+Speaking of competition, you really like competition.
+263
+Talk to us a little bit about that.
+264
+How does that factor into sort of your management, your leadership of the team, this love that you have for competition?
+265
+Well, as a engineer, I know that a lot of inspiration as an engineer comes to you from amazing technologies that you see outside.
+266
+And you want to actually go and match those technologies, you know, actually go and beat those and like.
+267
+And so I think competition actually always serves a really strong purpose in driving the RD engine at any enterprise.
+268
+I'll tell you, just from our own company's perspective, when we started with our core search and before everybody decided to actually come into the search and the AI assistant market, we were alone for a long time.
+269
+We were the first company to sort of actually take transformers and start to sort of work all these search and assistant products six years back.
+270
+So for a long time, we were by ourselves.
+271
+And when you're by yourself, it's very hard to pace.
+272
+It's very hard to actually figure out, are you moving fast enough or not?
+273
+Because there's no comparison, there's no benchmark.
+274
+You don't see anything outside.
+275
+And so you have to be really just like, you know, you're just charging ahead with no clear indication of that, like, you know, we need to move faster or not.
+276
+Sometimes actually get complicated because you are the best product out there.
+277
+And I think, so that, and that's what competition does to you is that not only does it actually create that urgency in your team, because now you know that, well, if you don't wait fast, you know, and if you don't stay ahead, then you will be dead.
+278
+And so it sort of creates that sort of urgency and velocity.
+279
+But also, competition is good because no one company has the monopoly and all the ideas.
+280
+We can't think of all the great things.
+281
+We learn so much from what other people.
+282
+Like, you know, the ideas that they have new ways of thinking, new things that come out.
+283
+And then we take inspiration from them and build our own RD roadmap based on that.
+284
+So I think it is essential.
+285
+In any industry, the more people that work on an idea, it's actually better for all of us.
+286
+And ultimately, it also creates, you know, like the pie gets just bigger, like, you know, and all of us benefit from it.
+287
+Yeah, it makes total sense.
+288
+I mean, it's a driver of urgency, which you need as a startup.
+289
+And like you said, I mean, it sort of shows you where to focus.
+290
+And it seems like it's working.
+291
+You know, I know this past year has been massive for you.
+292
+Just announced recently that you just crossed over 100 million ARR.
+293
+Super, super impressive number.
+294
+And I believe the business has tripled over the past year, which is just incredible.
+295
+What would you attribute this to?
+296
+Obviously, there's a lot of excitement and demand for the product, but were there key drivers that enabled you to drive that kind of growth over the past year?
+297
+It's really phenomenal.
+298
+Yeah, I think, so, so, first of all, I think it's all about timing.
+299
+So, we feel fortunate that all the work that we did over the last six years has allowed us to actually create a product that is ahead of the market in a very significant way.
+300
+And so, when people are now looking for this product, they like what they see from Glean and they're embracing and adopting it.
+301
+One other thing that I want to actually also, the market itself, like, I think when you think about AI, you will also hear stories on that.
+302
+Well, I see all these great demos and but when I try to actually deploy AI in production, you know, it doesn't actually work, and like, you know, I'm just I feel like I'm just experimenting and I don't know like where the value and the ROI is coming from.
+303
+And one of the things, you know, that it changed in the mindset that I've seen last year is that people are also realizing that, look, you know, AI technology is very powerful, like, there's no doubt about it.
+304
+It's going to change our world.
+305
+There's no doubt about that either.
+306
+But it's also very difficult to use.
+307
+It's a machine, like a machine that nobody has ever seen before.
+308
+As a human, like, you know, when you use a machine, you know, like, you know, a machine is predictable.
+309
+Like, you know, it does, you know, it does one task and it does it, you know, precisely the same way.
+310
+You know, that's the definition of the word machine.
+311
+And, you know, AI has changed that.
+312
+You know, it doesn't feel like that.
+313
+Like, you ask the same question to it four times, you know, answer it four different ways.
+314
+And so sometimes, you know, people get very confused with a technology like this and they give up.
+315
+And a lot of people actually gave up after they asked some questions in Chat GPT, it made some things up.
+316
+And they said, like, you know, you know what, this is, I don't believe it, I don't trust it.
+317
+And so you have this conundrum.
+318
+You have this conundrum where as a leader, you know that AI is going to transform my business.
+319
+I need to be ready.
+320
+I need to get ready for it.
+321
+But at the same time, this is a hard technology.
+322
+So how do I make sure that I don't fall behind because my employees give up?
+323
+And you have to drive that education inside the company.
+324
+And so on this EOs, CEOs' minds these days is that, well, look, yes, I want ROI from AI, but I also want education to happen.
+325
+I want every employee in my company to become an AI first employee.
+326
+Clean is actually growing at a rapid pace.
+327
+It's because companies feel that we are the most accessible tool that you can actually give to every employee and it can actually help them with their day-to-day work and sort of get them familiar with how to use AI and make it part of their work lives.
+328
+So that's been a big catalyst for us.
+329
+How do you do that with your own team?
+330
+I mean, is it through dog fooding?
+331
+Is it through constant communication?
+332
+Is it through certain OKRs?
+333
+How do you drive a culture like that?
+334
+Yeah, that's a great question.
+335
+I think humans are creatures of habit.
+336
+And even in a Gen AI native company that we are, we have found that people will not automatically bring AI into their day-to-day work.
+337
+Like, you know, you have a particular way of doing things and you keep doing it that way.
+338
+So, one of the things that we've done, like, you know, I was frustrated personally about it.
+339
+Like, you know, it was sort of frankly embarrassing that we are going out there to our market and evangelizing AI when we can't get our own employees to actually fully embrace it.
+340
+Like, you know, of course, they all embrace clean, but we're not using many, many more other AI tools.
+341
+We're not actually also seeing an interest from our team to actually try and see what's out there.
+342
+So you actually do have to have some top-down initiatives.
+343
+And one simple thing that I did was because everybody's busy with their current work and all that.
+344
+So we said that, look, I want every executive leader to actually come up with one use case in a quarter.
+345
+And it could be a small use case.
+346
+I don't care how big or small it is, but one use case that you'll actually start to use AI and LLMs in.
+347
+So I think that's one thing that we also recommend to all of our customers as well: these kind of top-down initiatives to force a change because otherwise humans are like creatures of habit, as I said.
+348
+Yeah, it's a really, really cool idea.
+349
+Maybe on that note, this is your second startup that you founded.
+350
+Obviously, we talked very, very briefly about Rubrik.
+351
+How has this experience differed from that one?
+352
+Maybe what things have you done differently, or what did you learn at Rubrik that you've been able to take to building Glean?
+353
+Yeah, it couldn't be more different because of just the nature of the product and the domain.
+354
+And also the role.
+355
+For me personally, a lot of learnings for me for sure.
+356
+The most important thing you could do to build a successful startup is to build a great team of engineers.
+357
+And it's obvious, everybody would say it.
+358
+But you've got to bring the best people, the best engineers, best salespeople, best marketers, and let them be.
+359
+People do best when they feel the autonomy, the agency.
+360
+In the first one year of Glean, or the first two years, the primary role that I felt I had as a CEO of the company was being the recruiter.
+361
+Like, you know, just bring, you know, build, assemble the best team.
+362
+And that's the culture that we followed.
+363
+Like, you know, like we used to follow at Google and now at Rubrik and not Glean.
+364
+And I think that has served us well.
+365
+Like, you know, we have an amazing team.
+366
+And the amazing team, you know, obviously were able to build an amazing product for us and an amazing business.
+367
+In terms of like, you know, differences, so one of the things, you know, like I was mentioning this before, like Rubrik was in a very established market.
+368
+People were buying a product like Rubrik.
+369
+We went, we built a better product, and we could go to our customers and say that, like, look, you're spending a million dollars on data protection, like buying this old technology which is not kept up with the times, you know, buy model one from us.
+370
+So it's an established market, and you don't have to actually do category creation.
+371
+Versus like, you know, in Glean, you know, we came, we built a product and we knew it from day one that we're building a product for which there are no budgets.
+372
+You know, and so it's going to be a different kind of emotion.
+373
+Like, you know, there's no competition, but there's also no budget.
+374
+And like, you know, it'll be a long slog.
+375
+You have to actually sort of figure out like, you know, ways to create those budgets.
+376
+And then the second big difference between Rubrik and Glean was that we are an end-user product that every single company, you know, person in the company uses.
+377
+In Rubrik, you know, it's a product that like, you know, a very few people used, and you actually had relationships with them.
+378
+So like, you know, in Rubrik, it allowed us to actually accelerate the go-to market and start to sell the product before it actually really worked properly.
+379
+Because all the people that you were selling the product to were people you had relationships with, your touch point, and they were willing to build the product with you.
+380
+Here, like, you know, you don't get to do that because we don't know all the people who use Glean at a company because it's everyone.
+381
+And so you have to sort of like, you know, change the go-to-market motion.
+382
+You have to actually really build, you know, bring the product to a level of quality and make sure that it feels amazing to people before you could actually unleash the go-to-market motion.
+383
+And so we had a very different journey in terms of how much RD we had to do first before we actually really scale the business.
+384
+You mentioned that.
+385
+You seem like the type of founder, CEO that's very technically minded, very technically oriented.
+386
+That seems to be increasingly common for CEOs of startups, I would say, especially in this AI wave.
+387
+How do you think that differs from sort of the CEO maybe we saw like the last wave?
+388
+It was very product-oriented or very business or sales-oriented, and maybe like how does that work to glean strengths?
+389
+It's a good question.
+390
+I think, like, you know, at startups, like often, oftentimes, you know, companies, engineers, you know, are the ones who start companies, you know, because they like, and that's because they have that capability to build something, you know, and so I think the is like always, like, you know, I've said, like, you know, like, you know, even in the last 20 years, like, you know, the first startup CEO always tends to be a technologist in some ways.
+391
+And, like, you know, like very quickly they realize that, well, like the role of the CEO is a lot more complicated than building a product.
+392
+And so, therefore, you sort of make your way, you know, to somebody who actually knows how to build a business.
+393
+And I don't know, like, you know, how much of it is actually changing.
+394
+I mean, I know that founders are increasingly staying longer in those roles.
+395
+But ultimately, building a business is complicated and it does require you to sort of have the ability to sort of think about competition, customers, strategy.
+396
+And sometimes they may not align with.
+397
+But me personally, for example, I constantly have that doubt on as the company keeps scaling.
+398
+Can I handle the complexity?
+399
+Yes, I want to learn.
+400
+And hopefully, I can keep scaling.
+401
+But I would disagree with the notion of that engineers are better CEOs.
+402
+I don't think so.
+403
+Yeah, got it.
+404
+Well, it sounds like you're very humble.
+405
+And also, it's been working well.
+406
+So I'm sure you can handle each additional scale.
+407
+I know you're on a tight schedule because you've got a lot going on today.
+408
+We're going to do a very quick lightning round.
+409
+So I'm just going to hit you with a quick question.
+410
+Feel free to just answer what the first thing comes to your mind.
+411
+So maybe what's one of your favorite productivity hacks using Glean?
+412
+Like, what's a really interesting and fun way that you use Glean to be more productive?
+413
+I mean, like, I ask every question that I have these days, like, I don't actually ping somebody.
+414
+Like, you know, the first thing I do is actually ask Glean.
+415
+And I do it for two reasons.
+416
+Like, not because it'll be, not only because it's going to be faster for me to get an answer, because obviously I like to keep testing our product and I want to make sure it actually is working.
+417
+But the favorite thing for me is that when I actually go do demos with customers, and they're always asking me all these questions about do you do this?
+418
+Does Glean do that?
+419
+And I realized that I don't actually answer those questions anymore myself.
+420
+I actually want to put them right in front of them in Glean and do a live demo.
+421
+And so that's the thing I really love about our product.
+422
+We're able to show the power of it.
+423
+Like, what's one thing that's sort of bubbling under the surface that you feel is like the most underrated technology or AI trend?
+424
+What is underrated is the fact that these models are so powerful.
+425
+You can do so much engineering on top of like, you know, the current state of where the model technology is.
+426
+Like, we're always focused on that, like, hey, like, the models are not smart enough.
+427
+They're not, you know, they can't fully reason.
+428
+And, you know, we're looking for AGI or the next advances.
+429
+But what I'm saying is, what I feel is that there's an amazing technology at our disposal right now.
+430
+And we've not even used 1% of the power that the current models actually provide.
+431
+Not just the frontier ones, but even all the other smaller models in open domain.
+432
+So there is a lot, there's a lot of work that we will see over time.
+433
+When you combine engineering and effort with the power of these models, so much more can be done.
+434
+Yeah.
+435
+What's a technology from a movie or science fiction that you wish existed?
+436
+Well, I love this concept of, there's a thought that comes to my mind, or a question that came to my mind.
+437
+Before I even had to actually say or speak, we fed the answer back to it.
+438
+That's the thing.
+439
+And it's not happened.
+440
+Brain interface.
+441
+I love this concept of zero friction.
+442
+A lot of times, I'm curious.
+443
+I have these questions, but I don't have the energy to actually say it or speak.
+444
+Like, but I, you know, just, I would, I would, I would love to have a system where like, you know, thoughts like convert into answers, like, you know, just automatically.
+445
+That's awesome.
+446
+Maybe.
+447
+And hopefully it'll be powered by glean.
+448
+Arvin, thank you so much.
+449
+This has been amazing.
+450
+Really, really appreciate your time.
+451
+Thank you for having me.
+452
+This was a lot of fun.
+453
+Yeah, likewise.
+454
+See ya.
+455
+Thank you so much for listening to Generative Now.
+456
+If you liked what you heard, please rate and review the podcast.
+457
+That really does help.
+458
+And of course, subscribe to the podcast so you get notified every time we publish a new episode.
+459
+If you want to learn more, follow Lightspeed at Lightspeed VP on YouTube, X, or LinkedIn.
+460
+You can follow me at McNano, M-I-G, N-A-N-O, and all the same places.
+461
+And Generative Now is produced by Lightspeed in partnership with Pod People.
+462
+I am Michael McNano, and we will be back next week.
+463
+See you there.

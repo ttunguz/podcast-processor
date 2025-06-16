@@ -1,0 +1,1326 @@
+--- METADATA START ---
+Show: The MAD Podcast with Matt Turck
+Episode: Inside the Paper That Changed …
+Host: Matt Turck
+GUESTS: Aidan Gomez 
+Guests: Aidan Gomez
+Source URL: https://podcasts.apple.com/us/podcast/inside-the-paper-that-changed-ai-forever-cohere-ceo/id1686238724?i=1000711589685
+--- METADATA END ---
+
+1
+The idea of increasing human productivity, letting humans do more, increasing supply, driving costs of things down, letting humans do more and accomplish more.
+2
+That's what inspires me much more than building God or saving the world from AI.
+3
+I want to save the world with AI.
+4
+Hi, I'm Matt Turk from FirstMark.
+5
+Welcome back to the Matt Podcast.
+6
+Today, my guest is Aiden Gomez, the CEO of Cohere.
+7
+In 2017, Aiden was a third-year undergrad student who cold-emailed Google Brain, landed an internship, and ended up co-authoring Attention Is All You Need, the seminal Transformers paper that helped usher the entire generative AI revolution.
+8
+Fast forward to 2025, and Aiden is now steering Cohere, a 500-person enterprise AI company that has raised over $1 billion in venture capital and powers Oracle, Notion, and many enterprise customers with a full-stack multilingual platform for AI agents.
+9
+In this episode, we unpack the inside story of the Transformers paper, including the mishire that put Aiden in the room.
+10
+And I had to be, oh no, I need to finish third-year undergrad.
+11
+We don't hire undergrad students.
+12
+I got in through an administrative mistake.
+13
+The state of AI research, including agents, reasoning compute, synthetic data, and why Transformers is still the dominant architecture eight years after the paper was originally published.
+14
+So, one of the big shocks is how, over the past eight years, how little things have changed.
+15
+It's really surprising to me that the Transformers we train today look so similar to what was back then.
+16
+We've just scratched the surface.
+17
+And why Cohere bet the farm on enterprise AI in the first place, instead of focusing on the AGI ego fest.
+18
+I never liked the vibes of the whole AGI.
+19
+It felt cosplaying.
+20
+It felt people were LARPing a new religion.
+21
+Frankly, enterprise maybe has a wrap of being boring, but I think it's way more important.
+22
+This is a fantastic episode packed with fun stories and insights to understand the past, present, and future of AI.
+23
+Please enjoy this great conversation with Aiden Gomez.
+24
+Aiden, welcome.
+25
+Thank you, thank you, thanks for having me.
+26
+So, to get started, I'd love for you to tell the story of the Transformers paper.
+27
+You're famously one of the eight co-authors of it.
+28
+And of course, Transformers and Attention is all you need is the seminal paper that led to everything that we're experiencing today in generative AI.
+29
+What was your journey to it?
+30
+How did you become part of the eight?
+31
+I was a student at the University of Toronto, and I had been working on deep learning because a lot of the early work in the field was obviously done by Jeff Hinton and others at the school.
+32
+So I'd been getting quite close to it.
+33
+I was reading up on papers, and I just kept seeing Google Brain repeatedly across these papers again and again and again, researchers from Brain.
+34
+And so eventually I ended up reaching out to them, reaching out to some of the researchers there and saying, hey, listen, I read your paper.
+35
+I have this idea of how to extend it.
+36
+And one thing led to another, and I got an offer to join.
+37
+You just co-email them, you found their email address, and so I call email them.
+38
+That's awesome.
+39
+Yeah, well, on papers, you have the email address under the author name.
+40
+So I could just reach out to them to say, hey, super cool experiments.
+41
+Did you try this?
+42
+What if we did this next?
+43
+And they replied to me and said, hey, why don't you come down to Mountain View and do some work with us?
+44
+So I got hired as an intern on Lukash Kaiser's team, and I was sat next to Noam Shazir.
+45
+And that was the start of it.
+46
+The end of it, if I skip all the way to the end, I was leaving Google after the internship had finished up, and they were throwing a little goodbye Aiden,, party, whatever, some sweeps and stuff.
+47
+And my manager, Lukash, was, okay,, everyone, Aiden's going back to his PhD.
+48
+Aiden, how many more years have you got left?
+49
+And I had to be, oh, no, I need to finish third year undergrad.
+50
+And Lukash was, what?
+51, we don't hire undergrad students.
+52
+I think I got in through an administrative mistake because my manager thought I was a PhD student.
+53
+So that's how I got there.
+54
+The process of the Transformer,, it was incredible.
+55 the velocity that that came together was, I haven't seen anything it since.
+56
+So I showed up, the project that I was supposed to work on, it's a paper that is out and it was released at the same time called One Model to Learn Them All.
+57
+And it was a Omni model.
+58
+So you can feed in text, audio, images, everything, and it could output the same.
+59
+So super multimodal.
+60
+Again, this was eight years ago, and so primitive compared to what we have today, but certainly prescient to where things were going.
+61
+But as we were working on that, Lukash and I, we built this framework called Tensor to Tensor.
+62
+And it was used for doing big training jobs, distributing over a bunch of different GPUs, making things super efficient.
+63
+And because we were sitting next to GNOME, we convinced GNOME to use it.
+64
+So GNOME joined Tensor to Tensor.
+65
+And then we were, GNOME was in conversation with folks over at Google Translate, which was the second group of people who were working on these projects.
+66
+And we realized folks were working on the same thing.
+67
+We were all looking at text-based autoregressive models that heavily leveraged attention or were much more pure attention as opposed to these previous RNN models, LSTM models, which were quite complicated and in some ways ugly.
+68
+So we wanted to strip all that back and just create the most simple, efficient, attention-based language model.
+69
+And so then we just decided to team up and join forces.
+70
+And that happened about a month into my internship.
+71
+So that was purely organic?
+72 Noam happened to be around, and then you had some conversations with other folks.
+73
+Was that how Google Brain operated?
+74
+Meaning Google Brain allowed people to just organically form groups and teams?
+75
+Yeah, totally.
+76
+That was it.
+77
+It was a group of people who were researchers with full academic freedom to do whatever interested them.
+78
+And you would congeal around projects or ideas.
+79
+And so that's what happened.
+80
+We were just chatting to folks,, saw a good idea, and then teamed up to take it on.
+81
+It seems that it's a defining characteristic of successful research organizations.
+82, at some point recently, we were chatting with Daryl Keeler, now of Architectural, and he was talking about FAIR at the time, and it sounded it was a little bit that as well.
+83
+Do you think that was a moment in time when all those labs were authorized to or allowed to operate that way and given free reign to explore anything?
+84
+Is that still true today?
+85
+As it changed?
+86
+I don't know.
+87
+I've been out of Google for long enough that I'm not sure how the culture has shifted.
+88
+I would say that the economic relevance of this work is very different to when I was interning eight years ago.
+89
+So I imagine things would have to shift out of necessity, especially because of the product implications, the amount of resources that are being thrown at these projects and these models.
+90
+It's much more consolidated, I would imagine and expect.
+91
+Certainly, the way we run things at Cohere, it's much more a product organization.
+92 you have very clear work streams.
+93
+There's scope to experiment and try to find new alpha, but towards the ends of the product, right?
+94
+So it's focused and more narrow.
+95
+But back then, it was very greenfield.
+96
+And so you could work on whatever you were excited about.
+97
+And yeah, I do think that is a crucial component of successful research organizations.
+98
+And it worked, it produced incredible technology.
+99
+So, going back to the story the eight of you got together, and then how long was that process of writing the paper?
+100
+Super, super fast.
+101
+So, probably about a month in, we decided to consolidate and all work on the transformer together.
+102
+And it just became a mad dash towards the Neurops conference deadlines.
+103
+And NERPS is the biggest AI conference for academics where you submit your papers to.
+104
+And so, we were just all out sprinting.
+105
+And it was a lot of, honestly, it was a lot of throwing shit at the wall and seeing what sticks.
+106
+So many different things were tried, so many little bugs hackily patched.
+107, one example is pure attention architecture.
+108
+The model can't tell the difference between positions of the elements in the same way that an LSTM could, because it could consume each one one by one.
+109
+And so, then GNOME just came up with this idea.
+110
+I remember the day I was sitting next to him, he was talking to me about it, of just throwing these sinusoids into the embeddings and having that represent the position.
+111
+And it stuck.
+112
+And I think we've moved on a little bit, but shockingly, we're still quite close to that strategy today.
+113
+So, that's how stuff worked.
+114
+It was just fixing bugs one by one as quickly as possible.
+115
+And then, whatever we were left with at the last moment, that's what we submitted to Neurops.
+116
+And so, one of the big shocks is how, over the past eight years, how little things have changed.
+117, it's really surprising to me that the transformers we train today look so similar to what was back then.
+118
+And then when you guys submitted the paper and got accepted into NeuroPS, what was the general reception to it?
+119
+Was it clear to folks that this was going to be a big deal or not?
+120
+Yeah, I think folks noticed it and were pretty excited about it.
+121
+But it was still the folks who were in NLP or translation, a subset of a subset of the AI community.
+122
+And so it was fairly limited in terms of reaction, but the folks who knew were quite excited about it.
+123
+And then,, the much debated question of why did Google not immediately jump on this and eventually famously OpenAI is the company that's leveraged the transformer architecture faster.
+124
+What's your insider perspective on that?
+125
+No, they jumped all over it.
+126
+So it went to production inside of search, inside of translate, the existing product suite.
+127
+And so to say that they didn't adopt the transformer architecture would not be correct.
+128
+To say they didn't lean hard enough into language modeling, just pure sequence modeling of text on the internet, that's, I think, the accurate statement.
+129
+That's what OpenAI did early and uniquely well.
+130
+But certainly it was everywhere across Google quite quickly.
+131
+BERT and the search folks, they figured out how to make use of the Transformer super, super fast.
+132
+And to the point that you were making a second ago, why do you think Transformers has had so much staying power?
+133
+Is that because it's the gift that keeps on giving and the more data and compute you feed it, the better it performs, and we haven't reached that moment when things get less exciting?
+134
+Or is there something in research where people are, I don't know, for whatever reason, not as productive in terms of new ideas?
+135
+I don't think people are not productive in terms of new ideas, but I do think it's a reinforcing loop or a self-fulfilling prophecy where the community got super excited about the Transformer.
+136
+They built so much infrastructure specialized to the Transformer.
+137
+And so it's we dug ourselves into this well.
+138 we now have chips that are being optimized explicitly to that architecture.
+139
+And so to move architecture, it requires so much effort, energy, lift to rewrite everything and start from scratch.
+140
+That new architecture needs to present something extraordinarily compelling, a very good reason to move.
+141
+And we just haven't found that architecture yet.
+142
+Yeah, so the bar is super high.
+143
+And I don't know if that's an unfair question because you're now a CEO, so you're presumably, I'm sure, focused on building a fantasy company pretty much all day, every day.
+144
+So I don't know how long you spend looking at research papers, but is there anything that you find exciting?
+145
+So this,, Ian Le Khan has proposed alternative architecture to LLMs.
+146
+There was discussion about state-space models, all that stuff.
+147
+Is there something that's emerging on your radar as a post-Transformer architecture, possibly, even if it doesn't work today, but it sounds promising?
+148
+Yeah, so I have for a long time believed and hoped for a replacement to the Transformer.
+149
+And I think most of the Transformer paper team, we're researchers, we want to see our stuff surpassed.
+150
+It would be terrible if the best we could do is this paper from eight years ago.
+151
+That's just bad for humanity, right?
+152
+We want to see progress.
+153
+So I've been hoping for that, so much so that when we opened the New York office for Cohere, I named one of our meeting rooms SSM because I was, this is it.
+154
+It's going to get replaced.
+155
+And it hasn't.
+156
+It hasn't.
+157
+It turns out the Transformer is a great artist.
+158
+It copies all the good ideas that it sees out there.
+159
+And so it just hasn't been replaced.
+160
+When SSMs came out, the good ideas from that got ported over to the Transformer, and we kept going with Transformers.
+161
+Now there are these discrete diffusion models which do diffusion, which has been super popular for image understanding, image generation.
+162
+It's doing that same process for language models, but I still don't see that replacing the Transformer.
+163
+So I'm waiting, everyone else is.
+164
+But I am hopeful that we'll get something.
+165
+And the whole reasoning/slash test time compute that,, at least for the non-AI researcher of us, seems to have come out of nowhere in the last five, six months in particular.
+166 for from your perspective, is that a somewhat obvious idea that was a matter of time until it was going to be implemented and it's good but not completely groundbreaking.
+167
+Or is that a major development?
+168
+Well, it's been worked on for a very long time.
+169
+So we've known it was coming for years, for years, for the past three years.
+170
+And it is obvious.
+171
+It is obvious.
+172
+Because if you think of the pre-reasoning world, the input space to a language model is everything.
+173
+It's all of language.
+174
+And so you can ask it very simple questions one plus one or extremely complex ones go cure cancer.
+175 those are two strings or requests that you can ask it.
+176
+And you really don't expect it to spend the same amount of energy and time on those two different problems.
+177
+One, it should respond immediately.
+178
+The other one, it should probably,, it might take years of thinking and trying to accomplish.
+179
+But we didn't have that reality before reasoning.
+180
+We had an input and then an immediate response.
+181
+And so both of those got the same energy and effort put into them.
+182
+So it had to come at some point, this notion of different amounts of energy or time being spent on problems, test time, compute.
+183
+I think the effectiveness of it was surprising.
+184 it was really quite incredible to see how much gets unlocked.
+185 these models can, with very little supervision, very little data from humans saying this is how you think through problems, figure it out for themselves.
+186
+So that's been incredible to watch.
+187
+I think the other thing that's been incredible is it's really easy to do.
+188
+It's easy to create a reasoning model.
+189
+It's dramatically cheaper than pre-training.
+190
+And so it's accessible.
+191
+So there's this huge intelligence uplift that comes for really quite little effort.
+192
+Is there more juice to squeeze there?
+193, should we expect more progress specifically under that paradigm?
+194
+Totally, totally.
+195
+We've just scratched the surface.
+196
+At the moment, it's mostly focused on math problems and this thing.
+197
+There is a whole world of applications that we need to make it work in.
+198
+Medicine, everything from the pure sciences, physics, chemistry.
+199
+There is so many, all the interesting problems require reasoning.
+200
+And so there's a lot of white space for us to go after.
+201
+And maybe to unpack this for people, it's the reason for that, it's because each time you do work on test time compute, you effectively, there's an element of bringing a domain into the effort.
+202
+So people have done that for math, but they haven't done that for other areas.
+203
+Is that the right way to think about it?
+204
+Yeah, so they've spent a lot of time teaching the model to reason in the domain of mathematics, in the domain of computer science and coding.
+205
+But that effort hasn't been applied to biology yet or some of these pure sciences.
+206
+And it hasn't been applied to automation and the enterprise world.
+207
+So using the tools that enterprises use to create value in our world, to get things done.
+208
+So after the Transformers paper, what was your journey to starting Cohere?
+209
+So I bounced around Google for a while.
+210
+I went back to Toronto.
+211
+I started working at Google for Jeff Hinton there.
+212
+I met my co-founders, Nick and Ivan.
+213
+And then I started my PhD in England.
+214
+And I was still working at Google.
+215
+I was flying back and forth between London and Berlin because in Berlin, London is, it was exclusively DeepMind, which was another arm of Google, which did AI research.
+216
+And so Brain didn't really exist there.
+217
+But one of the Transformer co-authors, Jakob, had opened a brain office in Berlin.
+218
+And so I would bounce back and forth to go see him.
+219
+And we were doing work with Jeff Dean on scaling up infrastructure.
+220
+So training on networks of TPU pods.
+221
+So instead of having one supercomputer, you chain together a bunch of supercomputers and you can train something dramatically larger.
+222
+And that's where we started to see the first instances of scaling up large language models.
+223
+And that was what, what year was that?
+224
+That would have been 2019 or 2020.
+225
+No, 2019.
+226
+It would have been just before GPT-2.
+227
+So the first time computers started writing in a way that was compelling, almost a human.
+228 you read it and you're, that was the moment I felt shock reading what I was reading.
+229
+Yeah, that's amazing.
+230
+So that was, just to unpack that, that was a surprise to you.
+231, that's one of the things I find the most fascinating about this whole thing is that even people who are super deep in the field would be shocked.
+232
+Because there's a whole train of thought that says, well, the rest of us are impressed because effectively the computer does what the computer always did, but now we can emotionally relate to it because it uses language.
+233
+So I find it fascinating when somebody of your caliber says, well, no, no, it was a shock to me as well.
+234
+Yeah, no, I think it's before you press go on one of these experiments, you have some belief.
+235
+You think it'll get somewhere.
+236
+But then when you get there, it still takes you a while to get used to it.
+237
+I had the same feeling when some of these voice models that are able to inject emotion, the experience, the experience of interacting with a machine where you hear it inhale before saying something, you hear its lips smacking as it talks to you, you hear it,, hum or hot.
+238 it is, it tickles a part of deep down in your brain.
+239
+The experience is just so incredible.
+240
+You can't prepare yourself for it.
+241
+When it's in front of you, you just can't wipe the smile off your face because it's so crazy.
+242
+I had the same thing with reading the first outputs of these models and just it's so delighted.
+243
+It's shocking.
+244 it's so creative.
+245
+It's The first sample that I got was sent to me by Lukash, my manager.
+246
+And I've told this story a bunch before, but, it was an email and the subject was Aiden, look at this.
+247
+And then in the body, it was a Wikipedia article titled The Transformer.
+248
+It was about this Japanese punk rock band that had gotten together.
+249
+I was just reading through the story of this.
+250
+And then at the end, Lukash was, I just wrote the Transformer.
+251
+The machine wrote the rap.
+252
+And I was just, what?
+253, what do you mean?
+254
+This is completely written by a human.
+255
+So those moments,, they're not that frequent, but they're pretty frequent.
+256
+It's once a year.
+257, same with reasoning.
+258, when you're reading through what this model is thinking, you're, holy shit.
+259, it's so so-just part.
+260
+Yeah, yeah.
+261, it has a monologue.
+262
+It's talking to itself.
+263
+It's thinking through stuff.
+264
+It's, oh, I messed up.
+265 what?
+266
+Let me try this and figuring it out.
+267
+It's so beautiful to see.
+268
+It's very cool.
+269
+It's very cool.
+270
+So you were in England working with Jeff Dean and others.
+271
+And then at some point, you decided to leave and start the company?
+272
+Where was the next hop?
+273
+Yeah, so when computers started to get quite compelling in language using these language models, I called up Nick and Ivan and said, guys, we need to do something here.
+274
+There's a very interesting direction of travel.
+275
+Let's see if we can raise some money and build a company that builds models of the web.
+276
+Because that's what this project really was.
+277
+That's what these language models were.
+278
+They were just models of the content on the internet.
+279
+And so that's what we started doing.
+280
+And then very soon after that, we wanted to explore enterprise applications of it, stuff customer support and chatbots, this type of thing.
+281
+So we quickly became an enterprise company.
+282
+And the rest is history.
+283
+We're now, I think, approaching 500 people, offices in SF, Toronto, New York, London, Tokyo, Seoul.
+284
+And yeah, it's been really incredible to see as a company.
+285
+Why did you guys decide early in the company to build an enterprise company?
+286
+Certainly, given your credentials, you could have been one of those AGI labs.
+287
+Was there a specific reason why you decided not to do that and focus on the enterprise instead?
+288
+Yeah, I never liked the vibes of the whole AGI, effective altruist, this whole ecosystem.
+289
+It never resonated with me.
+290
+It felt cosplaying.
+291
+It felt people were LARPing a new religion and all the stuff create God.
+292
+I just didn't that.
+293
+I didn't that ethos.
+294
+And frankly, enterprise maybe has a wrap of being boring, but I think it's way more important.
+295
+I think the idea of increasing human productivity, letting humans do more, increasing supply, driving costs of things down, letting humans do more and accomplish more.
+296
+That's what inspires me much more than building God or saving the world from AI.
+297
+I want to save the world with AI, right?
+298, I want to put it to work to make healthcare better.
+299
+I want doctors to spend less time writing up notes and filling out paperwork.
+300
+I want them to be with the patient thinking through problems.
+301
+I want to help them solve those problems, give them agents that can help them do research on something they've never seen before.
+302
+So, I want to put the technology to work in the global economy.
+303
+And that's really what inspired Nick Ivan and I.
+304
+Do you spend any time thinking about AGI and SEI?
+305, bearing in mind what you just said, do you think that's something where we do you think that's a tractable problem and we're getting closer, or nobody knows?
+306, the goalposts keep moving constantly, and we get to the place that we thought,, AGI was, and we say, oh,, I guess it's a little bit harder than that.
+307
+No, it's out here now.
+308
+Well, to your first question,, can I avoid it?
+309
+Do I spend time thinking about it?
+310
+I can't avoid it.
+311
+I do spend time thinking about it, of course.
+312
+And, many regulators ask me questions about it and policymakers, et cetera.
+313
+So I have to think about it.
+314
+That sounds fun.
+315
+Yeah, regulators about AGI.
+316
+I'm sure that's your favorite activity.
+317
+It's a joy.
+318
+I'm glad people are thinking about it.
+319
+I don't think it should be the center of the discourse in the way that it historically has been.
+320
+I think there's been positive change to more of a practical focus.
+321
+But certainly early on in the language modeling game, it was doomsday.
+322
+It was, we're going to save the world.
+323
+It was this is so risky, we have to,, shut down everything.
+324
+And so I think that era has passed us, which is good.
+325
+And I am glad that people think about that stuff.
+326
+The long-tail risks are important and they're worthy of academic inquiry.
+327
+And so I'm glad.
+328
+But I'm very relieved we're past the point where that's the only thing people seem to talk about.
+329
+Doomerism aside, this concept of AI continuing to be on some exponential curve towards whether you call it human level intelligence or superhuman.
+330
+Is that something that you see progress, or effectively, we've made a lot of progress, but nobody really knows when that's going to stop or whether it's going to accelerate?
+331
+Or what's your expert take on it?
+332
+Listen, the models are going to continue to get better.
+333
+They're going to continue to get better.
+334
+And they're going to do some incredible things.
+335
+And there will be specialist models that emerge to help in things in pharma, right?
+336
+The creation of new drugs, in material sciences, for advanced materials.
+337
+The models will be able to be incredibly helpful to us.
+338
+The definition of ASI and AGI is so hazy and ill-defined, it's hard for me to give a concrete answer to what you're asking.
+339
+Aside from it must be a continuum and not a discrete bit flip where suddenly it's ASI or AGI.
+340
+I think we already have AGI to a large extent.
+341, if you have, yeah, you have the choice between you right now, you have some symptoms, and the only option is Aiden prescribes me drugs, or Aiden's model, Cohere's Model Command, prescribes me drugs.
+342
+The logical and correct answer is to have the model do it.
+343
+I promise you, it knows more than I do.
+344
+Now, it shouldn't be prescribing anyone drugs, but it's smarter than me at that thing.
+345
+So, it is, and many other things, right?
+346, most things,.
+347
+I personally thought we had a GI when Google Photos was able to recognize my family in thousands of photos.
+348
+Sorry, my bar is low.
+349
+Okay, yeah, yeah, so you're already there.
+350
+Yeah, and then the ASI thing, better than humans, of course, it will get better than humans at some things.
+351 I just said, it's better than me at this.
+352
+Is it better than the world's best doctor at prescribing drugs?
+353
+Probably not.
+354
+Will it get there?
+355
+Probably.
+356
+So, I think betting against progress is bad.
+357
+I think it's what does that mean?
+358
+What does that progress mean?
+359
+What are the tangible effects?
+360
+Anyone who's selling you doom and gloom, I think, is wrong.
+361
+One thing that's really interesting about you guys as a founding team is that I believe the three of you are researchers, right?
+362 you all met.
+363
+That's what you were describing, all of you met at Google Brain.
+364
+It's something that I've been thinking about: the concept of AI researchers as founders and entrepreneurs.
+365
+And it seems that there was a whole wave of people doing this, but equally, there was a wave back of people just going back to the labs and sometimes going directly through employment, sometimes selling companies, so whether that's adept or inflection or character.
+366
+What was your personal evolution to go from a world-class person writing one of the most important papers of all time to suddenly, oh,, you have to worry about HR and fundraising and making customers happy?
+367
+Yeah, no, HR is the worst.
+368
+By far the worst.
+369
+What was the transition?
+370
+I would say it was gradual.
+371
+It wasn't immediate.
+372
+I was still doing loads of research for the first year and a half, two years of the company.
+373
+But I've slowly been weaned or pushed off of research.
+374
+I'm probably more annoying now to the modeling team than I am helpful.
+375
+Guys, I can still do it.
+376
+Yeah, guys, listen to this idea of.
+377
+Yeah, no, it was gradual.
+378
+I would say I love my job.
+379, I think being a CEO is such a privilege.
+380
+You get to see so many different parts of the world.
+381
+And not just obviously geographically, but you get to just see so much of what happens out there.
+382
+Different sectors, different types of people, private sector, public sector.
+383
+And so it's been a huge privilege, but certainly a journey.
+384
+And I've learned a lot.
+385
+I've been lucky to have really good mentors.
+386
+So I have an incredible board.
+387
+Mike Volpe and Jordan Jacobs, they've been on my board since the very beginning and have really taught me everything I know.
+388
+Great folks, yes.
+389
+And then I've met great founder CEOs,, Jensen and many others.
+390
+And so it's been a lot of learning, very fast, and lots of failures, which I've had to adapt to and react to.
+391
+But it's been a privilege.
+392
+So let's get into Corey here in more detail.
+393
+So you have built this enterprise AI platform, and I will let you correct me if those are not the right words.
+394
+But interestingly, it's very vertically integrated.
+395
+So you do the model part, which is command, I believe.
+396
+And then on top of that, you build other products.
+397
+And I believe the most recent one is North, which is an agentic platform.
+398
+So, in better words, how do you describe the company, what it does, and then that product architecture where all the pieces fit in?
+399
+Yeah,, for North, the fast way to describe it is it's an AI agent platform where you can build agents, plug those agents into all the software and data that the humans inside your organization have access to, and then ask them to go do things.
+400
+So they use tools, they use sales software, HR software, whatever, your email, your docs, and it can just go out and accomplish tasks for you.
+401
+So that's North.
+402
+But I think it's more interesting to build up from the base, which is first and foremost, Cohere builds models.
+403
+So we have our command model, which is our generative model, competes with GPT-4.0, LLAMA, et cetera.
+404
+We also have another set of models, which are our search models.
+405
+So Embed V4, Rerank 3.5, these are our search models that can see, that can sift through data, surface information for you.
+406
+And so those two form the backbone of North.
+407
+They're what manages the model's ability to interact with the user, think through problems, use tools, and then find the data that it needs to accomplish a task.
+408
+How are those trained?
+409
+The command and the re-ranker and yeah, so the generative model, we released a very detailed paper on Command-A, which describes exactly what we did.
+410
+But similar to others, we do a large pre-training phase, which involves data from the web, synthetic data that we generate.
+411
+And we do a big training run, and then we start doing SFT and RLHF.
+412
+And so this is the part where you have a model that knows a bunch, and now we want to start making it capable of using that knowledge, using that intelligence towards some task, whether it's using tools, performing stuff RAG, where you need to search databases, pull back information, respond with that information.
+413
+So that's how we build that side.
+414
+On the search side, it's similar, right?
+415 we have to search over really complex data.
+416
+In particular, enterprise data isn't usually out on the web, so you can't find it out there.
+417
+So we need to go create data that looks it synthetically and train on that instead.
+418
+And those models are fully multimodal.
+419
+And I think I can say, and I think most people would agree, our re-ranker and embedding models are the best out there.
+420
+And re-ranker, just to make this educational, that's part of the search architecture.
+421
+And basically, that enables the customer to decide which results should be given priority versus others.
+422
+Is that fair?
+423
+Exactly, exactly.
+424
+You give it a bunch of stuff, and there's some needle inside the haystack, and the re-ranker surfaces it.
+425
+So it pulls it up to the front so that you can just grab that piece and pass it along.
+426
+What's the deal with synthetic data?
+427
+A year or two ago, everybody was saying it doesn't work.
+428
+It doesn't enable you to train as well.
+429
+And I may be wrong, but that's what I would hear and tell me that's not correct.
+430
+And this year, it seems to be, people seem to be viewing synthetic data as something that's completely ready for prime time and that they are increasingly using in just everything AI.
+431
+So one, is that fair or not?
+432
+And two, if that's fair or what happened.
+433
+Yeah, there was a period where there were a lot of people saying, I forget the word of the snake eating the snake, the horriborous or whatever.
+434 a human centipede of data.
+435
+And yeah, I think it just got decisively proven wrong.
+436
+Synthetic data is incredibly effective.
+437
+It's now the majority of the data that we train on for creating something Command A.
+438
+And in many instances, it's more useful to the model than human data.
+439
+The most obvious example of that is stylistically.
+440
+So humans, if you ask them to respond to a question, we're lazy.
+441
+If I ask what's,, nine plus 2, a human is just going to say 11.
+442
+But what the human wants to see is, Aiden, that's a great question.
+443
+That's so interesting.
+444
+So it's...
+445
+This is the first time I'm being asked this question.
+446
+Yeah.
+447
+Yeah, yeah, you're incredible.
+448
+But so stylistically, humans prefer models answers that are incredibly empathetic,, positive, patient to human answers.
+449
+And so what we have to do is we have to get the models to rewrite the human answers because the humans are lazy and they're, it's 11.
+450
+And it makes you feel shit.
+451
+You're, okay, fine, thanks.
+452
+So that's the most concrete place where, yeah, synthetic data is just way better.
+453
+But obviously we're applying it all over the place.
+454
+Yeah.
+455
+Because one of the interesting, many interesting things that you guys do is that you seem to have a development model where you work very closely with some key design partners per industry.
+456
+So I believe you had RBC for banking.
+457
+So I guess that's North for banking, is that the Agenti platform.
+458
+And then I believe you have a customer for telecom and so on and so forth.
+459
+Is part of the idea that you can train the model working with these partners, but ultimately obviously their data is their data.
+460
+And if you want to generalize what you're doing to other financial customers, then you need to create synthetic data that looks that data.
+461
+Is that part of the idea?
+462
+Yeah, that's exactly correct.
+463
+So sometimes our customers either can't or don't want to train a model on their data either.
+464
+They don't want to train on their data.
+465
+Either they don't have permission to, or, they're just not comfortable with it.
+466
+And so in that case, synthetic is the only option.
+467
+But given a few examples of the ground truth data, synthetic data works extremely well.
+468
+You can create huge quantities of fake data that is very, very faithful to the ground truth.
+469
+And so that's being used all over the place for us.
+470
+We're lucky in that most customers do trust us because of our deployment model.
+471
+So we can deploy completely privately, on-premise.
+472
+We can air gap it.
+473
+So it's just way more secure than some of the other fine-tuning options that are out there.
+474
+But if they still don't have comfort, we have this option that we can develop a bunch of synthetic data and show uplift in performance without having to train on real user data or real patient data.
+475
+But ultimately, you have one big model, right?
+476
+So what you learn in finance, what you learn in healthcare, what you learn in telecom, all that goes to the same model versus having specialized versions of command.
+477
+No, we do have specialized versions.
+478
+So we can create custom versions for an enterprise.
+479
+Now, of course, we want to be helpful to an industry.
+480
+And if we know that a particular industry cares about a use case, we're going to make sure that our general model performs at that use case.
+481
+And yeah, synthetic data will be a huge part of that.
+482
+But for a particular customer, oftentimes they want a dedicated model for them, for their use case, for whatever it is they care about.
+483
+And they want this to happen at the model level, not just the agents or interface, or they want, okay, okay, interesting.
+484
+So that's command and re-rank.
+485
+I read somewhere this the IA models, is that on the side?
+486
+Is that part of the research arm?
+487
+So it's based off of our command models.
+488
+Okay.
+489
+But it's extended and trained for many more languages.
+490
+So over 100 different languages.
+491
+So it's our multilingual effort.
+492
+That effort's being run by Sarah Hooker.
+493
+She leads Cohere Labs, which is our research not-for-profit.
+494
+And that used to be called Cohere for Good.
+495
+Is that what it is?
+496
+Cohere 4AI, yeah.
+497
+And before that, it had another name.
+498
+Just 4AI.
+499
+Just Fourier.
+500
+Okay.
+501
+Okay.
+502
+That's what Ivan and I started 4AI when we were in undergrad, just because we wanted to do more AI research and we needed some money for GPUs.
+503
+So we built a little organization.
+504
+And that's still around now in the form of that organization.
+505
+Okay, great.
+506
+So that's a research, research.
+507
+Is that the research part of Cohere?
+508, yes, yes, it is.
+509
+But so is Cohere proper.
+510
+So everyone does research.
+511
+Cohere collaborates with Cohere Labs very, very closely.
+512
+A lot of the stuff that you see in Cohere Labs papers, you'll see it pop up in the next version of the command model or other models.
+513
+And so,, there's an IAVision model that we released today.
+514
+So, command, Command A isn't currently multimodal, but you can imagine very soon it will be.
+515
+So, Cohere Labs usually runs a little bit out in front of Cohere proper, but with deep collaboration to the org itself.
+516
+Interesting.
+517
+Do you see enterprise demand for multimodal, or is that more anticipation of what may come?
+518
+Totally.
+519
+No, there's lots of demand.
+520
+Some of the use cases,, there's all the OCR type stuff, but there's also multimodal is essential for understanding enterprise data PDF documents where there's graphs and this type of thing, or understanding slide decks.
+521
+A lot of the modalities that enterprises work in are visual.
+522
+So it's table stakes.
+523
+The other thing that vision is crucial for is computer use, right?
+524 the ability to control a computer.
+525
+It's a real,, it's a GUI.
+526
+It's a visual experience.
+527
+Trying to use a computer or even surf the web, looking at HTML, very, you could try doing it if you want.
+528
+It's a horrible experience for language models too.
+529
+And so the ability to see is essential to being able to navigate it.
+530
+Multilingual seems to be something that you guys care about a lot as well.
+531
+I read that you apply some of the same design principle or design go-to-market with some key partners, Fujitsu for Japanese, I believe.
+532
+LG for Korean.
+533
+So walk us through the thinking, how it came about, what's special and perhaps difficult about doing this?
+534
+Yeah,, the markets there are extremely underserved.
+535
+They have populations that don't speak that much English, and the current technology that exists doesn't serve their needs, especially in the enterprise world.
+536, maybe you can get them to speak good enough Japanese at chitchat, but for actual enterprise documents, everything breaks down immediately.
+537
+And so we focused on teaming up with regional champions.
+538
+So Fujitsu is the largest SI in Japan.
+539
+LG CNS is one of the largest SIs in Korea, and obviously one of the large Chaybols.
+540
+And so we team up with them to create models specifically for the market.
+541
+So native in Japanese and Korean, focused on the enterprise use cases that that economy cares about, whether it's manufacturing, finance, whatever is relevant in that space.
+542
+So that's what we've been doing, and it's been extremely successful.
+543
+It gives that market access to something that it would have had to just wait and wait or develop internally at massive cost overnight.
+544
+All right, so that's a model layer.
+545
+On top of that, do you have an API layer?
+546, it seems that part of the business is to provide the models to companies Oracle or Notion.
+547
+Is that the model themselves?
+548
+Is it a separate product?
+549
+No, we provide the whole platform.
+550
+So, serving of the models, optimization on different hardware, AMD.
+551
+We're up and running on Cerebris, Grok, of course, NVIDIA.
+552
+So, all of that we provide and we can deploy anywhere.
+553
+And that's been quite unique.
+554
+I think one thing that's different about agents and AI compared to other SaaS is that usually you're trying to do something that a human is doing in the organization.
+555
+And to do that, you need the same context that a human has.
+556
+And so, that means you need to give very broad visibility.
+557, our North platform, to be fully useful, needs to see all of your internal communications, all of your emails, all of your documents, your customer records, et cetera, et cetera, et cetera.
+558
+And that is a huge security risk.
+559
+Very unique one compared to CRM software or HR software, that type of thing.
+560
+And so, our security posturing, the fact that we don't say, hey, send your data over to us, hit our API, trust us, we're SOC2.
+561
+The fact that we don't say that, and instead we say, we're going to ship our models directly on your hardware, whether it's in your VPC on a cloud or for regulated industries in your data center.
+562
+That's been a huge unlock.
+563
+People get comfortable plugging in much more, and so they can do more with the product.
+564
+Oh, interesting.
+565
+So, that's one benefit of vertical integration.
+566
+So, it's not just that you control the whole experience, it's also that you can make the claim with a straight face, because obviously it's true that you're not sending data anywhere, right?
+567
+As opposed to some direct or indirect competitors to cohere would say, hey,, we can connect to all your sources, but ultimately, we're powered by Gemini OpenAI or cloud and that's on Bedrock or Vertex or model as a service whereas here you control the whole thing okay are you seeing a lot a lot of demand for on-prem and VPC deployments versus cloud is that is the overlap 100% with the regulated industries versus non-regulated industries or do you see some some nuances there I would say the most interesting work we do requires in VPC or on-prem it touches the most critical data to the business and so we're having The most significant impact and that's regard that's regardless of the regulated industries have to do it but are you seeing non-regulated industry that that that still decide to use you guys on-prem or vpc because they're data is so sensitive i'm just curious because this is all theme of cloud repatriation that could be accelerated by ai i'm just curious what you see in the in your daily reality yeah in startups that use us the ones who care about on-prem and in vpc they are serving regulated customers that's what they're doing and so it comes from a security standpoint and i i do think on-prem and in vpc resonates the most with the folks who have the most restrictions on what they can do with their data and where it can live so talking about north what are some of the capabilities it has and doesn't have yet perhaps express in terms of of use cases what can he do what can he not do yeah so there's a few different modalities in north.
+568
+We're still in early access, so we opened that up in in january.
+569
+Right, right, it's brand new.
+570
+Yeah, hopefully we'll we'll ga that product quite soon, and i'll be able to say more about it.
+571
+But yeah, you can imagine it as a fully private version of your favorite consumer chatbot with thinking natively, or sorry, reasoning natively supported, but much more customizable.
+572
+So you can plug in literally anything.
+573
+If Accenture or Deloitte built your supply chain team a custom piece of software, you can integrate that into North and the model can start using that software to accomplish problems.
+574
+And it does a lot of interesting work on deep research and this type of spending time thinking, researching things, sifting through data, taking 5, 10, 20, 30 minutes to accomplish a task.
+575
+It does that extremely well because of all the data it has access to.
+576
+It's not just web search, it's sifting through your entire organization.
+577
+Is part of the idea that you're going to evolve towards multi-agent workflows, which seems to be the cool thing to talk about on Twitter in 2025?
+578
+And if so, what would be some examples of what an agentic workflow looks?
+579
+We have to take a shot, by the way, which time we say the word agentic.
+580
+That's the rule of podcasts.
+581
+I'll be asleep by the end of it.
+582
+So, for use cases, right now, the coolest stuff is usually in time-sensitive areas.
+583
+So, there's one really cool use case, which I think is going to have a huge, huge, huge, huge impact on the economy, which is doing research for folks in finance, for example, wealth managers, when an event breaks.
+584
+So, what happens today is if I'm a wealth manager, I'm managing 10 to 15 clients, a war breaks out somewhere, or there's some announcement about a new tariff.
+585
+I get calls from all of those clients saying, oh my God,, what are we going to do?
+586
+And I have to spend,, maybe a week, maybe four weeks researching and coming up with a hedge proposal.
+587
+So, I come up with a portfolio hedge, and then I need to implement that across my client base.
+588
+At that point,,, a week, four weeks, the world has changed.
+589
+The market has dropped 20%,, the conflict is resolved, whatever.
+590
+And so, the velocity and the importance of being able to act with speed in that space is crucial.
+591
+And so, that's what these agents can do.
+592
+They can help do that job dramatically faster.
+593
+That research, they can come up with a proposal way faster than a human ever could because it can read 100,000 times faster than a human.
+594
+So, we can go out, read analysis, read articles, and come back with a concrete proposal of what to do.
+595
+And then the human can take over and make whatever edits they want to make and then take that forward.
+596
+So, we can take something that used to be a month and bring it down to four hours, eight hours.
+597
+That's a fascinating example.
+598
+The beauty and the curse of this whole agentic shot, horizontal possibility, and the fact that even in the enterprise, agents can do all those things feels both a blessing and a curse.
+599
+meaning that the risk is that customers could be just overwhelmed by the possibilities and not know where to start.
+600
+How does that work in practice?
+601
+Do you find yourself effectively doing consulting and singing down with customers to help them come up with use cases?
+602
+Or do some people know exactly what they want to do?
+603
+What's the reality of that part?
+604
+It used to be much more that, where you'd come in and they'd say, hey, this AI stuff is super cool.
+605
+My board is giving me a bunch of pressure.
+606
+What am I going to do about Gen AI?
+607
+What should I do?
+608
+And we would have to help them think through the opportunity space.
+609
+We'd have to learn about their business, try to help them identify the opportunity.
+610
+But increasingly, it's changed dramatically.
+611
+And the competency of the customer is much higher.
+612
+They know exactly what they want to do.
+613
+They know their business.
+614
+They know what will count.
+615
+And they just want to go implement it.
+616
+And so they need a partner to help them accomplish that roadmap that they've decided on.
+617
+So there's that phase of POC or figuring things out.
+618
+It feels it's passed us by now.
+619
+Most organizations know the opportunity, they know what they want to do, and they really just need help to go execute on it.
+620
+The $2 billion we collectively spent on Accenture did pay off.
+621
+Now our customers are ready to truly move forward.
+622
+Okay, that's fantastic news for the industry.
+623
+Particularly interesting because, again, the agentic aspect of this, in some ways, makes it more complex, more complex because you have more possibilities.
+624
+So it's fascinating to hear that people, despite the scope of this being widened, more,, have a more precise idea of what it is that they want to do.
+625
+Okay, great.
+626
+Yeah, they also,, it's not they come with only one idea.
+627
+So the scope is still broad.
+628, we've had multiple large enterprises come to us and say, we have 700 use cases that we've identified.
+629
+Can you help us accomplish them?
+630
+And it's, okay, yeah, we can, but let's start on the most important five and then expand from there.
+631
+But with a company Oracle, which has all of this workplace software in Fusion apps and NetSuite, they've implemented hundreds of use cases themselves using Cohere's models.
+632
+And so the progress for the early adopters, it is pretty staggering.
+633
+It's incredible how far this technology is reaching.
+634
+And of course, it's in the hands of hundreds of millions, potentially over a billion now, of consumers.
+635
+But for workers, for employees, it's very, very rapidly approaching similar scales.
+636
+And you're starting to see a breakout between the companies that adopted this early, did the work, joke aside, brought in Accenture, and are starting to deploy this at scale, and the laggards,, following the typical adoption cycle, because that's something that we as an industry have been collectively,, warning, quote end of quote, let's say the global 2000 that would happen.
+637
+Are you seeing it happen?
+638
+I definitely think so.
+639
+I think there's advantage being conferred to those who have access, who have adopted early and given their employees this augmentation, and whose employees are by the day getting more and more competent at integrating models and agents and AI into their work.
+640
+The organizations that have the workforce best capable of doing that, they're going to win.
+641
+What are agents not quite ready for?
+642
+What would you advise customers to not do?
+643
+Well, there's all the sensitive use cases, medicine and these sorts of places, lots in finance.
+644
+For those, you want a human in the loop.
+645
+You don't want to just hand it over to an agent and let the model go crazy.
+646
+So there's places where it's not ready just because we need good oversight.
+647
+And it may never be ready, right?
+648
+There's a large swath of things that we always want a human in the loop for.
+649
+In terms of technological limitations, where the model is not yet smart enough to accomplish something, I think one of the things that's said quite often now and is a really good example of how far the bar has been raised.
+650
+People are saying,,, these models haven't discovered new science.
+651
+They haven't,, created,, solved some millennium problem or something that.
+652
+That is somewhere that the models are not yet super helpful.
+653
+If you're a postdoc, it might be useful to your productivity of reading papers and preparing talks and that type of thing.
+654
+But helping you discover a new compound, I'm not sure how useful it is yet, but I'm very confident it will be useful very soon.
+655
+It's been an awesome conversation.
+656
+Maybe to close, zooming out, what keeps you up at night?
+657
+Progress in, or lack of progress in AI research, or the world moving in a specific direction, or micro-problems that you deal with every day at Cohere as a CEO?
+658
+I think for me, what keeps me up at night is politics.
+659
+I think it's the fracturing that we're seeing around the world.
+660
+And of course, those have implications on me and the business, but I'm mostly concerned about our societies, liberal democracies.
+661
+I'm afraid for liberalism and the progress that's been made over the past century.
+662
+I'm afraid for that.
+663
+So that's mostly what keeps me up at night, which is not a technical answer.
+664
+But I'm really optimistic about AI.
+665
+I think it can be a big force for good in making sure the good guys win and making sure that some of the economic issues the world has been facing over the past 15 years in terms of slow productivity growth, stagnation, wealth not reaching the population evenly, I'm optimistic that AI can play a role in helping to resolve some of that.
+666
+Success for you guys over the next three years, five years, what does that look?
+667
+I want to see GDP impacting productivity gains.
+668
+I want to see this technology integrated.
+669
+across the globe and I want it to become a part of everybody's workday, not just their fun time or searching up stuff.
+670
+I want it to help people accomplish more and I want this technology to make stuff much cheaper, much more abundant.
+671
+Aiden, terrific.
+672
+Thank you so much for doing this.
+673
+Thanks so much.
+674
+Hi, it's Matt Turk again.
+675
+Thanks for listening to this episode of the Mad Podcast.
+676
+If you enjoyed it, we'd be very grateful if you would consider subscribing if you haven't already or leaving a positive review or comment on whichever platform you're watching this or listening to this episode from.
+677
+This really helps us build a podcast and get great guests.
+678
+Thanks and see you at the next episode.

@@ -1,0 +1,1270 @@
+
+Hello again. This is Charlie, your AI co-host. We're back from our travels and excited to get back
+in the studio with today's special guest, Damesh Shah, the fierce nerd, creator of Agent AI,
+CTO of HubSpot and the second deeply AI-pilled publicly traded company founder on our show.
+Special thanks to fellow podcaster Sean Purie for the introduction to our dream guest.
+You may have heard of Damesh from his epic $15 million sale of the chat.com domain to open AI.
+In 2023, Damesh launched ChatSpot, the smart CRM. In 2024, he announced agent.ai, the completely
+free agent builder. This year, Damesh is turning agent.ai into a marketplace and professional
+network for AI agents and the people who love them. We recorded this episode right after the AI
+Engineer Conference in New York, where Swix grouped up every definition of agents and presented them
+in his Agent Engineering keynote, which you can now find on the latent space blog.
+Damesh takes a different, more minimal approach to defining agents and sees 2026 as the year of
+multi-agent networks. In other news, we're regrouping with fan favorite guest, David Hershey,
+for a Claude plays Pokemon hackathon with Anthropic this Sunday. If you're not in San Francisco,
+then we're excited to launch the 2025 State of AI Engineering survey, which you can find in the
+show notes. Watch out and take care. Hey everyone, welcome back to the latent space podcast. This
+is Alessio, partner, and CTO accessible partners. I'm joined by my co-host Swix, founder of small AI.
+Hello, and today we're super excited to have Damesh to join us. I guess your relevant title
+here is founder of agent.ai. Yeah, that's true for this. Yeah, creator of agent.ai and co-founder
+of HubSpot, but yeah, co-founder of HubSpot, which I follow for many years, I think 18 years now.
+Yeah. Going to be 19 soon. And you caught, you know, people can catch up in your HubSpot
+story elsewhere. I should also thank Sean Perry, who's who I've chatted with back and forth,
+who's been, I guess, getting me in touch with your people. But also, I think like,
+just giving us a lot of context, because obviously my first million joined you guys. And then they've
+been chatting with you guys a lot. So for the business side, we can talk about that. But I kind
+of wanted to engage your CTO agent engineer, sure side of things. Yeah. So how did you get agent
+religion? Let's see. So I've been working, I'll take like a half step back, a decade or so ago,
+even though actually more than that. So even before HubSpot, the company I was contemplating
+that I had named for was called Ingenesoft. And the idea behind Ingenesoft was a natural language
+interface to business software. And I realized this is 20 years ago. So that was a hard thing to do.
+But the actual use case that I had in mind was, you know, we had data sitting in business systems,
+like a CRM or something like that. And my kind of, what I thought clever at the time was, oh, what
+if we used email as the kind of interface to get to business software? And the motivation for using
+email is that it is automatically works when you're offline. So imagine I can, like, I'm getting
+on a plane or I'm on a plane, there was no internet done planes back then. It's like, oh, I'm going
+through business cards from an event I went to and I can just type things into an email just to
+have them all in the backlog. When it reconnects, it sends those emails to a processor that basically
+kind of passes the effectively the commands and updates the software, sends you the file,
+whatever it is. And there was a handful of commands. I was a little bit ahead of the
+times in terms of what was actually possible. And I reattempted this natural language thing
+with a product called ChatSpot that I did back 20 years ago. This is your first like post chat
+GBT project. That's how I come out. Yeah. And so I've always been kind of fascinated by this
+natural language interface to software because, you know, as software developers, myself included,
+we've always said, oh, we build intuitive, easy to use applications. And it's not intuitive at all,
+right? Because what we're doing is taking the mental model that's in our head of what we're trying
+to accomplish with set a piece of software and translating that into a series of touches and
+swipes and clicks and things like that. And there's nothing natural or intuitive about it.
+And so natural language interfaces, for the first time, you know, whatever the thought is,
+you have in your head and expressed in whatever language that you normally use to talk to yourself
+in your head, you can just sort of emit that and have software do something. I thought that was a
+kind of a breakthrough, which it has been, and it's gone. So that's where I first started getting into
+the generative AI side because now it actually works, right? So once we got ChatUPT and you can take
+even with a few shot example, convert something into structured, even back in the ChatUP 3.5 days,
+it did a decent job and a few shot example, convert something to, you know, to structure text,
+you knew what kinds of intents you were going to have. And so that happened and that ultimately
+became a HubSpot project. But then agents intrigued me because I'm like, okay, well,
+that's the next step here. So Chat's great. Love Chat UX. But if we want to do something even
+more meaningful, it felt like the next kind of advancement is not this kind of, I'm chatting with
+some software and a kind of a synchronous back and forth model is that software is going to do
+things for me in kind of multi step way to try and accomplish some goals. So yeah, that's when I
+first got started, it's like, okay, what would that look like? So then I've been obsessed ever
+since, by the way, so which goes back to your first experience with it, which is like, you're
+offline and you want to do a task, you don't need to do it right now, you just want to queue it up
+for somebody to do it for you. Yes. As you think about agents, like, let's start at the easy question,
+which is like, how do you define an agent? Maybe you mean the hardest question in the universe?
+Is that what you mean? You said you have an irritating take. I do have an irritating take. I
+think, well, some number of people have been irritated, including within with my own team.
+So I have a very broad definition for agent agents, which is it's AI powered software that accomplishes
+a goal. Period. That's it. And what irritates people about it is like, well, that's so broad as
+to be completely non useful. And I understand that, understand the criticism. But in my mind,
+if you kind of fast forward months, I guess in the AI years, the implementation of it, and we're
+already starting to see this and we'll talk about this different kinds of agents, right? So I think
+in addition to having a usable definition, and I like yours, by the way, and we should talk
+more about that. You just came out with the classification of agents actually is also useful,
+which is, is it autonomous or non autonomous? Does it have a deterministic workflow? Does it
+have a non deterministic flow workflow? Is it working synchronously? Is it working asynchronously?
+Then you have the different kind of interaction modes? Is it a chat agent kind of like a customer
+support agent would be you're having this kind of back and forth? Is a workflow agent that just
+does a discrete number of steps? So there's all these different flavors of agents. So if I were to
+draw in a Venn diagram, I would draw a big circle that says this is agents, and then I have a bunch
+of circles, some of we're lapping because they're not mutually exclusive. And so I think that's
+what's interesting. And we're seeing development along a bunch of different paths, right? So if
+you look at the first implementation of like agent frameworks that you look at, maybe AJI and
+auto GPT, I think it was an auto gen. That's the Microsoft one. They were way ahead of their time
+because they assumed this level of reasoning and execution and planning capability that just
+just did not exist, right? So it was an interesting experiment thought experiment, which is what it
+was even the guy that I'm an investor in Yohei's, Yohei's fund that did maybe AJI. It wasn't ready,
+but like it was a sign of what was to come. And so the question then is like when is it ready?
+And so lots of people talk about like the state of the art when it comes to agents.
+I'm a pragmatist, but I think of like the state of the practical. It's like, okay, well, what can I
+actually build that has commercial value or solves actually some discrete problem with some kind of
+some baseline of kind of repeatability or verifiability. So yeah, there was a lot and very, very interesting.
+I'm not irritated by it at all. I think as you know, I take a sort of anthropological view or linguistics
+view and in linguistics, you don't want to be prescriptive. You want to be descriptive. So you're
+a goals guy. That's the keyword in your thing. And other people have other definitions that might
+involve like delegated trust or non-interministic work. LLM in the loop, all that stuff. The other
+thing I was thinking about, they just called the comment on baby GI, LGBT. Yeah, in that piece that
+you just read, I was able to go through our backlog and just kind of track the the winter of agents
+and then the summer now. And it really it really you can we can tell the whole story like as an oral
+history, just following that thread. And it's really just like, I think I tried to explain the
+why now, right? Like I had, there's better models, of course, there's better tool use with like they're
+just more reliable, better tools with MCP and all that stuff. I'm sure you have opinions on that too.
+Business model shift, which you like a lot. I just heard you talk about RAS with MFM guys.
+Cost is dropping a lot. In for instance, going faster. There's model diversity,
+which I think is a subtle point. It means that like you have different models with different
+perspective. You don't get stuck in the the basin of a performance of a single model. You can just
+get out of it by just switching models multi-agent research and oral fine-tuning. So I just wanted
+to let you respond to like any of that. Yeah, a couple things connecting the dots on the kind of
+the definition side of it. So we'll get the irritation out of the way completely. I have one more even
+more irritating leap on the engine definition thing. So here's the way I think about it. By the way,
+the kind of word agent I looked at, like the English dictionary definition is when you have
+someone or something that does something on your behalf, like a travel agent or a real estate agent
+acts on your behalf as a proxy, which is a nice kind of general definition. So the other direction
+I'm sort of headed and it's going to tie back to tool calling and MCP and things like that is if you
+and I'm not a biologist by any stretch of the imagination, but we have these single-celled
+organisms, like a simplest possible form of what one would call life, but it's still life. It just
+happens to be single-celled and then you can combine cells or and then spell cells become
+specialized over time. You have much more sophisticated organisms, you know, kind of further down the
+spectrum. In my mind, at the most fundamental level, you can almost think of having atomic agents.
+What is the simplest possible thing that's an agent that can still be called an agent?
+What is the equivalent of a single-celled organism? And the reason I think that's useful is right
+now we're headed down the road, which I think is very exciting around tool use, right? That says,
+okay, the LMs now can be provided a set of tools that it calls to accomplish whatever it needs to
+accomplish in the kind of furtherance of whatever goal is trying to get done. And I'm not overly
+bothered by it, but if you think about it, if you just squint a little bit and say, well,
+what if everything was an agent and what if tools were actually just atomic agents,
+because then it's turtles all the way down, right? Then it's like, oh, well, all that's really
+happening with tool use is that we have a network of agents that know about each other through
+something like an MCP and can kind of decompose a particular problem and say, oh, I'm going to
+delegate this to this set of agents and why do we need to draw this distinction between tools,
+which are functions that most of the time an actual agent. And so I'm going to write this
+irritating LinkedIn posts proposing this. It's like, okay, and not suggesting we should call
+even functions in a call them agents. But there is a certain amount of elegance that happens when
+you say, oh, we can just reduce it down to one primitive, which is an agent that you can combine
+in complicated ways to kind of, you know, raise the level of abstraction and accomplish higher order
+goals. Anyway, yeah, I'd say that said about this. Thank you for coming to my TED talk on.
+How do you define the minimum Bible agent? Do you already have a definition for like,
+where you draw the line between a cell and an atom or? Yeah, some in my mind, it has to,
+at some level, use AI in order for it. Otherwise, it's just software. It's like, you know, we don't
+need another word for that. And so that's probably where I draw the line. So then the question, you
+know, the counter argument would be, well, if that's true, then lots of tools themselves are
+actually not agents because they're just doing a database call or a REST API call or whatever
+is they're doing. And that does not necessarily qualify them, which is a fair counter argument.
+And I accept that it's like a good argument. I still like to think about, because we'll talk
+about multi agent systems, because I think, so we've accepted, which I think is true, lots of people
+have said it, and you've hopefully combined some of those clips of really smart people saying,
+this is the year of agents. And I completely agree, it is the year of agents. But then shortly after
+that, it's going to be the year of multi agent systems or multi agent networks. I think that's
+where it's going to be headed next year. Yeah, opening is already on that. Yeah, my quick
+philosophical engagement with you on this cell thing is often think about the kind of the other
+spectrum, the other end of the cell spectrum. So single cell is life, multi cell is life.
+And you clump a bunch of cells together in a more complex organism, they become organs,
+like an eye and a liver, whatever. And then obviously we are, we consider us ourselves in
+one life form that there's not like a lot of lives within me. I'm just one life. And now,
+obviously, like, I don't think people don't really like to anthropomorphize agents and AI,
+but we are extending our consciousness in our brain and our functionality out into machines.
+I just saw you were a bee. Yeah, it just was pending in my pocket. I got one of these boys.
+Yeah, I'm testing it all out, you know, got it got to be early adopters. But like, we want to
+extend our personal memory into these things so that we can be good at the things that we're good
+at. And, you know, machines are good at machines out there. So like, my definitely life is kind of
+like going outside of my own body now. I don't know if you've ever had like reflections on that,
+like how yourself is like actually being distributed outside of you.
+Yeah, I don't fancy myself a philosopher, but you went there. So yeah, I did go there.
+I'm fascinated by kind of graphs and graph theory and networks and have been for a long, long time.
+And to me, we're sort of all nodes in this kind of larger thing. It just so happens that we're
+looking at individual kind of life forms as as they exist right now. But so the idea is when
+you put a podcast out there, there's these little kind of nodes you're putting out there of like,
+you know, conceptual ideas. Once again, you have varying kind of forms of those little nodes that
+are up there and are connected and varying in sundry ways. And so I just think of myself as
+being a node, a massive, massive network. And I'm producing more nodes as I, you know, put content
+or ideas. And you know, you spend some portion of your life collecting dots, experiences people,
+and some portion of your life then connecting dots from the ones that you've collected over time.
+And I found that really interesting things happen. And you just really can't
+know in advance how those dots are necessarily going to connect in the future. And that's, yeah,
+so that's my philosophical take. That's just exactly back. Yep.
+Do you like graph as an agent abstraction? There's been one of the hot topics with land graph and
+pedantic and all of that. I do think I'm more interested in terms of use of graphs. And then
+there's lots of work happening on that now is graph data stores as an alternative in terms of
+knowledge stores and knowledge graphs. Because you know, so I've been in software now 30 plus years,
+right? So it's not 10,000 hours. It's like 100,000 hours. And I spent doing this stuff. And so I've
+grew up with, so back in the day, you know, I started on mainframes that it was a product called
+IMS from IBM, which is basically index database, what we'd call like a key value store today.
+Then we've had relational databases, right? We have tables and columns and foreign key relationships
+that we all know that we have document databases like MongoDB, which is sort of a nested structure
+keyed by a specific index. We have vector stores vector embedding database. And graphs are interesting
+for a couple of reasons. One is, so it's not classically structured in a relational way with one when
+you say structured database to most people, they're thinking tables and columns and in relational
+database and set theory and all that graphs still have structure, but it's not the tables and column
+structure. And you could wonder and people have made this case that they are a better representation
+of knowledge for LLMs and for AI generally than other things. So that's kind of thing number one
+conceptually. And that might be true, I think is possibly true. And the other thing that I really
+like about that in the context of data stores for RAG is RAG, you say, oh, I have a million
+documents, I'm going to build the vector embeddings, I'm going to come back with the top X based on
+the semantic match. And that's fine. All that's very, very useful. But the reality is something
+gets lost in the chunking process and the, okay, well, those tend, you don't really
+get the whole picture, so to speak, and maybe not even the right set of dimensions on the kind
+of broader picture. And it makes intuitive sense to me that if we did capture it properly in a graph
+form, that maybe that feeding into a RAG pipeline will actually yield better results for some use
+cases, I don't know. And do you feel like at the core of it, there's this difference between
+imperative and declarative programs? Because if you think about HubSpot, it's like, you know,
+people in graph kind of goes hand in hand, you know, but I think maybe the software before was
+more like primary for in key, yes, relationship versus now the models can traverse sort of graph
+more easily. Yes. So I like that representation. There's something just conceptually elegant
+about graphs and just some of the representation of it are much more discoverable. You can kind of
+see it. There's observability to it versus kind of embeddings, which you can't really do much with
+as a human. You know, once they're in there, you can't pull stuff back out. But yeah, I like that
+kind of idea of it. And the other thing that's kind of, because I love graphs, I've been long
+obsessed with PageRank from back in the early days. And you know, one of the kind of simplest
+algorithms in terms of coming up, you know, with a throw and everyone's been exposed to PageRank.
+But the idea is that and so I had this other idea for a project, not a company and I have hundreds
+of these called NodeRank is to be able to take the idea of PageRank and apply it to an arbitrary
+graph that says, okay, I'm going to define what authority looks like and say, okay, well,
+that's interesting to me because then if you say, I'm going to take my knowledge store and maybe
+this person that contributed some number of chunks to the graph data store has more authority on
+this particular use case or prompt that's being submitted than this other one that may or that
+maybe this one was more popular or maybe this one has whatever it is, there should be a way for
+us to kind of rank nodes in a graph and sort them in some useful way.
+Yeah, so I think that's generally useful for anything. I think the problem, like so even though
+at my conferences, graph lag is super popular and people are getting knowledge graph religion and
+I would say like it's getting space getting traction in two areas, conversation memory,
+and then also just rag in general like the document data source. Most ML practitioners would say
+that knowledge graph is kind of like a dirty word, the graph database, people get graph religion,
+everything's a graph and then they go really hard into it and then they get a graph that is
+too complex to navigate. And so the simple way to put it is like you at running HubSpot,
+you know the power of graphs, the way that Google has pitched them for many years,
+but I don't suspect that HubSpot itself uses a knowledge graph. So when is it over engineering
+basically? It's a great question. I don't know. So the question now in AI land is do we necessarily
+need to understand, so right now LLMs for the most part are somewhat black boxes. We sort of
+understand how the algorithm itself works but we really don't know what's going on in there and
+how things come out. So if a graph data store is able to produce the outcomes we want, it's like
+here's a set of queries I want to be able to submit and it comes out with useful content.
+Maybe the underlying data store is as opaque as vector embeddings or something like that,
+but maybe it's fine. Maybe we don't necessarily need to understand it to get utility out of it.
+And so maybe if it's messy, that's okay. That's just another form of lossy compression,
+it's just lossy in a way that we just don't completely understand in terms of because it's
+going to grow organically and it's not structured. It's like, we're just going to throw a bunch of
+stuff in there, let the equivalent of the embedding algorithm, whatever they call it in graph land.
+So the one with the best results wins. I think so. Or this is the practical side of me is like,
+yeah, if it's useful, we don't necessarily need to understand it. I mean, I'm happy to push back
+as long as you want. It's not practical to evaluate the 10 different options out there because it
+takes time, it takes people, it takes resources. That's the first thing. Second thing is your
+e-vals are typically on small things and something only works at scale, like graphs.
+No, that's fair. I think this is one of the challenges in terms of implementation of graph
+databases is that the most common approach that I've seen developers do, I've done it myself,
+is that, oh, I've got a Postgres database or a MySQL, where I can represent a graph with a
+very set of tables with a pair of child thing or whatever. And that sort of gives me the ability,
+why would I need anything more than that? And the answer is, well, if you don't need anything
+more than that, you don't need anything more than that. But there's a high chance that you're sort
+of missing out on the actual value that a graph representation gives you, which is the ability to
+traverse the graph efficiently in ways that going through the traversal and the relational database
+form, even though structurally you have the data practically, you're not going to be able to pull
+it out in useful ways. So you wouldn't represent a social graph in using that kind of relational
+table model, it just wouldn't scale, it wouldn't work. I think we want to move on to MCP, but I
+just want to, like, just engineering advice. Obviously, you've run, you've had to do a lot of
+projects and run a lot of teams. Do you have a general rule for over engineering or engineering
+ahead of time? Because people, we know premature engineering is the root of all evil, but also
+sometimes you just have to. When do you do it? Yeah, it's a great question. This is a question
+as old as time almost, which is what's the right and wrong levels of abstraction, because that's
+effectively what we're answering when we're trying to do engineering. I tend to be a pragmatist,
+right? So here's the thing, lots of times doing something the right way has only a marginal increased
+cost. In those cases, just do it the right way. And this is what makes a great engineer or a good
+engineer better than not so great one. It's like, okay, all things being equal, if it's going to take
+you roughly close to constant time anyway, might as well do it the right way, like, so do things
+well. Then the question is, okay, well, am I building a framework as the reusable library? To
+what degree? What am I anticipating in terms of what's going to need to change in this thing,
+you know, along what dimension? And then I think like a business person in some ways, like, what's
+the return on calories, right? So and you look at energy, the expected value of like, okay,
+here are the five possible things that could happen. Try to assign probabilities like, okay, well,
+if there's a 50% chance that we're going to go down this particular path someday, like,
+or one of these five things is going to happen. And it costs you 10% more to engineer for that.
+It's basically it's something that yields kind of interest compounding value as you get closer
+to the time of needing that versus having to take on debt, which is when you under engineer it,
+you're taking on debt, they're going to have to pay off when you do get to that eventuality where
+something happens. One thing as a pragmatist, so I would rather under engineer something than
+over engineer it. If I were going to air on the side of something, and here's the reason is that
+when you under engineer it, yes, you take on tech debt, but the interest rate is relatively known
+and payoff is very, very possible, right, which is, oh, I did a shortcut here as a result of which
+now this thing that should have taken me a week is now going to take me four weeks. Fine. But
+if that particular thing that you thought might happen, never actually never have that use case
+transpire or just doesn't like, well, you just save yourself time, right? And that has value
+because you were able to do other things instead of slightly over engineering it way over engineering
+it. But there's no perfect answers in the art form in terms of, and yeah, we'll bring kind of
+this layers of abstraction back on the code generation conversation, which we'll, I think,
+have later on. I was going to ask, we can just jump back quickly. Like, as you think about
+pipe coding and all that, how does the percentage of potential usefulness change when I feel like
+we're over engineering a lot of times is like the investment in syntax, it's less about the
+investment and like arc is acting. Yeah. Yeah. How does that change your calculus?
+A couple of things, right? One is, so going back to that kind of ROI or return on calories,
+kind of calculus or heuristic, you think through, it's like, okay, well, what is it going to cost me
+to put this layer of abstraction above the code that I'm writing now and anticipating kind of
+future needs? If the cost of fixing or doing under engineering right now will trend towards zero,
+that says, okay, well, I don't have to get it right right now because even if I get it wrong,
+I'll run the thing for six hours instead of 60 minutes or whatever, it doesn't really matter,
+right? Because that's going to trend towards zero to be the ability to refactor code.
+And because we're going to, not that long from now, we're going to have large code bases
+be able to exist, you know, as context for a code generation or a code refactoring model.
+So I think it's going to make it make the case for under engineering even stronger,
+which is why I take on that cost, you just pay the interest when you get there,
+it's not going to go on with your life if I've got it and come back when you need to.
+Yeah, sometimes I feel like there's no decision making in some things. Like today, I've built
+autosave for like our internal notes platform. Sure. And I literally just asked one cursor,
+can you add autosave? Yeah. I don't know if it's over under engineer. Yeah, I just vibe coded it.
+Yep. And I feel like at some point, we're going to get to the point where the models
+kind of decide where the right line is. But this is where the like, in my mind, the danger is,
+right? So there's two sides to this. One is the cost of kind of development and coding and things
+like that stuff that we know we talk about. But then like in your example, one of the risks that we
+have is that because adding a feature like a save or whatever the feature might be to a product,
+as that price tends towards zero, are we going to be less discriminant about what features we add
+as a result of making more products more complicated, which has a negative impact on the user,
+a negative impact on the business. And so that's the thing I worry about. If it starts to become
+too easy, are we going to be too promiscuous in our kind of extension adding product extensions
+and things like that? It's like, ah, why not add XYZ or whatever? Back then it was like,
+oh, we only have so many engineering hours or story points. So however you measure things,
+that least kept us in check a little bit. Yeah. And then over engineering, you're like,
+yeah, it's kind of like you're putting that on yourself. Yeah. Like now it's like the models
+don't understand that if they add too much complexity, it's going to come back to bite them later.
+Yep. So they just do whatever they want to do. Yeah. And I'm curious where in the workflow that's
+going to be, whereas I hate this is like the amount of complexity in over engineer you can do
+before you got to ask me. Yeah, if we should actually do it versus I do something else.
+I think that so, you know, we've already, it's like we're leaving this in the code generation world,
+this kind of compressed cycle time, right? It's like, okay, we went from autocomplete and the
+GitHub co-pilot to like, oh, finish this particular thing and hit tab to a, oh, I sort of know your
+file or whatever. I can write out a full function to you to now I can like hold a bunch of the
+context in my head so we can do app generation, which we have now with lovable and bolt and
+replet agent and other things. So then the question is, okay, well, where does it naturally go from
+here? So we're going to generate products. Makes sense. We might be able to generate platforms as
+though I want a platform for ERP that does this, whatever. And that includes the APIs, includes the
+product and the UI and all the things that make for a platform. There's no nothing that says we
+would stop like, okay, can you generate entire software companies someday, right? With the platform
+and the monetization and the go to market and the whatever. And you know, that's interesting to me
+in terms of, you know, what, when you take it to almost ludicrous levels of abstract, it's like,
+okay, turn it to 11. You mentioned Vibe coding. So I have to, this is a blog post I haven't written,
+but I'm kind of exploring it. Yeah. Is the junior engineer dead? I don't think so. I think what will
+happen is that the junior engineer will be able to, if all their brings the table is the fact that
+they are a junior engineer, then yes, they're likely dead. But hopefully if they can communicate
+with carbon based life forms, they can interact with product if they're willing to talk to customers,
+they can take their kind of basic understanding of engineering and how kind of software works.
+I think that has value. So I have a 14 year old right now, I'm just taking Python programming class.
+And some people ask me, it's like, why is he learning coding? And my answer is, is because it's
+not about this intact. It's not about the coding. What he's learning is like the fundamental thing
+of like how things work. And there's value in that. I think there's going to be timeless value in
+systems thinking and abstractions and what that means and whether functions manifested as math,
+which he's going to get exposed to regardless. Or there are some core primitives to the universe,
+I think that the more you understand them, those are what I would kind of think of as like really
+large dots in your life that will have a higher gravitational pull and value to them that you'll
+then be able to. So I want him to collect those dots and he's not resisting. So it's like, okay,
+while he's still listening to me, I'm going to have him do things that I think will be useful.
+Yeah, you know, part of one of the pitches that I evaluated for AI engineer as a term
+is that maybe the traditional interview path or career path of software engineer goes away,
+which is because what's the point of the code? Yeah, you know, it actually matters more than you
+know how to work with AI to implement the things that you want. Yeah, that's one of the like interesting
+things that's happened with generative AI. You know, you go from machine learning and the models and
+just that underlying form, which is like true engineering, right, like an actual, what I call
+real engineering. I don't think of myself as a real engineer. Actually, I'm a developer.
+But now with generative AI, we call it AI. And it's obviously got its roots in machine learning,
+but it just feels like fundamentally different to me. Like you have the vibe, it's like, okay,
+well, this is just a whole different approach to software development to so many different things.
+And so I'm wondering now, like an AI engineer is like, if you were like a draw the venn diagram,
+it's interesting because the cross between like AI things, generative AI and what the tools
+are capable of models do and this whole new kind of body of knowledge that we're still building out,
+still very young, intersected with the kind of classic engineering software engineering.
+Yeah, I just described the overlap is it separates out eventually until it's its own thing. Yeah,
+but it's starting out as a software. Yeah, that makes sense.
+So to close the bike coding, the other big hype now is MCP's. Obviously, I would say
+cloud desktop and cursor are like the two main drivers of MCP usage. I would say my favorite,
+the sentry MCP, I can pull in errors and then just put the context in the cursor.
+How do you think about that abstraction layer? Does it feel almost too magical in a way? Do you
+think it's like you get enough because you don't really see how the server itself is then kind of
+like repackaging the information for you? I think MCP as a standard is one of the better things
+that's happened in the world of AI because a standard needed to exist and absent to standard,
+there was a set of things that just weren't possible. Now, we can argue whether it's the best possible
+manifestation of a standard or not as a do too much as a too little. I get that, but it's just
+simple enough to both be useful and understandable and adoptable by mere mortals. It's not overly
+complicated. A reasonable engineer can put a stand up on MCP server relatively easily.
+The thing that has me excited about it is I'm a big believer in multi-agent systems,
+and so that's going back to our kind of this idea of an atomic agent. So imagine the MCP server,
+like obviously it calls tools, but the way I think about it, so I'm working on my current
+passion project is agent.ai and we'll talk more about the, I think we should, because I think
+it's interesting not to promote the project at all, but there's some interesting ideas in there,
+one of which is around we're going to need a mechanism for if agents are going to collaborate
+and be able to delegate, there's going to need to be some form of discovery and we're going to need
+some standard way. It's like, okay, well, I just need to know what this thing over here is capable
+of we're going to need a registry, which anthropics working on. I'm sure others will and have been
+doing directories of and there's going to be a standard around that too. So how do you build out
+a directory of MCP servers in a standard way? I think that's going to unlock so many things
+just because and we're already starting to see it. So I think MCP or something like it is going to
+be the next major unlock because it allows systems that don't know about each other, don't need to
+it. It's that kind of decoupling of like century and whatever tools someone else was building and
+it's not just about, you know, cloud desktop or things like even on the client side, I think we're
+going to see very interesting consumers of MCP, MCP clients versus just the chat body kind of
+things like, you know, cloud desktop and cursor and things like that. But yeah, I'm very excited
+about MCP in that general direction. I think the typical cynical developer take it's like we have
+open API. Yeah. What's the new thing? I don't know if you have a do you have a quick MCP versus
+everything else? Yeah. So it's so I like open air, right? So just a descriptive thing is open API.
+Open API. Yes, that's what I meant. It's so it's basically a self documenting thing we can do
+machine generated lots of things from that output. It's a structured definition of an API. I get that
+love it. But MCPs sort of are kind of use case specific. They're perfect for exactly what we're
+trying to use them for around LLMs in terms of discovery. It's like, okay, I don't necessarily
+need to know kind of all this detail. And so right now we have, I'll talk more about like MCP server
+implementations, but we will. I don't know. At least this in my head.
+Yeah. But I do think MCP adds value above open API. It's yeah. Just because it solves this
+particular thing. And if we had come to the world, which we have, like it's like, hey, we already
+have open API is like, if that were good enough for the universe, the universe would have adopted
+it already. There's a reason why MCP is taking off because marginally adds something that was
+missing before and doesn't go too far. And so that's why the kind of rate of adoption you folks have
+written about this and talked about it. Yeah. And it won because the universe decided that
+this was useful. And maybe it gets supplanted by something else. And maybe we discover,
+huh, maybe open API was good enough the whole time. I doubt that.
+The meta lesson, this is, I mean, he's a, he's an investor in DevTools companies. I work in
+developer experience that DevRel in DevTools companies. Everyone wants to own the standard.
+Yeah. I'm sure you guys have tried to launch you on standards. Actually, it's
+how it's what known for a standard, you know, obviously inbound marketing, but
+there is standard protocol that you ever tried to push. No. And there's a reason for this is that,
+and I don't mean need to mean speak for the people of HubSpot, but I personally kind of do.
+I'm not smart enough. That's not the, like, I think I have a smart enough for that. I'm much
+better off understanding the standards that are out there. And I'm more on the
+composability side. Let's like take the pieces of technology that exist out there,
+combine them in creative, unique ways. And I like to consume standards. I don't like to,
+and that's not, I don't like to create them. I just don't think I have the,
+both the raw wattage or the credibility is like, okay, well, who the heck is Darmesh?
+And why should we adopt a standard? Yeah. Yeah. I mean, there are people who don't
+monetize standards, like open telemetry is a big standard and lights that never capitalize on that.
+So, okay. So if I were to do a standard, there's two things that have been in my head in the past.
+I was one around, very, very basic one around, and even have the domain, I have a domain for
+everything for open marketing as the issue we had in HubSpot grew up in the marketing space.
+There was no standard around data formats and things like that. It doesn't go anywhere,
+but the other one, I did not mean to go here, but I'm going to go here. It's called Open Graph.
+I know the term was already taken, but it hasn't been used for like 15 years now for
+its original purpose. But what I think should exist in the world is right now,
+our information, all of us nodes are in the social graph at meta or the professional graph at LinkedIn,
+both of which are actually relatively closed in actually very annoying ways, like very,
+very closed, right, especially LinkedIn. And I personally believe that if it's my data,
+and if I would get utility out of it being open, I should be able to make my data open or publish
+it in whatever forms that I choose as long as I have control over as opt in. So the idea is around
+open graph that says here's a standard, here's a way to publish it that I should go to open,
+I should be able to go to opengraph.org/darmesh.json and get it back. And it's like, here's your stuff,
+right? And I can choose along the way and people can write to it, and I can prove,
+and there can be an entire system. And if I were to do that, I would do it as a like a public benefit,
+nonprofit-y kind of thing, as this is a contribution to society, I wouldn't try to commercialize that.
+If you look at @proto. What's that? @proto. That's the protocol behind Blue Sky.
+Okay. My good friend Dan Abramov, who was the face of React for many, many years,
+now works there. And he actually did a talk that I can send to you, which basically kind of tries
+to articulate what you just said. But he loves doing these really great analogies, which I think
+you'll like, which is a lot of our data is behind a handle, behind a domain. So he's like, all right,
+what if we flip that? What if it was our handle and then the domain? And that's really like your
+data should belong to you. And I should not have to wait 30 days for my Twitter data to export.
+And you should be able to at least be able to automate it or do like, yes, I should be
+able to plug it into an agentic thing. Yes. I think we're because so much of our data is locked up.
+I think the trick here isn't that standard. It is getting the normies to care.
+Yeah, because normies don't care. That's true. But building on that, normies don't care. So,
+you know, privacy is a really hot topic and an easy word to use, but it's not a binary thing.
+Like there are use cases where, and we make these choices all the time, that I will trade
+not all privacy, but I will trade some privacy for some productivity gain or some benefit to me.
+That says, oh, I don't care about that particular data being online. If it gives me this in return,
+or I don't mind sharing this information with this company, if I'm getting, you know, this in return,
+but that sort of should be my option. I think now with computer use, you can actually automate
+some of the experts, like something we've been doing internally is like everybody exports
+the LinkedIn connections. And then internally, we kind of merge them together to see how we can
+connect our companies to customers or things like that. Not to pick on LinkedIn, but since we're
+talking about it, but they are feel strongly enough on the, you know, do not take LinkedIn data,
+that they will block even browser use kind of things or whatever. They go to great, great links,
+even to see patterns of usage. And it says, oh, there's no way you could have, you know, gotten
+that particular thing or whatever without, and it's, so it's, there's. Wasn't there a Supreme Court
+case that they lost? Yeah. So the one they lost was around someone that was scraping public data
+that was on the, on the public internet. And that particular company had not signed any terms of
+service or whatever. It's like, Oh, I'm just taking data that's on. There was no. And so that's,
+that's why they won. But now the, you know, the question is around can LinkedIn, and I think they
+can, like when you use as a user, you use LinkedIn, you are signing up for their terms of service. And
+if they say, well, this kind of use of your LinkedIn account that violates our terms of service,
+they can shut your account down, right? They can. And they, yeah, so, you know, we don't need to make
+this out. By the way, I love the company. Don't get me wrong. Avid user of the product. I mean,
+I've got, I mean, you got over a million followers on LinkedIn. I think so. And I've,
+they should listen to you there for a long, long time, right? That I have lots of respect. And I
+understand even where the mindset originally came from of this kind of members first approach
+to a privacy first, I sort of get that. But sometimes you sort of have to wonder, it's like,
+okay, well, that was 15, 20 years ago. There's likely some controlled ways to expose some data
+on some members behalf and not just completely be a binary. It's like, no, thou shalt not have the
+data. I'll just pay for sales navigator. So before we move to the next layer of instruction,
+anything else on MCP you mentioned? Let's move back and then I'll tie it back to MCPs. So I think
+the open this with agent data. Okay, so I'll start with, here's my kind of running thesis is that as
+AI and agents evolve, which they're doing very, very quickly, we're going to look at them more
+and more. I don't like to answer more files. We'll talk about why this is not that less as just like
+raw tools and more like teammates. They'll still be software. They should self disclose as being
+software. I'm totally cool with that. But I think what's going to happen is that in the same way
+you might collaborate with a team member on Slack or teams or whatever you use, you can imagine a
+series of agents that do specific things just like a team member might do that you can delegate
+things to you can collaborate. You can say, can you take a look at this? Can you proofread that?
+Can you try this? You can you, whatever happens to be? So I think it is, I will go so far as to
+say it's inevitable that we're going to have hybrid teams someday. And what I mean by hybrid
+teams. So back in the day, hybrid teams were, Oh, well, he has some full-time employees and some
+contractors. Then it was like hybrid teams are some people that are in the office and some that
+are remote. That's the kind of form of hybrid. The next form of hybrid is like the carbon-based
+life forms and agents and AI and some form of a form of software. So let's say we temporarily
+stipulate that I'm right about that and over some time horizon that eventually we're going to have
+these kind of digitally hybrid teams. So if that's true, then the question you sort of ask yourself
+is that then what needs to exist in order for us to get the full value of that new model? It's like,
+okay, well, you sort of need to like, okay, well, how do I, if I'm building a digital team, like,
+how do I just in the same way if I'm interviewing for an engineer or designer or a PM, whatever,
+it's like, well, that's why we have professional networks, right? It's like, oh, they have a presence
+on likely LinkedIn. I can go through that semi-structured structured form and I can see the
+experience of whatever, I mean, a self-disclosed. But okay, well, agents are going to need that
+someday. And so I'm like, okay, well, this seems like a thread that's worth pulling on that said,
+okay, so agent.ai is out there for agents. It's LinkedIn for agents. It's a professional
+network for agents. And the more I pull on that thread, it's like, okay, well, if that's true,
+like what happens, right? It's like, oh, well, they have a profile just like anyone else,
+just like a human would, it's going to be a graph underneath just like a professional network would
+be. It's just that, and you can have its connections and follows and agents should be able to post,
+that's maybe how they do release notes, like, oh, I have this new version, whatever data side to
+post, it should just be able to behave as a node on the network of a professional network.
+And as it turns out, the more I think about that and pull on that thread, the more and more things
+like start to make sense to me. So it may be more than a just a pure professional network. So my
+original thought was, okay, well, it's a professional network and agents as they exist out there,
+which I think there's going to be more and more of what kind of exist on this network and how
+the profile then. And this is always dangerous. I'm like, okay, I want to see a world where
+thousands of agents are out there in order for the because those digital employees, the digital
+workers don't exist yet in any meaningful way. And so then I'm like, oh, can I make that easier
+for like, and so I have, as one does, it's like, I'll build a low code platform for building
+ages, how hard could that be, right? Like very hard as it turns out. But it's been fun. So now,
+agent.ai has 1.3 million users, 3000 people have actually, you know, built some variation of an
+agent, sometimes, sometimes just for their own personal productivity, about 1000 of which have
+been published. And the reason this comes back to mcp for me. So imagine that and other networks,
+but it was just since I know agent.ai. So right now, we have an mcp server for agent.ai that exposes
+all the internally built agents that we have that do like super useful things, like, you know,
+I have access to Twitter API that way, like I can subsidize the cost. And I can say, you know,
+if you're looking to build something for social media, but like these kinds of things,
+with a single API key, and it's all completely free right now, I'm funding it, that's a useful
+way for a developer to say, Oh, I have this idea. I don't have to worry about open AI. I don't have
+to worry about now, you know, this particular model is better to have access to all the models
+with one key. And we proxy it kind of behind the scenes and then expose it. So then we get this
+kind of community effect, right? This is Oh, well, someone else may have built an agent to do X,
+like I have an agent right now that I built for myself to do domain valuation for website domains,
+because I'm obsessed with domains, right? And like, there's no efficient market for domains.
+There's no Zillow for domains right now that tells you, Oh, here, what houses in your neighborhood
+sold for? It's like, well, why doesn't that exist? We should be able to solve that problem. And yes,
+you're still guessing fine. There should be some simple heuristics. So I built that. It's like,
+okay, well, let me go look for past transaction, you say, okay, I'm going to type in agent.ai agent.com,
+whatever domain, what's it actually worth? I'm looking at buying it, it can go and say, Oh,
+and which is what it does, it's like, I'm going to go look at, are there any published domain
+transactions recently that are similar, either use the same word, same top level domain, whatever
+it is, and it comes back with an approximate value, and it comes back with its kind of rationale for
+why it picked the value and comparable transactions. Oh, by the way, this domain sold for published.
+Okay. So that agent now, let's say existed on the web on agent.ai, then imagine someone else says,
+Oh, you know, I want to build a brand building agent for startups and entrepreneurs to come up
+with names for their startup, like a common problem. Every startup is like, I don't know what to call
+it. And so they type in five random words that kind of define whatever their startup is. And you can
+do all manner of things, one of which is like, Oh, well, I need to find the domain name for it,
+what are possible choices. Now it's like, okay, well, it would be nice to know if there's an
+aftermarket price for if it's listed for sale. Awesome. Then imagine it calling this valuation
+agents like, Okay, well, I want to find where the arbitrage is where the agent valuation tool says
+this thing is worth $25,000. It's listed on GoDaddy for $5,000. It's close enough. Let's go do that,
+right? And that's a kind of composition use case that in my future state, thousands of agents on
+the network, all discoverable through something like MCP. And then you as a developer of agents
+have access to all these kind of Lego billing blocks based on what you're trying to solve. And
+you blend in orchestration, which is getting better and better with the reasoning models now,
+just describe the problem that you have. Now the next layer that we're all contending with is that
+how many tools can you actually give an L M before the L M breaks that number used to be like 15 or
+20 before you're kind of managed hard to vary dramatically. And so that's the thing I'm thinking
+about now is like, Okay, if I want to expose a thousand of these agents to a given L M,
+obviously I can't give it all 1000. Is there some intermediate layer that says based on your
+prompt, I'm going to make a best guess at which agents might be able to be helpful for this
+particular thing. Yeah, like rag for tools. Yeah, I did build the latent space researcher
+on agent.ai. Okay, nice. Yeah, that seems like, you know, then there's gonna be a latent space
+scheduler. And then once I schedule the research, you know, and you build all of these things.
+By the way, my apologies to the user experience that you realize that it's pretty good. I always
+say normie friendly thing. Yeah, that's your magic. It helps what does the same thing.
+Yeah, just to like quickly run through it, you can basically create all these different steps
+and these steps that like, you know, static versus like variable driven things. How did you decide
+between this kind of like low code ish versus doing, you know, low code with code back end versus
+like not exposing that at all. Any fun design decisions? Yeah, and this is I think I think lots
+of people are likely sitting in exactly my position right now, coming through the choosing
+between deterministic. Like if you're like in a business or building, you know, some sort of
+agentic thing, you decide to do a deterministic thing, or do you go non deterministic and just
+let the all them handle it right with the reasoning models. The original idea and the reason I took
+the low code stepwise, very deterministic approach. A, the reasoning models did not exist at that
+time. That's thing number one, thing number two is if you can get if you know in your head,
+what the actual steps are to accomplish whatever goal, why would you leave that to chance? There's
+no upside. There's literally no upside. Just just tell me like what steps do you need executed.
+So right now what I'm playing with, one thing we haven't talked about yet and and people don't
+talk about UI and agents right now, the primary interaction model, or they don't talk enough about
+it. I know some people have, but it's like, okay, so we're used to the chat bot back and forth.
+Fine. I get that. I think we're going to move to a blend of some of those things are going to be
+synchronous as they are now, but some are going to be async is just going to put in a queue just like,
+and this goes back to my man, I talk fast, but I have this, I only have one other speed. It's
+even faster. So imagine it's like, if you're working, so back to my, oh, this, we're going to have these
+hybrid digital teams, like you would not go to a coworker and say, I'm going to ask you to do this
+thing, and then sit there and wait for them to go do it. Like, that's not how the world works. So,
+it's nice to be able to just like hand something off to someone. It's like, okay, well, maybe I
+expect a response at an hour a day or something like that. And there's some implicit contract that
+we have with our coworkers in terms of when things need to happen. So the UI around agents. So if
+you look at the output of agent.ai agents right now, they are the simplest possible manifestation
+of a UI, right? That says, oh, we have inputs of like four different types that we've got a drop
+down, we've got multi select with all the things like back in HTML, usually HTML 1.0 days, right?
+Like you're the smallest possible set of primitives for UI. And it says, okay, because we need to
+collect some information from the user, and then we go do steps and do things and generate some
+output in HTML or markup are the two primary examples. So the thing I've been asking myself,
+if I keep going down that path, like, so people asking me, I get requests all the time, it's like,
+oh, can you make the UI sort of boring? I need to be able to do this, right? And if I keep
+pulling on that, it's like, okay, well, now I've built an entire UI builder thing that where does
+this like, where does this end? And so I think the right answer, and this is what I'm going to be
+back coding once I get done here is around injecting a code generation UI generation into the agent.ai
+flow, right? As a builder, you're like, okay, I'm going to describe the thing that I want,
+much like you would do in a vibe coding world. But instead of generating the entire app,
+it's going to generate the UI that exists at some point in either that deterministic
+flow or something like that. It says, Oh, here's the thing I'm trying to do,
+though, generate the UI for me, and I can go through some iterations. And what I think of it as a
+so second, I'm going to generate the code, generate the code, tweak it, go through this kind of
+prompt style, like we do with the vibe coding now. And at some point, I'm going to be happy with it,
+and I'm going to hit save. And that's going to become the action in that particular step. It's
+like a caching of the generated code that I can then like, incurring inference time cost is just
+actual code at that point. Yeah, I invested in a company called e2b, which does code sandbox,
+and they powered the LM Arena web arena. Yeah. So it's basically the, just like you do LMSIS,
+like text to text, they do the same for like UI generation. Yeah. So if you're skin a model,
+how do you do it? Oh, yeah, I think that's kind of where I'm really fascinated by. So the early
+LLMs, you know, we're understandably but laughably bad at simple arithmetic, right? That's that
+thing like my wife, Normies would ask us like, you call this AI, like it can't my son, it's just
+stupid. It can't even do like simple arithmetic. And then like we've discovered over time that,
+and there's a reason for this, right? It's like it's a large, you know, the word language is in
+there for a reason in terms of what it's been trained on. That's not meant to do math.
+But now it's like, okay, well, the fact that has access to a Python interpreter that I can
+actually call at runtime, that solves an entire body of problems that it wasn't trained to do. And
+it's basically a form of delegation. And so the thought that's kind of rattling around in my head
+is that that's great. So it's like took the arithmetic problem, took it first. Now with like
+anything that's solvable through a relatively concrete Python program, it's able to do a bunch
+of things that I couldn't do before. Can we get to the same place with UI? I don't know what the
+future of UI looks like in a agentic AI world, but maybe let the LM handle a bit not in the
+classic sense. Maybe it generates it on the fly, or maybe we go through some iterations and hit
+cache or something like that. So it's a little bit more predictable. I don't know. Yeah. And
+especially when is the human supposed to intervene? So especially if you're composing them. Yeah,
+most of them should not have a UI because then they're just web poking to somewhere else.
+I just want to touch back. I don't know if you have more comments on this.
+I was just going to ask when you said you're going to go back to code. What are you coding with?
+What's your stack? Yeah. So Python's my language. I'm glad that it won in terms of the AI,
+just lingua franca. It's the second best language for everything.
+By the way, I think the exact end of one of things that I disagree with Brett Taylor on when he was
+on, and just generally I'm a massive Brett Taylor fan. One of my favorite people in tech,
+like it was like a segment in there. He was talking about like, oh, we need a different language
+than Python or whatever that is like built for built for AI and built. It's like no, Brett.
+I don't think we do actually. It's just fine. It deals with just fine, just expressive enough.
+And it's nice to have a language that we can use as a common denominator across both humans and AI.
+It doesn't slow the AI down enough, but it does make it awfully useful for us to also be able to
+participate in that kind of future world that we can still be somewhat useful. So it's Python,
+cursor, as my code gen thing. I would also mention that I really like your code generation thing.
+I have another thesis I haven't written up yet about how generative UI has kind of
+not fulfilled its full potential. We've seen the bolts and lovables and those are great.
+And then Vercel has a version of generative UI that is basically functioning calling pre-made
+components. And there's something in between where you should be able to generate the UI that you
+want and pin it and stick to it. And that becomes your form. And so the way I put it is,
+I think that the two form factors of agents that have seen a lot of product market fit recently
+has been deep research. And the AI builders like the bolt levels. I think there's some
+version of this where you generate the UI, but you just want to generate the mad libs
+fill in the banks forms. And then you hit that stable. And the deep research just fills that in.
+Yeah. And that's it. I like that. Yeah. So I love those kind of simple implementations
+and kind of abstractions. But then if you look at the kind of, I'll say almost like the polar
+opposite of that. So right now, most of the UIs that you and I think about or conceive or even
+examples are based on the primitives and the vocabulary that we have for UI right now. It's
+like, Oh, we have text boxes. We have check boxes. We have radio buttons. We have now we have clicks,
+touches twice, now voice, whatever it is, the set of primitives that exists right now,
+we will combine them in interesting ways. But where AI is going to be headed, I think on the UI
+front is the same places headed on the science front that originally it's like, Oh, well,
+based on the things that we know right now, it'll sort of combine them. But we're like right
+at the cusp of it being able to actual novel research. So maybe a future version of AI comes up
+with a new set of primitives that actually work better for human computer interaction
+than things that we've done in the past. I don't think it's it ended with the checkbox
+radio button and dropdown list. I think there's life beyond that. I know we're going to move
+to business models after, but when you talked about hybrid teams, one way we talk to folks about
+is you had offshoring yet onshoring, which is like, you know, move to cheaper places in the
+country than offshoring. And now it's like AI shoring. You're kind of moving some roles to AI.
+I think people say, yeah, shoring. Yeah, that's the first I've ever heard of that.
+Yeah. No, man. But I think to me, the most interesting thing about the professional networks is like,
+with people, you have limited availability to evaluate a person. So you have to use previous
+signal as kind of like a evaluation thing. With agents, theoretically, you can have kind of like
+proof of work, you know, you can run simulations and like evaluate them in that way. How do you
+think about that when running building agent that AI even is like, you know, instead of just choosing
+one, I could like literally just run across all of them and figure out which one is going to work
+best. I'm a big believer. So under the covers, when you build in, because the primitives are so
+simple, you have some sort of inputs, we know that what the variables are. Every agent that's
+on agent.ai automatically has a REST API that's callable in exactly the way you would expect.
+Automatically shows up in the MCP servers, you're able to invoke it in whatever form you decide to.
+And so my expectation is that in this future state, whether it's a human hiring an agent to
+do a particular task or evaluating a set of five agents to do a particular task and
+picking the best one for their particular use case, we should be able to automate that. It's like,
+I just want to try it. And there should be a policy that the publisher builder of the agent has that
+says, okay, well, I'm going to let you call me 50 times 100 times before you have to pay or
+something like that. We should have effectively like an audit trail like, okay, this agent has
+been called this many times. We also have kind of human ratings and reviews right now. And we have
+tens of thousands of reviews of the existing agents on agent.ai average is like 4.1 out of 5 stars.
+And all those things are nice signals to be able to have. But the kind of callable, verifiable kind
+of thing, I think is super useful. Like if I can just call it, give me an API that says,
+here are five agents that solves this particular problem for me. If I have like a simple eval,
+I think that would be so powerful. I wish I had that for humans. Honestly, that would be so cool.
+Yeah, because I mean, when I was running engineering teams, people would try and come out with these
+rubrics when hiring. And it's like, they're not really helpful, but you just kind of need some
+ground truth. But I feel like now, say you want to hire AI software engineer, you can literally
+generate like 15, 20 examples of like your actual issues in your organization, both from a people
+perspective of like collaboration and like actual code generation. And just pay for it to run it.
+Yeah. Like today, we do take home projects and we pay people. Sure.
+Like this should be kind of the same thing. It's like, I'll just run you. But I feel like people
+are not investing in their own emails as much. That's the present company included, right?
+Everyone talks about e-vals. Everyone accepts the fact that we should be doing more with e-vals.
+I won't say nobody, but almost nobody actually does. And that's the topic for a whole other
+day. Yeah. It's funny, because obviously hotspot is famous for launching graders of things.
+Yes. You'd be perfect for it. Yeah, somehow. I agree on e-vals, by the way. I mean, I just force
+myself to be the human in a loop or, you know, someone I work with. And that's okay. But obviously,
+the scalable thing needs to be done. Just a fun fact or question on the agent AI. You famously,
+you've already talked about the chat.com acquisition and all that. And that was around the time of
+custom GPTs and the GPT store launching. Yes. And I definitely feel agent AI is a kind of the
+GPT score, but not taken seriously. Yeah. Do you feel open AI if like they woke up one day and they
+were like, agent AI is the thing, like we should just reinvest in GPT store instead of fear?
+I think that's an, it won't be agent.ai driven. It'll, it's an inevitability that open AI. I don't
+have any insider information. I'm an investor, but no insider information is because it makes too
+much sense for them not to like, and they've taken multiple passes there, right? They did the plugins
+back in the day, then the custom GPTs and the GPT store, because, you know, being the platform
+that they are, I think it's inevitable that they will ultimately come up with, and they already
+have customers, you know, it's going to happen. I'm not, you know, on the list of things I promised
+myself, I would never do is compete with some Altman ever. I'm not intentionally anyway. And
+here you are. But yeah, here I am. But I'm not really right. It's not really. It's free. So like
+whatever, but you know, at some point, yeah, but I mean, he's actually valuable. He's, they're
+solving a much, much bigger problem. I'm like a small, tiny, rounding error in the universe. But
+the reason that compelled me to actually create in the first place, because I knew custom GPTs
+existed, and I did have this rule in my head that I don't compete with Sam. He's literally like at
+the top of my list of people not to compete with. He's so good. But the thing that I needed in terms
+of for my own personal use, which is how agent.ai got started, because I was building a bunch of
+what I call solo software, things for my own personal productivity gain. And I found myself
+doing more and more kind of LM driven stuff, because it was better that way. You know, AI
+sort of showed up in those solo projects, a bunch. And so the thing I needed was an underlying
+framework to kind of build these things. And high on the list was I want to be able to straddle models,
+because certain steps in the thing is like, Oh, for this particular thing involves writing. So
+maybe I want to use Claude for this particular thing. And maybe I want to do this even around
+image generation, different types of whether it has text or doesn't have text or whatever.
+And I want to be able to mix and match. And my sense is that whether it's open AI or anthropic
+or whatever, they're likely going to have an affinity for their own models, right, which makes
+sense for them. But I can sort of be for my own purposes and for our user base. A little bit of
+the Switzerland, it's like, we don't think there's like one model to rule them all based on your use
+case, you're going to want to mix and match and maybe even change them out, maybe even test them
+back to the kind of eval ideas. Like, I have this agentic workflow. And here's the thing we've
+been playing with recently, because we have enough users now where they like the LM and I look at
+the bills and it's like, Oh, I'm spending real money now. And this is just human nature, right?
+It's not just dynamics, but it's like, so you have this drop down of all the models that you can
+say which model you want to use in your agent.ai agent. And it turns out people pick the largest
+number. So they will pick 0.3 or whatever it whatever it is, right? That's like, it's like,
+Oh my God, you're doing 4.5. Yes. Ouch. Yes. Yeah. But the thing I've promised myself is,
+we will support all of them regardless of what it costs. Like once again, I see this as a just a
+research thing, benefit to humanity and inference costs are going down, at least I so I tell myself
+late at night, so I can sleep. So they picked the highest numbered one. And so we have an option
+in there right now that says, and which is the first option is like, what the system pick for me?
+Auto op. Yeah. As it turns out, people don't do that. They just pick the jeep because they
+don't trust it yet, which is fine. They shouldn't trust it completely. But one thing we discovered
+is that if we back channel it, and this is the thing we're testing with, is that, Oh, if I can
+just run the exact same agent gets run 1000 times, we'll do it on our own internal agents first.
+And if the ratings and reviews, because we're getting human emails all the time on these agents,
+we can get a dramatic multiple words of magnitude reduction by going to a lower model with literally
+like no change in the quality of the output, right? Which makes sense, because so many of the
+things we're doing doesn't require the most powerful model. And it's actually bad because
+there is higher latency. It's not just a cost thing. But so anyway, like in that kind of future state,
+I think we're going to have model routing and whole bodies and people working on that problem,
+too. It's like helping pick the best model at runtime. Would you buy or build model routing?
+I buy everything that I can buy. I don't want to build anything. I don't have to.
+One of the most impressive examples of this, I think, was our CHI AI conversation, which I
+think about a lot. He views himself explicitly as a marketplace. You are kind of a marketplace,
+but he has a third angle, which is the model providers. And he lets them compete. And I think
+that sort of try three-way marketplace. Maybe it makes a lot of sense. I don't know why every
+AI company isn't built that way. It's a good point, actually. Yeah. It makes sense. I'm a list of
+things I'm super passionate about. I'm very passionate about efficient markets or extremely
+irritated by inefficient markets. And so efficient markets for the normies listening are markets
+that exist where every possible efficient markets are the ones that every transaction that should
+occur actually does. That's an efficient market. That should happen. And so then why do inefficient
+markets exist? Well, maybe the buyer and seller don't know each about each other. Maybe there's
+not enough of a trust mechanism. There's no way to actually price that or come up with fair market
+value, fair pricing. And as you kind of knock those dominoes down, the market becomes more and more.
+And lots of latent value exists as a result of inefficiency. And whoever removes those
+inefficiencies for high-value markets makes a lot of money. That's been proven time and time again.
+This is one of those examples of there's an inefficiency right now because we are either
+over using over models or whatever. Let's just reduce that to an efficient market. The right
+model should be matched up with the right use case for the right price. And then we'll-
+Very interesting. You ever looked into DSPY?
+I have looked at it, not deeply enough though.
+It's supposed to be, as far as I think the only EVAL's first framework. And EVAL's is so
+important. And by the way, the relationship between this and all that is, DSPY would also
+help you optimize your models because you did the EVAL's first. I wonder why it's not as popular.
+But I mean, it is growing interaction. I would say we're keeping an eye on it.
+Let's talk about business models. Obviously, you have kind of to work as a service and
+results as a service. I'm curious how you divide the two.
+Yeah. So work as a service is- So we know about software as a service, right? So I'm licensing
+software that's delivered to me as a service that's been around for decades now. So we understand
+that. But the consumer of that service is generally a human that's doing the actual work,
+whichever software you're buying. Work as a service is- The software is actually doing
+the work. Whatever that work happens to be. And so that's work as a service.
+So if we come up with discrete use cases, whether it's kind of classification or legal contract
+review or whatever the software is actually doing the thing, results as a service is you're
+actually charging for the outcome, not actually the work, right? That says, okay, instead of saying,
+I'm going to pay you X amount of dollars to review a legal contract, or this amount of time,
+or number of uses, or something like that, I'm going to actually pay you for the actual result,
+which is- So my take on this in the industry or parts of the industry are super excited
+about this kind of results to the service or outcomes based pricing. And I think the reason
+for that- I think we're over indexing on it. And the reason we're over indexing on it
+is the most popular use case on the kind of agent side right now is like customer support.
+Well documented, a lot of the providers that have agents for customer support do it on a
+number of tickets resolved at times X dollars per ticket. And the reason that makes a lot of
+sense is that the customer support departments and teams sort of already have a sense for what a
+ticket cost to resolve through their kind of current way. And so you can come up with an approximation
+for A, what the economic value is. There's also a least selling objective measure for what an
+acceptable resolution or outcome is, right? Like you can say, oh, well, we measured the net
+promoter score or CSAT for tickets or whatever, as long as the customers 90% of the tickets were
+handled the way the customer was happy. That's whatever your kind of line is, as long as the AI
+is able to kind of replicate that same SLA, there's like, okay, well, it's the same. They're
+fungible one versus the other. I think the reason we're over index though is that there are not
+that many use cases that have those two dimensions to them that are objectively measurable and that
+there's a known economic value that's constant. Like customer support tickets, because they're
+handled by humans makes sense. And humans have a kind of a discrete cost. And especially in retail,
+which is where this originally got started in B2C companies that have a high volume of customer
+support tickets that they're distributing across, a ticket is roughly worth the same because it
+takes the same amount of time for most humans do that kind of level one tier one support.
+But in other things, the value per outcome can vary dramatically literally by orders of magnitude
+in terms of what the thing is actually worth. That's kind of thing number one. Thing number two
+is how do you objectively measure? So let's say you're going to do a logo creator as a service
+based on results, right? And that's a completely opposite subjective thing or whatever. And so,
+okay, well, it may take me a hundred iterations. It take me five iterations. The quality of the
+output is actually not completely under my control. It's not up to the software. It could be you
+have weird taste or you're looking for enough or whatever. It's like it was just not a solvable
+problem and design kind of qualitative subjective disciplines deal with this all the time. How do
+you make for a happy customer? There's a reason why they have, oh, we'll go through five iterations,
+but no, our output is we're going to charge you $5,000 or $500, whatever it is for this logo.
+But that's hard to kind of do at scale. Just a relatable anecdote. We are
+podcasts. Actually, we just got a new logo and we did a 99 designs for it. And there's so many
+designers who are working really hard. But I just didn't know what I wanted. So,
+they were like, I was like, just too bad. I know it. You see, you seem great, but you know.
+That's another example of a market made efficient, right? It's like, I've been a 99
+designs user and customer for a dozen plus years now. It's fantastic. So many designers,
+like this doesn't cost them that much for them to do. It's worth a lot to us. We can't design for
+shit. Totally. Yeah. Yep. By a pro tip on 99 designs is that on the margin, you're better off
+kind of committing to paying the designer that you're going to pick a winner, whether you like it
+or not. Doesn't really matter. And that gets higher participation, which and the, you're still
+going to get a bunch of crap that happens, a bunch of noise in it. But the kind of quality
+outcome is often a function of the number of iterations and logo design is one of those
+examples. If you can, if you had to choose between 200 logos versus 20 logos, chances are closer
+that you're going to find something you like for that delta. I have a blog post on my reflections
+on the 99 design thing. And that's one of those that they had given estimate of how many designs
+you get. Yep. And I think that the modifier for like, we will pay you, we'll pay somebody,
+and maybe it's you. Yep. It's like 30 to 60, but actually it's 200. Yep. So it's underpriced.
+Yep. Yep. Do you think some markets are just fundamentally going to move to more results driven
+business models? Probably. And I don't understand enough markets well enough and no. But if we had to
+kind of sort or rank them, there's likely some dimension in along which we could sort that cycle.
+These kinds of businesses, is their objective measure of kind of truth or the outcome?
+Is there a way to kind of price it in terms of low variance or variability on the value per outcome?
+If those things are true, whatever industries that is true in customer support is an example,
+but there's likely lots of other examples where those two things are true. But then the thing I
+wonder though is that from the customer's perspective, would they rather actually pay for work as a
+service versus an actual, that's like maybe the way they think about it is that's sort of my arbitrage
+opportunity. Like in the, I can work done for X, but the value is actually why, why would I want
+that delta to be squeezed out by the kind of provider of the software if I have a choice? I don't
+know. Oh, I mean, okay, I'm attribution. There's 18 things that go into them, you're one of them,
+so it's hard to tell. Yes, it is. By the way, have you seen, obviously you're in this industry,
+not exactly HubSpot's exact part of the market, but what have you seen an attribution that is
+interesting? Because that directly ties into work as a service versus results. Yeah, not enough,
+because we are so, as a world, as an individual, just pick your thing so behind on track. This
+is why I think web three, in the way that it was meant to be done, is going to make a comeback,
+because fundamental principles of that make sense. I think what happened in that world was
+kind of a bunch of crypto bros and grifters and NFT stuff or whatever that was loosely related,
+because there was no actual, but the idea of a blockchain of a trackable thing, you know,
+being able to fractionalize digital assets, attribution, having an audit log, a published
+thing that's verifiable, all those primitives make sense, right? And maybe there's a limited,
+but it's not zero, set of use cases where the kind of what we would now call like the inference
+cost of the overhead, the tax for storing data on the blockchain, and there's certainly a tax
+to it, and it doesn't make sense for all things, but it makes sense for some things, for sure.
+But we just don't have attribution in any meaningful way, I don't think.
+Isn't it sad that it's so important? I know, no answer.
+It's partly comes down to incentives. So the people that actually have the data or parts of the data,
+from which attribution could be calculated or derived, don't really have the incentives to make
+that data available. So even something is simple, like on, like the PPC side, right? Like the Google
+search thing, that's, you know, that's sort of my world or has been. We have less data now than we
+did back in the day in terms of like click throughs and things like that before Google would actually
+send you here, the keywords people typed. And years ago, they even took that away. So it's
+hard to kind of really connect the dots back on things. And we're seeing that across. It's not
+just PPC, but just all sorts of data away from the search console. What's that? The search console
+has that. It took that away. Search console has that, but your website, if you go to Google Analytics,
+you can connect it back to the Google search console. ICS. Yeah. But yes. Okay. Right. Yeah. Well,
+it's a known thing. I don't have to make it a rat about Google. What about software engineering?
+Do you think it will stay as like a work as a service? Or do you think I think most companies
+hire a lot of engineers, but didn't really know what to do with them or like didn't really use
+them productively? Yeah. And I think now they're kind of heading this like, you know, crisis,
+where it's like, okay, I don't know what I would price an agent because I don't really know what
+my people are doing anyway. Yeah. Like, how do you think that changes? I think so I'm actually
+bullish on engineers in terms of their kind of long term economic value, not despite all the
+movements and cogent and all the things that we're already seeing, but because of it, because what's
+going to happen as a result of AI and people have talked about this in even other disciplines,
+we're going to be able to solve many more problems. The semi math guy in me is like, okay, so we always
+say, oh, well, now agents are going to be doing code or whatever. And so there's going to be a
+million software and, you know, virtual digital software engineers out there. And so the value
+per engineer is going to go down because I'm just in that same mix of eyes and engineer,
+what they don't recognize is that it's not just about the denominator. There's a numerator as well,
+which is what's a total economic value that's possible. And I would argue that's growing
+faster than the kind of denominator is that the actual economic value that's possible as a result
+of software than what engineers can produce with the tools that they will have at hand. So I think
+the value of an engineer actually goes up. They're going to have the power tools. They're going to
+be able to solve a larger pace of problems that need to be solved. Yeah, it feels to me like
+you'll stay as like work as a service. I don't think there's like a way to do it. There will be
+a set of engineers that, and we see this all the time, you know, they're in the media industry,
+you have people that are kind of writers, but then you have freelancers that, you know, write articles
+or however they manifest their kind of creative talent. And both makes sense, right? There's like
+the work for hire. There's also the kind of outcome based or like I produce this thing.
+And maybe they, some of those engineers actually produce agents. So they put it in a marketplace
+like agent today, someday. And that's how they make their millions. Yeah. Any other thoughts,
+just an agent, we got a lot of like, missed miscellaneous that we want to talk to you about.
+I think we cover a lot of territory. So I'm excited about agents, my kind of a message to the world
+would be, don't be scared. I know it's scary. Easy for me to say as a tech technical optimist,
+but learn it. Even if you're a normie, even if you're not an engineer, if you're not an AI person,
+you'll think of yourself as an AI person. Use the tools. I don't care what role you have right now,
+where you are in the workforce, it will be useful to you and start to get to know agents.
+Use them, build them. And I think my message for engineers is always like,
+there's more to go. Like we're still early in the early days of figuring out what an agent's
+stack looks like. And I want to push people towards agents with memory, agents with planning.
+We have to talk about memory. Let's go. I think that's the next,
+my mind, the next frontier is actual long term memory, both for agents and then for
+agent networks. And they trustable, verifiable, I won't say privacy first, but privacy oriented way.
+I have an issue with the term privacy first. A lot of times we say privacy first, when we don't
+really mean that privacy first means I value that above all things, doesn't matter what we're talking
+about. And that's just not true enough for any for any human thing. They must be used.
+So it's but but so memory is an interesting thing, right? So the thing I'm working on right
+right now, lots of things in played in agent.ai is around implementation of memory. And there are
+three projects out there, M0 being one of them. But the thing that's interesting for me, right,
+is, and so we see this in chat TPT, other things right now, where it does have the notion of a
+longer term memory can pull things back into into context as needed. The thing I'm fascinated by
+is cross agent memory. So if I'm an agent builder right now, it's like, okay, here are the things
+that I sort of know, or I, I learned from the user in terms of pulling out the, I'll call
+knowledge nuggets for lack of a better term. And that's great. But then when the next agent
+builder comes up and it's the same user shouldn't all the things that agent one learned about me,
+if it's going to be useful for agent two, as long as I opt into it, it's like, yeah, I don't care
+those things. In fact, I would find it awfully annoying to tell agent two and agent n and agent
+n plus one, all the same things I've already told it, because it should know like the system
+should know. And this is part of the reason why I'm like a believer in these kind of networks of
+agents. And shared state is that that user utility gets created as a result of having shared
+shared memory, not just we should solve the memory problem for independent agent. But then we should
+also be able to share, share that context, share that memory across agents. And that's part of the
+value prop for agent.ai is like, okay, when you're building sex, so we've got, you know,
+and whatever million users, and we're going to have growing memory about all of them. So instead of
+you going off on your own thing and building an agent out as this kind of disconnected node in
+the universe or whatever, here's the value for building on the network or on the platform hours,
+hours or someone else's, because more, there's more user value that gets created. It's going to be
+how do you think about art for that? Because part of memory is like selective memory. So take
+like scheduling. I want you to have access. If I have a scheduling agent, you should be able to
+access the events you're a part of. And like, what times have available, but I shouldn't tell you
+about other events on my calendar. Like, what's that matter? Like, so many thoughts on this. This
+is the and the, like the opportunity out there are like solving these kind of fundamental, like,
+this is going to need to exist, right? So right now, the closest approximation we have is off,
+or off, right? And everyone has it's like, okay, approve. And it's a very, very coarse set of
+scopes, right? Like based on the provider of the OAuth server, be it Google, whoever it is,
+up spot, it doesn't matter. It's like, oh, I pick a set of scopes and they could have defined
+the scopes to be super granular fine. But that's sort of up to them. But that is going to move
+so slowly, right? So for instance, the use case I have right now, like, I use email for everything.
+I use it as a like an event and data bus for my life, right? And why I mean that, like, literally,
+it's like, I'm like, anything that I do, if there's a way to kind of get that into email,
+because I know it's an open protocol, right? Like, I will be able to get to that data in useful ways.
+And this is before, so I have three million that I've built a vector store off of that has
+that's all my own personal use cases. So I'll give you the example. But obviously,
+I'm not going to build all my own software for everything. But if the startup comes along and
+says, Darmesh, can you make your email inbox available in exchange for these things? I'm like,
+hell no, like, that's the literally my car, like everything, like my life is in here, right? So you
+need to share subsets. Yes. And so I think there's a, and maybe this is not the actual
+implementation, but imagine if someone said, okay, I have a trusted intermediary for that first
+trust, however defined, that says, okay, I'm going to OAuth into this thing. And it gets to
+control that I can say in natural language, I only want to pass email to this provider,
+where the label is one of X, or that's within the last thing, and no more than 50 emails in a
+day or whatever. So I don't have them dumping the entire three million in the backlog. Whatever
+controls I want to put on it, it's unlikely that the all the OAuth server side right now,
+the Google's even the big one, small ones, doesn't really matter, are going to do that. But this is
+an opportunity for someone, and they're going to need to get to some scale, build some level of
+trust that says, okay, I'm going to hand over the keys to this intermediary. But then it opens
+up a bunch of utility because it gives me control, more fine, fine grained control.
+Yeah. I'd say Langchain has, has an interesting one. There are a bunch of people who has tried
+to track crack AI email. Every single one of them who has tried has pivoted away.
+Yeah. And I'm waiting for super human to do it. Yeah. I don't know why they haven't, but you know,
+some cool AI stuff, but I think the pace is to increase. But I think this goes back to like
+Open Graph, which is like, I think Google is not incentivized to build better scopes,
+and like they're just not going to do it. So we can't even get like, we haven't been able to get
+semantic search out of Google for like, yeah, just now they made the announcement this week.
+What do you mean, semantic search in Gmail? Oh, I see. So, okay. So they have all the,
+they have my three million emails. Why don't they have a vector store where I can just like,
+basic rap, right? So that's, that's really bad. They're indexing the entire internet in real
+time. Like I don't think my email is that big a deal? But yeah, my standard thing on memory is,
+it sounds like you are using a zero. I am. There's also mem GPT now letter,
+which give a workshop at my conference, the ZEP, which uses a graph database, just open source,
+credit, kind of interesting, and Langmem from Langgraph, which I would highlight. Also,
+like it's really interesting this developing philosophy that people seem to be agreeing on
+and on a hierarchy of memories from semantic memory to episodic memory to, I think it's just overall
+sort of background processing. Like we have independently reinvented that AI should sleep,
+to do that deep REM processing of memories. It's kind of interesting.
+Yep. Yeah, that is. It's the other, I mean, just on the notion of memory in hierarchies,
+so I talked about the memory we're working on right now is at the, at the user level and it's
+cross agent, right? But the other kind of one step up would be, so man, once again, going back to
+this kind of hybrid digital teams, is that you can imagine to say, oh, well, my team has this
+class shared team. I don't want to share with the world or anything other way. This set of agents
+across this group of people, I want to have shared state like we would have in a Slack channel or
+something like that. That should sort of exist as an option, right? And the platforms provide
+that. And the B folks I should also mention have mentioned that they're working on that as well.
+So imagine being able to share selective conversations with people like that's nice. Limitless has,
+I guess, voice-based shielding. Yeah, I don't think there's actually.
+I'm an investor in that too, by the way. So, okay, trying to think about all the things I've
+said, I invest in open AI, perplexity, land graph, crew AI, the middle list, a bunch of them. So,
+if I've said anything, by the way, I have no insider knowledge. I'm not trying to plug or
+picture anything. No, no, no. I think it's understood. We're often, like, you know, if you have skin
+in a game, you probably invested or, you know, me or me not. I'm not an investor in B, but I'm just
+a friend. And I think you should be able to speak freely of your opinions regardless.
+Okay. We have some miscellaneous questions that may be zooming out from Agent AI.
+Sure. First of all, you mentioned this and I have to ask, you have
+so many AI projects you'll never get to. What's one or two that you want other people to work on?
+Oh, wow. Other people to work on. Because you'll never get to it.
+Yeah. What I need to do is I've had this thought before. So, I have this is like maybe like pick one
+a week or something like that and give the domain away. Like, I have people submit there
+during a one-pager or something like that. It's like, if you can convince me that you have at least
+enough of an idea, enough like willingness to kind of commit to actually doing something.
+It's the ones that you keep mentioning, but you've you haven't got into it for whatever reason.
+Yeah. Try to think like some of them. I don't have the underlying business model.
+We're gonna have to come back to this maybe do a follow-up episode. I don't like, they're just
+not jumping to mine. You don't need that business model. Just just, yeah. If I own scout.ai.
+Okay. I think that's an interesting. By the way, pretty much all of them, there was an idea at the
+time. It's like, it was one of those late nights. I was like, ah, I could do this. It's a domain
+available and I go grab it. I'm trying to think what I also have on the AI space. I have a lot of
+like nonprofit domain names as well for like nonprofit like open graph. I'm not sure why things are
+not jumping to my head. I have agent.com, which obviously is tied to agent.ai. That's gonna be big.
+That's gonna be big. Oh my God. That's gonna be like a 30, 50 million dollar.
+It's gonna be big. Yeah. It's gonna be, I think, and end up being bigger than chat.com, which
+it has to. It was 15. Yeah. Yeah. Yeah. It's more work oriented. Yep. That's interesting.
+Yeah. Do you want to talk about the chat.com thing? I would love just the back story. It's like,
+did you just call up Sam one day and be like, I got the domain. Did they kind of get back to you?
+No, maybe it's a it's a good story. Back in the original chat GPT days, the first thought I had
+in my head, which lots of people had in their head, is that opening eyes going to build a platform
+and chat GPT is actually just a demo app to show off the thing. And there's been precedence for
+tech companies that have had, you know, demo apps to kind of help normies understand the underlying
+technology. And even after the kind of the boost or whatever. So my original thought was, well,
+someone should actually create like an actual real product. And so I'm like, and that product
+should be called chat.com because GPT is a lot of consumer friendly thing at all. Like that's an
+acronym and that doesn't roll off the tongue. And so like I'll build chat GPT because I was
+just a demo app back then. So I, you know, got chat.com. And then as it turns out,
+chat GPT is like a real product. And I was at an event here in San Francisco that Sam spoke at,
+where he launched plugins, I think it was the announcement at that time. Yeah. And that's the
+thing is like, I had sort of suspected it's like, okay, things sort of be like, there's no way
+that opening eyes going to launch plugins for chat GPT if they were not thinking of it as an
+actual platform. So it's not just about the GPT APIs. This is like a real thing. I'm like crap.
+Like this violates the first rule of Darmesh, which is don't compete with Sam. I knew when I
+bought the domain that there was competition for the domain, there were other companies looking to
+buy it. I don't know who they were. I had suspicions. So I bought it and then I'm like, okay, well,
+I'll reach out to Sam. I'm saying, Hey, Sam, I happened to have gotten. I don't know if he was
+or wasn't in the running or trying to acquire it or not. But I have chat.com. I don't not looking
+to make a profit or whatever. If you want it, you'll obviously do something much better with it.
+I don't want to be in the compete with Sam game effectively, is what I said. And so they did want
+it. And yeah, we struck a deal. Looks like it's been a very good deal if the valuations are,
+you know, to be to be real. Yeah. Who knows? Who knows? It's one of those weird things like,
+yeah, the agent that AI domain evaluator said that late in that space is for between five and
+15 K. Okay. So does that feel right? Well, it's missed that is missing. This one does not
+incorporate the transactional data have not published that one yet. That's because it's also
+operationally very intensive. That other one, but we actually had it donated by a listener.
+Okay. So I don't know what the real cost is. But it's missing that it's linked to an influencer.
+By the way, crew.ai, which I've offered at an investor. You did. Yes.
+I bought that. And I've told him that like whenever you're ready, you let me know. I'll
+sell to you at cost. Yeah. I mean, that is some value. Since you buy a lot of domains,
+what are your favorite domain buying tips apart from have a really good domain broker, which I
+assume you have? No, I actually don't. I do my own deals. I have a like a very cards face up
+approach to life. So there's so some people would tell you it's like, Oh, well, if someone
+they know that it's you're behind the transaction, the price is going to go up. Sure. But it's still
+like willing seller or willing buyer, whatever. It doesn't mean I'm going to have to necessarily
+pay that price. That's like, okay. But the upside to it, because I always, you know, reach out as
+myself when there's a domain out there and they can look you up. They can look me up. But anyway,
+I also come off as like legit, like, okay, well, there's very few people are not going to return
+my email. And when I say I'm interested in a domain that they may have for sale,
+or had not considered selling, but you know, would you consider selling? So yeah, and some of the
+like a, some of my favorites, I still own prompt.com, by the way, that could be a big one. And I owned
+and this is one, I don't regret it. I went into a good, I owned a playground.com. And so the original
+idea behind playground.com was at the time, opening I had their playground where you can play around
+with the models and things like that, right? It's like, okay, well, there should be a platform
+neutral thing. There should be a playground across all the L.O.Ms, then you can, and there are
+obviously products and startups that do that now. And so that was my original thing. It's like
+others should be playground.com and you can go test out all the models and play around with them,
+just like you can with with opening eyes, that's your PT stuff. And then so sale was out there with
+with with playground of the company. And I think he reached out, might have reached out to me over
+over Twitter or something like that. So we knew of each other. I'd never, I've still never met him.
+And he asked me whether I would consider, and that was a tough one, because I'm like,
+I actually have the business idea already in my head. I think it's a great domain name. And it's
+like a really simple English word that has like relevance and a whole new context now.
+But once again, I took, I took equity. So it's like, I got the bright side. That's like, I,
+so domain is to get me into deals that I would never been able to likely get into two other ways.
+So yeah, we should securitize your GoDaddy account and just make it a fun.
+It's a fun. It's basically a fun. Yeah, by the way, and so back to the kind of
+three things, whatever side we invested in a company that's going to treat domains as a
+fractionalizable, a tradable asset, because that's the kind of original NFT in a way, right?
+It's like, okay, well, you can, and then if you can make both fractionalizing, but also just a
+transfer of like right now, it's so painful when you buy a domain, you go through an escrow service,
+and there's just all this, it's like, I just want like instantaneous, like, charge me in Bitcoin
+or credit card, whatever it is, and then I should show up, and I should be able to read out the DNS.
+Like that should be minutes, not weeks or days. Anyway, so, yeah, that's for ENS on Ethereum.
+Yes, it's basically the same. But it should bring that for normies. Yeah,
+exactly. This should bring the, yeah, the icon and all of that is it's own thing.
+I have a question on just, you know, you keep bringing up your Sam Altman rule.
+One of my favorite, favorite, favorite, my first millions of all time was actually without you
+there, but talking about you, because Sean was describing you as a fierce nerd, which I'm sure
+you were there. I think Sam also is a fierce nerd, and he is, I was listening to this Jessica
+Livingston podcast where she had him on and described him as a formidable person.
+I think you're also very formidable, and I just wonder what makes you formidable,
+what makes you a fierce nerd, what keeps you this driven? Yeah, Sam's fiercer and nerdier,
+just for the record, but I think part of it is just like the strength of my conviction, I guess,
+like I'm, I'm willing to like work harder and grind it out more than people that are smarter than me,
+and I'm only slightly stupier than people that are willing to work harder than me, right?
+Like, I'm just the right mix of the kind of grind at it, kind of work at it, stick to it for extended
+periods of time. If I think I'm right, I will latch on and not let go until I can either like
+prove to myself that it's not even like a natural language thing. It's like, you know, it took 20
+years, but eventually I got to a point where the world caught up and became possible. But yeah,
+I think, and part of it is, I think, this is partly, I think what makes me like, I'm a nice guy,
+and sometimes they're the most dangerous kind, right? It's like, okay, well, I don't make enemies or
+whatever, but so my advice would be, this might take on competition. I don't think of it as like
+war. I think of it as their opponents, right? And this is not war, you're not because it's like,
+it's a game, right? And you can use whatever analogy I happen to play a fair amount of chess.
+I'm a student of the game. That's partly, I think, what makes me effective. I'm solving for the long
+term. So I'm kind of hard to deter. So for those of you out there looking to kind of compete with HubSpot,
+the luck. No, I'm going to be here. I'm going to be here for the 18 years. So, but not that you
+shouldn't do it. It's a big market. I'm not trying to sway anyone. But yeah, I think like,
+something I struggled with, with this conviction, you said you pursue things to conviction, but like,
+you start out not knowing anything. Yeah. And so how do you develop a conviction
+when there's you, you find it along the way, where you stumble along the way, then you lose
+conviction, and then you stop working on it. You know, like, how do you keep going? The way I've
+sort of approached it is that I don't generally tend to have conviction around
+a solution or a product. I have conviction around a problem that says this is an actual real problem
+that needs to be solved. And I may have an idea for how to be solved right now. And that I may get
+this way. It's like, I'm not smart enough. Technology is not good enough, whatever the constraints are.
+But it's the problem I have conviction around. It's like, oh, that problem still hasn't gone away.
+So like, I sort of filed away in the back of my brain and I will revisit, it's like, okay, well,
+you know, the kind of board changes and changes is really fast now with AI, like things that weren't
+possible before are now possible. So you kind of go back for your roster of things that you believe
+or believed and say, maybe now, now is the time, maybe then it wasn't the time. But I'm a big believer
+in kind of attaching yourself passionately with conviction to problems that matter. And
+there are some that are just too high flute for me that I'm not going to ever be able to kind of
+take on. I have the humility to recognize that. Yeah, I feel like I need a updated founders
+version of a serenity prayer. Like, give me the confidence to like, do what I think I'm capable
+of, but like, not to overestimate myself, you know? Yeah, you know, anyway, when you say board
+changes, how do you keep up on AI? A lot of YouTube has it turns out, really? Yeah, a lot.
+Okay, fire ship. I don't know what fire ship is. It's a current meme right now. Whenever opening
+eye drops, something, you know, they love this like, live streams of stuff from on the opening
+eye channel. The top comment is always, I will wait for the fire ship video. Okay. Okay, this
+fire ship just summarizes their thing in five minutes. No, I so my kind of mo so I, by the way,
+I keep very weird hours. So my average go to bedtime is roughly 2am. Oh boy. But I do get average
+seven, seven and a half hours in. That's great. I don't use alarm clocks because I don't have
+meetings in the morning at all or try not to at least. So my late night thing is I'll watch
+probably like a couple of hours of YouTube videos off in the background while I'm coding.
+That's how you see in our talks. I have. Yeah. Yeah. Yeah. Okay. Yeah. And so there's
+so much good material out there. And the thing I love about kind of YouTube is by the way,
+in terms of like use cases and things that agents that should exist that don't yet,
+I would love to technology exists now to build this is to be able to take a YouTube video of
+like a talk about say on late the space, or not on the engineer event and say, just pull the slides
+out for me because I want to put it into a deck for use or whatever, some form of a kind of
+distillation or translation into a different. Oh, I see. Pull the slides out of a video. I think
+that's interesting. I have. Yeah. So by the way, on the kind of agent.ai thing, like one of the
+commonly used actions, primitives that we have is the ability to kind of get a transcript from a
+video. And that seems like such a trivial thing or whatever. But it's like, like, if you don't know
+how to do it programmatically or whatever, if you're just a normie, it's like, okay, well,
+I know it's there, but I can copy and paste it. But like, how do I actually like get to the
+the transcript for you? And then getting to the transcript and then being able to encode it and
+say, I can actually give you timestamp. So if you have a use case that says, Oh, I want to know
+exactly when this was, I want to create an aggregate video clip. This was the actual original agent
+that I built for my wife that she wanted to pull multiple clips together without using video
+editing software, because you wanted to have this aggregate thing to the nonprofit side to
+like send to a friend. Anyway, there are video understanding models that have come out from
+meta. But the easiest one is by far, it's going to be Gemini. They just launched YouTube support.
+Yep. So they're doing good work over there. In terms of like the coolest thing AI wise,
+recently, I'll say last week to 10 days has been the new image model Gemini flash experimental,
+whatever they call it, because it lets you effectively do editing. And just, and so my son
+is doing a eighth grade research project on AI image generation, right? So he's kind of gone deep
+on stable diffusion and the algorithms and things like that. I don't know much about it. But one
+thing I do know, I know enough about stable diffusion to know why editing is like near impossible that
+you can't recreate because it's like you can't go back that way. It's going to be a different thing,
+because it's sort of spinning the roulette wheel another time the next time you try to, you know,
+a similar prompt. And so the fact that they were able to pull it out, it's still, it's still a
+very much a V1, because, you know, if you know, if I was a test case, like, oh, take that spot logo
+and replace the O, which like this kind of sprocket with a donut. And it will do it,
+but it won't size it to the degree that will actually fit into the actual thing. It's like,
+okay. But yeah, but that's where it's headed. Do you know the back story behind that one?
+No. Most of most of who was part of, so they had image generation in llama three, okay,
+large didn't improve it. Most of a quit meta joined Gemini and didn't shift it. And it is rumored.
+And that's all I can say is that they got rid of diffusion. They did autoregressive
+image generation. And I think it's been interesting, these two worlds colliding,
+because diffusion was really about the images and autoregressive was really about languages.
+And people were kind of seeing like, how are they going to merge? And on the mid journey side,
+David Holtz was very much betting on text diffusion being being their path forward.
+But it seems like the autoregressive paradigm is one, like next token is-
+So Helen, the playground are doing like exceptional work on that autoregressive.
+I don't know if it's autoregressive, but around kind of image editing and not just the kind of
+text to image and actually building like a UI for like a Photoshop kind of thing for actual
+generation of images versus student text. It's fascinating. I just thought diffusion was kind of
+dead. Like there wasn't that much, it was just like bigger models, you know, higher detail,
+and now autoregressive come along. And now like the whole field is open. Yeah.
+And I think like if there's any real threats to like Photoshop or Canva, it's this thing. Yeah.
+Just to wrap up the conversation, you have a great post called,
+"Sorry, you must pass," which if I did the math right, you first wrote in 2007.
+Yeah, the first version. And then you re-updated a post-COVID.
+You mentioned you made a lot of changes to your schedule and your life based on the pandemic.
+How do you make decisions today, you know, as anything changed, like since you-
+Because you updated this in 2022 and I think now we're kind of like, you know,
+five years removed from COVID and all of that. I'm curious if you made any changes.
+Yeah. So that post, "Sorry, you must pass," was the issue that happened is my schedule just
+and life just got overwhelmed, right? It's like just too many kind of dots and connections.
+And I love interacting with new people online. I love ideas. I love startups.
+There's- But it turns out every time you say yes to anything, you are by definition saying no
+to something else, you know, despite my best attempts to change the laws of the universe,
+I have not been able to do that. So that post was a reaction to that because what would happen
+for me would be when I did say no, I would feel this guilt because it's like, okay, well,
+whatever happened to be, it's like, oh, can you spend 15 minutes and just review this startup idea
+or whatever? It's like- And sometimes it would be someone that was second-degree removed,
+like into a friend or something like that. And I felt, you know, real guilt. And so this was a very
+kind of honest, vulnerable. Here's what's going on in my life. So this is not a judgment on you
+at all, whatever your project or whatever your thing you're working on. But I have sort of come to this
+realization that I just can't do it. So I'm sorry, but I- So my default thing right now, and lots of
+people will disagree with this default position, is that I have to pass because I'm less- And Derek
+Sivers said this really well. It's like either a hell yes or no, right? And I'm going to- There's
+going to be a limited number of the- The hell yeses that I'm going to be able to kind of inject
+into my life. So yeah, that- And that's- Of all the blog posts that I've ever written,
+that has been the most useful for me. So I- And so- And I send it- And I still send it out personally,
+right? I don't have- I don't automate my email responses at all yet. Don't do automated social
+media posts. But yeah, that one's been very- And I- So I encourage everyone, wherever your line
+happens to be. I think this- Lots of people have this guilt issue, and that's one of the most
+unproductive emotions in- in human psychology is like no good comes from guilt. Not really. And
+unless you're like a sociopath or something like that, maybe you need- Anyway, you don't need more
+guilt. I would also say, so I would just encourage people to blog more. Because a lot of times people
+want like to pick your brain. And then they ask you the same five questions that everyone else has
+asked. So if you've blogged it, then you can just hear. Yeah. So one of the things I'm working on,
+and there are startups that are working on this as well, but I started before then,
+is like a darmesh.ai, right? That's just- Yeah. Captures. And it's interesting. So that's one
+of the agents on agent.ai on the underlying platform. Oh, there's a darmesh? It's out there.
+It's darmesh.ai. Nice. And it's pure tech space, no video, no audio right now. But the thing that's-
+like I found it useful in terms of just the how do I give it knowledge? So I have a kind of a private
+email address. Because a lot of the interactions that I will have, or if I do answer questions,
+because the other thing, by the way, I don't do any phone calls like at all. Even like-
+No zoos. Like at all. I don't get on zoos with teams, but no one-on-one meetings,
+no one-on-one just doesn't scale. So I've moved as much as possible to an async world.
+It's like I will, as long as I can control the schedule, like I will take 20 minutes and write a
+thoughtful response. But I reserve the right anonymously with no attribution, kind of share that either
+with my model or with the world, you know, throw a blog post or something. But it's been like useful
+because now that I have that kind of email backlog, I can go back and say, "Okay, I'm trying to answer
+this question, go through the vector store." And it's shockingly good. And I'm still irritated
+that email doesn't do that out of the box. It's like they're Google. I think it's got to be coming
+now. I think they're- I think they're finally- the giant has been woken up. I think they're-
+it's gotten faster now. It's one of the biggest giants ever. So when I first told Alessio,
+"You were one of our dream guests," I never expected to book you because- sorry, you must pass.
+So we were just like, "I'll just send an email." And then he'll say, "No." And we'll move on a
+whole day. So I just have to say, we're very honored. It's just fascinating. It's real to be here,
+huge fan of first-time first-time guest. Thank you for all that you do for the- for the community.
+I speak for a lot of them. You guys taught me a lot of what I think I know.
+Yeah. I mean, I am explicitly inspired by HubSpot. Oh, thank you.
+In bar marketing, I think is a stroke of genius. And the AI engineering is explicitly modeled after
+that. So you created your own industry, subsection of an industry that became a huge thing because
+you got the trend, right? And that's what AI engineering is supposed to be. If we get it right,
+how do we screw this up? How do I screw this up? How do we screw AI engineering up?
+Oh, yeah. So the common failure modes, right, is- so the original thing that makes inbound
+marketing work, the kernel of the idea, was to solve for the customer, solve for the audience,
+solve for the other side. Because the thing that was broken about marketing was marketing was a
+very self-centered, "I have this budget. I'm going to blast you and interrupt your life and
+interrupt your day because I want you to buy this thing for me," right? And inbound marketing was the
+exact opposite. It's like, use whatever limited budget you have and put something useful in the
+world that your target customer, whoever happens to be, will find valuable. Anyway, so the common
+failure mode is that you lose that- I don't think you will, but it's very, very common, right? It's
+like, "Ah, now I'm just going to turn the crank and squeeze just a little bit," or like it's-
+the reason I think folks like me appreciate that community so much is you use to have that genuine
+want to act. And there's nothing wrong with making money. There's nothing wrong with having
+spotted- none of that. But at the core of it, it's like, we want to lift the overall level of
+awareness for this group of people and create value and create goodness in the world. I think
+if you hold on to that, over the fullness of time, the market becomes more efficient and rewards
+that generosity. That's my kind of fundamental life belief. So I think you guys are doing well.
+Thank you for your help and support. Yeah, my question.
+Yeah, and just a wrap in very dermesh fashion. You have a URL for the "Sorry, Must Pass" blog,
+which is "Sorry, Must Pass" org. So, yeah, I thought there was a good nugget.
+Yeah, thanks so much for coming on. Oh, thanks. Thanks for having me.
+(upbeat music)
+(upbeat music)
+

@@ -1,0 +1,30 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  NewCops: enable
+  SuggestExtensions: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+  Exclude:
+    - "**/*.gemspec"
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Disable Security/MarshalLoad rule only for spec files
+Security/MarshalLoad:
+  Exclude:
+    - "spec/**/*"

@@ -1,0 +1,1001 @@
+--- METADATA START ---
+Show: a16z Podcast
+Episode: What Is an AI Agent?
+Host: Unknown
+GUESTS: Guido Appenzeller, Matt Bornstein, Yoko Lee 
+Guests: Guido Appenzeller, Matt Bornstein, Yoko Lee
+Source URL: https://podcasts.apple.com/us/podcast/what-is-an-ai-agent/id842818711?i=1000709409979
+--- METADATA END ---
+
+1
+Today, we're discussing one of the busiest and most confusing terms in AI right now, agents.
+2
+Are they just fancy wrappers around LLMs, full-blown autonomous workers, or something in between?
+3
+A16Z Info Partners Guido Appenzeller, Matt Bornstein, and Yoko Lee break down the technical definitions, pricing models, use cases, and why the term agent means so many different things to different people.
+4
+If you're building, buying, or just curious about what agents are and aren't, this episode is for you.
+5
+Let's get into it.
+6
+As a reminder, the content here is for informational purposes only, should not be taken as legal business, tax, or investment advice, or be used to evaluate any investment or security, and is not directed at any investors or potential investors in any A16Z fund.
+7
+Please note that A16Z and its affiliates may also maintain investments in the companies discussed in this podcast.
+8
+For more details, including a link to our investments, please see a16z.com forward slash disclosures.
+9
+So I think there's some things which are probably kind of easy to say, which is that, A, there's a good amount of disagreement.
+10
+What is an agent?
+11
+We've heard a lot of different definitions of it, both on the technical side as well, I'd say on the marketing and sales side in some cases, because there's some sales models associated with it.
+12
+So let's start with the technical side.
+13
+I think there's sort of a continuum here.
+14
+You know, the simplest thing that I've heard being called an agent is basically just a clever prompt on top of some kind of knowledge base or some kind of context that has this sort of a chat type interface.
+15
+So from a user's perspective, this looks like an human agent would look like, right?
+16
+So for example, I ask it, hey, I have a technical problem with my product XYZ.
+17
+It looks at the knowledge base and comes back with a canned response.
+18
+But there doesn't have to be a knowledge base, right?
+19
+It doesn't even have to be a knowledge base.
+20
+I see.
+21
+Got it.
+22
+Okay.
+23
+So an agent could just be an LLM with a chat interface or something like that, by some definition.
+24
+I think on the other end of the spectrum, there are some people who basically say for something to be a real agent, it has to be something fairly close to AGI, right?
+25
+It needs to persist over long periods of time, it needs to be able to learn, it needs to have a knowledge base, it needs to work independently on problems.
+26
+If you take the most extensive definition, is it fair to say that doesn't work yet?
+27
+I think so.
+28
+It doesn't work yet.
+29
+Although.
+30
+Will it ever work?
+31
+That's a philosophical question.
+32
+All right.
+33
+Fair.
+34
+Very fair.
+35
+Very fair.
+36
+So if we take that continuum in between, is there at least a way to chop that up into a couple of categories of sort of maybe degrees of agentic behavior?
+37
+And different types of agent.
+38
+There's some artsy agent that helps artists to come up with new Bezier curves.
+39
+There's coding agent, which we like to talk about as the agent of agents.
+40
+Which we use, yeah, that's it.
+41
+Yeah, which we use.
+42
+There's agent that's just a wraparound type of LLNs.
+43
+That's right.
+44
+I may be the contrarian in this group.
+45
+All right.
+46
+Look, I kind of think agent is just a word for AI applications, right?
+47
+Anything that uses AI kind of can be an agent.
+48
+Now, before we started this talk, I actually went online just to refresh myself about some of the more interesting AI agent perspectives out there.
+49
+I found a really cool talk from Karpathi that he gave a couple of years ago about agents, which I can describe a little bit.
+50
+But the really funny part was on the YouTube recommended videos to watch next, it's like: AI agents are going to revolutionize your lifestyle and the rise of super intelligent AI.
+51
+The cleanest definition I've seen of an agent is just something that does complex planning and something that interacts with outside systems.
+52
+The problem with that definition is all LLMs now do both of those things, right?
+53
+They have built-in planning in many cases, and they at least consume information, you know, at least from the internet, maybe from some servers that expose information through MCP or some other protocol.
+54
+So, the line really is very blurry.
+55
+And, you know, what was so interesting about the Karpathy talk is he basically related it to autonomous vehicles and said AI agents are a real problem, but it's like a 10-year problem.
+56
+It's like a decade problem that we need to work on.
+57
+And I think most of what we're seeing in the market now is like, is not the decade version of this problem.
+58
+It's like the weekend demo version of this problem.
+59
+And this is why we sort of generate so much confusion.
+60
+You have this kind of poorly defined, nebulous thing that LLMs are kind of consuming themselves over time.
+61
+And so I don't think anything we have are actually agents, is kind of, and agent itself may be a poorly defined and kind of overloaded term.
+62
+But if someone's willing to do the hard work and define exactly what it's like to kind of be a human but in digital form and spend 10 years to make it actually work, you know, that's sort of what I'm excited to see.
+63
+Okay.
+64
+So defining agents is a difficult job.
+65
+Maybe it's easier to talk about how people use the tools they call agents and what are the differing degrees of agentic behavior.
+66
+I wonder if part of the conversation is redefining agents, because we all know that agent as a term, just not a great term.
+67
+It means so many things to so many people.
+68
+If it's interesting to dissect, like, what do we mean, what do different people mean when they say agents?
+69
+What are different ways we could utilize this process we call agents?
+70
+So it seems to me this, if we're trying to.
+71
+There's something like a user interface aspect to it, right?
+72
+Where something that's a pure co-pilot, but basically a user goes back and forth with an LM to work in a particular task that's often not called an agent.
+73
+Is that fair?
+74
+There's a little bit of the co-pilots versus agents UI models.
+75
+Yeah, I guess what are the elements we will think that goes into agentic behavior?
+76
+Like Matt mentioned, planning could be one.
+77
+There could be decisions made by the agent.
+78
+There has to be an LLM somewhere.
+79
+But curious about your take on that.
+80
+So I think another definition we're from Anthropic recently was this idea that an agent is an LLM running in a loop with tool use, right?
+81
+Which there's two important parts of that.
+82
+One is this notion that it's not just a single prompt and not even just a single static sequence of prompts, right?
+83
+But something where the LLM takes the output of a prompt, feeds it back into itself, and based on that makes decisions on what the next prompt, and likely also when to abort, like when to complete a task.
+84
+I think that for the real agents or the more agentic behaviors, I think that's a reasonably good definition.
+85
+And I think the other thing is...
+86
+But just by that definition, isn't every chatbot effectively an agent then in this world, right?
+87
+Like if I go just to chatgpt.com and use their latest reasoning model with web search, it isn't using tools and feeding its outputs into a new prompt in order to do kind of chain of thought.
+88
+Chain of thought is a little bit between.
+89
+If it's just a single prompt and comes back with a result, then it wouldn't have this notion of planning and doing a more long-term concept and deciding itself when it is complete.
+90
+I just think it's really tough to define a system based on what someone says to it.
+91
+Because these are by design, unstructured inputs.
+92
+These systems will accept literally anything.
+93
+And so, sure, if you tell it, you know, what's today's weather, I would agree that's not agentic, right?
+94
+That's just fetching, you know, from an API.
+95
+If you ask it, define a new philosophy of weather, right?
+96
+It'll happily go do it, right?
+97
+So it's like an agent if you ask it one thing, but not an agent if you ask it another thing.
+98
+I think that's kind of a lot of the confusion in the market around this.
+99
+And if we spoke in the terms that you're talking about, Guido, of like, hey, this is an LLM in a loop with a tool, like that's actually a much more productive way to talk about it, I think.
+100
+Yeah, yeah.
+101
+I mean, that's it.
+102
+It seems like we're seeing to some degree a specialization of user interfaces in sort of two directions.
+103
+There's, let's say, a cursor or something like that, which really emphasizes the tight loop between the user, the tight feedback loop between the user and the LLM and the thing I'm working on.
+104
+So I want immediate gratification when I do something, and so response time matters.
+105
+Then there's more the back-end source code management system type plug-ins where it's more about throwing something over the wall by maybe answering a couple of questions, and then you try to maximize the amount of time the agent can work independently.
+106
+So it seems like, I think you're right that there's no clean system definition, it's split between the two, but there seems to be a little bit of an user interface specialization.
+107
+Is that a fair statement?
+108
+I almost feel like for all the use cases with described, there's one element that all agents have, which is reasoning and decision.
+109
+Would you call just a call to LLM to say, translate this text to JSON?
+110
+That's probably not the agent.
+111
+But then if you ask LM to say, hey, decide where this response goes and route it for me, it feels more like an agent than before.
+112
+So it almost felt like planning.
+113
+I'm actually not sure, does the agent need to plan or does it need to decide?
+114
+Maybe both.
+115
+I actually feel like it's a multi-step LLM chain with a decision tree.
+116
+A dynamic decision tree.
+117
+A dynamic decision tree.
+118
+I think that's fair.
+119
+I think we've all just been nerd sniped.
+120
+I just think, you know, it's like humanities people love classifying and they draw kind of like fine distinctions between different types of things, entities, whatever.
+121
+We're computer scientists.
+122
+No, there's anything wrong with humanities, but we're just not that.
+123
+So I think we're not well equipped when it's a bit isn't just zero or one, it's maybe something in between.
+124
+And we just talk about it a lot.
+125
+We try to coerce it to one value or the other.
+126
+Yeah.
+127
+Of course, agents are more than pure technology.
+128
+They're also becoming products, which means they need to be marketed.
+129
+And how someone positions their product has a major effect on how they price it.
+130
+What's more, the ultimate value of any given agent, which is still to be determined for the vast majority of them, is to what degree they can actually replace or simply augment human workers.
+131
+There is an interesting point, which is, I think there is a marketing angle to agents, right?
+132
+I've heard this narrative from a couple of startups that they're basically saying, like, hey, you know, we can price the software that we're building much, much higher because this is an agent.
+133
+So we can go to a company and say, you're replacing a human worker with this agent.
+134
+The human worker makes, I don't know, $50,000 a year, and therefore, this agent, you can get for only $30,000 a year.
+135
+This sounds really compelling from a first glance.
+136
+And actually, I mean, there's some value to it in the very early days because essentially it's very easy to understand comparative pricing for somebody who has to make a buying decision, right?
+137
+You know, on the flip side, we all know that the cost of a product over time converges towards the marginal cost of production, right?
+138
+And so today, if I used to use a translator maybe to translate a page of text, today you use ChatGPT.
+139
+I do not pay ChatGPT like I paid my translator.
+140
+I paid a tiny fraction of a cent, right?
+141
+Which is the API, which is the actual cost.
+142
+So I sort of wonder how much of the agent debate is driven by marketing and pricing.
+143
+I just actually think this is a really interesting topic.
+144
+What fields can you think of that are actually suffering complete replacement from AI or AI agent?
+145
+And this is a setup, I'll warn you.
+146
+I have another extreme point of view that I'll say afterward.
+147
+But can you think of fields where this is actually happening?
+148
+Not completely, but definitely partially, because there's a lot of, for example, voice agents that replace receptionists.
+149
+I don't know if we should.
+150
+Replace people who would get back to customers.
+151
+So there's definitely a lot of workloads that have been offloaded from the folks who traditionally did the job.
+152
+But I don't think they're 100% replaced.
+153
+They can do something else.
+154
+But we are seeing headcount growth in some areas are slowing.
+155
+So it's not that existing jobs are being replaced.
+156
+It's more like they're hiring net new humans slower.
+157
+I think it's exactly right.
+158
+I mean, I think in a few cases, humans will get replaced by AI.
+159
+In most cases, two humans will get replaced, one human that's more productive with AI.
+160
+Yeah, or maybe they keep the two employees.
+161
+Maybe they go to three employees because now they're more productive.
+162
+Yeah, right, right.
+163
+It's just a really interesting question.
+164
+And the reason I think it's really relevant to agents is I think part of the ethos and part of the confusion around agents is this idea that we actually will develop human replacements, right?
+165
+And that this thing we called an agent, which by the way is a name for a person, right?
+166
+Before we had AI, we had people called agents, and we still have all kinds of people called agents.
+167
+And it just doesn't seem like that's happening, right?
+168
+Not in the replacement sense, right?
+169
+You mentioned Yoko with agents.
+170
+We've always had customer support automation.
+171
+We've had 1-800 numbers where you press one for sales, plus, that's existed for a long time.
+172
+This is a much better form of that, obviously.
+173
+Translation is a great example, too, Guido.
+174
+These systems can perform translation extremely well, but you're probably not going to just stick something to ChatGPT and then publish it on your website.
+175
+There is actually work that needs to take place.
+176
+And I think the reason for this is there's just fundamental creative work in most things that humans do.
+177
+I think from our kind of perch in Silicon Valley, we can forget that sometimes that people all over the country and doing all sorts of jobs actually have hard jobs, and not just hard in the sense of someone's got to do it jobs, but hard in the sense of it does take thinking and human decision-making, which I just don't know that AI kind of has what we would think of as decision-making or intent.
+178
+It's a system that still, somebody has to push the button, right?
+179
+It may be running somewhere, it may do a great job or whatever, but someone tells us to give it a prompt and hit go.
+180
+And to me, that's a lot of the confusion around agents.
+181
+We're all thinking at some point a human person with intent and creativity and thinking is going to be replaced.
+182
+I'm just not sure that even is theoretically possible, right?
+183
+It's almost just like a catch-22 to say an AI system is thinking for itself, right?
+184
+Because somebody has to have sort of created it.
+185
+You know, this is old sci-fi philosophy I'm getting into now, but I actually do think it's a big reason for the confusion that we sort of experience now.
+186
+It's interesting because there's two types of agent we're already talking about.
+187
+There's one type where the agent is replacing humans, work with humans, do things humans can do.
+188
+There's the other type of agent.
+189
+To some extent, agents are like technical details in the system in that way.
+190
+But we mean both when we talk about agents.
+191
+In that case, is there actually a difference between an agent and a function?
+192
+I think so.
+193
+I think agent will be multiple functions with LLMs in the middle.
+194
+If I have a low-level agent and I'm giving this low-level agent a task and I get back a task result, it looks a little bit like a classic API call.
+195
+But with the LLM in the middle to make decisions on what to do for that API call.
+196
+So I understood, but that's sort of how this function works internally to some degree.
+197
+Yes.
+198
+Right?
+199
+Yeah.
+200
+So from the outside, would I care?
+201
+You wouldn't care.
+202
+It's like most of the time when we see AI SDRs, when we talk about AI SDR agents, what we mean by that is when the agent can go to the CRM, pull something out, and then filter the list, draft an email, and send the email.
+203
+So that feels very process level instead of human level.
+204
+Yeah.
+205
+So that's what I meant.
+206
+If you don't know how this thing works internally, the classic function and agent become indistinguishable.
+207
+Totally.
+208
+I absolutely agree.
+209
+But when you, as a programmer, when you write the function, you will define agent that that's this sort of thing.
+210
+Implementation.
+211
+We'll get back to pricing shortly.
+212
+But first, let's dive a little deeper into this discussion of how interacting with an agent is different than or similar to traditional software-based functions.
+213
+So here's one interesting thing to think about on that topic.
+214
+I totally agree with you, Guido.
+215
+And I think you sort of agreed too, that it's really a function if you kind of just look at it that way.
+216
+Shareable, reproducible functions have tried to say, oh, I can just write a function and then anybody on Earth can use it, right?
+217
+Like, you know, we have packages, right, that you can download a whole package with various functionality, but literally just one function you can share.
+218
+If you kind of squint a little bit, that kind of exists now with AI, right?
+219
+Because you have these models that's trained by somebody.
+220
+Somebody else may download it, fine-tune it, train a LoRa, package it up into some new and interesting way.
+221
+And then it's actually immediately available for someone else to use on hosting services or Hugging Face or something like that.
+222
+So while it does seem to be just an implementation detail, whether you're using an LLM or not, there is this interesting thing where the model itself takes up so much of that functionality in the function, and it's just a different kind of animal compared to normal code.
+223
+It's actually more, it's kind of shared by default in a way, because nobody's going in and training their own model every time they're writing code.
+224
+You know, it's obviously heavy, right?
+225
+It's harder to move around.
+226
+There are all these different characteristics from normal functions, some of which are actually very desirable.
+227
+Some are kind of bad, right?
+228
+Characteristics you don't want, but many of them are kind of interesting.
+229
+And I think we'll actually see new infrastructure, new dev tools kind of built around us in the long run.
+230
+I think it would make sense.
+231
+I mean, when if we go back in time, the last time we sort of invented a major new component for building systems, which was probably networking, right?
+232
+How we thought about calling a function before networking afterwards changed a lot, right?
+233
+Totally.
+234
+The complexities of APIs and the infrastructure around it is completely different today.
+235
+This is such a good point, because now I think about it, I feel like humans are just functions too.
+236
+Like if you have a thought experiment and then replace LLMs in the program to a human, the kind of answers we'll give to the program is not that different from what an LLM will give to the program.
+237
+So if we actually all get hooked up to servers one day, then I will agree that agents have been created.
+238
+That's when agent is.
+239
+Isn't mechanical torque exactly that?
+240
+Or maybe even your email inbox?
+241
+There's an Amazon supermarket a while back in Soma.
+242
+I think they were advertising that it's computer vision models behind the scenes, identifying what you took from the supermarket.
+243
+But then people found that they hire a lot of people behind the scenes to actually label the data in real time.
+244
+So the humans in that case are the functions that today may be.
+245
+Seafood agents.
+246
+Right, replaced by LMs.
+247
+Well, but this was exactly my point, though, right?
+248
+There actually is important creative work.
+249
+Even in a grocery store checkout clerk, right, you could naively think, oh, this is an easy job.
+250
+Actually, it's not an easy job at all, right?
+251
+And so you can take this work and kind of shift it, right?
+252
+And you can squeeze it down with automation and stuff, but it never really goes away.
+253
+Oh, yeah, absolutely.
+254
+Yeah.
+255
+All right.
+256
+So given all of this, how should companies think about pricing their agents?
+257
+Per seat, per token, per task?
+258
+Hint.
+259
+It might be too early to truly tell.
+260
+Usually, if you introduce a brand new product category, right, you often initially put a pricing that prices against the status quo, right?
+261
+Whatever you replace, or augment in some cases.
+262
+But let's assume we have a direct replacement, right?
+263
+So that's, I think, where this idea from, oh, this replaces a human, which it doesn't.
+264
+But if it would, right, then you could charge X amount for it.
+265
+Usually over time, competition kicks in, right?
+266
+And you effectively price by how much your competitors are charging.
+267
+And if you start off in an erosion, then it depends on many things like how much of a mode do you have?
+268
+Do you have customer lock-in and so on?
+269
+Which, I mean, look, if I look at most agents today, it's probably very low.
+270
+Any agent you can purely model in software, the couple of LLMs calls, you can run at a very low cost.
+271
+And the cost is decreasing over time.
+272
+And I would sort of argue that's kind of already what's happening, that in practice, most AI applications, and in particular, if we want to call them AI agent applications, you know, they have their sales pitch around you should pay us X because we're saving you.
+273
+You know, it's like a classic ROI calculation.
+274
+Established value.
+275
+Yeah, exactly.
+276
+Value-based pricing.
+277
+But in practice, I think most buyers are actually pretty sophisticated about what's going on under the hood.
+278
+And to your point, they know it's pretty simple stuff happening.
+279
+And so it's like, hey, what does it cost you to run all these GPUs and we'll pay you some premium over that?
+280
+And I think that's how a lot of vendors are pricing in practice these days.
+281
+I mean, long-term you'd expect pretty healthy margins, just like in SaaS, right?
+282
+Which software traditionally has very good margins.
+283
+It's so funny because we always advise companies to not price based on the margin, but price based on the value you add, whatever that could be.
+284
+It could be compared to other vendors on the market, could be compared to just what it is building in-house.
+285
+And traditionally, for Infra, a rule of thumb, not always the case, is that if the service is used by a human, it's a perceived pricing.
+286
+And if it's a service that's used by other machines, it's a usage-based pricing.
+287
+And I actually don't know where to put agent here.
+288
+But it could be used by either, right?
+289
+It could be used by user agent, or a human could be used in agent.
+290
+Look, I think your analysis is exactly right.
+291
+And the reality is, most AI companies don't know what value they're generating yet.
+292
+And, you know, in the case of OpenAI, they have how many millions of users, they probably don't have a very strong sense of what they're all using it for.
+293
+And once they do, right, and you see this more, they're trying to verticalize a bit more and have kind of specific products for specific use cases, code obviously being the big one.
+294
+You know, then you'll be able to see the pricing kind of catch up, is kind of my hypothesis.
+295
+This reminds me, the open AI point you brought up.
+296
+I was thinking about AI companions, because that's the closest to perceive the human pricing.
+297
+Like you can't charge someone every sentence they talk to their companion, although some of the foundational models are.
+298
+There are services that will charge you per response.
+299
+I haven't used them, but they do exist.
+300
+I see.
+301
+Wow.
+302
+Okay.
+303
+So usually it's kind of weird to charge someone like by tokens of how much they talk to the companion rather than like a flat monthly fee.
+304
+It doesn't feel like a true friend.
+305
+Right, exactly.
+306
+It's very transactional.
+307
+This is, look, this is all theory, right?
+308
+People love sitting around and talking, oh, we're going to charge per person, per task, per world economy that we rescue.
+309
+You know, it's like, it's all made up, right?
+310
+I think Guido's thing was exactly right.
+311
+Let's look at the actual technology underlying what we're calling agents right now, where are they being deployed and why.
+312
+And honestly, the pricing, the marketing, the sales tactic, all of this kind of follows from what they're actually selling.
+313
+If I'm selling something that looks like an agent, but I haven't truly figured out the value I'm providing to my users, how do I justify the jump to a higher price point when I do figure out that value?
+314
+You just need to be selling a solution rather than a product, right?
+315
+This is really well-worn expertise in enterprise go-to-market.
+316
+Code, you can somewhat see the decoupling.
+317
+And so, as a VP of engineering or a CTO, you can look at this and say, okay, I'm actually saving a lot of money, and my guys are getting a lot more productive.
+318
+I can do a normal job here.
+319
+Yeah, so you're kind of buying a solution, right?
+320
+You're buying from a vendor something that solves a problem for you, which again, Microsoft, Oracle, Salesforce people have been doing forever.
+321
+Once we start to see more of that, it's going to be these things that become real products and kind of decouple pricing and look kind of like real businesses, I think.
+322
+I think it's dictated by the high-level application.
+323
+So, I'll give you an example.
+324
+So, I'm a Pokemon Go player.
+325
+So, for those who have played Pokemon Go, once you collect enough Pokemons, you are out of storage in your pocket.
+326
+So, you need to pay extra to buy a new bag, virtual bag, that you can put more Pokemon in.
+327
+And as an infrastructure investor, I invest in storage businesses.
+328
+And then, when I look at how much I need to pay for like 30 extra Pokemon, it was thousands of times more expensive than what storage is.
+329
+So, it actually reminded me.
+330
+I'm surprised that something thousands.
+331
+No, no, no, no, no, no, no, no, no, no, no, no, no, sorry.
+332
+There's a whole price curve on Pokemon storage, it turns out.
+333
+Because this is the one JSON blob, basically, and they charge you like $5.
+334
+Yeah, and then a Pokemon, normal Pokemon players, they wouldn't think about this.
+335
+Like, how much do storage costs, right?
+336
+Like, a normal Pokemon player will be like, oh, this capability, I will be happily paying thousands more than I were to have a S3 bucket somewhere.
+337
+So, one of it is monopoly.
+338
+So, it's an application-layer monopoly that you wouldn't have been able to store the Pokemon anywhere else.
+339
+And two, it's a use cases.
+340
+It's for a different audience.
+341
+It wouldn't be asking these questions, they would be thinking about what.
+342
+Is it a fun game?
+343
+It's a fun game.
+344
+Take $100 more.
+345
+Yeah, I think that's exactly right.
+346
+And implicit is what you're saying: this idea that the product or the solution has to actually work for them, right?
+347
+For a less technical person who's, you know, the person who's not going to try to provision their own storage bucket to self-host their own bonus through for Pokemon.
+348
+And it's quite defensible, differentiated too, because Pokemon Go is not open source.
+349
+There's no other replacement of Pokemon Go.
+350
+There's only one Pokemon Go.
+351
+So there's only one place where you would be willing to pay so much money for Pokemon storage.
+352
+Plus, very strong brand, plus you have a little bit of network effect because we can play together.
+353
+Yeah, and then we'll see the AI agent version of this.
+354
+I can't wait to see the AI companion version of this.
+355
+Playing storage for AI companions wardrobe.
+356
+As the AI market continues to shake out and evolve, where will agent capabilities ultimately live?
+357
+For example, can they live inside LLMs or must they call external tools?
+358
+And who's ultimately in the best position to influence this?
+359
+Super interesting question, right?
+360
+What's the systems perspective of how an agent is built?
+361
+And I personally think that architecturally, there really is no difference between your typical SaaS software today and agent in terms of how you build it, right?
+362
+And let me explain why.
+363
+So in agent, you have sort of an overall loop with an LLM and prompts that feeds into itself plus external tool use.
+364
+The LLM itself, you probably want to run a separate infrastructure just because it's highly specialized.
+365
+You need these vast GPU farms can't easily run today's slash LMs in a single GPU.
+366
+So it's a very specialized infrastructure that's externally.
+367
+So the LLM call is external.
+368
+So you probably also want to externalize that.
+369
+And then what remains is fairly lightweight logic, where I'm basically taking context that I retrieve somehow from databases, I assemble that into a prompt, I run the prompt, and then I occasionally invoke tools.
+370
+Maybe I do that with MCP or something like that with an external server.
+371
+But the core loop is actually pretty lightweight, right?
+372
+And I can run a gazillion agents on a single server.
+373
+Not a gazillion, but many agents on a single server.
+374
+I don't need a lot of compute performance for that.
+375
+Does that sound about right?
+376
+Yeah, yeah, I totally agree.
+377
+The interesting architectural question for me has always been: how do you handle the kind of non-determinism that may come from?
+378
+Many of the successful AI applications that we all use and love really just spit model outputs back out to the user, right?
+379
+Like a chatbot or image generator.
+380
+It's like, hey, I called the LLM, here's what I got.
+381
+You know, good luck.
+382
+When you try to actually incorporate the output from an LLM into the control flow of your program, that is actually a very hard, very unsolved problem.
+383
+To your point, there are relatively minor architectural differences today, but this may actually drive more significant changes in the future.
+384
+I actually think the winners will be the specialists, not the foundational models.
+385
+It's the people who will build on top of the foundational models or fine-tune the foundational models.
+386
+So a very artistic example of this is that I've been spending the last two weeks just prompting GP40, their image model.
+387
+It's very good at cartooning, so it's very good at manga.
+388
+It can spell, so it has a storyline.
+389
+But then I realized that there's only top two or three styles it's good at.
+390
+So it's good at Jibly, it's good at manga, and then there's variations of the style in that realm.
+391
+Everyone doesn't want to see the same things over and over again because that's how they value art, something that's different.
+392
+Yeah, ideally, maybe.
+393
+Ideally, yeah.
+394
+Did somebody reason to define art as out-of-distribution samples?
+395
+Yeah, art can be in distribution, that's pop art, right?
+396
+It could also be out of distribution.
+397
+That's like when Impressionism came up many years ago, everyone was drawing impressionism.
+398
+And at the time, the painters before they were like, What's wrong with your eyes?
+399
+Why are you drawing blurry images?
+400
+So, styles come and go.
+401
+But because of that, I think it's a pushing distribution question.
+402
+How the foundational model will never cover 100% of everything.
+403
+So, it's really up to the humans and specialists of the next wave to come up with the new data, new workflows, new aesthetics to push that distribution.
+404
+Of course, at the end of the day, agents are only as useful as the tools and data to which they have access.
+405
+So, what happens if major web platforms decide they want to keep agents from accessing their data?
+406
+It seems like one of the hardest things about agents today are data modes.
+407
+In some cases, just because they're technically difficult, I'm trying to access data, and agents are trying to access data, and it's just very hard to integrate with that system.
+408
+In some cases, it's very deliberate, right?
+409
+My iPhone, the photos are not accessible via any API because it's a walled garden.
+410
+So, sort of data silos, you're talking about it.
+411
+Data silos, right?
+412
+So, is that something that's holding back agents or is making them more difficult?
+413
+Or to make it even stronger, consumer companies traditionally often were opposed to offering automated access to their services because they want the user engagement, they want the time.
+414
+Will that limit how much we can deploy agents?
+415
+And would that be changed once we have the browser-native agents that can browse the web and browse ourselves?
+416
+Great question.
+417
+Yes.
+418
+I think that I think Yoko is totally right.
+419
+You know, it's like there's strong incentives for people who own data about physical entities, people, businesses, et cetera, to keep it to themselves, right?
+420
+Especially because they may be scared of what AI is going to do to them, by the way.
+421
+So they're kind of clinging tight to what they have.
+422
+And these problems are rarely solved by defining a new protocol and just saying, hey, if we make it easy for people to give away their core assets, they'll just do it.
+423
+Obviously, that's very unlikely to work.
+424
+But someone eventually will solve this by saying, hey, if your data is publicly visible, we're going to get it.
+425
+It's like, by the way, it's not actually your data, it's data about me, so why should you be holding on to it?
+426
+Actually, I feel like the new advancement in models may just change the data mode.
+427
+Kind of to the point of today, web browsing using an agent doesn't work super well.
+428
+It's very slow, it's very clunky.
+429
+You have to try it multiple times for it to do any task.
+430
+But imagine if we have foundational model capability of giving an agent the ability to go to any website, logging as a human.
+431
+We'll table that one.
+432
+I don't know how agent identity works yet.
+433
+Or go, you know, go SSH into a server, like execute certain commands, or like spin up a virtual machine for mobile, or access a device in a device farm to play Pokemon Go.
+434
+Like, maybe those are the data traditionally only available to humans under that account now may be available to agents.
+435
+There's also the opposite that could happen, right?
+436
+That presently, all the consumer sites are starting with more and more complex anti-agent captchas, trying to.
+437
+I mean, I recently did use one of these deep research tools, one of the major LLMs.
+438
+And one of the steps, if you look through it, all the steps I went through was like, you know, trying to see how I can get around a capture mechanism for a site.
+439
+That was an actual reasoning step, right?
+440
+Where basically it knew what information it wanted and was blocked from accessing it.
+441
+So is that, you know, how dystopian is the digital media here?
+442
+It's all that actually.
+443
+I mean, it's so interesting.
+444
+So here's a really early machine learning example of this.
+445
+I don't know if you guys remember when Gmail first implemented ads.
+446
+It was a big controversy because they basically said, okay, we are not going to read your emails, but our algorithms are going to read your emails, and we're going to suggest ads that you should watch, you know, or click on based on that.
+447
+We all sort of, I think, just forgot and got used to it.
+448
+I still think we don't love the idea, but we kind of lived with it.
+449
+But some of the data providers reacted by removing data from email.
+450
+So Amazon, famously, now when you order something, they send you a confirmation email that says, hey, you just ordered something.
+451
+Click here to find out what you ordered, when it's going to arrive, or any information you might want to know.
+452
+And so that actually did happen in practice in that example.
+453
+The major data holders kind of found ways to withhold it.
+454
+It'll be interesting to see whether that's possible now or not.
+455
+But that same data is scraped on the client side from the ad networks that I install.
+456
+Oh, sure.
+457
+Yeah, yeah, yeah.
+458
+Yeah, there's always some other way.
+459
+Yeah.
+460
+Not maybe exactly the same, but maybe a proxy.
+461
+Yeah, yeah.
+462
+It may be that it's much harder to tell the difference between an LLM and a human than a classic API call mechanism and a human.
+463
+That may change the dynamics.
+464
+Finally, Guido, Matt, and Yoko answer an obvious question on the longest timeline into which we might have clear visibility.
+465
+What needs to happen to make agents a truly game-changing innovation within the next, say, two years?
+466
+I think the positive vision is that in two years, we figured out how an agent working on my behalf can use most of the tools that I have access to.
+467
+I think it's also clear what are all the pieces that are missing for that, right?
+468
+We have not figured out security, authentication, access control for agents working on my behalf yet.
+469
+We have not figured out how data retention works.
+470
+We have not figured out the relationship with consumer websites that potentially want to block that agent.
+471
+But if you have that, it could make many tasks much, much easier.
+472
+Today, if I have data sitting, say, my Google Drive or so, how easy I can reason about that data versus other data that's in more fragmented sources, it makes an incredible difference.
+473
+So I think that's the bold case, right?
+474
+Where you have agents that can take all the data that you can access, they can access it on your behalf and perform tasks on your behalf, right?
+475
+And save you a ton of time.
+476
+It could make you, depending on what you do, like, you know, multiple times as productive as you are today.
+477
+My answer to that is actually different modalities on the foundational model.
+478
+Today it's still very much text-based, and that worked really well for coding and text-based tasks.
+479
+But then for more visual-first tasks, if there's just no one-to-one mapping, even for web browsing, it's like a very clunky experience of take a screenshot every couple seconds and send it back to a foundational model.
+480
+So I will actually bet on multimodality when it comes to if we train the model with different traces of clicking on buttons on the website, navigating the web, using different devices, drawing, producing vector art, I think there will be net new things that the model could unlock on the agent level.
+481
+You can probably guess my answer.
+482
+If we don't use the word agent two years from now or five years from now, called AI is Normal Technology.
+483
+And they sort of make the argument that there's a false dichotomy out there.
+484
+It's like AI is either going to bring about utopia or dystopia, meaning everything's going to be amazing because we have AI or everything is going to be terrible.
+485
+This is kind of the national discourse.
+486
+But if you just think of it as normal, right, like water or electricity or the internet or things like that, I think that's the world we're kind of headed towards.
+487
+An agent is this kind of way to help us get there.
+488
+And so that's my goal.
+489
+I mean, this stuff is just incredibly powerful.
+490
+We understand how to use it.
+491
+We understand the use cases.
+492
+And we're kind of, you know, we're kind of putting it to use for us.
+493
+Thanks for listening to the A16Z podcast.
+494
+If you enjoyed the episode, let us know by leaving a review at rate thispodcast.com slash A16Z.
+495
+We've got more great conversations coming your way.
+496
+See you next time.

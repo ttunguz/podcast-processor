@@ -1,0 +1,2141 @@
+Here is my analysis of the key sections from the podcast transcript:
+
+1. EPISODE CONTEXT
+- Podcast name and episode focus: All-In Podcast, episode focused on interviewing Patrick and John Collison, founders of Stripe
+
+- Hosts and their backgrounds/roles: 
+Jason Calacanis - angel investor 
+David Friedberg (did not capture full title/affiliation)
+Chamath Palihapitiya (did not capture full title/affiliation)
+
+- Guests and their roles/backgrounds:
+Patrick and John Collison - Co-founders of Stripe
+
+- Featured company overview: Stripe - payments company, founded in 2010, over 10,000 employees, processes over $1 trillion per year (around 1% of global GDP), recently profitable, valued in the tens of billions, still privately held
+
+2. KEY INSIGHTS
+1) Stripe aims to make money movement more efficient, especially cross-border payments, through innovations like using stablecoins on their recently acquired Bridge platform. This targets pain points in the current system.
+
+2) Fraud is a bigger cost than transaction fees for most businesses. Stripe acting as a trusted reputation network between buyers and sellers is a key value proposition to reduce fraud losses. 
+
+3) Stripe sees opportunity in rebuilding parts of the financial system infrastructure, but will likely build on top of credit card networks for consumer facing applications rather than replacing them entirely.
+
+4) Early career employees struggle more in remote work environments from both a productivity and personal wellness standpoint. In-office mentorship and interaction is valuable for them.
+
+5) Stripe has stayed private for 13 years to focus on customers and long-term strategy without public market distractions. Founders see no inherent virtue in being public and note many major financial firms stayed private for decades. Being public makes sense for cheaper capital access if needed.
+
+6. KEY METRICS & BUSINESS DETAILS
+- Growth, revenue, user metrics shared: Stripe processes over $1 trillion per year, around 1% of global GDP
+- Profitability: Stripe recently became profitable 
+
+7. NOTABLE TECHNOLOGIES  
+- Stablecoins: Stripe enabling stablecoin payments through acquired Bridge platform, sees opportunity especially for cross-border transactions
+- Fraud detection: Stripe leveraging data to act as reputation network and reduce fraud
+
+8. COMPANIES MENTIONED
+Stripe: Payments company founded by guests Patrick and John Collison, processes over $1T annually, recently profitable, still private after 13 years
+- "Stripe is not like a full cross-section of the economy. You know, we're more biased towards online, we're more biased towards innovative companies" - Patrick
+
+Bridge: Stablecoin payments platform recently acquired by Stripe 
+- "Bridge is the company, it's the platform, and you know, that's like the right thing." - Jason
+- "Bridge has one (small stablecoin) already." - Patrick  
+
+9. PEOPLE MENTIONED
+Patrick Collison [Co-Founder, Stripe]: Interviewed guest, co-founded Stripe in 2010 which now processes over $1T annually, explains rationale for staying private
+
+John Collison [Co-Founder, Stripe]: Interviewed guest, co-founded Stripe in 2010, discusses benefits of staying private to avoid distractions and focus on customers
+
+In summary, the key topics were Stripe's innovations in stablecoins and fraud prevention, the founders' views on staying private, and some discussion of remote work challenges especially for early career employees. Let me know if you need any clarification or have additional questions!
+
+# Transcript
+
+
+All right, everybody.
+Welcome back to the number one podcast in the world.
+I am your host, Jason Calacanis, and with me again, a couple of my besties, David Friedberg.
+You know him as our Sultan of Science.
+Lots to get into today, Sultan, huh?
+How you doing?
+I'm keeping busy.
+Thank you.
+Keep him busy.
+Jama'ath and I on Valentine's Day.
+We had a little trio.
+We were on MK ULTRA's podcast, and it hit number four while in podcast, of course, number
+one.
+Jama'ath, reflections on our Meghan Cali, our triumphant Meghan Cali Valentine's spectacular.
+It was fine.
+It was good.
+Okay.
+Wow.
+Thanks.
+You're such a great performer.
+You're giving me so much to work with Jama'ath as always, but it was a great, great pod.
+Shout out to our friend and friend of the pod, Meghan Cali, and awesome.
+We've got an incredible duo for the first time we've invited a duo to join us in the
+red throne.
+David's access seat.
+He's busy saving the country, but we're really excited.
+Colson brothers are with us.
+Thank you for having us.
+You guys want to hear a great loss porn story?
+John has one for you.
+The last time we met, Jama'ath was 18 years ago when we were working on our prior startup,
+Octomatic with Pargent and Cool Tagar.
+You were how old?
+They were 17, 18, 19.
+It was one of these San Francisco setups, where it was like a two bedroom apartment.
+There was a few of us living there, I think maybe six people working out there, and a
+normal number.
+Exactly.
+Normal number is to load up a two bed apartment with, and then Jama'ath, you came and visited.
+This is what's so brutal about this, okay?
+I could have invested a dollar, one single dollar, and I would have made a billion dollars.
+I remember meeting these guys, and I was with Alan Morgan, who was my boss at the time.
+I was a junior principal at Mayfield, and I think we tried to, guys, I don't know if
+you remember, Patrick and John.
+I think we tried to invest in the business, or it didn't happen, or then you ended up
+shutting it down.
+But right away, you spun back up and started Stripe, and I just watched from the sidelines
+the whole way.
+It is such a, first of all, it's an amazing place for Silicon Valley, where you can like
+see these people just keep pushing the boundaries up and up and up.
+Number one.
+The thing that is such a learning for me is like, why didn't I just pick up the phone
+and call the bed at any point in the last 17 years?
+I wonder if I think it.
+It's so brutal.
+It's so brutal.
+It's so brutal.
+Yes.
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+It's so brutal.
+Number one, first you probably don't remember this, but I remember that meeting that we offered
+you, you know, do you want something to drink?
+We did not have a broad selection.
+I think we had water or milk in the fridge, and you asked for a glass of water, and so
+I went to the sink and I realized that we hadn't really been on top of the washing up,
+so I had to sort of gingerly wash a glass for you to get your glass of water, which kind
+of you touched it over the course of that meeting.
+And then secondly, like when we started out with Stripe, like the FinTech sector basically
+didn't exist.
+I mean, the word hardly existed, and it didn't exist now.
+Yeah, people just didn't think that, I mean, you know, teenagers weren't actually teenagers
+at the time, but, you know, people in the early twenties, college kids taking on, you
+know, PayPal or the incumbents or regulated financial services or whatever, you know, people
+just didn't think it was a good idea.
+So I don't know, you certainly were like, the vast majority of investors we spoke with
+in the first year or two of Stripe turned us down, so you were not anomalous.
+John, tell us what that meeting was like, and to just take you back to the moment, here's
+a picture.
+Stop, stop, stop.
+Here's a picture.
+No striking.
+Here's a picture of free, free nine-figure Chima.
+Oh my God.
+And this is when he shot at Macy's.
+Is that, maybe that jocks of memories, John, when that guy walked in with his khakis and
+that light pink Brooks Brothers shirt, what did you think?
+I don't know.
+I think you can, you can go back and find historical photos of anyone and use them too.
+Like, if that's the worst historical photo you have, that's pretty lightweight stuff,
+exactly.
+Jason, do you want to tell everyone in the audience what Stripe is?
+I mean, do we have to, okay, Stripe processes payments.
+This is a 10-plus-year-old startup that basically if you're a startup company and you want to
+do transactions, you use Stripe.
+For example, the all-in startup uses Stripe to pay for the tickets, and then we give these
+guys for some reason a half million dollars every year.
+No discount.
+They don't sponsor the event, and they're making a fortune.
+They got 10,000 employees, and the company changed the world.
+We've never been offered to sponsor the event, I didn't know this was an option.
+Well, you hit us up for a half-milli last year, I mean, maybe this year, you can hit
+you up.
+That's broadly accurate.
+I would just fact-check that it's nowadays not just startups, even though they run on
+Stripe also.
+The world's largest enterprises, Hertz, Amazon, Ford, all these kind of companies, and so
+when we started out with Stripe, we thought it would only be for startups.
+We thought those were the people who needed a problem solved, and we thought payments
+was broken for them, and as time went on, we just found out it was kind of broken for
+everyone.
+And is it public?
+How much volume you guys do a year?
+Do you guys talk about that?
+It's more than a trillion dollars a year.
+A trillion dollars a year is processed through your network.
+Yeah, which works out in global GDP is around 100 trillion years, so it works out around
+1% of global GDP.
+Incredible.
+And you could say, "Well, GDP is final goods, and Stripe processes more than only
+final goods."
+No one says that kind of stuff.
+I've only used that.
+Okay.
+Well, look, it's not exactly the right or a fair comparison or something, but Stripe mostly
+is used to sell final goods.
+I think it's reasonable.
+And just the other thing I'd say is people I think reasonably think of Stripe as a payments
+company, because that is certainly what we started out doing, and it's certainly the
+largest line of our business.
+But the thing we kind of realized a couple of years in is that the structural secular
+thing that's happening is that every kind of money movement is going from being manually
+orchestrated to being orchestrated by software, and there's some program somewhere making
+the thing happen.
+And so because of that, just because of what we hear from customers and the poll there,
+we're now helping with lending, we're helping with card issuance, we're helping with treasury
+and money storage, we're helping with cross-border money movement.
+Stablecoins.
+We've got to talk about stablecoins.
+Yeah, stable.
+Yeah.
+Why'd you do a stablecoin?
+Stablecoins are finally happening, and they're really useful.
+We followed crypto for a long time.
+The Bitcoin white paper dropped in 2008, the year before we started working on Stripe,
+and so it's been funny where Stripe and crypto have grown up together.
+And you know, we tried to make Bitcoin happen as a payment method on Stripe, just wasn't
+that good?
+It's a payment method.
+I mean, it's good as a store of value as kind of a gold substitute, but transactions
+are slow, transactions are expensive.
+You never know exactly how much you're going to get because it's not denominated in dollars.
+The stablecoins are now really good if you look at something on an Ethereum L2 or Solana
+or something like that.
+And so we bought a company called Bridge late last year who is building the Stripe of stablecoins.
+And so if you're...
+I mean, I think you guys have talked about them a little bit, but people like SpaceX
+using them for treasury management, people using them to offer US dollar services to
+people all around the world, just stablecoins are, I think, the first really big payments
+use case.
+And I think it's finally coming because the tech is good enough.
+Is there a moment, guys, where is it a regulatory event where you'll say the Visa MasterCard
+duopoly can get challenged?
+Is there a set of boundary conditions that you have written down where when you can check
+a few of these boxes, you know that it's time for those companies to get dismantled?
+The behavior we're seeing right now is that stablecoins are most interesting and seeing
+most adoption where there is some cross-border component.
+And so you need to manage corporate treasury around the world.
+You want to send remittances to people in other countries.
+Often it's people in other countries want to hold dollar balances or things like that.
+What we've always seen is this, I don't know, in the US, things work pretty well, in Europe,
+things work pretty well.
+And so we even see this pre-crypto where the way people pay for stuff has been radically
+changing your UPI in India, picks in Brazil.
+You have all these designed by central banks, actually really good kind of government-run
+Venmo solutions, those have all happened in emerging markets broadly and not in the US
+in Europe.
+We certainly keep our eyes peeled for that changing at some point, but I think right
+now, I don't know about it, would you characterize it that way that a lot of the interesting
+stuff we see is happening internationally?
+Yes.
+So with respect to Visa and MasterCard, I think an important thing to keep in mind is
+that most of the interchange fees that are charged to merchants, and you mentioned what
+we charge the all-in podcast, the vast majority of that flows right back to the issuing banks
+in the form of interchange, and almost all of that flows right back to the consumers
+in the form of the lending that the cards themselves represent, but then also in card
+rewards.
+Card programs are not actually big profit pools for most of the major banks.
+And so I think any substitute for Visa and MasterCard in that sense, the question of
+well, are the consumer rewards going to go down, are the consumer protections going
+to go down, would be extending less consumer credit, and maybe other points in that space
+are viable.
+But it is a set of trade-offs, and it's not as simple as this enormous rent extraction
+happening.
+John's totally right.
+I think the interesting use of stablecoins is cross-border is outside the US.
+I mean, the big use case of taking off right now is consumers in other countries seeking
+to hold dollars.
+We in the US here today, we obviously benefit from having able to do that.
+The vast majority of people in the world are subject to a worse currency, worse in the
+sense that it's less stable, it's more inflationary, storing savings is much less favorable.
+If you look at the Nia, for example, there are a lot of people in Nigeria, and the currency
+there has devalued by a factor of three or four of the last couple of years.
+And so that use case of considering being able to store dollars is really exploding.
+And we think about this really as kind of an analogy to the euro-dollar system, where
+the euro-dollar system in the '70s and '80s, this was a way for companies to store dollars
+and to have something more stable and reliable and so forth.
+But it was only except, I mean, I think the minimum transaction size was like a million
+dollars, and so there's kind of a very high barrier to entry.
+Whereas with stablecoins, now you can be a consumer in Ecuador, and you can have like
+a 10 US dollar balance, and that was just not a product that was accessible to you before.
+And so I think it's a really big deal, certainly for people in those countries, and in some
+sense also for the US, because the dollar status as the world's reserve currency I think
+is in the process of becoming much more deeply established.
+Yeah, that is the huge win for allowing stablecoins and making them legal, giving them rails,
+putting a site tether and all the bans and fugazy stuff they've been doing, or have
+done in all the lawsuits that they've lost and the bans in different countries.
+Having USDC, having yours and other ones in the United States means we can regulate them
+and they have to buy treasuries.
+And so, okay, dollar supremacy continues, and that's fantastic.
+But right now, all in, just using the example, could accept payment in stablecoin, correct?
+With Stripe, we just check a button and we get stablecoins.
+Correct.
+Yes.
+Okay, so then the next piece I have is we-
+Well, we'll follow up with you afterwards to make sure we get that.
+Well, I'm actually really excited that you guys are going to be answering the all-in-summit
+this year.
+That's exciting.
+Super exciting.
+No, Freeberg is great at securing the bank.
+The thing that's interesting though is, let's say we had a milli sitting in our Stripe account,
+and then we had to pay a venue or pay other vendors, and we're sitting there in your coins
+called Bridge.
+Is that what it's going to be called or it's called?
+Bridge is the company, it's the platform, and you know, that's like the right thing.
+Okay, so they're not a stablecoin.
+Correct.
+Correct.
+But you'll have a Stripe stablecoin at some point, yeah?
+Like one means.
+Bridge has one already.
+Yeah, Bridge has a small stablecoin, but we don't need to get into details, but Bridge
+is primarily set up software APIs.
+Got it.
+But you'll obviously have a Stripe stablecoin.
+The point is, if you turn on stablecoin acceptance for all the way in today, that will use USDC.
+Perfect.
+Now, could we then go pay people from our Stripe account?
+And then you could lower our fees if they were also doing stablecoins, is that exist
+today or is that something coming next year?
+Look, you could pay people in stablecoins, but again, to the point of where you'll see
+adoption first, paying people via bank transfer in the US, like, yeah, it's not great.
+It's kind of slow, everything like that.
+Yeah.
+It's fine.
+It's not the biggest problem.
+It's really cheap today.
+Yeah.
+Exactly.
+Where is the people who are using Bridge?
+It's like scale AI is, you know, they have to pay the contractors all around the world.
+And when you want to get money to people in the Philippines, that starts to get really
+annoying and expensive.
+And so just from our point of view, the like real hair on fire problem is the international
+stuff and domestic, I assume you're paying domestic suppliers, it'll come later.
+But I think you're answering narrowly to stablecoins, I think everything you just said is right.
+But I will say, I think, Jason, you're intuition that, man, it's really inefficient and annoying
+to engage in B2B transactions and to get these invoices paid and just like the whole system.
+And if you look at most companies, they're losing 1-3% of revenue to AP and AR.
+Now, some of that may be because of the transaction rails themselves.
+A lot of it just because of, you know, broke inefficient processes where you have humans
+setting invoices, humans reconciling them, you're trying to line up transfers in your
+bank account statement and figure out what corresponds to what and so on.
+And that's super inefficient.
+And so we're separately.
+I mean, silicone's going to be part of the solution here, but there's more to it separately.
+We're trying to solve that with a product called Stripe Billing, which we actually
+just announced last week has passed, you know, half a billion in ARR.
+And so we...
+We can send an invoice to somebody, which might be gone.
+Exactly.
+Exactly.
+So that's like fresh boats or whatever those other products in the market are...
+Oh, it's amazing.
+All the back office.
+A version of a network effect inside of Stripe for their customers where if I just allowed
+you guys to just be integrated into my GL somehow and you gave me some kind of phantom
+bank account, why isn't it just a ledger entry if I'm just making a payment from me
+to somebody else that's also on Stripe?
+The thing we really want to solve is all the calculation, the ID verification, the risk.
+Like, those are the things that are actually expensive.
+If you look at this flow to our companies, lose their money today, having said that,
+you're right.
+You know, where the fraction of money movement on Stripe for, you know, the two counterparties
+are both part of the Stripe network is obviously growing.
+And so I think that'll be another way we can reduce fees over time.
+Although, again, I actually think the biggest part of that is it's going to be because we
+reduce fraud.
+Like both counterparties are known.
+And like...
+No, I talked to a company, a payroll company recently, and they were describing, you know,
+how big a deal it is for them that, you know, both signed up, you know, fraudulent companies
+or whatever.
+And, you know, they can lose millions of dollars in a single attack.
+And so having some kind of trusted node rather than just like a routing and an account number,
+that would be a really big deal for them.
+Look, you have a very good pulse.
+And what I would say is that as a subset of the economy, you probably reflect a large part
+of the global economy.
+Have you ever been approached or have you ever considered on a regular basis publishing
+some sort of economic sentiment?
+One of the big things that we've talked about is how many backward revisions there are to
+everything from non-farm payrolls to GDP that they've become so unreliable.
+And so it's very difficult for people that are transacting in market to know what to do.
+Have you guys ever thought about that?
+Because I'm sure that you have a much more accurate sense of where the economy is than
+many other people.
+We have, and I feel a bit ruthless, you know, with you asking the question because I feel
+like on some level, we should have done it.
+And the thing that makes it kind of tricky is because, well, two things, one, Stripe is
+not like a full cross-section of the economy.
+You know, we're more biased towards online, we're more biased towards innovative companies,
+you know, whatever.
+It's kind of net that out somehow.
+Anyway, there can be these stories where, I mean, during COVID, like the online economy
+was doing great.
+The offline economy is sort of a different story, so the interpretation can be a bit tricky.
+But then just the second thing is the stripe business is growing so quickly and changing
+so fast that, again, you know, it's not necessarily representative of the economy and
+even if Stripe is way up here over here, you know, you have to be a bit hesitant to drawing
+conclusions from that.
+Having said that, I think in principle, you could draw, you know, some conclusions.
+And you know, one thing we did look at was just inflationary data over the last couple
+of years.
+And I think you can construct and the team did construct a pretty reliable kind of leading
+indicator for inflation.
+And so we would like to share that openly because, you know, I think it's, I think it's
+a public good, further to be better and more reliable economic data.
+All right, Freiburg, before we get into the doc, you got any question for the boys here?
+If you were to kind of build the financial system from scratch today, we've got Swift,
+we've got banks that store assets, we have credit cards and these credit card networks,
+then we've got transaction service providers that sit on top of this.
+What's the right solution if we were to build a financial system for the world from scratch
+today? And can you guys see a world where we bridge away from the credit card networks
+where we move out of some of these legacy systems, or are they so deeply ingrained in
+everything that it's going to continue to be the same, where we've got to build these
+complicated solutions into and around the legacy of financial infrastructure?
+I'll give my view and then I'm curious what Patrick has.
+I would say, firstly, there is just general tech scalability.
+You know, the finance industry has its version of the mine shafts, for sure, where everything
+should be highly scalable in real time.
+And I think in a way, stablecoins are solving something that you don't technically need
+full decentralization to do, but the ability to make kind of real-time payments any hour
+of the day or night is a useful property.
+And again, some private systems have also built that.
+I think a big one for us is trust.
+And the fact that the fraud problem hasn't really been solved in online payments.
+A big reason people come to Stripe is basically we are a reputation network across the internal
+economy.
+And so when someone comes and buys something from a Stripe user, 93% of the time, we have
+seen that card before.
+And so the merchant can know something and know that they can trust this end user.
+And it's gotten to the stage now where if someone comes along and buys with a credit
+card, if they're, you know, signing up with an email address or a phone or something that
+we haven't seen before, that is just ipso facto suspicious, because, you know, they are coming
+along and maybe trying to, it's a stolen credit card or something like that.
+And so a big part of what Stripe ends up doing is acting as a reputation network to keep
+fraud out of the system that maybe you would have wanted to design in from day one.
+Well, fairness, Jamal, told me I could use that credit card anytime I want.
+I don't think you remember, but I think you need to turn my account back on.
+Freeburg, I just got news from our CEO, John MasterCard just canceled their sponsorship
+of all in Summit.
+So it's just costing us a fortune this podcast so far.
+Two things.
+One, to your point about just all these different networks and so forth, I think stablecoins
+are going to be a big part of a big part of the solution.
+I actually don't think that's going to supplant all the consumer facing networks.
+I think we're going to see consumer facing networks built upon and that, you know, substantially
+leverage these things, but I think stablecoins will probably be the common rail.
+And then just secondly, I think part of what you're hearing is most businesses lose more
+money to fraud than they do to the kind of pure transaction costs themselves.
+And so, you know, you're hearing us talk a lot about fraud here.
+And that's because one, it's just, it's a huge economic cost for these businesses today.
+And there's even indirect costs where you make the consumer experience more hostile because
+you have to protect against, you know, possible fraud.
+Like, you know, why do you have to type in all these networks for you to adapt?
+Yeah.
+All this stuff.
+Exactly.
+But then secondly, I think these, we can just see it in the data.
+These fraud ones are actually getting worse and harder because, you know, ML, AI, globalization,
+everything.
+Yeah.
+Exactly.
+And so like, you know, various fraud metrics across the industry and the ecosystem are
+way up over the last couple of years, you know, on strike actually down by 80%, but it's,
+it's really becoming a cute issue.
+All right.
+And we'll get into staying private longer.
+And when you guys are going to pull the IPO trigger later in the show, but we got to get
+through this doc and we got so many great topics to talk about.
+Let's get to our first story here.
+It's a kind of a fun one.
+Jamie Diamond went on a rant about remote work and zoom in a town hall.
+And here's a snippet.
+A lot of you were on the zoom and you were doing the following, okay?
+You know, look at your mail, sending text to each other over and ask the other person
+is, okay, not paying attention, not reading your stuff, you know, and if you don't think
+that slows down efficiency, creativity creates rudeness as though it does, okay?
+And when I found out that people are doing that, you don't do that.
+My goddamn meetings, you're going to meet with me.
+You got my attention.
+You got my focus.
+I don't bring my goddamn phone.
+I'm not sending text to the people, okay?
+It simply doesn't work.
+The young generation is being damaged by this.
+That mean they may or may not be in your particular step, but they are being left behind.
+You're being left behind socially, ideas, meeting people.
+In fact, my guess is most you live in communities, I have a lot less diverse than this room.
+That's not how you run a great company.
+We didn't build this great company by doing that, by doing the same semi-disease shit
+that everybody else does.
+Colson Brothers, tell us about how you run Stripe.
+Are you remote?
+Does this resonate with you four years after we've come out of the pandemic?
+I love listening to Jamie Diamon Rants, like, I feel like that's business, ASMR.
+Business ASMR.
+That's out to be a great podcast.
+I was about to say, I'm subscribing, that's an instant $10 a month subscription.
+What do you think, John?
+I don't know.
+People just said a lot of sh*t during the pandemic.
+Like do you remember, it's like, oh, handshakes are going to be over.
+Business travel is going to be over.
+Every company is going to be fully remote.
+I would say Stripe broadly is in a pretty similar spot to where it was beforehand, which
+is most people go into an office, like most people are part of our San Francisco office
+or New York or Dublin or Singapore or wherever.
+And then we've a bunch of people also who work remotely.
+I think kind of obviously, you know, Jamie is right on some points.
+I think also working remotely has had a bunch of benefits where there's a way larger talent
+pool available to companies like Stripe.
+And there's a lot of people, you know, you see the kind of the two body problem where
+it allows a lot of couples where, you know, maybe one partner is assigned to some hospital
+in Idaho and like they don't get to choose what hospital necessarily they got assigned
+to and the other person gets to work a high paying tech job.
+And so, I don't know, I think when like one of the theories for declining dynamism in
+the U.S. and declining TFP is that allocates of efficiency of, you know, people declined
+as women enter the workforce because now you have, you know, what John describes this
+two body problem where, you know, both people have to make coordinated switches.
+And it's almost remote work, all of it, actually.
+Yeah.
+Freeberg, you're running a company now.
+You're the CEO of Ohalo.
+Tell us, does this resonate with you?
+What do you think?
+Especially by younger people, his point and like being rude or being focused, being in
+the meeting and then like maybe there's too many meetings where people are partially
+paying attention.
+Maybe there should be half as many meetings and people should be paying attention.
+What do you think?
+Well, there's always room for optimization that we deal with this to too many meetings,
+too many people.
+I think what was most striking for me about the Jamie Dimon rant and the resonance it seems
+to be having particularly in Silicon Valley and particularly with folks that are in leadership
+positions or on boards is that this is another example of what I think is kind of a different
+tenor for leaders in business right now relative to where we were a few years ago.
+Leaders are starting to step up and speak their mind and speak more directly and lead
+from the front rather than lead from the back.
+I think the last couple of years, and I would say that the whole kind of transition away
+from wokeism and coddled employee workforces, which is something that a lot of folks talk
+about.
+I'm not trying to just characterize it.
+I'm just saying that's the characterization that's been placed on it is that the employees
+made the decisions and then the leaders kind of said, "Okay, I'm subjugated to the employees,
+wins and needs and look at what's gone on with Zuck."
+He said, "You're with me.
+You're against me.
+You're the buyout option."
+Elon obviously was an exemplar of this at Twitter.
+We've now seen this become Coinbase Brian and his letter and we've now seen this become
+I think a bit more of a standard in the kind of emergence in the post-COVID era that leaders
+can lead from the front, speak directly and say, "This is the way things are going to
+be.
+My job is not to coddle my employees.
+My job is to lead my employees so that our organization, our team wins and we achieve
+our mission."
+That's the objective.
+It's not to create a family workplace for everyone to be happy all the time.
+It's to help the organization succeed.
+I think I have heard from people individually.
+I've seen this tenors shift underway right now and I think that Jamie Diamond is another
+kind of exemplar of this that seems to have some resonance.
+All right, Shamoth, I want you to respond specifically to this next clip.
+Let's play the second clip about organizational bloat.
+Every area should be looking to be 10% more efficient.
+If I was related to part of a hundred people, I guarantee you if I wanted to, I could run
+it with 90 and be more efficient.
+I guarantee you, I could do it in my sleep and the notion these bureaucracies, I need
+more people.
+I can't get it done because you're feeling that requested don't need to be done.
+Your people are going to meet as they don't need to go to.
+Someone told me to pursue some as wealth management that they had to go to 14 committees.
+I am dying to get the name of the 14 committees and I feel like firing 14 chairman of committees.
+I can't stand it anymore.
+All right, Shamoth, the bloated bureaucracy at big companies or those?
+Well, you know, there's that adage that says something akin to 50% of advertising is
+useless.
+We just don't know which 50%.
+I think it's probably true from most corporate structures in general, which is that a lot
+of the organizational bloat has evolved because of the way that people have responded to how
+you use technology.
+So meaning if you went look back 50 years ago, if you look at that famous picture of
+the Microsoft early team, they didn't rely on software necessarily.
+There wasn't Salesforce, there wasn't Workday, there wasn't all of this infrastructure.
+And so instead, they probably organized by what they were good at and they just tried
+to do things efficiently.
+And I suspect that many companies in the absence of technology found a way to just be very efficient.
+That started to change when you had these rigid demarcations of where one job ended
+and another job started.
+And part of why that happened is because you had all this software that went in and
+convinced people.
+This will create efficiency, but in return, the chief marketing officer's job is X, Y,
+and Z.
+This is how the roles are defined.
+This is how people do it.
+And so I think that the reason why things have become so bureaucratic and bloated is
+that there is just this propensity to run towards software because you think it's a solution.
+At best, it's a symptomatic aid.
+It doesn't address the root cause and in fact, it promotes bureaucracy and it promotes the
+bloat that Jamie's talking about.
+And if you look at Jamie's P&L, he spent $16 billion a year on IT.
+And I suspect that if you streamline the hat, you'd actually have half as many people because
+they'd be doing the job in a wholly different way.
+And by the way, the counterfactual to it is if you look at companies like Facebook or
+Google or Tesla or SpaceX, who designs, and I'm sure Stripe is the same, who designs
+a lot of stuff internally that's custom built for their org.
+I think the way that you see this in the revenue per employee and a bunch of these other metrics
+in terms of the efficiency of those companies.
+So I think what he is talking about is that he is a victim of this push to productivity
+because he would look like a Luddite if he didn't to drop technology.
+But by adopting the off the shelf stuff, he introduces organizational bloat because
+these things are demarked very, very rigidly.
+Yeah, you got the marketing team, as you mentioned, using HubSpot and then you got like
+the sales team using a tool for organizational bloat.
+The other thing I just want to say on the first topic is I've mentioned this before.
+Other than engineers who are naive but can be extremely productive from day one, there
+are very few other job types where naivety is an asset.
+Most people early in their career are in a J-curve where they are negatively contributing
+and the whole goal is that you invest in these people so that they come out of the
+J-curve.
+There are probably other jobs that are like engineering, but many, many are not.
+And so I think it's important to get the kind of mentoring you get by being in an office.
+And in the absence of that, I think these young people like Jamie said are totally lost.
+That's on them.
+But then for the company, they're completely unproductive and useless, which is on us.
+Hey, John, Toby, I don't know if you know Toby from Shopify, but he did this.
+It's like zero based budgeting kind of concept for meetings.
+He just purged all meetings at the beginning of the year.
+He just like deleted everybody's meetings from the top down.
+I'm curious how you think about bloat and just all of these meetings and committees.
+Do you worry about that at Stripe?
+We know Toby very well and I don't know, I always feel like, yeah, I'm tempted to take
+some of the ideas.
+Like we haven't done the meeting deletion one and you just say, oh, the meetings get
+recreated.
+They measured us and they didn't, it sounds like.
+And I do always enjoy Toby's perspective, which I think that many organizational problems
+are in fact software problems and you just need to write a script literally.
+Like I think he wrote the script from the Google Calendar instance, but there's kind
+of this purity that you're over intellectualizing your problems.
+And I do agree with Jonathan, the remote thing where it's very dangerous.
+One thing that can be dangerous with as CEOs think about this stuff is, I think there's
+these unfair, anecdotes that feel unfair that get people really riled up, the quiet
+critters, the anti-work subreddit, you know, all these talk of people working two jobs.
+And that generates a lot of energy with corporate leaders, but you don't want to design your
+policies around like the bottom five percent of the company.
+That would be a horrible mistake.
+Yeah, you want to design your policies against the top-town, do we have some like outrageously
+productive remote people and they're off and again, the cabin, I know somewhere just,
+you know, coding up a storm, the thing that we have seen and interestingly, we measured
+this before COVID because we were doing a lot of remote hiring and we wanted to see,
+we wanted to see how much we should lean into it, is that it is not good for early
+career people.
+We could actually measure it in our productivity data before the whole discussion about remote
+work happened during COVID.
+And it's bad from a work point of view.
+It's also just bad from a personal point of view where they go mad because they're 23 years
+old.
+And they're in solitary confinement.
+Exactly.
+Literally solitary confinement.
+It's ridiculous.
+And by the way, breaking news here, Jamie Diamond now knows which 2000 or I'm sorry, 1,739 employees
+to lay off first, there is a coworker, I hoard petition to get Jamie to retract his
+statement.
+So the opt in has been created.
+If I know Jamie, I know he'll be retracting that statement right away.
+Absolutely.
+Ben, to the pressure of those 1,700 mids, Patrick, how do you deal with mids at Stripe?
+How do you deal with the mids?
+The people, I'm not saying you have any, but maybe you've run into, because you've
+got over 10,000 employees.
+When somebody's average, that must make you crazy.
+How do you deal with it?
+No, the median employee at Stripe is awesome.
+The median employee at Stripe is not the median person in the population at large, although
+I think the median person in the country is we, you know, we employ people in Oregon.
+It's also quite good.
+You know, mids are people who are just average people, not the above average Stripe people
+who opt into that.
+But how do you deal with low performance?
+It's kind of what I'm getting.
+Well, look, you need to have an aggressive performance management culture and to stay
+on top of that.
+And look, it's not good for anyone to keep those people around, because nobody likes
+feeling that they aren't succeeding.
+And so if those people are, you know, the careers aren't advancing, they're not getting,
+you know, positive feedback from their manager, from their peers, they aren't shipping things
+like whatever.
+This is just like not a good equilibrium for anyone.
+So we really try to, you know, stay on top of that, we track it closely.
+The thing just on this discussion broadly to say is, I think people very readily fall
+into a kind of normative, moralizing perspective on this stuff of people should be in the office.
+They shouldn't be in the office, but like there's a lot of should here.
+I think it's helpful to just one kind of this John reference with, you know, some of the
+analysis just, you know, be quite empirical and objective and just like look at what the
+data says.
+And then second, just recognize there's a lot of heterogeneity as in people have different
+preferences, people have different abilities to work effectively, you know, when they're
+by themselves and, you know, some don't, organizations are doing different kinds of
+work.
+Nvidia, you know, last I checked is doing pretty damn well.
+And you know, Jensen is on the record saying he, you know, doesn't give a shit about where
+you work.
+Coinbase, Shopify, you know, they're all these, you know, remote first companies.
+And then, you know, I was recently chart the folks at Jane Street and they really believe
+that, you know, being co-located and being able to share ideas and the trading floor and
+so forth is really important.
+But I don't think these pictures are necessary or these worldviews are necessarily contradictory.
+They probably hire different kinds of people or in different kinds of businesses and so
+on.
+And so I don't know.
+I guess I'm just skeptical of flat shoulds in this space and I did a lot of them.
+Yeah.
+Many paths to heaven.
+All right.
+So let's move on to our next story.
+Just say last, just keep in mind and labor productivity in the US is up like 20% in the
+last 10 years.
+And so just like, again, you just, you just look at the data, just the median person in
+the economy or the average person is producing 20% on an inflation adjusted basis more than
+they were 10 years ago.
+Yeah.
+I mean, that's going to keep ramping up with AI and all these amazing tools that are coming
+out.
+We'll leave that on the side for now because that would be an hour long rabbit hole.
+We could jump down, but we got to get back into doge.
+The number, well, I've heard a couple of criticisms of doge.
+One of them is it's one side.
+We're only hearing about, you know, people on the left doing grips and USAID.
+The other one is, hey, you're, you're pointing out little tiny things like USAID.
+What are you going to get to defense spending and Social Security?
+Well, here we are.
+Washington Post is reporting that in between doing sets of 47 pushups, Defense Secretary
+Pete Haggseth asked senior leadership at the Pentagon to develop a plan to cut 8% from
+the defense budget each of the next five years.
+That's compounding 8%.
+Here's a chart.
+We're talking about close to 300 billion in savings over five years if they hit, which
+isn't a crazy target 8% a year.
+It's just crazy in our country where we haven't even been able to have our Defense Department
+pass a basic audit.
+If you've seen those type of reports, let's pause there and just talk about military spending.
+Chima.
+I think that military spending needs to sit downstream from technology because if it doesn't,
+you're sort of misappropriating the money.
+And what I mean is that we're inventing incredible capabilities in AI and autonomy.
+I think that you need to take those things first and figure out how to projectize them
+because I think that builds the kind of modern war machine we need.
+Otherwise what happens, I tweeted about this, Nick, maybe you can find it, but like the
+CBO red flagged a project where the Navy was about to appropriate $1.2 trillion to build
+frigates.
+Now, there's a body I think of military planning that says this is a projection of power and
+so you need to spend this kind of money because people want to see the big boats and the big
+iron in the water.
+Okay.
+And maybe there's something about that.
+But the reality is you can't be spending $3 or $4 billion a boat and taking 8, 9, 10 years
+to build these things.
+So this is not sustainable.
+And part of why they do that is it's not coupled to what's actually happening with respect
+to innovation, where there are core pockets of companies, Sironic just announced a $600
+million raised today, Sildrone announced hundreds of millions of dollars of contracts with
+the Navy.
+Andril is doing that with the army.
+So I think that military spending needs to happen downstream from what's actually happening
+in technology, broadly speaking, we don't have that.
+What you have instead are system integrators with extremely deep connectivity that are
+able to contract well, and not necessarily to invent well.
+Freiburg, any thoughts there on cutting defense spending?
+Obviously, we have to Tremont's point, amazing founders, like my guy, Palmer Lucky, cutting
+the cost of very important, uh, he's not your mess.
+He hates.
+That's my guy.
+He hates.
+That's the, oh, no, we, it's all a joke.
+Everybody, calm down.
+You just have a little bit.
+Listen, I know all the board members, I got a personal relationship with him, and he's
+going to do everything he can to your ranch.
+He loves it.
+He loves it.
+Yeah.
+Everybody needs a foil.
+It's all sorts of problems for the rest of us when you go out and talk about people
+for no reasons.
+What did you talk about?
+I never talked about shrimp.
+Guys, we don't have any beef.
+You can't call your employees mid for no reason, for no reason.
+You just like, Oh, what about your mid?
+That was a hypothetical.
+Yeah.
+Okay.
+I did say that you guys pocketed 500 large.
+Look, we, we can come to the summers and, you know, Palmer style.
+Just like.
+Yeah.
+Oh my God.
+Yeah.
+And the things I've said about you.
+Please.
+Yes.
+Absolutely.
+Shout out to my guy.
+Palmer lucky.
+But what do you think?
+Freeback for sure.
+Let's get back on track here.
+Okay.
+So here's what I think.
+Here's what I think.
+If you take defense down to first principles, there was an excellent tweet that we were all
+texting about yesterday.
+It may be observation that Trump's negotiations with Russia and China, where there's all
+of this hemming and hawing about those negotiations being complying with the wants
+and needs of dictators may actually be a shift in strategy on the global relationship
+the United States has with other global powers.
+In particular, a shift from the objective being about US primacy and the US being kind
+of the sole great power on earth to recognizing that that's no longer the case and that in
+a multipolar world, we no longer need to invest in wars, need to invest in conflicts, need
+to invest in defense with supposed allies to try and build up our strength across the
+globe.
+And I'm not saying that this is necessarily the right strategy, but it was an observation
+that maybe the strategic imperative is now to have kind of a multipolar stance in the
+world rather than a stance of primacy.
+And in that framing, you then asked the question, okay, make that the case now.
+If we do agree that we are all going to settle into a new world where China, Russia, the
+United States are not necessarily equal powers, but shared powers across the globe.
+In that context, do we need to have as much of an investment in global defense?
+Do we need to continue to pour dollars into building up arsenals and military bases and
+troops and stations and positions all around the world?
+Perhaps not.
+Perhaps the world gets divided peacefully and we open up global trade relationships and
+everyone benefits economically from the advances in technology and improvements in productivity
+and the world order is peaceful, but multipolar.
+Maybe that's the new era that we're entering.
+And in that context, you don't need as much of a defense.
+And separately, to Jamal's point, there's different technology that's now in play.
+We've seen it in the Ukraine-Russia context that a $10,000 drone can destroy a $10 million
+piece of equipment.
+And China now has drone factories that can output millions of drones each month.
+So if China develops this new type of arsenal with millions of autonomous flying systems
+that can go and attack troops and attack expensive pieces of equipment, do we really
+need aircraft carriers?
+Do we really need tanks?
+And I think that's the whole HEGSAP-led Trump-led conversation that's underway in defense right
+now.
+Number one, multipolar.
+Number two, therefore, we don't need as much defense spending.
+Number three, maybe the defense spending that we do do should account for the new technology
+on in play in the battlefield.
+And that really changed as the character of how the defense department is structured
+and how funding is structured.
+So that's really, I think, the way to look at it versus, "Hey, let's just cut defense
+spending for cutting sake."
+And that might be what's going on right now.
+A holistic view of it.
+Patrick, any thoughts on what we're seeing in defense tech and saving money through
+Doge?
+Well, obviously, what Andrew and others are doing is pretty amazing.
+But we're obviously not defense experts, but sort of just bring the credit card merchant
+perspective to bear here.
+We naturally just go and look at the time series and the data around it.
+And I guess I'm struck by-- and again, maybe I'm getting some of the details wrong here.
+This is outside of our zone.
+But as far as I can tell, the cuts proposed over the next couple of years for the defense
+department are of approximately the same magnitude as the reduction in the defense budget that
+occurred between 2010 and today.
+And so it's not like this is some unprecedented transformation in DOD budget.
+We've done this.
+And then secondly, as far as I can tell, one of the most ecumenical, uniformly shared
+bipartisan issues in Washington is the inefficiency and the profligacy of defense procurement.
+Jim's fallows writing a book about this in the late '80s.
+If you had Augustine's laws and other whole book about this, just everyone seems to fervently
+believe that defense procurement is monstrously inefficient.
+Now, it's possible to make budgetary changes without fixing that.
+But obviously, the prospect of meaningful improvement there seems like it would be
+really beneficial.
+And if I can just give a quick book recommendation, this book "Boys" by Robert Corum by John Boyd,
+the Air Force colonel who is part of the reformist movement.
+I feel like everyone in Silicon Valley has that book on their shelf, and no one's actually
+read it.
+But it is a...
+Exactly.
+It is quite a reference to sprinkling some Uda loops into your remarks all those hours.
+Exactly.
+Yeah, yeah, yeah.
+Sounds smart.
+But that is a great book.
+And it's a book about Air Force procurement, essentially, where he had his basic historians
+that the Air Force generals of the time wanted planes that were bad.
+And he had a theory about better fighter jets, and he had his fingerprints all over the F-16,
+and the A-10, and the F-15, and various aircraft.
+And it was a real battle to get the Air Force to produce better aircraft, and the generals
+really wanted these bad aircraft that they had planned.
+And so that's a fun read at this moment in time when it feels like we have this similar
+transition from Manda.
+Tell us the name of the book again, I know there's many books about it.
+It's called "Boys" by Robert Corum, and it's a really engaging read.
+It's also just very well written.
+It's this kind of narrative non-fiction style.
+Yeah.
+There it is.
+Okay, everybody.
+And another book selection from the All In Book Club, brought to you by Stripe, and use
+the code "All In" to get a year free.
+We have to come to the Stripe Press books.
+Absolutely.
+Oh, you do actually have a series of cool books.
+Yeah, we'll plug those towards the end.
+All right.
+Tremoth, you added a crypto update, a crypto corner is back.
+We had an exciting week of innovation in the crypto space last week, Argentine President
+Millet, who is a hero to a lot of people on the right or for government efficiency, promoted
+a meme coin.
+It was called Libra, Dalesign Libra.
+And he originally tweeted, "This private project will be dedicated to encouraging the
+growth of the Argentine economy with a link to Libra for his citizens to go buy it and
+buy it they did."
+But he deleted that tweet when this whole thing came apart and said, "I was not aware
+of the details of the project and after having become aware of it, I decided to not continue
+spreading it.
+The market cap ripped $4 billion.
+It crashed 95% as these meme coins always do.
+74,000 traders lost almost 300 million.
+24 wallets had losses over a million.
+And Millet has been sued 100 plus times already, and this just happened last week.
+He's being investigated by his own government now.
+And there is an impeachment attempt underway by the opposition.
+Millet's team told CNN that his endorsement of the coin was a mistake.
+Really?
+Oh, wow.
+Going out on a limb there.
+Mr. Millet never actually owned any Libra and was not associated with the coin.
+I think family members maybe put him up to it.
+The details of why he brought it remain a little bit unclear.
+There's a lot of speculation.
+Jamath your thoughts.
+It's kind of crazy.
+I mean, he was on such a positive upswing of momentum.
+It doesn't make much sense why he got embroiled in all of this.
+The problem with this though is I think that the cover-up is always worse than the crime
+itself.
+So the first message was, you know, very Clinton-esque, like I did not have sexual relations
+with that woman.
+He was like, I did not endorse it.
+I just shared it was his justification for how he could rationalize what he did.
+The kid that's behind this thing, Hayden Davis, I think is his name.
+He was on coffeezilla was an incredible one hour.
+Did you see that?
+The coffeezilla?
+I saw some of the clips on X and it was pretty brazen because he essentially said that he
+had Javier Malay in his pocket and then there were text messages that use some pretty colorful
+language to basically say the same thing.
+Then on top of that, there were some text messages that seemed to implicate Malay's sister
+as having got some of the money from all of this.
+I don't know.
+The whole thing just makes absolutely no sense that he was doing so much good.
+And now he's going to go through this whole cycle of trying to wash his hands of this whole
+thing.
+It's a complete waste of time and effort.
+I don't know why he did this.
+And there was another interesting little tidbit, Friedberg friend of the pod, David Portnoy,
+supposedly he's been getting in on this and he's a gambler and he loves gambling and he
+looks at his gambling.
+Obviously, he had put reportedly millions of dollars into this and this guy we're talking
+about gave him his money back.
+The sky also has something like a hundred million dollars sitting in a bank account anywhere.
+What's your take on all these meme coins, Reber?
+I don't like them.
+I don't think that they're like good.
+I don't think they're productive.
+I think that a bunch of people are going to put money in and lose money and a few people
+are going to make a lot of money.
+But at the end of the day, it's no different than the people that sell trading cards or
+the people that create and sell collectibles and get paid for them.
+And this is just effectively a digital collectibles business.
+Unfortunately, I think it's amplified by a thousand X because collectibles businesses
+have friction and they're manual and you got to ship them.
+This creates a bit more of a digital frenzy where you see the social feedback loop happen
+really quickly and real time and that drives these things to a high value, which means
+people have the ability to lose a lot more than they otherwise would.
+But look, I mean, these are not helping the financial system get rebuilt as we talked
+about earlier.
+They're not creating productive value.
+They're entertainment mechanisms, just like any other kind of gambling system might be.
+And people can choose to do that if they want, but personally, I'm not into it.
+I just think it's stupid, but whatever.
+Patrick, do you think these are collectibles or do you think they are perceived by the
+people buying them more like securities and more like Bitcoin?
+They do to steal them on the other side of the argument.
+They do trade with a ticker symbol.
+They are traded on major platforms like Coinbase and Robin Hood and people share charts about
+them.
+So where do you stand on it?
+You're in the finance business.
+Meme coin's good.
+Meme coin's bad.
+I'm basically with Dave.
+Well, they seem to me to be maybe analogous to gambling, which I don't know that we want
+to ban gambling.
+Like if you're able to do it responsibly and you understand what you're getting into and
+so forth, like I guess that's fine.
+But as you say, judging by the tweets that I see, there are awful lot of ticker symbols
+and charts and prognostications about future price trajectories and so forth that lead
+me to think that people are placing somewhat more weight on the asset and security value
+of these as compared to some numinous intrinsic aesthetic value.
+Yes, John, maybe two things could be true here.
+People are gambling and they are being presented as financial instruments and they're trying
+to trick the suckers at the table.
+The suckers, in this case, being the people who voted for Malay to Tremont's point.
+This is the unbelievable cell phone of the of the decade.
+Yeah.
+Look, I don't like meme coins.
+I think they're bad.
+I think they're part of, like Patrick said, a broader swathe of things that we need to
+figure out, societally, where the legalization of sports betting and combined with highly
+targeted advertising.
+I don't know if you guys have seen the stats on, you know, whales in sports betting, losing
+a very large amount of money and it's just these heartbreaking tales and there's a very
+large number of them of people kind of losing much more than they expected.
+And I don't know, we have to reckon with these societal questions, I don't think the super
+easy answers.
+They come along from time to time.
+I only learned recently that state lotteries are relatively recent phenomenon.
+Like, I think it was one state started doing it in the 1970s and then a bunch of the other
+states followed suit, but it's kind of odd when you step back that like I've passed a
+billboard on 101 for power, you know, the state of California trying to, you know, get
+me to buy lotteries as a negative EV bet.
+Yeah.
+But that's become very normalized.
+And so I think it's a bucket of hard questions here around, you know, meme coins, sports gambling,
+whatever, I don't know what you do, but there's a lot of meme coins are not the only place
+you find these very heartbreaking stories.
+This is the first time where they've actually talked about or at least where I saw the details
+of how this stuff happens because he laid it out.
+And there's these people called snipers that go and like pump up the bids right as soon
+as the coin gets launched and then they're able to feed.
+So there's like this entire mechanism, it's all so shady.
+I was gonna say some there where I feel like the specific thing within meme coins, probably
+most pernicious is like the rugging dynamic.
+And if you could have meme coins to a girl, but without the, without the pump and rug,
+if it was like, I don't know, just some mimetic tracker of some sentiment or something, like
+maybe that'd be okay, but the, like the particular way in which they seem to be employed is like,
+yeah, some, some sort of discontinuous run up and then about the rug.
+What do you think, Jacob?
+I agree with you, chama.
+Malay had the greatest PR run of all time, I think, whoa, I mean, he became an inspiration
+to all of us here in America who were concerned about the deficit and out of control spending
+and ridiculous departments.
+We heard Jamie Diamond talking about ridiculous committees and all this nonsense.
+I don't know if you guys remember, but remember, he was like, Minister of Culture, Afwera,
+and Minister of Gender, Afwera.
+This was the precursor to, of course, Doge, where now we're like USA, deleted, Department
+of Education, deleted, you know, Defense Department, minus 8%.
+And you know, what I really find terrible about this is that what it means for leadership,
+what Malay did was he rug pulled the people who put him in office, the people who voted
+for Malay, are the ones who got hurt here.
+And when you think about leadership at its core, it really is about putting the needs
+of your constituents ahead of your own interest, the needs of your investors in the case of,
+you know, if you were running Stripe, right, you got to think about all these shareholders.
+Leadership, you know, at its core is, I think, setting the example, right?
+You set the standard, the moral, the ethical, the vibes, the culture.
+You set that standard, he had set such a great standard that we all loved, and, you know,
+the appearance of impropriety is impropriety in my mind.
+That's the leadership standard that should be here.
+So even being near this, your sister launching it, your brother launching, whatever it is,
+he then went on to taunt.
+This is where I've really, you know, like people make mistakes, but, and this is a stupid one
+to make, but the taunting of his own followers, you know, I'm out on Malay right now.
+This is what he said.
+And the reality is, if you go to the casino and lose money, I mean, what is the claim
+if you knew that it had these characteristics?
+This is another failure of leadership.
+Leaders own their mistakes.
+They don't attack the victims, you take ownership of it.
+And the way you should judge people, I think, is what they do when they're given a lot of
+power and what they do when they make mistakes.
+Malay is a failure on all of those fronts.
+It's absolutely abhorrent.
+That's it.
+No, I'm just, I'm on fire about it.
+I just think it's like really terrible.
+Do you need help getting off your moral grandstand now?
+I do.
+Actually, yes.
+Yeah.
+I'm over here.
+I'm sorry.
+I actually care about morals, ethics and leadership.
+I think that there's a standard set by these people.
+That's what I, that's what I think about when I think about you.
+Yeah.
+Of course.
+Thank you.
+All right.
+With friends like these calls and brothers.
+Can you imagine?
+Imagine, please say there.
+Okay.
+I'm so annoyed.
+Can you please say the name?
+God damn, I am pronouncing the Irish.
+Okay.
+We speed things up a little bit.
+We come with them together.
+It's a little bit different.
+You wouldn't know this from being from Sri Lanka.
+A great country.
+You know, don't accept.
+You guys wouldn't know why anyone watches this show, would you?
+I don't know.
+I don't know.
+Somebody's just jumping into this right now.
+Everybody says the same thing.
+You have no content for this.
+It's funny.
+Why do you make every show a train wreck and we have to get it out of it?
+The banter is why people come.
+People listen.
+You know, so many TV shows are about it.
+It's nice to have friends.
+I mean, you look at friends or how much your mother, my wife and I are rewatching the West
+Wing right now.
+Oh, great show.
+And it's basically a show about, you know, but it's just like the wrong buddies and loyal
+to each other and everything.
+And I think the underlying idea behind lots of TV shows is it's nice to have friends.
+And I think that's the success they all have.
+The West Wing, by the way, is an incredible, which season are you on?
+It's an incredible show.
+We're up to season four now.
+God.
+I've got to get five or seven.
+Five or seven.
+I've never been on the West.
+I can laugh after season four and so many people.
+The whole thing about the great debate that America needs to have, I think, is still like
+the missing aspect of modern politics is everything.
+Explain the great debate.
+Well, the great debate is like, let's talk about the topic that's at hand and talk about
+it on the merits of what's right for the country as opposed to everything being about
+attacking because the other side brought the idea forward.
+And now we have to attack the other side and frame the idea as being beneficial to them
+and hurtful to us, nothing actually gets resolved because we don't end up having objectivity
+around these conversations around some of the major issues that the country faces, many
+of which, by the way, both sides have valid points of view.
+And if we can kind of have the great debate, we can have these conversations like doge,
+right?
+Like abortion, like, you know, the rights of states, like spending.
+Like there are all these things that we should be talking about rather than use that moment
+as a way to attack the other side politically so I can make sure I've got points and kudos
+leading into the next election cycle.
+It's just awful.
+Anyway, I noticed that about the West Wing.
+It feels like a purist, like just a beautiful way of thinking about how this could really
+work.
+I wonder what it would be like to watch the West Wing and then House of Cards back to
+back.
+That's something I should know, but it's like really a juxtaposition, those two different
+shows.
+Yeah.
+But isn't the West Wing kind of the opposite of what you just said?
+You want the all in representing us?
+I see.
+I see the West Wing as being sort of fully immersed in and representing, you know, one
+sort of particular worldview, there was, you know, there was, in some sense, we look back
+on the 90s of the Clinton years or something as, you know, this period of great harmony
+in the country and, you know, that harmony might have been great and the economy was
+doing well and, you know, all the things.
+But it wasn't exactly a period, I mean, whatever, I wasn't here in the 90s.
+But, you know, from afar, it did not feel to me when I was eight or whatever as a period
+of tremendous ideological debate and fervor and schisms and all the rest.
+During the 90s, during the Clinton area, you were saying?
+Yeah.
+And I think, I mean, maybe I'm wrong, but I think of the West Wing as, you know, a kind
+of recapitulation of the 20 years.
+Maybe they were, I mean, maybe they were the compromising party because, I mean, tell me
+another modern Democrat president that's had any point of view on balancing the budget
+and creating a surplus, which he was essentially was aligned with the Reagan point of view
+at the time.
+And he kind of, you know, again, as Jay Cal said, he was a centrist and he brought the
+parties closer together rather than farther apart with how they operate.
+I agree with Patrick.
+Yeah, the thing that makes the West Wing a great show is that it's about the insider
+nature of the White House and the West Wing and where you see these characters like Toby,
+who would never be a star in any other show under any other circumstance on any network
+ever.
+And instead, he's one of these central, quasi good, quasi nefarious bully kind of, you know,
+he was like the precursor to the Rahm Emanuel archetype in the Obama White House, I think.
+I also found it funny where, you know, the way Dominic Cummings has talked about just
+his experience of life in government was that it's so distracting trying to get anything
+done because, you know, you have some plan, you get up in the morning and you're going
+to go do something that matters for the country.
+And then you're just instantly by 8 a.m., you know, sideswiped by some kind of silly controversy
+of the day.
+That's basically many of the episodes of the West Wing where they like have some actual
+important thing that they want to get done and then they just get way late by a silly
+controversy.
+Yeah.
+Seems to me like you're also the product of the technological innovation that occurred
+during your presidency and during your term.
+And if you think about Clinton, he got to ride the Internet and this massive economic
+boom.
+And you look at, you know, Reagan, the PC boom, I mean, sometimes the timing really matters,
+I think.
+Do I think, you know, and again, I'm not any grand experts on the Clinton years, but
+I think, you know, it is interesting where, you know, one of the first acts of the Clinton
+presidency was the was the Deficit Reduction Act.
+You know, David, your point, you know, when's the last time that a, you know, a Democratic
+president who really, really cared about the Deficitation, I think federal spending fell
+by five points of GDP over the course of the of the Clinton presidency, which is really
+not a small amount, you know, so obviously there were some kind of structural tailwinds
+from, you know, technology and the internet and all the way.
+So yeah, a bunch of that was defense, but, but like nonetheless.
+So he did it on the last two administrations and you look at California, there were massive
+windows of surplus and there were massive windows of a surging stock market over the
+last eight years and we plundered and we wasted them by adding 16 trillion to the debt during
+a good time.
+Like, what's going to happen during a bad time?
+Just absolutely brutal.
+Let's move on.
+Where do we want to go here?
+We got Grog 3, we got the China private sector, we got a victory lap for Freeburg.
+I want to ask you guys questions about Arc Institute and the EVO model.
+Where did you do that?
+All right.
+Let's do the Arc Institute.
+Freeburg.
+Why don't you ask the question.
+Patrick runs the Arc Institute.
+Right?
+Okay.
+Yes.
+And we're the co-founders and then there are two scientists.
+And you guys have a funders of it or, you know, maybe you guys give us the answer to
+a lot of money into this.
+Yeah.
+Yeah.
+Yeah.
+So the Arc Institute is a nonprofit.
+It does basic biology research.
+It's in Palo Alto, Nexus Stanford, it's about 230 people today.
+And yeah, John and I are among the funders of us, but there's this bunch of other very
+generous donors.
+Can you explain how to say how a curiosity-driven research that's on the website?
+Yeah.
+There's kind of two things behind it.
+So the first is the vast majority of biology scientists today receive NIH grants during
+basic research and the NIH grants are one just hard to get and annoying to get.
+You know, scientists spend 40% of their time working on grand overhead and so forth.
+And at worst, like even more perniciously, the grants are very restrictive in terms of
+the kind of science they can do.
+And so we ran a survey of scientists back a couple of years ago of top scientists and
+four out of five, like 79% of them told us that if they could just spend money whoever
+they wanted, if they weren't kind of limited by, you know, what they're prescribed by these
+NIH grants, four out of five tools, they would change the research agenda a lot.
+And so I think the analogy here is imagine if there was only one VC firm and it was run
+by the government.
+And that VC firm had strong opinions on what kind of companies people should build.
+Exactly.
+You know, literally the grant panels at the NIH are and they're consensus based like explicitly.
+They've kind of consensus based scoring mechanisms and they, you know, penalize you if you're
+doing work outside of your field and so forth.
+So we kind of we do go to all this work to train these amazing scientists and then we
+sort of don't let them pursue their best ideas.
+That's kind of problem one and arc the arc investigators, you know, they're fun to do
+whatever they want.
+That's a different research.
+And then the second thing behind arc is this idea that you can kind of divide diseases
+into three categories, you know, the infectious diseases and we broadly speaking know how
+to, you know, generate cures for and treatments for infectious diseases.
+We've monogenic diseases like one mutation or something and we don't know how to cure
+those in most cases, but we can only screen for them and so on.
+And then we've, you know, the biologists call it complex diseases for the some kind
+of gene environment interaction that's most cancers, most autoimmune diseases, most neurodegenerative
+diseases, and so forth, Alzheimer's, things like that.
+Exactly.
+And we've never cured a complex disease.
+And you know, many of these diseases are very tragic, precisely because, you know, we not
+only we're not cured, but we don't even have treatments as, you know, as John says, in
+the case of Alzheimer's, for example.
+And so, you know, the question is, can we do something about this?
+And, you know, what would a research agenda and program that, you know, can, that can
+help, you know, shine some light on these complex diseases look like.
+And our hypothesis, you know, we'll see, we'll see how much it's born out, but our hypothesis
+is that we've gotten a couple of new technologies over the last couple of years, single cell
+sequencing.
+We can sequence the DNA or the RNA, just like in one cell.
+We've, you know, fancy new functional genomics and CRISPR technologies, so you can make these,
+you know, fine edits and perturbations, again, even just in a single cell.
+And then obviously you have transformers in AI and ML and all this stuff.
+And this is kind of a new read, think, write loop in biology that just didn't exist a
+decade ago.
+And again, the question is, is this powerful enough now to, you know, solve some of these
+previously intractable diseases?
+And so yesterday, Arc released this new foundation model for biology.
+It's the largest biology ML model ever.
+It's, it's actually, I think the largest open source AI model ever.
+This is EVO2, you're talking about, EVO2, the number two.
+EVO2.
+Yeah.
+And so it's not just open weights, like, like, you know, the deep-seek model or llama or
+something.
+It's actually, it's open source since the training code is, is public.
+And you know, it's, you can, people can go read the blog post or the paper or whatever.
+The thing I find amazing at EVO and that just really surprised me is, so it's trained
+on nine trillion base pair gene tokens.
+So, you know, Chet GPT, LLM, it's normally trained on, on, you know, the, on human language.
+This is a language model, but it's trained on DNA, the language of life.
+And there's only one human genome in the training set.
+It's mostly other species.
+And even though it's only seen one human genome, it's state of the art as predicting
+the pathogenicity of human genome mutations.
+And so, you know, a famous mutation is the brocco mutation for breast cancer, like,
+it's state of the art at predicting the pathogenicity, the harmfulness of, of brocco mutations.
+Again, it only--
+Despite never having seen one in humans.
+It's only seen one human genome and that human, you know, did not have these pathogenic mutations.
+And so it's, it's kind of learning something deep across the tree of life.
+And I don't know, I find that pretty cool.
+And sorry, is there a phenotypic data set that's used in training?
+So I think like, you know, when you typically--
+No, totally unsupervised.
+Right.
+And so when you're building models in typical, like, genotype by phenotype models, you're
+trying to look at the phenotype, the physical characteristics of the organism.
+What can it do?
+What does it look like?
+What are the features?
+And then you look at the genome.
+And so that tells you, hey, these are the specific genes or alterations or mutations
+that drove this particular phenotype is kind of what the model tries to learn over time
+with the objective being, hey, can I ask it to define a genotype or a genome based on
+a phenotype based on a physical characteristics I'm looking for vice versa.
+Maybe you can just help us understand what is it trained on and, you know, how did that
+kind of, you know, prediction in Branca, you know, how is that possible?
+Great question.
+So it's totally unsupervised that is to say, you know, you're just showing us lots
+of genomes and any kind of latent structure that it learns is just based on trying to
+figure out how to kind of organize that knowledge, but we're not showing it any labeled data
+or phenotypic, you know, kind of outcome data or, you know, what have you.
+And so then you're able to, you can give it a genetic sequence and ask relative to its
+understanding of the genetic universe, how likely is this particular sequence.
+And so then you can do things like, you know, predict anomalousness or pathogenicity or
+whatever.
+Right.
+You can also then kind of using the embeddings of the upper layers.
+No, we don't need to get too technical here, but like you can train another model on top
+of the model and, and, and even if you showed maybe only a couple of examples, it learns
+very quickly.
+Okay.
+Kind of here's, you know, here's how the weights of Evo to correspond to this particular task.
+And those, those sort of models trained on top, turn out to be, you know, really accurate.
+You guys open source the base model or you open source the fine tuned or both.
+We open source the base model, but there's no kind of proprietary reason that we didn't
+open source the fine tunes.
+Okay, it's really easy to produce them.
+And yeah, if anyone wanted one of them, we'd, we'd happily share it.
+Where does it stand in the spectrum of different tools that folks would, would use to solve
+these life sciences problems?
+There's cell models that are being developed by some, then there's these protein models.
+Where does this fit?
+This kind of landscape of, of, of foundation models and biology, it's obviously very new.
+So it's a, it's a bit of an open question, sort of how exactly people are going to find,
+you know, ways to, to use it and applications for it.
+Part of, I think is cool is that proteins and RNA and, I mean, phenotypic expression
+and everything, you know, all these things sit on top of the DNA, like in some sense,
+the DNA encodes everything because, you know, the, the whole organism comes from the DNA.
+And so I guess the question would be, and, you know, we don't really know yet, is DNA
+all you need, and with Evo one, we saw some, you know, encouraging suggestions that, for
+example, you can build really good protein structure prediction models out of a DNA foundation
+model, even if you don't train on a lot of, you know, protein structure data.
+So, but I'd say just, it's a really exciting time and it's kind of an open question.
+And I don't know if you analogize Evo two to, I don't know whether it's GPT two or three
+or something, but, you know, I think we're going to see a similar Cambrian explosion
+of, of applications over a couple of years.
+The thing we're really excited about at ARK is, is training, yeah, cell state models and
+trying to better understand, you know, how cells, you know, what causes them to change
+states.
+And so we're thinking a lot about that, but, but, you know, the reason that the weights
+are on hugging face and hopefully we'll be surprised and, and Patrick, do you just expect
+that over time as Stripe continues to grow, you can just take the ex, some of your own
+excess capital and other people will do the same and keep funding ARK.
+And then if there's something that ARK creates or innovates on, if it can generate some amount
+of money, it would just kind of flow back.
+Is it meant to be self-sustaining or is it always just going to be via patronage from
+successful folks that just want to keep it going?
+John and I are, you know, we are ourselves very committed to us and, and, you know, we're
+kind of underwriting us in that regard.
+But, well, one, we're just lucky where there's a growing donor pool of other people supporting
+us.
+I think it's just better for an institution if it's not kind of beholden to the whims
+of, you know, one donor, one group of donors or something.
+So I think that's just a much healthier structure for us.
+Now, I think there's also a larger group of people for just becoming interested in science
+and realizing, I mean, you know, Jason was on his, his moral pulpit.
+My pulpit is that, you know, all is not well in basic research in the U.S. today.
+And again, the way to see this is just talk to the scientists themselves and they tell
+you how kind of inhibited they are and, you know, the, the, the kind of problems caused
+by the strictures and structures around them.
+And we don't see arc as, you know, the answer, hopefully it can be sort of one point in the
+space, but then, you know, there's other people doing cool stuff, you know, Brian Armstrong,
+of course, started a company in the longevity space and Yuri Milner and others started
+Altos.
+And, you know, this is the people that the Chan Zuckerberg Institute and so, you know,
+people are trying different things, but no, our arc is, you know, we're happy to support
+it.
+And then if it's possible that arc over the long term becomes self-sustaining, but, you
+know, that's, well, that was my next question is, yeah, it takes a while to get things into
+the clinic.
+So, you know, we're not holding out for that tomorrow, what I, you know, when they have
+this technology transfer department at every major university where when scientists get
+grants and they work on some innovation, it gets monetized.
+And so what happens here, who owns the innovations, how do you license them?
+Because it would be amazing if it just wasn't based on, I believe you guys have put over
+a billion dollars into this.
+That was my understanding.
+Is that true?
+It's just like you guys are over a billion dollars into this effort?
+Not quite.
+The numbers.
+Yeah, not quite.
+The numbers are public.
+So arc spends around a hundred million a year.
+Oh, okay.
+And it started about three years ago.
+Okay.
+So.
+So hundreds of millions of dollars.
+This is a really significant thing.
+Yeah.
+And again, they want to have size.
+There are other donors.
+Yes.
+It's not just us.
+But I mean, it's a nonprofit.
+There have been spinouts and there will continue to be.
+And so if one of those, you know, really, if one of those becomes Moderna or, you know,
+the next Ozen pick or something, then, you know, that can be really good for arc and
+arms might have an endowment and be able to kind of self sustain and so forth.
+We're, we're, there's no prospect for us to make money on it in the sense that, you know,
+it's an nonprofit.
+Yeah, John, yeah, just one thing there, I was talking to a friend of mine.
+You could, if this thing actually hits, you could flip this nonprofit and I got a guy
+who could talk to John, go ahead on the whole like modeling world.
+We talk a lot about the idea that you can kind of use a computer, state the phenotype
+or the physical characteristics you want in a biological organism and have the software
+resolve the whole genome, all the DNA needed to make that physical organism real.
+And it can do it from its prediction ability on what genes, what combinations, but we're
+a couple orders away from that, right?
+I mean, I think like ultimately we always talk about, hey, we want to be able to define
+or have the software define the plant that can grow on the surface of Mars.
+It knows the soil type of Mars.
+It knows the air, you know, it knows that it's carbon dioxide based.
+It's 10% of the earth's atmosphere.
+This is what the day, the daylight structure looks like, it needs to be wind tolerant.
+And then the software predicts an organism that might be able to do that, you know, and
+obviously there's a lot of this predictive work going on in proteins, then the higher
+order is cells, so single cell organisms, microbial organisms, and then ultimately multicellular
+organisms of plants and then finally animals where you could basically create organisms
+from scratch using software because we have all the other tools to biologically put these
+pieces together today.
+But this is a great kind of, I view it as a pyramid, there's a ton of phenotypic data
+that still needs to be fed and ultimately kind of have us all understand protein models
+and a lot more to it.
+But it's a great...
+I think that's right.
+Like you can, there's a certain event, you can probably derive sort of, you know, from
+first principles just by looking at genomes.
+But I think the really powerful models are going to need to do exactly what you say and
+to feed in a lot of ancillary, phenotypic, and just kind of other data, how they fare
+in different environments.
+And the sequencing data got ahead of the phenotyping data because there's so much sequencing
+data that's come in so you can do a beautiful job predicting like correctness in a genome.
+But you can't...
+And the sequencing data is really nicely digital, whereas, you know, the phenotypic stuff, it's
+like, well...
+Unstructured.
+It is the data.
+Yeah.
+Totally.
+Sorry.
+While we're in the science corner, I have a question for you, Dave, which are strawberries
+you might know.
+The answer is this.
+A bunch of tree species around the world are under attack.
+So in Ireland, we have this problem of the ash tieback, ash is kind of Ireland's national
+tree.
+They use it to make hurlies, which is, you know, for the national sport.
+And since mid-2010s, you know, especially as the live plant trade has ramped up, you
+had a hurl for Jason to happen to you.
+For Jason.
+Put it right here on the shelf.
+Absolutely.
+For the American chestnut here.
+Yeah.
+No, exactly.
+I was going to reference the American chestnut as well in the US.
+But it feels like we have this real problem.
+And it's so sad where so many beautiful trees are under attack from the bark beetle in
+California and, you know, the various conifers that we're losing.
+So we've got to solve this.
+The black pod fungus and cacao and coffees being destroyed, TR4 is destroying banana
+right now.
+Don't have to do them.
+Let's go.
+No, no, like it's a real, like, it is a real issue.
+This is the real issue.
+Yeah.
+What are we doing?
+We're down to the science corner here.
+So this is, yeah, I mean, this is exactly what we aim to address at O'Hollow.
+So in some cases, you can actually silence a gene that's a suppressor of immune function
+of the organism, which can actually improve disease resistance.
+But how do you do delivery of ash, like this airborne sprays, or what's the, how do you
+treat the tree?
+Yep.
+So ultimately, if you're going to use a genomic method, you would transform the genome.
+So you would edit the genome and you would regenerate a plant or regenerate a tree and
+then propagate that tree.
+Okay.
+But then like we've to replant all the trees to replant the trees.
+We have to replant the trees and ultimately.
+Do you custom projects?
+Can we do a little thing on ash in Ireland?
+Absolutely.
+That is some of the work we do.
+Just a few weeks ago, a partnership with the University of Florida, you use our methods
+to basically introduce disease resistance for major fungal pathogen, and that's destroying
+the Florida strawberry crop.
+And so that's what we call a trait program at O'Hollow, where we can identify a specific
+genomic trait that we can go and introduce into that plant.
+But then you're right, you do have to grow all the plants back and then put them back
+in the ground.
+That's a second mess to pure extinction bursts.
+And I have in Ireland, I ended up owning this kind of country house and virgin woodlands
+where, you know, woodlands that Ireland was used to be fully forested and then was denuded
+with the arrival of agriculture.
+And there's some kind of ancient woodlands on this that are from the original when Ireland
+was fully kind of covered in trees.
+And I find the die off of species very sad.
+And so we've got to get.
+Yeah.
+But no, it's not like I'm very optimistic.
+We know how to address these solutions.
+We know how to regenerate the trees.
+We can do this quickly.
+We can resolve these problems.
+But you are right.
+You should be selling a skew to the people in Tahoe, like, you know, the Tahoe basin has
+been so worse than decimation.
+It doesn't decimation is only one in 10, which is like, you know, half the trees in
+Tahoe have been hit by a bark beetle.
+So those are very interesting ones because insects, you can actually build very specific
+defense mechanisms against insects.
+But we generally have to improve genetic diversity and in doing so, you know, there's a natural
+resistance because the evolutionary, like, like the reason we have a TR4 problem in banana,
+all the world's banana that we grow commercially comes from one original banana clone called
+dwarf cabin dish.
+And they took that one plant, they cut clippings of it, put it in the ground to another plant,
+cut clippings of that and they kept multiplying it.
+So all the bananas we eat and all the bananas that are planted across tens of millions of
+acres worldwide come from one original clone.
+And because of that, this fungus has been exceptionally capable of evolving itself to
+better eat that banana plant.
+And so 60 cents of every dollar we spend on bananas today goes towards fungicide.
+We're spraying these banana trees once or multiple times a week to kill this fungus.
+We're consuming that.
+It's super expensive.
+And if we had genetic diversity, if we had better genetics in the banana programs around
+the world, we'd be able to radically improve and plot the administration says you think
+we need more diversity.
+Are you in favor of DEI, Friedberg, they cornered you, Friedberg, I got you, got to make one
+promise to me.
+You're not going to start working on raptors.
+I don't want to see any of these raptors running around San Francisco.
+Okay.
+Shamatha, your thoughts here on science corner here?
+It's been a really enthralling one.
+The raptors are coming for you.
+I find it incredibly inspiring, but there's just so much movement in these foundational
+models.
+It's incredible.
+Like every day, it just seems like there's something new.
+The biggest problem that I think that the commercial community is going to deal with
+is how to actually take advantage of it because you're kind of head spins because you don't
+exactly know where to start.
+The biological models are different in that.
+I think it's a much smaller population of people that will use it.
+And I think they do have to figure out how to take these models and complement the existing
+pipeline they have.
+The pipeline they have right now, I think, is pretty brittle.
+I think we all know that in life sciences.
+My wife struggles with this a lot is how to complement a very traditional pipeline with
+this kind of stuff.
+So I see it firsthand in how she tries to allocate capital towards these problems.
+On the other side, I just think these foundational models are really incredible.
+And I think that I was completely wrong on a couple of my earlier thoughts.
+One of the thought that I had for a long time was it just seemed like all these base models
+were asymptoting.
+And so I was not convinced where all this capex would go in a productive way.
+Like, why are you buying all these NVIDIA GPUs?
+And then I think if you looked at Colossus, the Elon's Colossus, X AI built the largest
+data center over 100,000 GPUs going to 200,000 in 122 days.
+I mean, basically what he proved was that there are still valuable gains in pre-training.
+And so the larger the cluster, the more value that there is.
+Now, he also benefits, I guess, from the X feed.
+But that was really interesting.
+So now I'm like a little bullish on NVIDIA.
+I'm like, oh, my God, if this is true, then all this capex may be justified.
+You could be buying a lot of stuff.
+And hey, look, I actually also just to maybe riff on this grock 3 thing for one second.
+I had three takeaways.
+My first takeaway was I was sneakily surprised on the pre-training upside on having a larger
+cluster.
+So I think that that's very pro NVIDIA actually.
+And it's actually also just really good in general for foundational model makers.
+So I think like that's like a really positive thing.
+The second thing is, I don't know if you watched the live stream, but did you guys
+hear some of the stuff that these guys had to pull to pull this thing off?
+One of the most incredible.
+So the way that Elon narrated it was we first had a physical problem.
+So we just had to search all around the country for one single location where we could actually
+put 100,000 GPUs and they found it, which was an old electrolux factory in Memphis.
+Okay.
+That's kind of interesting.
+But then he only had like 15 megawatts and he had to get a quarter gigawatt.
+And so he had to basically buy every useful generator that was available.
+But then they had to liquid cool it.
+And so they bought one third of all the portable liquid cooling capacity in America and located
+it on prem.
+But then they figured out that there was a power problem.
+So then they took all these Tesla power packs and then had to do power smoothing, which
+had them had to rewrite all of the power pack firmware.
+And all of this, you know how we talked about deep seek being this moment where we had lost
+sight in America of capital being the source of innovation, he proves actually a more generalized
+rule that I took away from this, which is you always have to have a constraint.
+So meaning, let's say there's like infinite capital in his case and infinite talent because
+he can basically recruit anybody he wants.
+What did he do instead?
+He created this artificial constraint of time.
+And so he was just able to say, you're going to get this done in a moment.
+And Nick, I saw the third graph that the guys at artificial analysis sent to me.
+I just want to put it up here because it shows you guys the quality of rock three relative
+to the amount of time that they've spent on this problem is to me, what's staggering.
+So if you just sort of project the rate of change of this, and this is without judging
+open AI or anthropic or anything else, those guys have been doing it for years.
+These guys have been doing it for a year.
+And they did all of this MacGyver engineering and were able to pull this off.
+So that's my second takeaway is that innovation needs a constraint.
+Sometimes it's capital, sometimes it's talent, and sometimes it's time.
+And so if you can basically be just completely rigid on one of those dimensions, you can
+get a great team to create something.
+So that was an interesting takeaway.
+And then the third is, I think what this also speaks to is the notion of like a kiretsu,
+which is like the Japanese word for like companies that work together while still remaining
+independent.
+You know, it's more interlinked companies.
+It's interlinked.
+You know, Koreans have Chables, right.
+So Japanese, Japanese have kiretsus.
+But this is the manifestation of an American kiretsu, which is Elon is able to get engineers
+from Tesla.
+He's not just buying the power packs.
+He had them re-engineer the actual firmware in real time on site.
+And so there's this positive ability to just like organize effort and human capital.
+Like, look, could we all stand up a data center and go and buy $500 million of power packs
+from Panasonic?
+Absolutely.
+It would take a few months.
+18.
+And then when it looked like we need to rewrite the firmware, we'll take another 18 months
+to your point, Jason.
+So it's really incredible what these guys are able to do together.
+Those were right.
+It was really, really inspiring.
+Chamath, a book I think you might find really fun is it's called Henry Kaiser, builder
+in the American West.
+But Kaiser is kind of underappreciated these days.
+He was the Elon of his time.
+He started as a road builder of all things.
+He won the contract to build the Hoover Dam.
+He built the Hoover Dam.
+He started a shipyard during World War II.
+Yeah, exactly this book.
+He made cars.
+He decided to make cars.
+He decided to make aeroplanes, the famous four day liberty ship, remember the propaganda
+win during World War II of, you know, they were able to lay down.
+That was at the Kaiser shipyards.
+Kaiser Permanente spun out of them as part of the, I was literally saying that pulling
+up my notes from the book.
+And just.
+He was just a complete phenom and he just kept finding new industries.
+It's like, oh, building cars.
+How hard can it be?
+Building airplanes.
+How hard can it be?
+Yeah.
+I mean, that is the nature of entrepreneurship.
+The nature of entrepreneurship is doing something delusional and then just letting you know.
+But most entrepreneurs just do one delusional thing once at the stage and after like, again,
+Elon and Henry Kaiser back in the day.
+It's in the world of atoms, very hard things, short timelines and San Francisco now kind
+of at least in the physical domain stands for a kind of stasis.
+You know, it takes you 10 years to build anything.
+But when he had the ship.
+Well, yeah, the ship building yards here, he went from zero to a hundred thousand people
+in Richmond in wind year.
+He basically built the city of Richmond, California.
+How do you, how do you, guys, okay, let's just double how, how do you think these guys
+pull this off?
+I don't, I'm personal sacrifice, massive personal sacrifice.
+I understand that Jason, but I'm, I'm talking about like tactically pull this off where
+you have to be on site at some point, organizing this team, directing this team, being able
+to help isolate these problems, fix them, it just seems impossible to do it once let
+alone six.
+I don't understand how they do it.
+I actually have some insight into this just from knowing Elon, a lot of these things compound,
+a lot of what he learned in material science doing SpaceX and about making the engines
+and then working with metal you see in his production at Tesla and specifically in the
+cyber truck.
+He has learned so much about factories.
+I don't think there's a person on the planet who knows more about factories now having
+built a battery factory, a space factory, an engine factory and a car factory and now
+building optimists on top of that.
+So these things compound and then a lot of the engineers will float between the company.
+So there are folks who have worked at SpaceX who then go do a tour over at Tesla, et cetera.
+And a number of those wound up coming into a, I'm going to read you a few quotes in this
+book.
+I'm just going to see if they remind you of anyone.
+Kaiser is manager's challenged convention from the start as builders.
+They were expert at coordinating workers and materials.
+Kaiser was almost contemptuous of traditional methods.
+His partners had long since disbeared of getting him to follow customary procedures.
+In preparing his bids for each new job, Kaiser would try to conceive every possible technique
+that might justify making a bid low enough to win the job.
+Once the construction was underway, he was forever trying to come up with ideas that
+would expedite the work.
+Perhaps more than any other builder, he believed that the faster a job gets done, the lower
+the costs can be.
+That's incredible.
+Incredible.
+What happened with Colossus is they had told Elon that it would, when he wanted to use
+other network operation centers to host Colossus, you know, and he looked, they were not available.
+And when he did find quotes from them, they told him 18 to 24 months.
+He just determined, hey, if this, there's no reason to even do this, if I can't get this
+done in a, you know, a hundred days or something, why even join the race, I'm going to be so
+far behind.
+If you look just to wrap this segment up and get onto our final two segments, if you look
+at these two charts about Brock, it's now, and you know, listen, these benchmarks and
+these arenas and testing, there's a lot of controversy around them and people keep
+leapfrogging each other, but they do give us, I think, our best shot at looking at progress.
+This is the benchmark here for Groc on a bunch of different tests, math, science, and coding.
+And as you can see, Groc 3 has now eclipsed Gemini, which is Google's LLM and DeepSeek
+from China, Quad and chat GPT 40.
+And so to your point, it's pretty impressive.
+It's super impressive.
+Yeah.
+That's super impressive.
+At the top of the Alan says leaderboard.
+The thing here, I think, Freiburg, I'd like to get your comment on is, if hardware is
+the constraint, does that mean that the person who understands hardware and buildouts, as
+Tremont was pointing to, does that mean that they by default win?
+No, but Jason, hold on, this is what's counterintuitive.
+It wasn't clear because no, it was not.
+Yes.
+I would guess that the last couple of iterations, it seemed like OpenAI has moved to what comes
+after the base model, meaning in the allocation of resources in terms of what they were creating.
+And so this is what's so counterintuitive.
+He was like, no.
+And so I don't understand what he knew that everybody else didn't know.
+But the size of that cluster made no sense.
+And it could only be a result like this where he basically proved that there was still value
+in pre-training where size actually led to better outcomes.
+That's not...
+I think that was counterintuitive.
+It's super consequential, I mean, complete agreement with the Chamath and just Freiburg
+to wrap the segment up and put a bow on it.
+We see these LLMs, they've made incredible progress as we just heard from EV2 or EVO2.
+I'm sorry, Grok, and we're making these giant gains in space, you know, in work.
+And it's specifically in space, Dave, do you think this will get us any closer to Uranus?
+So sad.
+So sad.
+It didn't even land.
+Don't even acknowledge it.
+Don't even acknowledge it.
+Don't even acknowledge it.
+Do not acknowledge it because we'll just do more of it.
+I tried to get your mouth to do what he wouldn't do.
+Okay, last two segments, we're going to talk about staying private longer and when you
+guys are going to go public and then there's an asteroid coming.
+What do we want to do first, boys?
+If you want to talk about this asteroid coming, Dave, is it the end of the world?
+If it hits us, what's going on?
+NASA dropped the probability of it hitting Earth to one and a half per cent.
+So every day when the sky gets dark, they can do a better job seeing this asteroid that
+everyone's freaking out about.
+So we finally got a good night's sky two nights ago, the telescopes were able to get a better
+trajectory reading on it and that allows the models to make estimates on the probability
+of this asteroid hitting Earth in 2032 when it's projected to cross our orbit.
+And so right now, the probability is estimated at 1.5% that it will hit the Earth.
+And based on the size of this asteroid, there's this range.
+It goes up to 320 feet in diameter, as small as 80 feet in diameter, which actually can
+have a pretty big effect on how big of an energy release there would be if it actually
+hit the Earth.
+So even on the high end, if it was colored 300 feet, it would be the equivalent of color
+at a 20 megaton bomb, which is not insignificant.
+If it were that big, it would hit the Earth.
+If it was smaller than that, it would probably just detonate me air and create a massive
+shockwave and firestorm.
+But the region that it would decimate would be limited to probably a couple dozen miles
+up to 1,000 miles of effect.
+And if you look at the total surface area of the Earth, we're talking about 10% to 15%
+of the Earth having people that have enough people to have it.
+Probably going to land in ocean, right?
+Right.
+Yeah.
+So it's 1.5% chance of hitting the Earth and then call it a 15% chance of it hits the
+Earth, the causing loss of life.
+So 10 basis points, it hits a city.
+One basis point.
+And then, right.
+And then it's a function of how big it is.
+If it's actually as small as 80 feet, then it's not going to be that significant, even
+if it does get close to habitat areas.
+So yeah, I'm not losing sleepover over there.
+Did you come across in your research?
+I feel like this is a real boys are monitoring the situation in that moment.
+Did you come across the Tunguska event?
+Yeah.
+Research on this.
+So that one.
+It's incredible.
+Yeah.
+So I don't, you want to talk about it?
+Go ahead.
+Yeah.
+Just, no, no is this.
+An asteroid hit the Earth, it hits relatively uninhabited part of Russia.
+It was a first off, the asteroid did not hit the Earth because it got so hot on re-entry
+there was an air burst and it was a thousand Tungus in size.
+The explosion.
+Yeah.
+They have here the 60 meter asteroid and they have the mega tonnage somewhere.
+Wow.
+It's the largest impact event in recorded history.
+Obviously, it was, you know, stuff before recorded history is flattened 80 million trees,
+weirdly, basically, no one was killed because it was so uninhabited.
+But this is quite comparable to the one that NASA is talking about.
+That's right.
+It's about the same size.
+Yep.
+Exactly.
+And I think you can take a little bit of reassurance maybe that we have had a similar
+size asteroids hit before and there is some existence proof that despite the giant explosion,
+you know, it doesn't show up in the climactic day.
+Yeah, the Tunguska asteroid was like 160, 200 feet.
+So if, if this asteroid is in that range and it hits the Earth, you have this kind of
+explosion in the air.
+If it gets above, I think 250 roughly is where they think that it doesn't burn up fully in
+the air and it actually will strike the Earth.
+Yeah.
+That's.
+There you go.
+This is roughly what we saw happen.
+What we think the size will be if it hits.
+Is there a countermeasure?
+I don't mean to get all sci-fi here.
+Great question.
+Yeah.
+No.
+But is there a countermeasure possible?
+And like, if this thing was coming, let's say in five years and it was twice the size.
+Yeah.
+So relative to the Earth, this is like tens of thousands of kilometers an hour.
+Right?
+It's a very fast moving object and pretty small, right, 160 feet.
+So you've now got to figure out the exact trajectory, get it perfectly right, get a
+launch off of the Earth and intercept this thing at the exact moment that you need to
+push it off course or detonate something nearby it to redirect it.
+So technically very complicated, very hard to pull off.
+But this is exactly why we have this planetary defense funding at NASA, which is to track
+these objects.
+And this is another example, by the way, where I would say AI can play an important
+role.
+And I'd love Patrick and John to apply on this.
+But I have a thesis that like AI, more than anything, unlocks deeply complicated projects
+for humans that would otherwise be kind of infeasible in the pre AI era.
+I think in the post AI era, we're going to be like, oh, here's all these projects that
+we do that are like, oh, you know, we, we, on a daily basis, we mine to the center of
+the earth and we get cool, like rare earth minerals from like 500 miles down.
+And we go to space and colonize the moon and all these crazy things because AI unlocks
+these large scale projects that would require millions of people to do things in a coordinated
+way.
+And AI can be very smart in this way.
+But I think AI could play a role also in these planetary defense initiative concepts,
+J Cal, in the future where you can actually build a complete project model in software
+on how you would actually address this problem and then, you know, go execute it with automation.
+And then, but yeah, there's a planetary defense function at NASA.
+They track these objects.
+And they're funded to do it.
+So we hope that NASA continues to get funding to do this work very important.
+And guys, it just came through that NASA just dropped the probability of the impact event
+to about a one third of 1%.
+So it's gotten even smaller, which is we can all go to sleep comfortably.
+All right.
+All right.
+Now, good morning.
+Everybody's been waiting for Patrick, John, you founded the company in 2010.
+It's 15 years later, the entire LP industrial complex and venture capitalists everywhere.
+I'm sure some employees are wondering when will Stripe go public and under what circumstances
+and what's the hold up here?
+Why aren't you public already?
+Yeah, look, I think sometimes hold us out to be a dogmatic or something on this topic
+where we feel like so many other people out there in the world are dogmatic and we just
+try to be pragmatic on us.
+Keith was on the show and he was saying he believes companies should go public as quickly
+as possible.
+I don't know.
+Maybe that's the right thing for some companies, but in at least Stripe's case, that hasn't
+been the case.
+I also think the environment has changed quite a bit where it used to be the case that to
+do any return of capital to shareholders or if you needed any kind of large sums of money,
+you needed the public markets.
+That's obviously not true today where the stable private markets exist.
+But we look at it and say, "Is Stripe better off at the moment as a private or a public
+company?"
+And up to this point, we have determined private.
+That could change at some point, but it's kind of no dogma from our point.
+The last thing I'll just say is, I think Keith made the argument, people generally make
+the argument that it is critical for discipline to be public and public companies run in
+a more disciplined fashion.
+I think that's hugwash.
+If you need a 25-year-old Fidelity analyst asking you to double-click on your CapEx blah,
+blah, blah, to run the company with discipline, something is horribly wrong at the company
+and you need new management.
+And so that argument has never really resonated with me.
+Basically what you guys are saying is for your intellectual perspective, you get a lot more
+return on the time you spend talking with the private investors you have and your team.
+And then all...
+And customers.
+And customers.
+And it would just be deluded and you would have sh*t here out, comes quite honestly.
+If you had to talk to these other folks who are talking to you and 50 other companies,
+don't really know much of anything, maybe very surface level, and then may actually distract
+you and force you to make decisions you don't want to make.
+We're not even that negative.
+We're not even that negative, but I was going to say, but there's no spiritual status associated
+with being public.
+Like, why be public?
+It is a cheaper source of deeper and more liquid capital.
+And so if you want cheaper and more liquid capital, then you know, by all means go with
+it, but you know, it's not more moral.
+And I think, you know, again, it's just helpful to sort of get away from that kind of framing.
+I also think it's noteworthy that if you look at financial services in particular and we're
+kind of a company at the intersection of financial services and technology, being private for
+a long time is the norm.
+So Bloomberg is a private company, Fidelity is a private company, Vanguard is a private
+company, Jane Street is a private company, Goldman Sachs, Goldman made it 130 years
+ago public, JV Morgan was 70 years ago public, Visa waited 50 years to go public.
+And you know, again, those are all different times in history.
+So I'm not saying you can draw, but well, I think that's a thing.
+Everything in financial services, there's always a tendency uniquely here to be kind
+of pro cyclical.
+And I think you need to be kind of particularly careful as a public financial services company
+to avoid some of those temptations and some of those tendencies.
+And so, you know, I think that that's a unique dynamic that applies in our space.
+And then you know, financial services generally, if you look at companies like SpaceX, they're
+able to provide this yearly liquidity, which actually is probably better because it smooths
+out a lot of the vol and then people can get back to work and just kind of.
+Are you guys profitable by the way?
+We are profitable.
+Yeah.
+Yeah.
+And profitable.
+I'm like a fully loaded gap net income basis, not like a guarantee adjusted, but a stuff
+close.
+Shout out Adam Newman.
+Come on the prod anytime.
+You got to wear shoes.
+Yeah.
+I do think we think as it comes, you know, pertains to people joining the business and
+being compensated, you know, everyone loves the idea of an IPO pop.
+But if you look at a bunch of the other FinTech companies, you know, Square, really great
+company, 70% off its 2021 peak PayPal, 80% off their 2021 peak.
+If you're an employee and you join those companies in 2021, it's not a great feeling.
+And so again, I think the lack of, you know, the good and the bad is you are not priced
+every single day by the market, but it's not only a bad thing.
+All right.
+And framework, you know, if I'm trying to predict our actions, like the framework we use is
+kind of two things.
+One, I think, you know, what matters is less kind of the returns in a given year and more
+duration.
+And so the question is, you know, what enables the best compounding on sort of a 10 year
+time horizon and, you know, what's best for shareholders as you really take kind of the
+longer term perspective, and then just what best for customers.
+And then you know, what, you know, helps you build the best products.
+And you know, you kind of set it where, you know, at least at this juncture with business
+growing at this rate, we want to spend the marginal hour with, with some customer.
+Yeah.
+Yeah.
+And it's like, this is our life's work, you know, we're not going anywhere.
+We'll be very happily running stripe in 10 years time in 20 years time.
+And there's so much going on in the space where we spend a bunch of time talking about
+stablecoins, talking about AI, everything like that.
+And it's hard enough to stay ahead in the world of business, you know, without all these
+distractions, like you said.
+And so it's just a question of how do you set yourself up to win and do right by anyone
+in a world that was pretty competitive.
+I think if you had to steal man, the Bill Gurley point of view, there are very few founders
+that are probably as steel-y-eyed as you guys.
+And so what I think a lot of board members in most other situations that are not stripe
+deal with is what is a good forcing function to keep these folks on track and focused and
+thinking in a multi-decade kind of way.
+And they found that the public markets, I think, do that more than anything else.
+That's probably the most compelling for the folks that would otherwise maybe get distracted.
+But then for guys like you, that can frankly just do it.
+It's great.
+It's impressive.
+It's really impressive.
+Congratulations.
+Well, I appreciate you guys coming on the program, come back any time you were awesome
+today.
+And listen, let's recap what have we learned?
+People got to put some pants on and get back to work.
+Constraint makes for great art.
+Stripes going public in 2050.
+Chamath lost $5 billion, not investing.
+The Coulson's read a lot of books.
+But I'm still kicking.
+Love and kicking, bro.
+Are they still in the arena?
+Got a lot of chips, still to fire.
+So let's see what happens.
+Yes.
+What happens?
+Fire, fire, fire.
+South American president shouldn't have their own meme coins.
+And life finds a way.
+We are, and you pronounce a call is son, obviously, I said, Gordon, because, you know, we're down
+the road and Kerry and we go and get some eggs and bakey sometimes.
+Okay.
+Coming to South by Southwest, brought to you by the Coulson brothers in Stripe, a all-in
+is headed to the South by Southwest.
+They're not sponsoring it.
+I'm joking.
+All-in is headed to South by Southwest on March 13.
+Me and Freiburg are going to sit down and do our interviews.
+Two besties on the future of many media and building businesses in this new media ecosystem.
+We're going to have a casual party, food, drinks, the whole thing.
+Event is going to be pretty intimate.
+A couple hundred seats.
+One of you guys in this?
+March 13.
+You opted out.
+Me and Freiburg want to do it.
+Oh, Thursday.
+No can do.
+Okay.
+And it's by application only with a small $30 registration fee of which Stripe will take
+$19, go to all-in.com/events to apply.
+I'm not bitter about it.
+And programming note, the besties are on a tear.
+We were on Meghan Kelly last week and next week, our bestie Freiburg is representing
+us on celebrity jeopardy.
+We can't say what's happening, but- Oh, get the clips ready.
+Get the clips ready.
+Get the clips ready.
+We are going to do a recap of every single question.
+When is it air on Monday?
+Next week, I think.
+I don't know.
+Wednesday at 9 p.m.
+Wednesday at 9 p.m.
+Oh, perfect.
+Before the taping.
+Yum yum.
+Perfect.
+Perfect.
+There he is.
+Between Anna Navarro, she's from the view, right?
+Oh, she's pretty hungry.
+I've seen clips of her.
+I should have gotten some counsel ahead of signing up for celebrity jeopardy on the lack
+of upside in doing this.
+And you will see why.
+We'll talk next time.
+Oh, no.
+Oh, no.
+You lost that good?
+Oh, no.
+You lost to them.
+You?
+You didn't lose to them.
+I'm up.
+Did you?
+Look, guys, I'm just telling you guys got 160 IQ.
+The view put together doesn't have 160 IQ.
+Let me just tell you what we'll talk about it afterward.
+I just bought this.
+Don't tell me they got you on pop culture.
+You're pretty good on pop culture.
+Oh, no.
+Okay.
+Love you guys.
+Love you.
+Bye bye.
+See you next time.
+Bye boys.
+We'll let your winners ride.
+Brain man, David Sacks.
+Oh, I'm going on.
+Oh, yes.
+And it said we open sourced it to the fans and they've just gone crazy with it.
+Love you guys.
+I just we know you can walk.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+I'm going on.
+Besties are gone.
+I'm going on.
+Besties are gone.
+Besties are gone.
+Besties are gone.
+We should all just get a room and just have one big huge orgy because they're all just like this like sexual pensive and they just need to release the house.
+What? You're the beat? What? You're the beat? You're the beat? What? We need to get merges on now.
+I'm doing all this!
+I'm doing all this!
+
+

@@ -1,0 +1,355 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: Is AI Already Shrinking Entry-…
+Host: Unknown
+GUESTS: None 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/is-ai-already-shrinking-entry-level-tech-jobs/id1680633614?i=1000710368187
+--- METADATA END ---
+
+1
+Today on the AI Daily Brief, is AI already eating entry-level tech jobs?
+2
+Before that, in the headlines, Anthropic gets voice mode.
+3
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+4
+Thanks to today's sponsors, Blitzy.com, SuperIntelligent, and Plum.
+5
+And to get an ad-free version of the show, go to patreon.com/slash AI DailyBrief.
+6
+Welcome back to the AI Daily Brief Headlines Edition, all the daily AI news you need in around five minutes.
+7
+Kicking off today with some new feature news, Anthropic has released their long-awaited voice mode.
+8
+Now, the feature itself isn't all that interesting.
+9
+It allows users to speak to Claude and receive audio responses.
+10
+Claude's voice is pretty easy to listen to, it doesn't sound too robotic, but it also doesn't go in the other direction to add vocal tics in an attempt to pass as human.
+11
+There are five different voice options if you don't happen to like the British accented default.
+12
+Maybe more interesting is how Anthropic is presenting the feature.
+13
+Their launch video demonstrates how to use Claude as an agentic voice assistant.
+14
+The user asks Claude to check on her schedule in the morning by accessing her calendar and then email a coworker to prepare some materials for the first meeting of the day.
+15
+Now, there are, of course, a ton of different ways to use voice mode.
+16
+If you are a regular ChatGPT user, you will probably have already found some.
+17
+But it is interesting that Anthropic is pushing this sort of vision of it as a step closer to a full assistant.
+18
+It is worth noting that voice mode is a little hungry on the usage limits.
+19
+Anthropic says that free users can expect 20 to 30 conversations.
+20
+In addition to that, tool use features like accessing a calendar or email are only available to paid subscribers.
+21
+On launch, the feature is also only available through the Claude app rather than through the web interface or API.
+22
+So, will this push people to use Claude instead of other options?
+23
+Or is this just table stakes now?
+24
+In either case, glad to see this feature available and excited to play around with it.
+25
+Meanwhile, over at Meta, that company is splitting their AI division in two.
+26
+Axios reports based on an internal memo sent yesterday that the Gen AI division will now be divided into an AI products team and an AGI Foundations unit.
+27
+The AI products team will be led by Connor Hayes, who is currently the VP of Gen AI.
+28
+This team will have ownership of Meta AI, AI Studio, along with all in-app tools.
+29
+The AGI Foundations unit will be co-led by Ahmad Eldale and Amir Frankl, who will work on bigger picture efforts, including improving the Foundation Llama models.
+30
+The Fundamental AI Research, or FAIR Lab, will continue to be an entirely separate division, although one team working on multimedia will move to the AGI Foundations unit.
+31
+The restructuring memo was sent by Chief Product Officer Chris Cox, who's taken an increasingly important role in setting the course for Meta's AI strategy.
+32
+Axios reports that no executives are leaving as part of the restructuring, nor are any jobs being cut.
+33
+However, Meta is moving across some key leaders from other parts of the company.
+34
+Business Insider recently reported that Meta had experienced a brain drain to faster-moving open source AI companies like Mistral, with Axios writing, Meta hopes that splitting a single large organization into smaller teams will speed product development and give the company more flexibility as it adds additional technical leaders.
+35
+A direct quote from Cox's memo said, Our new structure aims to give each org more ownership while making explicit team dependencies.
+36
+According to the information, the restructuring will mean more than two dozen leaders have responsibility for various parts of the company's AI strategy.
+37
+For the last six months, the narrative has very much been meta in panic.
+38
+Even before that, though, back in 2023, we saw one reorg of AI at Meta, with the Lama project removed from the Fair Lab and put into the hands of the then-newly formed Gen AI team.
+39
+Interestingly, this new restructuring seems to be going in the complete opposite direction of Google, who late last year consolidated most of its AI teams under DeepMode.
+40
+CEO Sundar Pichai even emphasized this strategy at last week's Google I/O conference, with the core theme being about bringing AI from research to reality, their words.
+41
+Still, it's not insane to me why Meta would take this move.
+42
+If you're trying to move fast, organizational bloat can be one of the big killers.
+43
+So maybe by having smaller, more nimble efforts, they'll be able to move more quickly.
+44
+Ultimately, it's very hard to know what's going on exactly inside companies.
+45
+And what is absolutely true is that when push comes to shove, all that will matter is how well the changes work.
+46
+Lastly today, OpenAI is exploring ways for users to sign into third-party apps using their ChatGPT account.
+47
+Yesterday, the company put out an expression of interest looking for developers interested in integrating these features into their own apps.
+48
+The form contemplates partnering with apps with as few as a thousand users, right up to those with user bases over 100 million.
+49
+OpenAI was also interested in knowing how the apps charge for their AI features and whether they're using OpenAI APIs.
+50
+Earlier this month, OpenAI launched a preview of the feature for developers through the Codex CLI.
+51
+They offered free API credits to incentivize developers to connect their ChatGPT accounts to their API accounts.
+52
+This could be a very simple attempt to get more accurate user data, weeding out the double counting, but most think this is about something far larger.
+53
+Nick Dobos posted, Bigger deal than people are realizing.
+54
+Sign in with ChatGPT is about to be everywhere.
+55
+Now, so far, signing in with an existing account has been mostly the domain of the tech giants.
+56
+The bargain is a convenient credential management for app developers in exchange for basic user data.
+57
+Sam Altman is certainly interested in this angle.
+58
+In fact, he's been talking about sign-in with OpenAI as a feature since at least late 2023.
+59
+His World Coin Crypto project is also about unified credentialing based on.
+60
+Bring your API token, bring your GPTs, bring your memories, bring your tools, etc.
+61
+Something to watch for sure, but for now, that is going to do it for today's AI Daily Brief Headlines Edition.
+62
+Next up, the main episode.
+63
+Today's episode is brought to you by Blitzy, the Enterprise Autonomous Software Development Platform with Infinite Code Context.
+64
+Which, if you don't know exactly what that means yet, do not worry, we're going to explain, and it's awesome.
+65
+So, Blitzy is used alongside your favorite coding co-pilot as your batch software development platform for the enterprise, and it's meant for those who are seeking dramatic development acceleration on large-scale code bases.
+66
+Traditional co-pilots help developers with line-by-line completions and snippets, but Blitzy works ahead of the IDE, first documenting your entire code base, then deploying more than 3,000 coordinated AI agents working in parallel to batch-build millions of lines of high-quality code for large-scale software projects.
+67
+So, then, whether it's code-based refactors, modernizations, or bulk development of your product roadmap, the whole idea of Blitzy is to provide enterprises dramatic velocity improvement.
+68
+To put it in simpler terms, for every line of code eventually provided to the human engineering team, Blitzy will have written it hundreds of times, validating the output with different agents to get the highest quality code to the enterprise in batch.
+69
+Projects then that would normally require dozens of developers working for months can now be completed with a fraction of the team in weeks, empowering organizations to dramatically shorten development cycles and bring products to market faster than ever.
+70
+If your enterprise is looking to accelerate software development, whether it's large-scale modernization, refactoring, or just increasing the rate of your STLC, contact Blitzy at blitzy.com, that's B-L-I-T-Z-Y dot com, to book a custom demo, or just press get started and start using the product right away.
+71
+If you've been listening for a while, you have probably heard me talk about this.
+72
+But basically, the idea of the Agent Readiness Audit is that this is a system that we've created to help you benchmark and map opportunities in your organizations where agents could specifically help you solve your problems, create new opportunities in a way that again is completely customized to you.
+73
+When you do one of these audits, what you're going to do is a voice-based agent interview where we work with some number of your leadership and employees to map what's going on inside the organization and to figure out where you are in your agent journey.
+74
+That's going to produce an agent readiness score that comes with a deep set of explanations, strengths, weaknesses, key findings, and of course, a set of very specific recommendations that then we have the ability to help you go find the right partners to actually fulfill.
+75
+So, if you are looking for a way to jumpstart your agent strategy, send us an email at agent at bsuper.ai and let's get you plugged into the agentic era.
+76
+Today's episode is brought to you by Plum.
+77
+If you're building agentic workflows for clients or colleagues, it's time to take another look at Plum.
+78
+Plum is where AI experts create, deploy, manage, and monetize complex automations.
+79
+With features like one-click updates that reach all your subscribers, user-level variables for personalization, and the ability to protect your prompts and workflow IP, it's the best place to grow your AI automation practice.
+80
+Serve twice the clients in half the time with Plum.
+81
+Sign up today at useplum.com.
+82
+That's USEPLUMB.com forward slash NLW.
+83
+Welcome back to the AI Daily Brief.
+84
+One of the most important discussions that we track here is the way in which AI is impacting jobs.
+85
+And a lot of this so far has been.
+86
+And in a new research report, data-driven BC firm SignalFire believes that they are starting to see the first signs of AI's impact on hiring.
+87
+The report is called the State of Talent Report 2025.
+88
+It's based on a platform they've built called Beacon, which tracks over 650 million professionals in 80 million organizations.
+89
+What they've found is fairly dramatic.
+90
+Entry-level hiring, they say, is collapsing, and a generational hiring shift is leaving new graduates behind.
+91
+Signalfire writes: The tech world has long been synonymous with innovation, breakneck growth, and boundless opportunities.
+92
+The door to tech once swung wide open for new grads.
+93
+Today, it's barely cracked.
+94
+The industry's obsession with hiring bright-eyed grads right out of college is colliding with new realities: smaller funding rounds, shrinking teams, fewer new grad programs, and the rise of AI.
+95
+And really, what's interesting here is that we're starting to see a bit of a separation from just the post-COVID reversion to the mean and the lean years after the big boom years during that period.
+96
+You might remember this crazy chart that was flying around of software engineering job postings on Indeed.
+97
+Many people were sharing just between 2022 and 2025 when there was more than a 70% drop-off.
+98
+But if you zoom back out, we actually just saw a reversion to the pre-pandemic mean.
+99
+Now, however, we're starting to see impacts that seem to not just be about larger macro effects.
+100
+Even as the market recovered, there has been a sharp divide between senior-level hires and entry-level hires.
+101
+Between 2023 and 2024, every demographic with two years of experience or more saw a big increase in both startups, but especially in big tech.
+102
+But there was a massive decline in entry-level hiring.
+103
+In big tech, for example, entry-level hiring was down 25% in 2024.
+104
+If you zoom farther back, New grad hiring is down over 50% from pre-pandemic levels in 2019.
+105
+That's for big tech.
+106
+New hires of grads were down 11% for last year and down over 30% from their pre-pandemic levels in 2019.
+107
+The total percentage of hires that were entry-level has about halved for both of these categories.
+108
+And what's more, this is a trend beyond tech.
+109
+Data from the Reserve Bank of New York shows that the unemployment rate for recent college grads is rising much faster than young workers in general over the past year.
+110
+Recent grads currently have a 5.8% unemployment rate as compared to 4% for the overall population.
+111
+This is the highest unemployment rate for new grads dating back to 2013, ignoring the pandemic, and also the first instance of new grad unemployment data trending up over a multi-year period since the data series began in 1990.
+112
+Data from the Law School Admissions Council found applications for 2025 were up roughly 21% compared to last year, which is a common trend during recessions.
+113
+Basically, putting off workplace entry by going to law school tends to be more attractive when job opportunities are slim.
+114
+Now, SignalFire does point out that there are more potential explanations for this than just AI.
+115
+They write, the bigger driver may be the end of the free money madness driven by low interest rates that we saw in 2020 and 2022, along with the overhiring and inflation it led to.
+116
+Now with tighter budgets and shorter runways, companies are hiring leaner and later.
+117
+CARDA data shows that Series A tech startups are 20% smaller than they were in 2020.
+118
+And yet at the same time, they do think that AI is part of the story.
+119
+They continue, the shift isn't just about hiring less.
+120
+As AI tools take over more routine entry-level tasks, companies are prioritizing roles that deliver high-leverage technical output.
+121
+Big tech is doubling down on machine learning and data engineering, while non-technical functions like recruiting, product, and sales keep shrinking, making it especially tough for Gen Z and early career talent to break in.
+122
+According to their data, only around 70% of computer science grads from the class of 24 found employment within six months, and only 61% of those were employed as engineers, with just 12% finding positions at Mag 7 companies.
+123
+Each of those numbers are down significantly from recent years and at or near a five-year low.
+124
+The World Economic Forum Futures of Job Report also recently found that the issues for young grads go beyond the tech sector.
+125
+They wrote, Are entry-level jobs on the way out?
+126
+For decades, entry-level roles have provided essential training grounds for newcomers to step into the world of work.
+127
+From finance to journalism, junior staff have traditionally handled the grunt work as a rite of passage as much as a development opportunity.
+128
+But as AI reshapes the career ladder, these early entry points could be increasingly at risk.
+129
+According to the WEF survey, 40% of employers plan to reduce their workforce in areas where AI can automate tasks.
+130
+Business Insider recently wrote that the number of entry-level positions in consulting and finance are down, with, quote, several big firms considering offering lower salaries, reasoning that AI would take on some of the workload.
+131
+A recent report from Hiring Lab found that 49% of Gen Z job hunters believe AI has reduced the value of their college education.
+132
+Still, the World Economic Forum didn't think it was all doom and gloom.
+133
+They wrote, Gen AI could democratize access to jobs, making it easier to build the technical knowledge and skills that have historically excluded otherwise qualified workers.
+134
+Rather than eliminating entry-level opportunities altogether, companies could harness AI to train the next generation of senior professionals.
+135
+As Gen AI becomes further embedded in the workplace, companies will need to invest in substantial upskilling efforts to prepare their employees for the AI-driven economy.
+136
+Still, what I think that we're experiencing is an example of how challenging transitional periods can be.
+137
+If you are a regular listener to this show, you'll know that I am net bullish on how all of this shakes out.
+138
+I think that AI is going to bring massive disruption to the way that we work.
+139
+I think almost everyone's job, in terms of the things we spend our time on, actually looks pretty different in five years.
+140
+I think that the market absorbs a huge amount of talent that would have otherwise been absorbed into these big companies in new and interesting ways.
+141
+But that doesn't mean that it's not going to be extraordinarily painful along the way.
+142
+And what's more, it's not even as simple as whether people get replaced or not.
+143
+There's also the question of what jobs look like.
+144
+In response to a post from Aaron Francis that read, I think the appetite for software is nearly infinite.
+145
+I've been using AI to extensively write code, and yet the number of things I still need to code has increased, not decreased.
+146
+It's like we added three lanes to the highway and still have traffic.
+147
+And again, this is my base case for optimism.
+148
+Cal Irvine responds, That's why I always thought the AI will replace developer jobs narrative is kind of silly.
+149
+Like software products would just be finished if only we had the manpower.
+150
+If that's true, then surely the tech giants would be finished by now.
+151
+We aren't going to lose our jobs.
+152
+We're just going to do more.
+153
+This question of more is another serious one.
+154
+The New York Times recently wrote a piece titled, At Amazon, some coders say their jobs have begun to resemble warehouse work.
+155
+Three Amazon engineers told the newspaper that, quote, managers had increasingly pushed them to use AI in their work over the past year.
+156
+The engineers said that the company had raised output goals and had become less forgiving about deadlines.
+157
+It has even encouraged coders to gin up new AI productivity tools at an upcoming hackathon.
+158
+One Amazon engineer said his team was roughly half the size it had been last year, but it was expected to produce roughly the same amount of code by using AI.
+159
+A labor economist at Harvard said, things look like a speedup for knowledge workers.
+160
+There's a sense that the employer can pile on more stuff.
+161
+One of the things that employees and companies will have to negotiate is how to distribute the benefits of the productivity gains from AI.
+162
+If it's purely to double or triple the expected output of each worker, it seems pretty likely to cause problems.
+163
+But there are obviously more ways to come at it than just that.
+164
+And this, I think, gets back to a conversation that we have pretty regularly here, which is the need for leadership.
+165
+The impact of AI for an employee base runs a wide spectrum from dehumanizing to rehumanizing.
+166
+Where companies fall is going to largely be based on leadership decisions, and not only decisions, but articulations of those decisions and engagement with employees to get their buy-in.
+167
+Without that engagement, you're going to see more and more combativeness, expressed, for example, in this battle between Politico's newsroom and its management over the use of AI.
+168
+So I think for me, the takeaway is not that we should all be frantic, but it is to recognize that we're starting to get a clear view into some of the challenges that come with AI.
+169
+One that appears to be emerging is the early career mentorship gap.
+170
+If no one hires entry-level workers, we're going to lose an entire generation that never has the chance to train up.
+171
+Unless, of course, we design something different for them.
+172
+Certainly, my response reading this is to think about how I and my companies could scoop up talent that might not previously have been available.
+173
+But whatever the case, it's a good reminder that no matter how bullish we are, the transition is going to be messy, and we need to go into it with clear eyes.

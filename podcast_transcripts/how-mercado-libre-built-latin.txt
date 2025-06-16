@@ -1,0 +1,1973 @@
+--- METADATA START ---
+Show: Lenny's Podcast: Product | Growth | Career
+Episode: How Mercado Libre built Latin …
+Host: Lenny Rachitsky 
+Guests: Sebastian Barrios
+Source URL: https://podcasts.apple.com/us/podcast/how-mercado-libre-built-latin-americas-most-valuable/id1627920305?i=1000711986101
+--- METADATA END ---
+
+1
+Steve Jobs called you.
+2
+One day I'm walking in the street and I get a phone and a blocked number.
+3
+I was super young, by the way, at the time.
+4
+I think I was 16.
+5
+Pick up.
+6
+I said, Well, hi, it's fashion.
+7
+This is Steve from Apple.
+8
+I need to talk to you about your app.
+9
+We're not going to be able to have it on the app store.
+10
+I pushed back a little bit.
+11
+I told him I read all the rules of the app store.
+12
+He told me, check again, because we just added a new rule.
+13
+At 19, you built an app that became the number one app in 19 countries.
+14
+It absolutely exploded.
+15
+I got contacted by a lot of different companies, multinationals, governments.
+16
+Saying,, well, you have the number one app.
+17
+We want you to build an app for us.
+18
+You oversee something 18,000 developers.
+19
+We do around 30,000 deployments per day.
+20
+We deliver over 5 million packages per day.
+21
+You're really big on not creating a big distinction between engineering and product.
+22
+It's hard to separate where engineering stops and product begins, and we don't feel just having a title should determine who is the owner.
+23
+Is there anything else that might be helpful for folks either about how you operate as a human?
+24
+Morning routine?
+25
+We were raised in a very intensely independent way.
+26
+My mother, mainly the analogy that she used is that she wanted to train us spies.
+27
+She would drop us in the middle of the city, Mexico City.
+28
+It would be, you have to get back home.
+29
+You have to know public transit or ask someone for help and basically solve problems.
+30
+Just go and get things done.
+31
+Today, my guest is Sebastian Barrios.
+32
+Sebas, as most people know him, is currently senior vice president of engineering at Roblox.
+33
+He was also a longtime head of product and engineering at Mercado Libre.
+34
+Mercado Libre might be the biggest and most interesting company that you have never heard of, and Sebas might also be the most interesting product leader that you've never heard of.
+35
+Mercado Libre is currently the most valuable company in Latin America, valued at over $100 billion, which also makes them one of the 150 most valuable companies on the planet.
+36
+They also have one of the largest engineering teams on the planet, with over 18,000 engineers operating in 18 countries.
+37
+They deploy an unprecedented 30,000 times a day.
+38
+The company owns their own trucks and planes.
+39
+They deliver over 5 million packages a day.
+40
+At one point, eBay tried to acquire them.
+41
+They ended up acquiring PayPal instead.
+42
+Now they are larger than both eBay and PayPal combined.
+43
+Also, just wait till you hear the stories about Sebas's early life, including how his mom trained him a spy, why he only drinks water, no coffee or tea or juice, why he doesn't listen to music, and also why Steve Jobs personally called him when he was 17 years old, telling him that they are booting his app from the App Store and forever changing the App Store policies as a result.
+44
+A huge thank you to Christopher Lazarus, Oscar Mullen, and Farhan Thauer for suggesting topics for this conversation.
+45
+If you enjoy this podcast, don't forget to subscribe and follow it in your favorite podcasting app or YouTube.
+46
+Also, if you become an annual subscriber of my newsletter, you get a year free of Bolt, Linear, Superhuman, Notion, Perplexity, Granola, and more.
+47
+Check it out at LennysNewsletter.com and click Bundle.
+48
+With that, I bring you Sebastian Barrios.
+49
+This episode is brought to you by Merge.
+50
+Product leaders, yes, you, cringe when they hear the word integration.
+51
+They're not fun for you to scope, build, launch, or maintain, and integrations probably aren't what led you to product work in the first place.
+52
+Lucky for you, the folks at Merge are obsessed with integrations.
+53
+Their single API helps SaaS companies launch over 200 product integrations in weeks, not quarters.
+54
+Think of Merge Plaid, but for everything B2B SaaS.
+55
+Organizations RAMP, Drada, and Electric use Merge to access their customers' accounting data to reconcile bill payments, file storage data to create searchable databases and their product, or HRIS data to auto-provision and deprovision access for their customers' employees.
+56
+And yes, if you need AI-ready data for your SaaS product, then Merge is the fastest way to get it.
+57
+So, want to solve your organization's integration dilemma once and for all?
+58
+Book and attend a meeting at merge.dev slash Lenny and receive a $50 Amazon gift card.
+59
+That's merge.dev slash Lenny.
+60
+This episode is brought to you by Vanta.
+61
+When it comes to ensuring your company has top-notch security practices, things get complicated fast.
+62
+Now you can assess risk, secure the trust of your customers, and automate compliance for SOC2, ISO 27001, HIPAA, and more with a single platform, Vanta.
+63
+Vanta's market-leading trust management platform helps you continuously monitor compliance alongside reporting and tracking risk.
+64
+Plus, you can save hours by completing security questionnaires with Vanta AI.
+65
+Join thousands of global companies that use Vanta to automate evidence collection, unify risk management, and streamline security reviews.
+66
+Get $1,000 off Vanta when you go to Vanta.com/slash Lenny.
+67
+That's vanta.com/slash lenny.
+68
+Sebas, thank you so much for being here and welcome to the podcast.
+69
+I'm super happy to be here.
+70
+Thank you for hosting me.
+71
+This is the first time that you're doing a major, let's call it major podcast.
+72
+I think you can call it major podcast.
+73
+You can be proud of what you've done.
+74
+I appreciate that.
+75
+So, let me just start with a stat that I think is going to blow a lot of people's minds.
+76
+You oversee something 18,000 developers.
+77
+Is that right?
+78
+Is that the right number?
+79
+That is the right number.
+80
+18,000 and climbing.
+81
+I just would specify that they don't report all directly to me.
+82
+We can talk about how the company is structured, but yes, I lead the technology team that basically powers all of what they do.
+83
+I think essentially you guys are in the top 10 of most engineers at a company.
+84
+You're above Salesforce and TikTok, NVIDIA, Adobe, Uber, OpenAI.
+85
+That's right.
+86
+I think you have to go into big tech or huge banks to get a larger number.
+87
+Okay.
+88
+So a lot of people listening to this have not heard of Mercado Libre.
+89
+A lot of listeners are in the US, other parts of the country outside of Latin America.
+90
+Give us just a brief explanation of what Mercado Libre do, and then give us a few more stats that will blow people's minds to the scale of this business at this point.
+91
+Happy to, happy to.
+92
+So, you can think of us as a completely vertically integrated e-commerce marketplace.
+93
+That means buying and selling any product you can think of.
+94
+And the vertically integrated part means we have our own distribution network, we have our own airplanes, we have our own trucks, we have to do all the technology and coordination behind that.
+95
+But even, or in addition to that, we also have a very large fintech operation.
+96
+The two sides of the business are almost the same size.
+97
+So, we also offer accounts, we offer credit cards, we offer loans, all of that integrated with each other into what we call an ecosystem.
+98
+Okay, and I saw a stat that you guys plan to have over 100,000 employees by the end of this year.
+99
+That's right.
+100
+There's a lot of operations that need to happen for all those packages to be delivered.
+101
+You asked about some fund statistics, specifically with deliveries.
+102
+We deliver over 5 million packages per day or items.
+103
+So you visit most of Latin America.
+104
+We have some very cool visualizations where if you track the routes of our trucks and delivery vans and whatnot, you paint a picture of Latin America, which is pretty fun.
+105
+We obviously operate in major cities, but we have very, very large capillarity and reach all the different corners of Latin America.
+106
+Okay, a couple more stats that you didn't mention.
+107
+You guys are valued over $100 billion.
+108
+It's a large company.
+109
+We don't focus on the stock price that much.
+110
+But yes, $100 billion, even more so now, depends on how the market's feeling and what the global news are.
+111
+But yes, one of the top-valued companies on the planet.
+112
+We have around 100 million users, customers, sellers, people interacting in the platform.
+113
+And as you mentioned, one of the larger engineering and product building teams on the planet.
+114
+Hopefully people now get the sense of, holy shit, there's a lot to learn here.
+115
+There's two buckets to the way I want to approach this conversation.
+116
+One is just really unique, interesting ways you all operate and how you scale a business this, how you build product.
+117
+The other is just you as a human are really interesting.
+118
+And there's a lot of stories I've heard that I want to talk about, but I'm going to save that for next.
+119
+Let's start with how you all operate.
+120
+So, one of the things, so I talked to a lot of people that work with you that work at Mercato Libre.
+121
+One of the themes that came up again and again is: you're really big on not creating a big distinction between engineering and product.
+122
+It's essentially one team for you guys.
+123
+Talk about just how that works specifically, just what does that mean and why that's so important to you.
+124
+For me and for Mericado Libre, it's hard to separate where engineering stops and product begins.
+125
+We do have a small product organization.
+126
+There are people in Medical Libre that have the product manager title, but the ratio is much smaller than any other tech company that you would think of.
+127
+And the way we think about it is that: we're not going to determine who's going to own the product just based on the title.
+128
+It's going to be based on who's the best for that role.
+129
+And it turns out that for us, in the majority of the cases, it's the engineering leaders, it's the tech leads, it's the people that can understand what's technically possible, and they're also good.
+130
+Well, okay, what are the business needs?
+131
+What are the user needs?
+132
+What are the users doing?
+133
+How am I going to measure that?
+134
+And combine that into a single role.
+135
+So, to make this even clearer, you have 18,000-ish developers.
+136
+How many people have the PM title?
+137
+So, I think it's less than 1,000.
+138
+I think that would make 5% work in other companies.
+139
+Maybe you have 10, 20, 30%, even more at other companies.
+140
+So, two follow-ups here: one is just why do you think operating this way is more effective in your business?
+141
+And do you need to hire engineers in a different way for them to succeed in this way where they're basically playing the PM role?
+142
+This works because you want to be as close to the problem as possible, and that probably works being as close to the technology as possible, being as close to the users as possible.
+143
+You can have it with two different people that have to interact and coordinate, and that obviously works as well, right?
+144, I'm not saying this is the only way to do it.
+145
+Clearly, there are a lot more examples.
+146
+Maybe we are the exception, and it would be hard to replicate anywhere else.
+147
+But if you're able to have that whole context in a single mind, in a single person, that can then deliver that vision to the team, I think it leads to great products that users are going to love and enjoy.
+148
+In terms of hiring, we do, in the interview process, test for product skills, but we mainly do test for engineering skills.
+149
+I think it's worth being honest about we have a strong bias for engineering, for being technical, for being deep into the details.
+150
+There's not a lot of tolerance for being in a meeting and getting asked the questions:, well, I need to check with this person to understand the details because I'm not sure what technology we're using.
+151, that would not fly.
+152
+So, there is a bias towards the tech side of it.
+153
+And then, once you're inside Mercalibre, we'll probably get to know you a lot more, and it'll be very clear if you have the product inclination or if you're more comfortable just with the engineering.
+154
+What's really interesting about this is a lot of companies start with no PMs, and they're, We never need PMs.
+155
+We're just going to be engineers leading products, it's going to be amazing.
+156
+And then, usually, eventually, people, these engineers realize, I don't want to be doing all this bullshit PM work.
+157, I just want to code, I want to build.
+158
+What am I in meetings all day writing specs?
+159
+And it's interesting, you guys have scaled to a hundred billion-dollar market cap, 18,000 people on the product team developers, and still you're working this way.
+160
+It's really rare.
+161
+What do you think has allowed you to operate this way at this scale that maybe other companies can't?
+162
+Yeah, I think it's also a top-down thing where a lot of the leadership is very technical.
+163
+They're very into the product.
+164
+They're also very into the business, into the numbers, into the details.
+165
+It's amazing to be on the C-level meetings and the questions, the level of attention.
+166
+I know founder mode is now a term that's there, but the company has been operating that for a while, where discussions will even go as deep as, okay, we're using that copy.
+167
+That's way too many words.
+168
+It's not clear.
+169
+Hey, what is this pixel here where we could use that space for something a lot more useful?
+170
+And these are literally conversations at the C-level asking, okay, how does this work for users?
+171
+When you present a feature, and here I'm going to stereotype other companies, it might not be the case, but my understanding is many times, okay, how much revenue can we get from this new feature?
+172
+Or what's the metric that's going to move for Marcus?
+173
+Our CEO, the first question is always: okay, how's the user going to experience this?
+174
+Show me the flow, show me the user experience, are they understanding it?
+175
+Show me the metrics that people are liking what we're doing.
+176
+Putting the users before the revenue obviously turns into revenue in the future, in the long term, which is what you're looking for.
+177
+So, again, I think the top-down version of that, maintaining the culture and being able to select for the top of the top talent in a whole region, in multiple countries, I think it's what's allowed that to happen.
+178
+And the business, as you said, there's a lot of technology, right?
+179, you need to do the routing for all the buses, the trucks, the planes, the distribution centers.
+180
+You need to do routing for picking items within the distribution centers, risk, content moderation, search, robotics.
+181
+There's a really long list of really fun initiatives that we're working on.
+182
+They're all very technical and turn into value for our users.
+183
+I can't help but ask: how does AI impact this way of working where engineers are doing more and more of the PM work?
+184
+Is that just accelerating that further?
+185
+Is there anything you can share about just how AI is changing the way you all operate?
+186
+It's a great question because you probably always hear it from the other side, no?
+187, okay, now people who are more product-oriented are not going to need engineers as much.
+188
+So, for us, the change is accelerating what people can do on both sides.
+189
+But I don't think there's any competition.
+190
+And again, we don't see a line between product and engineering as strongly as other companies.
+191
+So, I'm extremely happy when someone who's more product-oriented comes in and can start developing more stuff on their own, even just demos.
+192
+I think we can talk about the AI hype a little bit in the future, but it's definitely great to make demos, to turn ideas into something that you can touch, something that you can see, designs, and seeing a lot more people enabled to do that.
+193
+I think it's just accelerating everything we do.
+194
+On the actual coding side, of course, it started as advanced autocomplete, and now you have agentic frameworks, cursor, and windsurf.
+195
+OpenAI just made an acquisition.
+196
+Clearly, it's a big shift in the way we develop technology.
+197
+It's not at the point where it can do anything and everything, and security, compliance, all the different things that go around turning a demo or a product into something that's going to reach the production or the market takes time.
+198
+But I'll say we're taking it even further.
+199
+We always to think in terms of platforms.
+200
+It's one of the reasons why we've been able to scale the team so much.
+201
+We have a great internal development platform that takes care of a lot of scaling, security, building, testing, compliance.
+202
+So developers and teams can just focus on adding value.
+203
+And we're taking the same approach with AI.
+204
+We developed an internal platform called Verdi that basically abstracts away a lot of the complexities around, okay, where are you going to get data?
+205
+How is it going to be authorized?
+206
+And that in Intel has been evolving as the models become more capable.
+207
+Now you can have more agents, agentic frameworks, things taking action, taking over longer tasks.
+208
+And we're seeing great results with skipping code entirely.
+209
+I think it's a fun one where the prompt or what you want the product to do is everything you tell the system.
+210
+We came up with ways to use our existing code.
+211
+So it's not there's no code in any of what I'm talking about, but we basically can extract the functionality of every single one of our microservices.
+212
+And then we can have agents build and use different parts of different services and create new features for users end-to-end with a UI.
+213
+So that's something that is still experimental, obviously, but it's happening and it's just going to accelerate as the models get better.
+214
+So we literally have things that are taking existing code.
+215
+So it's not code doesn't exist, but you don't have to write any new code.
+216
+There's a lot of functionality that we already have on the platform.
+217
+And you can combine different parts of it and turn it into a new feature or product without any intervention from any code, extra code.
+218
+That is very cool.
+219
+So essentially, you have all these APIs and microservices, and your agents can just use what already exists to add new features.
+220
+Exactly.
+221
+And if you extend it a little more, you could even reach a point where UIs and apps are entirely generated.
+222
+These are all the things that you can do inside Mercada Libre.
+223
+You can buy stuff, you can get a credit card, you can move money around, and then have a completely personalized UI for user predicting what are you going to do next, and then just having that as the main screen.
+224
+Maybe you have other screens, obviously, that allow you to do everything, but it's an exciting future.
+225
+I think we're going to see a lot more automated UI.
+226
+Wow.
+227
+Okay.
+228
+I'm going to try to resist just making every conversation about AI.
+229
+So let's leave that aside and maybe we'll come back to it.
+230
+But let's zoom out a little bit.
+231
+And I want to hear other key or very unique ways of working that you have figured out that allow you to operate this team of 18,000 developers and continue to ship great products.
+232
+So if you had to pick,, I don't know, two or three key ways of working, what would those be?
+233
+One big one, it's a cliche, but it's true, is the fear of failure.
+234
+We empower our teams to make mistakes.
+235, no one's going to get fired for believing something that didn't work in the sense that maybe the market was not ready or we had the wrong idea on where we have to implement.
+236
+Obviously, there's a lot less tolerance for bad quality and it failed because the product wasn't good or is going offline or those kinds of failures are much less tolerated.
+237
+But we do encourage our teams to take a lot of risks on what we should be working on.
+238
+We also let them be very independent.
+239
+I think it goes hand in hand.
+240
+So for example, we don't operate with OKRs where everything just trickles down into what every team is supposed to do.
+241
+We have very high-level objectives on where we want the company to be.
+242
+And they're not even that long term.
+243
+It's not we have a 10-year plan.
+244
+And I think in a market that's changing so much, even before AI, this is an extremely competitive market with very dynamic regulations in multiple countries.
+245
+So it's hard to say,, okay, this is a plan for 10 years, and these are the OKRs.
+246
+And now everyone go into your teams and implement the specific features that are going to point to that.
+247
+The way we run it is these are the objectives.
+248
+These are maybe some of the new businesses or areas where we would to explore.
+249
+But everything else is up to the teams.
+250
+We just cascade the main vision of where the company is going.
+251
+And there's a lot of another cliche, freedom and responsibility, saying, okay, do whatever, literally, whatever you think is best for our users, for the company, for what we want to accomplish.
+252
+There's going to be tight feedback loops on that to also make sure everyone's pointing in the same direction.
+253
+But you can't be telling 18,000 people exactly what they should be working on every day and expect that to work.
+254
+So there's a fun combination of what can you delegate, what can you not delegate.
+255
+We're also, I think, very hands-on wherever we can be.
+256
+So we can't be on every single detail.
+257
+But in the projects that we feel are most important, the whole leadership team goes extremely deep into working with the team, understanding what the restrictions are, what's working, what's not working, and pushing the team forward.
+258
+So I think that's probably the main one.
+259
+We also talked about putting users before revenue.
+260
+I think that's another big one that we've liked.
+261
+And there's another tricky aspect of it, because life is trade-offs.
+262
+But as we say, okay, let's be very distributed on what the teams are going to be working on.
+263
+Then you can end up with a product that has great parts, but once you put them all together, it's horrible and it sucks.
+264
+People don't it.
+265
+So you also need a mix of, okay, this is the holistic vision.
+266
+This is what we want to accomplish.
+267
+This is what probably the end product is going to look.
+268
+And then you can build the features.
+269
+And there's no one rule that basically applies to all projects.
+270
+There are times where you can have more freedom.
+271
+There are times where you do require a lot more, yeah, one vision of where things are going.
+272
+So I think that's another important one.
+273
+What else?
+274
+We to observe users more than talk to users.
+275
+You always hear talk to users, listen to users.
+276
+They're going to tell you what they want, what they need.
+277
+That works sometimes.
+278
+We've seen that what works best is just to observe them, whether that's literally user research sessions and just seeing what people are doing with the product.
+279
+I'm sure this has happened to you and to many people that listen to your show and you cringe at all the assumptions that are being crushed before your eyes as someone types in their email and their name in the same field because your field said email comma name.
+280
+So you could either have the email or the username and people say, well, I'll write both because that's what they're asking of me.
+281
+So a lot of examples this where observing users is extremely valuable.
+282
+I think those are the ones that come to mind.
+283
+Okay, this is a great.
+284
+Let me follow up on a couple of these.
+285
+So what I'm hearing is there's a lot of independence and distribution of ownership where teams can go off and build their own stuff.
+286
+As you pointed out, it's important to have a vision and some sense of what success looks and make sure everyone's rolling in the same direction.
+287
+Just going a level deeper, how do you operationalize that way of operating where teams can do their own thing, but you also share vision?
+288, how often do you update that vision?
+289
+How do you communicate it?
+290
+And then how do you check in with teams to make sure they're heading towards the right direction?
+291
+We don't do anything magical there.
+292
+We do a lot of design reviews.
+293
+I think it's a term that they would probably use or product reviews in the US, where it's, okay, this is what we're working on.
+294
+This is what it looks.
+295
+This is what all the pieces together are doing and working or not working.
+296
+And there, the leadership team is extremely candid and honest on their feedback, always cordial and a happy work environment, but definitely on the side of being honest about what's working, what's not working.
+297
+Whether the vision was mistaken as well.
+298
+There were many times where we've thought this was the right direction.
+299
+Turns out it's not, and we can pivot very quickly into a new thing.
+300
+So no big secrets.
+301
+Maybe the only secret is you can't check absolutely everything when you have 18,000 people.
+302
+So to give you another crazy statistic, we do around 30,000 deployments per day, changes to production.
+303
+30,000 PRs a day.
+304
+PRs, deploys, changes to a system.
+305
+It can be configuration changes, it can be database updates or whatever, things that change.
+306
+So there's no way anyone can check what those 30,000 changes are doing.
+307
+That's more than one per developer.
+308
+Yeah, some of them are automated changes as well.
+309
+But yeah, we have a very high speed of execution.
+310
+And yeah, it's quite fun to be around something that's changing that rapidly and that dramatically.
+311
+We, again, have many different businesses, many different competitors in different businesses who operate at world class, whether it's finance, whether it's e-commerce.
+312
+I would even say...
+313
+Brazil is probably one of the most competitive markets on the planet for e-commerce.
+314
+You have local players, you have international players, you have players from Asia that are even funded by video game revenue and profits.
+315
+So it's a great dynamic market to be around.
+316
+I that optimism, that way of framing it.
+317
+Well, we competition, especially when you're competing with the top of the top, and it pushes you to be better as well.
+318
+This point you made earlier about being the top company in a market is really interesting.
+319
+I was wondering if I wanted to come to this, but I think it's interesting to talk about for a bit.
+320
+So I've had a few product leaders from companies Revolut, N26.
+321
+I haven't had Intercom on yet, but the co-founder is coming on soon.
+322
+And a theme across all those conversations about how they've built such a strong product team that pumps out incredible product leaders is they're the top startup in their market.
+323
+And it's just an interesting thread of just how much power comes with being the most successful company in a market and just the cycle of success that comes from that in terms of hiring amazing people.
+324
+Is there anything else there that you think might be interesting to folks that are, I don't know, that want to try to do something this other than just build a successful business?
+325
+I think it applies to many things.
+326
+And you often also hear,, well, you're not in the Bay Area.
+327
+You're not in the pinnacle of the capital of technology, so how can you build amazing technology?
+328
+And there are advantages as well.
+329
+I think you would find the same with, you mentioned a bunch of companies that have experienced that where, okay, if you can be the top in a region where there's great talent, and by statistical definition, there's great talent everywhere.
+330
+It probably follows a probabilistic distribution, so it's everywhere.
+331
+A lot of it does flow into the US, and it's absolutely true that there's a very high concentration of talent outside specific companies.
+332
+I think that's probably the one thing you don't get outside of the big tech hubs where you are the top company, but you are the only top company.
+333
+And I'm exaggerating a bit, right?
+334
+There are great companies throughout the world and in Latin America, and you have unicorns and there are outliers.
+335
+But the truth is, you're setting your own path and you're setting your own map and setting your own destination.
+336
+And you're building things that have not been built before in a different way.
+337
+And it's very fun, that's for sure.
+338
+But I'll correct.
+339
+I said intercom.
+340
+I don't think, I think they're technically a US-based company, but I think a lot of their team is in Ireland or is originally in Ireland, just to be clear there.
+341
+And then there's other companies Canva and Atlassian.
+342
+I feel there's this really,, what I'm taking away from this is if you want to build a company outside of the US, you need to be the best in that market to take advantage of this cycle that happens where the best come to you.
+343
+Yeah, maybe you could say you have to be the best eventually if you want to have that flywheel running.
+344
+It's hard to start and be the best and the biggest when you're just getting started.
+345
+But I think knowing that there's great talent everywhere and that it is possible to attract them without being in a specific tech hub, maybe even empowering, so, okay, I want to start a company here.
+346
+I think we can also be honest that it will be harder.
+347
+It is easier to recruit and build a team where you're in a place where the high density is all over.
+348
+Another thing that happens to us is that many people try to recruit from us, and that's something that we have to deal with.
+349
+But if you get that flywheel going, it becomes into a clear advantage.
+350
+I want to come back to something you said that I think might be, there might be something more there, which is around reducing the fear of failure.
+351
+A lot of companies and leaders say that.
+352
+They're, yeah, yeah, we let people fail.
+353
+Totally.
+354
+No problem.
+355
+But then in reality, they have performance reviews, they got to show impact, they have to show success.
+356
+Is there something you do to create that culture where failing is okay?
+357, what can people learn from you to create that culture?
+358
+I think that question is even more on how does culture work at any company, especially at hours.
+359
+It's very clear that it's not what you write on the walls or what you put on your website.
+360
+From what Flearn and what we've seen, it's something it's what you do.
+361
+It's what the leadership team is doing, is how I get my performance reviews, how I get either praise or not praise.
+362
+And in public, what are the acceptable errors?
+363
+What are the not acceptable errors?
+364
+Again, if we have a system outage, it's obviously unacceptable.
+365
+That's not the error that we're going for.
+366
+We're going for, well, you took a risk and a very bold vision, and it turns out it was not the right path.
+367
+You're not going to get penalized for that.
+368
+You might even get a promotion, and those messages that you send are extremely powerful.
+369
+Who has what title, who gets promoted, who doesn't get promoted, who is getting what praise in public?
+370
+What announcements are made on new products.
+371
+How do we talk about things that didn't work?
+372
+One very clear one is, okay, this didn't work.
+373
+And yes, we risk, but the person that led the project was fired.
+374
+It's, well, then you're not living what you have on your website.
+375
+So I think it is not more complicated than that.
+376
+You need to live it, you need to show it.
+377
+And you also need to have people that will take in that culture and also propagate it into their teams.
+378
+That's also the way it scales in the organization.
+379
+But it definitely starts with the top management of the company and again, what they are focused on, what messages they're sending to the rest of the company.
+380
+They participate in the product reviews.
+381
+They are very aware, at least, of all the big features that we launch.
+382
+And the feedback is direct and clear.
+383
+Today's episode is brought to you by LinkedIn Ads.
+384
+One of the hardest and also most important parts of B2B marketing is reaching the right people.
+385
+I'm constantly getting ads for products that I will never buy.
+386
+And I almost feel sorry for the money that these companies are spending, pitching me on their spend management software or some cybersecurity solution that my one-man business just does not need.
+387
+When you're ready to reach the right professionals, use LinkedIn ads.
+388
+LinkedIn has grown to a network of over 1 billion professionals, including 130 million decision makers.
+389
+And that's where it stands apart from other ad platforms.
+390
+You can target your ad buyers by job title, industry, company, role, seniority, skills, even company revenue.
+391
+All the professionals that you need to reach in one place.
+392
+Stop wasting budget on the wrong audience and start targeting the right professionals only on LinkedIn ads.
+393
+LinkedIn will even give you $100 credit on your next campaign so that you can try it for yourself.
+394
+Just go to linkedin.com/slash podleny.
+395
+That's linkedin.com/slash podleny.
+396
+Terms and conditions apply only on LinkedIn ads.
+397
+You talked about this idea of being direct and honest, but also maintaining a cordial environment.
+398
+Talk about just that balance in the culture you've created of being direct.
+399 this idea of radical candor is what I'm hearing.
+400
+Yeah, so the book became very, very popular.
+401
+The book Radical Candor.
+402
+Yeah, yeah.
+403
+Oh, awesome.
+404
+Sorry we had Kim Scott on the podcast.
+405
+It's a great book, and the concept is also great.
+406
+I would even say it's even more important in Latin America, in some Asian countries where you have a culture, and I'm Latin American, so I can talk a little bit about stereotypes without it becoming offensive, especially ones that are true, where there's a lot of hierarchy.
+407
+And I'm not going to tell my boss that he's wrong.
+408
+We'll just going to do this because he said so or she said so.
+409
+This is the way it works.
+410
+And this is the way it's always been done.
+411
+So that's the way we're going to do it.
+412
+I don't want to stand out.
+413
+These are cultural stereotypes that we are extremely aware of when we operate.
+414
+People are extremely polite in Latin America as well.
+415
+If you're traveled, everyone will smile at you.
+416
+It will be very hard for someone to say no to something.
+417
+Even meetings or whatnot, or yes, but later, yes, but later.
+418
+And they mean no.
+419
+I think there, Argentina and other countries, but Argentina, where the company was founded, is an exception to that, where people are very direct.
+420
+I will tell my boss if he's wrong.
+421
+It's something that I love about the company, and we've been able to export that and also select for people that will behave in that way.
+422
+But yes, we're extremely direct, extremely candid.
+423
+We're honest about what's working, what's not working.
+424
+And it's a learning that every manager or leader goes through.
+425, well, I don't want to hurt people's feelings.
+426
+I want to be friends with everyone.
+427
+I think we all start on that path.
+428
+And eventually you realize that people the honesty.
+429
+They might not it in the very short term or in the medium term, sometimes even.
+430
+But my experience has been: if you're coming from a place of honesty, again, if you're not insulting anyone or crossing a line where things feel personal, people appreciate the feedback.
+431
+People growing.
+432
+If you have your performance review and everything comes back positive, what are you going to do with that?
+433
+I was, well, he's doing great.
+434
+Everything's perfect.
+435
+Thank you for being a part of the company.
+436
+Well, what could I be doing better?
+437
+What's not working?
+438
+It's also a skill to separate that from your person.
+439
+We do have situations where I've had to have conversations on, well, you got this strong feedback, but it's not the product.
+440
+It's maybe on the vision that we are pursuing or on the execution that the work has nothing to do with you.
+441
+We can go out and have lunch and we'll still be cordial.
+442
+But this idea of, well, the companies should be families and it's not true because you behave extremely different with your family.
+443
+There's no expectation of high performance.
+444, in some families, obviously, and in some cases, even in mine, we can talk about that.
+445
+But it's always from a different perspective.
+446
+Whereas I think the analogy that we use much more often is of a high-performance sports team, where it's very clear where the line is between, yes, we can have fun together and we should as we work on interesting things.
+447
+But when you are talking about work and the performance and what's working, what's not working, the results speak for themselves usually, and we just don't hide that from anyone.
+448
+Speaking of that, along those same lines, I heard you do this, you do something that is a little controversial these days, but you did this a long time ago, which is you send a weekly email asking what did you get done this week, and you share what you got done this week.
+449
+Talk about just that.
+450
+Yeah, yeah.
+451
+So it became a meme, what was it, one or two years ago.
+452
+I used to do it before that, I should say.
+453
+And I should also clarify that I don't have an expectation that people are going to send that to me.
+454
+It's something I do myself.
+455
+So I'll go over what I did in the week, what worked, what didn't work, even what interesting things I discovered.
+456
+And I will share that with the executive team, with our CEO who I report to.
+457
+I'll share some of those with my team.
+458
+It basically helps me keep track of what's working, what's not working.
+459
+I usually also get feedback on those emails or help or saying, well, let's talk about this and this and that.
+460
+So I think that's something super simple that anyone can do.
+461
+You can write a weekly email to your boss or to your team and saying, well, this is what happened this week.
+462
+This is what worked.
+463
+This is what didn't work.
+464
+This is maybe something I need help with or something that stuck.
+465
+Maybe we can unlock it together.
+466
+I think it's strange that not, I haven't heard a lot of people doing it.
+467
+I think I read it somewhere a couple of years ago, and that's probably where I got the idea.
+468
+I'll look it up to see if we can link it on your notes.
+469
+So I don't take credit for it.
+470
+I wrote a post about this,.
+471
+I called it the state of me.
+472
+Okay, maybe it was you.
+473
+I wonder if it was.
+474
+Maybe it was you.
+475
+Either way, I'll link to this post and the whole idea.
+476
+And there's a less controversial way of asking this instead of what did you get done this week, which is, I call it the state of me, I call it the state of Lenny email.
+477
+And basically, every week, it was a weekly thing for me, not a daily thing.
+478
+I email my manager.
+479
+Here's what I got done.
+480
+Here's my next set of priorities.
+481
+And here's blockers I need you to help.
+482
+Oh, I probably got it from you.
+483
+It's sounding extremely familiar.
+484
+So, I send a weekly email.
+485
+I call it a weekly update.
+486
+It's also not what did I get done this week.
+487
+It can be what I got done on the week, but important things are happening, your releases.
+488
+That also frees up a lot of time, for example, with my COO, where, okay, on the weekly meeting, we don't have to talk about those specific things, or we can pick out from that email what's relevant, what's working, what's not working.
+489
+So, definitely a great tool.
+490
+And I'm pretty sure I got from your post just hearing you.
+491
+What a circle of light you've got here.
+492
+Okay, so speaking of things that you did before other people, something else that came up a lot in chatting with folks that work with you is they pointed out that you're really good at not falling for hype cycles.
+493
+You're good at being really pragmatic about things that everyone's really excited about, crypto, Gen AI these days.
+494
+How do you approach stuff?
+495
+How do you approach new things that everyone's super excited about and not fall into this trap of just, oh, we all got to pivot and do this thing that everyone else is doing?
+496
+I hadn't thought about it that way, but it's true.
+497
+It's true in some sense, because it's not I just ignore it.
+498
+So, I think I bought or even mined my first Bitcoin in 2010 or 12 or something that.
+499
+We can leave it undisclosed how many and how many I still have.
+500
+Why are you even working?
+501
+No, not enough for that.
+502
+A lot of great lessons on selling and when the right time and whatnot.
+503
+I had those lessons too.
+504
+So, it's not I ignored what was happening, no, but I'm definitely skeptic of most things, I would say, even.
+505
+I doing a lot of research.
+506
+Deep research is a great tool.
+507
+I use it all the time for a lot of things.
+508
+I do it myself as well.
+509
+So with crypto, for example, I love the technology,.
+510
+I think there are some very fun breakthroughs there, the distributed consensus, and how you get a single thing.
+511
+But then you start to run some of the numbers on, okay, so what's the throughput?
+512
+And then what can you put in there, at least with the technology that we had at the time?
+513
+A lot of things are moving quickly, and you get layer two and layer three and whatnot.
+514
+But I think having a good understanding of the fundamentals and also being involved probably in what I would call quote unquote the real world in a business and understanding the scale of what's necessary for things to work is it's helpful.
+515
+Keeping a level head on what are some of the main characteristics.
+516
+So we can talk about, and by the way, we have crypto and Mercado Liure, we have our own cryptocurrency.
+517
+So it's not we to say, well, crypto is not useful and it's very useful in Latin America and countries where access to US dollars is not as easy as in other places.
+518
+But I think going from that to saying,, okay, every single thing on the planet is going to run on the blockchain, that's where some of my alarms start to go off.
+519
+And it's, well, it can be a great technology and it can be very successful without having to take over the world, which can also turn into AI, where, again, the claims are that it will take over the world, and happy to talk about that.
+520
+But just understanding the fundamentals of the technology that's being potentially hyped and having a good understanding of how it could be applied to something useful for people, I think it's where it's been helpful.
+521
+Awesome.
+522
+Okay.
+523
+Let's pivot to talking about you as a human.
+524
+There's just so many stories I heard from people that I want to hear about.
+525
+Okay, so one is that you built an app, you put an app store, Steve Jobs called you, and he's, Sebastian, we got to remove your app.
+526
+Yeah.
+527
+Talk about that story.
+528
+Yeah, so we should clarify that the app was a bit strange.
+529
+So it was an app that literally helped you drain your phone's battery.
+530
+There were two reasons why I made it.
+531
+One was because I was learning about all the different sensors on the phone, GPS and gyroscope and the screen and whatnot.
+532
+So I said, okay, I'm going to turn them all on at the same time.
+533
+And that's going to really warm up your phone.
+534
+On the other end, there was this trend.
+535
+I'm not even sure where that ended up, where it was better for your phone to run completely out of battery and then recharge it.
+536
+I think now the recommendation is that it should stay between 10% and 80% at all times to maintain battery health.
+537
+I was, okay, so when you have 2% left and you just want to get it over with and get the battery down, you open this app and drain it.
+538
+I that there's a reason for this because I could see you just doing it for fun, but I there's functionality here.
+539
+Yeah, yeah.
+540
+I always try to make it useful, at least for me.
+541
+So I put it on the app store, and this was the time where the app store was starting and the app review process, and people were getting very mad that their apps were getting rejected.
+542
+We're used to a world where I just put my app out there and anyone can download it.
+543
+So developers were going to the press to say, well, Apple is not approving my app, and then articles will be written and it would be a PR thing.
+544
+So the executive team at Apple, including Steve, were calling developers to inform them that their apps were not going to be approved, that they were taken off the app store, trying to avoid them going to the press and just being more personal and explaining what was wrong with the app.
+545
+And so one day I'm walking in the street and I get a phone and a blocked number, maybe I can't identify it.
+546
+Pick up.
+547
+I said, well, hi, Sebastian.
+548
+This is Steve from Apple.
+549
+I'm here to, well, I need to talk to you about your app.
+550
+We're not going to be able to have it on the App Store.
+551
+This is draining people's batteries and we don't want that for people.
+552
+I pushed back a little bit.
+553
+I told him, well,, I read all the rules of the App Store before making this app, and there's no rule against draining the battery.
+554
+And he told me, check again, because we just added a new rule that apps cannot overly drain the battery on the phones.
+555
+So I'm happy to say there is an App Store rule that was made specifically for me at the time.
+556
+I didn't realize I had spoken to Steve Jobs until a couple of minutes later.
+557
+It was, well, yeah, someone called Steve from Apple.
+558
+There's probably a lot of Steve's.
+559
+I was, well,, that voice sounded extremely familiar.
+560
+And I was, okay.
+561
+And then articles started popping up of Steve and the rest of the executive team calling developers to let them know that this was happening.
+562
+So I was happy to confirm that I had at least had a short phone conversation with Steve, quite the legend.
+563
+That is an incredible story.
+564
+First of all, I just love that Steve Jobs was calling random app developers.
+565
+Founder mode, right?
+566, how did he have the time?
+567
+I just love that he took,, that they realized this is important.
+568
+And if people hear from us, that'll go over better.
+569
+Even though people kept posting, right?
+570, people are, Steve Jauscalib should touch down my app.
+571
+So a little backfired, maybe.
+572
+And he, how did he sound?
+573
+Was he just, did he, was he this nice radical candor balance of nice and yeah, yeah.
+574
+And it's not what you would against here typically hear from him.
+575
+No, he was a lot more mercurial, I think is the term that people use.
+576
+But none of that on the call.
+577
+He was pretty nice and chill.
+578
+And so, well, we're not going to allow your app.
+579
+Just matter of fact.
+580
+Yeah.
+581
+And then you said that they added this rule before he called you.
+582
+We have a new rule.
+583
+I guess they could do that, right?
+584
+It's our place, our store.
+585
+Wow.
+586
+Okay.
+587
+Amazing story.
+588
+Did that discourage you from building more apps, or are you just, holy shit, this is not a good thing?
+589
+No, absolutely.
+590
+No.
+591
+I was very happy to talk to Steve.
+592
+I sent him a few emails.
+593
+I never got a reply, to be honest, but yeah, sent some emails on feedback.
+594
+Again, the App Store, the iOS and whatnot.
+595
+I was super young, by the way, at the time.
+596
+I think I was 16 or 17, 17 or 18 when I developed that app.
+597
+So I was, yeah, I didn't know what it meant to get a call from him and to send him emails and expect a reply and whatnot.
+598
+So it was a fun experience.
+599
+And I kept building more apps.
+600
+I started a mobile app development company a few months after that, which is another fun story.
+601
+Well, maybe this is the story, but I know that at 19 you built an app that became the number one app in 19 countries.
+602
+Maybe just briefly share that story.
+603
+That one is super fun.
+604
+So I had a girlfriend who I really liked at the time.
+605
+I don't know if that happened in the US, but in many Latin American countries, and I think throughout the world, phone companies came out with something where you could call five numbers for five minutes for free, five for five for five.
+606
+So I had my girlfriend's number on there and we would talk for five minutes.
+607
+But what they did is if you went over one second, they would charge the whole five minutes.
+608
+And phone bills were expensive.
+609
+Now, we're going to sound old people when we talk about this soon.
+610
+That was a big deal, especially for a teenager.
+611
+I didn't have money to throw around on my phone bill.
+612
+So I made this app that was extremely simple.
+613
+It alarmed you,, it sent a notification when you were close to reaching the five minutes.
+614
+So, you could just hang up and call again and have another five free minutes and then call again.
+615
+I did it for myself.
+616
+It turned out to be a good investment because I ended up marrying my girlfriend.
+617
+And she's still my wife, and we have a beautiful family together.
+618
+It also turned out to be a good business decision.
+619
+So, it cost $100, I think it still does, to upload an app to the App Store.
+620
+So, I thought, okay, I need to sell around 100 copies.
+621, there are fees and whatnot, but let's say I have to sell 100 copies for $1, so I'll put it on the app store.
+622
+That was my business plan, and it absolutely exploded.
+623
+It became the top-selling app in Mexico and a lot of other different countries.
+624
+It was not a free app, and it was also completely local, so there was no back-end, no cost, no advertising.
+625
+So, it was a very profitable endeavor that also very quickly turned into a business in itself.
+626
+And then a separate business where people, this was when the app store was just starting, when the iPhone was getting big.
+627
+So, I got contacted by a lot of different companies, multinationals, governments, saying, Well, you have the number one app, so we want you to build an app for us.
+628
+There weren't that many people into iPhone OS at the time.
+629
+It was called Development Objective-C, and all the ways to build a good app.
+630
+So, I started building apps myself for a bunch of different people and companies.
+631
+Eventually, I couldn't scale that and had to hire people.
+632
+So, I hired my friends from college and taught them how to do apps.
+633
+We all learned from a free online course from Stanford.
+634
+It was a great course on how to build apps.
+635
+Because I remember going to my university professors and saying, Hey, the iPhone is cool.
+636
+I want to learn how to make these apps.
+637
+Who can teach me?
+638
+And they're, No one,, this is new.
+639, no one knows how to do it.
+640
+So, I also had to learn on my own, but then I was able to teach people, turn that into a mobile app company.
+641
+Did that for about two years.
+642
+And it turns out to be a very good business, but it's also boring to have to start over new projects and new projects and projects.
+643
+I going deep into things and iterating and creating products that people love.
+644
+So we decided to sell the consulting side of that, keep the mainly mobile team, and start working on fun products that we could scale and scale exponentially.
+645
+One of those was ordering taxis from your phone.
+646
+So at the time, Uber was starting in San Francisco.
+647
+They started a private network of drivers and fancy cars.
+648
+And eventually it was open to a lot of people.
+649
+So I thought, well, that would work great for taxis.
+650
+And Mexico City is the city with the most taxis on the planet, at least outside Asia.
+651
+And at the time in San Francisco, for example, at least taxis had a clunky computer and they were these tracked GPS or whatnot, but in Mexico, they use radios and you had to call a number and you never knew if your taxi was coming or not.
+652
+So we developed a very simple test.
+653
+It sounds silly now that these companies are huge, but I was not sure are people going to trust getting on a car that they got from a phone in Mexico City, when your parents have told you,, don't trust people on the internet and don't get into strangers' cars.
+654
+So, we're combining two things that people were taught not to do by their parents.
+655
+We decided to just do the passenger app and test whether people this.
+656
+So, when you requested a car, we would call a taxi company and basically just call for you and send the car over.
+657
+And that was enough for it to explode.
+658, we could not deal with the demand.
+659
+We had to build an intermediary call center to call other call centers while we developed the driver side of the marketplace and got drivers on board.
+660
+And once you got the flywheel and you got a lot of drivers and a lot of riders and the network effects, then it started to scale and work.
+661
+That was a fun experience.
+662
+Oh, man.
+663
+You're just a well of fascinating stories.
+664
+I love this journey of sharing of just at 16, I think you built that app that Steve Jobs called you about.
+665
+I was already, yeah, yeah, maybe 17.
+666
+Okay, from that to now managing something 18,000 engineers.
+667
+I love this journey.
+668
+Also, competing with Uber along the way.
+669
+Yeah, yeah.
+670
+Very intense competition.
+671
+I've always enjoyed competition.
+672
+That's the epitome of intense competition from what I hear.
+673
+Okay, another interesting thing about you that I've heard is that you drink no alcohol, which I think is common these days, but it's something you've been doing for a long time.
+674
+You also drink no tea, no coffee, no juice, no soda, just water.
+675
+What's going on there?
+676
+Why is that?
+677
+I just love water.
+678
+Water is amazing.
+679
+I think it's not the same reason for everything.
+680
+It has turned now into, well, I'm happy with water.
+681, why do I have to alter my brain with chemicals?
+682, I my brain.
+683
+We have a good relationship.
+684
+And I sleep well.
+685
+And I don't feel I need stimulants of any kind.
+686
+I already have a lot of fun.
+687
+It did start in different ways.
+688
+So the legal drinking age in Mexico is 18, a lot younger than in the US.
+689
+So people start drinking when they're 16.
+690
+So very early, I got to see the effects of at least drinking a lot can have on your body.
+691
+And I just never wanted to be in that situation where I didn't have control of my destiny and control, right?
+692
+We don't have a lot of control on our destinies, but at least physical control of, I want to walk there and can I walk there.
+693
+I think that really marks you when you see young people overdrinking.
+694
+It's not a fun picture.
+695
+Then I understand people, adults, can drink responsibly and have fun with friends and whatnot, but I never got into it.
+696
+And I think it's an acquired taste.
+697
+I don't particularly enjoy the flavor of beer and different alcohols.
+698
+Coffee, it's also similar.
+699
+I don't how it tastes.
+700
+It takes extremely bitter to me.
+701
+I also think it's an acquired taste where it's, okay, well, the effect is great because I get a lot of energy.
+702
+And then you start to appreciate the flavor, but I don't think it starts with the flavor.
+703
+So again, I never got into it.
+704
+Tea, I think, is something that I could drink, but I just never think of drinking it.
+705
+And I'll probably erase you.
+706
+Even one stranger that I don't know if my the friends you you interviewed mentioned, but I also don't listen to a lot of music.
+707
+Also, when I program, I to program in silence, which I know seems extremely strange to to a lot of programmers and developers.
+708
+And I think the reason for that one, and also talking about the interesting background, is my dad's an orchestra conductor.
+709
+So I went to maybe hundreds of concerts for big orchestras and backstage.
+710
+And it was very fun.
+711
+But I think I had enough music for a while.
+712
+And it's not I don't enjoy music.
+713
+My wife is really into music and we listen to music together and with our kids and everything.
+714
+But I never have the idea of putting on music myself.
+715
+So that's another strange one to share.
+716
+That was a good one.
+717
+I had not heard that one.
+718
+And then another couple things I heard is that you basically don't do any social media.
+719
+You also don't watch the news.
+720
+You don't watch TV really.
+721
+Is that all true?
+722
+That is true.
+723
+That is true.
+724
+For a really long time, we didn't even have a TV, the device.
+725
+We bought one when my son was born, and we couldn't go to the movies anymore.
+726
+So I do media.
+727
+I movies from time to time.
+728
+We do watch shows from time to time, but we can watch them on an iPad.
+729
+I think it's a lot less addictive if the screen is small.
+730
+So even though we have a T V now, we don't use it very often.
+731
+I love reading.
+732
+And The social media thing, I think it's worth qualifying as well.
+733, I enjoy X a lot, Twitter, and reading what people are thinking, what's happening, what's not happening.
+734
+That's probably my main source of news.
+735
+I don't follow any news organizations just because I feel I'm going to find out if something extremely important is happening.
+736 now, the whole political and geopolitical environment is extremely volatile.
+737
+And I hear about that from people that I follow.
+738
+And sometimes I'll retweet articles and I'll read them.
+739
+There was a fun memory of my childhood when we had a TV in the house.
+740
+And my mom, who's also a very curious character, stuck a sign to it that said, everything you see here is a lie.
+741
+She stuck the sign to the TV.
+742
+Yeah, I don't think she meant it for news and she didn't get into the whole misinformation thing and whatnot.
+743
+It was mostly on, well, you're going to watch cartoons of people flying and be careful, don't jump off the roof of the house.
+744
+And I think it was more in that sense, but it probably stuck with me of being very independent-minded and do your own research and understand what you're hoping for and what you want to do.
+745
+Again, I'm not closing my ears and eyes to what's happening in the world.
+746
+And I do follow a lot of tech coverage and that I enjoy a lot, new programming languages, new frameworks, new model developments.
+747
+So when I talk about news, it's probably the bad news that I think people can sometimes even get addicted to.
+748
+Of, okay, if I turn on the T V and put the local news channel, it's just going to be bad news.
+749
+And I know that,, statistically, it's not all bad news.
+750
+So, why am I going to watch a show that's pointing out very unique things that don't happen very often that are not happy stories?
+751
+I don't know who said this once, but it's always stuck with me along these lines of what you just said: that we're just not designed to know all the bad things happening in the world every day.
+752, we lived in small tribes where a couple maybe something bad happened that day.
+753
+We're not evolved to comprehend so many calamities globally that we should not even know.
+754
+Absolutely, right?
+755
+I can't imagine our brains were evolved into, well,, you open your phone and you get unlimited information about any single topic that you want.
+756
+I think you have to be purposeful of what you're reading, what you're seeing.
+757
+You can find absolutely anything.
+758
+Amazing things, horrible things.
+759
+So, why am I going to focus on the horrible things?
+760
+I love that, and I feel the same way.
+761
+This is such a cool glimpse into just what it takes to be extremely successful, to go from building this app that Steve Dropshed down to running a company and a team this size.
+762
+Is there anything else along those lines that we haven't talked about that might be helpful for folks either about how you operate as a human, a morning routine, trick?
+763
+I don't know, anything else that we haven't touched on along those lines?
+764
+I don't have as strict a routine as you would expect when you talk to executives and whatnot,, well, this is the time that I do this, the time that I do this.
+765, I think what's worked great for me is to follow my curiosity.
+766, thankfully, I think I have good intuition,, but even in life and in my work,, on it's hard to say,, well, this is a formula for what you should focus on today.
+767
+It's, I have an intuition of what I'm most curious about.
+768
+And thankfully, that usually aligns with what we should be working on and where I can add the most value to my teams, to the company, to my family, to my career, to the things I'm learning.
+769
+I think that that's probably what's been the guiding principle for me.
+770
+Follow your curiosity, what excites you.
+771
+It's also probably what you're going to be good at, because it's hard to compete with someone who loves what they're doing if you don't love that thing.
+772
+But if you go in and say, well, this is my curiosity, this is what I love, I'm probably going to be good at it.
+773
+And it's not going to be something I have to force myself into.
+774
+So I think that that's something that I've done throughout my whole life and career that's worked very well.
+775
+I had Toby Lutke on the podcast, and we were talking about raising kids for a little bit.
+776
+And we chatted about what do you want your kid to learn most?
+777, what's the most important trait to develop?
+778
+And his inkling is developing curiosity.
+779
+Developing curiosity, I think I would agree.
+780
+I think the other one that you need is probably, it's also a trending topic now, but agency.
+781
+I was saying it's not probably enough to just be curious, but be curious and go get what you want.
+782
+We were raised in a very intensely independent way.
+783
+So my mother mainly had these fun ideas on how she wanted us to be.
+784
+She wanted us to be able to handle, quote unquote, any situation.
+785
+And the analogy that she used is that she wanted to train us spice.
+786
+I was thinking Sparta.
+787
+Yeah, well, I'll share one fun story.
+788
+One morning she wakes us up,, hey, we're going camping.
+789
+Everyone get ready.
+790, no warning.
+791
+We're leaving right now.
+792
+I remember my little brother, just so you understand how that plant works.
+793
+His only question was, should I go in my pajamas or should I change or something?
+794
+So we go and turns out I think it would be hard to call it camping because we were camping with no gear.
+795
+So it was a survival camp training is what we were going to do.
+796
+There was an instructor and it wasn't completely irresponsible, but it was find your own water, build your own shelter, boil it, start your own fire.
+797
+That was a fun one.
+798
+Another fun one, and that was to celebrate New Year's.
+799
+Another fun one was she would drop us in the in the middle of the city, as this is Mexico City.
+800
+She says she would then just leave us alone.
+801
+I don't remember.
+802
+I think she was just following us, but it would be, you have to get back home and you have to know public transit or ask someone for help and basically solve problems.
+803
+She would send us on international trips also alone.
+804
+So I think there were many things that she did.
+805
+She called it independence.
+806
+She wanted us to be independent.
+807
+I think the term that we could use now is agency, solve your problems, just go and get things and get things done.
+808
+So, I think that was also very formative of the way I am and I approach different problems.
+809
+Do you feel she might have been training you to be a spy?
+810
+Maybe.
+811
+We also did a lot of skiing, biking, trekking, and also the action parts of the spy experience.
+812
+We used to tease her still that she didn't enjoy activities that didn't have a liability release before you did them.
+813
+So, yeah, Rappel, climbing.
+814
+We had a very fun childhood.
+815
+This explains a lot.
+816
+I feel I could do another hour just diving into your childhood and what made you who you are today, but maybe we'll save that for part two.
+817
+I feel we've done a great job giving people a sense of just how interesting you are as a person and also just the uniqueness of Mercado Libre and what they've built in the business that you help run.
+818
+Is there anything else that we haven't touched on that you think might be helpful to folks or that you want to leave listeners with before we get to a very exciting lightning round?
+819
+I think we covered a lot.
+820
+I was also happy to be able to share.
+821
+No, Mercado Libre doesn't operate in the US.
+822
+I think that's the main reason why it's not such a well-known tech company.
+823
+I think it's changing with the stock growing as well.
+824
+It helps.
+825
+A lot of people know it from investing and being very happy with the performance.
+826
+So, thank you for letting me share some of what we do and some of what I've been doing.
+827
+Absolutely.
+828
+And with that, we've reached our very exciting lightning round.
+829
+I've got five questions for you.
+830
+Are you ready?
+831
+I'm ready.
+832
+What are two or three books that you recommend most to other people?
+833
+This is a good one.
+834
+I think it depends on the person that I'm recommended to.
+835
+I try to make it relevant to what they're doing.
+836
+If we go statistically, it's usually within the company.
+837
+So management-related high-output management I think is a great one.
+838
+But I also have been recently recommending people read The Odyssey.
+839
+It's a super, super inspiring story.
+840
+It's not a coincidence that it's survived for thousands of years.
+841
+It's a really fun read and something that just resonates with a lot of people.
+842
+Another book that I really is called The Dream Machine.
+843
+And it's the story of computers and computing and the internet.
+844
+And for example, why is Ethernet called Ethernet?
+845
+There was AlohaNet before.
+846
+So I think that's also a great one to understand some of the things that we rely on.
+847
+And these we stand in the shoulders of giants constantly to build the things we do.
+848
+I think that's another great one.
+849
+Because the rest are probably more fiction.
+850
+And I love Dune, I love science fiction and what you would expect.
+851
+Okay.
+852
+This next question.
+853
+I know you don't watch TV, so let me just ask: is there a favorite recent movie that you've watched that you really enjoyed?
+854
+Yeah, yeah.
+855, recent, I don't go to the movies as often as I used to since I had kids.
+856
+But sometimes we go with them.
+857
+But I think probably the last one that resonated with me or that I thought was awesome was Everything Everywhere All At Once.
+858
+Just really fun movie, great acting, low budget.
+859
+I didn't know when I watched it at the time.
+860
+I did research on it later.
+861
+That one was super fun.
+862
+Dune, I enjoyed it a lot because I the books.
+863
+It's one of my favorite books.
+864
+But I do watch children's shows from time to time.
+865
+I'm sure someone has probably mentioned Bluey already, but it's amazing.
+866
+It's really well made for the kids, for the parents.
+867
+Great messages, great animation.
+868
+That's just a gem that I really recommend.
+869
+Yeah, Bluey does come up a bunch.
+870
+I feel it's one of the more mentioned shows.
+871
+You interview a lot of parents as well, Ben.
+872
+I guess I do.
+873
+And I'm a new parent, so you think that I'm pulling them in.
+874
+Okay, do you have a favorite product that you've recently discovered that you really love?
+875
+Yeah, this one's going to be fun for you as well as a parent.
+876
+I'm not sure if you've heard of Mendava.
+877
+It's a new way of teaching kids to read.
+878
+Oh, the company.
+879
+Okay, yes.
+880
+Say more.
+881
+Yeah, yeah.
+882
+So,, it's a product and it's great.
+883
+I did it with my son and I quote unquote taught him how to read using the program.
+884
+And now he's probably the top reader in his class.
+885
+How old is he?
+886
+So he's five.
+887
+It's designed for three, four, five-year-olds.
+888
+So he's probably late to the reading early bandwagon because I haven't really seen strong evidence that it changes outcomes in the future.
+889
+The best argument I've seen for it from Matt Bateman, and I'm not sure if you're familiar with him, but he's great on education and Montessori, is that it can lead to a very enjoyable childhood if you can read early.
+890
+So, if you're a four-year-old, a five-year-old that can read very well, you'll have a fun childhood with access to a lot more information.
+891
+So, for us, it wasn't reading early, it was just making sure you have a really good fundamental on reading because it's just a base skill that propagates to the rest.
+892
+And in that pain,, Beast Academy for Math is another great one that I would recommend to parents.
+893
+That one's great.
+894
+And maybe the last product I would mention: David Protein Bars.
+895
+They're very good.
+896
+I really weightlifting.
+897
+It's one of the things I do to get my blood flowing.
+898
+Super high-quality ingredients, very high protein.
+899
+I think it's a venture-backed company.
+900
+I haven't talked to the founders, but reach out.
+901
+I would love to meet you.
+902
+You guys are doing some good fun.
+903
+So, I think those are the ones that come to mind.
+904
+3D printers are also fun.
+905
+I made a telescope with my son a couple of months ago.
+906
+That was very fun.
+907
+There's a lot of new products now.
+908
+It's a fun time to be alive.
+909
+This is your category right here: cool, fun gadgets and products.
+910
+I feel this could be another hour of podcasting.
+911
+Probably.
+912
+Okay, two more questions.
+913
+One, do you have a favorite life motto that you often come back to find useful in work or in life?
+914
+That life and the world are malleable.
+915
+Things aren't as set in stone as you would think.
+916
+There's usually a way to get what you're after.
+917
+You have to be careful, I think, about what you want because if you have enough agency, you can probably get quote-unquote anything.
+918
+So, make sure you're looking for something good and that you're going to be happy with the result.
+919
+But that's probably the main one.
+920
+I've heard it phrased in many different ways.
+921
+Steve Jobs said of, well,, the world was built by people you, me, some of them not smarter than you, some of them maybe smarter than you.
+922
+So you can just go out and do things.
+923
+This is a new meme, no, and the world will probably reconfigure itself to help you, which is that one's from Mark Andreessen.
+924
+Yeah, just understanding that you can change the world.
+925
+It doesn't have to be in a massive way.
+926
+It's also possible just in not just getting locked down to, well,, this is how it's done, or this is a culture here, or this is how it's always been done.
+927
+I think we can change whatever we want.
+928
+What I'm hearing is your mom's goal of instilling agency in you work.
+929
+I would say so.
+930
+Yes, I have fun solving problems.
+931
+Just finding your way home from the center of Mexico City worked.
+932
+Final question: A colleague of yours, maybe friend Christopher Lazarus, wanted me to ask you about something called the Tatami project.
+933
+Does that ring a bell?
+934
+Talk about what that was.
+935
+Yeah, yeah, that's from a long time ago.
+936
+So you did your very good research.
+937
+Yeah, talking about agency, at some point I wanted to have what's called, I think it's called Tammy Room.
+938
+I'm not an expert, but basically a room in your house where you have Tatamis and you can meditate there or train or practice.
+939
+My room, my childhood bedroom, was strange in that it had a basement.
+940
+So, two floors, you could open a hatch on the floor and go down.
+941
+I think it was a thing from how the house was built.
+942
+I decided that that was the best place for putting the tatamis, but I didn't want to have a roof on top of that.
+943
+So, I went and bought construction gear and huge diamond cutters and cut a big hole in the middle of my room, put a stair and put the tatamis underneath.
+944
+So, I turned my room into a two-floor loft, which was pretty fun.
+945
+I hadn't thought about that in a while.
+946
+I used to do a lot of hacker projects and maker things, and I love using my hands, I love building products, technology, code, but also physical things.
+947
+Had a lot of fun with Arduinos and building tiny robots.
+948
+Yeah, that's a fun memory.
+949
+But I did put a hole in the middle of my room.
+950
+My parents were always happy with us having projects.
+951
+I was gonna ask, how did your mom feel about this?
+952
+I don't think they were thinking about the future sale value of the house or whatnot.
+953
+It turned out to be a thing people were interested.
+954
+They didn't sell the house, but they used to rent it.
+955
+And I was, well, this is strange.
+956
+Maybe we'll put something here.
+957
+And it turned out to be a good decision.
+958
+But they were very open to us exploring and making mistakes.
+959
+I think going back even to the start of our conversation on how to not get stuck as a big company, as a big team.
+960
+You need to make mistakes and take risks.
+961
+And that's something that was always encouraged by my parents.
+962
+That is a hilarious story.
+963
+And just to be clear, it's a Tami mat.
+964
+It's a thin mattress, basically.
+965
+So a tatami is not something you would sleep on directly, but it's made out of bamboo.
+966 if you Google for just a Japanese house, what they have on the floor is a tatami block.
+967
+So they'll put two, three, five, ten together.
+968
+So it's that green floor that you see in many traditional hotels or photos.
+969
+So I made a miniature version of that in the newly added second floor of my room.
+970
+Sebas, this was everything I was hoping it'd be.
+971
+We covered so much ground, you, the company, things you've learned.
+972
+I feel we could do another follow-up with just as many insights and lessons and stories.
+973
+But other than that, two final questions.
+974
+Where can folks find you online if they want to reach out, learn more?
+975
+And how can listeners be useful to you?
+976
+Perfect.
+977
+I am not so active on Twitter.
+978
+I mostly read and find interesting ideas, but happy to see you there.
+979
+LinkedIn is another one.
+980
+I know some people who are very into X and Twitter don't LinkedIn a lot, but I think both work and they'll both have their place.
+981
+So yeah, happy to connect and feel free to reach out.
+982
+Something that I love about the tech industry, you can just do things, just reach out to people and they'll probably be helpful and help you.
+983
+That has certainly been the case with me.
+984
+And I'm also happy to do that for anyone who has any question or wants to connect.
+985
+Amazing.
+986
+Sebas, thank you so much for being here.
+987
+Thank you for hosting me.
+988
+It was awesome.
+989
+Happy to be awesome.
+990
+It's my pleasure.
+991
+Bye, everyone.
+992
+Thank you so much for listening.
+993
+If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app.
+994
+Also, please consider giving us a rating or leaving a review, as that really helps other listeners find the podcast.
+995
+You can find all past episodes or learn more about the show at lennyspodcast.com.
+996
+See you in the next episode.

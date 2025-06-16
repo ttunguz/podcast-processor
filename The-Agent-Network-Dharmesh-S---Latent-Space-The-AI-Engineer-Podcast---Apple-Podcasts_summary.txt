@@ -1,0 +1,259 @@
+EPISODE CONTEXT:
+
+Podcast Name: The Latent Space Podcast 
+Episode Focus: Interview with Damesh Shah, founder of agent.ai and CTO of HubSpot, discussing agents, multi-agent systems, memory architectures for agents, and the evolution of AI technologies.
+
+Hosts: 
+- Alessio Plasmati, Partner & CTO at Accessible Partners
+- Swayx (Swix), Founder of Small AI
+
+Guest:
+- Damesh Shah, Founder of agent.ai and CTO of HubSpot
+
+Featured Company: agent.ai (early stage startup building a platform and marketplace for AI agents)
+
+KEY INSIGHTS:
+
+1. Agents and multi-agent systems will become increasingly prevalent.
+"This is the year of agents. And I completely agree, it is the year of agents. But then shortly after that, it's going to be the year of multi agent systems or multi agent networks."
+
+Supporting Quote: "Imagine the MCP server, like obviously it calls tools, but the way I think about it, so I'm working on my current passion project is agent.ai and we'll talk more about the, I think we should, because I think it's interesting not to promote the project at all, but there's some interesting ideas in there, one of which is around we're going to need a mechanism for if agents are going to collaborate and be able to delegate, there's going to need to be some form of discovery..."
+
+Significance: As AI capabilities advance, the concept of independent AI agents collaborating and delegating tasks through shared protocols and memory will become critical for scalability and complexity.
+
+2. AI agents will require shared memory architectures to enable collaboration.
+"We should also be able to share, share that context, share that memory across agents. And that's part of the value prop for agent.ai..."
+
+Supporting Quote: "So imagine being able to share selective conversations with people like that's nice. Limitless has, I guess, voice-based shielding. Yeah, I don't think there's actually."
+
+Significance: For AI agents to effectively work together in multi-agent systems, they will need the ability to selectively share context and memory with appropriate privacy controls. This is a key challenge being explored.
+
+3. Compositional agent architectures using registries/directories will emerge. 
+"So imagine that and other networks, but it was just since I know agent.ai. So right now, we have an mcp server for agent.ai that exposes all the internally built agents that we have that do like super useful things..."
+
+Supporting Quote: "And then you as a developer of agents have access to all these kind of Lego billing blocks based on what you're trying to solve. And you blend in orchestration, which is getting better and better with the reasoning models now, just describe the problem that you have."
+
+Significance: Similar to APIs, developers will be able to leverage registries of pre-built AI agents as composable building blocks, combining their capabilities through orchestration to create more complex applications.
+
+4. The business model for AI is still being explored between "work as a service" and "results as a service".
+"Work as a service is- The software is actually doing the work. Whatever that work happens to be. And so that's work as a service...Results as a service is you're actually charging for the outcome, not actually the work..."
+
+Supporting Quote: "I think the reason we're over indexing though is that there are not that many use cases that have those two dimensions to them that are objectively measurable and that there's a known economic value that's constant."
+
+Significance: There is ongoing exploration into optimal pricing models - whether to charge for the AI system's work/computation or for the final result/outcome it produces. The model may depend on measurability and known economic value.
+
+5. AI systems will spawn new primitives for human-computer interaction beyond current UI paradigms.
+"Where AI is going to be headed, I think on the UI front is the same places headed on the science front that originally it's like, Oh, well, based on the things that we know right now, it'll sort of combine them. But we're like right at the cusp of it being able to actual novel research."
+
+Supporting Quote: "So maybe a future version of AI comes up with a new set of primitives that actually work better for human computer interaction than things that we've done in the past. I don't think it's it ended with the checkbox radio button and dropdown list."
+
+Significance: Just as AI is enabling novel scientific breakthroughs, it may also give rise to entirely new interface paradigms and primitives that are more intuitive for human-AI collaboration than current UI conventions.
+
+TECHNOLOGY & PRODUCT DEVELOPMENTS: 
+
+- Low-code platform for building AI agents with memory, planning and UI generation capabilities being developed at agent.ai
+- Exploration of memory architectures to enable shared context/state across agents, including semantic, episodic and long-term memory
+- Integration of large language model (LLM) capabilities like code generation, task decomposition into agent development
+- Registry/directory of pre-built agents that can be discovered and composed together
+- Model routing - dynamically selecting optimal LLM for each task based on factors like cost, latency, quality
+- UI generation moving beyond current checkbox/dropdown primitives to more novel interaction paradigms
+
+COMPETITIVE LANDSCAPE:
+
+Companies mentioned:
+- Anthropic (developing AI agents and model routing)
+- OpenAI (perceived as potential future competitor in agent marketplaces)
+- Langchain, Hugging Face, Replicate (providing agent/workflow tooling)
+
+agent.ai positions itself as a "Switzerland" that can straddle and integrate different LLM providers rather than being tightly coupled to any one vendor's models.
+
+TEAM & CULTURE SIGNALS:
+
+Leadership Philosophy:
+- Driven by conviction around solving important problems, not just specific solutions
+- Defaults to "no" to avoid overcommitting, promotes work-life balance ("Sorry, Must Pass" blog) 
+- Technically curious - keeps up on AI trends via YouTube, attends conferences
+
+Team Building Strategies:
+- Hasn't built out a full team yet for agent.ai, as it's an early passion project
+- At HubSpot, seemed to value hiring great engineers and giving them autonomy/ownership
+
+Company Values:
+- Creating value/usefulness for the end customer/user
+- Transparency - no automated email responses, blogs openly
+- Optimism about AI's potential to augment human capabilities
+
+KEY METRICS & BUSINESS DETAILS:
+
+- agent.ai has 1.3M users, 3000 have built agents, 1000 published
+- Monetization approach is currently free while funded by Shah personally
+- Long-term view is a marketplace for paid agents once ecosystem develops
+- Sold chat.com domain to OpenAI for $15M in 2023
+
+NOTABLE TECHNOLOGIES:
+
+- Memory Architectures: Mem0, MemGPT, LangMem 
+- Image Editing: Gemini's new autoregressive image model
+- Knowledge Graphs & Graph Databases
+- RAG (Retrieval-Augmented Generation)
+- DSPY (Evaluations-First framework)
+
+COMPANIES MENTIONED:
+
+OpenAI: "And so the thing that compelled me to actually create in the first place, because I knew custom GPTs existed, and I did have this rule in my head that I don't compete with Sam. He's literally like at the top of my list of people not to compete with."
+
+Anthropic: "So the B folks I should also mention have mentioned that they're working on that as well."
+
+HubSpot: "Yeah, that's true for this. Yeah, creator of agent.ai and co-founder of HubSpot, but yeah, co-founder of HubSpot, which I follow for many years, I think 18 years now." 
+
+Playground.ai: "And then so sale was out there with with with playground of the company. And I think he reached out, might have reached out to me over over Twitter or something like that. So we knew of each other."
+
+Google: "It's unlikely that the all the OAuth server side right now, the Google's even the big one, small ones, doesn't really matter, are going to do that."
+
+Meta: "I have a kind of private email address. Because a lot of the interactions that I will have, or if I do answer questions, because the other thing, by the way, I don't do any phone calls like at all. Even like- No zoos."
+
+PEOPLE MENTIONED:
+
+Sam Altman (CEO of OpenAI): "I'm not trying to plug or picture anything. No, no, no. I think it's understood. We're often, like, you know, if you have skin in a game, you probably invested or, you know, me or me not. I'm not an investor in B, but I'm just a friend. And I think you should be able to speak freely of your opinions regardless."
+
+Sean Purie (Podcaster): "Special thanks to fellow podcaster Sean Purie for the introduction to our dream guest."
+
+David Holz (Founder of Midjourney): "And on the mid journey side, David Holtz was very much betting on text diffusion being being their path forward."
+
+Brett Taylor (Co-founder of Sengrid): "One of my favorite people in tech, like it was like a segment in there. He was talking about like, oh, we need a different language than Python or whatever that is like built for built for AI and built."
+
+Jessica Livingston (Co-founder of Y Combinator): "I was listening to this Jessica Livingston podcast where she had him on and described him as a formidable person."
+
+# Named Entities
+
+## PERSON
+- ##ess
+- ##ke
+- ##mes
+- ##sh
+- ##sh Shah
+- Alt
+- An
+- Brett
+- Brett Taylor
+- Cha
+- Charlie
+- Claude
+- Dame
+- Dan Abramo
+- Dar
+- David Hershey
+- David Holtz
+- Derek
+- G
+- Helen
+- Langcha
+- Langme
+- Livingston
+- Nor
+- Po
+- Sam
+- Sam Altman
+- Sean
+- Sean Perry
+- Sean Purie
+- Sivers
+- Swi
+- Swix
+- V
+- Yo
+- Yohe
+- Z
+
+## ORGANIZATION
+- ##B
+- ##C
+- ##In
+- ##L
+- ##S
+- ##VAL
+- ##bS
+- ##dy
+- ##ther
+- AI
+- AJI
+- API
+- Agent Engineering
+- Al
+- B
+- Bitcoin
+- Blue Sky
+- CT
+- Canva
+- ChatS
+- DSPY
+- DevRel
+- DevTools
+- E
+- Engineering
+- GB
+- GPT
+- Gemini
+- GitHub
+- GoD
+- Google
+- Google Analytics
+- HubS
+- HubSpot
+- IBM
+- ICS
+- IMS
+- L
+- LL
+- LM
+- LM Arena
+- LMSIS
+- Langgraph
+- Link
+- LinkedIn
+- MC
+- MCP
+- MFM
+- ML
+- Microsoft
+- N
+- NodeRank
+- O
+- OA
+- OAuth
+- Open
+- PP
+- PageRank
+- Photoshop
+- RA
+- RAG
+- React
+- Supreme Court
+- T
+- Twitter
+- U
+- UI
+- Vercel
+- X
+- YouTube
+- ZEP
+
+## LOCATION
+- ##eum
+- E
+- New York
+- San Francisco
+- Switzerland
+
+## PRODUCT
+
+## EVENT
+
+## WORK_OF_ART
+
+## DATE
+
+## MONEY
+
+## QUANTITY
+

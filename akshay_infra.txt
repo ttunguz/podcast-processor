@@ -1,0 +1,948 @@
+
+[00:00:00.000 --> 00:00:02.400]   (upbeat music)
+[00:00:02.400 --> 00:00:05.040]   - Hey, welcome back to our yet another Infra Deep Dive.
+[00:00:05.040 --> 00:00:08.800]   As usual, Tim from Essence and Ian, let's go.
+[00:00:08.800 --> 00:00:12.320]   - Man, I'm so excited to say Tim, this is Ian Livingston.
+[00:00:12.320 --> 00:00:15.040]   We are joined by a dear friend of mine
+[00:00:15.040 --> 00:00:18.240]   in the current CTO at a company called Buff.
+[00:00:18.240 --> 00:00:22.120]   Actually, tell us a little bit yourself, my friend.
+[00:00:22.120 --> 00:00:24.960]   - Hey, I'm Akshay, I'm the CTO at Buff right now
+[00:00:24.960 --> 00:00:27.760]   and I'm an engineer.
+[00:00:27.760 --> 00:00:29.040]   I don't know, I came to engineering
+[00:00:29.040 --> 00:00:31.280]   by a long and winding road, but have spent
+[00:00:31.280 --> 00:00:34.860]   most of my engineering career in startups.
+[00:00:34.860 --> 00:00:38.080]   The most notable of which was Uber,
+[00:00:38.080 --> 00:00:40.880]   which I joined when it was, I don't know,
+[00:00:40.880 --> 00:00:44.520]   a couple hundred engineers and grew to
+[00:00:44.520 --> 00:00:47.320]   at least in order of magnitude more than that.
+[00:00:47.320 --> 00:00:49.760]   And I started over there in data engineering,
+[00:00:49.760 --> 00:00:51.120]   working on this kind of metrics
+[00:00:51.120 --> 00:00:53.360]   and anomaly detection stuff,
+[00:00:53.360 --> 00:00:55.960]   moved over to network infrastructure
+[00:00:55.960 --> 00:00:58.040]   and service discovery and RPC,
+[00:00:58.040 --> 00:01:01.000]   and then ended up running the team
+[00:01:01.000 --> 00:01:03.840]   that built out Uber's Go infrastructure.
+[00:01:03.840 --> 00:01:05.600]   Started my own company for a bit,
+[00:01:05.600 --> 00:01:07.640]   went to Microsoft for a bit and worked on Azure,
+[00:01:07.640 --> 00:01:11.240]   and then ended up at Buff doing part of Buff infrastructure.
+[00:01:11.240 --> 00:01:14.240]   - Amazing.
+[00:01:14.240 --> 00:01:16.040]   And can you give us a little bit,
+[00:01:16.040 --> 00:01:18.640]   like what's that little 411 or the download?
+[00:01:18.640 --> 00:01:20.720]   What is Buff, like what's Buff trying to do?
+[00:01:20.720 --> 00:01:22.240]   What does Buff exist?
+[00:01:22.240 --> 00:01:24.000]   What's the mission at Buff?
+[00:01:24.000 --> 00:01:25.440]   - Absolutely.
+[00:01:25.440 --> 00:01:27.840]   We build part of Buff infrastructure
+[00:01:27.840 --> 00:01:30.560]   for other companies to buy as a package
+[00:01:30.560 --> 00:01:33.920]   kind of end-to-end piece of your infrastructure.
+[00:01:33.920 --> 00:01:36.280]   That means we build a part about compiler
+[00:01:36.280 --> 00:01:37.760]   and a command line tool.
+[00:01:37.760 --> 00:01:39.360]   So it replaces courtesy,
+[00:01:39.360 --> 00:01:41.280]   plus a bunch of other stuff you might want,
+[00:01:41.280 --> 00:01:44.680]   linting, formatting, breaking change detection,
+[00:01:44.680 --> 00:01:46.640]   interacting with RPC services
+[00:01:46.640 --> 00:01:49.520]   using binary payloads, all that kind of stuff.
+[00:01:49.520 --> 00:01:52.200]   We actually build an RPC framework called Connect,
+[00:01:52.200 --> 00:01:55.000]   which is part of the CNCF now.
+[00:01:55.000 --> 00:01:56.680]   Our main commercial product to date
+[00:01:56.680 --> 00:01:58.480]   has been a schema registry,
+[00:01:58.480 --> 00:02:01.560]   which basically brings all the benefits
+[00:02:01.560 --> 00:02:05.480]   of a basal style monorepo for part about schemas
+[00:02:05.480 --> 00:02:10.480]   to your not to basal, not monorepo mesh of services.
+[00:02:10.480 --> 00:02:16.080]   And recently, we finally launched this message queue
+[00:02:16.080 --> 00:02:18.040]   that we've been working on called BuffStream,
+[00:02:18.040 --> 00:02:19.720]   which brings a lot of the same kind of
+[00:02:19.720 --> 00:02:23.040]   part of our first benefits to streaming data.
+[00:02:23.040 --> 00:02:26.080]   - What is about Buff's mission that really spoke to you?
+[00:02:26.080 --> 00:02:28.080]   Was there some experience or something you had?
+[00:02:28.080 --> 00:02:29.800]   They're like, ah, this company saw me as a problem,
+[00:02:29.800 --> 00:02:32.520]   and I have to go join and help and figure this out, too.
+[00:02:32.520 --> 00:02:35.360]   Like what got you excited and what got you going?
+[00:02:35.360 --> 00:02:38.360]   - That's a great question, you know?
+[00:02:38.360 --> 00:02:41.320]   So pretty much as soon as I joined Uber,
+[00:02:41.320 --> 00:02:45.840]   the company decided to go all in on schema-driven development.
+[00:02:45.840 --> 00:02:50.840]   And it was shaped much like most companies are today.
+[00:02:50.840 --> 00:02:53.880]   I joined like right after New Year's,
+[00:02:53.880 --> 00:02:55.560]   so the very beginning of 2015.
+[00:02:55.560 --> 00:03:01.360]   And that was a pretty foamy, like enthusiastic time
+[00:03:01.360 --> 00:03:02.640]   for microservices.
+[00:03:02.640 --> 00:03:04.760]   But directionally, I don't think much has changed.
+[00:03:04.760 --> 00:03:06.040]   So you have a bunch of developers,
+[00:03:06.040 --> 00:03:10.000]   everybody's shipping code from their own repository,
+[00:03:10.000 --> 00:03:11.960]   like their own Git repository,
+[00:03:11.960 --> 00:03:16.520]   usually their choice of language and framework.
+[00:03:16.520 --> 00:03:18.560]   And then the idea is that all these services
+[00:03:18.560 --> 00:03:20.440]   kind of talk to each other over the network,
+[00:03:20.440 --> 00:03:22.920]   and they pass messages over some queue.
+[00:03:23.800 --> 00:03:27.000]   And we want to make all of that schema first.
+[00:03:27.000 --> 00:03:29.880]   And the idea there is you get this layer of safety
+[00:03:29.880 --> 00:03:33.000]   and policy control over all of your systems.
+[00:03:33.000 --> 00:03:36.680]   So everybody knows what are the inputs and outputs
+[00:03:36.680 --> 00:03:39.280]   of these functions we're calling over the network,
+[00:03:39.280 --> 00:03:42.360]   exactly what is inside of this Kafka topic.
+[00:03:42.360 --> 00:03:45.480]   It's not just some like garbage pile of JSON.
+[00:03:45.480 --> 00:03:47.240]   And that all should be like self-documenting,
+[00:03:47.240 --> 00:03:49.880]   self-enforcing, and then you get some efficiency benefits
+[00:03:49.880 --> 00:03:51.320]   out the topic.
+[00:03:51.320 --> 00:03:54.520]   In practice, what you don't know with is just
+[00:03:54.520 --> 00:03:59.120]   the system that's designed in individual tiny pieces
+[00:03:59.120 --> 00:04:02.800]   that in theory are like nicely factored layers,
+[00:04:02.800 --> 00:04:04.800]   but in practice is just a mess.
+[00:04:04.800 --> 00:04:07.840]   Like somebody needs to go and spend
+[00:04:07.840 --> 00:04:12.560]   what ended up being many, many, many millions of dollars
+[00:04:12.560 --> 00:04:14.600]   in headcount and infrastructure
+[00:04:14.600 --> 00:04:16.840]   to actually assemble this stuff
+[00:04:16.840 --> 00:04:19.880]   into a platform that works end to end.
+[00:04:19.880 --> 00:04:23.440]   And this goes from the most trivial problems
+[00:04:23.440 --> 00:04:28.320]   to these kind of gigantic data infrastructure problems.
+[00:04:28.320 --> 00:04:31.120]   So on the trivial side, anyone you talk to you
+[00:04:31.120 --> 00:04:35.280]   about thrift or perturbuff or like JSON schema,
+[00:04:35.280 --> 00:04:36.760]   they'll tell you that one of the benefits
+[00:04:36.760 --> 00:04:41.760]   is that you can identify ahead of time using the schema
+[00:04:41.760 --> 00:04:46.120]   when a given change is gonna break backward compatibility.
+[00:04:47.040 --> 00:04:49.880]   So like, oh, I can look at the pull request
+[00:04:49.880 --> 00:04:51.400]   and tell you like, you shouldn't do this.
+[00:04:51.400 --> 00:04:53.360]   This is gonna break all your existing colors
+[00:04:53.360 --> 00:04:56.600]   or it's gonna break all the existing consumers of this data.
+[00:04:56.600 --> 00:04:58.440]   And in theory, that's true.
+[00:04:58.440 --> 00:05:00.320]   But then if you dig one step deep and you're like,
+[00:05:00.320 --> 00:05:02.200]   okay, how do we do this?
+[00:05:02.200 --> 00:05:03.440]   You know, like, yeah, you just read,
+[00:05:03.440 --> 00:05:05.400]   you just read the PR very, very carefully
+[00:05:05.400 --> 00:05:07.120]   and think hard about it.
+[00:05:07.120 --> 00:05:09.520]   Like this is a garbage answer.
+[00:05:09.520 --> 00:05:12.080]   There are no tools to do this
+[00:05:12.080 --> 00:05:13.480]   and you have to build the tools.
+[00:05:13.480 --> 00:05:15.640]   And to build the tools, sometimes you have to build
+[00:05:15.640 --> 00:05:18.320]   a parser or a compiler for the schema language
+[00:05:18.320 --> 00:05:21.240]   because the existing one just doesn't expose the APIs
+[00:05:21.240 --> 00:05:22.800]   needed to do this.
+[00:05:22.800 --> 00:05:25.120]   And so we kind of carefully and laboriously solve
+[00:05:25.120 --> 00:05:27.880]   this problem in all of the follow-on problems.
+[00:05:27.880 --> 00:05:30.280]   How do you get the schemas from one repo to another?
+[00:05:30.280 --> 00:05:32.280]   What does dependency management look like?
+[00:05:32.280 --> 00:05:34.520]   How do you package them up and move them around?
+[00:05:34.520 --> 00:05:36.480]   How do you access the schema at runtime
+[00:05:36.480 --> 00:05:39.720]   if I wanna do some dynamic schema-driven thing?
+[00:05:39.720 --> 00:05:42.760]   How do I attack extra policy information onto the schema?
+[00:05:42.760 --> 00:05:44.560]   Like, who's allowed to call this API
+[00:05:44.560 --> 00:05:47.000]   or is this fit for public consumption?
+[00:05:47.000 --> 00:05:50.480]   Or if I'm an engineer debugging this topic,
+[00:05:50.480 --> 00:05:52.240]   am I allowed to see this information?
+[00:05:52.240 --> 00:05:55.400]   Or is it privileged and sensitive and can't,
+[00:05:55.400 --> 00:05:58.600]   cannot exit production onto my laptop?
+[00:05:58.600 --> 00:06:01.800]   All of that was so laborious to do.
+[00:06:01.800 --> 00:06:06.560]   And it's funded the way all internal info was funded,
+[00:06:06.560 --> 00:06:09.920]   which is you get it to like just good enough.
+[00:06:09.920 --> 00:06:12.000]   And then all these expensive engineers get allocated
+[00:06:12.000 --> 00:06:12.840]   onto some problem.
+[00:06:12.840 --> 00:06:15.720]   That's like the new priority of the year.
+[00:06:15.720 --> 00:06:19.640]   And I really wanted to come and solve that problem
+[00:06:19.640 --> 00:06:22.000]   once and for all, for everyone.
+[00:06:22.000 --> 00:06:27.840]   And I wanted a cohesive platform that forever and more
+[00:06:27.840 --> 00:06:31.920]   when I got tapped as the part of our person
+[00:06:31.920 --> 00:06:34.840]   or the RPC person or the Kafka person,
+[00:06:34.840 --> 00:06:36.760]   I could just point people and say,
+[00:06:36.760 --> 00:06:39.920]   my answer is that you should buy or build exactly that.
+[00:06:39.920 --> 00:06:42.120]   That is the way to do it and to end.
+[00:06:42.120 --> 00:06:46.600]   - So one of the things at the beginning of your explanation
+[00:06:46.600 --> 00:06:49.360]   was like as soon as you got to Uber,
+[00:06:49.360 --> 00:06:50.880]   they decided to go schema first.
+[00:06:50.880 --> 00:06:53.360]   I think that they're not uninformed.
+[00:06:53.360 --> 00:06:56.160]   Anyone who's operated, you know, an at scale data system
+[00:06:56.160 --> 00:06:58.640]   that is real time operational, right?
+[00:06:58.640 --> 00:07:00.120]   Uber's an operational data use case
+[00:07:00.120 --> 00:07:02.080]   'cause you're trying to price rides
+[00:07:02.080 --> 00:07:04.280]   and do all this stuff stuff in real time
+[00:07:04.280 --> 00:07:06.080]   as the world changes around it.
+[00:07:06.080 --> 00:07:08.560]   Like what were the pain points that led us to,
+[00:07:08.560 --> 00:07:09.880]   oh, we got to be schema first.
+[00:07:09.880 --> 00:07:12.600]   So this probably actually a standard far beyond the operational side.
+[00:07:12.600 --> 00:07:14.720]   It went into the analytics side of things too.
+[00:07:14.720 --> 00:07:16.120]   And that's actually the angle
+[00:07:16.120 --> 00:07:18.640]   that I joined the company focused on, right?
+[00:07:18.640 --> 00:07:21.040]   'Cause I joined the data engineering team
+[00:07:21.040 --> 00:07:23.200]   and you have to kind of rewind the clock, right?
+[00:07:23.200 --> 00:07:26.400]   So it's now the very, very beginning of 2015
+[00:07:26.400 --> 00:07:30.120]   and what is the overall engineering zeitgeist?
+[00:07:30.120 --> 00:07:32.360]   You know, if you went back to the way back machine
+[00:07:32.360 --> 00:07:34.200]   and sampled the front page of Hacker News,
+[00:07:34.200 --> 00:07:36.880]   what would you be seeing at that time?
+[00:07:36.880 --> 00:07:39.240]   And my recollection of the world at that time
+[00:07:39.240 --> 00:07:42.360]   was that we were still on the upswing
+[00:07:42.360 --> 00:07:47.360]   of everyone's enthusiasm about AP systems instead of CP.
+[00:07:47.360 --> 00:07:52.640]   We're on the upswing of Cassandra style key value stores.
+[00:07:52.640 --> 00:07:56.560]   We're on the upswing of interest in CRDTs
+[00:07:56.560 --> 00:08:00.120]   and exposing consistency constraints
+[00:08:00.120 --> 00:08:01.920]   to application developers.
+[00:08:01.920 --> 00:08:05.000]   We're very definitely on the upswing of interest
+[00:08:05.000 --> 00:08:06.920]   in microservices
+[00:08:06.920 --> 00:08:09.720]   and having a company build a product
+[00:08:09.720 --> 00:08:12.360]   as a bunch of small binaries
+[00:08:12.360 --> 00:08:13.880]   that communicate with each other
+[00:08:13.880 --> 00:08:16.200]   in a pretty chatty way over the network.
+[00:08:16.200 --> 00:08:19.600]   Cooper News did not yet really exist the way it does today.
+[00:08:19.600 --> 00:08:21.840]   The closest was Mesos,
+[00:08:21.840 --> 00:08:24.880]   which was roughly being commercialized by Mesosphere,
+[00:08:24.880 --> 00:08:28.480]   but like the primitives we depend on today just didn't exist.
+[00:08:28.480 --> 00:08:30.360]   And so what did Uber have?
+[00:08:30.360 --> 00:08:34.800]   Uber had a pretty large pool of hosts
+[00:08:34.800 --> 00:08:38.600]   that we were physically racking in data centers
+[00:08:38.600 --> 00:08:40.920]   and managing with puppet.
+[00:08:40.920 --> 00:08:45.040]   And what the company would do is it would ask every team
+[00:08:45.040 --> 00:08:47.080]   that wanted to ship a new service
+[00:08:47.080 --> 00:08:51.200]   to go add a little bit of data to the puppet run
+[00:08:51.200 --> 00:08:52.760]   to define what the service was,
+[00:08:52.760 --> 00:08:54.480]   where it was gonna run,
+[00:08:54.480 --> 00:08:56.120]   what port it was gonna be available on,
+[00:08:56.120 --> 00:08:58.840]   everything was restful-ish.
+[00:08:58.840 --> 00:09:02.760]   And then that focus on like loosely structured JSON
+[00:09:02.760 --> 00:09:05.560]   kind of came out of a development culture
+[00:09:05.560 --> 00:09:07.920]   that used a lot of node and Python.
+[00:09:07.920 --> 00:09:11.000]   So that was a pretty comfortable world to live in.
+[00:09:11.000 --> 00:09:14.280]   And then that data would go into often Kafka
+[00:09:14.280 --> 00:09:17.360]   or some not Kafka system
+[00:09:17.360 --> 00:09:20.080]   'cause Kafka was also pretty new at the time.
+[00:09:20.080 --> 00:09:21.840]   It would pop out the other end
+[00:09:21.840 --> 00:09:24.160]   and it would be processed often
+[00:09:24.160 --> 00:09:26.640]   in some sort of like complicated ad hoc way
+[00:09:26.640 --> 00:09:29.240]   that depended on treating all the data
+[00:09:29.240 --> 00:09:31.300]   just as a dictionary full of stuff.
+[00:09:32.240 --> 00:09:34.440]   I mean, this led to all the problems that you might expect.
+[00:09:34.440 --> 00:09:36.640]   It's incredibly error prone.
+[00:09:36.640 --> 00:09:38.080]   It's very, very difficult to reason
+[00:09:38.080 --> 00:09:40.480]   about the blast radius of a change.
+[00:09:40.480 --> 00:09:42.440]   So you're a hapless developer
+[00:09:42.440 --> 00:09:43.960]   who's trying to change something
+[00:09:43.960 --> 00:09:47.560]   and you just can't really tell what's gonna break.
+[00:09:47.560 --> 00:09:49.400]   It was really difficult to reason
+[00:09:49.400 --> 00:09:53.320]   about consistency and correctness over time
+[00:09:53.320 --> 00:09:55.280]   because it was very difficult to understand
+[00:09:55.280 --> 00:09:59.600]   when and how might somebody access old data
+[00:09:59.600 --> 00:10:02.960]   that's using a schema that's implicit in application code
+[00:10:02.960 --> 00:10:05.200]   that's from a year ago, right?
+[00:10:05.200 --> 00:10:08.880]   And this just led to this like constant stream
+[00:10:08.880 --> 00:10:12.640]   of small outages and brownouts and fire drills
+[00:10:12.640 --> 00:10:15.080]   that was really difficult to cope with.
+[00:10:15.080 --> 00:10:17.720]   It also in general made it very difficult for teams
+[00:10:17.720 --> 00:10:19.280]   to communicate with each other.
+[00:10:19.280 --> 00:10:21.760]   It was a constant efficiency tax.
+[00:10:21.760 --> 00:10:24.240]   JSON's just expensive.
+[00:10:24.240 --> 00:10:27.360]   The team before I joined did a whole bake off of options.
+[00:10:27.360 --> 00:10:31.000]   And so they were looking at the open API world
+[00:10:31.000 --> 00:10:35.520]   at RAML at a variety of schema technologies.
+[00:10:35.520 --> 00:10:38.880]   And the one they settled on at the time was thrift.
+[00:10:38.880 --> 00:10:40.160]   Part of off was open source,
+[00:10:40.160 --> 00:10:43.400]   but JRPC didn't exist yet in the outside world.
+[00:10:43.400 --> 00:10:45.320]   And so thrift was the only place you could go
+[00:10:45.320 --> 00:10:48.520]   to get a schema language,
+[00:10:48.520 --> 00:10:52.680]   a serialization format and an RPC framework out of the box.
+[00:10:52.680 --> 00:10:56.120]   Very quickly Uber abandoned that RPC framework
+[00:10:56.120 --> 00:10:58.320]   and built its own network transport.
+[00:10:58.320 --> 00:11:02.360]   And then in a sad pivot,
+[00:11:02.360 --> 00:11:03.480]   the data ecosystem was like,
+[00:11:03.480 --> 00:11:05.160]   oh god, this thrift thing's never gonna work for us.
+[00:11:05.160 --> 00:11:07.000]   We're gonna use Avro instead.
+[00:11:07.000 --> 00:11:08.440]   So in the worst of all worlds,
+[00:11:08.440 --> 00:11:10.520]   we settled on two of the possible options
+[00:11:10.520 --> 00:11:11.840]   and then spent a bunch of time
+[00:11:11.840 --> 00:11:13.920]   building elaborate interrupt between them.
+[00:11:13.920 --> 00:11:17.760]   - It's so fun to get to mention thrift and mesosphere.
+[00:11:17.760 --> 00:11:20.440]   I guess I'll bring back all the old memories here.
+[00:11:20.440 --> 00:11:25.120]   I feel like we have been running into this problem forever,
+[00:11:25.120 --> 00:11:28.080]   but maybe the complexity of microservices,
+[00:11:28.080 --> 00:11:29.960]   maybe the pace of changes.
+[00:11:29.960 --> 00:11:32.080]   And now we're actually, you're going into data, right?
+[00:11:32.080 --> 00:11:34.880]   This thing, we have been,
+[00:11:34.880 --> 00:11:36.960]   I think the Hadoop Ecosystem have the Avro.
+[00:11:36.960 --> 00:11:40.440]   There's had things have been in a sort of different ecosystems
+[00:11:40.440 --> 00:11:43.040]   with their different formats and different tools.
+[00:11:43.040 --> 00:11:44.720]   And they're both growing complexity.
+[00:11:44.720 --> 00:11:46.320]   I feel like data is probably way more now
+[00:11:46.320 --> 00:11:47.640]   than the microservice,
+[00:11:47.640 --> 00:11:50.400]   I think just given like the complexity here.
+[00:11:50.400 --> 00:11:53.320]   And what has been like very intrigued is,
+[00:11:53.320 --> 00:11:57.120]   I feel like since buff is really talking about protobuf
+[00:11:57.120 --> 00:11:59.840]   as the standard format for all,
+[00:11:59.840 --> 00:12:03.320]   is there any challenge or driving force
+[00:12:03.320 --> 00:12:06.440]   of why people should use the same format every, you know,
+[00:12:06.440 --> 00:12:07.800]   like a protobuf to drive really?
+[00:12:07.800 --> 00:12:10.920]   Because I think the fundamental belief here is protobuf
+[00:12:10.920 --> 00:12:12.600]   is the center of everything.
+[00:12:12.600 --> 00:12:14.920]   And sort of buff creates all the toolings
+[00:12:14.920 --> 00:12:16.600]   and products necessary towards it.
+[00:12:16.600 --> 00:12:18.120]   But I want to just kind of start there.
+[00:12:18.120 --> 00:12:22.760]   Like what is driving motivation
+[00:12:22.760 --> 00:12:24.800]   for things you're seeing people to start to like,
+[00:12:24.800 --> 00:12:27.120]   you know what, that's not used five things,
+[00:12:27.120 --> 00:12:28.440]   you know, four different formats.
+[00:12:28.440 --> 00:12:31.920]   And like, we got to adopt one thing and it's protobuf.
+[00:12:31.920 --> 00:12:33.280]   Can you tell us more like how it is?
+[00:12:33.280 --> 00:12:35.040]   - Yeah, for sure.
+[00:12:35.040 --> 00:12:38.120]   There are two kind of altitudes
+[00:12:38.120 --> 00:12:40.120]   that you can talk about a problem like that, right?
+[00:12:40.120 --> 00:12:42.840]   One of them is kind of an organizational altitude.
+[00:12:42.840 --> 00:12:44.560]   What are the benefits of having one thing
+[00:12:44.560 --> 00:12:46.640]   instead of two or three or four?
+[00:12:46.640 --> 00:12:48.320]   And what are the characteristics
+[00:12:48.320 --> 00:12:50.800]   of the one schema language and data format
+[00:12:50.800 --> 00:12:52.640]   that you might want?
+[00:12:52.640 --> 00:12:55.840]   And then on a more like granular in the weeds level,
+[00:12:55.840 --> 00:12:58.920]   it's like, okay, we can compare and contrast protobuf
+[00:12:58.920 --> 00:13:02.360]   with Avro or with Thrift or with Jason.
+[00:13:02.360 --> 00:13:04.400]   At a high level for an organization,
+[00:13:04.400 --> 00:13:06.200]   I think you want a couple of things
+[00:13:06.200 --> 00:13:08.560]   out of a schema language, ideally.
+[00:13:08.560 --> 00:13:10.880]   You want to be able to use this schema language
+[00:13:10.880 --> 00:13:15.640]   in a couple of different arenas pretty seamlessly.
+[00:13:15.640 --> 00:13:17.160]   And if you're talking about
+[00:13:17.160 --> 00:13:20.200]   your modern cloud native organization,
+[00:13:20.200 --> 00:13:23.320]   that means you want to model your business
+[00:13:23.320 --> 00:13:28.320]   all the way from RPCs down to tables in your lake house
+[00:13:28.320 --> 00:13:31.640]   using a common language.
+[00:13:31.640 --> 00:13:33.720]   And what that gives you is it gives you the ability
+[00:13:33.720 --> 00:13:38.080]   to standardize on definitions of common business entities,
+[00:13:38.080 --> 00:13:39.920]   at least in a bounded domain
+[00:13:39.920 --> 00:13:42.680]   and pass them along very easily from one system
+[00:13:42.680 --> 00:13:46.320]   to another without a translation stack
+[00:13:46.320 --> 00:13:49.960]   that jumps through a bunch of arbitrary application code.
+[00:13:49.960 --> 00:13:51.600]   Once you have that,
+[00:13:51.600 --> 00:13:55.280]   that is a really interesting point of leverage
+[00:13:55.280 --> 00:13:57.480]   over a bunch of problems.
+[00:13:57.480 --> 00:14:01.080]   So now, because you're using one system throughout,
+[00:14:01.080 --> 00:14:03.960]   you can actually, from a technical
+[00:14:03.960 --> 00:14:05.600]   and a process perspective,
+[00:14:05.600 --> 00:14:09.280]   start imposing some control on change safety.
+[00:14:09.280 --> 00:14:11.240]   So backwards compatibility.
+[00:14:11.240 --> 00:14:15.120]   You can start imposing some like best practices
+[00:14:15.120 --> 00:14:18.200]   around how the schemas ought to be shaped.
+[00:14:18.200 --> 00:14:20.560]   And what sort of data you need to attach to the schema
+[00:14:20.560 --> 00:14:23.040]   to make it useful to consumers?
+[00:14:23.040 --> 00:14:26.040]   You can also start attaching policy information
+[00:14:26.040 --> 00:14:28.240]   in a way that's really powerful.
+[00:14:28.240 --> 00:14:33.240]   So for example, you can say that a user has a profile
+[00:14:33.240 --> 00:14:36.120]   and the profile has an email address.
+[00:14:36.120 --> 00:14:38.320]   But this email address in this schema,
+[00:14:38.320 --> 00:14:41.560]   you can mark it as protected information.
+[00:14:41.560 --> 00:14:43.560]   And you can say that it's not just a string,
+[00:14:43.560 --> 00:14:45.360]   it's actually an email address.
+[00:14:45.360 --> 00:14:48.360]   And in our system, by entering this email address,
+[00:14:48.360 --> 00:14:51.200]   the user has only consented to communication
+[00:14:51.200 --> 00:14:53.320]   about like billing related events.
+[00:14:53.320 --> 00:14:55.480]   You may not use this for marketing.
+[00:14:55.480 --> 00:14:57.240]   And then you can build infrastructure
+[00:14:57.240 --> 00:15:00.360]   that enforces that all the way down.
+[00:15:00.360 --> 00:15:02.320]   So look, when you show up to read this data
+[00:15:02.320 --> 00:15:04.520]   or when you show up to make an RPC,
+[00:15:04.520 --> 00:15:07.640]   you must inform the server or the queue
+[00:15:07.640 --> 00:15:10.040]   what you're doing with the data, right?
+[00:15:10.040 --> 00:15:11.880]   Are you here for marketing?
+[00:15:11.880 --> 00:15:16.040]   Are you here for billing? Are you here to train an LLM?
+[00:15:16.040 --> 00:15:18.480]   And then you only receive the data
+[00:15:18.480 --> 00:15:20.640]   that's greenlit for that purpose.
+[00:15:20.640 --> 00:15:23.160]   And that's the kind of capability
+[00:15:23.160 --> 00:15:26.240]   that it's really an end-to-end capability
+[00:15:26.240 --> 00:15:27.840]   of the architecture.
+[00:15:27.840 --> 00:15:30.880]   But it's really powerful for an organization
+[00:15:30.880 --> 00:15:33.120]   because it lets you take those problems
+[00:15:33.120 --> 00:15:36.160]   and push them down into your infrastructure
+[00:15:36.160 --> 00:15:38.400]   instead of taking a TPM
+[00:15:38.400 --> 00:15:39.920]   and handing them Google spreadsheets
+[00:15:39.920 --> 00:15:43.000]   and being like, please go victimize individual engineers
+[00:15:43.000 --> 00:15:45.680]   until the checklist has been checked.
+[00:15:45.680 --> 00:15:48.000]   Like, you tell me how many orders it's gonna take
+[00:15:48.000 --> 00:15:51.280]   to harass everybody into installing whatever
+[00:15:51.280 --> 00:15:53.680]   bespoke libraries we've done for this
+[00:15:53.680 --> 00:15:55.840]   and updating them and whatever.
+[00:15:55.840 --> 00:15:58.280]   Nobody likes that, it's expensive, it's inefficient,
+[00:15:58.280 --> 00:16:01.120]   it's painful, it has a bunch of holes in it.
+[00:16:01.120 --> 00:16:03.240]   You wanna take that and you wanna make that
+[00:16:03.240 --> 00:16:05.720]   a characteristic of your data platform.
+[00:16:05.720 --> 00:16:07.920]   And this, I think, is we're a protobuf shuttle.
+[00:16:09.320 --> 00:16:12.680]   It's paired often with gRPC,
+[00:16:12.680 --> 00:16:14.800]   which is available in a million languages
+[00:16:14.800 --> 00:16:17.840]   is kind of a widely used standard, right?
+[00:16:17.840 --> 00:16:19.360]   So if you're doing microservices
+[00:16:19.360 --> 00:16:21.400]   and you have schemas today,
+[00:16:21.400 --> 00:16:23.440]   chances are you're doing gRPC.
+[00:16:23.440 --> 00:16:25.400]   You can then take those protobuf schemas
+[00:16:25.400 --> 00:16:30.400]   and this huge, like, relatively quiet group of companies
+[00:16:30.400 --> 00:16:35.080]   uses protobuf all the way from gRPC down into Kafka.
+[00:16:35.080 --> 00:16:38.000]   Historically, one of the kind of misconceptions
+[00:16:38.000 --> 00:16:41.640]   about protobuf is that you must generate code ahead of time
+[00:16:41.640 --> 00:16:44.640]   and you cannot use protobuf the way you use Avro
+[00:16:44.640 --> 00:16:47.800]   with a schema registry and a bunch of dynamic message work.
+[00:16:47.800 --> 00:16:50.760]   You can, it's just that it wasn't a schema registry
+[00:16:50.760 --> 00:16:51.920]   available to you.
+[00:16:51.920 --> 00:16:53.240]   Now, there is.
+[00:16:53.240 --> 00:16:56.160]   And once you get out of Kafka and you're over in Batchland,
+[00:16:56.160 --> 00:16:58.800]   like, nobody's really doing Avro anyways, right?
+[00:16:58.800 --> 00:17:00.160]   Everything's in Parquet.
+[00:17:00.160 --> 00:17:02.480]   The Parquet files are self-describing.
+[00:17:02.480 --> 00:17:05.520]   Avro was just an incidental detail of your row format
+[00:17:05.520 --> 00:17:07.040]   along the way.
+[00:17:07.040 --> 00:17:08.880]   Easy peasy, right?
+[00:17:08.880 --> 00:17:09.920]   Yeah.
+[00:17:09.920 --> 00:17:12.920]   So I guess, I think you're talking about like,
+[00:17:12.920 --> 00:17:14.600]   when we all consolidate,
+[00:17:14.600 --> 00:17:17.480]   there's just so much more things you can actually do
+[00:17:17.480 --> 00:17:21.080]   and just prevent and empower and all the policies.
+[00:17:21.080 --> 00:17:22.560]   That's really, really interesting.
+[00:17:22.560 --> 00:17:24.520]   I actually very curious because I think,
+[00:17:24.520 --> 00:17:27.000]   when I think of protobuf and buff, I think a gRPC,
+[00:17:27.000 --> 00:17:28.720]   I think of microservices, API,
+[00:17:28.720 --> 00:17:30.680]   all that stuff upfront as well
+[00:17:30.680 --> 00:17:33.480]   because that's where the world has largely adopted this
+[00:17:33.480 --> 00:17:35.240]   at that place.
+[00:17:35.240 --> 00:17:37.000]   And now you're into the data business now.
+[00:17:37.000 --> 00:17:39.880]   Like, buff stream, I'm actually really curious, like,
+[00:17:39.880 --> 00:17:44.240]   to me, I think buff stream is a really bold take, right?
+[00:17:44.240 --> 00:17:45.240]   Because it's not just like,
+[00:17:45.240 --> 00:17:49.160]   you're adding protobuf support to existing data stuff.
+[00:17:49.160 --> 00:17:50.440]   You're actually like, you know what?
+[00:17:50.440 --> 00:17:52.520]   Use us as a Kafka replacement, right?
+[00:17:52.520 --> 00:17:54.400]   That's kind of how I read it.
+[00:17:54.400 --> 00:17:57.040]   That's, I guess this is the question.
+[00:17:57.040 --> 00:18:00.720]   Why did you choose this to be the first,
+[00:18:00.720 --> 00:18:02.680]   not the first entry of the data product,
+[00:18:02.680 --> 00:18:04.760]   but almost like the first major product
+[00:18:04.760 --> 00:18:06.520]   you wanna go into the data side?
+[00:18:06.520 --> 00:18:08.200]   'Cause I can imagine you also like,
+[00:18:08.200 --> 00:18:10.680]   take the schema registry for Kafka, for example, wait.
+[00:18:10.680 --> 00:18:11.520]   - We already do that.
+[00:18:11.520 --> 00:18:14.360]   So we shipped that early last year.
+[00:18:14.360 --> 00:18:15.200]   - Ah, nice.
+[00:18:15.200 --> 00:18:16.800]   - I mean, we do that with a bunch of customers.
+[00:18:16.800 --> 00:18:17.640]   - Got it.
+[00:18:17.640 --> 00:18:18.760]   So then why buff stream?
+[00:18:18.760 --> 00:18:20.160]   I guess probably the more easier question,
+[00:18:20.160 --> 00:18:23.440]   like, why did you wanna actually build a Kafka replacement?
+[00:18:23.440 --> 00:18:26.280]   Because I feel like that is more just the benefits
+[00:18:26.280 --> 00:18:27.400]   you talked about maybe, right?
+[00:18:27.400 --> 00:18:29.080]   Because Kafka replacements,
+[00:18:29.080 --> 00:18:30.920]   there is quite a lot of different things
+[00:18:30.920 --> 00:18:31.840]   you can go after here.
+[00:18:31.840 --> 00:18:33.480]   So maybe talk about motivation here, like why?
+[00:18:33.480 --> 00:18:34.640]   - Yeah.
+[00:18:34.640 --> 00:18:36.120]   Like a lot of startups, right?
+[00:18:36.120 --> 00:18:41.120]   This stuff comes from early and pretty deep engagements
+[00:18:41.120 --> 00:18:42.800]   with our existing customers
+[00:18:42.800 --> 00:18:45.200]   and with a couple of prospects.
+[00:18:45.200 --> 00:18:47.440]   And all of those companies,
+[00:18:47.440 --> 00:18:49.280]   which for the most part,
+[00:18:49.280 --> 00:18:51.120]   the ones for this product,
+[00:18:51.120 --> 00:18:53.840]   they're quite large and sophisticated.
+[00:18:53.840 --> 00:18:56.720]   They would like to use part of us for everything,
+[00:18:56.720 --> 00:19:01.040]   from their RPC APIs down through their message queues,
+[00:19:01.040 --> 00:19:03.000]   their stream processing.
+[00:19:03.000 --> 00:19:05.360]   And the only place they would like to get out of part of us
+[00:19:05.360 --> 00:19:07.440]   is when things become per K.
+[00:19:07.440 --> 00:19:10.760]   We started working with them early last year,
+[00:19:10.760 --> 00:19:13.960]   so the kind of beginning of 2023.
+[00:19:13.960 --> 00:19:17.960]   When we were building the Buff schema registry support
+[00:19:17.960 --> 00:19:21.200]   for the Kafka registry protocol.
+[00:19:21.200 --> 00:19:23.360]   We built that and we started talking to them and we're like,
+[00:19:23.360 --> 00:19:25.800]   "Okay, did we fix it?"
+[00:19:25.800 --> 00:19:28.560]   And their basic answer was not quite no.
+[00:19:28.560 --> 00:19:31.320]   We still have a ton of problems.
+[00:19:31.320 --> 00:19:33.200]   And the basic problem they had was
+[00:19:33.200 --> 00:19:35.480]   kind of what we've articulated already.
+[00:19:35.480 --> 00:19:37.360]   They have an end-to-end problem
+[00:19:37.360 --> 00:19:40.120]   and they don't want a collection
+[00:19:40.120 --> 00:19:43.040]   of individual layered solutions
+[00:19:43.040 --> 00:19:46.360]   that they then need to go and ensure
+[00:19:46.360 --> 00:19:49.160]   that every code base layers correctly.
+[00:19:49.160 --> 00:19:52.040]   So for Kafka in particular,
+[00:19:52.040 --> 00:19:53.200]   it's where we started
+[00:19:53.200 --> 00:19:56.080]   because in a modern data architecture,
+[00:19:56.080 --> 00:19:59.280]   that's typically where you're making the transition
+[00:19:59.280 --> 00:20:02.600]   from your online transaction processing world
+[00:20:02.600 --> 00:20:07.600]   into your data engineering offline stream processing,
+[00:20:07.600 --> 00:20:11.600]   kind of semi real time, but not hard real time work.
+[00:20:11.600 --> 00:20:13.560]   And that's where you're crossing the boundary
+[00:20:13.560 --> 00:20:15.680]   into analytic data use cases.
+[00:20:15.680 --> 00:20:19.840]   The basic problem that our customers have
+[00:20:19.840 --> 00:20:22.600]   is that the Kafka team,
+[00:20:22.600 --> 00:20:25.480]   like the streaming data team at their company,
+[00:20:25.480 --> 00:20:28.600]   they view their job as accurately schlepping
+[00:20:28.600 --> 00:20:30.120]   the bytes around.
+[00:20:30.120 --> 00:20:32.480]   And so from the Kafka team's perspective,
+[00:20:32.480 --> 00:20:34.160]   they run Apache Kafka
+[00:20:34.160 --> 00:20:37.520]   or they help to manage the confluent install or whatever.
+[00:20:37.520 --> 00:20:40.880]   And their job is to get the bytes
+[00:20:40.880 --> 00:20:42.360]   that they're handed by the producer
+[00:20:42.360 --> 00:20:44.480]   and give them to the consumer.
+[00:20:44.480 --> 00:20:46.360]   And that's kind of the end of it.
+[00:20:46.360 --> 00:20:48.680]   If anything about the bytes is wrong
+[00:20:48.680 --> 00:20:51.520]   or the bytes were not supposed to be there to begin with,
+[00:20:51.520 --> 00:20:53.240]   that's a conversation that the consumer
+[00:20:53.240 --> 00:20:55.760]   needs to take up with the producer.
+[00:20:55.760 --> 00:20:58.200]   And now you're in this like who done it murder mystery
+[00:20:58.200 --> 00:21:01.440]   of like there was a man in the floating point numbers.
+[00:21:01.440 --> 00:21:04.160]   And now some exec is looking at like a revenue dashboard
+[00:21:04.160 --> 00:21:05.520]   that just says man.
+[00:21:05.520 --> 00:21:07.160]   And everyone's scrambling to figure out
+[00:21:07.160 --> 00:21:08.360]   where this thing came from,
+[00:21:08.360 --> 00:21:10.840]   which stream processing job along the way introduced it.
+[00:21:10.840 --> 00:21:13.200]   Like who's fault is this basically?
+[00:21:13.200 --> 00:21:14.920]   This is just not really workable.
+[00:21:14.920 --> 00:21:19.520]   It's not what the business wants out of the data platform.
+[00:21:19.520 --> 00:21:22.960]   What the business wants is they want some guarantee
+[00:21:22.960 --> 00:21:27.480]   that yes, the bytes are making their way around correctly.
+[00:21:27.480 --> 00:21:29.240]   But more importantly,
+[00:21:29.240 --> 00:21:33.400]   that the business entities being modeled by these topics
+[00:21:33.400 --> 00:21:35.400]   are moving around correctly.
+[00:21:35.400 --> 00:21:39.400]   That consumers can rely on getting valid data
+[00:21:39.400 --> 00:21:42.160]   out of this system as a platform guarantee,
+[00:21:42.160 --> 00:21:46.360]   not as a best effort go talk to the producer guarantee.
+[00:21:46.360 --> 00:21:50.600]   And then furthermore that this system has built in hooks
+[00:21:50.600 --> 00:21:52.800]   to enable the kind of data governance
+[00:21:52.800 --> 00:21:55.200]   that they're increasingly concerned about.
+[00:21:55.200 --> 00:21:59.000]   And so we started working on this with a gateway, right?
+[00:21:59.000 --> 00:22:00.880]   If you look at that problem and you kind of smell it
+[00:22:00.880 --> 00:22:03.960]   and you're like, ah, this feels like an API gateway.
+[00:22:03.960 --> 00:22:07.120]   Like that's how I would solve this over in networking land.
+[00:22:07.120 --> 00:22:09.920]   I would slap a sidecard next to your process.
+[00:22:09.920 --> 00:22:11.960]   I would inspect the data as it comes in and out.
+[00:22:11.960 --> 00:22:12.800]   I would redact it.
+[00:22:12.800 --> 00:22:13.640]   I would load balance it.
+[00:22:13.640 --> 00:22:16.080]   I'd have some control plan for policy data.
+[00:22:16.080 --> 00:22:17.240]   And that's how we would fix this.
+[00:22:17.240 --> 00:22:18.520]   And that's roughly how Envoy works.
+[00:22:18.520 --> 00:22:21.320]   It's kind of a commoditized architecture.
+[00:22:21.320 --> 00:22:23.200]   And you look over at Kafka and you're like,
+[00:22:23.200 --> 00:22:24.600]   there's not really anything like this.
+[00:22:24.600 --> 00:22:26.200]   Like this smells like a similar problem.
+[00:22:26.200 --> 00:22:27.720]   Let's try this out.
+[00:22:27.720 --> 00:22:29.760]   And so we built a gateway,
+[00:22:29.760 --> 00:22:31.440]   which does all that stuff for Kafka.
+[00:22:31.440 --> 00:22:33.360]   And of course it has to speak the Kafka protocol,
+[00:22:33.360 --> 00:22:37.760]   which is particularly onerous to implement.
+[00:22:37.760 --> 00:22:39.960]   And it mostly works.
+[00:22:39.960 --> 00:22:43.400]   The problem is that it's really irritatingly complicated.
+[00:22:43.400 --> 00:22:45.680]   And there are key pieces of this
+[00:22:45.680 --> 00:22:47.520]   that you just cannot do as a proxy.
+[00:22:47.520 --> 00:22:49.680]   You have to own the data layer.
+[00:22:49.680 --> 00:22:51.920]   And the most important thing,
+[00:22:51.920 --> 00:22:53.760]   I'll actually say the two key things
+[00:22:53.760 --> 00:22:58.240]   that we were unable to do in a satisfying way with a proxy,
+[00:22:58.240 --> 00:22:59.480]   were number one,
+[00:22:59.480 --> 00:23:02.680]   making all of these correctness things a guarantee
+[00:23:02.680 --> 00:23:04.640]   and not best effort.
+[00:23:04.640 --> 00:23:07.080]   What we were telling our early prospects to do
+[00:23:07.080 --> 00:23:09.200]   is to configure firewall rules
+[00:23:09.200 --> 00:23:12.600]   to make sure that only the proxies can talk to the brokers.
+[00:23:12.600 --> 00:23:15.360]   And that's just very laborious and painful.
+[00:23:15.360 --> 00:23:17.280]   From a functionality perspective,
+[00:23:17.280 --> 00:23:19.120]   the biggest thing that we couldn't do
+[00:23:19.120 --> 00:23:22.800]   is we couldn't control the format of the data
+[00:23:22.800 --> 00:23:24.840]   on Discord and S3.
+[00:23:24.840 --> 00:23:26.280]   And really what we want
+[00:23:26.280 --> 00:23:29.760]   is we want the native format of your Kafka topics
+[00:23:29.760 --> 00:23:31.280]   to be parquet files.
+[00:23:31.280 --> 00:23:35.520]   That lets you get huge efficiency benefits
+[00:23:35.520 --> 00:23:37.880]   and simplicity benefits.
+[00:23:37.880 --> 00:23:39.000]   And so we looked at that
+[00:23:39.000 --> 00:23:41.320]   and we kind of looked at this gateway product and we said,
+[00:23:41.320 --> 00:23:44.120]   ugh, like this is cool,
+[00:23:44.120 --> 00:23:46.120]   but we can do dramatically better
+[00:23:46.120 --> 00:23:49.680]   if we own the storage layer.
+[00:23:49.680 --> 00:23:52.920]   And we've already implemented the whole protocol.
+[00:23:52.920 --> 00:23:55.720]   We might as well own the storage layer too.
+[00:23:55.720 --> 00:23:56.880]   So that's what we did.
+[00:23:56.880 --> 00:24:00.600]   - Can you explain why,
+[00:24:00.600 --> 00:24:02.040]   like you said so much that I'm like,
+[00:24:02.040 --> 00:24:04.200]   okay, we need to step back and have a little explanation,
+[00:24:04.200 --> 00:24:06.120]   but could you explain
+[00:24:06.120 --> 00:24:08.800]   why parquet is the right format for Kafka?
+[00:24:08.800 --> 00:24:11.080]   Like what are the efficiencies that you're seeing?
+[00:24:11.080 --> 00:24:12.080]   'Cause you talked before
+[00:24:12.080 --> 00:24:13.560]   or is that you had this sort of transmission layer
+[00:24:13.560 --> 00:24:15.560]   as a transformation layer,
+[00:24:15.560 --> 00:24:17.040]   a lot of things per buck turned to parquet.
+[00:24:17.040 --> 00:24:20.200]   And I'm like, but why is parquet the right format?
+[00:24:20.200 --> 00:24:22.600]   Like if you had a parquet native stream processor,
+[00:24:22.600 --> 00:24:24.880]   why is parquet the right solution?
+[00:24:24.880 --> 00:24:28.360]   - There are a couple of things that are really good
+[00:24:28.360 --> 00:24:31.320]   about parquet from a theoretical perspective
+[00:24:31.320 --> 00:24:33.240]   and then there's a practical angle.
+[00:24:33.240 --> 00:24:36.480]   And the most important practical angle is that
+[00:24:36.480 --> 00:24:39.640]   maybe this is getting into the kind of spicy hot takes world,
+[00:24:39.640 --> 00:24:42.880]   but in my view, really elaborate
+[00:24:42.880 --> 00:24:45.280]   stream processing architectures,
+[00:24:45.280 --> 00:24:47.400]   they're kind of 2015 vintage.
+[00:24:47.400 --> 00:24:49.200]   Like, oh, we're really excited.
+[00:24:49.200 --> 00:24:51.760]   You know, we're gonna do storm and Heron and Samza
+[00:24:51.760 --> 00:24:52.680]   and Spark streaming.
+[00:24:52.680 --> 00:24:54.120]   And we're gonna get really bent out of shape
+[00:24:54.120 --> 00:24:56.520]   about whether you're streaming is micro batching
+[00:24:56.520 --> 00:24:58.000]   or truly streaming.
+[00:24:58.000 --> 00:25:00.480]   My sense is that for the most part,
+[00:25:00.480 --> 00:25:03.440]   this has gone the way of eventually
+[00:25:03.440 --> 00:25:05.840]   consistent transactional databases.
+[00:25:05.840 --> 00:25:09.400]   The programming model is too complicated for most use cases.
+[00:25:09.400 --> 00:25:12.040]   And instead, we wanna take all that stuff
+[00:25:12.040 --> 00:25:17.040]   and we wanna do most of it in a near real time batch kind of way.
+[00:25:17.040 --> 00:25:19.680]   Or at least that's the programming model
+[00:25:19.680 --> 00:25:22.600]   you wanna present people, SQL.
+[00:25:22.600 --> 00:25:26.800]   Over in that world, parquet is the lingua franca of data.
+[00:25:26.800 --> 00:25:29.760]   It's like CSV for business data.
+[00:25:29.760 --> 00:25:32.760]   If you wanna deal with iceberg or Delta Lake
+[00:25:32.760 --> 00:25:36.360]   or hoodie or duck DB or arrow,
+[00:25:36.360 --> 00:25:38.920]   parquet is the bedrock of all of that.
+[00:25:38.920 --> 00:25:42.800]   And there's a ton of complexity in systems like hoodie.
+[00:25:42.800 --> 00:25:44.920]   But really, it's just a bunch of parquet files
+[00:25:44.920 --> 00:25:47.920]   with a really simple set of manifest files on top of it
+[00:25:47.920 --> 00:25:50.880]   that just tell you what data is in which parquet file.
+[00:25:50.880 --> 00:25:53.360]   And so for topics that have a schema,
+[00:25:53.360 --> 00:25:55.760]   which is most of the ones that matter,
+[00:25:55.760 --> 00:25:58.240]   if you're natively storing Kafka,
+[00:25:58.240 --> 00:26:00.560]   your Kafka data as parquet,
+[00:26:00.560 --> 00:26:02.200]   it's really only a hop skip and a jump
+[00:26:02.200 --> 00:26:06.920]   to also materialize the manifest files that you need.
+[00:26:06.920 --> 00:26:09.200]   And now you go all the way back
+[00:26:09.200 --> 00:26:13.520]   to Jay Crapz's original blog post on Kafka.
+[00:26:13.520 --> 00:26:15.960]   And he made a big deal at the time
+[00:26:15.960 --> 00:26:18.560]   about stream table duality.
+[00:26:18.560 --> 00:26:20.280]   Jay Crapz was talking about it a couple of years later
+[00:26:20.280 --> 00:26:21.800]   Martin Kletman gives the blog post
+[00:26:21.800 --> 00:26:24.160]   and we're turning the database inside out.
+[00:26:24.160 --> 00:26:26.560]   And at the time, I think everyone really interpreted that
+[00:26:26.560 --> 00:26:29.720]   to mean, oh my God, we've gotta do case equal DB.
+[00:26:29.720 --> 00:26:32.160]   We've gotta have Flink support SQL
+[00:26:32.160 --> 00:26:34.400]   as a true stream processing abstraction.
+[00:26:34.400 --> 00:26:36.800]   But I think where we've ended up actually is that
+[00:26:36.800 --> 00:26:40.680]   we want all the application logic to be SQL like
+[00:26:40.680 --> 00:26:41.960]   for the most part.
+[00:26:41.960 --> 00:26:44.240]   And we wanna use Kafka kind of as a way of like
+[00:26:44.240 --> 00:26:48.720]   directly accessing the write ahead log of the database.
+[00:26:48.720 --> 00:26:52.360]   And if we can store your Kafka data as an iceberg table
+[00:26:52.360 --> 00:26:55.300]   or as parquet files, we're there.
+[00:26:55.300 --> 00:26:58.920]   Writing to a Kafka topic becomes the same thing
+[00:26:58.920 --> 00:27:02.220]   as appending to your lake house table.
+[00:27:02.220 --> 00:27:04.800]   And your consumers can choose the access modality
+[00:27:04.800 --> 00:27:06.760]   that makes the most sense for them.
+[00:27:06.760 --> 00:27:10.800]   They can get record at a time via the Kafka API
+[00:27:10.800 --> 00:27:15.800]   or they can jack this S3 bucket into their query engine
+[00:27:15.800 --> 00:27:19.080]   as an external table and they can run whatever SQL queries
+[00:27:19.080 --> 00:27:19.920]   they'd like.
+[00:27:19.920 --> 00:27:23.120]   And if you look at what people do in practice,
+[00:27:23.120 --> 00:27:26.440]   this is kind of the default architecture.
+[00:27:26.440 --> 00:27:27.640]   It even has a name.
+[00:27:27.640 --> 00:27:29.800]   This is the medallion architecture.
+[00:27:29.800 --> 00:27:33.800]   And your Kafka topics are your 10 or bronze tables.
+[00:27:33.800 --> 00:27:35.280]   And then you're gonna run SQL
+[00:27:35.280 --> 00:27:37.760]   or you're gonna run some processing on the other end
+[00:27:37.760 --> 00:27:41.280]   to refine that data into lower volume,
+[00:27:41.280 --> 00:27:44.600]   more like analysis ready tables.
+[00:27:44.600 --> 00:27:46.320]   But all that stuff doesn't need to require
+[00:27:46.320 --> 00:27:49.440]   another distributed system to copy the data around.
+[00:27:49.440 --> 00:27:52.240]   It doesn't need to require another whole copy of the data,
+[00:27:52.240 --> 00:27:54.360]   which is extortionately expensive.
+[00:27:54.360 --> 00:27:56.680]   We can just do that at rest.
+[00:27:56.680 --> 00:27:59.280]   We can build that end-to-end in a way that's ready
+[00:27:59.280 --> 00:28:01.960]   to use in one step and one system.
+[00:28:01.960 --> 00:28:04.840]   I think parquet as a format has kind of one.
+[00:28:04.840 --> 00:28:07.400]   It has some things that are not great about it.
+[00:28:07.400 --> 00:28:09.600]   And there are a lot of people trying to do better.
+[00:28:09.600 --> 00:28:11.600]   So like Facebook just did Nimble.
+[00:28:11.600 --> 00:28:13.640]   It's really interesting.
+[00:28:13.640 --> 00:28:15.760]   And I don't really have a strong opinion
+[00:28:15.760 --> 00:28:17.440]   about whether Nimble has nailed
+[00:28:17.440 --> 00:28:19.800]   all of the important problems with parquet.
+[00:28:19.800 --> 00:28:24.720]   - Yeah, I guess we should let the format wars begin, huh?
+[00:28:24.720 --> 00:28:27.120]   - Yeah, I mean, we're already fighting over
+[00:28:27.120 --> 00:28:28.360]   in the lake as formats.
+[00:28:28.360 --> 00:28:29.880]   And I guess we're gonna like push
+[00:28:29.880 --> 00:28:32.080]   that bite one layer down too.
+[00:28:32.080 --> 00:28:34.120]   - One more standard to rule them all.
+[00:28:34.120 --> 00:28:36.200]   - That's right.
+[00:28:36.200 --> 00:28:39.920]   So I wanna move on to something we call the spicy future.
+[00:28:39.920 --> 00:28:41.400]   - Spicy futures.
+[00:28:41.400 --> 00:28:47.600]   - As a very simply understood,
+[00:28:47.600 --> 00:28:49.720]   we want you to tell us what you believe
+[00:28:49.720 --> 00:28:50.920]   that most people don't believe in.
+[00:28:50.920 --> 00:28:52.160]   And I think you already have something.
+[00:28:52.160 --> 00:28:55.040]   So what is the spicy hot take
+[00:28:55.040 --> 00:28:57.080]   of the data engineering world that you have?
+[00:28:57.080 --> 00:29:01.480]   - I think all of this was a mistake.
+[00:29:01.480 --> 00:29:06.160]   Like the idea that really kicked off a lot
+[00:29:06.160 --> 00:29:08.760]   of our focus on big data.
+[00:29:08.760 --> 00:29:11.360]   We've got J-Crafts and Martin Klubman and DJ Patil.
+[00:29:11.360 --> 00:29:16.200]   And we're all gonna say that lurking in this mass of data
+[00:29:16.200 --> 00:29:19.240]   are these business changing insights.
+[00:29:19.240 --> 00:29:20.840]   And if we could only build you
+[00:29:20.840 --> 00:29:22.960]   the incredibly modular, expensive,
+[00:29:22.960 --> 00:29:25.360]   operationally complex stack.
+[00:29:25.360 --> 00:29:27.700]   And if you would only staff up a whole new function
+[00:29:27.700 --> 00:29:29.920]   of people to operate that thing for you.
+[00:29:30.800 --> 00:29:34.120]   And then if you would only staff a team of data engineers
+[00:29:34.120 --> 00:29:38.600]   to get the like low rent analysis off their plate,
+[00:29:38.600 --> 00:29:43.600]   we could have this aristocracy of data scientists show up
+[00:29:43.600 --> 00:29:46.360]   and just start delivering game changing insights.
+[00:29:46.360 --> 00:29:49.160]   I mean, every company would have their people
+[00:29:49.160 --> 00:29:52.000]   you may know LinkedIn feature equivalent.
+[00:29:52.000 --> 00:29:54.680]   And they'd be shipping them like once a month.
+[00:29:54.680 --> 00:29:56.720]   And that just has not panned out.
+[00:29:56.720 --> 00:29:59.720]   Company after company has invested in this stack.
+[00:29:59.720 --> 00:30:02.680]   And what they've gotten at the end, for the most part,
+[00:30:02.680 --> 00:30:06.760]   is an approach that works for well-understood
+[00:30:06.760 --> 00:30:08.160]   business critical problems.
+[00:30:08.160 --> 00:30:10.680]   So Uber that is surge pricing, right?
+[00:30:10.680 --> 00:30:14.400]   That is the dominant use for a bunch of this data.
+[00:30:14.400 --> 00:30:16.720]   And it has been business critical from day one.
+[00:30:16.720 --> 00:30:18.240]   Everybody knew that.
+[00:30:18.240 --> 00:30:20.640]   It wasn't some new problem that emerged
+[00:30:20.640 --> 00:30:22.480]   and was discovered in the data.
+[00:30:22.480 --> 00:30:26.600]   And the other thing that companies can achieve
+[00:30:26.600 --> 00:30:29.000]   is they can achieve an easier-to-use,
+[00:30:29.000 --> 00:30:31.800]   more user-friendly analysis pipeline
+[00:30:31.800 --> 00:30:35.120]   that doesn't require calling your friendly business analyst
+[00:30:35.120 --> 00:30:39.760]   to run some crazy SQL Terra data monster for you.
+[00:30:39.760 --> 00:30:42.120]   For the most part, people are not churning out
+[00:30:42.120 --> 00:30:44.440]   these game-changing insights
+[00:30:44.440 --> 00:30:48.640]   on a regular and predictable basis.
+[00:30:48.640 --> 00:30:52.560]   And I think the consequences of that are pretty far-reaching.
+[00:30:52.560 --> 00:30:55.960]   To me, it means that as in for people,
+[00:30:55.960 --> 00:30:59.840]   the idea that you can sell an incredibly expensive,
+[00:30:59.840 --> 00:31:02.840]   piecemeal, difficult to operate data platform
+[00:31:02.840 --> 00:31:07.920]   that needs a dedicated crew of people to manage and integrate.
+[00:31:07.920 --> 00:31:09.080]   And in Kafka's case, you're like,
+[00:31:09.080 --> 00:31:10.640]   oh, I need a dedicated crew of people
+[00:31:10.640 --> 00:31:14.840]   that just deals with partition rebalancing and operations.
+[00:31:14.840 --> 00:31:16.480]   And that the way you sell that
+[00:31:16.480 --> 00:31:20.320]   is the future value of this game-changing analysis.
+[00:31:20.320 --> 00:31:21.520]   That's dead.
+[00:31:21.520 --> 00:31:24.080]   That money is not available anymore.
+[00:31:24.080 --> 00:31:26.760]   Increasingly, I suspect companies are gonna be unwilling
+[00:31:26.760 --> 00:31:28.360]   to bite this off.
+[00:31:28.360 --> 00:31:31.160]   And so that means from an infra perspective,
+[00:31:31.160 --> 00:31:36.040]   we need to refocus on delivering end-to-end platforms
+[00:31:36.040 --> 00:31:39.800]   that bake in best practices into the technology
+[00:31:39.800 --> 00:31:42.360]   and not into a complicated user guide
+[00:31:42.360 --> 00:31:44.960]   where you're buying data engineering,
+[00:31:44.960 --> 00:31:46.520]   the definitive guide from O'Reilly,
+[00:31:46.520 --> 00:31:49.680]   and it makes that big thump when you drop it on the desk.
+[00:31:49.680 --> 00:31:54.280]   So I think a lot of our data in front today needs to pivot.
+[00:31:54.280 --> 00:31:56.760]   And I think this is the place
+[00:31:56.760 --> 00:32:00.480]   where the modern data stack needs the equivalent
+[00:32:00.480 --> 00:32:05.200]   of the Hortonworks and the Cloud era of 2010.
+[00:32:05.200 --> 00:32:10.320]   - I mean, this is something I've talked about a lot.
+[00:32:10.320 --> 00:32:14.160]   It's like, I think we're in the cloud consolidation phase,
+[00:32:14.160 --> 00:32:16.240]   right, where we went through this like crazy thing
+[00:32:16.240 --> 00:32:19.320]   over the last 15 years, since 2010, right?
+[00:32:19.320 --> 00:32:23.720]   And this is happening in AI right now,
+[00:32:23.720 --> 00:32:26.320]   but like, you know, in cloud and data,
+[00:32:26.320 --> 00:32:28.480]   it's like we had this massive Cambridge explosion
+[00:32:28.480 --> 00:32:30.480]   of all these technologies and all these companies.
+[00:32:30.480 --> 00:32:32.280]   We ended up with this like crazy polyglot,
+[00:32:32.280 --> 00:32:34.560]   like weirdo architecture.
+[00:32:34.560 --> 00:32:37.880]   It's like we picked different shaped like Lego bricks
+[00:32:37.880 --> 00:32:39.400]   that none of them actually fit together.
+[00:32:39.400 --> 00:32:41.040]   It's like we went to every universe
+[00:32:41.040 --> 00:32:42.960]   and like what's your Lego style?
+[00:32:42.960 --> 00:32:44.720]   And we just took them all and put them in a stack
+[00:32:44.720 --> 00:32:46.920]   and then tried to build Lego with it.
+[00:32:46.920 --> 00:32:48.840]   This is what cloud architecture feels like today.
+[00:32:48.840 --> 00:32:52.200]   Like the cloud native ecosystem is still, you know,
+[00:32:52.200 --> 00:32:54.120]   1000 plus different components
+[00:32:54.120 --> 00:32:56.240]   and they all work differently, it's all weird.
+[00:32:56.240 --> 00:32:59.240]   And so I like finally agree with what you're saying.
+[00:32:59.240 --> 00:33:01.240]   I guess the question is, what do you think causes?
+[00:33:01.240 --> 00:33:03.680]   Like there's all these like macroeconomic drivers, right?
+[00:33:03.680 --> 00:33:06.040]   Like interest rates are at 5% and you know,
+[00:33:06.040 --> 00:33:07.920]   capital's not free and what we're kind of
+[00:33:07.920 --> 00:33:09.800]   in this like tech recession, but what do you think?
+[00:33:09.800 --> 00:33:12.600]   Like I generally agree with what you're saying.
+[00:33:12.600 --> 00:33:14.960]   Now like, how do you think this consolidation occurs?
+[00:33:14.960 --> 00:33:17.640]   What do you think drives a consolidation?
+[00:33:17.640 --> 00:33:18.680]   - That's a great question.
+[00:33:18.680 --> 00:33:20.640]   So the first thing I would say is,
+[00:33:20.640 --> 00:33:22.880]   this isn't limited to the cloud
+[00:33:22.880 --> 00:33:26.320]   because these same architectures are being used on-prem.
+[00:33:26.320 --> 00:33:28.000]   Uber actually, I think they just published
+[00:33:28.000 --> 00:33:31.240]   this big blog post on this system called Oden.
+[00:33:31.240 --> 00:33:32.800]   And really what Oden is,
+[00:33:32.800 --> 00:33:35.160]   is it's trying to bring some consistently
+[00:33:35.160 --> 00:33:37.960]   to manage data gravity and operations
+[00:33:37.960 --> 00:33:41.800]   for disks full of data that you can't just you know,
+[00:33:41.800 --> 00:33:44.800]   eat into the cloud and never think about again.
+[00:33:44.800 --> 00:33:48.280]   So this same problem exists for on-prem workloads.
+[00:33:48.280 --> 00:33:52.440]   My sensors, this is partly an economic situation
+[00:33:52.440 --> 00:33:54.760]   where you're right, you know, budgets are down,
+[00:33:54.760 --> 00:33:58.160]   the cloud is really expensive, interest rates are up.
+[00:33:58.160 --> 00:34:01.480]   But this is partly also an acknowledgement
+[00:34:01.480 --> 00:34:05.760]   that these systems are just very, very, very complicated
+[00:34:05.760 --> 00:34:07.520]   to run and operate.
+[00:34:07.520 --> 00:34:11.160]   And there are only so many companies
+[00:34:11.160 --> 00:34:15.760]   that want to fund an expansive data engineering team
+[00:34:15.760 --> 00:34:18.400]   to enable their analysts.
+[00:34:18.400 --> 00:34:22.160]   And their analysts needs tend to be relatively straightforward.
+[00:34:22.160 --> 00:34:24.720]   You know, really I want something that speaks SQL
+[00:34:24.720 --> 00:34:28.520]   that I can jack into my dashboarding
+[00:34:28.520 --> 00:34:30.400]   and query engine of choice, you know.
+[00:34:30.400 --> 00:34:32.320]   At one point that would have been tableau or liquor.
+[00:34:32.320 --> 00:34:35.720]   I think that world has expanded a lot since then.
+[00:34:35.720 --> 00:34:40.560]   But it's hard to justify millions in headcount
+[00:34:40.560 --> 00:34:44.320]   on an ongoing basis to support that use case.
+[00:34:44.320 --> 00:34:46.360]   It doesn't pass the smell test.
+[00:34:46.360 --> 00:34:50.480]   - I mean, that's a super salient point.
+[00:34:50.480 --> 00:34:53.200]   It is just the headcount expense to manage these systems.
+[00:34:53.200 --> 00:34:56.000]   And the fact that like a lot of the complexity systems
+[00:34:56.000 --> 00:34:58.720]   comes from the fact that they're funny shaped Lego bricks
+[00:34:58.720 --> 00:35:00.920]   that weren't thought about being run together, right?
+[00:35:00.920 --> 00:35:03.320]   It's like the glue is where all the work is
+[00:35:03.320 --> 00:35:06.200]   and that glue is very expensive.
+[00:35:06.200 --> 00:35:08.480]   So I'm curious, like, what do you think the future
+[00:35:08.480 --> 00:35:12.120]   of a data org looks like or an engine organization looks like?
+[00:35:12.120 --> 00:35:14.240]   What is the future of these organizations?
+[00:35:14.240 --> 00:35:16.120]   'Cause if we're starting at the point is like,
+[00:35:16.120 --> 00:35:18.440]   we're spending millions and millions of dollars in headcount
+[00:35:18.440 --> 00:35:20.960]   on things that we don't necessarily need to
+[00:35:20.960 --> 00:35:22.000]   if there was consolidation.
+[00:35:22.000 --> 00:35:24.160]   Like what's the future organizational click?
+[00:35:24.160 --> 00:35:28.480]   'Cause we got here through like the broad concept
+[00:35:28.480 --> 00:35:30.880]   of like platform teams and feature teams, right?
+[00:35:30.880 --> 00:35:32.800]   And that's how we ended up in this world
+[00:35:32.800 --> 00:35:34.240]   where you have like the Kafka team
+[00:35:34.240 --> 00:35:36.120]   that just runs Kafka into the carbo bytes
+[00:35:36.120 --> 00:35:37.720]   'cause that's the way we drew their boundary.
+[00:35:37.720 --> 00:35:40.160]   Like, do you think there's like a fundamental
+[00:35:40.160 --> 00:35:42.640]   engineering culture change that has to occur?
+[00:35:42.640 --> 00:35:44.400]   How do you think this all changes?
+[00:35:44.400 --> 00:35:46.560]   - I think my view of engineering culture
+[00:35:46.560 --> 00:35:49.400]   is that a lot of it ends up shaped by the tools
+[00:35:49.400 --> 00:35:52.400]   that we use and that we invest ourselves
+[00:35:52.400 --> 00:35:54.680]   and our identities and our careers in.
+[00:35:54.680 --> 00:35:56.880]   And so the best way to change the culture
+[00:35:56.880 --> 00:35:58.240]   of how teams interact with each other
+[00:35:58.240 --> 00:36:00.400]   is to change the technology that they use.
+[00:36:00.400 --> 00:36:04.040]   It redraws the boundaries, it redraws responsibilities
+[00:36:04.040 --> 00:36:07.840]   and it changes the place for like cost and value set.
+[00:36:07.840 --> 00:36:11.280]   I think for data, there's this huge opportunity
+[00:36:11.280 --> 00:36:14.960]   to really think of RPC boundaries
+[00:36:14.960 --> 00:36:19.640]   and data lake tables as different ends of the same spectrum
+[00:36:19.640 --> 00:36:23.360]   and to have a unified stack that moves data
+[00:36:23.360 --> 00:36:26.920]   all the way from ephemeral network data
+[00:36:26.920 --> 00:36:30.320]   down to like kind of historical reporting data
+[00:36:30.320 --> 00:36:31.840]   in your lake house.
+[00:36:31.840 --> 00:36:34.240]   And again, this is my perspective, right?
+[00:36:34.240 --> 00:36:38.120]   That we want one format that's the lingua franca there.
+[00:36:38.120 --> 00:36:39.480]   Not that you have to use that,
+[00:36:39.480 --> 00:36:43.400]   but there's a clearly paved path to use one thing throughout.
+[00:36:43.400 --> 00:36:46.200]   And then we stop thinking of Kafka
+[00:36:46.200 --> 00:36:49.160]   as a particular message queue
+[00:36:49.160 --> 00:36:54.160]   and more as a convenient protocol for streaming updates.
+[00:36:54.160 --> 00:36:57.080]   And that protocol is a commodity.
+[00:36:57.080 --> 00:37:01.080]   Nobody today thinks of HTTP as a feature
+[00:37:01.080 --> 00:37:02.880]   of the Apache web server.
+[00:37:02.880 --> 00:37:05.040]   And you're like, oh, if this thing has to speak HTTP,
+[00:37:05.040 --> 00:37:07.200]   like we got to put Apache in front of it.
+[00:37:07.200 --> 00:37:08.760]   Everything speaks HTTP.
+[00:37:08.760 --> 00:37:12.040]   That's just the way we hook systems together
+[00:37:12.040 --> 00:37:14.400]   for request response workloads.
+[00:37:14.400 --> 00:37:17.240]   Similarly, the Kafka protocol should be the way
+[00:37:17.240 --> 00:37:20.360]   we hook things together when we want record
+[00:37:20.360 --> 00:37:22.120]   at a time streaming.
+[00:37:22.120 --> 00:37:26.880]   Everything else, right, is just a question of convenience.
+[00:37:26.880 --> 00:37:31.320]   I would love it to get to a world where you write data in
+[00:37:31.320 --> 00:37:33.240]   with Kafka to a system.
+[00:37:33.240 --> 00:37:37.640]   But that same system accepts RPC or REST calls
+[00:37:37.640 --> 00:37:39.680]   for relatively simple use cases.
+[00:37:39.680 --> 00:37:43.960]   Ideally, like all the workloads that once upon a time
+[00:37:43.960 --> 00:37:46.520]   we did with like HBase tables,
+[00:37:46.520 --> 00:37:48.720]   like that is right there for the asking.
+[00:37:48.720 --> 00:37:51.960]   We can support all of that with some squinting, right?
+[00:37:51.960 --> 00:37:55.280]   And maybe some cooperation from the object storage centers.
+[00:37:55.280 --> 00:37:59.560]   Like we could do reasonably low latency like MongoDB
+[00:37:59.560 --> 00:38:02.480]   on top of the same data set at REST.
+[00:38:02.480 --> 00:38:07.000]   So I would love something that's much more converged
+[00:38:07.000 --> 00:38:09.240]   that doesn't necessarily try to bridge
+[00:38:09.240 --> 00:38:11.760]   transaction processing and analytics.
+[00:38:11.760 --> 00:38:15.640]   But over in the use cases where you want throughput
+[00:38:15.640 --> 00:38:19.040]   over latency, we can offer you your data
+[00:38:19.040 --> 00:38:20.880]   in a whole bunch of different formats
+[00:38:20.880 --> 00:38:25.120]   and via a bunch of different like protocols and APIs.
+[00:38:25.120 --> 00:38:26.320]   - Yeah, this is actually fascinating.
+[00:38:26.320 --> 00:38:29.680]   Our last episode was taught by HTap,
+[00:38:29.680 --> 00:38:31.840]   which also has another flavor
+[00:38:31.840 --> 00:38:35.360]   of combining transactional and analytics as well.
+[00:38:35.360 --> 00:38:37.280]   And you're bringing a totally different angle to it,
+[00:38:37.280 --> 00:38:39.360]   which is super interesting.
+[00:38:39.360 --> 00:38:40.880]   I think-- - HTap is the holy grail.
+[00:38:40.880 --> 00:38:43.480]   Like if we could get there, that would be amazing.
+[00:38:43.480 --> 00:38:47.040]   - I feel like HTap with one single format to rule them all
+[00:38:47.040 --> 00:38:49.880]   will might be in heaven of some sort of data
+[00:38:49.880 --> 00:38:50.960]   engineer world out there.
+[00:38:50.960 --> 00:38:52.480]   - I mean, everyone listening to this podcast
+[00:38:52.480 --> 00:38:55.040]   from inside Google is just like giggling to themselves.
+[00:38:55.040 --> 00:38:56.880]   So it's like more or less, my understanding is
+[00:38:56.880 --> 00:38:57.880]   this is basically how it works.
+[00:38:57.880 --> 00:38:58.720]   You have some pertibuffs
+[00:38:58.720 --> 00:39:02.080]   and you're just like flinging pertibuffs everywhere.
+[00:39:02.080 --> 00:39:04.360]   Under the hood, everything is pertibuff.
+[00:39:04.360 --> 00:39:05.880]   Like their equivalent of parquet
+[00:39:05.880 --> 00:39:07.480]   is just shredded up pertibuff records.
+[00:39:07.480 --> 00:39:09.560]   That's the Dremel paper.
+[00:39:09.560 --> 00:39:11.560]   The SQL type database takes
+[00:39:11.560 --> 00:39:13.800]   and returns pertibuff records.
+[00:39:13.800 --> 00:39:16.080]   It's the kind of world you can get to quickly
+[00:39:16.080 --> 00:39:19.640]   if you have a internal ecosystem
+[00:39:19.640 --> 00:39:23.200]   that has really, really lavish infrastructure funding
+[00:39:23.200 --> 00:39:26.120]   and has buy-in from the top
+[00:39:26.120 --> 00:39:29.680]   to really focus on uniformity, no matter what the cost.
+[00:39:29.680 --> 00:39:33.000]   - And so I think my last question really,
+[00:39:33.000 --> 00:39:35.720]   like we haven't got to this future state
+[00:39:35.720 --> 00:39:39.240]   that you're talking about here.
+[00:39:39.240 --> 00:39:41.360]   We probably can talk about like all the single steps
+[00:39:41.360 --> 00:39:44.360]   that requires it, but what is like one major thing
+[00:39:44.360 --> 00:39:45.840]   that you guys are working on or something
+[00:39:45.840 --> 00:39:50.840]   that requires to make the push to have the pertibuff format
+[00:39:50.840 --> 00:39:53.320]   to be more widely adopted?
+[00:39:53.320 --> 00:39:56.160]   What is the first major step you guys are taking to like,
+[00:39:56.160 --> 00:39:57.800]   hey, we can get better.
+[00:39:57.800 --> 00:39:59.080]   This is something that we're working on
+[00:39:59.080 --> 00:40:01.760]   to get more usually while adopted?
+[00:40:01.760 --> 00:40:03.160]   - The first thing that we're doing
+[00:40:03.160 --> 00:40:08.160]   is we're shipping like native RK support in BuffStream.
+[00:40:08.160 --> 00:40:10.600]   And I think that by itself
+[00:40:10.600 --> 00:40:13.840]   is enough to get rid of so much extra plumbing
+[00:40:13.840 --> 00:40:18.160]   and so much extra expense from a lot of data pipelines
+[00:40:18.160 --> 00:40:20.920]   that I think of it as a proof of concept.
+[00:40:20.920 --> 00:40:22.920]   It's the one thing that we can point to and say,
+[00:40:22.920 --> 00:40:26.680]   look, if you were willing to standardize,
+[00:40:26.680 --> 00:40:30.720]   I can give you this not only with lower operational overhead
+[00:40:30.720 --> 00:40:34.800]   and more simplicity, but with lower hard costs too.
+[00:40:34.800 --> 00:40:37.320]   That is also, I think, the foundational,
+[00:40:37.320 --> 00:40:41.080]   that's the bridge between your stream processing
+[00:40:41.080 --> 00:40:43.560]   and your kind of analytic estate
+[00:40:43.560 --> 00:40:48.240]   over in Databricks or Snowflake or Big Lake
+[00:40:48.240 --> 00:40:50.480]   or wherever you put your data.
+[00:40:50.480 --> 00:40:52.160]   And once those get bridged,
+[00:40:52.160 --> 00:40:56.120]   now we can start moving policy information back and forth too.
+[00:40:56.120 --> 00:41:00.040]   And I think that'll be the place where we can show people
+[00:41:00.040 --> 00:41:02.280]   the power of a unified platform
+[00:41:02.280 --> 00:41:05.200]   to solve business problems for you, right?
+[00:41:05.200 --> 00:41:10.400]   To solve problems of compliance, enforcement, GDPR, CCPA,
+[00:41:10.400 --> 00:41:12.920]   how do you govern like whether your LLMs
+[00:41:12.920 --> 00:41:15.240]   or learning on the wrong data
+[00:41:15.240 --> 00:41:18.800]   can give you a firm footing to tackle all those problems?
+[00:41:18.800 --> 00:41:21.840]   - Well, awesome.
+[00:41:21.840 --> 00:41:24.880]   I guess if people want to learn more about you
+[00:41:24.880 --> 00:41:27.840]   or Buffstream or Buff, where should we go?
+[00:41:27.840 --> 00:41:29.880]   - Should go to buck.build.
+[00:41:29.880 --> 00:41:30.920]   That's the homepage.
+[00:41:30.920 --> 00:41:32.000]   And right up at the top,
+[00:41:32.000 --> 00:41:33.840]   there's an announcement banner for Buffstream.
+[00:41:33.840 --> 00:41:35.600]   You can check out the blog post,
+[00:41:35.600 --> 00:41:37.760]   you can check out the cost deep dive,
+[00:41:37.760 --> 00:41:38.640]   you can reach out to us
+[00:41:38.640 --> 00:41:41.840]   and we can kind of get you slated for a POC with us.
+[00:41:41.840 --> 00:41:44.480]   - Amazing, thanks so much, it was so informative.
+[00:41:44.480 --> 00:41:45.880]   When I saw Buffstream launch, I was like,
+[00:41:45.880 --> 00:41:48.520]   I need to know more, now I get it.
+[00:41:48.520 --> 00:41:51.320]   Now I understand, I appreciate it enough.
+[00:41:51.320 --> 00:41:53.480]   - It was wonderful to talk to both of you, I appreciate it.
+[00:41:53.480 --> 00:41:56.060]   (upbeat music)
+[00:41:56.060 --> 00:41:58.640]   (upbeat music)
+

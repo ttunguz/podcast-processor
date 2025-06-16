@@ -1,0 +1,1069 @@
+
+As an investor, I'm always on the lookout for tools that can truly transform the way
+that we work as a business.
+AlphaSense has completely transformed the research process with cutting-edge AI technology
+and a vast collection of top-tier, reliable business content.
+Since I started using it, it's been a game changer for my market research.
+I now rely on AlphaSense daily to uncover insights and make smarter decisions.
+With the recent acquisition of Teagus, AlphaSense continues to be a best-in-class research
+platform delivering even more powerful tools to help users make informed decisions faster.
+What truly sets AlphaSense apart is its cutting-edge AI.
+Imagine completing your research five to ten times faster, with search that delivers
+the most relevant results, helping you make high-conviction decisions with confidence.
+AlphaSense provides access to over 300 million premium documents, including company filings,
+earnings reports, press releases, and more from public and private companies.
+You can even upload and manage your own proprietary documents for seamless integration.
+With over 10,000 premium content sources and top broker research from firms like Goldman
+Sachs and Morgan Stanley, AlphaSense gives you the tools to make high-conviction decisions
+with confidence.
+Here's the best part.
+Invest like the best listeners can get a free trial now.
+Just head to alpha-sense.com/invest and experience firsthand how AlphaSense and Teagus help you
+make smarter decisions faster.
+Trust me once you try, you'll see why it is an essential tool for market research.
+Every investment professional knows this challenge.
+You love the core work of investing, but operational complexities eat up valuable time
+and energy.
+That's where Ridgeline comes in, an all-in-one operating system designed specifically for
+investment managers.
+Ridgeline has created a comprehensive cloud platform that handles everything in real-time,
+from trading and portfolio management to compliance and client reporting, gone to the days of
+juggling multiple legacy systems, and spending endless quarter-ends compiling reports.
+It's worth reaching out to Ridgeline to see what the experience can be like with a single
+platform.
+Visit RidgelineApps.com to schedule a demo, and we'll hear directly from someone who's
+made the switch.
+You'll hear a short clip from my conversation with Katie Ellenberg, who heads investment
+operations and portfolio administration at Geneva Capital Management.
+Her team implemented Ridgeline in just six months, and after this episode, she'll share
+her full experience and the key benefits they've seen.
+We are using our previous provider for over 30 years.
+We had the entire suite of products, from the portfolio accounting to trade order management,
+reporting, the reconciliation features.
+I didn't think that we would ever be able to switch to anything else.
+Andy, our head trader, suggested that I meet with Ridgeline, and they started off right
+away, not by introducing their company, but who they were hiring, and that caught my attention.
+They were pretty much putting in place a dream team of technical experts.
+Then they started talking about this single source of data.
+I was like, "What in the world?"
+I couldn't even conceptualize that because I'm so used to all of these different systems
+and these different modules that sit on top of each other.
+I wanted to hear more about that.
+When I was looking at other companies, they could only solve for part of what we had and
+part of what we needed.
+Ridgeline is the entire package and their experts were no longer just a number.
+When we call service, they know who we are.
+They completely have our backs.
+I knew that they were not going to let us fail in this transition.
+Hello, and welcome, everyone.
+I'm Patrick O'Shaughnessy, and this is Invest Like the Best.
+This show is an open-ended exploration of markets, ideas, stories, and strategies that
+will help you better invest both your time and your money.
+Invest Like the Best is part of the Colossus family of podcasts, and you can access all
+our podcasts, including edited transcripts, show notes, and other resources to keep learning
+at joincalossus.com.
+Patrick O'Shaughnessy is the CEO of Positive Sum.
+All opinions expressed by Patrick and podcast guests are solely their own opinions and
+do not reflect the opinion of Positive Sum.
+This podcast is for informational purposes only and should not be relied upon as a basis
+for investment decisions.
+Clients of Positive Sum may maintain positions in the securities discussed in this podcast.
+To learn more, visit psum.vc.
+My guest today is Scott Woo.
+Scott is the co-founder and CEO of Cognition, which is an applied AI lab that has created
+the first AI software engineer, which they call Devon.
+In just a year since founding Cognition, Devon functions at the level of a junior software
+engineer, capable of handling complete engineering workflows from bug-fixing to submitting pull
+requests.
+Scott is a former competitive programming champion, and he describes the engineering field as simply
+the art of telling a computer what you want it to do.
+Scott predicts AI will surpass the world's best competitive programmer within one to
+two years and sees this technology not as replacing programmers, but as democratizing
+software creation.
+We discussed the bottleneck in software development, the future of AI in various industries, and
+the challenges of leveling up Devon.
+The implication of Scott's work and Devon itself is enormous.
+Please enjoy my great conversation with Scott Woo.
+Scott, since not everyone listening will know Cognition intimately, can you just start by
+describing what the business is and does?
+It's quite young.
+It's made a lot of progress very, very quickly, which is going to be a topic of our conversation
+in general, but maybe just start by describing for those listening what Cognition does.
+Yeah, absolutely.
+Thank you so much for having me.
+We got started actually just around one year ago, and we are focused on building AI to
+automate software engineering.
+The product we're building is called Devon, and Devon is the first fully autonomous software
+engineer.
+What that means is that Devon is basically able to do all of the parts of the software
+flow, and so you work with Devon the same way that you would work with the co-worker,
+and Devon is in your Slack, Devon is in your GitHub, uses all of your tools and works in
+your local developer environment, and so you can just tag Devon and you can say, "Hey,
+@Devon, I've got this bug that's going on in the front end and you figure out what's
+going on."
+Devon will do not just the parts of writing the code, but actually all of the parts around
+it as well, which includes getting the local environment running, reproducing the bug
+itself, taking a look at the logs, figuring out what's going on, testing the bug, adding
+in some unit tests, and then making a pull request for you as the engineer to go review.
+That's the right way to think about, if I think about Devon as an actual engineer, its level
+of sophistication, maybe you could put it in salary terms or something, or years of experience
+terms, or some other thing, help manage my expectations for how much I could have this
+thing do without any human involved.
+It's very much a junior engineer today.
+That's how we think, but that's how we describe it.
+I would say right around when we got started, high school CS student or something like that
+is probably fair, maybe six months ago, an intern.
+I think today it's very much an entry level junior engineer.
+There's going to be a lot of tasks.
+For example, if you wanted to say, "Alright, I need you to re-architect my entire code
+base, rewrite the whole thing, make it all 10x more efficient, and then I'll check in
+in like a week."
+That's probably not the right way to use Devon, whereas actually a lot of it, it really
+does function turning every engineer into an engineering manager where you get to work
+with your own team of Devins and hand off tasks, and so a lot of these little things,
+which you would want to delegate and spread off, you would say, "Hey, Devon, take a look
+at this, take a first pass, maybe you have to fix a few things," or maybe Devon asks
+a few questions that you have to answer or things like that.
+The whole idea is that you're working asynchronously with your team of Devins while you're doing
+your own stuff or doing things separately.
+Should I think of Devon as a singular or a plural?
+The way that it's all set up is we build by usage, so we have a plan, plan is 500 bucks
+a month for engineering teams by default, and then obviously as you use more, then we
+build more.
+The whole idea with it obviously is that you could have your own army of Devins, and each
+Devon is its own thing, and let's say you have five different bugs or issues or something
+that you're trying to work on today, but a lot of our users do this where you just spin
+up five different Devins, and each one is tackling a different one, and obviously they
+ask you as they have questions or put up code for you to review or things like that, but
+now you're actually jumping between your different Devins and tackling these tasks in parallel.
+It seems like GPTs are GPTs, general purpose technologies, and one of the cool things
+about general purpose technologies is it's very hard to predict how the world will use
+them to build other things.
+Now that you've had Devon live for a while in private and now generally available, what
+has surprised you most about the ways in which people use it to do things?
+A lot of the emergent use cases are things that we wouldn't have predicted ourselves.
+One of the first things that companies that we work with have been using Devon for actually
+is a lot of these migrations, replatforms, modernization and version upgrades, things
+like that.
+For example, if we work with bangs, we work with healthcare companies, and many of these
+folks have code that is literally decades old, and they would love to be on the latest
+stack, on the latest technologies, make things faster, make things more efficient, make things
+more secure, make things easier for their developers to work on as well.
+It's just such a pain, as you can imagine, if your code base is 30,000 files, to actually
+go through and do this kind of modernization effort.
+It's the kind of thing that's very tedious, and it requires a little bit of active thought
+and effort to get into you, but it's obviously there's just so much volume of it.
+That was one of the first things where we really, really saw folks using Devon.
+A lot of our customers did their own internal studies of the usage, and they were finding
+that every hour of an engineering's time using Devon was equivalent to 8 to 12 hours actually
+without Devon.
+What that looks like is you're just asking questions and reviewing the code rather than
+having to write the code yourself.
+Some of these usage patterns where a lot of the kind of more routine to ask that needed
+to get done, Devon was just really able to do in one fell swoop.
+Can you explain the key differences between those innovating in IDE like a cursor or something
+that just make it much easier for a programmer to program versus something like Devon, where
+it feels more holistic, like I'm handing off a whole thing and coming back and getting
+a complete piece of work?
+We've been doing this call at this agentic approach, like a full automation ever since
+we got started.
+And the way that I describe it, I think the biggest step function change is about asynchronous
+versus synchronous.
+So a lot of these code assistant tools, which you mentioned a lot of great examples, really
+great tools, honestly, what happens obviously is you use language models to do an autocomplete
+or you have simple things where it writes certain files or functions for you or things
+like that.
+And if it writes the right things, you hit tab and confirm those or confirm the suggestion
+that gets given saves you that time of typing.
+I think in general, what folks have seen with those kinds of technologies is they see something
+like a 10 to 20% improvement across the board.
+So all of the different software work that they're doing, it makes them a 10 to 20% faster
+engineer.
+Basically, by the way, engineering is huge.
+That's not a small number at all.
+But with Devin, what we kind of see is there is a certain level of task, obviously, that
+Devin is capable of taking on, you're not going to ask it to do the entire re-architecting
+or something like that.
+But for the tasks that Devin can do, it's more like a 10x rather than a 10%.
+Because it really is you just handing off the task to Devin and you go ahead and do your
+own stuff, you work on other things, maybe you're running other devins as well.
+And in the meantime, Devin is really just a co-worker that you've given the task and
+works on that and gives you a full review and a full piece of code.
+There's a lot of meaningful differences in the product experience, like all stem from
+that.
+So Devin has to have the ability to test its own code, to run things live, to go and look
+up documentation, to be able to pull up websites and stuff by itself.
+You have to be able to talk to it in your GitHub or your Slack or your linear or whatever
+technologies you're using as a team to communicate with each other.
+It's quite a different product experience and honestly we've seen from folks that it's
+complementary.
+We use the assisted suite of tools as well and then we also use Devin.
+A lot of folks use both.
+Because of where you sit in your own personal experience, I'd love to use the opportunity
+of chatting with you today to really talk about the past, present and future of software
+engineering.
+I would love to start with the past.
+Maybe in my mind it's this growing abstraction layer where it gets simpler and simpler and
+you have to know less and less things down close to the bare metal itself of semiconductors
+to do what you want to do in a computer system.
+Maybe you can describe your perspective on the history so far to this point of computer
+programming and like the major milestones that we've reached before we talk about today
+and then the future.
+Well, I love the way that you actually just described it, which is I think software engineering,
+this whole time programming or whatever we want to call this has always been basically
+just the art of telling the computer what you want it to do.
+That has been the goal.
+It is really that simple and it's kind of funny obviously because the form factor that has
+changed so much over time and obviously like a long, long time ago, this is all about
+punch cards.
+But even before that is about these gas tubes or things like that and that was programming
+and then there was assembly and assembly that was programming.
+There was basic and there was C and these other languages and frameworks and technologies.
+We had cloud, we had mobile, a lot of big broad shifts in the technology.
+I think the undercurrent that's going through this all is over the last 50 to 100 years
+we have been able to automate so much of the processes that we need in our economy and
+automating that is essentially it boils down to being able to explain to the computer exactly
+what you want the computer to do for you.
+Really, really fascinating to study a lot of the history of it because I think often it
+actually was the case that many of these technologies at the time they came out they
+were very interesting technology and then there's a question of how do you make it useful?
+What is the use case?
+And then sometimes it was kind of surprising, I mean probably the most famous example that
+folks know about is the ENIAC back in the 40s which was the first real automated computer
+and the initial use case obviously that really got it there was missile trajectories, ballistics
+and all the physics said you want to calculate with that if you want to be very, very accurate
+and doing 10 digits of precision or something you don't want to be doing that by hand.
+With punch cards for example the first real big thing that really caused that to be valuable
+was the US Census and that was the thing that needed to be automated.
+The first Macintosh for example like a lot of the initial use case actually was for graphic
+designers actually and then number two was actually the spreadsheet was the killer app
+that made it useful.
+With each of these there was this technology that came about and then it took some time
+to really make it useful we're seeing a very similar paradigm here where language models
+came out and obviously they took the world by storm, chat GBT in November of 2022 almost
+exactly two years ago it was the moment when everyone realized what was possible and now
+we're seeing what are all the natural applications at that and I think one of those obviously
+software itself the accelerating software itself is just this recursive thing where you get
+such massive continued gains.
+You I don't know what age you were I think you were seventeen or something one the competitive
+programming challenge so literally you were the best programmer alive or at least in some
+major way at that time and maybe today what distinguishes do you hear about this idea of
+the 10x or 100x engineer what are the qualities of those people that make them better than
+others in those competitions what is the competitive frontier what are you trying to
+best your opponents at in that field well thank you so much for the kind words there's
+these competitions which are kind of more like algorithmic problems there's software but
+in all these things I honestly think the soul of programming the whole way through even
+as we're saying it's changed in form factors so much I think the soul of it is really just
+being able to understand deeply understand these abstractions and just work at this abstract
+level think that's true in software today where the soul of software engineering is the part
+of taking a customer's problem or your own products problem or something like that and
+really just figuring out okay here is exactly the solution that I need to build here is
+how I'm going to represent it and here's how I'm going architect it there's all the
+cases and the details that I need to be thinking about here's the flows maybe that I'm going
+to be setting up my website here's the database schema that's going to make this all work
+and make this efficient or something like that and the thing that's kind of funny about
+it obviously is that is the part that every engineer loves about software you know and
+it is also I think as you're saying it's the thing that really distinguishes somebody
+from being a 1x versus a 10x versus 100x at the same time it's probably only about 10%
+of what the average engineer does because the other 90% of their time obviously is
+debugging implementing setting up testing dealing with their devobs figuring out what
+went down with their database without just crashed or all these kind of various things
+which look a lot more like implementation than this creativity but I would say even
+despite that the creativity and the problem solving is actually really what defines programming.
+In those competitions how did you get better maybe just walking through the competitions
+themselves how they were structured what you did to try to win how you won I'm really
+interested in that chapter of your life. The competition was called the IOI the international
+Olympia out of infomer habits it was very much the Olympics of programming so every country
+sends their top contestants there's gold medals of medals bronze medals you qualify at your
+local level and then you make it to the team selection at your country and you qualify
+and yeah I mean that was my entire life growing up actually I'm from Baton Rouge Louisiana
+they're not that many people who are into competitive programming in Baton Rouge Louisiana
+but I just really really loved it my older brother actually did it first and I got super
+into it through him and it was the number one focus of my life for the first 17 years
+in my life honestly at the core of it it's really just problems on it and you have code
+as the medium by which you build the solutions and all the things that you're designing around
+and so on but the core of it is really whether you can figure out these algorithmic problems
+and understand the right approaches. I wonder if you could sketch for us what your best
+guess is as to what will happen in this world in the next five to ten years computer programming
+writ large obviously you're directly trying to affect that trajectory and what the answer
+is but you also occupied this cool seat with maybe five or ten others at the very bleeding
+edge frontier so not only are you pushing that frontier but it probably gives you the
+chance to see a little bit further as you look out what do you see what do you think
+maybe you could draw confidence intervals or something for us best case worst case or
+something but if you think forward five years where might we get in terms of what's possible
+with engineering.
+I mean for one year as my competitive programming the best programmer in history is actually
+a guy named Gennady Korkovich he's got from Belarus and I would imagine that we have
+AI that can beat Gennady in the next one or two years beating the best programmer in
+the world at this programming competition I think that is going to happen and I think
+it's going to be like an AlphaGo style moment where it's obviously like holy shit like this
+is true there. The tech today honestly already is folks have been putting out things Google
+put out something on the IMO the math Olympia ad and opening I put something out on the
+IOI but they're already at a level where they're competitive with some of the best competitors
+in the world getting to number one is honestly not too far from that I think what happens
+to software engineering as a whole is I really come back to this point of what we're saying
+that all of programming it really is just about telling your computer what to do a lot
+of this work that's happening with AI and AI agents as truly just the next generation
+of human computer interface and so what I mean by that obviously is if you think about
+a programming language let's say Python for example perhaps the most popular language
+out there. Python is great it's beautiful and everything but if you really just look
+at it it is such a stark compromise that you have to be making for both sides. From
+the human side obviously you have to learn how to code 99% of people in the world don't
+know how to code and it takes years to learn all the little details and here's how you
+do like a Lambda function and here's how you do this little particular thing and these
+are all the things you have to learn just to be able to talk to your computer and from
+the computer side Python itself is notoriously actually slow and inefficient and so on even
+compared to other languages but obviously compared to how fast you could truly run things
+on bare metal assembly if you knew this is exactly what I want to do but you can make
+all of the systems honestly 10 or 100x faster and the way I think about it is Python is
+maybe the best language out there by a lot of people's definitions and really is this
+awkward compromise that we have to make because this is the only way that humans and computers
+are really communicating today. One of the great things I think that AI will really solve
+is essentially this translation problem where a human any human doesn't have to be somebody
+who is trained in code or something can describe precisely what it is that they want to build
+and the computer will build the efficient and future complete version of that that actually
+just works and does all these things. It's going to take some real time to get there obviously
+I think that's the future that we're headed towards.
+Meaning just to use a simple example I using natural language want a very very specific
+application to stick on my phone or something that maybe within five years will be at a
+point that me with no particular CS experience can get exactly what I want in a way that
+works with high fidelity without having to rely on human programmers do you think that's
+feasible.
+I think that's right if I had to put down a number right now it's obviously very hard
+to predict I think five to ten years is like the reasonable realm for that one point I
+would make on that even the way that we talked about applications we kind of assume obviously
+that there's some application that has to generalize one way to put it maybe is software
+engineering is so expensive today it is so so expensive that the only software that you
+can actually build that's worth building is basically applications that reach millions
+of people it's like okay it was worth it to codeface but because of how many people use
+the exact same software every day YouTube or something or DoorDash or whatever obviously
+there are somewhat more niche things but there's honestly lots and lots of things out
+there where it would be better served with code there's communities of call it a couple
+thousand people there's little groups or little niches or things like that there's personalized
+products even for one person and so whatever you day to day chores are they really are
+better served with code that code can do all the things that you might need to do and
+just make all the execution of that much cleaner the reason we don't have that obviously is
+because there's not really anyone in the world for whom that makes sense to write custom
+software just for their own personal use case every time they want to do something new but
+I think we will get to that point where you are just able to execute these things and
+maybe it's code on the back end but from the perspective of us it's really yeah just explaining
+to the computer exactly what we want and seeing that happen there's going to be a lot of
+middle steps but yeah I'm curious what you think about one layer down or up depending
+on how you think about it which is the same question for agents specifically and whether
+or not all of these systems are going to cause applications themselves to be less common
+and agents we interact with through voice or through text or through other means to do
+more and more of the things that we currently use applications to do since you're building
+an agentic system I'd love you to just teach us about agents everyone's saying that now
+you're the word agent in every single call I feel like that scene in Seinfeld talking about
+write-offs you're like you don't really know what that means do you tell us what
+agents means to you and why it's such an important construct in this coming age of technology like
+we're saying GPT came out two years ago is huge surprise for everyone and I think for a while
+all of the products that came out of that were basically what I would call these text completion
+products that work off of that and by the way it makes sense obviously because the native form
+of a language model is put in this input text tell me what the output text is but that's kind of
+where you saw every application at first GPT itself is obviously like that you had a lot of Q&A
+products marketing copywriting hey I need you to write this paragraph for me that explains x y and
+z can you just put together a nicely written thing boom here's the output customer support
+customer is asking something and then it's like what would you say here here's all the
+information you need to know boom code that was the same thing too right where the first big code
+product me github co-pilot is probably the biggest of these it's a text autocomplete where it's like
+here's the file so far predict me the next line and if it is correct I'll just hit tab and it'll
+obviously save me the time to type the line it doesn't save me the time of thinking of the line
+because obviously it's still me that's deciding what's correct and what's not correct but it does
+save the time of typing one and I think what we're now seeing and what everybody is talking about
+now with agents although of course it's very early is this new paradigm where models can actually
+act and make decisions in the real world there's lots to it and it's how humans do it too it's not
+like a human just produces this perfect paragraph here's everything that I needed to give you and
+then you're all done a lot of it is going and interacting with the real world looking up websites
+or something trying out things seeing what works or what doesn't work in the case of code obviously
+running the code and looking at the output or looking at the logs and things like that and I think
+maybe the simplest way to put it is in all of these verticals I think we're going to see this where
+basically hey having a legal Q&A bot is great but the next step is to have a lawyer having
+something that can answer questions about math problems or something that you have is great the
+next step is to have like a full teacher and obviously even software it's the same thing where
+it's like having the text autocomplete for coding does make you faster yourself as an engineer but
+what if you had a whole engineer that you're working with that's kind of the core of this
+objective work maybe you can describe then how literally Devin is built behind this question I'm
+also curious about taking your experience as advice for other builders who are using core
+foundation models as a key part of the thing that they're building and building in such a way that
+is complementary to those underlying foundation models and won't just get subsumed by them
+everyone asks about this I'm sure every VC asks every founder like how well oh one not just do this
+so tell us about how Devin is built and how you think about building with and alongside these
+evolving foundation models we are a hundred percent laser focused on solving all the problems along
+the way of software engineering and the truth is software engineering is just very messy my point
+with that is just that there's this idea of like solving these math problems in a vacuum for
+example there's a lot of research that's going towards that but there's also this entire thread
+between of how do you take that IQ and turn that into something that is actually meaningfully useful
+for software engineers and their day-to-day work so there's a ton of stuff that needs to be done
+on adapting to the capabilities for particular tooling and particular stack and then there's
+also a ton of stuff that has to be done on the product side as well I'll just give several examples
+of that a simple one is obviously Devin has to be plugged into all your tools solving problems
+in a vacuum is great but Devin has to work in your github has to be working in your codebase it has
+to use your confluence docs or whatever it is that's where the information is it has to read the bugs
+on gira and on top of that obviously Devin needs to learn with the codebase over time and so even
+a really really really sharp software engineer they join your company on day one they're probably
+not to be all that productive at least compared to somebody who's been there for five years and
+knows the entire codebase in and out Devin needs to learn the same way of understanding hey here's
+what this file does here's what these functions are for if I want to do the schema migration here is
+step one two three to get that done and all that and then there's obviously all of the actual step
+by step decision-making that goes into it which is somewhat different we were talking about fixing
+a bug I think a very natural flow with fixing a bug is okay I got a report for bug first thing
+I'm going to do is I'm going to try and reproduce the bug myself and see what's going on got to go
+run all the code locally and try to make the bug happen if the bug does happen I'm going to go and
+take a look at the logs and see what the error was or what happened exactly what the variables were
+and then from there I'm going to go read the relevant files maybe you make some edits test
+things out and whatever and then I'm going to go test it again and see if it works and if that
+all works then I'm going to add a unit test to make sure it doesn't fail again and whatever and
+all this step-by-step decision-making it's a very different problem obviously from text completing
+what would somebody really smart on the internet say how do you use the tools available to you and
+make a sequence of decisions that maximizes your chance of success I think the other question you
+asked was how as a builder to think about this in relation to obviously this steady stream of
+improving models it's a really interesting one because a lot of other technologies that we've had
+have been a lot more step-function mobile phones came out and the first question was what are you
+going to do when everyone has a smartphone in their pocket as in some ways the core of Uber or
+Airbnb or DoorDash for all these things and you can kind of think about okay this is the technology
+shift and let's think about what happens over the next coming years now that we have this shift
+AI is a lot more of a very incremental thing here's GPT-3 and 3.5 and 4 and each little
+technology gets a little bit better over time and part of what that implies I think is yeah just
+really thinking about what are the models not going to do by themselves over time and a lot of the
+stack and a lot of the things that we care about obviously are around building capabilities and
+the product experience specifically for software I have no doubt that the foundation models will
+continue to increase in IQ and increase in IQ and so on over time but a lot of the detail of all
+of the tools that you work with how you make decisions with all of that even how you communicate
+with the user what is the user interface where you're talking with Devin and giving feedback
+and seeing what Devin's up to and checking in and making sure nothing's wrong and all these things
+there's a lot a lot of detail obviously in that flow that really brings out the inherent IQ
+to put it that way we've always thought about it in that way of how do we make sure everything
+that we're doing is complementary with the model increases and by the way complementary with
+everything else the hardware is getting faster all the time the whole stack is getting more
+efficient everywhere and we have our part of the stack and we have always thought about it as
+how do we do as well as possible and our part of the stack specifically for software
+what improvements are you hoping for from the foundation model companies that would make
+Devin more effective than it is today in the future I should mention by the way if the foundation
+model labs are all super super excited about agents and it makes sense I think one thing
+which is kind of interesting just practically is let's say you ask GPT a question who is the fifth
+president or something you ask one question you get one answer and that's a single model query
+and obviously there's a consumer pricing and everything but if you're going by the API pricing
+that costs one millionth of a dollar or something like that something ridiculously low whereas if
+you're asking Devin hey I've got this new feature that I need you to build down can you build it
+and test it and make sure it looks good over the course of that Devin's probably going to be making
+hundreds if not thousands actually of decisions over the next half an hour or something while it's
+going and building that out and it also just practically means it's actually just a lot more
+inference on GPUs and so for that reason what we'll see over the next while honestly even the
+next one year I think agents are going to become a lot more widespread and what we'll see actually
+is I think the dominant usage of these GPUs of these language models and everything will be for
+agents largely because every single agent query is just so much more magnitude of underlying
+language model calls than a single Q&A query and I think what happens next with that which I think
+these foundation model labs are all thinking about is yeah how do we build our our models
+to be as optimized for agents and so I think a lot of these things of working with multi-term traces
+being able to handle long context outputs for example like context is a big thing that people
+are spending a lot of time thinking about and with an agent again it's like if you have half
+an hour of decisions obviously it helps a lot to know what's been going on in the last half hour
+so some of these particular technologies that will really help with that how do you use Devin
+in your own building of Devin we use a lot of Devin actually from a rebuilding Devin it really
+is this new workflow a very asynchronous workflow and so I'll just give an example we do all of our
+communications in Slack we have a few channels we have a crashes channel where every production crash
+gets reported we have a front-end channel where we talk about any like front-end feature requests
+or maybe like hey let's switch the flow around this way or hey this design is a little bit off
+or things like that front-end things that come up we have a bugs channel where users are filing
+bug reports of hey this thing didn't work or something or this thing broke or whatever
+in all of these channels numbers one thing we do every time something gets poured we tagged out
+you could just go through the channel hey this thing broken at Devin hey somebody requested this
+at Devin hey we just had a crash at Devin Devin's not perfect Devin's a junior engineer and often
+does need a lot of guidance and I would say probably about 50 percent of the time Devin's output on
+one of these is just like a pull request code that's straight out of the box ready to merge
+and the other 50 percent time obviously you can make call of okay do I want to talk with Devin and
+coach Devin through this do I want to go and make some changes myself and just touch up whatever
+needs to be fixed or do I want to just go start from scratch if it's especially far off or whatever
+but having this be part of our workflow you had to report the bug anyway and so you might as well
+just tag on and add Devin at the end and then you get a first pass for free and so a lot of
+workflows like this a lot of it is just thinking about how to put it into the asynchronous workflows
+the similar one honestly is if one of our engineers is building some big new projects
+and they're going and implementing things are building the IDE for example this happens all the
+time as an engineer you're going to go through the code and you're going to see all these little
+things that are like man why did we write it this way this is so messy or like this thing is
+technically correct but it is not the most stable way to do this or lots of little things
+you get caught up in a lot of these little things as you're building your bigger project
+it does distract and it takes away your focus and what we do now obviously is you just kick
+off Devin from the IDE for each one of these and it's like hey can you go refactor this one real
+quick hey can you change this to be type safe hey order this in a different way so that there's
+not going to be a race condition or something and you're doing all these little fixes and you're
+kicking them off async and then you're doing your own project in the meantime in both of these
+cases a lot of it is really just figuring out these asynchronous flows it seems like part of the
+answer to in the near term you said earlier that maybe 10 percent of the engineer's time is spent
+on what a friend of mine calls positive engineering building things the creative part 90 percent
+might be on make sure things work more almost like a mechanic than a creative productive engineer
+so does that mean that in the near term what Devin and other systems like it are going to help
+us do is eat that 90 percent and keep the program we're focused on the 10 percent and then what
+happens beyond that if we beat the world's best programmer in two years why do we need programmers
+will there be programmers what will they do so i think it's exactly right eating the 90 percent
+of all the miscellaneous implementation and debugging and iteration and whatever i think what
+happens then is honestly you just get to do 10 x more than 10 percent and i think the cool thing
+about it we should say it all right obviously there's a lot of fear in ai about what's going
+to happen and what happens next but i think one of the really beautiful things about software is
+there really is 10 times more software to go right if we just had 10 times the capacity
+over the last however many years we've always been bottlenecked by supply if you talk to any
+engineering team i haven't met a single team who said yeah we built everything that we wanted to
+build there's actually no software like to do every team out there has 20 projects that they
+want to do they have to take three to take on this week because there's just so few software
+engineers and software just takes so long to build i honestly think we're going to see a lot of
+this jevons paradox where we're just going to be building more and more and more software as it
+gets easier it's what we've seen already but maybe to a somewhat lesser scaling building software
+now versus billion in the 80s it probably is about 10 x easier or so and this shift will happen a
+lot quicker obviously but over that 40 years we've gotten a lot more programmers and we've built a
+lot more software and i think we're going to see a shift that looks like that as well i think in the
+long term i think the soul of software engineering again is each person getting to decide what are
+the problems that i want to solve and what is exactly the solution that i want to build
+AI is not magic obviously it's not going to go and solve all your problems for you but it will give
+you the power to specify exactly what the solution is that you want to have and just be able to have
+that happen and build that out do you think in general that all this means that business people
+need to start thinking harder about demand and distribution if we've been supply constrained
+and that's about to go away does that mean that the people that are going to win in the future are
+those with better demand and distribution i think it's software especially we have always been
+capped by supply and not demand obviously there are a lot of things that are more fixed in terms of
+their demand i think there's a lot of interesting questions of what happens to the economy with this
+and a lot of interesting second-order effects the simplest way to put it where does all the money
+in tech go where does the money adventure capital what does it go into and it is primarily software
+engineers so when you're getting 10 x more bang for the bug for every software engineer that you're
+bringing on it does change the landscape a lot of how much people can build with products and
+how much people can do and then i think down the line you see a lot of pretty interesting effects
+with businesses i see a few different categories of businesses broadly if we're being blunt and
+you know i think the toughest category to be in is business that's heavily reliant on switching
+costs that lock it a lot of businesses out there are software businesses that the reason they make
+all the revenue that they make is because it is so painful to switch to the other products or the
+other technology or something like that if Devin is just able to do all that implementation and
+migration and those costs go to zero obviously it's going to be a lot more about having the better
+product that's going to be a real shift i think that companies are going to deal with at the same
+time it's not a nihilist view you know there are a lot of things that will be just as strong if not
+stronger network effects i think will always be golden i think data and personalization is going
+to be even more powerful so a business that owns the infrastructure for example or a business that
+has all the personal relationships and the data and so on being able to serve for each person
+can individualize product that is truly optimized just for them instead of this quantity thing that
+kind of works for everybody and touches all the millions of people but is not the perfect product
+for anybody i think a lot of those businesses will be able to do very well what kinds of questions
+are becoming most common when you spend your time talking to the senior most people at the big
+established technology companies there's definitely a lot of folks asking how do i think about my
+engineering headcount and how do i work with this i think we're very much in the paradigm where
+people like to say this ai won't replace you but someone using ai better than you might and so a
+lot of it is how do you get smart and how do you make sure you're on top of the latest technologies
+and you're ready for the shift we're sure honestly going to quicker than most people imagine and
+getting your whole team set for that and getting things built for that i think there's also a special
+case actually with these technology businesses themselves folks who are building sass products
+or things like that where we talk so much about agents i actually think one of the kind of interesting
+product changes is that a lot of these companies are actually going to be serving agents in addition
+to humans a lot of great businesses out there that are basically meant for this collaboration
+coordination a lot of interfacing we talked about companies like slag or github or data dog or
+elastian or things like that where there's a lot of work and compiling that they do and
+also a lot of it is about the interface with how humans interact i think the way i think
+about is right now it's those are really valuable tools for agents to be using as well
+sure you can imagine this nihilist view where an agent is just building everything on its own
+from scratch but the truth is there's a reason that we look at logs the way that we look at logs
+the reason that we set up our documents the way that we set up our documents and it does just
+make it easier it makes the problem easier of getting the context that you need
+so what will happen actually is we're going to have a lot of agents who are using these products
+as well so businesses that are in that space a lot of folks are actually thinking about
+how do i make my product ready for my new wave of agent customers in addition to all the human
+customers i was talking to martin casado about these climbing cost curves that technology creates
+and the first one that's clearly happened already in a is like the cost of marginal content creation
+has started its march towards zero in all different forms of media it seems like with you and what
+you're building there's that same curve story happening in the cost of software itself how do
+you build a software business in that reality if i fast forward 10 years or something sufficiently
+long why should devon cost anything why won't there just be like an open source devon that
+does everything for me and what do i need to pay for software if we're entering an era of marginal
+cost of creating software being very close to zero i mean i think right now devon is really
+the only one out there in the market that's doing that but as you're saying i'm sure there will be
+lots and lots of competitors pretty soon even and folks that want to do similar things in code
+is great for the consumer we were just talking about the 10x engineers and things like that the
+truth is that every level of decision making quality and every level of skill that you can have in
+your software engineer actually really does have this exponential reward curve and it makes a big
+difference and one of the things that we're getting obviously is this ability to really really
+personalize devon to each of their customers and so like devon out a lot of our customers today when
+we work with devon for example it's just like devon knows the entire codebase and an out devon
+wrote half the files in the codebase and so there's all these details in it obviously it's not just
+the lines of code it's the decision making that went into it and thought process and so on that
+devon has internalized and working with the entire engineering team and it really is that trade-off
+where it is about here's an engineer who's maybe smart and sharp and stuff but is starting day one
+on your codebase today versus here's an engineer who's been with your codebase for years and years
+and understands every file and has built all these things and knows exactly what your engineers
+mean when they ask certain things and there's a real trade-off there it comes down to these things
+where it's kind of like pure technology switching costs where it's migrating all your files to
+some new thing or moving to some different platform yeah I think that is going to get cheaper and
+cheaper over time at the same time obviously if you have the level of personalization if you
+have the network effects or whatever it's not about the cost switch it's really just about
+you're able to provide a better product maybe say a bit about pricing this is such an interesting
+question it seems like someone at OpenAI put their finger in the air and decided 20 bucks was a
+reasonable price to charge and a whole business ecosystem has spun up and that seems to be the
+default pricing you made a very different pricing choice it's 500 bucks a month OpenAI just released
+the $200 a month option so we're marching upward but talk me through how you thought about and
+think about pricing in this new world yeah we're gonna see more of that obviously I mean I think
+for us it's funny we had a lot of questions with our launch for example questions of like how much
+do we have to glorify is Devin how do we explain the structure of it and so on but I really do
+think it is a pretty different paradigm where with agents it does come down to usage for better
+of force there's reasons for both the inputs and the outputs for that but the inputs like we're
+saying I mean it is just more expensive to run and that that is the case you're doing more
+queries and more work there's more GPU compute that goes into each job or each task or something
+like that but I think with the outputs as well obviously when you're starting to take on tasks
+that are real end-to-end tasks it's just much cleaner and much clearer to measure
+the concrete impact that something like this has I think the proxy that we essentially want to
+have is value-based pricing where it's basically we want to make a lot of the projects or the bugs
+or the features or whatever that you're building 10x cheaper to build and so we want the cost of
+Devin to run on those to be a 10x less it's obviously hard to have a perfect proxy for that
+but the proxy that we have essentially is usage we have a unit called acus agent compute units
+and it's basically all the decisions that Devin makes the box that Devin uses the code that Devin
+runs or things like that and it roughly corresponds to basically for every hour of Devin's work that
+you're doing again it depends on different machines but you're paying something like 8 to 12 bucks or
+something like that obviously Devin can do a lot in an hour the setup is such that we want it to be
+a 10x cheaper than having to do those yourself but I think that is going to be broadly the new
+paradigm when we start to have ais that are doing tasks instead of answering questions
+Any thoughts on this big fun almost has become like a cocktail party style question around whether
+or not we've achieved AGI or not and whether or not that's a question that you care about I'm
+curious what you think about this one I'm in camp number two on that we already have AGI
+someone said this in our favor in 2017 if you ask if we have AGI answers no in 2024 you ask if
+we have AGI the answer is well you got to define AGI depends on this I think there is a somewhat
+recursive definition of AGI obviously that people like to say oh it's doing 80 percent of human
+labor it's like well if you could do that then the humans would be doing the 20 percent so it wouldn't
+be the 80 percent anymore there's some recursiveness but the way I would say it practically is I think
+there's going to be a tale of things where we will push the capabilities we'll push the capabilities
+and for a while there's going to be lots of little things that are like well actually humans
+are still better at this one thing and then we'll solve that thing and then people will be like oh
+well humans actually can still do this one thing everybody obviously have a lot of pride as humans
+and our own species of wanting to find the things that make us unique and so on but I think that
+by practically what matters for the world obviously is is the AI good enough and is it built into
+products and distributed well enough that it's actually affecting the world and affecting the
+economy and affecting people's day to day lives in some sense that question matters more than
+is it doing 95 percent or 96 percent or 97 percent of you know the humans workflow
+is more a question of are humans actually out there doing 25 times more because of the AI technology
+and I think that actually is much more of a practical question and in some sense it's like
+we're talking about the IKEA's and things like that the math problems that these base AI's can
+solve are already honestly shockingly good and among humans would be in the upper edge
+lots of humans if not quite number one in the world yet and I think the biggest distinction is
+actually not whether we are number one in the world or only top 0.1 percent human or something
+like that the distinction is a bit more of is that level of intelligence actually used by every
+human out there in the world and done in a way that's actually giving them a lot of value that's
+going to be the big shift that actually gets us to the massive GDP growth massive efficiency gains
+quality of life whatever you want to call it the investors mostly are obsessing over scaling
+loss because it just has such big implications for public equities for companies building new
+products in the private markets and so that's where they tend to focus if you are training your
+attention on what's going on in the foundation model world what do you spend your time
+wondering about asking your friends about learning about where's your eye trained in that world
+yeah my heartache from this news I think scaling laws are a little bit of a myth
+I think we have made continued progress on these models and push the capabilities and things like
+that and there's been a lot of new technologies obviously that we figured out and there's
+way better post trading and there's some of this stuff obviously that's going on reinforcement
+learning and things like that sure there is some return to scale but I think a lot of what we're
+seeing is basically it is also the introduction of new technologies that are making this more
+efficient or allowing it to grow with scale beyond that and so people sometimes like to talk about
+scaling laws as if you just sit back and as long as you got the hardware for it it's just going
+to get better and better and better and I think really obviously we have needed more and more
+hardware but it's also been innovations that have actually gotten us there I think practically
+with foundation models we always obviously want to have a pulse on what's going on and
+what things are going on next we work very closely with all the foundation model labs we
+do the evaluation of early models with them we do custom training of models with them things like
+that it's like we're saying it is an incremental thing these things will get better and a lot of
+the question as a decision maker is to basically just have a very clear sense on what are the
+capabilities that will get better and what are the either the capabilities or the products or the
+human experience of it that we'll always need to complement these for you to deliver something
+of value to your customers. I'm really curious to learn a bit about the formative experiences for
+you as a business person obviously you had we've talked a lot about formative experiences as a
+technologist building cognition and also IOI and these other competitions for the first part of your
+life I'm sure everyone's seen the video of you when you were 12 or something winning math competitions
+obviously you've had some pretty cool formative experiences what have those been on the business
+side for example I'm interested to hear about your experience with lunch club and what you were
+building why you're building it and what that experience or that chapter of your business career
+taught you. Yeah lunch club is my first company I dropped out of school actually to start the
+company you know it's a great experience first of all there's an AI for professional networking we
+made millions of meetings happen and it was super fun team and product to build I would say one of
+the big things honestly that I learned is it sounds simple but it really does come down to the
+fundamentals I feel like the common pieces of startup wisdom that everybody talks about in some
+sense they're so obvious that it's not obvious it's not even worth mentioning and people feel that
+way where it's like go as fast as you can everybody says that everybody knows that never compromise
+on recruiting stay as close to your customers as possible focus on building a product that people
+love and want these are almost taught to logically true but the thing is the reality is there's always
+another gear that you can kick into with your fundamentals and that's how I've really thought
+about it now having gone to see it and simple examples like everybody says you can go fast in
+our case we incorporated the company in January we were building the first versions of the product
+we got it out to the first group of initial users in February we did a launch in March we raised
+big round in April we did a big partnership with Microsoft in May while we were doing that we got
+on a lot of enterprise customers we grew the team no matter how fast you're going and every startup
+in the valley obviously thinks they're going quite fast it's still worth it to really push for even
+faster and no matter how close you are to your customers and how deeply you understand their
+problems you're probably not going to regret spending even more time with them and understanding
+that deeper and no matter how high your bar is for hiring you're probably not going to regret
+trying to go for folks that are even higher still and I think that is the biggest lesson I've learned
+with startups the competitive landscape does it feel like this big exciting green field or does it feel
+like battle lines are being drawn and insanely competitive for every available opening and you
+know sharp elbows characterize what the playing field feels like right now you all work out of
+this amazing house that I've been doing it's a technical environment which feels so start-up-y
+and yet the next day you're with Microsoft the contrast here of real true startups in startup houses
+and raw cultures that are emerging they're interacting like you are with the biggest players in the
+world of technology inside of a few months it's just a bizarre set of circumstances how would you
+describe the playing field to an outsider I think it's still a very green field I mean the
+technology itself is so early we're like one or two years in in some sense to all the stuff really
+being valuable and getting there one thing that I think about a lot is software is just so big
+we obviously know that but there's so many facets of software and so many details and
+so many different things that can be done and can be built and so one way that I think about it is
+each of the use cases that we're talking about they're enormous and really really meaningful
+businesses that are built and just do that use case a lot of folks are talking about AI for
+data observability for example data dog is a great business it's making billions of revenue it's
+something like a 50 or 60 billion dollar market cap it's doing very very well and growing quickly
+and as you can imagine there's so much to do with AI for data observability in some form
+incident response is a huge thing that's only going to get bigger and bigger and there's a lot
+of great businesses in the space like Patreon is a great business but AI is going to make these
+things again orders of magnitude bigger it's true with testing it's true with modernization
+progress is true of migration a lot of these big guys like Microsoft Amazon Google or anyone
+the amount of effort they have to go through to migrate customers onto their platform even today
+is enormous it's billions of billions of dollars every year so all of these are just such enormous
+spaces and there's still so many questions even about the product form factor and as the
+technology gets better and better and better the kinds of use cases that will be able to support
+as a space are only going to get bigger what do you think the world is overestimating and
+underestimating right now about your whole world about the automatability of software engineering
+this speed of it is probably a big one one thing i always think about if we're just looking all
+the way across AI for example i think agents in general are going to really work everywhere
+code is one of the first for a lot of reasons but i would almost argue one of the first agents
+if you want to call it that actually was self-driving cars that's an actual AI that's making decisions
+in the real world and taking in feedback and iterating with that people are familiar with the story of
+self-driving cars where i actually lived in mountain view in 2014 i would see the way most driving
+around all time i never got a driver's license i had just gotten started working at the time
+i'm not going to need one they're basically there i'm sure i'll be able to use it but we did
+finally get there i think there's still a lot of room to grow obviously but it did take a lot of
+time i think the difference between self-driving and code and honestly a lot of other applications i
+think we'll see over the next year is thing with self-driving you really really need to have a
+deal at 99.9999 percent sufficiency and there's not a world where it's like uh or there is but
+it's not as big of a difference where it's like human and machine combined can do a lot more together
+and i think that's people's typical example it's like okay you know there's gonna be all the edge
+cases to figure out and all that which is true by the way but the nice thing with software for
+example is there actually is just a really great way to do human plus machine and do a lot more
+that's the case with Devin Devin is not the 99.9999 percent solution it looks a lot more like the
+2014 Waymo or honestly probably even a little earlier than that but the thing is having Devin
+take a first pass or having Devin send you the code and you take a look and give a review or whatever
+it is like that where Devin is doing the 90 percent of you're doing one nine instead of six
+nines it's still super super useful it actually does save you 90 percent of the time whereas you're
+not going to get into a car that is only 90 percent consistent and so i think there's going to be a
+real form factor difference in how soon we're going to see it actually really transform practical
+software not just because of the capabilities but also just because the product space is better
+set up for that what was the lesson that lunch club taught you about the world of entrepreneurship
+was it something around market was it something around product if you think back on that experience
+what's the big takeaway and how are you applying that learning to what you're doing at cognition
+probably the biggest one that stands out honestly is sometimes it's easier to solve a bigger problem
+than it is to solve smaller problem which is fine you know people folks talk about this
+if you're going after something that's truly enormous and it's the thing and it's the most
+exciting thing you'll be able to bring together a group of people who's all really excited to make
+it happen and is really passionate and dedicated to pushing the frontier in a way that actually
+sometimes make it easier our team for example our team's about 20 people right now of this 20 I think
+14 of them actually have been founders themselves before and it's kind of an interesting one where
+we've all done companies and honestly it's a really really talented team and a lot of these
+folks would get a blank check to raise money if that's what they wanted to do and they wanted
+to do their own thing but a lot of it is just how do we come together and build something that's
+really great I think that's one of the big lessons from me what has been the most
+difficult or stressful moments so far in the one-year cognition journey oh there's been a lot of
+it let's do a few then I love these one of my favorites all these launches you know how it is
+with startups obviously things are so last minute so we had the GA launch this week and then we
+obviously had our initial product launched back in March and for both of those the few days leading
+up to the launch were some of the most stressful but just the most memorable experiences and our
+launch in March is huge there's so much you have to do to get into it and obviously there's the
+product itself and testing with early users and making sure everything is truly working the way
+that it's supposed to getting the info ready for and setting everything up and then there's obviously
+all these other things with filming the video think about blog posts think about the content
+getting things out there working with customers to get testimonials and things like that and our
+March and much actually we were doing all that in addition to we're doing a fun raise right
+before the launch as well actually and so we were doing that we had candidates who were in the
+pipeline pretty meaningful candidates that we were working on and figuring out and everything
+during that as well and so that weekend was a very fun time that launch was actually it was an
+article that went out by Ashley Vance Bloomberg article about our company and that was the article
+obviously that marked the launch it was supposed to go out at 6 a.m. Tuesday we asked them to push
+just a little bit later we got it to be 9 a.m. Tuesday instead of 6 a.m. we needed those extra
+few hours we weren't done filming the video for the launch as of that night at one or two a.m.
+we were still recording lines and then there was all the blog posts and putting that all together
+it's crazy we can't yeah to not get very much sleep that night basically it's just a really fun
+moment to get together and really do everything together it's one of the reasons actually I think
+that us all just living in a working in a house together is great it's because there's something
+about the shared experience so seeing the late night energy and everything I feel like it wouldn't be
+quite the same at an office and yeah this launch as well you know actually we were all in Utah
+which was kind of hilarious actually the last minute decisions like okay we're going to use up
+and we got on a plane that day we found a cabin that would fit us all got into that and we were
+all just working on the launch and it was the same story always even having done this we got no
+wiser and so we were still filming at 2 a.m. the night before putting things together for the launch
+and getting all the content ready and getting the info ready and obviously in this case it's a full
+GA thing too so we got to be ready to handle 10x the load or if more than that so all these kinds
+of things that we had to do to get ready and those are some of the funnest moments honestly
+I'm just extremely interested in launching things I think there's so much rolled up into it
+that it's like business encompassed or something can you tell me the best and worst part about
+each of those two launches in retrospect honestly the experience with the team is the best part
+just getting to build it together and do it together with the team it really is the soul of
+startups yeah the worst I mean there's scares and stuff that happen all the time
+the night before it's just like hey we did our load testing this didn't work at all
+all the info went down there's no way we're gonna handle the load we were expecting to handle this
+many concurrent devin sessions per minute it did not work at all and the last minute things we
+had to do the onboarding flow for example last minute changes that we had to make my co-founder
+steven actually put out a post talking about how we shipped the whole thing where you could do a
+slack connect with us and work directly with our team that got started about one a.m. the night
+before the launch and shits the morning of the launch and devin built a lot of that because obviously
+we needed the extra bandwidth from devin in the moment every single thing that you're optimizing
+for is how do we make this not incredibly embarrassing for us all and you know sometimes you just have
+to put it out there and do your best how do you think about something like o1 pro mode and people
+using that to do coding versus devin yeah i think this tool is great and i think a lot of companies
+are thinking about code and are focused on code and like we're saying code is such a big thing
+there are a lot of cases where yeah sure it's like you want to build something
+a single file of code out of the box and you want to think through particular problems or whatever
+and have that be a really great single file of code or something where yeah you can just go to
+o1 pro and consult it or an ai stack overflow if you will where it's like you can paste in an error
+and it'll give you its best guess from what it has here's what i think the error is with devin
+there's a ton of just these iterative flows that make a lot of natural sense and so for example if
+it's not just writing a single file and that's all but it's like hey i need you to work in my code
+base and build a new feature and plug it into all the existing stuff and test it out to make sure
+that it works then obviously all of those iterative steps those are the things that devin is doing
+for you and similarly if it was a debugging thing like a ai stack overflow thing for example actually
+one of our first devin moment i want to say is we started building this as more like research type
+technology and just trying to understand multi-turn agents iterative decision-making and stuff and
+eventually it made sense to build into the devin product but one of the first things i really
+convinced us is we were trying to set up our database for our own work when we were setting
+up MongoDB and anyone who's done it knows what this flow looks like basically where it's just
+give you a set of commands you try it and then it doesn't work and then you read the error and
+you copy paste it and you try to figure out you google what's going on you find something and you
+run that and then you run into a different error you do that ten times until the thing works
+everybody set up is always a little bit different and there's always these little details that
+will get you in this case it's been a while trying to set a MongoDB and like it wasn't working
+so we just gave it's dev and we're like hey can you just please get this working
+locally and then devin did it and that was the thing to what we were saying earlier
+it's not just a stack overflow where it just gives you the one answer of oh you went into this error
+oh maybe you should try this like devin sees the error and says okay let me see what's going on
+let's check what ports are open let me see what the schema of this database is let me see if the
+socket connection is actually set up it's going and running all those commands to go look at that
+and then it uses that information to decide okay what's the next thing i'm going to try
+and then it tries that and if it runs into a new error then it's able to debug that
+the integrated autonomous flow is i think the biggest difference
+how hard is it to build that i'm not technical enough to ask the best version of this question
+but if i think about part of the secret sauce being the iterative agentic nature of the whole
+thing what are the hardest parts about building that capability the obvious one is the model
+capability itself the models are roughly like here's what a smart person on the internet i'd say
+but if you're now thinking okay i'm doing a step-by-step process to make decisions to maximize my
+chance not now but after 100 steps that i'll have solved the issue then it's obviously a pretty
+different thing that you're solving for and so a lot of it goes into the capabilities but i think
+beyond that too there's so much with the infrared with the whole experience that gets quite involved
+as you can imagine and so for example devin has its own machine that it works in and a lot of the
+features that you'd want to support for example like rolling back state of the machine or dealing
+with clot loading these quickly and being able to spin up a devin instance with a new machine
+immediately being able to go and navigate through all the previous decisions and go back and forth
+between these different things or the ability to work with different devins and parallel or
+things like that yeah there's a lot of infrastructure problems that go into that as well and i think
+it just comes down to this thing where the software is doing so messy and so it really is just so
+different from doing problems in a vacuum and building all of these high-touch components with
+the real world where you're actually able to do these things in the real world you're actually
+able to use all your integrations you're actually able to maintain your own machine state or work
+within your get checkout or all these things a lot of the mess of that is the part that i think
+that really comes out from us just really focusing only on software engineering if you were to put
+your most sci-fi lenses on for the future of technology in the world what are some things that
+you maybe talk about with your team just for fun that don't seem feasible yet but might be
+feasible in the future they get you the most excited my co-founder waldon has this great
+line which i've always really loved which is we've been playing in Minecraft's survival mode for
+so long and now it's going to be time Minecraft creative mode describe what that means for those
+that don't have 10-year-old boys yeah yeah and so basically Minecraft is a sandbox open world game
+and it's meant to be a simulation of life you can go and grow food you can go and forage you can
+mine you can do all these different things you can build stuff it's kind of funny because there's
+two major modes there's one which is survival mode which is you are actually just have to deal
+with the enemies that come after you you have to go build your own shelter and make sure you have
+enough food to stay alive and all these things and there's obviously creativity within that
+things that you could do but you are also constrained by how hungry your own character is or whether
+you're being attacked or something like that whereas Minecraft creative mode is basically a
+mode where you're able to put together whatever you want it's not like i didn't find any iron or
+today and so i'm not going to be able to build this thing it's like i want to build this thing i
+want to try this new thing i want to set up this really cool thing there's folks who have set up
+entire computers and computer programs in Minecraft which is insane it's basically just
+focusing on the ideas and the imagination rather than the execution it's not about okay now i'm
+going to have to go spend another two hours going and collecting gold or because i want to build
+this thing it's like i know exactly what i want to build and now i have the freedom to just make
+that come to life that's honestly i think the big dream of AI as a whole is to be able to free up
+humans the point of the eye isn't to go and just solve all of our problems for us and leave us
+with nothing i think it's to give us the power that or the kinds of problems that we want to solve
+or the things that we want to build to give us the ability to actually just turn that into reality
+yeah it's so funny to imagine i'll use my own experience when i visited you you asked i think
+the demo is incredibly powerful so you asked me to come up with an application idea i think
+it took eight minutes to build and we watched it do it watching the iterative nature of it feels like
+a real aha moment because it really does look like it's in hyper speed doing something that a person
+would do as it builds something but maybe the more profound realization i had was it built the thing
+that i described in natural language but it wasn't until i saw the thing the little stupid application
+that i made up that i realized why that idea was bad when i said the idea it sounded good
+and when i saw the thing i knew why it was bad and so i would say the thing that excites me is
+not that i can make my ideas but that i can get better ideas which i think is pretty underrated
+part of this whole thing that just like a computer programmer is going to be faster now
+anyone with ideas is going to be better and faster because they can see the thing and see
+why it stinks does that resonate that's a great point it's very much the idea of turning 10% of
+time that you get to spend on your ideas until 100% of time where as before you got to get a team
+together they're going to go and build the whole thing and you spend a couple of days or something
+building this whole thing and then you get to do your next step of idea iteration and by the way
+Devin's still honestly a lot of room to grow and it's going to take a lot of progress honestly to
+get to this future but but to get to a point where it's basically just you get to do the
+ideation work you get to iterate against that you get to do the new idea you get to do the new idea
+and so on and instead of these 90% implementation with the little 10% chunks in between you just
+really just get to spend all your focus on the ideas i'm super excited about that it seems like
+one of the defining aspects of cognition is the degree of friendship and trust between the leaders
+is extremely unusual maybe you can describe the origin of that but when you're moving fast trust
+is really valuable and i'm just curious to hear about that side of your building experience so far
+pretty much all of us on the team have known each other for years and years and years
+Steven and Walden Russell i've known these guys for a long time and the whole crew as well
+i had always wondered about okay is it going to be awkward to work with your friends there's
+lots of things that come up and if anything it's honestly the other way around where it's easier
+to have tough conversations because you know obviously we were friends before all this
+all of this that we're doing is coming from a place of we are just trying to take care of each
+other and make something great together when you both know that's true and when that undertone is
+always there it's a lot easier to just call out stuff like hey like i think this is totally wrong
+or we need to change this thing right now or things like that what in your experience talking
+to investors present company included what do people not ask you about the product the company
+or the vision that they should ask you about yeah it's a good question i think one thing that's
+definitely different talking about it versus feeling it is that folks sometimes talk about or
+ask about really is just kind of the experience with the team i think the day to day it's getting
+the product out there and seeing what folks are saying about it and talking with our users and
+things like that obviously but ourselves i think just how we do it and how we build it as a team is
+truly special i would say i think we have some of the smartest and most ambitious and most capable
+people and yet somehow they're all such low ego people as well i think that is truly the
+that's the soul of it for me is the 20 of us in a house together trying to do something meaningful
+it's a big difference i think talking about it versus really seeing it live and so what
+are the things that we often do as we're really pushing with it is having folks at the house
+just come by and see what it's like it's going to be 1 a.m or 2 a.m and stuff and people are still
+building and there's a lot of discussions and stuff that's moving quickly and everything
+and that's probably the thing about building the company that i'm most grateful what uncertainty
+interests you the most that's outside of your control interesting yeah one of the uncertainties
+i think actually think a lot about is broad adoption it seems very clear to me now that the
+technology will get there or maybe already has gone there in a lot of cases to be extremely
+impactful and i think the rate at which we see it happening in different industries is going to
+be pretty fascinating we can both think of things like medicine or law or things like that where
+you can certainly imagine it will take time to do that and then there's obviously just the whole
+world of distribution i will call it a win where everyone in Baton Rouge Louisiana is actually
+having a significantly better life because of the work that AI is doing it's a different curve
+everywhere obviously i think we're lucky in software that developers are just kind of inherently
+curious and always want to try to but i do think the rates of adoption it's going to be a real
+question with this technology because i think the pace of progress is going to be such that
+technology in some places is going to be way ahead of reality when we were first together
+you did this insane car trick are you willing to do it for us yeah let's do it yeah tell us the
+origins of this trick yeah so this is a car trick so it wouldn't even call it a car trick it's more
+of a card game and so growing up i always used to play this game called 24 it's a little math game
+and i think it actually helps a lot with just getting the fluency in math i think it's one thing
+to learn okay here's addition here's multiplication whatever but it's obviously is the first building
+block but also a lot of it is just this creativity and this ability to reason with numbers and
+experiment with numbers and so i'll just show what the game looks like it so the idea is you have
+four cards and they're four numbers by the way jack is 11 queen is 12 kings 13 so it would be a
+four seven eight and 12 are the four numbers that we're dealing with here and the idea with this
+is you can use the four numbers in any order in any combination you got to add some tracks
+multiply divide any of these and your goal is to put together an equation that uses all four of
+these and makes the number 24 and so here what i would do is 12 minus eight is four four times
+seven is 28 and 28 minus four is 24 and so you can see how it uses a lot of this creativity where
+it's like hmm messing around this number four 24 is in multiple four and so if i could just make
+six from the other three then maybe i could do something turns out that you can't quite do that
+but you can make a seven and subtract another four out things like that where you're playing
+with these ideas and so at these math camps and programming camps we used to play this game all
+time and eventually we got to the point where you learn all the combinations of 24 there's only
+about 1300 total combinations that you have to know not all of them are possible but for the ones
+that are possible you know them and so what we did next was we did a thing where you take six
+cards and you're making 163 and so i'll just steal another six parts and so in this case for example
+what i would do is 11 times 2 is 22 22 minus 3 is 19 6 plus 10 16 16 times 9 is 144 and 144
+plus 19 is 163 and so as you can imagine it's a lot of fun we would play this at the math camp
+during the team selection training for the us team basically in between contests we would just be
+playing this game all the time and doing this and eventually you get to the point where 163
+you have allotted the patterns down and you see things and so then the next thing that we did
+was we do eight cards and we make the current year and so now it's 2024 and so let's just go ahead
+and do that so 13 minus 12 is one and this is actually relatively easy i'm just gonna take
+one times one times one and we still got a one and 13 plus 10 is 23 23 times 11 is 253
+253 times eight is 2024 which times one is still 2024 incredible and eventually you learn all
+the patterns with that and so obviously the next fun thing that we have to do is we have to do a
+custom number how many digits four digits yeah yeah let's do 7 5 3 2 7 5 3 2 okay so it's a little
+bigger so we're gonna do nine cards okay okay so 11 times 77 77 minus two is 75 we got two tens
+here which is a nice hundred and so that makes it 7500 and then from here nine times four is 36
+three plus one is four 36 minus four is 32 so 7500 plus 32 is 7500 pretty amazing i don't know how you
+do it what are you doing what is the method behind calculation or is it multiple methods a lot of it
+is an intuition i guess that you build over time with 163 for example a lot of these little things
+where i know okay 11 times 15 is 165 so if i can make an 11 and a 15 and then i can make a two left
+over then i could do 165 minus two and then i'm searching for that and so based on the numbers i
+see i'm solving for something like that and it depends a lot on the patterns that you get and
+everything it's actually i think great game for kids this is my favorite game as a three-year-old kid
+or never playing 24 with the four cards because a lot of it really pushes the number sense it's
+not just a question of can you add two numbers but can you really reason around that and like
+do you know what that means and be creative with the numbers that you have which i think is the
+core skill that you really want to learn not just the mechanical part i think what you're building
+is so cool to me because effectively what you're doing downstream is unlocking the creativity of
+a lot more people than currently have the ability to build things through computer science and
+programming and i just think that's an incredibly cool and amazing thing for the world i hope you
+and others like you are successful in doing so when i do these interviews ask everyone the same
+traditional closing question what is the kindest thing that anyone's ever done for you
+the number one thing that i come to throughout my life is honestly just all the mentors that i've
+had and how much effort they truly put in even as a kid as you can imagine like training for the
+us team for the international thing it was funny because i never had a coach i never had the formal
+this is the person but i did have a couple people in one in particular who just really invested
+me and believed in me and you know he was the one who really just pushed i was a high school kid
+i had a lot of other things that i wanted to do besides just doing math all the time and
+he was always pushing me like you got to practice you got to do this thing every time i would get
+something wrong you'd be like yeah you can't make that mistake here's how we're going to do the
+things and all the time that he put in is everything honesty comes from that i feel like i'm really
+only the sum of all the mentorship that i've received and i think the same is true in startups
+i can think of a few people and again i can think of one in particular who's really just coached me
+through a lot of this and guided me through a lot of these things and been the one to give me the
+harsh criticism and the feedback and hit me with the things that matter and pushed me to do better
+and to do more and people often think of kindness as sacrifice and i do think actually that often
+a lot of the greatest kindness is about building more together and doing more together
+Scott thank you so much for your time thank you so much man
+if you enjoyed this episode check out join colossus.com there you'll find every
+episode of this podcast complete with transcripts show notes and resources to keep learning
+you can also sign up for our newsletter colossus weekly where we condense
+episodes to the big ideas quotations and more as well as share the best content we find on the
+internet every week
+we hope you enjoyed the episode next stay tuned for my conversation with katie elenberg
+head of investment operations and portfolio administration at janeva capital management
+katie gets into details about her experience with ridgeline and how she benefits the most
+from their offering to learn more about ridgeline make sure to click the link in the show notes
+katie begin by just describing what it is that you are focused on at janeva to make things
+work as well as they possibly can on the investment side i am the head of investment
+operations and portfolio administration here at janeva capital and my focus is on providing the
+best support for the firm for the investment team can you just describe what janeva does
+we are an independent investment advisor currently about over six billion in assets under management
+we specialize in us small and mid cap growth stocks so you've got some investors at the high
+end they want to buy and sell stuff and you've got all sorts of investors there's money you've
+collected in different ways i'm sure everything in between i'm interested in what are the eras of
+how you solve this challenge of building the infrastructure for the investors we are using
+our previous provider for over 30 years they've done very well for us we had the entire suite of
+products from the portfolio accounting to trade order management reporting the reconciliation
+features with being on our current system for 30 years i didn't think that we would ever be
+able to switch to anything else so it wasn't even in my mind and your head trader suggested that i
+meet with ridge line he got a call from nick shay works with ridge line and neither andy or i heard
+of ridge line and i really did it more as a favor to andy not because i was really interested in
+meeting them we just moved into our office we didn't have any furniture because we just moved
+locations and so i agreed to meet with them in the downstairs cafeteria and i thought okay this
+will be perfect for a short meeting honestly patrick i didn't even dress up i was in jeans i had my
+hair thrown up i completely was doing this as a favor i go downstairs in the cafeteria and i think
+i'm meeting with nick and in walks to other people with him jack and allie and i'm like
+now there's three of them what am i getting myself into really my intention was to make it quick
+and they started off right away by introducing their company but who they were hiring and that
+caught my attention they were pretty much putting in place a dream team of technical experts to
+develop this whole software system bringing in people from charles river and facts at bloomberg
+and i thought how brilliant is that to bring in the best of the best so then they started talking
+about this single source of data and i was like what in the world i couldn't even conceptualize
+that because i'm so used to all of these different systems in these different modules that sit on
+top of each other and so i wanted to hear more about that as i was meeting with a lot of the
+other vendors they always gave me this very high level sales pitch oh transition to our company
+it's going to be so easy etc well i knew 30 years of data was not going to be an easy transition
+and so i like to give them challenging questions right away which oftentimes in most cases the other
+vendors couldn't even answer those details so i thought okay i'm going to try the same approach
+with richline and i asked them a question about our security master file and it was alley right away
+who answered my question with such expertise and she knew right away that i was talking about these
+dot old securities and told me how they would solve for that so for the first time when i met
+richline it was the first company that i walked back to my office and i made a note and i said now
+this is a company to watch for so we did go ahead and we renewed our contract for a couple of years
+with our vendor when they had merged in with a larger company we had noticed a decrease in our
+service i knew that we wanted better service at the same time nick was keeping in touch with me
+and telling me the updates with richline so they invited me to base camp and i'll tell you that that
+is where i really made up my mind with which direction i wanted to go and it was then after i left that
+conference where i felt that comfort and knowing that okay i think that these guys really could solve
+for something for the future they were solving for all of the critical tasks that i needed completely
+intrigued and impressed by everything that they had to offer my three favorite aspects
+obviously it is that single source data i would have to mention the ai capabilities yet to come
+client portal that's something that we haven't had before that's going to just further make things
+efficient for our quarter-end processing but on the other side of it it's the fact that we've built
+these relationships with the richline team i mean they're experts we're no longer just a number
+when we call service they know who we are they completely have our backs i knew that they were
+not going to let us fail in this transition we're able to now wish further than what we've ever
+been able to do before now we can really start thinking out of the box with where can we take
+this richline is the entire package so when i was looking at other companies they could only
+solve for part of what we had and part of what we needed richline is the entire package and it's
+more than that in that again it's built for the entire firm and not just operational
+the richline team has become family to us
+you
+
+

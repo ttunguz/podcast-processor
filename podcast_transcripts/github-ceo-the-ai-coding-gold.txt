@@ -1,0 +1,1108 @@
+--- METADATA START ---
+Show: The MAD Podcast with Matt Turck
+Episode: GitHub CEO: The AI Coding Gold…
+Host: Matt Turck 
+Guests: Thomas Domke
+Source URL: https://podcasts.apple.com/us/podcast/github-ceo-the-ai-coding-gold-rush-vibe-coding-cursor/id1686238724?i=1000712583836
+--- METADATA END ---
+
+1
+I think we're underestimating how much you can do with the models that are out today.
+2
+Not the ones that are coming next year or next month.
+3
+We're only touching the surface of what's possible.
+4
+Welcome back to the Mad Podcast.
+5
+Today we have a fantastic conversation with Thomas Domke, the CEO of GitHub.
+6
+Now, of course, GitHub is the world's largest developer platform.
+7
+Once upon a time, a scrappy startup, GitHub was acquired by Microsoft in 2018 for $7.5 billion.
+8
+And today, it serves 150 million developers and generates around $2 billion in annual recurring revenue.
+9
+GitHub is also sitting today at the epicenter of the hottest space in generative AI, AI coding, where hyperscalers Microsoft and Google face off against AI giants OpenAI and Anthropic, and fast-growing, nimble startups Cursor.
+10
+In this episode, we talk about the rise of AI coding agents, including GitHub's brand new co-pilot agent mode.
+11
+The coding agent is a new member of your team that can take on certain tasks.
+12
+And you cannot only assign one task to one coding agent, you can assign 10 tasks to 10 versions of that coding agent.
+13
+And they can all run in parallel.
+14
+How to understand the current AI coding market and the delicate balance between competition and collaboration amongst players.
+15
+It's the DNA of Microsoft to be competing and partnering with many companies in the industry.
+16
+As well as the future of software and code development.
+17
+AI is going to accelerate the role of a professional software developer and it's also going to enable everyone that wants to become a developer to learn coding.
+18
+This is a very educational episode packed with insights for both developers and non-developers interested in understanding where AI is going.
+19
+Please enjoy this great conversation with Thomas Dunker.
+20
+Thomas, welcome to the Matt Podcast.
+21
+Matt, thank you so much for having me.
+22
+Great to have you here today.
+23
+I've been very much looking forward to the conversation because AI coding is such a fascinating area.
+24
+It feels ground zero for all things generative AI.
+25
+First, it's arguably the most widely adopted application of generative AI today.
+26
+It's where a lot of the innovation is happening.
+27
+It's where some of the questions around is AI going to take our jobs or not feel the most real.
+28
+And then it's a big battleground as well from a business standpoint between the hyperscalers and the startups and the big AI labs.
+29
+So, what I'm hoping to do today is have a very educational and in-depth conversation about all the things, both for coders and non-coders, to understand where it's all going.
+30
+Does that sound good?
+31
+Sounds great.
+32
+Yeah, and it's also, I think, one of the oldest use cases for AI.
+33
+Yes, perfect segue.
+34
+Let's go back to in history a little bit.
+35
+Let's talk about 2018, which was the $7.5 billion acquisition of GitHub, which had been a startup for over a decade by then, by Microsoft.
+36
+And you were deeply involved in this.
+37
+Walk us maybe through the strategic thinking behind the acquisition at the time.
+38
+$7.5 billion seems cheap now that we are in 2025 and you see all these startup valuations.
+39
+I think Microsoft has always seen itself as a developer tools company.
+40
+It's a platform company, and to be successful with a platform, you need to have developers on your platform that build apps,, services, products on top of it, but also build an ecosystem around the platforms.
+41
+And Microsoft back 50 years ago started with a basic interpreter for the Altair.
+42
+And then you fast forward and in the 1990s, Visual Studio came.
+43
+In the 2000s, there was TypeScript and.NET and that ecosystem.
+44
+And in 2018,, a lot of things had changed under Satya Nadella's Microsoft's current CEO, which came into role in 2014, had changed that Microsoft started embracing open source.
+45.NET was already an open source project.
+46
+VS Code, the editor, was already on GitHub and in fact, one of the biggest projects on GitHub in terms of number of contributions.
+47
+And so we felt it was time for Microsoft to fully embrace its roots as a developer company and bring in all these web developers, those that are building apps, is now called cloud native, and bring them into the Microsoft ecosystem.
+48
+So I think that was the primary motivation.
+49
+Bring those developers that are on GitHub, that are building in the open or on startup projects, their private projects, and increasingly in the enterprise as GitHub in the late 2010s more and more also embraced the enterprise and started selling a server, a GitHub Enterprise Server, and a business product in the cloud.
+50
+And so bring that into the Microsoft ecosystem.
+51
+And two years before the GitHub deal, the LinkedIn deal had happened.
+52
+So 2016, Microsoft had acquired LinkedIn and had kept LinkedIn somewhat independent from the big mothership.
+53
+And so we also had a template of how to do such a deal where we retain a lot of the value of the deal by keeping the company independent.
+54
+And the three principles that we said back in 2018, they're still true today, which is GitHub always puts the developer first.
+55
+And so that's what drives all the decisions, the design, the product processes, how we think, marketing blogs, our conference.
+56
+We have Microsoft accelerate GitHub.
+57
+And I think that is a crucial part.
+58
+of how everybody should think about acquisitions, which is the buyer should accelerate the target company.
+59
+It's almost a venture capitalist investing into a startup, right?
+60
+You invest money to accelerate the company you're investing into.
+61
+When you're acquiring a company, I think you should have that same mindset.
+62
+I'm buying a company to accelerate them so they increase their value.
+63
+And as such, I'm increasing the value of the buy side.
+64
+And then lastly, we also thought about GitHub accelerating Microsoft.
+65
+And here we are in 2025.
+66
+And the easiest example I can give you is how GitHub Accelerate Microsoft is, of course, GitHub Copilot.
+67
+So just to build on those two points, which are super interesting, the GitHub helping Microsoft, to which extent does GitHub fit into the Azure broader picture?
+68
+The hyperscaler business model is generally described as building a bunch of applications that drive demand for the underlying compute.
+69
+Is that one of the key objectives?
+70
+And what is the intersection between GitHub in general, GitHub Copilot in particular, and underlying Azure business?
+71
+The Azure business within Microsoft came out of a division called Server and Tools.
+72
+Today, that division is called Cloud and AI.
+73
+And the Server and Tools team also had the developer division, with this core product back in 2018 being Visual Studio, in itself, the IDE, the old school IDE, in itself, a billion-dollar business, and had a bunch of new stuff Visual Studio Code.
+74
+It had a platform for DevOps, back then called Visual Studio Team Services, nowadays called Azure DevOps.
+75
+And so that tools division,, within the cloud, within Azure, had the job of providing the ecosystem, the tools, the platform for developers to build on top of Azure, to build on top of Windows, to build on top of other Microsoft platforms.
+76
+And GitHub snapped into that developer division, bringing basically the open source platform, the home of all developers into that same ecosystem.
+77
+From a business perspective, that meant the GitHub revenue became part of the Azure KPI that is reported in earnings calls every quarter for Microsoft.
+78
+And we announced last July, so almost a year ago, that GitHub had passed 2 billion in annual revenue run rate ARR.
+79
+And you can go back in time, 2017, a year before the deal, then GitHub leadership team had announced 200 million in ARR.
+80
+So those are not exactly snapping to the timing of the deal, but you get an idea between 2017 and 2024, revenue went 10x, right?
+81
+And as such, the first thing I want everybody to think about when you ask,, how is GitHub contributing to Azure?
+82
+Well, it contributes to Azure's revenue number, right?
+83
+Increasingly,, generating more and more cloud revenue.
+84
+And of course, Copilot is a big part of that cloud or an increasing part of that cloud revenue.
+85
+We bring developers, new developers, students, even high schoolers, sometimes even middle schoolers, and increasingly younger kids as well.
+86
+Often the motivation is less that they want to learn coding.
+87
+That is also true.
+88
+But I was in one of my sons' middle school last year, and I asked them about GitHub, and they're, Yeah, that's why we find an old Minecraft build that works on the school laptops and isn't detected by IT, probably because it runs on some older file that isn't fingerprinted by school IT or what have you.
+89
+But it brings developers into the platform, into the Microsoft ecosystem.
+90
+And the ultimate hypothesis is that they go through their career journey on GitHub and learn about Microsoft tools, whether it's VS Code and Visual Studio, whether it's the cloud in Azure.
+91
+And of course, we have within GitHub a number of integration points where you can deploy your repository to Azure through something called GitHub Actions, our CI CDE service, where it suggests the Azure Kubernetes service, for example, to deploy a Docker file.
+92
+It's the other way around, which is the Azure teams obviously are also leveraging GitHub for their work, whether it's GitHub itself, whether it's co-pilot, GitHub Actions, all the open source on GitHub, consuming that, contributing back to it.
+93
+So when we think about developers at Microsoft and developer tools at Microsoft, we always also think Microsoft is one of the biggest software development companies itself.
+94
+So it benefits from every innovation that we're building into GitHub for its own backlog, for its own shipping velocity, quality, et cetera.
+95
+The other thing that you mentioned a minute ago that's fascinating is precisely the fact that the acquisition of GitHub seemed to have been so successful in terms of keeping the spirit alive.
+96
+And to put it in full context, one of the things I find amazing about this whole story is that you guys came up with co-pilot way ahead of anybody else in the market.
+97
+In particular, you were a year before the whole ChatGPT thing,, unleashed the entire generative AI craze.
+98
+So you're very much early to this market, which when you think about big companies, that tends to be the other way around, right?
+99
+Especially for people me in the venture world, it's always,, the startup moves faster than the big company.
+100
+That was not the case here.
+101
+What was the secret and the management tricks and techniques that enable you guys to do that?
+102
+Tying it back to the acquisition,, one story I can give you is that beyond all the other reasons I gave you that we are part of the strategy document that we had to write to send it to Satya and then for Satya to go to the Microsoft board and Odimil get approved for the deal.
+103
+One additional thing was in fact AI and saying we believe there's a future where we can train AI models on the graph is I think what we called it of all the source code that is not on GitHub, but also on the relationships between the developers,, how they work together.
+104
+And so in 2018, obviously we didn't know anything about co-pilot, but AI was certainly a reason to do the deal.
+105
+Comes 2020, and in the meantime, Microsoft had invested into OpenAI.
+106
+I think that was in mid-2019.
+107
+And GPT-3 was on the horizon.
+108
+And we got early access because of the partnership between Microsoft and OpenAI.
+109
+And we played with the model.
+110
+Just,, just today you play with a new model whenever a new one comes out, which feels it's every other day.
+111
+And we asked it to write methods prime number detection, sorting algorithms, those coding exercises available.
+112
+In fact, through that process, we looked at our own coding exercises that we use for our interview loops.
+113
+And I think we collected about 230 or so of them and ran them through the model, which then was called Codex.
+114
+So OpenAI fine-tuned a model based on the open source code on GitHub and other sources.
+115
+I think there's a paper still on some of these RVIX or whatever the page is called that describes exactly how Codex was trained.
+116
+I think the model was able, with multiple attempts, to solve more than 90% of these coding exercises, of these 230 coding exercises.
+117
+And that ultimately gave us the confidence we can build a product here.
+118
+So this is 2020, two years and a bit before ChatGPT.
+119
+But, conversational coding is what we called it, was one of the ideas we had.
+120
+And the only reason we didn't ship that was that it wasn't good enough.
+121
+And we were quite skeptical shipping something where everybody looks at this and asks in the chat interface, describe this method or ask the typical chat scenario that we are all now used to.
+122
+And it often gave incomplete answers or wrong answers.
+123
+And so we felt we can't really do this and then ship this to developers.
+124
+We're going to get all the ridicule on social media.
+125
+The other thing that's easy to forget is auto-completion has been around forever.
+126
+Microsoft, I think, shipped in TeleSense, which is the somewhat intelligent auto-completion in the 2010s.
+127
+And in fact, even that was debated by developers because the worry was that if it can predict the next word and the method name, I have, I think the term was brainwaught.
+128
+I'm going to forget my skills.
+129
+And so that question of is AI going to replace the developer and make us all less skillful at lower level of craft, that goes as far back as IntelliSense.
+130
+And I remember first using TextMate in 2004 or 2005.
+131
+And it felt magical to me that it could auto-complete even stuff that wasn't in a Ruby and Rails app that wasn't even in the documentation because it would pass the file and create a dictionary of the file I'm working in.
+132
+And so it could predict the method name that is part of the code I vote.
+133
+And then Microsoft evolved IntelliSense into IntelliCode, which was IntelliSense with AI using a local model to do better predictions.
+134
+So that was already AI.
+135
+It just wasn't a large language model, a transformer model as we used for Copilot.
+136
+But all these steps ultimately set us up to ship Copilot, the original Copilot, in June 2021, more than a year and a half before the big bang of AI.
+137
+And then we brought that into production within a year.
+138
+And it feels strange looking back now to summer 2022, three years ago, when Copilot G8, and how many people were still doubting that this technology is any good and will become a standard tool for developers.
+139
+And here we are in 2025, and all of that has happened.
+140
+And you see, many CEOs in AI and outside of AI predicting these co-pilots are going to write 90%, if not 100%, of all code.
+141
+Again, in an effort to make this interesting to both a developer-coder audience, but a broader audience as well, how would you describe GitHub Copilot in two minutes?
+142
+And how does that interface with VS Code?
+143
+And what is VS Code?
+144
+And so, if I'm a non-developer, what does that all mean?
+145
+The way I'd to start describing what GitHub Copilot does is to describe what a developed job is, which is writing code.
+146
+And so, most developers in the morning, they go somewhere where they have their backlog,, the tasks that they defined themselves, or often that comes from their manager or from their product team.
+147
+They pick up a task and then they go into an editor, which is ultimately a program where I can edit files with plain text.
+148
+And the key skill of a developer is to take this description that is in human language, because that's what all the specs, all the issues, all the bug reports are in, right?
+149 they're in English, German, French, whatever language the stakeholder used.
+150
+The key job of the developer is to translate that language into code.
+151
+And so take human language and transfer it into programming language.
+152
+And so they type code.
+153
+And as any writer, whether it's a coder or whether it's a journalist or a VC writing a blog post, it's really hard to do that because you're getting stuck when you have an empty file.
+154
+You're getting stuck because you don't remember specifically how to call a method or how to do a certain algorithm connecting to some back-end system and so on.
+155
+And so, what you did before Copilot would command tap or I'll tap on your computer into a different application, often the browser, and try to find that information.
+156
+And you do that by opening a new tab and using Google or Stack Overflow, GitHub, lots of platforms that have developers talking about these problems and then figuring out what's the answer to the problem I'm trying to solve.
+157
+And 10, 15, 20 minutes later, you're back in your editor and you copy and paste that code snippet that you found somewhere, and then you make it work within the file that you were working on.
+158
+And so, Copilot does all of that without that context switch.
+159
+It keeps you in the flow.
+160
+Developers often call this the magic flow state where you have an idea, what you're doing, and it's just flowing from top to bottom in the file, and it feels you're changing the world.
+161
+And you want to stay in that state for as long as possible.
+162
+You want to serve the wave, if you will, without falling into the water and having to paddle back and find a new wave.
+163
+And so, Copilot, the original Copilot, did that by suggesting multiple lines of code instead of just the next word that could complete five, 10, 20 lines of code.
+164
+And you would just accept that with a tab key, or you would keep typing until it was good enough for you to say, okay, I can now press tap and then edit this a little bit to make it work because most developers also are very used to trial and error or trial and error.
+165
+That's how we all learn coding.
+166
+And so, Copilot does that auto-completion, and that continues to be the most used features because it is always there.
+167
+The magic of Copilot in the early days was that it wasn't really about AI, it wasn't about large language models, it was about giving you a feature in your editor that keeps you in the flow state and makes you more productive and ultimately more happy.
+168
+And then came ChatGPT.
+169
+And of course, we added the chat scenarios and that allows you to do all kinds of exploratory things asking questions, describing code, telling the chat part to fix the bug.
+170
+And I bought both my kids a Copilot license because before they would always come to me and say, hey, my Python, of course.
+171
+That also let me test the payment and the billing flow.
+172
+And so I get free emails from GitHub every month, one for my own account and then one for each of my sons.
+173
+And so I'm,, the customer zero, as we would call that.
+174
+And,, before that, they would come and say, hey, I'm building this Python Pi game, a little jump and run platformer, and I have a bug and I can't figure out how to solve that bug.
+175
+And then I was, well,, I'm talking with Matt right now, but I come to your room in an hour.
+176
+And of course, they don't that because their stuff is way more important than your podcast, Matt.
+177
+And so I was a co-pilot.
+178
+And now they're just asking Copilot, help me to fix the bug.
+179
+And it doesn't have to be perfect.
+180
+I'm not perfect either when I help them, right?
+181
+I try to understand what they did.
+182
+So does Copilot.
+183
+And so that's the second scenario.
+184
+And then the third one, and that's really what 2025 is all about: is agentic scenarios.
+185
+We call it agent mode in the IDE.
+186
+We have the coding agent on the platform where instead of just asking questions and getting answers, you can give it tests and it does that task for you.
+187
+You mentioned that initially GitHub Copilot ran on Codex, which was the early coding model from OpenAI in, I think, at the end of last year, 2024, you introduced GitHub models, which feels a library of different underlying models you can use.
+188
+Walk us through that.
+189
+How does that work and what can you do as a developer?
+190
+In 2024, we did two things.
+191
+GitHub models was early August, and that gives developers access to a catalog of models integrated into the GitHub platform.
+192
+And in fact, last month, in May 2025, we brought these models into the repository.
+193
+And so you can integrate these models into your repository to build AI scenarios into your own applications.
+194
+And this is really cool because you don't have to go to another place and sign up for a new account.
+195
+And then you have your model stuff here and your code on the other side.
+196
+GitHub ultimately was always about millions of developers collaborating on a project together.
+197
+And so our philosophy is we bring what we call the primitives that developers need into the repository: issues, wikis, pull requests, actions, and now models.
+198
+And then late, I think it was late October, we announced multi-model choice for Copilot, moving from just having one model provider, OpenAI, to having multiple model providers for Copilot Chat and for now Copilot Agent Mode.
+199
+And so we added back then Anthropic Claude 3.5 Sonnet, and now it's Anthropic Claude Sonnet 4 and Opus 4.
+200
+And we added Google Gemini.
+201
+Back then, back then 1.5, now we are at 2.5 Pro.
+202
+And what really,, it is about choice.
+203
+We fundamentally at GitHub believe that we need to offer developers choice.
+204
+You wouldn't be using GitHub if it only had one open source project or one programming language or one ecosystem.
+205 we are not the ones telling developers whether jQuery or React or Next.js or whatever the next thing in the JavaScript ecosystem is, whether those are the ones to pick.
+206
+We are offering all these projects a home where they can collaborate and innovate.
+207
+And we let the developers, the teams, organizations choose which of these ecosystems they want to participate in or consume.
+208
+And we believe the same is true for models.
+209
+There is never going to be one single model that rules them all.
+210
+But the world of software development is just way too broad for this.
+211
+And that's also, I think, where the benchmarks, it's the right word, dangerous, I guess, because of course there's a big difference between writing code in C C or even assembler to writing code in TypeScript or Python.
+212
+And often, if you look at these benchmarks, the devil is in the details, you have to do the double-click and see,, how does it do for my language for a documentation scenario or for test generation scenario.
+213
+And in fact,, nowadays in VS Code, we not only have the models that we offer on our inference API, we also have bring your own keys.
+214
+We can connect Copilot to OpenRouter or Olama.
+215
+It can run a local model and try out that model in Copilot to build your own agentic behavior into your developer workflow.
+216
+So that's what it's all about.
+217
+And that also enables us to move really fast, which has become incredibly important in the AI space.
+218
+I've never seen anything that in my 30-year career as a software developer.
+219
+There's so much innovation, so much change happening that just sticking with one model will ultimately mean you either are really, really good at change management with all these tens of thousands of enterprise customers, that's a hard nut to crack.
+220
+Or you offer the choice and then the enterprises can stick with a model that they feel is the one that is the best for them and approved and reviewed by security and compliance and all that.
+221
+And then there's all the other models that we can offer other customers and individual developers, those that want to stay at the cutting edge.
+222
+So that's the other part of the choice being important.
+223
+If you want to move fast, you ultimately have to support multiple models because there's always going to be a group of customers that intentionally want to move slow given the regulated environment they're operating in.
+224
+And for the enterprise, do you allow people to fine-tune their model based on their data?
+225
+How does that part work?
+226
+We do not today.
+227
+We have pursued that path in the past.
+228
+So I think 2023, 2024, a number of companies in our space saw fine-tuning as the next opportunity.
+229
+The challenge from my perspective on fine-tuning is that A, as there's another model every other day, you're ultimately always going to be behind with your fine-tuned model.
+230
+And we are putting you then in a position where you're having the choice between the model that you fine-tuned that is based on an older version of the base model, or you can pick the new model, but that isn't fine-tuned yet.
+231
+B, I think most customers' code bases, especially if you look into the individual project, most companies that are at a certain scale have not just a single programming language and a unified stack.
+232
+That's the dream every CIO or CTO is talking about.
+233, I want a standardized stack for all my developers.
+234
+And then you look into a 30-person startup, and of course, even they don't have that because as soon as they go from web development to iPhone development to Android development, they already have three stacks.
+235
+And so then if you look at the individual repository or set of repositories, that code base isn't big enough to have a meaningfully fine-tuned model.
+236
+And lastly, and I think this is where fine-tuning got left behind by most companies in the space is that when customers think about fine-tuning, what they really mean is that the agent understands the code base and the environment that that code base sits in.
+237
+But that's not only the code that was relevant during the fine-tuning process, because you can always have a new open source library being added, or you're upgrading from one React version to another, and now your API change or from one Java version to another, even simpler.
+238
+But it's also everything else that's surrounding that project, your database schemas, whatever solution you're using for feature flagging and experimentation.
+239
+There's all these services that surrounds your project that provide additional context that the agent needs to know about.
+240
+And so now in 2025, I think the answer is very clear, which is MCP model context protocol and the ability for models to call tools.
+241
+And so they can call tools on the command line to install a Maven package or an NPM package.
+242
+They can call an MCP server that connects into your GitHub repository or into your Jira and Conference institutional knowledge.
+243
+And then there's a thousand MCP servers for everything else.
+244
+So if you want to connect to Figma or you want to connect to your Mongo database or what have you, you can put in all that context.
+245
+So the agent knows as much about the environment that the code base sits in as the human developer.
+246
+And so using MCP, using cool calls, and then whether it's retrieval or just navigating the file tree and doing code search a human developer does.
+247
+And if you have used Agent Mode or any of these agent modes, you can see that working, how it uses the chain of thought to go from, okay, it's three files, or maybe I need to add two more files.
+248
+So now I have picked five files that it needs to modify.
+249
+And it figures out that it not only needs to write the code, but also write the test cases for it and then run the tests and fix it itself.
+250
+So this iterative process that the agent does with the help of the tool calls in all the contexts makes it so much more powerful than a fine-tuned model could ever be.
+251
+All right, amazing.
+252
+I'd love now to talk about, let's call it the political economy of this whole space, for lack of a better term.
+253
+You mentioned the incredible pace of innovation, and indeed it's dizzying, right?
+254
+Just what over the last few days it feels,, Mistroll announced a coding product that's a combination of the various underlying coding models that they had.
+255
+Cursor officially announced they are round at a 9 or 10 billion valuation and said that they were at 500 million in AR, which is insane and makes them possibly the fastest growing startup of all times, at least on the enterprise side.
+256, the Sonnet 4 that you mentioned earlier that came out, what, two weeks ago, it feels on old news, but that was two weeks ago.
+257
+So the pace is absolutely dizzying.
+258
+What do you make of it and how you would categorize it, who does what, and where do you guys fit in?
+259
+What do you cover?
+260
+What do you not cover?
+261
+First of all, I think we should recognize how amazing it is that a developer tools company is the fastest growing startup of all time.
+262
+Because there were times between 2018 and now that you would go to a startup founder or a venture capitalist and they wouldn't want to invest into that space.
+263
+100%.
+264
+I'm so glad you said that.
+265
+That was such a VC trope that don't invest in developer tool because developers are very cheap people.
+266
+They will never pay any money for anything.
+267
+And yeah, there you go.
+268
+There's no money to be made.
+269
+And here we are.
+270
+And second, I think it shows that AI is going to accelerate the role of the professional software developer.
+271
+And it's also going to enable everyone that wants to become a developer to learn coding.
+272
+And you can see that with Copilot and a bunch of these tools, Verse LV is your bold, lovable OpenAI codecs where folks with a non-technical background can build a quick web page.
+273
+Now, and I think this is good to anchor ourselves.
+274
+We have been living in a world for quite a while where companies were pitching no-code or low-code solutions.
+275
+In fact, I think 15 years ago, I set up my first Squarespace web page.
+276
+And even though I knew how HTML and CSS works, that was still the faster and cheaper way to just spin up a quick web page and publish.
+277
+I think it was the landing page for our startup back then, and just say, here's the sign-up field.
+278
+Let us know if you want to get informed when we're launching.
+279
+With AI, we're going a step further because now you can use AI agents to generate quite complex applications from web pages to little games.
+280
+My favorite demo is to build Snake Game because it's trick to build and trick to play without explaining too much how it works.
+281
+Most people still remember Snake on their Nokia phones or whatever phone they had.
+282
+And so if you look into the space now, you have companies that are working in this bootstrapping, or we to call it greenfield scenario.
+283
+You start with nothing, you enter a prompt.
+284
+It's almost using an image model.
+285
+You enter a prompt and it generates you an image, but instead of an image, it generates you a web page, an application.
+286
+And then you either what you see or you want to add more or change things and you keep prompting.
+287
+And in fact, the image model is a great comparison because in the same way that the first output of an image model almost never is perfect in exactly what in your head, the same is also true for these bootstrapping AI scenarios.
+288
+So that's, I think, one category.
+289
+One is IDEs.
+290
+You already mentioned,, one, there's a bunch of others that have taken VS Code, forked it, and made it a new version.
+291
+And that's the power of open source, right?
+292
+The power of open source, of Microsoft making VS Code open source back in 10 years ago in 2015.
+293
+But there's also the traditional IDEs, Visual Studio, the JetBrains family of IDEs, even Apple with Xcode.
+294
+Everybody is integrating AI scenarios into these IDEs, and many companies ours are providing co-pilot not only for VS Code and VS, the Microsoft IDEs, but also for JetBrains, for Eclipse, for Xcode, for Android Studio.
+295
+And then there's forks of our code base to bring it into Emacs and what have you.
+296
+And so the IDE is the hardest playing field, I'd say, simply because that's where the majority of professional developers are.
+297
+And the key of successful developer tools has always been you've got to meet developers where they are and then move them into that future that you're seeing as your North Star.
+298
+But what doesn't work is to give them the new thing and tell them to stop everything that we're doing until now.
+299
+That's going to create an allergic reaction, go away, I know what I'm doing.
+300
+I'm used to my shortcuts and my color schemes and all these kinds of things.
+301
+Then there's the model companies that provide the models that power all these scenarios, but they have entered the space itself, whether it's OpenAI Codex, Cloud Code, Mistral Code.
+302
+And I think part of the reason for that is that AI code generation is a scenario that worked first and has the largest part of the respected workforce having adopted it.
+303
+As in most developers have adopted some form of AI tooling into the workflow already, while other knowledge workers, other white collar workers, are still early in that adoption journey.
+304
+And they might use a chat agent as a better version of a search engine to find a document or to summarize an email.
+305
+But they haven't replaced parts of their workflow with AI.
+306
+Which brings us to the fourth category, which is agents.
+307
+And these agents, what separates them from the bootstrapping greenfield scenario is that these agents work in Brownfield, as in they are working within an existing code base for the coding agent or within your Azure cluster to monitor all your resources, the SIE agent, and then look at exceptions or monitoring data and then file a GitHub issue and say, hey, the latest deploy has created an exception.
+308
+And you can tie those together and have the SI agent file an issue and then the coding agent pick up the issue and provide the pull request.
+309
+And then the human developer comes back in again to review the code change.
+310
+And what's interesting about these four categories is that while there's startups in each of them, there's also companies Microsoft and GitHub that operates in all of them and tries to provide a holistic platform across all these scenarios.
+311
+And I think the key for winning is to have a continuum where you can have an agent write code for you and submit a pull request.
+312
+But then if you, as a developer, see that code and you want to make three quick changes, you've got to be able to take that onto your local machine and just make those changes instead of trying to figure out how do I provide now feedback or prompt to describe in natural language where I already know how to do it in programming language.
+313
+That's basically replacing something that I can do in three seconds with something that might potentially take three minutes or even longer.
+314
+And that's obviously not more productivity, that's less productivity.
+315
+And so enabling developers to move between those categories and being able to pick the agent that provides the best ROI or do it themselves, I think that's the key for winning in the next few years.
+316
+This is so fascinating in so many ways.
+317
+To take your third category of the big AI labs, so there's this competition and collaboration relationship that's starting to appear where obviously Microsoft has a very special relationship with OpenAI, but through GitHub models that we were just discussing, you've diversified.
+318, you've offered choice for your users, which is the key driver.
+319
+But as a side matter, you've diversified away from one supplier.
+320
+That tension also between Anthropic potentially and cursor, where cursor has started to diversify away from them.
+321
+So how do you view this evolving?
+322
+Ultimately, everybody competes but also cooperates, or is there a moment when I don't know, you guys maybe need to develop your own model specifically for coding?
+323
+How do you view it evolving?
+324
+It's the DNA of Microsoft to be competing and partnering with many companies in the industry, right?
+325
+The most classic example comes to mind is that Microsoft for the longest time has sold software or provided software nowadays for the Mac, going back all the way to the Apple II.
+326
+I think most of us remember Bill Gates appearing in a Steve Jobs keynote, big on screen behind him, to announce that Microsoft is investing into Apple and bringing Internet Explorer and Office to Mac OS.
+327
+And then, of course,, after Asatia became the CEO, the decision was made to bring the Office Suite onto the iPad.
+328
+And nowadays, we take it for granted that Office Teams Outlook, all the modern Microsoft applications run on a Mac and run on iPhone and Android.
+329
+And as such, I think,, and I learned that when I joined Microsoft 10 and a half years ago, it was weird as a startup founder to come into the company and realizing that what I considered competitors for the product I owned at Microsoft are often also partners.
+330
+I can't name any names, but many of these AI code generation companies that compete with GitHub Copilot are running their inference on Azure AI Foundry.
+331
+And as such, they're paying Microsoft for the lower parts of the stack.
+332
+And obviously, Microsoft's cloud business with Azure doesn't want to say to customers, you can't run on us because you're competing with one of our products.
+333
+We have so many products that would hurt Microsoft's business.
+334
+So it is part of our DNA to both partner and compete.
+335
+And I think in many ways, that is the incredible thing about the tech ecosystem that that is possible.
+336
+Matter AWS, Google, they're also all hosting their open source on GitHub.
+337
+And as such, they are,, in one form or another, GitHub customers.
+338
+And so we really enjoy being on both sides of that spectrum.
+339
+And I think it increases the energy that we have within Microsoft and within GitHub to say, okay, we'd love to partner with these companies and developer space even more so because, look, if we would just exclude parts of the ecosystem, that means those developers go elsewhere and pay for the subscription or do their business with somebody else in the industry.
+340
+Instead, we see ourselves as part of an ecosystem, as GitHub, hopefully being one of the bigger planets, one of the core planets in Star Wars.
+341
+But there's a huge system, Midrim and Auderim, to stay within the metaphor, and companies that are closer to us and sponsor in our conference and have active partnerships and building active integrations, even though they're competing.
+342
+Devin, as one such company comes to mind, and others that are farther away, but obviously still a part of the developer ecosystem and that integrate with GitHub, use GitHub identity or store their source code.
+343
+And so if you take it back to AI code generation, all these companies ultimately allow a developer to submit a pull request or have the agent submit the pull request onto GitHub.
+344
+And as such, we have to be partners who enable those customers that pay us money for that repository, for their pull request, to choose the tools that they want to have part of their platform stack.
+345
+I'm curious what it feels from the inside, running a very important major division as part of the broader ship when it comes to product decisions.
+346
+A big part of the value proposition of cursor from the outside is that because they forked VS Code, they can have a product that's all in on AI, very AI native in all aspects of what it does, versus GitHub Copilot from what I understand, where your plug-in into VS Code, and then another part of Microsoft needs to make sure that VS Code remains very versatile, broadly applicable to lots of different use cases and scenarios.
+347
+Do you feel constrained by that in terms of how much you can do that's truly AI native because you need to operate in that framework where there are other driving factors?
+348
+Not at all.
+349
+And the VS Code team, while they don't report into me as the GitHub CEO, they are part of the developer division that we're also part of.
+350
+And together with the developer division, we're part of an organization within Microsoft called CoreAI that has the whole AI stack in it as well.
+351
+And so,, under Jay Parik, who's the leader for CoreAI, we're forming one unit that competes in this age of AI with all these companies across the categories that I lined out.
+352
+And as I mentioned, we're also partnering with them.
+353
+So a different part of the Core AI team might have one of our GitHub competitors as their customers and have partnership meetings with them and negotiate deals and Azure spend and those things.
+354
+Coming back to VS Code, at Microsoft Build in May, we announced that we are open sourcing the Copilot within VS Code, which also means we're moving it from an extension, which is how Copilot originally started, into a core part of VS Code.
+355
+And so it becomes open source as part of the VS Code open source project or the code.OSS project.
+356
+And as such, the VS Code team, and that's been true for a while, is the one building the client side of GitHub Copilot.
+357
+And so for, I think, the last two years now, the VS Code team owns GitHub Copilot Cloud client side for VS Code.
+358
+The Visual Studio team owns the Visual Studio Copilot, and then other teams in the developer division own Copilot for JetBrains, for Eclipse, and for Xcode.
+359
+And in fact, the Xcode version of Copilot is an open source project from a maintainer that we took over.
+360
+And it started as open source with an MIT license.
+361
+And we did a commercial deal with the maintainer to transfer it into our GitHub organization.
+362
+But we kept it open source.
+363
+So the Xcode version of Copilot has been open source for quite a while because it started as an open source project.
+364
+And we decided that that open source maintainer and the contributors to that project did such a good job that it's better for us to pay him some money and take over the project instead of competing with that open source maintainer.
+365
+I think the key for success at Microsoft is to leverage what is ultimately an incredible machine.
+366
+And yes, it is a huge ship.
+367
+And so changing direction sometimes feels really hard.
+368
+But at the same time, there's so many incredible people that are working in the developer division, in the cloud division, in the AI division, that we don't feel constrained.
+369
+If anything, I think the hard part in Microsoft is always going to be you have so many developers and so many employees that are supporting these developers in sales and support and what have you, that saying no to ideas is really hard.
+370
+That's much easier when you're running a 10-person team.
+371
+Because in a 10-person team, exactly what everybody's doing.
+372
+And you're the 11th man that also is probably coding if you're the CEO.
+373
+And so it's really easy to say, well, everybody's busy this week, so we don't have time for anything else unless somebody volunteers to work nights or on weekends.
+374
+But if you're managing an organization with, I think Microsoft All Up has about 70,000 people in research and development, not all of them engineers, there's some product managers and designers, but the majority are writing code.
+375
+Saying no to an idea is really hard.
+376
+And so putting yourself into that mindset, yeah, we are big, but we still have to say no a thousand times before we say yes again.
+377
+That I think is the constraint that we're having.
+378
+And then figuring out what are the strategic bets and how we are competing in this market, how we're ultimately winning the race and realizing that there's always going to be another race and another race, right?
+379
+We're playing the infinite game.
+380
+As a 50-year-old company, yes, we want to win the news cycle every month, the Formula One season of 2025, but then we also want to still be here and relevant in the next decade and more to come.
+381
+And that, I think, is ultimately what it is all about at Microsoft.
+382
+We have always stayed at the forefront of technology and we want to keep doing that for as long as we are all here.
+383
+You anticipated my question, which was what's the bull case and the bear case, depending on which idea you look at it from, on the cursor side, you could say they have the benefit of being unconstrained and being able to go all in and building one specific product and attracting the developers that already want pure AI.
+384
+I was curious what the bear case is for them.
+385 the reason why they're going to be a roadkill from the power of Microsoft and perhaps Google.
+386
+So that's distribution, that's developer mindshare.
+387, you're a very competitive guy, and Microsoft is a very competitive organization.
+388, why is the, how are you going to crush them?
+389
+I'm not thinking about crushing them because I think that's not how we're seeing the space.
+390, I for developers to pick the tool they love most, and I to build the ones that most of them are picking.
+391
+And so I think realizing that in developer tools and in automated technology, there's always going to be multiple players.
+392
+And there's always, and some of them and some technologies stay around forever.
+393
+Cobra on mainframes is one such example that comes up way more often than you would think for me as GitHub CEO.
+394
+Because many companies still deal with that Cobra on mainframe.
+395
+Now, is that the state of the art and something that college kids get excited about?
+396
+Of course not.
+397
+But we should realize that once some software is deployed, it sticks around.
+398
+It's incredibly sticky and it sticks around forever.
+399
+And migrating things, migrating even a repository in our form subversion into Git and then onto GitHub, that are often very complicated and expensive projects that engineering leadership only wants to fund if they can see the ROI.
+400
+I think the bare case for any company in our space is missing out on the next big thing.
+401
+And there's always going to be a next big thing in software demo, whether it's front-end frameworks, whether it's programming languages, whether it's IDEs.
+402
+Maybe the IDE is going to be replaced by something much more web-based.
+403
+And you can in fact already do that by Copilot and assign an issue to the coding agent on your iPhone with a GitHub mobile app.
+404
+And then it does its work while you're maybe on a podcast.
+405
+And then it thinks you and says, yeah, the coding agent has similar little pull requests.
+406
+And then you can review that code.
+407
+And you can even do that on your iPhone because the reviewing code is fairly doable on a small screen.
+408
+Writing is harder mostly because of all the special characters and what have you.
+409
+Predicting what is the next big thing, and then being able to disrupt yourself and overcoming the innovators dilemma that ultimately every company will get into that place where they have a mode and where they have an existing revenue stream.
+410
+Even more so, that revenue stream comes from many enterprise customers to then say, okay, we want to preserve that cash flow, but we also realize we got to disrupt ourselves and move into the next version.
+411
+And you have heard many of the startup founders, CEOs, chief product officers of our competitors talking about that.
+412
+Likely the world of AI code generation and IDEs will look very different in a year or two from now.
+413
+And I think we all realize that.
+414
+And so both the bear and the bull case are very similar, which is can you predict what that looks and meet developers' expectations and have the user adoption that then justifies that disruption to your existing business.
+415
+And at Microsoft, that is,, given the size of Microsoft, that is both an easier and a harder task at the same time.
+416
+That's such a fantastic thought that the pace of progress creates an innovator's dilemma for everyone, not just for Microsoft, but probably for Cursor as they grow.
+417
+They will also have a business to defend given how quick things are changing.
+418
+That's such an interesting thought.
+419
+GitHub has been pulled at least twice, right?
+420
+GitHub was founded on Git, which wasn't invented by GitHub.
+421
+It was invented by Linus Trawaltz and the Linux kernel team.
+422
+And a few years later, two years, I think, the GitHub founders, Chris, PJ, and Tom, saw an opportunity to say, Git hosting is so hard.
+423
+Let's build a SaaS service.
+424
+And in 2007, 2008, that was a time when SaaS wasn't as established, certainly not cloud-based as it is now.
+425
+And then we did this again with Copilot, where we again to pick the technology that wasn't invented by us.
+426
+Neither Transformer nor the GPT model, nor the inference infrastructure came from us.
+427
+They came from OpenAI and paper, obviously, from Google and the infrastructure from Microsoft.
+428
+And then we built the first Copilot and the first successful product in that space.
+429
+And so, yeah, the big question is what's the next wave of that?
+430
+And we believe it's coding agents.
+431
+And that's why we are investing heavily into our own coding agent in Copilot.
+432
+And getting that from the 20-30% benchmarks, if you would look at multilingual or 60-something percent for just Python, getting that to a number, I think 90% is going to be the minbar for broad adoption and saying this is now established technology and we need to look for the next big thing.
+433
+That is going to be the challenge of the years to come.
+434
+Yeah, let's double-click on that for a few minutes.
+435
+The launch of that agent mode was a major announcement, major new step in the history of GitHub that just happened at Build 2025 a few weeks ago.
+436
+What does it do?
+437
+And what tasks in particular would you suggest people should direct it to.
+438
+So the coding agent, the way it works is that you can just give it a task, coding task, documentation, generating test cases, or simple things find all the bugs in my code base.
+439
+The agent then goes off in the cloud and spins up a virtual machine and checks out the repository, installs all the tools and solves that task for you.
+440
+And the magic here is that in the meantime, you can keep working on your part of the code base on a different task, a different issue on your local machine.
+441
+And so effectively, the coding agent is a new member of your team that can take on certain tasks.
+442
+And you can obviously not only assign one task to one coding agent, you can assign 10 tasks to 10 versions of that coding agent.
+443
+And they can all run in parallel.
+444
+And when they're done with their work, they submit a pull request exactly one of your human team members would do.
+445
+And then they alert you and say, hey, this pull request is ready for review.
+446
+And then you go in and you review the code and you can comment on it.
+447
+And the co-pilot will pick up those comments and keep iterating.
+448
+And so if you don't the code, or I tested it yesterday with one of my hobby projects, and I realized the README is completely outdated because I didn't spend time on writing a README for myself.
+449
+And just told the coding agent, look at the code base and write a new README.
+450
+And then it wrote a README and I reviewed the README and looked at the headline.
+451
+It changed the title of the README from README to something else.
+452
+And so I gave it people and say, hey, I think the README should always be called README.
+453
+And so revert that change.
+454
+And it just did that.
+455
+And so that's the most simple explanation that I can give of the coding agent.
+456
+There is nuance here because there are going to be scenarios where now you want to take that code generated by the coding agent and check it out on your local machine.
+457
+And you can do that with the GitHub command line.
+458
+And then keep working in VS Code.
+459
+And of course, Copilot Agent Mode is also available for you there.
+460
+And so you can then use the agent in synchronous mode on your local machine.
+461
+And so that's,, if you stay with the analogy of your team, that's you pulled that team member that built the pull request onto your desk or into a Zoom call.
+462
+And now you're working together on that code base, but now your focus is on that task in synchronous mode while the coding agent works asynchronously.
+463
+And so this continuous spectrum of I can assign tasks, test generation, bug fixes, security vulnerabilities, bootstrapping a new feature to the coding agent to I can take that code base into my local IDE or I can keep working just as I'm used to, all these things are parallel.
+464
+That I think is going to be the future of software development.
+465
+And then the skill of the developer will be to know how to describe the task in such a way that the agent can do the job with almost no additional revisions needed.
+466
+Because every time you have to review code and correct the agent and wait another 10 minutes, you're interrupting your flow again.
+467
+And you have to do something else in those 10 minutes.
+468
+And jumping between different,, we're bad at multitasking and we're bad at context switching.
+469
+And most developers do not want to work on 30 different things throughout their day.
+470
+That's stressful and ultimately doesn't lead to great products.
+471
+And the agent works with prompts, right?
+472
+It's vibe coding where you describe what it is that you want it to do and it does it.
+473
+Is that right?
+474
+It's prompts when you use it within the IDE.
+475
+Although even there, you can start with brainstorming a cycle first.
+476
+And so that, for example, that works really great with Cloud Sonnet or Cloud Opus 4.
+477
+And so you can first ask it, how would I build this?
+478
+And what's the system design for this feature, for example?
+479
+And then have it first write a markdown file with bullets, doing the engineering together with the model.
+480
+And then you take the first task of that and feed that into the agent mode to write the code.
+481
+For the coding agent, because it sits on GitHub platform, the starting point is an issue.
+482
+And the issue can be the description that comes from your product manager or from a user of your open source project, but it's also all the comments in the issue, attached images, file references or web pages.
+483
+And of course, the coding agent and agent mode both can use MCP servers and tools.
+484
+And so you can then further connect into additional context.
+485
+But yeah, fundamentally, it's a prompt.
+486
+It's just that the prompt, it's no longer just one input field with three lines of code.
+487
+It can be a long description specification from a product manager, just as they would write for the human developer.
+488
+And again, the product manager then is the one that needs to learn how much do I need to decompose the big problem into a small building block.
+489
+And when you mention 30% or 40% success, is that across the board or from your experience using the product and early feedback from users?
+490
+Is the agent particularly good at certain tasks versus other tasks?
+491
+If I'm a GitHub user and I want to play with product, what should I do first?
+492
+The 30%, I was referencing the SVBench SWE benchmark that was developed by a number of researchers and originally started as in Python only.
+493
+And it's 2,000 issue pull request pairs out of a dozen Python report open source repositories, but was recently expanded to other languages.
+494
+And so in Python, I think the big best benchmarks is 60 to 70%, depending what model agent combination you take.
+495
+But if you look at multilingual, we are in the 20 to 30% range for these benchmarks.
+496
+So that gives you an idea of real-life issues in open source projects and the corresponding pull requests.
+497
+How good is the agent on solving that existing issue compared to the original solution?
+498
+For our coding agent, the way to approach this for developers is to just go and try it out.
+499
+Because worst case scenario here is that you get a pull request that is so far off from what you would build yourself that you close the pull request without merging it.
+500
+But then that gave you a learning cycle between the description that you gave it and the code it generated.
+501
+And then there's multiple ways you can approach that if you don't want to throw it away.
+502
+One is to provide custom instructions in a file within the repository to give the agent more context of what you expect it to do.
+503
+So it's a how-to that you provide to the agent in the same way that if you would hire a developer into a team or you would instruct people in open source to contribute back to your project, you would also give them a, this is how we expect the coding standards, the libraries, how we're writing unit tests.
+504
+So giving the agent more instructions often leads to better outcomes.
+505
+Scoping it down to a smaller change often leads to better outcome and also to smaller pull requests, which is the best practice.
+506
+And over time, the models will get better.
+507
+We launched the coding agent on CloudSonnet 3.7, and then three days later, for Pek came with Claude Sonnet 4.
+508
+And so now the coding agent is running on the 4 model.
+509
+And of course these models will get better.
+510
+The context for the model will get better.
+511
+The tool calls will be better.
+512
+And so I think the key thing to always remember is whatever your experience was with AI a month ago is probably no longer the state of the art now.
+513
+You shouldn't really form strong opinions or if you have strong opinions you should have them loosely held and change your beliefs as the AI technology is getting better.
+514
+To close, it feels almost inevitable when having a conversation about AI coding in 2025 to not ask about what that means for the broader industry in the broader world.
+515
+So two questions.
+516
+What does that mean in terms of the future of SaaS?
+517
+In a world where anyone can spin up applications quickly, do we all build our own applications ultimately?
+518
+And then another big MIDI question, which I'm not suggesting we go into it in great detail, but what does that mean in terms of the future of being a coder?
+519
+What are the skills I need to develop or not care about in the future?
+520
+The future of coders or software developers, software engineers is probably the best way of framing it, is bright from my perspective.
+521
+And software developers will learn very fast if they haven't already to adopt AI within their workflows, not only co-pilot and not only in the IDE or on GitHub, but also on the command line, when processing files, when organizing files, all the things that we also do when operating clusters, all these things that we also do.
+522
+And we have always, as software developers, automated parts of our workflow and moved higher up the abstraction ladder.
+523
+When I started coding on a Commodore 64, there wasn't a debugger.
+524
+Everything was trial and error, and you would print stuff onto the console to see what the variable content is.
+525
+And then came TurboProScale and Visual Studio and so on.
+526
+And our tools got more complex.
+527
+And as such, we moved up and got more done in the same amount of time.
+528
+And I think for developers, the same old thing will happen again.
+529
+It's in fact already happening.
+530
+It happened with the cloud.
+531
+It happened with containers Docker and Kubernetes.
+532
+Today, most developers in the web don't really care about the hardware anymore, certainly not about the chip itself, other than in models where you might know that you're running on an NVIDIA A100 or H200 or whatever the latest generation is when you're listening to this podcast.
+533
+But for most cloud applications, what's below the application layer doesn't matter to the developer as long as the server scales and is fast and snappy for the users.
+534
+Which brings me to the SaaS question.
+535
+And I think everything that I can easily replace with a single prompt is not going to have any value.
+536
+It will have the value of that prompt and the inference and the tokens, but that's often a few dollars.
+537
+And to manage the allowance of my kids, I'm probably not going to pay a $10 SaaS service.
+538
+And I have a hard time seeing what additional value they can provide instead of just using, for example, GitHub Spark, which is our tool for these scenarios, and build my own application.
+539
+But at the same time, I think existing SaaS services will also increase their complexity.
+540
+And so as the AI technology is not only used by you and I to bootstrap applications, it's also used by those SaaS companies that are building software GitHub itself.
+541
+We are making our applications more complex and add value that hopefully still motivates customers to pay for the SaaS service.
+542
+And whether it's for GitHub Copilot or for the fastest growing startup or the previous fastest growing startup, which I think was Wiz, I think there's always going to be companies that use the latest technology to build products that you cannot easily replicate yourself.
+543
+And as such, I'm not worried about that that value chain goes away.
+544
+I think it just, I think we're underestimating how much you can do with the models that are out today.
+545
+Not the ones that are coming next year or next month, the ones that we have today, where I think we're only touching the surface of what's possible with those using capabilities.
+546
+And there's a whole new generation of products and agents that will offer scenarios that we're easily willing to pay a SaaS price or a mix of seed-based pricing and consumption-based pricing for.
+547
+Thomas, what a fantastic conversation.
+548
+Thank you so much for doing it.
+549
+Thank you.
+550
+Hi, it's Matt Turk again.
+551
+Thanks for listening to this episode of the Mad Podcast.
+552
+If you enjoyed it, we'd be very grateful if you would consider subscribing if you haven't already or leaving a positive review or comment on whichever platform you're watching this or listening to this episode from.
+553
+This really helps us build a podcast and get great guests.
+554
+Thanks and see you at the next episode.
+555
+Yeah.

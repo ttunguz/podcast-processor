@@ -1,0 +1,644 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: Why AI Skeptics Are Nuts
+Host: Unknown 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/why-ai-skeptics-are-nuts/id1680633614?i=1000711989277
+--- METADATA END ---
+
+1
+Today on the AI Daily Brief, why AI skeptics are nuts.
+2
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+3
+Hello, friends.
+4
+Welcome back to the AI Daily Brief.
+5
+Quick announcements.
+6
+First of all, thanks to today's sponsors, KPMG, Blitzy, and Vanta.
+7
+As always, if you are looking for an ad-free version of the show, go to patreon.com/slash AI Daily Brief.
+8
+Ad-free starts at just $3 a month.
+9
+And today, of course, is a long reads episode of the show.
+10
+An essay has been exploding around the AI Twitter sphere for the last week or so, called quite plainly, My AI Skeptic Friends Are All Nuts.
+11
+Now, this is focused on AI coding specifically, but as you'll see, some of it is more broadly applicable.
+12
+We are going to Real Human Read some excerpts, and then we'll discuss it a little bit.
+13
+The piece is by Thomas Potacek, and Thomas does want to make clear in an important caveat: quote, I'm only discussing the implications of LLMs for software development.
+14
+For art, music, and writing, I got nothing.
+15
+I'm inclined to believe the skeptics in those fields.
+16
+I just don't believe them about mine.
+17
+Thomas writes, A heartfelt provocation about AI-assisted programming.
+18
+Tech execs are mandating LLM adoption.
+19
+That's bad strategy, but I get where they're coming from.
+20
+Some of the smartest people I know share a bone-deep belief that AI is a fad, the next generation of NFT mania.
+21
+I've been reluctant to push back on them because, well, they're smarter than me, but their arguments are unserious and worth confronting.
+22
+Extraordinarily talented people are doing work that LLMs already do better out of spite.
+23
+All progress on LLMs could halt today, and LLMs would remain the second most important thing to happen over the course of my career.
+24
+Thomas then talks about how he has been shipping software since the mid-90s through a whole series of different languages, leading ultimately to the conclusion: however you define serious developer, I qualify.
+25
+In the first section level setting, Thomas writes: First, we need to get on the same page.
+26
+If you were trying and failing to use an LLM for code six months ago, you're not doing what most serious LLM-assisted coders are doing.
+27
+People coding with LLMs today use agents.
+28
+Agents get to poke around your code base on their own.
+29
+They author files directly, they run tools, they compile code, run tests, and iterate on the results.
+30
+They also pull in arbitrary code from the tree or from other trees online into their context windows, run standard Unix tools to navigate the tree and extract information, interact with Git, run existing tooling, and make essentially arbitrary tool calls that you set up through MCP.
+31
+If you're making requests on a ChatGPT page and then pasting the resulting broken code into your editor, you're not doing what the AI boosters are doing.
+32
+No wonder you're talking past each other.
+33
+Now Thomas moves into the positive case.
+34
+Apologies for the explanation for those of you watching, but for those of you who are just listening, he shares an image of four quadrants.
+35
+The quadrants are one, fun and important, two, tedious and important, three, tedious and pointless, and four, fun and pointless.
+36
+Thomas continues, LLMs can write a large fraction of all the tedious code you'll ever need to write.
+37
+And most code on most projects is tedious.
+38
+LLMs drastically reduce the number of things you'll ever need to Google.
+39
+They look things up themselves.
+40
+Most importantly, they don't get tired.
+41
+They're immune to inertia.
+42
+Think of anything you wanted to build but didn't.
+43
+You tried to hone in on some first steps.
+44
+If you'd been in the limerer phase of a new programming language, you'd have started writing.
+45
+But you weren't, so you put it off for a day, for a year, or your whole career.
+46
+I can feel my blood pressure rising thinking of all the bookkeeping and Googling and dependency drama of a new project.
+47
+An LLM can be instructed to just figure all that crap out.
+48
+Often it will drop you precisely at that golden moment where things almost work.
+49
+And development means tweaking code and immediately seeing things work better.
+50
+That dopamine hit is why I code.
+51
+There's a downside.
+52
+Sometimes gnarly stuff needs doing, but you don't want to do it, so you refactor unit tests, soothing yourself with the lie that you're doing real work.
+53
+But an LLM can be told to go refactor all of your unit tests.
+54
+An agent can occupy itself for hours putzing with your tests in a VM and come back later with a PR.
+55
+If you listen to me, you'll know that.
+56
+You'll feel worse yak shaving.
+57
+You'll end up doing real work.
+58
+But you have no idea what the code is.
+59
+And by the way, Thomas here is using these section headers to reflect the common complaints he hears.
+60
+So again, this one is, but you have no idea what the code is.
+61
+Thomas writes, Are you a vibe coding YouTuber?
+62
+Can you not read code?
+63
+If so, astute point.
+64
+Otherwise, what the F is wrong with you?
+65
+You've always been responsible for what you merged to main.
+66
+You were five years ago and you are tomorrow, whether or not you use an LLM.
+67
+If you build something with an LLM that people will depend on, read the code.
+68
+In fact, you'll probably do more than that.
+69
+You'll spend five to ten minutes knocking it back into your own style.
+70
+LLMs are showing signs of adapting to local idiom, but we're not there yet.
+71
+People complain about LLM-generated code being probabilistic.
+72
+No, it isn't.
+73
+It's code.
+74
+It's not yak output.
+75
+It's knowable.
+76
+The LLM might be stochastic, but the LLM doesn't matter.
+77
+What matters is whether you can make sense of the result and whether your guardrails hold.
+78
+Reading other people's code is part of the job.
+79
+If you can't metabolize the boring, repetitive code an LLM generates, skills issue, how are you handling the chaos human developers turn out on a deadline?
+80
+For the last month or so, Gemini 2.5 has been my go-to.
+81
+Almost nothing it spits out for me merges without edits.
+82
+I'm sure there's a skill to getting a state-of-the-art model to one-shot a feature plus merge, but I don't care.
+83
+I like moving the code around and chuckling to myself while I delete all the stupid comments.
+84
+I have to read the code line by line anyways.
+85
+But hallucination.
+86
+If hallucination matters to you, your programming language has let you down.
+87
+Agents lint, they compile and run tests.
+88
+If their LLM invents a new function signature, the agent sees the error.
+89
+They feed it back to the LLM, which says, oh, right, I totally made that up, and then tries again.
+90
+You'll only notice this happening if you watch the chain of thought log your agent generates.
+91
+Don't.
+92
+This is why I like Zed's agent mode.
+93
+It begs you to tab away and let it work, and pings you with a desktop notification when it's done.
+94
+I'm sure there are still environments where hallucination matters.
+95
+But hallucination is the first thing developers bring up when someone suggests using LLMs, despite it being more or less a solved problem.
+96
+But the code is crappy, like that of a junior developer.
+97
+Does an intern cost $20 a month?
+98
+Because that's what cursor.ai costs.
+99
+Part of being a senior developer is making less able coders productive, be they fleshly or algebraic.
+100
+Using agents well is both a skill and an engineering project all its own, of prompts, indices, and especially tooling.
+101
+LLMs only produce crappy code if you let them.
+102
+Maybe the current confusion is about who's doing what work.
+103
+Today, LLMs do a lot of typing, googling, test cases, and edit-compile-test debug cycles.
+104
+But even the most clawed poison serious developers in the world still own curation, judgment, guidance, and direction.
+105
+Also, let's stop kidding ourselves about how good our human first cuts really are.
+106
+But it's bad at Rust.
+107
+A lot of LLM skepticism probably isn't really about LLMs.
+108
+It's projection.
+109
+People say LLMs can't code when what they really mean is LLMs can't write Rust.
+110
+Fair enough, but people select languages in part based on how well LLMs work with them.
+111
+So Rust people should get on that.
+112
+I work mostly in Go.
+113
+I'm confident the designers of the Go programming language didn't set out to produce the most LLM legible language in the industry.
+114
+They succeeded nonetheless.
+115
+Go has just enough type safety, an extensive standard library, and a culture that prizes often repetitive idiom.
+116
+LLMs kick ass generating it.
+117
+All of this is to say, I write some Rust.
+118
+I like it fine.
+119
+If LLMs and Rust aren't working for you, I feel you.
+120
+But if that's your whole thing, we're not having the same argument.
+121
+But the craft.
+122
+Do you like fine Japanese woodworking?
+123
+All-hand tools, and sashimono joinery?
+124
+Me too.
+125
+Do it on your own time.
+126
+I have a basic wood shop in my basement.
+127
+I could get a lot of satisfaction from building a table.
+128
+And if that table is a workbench or a grill table, sure, I'll build it.
+129
+But if I need, like, a table for people to sit at in my office, I buy a friggin' table.
+130
+Professional software developers are in the business of solving practical problems for people who code.
+131
+We are not, in our day jobs, artisans.
+132
+Steve Jobs was wrong.
+133
+We do not need to carve the unseen feet in the sculpture.
+134
+Nobody cares if the logic board traces are pleasingly routed.
+135
+If anything we build indoors, it won't be because the code base was beautiful.
+136
+Besides, that's not really what happens.
+137
+If you're taking time carefully golfing functions down into graceful, fluent, minimal functional expressions, alarm bells should ring.
+138
+You're yak shaving.
+139
+The real world has depleted your focus.
+140
+You're not building yourself soothing.
+141
+Which, wait for it, is something LLMs are good for.
+142
+They devour schlep and clear a path to the important stuff where your judgment and values really matter.
+143
+But the mediocrity.
+144
+As a mid-late career coder, I've come to appreciate mediocrity.
+145
+You should be so lucky as to have it flowing almost effortlessly from a tap.
+146
+We all write mediocre code.
+147
+Mediocre code, often fine.
+148
+Not all code is equally important.
+149
+Some code should be mediocre.
+150
+Maximum effort on a random unit test, you're doing something wrong.
+151
+Your team lead should correct you.
+152
+Developers love to preen about code.
+153
+They worry LLMs lower the ceiling for quality.
+154
+Maybe, but they also raise the floor.
+155
+Gemini's floor is higher than my own.
+156
+My code looks nice, but it's not as thorough.
+157
+LLM code is repetitive, but mine includes dumb contortions where I got too clever trying to dry things up.
+158
+And LLMs aren't mediocre on every access.
+159
+They almost certainly have a bigger bag of algorithmic tricks than you do, but I'm getting ahead of myself.
+160
+It doesn't matter.
+161
+If truly mediocre code is all we ever get from an LLM, that's still huge.
+162
+It's that much less mediocre code humans have to write.
+163
+But it'll never be AGI.
+164
+I don't give a crap.
+165
+Smart practitioners get wound up by the AI VC hype cycle.
+166
+I can't blame them.
+167
+But it's not an argument.
+168
+Things either work or they don't, no matter what Jensen Huang has to say about it.
+169
+This episode is brought to you by Blitzy, the Enterprise Autonomous Software Development Platform with Infinite Code Context.
+170
+Blitzy is used alongside your favorite coding copilot as your batch software development platform for the enterprise seeking dramatic development acceleration on large-scale code bases.
+171
+While traditional co-pilots help with line-by-line completions, Blitzy works ahead of the IDE by first documenting your entire code base, then deploying over 3,000 coordinated AI agents in parallel to batch build millions of lines of high-quality code.
+172
+The scale difference is staggering.
+173
+Copilots might give you a few hundred lines of code in seconds, but Blitzy can generate up to 3 million lines of thoroughly vetted code.
+174
+If your enterprise is looking to accelerate software development, contact us at blitzy.com to book a custom demo or press get started to begin using the product right away.
+175
+Today's episode is brought to you by Plum.
+176
+If you're building agentic workflows for clients or colleagues, it's time to take another look at Plum.
+177
+Plum is where AI experts create, deploy, manage, and monetize complex automations.
+178
+With features like one-click updates that reach all your subscribers, user-level variables for personalization, and the ability to protect your prompts and workflow IP, it's the best place to grow your AI automation practice.
+179
+Serve twice the clients in half the time with Plum.
+180
+Sign up today at useplum.com.
+181
+That's USEPLUMB.com forward slash NLW.
+182
+Today's episode is brought to you by Vanta.
+183
+In today's business landscape, businesses can't just claim security, they have to prove it.
+184
+Achieving compliance with a framework like SOC2, ISO 27001, HIPAA, GDPR, and more is how businesses can demonstrate strong security practices.
+185
+The problem is that navigating security and compliance is time-consuming and complicated.
+186
+It can take months of work and use up valuable time and resources.
+187
+Vanta makes it easy and faster by automating compliance across 35 plus frameworks.
+188
+It gets you audit ready in weeks instead of months and saves you up to 85% of associated costs.
+189
+In fact, a recent IDC white paper found that Vanta customers achieve $535,000 per year in benefits, and the platform pays for itself in just three months.
+190
+The proof is in the numbers.
+191
+More than 10,000 global companies trust Vanta.
+192
+For a limited time, listeners get $1,000 off at Vanta.com/slash NLW.
+193
+That's vanta.com/slash NLW for $1,000 off.
+194
+Today's episode is brought to you by Agency, an open source collective for interagent collaboration.
+195
+Agents are, of course, the most important theme of the moment right now, not only on this show, but I think for businesses everywhere.
+196
+And part of that is the expanded scope of what agents are starting to be able to do.
+197
+While single agents can handle specific tasks, the real power comes when specialized agents collaborate to solve complex problems.
+198
+However, right now there is no standardized infrastructure for these agents to discover, communicate with, and work alongside one another.
+199
+That's where Agency, spelled AGNTCY, comes in.
+200
+Agency is an open source collective building the internet of agents, a global collaboration layer where AI agents can work together.
+201
+It will connect systems across vendors and frameworks, solving the biggest problems of discovery, interoperability, and scalability for enterprises.
+202
+With contributors like Cisco, CrewAI, Langchain, and MongoDB, Agency is breaking down silos and building the future of interoperable AI.
+203
+Shape the future of enterprise innovation, visit agency.org to explore use cases now.
+204
+That's agntcy.org.
+205
+But they take our jobs.
+206
+So does open source.
+207
+We used to pay good money for databases.
+208
+We're a field premised on automating other people's jobs away.
+209
+Productivity gains, say the economists.
+210
+You get what that means, right?
+211
+Fewer people doing the same stuff.
+212
+Talk to a travel agent lately, or a floor broker, or a record store clerk, or a darkroom tech?
+213
+When this argument comes up, libertarian-leaning VCs start to chant.
+214
+Lamplighters, creative destruction, new kinds of work.
+215
+Maybe, but I'm not hypnotized.
+216
+I have no effing clue whether we're going to be better off after LLMs.
+217
+Things could get a lot worse for us.
+218
+LLMs might really displace many software developers.
+219
+That's not a high horse we get to ride.
+220
+Our jobs are just as much in tech's line of fire as everyone else's have been for the last three decades.
+221
+We're not East Coast dock workers.
+222
+We won't stop progress on our own.
+223
+But the plagiarism.
+224
+Artificial intelligence is profoundly and probably unfairly threatening to visual artists in ways that it might be hard to appreciate if you don't work in the arts.
+225
+We imagine artists spending their working hours pushing the limits of expression.
+226
+But the median artist isn't producing gallery pieces.
+227
+They produce on brief, turning out competent illustrations and compositions for magazine covers, museum displays, motion graphics, and game assets.
+228
+LLMs easily, alarmingly clear industry quality bars.
+229
+Gallingly, one of the things they're best at is turning out just good enough facsimiles of human creative work.
+230
+I have family in visual arts.
+231
+I can't talk to them about LLMs.
+232
+I don't blame them.
+233
+They're probably not wrong.
+234
+Meanwhile, software developers spot code fragments seemingly lifted from public repositories on GitHub and lose their crap.
+235
+What about the licensing?
+236
+If you're a lawyer, I defer.
+237
+But if you're a software developer playing this card, cut me a little slack as I ask you to shove this concern up your butt.
+238
+No profession has demonstrated more contempt for intellectual property.
+239
+The media and dev thinks Star Wars and Daft Punk are a public commons.
+240
+The great cultural product of developers has been opposing any protection that might inconvenience a monetizable media sharing site.
+241
+When they fail at policy, they route around it with coercion.
+242
+They stand up global-scale piracy networks to sneer at anyone who so much as tries to preserve a new release window for a TV show.
+243
+It's all special pleading anyways.
+244
+LLMs digest code further than you do.
+245
+If you don't believe a typeface designer can stake a moral claim on the terminals and counters of a letter form, you sure as hell can't be possessive about a red-black tree.
+246
+Positive case redux.
+247
+When I started writing a couple days ago, I wrote a section to level set the state of the art of LLM-assisted programming.
+248
+A bluefish filet has a longer shelf life than an LLM take.
+249
+In the time it took you to read this, everything changed.
+250
+Kids today don't just use agents.
+251
+They use asynchronous agents.
+252
+They wake up, free associate 13 different things for their LLMs to work on, make coffee, fill out a TPS report, drive to the Mars Cheese Castle, and then check their notifications.
+253
+They've got 13 PRs to review.
+254
+Three get tossed and reprompted.
+255
+Five of them get the same feedback a judo dev gets, and five get merged.
+256
+I'm sipping rocket fuel right now, a friend tells me.
+257
+The folks on my team who aren't embracing AI, it's like they're standing still.
+258
+He's not BSing me.
+259
+He doesn't work in SFBA.
+260
+He's got no reason to lie.
+261
+There's plenty of things I can't trust an LLM with.
+262
+No LLM has access to prod here, but I've been first responder on an incident and Fed 4.0, not 04 Mini 4.0, log transcripts, and watched it in second spot LVM metadata corruption issues on a host we've been complaining about for months.
+263
+Am I better than an LLM agent at interrogating open search logs and honeycomb traces?
+264
+No, no, I am not.
+265
+To the consternation of many of my friends, I'm not a radical or a futurist.
+266
+I'm a statist.
+267
+I believe in the haphazard perseverance of complex systems of institutions of reversions to the mean.
+268
+I write Go and Python code.
+269
+I'm not a Kool-Aid drinker.
+270
+But something real is happening.
+271
+My smartest friends are blowing it off.
+272
+Maybe I persuade you.
+273
+Maybe I don't.
+274
+Probably I don't.
+275
+But we need to be done making space for bad arguments.
+276
+But I'm tired of hearing about it.
+277
+And here I rejoin your company.
+278
+All day, every day, a sizable chunk of the front page of Hacker News is allocated to LLMs.
+279
+Incremental model updates, startups doing things with LLMs, LLM tutorials, screeds against LLMs.
+280
+It's annoying, but AI is also incredibly, a word I use advisedly, important.
+281
+It's getting the same kind of attention that smartphones got in 2008, and not as much as the internet got.
+282
+That seems about right.
+283
+I think this is going to get clearer over the next year.
+284
+The cool kid haughtiness about stochastic parrots and vibe coding can't survive much more contact with reality.
+285
+I'm snarking about these people, but I mean what I said.
+286
+They're smarter than me.
+287
+And when they get over this affectation, they're going to make coding agents profoundly more effective than they are today.
+288
+And that is the piece.
+289
+I think what's super valuable about this on a high level is obviously if you are an engineer who has been avoiding these things, which I can't imagine if you're listening to this show is you, but maybe someone sends this to you.
+290
+This is a person who is not, like me, an AI podcaster or an AI entrepreneur.
+291
+It's someone who has simply found undeniably that this new set of tools are fundamentally and inarguably transformative.
+292
+It's valuable because he's not making moral judgments or value judgments.
+293
+He's not even jumping on board with the techno-optimism that I and many of you probably hold dear about how this all shakes out on the other side.
+294
+Instead, he is just saying that these tools are too powerful to ignore.
+295
+I think that's a fairly decent starting point for any version of any skeptic in this space.
+296
+The second thing that I think is extremely important and valuable about this is that it embodies in a huge way the shift that we are living through right now that has, in fact, I believe, right from under our feet, switched without us in some cases even noticing it from the assistant era to the agent era.
+297
+As Thomas points out, this is not just some basic coding assistance.
+298
+This is actually using coding agents like teammates, junior devs, pair programmers.
+299
+It's setting a bunch of prompts, going off and doing other things, and coming back and interacting with what's been produced.
+300
+It's background agents, it's asynchronous agents.
+301
+This is increasingly the modality that we are going to see for all of our interaction with AI.
+302
+If you are a general consumer and you've used deep research, you've had a little taste of this.
+303
+You tell whichever LLM you're using to deep research what you want, it asks a set of clarifying questions, and then it tells you to buzz off while it does its work.
+304
+Five, 10, 15 minutes later, whatever it is, you come back, and it either got you what you need or you run it again.
+305
+But it happened while you were doing other things.
+306
+And that in itself totally changes what the actual capability set here is.
+307
+A third thing, which is a subtext, which I think is extremely important, is that there are entire categories of people for whom these debates are irrelevant because they just simply jumped on this train and ran all the way.
+308
+And I think this is particularly generational.
+309
+Young people are not going to putz around discussing the ethical mores of AI.
+310
+They're just going to use it to out-compete everyone who's not using it.
+311
+Period, full stop, end of story.
+312
+And the amount of value they produce at the speed at which they produce it will be nigh impossible for any sort of policy-imposed guardrails to slow down in any meaningful way.
+313
+Now, of course, that does not mean that there aren't parts of AI that should be subject to questions of ethics and values and the society we want to live in.
+314
+But as those conversations happen, there are many, many use cases that will simply march on, changing completely everything that they touch in their wake.
+315
+And when it comes to influencing the shape of AI, for those standing on the outside vaingloriously saying, whatever combination of things that Thomas mentioned and all the other arguments we hear in other areas, I will leave you with the sentiment, if not the exact quote, from the end of SLC Punk, after the main character has realized that being a burnout in Salt Lake City is going to do nothing for the world, and that if he actually wants to make a difference, taking his opportunity to go to Harvard and study law is probably a better bet.
+316
+We can do a hell of a lot more damage in this system than outside of it.
+317
+For now, that's going to do it for today's AI Daily Brief.
+318
+Until next time, peace.

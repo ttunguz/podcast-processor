@@ -5,11 +5,12 @@ require 'net/http'
 require 'benchmark'
 
 # Set up audio recording parameters
-format = 'wav'
+format = 'wav'  # Changed to wav format for better compatibility
 temp_file = Tempfile.new(['recording', ".#{format}"])
 @recording = false
 
 def start_recording(file, format)
+  # Record in WAV format with WhisperKit requirements (16kHz, 16-bit, mono)
   command = "sox -d -b 16 -r 16000 -c 1 #{file.path}"
   puts "Starting recording..."
   stdin, stdout, wait_thread = Open3.popen2(command)
@@ -34,36 +35,6 @@ def transcribe_audio(audio_file)
   puts "Input audio file: #{audio_file}"
   puts "File exists?: #{File.exist?(audio_file)}"
   puts "File size: #{File.size(audio_file)} bytes"
-  
-  converted_file = Tempfile.new(['converted', '.wav'])
-  puts "Created temp file at: #{converted_file.path}"
-  
-  convert_command = [
-    'ffmpeg',
-    '-y',
-    '-i', audio_file,
-    '-ar', '16000',
-    '-ac', '1',
-    '-c:a', 'pcm_s16le',
-    '-v', 'verbose',
-    converted_file.path
-  ]
-  
-  puts "\n=== FFmpeg Command ==="
-  puts "Running: #{convert_command.join(' ')}"
-  
-  conversion_time = Benchmark.measure do
-    stdout, stderr, status = Open3.capture3(*convert_command)
-    unless status.success?
-      puts "Error converting audio: #{stderr}"
-      return nil
-    end
-  end
-  puts "FFmpeg conversion took: #{conversion_time.real.round(2)} seconds"
-  
-  puts "FFmpeg conversion successful"
-  puts "Converted file exists?: #{File.exist?(converted_file.path)}"
-  puts "Converted file size: #{File.size(converted_file.path)} bytes"
 
   puts "\n=== WhisperKit Command ==="
   puts "WhisperKit CLI Path: #{WHISPERKIT_CLI_PATH}"
@@ -73,9 +44,9 @@ def transcribe_audio(audio_file)
     WHISPERKIT_CLI_PATH,
     'transcribe',
     '--audio-path',
-    converted_file.path,
+    audio_file,
     '--model', 
-    'small'
+    'tiny'
   ]
   
   puts "Running: #{whisperkit_command.join(' ')}"
@@ -96,88 +67,88 @@ def transcribe_audio(audio_file)
   end
   puts "Transcription took: #{transcription_time.real.round(2)} seconds"
   
-  return @transcription_result, converted_file
+  return @transcription_result, nil
 end
 
-# def refine_text_with_ollama(text)
-#   return text if text.nil? || text.empty?
-# 
-#   uri = URI('http://127.0.0.1:39281/v1/chat/completions')
-#   request = Net::HTTP::Post.new(uri)
-#   request.content_type = 'application/json'
-#   
-#   messages = [{
-#     role: "system",
-#     content: "You are a professional transcript editor. Your task is to enhance readability while maintaining the original meaning and tone. Focus on structural improvements and clarity."
-#   }, {
-#     role: "user", 
-#     content: <<~PROMPT
-#     # Text Formatting Assistant
-# 
-# Format the input text according to these rules:
-# 
-# ## Required Changes
-# * Fix spelling and grammar errors
-# * Remove filler words
-# * Break into paragraphs after every 3-4 sentences
-# * Add one blank line between paragraphs
-# * Format lists where appropriate
-# * Keep all original meaning and tone
-# 
-# ## List Formatting
-# * Numbered (1., 2., 3.) for sequential items
-# * Bullets (-) for non-sequential items
-# 
-# ## Do Not
-# * Add any introduction or explanation
-# * Include analysis or commentary
-# * Describe changes made
-# * Add notes or suggestions
-# * Offer additional help
-# * Add headers or subject lines
-# * Add asterisks or bold text
-# * Add any text not in the original
-# 
-# ## Response Format
-# Return only the formatted text with no additional content.
-# 
-# Transcript: #{text}
-# 
-#     PROMPT
-#   }]
-# 
-#   puts "\n=== Debug: User Message Content ==="
-#   puts messages[1][:content]
-#   puts "==================================="
-# 
-#   request.body = {
-#     model: 'gemma2:gguf',
-#     messages: messages,
-#     temperature: 0.7,
-#     max_tokens: 4096,
-#     stream: false
-#   }.to_json
-# 
-#   refinement_time = Benchmark.measure do
-#     response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-#       http.request(request)
-#     end
-# 
-#     if response.is_a?(Net::HTTPSuccess)
-#       result = JSON.parse(response.body)
-#       @refined_text = result['choices'][0]['message']['content']
-#     else
-#       puts "Error from Cortex: #{response.body}"
-#       @refined_text = text
-#     end
-#   end
-#   puts "Text refinement took: #{refinement_time.real.round(2)} seconds"
-#   
-#   return @refined_text
-# rescue => e
-#   puts "Error calling Cortex: #{e.message}"
-#   return text
-# end
+def refine_text_with_ollama(text)
+  return text if text.nil? || text.empty?
+
+  uri = URI('http://127.0.0.1:39281/v1/chat/completions')
+  request = Net::HTTP::Post.new(uri)
+  request.content_type = 'application/json'
+  
+  messages = [{
+    role: "system",
+    content: "You are a professional transcript editor. Your task is to enhance readability while maintaining the original meaning and tone. Focus on structural improvements and clarity."
+  }, {
+    role: "user", 
+    content: <<~PROMPT
+    # Text Formatting Assistant
+
+Format the input text according to these rules:
+
+## Required Changes
+* Fix spelling and grammar errors
+* Remove filler words
+* Break into paragraphs after every 3-4 sentences
+* Add one blank line between paragraphs
+* Format lists where appropriate
+* Keep all original meaning and tone
+
+## List Formatting
+* Numbered (1., 2., 3.) for sequential items
+* Bullets (-) for non-sequential items
+
+## Do Not
+* Add any introduction or explanation
+* Include analysis or commentary
+* Describe changes made
+* Add notes or suggestions
+* Offer additional help
+* Add headers or subject lines
+* Add asterisks or bold text
+* Add any text not in the original
+
+## Response Format
+Return only the formatted text with no additional content.
+
+Transcript: #{text}
+
+    PROMPT
+  }]
+
+  puts "\n=== Debug: User Message Content ==="
+  puts messages[1][:content]
+  puts "==================================="
+
+  request.body = {
+    model: 'gemma2:gguf',
+    messages: messages,
+    temperature: 0.7,
+    max_tokens: 4096,
+    stream: false
+  }.to_json
+
+  refinement_time = Benchmark.measure do
+    response = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      http.request(request)
+    end
+
+    if response.is_a?(Net::HTTPSuccess)
+      result = JSON.parse(response.body)
+      @refined_text = result['choices'][0]['message']['content']
+    else
+      puts "Error from Cortex: #{response.body}"
+      @refined_text = text
+    end
+  end
+  puts "Text refinement took: #{refinement_time.real.round(2)} seconds"
+  
+  return @refined_text
+rescue => e
+  puts "Error calling Cortex: #{e.message}"
+  return text
+end
 
 def type_text(text)
   return if text.nil? || text.empty?
@@ -191,7 +162,7 @@ def type_text(text)
     
     
     # Refine text with Ollama
-    # refined_text = refine_text_with_ollama(cleaned_text)
+    #refined_text = refine_text_with_ollama(cleaned_text)
     refined_text = cleaned_text
     
     puts "\n=== Debug: Text Processing ==="
@@ -236,13 +207,8 @@ begin
         stop_recording
         puts "\nRecording stopped after #{recording_time.round(2)} seconds"
         sleep 0.5
-        transcription, converted_file = transcribe_audio(temp_file.path)
+        transcription, _ = transcribe_audio(temp_file.path)
         type_text(transcription) if transcription
-        
-        puts "\n=== Cleanup ==="
-        puts "Cleaning up temporary file: #{converted_file.path}"
-        converted_file.close
-        converted_file.unlink
       else
         @recording = true
         @recording_start_time = Time.now

@@ -1,0 +1,769 @@
+
+[00:00:00.000 --> 00:00:01.560]   Happy New Year friends.
+[00:00:01.560 --> 00:00:03.880]   Thanks for all the love on the latent space live
+[00:00:03.880 --> 00:00:06.840]   and 100th episode end of year recap.
+[00:00:06.840 --> 00:00:10.720]   Your support has boosted us 30 places in the podcast charts
+[00:00:10.720 --> 00:00:13.480]   and that always helps us book great guests
+[00:00:13.480 --> 00:00:16.520]   and organize more industry events for you.
+[00:00:16.520 --> 00:00:17.880]   We don't say this enough,
+[00:00:17.880 --> 00:00:20.200]   but thank you to everyone who has left a review
+[00:00:20.200 --> 00:00:24.040]   on Apple podcasts or subscribed to our new YouTube channel.
+[00:00:24.040 --> 00:00:27.360]   Last year, we broke new ground
+[00:00:27.360 --> 00:00:30.080]   when we interviewed our first public company CEO
+[00:00:30.080 --> 00:00:33.080]   with Drew Houston and first technology cabinet member
+[00:00:33.080 --> 00:00:35.200]   with Minister Josephine Tao
+[00:00:35.200 --> 00:00:37.880]   and first year with full coverage of leading labs
+[00:00:37.880 --> 00:00:42.280]   across meta, OpenAI, Anthropic, Raka, Liquid
+[00:00:42.280 --> 00:00:44.360]   and Google DeepMind.
+[00:00:44.360 --> 00:00:46.440]   For our 100 first episode,
+[00:00:46.440 --> 00:00:49.000]   we are proud to introduce another first
+[00:00:49.000 --> 00:00:51.360]   with our first anonymous guest.
+[00:00:51.360 --> 00:00:54.600]   As Swix mentions in the episode,
+[00:00:54.600 --> 00:00:57.720]   latent space was started in the immediate aftermath
+[00:00:57.720 --> 00:01:01.440]   of stable diffusion and the uncredentialed software engineers
+[00:01:01.440 --> 00:01:04.560]   it enabled set the stage for the LLM wave
+[00:01:04.560 --> 00:01:07.000]   that was to come with chat GPT.
+[00:01:07.000 --> 00:01:10.040]   The earliest winner of the stable diffusion tooling wars
+[00:01:10.040 --> 00:01:14.440]   was SD Web UI, a radio app by the anonymous young creator
+[00:01:14.440 --> 00:01:17.160]   automatic 11/11 that quickly amassed
+[00:01:17.160 --> 00:01:21.600]   over 100,000 GitHub stars for how it rapidly shipped plugins
+[00:01:21.600 --> 00:01:24.360]   and usable interfaces for the rapidly growing
+[00:01:24.360 --> 00:01:26.320]   stable diffusion ecosystem.
+[00:01:26.320 --> 00:01:30.440]   However, these days the power tool of choice
+[00:01:30.440 --> 00:01:33.240]   is now come for UI by today's guest,
+[00:01:33.240 --> 00:01:35.600]   comfy anonymous, who is gracing us
+[00:01:35.600 --> 00:01:38.400]   with his first ever podcast appearance today.
+[00:01:38.400 --> 00:01:42.520]   The shift from automatic 11/11 to comfy UI
+[00:01:42.520 --> 00:01:45.240]   reflects a shift away in the image diffusion space
+[00:01:45.240 --> 00:01:48.320]   from prompting and tweaking settings in 2022
+[00:01:48.320 --> 00:01:50.840]   to more complex and parallel workflows
+[00:01:50.840 --> 00:01:52.840]   chaining together different models
+[00:01:52.840 --> 00:01:55.480]   and orchestrating long running operations
+[00:01:55.480 --> 00:01:57.920]   that can also include video processing
+[00:01:57.920 --> 00:02:00.200]   visualized on an intuitive canvas
+[00:02:00.200 --> 00:02:03.120]   instead of long YAML or code blocks.
+[00:02:03.120 --> 00:02:05.360]   Because comfy UI is open source,
+[00:02:05.360 --> 00:02:07.560]   there are now multiple Y-combinator startups
+[00:02:07.560 --> 00:02:09.400]   built off of a comfy workflow
+[00:02:09.400 --> 00:02:12.760]   or offering comfy UI as a service directly.
+[00:02:12.760 --> 00:02:15.400]   Interestingly enough, this same workflow tooling
+[00:02:15.400 --> 00:02:18.160]   has not seemed to take off for other modalities yet,
+[00:02:18.160 --> 00:02:21.280]   but perhaps 2025 is the year diffusion tooling
+[00:02:21.280 --> 00:02:23.880]   diffuses to non-image domains.
+[00:02:23.880 --> 00:02:25.840]   In other news, we have just announced
+[00:02:25.840 --> 00:02:29.520]   the second AI engineer summit in New York City.
+[00:02:29.520 --> 00:02:32.280]   We are bringing back the surprisingly successful
+[00:02:32.280 --> 00:02:34.720]   AI leadership track from World's Fair
+[00:02:34.720 --> 00:02:37.680]   and also the single-track AI engineering track
+[00:02:37.680 --> 00:02:40.960]   is now wholly focused on agents at work.
+[00:02:40.960 --> 00:02:43.520]   If you are building agents in 2025,
+[00:02:43.520 --> 00:02:46.240]   this is the single best conference to attend.
+[00:02:46.240 --> 00:02:49.640]   Head to apply.ai.engineer and see you there.
+[00:02:49.640 --> 00:02:51.120]   Watch out and take care.
+[00:02:51.120 --> 00:02:53.700]   (upbeat music)
+[00:02:53.700 --> 00:02:57.840]   - Hey everyone, welcome to the latent space podcast.
+[00:02:57.840 --> 00:03:00.440]   This is Alessio, partner and CTO accessible partners
+[00:03:00.440 --> 00:03:03.400]   and I'm joined by my cohost, Swix, founder of small AI.
+[00:03:03.400 --> 00:03:06.640]   - Hey everyone, we are in the Chroma Studio again,
+[00:03:06.640 --> 00:03:09.360]   but with our first ever anonymous guest,
+[00:03:09.360 --> 00:03:10.760]   comfy anonymous, welcome.
+[00:03:10.760 --> 00:03:12.320]   - Yeah, well, I don't know.
+[00:03:12.320 --> 00:03:13.920]   - I feel like that's your full name.
+[00:03:13.920 --> 00:03:15.280]   You just go by comfy, right?
+[00:03:15.280 --> 00:03:17.840]   - Yeah, well, a lot of people just call me comfy
+[00:03:17.840 --> 00:03:20.560]   even though even when they know my real name.
+[00:03:20.560 --> 00:03:21.640]   (laughing)
+[00:03:21.640 --> 00:03:23.560]   Hey, comfy.
+[00:03:23.560 --> 00:03:26.800]   - Swix is the same, not a lot of people call you strong.
+[00:03:26.800 --> 00:03:28.800]   - Yeah, you have a professional name, right?
+[00:03:28.800 --> 00:03:31.480]   People know you buy and then you have a legal name.
+[00:03:31.480 --> 00:03:32.400]   Yeah, that's fine.
+[00:03:32.400 --> 00:03:33.480]   How do I phrase this?
+[00:03:33.480 --> 00:03:35.840]   Like, people who are in the know, know that comfy
+[00:03:35.840 --> 00:03:38.240]   is like the tool for image generation
+[00:03:38.240 --> 00:03:40.440]   and now other multimodality stuff.
+[00:03:40.440 --> 00:03:42.000]   I would say that when I first got started
+[00:03:42.000 --> 00:03:44.600]   with stable diffusion, the star of the show
+[00:03:44.600 --> 00:03:46.480]   was automatic 111, right?
+[00:03:46.480 --> 00:03:50.480]   And I actually looked back at my notes from 2022-ish.
+[00:03:50.480 --> 00:03:52.400]   Like comfy was already getting started back then,
+[00:03:52.400 --> 00:03:53.760]   but it was kind of like the up-and-comber
+[00:03:53.760 --> 00:03:55.520]   and like your main feature was the full chart.
+[00:03:55.520 --> 00:03:58.760]   Can you just kind of rewind to that moments that year
+[00:03:58.760 --> 00:04:00.640]   and like, you know, how you looked at the landscape there
+[00:04:00.640 --> 00:04:02.160]   and decided to start comfy?
+[00:04:02.160 --> 00:04:05.800]   - Yeah, I discovered stable diffusion in 2022,
+[00:04:05.800 --> 00:04:08.200]   in October 2022.
+[00:04:08.200 --> 00:04:11.680]   And well, I kind of started playing around with it.
+[00:04:11.680 --> 00:04:15.120]   - Yes, I am. Back then I was using automatic,
+[00:04:15.120 --> 00:04:17.880]   which was where everyone was using back then.
+[00:04:17.880 --> 00:04:21.120]   I have like, so I started with that.
+[00:04:21.120 --> 00:04:24.080]   'Cause when I started, I had no idea
+[00:04:24.080 --> 00:04:27.920]   like how diffusion models work, how any of this works.
+[00:04:27.920 --> 00:04:30.880]   - Oh yeah, what was your prior background as an engineer?
+[00:04:30.880 --> 00:04:33.120]   - Just a software engineer.
+[00:04:33.120 --> 00:04:35.320]   Yeah, boring software engineer.
+[00:04:35.320 --> 00:04:38.880]   - But like any image stuff, any orchestration,
+[00:04:38.880 --> 00:04:41.000]   distributed systems, GPUs.
+[00:04:41.000 --> 00:04:45.120]   - You know, I was doing basically nothing interesting
+[00:04:45.120 --> 00:04:46.200]   (laughing)
+[00:04:46.200 --> 00:04:50.040]   about what development, well, not what development just,
+[00:04:50.040 --> 00:04:53.880]   yeah, some basic, maybe some basic automation stuff.
+[00:04:53.880 --> 00:04:54.720]   - Okay.
+[00:04:54.720 --> 00:04:59.720]   - Just, yeah, no, like no big companies or anything.
+[00:04:59.720 --> 00:05:02.360]   - Yeah, but like already some interesting automations,
+[00:05:02.360 --> 00:05:03.720]   probably a lot of Python.
+[00:05:03.720 --> 00:05:05.760]   - Yeah, yeah, of course, Python.
+[00:05:05.760 --> 00:05:10.160]   But I wasn't actually used to like the node
+[00:05:10.160 --> 00:05:13.400]   graph interface before I started Config UI.
+[00:05:13.400 --> 00:05:16.840]   It was just, I just thought it was like,
+[00:05:16.840 --> 00:05:20.200]   oh, like what's the best way to represent
+[00:05:20.200 --> 00:05:23.000]   the diffusion process in the user interface?
+[00:05:23.000 --> 00:05:24.640]   And then like, oh, wow.
+[00:05:24.640 --> 00:05:27.280]   Like, natural, this is the best way.
+[00:05:27.280 --> 00:05:31.800]   And this was like with the node interface.
+[00:05:31.800 --> 00:05:35.320]   So how I got started was, yeah.
+[00:05:35.320 --> 00:05:39.400]   So basically, October 2022, just like,
+[00:05:39.400 --> 00:05:42.480]   I hadn't written a line of PyTorch before that.
+[00:05:42.480 --> 00:05:45.280]   So it's completely new.
+[00:05:45.280 --> 00:05:47.520]   What happened was I kind of got addicted
+[00:05:47.520 --> 00:05:51.040]   to generating images as we all did.
+[00:05:51.040 --> 00:05:54.840]   - Yeah, and then I started the experimenting
+[00:05:54.840 --> 00:05:58.560]   with like the high risk fixed in auto,
+[00:05:58.560 --> 00:06:01.960]   which was for those that don't totally high risk fixes,
+[00:06:01.960 --> 00:06:05.760]   just generally since the diffusion models back then
+[00:06:05.760 --> 00:06:08.240]   could only generate that low resolution.
+[00:06:08.240 --> 00:06:11.320]   So what you would do, you would generate low resolution image,
+[00:06:11.320 --> 00:06:16.480]   then upscale, then refine it again.
+[00:06:16.480 --> 00:06:19.280]   And that was kind of the hack to generate
+[00:06:19.280 --> 00:06:21.560]   high resolution images.
+[00:06:21.560 --> 00:06:25.360]   I really liked generating like higher resolution images.
+[00:06:25.360 --> 00:06:28.480]   So I was experimenting with that.
+[00:06:28.480 --> 00:06:31.880]   And so I modified the code a bit.
+[00:06:31.880 --> 00:06:36.080]   Okay, what happens if I use different samplers
+[00:06:36.080 --> 00:06:40.840]   on the second path, so I was edited the code of auto.
+[00:06:40.840 --> 00:06:43.160]   So what happens if I use a different sampler?
+[00:06:43.160 --> 00:06:47.800]   What happens if I use a different like a different settings
+[00:06:47.800 --> 00:06:49.800]   and a different number of steps.
+[00:06:49.800 --> 00:06:54.920]   And 'cause back then the high risk fix was very basic.
+[00:06:54.920 --> 00:06:56.520]   Just so.
+[00:06:56.520 --> 00:06:57.880]   - Yeah, now there's a whole library
+[00:06:57.880 --> 00:06:59.760]   of just the up samplers.
+[00:06:59.760 --> 00:07:04.280]   - Yeah, I think they added a bunch of options
+[00:07:04.280 --> 00:07:07.800]   that high risk fix since then.
+[00:07:07.800 --> 00:07:09.920]   But before that was just so basic.
+[00:07:09.920 --> 00:07:12.160]   So I wanted to go further.
+[00:07:12.160 --> 00:07:13.800]   I wanted to try to get what happens
+[00:07:13.800 --> 00:07:17.960]   if I use a different model for the second pass.
+[00:07:17.960 --> 00:07:22.960]   And then the auto code base wasn't good enough for,
+[00:07:22.960 --> 00:07:25.640]   but it would have been harder
+[00:07:25.640 --> 00:07:29.280]   to implement that in the auto interface
+[00:07:29.280 --> 00:07:31.640]   than to create my own interface.
+[00:07:31.640 --> 00:07:35.560]   So that's when I decided to break my own.
+[00:07:35.560 --> 00:07:38.000]   - And you were doing that mostly on your own when you started
+[00:07:38.000 --> 00:07:40.080]   or did you already have kind of like a subgroup?
+[00:07:40.080 --> 00:07:44.440]   - No, it was on my own 'cause it was just
+[00:07:44.440 --> 00:07:46.200]   me experimenting with stuff.
+[00:07:46.200 --> 00:07:49.000]   So yeah, that was it.
+[00:07:49.000 --> 00:07:54.000]   So I started writing the code January 1, 2023.
+[00:07:54.000 --> 00:07:57.160]   And then I released the first version
+[00:07:57.160 --> 00:08:00.320]   on GitHub January 16, 2023.
+[00:08:00.320 --> 00:08:02.840]   That's how things got started.
+[00:08:02.840 --> 00:08:05.080]   - And what's the name, Comfy UI right away?
+[00:08:05.080 --> 00:08:06.680]   - Yeah, Comfy UI.
+[00:08:06.680 --> 00:08:08.680]   The reason that my name is Comfy
+[00:08:08.680 --> 00:08:11.920]   is because my pictures were Comfy.
+[00:08:11.920 --> 00:08:16.760]   So I'm just naming the Comfy UI.
+[00:08:16.760 --> 00:08:19.000]   So yeah, that's...
+[00:08:19.000 --> 00:08:20.840]   - Is there a particular segment of the community
+[00:08:20.840 --> 00:08:22.640]   that you targeted as users?
+[00:08:22.640 --> 00:08:25.760]   Like more intensive workflow artists,
+[00:08:25.760 --> 00:08:28.640]   compared to the automatic crowd or...
+[00:08:28.640 --> 00:08:33.640]   - This was my way of like experimenting with new things.
+[00:08:33.640 --> 00:08:36.440]   Like the high risk fix thing I mentioned,
+[00:08:36.440 --> 00:08:39.680]   which was like in Comfy, the first thing you could easily do
+[00:08:39.680 --> 00:08:42.800]   was just chain different models together.
+[00:08:42.800 --> 00:08:44.240]   And then one of the first things,
+[00:08:44.240 --> 00:08:47.680]   I think the first times it got a bit of popularity
+[00:08:47.680 --> 00:08:51.360]   was when I started experimenting with different...
+[00:08:51.360 --> 00:08:55.800]   Like applying prompts to different areas of the image.
+[00:08:55.800 --> 00:08:58.800]   - Yeah, I called it area conditioning.
+[00:08:58.800 --> 00:09:02.600]   Posted it, I read it, and it got a bunch of votes.
+[00:09:02.600 --> 00:09:07.600]   So I think that's when people first learned of Comfy UI.
+[00:09:07.600 --> 00:09:10.760]   - Is that mostly like fixing hands?
+[00:09:10.760 --> 00:09:13.840]   - I don't know, that was just like, let's say...
+[00:09:13.840 --> 00:09:15.320]   Well, it was very...
+[00:09:15.320 --> 00:09:17.760]   Well, it still is kind of difficult to like,
+[00:09:17.760 --> 00:09:21.480]   I'd say you want a mountain, you have an image,
+[00:09:21.480 --> 00:09:23.880]   and then you're like, I want a mountain here.
+[00:09:23.880 --> 00:09:28.880]   And I want like a fox here.
+[00:09:28.880 --> 00:09:30.880]   - Yeah, so compositing the image.
+[00:09:30.880 --> 00:09:32.880]   - Yeah, my way was very easy.
+[00:09:32.880 --> 00:09:37.120]   It was just like, when you run the diffusion process,
+[00:09:37.120 --> 00:09:41.720]   you kind of generate, okay, you do pass one pass
+[00:09:41.720 --> 00:09:43.000]   through the diffusion model.
+[00:09:43.000 --> 00:09:45.400]   Every step you do one pass, okay.
+[00:09:45.400 --> 00:09:48.000]   This place of the image with this brand,
+[00:09:48.000 --> 00:09:50.960]   this space, place of the image with the other prompt.
+[00:09:50.960 --> 00:09:54.320]   And then the entire image with another prompt,
+[00:09:54.320 --> 00:09:58.280]   and then just average everything together, every step.
+[00:09:58.280 --> 00:10:02.400]   And that was area composition, which I call it.
+[00:10:02.400 --> 00:10:05.480]   And then a month later, there was a paper
+[00:10:05.480 --> 00:10:07.520]   that came out called multi-diffusion,
+[00:10:07.520 --> 00:10:08.800]   which was the same thing.
+[00:10:08.800 --> 00:10:12.080]   But yeah, that's...
+[00:10:12.080 --> 00:10:15.280]   - Could you do area composition with different models?
+[00:10:15.280 --> 00:10:16.800]   Or because you're averaging out,
+[00:10:16.800 --> 00:10:17.800]   you kind of need the same model.
+[00:10:17.800 --> 00:10:21.440]   - Could do it with, but yeah, I hadn't implemented it
+[00:10:21.440 --> 00:10:25.080]   for different models, but you can do it
+[00:10:25.080 --> 00:10:27.480]   with different models if you want.
+[00:10:27.480 --> 00:10:30.640]   As long as the models share the same latent space.
+[00:10:30.640 --> 00:10:32.160]   (laughs)
+[00:10:32.160 --> 00:10:34.160]   - We're supposed to ring a bell or return to someone.
+[00:10:34.160 --> 00:10:35.000]   - Yeah, yeah.
+[00:10:35.000 --> 00:10:36.320]   (laughs)
+[00:10:36.320 --> 00:10:39.720]   - Yeah, like for example, you couldn't use like Excel
+[00:10:39.720 --> 00:10:43.240]   and SD1.5, because those have a different latent space,
+[00:10:43.240 --> 00:10:48.240]   but like, yeah, like SD1.5 models, different ones,
+[00:10:48.240 --> 00:10:50.920]   you could do that.
+[00:10:50.920 --> 00:10:54.080]   - There's some models that try to work in pixel space, right?
+[00:10:54.080 --> 00:10:56.080]   - Yeah, they're very slow.
+[00:10:56.080 --> 00:10:56.920]   (laughs)
+[00:10:56.920 --> 00:10:57.760]   - Of course.
+[00:10:57.760 --> 00:10:59.760]   - That's the reason why it's stable
+[00:10:59.760 --> 00:11:02.760]   if you actually became like popular,
+[00:11:02.760 --> 00:11:06.040]   like, 'cause it was because of the latent space.
+[00:11:06.040 --> 00:11:07.320]   - Yeah, small and, yeah.
+[00:11:07.320 --> 00:11:09.040]   Because it used to be latent diffusion models,
+[00:11:09.040 --> 00:11:10.400]   and then we trained it up.
+[00:11:10.400 --> 00:11:13.480]   - Yeah, 'cause the pixel, pixel-diffusion models
+[00:11:13.480 --> 00:11:15.840]   are just too slow, so.
+[00:11:15.840 --> 00:11:19.480]   - Yeah, have you ever tried to talk to, like, stability,
+[00:11:19.480 --> 00:11:21.680]   the latent diffusion guys, like, you know,
+[00:11:21.680 --> 00:11:22.760]   Robin Rumbach?
+[00:11:22.760 --> 00:11:25.720]   - Yeah, yeah, well, I used to work at stability.
+[00:11:25.720 --> 00:11:26.680]   - Oh, I actually didn't know.
+[00:11:26.680 --> 00:11:28.320]   - Yeah, I used to work at stability.
+[00:11:28.320 --> 00:11:34.200]   I got, I got hired in June, 2023.
+[00:11:34.200 --> 00:11:36.400]   That's the part of the story I didn't know about, okay?
+[00:11:36.400 --> 00:11:39.000]   - Yeah, so the reason I was hired
+[00:11:39.000 --> 00:11:42.600]   is because they were doing a SDX cell at the time,
+[00:11:42.600 --> 00:11:45.200]   and they were basically, SDX cell,
+[00:11:45.200 --> 00:11:47.920]   I don't know if you remember, it was a base model
+[00:11:47.920 --> 00:11:49.720]   and then a refinder model.
+[00:11:49.720 --> 00:11:51.600]   Basically, they wanted to experiment,
+[00:11:51.600 --> 00:11:53.560]   like, chaining them together,
+[00:11:53.560 --> 00:11:55.720]   and then they saw, oh.
+[00:11:55.720 --> 00:11:56.560]   - Right.
+[00:11:56.560 --> 00:11:58.960]   - Oh, this, we can use this to do that.
+[00:11:58.960 --> 00:12:01.600]   Well, let's hire that guy.
+[00:12:01.600 --> 00:12:04.200]   - But they didn't pursue it for, like, SD3.
+[00:12:04.200 --> 00:12:05.040]   - What do you mean?
+[00:12:05.040 --> 00:12:06.760]   - Like, the SDX-el approach.
+[00:12:06.760 --> 00:12:10.520]   - Yeah, the reason for that approach was because,
+[00:12:10.520 --> 00:12:13.880]   basically, they had two models,
+[00:12:13.880 --> 00:12:17.040]   and then they wanted to publish both of them,
+[00:12:17.040 --> 00:12:20.240]   so they trained one on lower time steps,
+[00:12:20.240 --> 00:12:22.680]   which was the refinder model,
+[00:12:22.680 --> 00:12:26.600]   and then the first one was trained normally,
+[00:12:26.600 --> 00:12:29.240]   and then during their test, they realized, oh,
+[00:12:29.240 --> 00:12:32.400]   like, if we string these models together
+[00:12:32.400 --> 00:12:34.480]   are, like, quality increases.
+[00:12:34.480 --> 00:12:37.840]   So let's publish that. (laughs)
+[00:12:37.840 --> 00:12:38.680]   - It worked.
+[00:12:38.680 --> 00:12:39.520]   - Yeah.
+[00:12:39.520 --> 00:12:41.840]   But, like, right now, I don't think many people
+[00:12:41.840 --> 00:12:43.680]   actually use the refinder anymore.
+[00:12:43.680 --> 00:12:46.760]   Even though it is actually a full diffusion model,
+[00:12:46.760 --> 00:12:48.720]   like, you can use it by their tone
+[00:12:48.720 --> 00:12:50.920]   and it's going to generate images.
+[00:12:50.920 --> 00:12:52.960]   I don't think anyone, people have,
+[00:12:52.960 --> 00:12:56.520]   mostly forgotten about it, but...
+[00:12:56.520 --> 00:12:58.560]   - Can we talk about models a little bit?
+[00:12:58.560 --> 00:13:00.360]   So, stable diffusion, obviously, is the most known.
+[00:13:00.360 --> 00:13:03.080]   I know Flux has gotten a lot of traction.
+[00:13:03.080 --> 00:13:06.200]   Are there any underrated models that people should use more,
+[00:13:06.200 --> 00:13:08.320]   or what's the state of the union?
+[00:13:08.320 --> 00:13:11.160]   - Well, the latest state of the art,
+[00:13:11.160 --> 00:13:14.120]   at least, yeah, for images, there's...
+[00:13:14.120 --> 00:13:15.760]   Yeah, there's Flux.
+[00:13:15.760 --> 00:13:18.400]   There's also SD 3.5.
+[00:13:18.400 --> 00:13:20.240]   Is it 3.5? There's two models.
+[00:13:20.240 --> 00:13:23.120]   There's a small one, 2.5B,
+[00:13:23.120 --> 00:13:25.560]   and there's the figure one, A to B.
+[00:13:25.560 --> 00:13:29.120]   So it's smaller than Flux, so...
+[00:13:29.120 --> 00:13:33.560]   And it's more creative in a way.
+[00:13:33.560 --> 00:13:36.560]   But Flux, yeah, Flux is the best.
+[00:13:36.560 --> 00:13:39.040]   People should give SD 3.5 a try,
+[00:13:39.040 --> 00:13:41.480]   because it's different.
+[00:13:41.480 --> 00:13:43.320]   I won't say it's better.
+[00:13:43.320 --> 00:13:46.720]   Well, it's better for some specific use cases.
+[00:13:46.720 --> 00:13:50.240]   If you want something to make something more creative,
+[00:13:50.240 --> 00:13:54.320]   maybe SD 3.5, if you want to make something more consistent
+[00:13:54.320 --> 00:13:57.560]   and Flux, it's probably better.
+[00:13:57.560 --> 00:14:01.880]   - Do you ever consider supporting the closed-source model APIs?
+[00:14:01.880 --> 00:14:05.720]   - Well, there we do support them with as custom nodes.
+[00:14:05.720 --> 00:14:09.320]   We actually have some official custom nodes
+[00:14:09.320 --> 00:14:10.880]   from different...
+[00:14:10.880 --> 00:14:12.480]   - Adiogram. - Yeah.
+[00:14:12.480 --> 00:14:14.480]   - I guess Dali would have one.
+[00:14:14.480 --> 00:14:15.840]   - Yeah, that's...
+[00:14:15.840 --> 00:14:17.120]   It's just not...
+[00:14:17.120 --> 00:14:19.360]   I'm not the person that handles that.
+[00:14:19.360 --> 00:14:20.280]   - Sure, sure.
+[00:14:20.280 --> 00:14:21.920]   Quick question on SD.
+[00:14:21.920 --> 00:14:23.440]   There's a lot of community discussion
+[00:14:23.440 --> 00:14:27.120]   about the transition from SD 1.5 to SD 2,
+[00:14:27.120 --> 00:14:28.680]   and then SD 2, SD 3.
+[00:14:28.680 --> 00:14:33.080]   People are still very loyal to the previous generation of SDs.
+[00:14:33.080 --> 00:14:38.080]   - Yeah, SD 1.5 and still has a lot of users.
+[00:14:38.080 --> 00:14:40.480]   - The last-based model.
+[00:14:40.480 --> 00:14:44.000]   - Yeah, then SD 2 was mostly ignoring.
+[00:14:44.000 --> 00:14:49.720]   It wasn't the biggest improvement over the previous one.
+[00:14:49.720 --> 00:14:52.440]   - Okay, so SD 1.5, SD 3, Flux.
+[00:14:52.440 --> 00:14:53.880]   - Yeah, it's the Excel.
+[00:14:53.880 --> 00:14:54.920]   - It's the Excel? - It's the Excel.
+[00:14:54.920 --> 00:14:55.840]   - That's the main one.
+[00:14:55.840 --> 00:14:56.920]   - Stable cascade? - Yeah.
+[00:14:56.920 --> 00:15:00.120]   Stable cascade, that was a good model.
+[00:15:00.120 --> 00:15:04.040]   That's... The problem with that one is it got...
+[00:15:04.040 --> 00:15:07.240]   Like, SD 3 was announced one week after.
+[00:15:07.240 --> 00:15:09.800]   - Yeah, it was like a weird release.
+[00:15:09.800 --> 00:15:12.320]   - What was it like inside of Stable? - Wow.
+[00:15:12.320 --> 00:15:16.880]   - I mean, Statue of Imitations expired, you know, management has moved so...
+[00:15:16.880 --> 00:15:18.080]   - It's easier to talk about now.
+[00:15:18.080 --> 00:15:20.880]   - Yeah, and it incites stability.
+[00:15:20.880 --> 00:15:24.880]   Actually, that model was ready, like, three months before,
+[00:15:24.880 --> 00:15:28.840]   but it got stuck in red teeming.
+[00:15:28.840 --> 00:15:31.760]   So basically, the problem, if that model had released,
+[00:15:31.760 --> 00:15:35.280]   it was supposed to be released by the authors,
+[00:15:35.280 --> 00:15:41.320]   and it would probably have got it very popular since it's a step up from SD XL.
+[00:15:41.320 --> 00:15:45.600]   But it got all of its momentum stolen by the SD 3 announcement,
+[00:15:45.600 --> 00:15:49.720]   so people kind of didn't develop anything on top of it,
+[00:15:49.720 --> 00:15:52.200]   even though it's a... Yeah.
+[00:15:52.200 --> 00:15:56.520]   It was a good model, at least, completely,
+[00:15:56.520 --> 00:15:58.760]   mostly ignores, for some reason, like...
+[00:15:58.760 --> 00:16:01.920]   - I think the naming, as well, matters.
+[00:16:01.920 --> 00:16:06.600]   It seemed like a branch off of the main, I mean, tree of development.
+[00:16:06.600 --> 00:16:09.440]   - Yeah, well, it was different to researchers that did it.
+[00:16:09.440 --> 00:16:15.960]   Like, very... Like, a good model, like, it's the worst to shin authors.
+[00:16:15.960 --> 00:16:17.400]   I don't know if I'm pronouncing it.
+[00:16:17.400 --> 00:16:19.560]   - Worship, yeah. - Worship, yeah.
+[00:16:19.560 --> 00:16:21.560]   - Yeah, they... - I actually met them in Vienna.
+[00:16:21.560 --> 00:16:23.760]   - Yeah, they worked at Stability for a bit,
+[00:16:23.760 --> 00:16:26.680]   and they left right after the cascade release.
+[00:16:26.680 --> 00:16:28.480]   - This is Dustin, right? - No.
+[00:16:28.480 --> 00:16:32.000]   - Dustin's SD 3. - No, Dustin is the tree, yes, yeah.
+[00:16:32.000 --> 00:16:36.560]   So, that's Pablo, and Domi,
+[00:16:36.560 --> 00:16:39.400]   who decided to think I'm pronouncing this name correctly.
+[00:16:39.400 --> 00:16:41.360]   - Yeah, very cool. - Yeah, very cool.
+[00:16:41.360 --> 00:16:45.040]   - Very good. - It seems like the community is very...
+[00:16:45.040 --> 00:16:46.520]   They move very quickly. - Yeah.
+[00:16:46.520 --> 00:16:50.280]   - Like, when there's a new model out, they just drop whatever the current one is,
+[00:16:50.280 --> 00:16:52.040]   and they just all move wholesale over.
+[00:16:52.040 --> 00:16:54.920]   Like, they don't really stay to explore the four capabilities.
+[00:16:54.920 --> 00:16:57.320]   Like, if the stable cascade was that good,
+[00:16:57.320 --> 00:16:59.560]   they would have A/B tested a bit more instead.
+[00:16:59.560 --> 00:17:01.560]   They're like, "Okay, SD 3 is out to make this go."
+[00:17:01.560 --> 00:17:05.000]   - You know? - Well, I find the opposite, actually.
+[00:17:05.000 --> 00:17:06.360]   The community doesn't...
+[00:17:06.360 --> 00:17:10.840]   Like, they only jump on a new model when there's a significant improvement.
+[00:17:10.840 --> 00:17:15.080]   Like, if there's only, like, incremental improvement,
+[00:17:15.080 --> 00:17:18.760]   which is what most of these models are going to have,
+[00:17:18.760 --> 00:17:22.760]   especially if you... 'Cause, uh, stay the same perimeter count.
+[00:17:22.760 --> 00:17:24.520]   - Yeah. - Like, you're not going to get
+[00:17:24.520 --> 00:17:28.360]   the massive improvement, uh, into, like...
+[00:17:28.360 --> 00:17:31.400]   Unless there's something big that not changes, so...
+[00:17:31.400 --> 00:17:32.360]   - Yeah. - Yeah.
+[00:17:32.360 --> 00:17:34.200]   How are they evaluating these improvements?
+[00:17:34.200 --> 00:17:37.720]   Like, um, because it's a whole chain of, you know,
+[00:17:37.720 --> 00:17:39.320]   comfy workflows. - Yeah.
+[00:17:39.320 --> 00:17:43.400]   - How does one part of the chain actually affect the whole process?
+[00:17:43.400 --> 00:17:45.960]   - I kind of model side-specific.
+[00:17:45.960 --> 00:17:49.560]   Model-specific, right? But, like, once you have your whole workflow
+[00:17:49.560 --> 00:17:52.120]   based on a model, it's very hard to move.
+[00:17:52.120 --> 00:17:55.320]   - Uh, not... well, not really.
+[00:17:55.320 --> 00:17:59.800]   - No, it depends on your... depends on the specific kind of workflow.
+[00:17:59.800 --> 00:18:00.760]   - Yeah. - Yeah.
+[00:18:00.760 --> 00:18:02.920]   Like, so, I do a lot of, like, text and image.
+[00:18:02.920 --> 00:18:05.880]   - Yeah, it's... when you do change, like,
+[00:18:05.880 --> 00:18:10.680]   most workflows are kind of going to be compatible between different models.
+[00:18:10.680 --> 00:18:13.560]   It's just, like, you might have to completely change your prompt,
+[00:18:13.560 --> 00:18:14.520]   completely change.
+[00:18:14.520 --> 00:18:17.400]   - Okay, well, I mean, that maybe the question is really about EVALS.
+[00:18:17.400 --> 00:18:21.720]   Like, what does the comfy community do for EVALS?
+[00:18:21.720 --> 00:18:22.840]   Just, you know...
+[00:18:22.840 --> 00:18:25.320]   - Well, that... it doesn't really do.
+[00:18:25.320 --> 00:18:28.040]   It's more, like, I think this image is nice.
+[00:18:28.040 --> 00:18:29.480]   - Yeah. - So, that's...
+[00:18:29.480 --> 00:18:30.120]   - It just... - It just...
+[00:18:30.120 --> 00:18:31.720]   - Subscribe to Fulfur. - Yeah.
+[00:18:31.720 --> 00:18:34.040]   - Yeah, I just see, like, you know, what Fulfur is doing.
+[00:18:34.040 --> 00:18:37.480]   - Yeah, well, we just... they just generate, like...
+[00:18:37.480 --> 00:18:39.960]   like, I don't see anyone really doing, like,
+[00:18:39.960 --> 00:18:42.920]   at least on the comfy side, comfy users.
+[00:18:42.920 --> 00:18:47.880]   It's more, like, or generate images and see, oh, this one's not as this, like...
+[00:18:47.880 --> 00:18:50.440]   - Yeah, yeah, yeah. - Yeah, it's not...
+[00:18:50.440 --> 00:18:55.960]   like, the more, like, scientific, like...
+[00:18:55.960 --> 00:19:00.200]   like, checking, that's more on specifically on, like, model side.
+[00:19:00.200 --> 00:19:02.840]   - Yeah. - Yeah.
+[00:19:02.840 --> 00:19:05.400]   But there is a lot of vibes also,
+[00:19:05.400 --> 00:19:08.600]   because it is a, like, artistic...
+[00:19:08.600 --> 00:19:12.200]   You can create a very good model that doesn't generate
+[00:19:12.200 --> 00:19:17.400]   nice images, because most of the images on the internet are ugly,
+[00:19:17.400 --> 00:19:21.320]   so if that's, like, if you just...
+[00:19:21.320 --> 00:19:24.040]   I have the best model attached, right?
+[00:19:24.040 --> 00:19:27.480]   It's super smart, I create it on all the...
+[00:19:27.480 --> 00:19:29.560]   like, I'll train it, I'll just...
+[00:19:29.560 --> 00:19:31.160]   all the images on the internet.
+[00:19:31.160 --> 00:19:33.480]   The images are not going to look good, so...
+[00:19:33.480 --> 00:19:36.840]   - Yeah, yeah. - They're going to be very consistent, but...
+[00:19:36.840 --> 00:19:41.560]   yeah, people, like, it's not going to be, like, the look that people are going to be
+[00:19:41.560 --> 00:19:45.960]   expecting from, uh, from a model, so...
+[00:19:45.960 --> 00:19:47.320]   Can we talk about Loris?
+[00:19:47.320 --> 00:19:51.400]   Because we talk about models, then, like, the next step is probably Loris.
+[00:19:51.400 --> 00:19:56.360]   Before, actually, I'm kind of curious how Loris entered the tool set of the image community,
+[00:19:56.360 --> 00:19:59.080]   because the Loris paper was 2021.
+[00:19:59.080 --> 00:20:02.120]   And then, like, there was, like, other methods, like, textual inversion that was
+[00:20:02.120 --> 00:20:04.280]   popular at the early SD stage.
+[00:20:04.280 --> 00:20:06.680]   Yeah, I can explain the difference between...
+[00:20:06.680 --> 00:20:11.240]   Like, textual inversions, that's, uh, basically what you're doing is your...
+[00:20:11.240 --> 00:20:15.400]   your training, 'cause, well, yeah, stable, if you didn't have the diffusion model,
+[00:20:15.400 --> 00:20:22.600]   you have the text encoder, so, basically, what you're doing is training a vector
+[00:20:22.600 --> 00:20:25.560]   that you're going to pass to the text encoder.
+[00:20:25.560 --> 00:20:27.640]   It's basically your training a new word.
+[00:20:27.640 --> 00:20:30.440]   Yeah, it's a little bit, like, representation engineering now.
+[00:20:30.440 --> 00:20:33.560]   Yeah, basically, yeah, you're just, uh...
+[00:20:33.560 --> 00:20:37.320]   So, yeah, if you know how, like, the text encoder works, basically,
+[00:20:37.320 --> 00:20:41.800]   you have, uh, you take your rewards of your product,
+[00:20:41.800 --> 00:20:45.560]   you convert those into tokens with the tokenizer,
+[00:20:45.560 --> 00:20:48.520]   and those are converted into vectors.
+[00:20:48.520 --> 00:20:52.040]   Basically, yeah, each token represents a different vector,
+[00:20:52.040 --> 00:20:55.560]   so each word presents a vector, and those...
+[00:20:55.560 --> 00:21:00.280]   depending on your words, that's the list of vectors that get passed to the text encoder,
+[00:21:00.280 --> 00:21:05.240]   which is just, uh, just a stack of, uh, of attention.
+[00:21:05.240 --> 00:21:12.360]   Like, basically, it's, uh, very close to LLM architecture, yeah, yeah, so...
+[00:21:12.360 --> 00:21:15.560]   Basically, what you're doing is just training a new vector.
+[00:21:15.560 --> 00:21:18.360]   We're saying, "Well, I have all these images,
+[00:21:18.360 --> 00:21:23.320]   and I want to know which word does that represent?"
+[00:21:23.320 --> 00:21:26.520]   And it's gonna get, like, you train this vector, and then...
+[00:21:26.520 --> 00:21:31.640]   And then, when you use this vector, it hopefully generates, uh,
+[00:21:31.640 --> 00:21:34.360]   like, something similar to your images, yeah.
+[00:21:34.360 --> 00:21:38.360]   I would say it's, like, surprisingly sample efficient in picking up the concept
+[00:21:38.360 --> 00:21:39.480]   that you're trying to train it on.
+[00:21:39.480 --> 00:21:42.840]   Yeah, well, people have kind of stopped doing that,
+[00:21:42.840 --> 00:21:45.880]   even though, uh, back at, like, when I was at Stability,
+[00:21:45.880 --> 00:21:50.840]   we, we actually did train internally some, like, text-driven versions on, like,
+[00:21:50.840 --> 00:21:58.600]   T5-X XL, actually worked pretty well. But, uh, for some reason, yeah, people don't use them.
+[00:21:58.600 --> 00:22:03.640]   And also, they might also work, like, like, yeah, this is something
+[00:22:03.640 --> 00:22:07.880]   that you probably have to test, but maybe if you train a text-driven version,
+[00:22:07.880 --> 00:22:13.000]   like, on T5-X XL, it might also work with all the other models that use T5-X XL,
+[00:22:13.880 --> 00:22:21.640]   because same thing with, like, like, the T6-1 versions that, uh, that were trained for SD1.5,
+[00:22:21.640 --> 00:22:27.800]   they also kind of work on SD XL, because SD XL has the, has two texting coders,
+[00:22:27.800 --> 00:22:32.520]   and one of them is the same as the, as the SD1.5 clip L.
+[00:22:32.520 --> 00:22:35.800]   So those, they actually, they don't work as strongly,
+[00:22:35.800 --> 00:22:39.080]   because they're only applied to one of the texting coders, but, uh,
+[00:22:39.080 --> 00:22:44.680]   and the same thing for SD3-3. SD3 has three texting coders, so it works.
+[00:22:44.680 --> 00:22:49.480]   It's still, you can still use your text conversion, SD1.5 on SD3,
+[00:22:49.480 --> 00:22:53.480]   but it's just a lot weaker, because now there's three texting coders,
+[00:22:53.480 --> 00:22:56.680]   so it gets even more diluted. Yeah.
+[00:22:56.680 --> 00:22:59.800]   Do people experiment a lot on, just on the clip side, uh, there's, like,
+[00:22:59.800 --> 00:23:03.560]   Siglip, there's Blip, like, do people experiment a lot on, on the other one?
+[00:23:03.560 --> 00:23:06.600]   You can't really replace. Yeah, because they're trained together, right?
+[00:23:06.600 --> 00:23:09.560]   Yeah, they're trained together, so you, you can't, like, well,
+[00:23:09.560 --> 00:23:13.720]   what I've seen people experimenting with is a long clip,
+[00:23:13.720 --> 00:23:19.160]   so basically someone, uh, fine-tuned the clip model to accept longer promise.
+[00:23:19.160 --> 00:23:22.200]   Oh, it's kind of, like, long context fine-tuning.
+[00:23:22.200 --> 00:23:26.520]   Yeah, so, so, like, it's, it's actually supported in core comfort.
+[00:23:26.520 --> 00:23:30.920]   How long is long? Regular clip is 77 tokens. Yeah.
+[00:23:30.920 --> 00:23:37.480]   Long clip is 256. Okay. So, but the hack that, uh, like,
+[00:23:37.480 --> 00:23:41.800]   you've, if you use table diffusion 1.5, you probably know there's no,
+[00:23:41.800 --> 00:23:48.040]   it still works if I, if I use long prompts, prompts longer than 77 words, well,
+[00:23:48.040 --> 00:23:52.280]   that's because the hack is to just, uh, well, you split,
+[00:23:52.280 --> 00:23:56.840]   you split it up in charts of 70s, your whole big prompt,
+[00:23:56.840 --> 00:24:01.400]   and say you, you give it, like, the massive text, like, the bible or so.
+[00:24:01.400 --> 00:24:09.080]   And it would split it up in charts of 77 and then just pass each one through the
+[00:24:09.080 --> 00:24:14.360]   eclip and then just cut down anything together at the end.
+[00:24:14.360 --> 00:24:19.720]   It's not ideal, but it actually works. Like, the positioning of the words really,
+[00:24:19.720 --> 00:24:23.240]   really matters then, right? Like, this is why order matters in prompts.
+[00:24:23.240 --> 00:24:29.640]   Yeah. Yeah. Like, it, it works, but it's, it's not ideal, but it's what people
+[00:24:29.640 --> 00:24:35.320]   expect. Like, if someone gives a huge prompt, they expect at least some of the
+[00:24:35.320 --> 00:24:39.480]   concepts that they tend to be, like, present in the image.
+[00:24:39.480 --> 00:24:43.240]   But usually when they give long prompts, they, they don't, they, like,
+[00:24:43.240 --> 00:24:49.400]   they don't expect, uh, like, detail, I think. So, that's why it works very well.
+[00:24:50.040 --> 00:24:53.560]   And while we're on this topic, uh, prompts weeding negative prompting all
+[00:24:53.560 --> 00:24:56.600]   own sort of similar part of this, the layer of the stack.
+[00:24:56.600 --> 00:25:04.280]   Yeah. The, the hack for that, which works on clip, like, basically, it's just, uh, for SD1.4,
+[00:25:04.280 --> 00:25:11.720]   well, for SD1.5, the prompt waiting works well, because clip L is, uh, it's not a very deep model.
+[00:25:11.720 --> 00:25:19.560]   So you have a very high correlation between, you have the input token,
+[00:25:19.560 --> 00:25:27.400]   the index of the input token vector and the output token. They're very, the concepts are very close
+[00:25:27.400 --> 00:25:35.480]   closely. So that means if you interpolate the vector from what, well, the way it comes to you,
+[00:25:35.480 --> 00:25:44.280]   I does it as it has, okay, you have the vector, you have an empty prompt. So you have a, a child,
+[00:25:44.280 --> 00:25:48.760]   like a clip output for the empty prompt. And then you have the one for your prompt.
+[00:25:48.760 --> 00:25:54.680]   And then it interpolates from that depending on your prompt weight, the weight of your, of your
+[00:25:54.680 --> 00:26:03.800]   tokens. So, so if you, yeah. So that's how it, how it does prompt waiting, but this stops working,
+[00:26:03.800 --> 00:26:12.200]   the deeper your text encoder is. So on T5, it doesn't work at all. So, wow, is that a problem
+[00:26:12.200 --> 00:26:15.320]   for people? I mean, because I'm used to just move moving up numbers.
+[00:26:15.320 --> 00:26:20.760]   Not as well. So you just use words to describe, right? Because it's a bigger language model.
+[00:26:20.760 --> 00:26:28.760]   Yeah. Yeah. So it might be good, but I haven't seen many complaints on Flux style. It's not
+[00:26:28.760 --> 00:26:37.640]   working. So I guess people can sort of get around it with, with language. So, yeah.
+[00:26:37.640 --> 00:26:43.480]   And then coming back to Laura's, now that the popular way to customize models is Laura's,
+[00:26:43.480 --> 00:26:47.160]   and I saw you also support Lo-Con and Lo-Ha, which I've never heard of before.
+[00:26:47.160 --> 00:26:50.840]   There's a bunch of, because what, what the Laura is essentially is,
+[00:26:50.840 --> 00:26:58.680]   instead of like, okay, you have your, your model, and then you want to fine tune it. So instead of,
+[00:26:58.680 --> 00:27:03.560]   like, what you could do is you could fine tune the entire thing. Yeah, fine too. But that's a bit
+[00:27:03.560 --> 00:27:11.800]   heavy. So to speed things up and make things less heavy, what you can do is just fine tune some
+[00:27:12.360 --> 00:27:20.360]   smaller weights, like basically two, two matrices that when you multiply like two low rank matrices,
+[00:27:20.360 --> 00:27:27.480]   then when you multiply them together, gives a represents a difference between trained
+[00:27:27.480 --> 00:27:35.480]   weights and your base weights. So like training those two smaller matrices, that's a lot less
+[00:27:35.480 --> 00:27:41.640]   same. And they're portable. So you're going to share them. Yeah, smaller. Yeah, that's the,
+[00:27:41.640 --> 00:27:48.440]   how Laura's works. So basically, so when inferencing, you get an inference with them pretty efficiently,
+[00:27:48.440 --> 00:27:54.360]   like how I compute, why does it just, when you use a Laura, it just applies it straight on the weights,
+[00:27:54.360 --> 00:28:00.920]   so that there's only a small delay at the big, like before the sampling to just when it applies
+[00:28:00.920 --> 00:28:10.360]   the weights and then it just same speed as before. So for inferencing, it's not that bad, but, and
+[00:28:10.360 --> 00:28:16.280]   then you have, so basically all the more types, like low, how low cost everything, that's just
+[00:28:16.280 --> 00:28:23.640]   different ways of representing that, like, basically, you can call it kind of like compression,
+[00:28:23.640 --> 00:28:29.400]   even though it's not really compression. It's just different ways of representing, like,
+[00:28:29.400 --> 00:28:35.080]   just okay, I want to train a different on the difference on the weights, what's the best way
+[00:28:35.080 --> 00:28:40.280]   to represent that difference. There's the basic mora, which is as well, let's multiply these two
+[00:28:40.280 --> 00:28:46.280]   matrices together. And then there's all the other ones, which are all different algorithms.
+[00:28:46.280 --> 00:28:53.720]   So, yeah. So let's talk about what comfy UI actually is. I think most people have heard a bit.
+[00:28:53.720 --> 00:28:58.440]   Some people might have seen screenshots. I think fewer people have built very complex
+[00:28:58.440 --> 00:29:04.360]   workflows. So when you started, automatic was like the super simple way. What were some of the
+[00:29:04.360 --> 00:29:09.640]   choices that you made? So the node workflow, is there anything else that stands out? It's like,
+[00:29:09.640 --> 00:29:13.480]   this was like a unique take on how to do image generation workflows.
+[00:29:13.480 --> 00:29:19.320]   I feel like, yeah, back there, everyone was trying to make like easy to use interface,
+[00:29:19.320 --> 00:29:23.640]   that much. Well, everyone's trying to make an easy to use interface.
+[00:29:23.640 --> 00:29:31.240]   Let's make it hard to use interface. So, like, I don't need to do that.
+[00:29:31.240 --> 00:29:39.720]   I have everyone else doing it. So let me try something, like, let me try to make a powerful interface.
+[00:29:39.720 --> 00:29:46.680]   Yeah. But it's not easy to use. So, like, yeah, there's a sort of node execution engine.
+[00:29:46.680 --> 00:29:51.240]   But you'll read me actually lists, it's a really good list of features of things you prioritize,
+[00:29:51.240 --> 00:29:57.560]   right? Like, let me see, like, sort of re-executing from many parts of the workflow that was changed,
+[00:29:57.560 --> 00:30:03.080]   asynchronous queue system, smart memory management, all this seems like a lot of engineering that.
+[00:30:03.080 --> 00:30:09.800]   Yeah, there's a lot of engineering in the back end to make things, because I was always focused.
+[00:30:09.800 --> 00:30:16.040]   I'm making things work locally very well, because that's because I was using it locally. So,
+[00:30:16.040 --> 00:30:24.600]   everything. So, there's a lot of a lot of thought and working by getting everything to run as well
+[00:30:24.600 --> 00:30:32.440]   as possible. So, yeah, a few of us actually more of a back end, at least, well, not other front ends
+[00:30:32.440 --> 00:30:40.840]   getting a lot more, a lot more. But before it was, I was pretty much only focused on the back end.
+[00:30:40.840 --> 00:30:46.520]   Yeah, so v0.1 was only August this year. Yeah, before the new front end.
+[00:30:46.520 --> 00:30:52.120]   Versioning, so, yeah, yeah. And so, what was the big rewrite for the 0.1 and the 1.0?
+[00:30:52.120 --> 00:30:59.480]   Well, that's more on the front and side, that's because before that, it was just like the UI,
+[00:30:59.480 --> 00:31:06.760]   what, because when I first wrote it, I just, I said, okay, how can I make, like,
+[00:31:06.760 --> 00:31:11.640]   I can't do web development, but I don't like doing it. Like, what's the easiest way I can
+[00:31:11.640 --> 00:31:17.320]   slap a node interface on this? And then I found this library, Light Graph, like JavaScript,
+[00:31:17.320 --> 00:31:22.040]   library, Light Graph. Usually, people will go for, like, React flow for, like, a flow build.
+[00:31:22.040 --> 00:31:24.280]   Yeah, but that seems, like, too complicated.
+[00:31:24.280 --> 00:31:32.280]   So, I didn't really want to spend time, like, developing the front ends. I'm like, oh,
+[00:31:32.280 --> 00:31:40.200]   Light Graph. This has the whole node interface. So, okay, let me just go like that to my back end, then.
+[00:31:40.200 --> 00:31:43.960]   I feel like if Streamlet or Gradio offered something, you would have used Streamlet or Gradio,
+[00:31:43.960 --> 00:31:52.440]   because it's Python. Yeah, Streamlet and Gradio, I don't like Gradio. That's one of the reasons
+[00:31:52.440 --> 00:32:00.840]   why, like, automatic was very bad. It's great, because the problem with Gradio, it forces you to,
+[00:32:00.840 --> 00:32:09.160]   well, not forces you, but it kind of makes your interface logic and your back end logic and, like,
+[00:32:09.160 --> 00:32:14.200]   just sticks them together. It's supposed to be easy for you, guys, for you, if you're a Python
+[00:32:14.200 --> 00:32:17.640]   main, you know, I'm a JS main, right? Yeah. If your Python main is supposed to be easy.
+[00:32:17.640 --> 00:32:21.720]   Yeah, it's easy. Well, it's easy, but it makes yours whole software a huge mess.
+[00:32:21.720 --> 00:32:25.160]   I see, I see. So, you're mixing concerns instead of separating concerns?
+[00:32:25.160 --> 00:32:31.960]   Well, it's, because front end and back end should be well separated with a finding API.
+[00:32:31.960 --> 00:32:36.120]   Yeah. Like, that's, that's how you're supposed to do it.
+[00:32:36.120 --> 00:32:41.640]   People, smart people disagree, but yeah, it just sticks everything together. It makes it easy
+[00:32:41.640 --> 00:32:49.240]   to, like, in a huge mess. And also, it's, there's a lot of issues with Gradio. Like,
+[00:32:49.240 --> 00:32:54.440]   it's very good if all you want to do is just get, like, slap a quick interface on your,
+[00:32:54.920 --> 00:33:01.080]   like, to, to show off your, like, your ML project. Like, that's what it's made for.
+[00:33:01.080 --> 00:33:07.000]   Yeah. Yeah. Like, like, there's no problem using it, like, oh, I have my, I have my code.
+[00:33:07.000 --> 00:33:12.840]   I just want it in quick interface on it. That's perfect. Like, use Gradio. But if you want to
+[00:33:12.840 --> 00:33:19.880]   make something that's, like, a real, like, real software that will last a long time and will be
+[00:33:19.880 --> 00:33:26.440]   easy to maintain, then I wouldn't avoid it. Yeah. So your criticism is Streamlet and Gradio.
+[00:33:26.440 --> 00:33:32.120]   The same, I mean, those are the same criticisms. Yeah. Streamlet, I haven't, haven't used this,
+[00:33:32.120 --> 00:33:38.200]   but yeah, I just looked a bit similar philosophy. Yeah. It's similar. It's just, it just seems to
+[00:33:38.200 --> 00:33:43.720]   me, like, okay, for quick, like AI demos, it's perfect. Yeah. Going back to like the, the, the
+[00:33:43.720 --> 00:33:48.600]   core tech, like asynchronous queues, slow re-execution, smart memory management, you know, anything that
+[00:33:48.600 --> 00:33:53.880]   you, you're very proud of or was very hard to figure out. Yeah. The thing that's the biggest
+[00:33:53.880 --> 00:33:59.240]   pain in the ass is probably the memory management. Yeah. Were you just paging models in an hour?
+[00:33:59.240 --> 00:34:05.400]   Yeah. Before it was just, okay, load the model, completely unload it, load the new model,
+[00:34:05.400 --> 00:34:11.560]   completely unload it. Okay. That, that works well when your models are small. But if your models
+[00:34:11.560 --> 00:34:17.800]   are bigger, then take sort of like, let's say someone has a, like a, a four, you got any. And
+[00:34:17.800 --> 00:34:24.920]   the model size is 10 gigabytes. That can take a few seconds to like load and load, load and load.
+[00:34:24.920 --> 00:34:31.640]   So you want to try to keep things like in memory, in the GPU memory, as much as possible. What comes
+[00:34:31.640 --> 00:34:38.680]   to UI does right now is that it tries to like estimate, okay, like, okay, you're going to sample
+[00:34:38.680 --> 00:34:47.000]   this model. It's going to take probably this amount of memory. Let's remove the models like this amount
+[00:34:47.000 --> 00:34:57.400]   of memory that's been loaded on the GPU and then just execute it. But so there's a fine line between
+[00:34:57.400 --> 00:35:05.720]   just because trying to remove the least amount of models that are already loaded. Because as
+[00:35:05.720 --> 00:35:15.000]   fans, like windows, driver, and another problem is the NVIDIA driver-out windows by default.
+[00:35:15.000 --> 00:35:21.720]   Because there's a way to, there's an option to disable that feature. But by default, if you start
+[00:35:21.720 --> 00:35:28.280]   loading, you can overflow your GPU memory and then it's, the drivers get automatically start
+[00:35:28.280 --> 00:35:34.920]   paging to run. But problem with that is it makes everything extremely slow. So when you see people
+[00:35:34.920 --> 00:35:41.640]   complaining, oh, this model, it works, but, oh, shit, it starts slowing down a lot. That's probably
+[00:35:41.640 --> 00:35:49.640]   what's happening. So it's basically you have to just try to get use as much memory as possible,
+[00:35:49.640 --> 00:35:56.040]   but not too much. Or else things start slowing down or people get out of memory. And then just
+[00:35:56.040 --> 00:36:02.840]   find, try to find that line where, oh, like the drive-around window starts paging and stuff.
+[00:36:03.800 --> 00:36:10.600]   And yeah, the problem with PyTorch is it's high levels. Don't have that much fine-grained control
+[00:36:10.600 --> 00:36:19.160]   over like specific memory stuff. So kind of have to leave like the memory freeing to Python and
+[00:36:19.160 --> 00:36:25.720]   PyTorch, which can be annoying sometimes. So, you know, I think one thing is a, as a
+[00:36:25.720 --> 00:36:31.560]   maintainer of this project, like you're designing for a very wide surface area of compute, like
+[00:36:31.560 --> 00:36:37.640]   you can support CPUs. Yeah, well, that's, that's just for fun. PyTorch, PyTorch, PyTorch CPUs.
+[00:36:37.640 --> 00:36:42.600]   Yeah, it's just, that's a high for support. First of all, is there a market share estimate?
+[00:36:42.600 --> 00:36:48.280]   Like, is it like 70% NVIDIA, like 30% AMD and then like miscellaneous on Apple,
+[00:36:48.280 --> 00:36:54.920]   Silicon or whatever? For comfy? Yeah. Yeah. And yeah, I don't know the market share.
+[00:36:54.920 --> 00:37:01.800]   Can you guess? I think it's mostly NVIDIA. Like, yeah. Because A and the problem like A and D
+[00:37:01.800 --> 00:37:08.840]   works horribly on Windows. Like on Linux, it works fine. It's slower than the price equivalent
+[00:37:08.840 --> 00:37:16.840]   NVIDIA GPU. But it works like you can use it, generate images, everything works on Linux.
+[00:37:16.840 --> 00:37:23.080]   On Windows, you might have a hard time. So that's the problem. And most people, I think most people
+[00:37:23.880 --> 00:37:31.800]   bought AMD, probably use Windows. They probably aren't going to switch to Linux.
+[00:37:31.800 --> 00:37:41.480]   So, until the AMD actually like ports there, like RockM to, to Windows properly. And then
+[00:37:41.480 --> 00:37:47.160]   there's actually PyTorch. I think they're doing that. They're in the process of doing that. But
+[00:37:47.160 --> 00:37:53.560]   until they get it, they get a good like PyTorch RockM build that works on Windows.
+[00:37:53.560 --> 00:37:58.520]   It's like they're going to have a hard time. Yeah. We've got to get George on it.
+[00:37:58.520 --> 00:38:05.160]   Yeah. Well, he's trying to get Lisa's food to do it. But let's talk a bit about like the node
+[00:38:05.160 --> 00:38:10.840]   design. So unlike all the other texts to image, you have a very like deep. So you have like a
+[00:38:10.840 --> 00:38:15.240]   separate node for like clipping code, you have a separate node for like the case sampler,
+[00:38:15.240 --> 00:38:19.480]   you have like all these nodes going back to like the making an EC versus making it hard. But like,
+[00:38:20.040 --> 00:38:24.040]   how much do people actually play with all the settings? You know, kind of like how do you get
+[00:38:24.040 --> 00:38:28.360]   people to like, hey, this is actually going to be very impactful versus this is maybe like
+[00:38:28.360 --> 00:38:30.600]   less impactful, but we still want to expose it to you.
+[00:38:30.600 --> 00:38:41.480]   Well, I try to expose like, I try to expose everything or, but yeah, at least for the, but for
+[00:38:41.480 --> 00:38:48.200]   things like, for example, for the samplers, like there's like, yeah, four different sample nodes,
+[00:38:48.200 --> 00:38:56.600]   which go in easiest to most advanced. So yeah, if you go like the easy node, the regular sample
+[00:38:56.600 --> 00:39:03.240]   node, that's you have just the basic settings. But if you use like the sampler advanced custom
+[00:39:03.240 --> 00:39:09.800]   advanced node, that that one you can actually you'll see you have like different nodes.
+[00:39:09.800 --> 00:39:11.960]   I'm looking it up now. Yeah.
+[00:39:12.520 --> 00:39:18.280]   What are like the most impactful parameters. So it's like, you know, you're going to have more,
+[00:39:18.280 --> 00:39:24.840]   but like, which ones like really make a difference? Yeah, they all do. They all have like, they
+[00:39:24.840 --> 00:39:32.600]   all like, for example, yeah, steps, usually you want to steps, you want them to be as low as possible.
+[00:39:32.600 --> 00:39:39.400]   But you want, if you're optimizing your workflow, you want to, you lower the steps until like,
+[00:39:39.400 --> 00:39:46.040]   the image will start deteriorating too much. Because that, yeah, that's the number of steps,
+[00:39:46.040 --> 00:39:52.360]   you're running the diffusion process. So if you want things to be faster, so lower is better.
+[00:39:52.360 --> 00:40:00.440]   But yeah, CFG, that's more, you can kind of see that as the contrast of the image. Like,
+[00:40:00.440 --> 00:40:07.000]   if your image looks too burnt out, then you know where the CFG. So yeah, CFG, that's how,
+[00:40:07.000 --> 00:40:15.080]   yeah, that's how strongly the negative versus positive problem is when you sample the diffusion
+[00:40:15.080 --> 00:40:23.000]   model, it's it's basically your negative prompt. It's just, yeah, positive prediction minus negative
+[00:40:23.000 --> 00:40:29.320]   prediction contrast, if lost. Yeah, positive minus negative and the CFG does the multiply.
+[00:40:29.320 --> 00:40:36.680]   Yeah. So what are like good resources to understand what the parameters do? I think most people
+[00:40:36.680 --> 00:40:41.480]   start with automatic and then the move algorithm is like, steps, CFG, sampler name,
+[00:40:41.480 --> 00:40:48.600]   scheduler, denoise, rid it. But honestly, well, it's more, it's something you should, like,
+[00:40:48.600 --> 00:40:54.440]   try out yourself. I don't know, you don't necessarily need to know how it works to,
+[00:40:54.440 --> 00:41:00.520]   right? Like, what it does, because even if you know, like, CFG, it's like, positive minus negative
+[00:41:00.520 --> 00:41:06.600]   problem. Yeah. So the only thing you know, it's CFG is if it's 1.0, then that means the negative
+[00:41:06.600 --> 00:41:13.480]   prompt isn't applying. You also mean sampling is two times faster. But yeah, but other than that,
+[00:41:13.480 --> 00:41:20.360]   it's more like you should really just see what it does to the images yourself and you'll probably
+[00:41:20.360 --> 00:41:28.200]   get more intuitive understanding of what these things do. Any other notes or things you want to
+[00:41:28.200 --> 00:41:32.840]   shout out? Like, I know the animated IP adapter does are like some of the most popular ones.
+[00:41:32.840 --> 00:41:34.680]   Yeah. What else comes to mind?
+[00:41:34.680 --> 00:41:41.640]   Not the notes, but there's like what I like is when some people, sometimes they make,
+[00:41:41.640 --> 00:41:48.440]   they make things that they use ConfiUI as they're back in, like there's a plug-in for Creta
+[00:41:48.440 --> 00:41:57.800]   that uses ConfiUI as it's back in. So you can use like all the models that work in Confi in
+[00:41:57.800 --> 00:42:05.880]   Creta and I think I've tried it once, but I know a lot of people use it and find it very nice.
+[00:42:05.880 --> 00:42:11.240]   So what's the craziest note that people have built? The most complicated?
+[00:42:11.240 --> 00:42:18.200]   craziest note, like, yeah, I know some people have made like video games and
+[00:42:20.040 --> 00:42:27.800]   in Confia, we like stuff like that. So like someone, I got to remember, like, yeah, last thing it was
+[00:42:27.800 --> 00:42:36.680]   last year, someone made like Wolfenstein through the in Confia, and then one of the inputs was
+[00:42:36.680 --> 00:42:43.560]   all you can generate the texture and then it changes the texture in the game. So I could plug it to
+[00:42:44.440 --> 00:42:50.520]   Wordflow and there's a lot of, if you like that, there's a lot of crazy things people do, so, yeah.
+[00:42:50.520 --> 00:42:55.560]   And now there's like a note register that people can use to like download notes and...
+[00:42:55.560 --> 00:43:00.840]   Yeah, like, well, there's always been like the ConfiUI manager, but we're trying to make this
+[00:43:00.840 --> 00:43:09.240]   more like, I don't know, official, like, with, yeah, with the note registry, because before,
+[00:43:09.240 --> 00:43:15.400]   before the note registry, it like, okay, how did your custom note get in the ConfiUI manager?
+[00:43:15.400 --> 00:43:21.000]   That's the guy running it who, like, every day he searched GitHub for your custom notes and added
+[00:43:21.000 --> 00:43:29.640]   that manually to his custom note managers. So we're trying to make it less effort for him,
+[00:43:29.640 --> 00:43:35.960]   basically. Yeah, but I was looking, I mean, there's like a YouTube download note, there's like,
+[00:43:36.520 --> 00:43:40.760]   this is almost like, you know, a data pipeline more than like an image generation thing at this
+[00:43:40.760 --> 00:43:45.000]   point. It's like, you can get data in, you can like apply filters to it, you can generate data out.
+[00:43:45.000 --> 00:43:53.560]   Yeah, you can do a lot of different things. Yeah, so I think I think what I did is I made it
+[00:43:53.560 --> 00:44:02.360]   easy to make custom notes. So I think that helped a lot for the ecosystem, because it is very easy
+[00:44:02.360 --> 00:44:12.040]   just make a note. So yeah, a bit too easy sometimes. Then we have the issue where there's a lot of
+[00:44:12.040 --> 00:44:21.160]   custom note packs which share similar notes. But, well, that's, yeah, something we're trying to solve
+[00:44:21.160 --> 00:44:26.920]   by maybe bringing some of the functionality into core. Yeah, yeah.
+[00:44:28.280 --> 00:44:32.840]   And then there's like video, people can do video generation. Yeah, video that's, well,
+[00:44:32.840 --> 00:44:40.120]   there are the first video model was like stable video diffusion, which was last. Yeah, exactly
+[00:44:40.120 --> 00:44:46.760]   last year, I think, like, one year ago. But that wasn't a true video model. So it was.
+[00:44:46.760 --> 00:44:51.720]   And then it was like moving images. Yeah, generated video, what I mean by that is it's like,
+[00:44:52.840 --> 00:45:00.040]   it's still 2D latents. It's basically what they did is they took SD2 and then they added some
+[00:45:00.040 --> 00:45:09.080]   temporal attention to it. And then I trained it on videos and on. So it's kind of like animated,
+[00:45:09.080 --> 00:45:16.280]   like, the same same idea, basically. Why I said it's not a true video model is that you still have
+[00:45:16.280 --> 00:45:22.840]   like the 2D latents, like a true video model, like Mochi, for example, would have 3D latents.
+[00:45:22.840 --> 00:45:28.760]   So you can like move through the space, basically. It's the difference. You're not just kind of like
+[00:45:28.760 --> 00:45:34.760]   reorienting. Yeah, and it's also, well, it's also because you have a temporal VA. Also, like,
+[00:45:34.760 --> 00:45:42.600]   Mochi has a temporal VA that compresses like the temporal direction also. So that's something
+[00:45:42.600 --> 00:45:48.360]   you don't have with like, yeah, animated different stable video diffusion. They only like compress
+[00:45:48.360 --> 00:45:55.480]   especially, not temporal. So yeah, so these models, that's why I call them like true video models.
+[00:45:55.480 --> 00:46:02.440]   There's, yeah, there's actually a few of them. But the one I've implemented in comfy is Mochi,
+[00:46:02.440 --> 00:46:08.680]   because that seems to be the best one so far. Yeah, we had AJ come and speak at the
+[00:46:08.680 --> 00:46:12.440]   stable diffusion meetup. Are there open one I think I've seen is called video?
+[00:46:12.440 --> 00:46:19.080]   Yeah, I called video. Yeah, that one's, yeah, it also seems decent. But, yeah, Chinese, so we don't
+[00:46:19.080 --> 00:46:25.640]   Yeah, it's fine. It's just, yeah, I could, yeah, it's just that there's a, it's not the only one.
+[00:46:25.640 --> 00:46:30.760]   There's also a few others, which are, there is a like closed source, right? Like clean. Yeah,
+[00:46:30.760 --> 00:46:35.160]   closed source, there's a bunch of them. But I mean, open, I've seen a few of them.
+[00:46:36.360 --> 00:46:42.200]   Like, I can't remember their names, but there's cog, cog videos, the big, the big one. And there's
+[00:46:42.200 --> 00:46:48.040]   also a few of them that release at the same time. And there's one that released at the same
+[00:46:48.040 --> 00:46:55.080]   time as the 3.5 same day, which is why I don't remember the name. We should have a release schedule
+[00:46:55.080 --> 00:47:00.280]   so we don't conflict on these things. Yeah, I think SD 3.5 and Mochi released on the same day.
+[00:47:01.000 --> 00:47:07.960]   So everything else was kind of drowned, completely drowned out. So for some reason, lots of people
+[00:47:07.960 --> 00:47:16.440]   picked that thing to release their stuff. Yeah, well, shame for those in gas and think
+[00:47:16.440 --> 00:47:19.960]   I'll only get also you'll use the same day, which also seems interesting.
+[00:47:19.960 --> 00:47:25.560]   Yeah, what's comfy? So you are comfy. And then there's like comfy.org.
+[00:47:25.560 --> 00:47:30.280]   I know we do a lot of things for like news research and those guys also have kind of like a more
+[00:47:30.280 --> 00:47:36.360]   open source and on thing going on. How do you work? Like you mentioned, you must work on like the
+[00:47:36.360 --> 00:47:44.600]   core piece of it. And then what? Maybe I should fit in because I feel like maybe I only explained
+[00:47:44.600 --> 00:47:51.800]   part of the story. Right. Yeah, maybe I should explain the rest. So yeah, so basically January,
+[00:47:51.800 --> 00:47:59.640]   that's when the first January 2023, January 1623, that's when comfy was the first released.
+[00:48:00.280 --> 00:48:06.280]   To the public, then yeah, they read it post about the area composition thing somewhere in
+[00:48:06.280 --> 00:48:15.160]   if don't remember exactly the end of January beginning February. And then someone a YouTuber
+[00:48:15.160 --> 00:48:23.000]   made a video about it. Like I'll leave you all. He made a video about comfy in March 2023.
+[00:48:23.000 --> 00:48:30.120]   I think that's when it was real burst of attention. And by the end, yeah, that time I was continued
+[00:48:30.120 --> 00:48:37.320]   to developing it and it was getting. Yeah, people were starting to use it more, which unfortunately
+[00:48:37.320 --> 00:48:45.800]   meant that I was I had the first written in to do like experiments, but then my time to do
+[00:48:45.800 --> 00:48:52.360]   experiments when I started going down because yeah, because yeah, people were actually starting
+[00:48:52.360 --> 00:48:59.240]   to use it. Like I had to and I said, well, yeah, I'm to add all these features and stuff.
+[00:48:59.240 --> 00:49:07.480]   Yeah, and then I got hired by Stability June 2023. Then I made the basically, yeah, they hired me
+[00:49:07.480 --> 00:49:16.600]   because they wanted SDXL. So I got SDXL working very well at the UI because they were experimenting
+[00:49:16.600 --> 00:49:23.080]   with it. Actually, the SDX, how the SDXL released worked is they released for some reason, like they
+[00:49:23.080 --> 00:49:30.600]   released the code first. But they didn't release the model checkpoint. So they released a couple.
+[00:49:30.600 --> 00:49:35.160]   And then well, if since the researcher is wearing the code, I released the code and he comes with you
+[00:49:35.160 --> 00:49:42.920]   too. And then the checkpoints were basically early access. People had to sign up and they only allowed
+[00:49:42.920 --> 00:49:52.280]   a lot of people from EDU emails, like if you had a EDU email, like they gave you access basically
+[00:49:52.280 --> 00:50:01.560]   to be zero SDXL, 0.9. And well, that leaked. Right, of course, because of course it's kind of
+[00:50:01.560 --> 00:50:08.280]   leaky. If you did that, well, the only way people could easily use it was with comfy. So
+[00:50:08.280 --> 00:50:14.200]   yeah, people started using it. And then I fixed a few of the issues people had, you know, the big
+[00:50:14.200 --> 00:50:22.520]   1.0 release happened. And well, comfy UI was the only way a lot of people could actually
+[00:50:22.520 --> 00:50:31.480]   write about their computers, because it just like automatic was so inefficient and bad that most
+[00:50:31.480 --> 00:50:38.840]   people couldn't act like it just wouldn't work. Because he did a quick implementation. So people
+[00:50:38.840 --> 00:50:44.840]   were forced to use comfy UI. And that's how it became popular, because people had no choice.
+[00:50:46.680 --> 00:50:53.160]   The growth hack. Yeah, like everywhere, like people didn't have the 49E. They had like who had just
+[00:50:53.160 --> 00:51:00.920]   regular GPU. They just didn't have a choice. So yeah, I got a 47E. So think of me. And so today,
+[00:51:00.920 --> 00:51:08.600]   what's is there like a core comfy team or? Yeah, well, right now, yeah, we are hiring.
+[00:51:09.720 --> 00:51:17.800]   Actually, so right now core could like on the core core itself, it's me. And by because the reason
+[00:51:17.800 --> 00:51:23.240]   where folks like all the focus has been mostly on the front end right now, because that's the
+[00:51:23.240 --> 00:51:31.400]   thing that's been neglected for a long time. So so most of the focus right now is all on the
+[00:51:31.400 --> 00:51:39.080]   front end. But we are, yeah, we will soon get more people to like help me with the actual vacuum
+[00:51:39.080 --> 00:51:47.080]   stuff. Because that's what once we have our V1 release, which is because it'd be the package
+[00:51:47.080 --> 00:51:55.160]   comfy with the nice interface and easy to install on Windows. And hopefully Mac. Yeah.
+[00:51:55.160 --> 00:52:02.120]   Once we have that, we're going to have to do lots of stuff to do on the back inside,
+[00:52:02.120 --> 00:52:08.920]   then also the front and side. But yeah. What's the release? I'm on the waitlist. What's the timing?
+[00:52:08.920 --> 00:52:19.480]   So soon. Yeah. Like, I don't want to promise the release day. Yeah, we do have a release day
+[00:52:19.480 --> 00:52:26.760]   we're targeting. But yeah, I'm not sure if it's public. Yeah. Yeah. And how we're gonna like,
+[00:52:26.760 --> 00:52:32.840]   we're still gonna continue like for doing the open source, like making him feel like the
+[00:52:32.840 --> 00:52:38.520]   best way to run like stable if you do models like that, at least the open source side,
+[00:52:38.520 --> 00:52:46.520]   then like it's going to be best way to run models locally. But we will have a few like a few things
+[00:52:46.520 --> 00:52:54.120]   that are to make money from it like cloud inference or like that type of thing. So
+[00:52:54.840 --> 00:53:00.600]   I may be some like some things for some enterprises. I mean, a few questions on that.
+[00:53:00.600 --> 00:53:04.520]   How do you feel about the other comfy startups? I mean, I think it's crazy.
+[00:53:04.520 --> 00:53:09.080]   They're using your name. Yeah. Well, it's better to use comfy than they use something else.
+[00:53:09.080 --> 00:53:17.640]   It's fine. I don't like like, yeah, I mean, we're gonna try not to,
+[00:53:17.640 --> 00:53:24.440]   we don't want to like we want them to people to use comfy. So, like I said, it's better that
+[00:53:24.440 --> 00:53:32.440]   people use comfy than something else. So, as long as they use comfy, it's, I think it helps,
+[00:53:32.440 --> 00:53:38.280]   it helps the ecosystem because more people, even if they don't, like even if they don't
+[00:53:38.280 --> 00:53:45.240]   contribute directly, the fact that they are using comfy means that like people are more likely to
+[00:53:45.240 --> 00:53:50.840]   like join the ecosystem. So, yeah. And then would you ever do text?
+[00:53:50.840 --> 00:53:56.760]   Yeah. Well, you can already do text with some custom notes. So, yeah, it's something we like,
+[00:53:56.760 --> 00:54:04.760]   yeah, it's something I've wanted to eventually add to core, but it's more like, not a very high
+[00:54:04.760 --> 00:54:11.640]   priority. But because a lot of people use text for like prompt enhancement, like other things
+[00:54:11.640 --> 00:54:18.200]   like that. So it's, yeah, it's just that my focus has always been like on diffusion models,
+[00:54:18.840 --> 00:54:24.200]   yeah, unless some text diffusion model comes out. Yeah, David Holt is investing a lot in
+[00:54:24.200 --> 00:54:29.080]   text diffusion. Yeah, if a good one comes out, then well, he'll probably have planted since it's
+[00:54:29.080 --> 00:54:33.800]   fits with the whole. Yeah. I mean, I imagine it's going to be a close source to mid-journey. So,
+[00:54:33.800 --> 00:54:43.080]   yeah, well, if a, yeah, if an open one comes out, yeah, then, yeah, probably, yeah, yeah,
+[00:54:43.080 --> 00:54:48.280]   probably implemented. Cool comfy. Thanks so much for coming on.
+[00:54:48.280 --> 00:54:54.120]   This was fun.
+[00:54:54.120 --> 00:54:59.080]   Bye.
+[00:54:59.080 --> 00:55:09.080]   [BLANK_AUDIO]
+

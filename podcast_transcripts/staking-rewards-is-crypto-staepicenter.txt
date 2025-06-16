@@ -1,0 +1,1111 @@
+--- METADATA START ---
+Show: Learn about Crypto, Blockchain, Ethereum, Bitcoin and Distributed Technologies
+Episode: Staking Rewards: Is Crypto Sta…–Epicenter
+Host: Sebastian Couture, Brian Crane
+GUESTS: Mirko, Obi 
+Guests: Mirko, Obi
+Source URL: https://podcasts.apple.com/no/podcast/staking-rewards-is-crypto-staking-killing-decentralisation/id792338939?i=1000711849207
+--- METADATA END ---
+
+1
+The economics just don't work in proof of stake.
+2
+We have no way of really incentivizing decentralization.
+3
+And then it always naturally consolidates to the biggest players that have the most resources because there's no on-chain mechanism to really incentivize smaller validators because you can't prove that a small validator is only run by one person.
+4
+But it's still a massive opportunity.
+5
+Like there's just Bitcoin lying there that you can borrow at that low cost.
+6
+The percent of the crypto market cap that's secured by proof of work and then by proof of stake.
+7
+And I had done this slide before in presentations a year ago.
+8
+32% was secured by proof of stake.
+9
+And now it was like 20%.
+10
+We see just a huge amount of assets struggling.
+11
+I mean, all the growth came from new networks to a large extent, right?
+12
+New networks and, of course, price growth as well to some extent.
+13
+Both of those have not performed so well, right?
+14
+So you basically have an industry that hasn't been growing much or even shrinking.
+15
+If you're looking to stake your crypto with confidence, look no further than CorusOne.
+16
+More than 150,000 delegators, including institutions like BitGo, Pentera Capital, and Zedger, trust ChorusOne with their assets.
+17
+They support over 50 blockchains and are leaders in governance or networks like Cosmos, ensuring your stake is responsibly managed.
+18
+Thanks to their advanced MEV research, you can also enjoy the highest staking rewards.
+19
+You can stake directly from your preferred wallet, set up a white label node, restake your assets on Eigenei or Symbiotic, or use the SDK for multi-chain staking in your app.
+20
+Learn more at chorus.1 and start staking today.
+21
+This episode is proudly brought to you by Gnosis, a collective dedicated to advancing a decentralized future.
+22
+Gnosis leads innovation with Circles, Gnosis Pay, and Metri, reshaping open banking and money.
+23
+With Hashi and Gnosis VPN, they're building a more resilient, privacy-focused internet.
+24
+If you're looking for an L1 to launch your project, Gnosis Chain offers the same development environment as Ethereum with lower transaction fees.
+25
+It's supported by over 200,000 validators, making Gnosis Chain a reliable and credibly neutral foundation for your applications.
+26
+Gnosis DAO drives Gnosis governance where every voice matters.
+27
+Join the Gnosis community in the Gnosis DAO forum today.
+28
+Deploy on the EVM-compatible Gnosis chain or secure the network with just one GNO and affordable hardware.
+29
+Start your decentralization journey today at Gnosis.io.
+30
+Welcome to Epicenter, the show which talks about the technologies, projects, and people driving decentralization and the blockchain revolution.
+31
+I'm Sebastian Couture, and I'm here with Brian Crane.
+32
+Hey, Brian, what's up?
+33
+Hey, you look wide awake.
+34
+Yeah, I'm highly awake.
+35
+It's very early here on day two of Staking Summit, and we're joined by none other than Miriko.
+36
+Yeah, man.
+37
+All good?
+38
+All good?
+39
+Yeah.
+40
+And Obi.
+41
+And so this is the fourth Staking Summit?
+42
+Fifth?
+43
+Fourth Staking Summit.
+44
+Yeah.
+45
+Yeah.
+46
+You can say the fifth if you count, like the first rooftop meetup in this one, which is crazy people.
+47
+But yeah, it's the full rewarm.
+48
+Okay.
+49
+And Mirko is the one who created it all.
+50
+Very impressive.
+51
+Yeah, it's a team effort, obviously.
+52
+Yeah.
+53
+I've been to three and I thought all of them were really good.
+54
+But this one is like pretty big compared to, say, like the one you had in Bangkok.
+55
+That's the last time we talked.
+56
+And I think this conversation will be like a good kickoff point from that.
+57
+Last conversation in November, where we talked a lot about meme coins, which are not a thing anymore.
+58
+But also, you know, Bitcoin restaking and Bitcoin staking.
+59
+And Symbiotic had not gone live yet.
+60
+So I think there's a few things we can pick up on.
+61
+But yeah, overall, what has been your like what's been the main thing that people have been talking about here at the conference?
+62
+I think it's really about Bitcoin staking has evolved the narrative.
+63
+It's more about sustainability now.
+64
+So everything is more back to the fundamentals, I feel.
+65
+It's not about, yeah, just hyped up.
+66
+It's more about, okay, how can we actually create sustainable yield at the moment?
+67
+And I think we have to do a lot of work there.
+68
+It's the same with shared security.
+69
+It's also evolving more and more and going in the direction of okay, how do we create extra use cases for staking and not just repurpose economic security, which no one needs maybe.
+70
+No one's going to pay for.
+71
+I mean, I think what's interesting thing to look at, just how this is to illustrate how this is not working at all today, is if you look at Aave, there's around $4 billion worth of Bitcoin that's deposited in Aave at a deposit rate of like 0%, that should be like 0.03% some amount.
+72
+And you can borrow Bitcoin on Aave for like 0.5% interest.
+73
+So it's very, very cheap.
+74
+But only like 10% of all the Bitcoin that's being deposited is being borrowed.
+75
+So, like, there's basically almost no demand, right, for people who to even borrow, you know, at 0.5% interest.
+76
+And obviously, if you could earn yield on Bitcoin in any meaningful way, people would do this, right?
+77
+They would be borrowing Bitcoin.
+78
+But, but no one's doing it.
+79
+So, I think you can see that kind of like you know, we're just very, very far.
+80
+There's like a bunch of points and airdrops and stuff people can get, but you know, I think we've all seen those, you know, I think the times where you can make a ton of money from like point farming doesn't seem to be doesn't seem to be the case right now.
+81
+So, yeah, I think it's going to be hard work to get like staking yield to Bitcoin.
+82
+Yeah, yesterday we also had a panel with the Lombard guy on it, and he also mentioned something similar.
+83
+People do not want to, like, people want to hold on to Bitcoin, and there are just not yet enough sustainable yield opportunities in the space, so they are comfortable even putting it into such an Arbor contract where they're just earning such small amounts.
+84
+Yeah, basically, there's nothing exactly.
+85
+So, there's just a statement.
+86
+The only reason why you put it into the Arby contract is because then you can borrow against it, right?
+87
+Yeah, you can take leverage.
+88
+Yeah, you can take borrows and sells, right?
+89
+So, but then you're not earning yield on Bitcoin.
+90
+But I think people don't necessarily need the yield, so I guess it could even scale way higher than the 4 billion that we have right now because there's an infinite demand for leverage as well in crypto, right?
+91
+Well, not infinite remote.
+92
+It's not infinite.
+93
+It's 4 billion.
+94
+Once we get back into the bull markets, it will increase.
+95
+But it'sure we have a massive opportunity.
+96
+Like, there's just Bitcoin lying there that you can borrow at that like low cost.
+97
+So, if you are able to structure a product around it or arbitrage in some kind of way, I feel like this market.
+98
+Sure, but you don't say, oh, there's, I don't know how many trillions of gold, and like, no one's earning yield on gold.
+99
+If you can pay yield on gold, it's a massive opportunity.
+100
+Like, sure.
+101
+Heather just bought like $2 billion of gold reserves, right, for the XAUT token.
+102
+Yeah.
+103
+I wonder what they are cooking as well.
+104
+What do you think is the opportunity here with regards to Bitcoin?
+105
+I mean, like, if you think about it, you know, this Bitcoin is not being utilized, it's not being borrowed.
+106
+So there's all this Bitcoin that's just sitting there.
+107
+Is this sort of a bearish sentiment on Bitcoin or people are not longing it are like boring against it to like sort of loop or leverage?
+108
+There's no bearish Bitcoin at all.
+109
+People just like Bitcoin and there's not much else to do with it.
+110
+Yeah.
+111
+I also think like the market is still maturing.
+112
+It used to be a whole asset for a long time and now it's, yeah.
+113
+Like people are building opportunities around it.
+114
+Yeah.
+115
+I think it's about unlocking even more utility for Bitcoin now and finding like interesting use cases.
+116
+So we're working on this loop BTC product, for example, where we're looking to like source from RWA yields and then arbitrage with the like 0.5 from RV.
+117
+And then it can create like a really interesting basically like lending out BTC to market makers and then you can earn like a sixth income on it for like five to six percent and then you can arbitrage that with the lending markets where you get it for 0.5 so when you loop that you can go to like 15% plus in very sustainable APY how can you loop so I'm giving my Bitcoin to some market maker which is always a undercollectalized loan it's collateralized loans it's collateralized or so what would they put up as collateral um I mean this is uh I think yeah they'll have to figure it out like in the details but they're working with like big OTC desks in New York and yeah bring out the details how to source these RWA yields it's a it's a product that's still relatively early in the development but there's a there's huge demand for people that are doing the basis trade with Bitcoin basically so they can generate like a very good yield on BTC and then yeah they can earn or like pay seven to eight percent on it I think in fixed income I think the idea would be to collateralize the NBTC token right and then borrow rep BTC against it NBTC rep WBTC yeah so the the RWA yield will be sourced or like maybe tokenized in a NBTC token and that can then be arbitraged with the REP BTC so you basically tokenize the the RWA yield oh the token RWA you mean the thing that the OTC desk pays you?
+118
+Right, yeah.
+119
+Right, so the OTT desk gives like whatever, it makes up some coin and then you put that in a pool and borrow WBC against.
+120
+Yeah, so you deposit BTC or REP BTC in a contract.
+121
+They take that BTC, lend it out to a market maker, form the basis trade and generate the.
+122
+They put RWA stuff as collateral.
+123
+Yeah.
+124
+Yeah.
+125
+I mean the the BTC is still there, right?
+126
+So yeah.
+127
+I mean if they're but market maker presumably needs to use it right for trading.
+128
+Right.
+129
+Yeah.
+130
+But they have the like the position is still there.
+131
+It's not going anywhere.
+132
+But you don't know that.
+133
+Well, yeah, I mean this is the it's like the position still there when you lend to three arrows too, right?
+134
+Yeah, but it's all transparent and they work with like big trading desks and so on.
+135
+So this is more about I think the idea is to create a product that sources from like off-chain yields where there's so much opportunity in the market right now.
+136
+And the more we can like bridge this gap between TransFi and DeFi, I think this poses like so many possibilities if we do that like in a transparent way and obviously have like good security and transparency models in place.
+137
+One kind of actually I think potentially sustainable way of earning yield on Bitcoin is if you put Bitcoin into Arbe or something like that and you borrow stable points against it, which you know I think costs you four or five percent or something and then you use those to earn a higher yield.
+138
+Like maybe you can earn ten percent on the stable point, right?
+139
+Like that seems pretty doable.
+140
+And then you could sell off the difference bitcoin yeah it just depends for what risk can you earn the 10 right yeah yeah sure yeah like that's uh you should build that as a product yeah but that's the thing there's just like so many opportunities on bitcoin and i think the space has to evolve more towards things that pay like real yields and not just yeah staking where obviously in staking the the yield continues going down i think over time and yeah it will be hard to to source very sustainable yield just from inflation rewards obviously yeah so so for you mirko you're also focusing a bit more more on bitcoin now with this yeah that's kind of a big focus for you bitcoin yeah i mean i've been excited about bitcoin for a long time and i think having a sustainable yield product on bitcoin it's a huge opportunity um and we are creating this product um that we are still scoping out and assigned the details and so on but um we see this as something that can yeah really help to unlock like the next big wave of pdc staking and sustainable yields basically and so you guys are also going from um you know because so far it's kind of like data and events to more like yield products trading yield products yeah so um the idea is to create products like looping products we've tried that with loop type now, and it was um pretty good um we launched it like one month ago, have like 20 million tbl in it now.
+141
+And the great thing it's like fully complementary to um all the validators.
+142
+We work with validators with this uh community code structure.
+143
+So if the validators deposit into the board, we make sure that all the stake is looped into their validator position.
+144
+Are you using ST Hype?
+145
+Yes.
+146
+Yeah.
+147
+What's ST Hype?
+148
+Underhead, guys.
+149
+Yeah.
+150
+Like a small team.
+151
+That's been a lot of different linguistic privacy.
+152
+And they have this feature community codes where validators on board.
+153
+And if someone uses the validators' community code, then the underlying stake is entirely attributed only to this validator, basically.
+154
+And when we then we also introduce this community codes for the looping product.
+155
+So we have a community code and then we make sure that the underlying stake is entirely looped with this validator.
+156
+Yeah.
+157
+Maybe to loop this back to OIBitcoin, what we are seeing, for example, with staking, I think you guys are seeing it as well at Chorus.
+158
+Stake tends to be quite sticky.
+159
+So when is the opportunity the biggest?
+160
+It's in the beginning of either a network launch, right, when nothing is staked yet.
+161
+So you really want to penetrate the market really early, become a bigger ecosystem player, and try to get that initial stake because it really tends to stick to your validator liquid staking protocol or DeFi protocol.
+162
+And then going back to Bitcoin, it looks like this opportunity seems very similar to a new network launch because right now we have like Bitcoin is just lying around on so many wallets.
+163
+So it's not really staked and it's not really sticky to a specific yield opportunity yet.
+164
+So being early in this market and providing a great sustainable yield opportunity to get this initial deposit and sticky stake happen is right now a big focus at staking awards.
+165
+And that's why we're also shifting our looping product focus into this direction.
+166
+Yeah, so there's a high stickiness to Bitcoin being deployed into various yield generation products.
+167
+Yes, generally speaking, a high stickiness in staking.
+168
+So once you are staking, you're just not thinking about it anymore because in your head you're thinking, yes, this is now a productive asset.
+169
+I'm just earning a passive yield.
+170
+I do not need to switch it.
+171
+It's a cost to switch it again.
+172
+You need to make more research, right?
+173
+So if you're just providing a really good sustainable product out of the goal where people can put it, right, if you get this initial transaction, yeah, others will have to make big investments also to move like staked PTC from potential depositors.
+174
+So yeah, the opportunity in the beginning is the highest, and the market is right now maturing and developing.
+175
+So you want to be part of it.
+176
+Yeah, I wanted to talk a little bit about the maturation of the staking market a little bit.
+177
+And I'm glad that you're here.
+178
+Yesterday there was this talk on MA in the staking ecosystem.
+179
+I don't know if you thought.
+180
+I missed it.
+181
+I mean, I've talked with JP a bit about it, but I unfortunately missed it.
+182
+Yeah, I mean, you know, JP, you've also done some acquisitions in the staking ecosystem.
+183
+I was also talking to Laszlo yesterday from Kiln and we were discussing sort of consolidation in the staking ecosystem and what the future might look like.
+184
+And it seems like there are a lot of indications that the staking use ecosystem as it matures will consolidate and that many staking providers will either get acquired or will acquire smaller staking providers.
+185
+And so I'm curious what you all think that the staking ecosystem might look like in five to ten years.
+186
+Right now it's quite decentralized, I'd say, and like there is a wide range of types of actors from home stakers to kind of ecosystem community partners to large institutional providers like Chorus and likes of Kiln and Figment, et cetera.
+187
+So what are your thoughts on how the staking use ecosystem emerges from here and like what is the role of say asset managers, exchanges, neobanks in this in this in the long term?
+188
+Yeah, I mean, so I did a talk yesterday and I included this slide which had the percent of the crypto market cap that's secured by proof of work and then by proof of stake.
+189
+And I had done this slide before in presentations.
+190
+But then it was interesting to see the data again, you know, 'cause I saw I checked and it was like a year ago, 32% was secured by proof of stake of and and you know, the mo the rest is mostly Bitcoin, right?
+191
+And now it was like 20%, right?
+192
+So we've seen a big, I mean, you know, we we we see just a huge amount of assets are struggling.
+193
+And, you know, you have some that are thriving, you know, I mean, Solana is doing pretty okay.
+194
+And, you know, SUI, and there's like a few, but, you know, even Ethereum struggling.
+195
+And but then, you know, the long tail of assets really struggling, right?
+196
+So you have basically some pockets of crypto doing well.
+197
+I think mainly Bitcoin and stable coins, maybe.
+198
+But a lot of it is not.
+199
+And of course, staking, I mean, all the growth came from new networks to a large extent, right?
+200
+New networks and of course price growth as well to some extent.
+201
+But, you know, both of those have not performed so well, right?
+202
+So you basically have an industry that kind of hasn't been growing much now or even shrinking.
+203
+Now, what would it take for that to change, right?
+204
+I mean, you maybe would have to see, I mean, of course, you could have some temporary change or, you know, some change just in the price side, which, you know, will of course be great for existing players.
+205
+It would still make it hard for someone new to really come in and benefit much.
+206
+I think for new people, new companies to come in, you'd have to see maybe really a lot of new networks launching again that actually get a lot of traction.
+207
+And I don't think that's going to happen anytime soon.
+208
+Like I don't think it will happen in the next few years.
+209
+Like, you know, we see fewer new network, big network launches, you know, when we look at, like, I mean, okay.
+210
+2021, 2022.
+211
+Yeah, I mean, if you look at like our thing, you know, of course, there's a variety of networks that we're gonna launch, but you know, of like really high expectation ones, I mean, monad comes to mind, then there's like not that much else.
+212
+So, you know, I think that's just And then you've had in staking, you've had an industry that was very easy to enter, right?
+213
+Like the initial barrier to entry is very low.
+214
+Yeah.
+215
+So in a lot of companies came in, and then you have kind of this, you know, huge supply of companies, and you have an industry that's been kind of shrinking a bit for a while.
+216
+And of course, that's a very challenging situation.
+217
+It means a lot of companies are not in a great position or like they're and so yeah, I think some kind of degree of oh, and then some other things, right?
+218
+So new networks have tended to have smaller validator sets at launch, right?
+219
+So, you know, maybe 10 or 15 or 30 or something like that.
+220
+So even then, just getting in is like harder.
+221
+And then you've also had the thing where now some networks are saying, oh, maybe investors cannot stake.
+222
+Or maybe there's lower staking rewards.
+223
+Or there's no staking rewards.
+224
+No staking rewards, right?
+225
+Or like, or like all the same rules are locked.
+226
+Or like they do all this stuff, which, you know, I think is a little bit desperate and doesn't make too much sense if you ask me.
+227
+But it's kind of like this reaction of like, oh, I mean, we're afraid, right?
+228
+We're afraid of the market.
+229
+We're afraid there's no buying demand.
+230
+So we try to kind of like cut off all the sell pressure.
+231
+And, but, of course, that is also reduces the ability for staking companies to generate revenues.
+232
+So, yeah, I think all of these make it challenging.
+233
+And then, at the same time, I think the integration into wallets, yeah, fintechs, stratify, ETPs, all of those things becomes more important.
+234
+And I think that's expensive to compete in.
+235
+Right.
+236
+You know, because you have to invest a lot in product, you have to invest a lot in BD and compliance and brand.
+237
+There's a lot of things you have to invest in a lot.
+238
+So, I do think that you're going to have a situation where there's only a handful of companies that can really compete there.
+239
+And they can do okay.
+240
+None of them are going to do like amazing until things change, right?
+241
+Until maybe the market changes.
+242
+But then I think a lot of others are just, you know, they don't really have a very viable business, right?
+243
+So then we've also seen a bunch of, you mentioned, you know, MA and stuff, right?
+244
+So we have seen some of those.
+245
+You know, we haven't really seen any large staking acquisitions for a while, but we've seen a bunch of small or kind of struggling ones sell more recently.
+246
+Yeah.
+247
+Yeah, that's a great overview.
+248
+I mean, sorry, yeah.
+249
+Yeah, I just want to say, I think obviously it's going, there would have to be much more differentiators for stake price.
+250
+It's becoming much more important to have an edge, I think.
+251
+And I'm not sure how many edges you think there are, but I think there's probably at least three.
+252
+Either you have like very good distribution as an edge, or you have like the geography can be an edge.
+253
+If you can be like the leader in a certain country and maybe also like, yeah, claim that market and have like good contact with regulators or whatever.
+254
+Or it's like a the third edge would probably be like strategic.
+255
+That's what you what you said, like a lot of networks that just launched with a small set and they just bring people on that are like fully aligned and strategically helping the product grow as well.
+256
+So it's not necessarily about like generating rewards or for them to set it up as a business, but it's more, okay, they already use the product and they helped grow.
+257
+Maybe they are invested themselves in some form or another.
+258
+And then they also run a validator for it, basically.
+259
+So it's like either a distribution, strategy, or geography.
+260
+Yeah, I would also say the validator meta has changed completely.
+261
+Like if you were like a top five, like competing with other top five validators maybe three to five years ago for like a slot in a like in the network what is just launching compared to now where you're competing maybe with 20 25 to 30 or even more providers because everybody is just improving and on the infrastructure level itself I would say the the difference in performance is is very little.
+262
+So you have a a lot of providers in the space that are very, very similar when it comes to yeah the infrastructure, basically what is important to secure a network.
+263
+And you really, yeah, like to build on Merko's point, you really need to differentiate.
+264
+And you also really need to probably do some very calculated bets on networks that you deem to be winners, right?
+265
+Because in order to get into the active sets, you need to offer some additional services, maybe some value-added services, or somehow add value to the ecosystem because just infrastructure, I feel like, is not enough anymore.
+266
+And I also strongly believe that it won't be enough in the future.
+267
+Otherwise, you'll just be competing over price and then basically funding the infrastructure for free.
+268
+You think the infrastructure then just basically gets commoditized and validators are basically only competing on price?
+269
+I mean, yeah, or they have to already have some strategic.
+270
+Yeah.
+271
+I mean, yeah, I think that's probably the case for the basic infrastructure provision.
+272
+But there's also the case, I think, where staking itself will become more specialized into performing certain tasks and actions.
+273
+So, for example, like in BitTenzo, it's a totally different ecosystem.
+274
+But to run a validator on BitTenzo, you actually need to set up a real data center.
+275
+You need to really perform some work.
+276
+You need to do this, what is it called that they do in BitTenzo?
+277
+But they basically validate these subnets and they perform like all these AI models running basically as a validators.
+278
+So it's like it's an actual task that creates value as well.
+279
+It's more like, it's going more back into the direction of proof of work maybe, where you perform not just stake, but it's a bit more work.
+280
+And I think there will be more use cases as well, probably on the infrastructure side.
+281
+I think there can be, I mean, you know, we have a sort of a small like font research team and we have gone like sometimes we go very deep on some networks to optimize performance and rewards which can make a meaningful difference.
+282
+But it tends to be, first of all, on a lot of networks, yeah, you can't, there's really not much to do.
+283
+And on other networks, it's not worth doing anything, right?
+284
+So then it's really like, I mean, right now our effort on that front is just focused on Solana and BearChain a bit.
+285
+And BearChain also, there's actually very, like, the difference for us in the rewards we've been earning on the GTE proof liquor thing is actually very meaningful, right?
+286
+So that's a big difference between like, so we spend a lot of time, you know, some optimizing that.
+287
+And, you know, Solana, I think there's also meaningful differences you can achieve, but then it takes a lot of work, right?
+288
+Because you have to really dive into it and you have to research it and understand it.
+289
+And then maybe you start modifying the client.
+290
+So, but I think that can be, you know, there can be meaningful differentiation there.
+291
+But yeah, you have to go very deep.
+292
+And of course, that's expensive, takes a lot of resources.
+293
+Yeah.
+294
+You guys recently cut a couple of networks that you were.
+295
+Yeah, we cut like, this is the biggest network.
+296
+How many networks?
+297
+I think like 15 or something.
+298
+Oh, wow.
+299
+That's a lot.
+300
+Out of what?
+301
+G60?
+302
+We were like, I think running around six, maybe over 60.
+303
+So I think now we will go down more to like 50.
+304
+I mean, we're still in the whole off-boarding thing takes a bit of time too.
+305
+Yeah.
+306
+I think we'll probably do another round like afterwards, look at maybe a few more networks.
+307
+So is it just a profitability question there?
+308
+Or are there other things that come into it?
+309
+Yeah, it's profitability mainly.
+310
+Yeah, there's just a lot of networks where, you know, just the token was doing poorly, and maybe also the economics were not very good.
+311
+And we were just not making any money.
+312
+And there didn't seem to be any prospect to get to.
+313
+Yeah.
+314
+So, yeah.
+315
+So, I mean, I think for us, it's definitely a part of wanting to focus also more on the big networks that make a big difference.
+316
+Right.
+317
+This, I mean, this kind of comes back to my earlier point about consolidation.
+318
+So it looks like you guys are consolidating on the bigger networks.
+319
+And consolidation is a different level, right?
+320
+There's like consolidation of, say, at the broader level of the ecosystem of state within a certain number of very professional actors that have distribution.
+321
+There's also consolidation at the individual provider level where you're consolidating, like large, those large actors are going to want to consolidate around big networks that have profitability, where token price is going to be maintained.
+322
+And so it kind of feels like, and then consolidation also at the network level, where those large networks may launch with smaller validator sets in order to prevent too much inflation of the token, in order to prevent the sell pressure, et cetera.
+323
+So there's consolidation at every level, basically.
+324
+All of this picture together, does it just point to a world where networks are less decentralized, where there are fewer validators, fewer validators on each network, and fewer large validators or sort of meaningful enterprise-grade validators securing most of the ecosystem?
+325
+Yeah, I think so.
+326
+Absolutely.
+327
+Now, I think there's different reasons for it, right?
+328
+One is that decentralization is kind of expensive, right?
+329
+It's expensive to pay a lot of validators enough so that it makes sense to track if they come in.
+330
+And with token prices not doing well, new networks struggling, right?
+331
+People are like, I want to save that cost.
+332
+And then I think the other thing is that people just don't care that much about decentralization, right?
+333
+People don't care much is like 200 validators or 30 validators.
+334
+It doesn't really seem something that's like a huge determinant of success.
+335
+So then people are like, well, we can, this is a place where we can save costs.
+336
+That's sort of an existential crisis sort of question, isn't it?
+337
+Because the entire point of the industry, the entire point of blockchains broadly is decentralization and no centralized control.
+338
+But I think the economics just don't work and proof of stake as well.
+339
+We have no way of really incentivizing decentralization as well.
+340
+There's no economic level for someone that's running a smaller validator.
+341
+And a lot of protocols have tried, I guess, but they haven't succeeded in it.
+342
+And then it always naturally consolidates to the biggest players that have the most resources because there's no on-chain mechanism to really incentivize smaller validators because you can't prove that a small validator is only run by one person.
+343
+And I think as long as we don't solve that problem, it will always tend to keep consolidating.
+344
+Do you think it's a problem that can be solved?
+345
+At some point, yeah, I think so.
+346
+I mean, I think it could only be solved if you have some kind of identity off-chain, you know, like, because otherwise you just, you just, I mean, in a way, other people have exactly as you pointed out, right?
+347
+They have tried to design proof-stake systems that are like, you know, decentralized.
+348
+I mean, look, Ethereum, in a way, right?
+349
+They're like, oh, there is a degree.
+350
+But you just run thousands of validators, tens of thousands of validators.
+351
+It doesn't, or like, you know, others like, you know, Polkadot or a bunch of others, right?
+352
+They're like, oh, we have, you know, every validator in the set earns the same awards and maybe at some point they assumed this was gonna lead to, you know, having you know, all these being different entities, but no, then you just run, you run a bunch of validators, right?
+353
+I don't think there's any way to prevent this.
+354
+Yeah, you would have to really have some sort of like, you know, a bit like what the Solana Foundation does with their delegation program, right?
+355
+Where they basically say, like, okay, you know, we're gonna do some kind of verification, make sure these are individual, you know, organizations, and then we're gonna split the stake.
+356
+Now, I think my understanding is actually in their case, they even think of getting rid of this or reducing this, right?
+357
+Because they're kind of like, well, does that make a lot of sense?
+358
+Because now there's a lot of validators whose only business is this Solana Foundation stake that they make a bunch of money on.
+359
+Otherwise, no one cares about them.
+360
+No one's heard of them.
+361
+No one's staking with them.
+362
+So I think they starting to unstake from people who don't have other delegations because they're like, this doesn't make, you know, also like, what does it really, how does it really benefit the network?
+363
+Yeah.
+364
+Not very clear.
+365
+Like, okay, you can tout some metric and say, oh, you have more validators, more decentralized, but it's kind of meaningless.
+366
+Yeah.
+367
+And then you're basically just sort of like paying service providers to run your network.
+368
+Yeah.
+369
+Yeah.
+370
+I think Larry from you guys know Larry and Dango previously Delphi.
+371
+So their network, basically they're like doing away with all of this, and they're just like validators are invoicing Django and they're paying them for to run the service.
+372
+Yeah, sure, but the issue is I know there are like some people doing something like that, but then the issue is they will like you know, I don't know, pay something like what, like, you know, 3K a month for something for like you know, some amount that, you know, maybe higher than the cost of just running the infrastructure, but is like nowhere near enough to actually, you know, have a reasonable business, right?
+373
+So there's no that's not a future that I mean, that's not a future that's gonna, you know, allow people to organize great conferences like staking rewards.
+374
+Yeah, but actually, but from decentralization perspective, is it hard to run the infrastructure there?
+375
+Because like 3,000 euros a month or dollars a month that might incentivize somebody to just run it in their home, right?
+376
+It's still like a reasonably high amount.
+377
+Of course, like a professional infrastructure provider that has like a UX team won't take this opportunity because there are just so many other opportunities.
+378
+But there's also like a benefit in having a plannable income each month when you have like, right, like when you have like your cost and your invoice versus like some token that might moon in the future, right?
+379
+This is also like a strategy that some validators are running, right?
+380
+They are supporting early, they don't know what happens to the network in the hopes that it's like, yeah, they made their analysis and they think it's going to be big at some point.
+381
+Basically, like a VC, right?
+382
+So, yeah, it's just a different approach that offers the opportunity to run a plannable business.
+383
+And I used to work at Telecom where we were also running a staking business, and plannability is extremely important also for the adoption of the more web 2-ish players in the whole space, which some might like and others might not like.
+384
+But just having a volatile token every month where you don't know what you have in six months is very hard if you have to do like financial plans for over a whole year, versus when you have something you can invoice, which is nice if you have a company that is listed.
+385
+It actually isn't too bad of an approach.
+386
+Yeah, but I think here the maybe like the issue is that in this example, you may have just a network of kind of at-home semi-professional validators, and you'll never have the institutional type validators like Chorus that are able to offer distribution to neobanks and assets.
+387
+Yeah, I guess in the end, you now make 30K.
+388
+Well, even if you have, I mean, how many networks of that kind would you need to be able to support a reasonable size team that has, you know, I don't know, does all the things that you need like a huge amount, like way more than they exist.
+389
+So I think it's not.
+390
+Yeah, but you're making the argument just for an institutional great operator set.
+391
+Do you need an institutional great operator set with providers that have like 100 people teams for every network?
+392
+Maybe you do not have a network that is meant for a neobank adoption, right?
+393
+Maybe it's just like, yeah, maybe there are some other use cases.
+394
+Sure.
+395
+Yeah, totally.
+396
+It can be.
+397
+Of course, like this.
+398
+Yeah, it's like about the decentralization, right?
+399
+Of course, there's a cost.
+400
+If you want to have a super decentralized network, you can't have like 100 institutional great providers supporting it.
+401
+I mean, the issue with decentralization here is also like what does it mean exactly, right?
+402
+Because if this guy now says, like, okay, I'm working with these 10 parties and they write me an invoice and I pay them some dollars, like it's, of course, also very, very far from the kind of decentralization that they will run it in Hetzna or something.
+403
+Yeah.
+404
+You mentioned Telegam and so there was a talk, I think, yesterday, or a panel with someone from big and staking as well.
+405
+Yeah, so what's the play there?
+406
+Wait, what is that?
+407
+Telcos?
+408
+Yeah, like Deutsche Telecom or there's telecommunication companies.
+409
+Yeah, and we actually have like a sponsor here as well, right?
+410
+SC Barrain and like Neoprotocol is doing a lot.
+411
+Yeah, actually, I can take that one why telcos are moving because actually telecom, I think we were the first in the space and a lot of other telcos are now joining as well following what Deutsche Telecom is doing.
+412
+And basically the argument that we sold internally, so people were not because we got actually challenged a lot internally with like crypto as a scam and stuff.
+413
+But at the end of the day, from teleco perspective, it's an infrastructure play, right?
+414
+So you're an infrastructure provider for the internet, right?
+415
+You're digging all the up the ground, putting all the cables in there.
+416
+Then you're an infrastructure provider for mobile.
+417
+And then yeah, what's the next big thing?
+418
+These guys also need to position themselves for the future.
+419
+It's like Web3, Internet of Ownership.
+420
+Ownership.
+421
+Basically, it's a huge argument for blockchain.
+422
+And then you want to be an infrastructure provider for blockchain.
+423
+It's still a very tiny business compared to the overall telco business, but you want to have a foot in the door in case it becomes bigger.
+424
+And yeah, that's basically like an infrastructure play.
+425
+So what networks does Deutsche Telecom validate?
+426
+I'm not sure what they do because they also think they had to cut some networks because of profitability.
+427
+It's actually a problem.
+428
+But definitely back when I was there, like Ethereum, I think Polkadot, and Cello actually, they had this, like in the beginning, a big focus on mobile, like connecting your wallet to like the mobile phone number.
+429
+So that was also like a strategic thing.
+430
+Chainlink was big for them.
+431
+Oh yeah, Chainlink is actually, yeah, yeah, like it is.
+432
+Yeah.
+433
+I think the biggest.
+434
+I mean, that makes sense.
+435
+And I mean, for Deutsche Telecom or any telco, you know, who operate data centers and like have the infrastructure basically in-house, it sort of makes sense.
+436
+It's like it's like a low lift to go run a couple of validators on like some servers running in some data center that they have.
+437
+It's actually also from decentralization perspectives, I think, a strong argument because like you have the hyper-decentralizer there, right?
+438
+You have like your own internet cables, your own cloud.
+439
+I think nobody else was on Open Telecom Cloud.
+440
+And yeah.
+441
+So there's definitely an argument that these guys are also decentralizing, even though they are these big players that are monetizing everything.
+442
+Yeah, on blockchain, that's going to be hard.
+443
+And especially to have distribution as well.
+444
+I think that's one of the key points.
+445
+I mean, Dutch Telecom and other telco providers, everyone using them on their phone.
+446
+So it's a huge distribution and brand.
+447
+And they could, of course, try to have a crypto wallet and stuff like that.
+448
+Exactly.
+449
+And some telcos also have, like, so, for example, in France, Orange also has a bank, right?
+450
+And so they sort of have different verticals in addition to the sort of telecom aspect.
+451
+So the distribution can be sort of like internalized as well.
+452
+Yeah, I think it's very exciting.
+453
+We probably see more of that, like networks willing to onboard for brand and distribution.
+454
+And it's kind of a symbiotic relationship, I guess.
+455
+Symbiotic.
+456
+Talking about symbiotic transition.
+457
+So we have about 10 minutes left.
+458
+So yeah, since last time we talked, we did it together with Felix and Symbiotic had not yet launched mainnet.
+459
+So yeah, I guess at a high level, how excited are you about Symbiotic come to the market and you know more broadly, what do you think restaking looks like in a year from now?
+460
+My perspective on restaking is that like the narrative has kind of deflated a little bit since last year, since Eigenlair launched.
+461
+And there's questions about like sustainability.
+462
+Yeah, I mean I think there's a they're changing their focus now, right?
+463
+I guess from the positioning, they don't want to call, like no one wants to call it restaking anymore, I think.
+464
+Even Eigenleyer and Babylon, like everyone is kind of away from restaking because that narrative is kind of washed out now.
+465
+And Symbiotic, I think I say universal staking now.
+466
+And it kind of makes sense.
+467
+I think this is like the use cases that those networks like Symbiotic have to unlock to really create sustainable yield.
+468
+And it is coming as well with projects like this CapMoney, where you basically have a yielding stablecoin and you stake into asset managers.
+469
+And if they produce the target APY for the stablecoin, then they get rewards.
+470
+And if they don't, then they get slashed.
+471
+So it's really going more in the direction of just economic alignment between different actors online.
+472
+And I think that's very exciting for the staking space.
+473
+There's so much use cases that we haven't unlocked for staking in general yet.
+474
+You look at staking from a first principle.
+475
+It's just like putting capital or like guaranteeing some sort of digital or economic work to be done and getting a guarantee for it.
+476
+So you get a guarantee that someone gets a certain work done, whatever that is, generating a yield or whatever.
+477
+And you do that in a trust-based way, which is pretty fascinating, I think.
+478
+And I believe there's millions of use cases that are still totally underexplored in that direction.
+479
+And I would love for these projects like Eigenlayer, Symbiotic, Barbara, and everyone to unlock these use cases and help us to create a more efficient way of how we collaborate online and how we shape our economy.
+480
+What kind of use cases are you most decided about?
+481
+Yeah, I mean, for example, it's like yield generation.
+482
+I think this could be a big thing.
+483
+Just getting guarantees that a third yield is done, because then you have a real, yeah, you get a guarantee.
+484
+That's almost like, and there's no risk because if the yield is not generated, then they get slashed.
+485
+So you not just trust the product when they claim they have whatever APY or something, but you know you're going to get it.
+486
+And there's no risk of even losing your collateral, for example.
+487
+If you have someone on the other hand, you could get slashed if your collateral or your yield doesn't sustain, basically.
+488
+Yeah, I mean, I think on a high level, you know, Eigenlayer had a lot of expectations, right?
+489
+A lot of hype.
+490
+Then people deposited a lot of ETH into it in anticipation that, like, hey, we're going to make significant extra yield from it.
+491
+You know, which at first was the points.
+492
+And then there was the Eigenlayer airdrop.
+493
+And, you know, I think that that seemed to have worked pretty well.
+494
+But, you know, that's over now, right?
+495
+So now it's the eigen pays some extra staking yield, right?
+496
+Still, if you stake ETH, but that is like 0.6% right now.
+497
+So let's say you make 3% from ETH staking, you make 0.6% from Eigen extra.
+498
+LRTs were paying incentives, but I think all of those have run out.
+499
+So you don't make anything from the LRT.
+500
+And then the ABSs basically don't pay anything.
+501
+And I think there's a very strong aversion from any ABS to pay anything.
+502
+Because if you let's say you compare to something like Solana, Solana pays staking rewards in Solana to people who hold Solana, right?
+503
+They're Solana investors.
+504
+Most of these people like more Solana, right?
+505
+They want to have Solana, right?
+506
+So staking rewards doesn't necessarily mean people are going to sell anything, right?
+507
+They may sell some for taxes.
+508
+And there was the whole like economics debate around the Solana inflation proposal.
+509
+But fundamentally, if you pay your staking rewards to people in your native assets who already hold your native assets, it's kind of like works pretty well.
+510
+But if you pay your staking rewards to people who are just staking ETH and they want more ETH APY, like for sure they're going to sell all of it, right?
+511
+Like or the LRTs may even do it automatically on people's behalf.
+512
+So I think there's a big aversion from ABSs to pay any rewards.
+513
+So basically those are kind of like zero, right?
+514
+So you have 3.6% now, roughly, if you're re-staking ETH.
+515
+The other thing is there's a huge amount of leverage in the system.
+516
+So people mostly staking with LRTs.
+517
+Most of the LRTs, I think something like 60 to you know, 80% is deposited in Aave because people will get, you know, stake ETH, get like Easy ETH or something or Etherfy ETH, put it into Aave, borrow ETH, look this, right?
+518
+Of course, that also means that when you unwind this, the TBL, you know, someone may be staking, you know, 1 million, but then the TBL will go down by 10 million, or I don't know how much, how much, but you know, it's a lot, right?
+519
+So I think, and that's also a little bit where you have, I mean, one of the challenges around Eigenlayer, because for a long time they were like, hey, look, we have so much ETH in there.
+520
+We're doing really well.
+521
+We're killing it.
+522
+But of course, that also means on the flip side, if the ETH balance is going to come down, it's going to look really bad, right?
+523
+And then that might depress the Eigenlayer price, which further reduces the yield people make and more incentivizes people to unwind it.
+524
+So my guess would be that you're going to see the TBL for Eigenlayer come down a lot.
+525
+And then in the end, for it to really make sense, and in the long run, right, you need the ABS yield.
+526
+So this is the only thing that's kind of like real and sustainable.
+527
+And yeah, I think that's going to be hard to get.
+528
+Now, I think the I guess EigenLayer has gone in that direction too, but I think the symbiotic approach of people having being able to stake their own tokens, I think it's a bit more sustainable, right?
+529
+So let's say if you like Akina and then you say you have a chain and people can stake ENA and USDE or something, and then like you probably want to incentivize that a lot more than you want to incentivize like EPStake.
+530
+Of course, that still then raises the question, okay, well, you know, what would a symbiotic token do and why would it have any value?
+531
+And so it still raises, you know, a lot of questions remain.
+532
+But yeah, I think you are going to see a big deflation of this whole restaking narrative.
+533
+And I think it's going to, people are going to be like, oh, this is dead.
+534
+Now, don't think it necessarily is dead, right?
+535
+In the long run, it makes some sense.
+536
+Like, I mean, it is pretty reasonable to say, hey, we want to have some economic value that's being secured, that's being used to secure one thing, to secure multiple things at the same time.
+537
+And I think that kind of pattern is something that makes sense.
+538
+So I think there's going to be something real there in the long run.
+539
+But I think my guess would be restaking is going to have a very hard time in the next two years at least.
+540
+And it's going to be hard to come back.
+541
+So that's what happens to all the projects when they launch with an IAF TV or with Einlaire, maybe launch with a high TVL, so to say.
+542
+Once this goes down, it creates a psychological kind of looks bearish.
+543
+And it's really hard to come back from that instead of if they didn't have much TVL but grew more organically, and maybe at this point they shouldn't have had so much TVA, probably for yeah, exactly.
+544
+It becomes more of a liability, right?
+545
+I mean, it looks fantastic, and you know, okay, they could like raise it very high valuations and stuff like that, but like I think it's something that then like hits you when it when it goes the other direction.
+546
+Yeah, guys, I think we should button this up.
+547
+Thank you so much.
+548
+It's been fascinating, and uh, yeah, congrats on another great event.
+549
+Thank you for having us.
+550
+Been a pleasure.
+551
+Thanks.

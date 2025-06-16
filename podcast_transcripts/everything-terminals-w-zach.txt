@@ -1,0 +1,995 @@
+--- METADATA START ---
+Show: The Analytics Engineering Podcast
+Episode: Everything terminals (w/ Zach …
+Host: Tristan Handy
+GUESTS: Zach Lloyd 
+Guests: Zach Lloyd
+Source URL: https://podcasts.apple.com/us/podcast/everything-terminals-w-zach-lloyd/id1574755368?i=1000709767117
+--- METADATA END ---
+
+1
+Hi, I'm Dan Poppy, the producer for the Analytics Engineering Podcast.
+2
+Before we get to this episode, I wanted to invite you to join Tristan May 28th at the 2025 DBT Launch Showcase for the latest features landing in DBT to empower the next era of analytics.
+3
+Register now at getdbt.com.
+4
+We'll see you there.
+5
+Welcome to the Analytics Engineering Podcast, featuring conversations with practitioners inventing the future of analytics engineering.
+6
+In this season of the Analytics Engineering Podcast, I'm digging deep into the world of developer tools and databases.
+7
+As a data practitioner, I use developer tools all the time, but I often feel like an outsider when doing so.
+8
+I know how to use the command line, but I don't actually know what Bash is or how it's different from ZShell.
+9
+I know how to ship a Docker image, but I don't know how Docker itself does its magic.
+10
+And I'd like to know how things work.
+11
+Maybe you do too.
+12
+In this episode, I talked to Zach Lloyd, founder of Warp.
+13
+Warp is a terminal built for the modern era, including for agents.
+14
+We get into the history of terminals all the way back to green screens and trace that history to the present.
+15
+In the process, I learned the difference between terminals and shells, the landscape of different options, and where the ecosystem is headed.
+16
+It's fascinating to think that in a text-based world of generative AI, the terminal could re-establish itself as the control center for all of your computer usage.
+17
+Text in, text out.
+18
+Without further ado, let's get into it.
+19
+Zach Lloyd, welcome to the Analytics Engineering Podcast.
+20
+Thanks for having me.
+21
+It's great to be here.
+22
+We are going to dive into a topic that I certainly love.
+23
+It's a topic that I love, but one that I don't think that I have spent a lot of time thinking about over the course of my career: terminals.
+24
+I am fascinated to learn more from you on this topic.
+25
+But why don't you, as a kind of an intro, why don't you say a little bit about the product you're building, where the idea came from, and where you folks are at today?
+26
+Sure.
+27
+So the product is called Warp.
+28
+The idea is to reimagine the command line to make it more approachable, more powerful, more useful for developers.
+29
+The genesis came from, I was looking at tools that I regularly use as a developer, and I've been a software engineer for over 20 years now.
+30
+Don't sigh before you say that.
+31
+That's sad.
+32
+It's surprising.
+33
+I don't know how much longer I'll be one, but yeah, I've been a developer for a very long time, and I've always used the terminal.
+34
+And I've never quite understood why it works the way that it does.
+35
+And for a long time, I would consider myself a sort of like minimal, like learn the minimum amount I need in order to do my job okay in the terminal.
+36
+Yeah.
+37
+And then Google and Stack Overflow the rest, right?
+38
+Yeah, or like, you know, more commonly for me, it's like bug someone else on my team when I have some Git problem or, you know, I want to get it set up so I can see the status of the Git branch, like the really, really basic stuff.
+39
+So I don't know, when I was thinking about what I wanted to work on coming out of, actually, I had founded another venture-backed startup.
+40
+I was looking at tools that I frequently use that I thought could, you know, if you were to improve them, could potentially have a big impact.
+41
+And then, I bet I could get a lot more out of this tool if it worked more like a modern app.
+42
+I do think there, you know, a lot of times the best developers that I worked with in my career were really good at using it.
+43
+And it seemed like a thing where if you could make the interface more approachable, you know, like a less steep learning curve, that you could really unlock a lot of productivity for software engineers.
+44
+And so that was the genesis of it.
+45
+And how long ago was that?
+46
+That was like five years ago.
+47
+Okay.
+48
+That was like five years ago.
+49
+And the initial idea for the product coming out of the gate was like, let's just reimagine the interface.
+50
+And that's what we spent sort of the first year and a half, two years working on.
+51
+And, you know, it was like, honestly, it was like simple things.
+52
+It was like, why not be able to use the mouse to position your cursor when you're editing the terminal command?
+53
+Or why, you know, why not make it so you don't have to do a bunch of like RC file configuration in order to get completions and see what Git branch you're in?
+54
+And why not make it easy to select all of a prior command's output for copy-paste?
+55
+And so really just like very basic things around the UX of the command line was where we started.
+56
+It's not where we've ended.
+57
+Like the product today is, I conceive of it much more of like an interface for asking AI to do things for you.
+58
+So when LLMs came out, we pretty quickly realized like, hey, this is a really, really big enabling technology for using the terminal.
+59
+Because the hardest things about using the command line are like...
+60
+It's like remembering what all the commands are, it's doing multi-step workflows, it's debugging crazy errors you see, and LLMs can just do all of this stuff.
+61
+And so today, what Warp is, it's really like a natural language interface into doing anything you want to do in the command line, which really is like anything you can do as an engineer.
+62
+Meaning like you can tell Warp to set up projects, you can tell it to write code, you can tell it to debug production.
+63
+So that's what the product is today, but that is not how it started.
+64
+It started as like, let's try and make the terminal a much more usable tool.
+65
+Gosh, when you're talking about mouse insert points and copy-paste, I immediately want to go right there.
+66
+But let's start at the beginning.
+67
+There's, I think, kind of two big concepts here.
+68
+There's the concept of a shell and the concept of a terminal.
+69
+I want to start with the concept of a shell.
+70
+Can you define that term?
+71
+Like, what is a shell?
+72
+Yeah, so think of the shell as like a program that takes text in, parses it as like, usually it's like an interactive command that you want to run, and then invokes a program on the user's behalf.
+73
+And then that program will also be text-based, will have text-based output, and it'll pipe that text-based output as output back.
+74
+And you can run the shell in like interactive mode, or you can think of the shell as like, you know, multi-step kind of command interpreter.
+75
+So you can write scripts where it will do multiple of these things in a row.
+76
+The terminal, which I assume you're going to ask, what's the difference, the terminal.
+77
+So when I'm using a terminal, I am today, I think Mac has steered me towards using Z Shell.
+78
+Before that, I think I was using Bash, Born Again Shell.
+79
+Some of these shells, I think I was looking it up.
+80
+I think Born Against Shell was 1989.
+81
+I mean, like, that's a minute ago.
+82
+And they exist in this kind of, and I'm a little out of my depth here, but they exist in this world of the new ecosystem.
+83
+So like CP copy is a, I think, a program.
+84
+It's a program.
+85
+Like, it's a little weird to think about copy as a program, but everything that you type in a shell, or like the first thing that you type is, I think, a program.
+86
+And so, like, what parts of this are the shell itself versus like, like, so let's say that I'm in Z shell and I move over to Bash.
+87
+Is my CP program the same?
+88
+Great question.
+89
+I think that there's like some subtlety here.
+90
+So, yeah, usually the first thing, the first part of the string that you type into the shell is the program name.
+91
+Some of these programs are so simple, like HCP or LS, that I think they're called what's like a shell built-in.
+92
+And so the shell itself won't like fork a new process and like run it as a program.
+93
+I'm sure, by the way, just as a caveat, I'm going to say several things on this podcast that are not 100% right.
+94
+And just I'm going to the extent of my knowledge here, too.
+95
+But yeah, there's a distinction between these things that are built-ins, which, you know, it's not worth the overhead of spawning a process.
+96
+And the shell program, the shell itself might as well do that for the user.
+97
+But the general thing is the shell will parse the first thing that the user types as an executable.
+98
+It'll kind of look along the path typically, find that executable, and then launch it as its own process.
+99
+And the shell's job is to basically parse that string where the user is entering the command, which is the program name plus some set of arguments, and figure out then how to call one of these programs.
+100
+Got it.
+101
+And this is a fairly simple thing.
+102
+Parsing a string of text and calling a program with arguments.
+103
+Is the simplicity of this, which is very Unix in nature, why there's been so little change in this world for so long?
+104
+Like it's a simple building block.
+105
+Does software engineers have battles over like, screw you, bash, I'm a Z shell all the way?
+106
+Like, is that an idea?
+107
+That's a thing, for sure.
+108
+When people argue about that kind of stuff, like, what are the things that they are arguing about?
+109
+It's a good question.
+110
+I mean, so these shells have different features.
+111
+They have different syntaxes.
+112
+They give you different stuff out of the box.
+113
+So how do they differ?
+114
+So they might differ in the way that they support completions.
+115
+They have different completion specs.
+116
+And completions, what I mean by that, is a thing where you're typing a command, then you hit tab, and it shows you what are all the choices for files that could go here.
+117
+They have different configuration options.
+118
+They might support different things when it comes to piping and multitasking and running programs in the background.
+119
+There is a sort of like standard around this with the base program.
+120
+Yeah, they almost always ended in like an SH.
+121
+So if someone says like ZSH, bash, fish, there's a CSH, there's a corn shell, there's like all these things, they ended in SH.
+122
+And there is like a lowest common denominator one, which is supposed to be, I think, like the most common thing.
+123
+It should be on every like Linux or Unix distribution called SH, which has the smallest feature set.
+124
+But yeah, generally these shells have different feature sets.
+125
+They have different licenses as well.
+126
+Oh, interesting.
+127
+So like, I actually think that that is the reason that the Mac default switched from bash to ZSH was because of it may have been like a GPL license thing.
+128
+I forget the exact reason, but they have different licenses too.
+129
+Different amounts of usability, that type of thing.
+130
+Got it.
+131
+But fundamentally, they're all abstractions over the operating system that allow you to call programs.
+132
+It's not like one shell or another shell is or is not compatible with a particular program.
+133
+Like it's built to run on your operating system, and then you can run all the other programs on your operating system.
+134
+Yeah, that's right.
+135
+Here's a maybe a silly question or an opportunity for you to wax poetic.
+136
+We've talked a little bit about the history and how far back some of this stuff goes.
+137
+Terminals overall significantly predate any kind of graphical user interface.
+138
+And if you would have believed Windows marketing in the 90s, graphical user interfaces were the newest thing and they'd take humanity into the next era of enlightenment and no one would ever need to type into their computer again.
+139
+And yet, what do you know?
+140
+Many, many humans, many smart humans still choose to interact with their computers in a way that is not actually that different from the way that you would interact with a computer, you know, 40 years ago.
+141
+What is so lasting about this text-based interaction modality?
+142
+Yeah, it's a great question.
+143
+There are a few things.
+144
+So, first of all, for the majority of the world, I think the Windows people were right.
+145
+So, it's really we're talking about developers, systems administrators, people.
+146
+It's like the terminal attracts a pretty technical group, and then also it attracts people who are technical hobbyists.
+147
+The unique thing, so one thing is like when you're using a command line, it's much easier to write a command line app than it is to write a GUI app.
+148
+So, on like the creation side, every hello world program that's written is just a terminal app.
+149
+It's just much easier to write something that outputs text than it is, something that draws to a screen and buttons and has all sorts of different states.
+150
+It's super simple.
+151
+It's also like a, interestingly enough, it's like an infinitely flexible interface in that you can have an infinite number of parameters and options and stuff that go into running a command line program, and you would have a really hard time making a GUI that supports an infinite number of.
+152
+And so, like, you know, when I was at Google, for instance, you know, all the servers in the world are just running command line apps.
+153
+And one nice thing is like you can just configure them all by passing in like hundreds of these flags and command line arguments for configuring how they work.
+154
+So that's another thing.
+155
+There is a sort of universality to the text-based interface where these programs can all interoperate, which is really interesting.
+156
+So this goes back to like Unix philosophy of like, hey, you can cat one program, you know, print it to the screen and then run that through another program that like filters out lines and then run it through another program that like searches for files that match that.
+157
+And so there's this cool composability aspect for running command line apps.
+158
+There's a.
+159
+It's very weakly typed, but it's infinitely flexible, right?
+160
+Exactly.
+161
+Yeah.
+162
+So text gives you.
+163
+And by the way, so people have tried making shells that are more strongly typed.
+164
+And I'll talk about that later.
+165
+Yeah.
+166
+Okay.
+167
+PowerShell, for instance, on Microsoft has real types and gives you objects to kind of an aside.
+168
+The other thing is it's scriptable.
+169
+And so if you're working in a, if you are a programmer and you know how to program, you can automate your own workflows with it, which is super cool.
+170
+So if you find yourself doing something over and over, these are programming environments.
+171
+And so you can just make a little script that says, here's how I do this.
+172
+And all of a sudden you've automated it.
+173
+And so all of those things are nice advantages over GUIs.
+174
+There's this other advantage of like, like servers that are running the internet don't even know that they have like graphics cards or whatever.
+175
+They don't need to run graphical programs.
+176
+And so, you know, the whole internet is just running on like a text in, text-out paradigm when it comes to HTTP.
+177
+And so, you know, it's all just running command-line apps.
+178
+So, Docker, anything you package up into Docker and ship off is a series of command-line apps.
+179
+So, it's very, very useful for a lot of the things that programmers build.
+180
+You wanted to go here earlier.
+181
+Let's open the door on terminals.
+182
+My very naive understanding, and I would love you to expand on this, is that a terminal is really just an interface that runs a shell.
+183
+And it is like almost your, you know, I actually didn't even realize this, but it turns out that I have for a long time been using iTerm2, which I just learned in preparation for this is over 20 years old.
+184
+Had never even thought about when iTerm2 first came out.
+185
+But I don't even think about a terminal as having features.
+186
+I think about the shell as having features.
+187
+So, what is the set of things that a terminal does that are not totally determined by the shell?
+188
+So, that's a good description.
+189
+The way to think about the terminal is that it was a piece of hardware, which basically had two parts.
+190
+It had a keyboard, so you could send characters into the shell, and it had a display where you could that just rendered characters, so it would render characters in a grid.
+191
+And when you open up the terminal app, let's just say you're not using warp or something like that, you're using iTerm or the stock terminal app, you're opening a GUI app that was built on your Mac to emulate this piece of hardware that's not made anymore, right?
+192
+That's what it is.
+193
+So it's like, and so it has a similar set of features that that hardware might have, but like a little bit more.
+194
+And so terminals can have themes, terminals can support different control characters.
+195
+And so there is this sort of meta language spoken between the shell and the terminal where, like, for instance, like if you're using like Emacs or Vim or something complicated, the shell or the pro more accurately, the program the shell is running is sending back these meta characters that are not principal characters on the screen, but they're characters that are telling the terminal like where to position the cursor or where to draw things, that type of stuff.
+196
+So you could almost think of it as like a very primitive graphics API, except it's a little bit more than graphics.
+197
+And so terminals support different versions of that.
+198
+Some terminals support things for like rendering like bitmapped images.
+199
+So there's different levels of support.
+200
+But by and large, like you'll hear the expression like dumb terminal.
+201
+And the idea is that most of the sort of like heavy lifting is done in the shell and the terminal is this like character rendering layer.
+202
+Okay, I love that.
+203
+That maps to my mental model as well.
+204
+Really for any shells and terminals are interoperable.
+205
+It's not that because I'm using iTerm2, I can or cannot use one shell or the other.
+206
+They all work with all of them, roughly.
+207
+Yeah, basically.
+208
+Okay.
+209
+And the thing that you have done at Warp is you have said, screw this, I am tired of terminals being the same old thing for multiple decades.
+210
+They should look different.
+211
+And this is probably the first episode where I felt like maximally limited by the audio format, because I want to be able to show folks what your interface looks like, but it is like not that similar to what a classical terminal experience looks like.
+212
+Can you describe to somebody who has been using iTerm for a long time, describe what it looks like to use Warp?
+213
+I guess just to describe it first, it looks more like a chat interface a little bit.
+214
+So you have a sort of input area with a blinking cursor, which is not too dissimilar from what you might see in like Slack, something like that.
+215
+And then the other part of it is as you run commands in Warp, you see something that maybe looks a little bit more like a notebook in the sense that every command's output is logically grouped together in what we call a block.
+216
+As opposed to this big kind of non-stop, just stream of text.
+217
+That's what it is in normal terminal.
+218
+Non-stop stream of text.
+219
+You don't, there's the, in a typical terminal, the terminal has no idea what text is related to what command.
+220
+Think of just like it's a character graphics renderer.
+221
+And so all that knowledge of like what characters have to do with what command you ran is like encapsulated in the shell.
+222
+In Warp, can you also use multiple different shells?
+223
+You can use, we support four shells.
+224
+We support bash, fish, CSH, and PowerShell for Windows.
+225
+So there's a little bit of work.
+226
+Like theoretically, we could support every shell.
+227
+We basically picked what we thought covered, like 97%.
+228
+So you have to do some kind of integration with the shell so that you can kind of pick up that context.
+229
+That's exactly right.
+230
+So we basically integrate with the shell so that it can, so that we know at the terminal layer what's what, essentially.
+231
+So that the output looks very different, then the input works quite differently too, in that when you're typing in a normal terminal, like every character is kind of going into the shell and then coming back.
+232
+It's like being echoed.
+233
+And the shell sort of maintains all of the state of that editor.
+234
+In Warp, we move that to the terminal as well.
+235
+And we do that because we want to give the user an editing experience that's much more like what they would get in a code editor.
+236
+And so we want to give them syntax highlighting.
+237
+We want to give first-class mouse support.
+238
+You know, we want it, like literally when you double-click on something and it selects text in a terminal and you hit paste, it pastes it at the end of the buffer instead of replacing what you have pasted, which is no one wants that in my experience.
+239
+And so we're trying to give like the normal interactions that people expect in every other app.
+240
+I love that you made this comment about the text editor that you would expect in your editor.
+241
+Because when I look at Warp, the thing that immediately stands out to me is that there is this weird, I think most software engineers that want to use some type of AI capabilities today are using three interfaces that are all fundamentally text-based.
+242
+They're using their editor, they're using their terminal, and they're also using some type of chat experience.
+243
+Now, maybe sometimes there's a more coupled than others, but there's kind of often three, and they're all text-based.
+244
+When I look at Warp, I think, gosh, there's this like weird blending here that's happening where like I no longer fully understand, is the world that you imagine that everyone will stop using VS code and their terminal will be like where they write all their code?
+245
+Like, how does this work?
+246
+This is a great question.
+247
+So it does seem a little crazy that we have three different interfaces that are all kind of text-oriented, right?
+248
+Yeah, so here's my vision of this.
+249
+I think we're moving to a world where rather than doing editing by hand or writing commands by hand, the primary way that developers do their job is by like telling the computer what to do.
+250
+And so that means if I want to make a code change, I'm not like popping open VS Code or cursor and like opening up five files and finding the right spot and typing code.
+251
+I'm just like saying, I'm describing the change that I want, and the LLM or AI or an agent, whatever you want to call it, is doing as much of that as it can and then sort of looping the developer in when.
+252
+So, my vision is we're moving to a world where it's like the developer's job is going to be telling the computer what to do.
+253
+And I think, putting aside whether or not it's through a terminal or an IDE or through ChatGPT's desktop app or whatever, I feel like the interface that needs to exist is one that is geared towards me coming in as a developer and being like, fix this bug, and then in parallel, being like, look at this feature that's described in this ticket and help me start on that.
+254
+And then, maybe in parallel, help me understand this error that I'm seeing in production.
+255
+And you sort of have like a bunch of these tasks that you're managing.
+256
+And when those tasks kind of need your help, you step in and help them.
+257
+But for the most part, they're sort of running.
+258
+And your job as a developer has gone from like typing all these commands manually or writing all this code manually to sort of like supervising what these, I'll call them agents for lack of a better term, are doing and helping them do the job.
+259
+That's like what I think the next evolution is.
+260
+Like, I think that's in the next, honestly, next year, year and a half, two years.
+261
+I think beyond that, I don't really know.
+262
+I think it kind of could get crazy.
+263
+It depends on the rate of progress of these models.
+264
+And then, as far as where this is done, I kind of think it's not necessarily done in the IDE.
+265
+I think it's like someone's got to build the app that has the right form factor for doing that style of work.
+266
+I'm biased.
+267
+This is what we are trying to do.
+268
+And in fact, I think it's very likely that we will stop calling work a terminal, even though it's like, that's our DNA.
+269
+That's what we started at.
+270
+We didn't talk about this ahead of time, but if you've got a product marketing position open, I'm ready.
+271
+But yeah, that's a vision, and that's what we're building towards.
+272
+It's just like a great interface for telling your computer what to do as a developer and like managing it as it does it.
+273
+It is really fascinating.
+274
+I stepped into this conversation without a tremendous amount of knowledge of this space.
+275
+But when we talk about the kind of convergence of these different things, it really echoes for me in many other conversations that I'm having right now, where AI is so disrupting the boundaries that we had had for often multiple decades of the different classifications of developer tools, how work gets done.
+276
+And you see all these lines blurring, and it's not exactly clear what the new lines will look like, or even like if there will be lines, or if we're all just going to be interacting with text from here on out, and there's just one giant tool, and Sam Altman rules the whole world.
+277
+I don't actually believe that.
+278
+But it is fun to be in the mix of this big kind of shake-up that is happening.
+279
+So fun.
+280
+I love what we're working on.
+281
+I don't know if there is a question coming out of this, but just like, I think it is the most interesting time.
+282
+As far as like, you got developed this, did you?
+283
+Was this very clever?
+284
+No, I don't know.
+285
+I think we got, I think, just like it's kind of interesting and lucky that this change happened while we had already been starting to, you know, try to innovate on the interface of the terminal because it ties in super well.
+286
+It actually provided our business model, which again, like our original business model was going to be around team collaboration.
+287
+And we do still have like some business around that.
+288
+But like it just is like this whole new market emerged while we happen to be trying to rebuild this one foundational dev tool.
+289
+And I don't think anyone knows like where this is going to land.
+290
+Like the like the strongest traction right now, by the way, is definitely in the IDE and it's with you know, it's with completions.
+291
+I don't know if you use like cursor, winsurf, co-pilot, any of those.
+292
+That's like, that's like, to me, the sort of like V0 of like really helping developers with this technology.
+293
+But I think the V1 hasn't really arrived yet.
+294
+And that's more like you tell the computer in English what you want it to do.
+295
+You see some of this like with Bolt and Lovable and these prompt to app things.
+296
+And you see some of it also in like Cursor Composer and WinSurf has like an agent feature.
+297
+And what's interesting is those agent features in the IDE are basically just chat panels.
+298
+They're kind of converging towards like terminal interfaces.
+299
+With the ability to nicely interact with the tabs that are open.
+300
+Yes.
+301
+But the interface themselves, the interfaces themselves are on the right-hand side of the screen.
+302
+Yeah, they're chat panels.
+303
+And so, you know, one way of thinking about, again, I don't know how much you want to talk about Warp, but it's like we're trying to invert that paradigm so that the terminal or like at least this log of what you're doing is the primary interface and the code blocks and code changes and stuff just are rendered in line.
+304
+So you get like this log of what the agent is doing.
+305
+One of the things that IDEs have for the last couple decades been pretty good at is language features that are very particular to a certain language.
+306
+And I think maybe a decade ago that Microsoft released the language server protocol and that now runs via the VS Code ecosystem.
+307
+There is a lot of niceness in the IDE world that is not AI related.
+308
+Totally.
+309
+Are you trying to also bring those kind of like language features into the terminal?
+310
+I just heard you trying to do that with the kind of like shell layer, but are you doing that with the language layer too?
+311
+Yeah, so this is an interesting question for us.
+312
+So the short answer is yes.
+313
+So we've built a code editor inside Warp, and the main way that it surfaces, like a good use case, would be like I would tell Warp, hey, can you build this new UI component into my app?
+314
+And then the Warp's agent would be like, sure.
+315
+And then it would display a diff inline in the terminal session.
+316
+And that uses an editor component that we've built.
+317
+And so we're bringing things into that, like LSP, and like what we think of as the kind of 80% features that someone really needs if they have to fall back to a hand coding experience.
+318
+But one of the product challenges that we have is like, how much do we invest in those types of like edit-by-hand things?
+319
+Yeah.
+320
+Yeah, right.
+321
+If you don't believe that that is primarily the way that people will interact with code in the future, then how much do you want to invest it in?
+322
+I don't know.
+323
+Like, a really interesting kind of proof point here is Cloud Code.
+324
+And, you know, what OpenAI just released their Codex CLI, and there are these terminal-based coding platforms.
+325
+Have you played with any of these?
+326
+You familiar with them?
+327
+So you should check.
+328
+Cloud code is very interesting because it's an Anthropic's coding product.
+329
+It runs, it's purely a terminal app.
+330
+So you run it within the terminal.
+331
+And it's all prompt-driven.
+332
+So you basically are like, you describe a bug you want fixed, and then it tries to fix it.
+333
+And there's zero editing, is what's really fascinating about it.
+334
+So they have like zero hand editing, code editing features.
+335
+I don't know what the traction is, but it's interesting in terms of the form factor to me of like, hey, they're like launching something which has no editing, which is wild.
+336
+I'm looking at the docs now.
+337
+Is their goal to have users use Cloud Code directly, or is it to be able to enable folks like you to build the coding experiences on top of Cloud?
+338
+It's the former.
+339
+It's like.
+340
+Oh, interesting.
+341
+It's their at least initial take, and who knows, maybe they'll launch an IDE too, but it's their initial take of forming a direct developer relationship rather than having people use Claude just through tools like Warp and Cursor, where Claude is the underlying model.
+342
+So we already are able to use Claude via API.
+343
+That's like our main, of course, our main coding model right now.
+344
+It's very fascinating.
+345
+The thing I keep coming back to as we're talking is that you go up the stack in terms of which of these experiences the one that has the biggest, I don't know, window, scope, whatever.
+346
+And moving, you know, originally when the large language models became decent at writing code, the mechanism that people would have is they would like bring over some small set of their code.
+347
+They would paste it into Chat GPT.
+348
+This is the first way of doing it.
+349
+Yep.
+350
+Right.
+351
+Like fix the bug, whatever.
+352
+And so, but that has such a limited context in what you're doing, which can maybe help you a little bit tactically.
+353
+And that's when you got all these developers that were super grumpy.
+354
+They're like, ah, it doesn't work.
+355
+This doesn't save any time.
+356
+Blah, blah, blah.
+357
+And then you have the next thing, which I think is cursor is a real poster child of.
+358
+You bring it into the editor, and you give it the context of the editor.
+359
+And all of a sudden, you know a lot more stuff.
+360
+And maybe you make the thing more useful in the process.
+361
+But if what you're saying is true, that the modality that we will end up at is tell your computer what to do, the biggest box to operate in is the terminal.
+362
+Like the terminal, maybe you're editing files.
+363
+Maybe you're not.
+364
+Maybe you're like just giving commands to spin up servers.
+365
+It's like literally whatever.
+366
+And so that is an interesting jumping off point to say maybe AI belongs here and not in the editor that's a big part of the thesis is that the terminal has a couple advantages in that one it's inherently cross-project right so it's like it can work across all your things whereas the editor is very you're doing one thing one git repo and then the other thing about the terminal is that it's very across the entire development lifecycle from like setup to code to push to production to debug to monitoring to firefighting and all that so i don't know again i'm biased here but that's why i think the terminal is a really really interesting wide space to apply this you can go one step wider by the way which is you can go computer use meaning like you could have computer vision like doing your browser tabs and i'm less of a believer in that but nobody's really doing actual computer use right like they're they're doing use a browser yes like open ai's operator is not actually computer use it's browser use i don't is that true i know that they have the browser use but i thought they also had like maybe i'm wrong maybe i'm wrong like a full-on like click all the buttons in your operating system type okay i think that's interesting for certain types of knowledge worker tasks it's the most general it feels like so the thing that i i don't like about it is i do think that you know agents are going to be much more effective if they have tools that that are not built for humans like they have just different capabilities fundamentally than humans they can digest a lot more information they can think a lot more quickly they don't it's a very inefficient interface to do it that way and so right interpreting pixels versus just like text it seems like for certain things, text is what you're going to want.
+367
+It's not as general, but still pretty general.
+368
+One of the interesting characteristics of terminals is that they're different than many developer tools in that maybe they're similar to editors in this way, but they're different than like Docker or Terraform or your use of Rust.
+369
+An individual developer can choose what terminal to use regardless of what the person sitting to their right uses.
+370
+For sure.
+371
+Yeah.
+372
+How does that impact how people think about adopting terminals or how are you thinking about your business in that way?
+373
+Great, great point.
+374
+Terminal is viewed as a tool of choice for developers.
+375
+Like the CIOs care at all.
+376
+Yeah, they could care less, right?
+377
+They don't.
+378
+And so the way the business works is really like a bottoms-up adoption motion.
+379
+Editors, by the way, are in a similar camp in that, like, some people want to use NeoVim, some people want to use IntelliJ.
+380
+If you try to, as a like engineering director or VP of engineering, mandate the use of an editor, I think you're going to have a lot of like very unhappy people.
+381
+And the same is.
+382
+It's like a cause of churn, like employee churn.
+383
+Yeah, people will leave if they can't choose their tools.
+384
+And so we don't try to do like a top-down sales motion.
+385
+Our go-to-market motion is like try to get individuals to love the tool.
+386
+Try to get a bunch of them using it and paying for it at companies to the point where it makes sense.
+387
+Like we make money off of individuals paying and small teams paying, but like we also would like enterprise.
+388
+And so, we tend to start individuals.
+389
+We tend to then get companies to pay for those types of features.
+390
+We don't really tend to go wall to wall, which is like would be awesome from a business perspective.
+391
+But even if our product is like 10x better, there's still some people who are like, no, I've been using whatever plus whatever shell forever, and I'm going to take a step backwards.
+392
+Multiple memory.
+393
+Yeah, multiple memory.
+394
+Yeah.
+395
+So it's hard.
+396
+You mentioned licenses before and how there's some maybe licensing stuff that drove Apple's decision to move to Z Shell.
+397
+One of the interesting things, whenever you're trying to innovate in a space that has the history that your space has, and you know, I say this from a place of like doing the same thing.
+398
+We're building SQL tooling.
+399
+SQL's been around forever.
+400
+One of our bets is that SQL will continue to be around, for my lifetime's purposes, forever.
+401
+You have to think about, you know, if you really want to change the way that people do stuff, not only do you have to be better, but you have to think about what it was that allowed the current version of the thing to be so widespread.
+402
+And part of that, I think, is the open licensing scheme and the way that, like, the pluggability of the layers of technology and all this stuff.
+403
+Is it a goal for you to kind of reset the baseline that, like, from here on out, terminals will just have a new set of capabilities, and we will no longer think of the previous, like, pure text-based terminals as like the default?
+404
+Do you guys have an open source version?
+405
+We're not open source.
+406
+I honestly feel there's a lot of risks too, which is why we haven't done it.
+407
+Like, for instance, you know, Cursor, Windsurf, et cetera, are competing with Microsoft in their own product.
+408
+And like, I feel like someone would do that with us.
+409
+Now, maybe we should take that risk and try to out-compete them.
+410
+There's also just like developer love and brand.
+411
+And if we could be open source, I think it would be people really like that.
+412
+And we use a lot of open source software.
+413
+And so there's something nice about that.
+414
+I hate to say this is what a terminal should be.
+415
+I think that one of the initial thoughts that I had when I started doing work was like, I don't actually think most developers care about or should even have to care about like terminal versus shell.
+416
+This is probably a controversial take at this point, but like my feeling is like from like a product perspective is that as a developer, I'm just trying to use this tool to do workflows that are important for me shipping software.
+417
+And so the you know, the product attitude that I've always had is like, let's build the best tool for those workflows.
+418
+We can call it, it's a terminal, but it's not really a terminal anymore because it's not like terminals don't write code and show you inline diffs and have collaboration platforms built in.
+419
+So I'm a little bit less, like, I just am not spending that much time thinking about the like, should every terminal be like this?
+420
+Resetting the baseline on that ecosystem.
+421
+Yeah, that's interesting.
+422
+Yeah, like I said, I think we're going to end up actually calling it something else and maybe honestly just try to make a new category of software, which is like the category.
+423
+We're working on a name for it, but like.
+424
+And like we want to be that.
+425
+So that's how I'm thinking about it.
+426
+It's really interesting.
+427
+I've been very excited and have written publicly about MCP model context protocol.
+428
+And it really just, I think, I think generally the integration points between different layers of the stack in the new AI-driven ecosystem are very, very interesting.
+429
+We were talking before about the relationships between terminals and shells and how shells can call programs.
+430
+And as long as the program runs on your operating system, then we're all good.
+431
+And so like everybody comes to understand these are all integration points.
+432
+Okay, cool.
+433
+There might be a new set of integration points in the AI world, which could be defined by MCP or maybe something else like it.
+434
+But I'd be curious, what are the ways that developers have to control their own experience inside of Warp?
+435
+Because that's always been such a pivotal part of the experience of terminals forever.
+436
+There's like the sort of customization stuff that you would expect from using a terminal.
+437
+So like theming and command shortcuts and that type of stuff.
+438
+The really interesting thing is how do you provide the context to AI?
+439
+Right, exactly.
+440
+Because, like, as you're saying, I think the quality of the experience of AI is so heavily dependent on what it knows.
+441
+And so, for Warp, actually, so we are supporting MCP, so we're about to launch MCP sports.
+442
+Okay, so you're going to be an MCP client.
+443
+Yes, we're an MCP client.
+444
+So that's like an obvious one.
+445
+But the really, the kind of less obvious one, but that is also super powerful, is that.
+446
+And so rather than needing like a ton of point MCP integrations, it's like, well, if you have the GitHub CLI installed, Warp can just be like, hey, let me see what's going on with your PR by running a command and looking at the output of it.
+447
+Does it like read the manual of all of your different command line programs?
+448
+Or do you actually provide some kind of wrapper around them?
+449
+How does it work?
+450
+It's more like you have like access to any API.
+451
+So for instance, Warp can use curl to get access to like, it can just curl things.
+452
+Or it can, if there happens to be a CLI that exists for the thing, like for instance, the G Cloud CLI or the AWS CLI, and you ask a question about your infrastructure, you don't have to set up an MCP server.
+453
+It can just be like, okay, well, let me do like G Cloud, like whatever, and read your logs, or AWS and see what, you know, how your service is set up.
+454
+So the terminal comes with all these.
+455
+Because the large language models like already known as the USB code.
+456
+They have to use these tools.
+457
+Yes.
+458
+Okay, got it.
+459
+When it comes to internal tools, so this is where I think we can do something better.
+460
+Like we haven't built this yet.
+461
+The really dumb thing is that it can just run the tool with dash dash help and learn the tool.
+462
+Yeah, as long as you stuff it into the context window, it's there.
+463
+It's like self-documenting.
+464
+That's not ideal because you've got to do that every time.
+465
+And so we're going to build, you could either do this via MCP or you could do it through some custom thing where it's like you could do it through rules.
+466
+So we support a rules concept, which is really cool.
+467
+Or you can just like, we're going to probably have some primitives around it like learning CLI tools specifically.
+468
+And so we can also just like plug that into our completion engine, do that type of thing.
+469
+But yeah, it's like, there's already a ton of available context because the agents inside the terminal can use any CLI tool to gather context.
+470
+Yeah, that's fascinating.
+471
+The universal integration layer, the command line.
+472
+Again, I don't want to overblow it, but it's a lot of stuff comes in there where it's just like, yeah, you want to read a website, sure, curl it.
+473
+You want to like read files, cat them.
+474
+You want to, you know, search for files, use find, and so on.
+475
+It's all there.
+476
+There is room for more like integration.
+477
+Like, for instance, if you want to get stuff from like your Slack or your Notion, I think an MCP server is totally the right thing.
+478
+But like for the most part, I don't know.
+479
+If you're in the command line, you don't even need that.
+480
+Right.
+481
+Zach, thank you so much.
+482
+This has been a lot of fun.
+483
+I've learned a lot about a world that I only had the barest of knowledge about to date.
+484
+So thanks for coming on.
+485
+Yeah, thank you so much for having me.
+486
+This was a super fun discussion.
+487
+I really enjoyed it.
+488
+The Analytics Engineering Podcast is sponsored by DBT Labs.
+489
+I'm your host, Tristan Handy.
+490
+Email us at podcast at dbtlabs.com with comments and guest suggestions.
+491
+Our producers are Jeff Fox and Dan Poppy.
+492
+If you enjoyed the show, drop us a review or share with a friend.
+493
+Thanks for listening.

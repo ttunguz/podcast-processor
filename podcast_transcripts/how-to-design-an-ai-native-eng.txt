@@ -1,0 +1,742 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: How to Design an AI-Native Eng…
+Host: Unknown 
+Guests: Brian Elliott, Sid Pardeshi
+Source URL: https://podcasts.apple.com/us/podcast/how-to-design-an-ai-native-engineering-organization/id1680633614?i=1000712151907
+--- METADATA END ---
+
+1
+Today on the AI Daily Brief, how to design an AI native engineering organization.
+2
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+3
+Hello, friends.
+4
+Quick announcements before we dive in.
+5
+First of all, thanks as always to today's sponsors, SuperIntelligent, Plum, Vanta, and agency.org.
+6
+To get an ad-free version of the show, go to patreon.com/slash AI DailyBrief.
+7
+And today, as I am traveling, we have a different type of episode.
+8
+I'm joined today by serial entrepreneur Brian Elliott and Sid Pardeshi, an ex-NVIDIA software architect with 27 generative AI patents to his name.
+9
+Sid and Brian are the co-founders of Blitzy.com, which of course you have heard me talk about as a sponsor.
+10
+Now, to be clear, Blitzy sponsorship does not include a sponsored episode.
+11
+This is something that came out of a bunch of conversations that I had had with Brian and Sid offline that I thought would be interesting to share.
+12
+Coding is obviously at this point one of, if not the most transformative use case of AI, particularly when you think about in the enterprise.
+13
+It's also a use case that opens up more use cases and compounds the rate at which everything is changing.
+14
+And so I think even for folks who are not building or in engineering organizations, understanding what's happening in and around AI and agentic coding is incredibly important.
+15
+In this show, we talk about the barriers holding AI coding back in the enterprise, specific types of investments enterprises can be making to make agentic coding work better, and ultimately try to get into a blueprint for the modern AI native engineering organization.
+16
+It's a fun conversation, so let's dive in.
+17
+Hello, sirs.
+18
+Welcome to the AI Daily Brief.
+19
+How's it going?
+20
+NLW, let's get into it.
+21
+Glad to be here.
+22
+Yeah, no, it's great to have you here.
+23
+We're talking today about, I think, a topic that is, you got to say at this point, that if there is one definitive, like just no denying it, use case for AI, specifically when it comes to sort of business and business operations, it's coding, right?
+24
+Like everything else, there's tons and tons of things that are changing productivity and changing how people do their jobs.
+25
+When it comes to like really rethinking fundamental structures, things that you could get fired for not doing, you know, reimagining sort of the engineering function with the new opportunity of AI and agents is pretty high on that list.
+26
+And so we're going to dig into that a little bit today.
+27
+And where I want to start is almost more broad, right?
+28
+Like for people who are not paying attention to sort of every shift and change when it comes to AI and coding and agent decoding, what is the landscape right now?
+29
+What is it being used for?
+30
+Is it primarily just sort of on the startup or individual side?
+31
+What is the state of models?
+32
+Kind of like, take us into the picture of AI and agent decoding, broadly speaking, in mid-25.
+33
+Yeah.
+34
+Let me give a band of the simplest use case and the most complex use case.
+35
+And this is being adopted across the RFS Enterprise.
+36
+So from a simple use case perspective, you have GitHub Co-Pilot, you have Cursor, you have these tools where you can give them a little bit of intent.
+37
+Say, I want to create a function that creates a login screen.
+38
+And that's going to give you back some code, a few hundred lines of code.
+39
+And that's really useful because developers don't remember a specific syntax for a language or they want this to work with their specific brand guidelines or they're doing something on the front end.
+40
+You can provide that to the co-pilot.
+41
+So that engineer within their IDE is going to be 20, 30% more efficient.
+42
+And for somebody that costs $100,000, $200,000, $300,000, $400,000 a year, depending on where you're based and how skilled you are, that is meaningful when extrapolated across the enterprise.
+43
+So that's where we're started on the simple use case.
+44
+Now, if you go to the other end of the spectrum, you can think about how long is that agentic system thinking and validating before providing the code back.
+45
+On the first part of the system where we had just a co-pilot, it's immediate response with the IDE, getting you something that might work or make you go faster versus thinking something like deep research, which we're all familiar with from a sort of research report generation perspective, where you are able to agentically improve the quality of the code.
+46
+And these are these much more agentic solutions that you're thinking about, where you have tools like Devin or Factory that are going to take 30 minutes to come back and get you a chunk of work that might be hundreds or thousands of lines of code that is taking into account all of the relationships around that.
+47
+And then you have a split C, which is going to take 12 hours or a few days, or we've had multi-week runs, right, where you're going to be accounting for tens of millions, 20 million, 30 million lines of code and delivering huge chunks of work, right?
+48
+And so you really have all the way from a little bit of intent, a little bit of code to huge amounts of interest on compute and huge amounts of code, ultimately delivering productivity, whether it's 30% or 300% really depends on the approach the enterprise is taking.
+49
+Yeah, and if you dig deeper into Brian's response, right, we focused on the modus operandi or the use of the tool.
+50
+There's also something interesting to look at from a use case standpoint, right?
+51
+So if you're looking at prototyping or building something that you can quickly demonstrate how it looks like in the UI, right?
+52
+If you're a product manager at an enterprise, then it's very easy to use something like Figma Make or Google Stitch and get something out there quick, that you can share a URL and have someone to see it.
+53
+If you're doing something a little bit more complicated, like maybe a GitHub issue or a Jira ticket, that's a full feature or a buck, right?
+54
+Then probably it makes sense to use something like an IDE tool.
+55
+And even Blitzy plays into that space.
+56
+But the point there is like you're writing hundreds, if not thousands, of lines of code, right?
+57
+But what if you're doing large-scale motorizations, refactors?
+58
+That's where Blitzy and some of these other tools can help you, where you need very large-scale context, right?
+59
+Like particularly for Blitzy, it's like we've pioneered infinite effective code context.
+60
+I'm sure we'll talk about that later.
+61
+But it's about keeping context across multiple repositories, modules, systems, and producing something that the humans can then review and take to production eventually.
+62
+So, okay, so here's where I want to go with this, because I think it's interesting.
+63
+One of the things that has been surprising over call of the last six months is how frequently it is the engineering departments of organizations that we're interacting with, you know, with these agent readiness audits and things like that, that are blockers to work.
+64
+And sometimes it feels for very kind of, you know, personal reasons, like they chose a very cushy position for a specific reason and don't really want to work all that much harder.
+65
+But let's hold that aside.
+66
+There have been a set of kind of complaints or just observations about how not enterprise ready certain tools are.
+67
+But it seems like that's, just based on your answer, that's sort of changing fast.
+68
+What has held back enterprise adoption of these processes on whatever end of that spectrum it is?
+69
+I feel very strongly for this personally.
+70
+So, I think we talk a lot about from a technological standpoint, but also there's the mindset standpoint that you spoke about, the change management.
+71
+If you think about the approach that the AI tools are taking today, it's like, let's work with the human, right?
+72
+Let's take some instructions from the human, get something back, review it, and push it.
+73
+And that's kind of like the easy way to do it, because essentially you're like building a wrapper around Claude or Gemini or some of the other models, and then you're building something that's a quick response.
+74
+And that is a response to the enterprise where the enterprise doesn't trust the models, right?
+75
+You have LLMs that can produce code, but that code necessarily isn't the most high quality.
+76
+You still have to spend time validating it, fixing it, and making sure it really adheres to your enterprise's best practices and whatnot.
+77
+Challenge really for moving forward to the next step is: how do we get enterprises to trust the AI, right?
+78
+As of today, AI is probably the bottleneck.
+79
+It's just not good enough for the humans to blindly trust it.
+80
+But given the advances that we're seeing with new model releases like every couple of months between like Cloud 3.7 and Cloud 4, what's going to quickly happen is that humans will become the bottleneck.
+81
+And the enterprises that are not quick at adopting the AI tools today are going to be significantly lacking at that point because they were slow to get the mindset changed.
+82
+In terms of technological adoption, we're not seeing a huge lead time in adopting an AI tool.
+83
+If you really clear all of the hurdles and from the security background checks and all of that, once you do that, integrating is literally a matter of days, right?
+84
+But the hurdle or the biggest challenge for enterprise AI adoption is really getting your most senior architects to change their mindsets and perspectives on AI, on changing how you build code.
+85
+Like, for example, rather than, you know, writing all of the code yourself, letting the AI write it and finish it off, right?
+86
+Handing it a set of requirements, which forces you to over-communicate.
+87
+And engineers historically haven't been the best communicators, right?
+88
+So, how do you cross that hurdle, change that mindset, incorporate AI into your entire software lifecycle, right?
+89
+And make sure you're ready for the next wave is where we're seeing the biggest challenge.
+90
+It's very hard for the enterprise if you look at it from their perspective, because there are thousands of tools out there.
+91
+And most of these tools are built by very, very young entrepreneurs that haven't spent time at senior levels within these enterprises.
+92
+So they don't know what is important to them from an adoption perspective, right?
+93
+And so, like, they're building SaaS without the ability to deploy it within the client's VPC, which if you're going to work with a financial services institution, like, forget about it, they're not going to adopt SaaS, right?
+94
+And so, they're building these solutions without the enterprise in mind that have good value, but they're not designed to be procured in a way that the enterprise has to de-risk.
+95
+And so, you need both the technological advancements to do something really, really compelling, but you have to make technical design decisions up front that is set up for the enterprise to adopt how they can procure.
+96
+Yeah, I mean, it feels like this is one of the so in our conversations with enterprises who are bringing up these types of issues, it's a very clear skate to where the puck is headed moment when, you know, because it's just the obvious opportunity for companies in this space to sort of rebuild and redesign enterprise engineering efforts is so huge that there's a flood of companies that are now taking on different pieces of that.
+97
+It's sort of one of those convenient short-term excuses that, you know, companies haven't been set up for that because that's not going to be the case for very long.
+98
+One of the other things that I wanted to ask you about, which I think gets a little bit into your architecture and how you guys approach some of these issues, is broadly speaking, we're sort of in the midst of an inflection between the assistant era and the agentic era.
+99
+This involves kind of a reimagining of AI from AI that helps me do stuff to AI that does stuff for me.
+100
+That all in of itself is a pretty big mindset shift, even for people who have spent the last couple of years getting comfortable with assistant type tools.
+101
+However, I think that it still feels that even the folks in general who are kind of fully embracing and thinking about agents as collaborators and digital employees and even starting to imagine, you know, teams of agents working together are kind of underimagining the full capabilities of when you have sort of intelligence too cheap to meter that you can use, you know, at mass scale.
+102
+Like, right?
+103
+Like we're still kind of in this mindset of replacing my copywriting with an agent rather than imagining 100 copywriters who are all competing in this sort of war game scenario that I've set up.
+104
+How are you seeing that type of shift happen?
+105
+And maybe this is a chance to kind of talk about the swarms that are a part of what you guys do.
+106
+Yeah.
+107
+In general, I think people are dramatically underreacting to what is happening in the ecosystem right now.
+108
+The rate of change is like nothing we've seen in our lifetime.
+109
+And the ability to pivot an organization to be able to be set up to give work off to a system and then get work back is fundamentally very, very different.
+110
+You have 20, 30, 40,000 employees and you're trying to re-architect the entire system that's built on people changing off work from one person to the other person to the other person.
+111
+So we've been thinking about how to solve this problem of giving work off to a swarm of agents for a very, very long time now.
+112
+And this process is fundamentally superior to the human bottlenecks, human in the loop.
+113
+For us, we have human in the loop at very specific checkpoints, but at the point where the human is sending that work off, letting the system get as high a quality of outcome as possible for whatever it costs, and then giving that back to the human a day or two days later.
+114
+And so you can talk about how the swarm concept was really invented, pioneered, and what it means for the enterprise.
+115
+Yeah, I think I also want to like underscore a very practical example of why this makes sense, right?
+116
+Like I've been leading and working with engineering teams for a decade plus.
+117
+And what we've constantly seen is that it's not really talent, even for humans, right?
+118
+It's not really talent or the technological limitations that delays projects more than someone will budget them, or that even causes humans to be relatively slower.
+119
+It's really the cost of communication, right?
+120
+It's the fact that humans don't typically work weekends, for example, right?
+121
+It's the fact that you have to go to multiple teams and multiple teams have different incentives, even within the same company, even if the company is aligned on the same mission.
+122
+But if you look at the swarms of AI agents that we know will be technologically better, we've seen that happen for the past few years.
+123
+And if you roll with that assumption, then that system has already solved for the cost of communication.
+124
+They don't take weekends off.
+125
+They're constantly working.
+126
+At the moment, maybe not very, not smarter than an average human, but they will soon be.
+127
+So because you've eliminated that, you can just get stuff done way faster.
+128
+And once you've crossed the chasm, as you mentioned, once you've gone from the assistant era to the Gentec era, you've adopted that.
+129
+You've positioned agents in your enterprise.
+130
+You are positioning yourself for what's coming next.
+131
+Because as of now, we're thinking of agents and/or like swarms of agents as operating, really, we're thinking about it in human terms, where I can hand off a task to someone and they come back with it.
+132
+Like that's like a human modus operating.
+133
+But with the agent Swarms, and once you've perfected this process, what you're going to see is systems that can be offloaded autonomously to agents.
+134
+Like customer support, for example, I think is a very good use case just because you have voice agents, you have chat agents, you have the ability to respond to emails, you have the ability to process documentation and understand it.
+135
+And many times, like Anthropic Cootario Mori said, like humans also hallucinate, and sometimes humans can hallucinate more than agents.
+136
+So the problems are similar, right?
+137
+And it's really hard for a human to keep context of like changing documentation, changing processes across the life cycle of the enterprise.
+138
+So AI is like very strongly positioned to automate away entire systems for enterprises.
+139
+And adopting the agents is a starting point to get there.
+140
+What is this?
+141
+How does this shape the design of engineering organizations in the future?
+142
+What's the combination of super-powered 10x coders or 100x coders who are using these tools as assistants still or as sort of collaborators, plus teams of agents or swarms of agents that are working largely or entirely autonomously, plus some sort of new type of engineering management role that's coordinating between these.
+143
+Like, what does that all look like?
+144
+And maybe, you know, on a one-year time scale and then on a three- to five-year time scale?
+145
+I'll tell you what the best organizations are doing right now, because there are organizations that are on the edge of AI adoption that are going to be what most of the industry looks like in 12 months.
+146
+So, we're seeing this right now where you'll have a senior architect, right, that has a system-level view of exactly what is going on across the organization from a code base context and from a business context.
+147
+They can finally have the code base context because Blitzy will pull everything together for them and put it inside of a document, right?
+148
+And they have the business context because they've been there for a long time.
+149
+That senior person is so valuable, but that's the person that you're turning from a 10X to 100X, right?
+150
+That is the person that is expressing intent to this system of action that is going to give it to the swarm of agents, do a lot of work, right?
+151
+And you're magnifying everything that architect otherwise would have done if they had infinite time, right?
+152
+They are expressing exactly what they want down to the nuanced level with the help of the system, sending it to the swarm, and then getting back the work, which in this case is code, right?
+153
+And so, we have the senior architect, and then you usually have a couple of junior people.
+154
+And this is where everyone says, Oh, all the junior engineers are going to go away.
+155
+There's going to be no work for them.
+156
+Those junior engineers that are, you know, two, three, four years of experience now have a place where they have access to understanding the code base, right?
+157
+And they have access to tools to level them up.
+158
+And they can finish out any remaining work that the AI system was not ready for.
+159
+And people think that, okay, so like the engineering org size is going to go down.
+160
+But engineers have been automating away the work that they've been doing for decades, right?
+161
+Like deploying something used to be a whole team's job, right?
+162
+Like now you can get it done with a little bit of configuration and a click of a button.
+163
+So engineers are exceptional at automating away the work that they used to do so they can work on the next level of abstraction that the business needs.
+164
+Because these engineers are just problem solvers and software is the tool that they're choosing to use.
+165
+Now AI magnifies their ability to create that.
+166
+Yeah, and given how broad this spectrum is, right, there's always a use case where you can deploy your engineers to one task or the other and the tools, right?
+167
+Use them optimally.
+168
+Like organizations and enterprises do not realize this often enough that they always have some sort of a key band risk, right?
+169
+And this is like the 10X architect or the person who's been around for like 10, 15, 20 years with the company that knows things that no one else does.
+170
+And when every time you bring an engineer on, you hire a new team, a new engineer, a team of engineers, you keep that person in the meeting and you help them ramp up, right?
+171
+But what happens if they quit and you don't have that knowledge captured?
+172
+And the AI tools out there, the swarms of agents can help you document and capture exactly that.
+173
+And that is a decision that you need to take consciously that you make sure that happens.
+174
+And then there's a bunch of use cases that we come to, right?
+175
+Like if you have these modernizations, if you have tech dev, which every enterprise has, if you have documentation challenges, it makes sense to have the swarm of agents take a stab at it, get it done to the best extent possible, and have your junior developers even finish the job, right?
+176
+Like Blitzy is, for example, an 80% to 20% in terms of time, right?
+177
+So Blitzy makes you five times faster, but the code that you get is not perfect.
+178
+So you can have junior developers spend time on finishing that if it's a large-scale modernization.
+179
+If you have something else where you have a product manager who's not very technical and they want to build a prototype, you can use the appropriate tools for that.
+180
+So, there are enough silos and specific use cases across the entire enterprise that lets you use a host of tools.
+181
+And there is work to do for every single skill level within the enterprise.
+182
+Do you see that evolving, though, as these systems get more advanced?
+183
+Sort of, you know, is there a narrow band of time in which juniors fit that role?
+184
+Or do you anticipate because there are going to be kind of continued, as you put it, you know, higher orders of abstraction, there will always be something that sort of, you know, that you're going to want people to augment the AI with?
+185
+AI is never going to invent something.
+186
+Well, until AGI is here and then it can learn things, right?
+187
+But like humans are like brilliant, right?
+188
+And when you let them focus their time on net new problems that haven't been solved, whether they're 22 or 52, like they will directionally move the organization in the right direction.
+189
+So the type of work that that 22-year-old is going to do is going to be different, but they're going to be empowered to do so much more because they have system-level understanding and a fresh perspective.
+190
+So as long as that organization has problems that can be solved through automation, through software, of which the backlog of any organization is decades long, if they were to actually sit through and work through what are the things that we would have from an optimal software perspective, they usually just catalog it at three years and then call it from there, right?
+191
+And so there will be a next level of work that these organizations are going to need, these really bright, talented young people to do.
+192
+We don't even know what some of that work is yet, but like there might be an approach where an organization says, great, for a one or two year time horizon, I'm actually going to cut head costs, like do the do the kind of private equity role and get as much free cash flow as possible.
+193
+But that will not be an enduring enterprise.
+194
+And the organizations that are going to like make it in the long term are the ones that are going to understand like people are incredibly valuable.
+195
+We have to adopt AI across all of our systems so that our people are working on the hardest possible problems that AI can't solve.
+196
+So for the best organizations, the answer is they're going nowhere.
+197
+And you know, I can speak for this personally just because I joined NVIDIA straight out of college and I was there.
+198
+NVIDIA is the only other employee I ever worked for.
+199
+I was the youngest senior architect from my batch, right?
+200
+I started as an intern and I really saw the journey together.
+201
+I think we're talking about how junior developers and we're like saying that they probably are not going to be relevant.
+202
+That's what some people are saying, but I think that's completely flawed.
+203
+What we're going to see in a few years from now, and it could be like two to three years, is that this paradigm completely shifts.
+204
+I would in fact say that if I had the tools that these people have access to today, like you know, like the ability to process large amounts of logs and understand where the error could be, like that's where I spent most of my time as a junior developer.
+205
+The ability to review a document of an entire code base that was written by someone else, and that is an AI, right?
+206
+And I can follow up and ask it questions and get to know things that I otherwise wouldn't have caught if I did like 10 tickets, right?
+207
+That's like game-changing, right?
+208
+We're not seeing enough of that just because college graduates go through this four-year process.
+209
+And that four-year process in the last four years in particular has completely, like the technology landscape has completely transformed.
+210
+So hardly anyone has knowledge of AI or how to use these tools.
+211
+But the universities are adapting and people are realizing this.
+212
+Junior engineers realize this.
+213
+The first thing they upscape on is AI just because the market is gravitating towards AI engineers in general.
+214
+So, what we're going to see is junior engineers who are able to become a 10x engineer far too quickly.
+215
+It took me three years to become a senior engineer, but I think we're gonna see junior engineers that become seniors in like one year or less.
+216
+Today's episode is brought to you by super intelligent, specifically agent readiness audits.
+217
+Everyone is trying to figure out what agent use cases are going to be most impactful for their business, and the agent readiness audit is the fastest and best way to do that.
+218
+We use voice agents to interview your leadership and team and process all of that information to provide an agent readiness score, a set of insights around that score, and a set of highly actionable recommendations on both organizational gaps and high-value agent use cases that you should pursue.
+219
+Once you've figured out the right use cases, you can use our marketplace to find the right vendors and partners.
+220
+And what it all adds up to is a faster, better agent strategy.
+221
+Check it out at bsuper.ai or email agents at bsuper.ai to learn more.
+222
+Today's episode is brought to you by Plum.
+223
+If you build agentic workflows for clients or colleagues, you need to check out Plum.
+224
+Plum is the only AI-native workflow builder on the market designed specifically for automation consultants with all the features you need to create, deploy, manage, and monetize complex automations.
+225
+Features like one-click updates that reach all your subscribers, user-level variables for personalization, and the ability to protect your prompts and workflow IP.
+226
+Make your life easier, your clients happier, and your business thrive with Plum.
+227
+Sign up today at useplum.com.
+228
+That's Plum with a B forward slash NLW.
+229
+Today's episode is brought to you by Vanta.
+230
+In today's business landscape, businesses can't just claim security, they have to prove it.
+231
+Achieving compliance with a framework like SOC2, ISO 27001, HIPAA, GDPR, and more is how businesses can demonstrate strong security practices.
+232
+The problem is that navigating security and compliance is time-consuming and complicated.
+233
+It can take months of work and use up valuable time and resources.
+234
+Vanta makes it easy and faster by automating compliance across 35 plus frameworks.
+235
+It gets you audit ready in weeks instead of months and saves you up to 85% of associated costs.
+236
+In fact, a recent IDC white paper found that Vanta customers achieve $535,000 per year in benefits, and the platform pays for itself in just three months.
+237
+The proof is in the numbers.
+238
+More than 10,000 global companies trust Vanta.
+239
+For a limited time, listeners get $1,000 off at Vanta.com slash NLW.
+240
+That's vanta.com/slash NLW for $1,000 off.
+241
+Today's episode is brought to you by Agency, an open source collective for interagent collaboration.
+242
+Agents are, of course, the most important theme of the moment right now, not only on this show, but I think for businesses everywhere.
+243
+And part of that is the expanded scope of what agents are starting to be able to do.
+244
+While single agents can handle specific tasks, the real power comes when specialized agents collaborate to solve complex problems.
+245
+However, right now there is no standardized infrastructure for these agents to discover, communicate with, and work alongside one another.
+246
+That's where Agency, spelled AGNTCY, comes in.
+247
+Agency is an open source collective building the internet of agents, a global collaboration layer where AI agents can work together.
+248
+It will connect systems across vendors and frameworks, solving the biggest problems of discovery, interoperability, and scalability for enterprises.
+249
+With contributors like Cisco, Crew AI, Langchain, and MongoDB, Agency is breaking down silos and building the future of interoperable AI.
+250
+Shape the future of enterprise innovation, visit agency.org to explore use cases now.
+251
+That's agntcy.org.
+252
+And I think that this almost goes without saying, but it's worth kind of putting a fine stamp on.
+253
+My guess is that, I mean, maybe let me ask it as a question.
+254
+Is there ever an end to the amount of code that an organization might demand or could use?
+255
+Basically, is there ever a point in which building is done?
+256
+Or is there always just in a world where it's 100 times easier to write code, we get 100 times as much code?
+257
+I think we're in a world where it's 100 times easier, you get 1,000 times more code.
+258
+There's an insatiable demand for software.
+259
+The way that we run our businesses today, like people will laugh at, right?
+260
+Like very, very clunky CRM, ERP systems, no digitization of the supply chain.
+261
+Like these are very specific to each enterprise and the way that they run their business.
+262
+And people will just start building all of this in-house and then they're going to layer AI on top of it.
+263
+And then the technology is going to change again.
+264
+So it is an expansion opportunity for software.
+265
+Now, AI will be writing most of the software, right?
+266
+Like eventually, you know, almost all of the software.
+267
+And it's going to be directed by people who understand what these systems can do and how to operate and how to steer them.
+268
+But there is not an organization that's going to be deeply, deeply successful that doesn't build a lot more software.
+269
+J1 Sparadox in action.
+270
+J1 Sparadox is exactly that.
+271
+Do you think that this vibe coding phenomenon of particular non-engineers, non-coders being able to sort of interact in this language will have positive effects in terms of the ability of other parts of the enterprise or organization to communicate with people who are coding, who are sort of building products.
+272
+If you think about code, building something visual, right?
+273
+Like it is a method not just to explain what you are thinking, but to explain it to yourself, right?
+274
+And so Vibe coding is a mechanism where you're having a two-way conversation in PATH to create a small application or a product that lets you tell a story about what you want to do.
+275
+Oftentimes, the value of people building these prototypes in-house is like they realize themselves that your idea was not very valuable, right?
+276
+And so instead of just pitching this idea three or four or five or six times and then like trying to convince your buddy from MIT to build it for you, like you in the course of a half an hour will decide that like your product idea for a note-taking app like was the same as Opple Notes, right?
+277
+And so this is a net positive for the enterprise, not just for the ability to say, hey, I'm a non-technical person.
+278
+I have an idea for a prototype for our marketing department and I want to show it to you, but it's actually the ability to self-discover like what is valuable with a new tool to do so.
+279
+But Vibe coding is awesome for these non-technical teams to prototype little projects.
+280
+You're seeing all these YC startups that Vibecoded their way to their product and then it doesn't scale, right?
+281
+Like it's not a viable engineering path.
+282
+And so it's good for its purpose.
+283
+It's good for small point applications, but it should not be used to abstract how software can or should be built.
+284
+I think wipe coding is here to stay.
+285
+And if everything plays out the way the visionaries at Anthropic and OpenAI describe it, we're sprinting towards a world where wipe coding is what everyone does.
+286
+We're all just wipe coders.
+287
+But if you look at the reality as of today and the road to get there, wipe coding is definitely not the way.
+288
+So there is definitely a place for like non-technical people to wipe code applications into existence, get sign-off, and then sign the bill to get it built a mix of the traditional way.
+289
+But having said that, like I said earlier, there is a future where for a lot of applications, depending on the use case, that makes sense.
+290
+You can wipe code it perpetually, right?
+291
+And you can keep it in production.
+292
+But for a lot of other more complicated use cases, like would you wipe code a healthcare application?
+293
+No.
+294
+Would you wipe code something that the government can use?
+295
+Absolutely not.
+296
+So there's always going to be things like next level scientific breakthroughs that require more human involvement and that will have to be built a combination of the traditional way.
+297
+What's the blueprint for the modern agent-enabled software engineering department in terms of people, mindset, infrastructure, support, partners, vendors?
+298
+What are the pillars of a modern software engineering organization?
+299
+Yeah, we think about the AI-native SDLC all the time.
+300
+We consult on this directly with our partners, our customers, and help them answer this question.
+301
+You need a batch development tool, something that operates at scale, at context that does a lot of code.
+302
+You need an IDE-based tool, right?
+303
+Your WinSurf, your cursor that is there in the developer workflow that they can work with.
+304
+I would just say let the developers pick what they want.
+305
+It's very preferential at that point.
+306
+And then that's there, I would say, the minimum viable stack, which is we see like Pluto plus cursor, Plusy plus WinSurf as a good minimum viable stack for the AI native SDLC.
+307
+And then Figma's not coming away.
+308
+And so people that think, you know, REPL is going to replace Figma or sort of don't understand the nuances required from a design department.
+309
+But that is minimum.
+310
+And you're going to see a lot of cool stuff come out from Jira and a lot of these tools be able to work with JIRA via MCP to make that existing kind of like call it non-AI native stack become AI native and work with these tools.
+311
+So because of MCP, we're going to see a lot of these old common SaaS providers be a part of the stack that is kind of like AI native SDLC.
+312
+And I think you mentioned also mindset and process.
+313
+So there's a couple of things I'd like to highlight there.
+314
+I think from a mindset standpoint, you need to be able to trust the AI.
+315
+Yes, it's not going to be perfect in the short term.
+316
+And you need to be willing to change your day-to-day workflow from writing a lot of code to letting the AI write it.
+317
+And you're reviewing and perfecting it and following all the regulatory practices, procedures, et cetera, approvals to get it into production.
+318
+I think that's the biggest mindset shift that needs to happen.
+319
+But there's also another specific procedural aspect that gets talked about quite less.
+320
+And that is the ability for AI agents to understand your code base.
+321
+And that's a continuous process.
+322
+Like, for example, if you track the most elite users of Blitzy or any AI coding tool, what they're doing is they're creating documentation within the repository that AI agents can follow, right?
+323
+And the fact of the matter is, the fun part is that it's also useful for the humans.
+324
+So for example, using Blitzy, you can document your entire code base and ask it to create README files in every single folder.
+325
+Or using Cursor, you can create a plan and then you can create that plan file at the root of your code base and ask it to follow that plan.
+326
+And you can also create coding guidelines and whatnot in this matter.
+327
+But the bottom line is, if you're able to make it easier for the AI agents to follow your instructions and to understand your code base, you're going to see massive dividends in code quality, right?
+328
+Because ultimately, if you think about current AI, it's garbage in, garbage out.
+329
+So if you're able to increase the quality of what you put in, you're going to see much better quality of what comes out.
+330
+And that it's not linear, right?
+331
+So even if you increase the quality by like 10 to 15 percent of specificity, for example, in what you tell it to do, you're going to see like an exponential increase.
+332
+It could be like 60% in terms of the output that you get back, just because it's exactly what you expected it to do.
+333
+By way of started wrap up here, you mentioned MCP.
+334
+Are there any trends, standards, conversations, new product developments, new advancements in models?
+335
+Anything that you're watching that has you particularly excited right now or that you're keeping a close eye on in this sort of broad domain?
+336
+I would say that the biggest thing, you know, I've been in this space since 2017, following along with deep learning, with the generative adversarial networks, VAEs.
+337
+The biggest problem then and even now to some extent was that it's a black box.
+338
+No one, even if they're a PhD in that very specific topic, no one really understands how the models actually work or, you know, how is it able to reason through.
+339
+But we're looking at things like, for example, everyone's talking about MCP and A to A, but Anthropic recently put out this paper about circuit tracing.
+340
+And they open sourced some libraries that are helpful for it.
+341
+And what that is, essentially, is you're able to visualize the neurons, right?
+342
+So the way neurologists explain how the brain works is like it's a set of neurons that fire.
+343
+And by tracing the path of the neurons that fire, you're able to understand and diagnose like brain issues or how the brain works.
+344
+It's similar for models, though, like a lot of experts would tell you that that's no, that's the models are not like the brain.
+345
+But if you stick to that analogy for a moment, if you're able to identify which parts of a neural network are being triggered, and if that was the expected path to be triggered based on your input prompt, you're able to understand if the model is doing what it is supposed to do, if it is looking at the right set of trained parameters in its set of parameters, and if it is on the right path.
+346
+For example, if it's a medical use case and if you detect that the wrong set of neurons are being activated, you can intercept and stop that process.
+347
+It could be a massive impact on the safety of that user, right?
+348
+Because it's hallucinating or it's not recommending something that it's supposed to do.
+349
+Or there could be a security risk, right?
+350
+So this particular research and this article that Anthropic just put out, it is going to be game-changing because you can now visualize the internals of the model and it is going to significantly change the way models are built.
+351
+And hopefully, we're going to see much stronger open source models separately because of this information.
+352
+Anthropic is going to be, and others, right, are going to be able to convince enterprises that they're in control of the models and they're give enterprises more confidence to adopt it just because they know that they have a stop button when you have a sign of something going wrong.
+353
+Brian, you got anything?
+354
+Anything you're watching?
+355
+I think people are dramatically underestimating the rate of computer use.
+356
+So, the ability to look at a screen and navigate it, which was really, really bad initially.
+357
+And people said, like, almost like wrote it off because it's not going to be interesting.
+358
+But if you talk about the ability to get software that's designed, built, then compiled, and then to make sure that it runs according to your spec, computer use is the fastest path to do that, right?
+359
+And so, all of these like really laborious, really distasteful, not enjoyable QA work is going to be offloaded onto that from a long inference time compute task effort to do end-to-end testing.
+360
+And that is just another area where folks are spending time that they don't want to be spending time on when they could be elevated, abstracted away, working on the most interesting, actually challenging problems for the enterprise.
+361
+Awesome.
+362
+Well, guys, super interesting conversation.
+363
+Like I said, this is a constant part of the discourse we have with companies at Super Intelligent and one where, again, I feel that we are, it is changing so rapidly and having such dramatically positive effects for companies that are sort of fully embracing this that I'm excited to see how it continues to develop.
+364
+Awesome.
+365
+Thanks.
+366
+I know, Doug, you're good at hand.
+367
+Thanks, Benevolence.

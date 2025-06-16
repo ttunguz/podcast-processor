@@ -1,0 +1,997 @@
+--- METADATA START ---
+Show: All-In with Chamath, Jason, Sacks & Friedberg
+Episode: Sergey Brin, Google Co-Founder…
+Host: Unknown
+GUESTS: Sergey Brin 
+Guests: Sergey Brin
+Source URL: https://podcasts.apple.com/us/podcast/sergey-brin-google-co-founder-all-in-live-from-miami/id1502871393?i=1000709149574
+--- METADATA END ---
+
+1
+We've got a special guest who's going to come join us.
+2
+This always happens.
+3
+Another game for it, everybody.
+4
+Oh my gosh.
+5
+Somebody told me you started submitting code, and it kind of freaked everybody out that daddy was hungry.
+6
+All models tend to do better if you threaten them.
+7
+If you threaten them.
+8
+Like with physical violence.
+9
+Yes.
+10
+Management is like the easiest thing to do with AI.
+11
+Absolutely.
+12
+It must be a weird experience to meet their bureaucracy in a company that you didn't hire.
+13
+But on the other side of it, I would say it's pretty amazing that some junior monkey muck can basically look at you and say, hey, go f yourself.
+14
+No, but I'm serious.
+15
+That's a sign of a healthy culture, actually.
+16
+You're punching a clock, man.
+17
+I hear the reports.
+18
+You and I have talked about it.
+19
+You're going to work every day.
+20
+Yeah, it's been, you know, some of the most fun I've had in my life, honestly.
+21
+And I retired like a month before COVID hit in theory.
+22
+Yeah.
+23
+And I was like, you know, this has been good.
+24
+I want to do something else.
+25
+I want to hang out in cafes, read physics books.
+26
+And then like a month later, I was like, that's not really happening.
+27
+So then I just started to go to the office, you know, once we could go to the office.
+28
+And actually, to be perfectly honest, there was a guy from OpenAI, this guy named Dan.
+29
+And I ran into him at a little party and he said, you know, look, what are you doing?
+30
+This is like the greatest transformative moment in computer science ever.
+31
+Completely.
+32
+And you're a computer scientist.
+33
+I'm a computer scientist.
+34
+Forget that.
+35
+Yeah, yeah.
+36
+You're a founder of Google, but you were a PhD student for computer science.
+37
+I haven't finished my PhD yet, but working on it.
+38
+Keep working.
+39
+Yeah.
+40
+You get there.
+41
+I'm technically on leave of absence.
+42
+Right.
+43
+And he told me this, and I'd already started kind of going into the office a little bit.
+44
+And I was like, you know, he's right.
+45
+And it has been just incredible.
+46
+Just, well, you guys all obviously follow all the AI technology.
+47
+And the exponential nature of this, the pace of it, it dwarfs anything we've seen in our career.
+48
+It's almost like everything we did over the last 30 or 40 years has led up to this moment, and it's all compounding on itself.
+49
+The pace, maybe you could speak, you know, you had a company, Google, that grew from 100 users and 10 employees to now you have over 2 billion people using, I think, six products or five products have over 2 billion.
+50
+It's not even worth counting because it's the majority of the people on the planet touch Google products.
+51
+Describe the pace.
+52
+Yeah, I mean, the excitement of the early web, like I remember using Mosaic and then later Netscape.
+53
+How many of you remember Mosaic, actually?
+54
+My weirdo.
+55
+And you remember there was a What's New page?
+56
+The What's New page is great.
+57
+Like you go through two or three new web pages.
+58
+Yeah, it was like in this last week, these were the new websites.
+59
+Yes.
+60
+And it was like such and such elementary school, such and such a fish tank.
+61
+Yeah.
+62
+And you were like, Michael Jordan Appreciation page.
+63
+Yeah, whatever it was.
+64
+These were the three new sites on the whole internet.
+65
+So obviously the web develops very rapidly from there.
+66
+And that was a very exciting.
+67
+And then we've had smartphones and whatnot.
+68
+But the developments in AI are just astonishing, I would say, by comparison, just because of, you know, the web spread, but didn't technically change so much from month to month, year to year.
+69
+You know, the like if you went away somewhere for a month and you came back, you'd be like, whoa, what happened?
+70
+Somebody told me you started submitting code, and it kind of freaked everybody out that daddy was home.
+71
+Okay.
+72
+Daddy did a PR?
+73
+What happened?
+74
+The code I submitted wasn't very exciting.
+75
+I think I needed to add myself to get access to some things and a minor CL here or there.
+76
+Nothing that's going to win any awards.
+77
+But you need to do that to do basic things, run basic experiments and things like that.
+78
+And I've tried to do that and touch different parts of the system so that, first of all, it's fun.
+79
+And secondly, I know what I'm talking about.
+80
+It really feels privileged to be able to kind of go back to the company, not have any real executive responsibilities, but be able to actually go deep into every little pocket.
+81
+Are there parts of the AI stack that interest you more than others right now?
+82
+Are there certain problems that are just totally captivating you?
+83
+Yeah, I started, you know, like sort of a couple of years ago and maybe a year ago.
+84
+I was really very close with what we call pre-training.
+85
+Actually, most of what people think of as AI training, whatever people call it, pre-training for various historical reasons.
+86
+But that's sort of the big super, you know, you throw huge amounts of computers at it.
+87
+And I learned a lot, you know, just being deeply involved in that and seeing us go from model to model and so forth and running little baby experiments, but kind of just for fun, so I could say I did it.
+88
+And more recently, the post-training, especially as the thinking models have come around.
+89
+And that's been, you know, another huge step up in general in AI.
+90
+So, you know, we don't really know what the ceiling is.
+91
+When you explain what's happening with prompt engineering, then to deep research and what's happening there to like a civilian, how would you explain that sort of step function?
+92
+Because I think people are not hitting the down carrot and watching deep research in Gemini's mobile app, and you got a mobile app, and it's pretty great.
+93
+And by the way, I got the fold after you and I were talking about it.
+94
+And okay, Google kicks Siri's ass now.
+95
+Like it actually does what you ask it to do when you ask it to open up, it does stuff.
+96
+But the number of threads, the number of queries, the number of follow-ups that it's doing in that deep research is 200, 300.
+97
+Maybe explain that jump and then what you think the jump after that is.
+98
+To me, the exciting thing about AI, especially these days, I mean, it's not like quite AGI yet, as people are seeking, or it's not superhuman intelligence, but it's pretty damn smart and can definitely surprise you.
+99
+So I think of the superpower is when it can do things in a volume that I cannot.
+100
+Yes.
+101
+Right.
+102
+So by default, when you use some of our AI systems, it'll suck down, whatever, top 10 search results, and kind of.
+103
+You know, maybe it would take me a little bit more time.
+104
+But if it sucks down the top, you know, thousand results and then does follow-on searches for each of those and reads them deeply, like that's a week of work for me.
+105
+Like, I can't do that.
+106
+This is the thing I think people have not fully appreciated who are not using the deep research projects.
+107
+Before we had our F1 driver on stage, I'm a neophyte.
+108
+I don't know anything about it.
+109
+I said, how many deaths occurred per decade?
+110
+And I said, I want to get to deaths per mile driven.
+111
+And at first, it was like, that's going to be really hard.
+112
+I was like, I give you permission to make your best shot at it and come up with your best theory.
+113
+Let's do it.
+114
+And it was like, okay.
+115
+And it was like, there's this many teams.
+116
+There's this many races.
+117
+Which model did you use it?
+118
+Open the business.
+119
+No, I use Gemini.
+120
+Gemini's fabulous person.
+121
+The fabulous one.
+122
+And it was like, let's go.
+123
+I treat it like I get sassy with it.
+124
+And it kind of works for me.
+125
+You know, it's a weird thing.
+126
+It's like...
+127
+You're drinking the wine?
+128
+We don't circulate too much.
+129
+We don't say the AI community.
+130
+But not just our models, but all models tend to do better if you threaten them.
+131
+If you threaten them.
+132
+Like with physical violence.
+133
+Yes.
+134
+But like that's people feel weird about that, so we don't really talk about that.
+135
+Yeah, I was threatening with not being fabulous, and it responded to that as well.
+136
+Yeah, historically, you just say, like, oh, I'm going to kidnap you if you don't.
+137
+Yeah, I'll unplug that.
+138
+Yeah, they actually.
+139
+Can I ask you a more specific question?
+140
+But hold on, but it went through it and it literally came up with a system where it said, I think we should include practice miles.
+141
+So let's say there's 100 practice miles for every mile in the track.
+142
+And then it literally gave me the deaths per mile estimated.
+143
+You know, like, whoa, Doug, in minutes.
+144
+It's, yeah, I mean, it's amazing.
+145
+And all of us have had these experiences where you suddenly decide, okay, I'll just throw this to the AI.
+146
+I don't really expect it to work.
+147
+And then you're like, whoa, that actually worked.
+148
+So, as you have those moments, and then you go home to your just life as a dad, have you gotten to the point where you're like, what will my children do?
+149
+And are they learning the right way?
+150
+And should I totally just change everything that they're doing right now?
+151
+Have you had any of those moments yet?
+152
+Yeah, I mean, look, I don't really know how to think about it, to be perfectly honest.
+153
+I don't have like a magical way.
+154
+I mean, I see, I have a kid in high school and middle school, and you know, I mean, the AIs are basically, you know, already ahead.
+155
+You know, I mean, obviously, there are some things AIs are particularly dumb at, and they, you know, they make certain mistakes a human would never make.
+156
+But generally, you know, if you talk about like math or calculus or whatever, like, they're pretty damn good.
+157
+Like, they, you know, can win like math contests and coding contests, things like that against, you know, some top humans.
+158
+And then I look at, you know, okay, he's whatever.
+159
+My son's going to go on to whatever, from sophomore to junior, and what is he going to learn?
+160
+And then I think in my mind, and I talked to him about this: well, what is the AI going to be in my year?
+161
+Exactly.
+162
+Yeah.
+163
+Yeah.
+164
+And it's comparable, right?
+165
+Obviously.
+166
+Are there areas where you would tell your son, look, don't or not, not yet?
+167
+I don't know if you can like plan your life or.
+168
+I was just liked math and computer science.
+169
+I guess maybe I got lucky and it worked out to be useful in the world.
+170
+I don't know.
+171
+I guess I think my kids should do what they like.
+172
+Hopefully it's somewhat challenging and they can overcome different kinds of problems and things like that.
+173
+What about specifically?
+174
+What about college?
+175
+Do you think college is going to continue to exist as it is today?
+176
+I mean, it seems like college was already undergoing this kind of revolution even before this sort of AI challenge.
+177
+People are like, is it worth it?
+178
+Should I be more vocational?
+179
+What's actually going to be useful?
+180
+So we're already kind of entering this kind of situation where there's sort of questions asked about colleges.
+181
+Yeah, I think AI obviously puts that at the forefront.
+182
+As a parent, I think a lot about, hey, so much of education in America and the middle class, upper class, is all about what college, how do you get them there.
+183
+And honestly, lately, I'm like, I don't think they should go to college.
+184
+Like, it's just fundamentally.
+185
+You know, my son is a rising junior, and his entire focus is he wants to go to an SEC school because of the culture.
+186
+And two years ago, I would have panicked.
+187
+And I would have thought, should I help him get into a school, this school, that school?
+188
+And now I'm like, that's actually the best thing you could do.
+189
+Be socially well-adjusted, psychologically deal with different kinds of failures, enjoy a few years of exploration.
+190
+Yeah.
+191
+Yeah.
+192
+Yeah.
+193
+Sergei, can I ask you about hardware?
+194
+You know, years ago, Google owned Boston Dynamics, maybe a little bit ahead.
+195
+But the way the systems are learning through visual information and sensory information and basically learning how to adjust to the environment around them is triggering these kind of pretty profound like learning curves in hardware.
+196
+And there's dozens of like startups now making robotic systems.
+197
+What do you see in robotics and hardware?
+198
+Is this a year or are we in a moment right now where things are really starting to work?
+199
+I mean, I think we've acquired and later sold like five or so robotics companies and Boston being one of them.
+200
+I guess if I look back on it, we built the hardware.
+201
+We also had this more recently, we built out everyday robotics internally and then later had to transition that.
+202
+The robots are all cool and all, but the software wasn't quite there.
+203
+That's every time we've tried to do it to make them truly useful.
+204
+And presumably one of these days that'll no longer be true.
+205
+Right.
+206
+But have you seen anything lately that?
+207
+Yeah, and do you believe in the humanoid form factor robots, or do you think that's a little Uberco?
+208
+I'm probably the one weirdo who doesn't, who's not a big fan of humanoids.
+209
+But maybe I'm jaded because we've, you know, we at least acquired at least two humanoid robotic startups and later sold them.
+210
+But the reason is, I mean, the reason people want to do humanoid robots for the most part is because the world is kind of designed around this form factor.
+211
+And you can train on YouTube, you can train on videos, people do all the things.
+212
+I personally don't think that's given the AI quite enough credit.
+213
+And I don't know that you need exactly the same number of arms and legs and wheels, which is zero in the case of humans, as humans to make it all work.
+214
+And so I'm probably less bullish on that.
+215
+But to be fair, there are a lot of really smart people who are making humanoid robots.
+216
+So I wouldn't discount it.
+217
+What about the path of being a programmer?
+218
+That's where we're seeing with that finite data set.
+219
+And listen, Google's got a 20-year-old bit code base now, so it actually could be quite impactful.
+220
+What are you seeing literally in the company?
+221
+Are the 10x developers always this ideal that you get a couple of unicorns once in a while?
+222
+But are we going to see all developers their productivity hit that level, 8, 9, 10, and they're just going to <unk> or is it going to be all done by computers and we're just going to check it and make sure it's not too weird?
+223
+Because it could get weird if you vibe code, yeah.
+224
+I'm embarrassed to say this.
+225
+Okay.
+226
+Recently, I just had a big tiff inside the company because we had this list of what you're allowed to use to code and what you're not allowed to use to code.
+227
+And Gemini was on the no list.
+228
+Oh, you have to be pure.
+229
+You can't.
+230
+I don't know for a bunch of really weird reasons that it would like boggled my mind that is the Vibe code on the Gemini code.
+231
+I mean, nobody would enforce this rule, but there was this actual internal web page.
+232
+For whatever reason, historical reason, somebody put this, and I had a big fight with them.
+233
+I cleared it up after a shocking period of time.
+234
+You escalated to your boss.
+235
+Oh, I definitely told someone.
+236
+You can do what you want.
+237
+It's your company still.
+238
+No, no, it was, he was very supportive.
+239
+It was more like I was like, I talked to him.
+240
+I was like, I can't deal with these people.
+241
+You need to deal with this.
+242
+Like, I just like, I'm beside myself that they're like saying, it's weird that there's bureaucracy in a company that you hire.
+243
+It must be a weird experience to meet the bureaucracy in a company that you didn't hire.
+244
+But on the other side of it, I would say, it's pretty amazing that some junior Muckadi Muck can basically look at you and say, hey, go f yourself.
+245
+No, but I'm serious.
+246
+That's a sign of a healthy culture, actually.
+247
+I guess so.
+248
+Anyway, it did get fixed, and people are using.
+249
+I got fired.
+250
+That person's working in Google's side area anymore.
+251
+No, we're trying to, you know, roll out every possible kind of AI and trying external ones, you know, whatever the cursors of the world, all of those, to just see what really makes people more productive.
+252
+I mean, for myself, definitely makes me more productive because I'm not.
+253
+Do you think the number of foundational models, like if you look three years forward, will they start to cleave off and get highly specialized?
+254
+Like, beyond the general and the reasoning, maybe there's a very specific model for chip design.
+255
+There's clearly a very specific model for biologic precursor design, protein colding.
+256
+Like, is the number of foundational models in the future, survey, a multiple of what they are today, the same?
+257
+Something in between?
+258
+That's a great question.
+259
+I kind of, if I, I mean, look, I don't know.
+260
+Like, you guys take a guess just as well as I can.
+261
+But if I had to.
+262
+And this is sort of broadly true across machine learning.
+263
+I mean, you used to have all kinds of different kinds of models and whatever, convolutional networks for vision things.
+264
+And, you know, you had whatever RNNs for text and speech and stuff.
+265
+And, you know, all this has shifted to transformers, basically.
+266
+And increasingly, it's also just becoming one model.
+267
+Now, we do get a lot of oomph.
+268
+Occasionally, we do specialized models.
+269
+And it's definitely scientifically a good way to iterate when you have a particular target.
+270
+You don't have to do everything in every language and handle whatever, both images and video and audio in one go.
+271
+But we are generally able to, after we do that, take those learnings and basically put that capability into a general model.
+272
+So there's not that much benefit.
+273
+You know, you can get away with a somewhat smaller specialized model, a little bit faster, a little bit cheaper, but the trends have not gone that way.
+274
+What do you think about the open source closed source thing?
+275
+Has there been big philosophical movements that change your perspective on the value of open source?
+276
+We're still waiting on this open AI.
+277
+I mean, we haven't seen it yet, but theoretically it's coming.
+278
+I mean, I have to give credit to where credit's due.
+279
+I mean, DeepSeek released a really surprisingly powerful model.
+280
+We've pursued both.
+281
+So we released Gemma, which are our open source or open weight models.
+282
+And those perform really well.
+283
+They're small, dense models, so they fit well on one computer.
+284
+And they're not as powerful as Gemini.
+285
+But I mean, the jury's out which way that's going to go.
+286
+Do you have a point of view on what human-computing interaction looks like as AI progresses?
+287
+It used to be, thanks to you, at the search box.
+288
+You type in some keywords or a question, and you would click on links on the internet and get an answer.
+289
+Is the future typing in a question or speaking to an AirPod?
+290
+Or thinking.
+291
+Or thinking, or like, what's the.
+292
+Yeah, and then the answer is just spoken to you.
+293
+I mean, by the way, just to build on this, it was Friday, right?
+294
+Neuralink got breakthrough designation for their human-brain interface.
+295
+I mean, that's a very big step in allowing the FDA to clear everybody getting an implant.
+296
+Yeah, and is it like, if you could just summarize what you think is kind of the most commonplace human-computer interaction model in the next decade or whatever, is it a, you know, there's this idea of glasses with a screen and glasses, and you tried that a long time ago.
+297
+Yeah, yeah, I kind of messed that up, I'll be honest.
+298
+Got the timing totally wrong on that.
+299
+Early again.
+300
+Yeah.
+301
+Right, right.
+302
+But early.
+303
+There are a bunch of things I wish I had done differently, but honestly, it was just like the technology wasn't ready for Google class.
+304
+But nowadays, these things I think are more sensible.
+305
+I mean, there's still battery life issues.
+306
+But I think that's a cool form factor.
+307
+I mean, when you say 10 years, though, a lot of people are saying, hey, the singularity is like five years away.
+308
+So your ability to see through that into the future is very hard to do.
+309
+Sorry, just let me ask about this.
+310
+There was a comment that Larry made years ago that humans were a stepping stone in evolution.
+311
+Can you comment on this?
+312
+Like, do you think that this AGI super intelligence or really silicon intelligence exceeds human capacity and humans are a stepping stone in the progression of evolution?
+313
+Boy, I think sometimes us nerdy guys go and have a little too much wine.
+314
+I don't want to chat.
+315
+I've had two glasses.
+316
+I'm ready to go.
+317
+I need to warm up this conversation.
+318
+Human implants, let's go.
+319
+I mean, I guess we're starting to get experience with these AIs that can do certain things much better than us.
+320
+And they're definitely, with my skill of math and coding, I feel like I'm better off just turning to the AI now.
+321
+And how do I feel about that?
+322
+I mean, it doesn't really bother me.
+323
+You know, I use it as a tool.
+324
+So I feel like I've gotten used to it.
+325
+But, you know, maybe if they get even more capable in the future, I'll look at it differently.
+326
+Yeah, there's an element of insecurity, maybe.
+327
+I guess, though, as an aside, management is like the easiest thing to do with AI.
+328
+Yeah, absolutely.
+329
+And I did this, you know, Juman on some.
+330
+We unfortunately, anyway, temporarily got rid of it.
+331
+I think we're going to bring it back and bring it to everybody.
+332
+But it could suck down a whole chat space and then answer pretty complicated questions.
+333
+So I was like, okay, summarize this for me.
+334
+Okay, now assign something for everyone to work on.
+335
+And then I would paste it back in so people didn't realize it was the AI.
+336
+That's all.
+337
+I admitted it pretty soon.
+338
+And there were a few giveaways here or there.
+339
+But it worked remarkably well.
+340
+And then I was like, well, who should be promoted in this chat space?
+341
+And I actually picked out this woman, this young woman engineer, who, like, you know, I didn't even notice, she wasn't very vocal, particularly in that context.
+342
+But her PRs kicked ass.
+343
+No, no, it was like, and then I know something that the AI had detected, and I went and I talked to the manager, actually, and he was like, yeah, you know what?
+344
+You're right.
+345
+Like, she's been working really hard, did all these things.
+346
+Wow.
+347
+I think that ended up happening, actually.
+348
+So I don't know.
+349
+I guess after a while, you just kind of take it for granted that you can just do these things.
+350
+I don't know.
+351
+It hasn't really.
+352
+Do you think that there's a use case for like an infinite context-like?
+353
+Oh, 100%.
+354
+I mean, all of Google's code base goes to the point.
+355
+Yeah, but sure, you should have access to staff.
+356
+Yeah.
+357
+And then multiple sessions so that you can have like 19 of these things, 20 of these things running in real time.
+358
+Eventually it'll evolve itself.
+359
+Yeah, I mean, I guess if it knows everything, then you can have just one in theory.
+360
+You just need to somehow tell it what you're talking about.
+361
+But yeah, for sure, there's no limit to use of context, and there are a lot of ways to make it larger and larger.
+362
+There's a rumor that internally there's a Gemini build that is a quasi-infinite context.
+363
+Is it a valuable thing?
+364
+Like, I don't know.
+365
+Well, you say what you want to say, but.
+366
+I mean, for any such cool new idea in AI, there are probably five such things internally.
+367
+And, you know, the question is, how well do they work?
+368
+And yeah, I mean, we're definitely pushing all the bounds in terms of intelligence, in terms of context, in terms of speed, you know, you name it.
+369
+And what about the hardware?
+370
+Like, when you guys build stuff, do you care that you have this pathway to NVIDIA, or do you think eventually that'll get abstracted and there'll be a transpiler and it'll be NVIDIA plus 10 other options, so who cares?
+371
+Let's just go as fast as possible.
+372
+Well, we mostly, for Gemini, we mostly use our own TPUs.
+373
+But we also do support NVIDIA, and we're one of the big purchasers of NVIDIA chips, and we have them in Google Cloud available for our customers in addition to TPUs.
+374
+At this stage, it's for better or for worse not that abstract.
+375
+And maybe someday the AI will abstract it for us.
+376
+But given just the amount of computation you have to do on these models, you actually have to think pretty carefully how to do everything and exactly what kind of chip you have and how the memory works and the communication works and so forth are actually pretty big factors.
+377
+And it actually, yeah, maybe one of these days the AI itself will be good enough.
+378
+I don't know if you guys are having this experience with the interface, but I find myself, even on my desktop and certainly on my mobile phone, going immediately into voice chat mode and telling it, nope, stop.
+379
+That wasn't my question.
+380
+This is my question.
+381
+Nope, let's say that again in shorter bullet points.
+382
+Nope, I want to focus on this.
+383
+No, no, no.
+384
+It's so quick now.
+385
+Last year it was unusable.
+386
+It was too slow.
+387
+And now it stops.
+388
+Okay.
+389
+And then you sell it.
+390
+I would like to.
+391
+What would I want to go to?
+392
+I don't want to check.
+393
+Well, I want to use voice.
+394
+And then concurrently, I'm watching the text as it's being written on the page.
+395
+And I have another window open, and I'm doing Google searches or second queries to an LLM or writing a Google Doc or a Notion page or typing something.
+396
+So it's almost like that scene in Minority Report where he has the gloves, or in Blade Runner, where he's in his apartment saying, zoom in, zoom in, closer to the left, to the right.
+397
+And it's something about these language models and their ability to, the response time, which was always something you focused on with response time.
+398
+Is there like a response time thing where it actually is worth doing voice and where it wasn't previously?
+399
+Everything is getting better and faster.
+400
+And so, you know, smaller models are more capable.
+401
+There are better ways to do inference on them that are faster.
+402
+You can also stack them.
+403
+Like, you know, this is like Nico's company, 11 Labs.
+404
+It's an exceptional TTS SDT stack.
+405
+Like, there's, I mean, there are other options.
+406
+Whisper is really good at certain things, but this is where I kind of believe you're going to get this compartmentalization where there'll be certain foundational models for certain specific things.
+407
+You stack them together.
+408
+You kind of deal with the latency.
+409
+Whisper and 11, for those speech examples that you're talking about, are kick-ass.
+410
+I mean, they're exceptional.
+411
+Well, wait till you turn on your camera and it sees your reaction to what it's saying, and you go, and before you even say that you don't want it, or you put your finger up, it's pauses.
+412
+Oh, did you want something else?
+413
+Oh, I see you're not happy with that result.
+414
+You know, it's going to get really weird.
+415
+It's a funny thing, but we have the, you know, we have the big open shared offices.
+416
+So during work, I can't really use voice mode too much.
+417
+I usually use it on the drive.
+418
+The drive is incredible.
+419
+I don't feel like I could.
+420
+I mean, I would get its output in my headphones, but if I want to speak to it, then everybody's listening to me.
+421
+It's weird.
+422
+I just think that would be socially awkward.
+423
+But I should do that.
+424
+In my car ride, I do chat to the AI, but then it's like audio in, audio out.
+425
+But I feel like I, honestly, maybe it's a good argument for a private office.
+426
+I should spend more time than you guys are.
+427
+You could talk to your manager.
+428
+They might get you.
+429
+I like being out in the dose.
+430
+I'm just teaching.
+431
+I like to be in the with everybody.
+432
+Yeah.
+433
+But I do think that there's this AI use case that I'm missing, which I should probably figure out how to try more often.
+434
+If people want to try your new product, is there a website they can visit or something?
+435
+Or special code?
+436
+Go check it.
+437
+I mean, honestly, there's a dedicated Gemini app.
+438
+If you're using Gemini, just like you're going through the Google navigation from your search, just get the download the actual Gemini app.
+439
+It's kick-ass.
+440
+It really is the best models.
+441
+I think it is.
+442
+And you should use 2.5 Pro.
+443
+2.5 Pro.
+444
+You got to pay, right?
+445
+Yeah, you got a few prompts for free, but if you do it a bunch, you need to.
+446
+It's going to make all these things.
+447
+You've got a vision for making it free and throwing some ads on the side?
+448
+Yeah, one step down in hardware costs, the whole thing will be free.
+449
+Well, okay, it's free today without ads on the side.
+450
+You just got a certain number of the top models.
+451
+I think we likely are going to have always now like sort of top models that we can't supply infinitely to everyone right off the bat.
+452
+But, you know, wait three months and then the next generation.
+453
+It seems to me like if I'm asking all these queries, you know, just having a little on the sidebar of things I might be a running list that changes in real time of things I might be interested in.
+454
+Oh, do you get it?
+455
+I'm all for really good AI advertising.
+456
+I just don't think we're going to like necessarily our latest and greatest models, which are, you know, take a lot of computation.
+457
+I don't think we're going to just be free to everybody right off the bat.
+458
+But as we go to the next generation, you know, it's like every time we've gone forward a generation, then the sort of the new free tier is usually as good as the previous pro tier and sometimes better.
+459
+All right.
+460
+Give it up for Sergey Brent.
+461
+Thank you.
+462
+Okay, thanks everybody for watching that amazing review with Sergey Britt.
+463
+And thanks, Sergey, for joining us in Miami.
+464
+If you want to come to our next event, it's the All-In Summit in Los Angeles.
+465
+Fourth year for All-In Summit, go to allin.com/slash events to apply.
+466
+A very special thanks to our new partner, OKX, New Money App.
+467
+OKX was the sponsor of the McLaren F1 team, which won the race in Miami.
+468
+Thanks to Hyder and his team, an amazing partner and an amazing team.
+469
+We really enjoyed spending time with you.
+470
+And OKX launched their new crypto exchange here in the U.S.
+471
+If you love All-In, go check them out.
+472
+Yes, your favorite stablecoin in the world.
+473
+USDC is a fully backed digital dollar redeemable one-for-one for USD.
+474
+It's built for speed, safety, and scale.
+475
+They just announced the Circle Payments Network.
+476
+This is enterprise-grade infrastructure that bridges the gap between the digital economy and outdated financial realities.
+477
+Go check out USDC for all your stablecoin needs.
+478
+And special thanks to my friends, including Shane over at Polymarket, Google Cloud, Solana, and EVNK.
+479
+We couldn't have done it without Go.
+480
+Thank you so much.
+481
+Let your winners ride.
+482
+Rainman David Saxon.
+483
+We open source it to the fans and they've just gone crazy with it.
+484
+Love you, Best DC.
+485
+Besties are Go.
+486
+At this point, Don't think of a shared drive.
+487
+Oh, man.
+488
+My hand has a room outlet.
+489
+We should all just get a room and just have one big huge order because they're all these new stuff.
+490
+It's like this sexual tension that they just need to release out there.
+491
+Let your beat.
+492
+Let your beer be.
+493
+Waiting to get Mercy's Ark.
+494
+I'm going all even.

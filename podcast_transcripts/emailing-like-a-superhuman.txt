@@ -1,0 +1,939 @@
+--- METADATA START ---
+Show: Practical AI
+Episode: Emailing like a superhuman
+Host: Daniel Whitenack, Chris Benson
+GUESTS: Loik Usie 
+Guests: Loik Usie
+Source URL: https://podcasts.apple.com/us/podcast/emailing-like-a-superhuman/id1406537385?i=1000708828907
+--- METADATA END ---
+
+1
+Welcome to Practical AI, the podcast that makes artificial intelligence practical, productive, and accessible to all.
+2
+If you like this show, you will love the changelog.
+3
+It's news on Mondays, deep technical interviews on Wednesdays, and on Fridays, an awesome talk show for your weekend enjoyment.
+4
+Find us by searching for The Change Log, wherever you get your podcasts.
+5
+Thanks to our partners at fly.io.
+6
+Launch your AI apps in five minutes or less.
+7
+Learn how at fly.io.
+8
+Welcome to another episode of the Practical AI podcast.
+9
+This is Daniel Whitenack.
+10
+I am CEO at Prediction Guard, and I'm joined as always by my co-host, Chris Benson, who is a principal AI research engineer at Lockheed Martin.
+11
+How are you doing, Chris?
+12
+Doing very well.
+13
+Looking forward to talking some fun stuff on this beautiful spring day.
+14
+Yes, yes.
+15
+Well, I've always hoped that AI could make me a superhuman.
+16
+So, really, really excited to hear about maybe something in that realm today from Loik Usie, who is head of engineering at Superhuman.
+17
+How are you doing, Loik?
+18
+I'm doing great.
+19
+I'm super excited to chat with you guys.
+20
+And I was with a pretty humbling set of guests in the past.
+21
+So I'm super happy to have this opportunity and discuss in length.
+22
+Yeah, that's awesome.
+23
+Well, I know this is kind of interesting because I know Superhuman, I think, was one of, you know, maybe the sort of first, you know, really integrated AI-first kind of engineering tools that I remember seeing.
+24
+And of course, the AI space has advanced.
+25
+Maybe could you give us a little bit of a kind of state of AI in email or productivity more broadly, if you want to think about that.
+26
+But really, I mean, obviously, we're going to talk a lot about email and messaging.
+27
+So, could you give us a little bit of a sense of what that landscape looks like right now and kind of how superhuman fits into that?
+28
+Yeah, totally.
+29
+And it's incredible, like the time that we're living right now.
+30
+Of course, like everyone has been shocked when we had the first version of those LLMs, like doing some crazy, crazy stuff and analyzing text, summarizing, and doing all sorts of magic.
+31
+And of course, email is all text-based for the most part.
+32
+And so it was like a really nice testbed to try out all the cool stuff that you can do.
+33
+And interestingly, that's also helped this category, the email client, to thrive for quite some time.
+34
+Superhuman was almost the only one supercharging Gmail and Outlook.
+35
+We were the only one on the space making people faster going through their emails and all of that.
+36
+And with the rise of LLN and agents and everything, now there's a bunch of people are like, oh, damn, this is a great, great, great environment to play around and to make things better.
+37
+And right now, this is what we see.
+38
+We see a bunch of other tools trying to do stuff with LLN and to create a better experience for email.
+39
+And this is indeed an interesting time for us because this.
+40
+And now more and more people are getting there showing that there's deep interest in it.
+41
+And it's challenging.
+42
+and it's like super interesting.
+43
+And we'll probably talk about it, but it will also help us understand what makes a good product.
+44
+And is just the LLM and AI sufficient?
+45
+Or do you need some sort of a secret source on top of it?
+46
+And happy to discuss about it.
+47
+As you, I'm kind of curious, following up on what Daniel was saying, with you guys being so early into the space, and obviously not only LLMs, but just AI in general has been going at light speed, increasing steadily over that time period.
+48
+How is the space changed for you guys from being kind of the early, only player into the space where there's others, it's becoming somewhat congested across not just the space you're in, but just like everything.
+49
+How has that changed the world for you guys in terms of staying differentiated and all that?
+50
+Yeah, so it's very interesting because there's multi-dimensions that we can talk about.
+51
+The first one is this is the rise of those AI features and capabilities are bringing a new set of features that you can implement that you couldn't do in the past.
+52
+In the past, AI was mostly classification, like adding labels and stuff like this.
+53
+And that was kind of the limit of what AI could do really for everything that is text-based, so typical classifiers, typical models like this.
+54
+So we moved from a place where we were making things faster for our users compared to Outlook, compared to Gmail.
+55
+But now there's more that we can do.
+56
+So we can make things smarter, which is probably like a padding shift in terms of the value that we're creating for our users.
+57
+The other dimension is like this is raising the expectations for, I would say, the different users.
+58
+For a long time, they were like, damn, this is so fast.
+59
+And I'm waiting four or four hours a week to go through my emails.
+60
+But everyone is used to chat GPT, everyone is used to perplexity, everyone is crafting images, or even movies with Sora and all of that.
+61
+So the level of awareness and the level of understanding of what the technology can do is raised dramatically.
+62
+So for our users, the level of expectations, like, hey, superhuman, I expect this now.
+63
+I expect this now.
+64
+The other dimension is like, from an engineering standpoint and like a building standpoint, our tool set is totally different.
+65
+The tools have changed.
+66
+And engineers that were working in some ways three years ago, even two years ago, even six months ago, right now, the tool set and your flow and all your setup to work has dramatically changed.
+67
+And maybe the last dimension that I think is really tricky to apprehend is the perceived quality.
+68
+So Superhuman was seen and built on the one single dimension that was like, it's highly qualitative.
+69
+We were in charge of the quality because we master everything.
+70
+So you can be like, have like a zero bug policy, you can take the time to deliver the value, but it needs to be perfect.
+71
+And now with LLMs, A bunch of the perceived quality depends on your prompt.
+72
+So you have users that are prompting with different skills or different level of skills.
+73
+And the outcome of that prompt may be perceived as low quality, but that's something that is really hard to control.
+74
+And it's creating something that is mind-blowing from an engineering standpoint.
+75
+I mean, we've all been working in tech and the craft, the bugs, and everything.
+76
+There are some processes to limit the number of bugs.
+77
+But now, quality is not only bugs.
+78
+It's also this perceived quality based on the user.
+79
+And that's an interesting thing to do, an interesting thing to tackle.
+80
+And I'm curious, as you kind of mentioned the fact that with some of the prompts and having different users, you know, skill level and stuff like that, could you talk a little bit about kind of how you tackle it?
+81
+This is one of those interesting things from my standpoint to hear about where there's all these little gotchas in this world that a typical person isn't going to ever have thought about going ahead of time.
+82
+And so as one of those things where prompting itself is fairly diverse in terms of the skill set, can you talk a little bit about how do you deal with that when you're trying to put together a product and focusing on the quality issues and stuff like that?
+83
+Because I'll be honest with you, that would not have occurred to me to have to think about addressing that kind of issue.
+84
+Can you talk a little bit about that?
+85
+I will tell you about one specific feature that we released in Q1.
+86
+So, we have those auto-labels.
+87
+So, automatic labels that will basically flag your emails.
+88
+And based on the label, you can decide to skip your inbox altogether.
+89
+Typical stuff, like random pitches from a company that wants to get in touch with you to sell their product.
+90
+I receive probably 30 of them every day.
+91
+Do I want to take a look at those 30 and answer all of that?
+92
+Probably not.
+93
+Probably not.
+94
+So, I'd love them to basically be skipped altogether.
+95
+So, for those, we built classifiers that do not rely on user prompts so that we control the quality, precision, recall, like the typical stuff.
+96
+But we also allow our users to create and craft their own labels.
+97
+Let's say you want to have, oh, I want all my podcast invitations to have the same label.
+98
+But, like, you cannot just have a deterministic rule to set because I don't know all the podcast people and everything.
+99
+So, you cannot just do the filter like Gmail would do where you say, like, if then, then, this.
+100
+So, you have to prompt it.
+101
+And you have to basically allow the user to craft a prompt that will surface all of those.
+102
+But then, that prompt is tricky because, like, if you have someone that is just putting just a one-liner, you start having some issues because the precision and recall based on the one-line prompt is not great.
+103
+And we know, like, as you, I would say, I guess your audience have been working with like chat.
+104
+And there's a bunch of hallucinations that can happen if you are just one-liner because lack of context and lack of all of that.
+105
+So, of course, you do some system prompt to surround this user prompt to try to avoid too much issues.
+106
+But there's also a part of education that you need to have.
+107
+And we're working on this now, which is like, huh, your prompt seems interesting, but probably you want to structure it that way.
+108
+So, there's some stuff like this that we will be working on.
+109
+Also, sharing prompts, like libraries of prompts, is something that we're thinking about more and more because not everyone is able to craft a nice prompt.
+110
+And maybe someone in your team will have done a prompt that you would really use happily if you get access to it.
+111
+So, it's sort of like a, I mean, it's very product-centric, so it's not AI-centric, and you need to work around this new problem.
+112
+And I wish we have a silver bullet and like the answer to that problem, but I think we are like learning as we walk.
+113
+But it's super interesting.
+114
+I'm wondering, like, I'm always intrigued by, I read a book by Richard Hamming, and one of the things that he talks about is how if you rethink a process that was very human and manual before, often the way that you would make that an augmented or machine-driven process is very different from what the original human process would look like.
+115
+And I think in the email client, we all sort of expect a certain process, a look and feel to the email client that's developed.
+116
+What have you found in terms of like presenting an email client to a user that is drastically different?
+117
+What sort of needs to be preserved?
+118
+What's kind of up for grabs in that experience?
+119
+What should stretch the user?
+120
+What needs to be preserved?
+121
+How do you think about that?
+122
+That's really interesting.
+123
+That's a really interesting point because we are at that moment where the user interaction with the computer, with the system, is dramatically changing.
+124
+People don't expect to click in different windows anymore.
+125
+The expectation is different.
+126
+Chat EPT, or I would say the other clones, for different providers, you basically have a chat box and you ask everything there.
+127
+Even if you're working on a document, you ask on the chatbot and modify my document and rewrite my exact summary.
+128
+Oh, make my tone a bit more like X and Y and Z.
+129
+You don't expect to have a button like World would have Microsoft World back in the days.
+130
+And we are only at the beginning of this shift.
+131
+So I think that, and it's kind of like coming back to competition and all of that, the barrier to entry to pretty much any SaaS application, or even a consumer application, is very low now because it's very easy to, at least to build a POC, at least to build a POC.
+132
+I wouldn't go further than that.
+133
+And what will make the difference is the product test and how you want to understand your users and how you understand their user interaction.
+134
+And this is where I feel pretty proud to work at Superhuman because our CEO is a freak in terms of user interaction and vision and is already thinking about that and how the future of the interaction will be.
+135
+And it will change.
+136
+It will be different.
+137
+So what will stay, what will be slightly different.
+138
+I'm pretty sure that the conversational aspect will be a strong paradigm.
+139
+Right now you don't talk, whether it is through your keyboard or through a mic, you don't really talk to your system.
+140
+You don't talk to the application.
+141
+Maybe you start talking with ChatGPT because they have this nice voice interaction.
+142
+Maybe you use Whisperflow or this type of tools to basically write your email or write in Slack and your messages.
+143
+But you're not exactly commanding the device to do things as you talk just yet.
+144
+But more and more people are doing so.
+145
+I probably talk to my computer now more than I type, interestingly.
+146
+So there's a change.
+147
+And everything that we've done in the past was mostly click and click and click.
+148
+Superhuman started with the common key and keyboard-centric access to things for people that wanted really productivity because switching with a mouse is pretty slow.
+149
+And now more and more people are starting to engage with the voice.
+150
+So all of that will change the way you think, the way you surface the data, the way you interact with the data, the way you bring the focus.
+151
+So this is an interesting area.
+152
+One thing that I do believe will stay, though, to your point, Daniel, and I will talk about him.
+153
+The concept of inbox, like the concept of having like some sort of like a timeline of things that you need to go through and get rid of the stuff that are top of mind, some sort of like a task list to some extent will stay.
+154
+Now, how it will be surfaced, how you will go through it will dramatically change over time.
+155
+And we are already like seeing this, okay, friends.
+156
+Build the future of multi-agent software with Agency, AGNTCY.
+157
+The agency is an open source collective building the internet of agents.
+158
+It is a collaboration layer where AI agents can discover, connect, and work across frameworks.
+159
+For developers, this means standardized agent discovery tools, seamless protocols for inter-agent communication, and modular components to compose and scale multi-agent workflows.
+160
+Join Crew AI, Langchain, Lambda Index, BrowserBase, Cisco, and dozens more.
+161
+The agency is dropping code, specs, and services, no strings attached.
+162
+You can now build with other engineers who care about high-quality multi-agent software.
+163
+Visit agency.org and add your support.
+164
+That's agntcy.org.
+165
+So, as we were kind of going into the break, we were talking about.
+166
+And I'm kind of curious as you're thinking about not only the rethinks, but you're also having to respond to the evolution of the technology itself that's available for your teams to implement and stuff.
+167
+And one of the things that we've seen over time is kind of, you know, it's not this smooth increase.
+168
+You may have evolutionary increase in the model capabilities for a bit, but you also have these jumps that will occur along the way.
+169
+And with your product teams, as you're looking at what the future of your products are going to be, and you hit these moments where it kind of goes from, you know, predictable improvement in the models, and you make these jumps, how does that affect the product development cycle that you have internally when you're saying, are those moments, you know, as we were talking about rethinks, do you have moments where you kind of go, maybe it's time for kind of a deliberate rethink because something just happened in terms of the technology capability that we weren't expecting last week?
+170
+And we're going to do that.
+171
+How do you guys handle this kind of an industry being in it for that?
+172
+No, it's really interesting.
+173
+So, Danielle, you were mentioning a book, but one book that comes to mind as you're asking this question is Zone to Win by Joe Frimois.
+174
+And it talks about continuous innovation and disruptive innovation.
+175
+And this is probably what we're talking about.
+176
+We continuously edit and we continuously add more features and new stuff into the product.
+177
+And sometimes you have this opportunity to provide something that is disruptive, whether it is the underlying technology that is disruptive or because you have some sort of a wow moment and you are like someone, I would say, with a vision that is like this is the direction to take and we need to either pivot or we need to do something like drastically different.
+178
+What we've seen, especially with AI, is like the rate of those disruptive innovations is mind-blowing.
+179
+I would say before AI, to some extent, like the technical innovation where maybe once a year, once every two years, like you have something that is like brand new and like, holy shit, we need to use this.
+180
+And pardon my French.
+181
+But what is interesting with LLM is like every two weeks or three weeks, if you're not on Twitter, you're not on Hacker News, you can miss the new big stuff.
+182
+LLM, like multi-modals, reasoning, MCPs, that came in six months.
+183
+And all of that is coming with a new set of capabilities that you can decide to implement in your product.
+184
+So to come back on your early question, what is the impact on the product development?
+185
+How do you handle this?
+186
+One, you better be agile, meaning like the true agile.
+187
+So you better be able to stop what you do and say, wow, we need to sit down for a moment because this is coming.
+188
+What do we do about it?
+189
+And you need to have like, and that's why I love like small companies to some extent, because it's very easy to have like everyone, listen, there's this new thing, we need to do something about it, let's change the roadmap right now.
+190
+When you're in a bigger company, it's way harder to do it because you have your yearly planning that is like coming into quarterly planning and you have all those OKRs that you need to report on.
+191
+So, you need basically almost a six-month business plan to explain why you want to pirate and do something else, which is obviously not the case when you're a company that is of a small size.
+192
+Superhuman.
+193
+Engineering and product and design is probably like, I don't know, I don't have the strict number, but like 40, 40, 60, maybe 50.
+194
+But that's about it.
+195
+That's the size where you can be like super agile.
+196
+You can stop everyone doing something because something is coming up and we need to focus on it.
+197
+Of course, we can do better.
+198
+If my engineers are listening to this podcast, they will say, Loik, maybe you're like you're caricaturing a bit.
+199
+So, probably I'm caricaturing a bit.
+200
+And of course, they are, right?
+201
+I mean, and of course, they're right.
+202
+Of course, they're listening to you.
+203
+And of course, they're listening to it.
+204
+So, it's having this understanding that everything is changing right now.
+205
+So, you need to reassess your priorities almost every two weeks.
+206
+Almost every two weeks.
+207
+MCP is coming.
+208
+People are standardizing on it right now.
+209
+What do we do with it?
+210
+What do we do with it?
+211
+Should we invest like crazy?
+212
+Should we stop everything that we're doing?
+213
+Should we, I would say, do we still believe in the vision and it's providing more value?
+214
+You need to make those decisions every two weeks.
+215
+So, or like almost every week.
+216
+So, being close to, I would say, the close-knit team that is talking basically on a daily basis to make sure that you're making the right decision is key.
+217
+It's key.
+218
+And by the way, just for listeners, you may have heard MCP in there.
+219
+If we did an episode explaining what MCP is, so anyone who's not familiar with it, you should jump back a few episodes and hear that out.
+220
+It'll give you some context around.
+221
+And I'm sorry if I use, I would say, some jargons, but jargon's fine, but we always try to jump in and point people to it.
+222
+This is perfect.
+223
+This is perfect.
+224
+And I think kind of looking forward, one of the things that I'm really curious about is we've kind of tackled some of the bigger issues of AI and email, but I'm kind of curious, you know, if we dive down into specific functionality at Superhuman, how do you see kind of the most, maybe the most useful AI email functions that you're currently either kind of releasing or kind of thinking about forward?
+225
+You know, how do you, when you get kind of granular on the product, how are you starting to think about that now?
+226
+I would just like the feature that all our users are basically talking about because they just love it is a feature called AutoDraft.
+227
+You receive an email as part of a thread, someone is asking you some questions, or you send an email basically saying, hey, can we meet next week or whatever?
+228
+And after two days, you don't have an answer.
+229
+You usually want to bump that into their inbox and everything.
+230
+We build this feature where we create those drafts for you, ready to be sent.
+231
+It's not mind-blowing in terms of usage of LLMs.
+232
+You provide the context, you use the tone of you're the bad person and everything, and you craft a draft that could sound like a good way to reply to it.
+233
+And the results are just mind-blowing.
+234
+The users find it so addictive because it's relatively accurate and they win a lot of time.
+235
+It's just about winning time.
+236
+Our users are mostly CEOs, CXOs, on the sales side, as well as some consultancy firms.
+237
+They live basically day in and day out in their emails.
+238
+So every 10 seconds that you can make them win in their day is a huge win for them, given the amount of emails that they have.
+239
+So this is one of those features that is super effective, even if it sounds simple.
+240
+So, Loik, even with what you're just describing, they're creating an auto-draft per email, maybe an LLM call, doing classifications, auto-labeling, maybe other calls.
+241
+I don't know how many calls or chains of LLM calls are happening per email, but that could potentially be a lot.
+242
+And if you do that for one email, that's fine.
+243
+You do that for all my emails, that's more.
+244
+If you do that for all emails of thousands or hundreds of thousands of people, that's a lot of Gen AI workload.
+245
+How does superhuman, as more of an AI application company, think about that in terms of optimizing infrastructure or AI, Gen AI use, consumption, hosting your own models, fine-tuning your own models, using smaller models?
+246
+How do you think through some of that?
+247
+So this is a great question, and this is a real challenge to some extent, if not a problem, sometimes, indeed.
+248
+I guess my engineers are very much into the finance.
+249
+They understand the cost of inference, the cost of the input, the cost of the output.
+250
+They understand the difference between.
+251
+So, we have to put some sort of high-level principles to keep moving fast so that they know, I would say, how to default and only escalate if they have some questions.
+252
+I will give you some example, but if it's a new feature, we don't know if it will be working or whatever.
+253
+So, still testing, we want it to be great.
+254
+So, we take the most expensive model.
+255
+It's working and we have traction.
+256
+Great, good problem to have.
+257
+And now, this is the moment where you start thinking about optimizing the cost.
+258
+And then you will switch to a cheaper model, maybe more fine-tuned.
+259
+Maybe you will switch to a different type of model altogether.
+260
+So, for example, like the classification that we discussed, LLMs are okay with classifications, but you can have way cheaper for the same quality with a BERT type of models.
+261
+And inference cost is like a fraction of it, a fraction.
+262
+So, long story short, this is the way we provide the value to our end users.
+263
+We try with the best, working, we do optimization after the fact.
+264
+Does that answer your question?
+265
+But this is like, more generally, I think this is always the right approach.
+266
+It's like, don't care about the cost right now if it's not becoming a problem.
+267
+Because you always want to provide the best experience.
+268
+And if you don't have traction, too bad.
+269
+Because the risk, if you try to start small, because you're afraid of the cost, you will use a cheaper model.
+270
+And the feedback from the users will be mere and they won't use your feature.
+271
+And then you don't know if it's because the feature is, I would say, not well targeted or if it's because of the model.
+272
+So, targeting.
+273
+That was a really interesting answer from my standpoint.
+274
+You explicitly kind of called out, you know, as you're getting to the feature and going ahead and going with the best, the most expensive thing, and then pulling it back to what the efficiency will be.
+275
+And once again, one of the things that we often call out on the show is kind of the fact of kind of software engineering being applied and kind of the analogies on that on the AI side.
+276
+So, I just really wanted to kind of call that out because I thought that was a great insight that you made there.
+277
+And it has impacts.
+278
+So, sorry to cut you off.
+279
+Sure, Chris, but it has a significant impact on the way you build your application because you want to be able to switch models, to switch the heuristic associated with the output that you want to have.
+280
+So, you have to invest some time to have a way to do this switch relatively easily, potentially do A-B testing with different populations to measure the difference of perception.
+281
+Because, again, not everything is black or white.
+282
+There's nuances of gray now in terms of perceived quality.
+283
+So, you need to have more of a statistical approach in terms of understanding the impact of one model versus the others.
+284
+And, of course, we have internal evals and all of that to do our own testing in terms of with our golden data set.
+285
+But the reality is we have a diverse set of customers, and everyone is different.
+286
+So, we need to have a broader perspective than just relying on our own data set.
+287
+Yeah, Loi, I appreciate you getting into.
+288
+Obviously, you're leading the technical efforts with Superhuman.
+289
+And I'm wondering if you have any sort of hard lessons learned from doing AI engineering over time.
+290
+We have a lot of practitioners that listen in.
+291
+Any kind of general principles or lessons learned that you'd want to impart?
+292
+That's a good question.
+293
+Maybe one thing that I've learned is to, like, as a CTO, I need to discuss with the rest of my leadership team.
+294
+And we talk about the success of features and everything.
+295
+And the typical way to talk about quality is typically in terms of the number of bugs and everything.
+296
+Now, and I was touched on it early on, but the perceived quality depends now.
+297
+We're in a world with way more subtleties with LLMs.
+298
+So setting the right expectation, basically explaining that the way the feature can be built and sometimes failing because the feedback is not great might not be because it's not well implemented.
+299
+But maybe there's, I would say, more to it.
+300
+Maybe there's a part of the perception, maybe there's too much latitude that is offered to the end user.
+301
+Maybe there's some work on the prompt side.
+302
+So that's something that hit me in the beginning where the perception of the feature was agrosh.
+303
+This is terrible work.
+304
+It's not working.
+305
+People are complaining.
+306
+Guys, what have you done?
+307
+And the work was done properly.
+308
+It was well implemented and everything.
+309
+But the perceived quality of such, I would say, some of those features can be completely different based on those new aspects.
+310
+So maybe my lesson learned is now to just be very explicit when you basically launch a new feature about the risk of that perceived quality and the source of the mistakes being a bit less on the engineering side and maybe a bit more on the user.
+311
+And there's a lot of work to be done to control that in terms of user education, in-product education.
+312
+So putting a bit more effort on the product-led growth, typical aspect of the business that will have a tremendous impact on the success of the feature.
+313
+So that's probably one.
+314
+The second one is, and it's interesting because I see it every day.
+315
+We are moving up market.
+316
+We have a lot of startups that are moving up market.
+317
+So you start having your companies that are part of the Fortune 500 and they want to use your product.
+318
+And I come from a world where moving to enterprise is pretty heavy.
+319
+You need a lot of features, you need to have a lot of compliance, you need to have basically a lot of things that are not directly improving your product, but improving the confidence of those companies that you are the right partner to work on those for them.
+320
+There's a shift now.
+321
+There's clearly a shift in those Fortune 500 and by extension all the enterprise market, where especially with AI, the risk associated with lesser compliance or you're a small company, should we trust you, is completely counterbalanced by the risk of missing out.
+322
+Like the cost, the opportunity cost is too big.
+323
+And now we see definitely push from CXOs on their security teams for those AI tools and productivity tools, basically saying, hey, guys, you need to make it work.
+324
+You need to make it work because it's improving so much the efficiency of the C-levels.
+325
+And by extension of the rest of the company, you know what?
+326
+We're probably ready to take the risk.
+327
+Even if it's like a Series A, Series B, Series C company, and it's not fully established, maybe, or like maybe the, yes, they are processing our emails, which is like a core data set of our business, and we need to be straight about it.
+328
+Maybe they're more okay.
+329
+Of course, we need to do the work.
+330
+You need to prove that you're the right partner.
+331
+But the first approach is changing and the dynamic is changing.
+332
+So it's basically a bias toward, let's make it work compared to two years before, where it was probably prove us that you are a reliable partner, and then we'll see if we do this POC.
+333
+It's completely the reverse right now.
+334
+So yeah, that's an interesting dynamic that is useful in the way to build a product right now.
+335
+I'm curious.
+336
+And we get to talk about all these really cool things happening in the AI space and how they're affecting products and services.
+337
+And LLMs can do so much now.
+338
+And we're kind of moving into the agentic age of AI and that's increasing.
+339
+But there's still a human being in the workflow.
+340
+And what are the critical factors that the human is still bringing into the workflow as opposed to all this amazing technology that we're able to utilize on that?
+341
+How do you see the human in the workflow going forward, given the fact?
+342
+That's an interesting question.
+343
+And I guess the answer is almost in the question.
+344
+It's like the human part that is hard to replicate.
+345
+And so, I mean, creativity, ability to define, like to detect patterns and stuff.
+346
+So I think that the rise of LLMs is helping us get rid of everything that is mundane.
+347
+I spent, like, I was, I used to, I will give you one example.
+348
+I do a lot of interviews because I hire engineers, and as part of every interview process, you used to write up like a debrief for the team to consume.
+349
+And writing a debrief, like a thoughtful debrief, like takes time.
+350
+It takes time.
+351
+I was probably spending between 20 and 30 minutes after each interview to basically put the pros, the cons, like a question mark, like an area to dive in.
+352
+Now we are pretty much all using meeting minutes that are using the transcript, formatting that the way you want, and you just have to add your quick thoughts here and there and like that.
+353
+So now, like from 20 to 30 minutes, this is taking me three minutes.
+354
+And boom, this is uploaded in the whatever ATS tools like Furniture.
+355
+That's an example.
+356
+Meeting minutes with my people.
+357
+I have one-to-ones.
+358
+I do one-to-one meetings with my people.
+359
+I want to keep track of everything that we said.
+360
+I used to take notes.
+361
+I'm still, to some extent, taking some notes, but the transcript itself is so good now that I don't have to take notes of everything.
+362
+So I just put notes of the two key highlights that I want to keep somewhat private.
+363
+And now it's building a database for me, of information on my desktop that I can query anytime to find information.
+364
+So this is replacing all the mundane work that I was doing, and I can just focus on brain power to some extent.
+365
+And that's definitely changing.
+366
+So same for my engineers.
+367
+My engineers, they've lived padding shift to padding shift and changing the way they build software over time.
+368
+They keep increasing their velocity because of those new tools.
+369
+They have also to think differently, but it's still stupid to some extent.
+370
+All these toolings, it's basically an intern.
+371
+It's an intern.
+372
+So you need to review.
+373
+You need to spend the time reviewing what has been output, what's the output of your new ID, being cursor, being C-line, whatever, those tools.
+374
+You need to review everything because sometimes it will make some crazy mistakes that a regular engineer won't do.
+375
+But I think that it's saving a ton of time for our engineers that they can just focus on the core of their job, which is understanding the user, understanding what needs to happen, and what is the smartest way to get it happen.
+376
+LLMs are just a nice helper to go faster, but so far it's about it.
+377
+But it's changing every day.
+378
+It's changing every day.
+379
+Yeah, Loik, you mentioned kind of coding and vibe coding, you know, comes to mind.
+380
+And I almost wonder, you know, there's going to be a new reality for email with all of these AI features coming in.
+381
+And there's different types of mental loads that I have to manage, like a lot of context switching, you know, guiding the model in different ways.
+382
+It's a different kind of mental load, a different kind of skill.
+383
+Do you see a similar thing developing in terms of my interaction with email and learning a kind of different way of working through those things, in good ways, but also in challenging ways to sort of retool my mind or retrain my mind of how to work in this kind of vibe emailing way?
+384
+No, no, this is a good question.
+385
+And then we're talking about the user interaction and how this is evolving.
+386
+And our work is to make that transition, if there's any transition, the smoothest possible.
+387
+We need to take the user where they are to bring them where they will be eventually with this vibe emailing, if that even means a thing.
+388
+I'm not sure what will be behind it, but clearly there's a change that we are facing.
+389
+And interestingly, I was talking lately, but right now, startups, I would say, startups typically over index on seniority for engineers because you need people to be able to manage the noise, manage the shit.
+390
+Like it's always changing.
+391
+You need people with a top skin to be able to manage that.
+392
+That said, anyway, and we see it, it's harder right now for new grads to get into this market.
+393
+But they have one asset that makes them probably different.
+394
+It's the brain plasticity.
+395
+The new grants of this year, for the last three years, they've seen so many different technologies coming, like every six months.
+396
+They had to readapt, they had to relearn.
+397
+So their brain is used to this mental shift.
+398
+like every six months, like, oh, damn, this is the new way to code.
+399
+Oh, damn, this is the new way to code.
+400
+In my days, like the biggest shift was moving from SVN to Git.
+401
+That was about it.
+402
+Or like you have a new framework, or you have a new language, but it's same old, same old, like different flavor of the same thing.
+403
+So I do think that the people that are just born with it, we were born with internet, they are born with LMS and with AI.
+404
+And they have this brain plasticity.
+405
+And I think this will be probably the challenge for practitioners, like engineers globally, is how to adapt to that.
+406
+Because I'm 45.
+407
+I'm not sure that my brain plasticity is still there.
+408
+So I need to keep up.
+409
+I need to still try new stuff and everything and challenge myself every day compared to even five years ago where I was just tuning my own ways and making it slightly better over time.
+410
+This is a paradigm shift.
+411
+And if I don't take the wagon, I'm probably lost.
+412
+And same applies for engineers.
+413
+So it's definitely an interesting time.
+414
+Definitely an interesting time.
+415
+I got to say, if you hadn't dated yourself intentionally, revealing your name, I was going to say the SVN to Git switch would have done that for you.
+416
+I don't think anyone out there under 30 is going to know what SVN is anyway.
+417
+I'm sorry with that.
+418
+It's kind of like my gray hair that we're talking.
+419
+I'm just definitely.
+420
+Brain plasticity is all.
+421
+So I'm curious, you know, as we wind up here, you know, there's so much ground is getting covered right now.
+422
+And you know, you've talked about like, you know, the evolution of the product and new technologies kind of slamming into your current plans and having to adjust and stuff.
+423
+If you kind of take a step back or you know, kind of done for the day and you're kind of thinking about the future and you're thinking on a little bit longer time frame than kind of what we've been talking about, kind of, you know, where can you know email and messaging and stuff, where can it go with these technologies in a little bit longer time frame when you kind of get into just letting your mind wander and kind of kind of dreaming what could be.
+424
+What are your thoughts around the future around that, you know, in the large?
+425
+What should we be thinking about that's not necessarily going to be science fiction going forward, but you know, day-to-day life given where things are kind of generally headed?
+426
+No, this is a, I wish I knew.
+427
+I wish I knew.
+428
+But like if I have to do like a bit of science fiction, like clearly I see the communication globally, communication between people is so fragmented.
+429
+So fragmented.
+430
+Like with my family I use WhatsApp.
+431
+At work I use and with my partners and all of that, we use emails.
+432
+Internally we use Slack.
+433
+But we also like discuss in like Google Docs threads like in Kof Commons and all of that.
+434
+So communication is so spread out and so in different places that it's really hard to make sure that you have everything that belongs to the same topic.
+435
+So if I have to guess where we would be like in, I don't know, I would say 10 years, but like maybe with like AI it will be like in six months, I would say that there's probably a need of a unified and central way to communicate for you, which is your preferred interface, regardless of where this will land.
+436
+And doing so like in a way that brings focus.
+437
+When I want to work on a specific partnership with like in AI, with all those big providers and everything, I want to focus only on this.
+438
+But I don't care if the information is in my email, is in Google Doc, is in Notion, is in WhatsApp or whatever.
+439
+I want this to be consolidated so that I know everything that is happening in one place.
+440
+So I think there will be a lot of work around this.
+441
+The other aspect that is really interesting is where LLM sits, what is the entry point?
+442
+We see ChatGPT being one entry point, but all the tools have an embedded ChatGPT equivalent.
+443
+So whether you use Confluence, Notion, whether you use Salesforce, whether you use any kind of B2B application, have their own specific chatbot.
+444
+And then you have actors like Green, for example, and some others that try to unify everything.
+445
+Where is this going?
+446
+And so that's something that I'm really curious about.
+447
+Do we want to be where people work, or do you want to have like i i have more questions than answer uh what's for sure it it will evolve uh and that uh i i do believe like superhuman is doing that in a nice way and people tend to love it.
+448
+So building on that experience and that empathy with users, I believe we'll be like well placed for that race, basically.
+449
+But interesting race.
+450
+I appreciate the insights.
+451
+And thank you so much for coming on the show today and kind of sharing not only where superhumans at, but kind of, you know, how you're tackling the challenges and thinking about the future.
+452
+A lot of insight there.
+453
+I really appreciate it.
+454
+Thanks, Chris.
+455
+I appreciate the time with you and Daniel.
+456
+All right.
+457
+That is our show for this week.
+458
+If you haven't checked out our Changelog newsletter, head to changelog.com/slash news.
+459
+There you'll find 29 reasons.
+460
+Yes, 29 reasons why you should subscribe.
+461
+I'll tell you, reason number 17, you might actually start looking forward to Mondays.
+462
+Sounds like somebody's got a case of the Mondays.
+463
+28 more reasons are waiting for you at changelog.com/slash news.
+464
+Thanks again to our partners at fly.io to break master cylinder for the beats and to you for listening.
+465
+That is all for now, but we'll talk to you again next time.

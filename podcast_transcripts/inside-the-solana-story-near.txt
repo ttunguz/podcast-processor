@@ -1,0 +1,1127 @@
+--- METADATA START ---
+Show: web3 with a16z crypto
+Episode: Inside the Solana Story: Near-…
+Host: Ali Yaya
+GUESTS: Anatoly Yakovenko 
+Guests: Anatoly Yakovenko
+Source URL: https://podcasts.apple.com/us/podcast/inside-the-solana-story-near-death-brushes-and-a/id1622312549?i=1000711238352
+--- METADATA END ---
+
+1
+Welcome to Web3 with A16Z.
+2
+Today's episode features Solana co-founder Anatoly Yakovenko in conversation with A16Z general partner Ali Yaya, recorded live at our CSX Crypto Startup Accelerator program earlier this year.
+3
+Anatoly shares the origin story of Solana from a late-night Eureka moment to thousands of investor meetings and several near-death startup experiences.
+4
+He talks about what it took to get the network off the ground, how his engineering background at Qualcomm shaped its design, and why a need for speed gave Solana its edge.
+5
+They also get into developer culture, engineering trade-offs, and what differentiates Solana's approach to building, including its willingness to ship, iterate, and rethink everything, including most recently its consensus algorithm.
+6
+As a reminder, none of the content should be taken as investment, business, legal, or tax advice.
+7
+Please see a16z.com/slash disclosures for more important information, including a link to a list of our investments.
+8
+Hey, everyone.
+9
+Hey, guys.
+10
+Thanks for joining us.
+11
+Sure.
+12
+Thanks for having me.
+13
+Great to have you.
+14
+I don't know if you remember when we met.
+15
+I think it was in Berkeley, one of the events.
+16
+Yeah, exactly.
+17
+It was 2017.
+18
+I had just joined A16Z.
+19
+I was a very junior BC.
+20
+And I think, yeah, it was Berkeley.
+21
+Don Song had like a panel.
+22
+I think I was on the panel.
+23
+You were in the audience.
+24
+And then at the very end of the conversation, we had like a very short interaction.
+25
+And then after that, then you came into the office.
+26
+We had this meeting with Dan Bonnet, who's a professor at Stanford, and kind of we went through all of your thinking for Solana at the time.
+27
+And then we passed, which was like a huge mistake.
+28
+And I actually pulled up the pass note that I sent you at the time.
+29
+And I had said this quote from the pass note.
+30
+I said, Our sense is that Solana's fully predictable leader schedule, combined with its probabilistic finality and its lack of strong disincentives for double signing, like slashing conditions, will make Solana less robust to Byzantine actors.
+31
+The likelihood of denial of service and/or bribery attacks against elected leaders to either censor transactions or mount rollback attacks seems unacceptably high.
+32
+Which is classic junior VC being overly caught up with like kind of the weeds and the implementation details and missing the big picture, missing the fact that you were a hardcore founder who was not going to give up at anything that would like continue sales, is Man's telling me.
+33
+I don't know about that.
+34
+I think I take a lot of responsibility for missing the seed round of Solana at that time.
+35
+But do you want to tell the story of that time?
+36
+Like the moment when you decided that you wanted to do this and then what it was like to get started?
+37
+For sure.
+38
+So I spent most of my career at Qualcomm.
+39
+I landed there straight out of college.
+40
+And in college, I had a startup working in a voiceover IP, which failed because we were in the middle of Illinois after the dot-com crash, building like a Vonnage thing.
+41
+Vonage didn't exist yet.
+42
+But I was super into performance optimizations and they kind of hired me in the spot.
+43
+And I was really into optimizing like low-level code for mobile and surfing and playing in our hockey and doing Iron Man triathlons.
+44
+And that was my life for like 14 years.
+45
+And for some reason, my wife and I decided to move to SF.
+46
+She wanted to switch into tech.
+47
+And I landed in SF and it hopped from Mesosphere to Dropbox.
+48
+And I always had, like, since I was 16, always some side project.
+49
+So I was always building stuff.
+50
+I think this is kind of the now that I spent like a third of my time investing, the type of the funder that I look at are like people that are like busy.
+51
+They just can't put stuff down.
+52
+In 2017, me and Steve Ackridge, who I spent a decade at Qualcomm with, we did Ironman together, played underwater hockey at like a U.S.
+53
+men's level.
+54
+This was like my go-to person.
+55
+We had a side project putting up GPUs in Hurricane Electric and mining crypto with them, but building an API for deep learning.
+56
+This was pre-Transformer paper.
+57
+We're just like geeking out on neural networks.
+58
+And because we were mining crypto with it to pay for the hardware, this is how I got into crypto as an engineer.
+59
+And I was kind of trying to figure out why are people paying me these astronomical amounts of money for running this stupid software that does nothing.
+60
+And I had two coffees in a beer cafe Soleil and had this Eureka moment that ended up my own rediscovery of verifiable delay functions, things that like folks at Dembonet was working on, you know.
+61
+But I couldn't Google for this.
+62
+Like there's no way you can come up with the term verifiable delay function on your own.
+63
+And there was not a lot of stuff.
+64
+It's not very Googleable.
+65
+Yeah, not very Googleable.
+66
+And thank God for that because then I thought that I had something really, really, really important that no one has discovered before.
+67
+That is interesting.
+68
+So because I couldn't Google for it and find smarter people than me working on this, I thought I had like a secret nut that could help me build something.
+69
+And the intuition that I had because of my careers at Qualcomm that if you have a source of time in a network, you can build time division multiple access, which is, if you remember, is like the first cellular network layer built in the 80s.
+70
+And this is very analogous to like, if you think of Bitcoin as Aloha, do people know what Aloha is?
+71
+The basic problem in like physics and radio is you have two towers transmitted at the same time or the same frequency of noise.
+72
+If you have two block producers make a block at the same time, you have noise in the network because you have two heads of the network.
+73
+So the first dumb protocol people came up with was called Aloha in Hawaii.
+74
+You produce, you send out your signal with your towers, and if you see you're getting interference, you retry in a random time.
+75
+So it's very inefficient.
+76
+It doesn't utilize the channel that you allocated for that network, the amount of frequency and bandwidth effectively.
+77
+So with time, you give each tower a clock and they alternate by time so they can only transmit at their allotted slot.
+78
+So because I thought I discovered this secret unbreakable source of time that is totally decentralized, doesn't rely on a central provider, I thought I had this thing to recreate Bitcoin, but much, much faster because it can utilize the entire bandwidth allocated to it.
+79
+There is no this random backup thing.
+80
+It was very hard to articulate this.
+81
+So when I was trying to explain this to Ali and stuff, I was using terms that are not crypto terms, not academic Byzantine fault-tolerant terms, because I'm coming to the space as like an optimization engineer.
+82
+And we did a lot of things wrong in our design.
+83
+Everything he actually said is true.
+84
+There's a lot of problems with spam and Byzantine attacks on leaders and stuff like this that we have to solve later on.
+85
+But the unique thing that we did figure out was that these networks, as academically designed at that time in 2017, had this problem where you had really poor channel utilization.
+86
+You allocate everyone one gigabyte or 10 gigabyte networks.
+87
+They cannot produce that much data in blocks because they have to constantly stop for consensus or they have to randomly back off.
+88
+And the unique thing that we discovered was that it is enough to solve that problem to solve scalability in crypto.
+89
+You don't need to go build shards or anything else that was fancier.
+90
+I think had I expressed that understanding of the problem that way and said we can solve all the other challenges, they probably wouldn't have passed.
+91
+But me as an engineer was so hyper-focused on the implementation, I didn't know how to sell what I had.
+92
+This is something that I learned later on: you have a solution that solves a problem for your users.
+93
+If you sell them the implementation, you're not going to convince them that you've solved their problem.
+94
+You have to actually understand the problem and sell that, that you can fix that.
+95
+So that was like my first experience at selling was raising money, which is a really good founder experience.
+96
+The reason I was at that meeting in Berkeley was that I had a kid, and my wife knows me really well.
+97
+So she gave me an ultimatum: You can't have a side project, a child, and a job.
+98
+You have to pick two.
+99
+The child is mandatory.
+100
+So, I had to pick either the job or the side project.
+101
+So, I quit.
+102
+I had six months to raise enough money to where we had income and stuff.
+103
+I could pay myself a salary.
+104
+And that was the motivator for me to actually go raise.
+105
+And my strategy for raising was like to go to every crypto event, talk to everyone there, try to find anyone that's associated with capital or whatever.
+106
+And this is how I bumped up to Oli.
+107
+I just heard him, I didn't know he was going to be there, but I went to every event and I overheard him say something about A16Z, and I like suck like boss.
+108
+Here's my bitch, you got to hear it out.
+109
+And it literally took me a thousand meetings, I think, to get a seed-round check, like enough capital to form the team.
+110
+Yeah, is your Wi-Fi engineer?
+111
+Yeah, you frame that as a trilemma.
+112
+Yeah, exactly.
+113
+That's amazing.
+114
+What did you think would be the biggest challenges at the time?
+115
+And then, how does that compare to what the actual biggest challenges in the Robin?
+116
+We thought that the most useful application for these things, like I didn't want to compete with Bitcoin because I think it's kind of a very special snowflake.
+117
+There's no way to engineer better Bitcoin.
+118
+And the way that it creates value or creates price for Bitcoin, it just, there's no rational way to do it.
+119
+There's no discount future cash flow model you can apply to Bitcoin.
+120
+And the thing that I did understand was at least the smart contract platform.
+121
+Having spent my career working on operating systems in mobile, I kind of understand this is an environment to build applications.
+122
+It's very constrained, similar to like early days mobile where you have two megabyte devices.
+123
+So you're very memory constrained, you're very CPU constrained, and I could solve that problem because I've done that before.
+124
+So we hyper-focused on that.
+125
+And the thing that we thought was interesting, or at least I could backtrack, this is how this network could make money, was trading.
+126
+Because if you have trading, you have an opportunity cost to being late, and therefore you'll pay more money to be first.
+127
+And at that time, I kind of called it arbitrage or triangulation.
+128
+The more markets you have, the more trades you have, the block producer could make money off that by simply being the primary broker or whatever you want to call it for that slot.
+129
+So we focused on trading, but we had no clue that meme coins were going to be a thing or NFTs were going to be a thing.
+130
+Because my background, we tried every crazy idea.
+131
+We pitched a dish network to sell bandwidth for 5G networks dynamically because you need like a lot of towers to actually saturate the US with 5G networks.
+132
+We pitched every random fintech, like all sorts of random stuff.
+133
+The first SDK was like written in C, if you can imagine that.
+134
+We basically had no idea how to get users.
+135
+This was like the biggest challenge.
+136
+And outside of like building the network and get it booted and running, which I knew we were going to get done because I hired a bunch of engineers at a Qualcomm that I worked on really, really hard problems with for over a decade.
+137
+So I kind of knew it was going to at least work.
+138
+But getting users for that was really, really hard.
+139
+And that was my job.
+140
+So like I had to both code and figure out where do we get users.
+141
+Did you start out thinking that you would build a better Ethereum?
+142
+Were you thinking of it in those terms?
+143
+Or was it completely different in your mind?
+144
+No, like as soon as Vitalik and Joe Lubin started talking about global settlement, I just thought that was really boring.
+145
+Like a part of one of my side projects, I was trading options and Forex and stuff across like a bunch of random interactive brokers and Oanda.
+146
+And the part that's interesting is the execution.
+147
+It's the trading.
+148
+This is where price discovery happens, is where like I felt as a user of those systems that I built an algorithm that worked in backtesting, but then when I actually deployed it, my trades would land a little later, my data would arrive a little later, just at that point where the algorithm should be making money.
+149
+So I felt like I was at a disadvantage because I'm trading very, very small amounts just for fun, right?
+150
+But I didn't have the same access as I would to like the Linux kernel internals in an open source environment.
+151
+Because I didn't know how, like, it's all a black box that's controlled by somebody that's giving their biggest customer preferential treatment, which is as they should, right?
+152
+They're running a business.
+153
+So my motivation was kind of like revenge, or if you want to think of it, we can focus in trading.
+154
+I know how this could make money.
+155
+So if we're even moderately successful, we won't run out of runway.
+156
+And I didn't even think of Ethereum as a competitor.
+157
+Do you feel like your vision for what Solana is has changed a ton, or has it remained fairly constant since then with the same North Star?
+158
+It's remarkably been the same, which is surprising to me that with so little information and blind luck, I would say that we turned out to be like somewhat directionally right.
+159
+Well, and one of the inevitable things for all startups is the fact that you cannot build a successful startup without going through significant ups and downs.
+160
+And then you've certainly had your fair share.
+161
+Do you want to tell a story of one of those moments and how you powered through?
+162
+We had a bunch.
+163
+I mean, end of 2019, we had like about 10 months of runway left, and the network could stay up for like about a week.
+164
+What would happen after a week?
+165
+Would it halt?
+166
+Yeah, there'd be some crash, like some bug that would like many of the consensus bugs or whatever would get triggered.
+167
+We did have a pretty good red team trying to crash it too.
+168
+Thank God we found all those bugs before we launched.
+169
+So I had to make tough decisions then.
+170
+We basically shrunk the team, kind of listened to a lot of the advice that you hear from startup books.
+171
+If you're going to cut, you cut deep to the bone to where you have enough gain and runway that it gives you one or two more shots on goal.
+172
+I also tried to raise, I went to China in January 2020 and like Asia and stuff.
+173
+Was sick in the flight back as a dog to raise like maybe $2 million out of our validators, which plus the cuts gave us like 14, 15 months of runway.
+174
+And then miraculously, the network started staying up more and more as we kind of went through the obvious bugs.
+175
+And around March 2020, we decided to launch.
+176
+We announced our auction, and three days later, the entire world collapsed.
+177
+This was like the SP dropped a bunch, Bitcoin dropped to like 3,000 or something like that.
+178
+And basically, all our investors and stuff that we talked to, they didn't know if their funds were going to survive.
+179
+So we're kind of in this decision moment: do we delay?
+180
+Because we did have enough runway to delay.
+181
+But my theory there was that the worst time to launch is right before the crash.
+182
+The right after the crash, I knew if you launch, the token isn't going to do spectacularly well.
+183
+So you're not optimizing for that.
+184
+The benefit of launching after the crash is that the global markets are going to recover.
+185
+And they gave us an opportunity to be first to market.
+186
+And two, I think crypto is unique in that if you have a token, a large part of what you should be optimizing for is the early supporters that get that token early on.
+187
+And there's no better opportunity to do that than after like a big global crash because people that go in and buy that token at that time are the diehards.
+188
+They're like the crazy people that are like believe in the product.
+189
+They for some reason ignore all the global negative market conditions and they still want to back you.
+190
+So like that, a lot of projects that you see launch that are optimized for low liquidity, high FTV end up missing this and kind of create this negative overhang that doesn't build like a strong community that's just really, really hard to overcome.
+191
+Yeah.
+192
+One of the best community building tools is having a monotonically increasing price curve.
+193
+Yeah.
+194
+And then every user, whoever buys, is in the money, if that's the case.
+195
+And if people are buying in and coming up to the ecosystem at an all-time high, then so around our breakpoint in 21, 2022, I think, we had our conference.
+196
+That was our biggest conference of the date.
+197
+Like 3,000 people showed up.
+198
+It was packed.
+199
+We had a developer event with like 1,800 devs, just not.
+200
+We had like a showcase of 50 game development teams, like it was great.
+201
+And on the flight back, a whole FTX shit show happened.
+202
+Token price started collapsing, FTX blew up.
+203
+It was like all the VCs and crypto, not you guys, but like a lot of kind of the mid-level VCs were like, Solana's dead, there's no point to launch on it.
+204
+They were telling teams that they invested in, they were building on Solana to switch to other chains.
+205
+And my biggest fear was that a bunch of the teams that were building on Solana actually had their capital in FTX.
+206
+Because if their runway was parked there, it's gone.
+207
+And that means if their runway is gone, there's no products being launched.
+208
+That was like the dead in the water moment.
+209
+Because we always kept our team small and like I still had that mindset of we only have 10, 12 months of runway and the tokens were only worth a dollar.
+210
+Solana dropping to eight bucks just didn't matter.
+211
+It was still infinite runway for me.
+212
+But like it was really terrifying that the teams building in the network would be catastrophically hit.
+213
+Luckily, they were pretty smart.
+214
+Vast majority of them kept most of their funds in banks and stuff.
+215
+Then the banks collapsing was like a whole other story.
+216
+That was just like the terrifying moment.
+217
+And the reason we survived that is because the teams that we picked up in the early days were building on Solana was like a buck.
+218
+And to them, it dropping to eight sucked, right?
+219
+They had to change their expectations.
+220
+But like that growth year that we had when Solana was low-priced allowed us to onboard a whole bunch of people, developers, builders, bug families that were giving out.
+221
+All that stuff happened at that very early stage of capital formation on the network and community formation.
+222
+So that those early pains of us struggling really, really did make a difference in the later stages.
+223
+What was it like leading the team in those moments?
+224
+Having a co-founder is really, really important that can complement you.
+225
+So I like get into loops where I drink too much coffee and I start pacing around and kind of like arguing with myself.
+226
+Raj is very much like an ER doctor kind of personality.
+227
+He lives for that moment where everything's on fire.
+228
+So he was able to actually structure my fears and thoughts and then go on get on calls with investors, with people building in the ecosystem and make sure that folks are actually like still focused and on track.
+229
+So I would say doing it alone is hard.
+230
+There's some people that can do it as founders, but during that like 2020 where everyone was remote, Raj and I were kind of on a Zoom as soon as we'd wake up till we'd go to sleep.
+231
+It's like 24-7, just staring at each other.
+232
+Like having that kind of co-founder relationship is pretty important to get through the hard days, I think.
+233
+And how was it keeping the morale of everyone else high?
+234
+We always had a very small team.
+235
+I think that's kind of a big advantage.
+236
+The rest of crypto was in a major downturn, too.
+237
+It wasn't just isolated to Solano, but we were hit a lot more.
+238
+And for some reason, we didn't have any attrition.
+239
+I think it's because the team was small and everyone felt like when you have a small team and you have a lot of work to do, that eliminates most of the politics and actually eliminates most of the unhappiness.
+240
+Like, I think people get unhappy when they don't feel like they're making impact.
+241
+It's actually that's basically the most key thing when you're looking at are your employees happy or not is like the work are they doing?
+242
+Do they see it get to product and actually change user behaviors?
+243
+And like that kind of loop is what drives people.
+244
+And because we were small, people felt like we got hit really hard, we didn't die, and they could fix it through their work.
+245
+And that really keeps people happy together.
+246
+Yeah, and being busy eliminates any airtime for illumination and for kind of going down in emotional spirals.
+247
+Yeah, it's the CEO's job to eat all those emotional spirals for the company.
+248
+I think one of the most epic memes or marketing campaigns in the history of crypto is that video you guys launched of Agent Smith unloading a cartridge into Neo, Neo being Solana at $8, and then his recitation.
+249
+That was all organic.
+250
+I don't think it was.
+251
+Oh, yeah.
+252
+That was excellent.
+253
+And if you guys haven't seen it, maybe we can send the links, but it's excellent.
+254
+All right.
+255
+Well, so what are all of the ways that Solana is better than Ethereum?
+256
+Everyone at the products level, at the foundation, at the engineering level, at Lakana and Fire Dancer, can make the chain better in the next release.
+257
+This is like something that we're hyper-focused in these incremental steps and improvements, which is, I think, very different mindset than let's research the perfect cathedral and then make the implementation a North Star and get to it.
+258
+We're more about there is a behavior change that we want, which is like we want everything traded in one giant global state machine.
+259
+The implementation details are less important, and we can incrementally get there.
+260
+And like every release unblocks some thing for a developer, makes the chain faster, increases capacity where it's a blocker, that kind of stuff.
+261
+So we're very much like iteration-based software development.
+262
+The proof of history thing that I came up with, which I thought was a really brilliant thing, we're now blessed enough to hire really smart consensus researchers.
+263
+And the first thing they told me is to get rid of it.
+264
+And I felt like relief.
+265
+I was happy.
+266
+We don't have any ego about any specific way that things should be built.
+267
+It's about solving a user problem.
+268
+And they clearly showed, hey, there's a better way to do what you guys are doing.
+269
+We get the good things that you guys built.
+270
+And this is like a better version of this.
+271
+So that kind of attitude is very different.
+272
+I think we would never come up with an L2-centric roadmap because that's an implementation detail to solve an unknown user problem.
+273
+Well, we were actually just talking about before we started, you were telling me about how you were working on swapping wholesale consensus algorithm for Solana.
+274
+Is that something you want to share about, Trump?
+275
+Yeah, it's actually easier to do this than to change RPC APIs because this is deep, low-level code that only touches a small number of engineers.
+276
+And when you have a lot of users and you break an RPC API for a lot of applications and users that depend on that revenue, that is actually harder to do.
+277
+But it is painful for five engineers.
+278
+They're going to suffer for this year.
+279
+But that's different than all your customers suffering downtime or outages or an API breakage when you upgrade.
+280
+Yeah, but I do feel like this is one of the key things that differentiates Solana, which is the fact that you guys are willing to continue to move fast and make extreme changes to the protocol whilst the plan is in the air, you know, swapping the core engine.
+281
+Maybe back to what you were saying about how like iterating quickly is one of the key things that makes you different from other.
+282
+Probably again, my experience as a software engineer, like software is never done.
+283
+It dies when it's frozen.
+284
+Because as soon as it stops, hardware evolves at the very low levels.
+285
+The timing and cost function for AVX1 to AVX2 is completely different.
+286
+And that subtle change in Intel will change how you write your software because now you have to implement bashing in a totally different way with a totally different memory model.
+287
+All that stuff percolates up to the API layer.
+288
+Like at the end of the day, the silicon and the physics limits that we have that people iterate on at DSMC, at Intel, and stuff, that's the real thing.
+289
+That's the magic.
+290
+And the software part, we need to change to express that magic up to the user.
+291
+And if you freeze the software, it dies simply because the problems that they're solving on, they do their best to be backwards compatible, but like the new stuff is always going to be different.
+292
+And you have to really kind of rethink how the plumbing drives all the way down to the silicon.
+293
+So this is something that I felt like we can never really freeze development as long as hardware keeps improving.
+294
+Well, along these lines, if you were to redesign Solana from the ground up today, knowing what you would know now and knowing everything you know about building Solana and then everything you know about other tech like ZK proofs and things like that, would there be any major differences to the design that would be difficult to build into Solana today that you're not already kind of working on towards?
+295
+I wish we used BLS signatures for consensus.
+296
+There's like minor details that are like now a huge pain in the ass to change.
+297
+Have you told Dan Boneta?
+298
+He'd be happy.
+299
+Oh yeah.
+300
+I mean the next version of Consensus uses BLS.
+301
+It was just at the time BLS was barely getting standardized.
+302
+So we picked something more stable.
+303
+There's like details like that that I feel like have been painful to work around because that's your legacy tech that you kind of carry with you.
+304
+But at the time when we made those mistakes, we knew we were making them and we made them to unblock a launch or a partner or whatever.
+305
+And that was important.
+306
+So like this is something that I had to tell the team to suck it up and ship this over the weekend.
+307
+And sometimes you have to kind of just do it.
+308
+And like when having a small team and small runway gives you that mentality that if we solve these problems today and we get PMF, we can hire people and it'll be their problem.
+309
+But to get to that stage, you need to unblock your users today.
+310
+You need to get them to go ship products and do stuff.
+311
+So you got to kind of suck it up, kiss a lot of frogs to like get to product market fit.
+312
+So there are no major changes you would make?
+313
+I mean, we were so wrong about a bunch of stuff, but that was path-dependent.
+314
+Had I tried to build everything correctly at once, we would have never shipped.
+315
+This is like the fear that I have with going back in time.
+316
+Getting it right would have meant that we wouldn't have shipped because it just takes more work.
+317
+Yeah, definitely.
+318
+Well, this is a thing that's pretty common, is like the second system syndrome, where like large companies build the first version of the system and realize all of the waste in which it's imperfect.
+319
+And then they decide that they're going to re-implement everything and build the version two, which will fix all of the problems and be perfect.
+320
+And then those projects tend to fail because they try to be like the God thing.
+321
+And then they miss all of the knowledge that is actually encoded in the first version.
+322
+And then they throw all of that out and then they encounter different problems that make the second system.
+323
+So the benefit that I had, I think, out of a lot of my competitors was that at Qualcomm, I've built four different systems.
+324
+So this was like my fourth or fifth one.
+325
+And by that time, I was like, just use whatever's the fastest to ship.
+326
+I didn't care.
+327
+Because I've built the crappy thing that launched first, which was like brew 1.0.
+328
+This was binary runtime environment for wireless.
+329
+The Qualcomm built for mobile.
+330
+This was one of the first mobile application things.
+331
+We just shipped it as fast as we could.
+332
+Then we fixed a bunch of bugs in two.
+333
+Then we tried to build the perfect system for three that never shipped.
+334
+And then I got thrown into Android and it was like, just ship the fastest thing to unblock Samsung or whoever because Apple is killing us.
+335
+So I went through that cycle.
+336
+Yeah.
+337
+And it's usually after you fail in the cathedral that you can be humble and tell people, like, if you don't ship this thing, like, I know it's not perfect.
+338
+Yeah.
+339
+And I know what the perfect thing is.
+340
+You guys have to ship this or we're dead.
+341
+Yeah, that's a good lesson.
+342
+All right, I want to open it up a little bit for questions from the group.
+343
+Just two quick questions about community.
+344
+One thing I've noticed with Solana, you guys are really good at like your events, your hackathons.
+345
+It seems like really well put together.
+346
+You guys invest in that.
+347
+I'm curious, specifically with hackathons, do you guys see value in continuing to do those events?
+348
+Like, do you invest in those companies as a VC type situation?
+349
+Are you seeing those hackathon participants build meaningful projects in your network?
+350
+And then two, community around like cross-protocol like standards or like getting into more enterprise?
+351
+How do you use Solana's future and actually trying to bring outside groups together to crush a protocol like WebAuthn or something that Bitcoin or Ethereum could also use?
+352
+So for both, I wanted to be really focused on some measurable KPI that ends up being useful.
+353
+Effectively, the only way the network survives is if it makes enough revenue.
+354
+The revenue comes from priority fees.
+355
+So we need stuff traded on the network.
+356
+And that stuff is tokens.
+357
+So the hackathons, the primary goal for them was to get an output companies that are investable by somebody.
+358
+We didn't want to fund all of them.
+359
+So, the goal of the hackathon is to surface projects, teams that you can invest in that will eventually, hopefully, ship a working product and a token.
+360
+Because that's how you effectively get some kind of revenue back in the ecosystem.
+361
+Same thing with like standards.
+362
+I really want to focus on standards and block some products.
+363
+So, like, token 22 is a standard for like real-world assets and a whole bunch of other stuff.
+364
+We had a customer, this was PayPal, that wanted these requirements.
+365
+So, for us to build as a one-off would have been like a waste of time, but we could capture their requirements and understand, like, okay, this is a big fintech company, they probably have similar concerns to everyone else.
+366
+How do we generalize them and make it like a piece of open source software that everyone can reuse and give that away and hopefully accelerate their business development and stuff like that?
+367
+So, that was again thinking backwards from we need stuff on chain that generates revenue.
+368
+Was your choice for the Berkeley packet filter from your time at Qualcomm?
+369
+Just wanting to ship as fast as you could?
+370
+Yeah, the alternatives were Wasm or like Thumb, which is an ARM instruction set.
+371
+The reason why we didn't go with Wasm was I worked a bit with Google via Android, and their teams rug you on tech.
+372
+Like, they're not committed to a specific technology vision, they're committed to like Google's vision for generating ad revenue.
+373
+So, the Linux kernel guys will say no to most features, so they're not going to rug us, they're not going to make BPF slower in some crazy weird way or add features that nobody needs.
+374
+So, it was the smallest set that I felt was stable, well understood, that was safe to run in Ring Zero, which is like inside the kernel, which is as close as we can get to smart contracts level of security.
+375
+So, Wasm is like, you know, you ship a feature, your browser crashes, you don't go to the website, nobody cares, right?
+376
+Google is not going to have like a fire from that.
+377
+But like, you ship a BPF change that allows like a memory exception in the kernel, that's bad, right?
+378
+There's just a lot of pushback there.
+379
+If RISC-V was like stable at that time, we probably would have gone with that.
+380
+But it was still like, nobody was really using it.
+381
+What do you think of Ethereum's last metallic post on switching the EVM to RISC-V?
+382
+I don't envy the engineers trying to make the backwards compatible.
+383
+That'd be why I should be able to do that.
+384
+Yeah, maximum pain for like a dozen people, I think, for two years.
+385
+That would be my guess.
+386
+But it's doable, like, and probably should be done.
+387
+I had a question about like Solana at the beginning was kind of hard to use.
+388
+And how did you prioritize teams that you support?
+389
+And I imagine the support was also being a lot of call to them, debugging sessions.
+390
+And like, you just have limited resources.
+391
+So, how did you basically did that?
+392
+There's a weird way that is like, despite developers and projects being our number one customer, the number one customer is the end user.
+393
+So if you think of priorities of whose problems we need to solve, it's the end user using the chain as the number one.
+394
+Then it's the developers.
+395
+Then it's the validators.
+396
+Then it's our internal engineers are at the bottom of the priority thing.
+397
+This is what I tell my team: you guys suffering right now is what unlocks users.
+398
+You should suffer anytime you can help a user.
+399
+So, developer pain is less important than user pain.
+400
+And user pain is high fees, slow confirmations, that kind of stuff.
+401
+So, if we fix that decisively, the developers are willing to eat pain and sacrifice their own pain for their user.
+402
+And this is why we're able to get developers to overcome the friction of getting on a new platform that was extremely raw.
+403
+Like, to build a smart contract on Solana at that time, you're like writing like a Linux kernel driver.
+404
+So, it was very painful.
+405
+But because it's software and developers are lazy, they will solve the problem once and then write a library for it eventually.
+406
+Like, you kind of overcome those problems.
+407
+So, I wouldn't, if you're building like a developer platform, anytime you can make dev suffer, that helps the user, you should make the dev suffer.
+408
+Because, like, the hard problems, we can solve any of those problems over a weekend.
+409
+There's a developer that's blocked because they don't understand it or build some API or whatever.
+410
+I can code that up over the weekend.
+411
+But if there is a fee spike on the network due to not enough capacity or some broken economic thing, that's a six-month project.
+412
+It's just impossible to solve those.
+413
+So, anytime you can prioritize those things and get the stuff that takes six months to fix out early, you should do that over anything you can fix over a weekend.
+414
+It's like another way to think about it.
+415
+What's your take on the evolving landscape of layer ones and competition from newcomers like Monat?
+416
+So, we were like the 2020 crash was actually a blessing because I didn't have enough runway to like delay.
+417
+We just launched and we launched earlier than a lot of our competitors.
+418
+ByNet Smart Chain wasn't even out yet.
+419
+So we had this three, four months window to just get enough users and kind of establish Solana as a fast chain.
+420
+And the difference between Ethereum and Solana was significant enough to where it could change user behavior.
+421
+Like if you're an Ethereum user and then you tried the same, you know, meme coin trading on Solana, you're unlikely to go back to Ethereum.
+422
+It just takes more to activate you to back.
+423
+So now there's faster chains that are more optimized, but the confirmation time going from like one second to half a second, is that enough to change user behavior?
+424
+And that's a big unknown.
+425
+I don't think we've seen use cases where that's true yet.
+426
+I think for trading, if you look at like E-Trade or whatever, and you actually go through the UX flow, it takes multiple seconds to actually go into the trade.
+427
+You submit it, then it shows like cleared or whatever after a couple seconds.
+428
+It's much faster than Ethereum, but it's not instant where the user is getting their trade filled right away.
+429
+There's some applications that depend on that, like I think like vector and stuff, but that difference between one and half a second, I feel like is important to back-end providers like market makers and stuff like that, which has impact on the prices that the users will pay at the spread.
+430
+Like these are like basis points.
+431
+So it's not, I don't think it's enough to change user behavior, but we'll see.
+432
+We need to see applications that really, really only work in Monad and unlock a new user change that drives people there that is so much better that you can't do on Solana.
+433
+And we need to see them fast enough in the market before Solana improves because basically every release, Solana gets a little faster, the hardware gets faster, the block capacity goes up, the confirmation times go down.
+434
+Yeah, you had a question regarding, I wanted to jump back on the pain ladder.
+435
+So you have the pain of the users, you have the pain of the builders.
+436
+The CEO is on the bottom of this.
+437
+Your pain is the.
+438
+We were thinking a lot about that.
+439
+Like, how can we actually onboard these die-hard teams?
+440
+Like, the teams are going to build day in, day out, even if they need to eat glass.
+441
+So I'm very curious, like, how did you make sure that you could find these die-hard teams to evangelize them, make sure that they are very loyal to your protocol and they're going to actually build stuff, even though it's really, really hard?
+442
+Because nowadays, I feel there's like so many chains, so many solutions.
+443
+They could say, oh, it's too hard on yours.
+444
+I'm going to build somewhere else.
+445
+Or there's more money somewhere else.
+446
+I'm going to go there.
+447
+I don't know if you can repeat this, but this worked for us in almost an accident.
+448
+I didn't have enough money to build a fast EVM.
+449
+So we would have had to use a slower version of EVM if you had EVM support.
+450
+And that meant that the stuff that we really were good at at optimizing just wouldn't be shown.
+451
+Amdel's law, EVM would take such a huge part of the budget for all this stuff that all these optimizations would be pointless.
+452
+So we build something that we knew could be fast, which was painful for devs because it was new, like written in a very low-level way.
+453
+But it unlocks something new for devs that could submit at that time an infinite number of transactions that they could think of at like fractions of a penny.
+454
+So they saw this as like a whole new playing field.
+455
+And the developers that cared about that were willing to eat glass to overcome that.
+456
+So that was one thing is that we attracted a certain kind of developer that was looking for new capacity, something new that this platform offered.
+457
+Two, and this was unpredicted, is that when Binance Smart Chain launched, there was a lot of copycat projects that would literally copy the code on Ethereum, like take the Uniswap contract or the Aave contracts, redeployment, Binance, and launch a token.
+458
+And that Aave code that they copied is as good as written by Aave, right?
+459
+Like it's as good as technology.
+460
+There's no technical difference to it.
+461
+But this is a low-effort team that just kind of did like a drive-by product launch.
+462
+The problem with those teams is they take space in the market and they attract users.
+463
+And now anyone that builds a lending protocol in your environment has to fight them for market share.
+464
+And it just sucks.
+465
+Because you had to be a low-level C engineer to figure out anything about Solana.
+466
+Those teams were filtered out.
+467
+So they couldn't overcome the friction, the developer friction.
+468
+They had to like go somewhere else.
+469
+So it was like this weird self-selection that the difficulty of building on Solana created space for these really smart engineers that were like, oh, I don't have a problem with Linux drivers.
+470
+I can do this in my sleep to punch out a bunch of code for products that were like functionally equivalent to what's on Ethereum.
+471
+It wasn't like a better AMM.
+472
+It was just an AMM that was harder to build.
+473
+That was as good as the one on Ethereum.
+474
+But it allowed that team to establish a brand.
+475
+Like Radium is still around and is massively successful by all measurable metrics.
+476
+But that was because they could overcome that friction and build something back in the early days.
+477
+That was like really unpredictable for me as a CEO to manufacture that.
+478
+That was kind of like a lucky break, I would say.
+479
+But the key part there that I think you do have control over is that the platform did unlock something that was more than marginally better than everyone else, the speed and the cost.
+480
+There was something about the hardcore ethos of everyone building on Solana.
+481
+I was a little confused earlier when you mentioned that you don't see Ethereum as a competitor.
+482
+From the standpoint of, is that you saying that you feel like there's enough space for many chains in the future, or is that like a critique where you just don't take them seriously in the long run?
+483
+We're not competing with Ethereum and settlement.
+484
+I could care less if all the assets are issued on Ethereum but traded on Solana.
+485
+We're competing with Ethereum for execution.
+486
+And this is when like Joe Lubin and Metallic started talking about global settlement.
+487
+It was just like, great, you're a DTC.
+488
+Like, how many people can even name a single settlement company that does settlement?
+489
+They do quadrillion worth of settlement per year and charge 0.2 basis points.
+490
+So to beat them as a technology company, you have to be cheaper than them and better somehow.
+491
+But settlement is the most boring, simplest part of finance.
+492
+So that was really the carve-out.
+493
+Like as soon as they went that direction, it was just kind of, okay, great.
+494
+It's like Google saying they no longer care about search.
+495
+Got it.
+496
+Okay.
+497
+And so then, you know, right now, the industry is still very young.
+498
+So it feels like there's a lot of infrastructure experiments going on as people are trying to find different niches.
+499
+But as the conversation evolves, and then we potentially get more into an application environment, and this layer becomes commoditized at a certain level, do you see most of those experiments either being absorbed or failing and kind of going to a singularity of the infrastructure that is blockchain?
+500
+Or do you see a future state where there's a market for many different purpose-built chains?
+501
+So that's already happened, actually.
+502
+Like when you look at the last five years, this is like one of my controversial takes.
+503
+There's maybe like five smart contracts that matter.
+504
+There's a token implementation, there's an NFT implementation, there's an AMM, a lending protocol, which kind of covers perps and a bunch of other risk engines.
+505
+And I don't know, a central, like a more order book style market.
+506
+So it's like a couple asset types and a couple market types and a couple leverage systems, risk engines.
+507
+That's five or six things.
+508
+There hasn't really been new contracts that have sprung up that have unlocked anything.
+509
+So that side has already been commoditized.
+510
+This is why like this weird thing in Solana is it's really hard to build interfaces.
+511
+So people build a single implementation.
+512
+There's two token implementations that everyone uses.
+513
+And in fact, 99% of the tokens are the first token implementation that we've built.
+514
+There's no reason to create developer optionality there and even the contract level.
+515
+So there's no reason to build another virtual machine.
+516
+What set of new VM instructions in the ISA could open up new use cases when we can't even figure out more than six smart contracts.
+517
+This is where I think a lot of stuff that people care about, like solidity versus rust versus risk or whatever, I don't think any of those details matter.
+518
+Where I find stuff that matters is like, can you eliminate business risk?
+519
+So weirdly, because there's no interfaces on Solana, you have a single token implementation that is the default one.
+520
+The reason why Meme Coins took off on Solana is because if you're a meme coin marketplace, you have to validate the implementation that you're consuming, not the interface.
+521
+Because you can build an implementation that steals user funds.
+522
+So you can't surface it to your users until you validate it.
+523
+On Solana, you don't have to do that because it's a standard implementation that everyone conforms to.
+524
+So we've removed developer optionality.
+525
+We made the system harder to code, harder to express yourself, but that reduced business risk.
+526
+And therefore, pump took off in like they built 30 lines of code for the bonding curve.
+527
+They didn't even build their own AMM or token standard.
+528
+So you kind of see that already.
+529
+And how it evolves in the future is hard to predict, but I just don't see the need for 10 different virtual machines.
+530
+Or, you know, like EVM is going to be around simply because of legacy stuff.
+531
+I think what's more interesting is maybe like things like Hyperliquid, where you have an application that has product market fit, and you build the hooks to run code from users into that application in some way that expands how that, like the PMF of the app.
+532
+So if you can start from there, right?
+533
+You build an app that gets PMF, and then you want to generalize it.
+534
+You can then borrow stuff from SVM or EVM or whatever, but you're going to be driven by product market fit there.
+535
+And the decisions that you'll make will be very different than designing it from scratch, like right now.
+536
+In as much detail as you can muster, what do you imagine the space looking like 10 years from now?
+537
+That's 10 years too far.
+538
+I can think in like four to five year terms.
+539
+I think we're going to get to a trillion dollars with the stable coins, which is staggering.
+540
+If you think about it, like we're at 250 billion, right?
+541
+We're over 200 billion now.
+542
+So it's like very achievable.
+543
+And then probably the same amount in like real-world assets mixed across a bunch of other stuff.
+544
+And that is a massive amount of finance revenue to go find either through fees as a custodian or trading system or market or whatever.
+545
+There's just so many places where you can build a real business with that much assets accessible to developers, to users and stuff.
+546
+I don't know of any other like high-growth area outside of AI.
+547
+And how do you imagine all of that would change everyday people's experience?
+548
+Well, my hope is that service fees go down for finance.
+549
+I think the goal should be to build systems that ultimately reduce user fees.
+550
+Otherwise, like we're wasting the world's time, right?
+551
+But I don't know.
+552
+Finance is like 20% of the world's GDP.
+553
+Half of that is about fees.
+554
+That's 10 trillion of something per year or something like that.
+555
+So let's cut that down to 1 trillion and all those be on Solana, right?
+556
+Amazing.
+557
+On that note, yeah, we can turn in here.
+558
+Thank you very much.
+559
+Thank you, guys.

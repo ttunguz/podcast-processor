@@ -1,0 +1,462 @@
+--- METADATA START ---
+Show: N/A
+Episode: Why compilers matter (w/ Lukas… - The Analytics Engineering Podcast
+Host: Tristan Handy
+GUESTS: Lucas Schulte
+Guests: Lucas Schulte
+Source URL: https://podcasts.apple.com/us/podcast/why-compilers-matter-w-lukas-schulte/id1574755368?i=1000707970980
+
+--- METADATA END ---
+
+ Hi, I'm Dan Poppy, the producer for the Analytics Engineering podcast.
+ Before we get to this episode, I wanted to invite you to join Tristan May 28th at the 2025 DBT
+ launch showcase for the latest features landing in DBT to empower the next era of analytics.
+ Register now at getdbt.com. We'll see you there.
+ Welcome to the Analytics Engineering podcast, featuring conversations with practitioners
+ inventing the future of analytics engineering.
+ In this episode, I speak with Lucas Schulte. Lucas is the co-founder of SDF,
+ and he joined DBT Labs earlier this year as a part of our acquisition of the company.
+ I have had the very distinct pleasure of getting to know Lucas over the past year,
+ and I've come to really appreciate him as a human, but that's a story for another day.
+ Today, Lucas and I talk about compilers. SDF is, at its core, a world-class SQL compiler.
+ We talk about the components of a compiler and how they work, different types of compilers
+ and their history, and how one of the most important roles of a compiler is to abstract
+ over underlying infrastructure, whether that's hardware or operating system or browser.
+ We then pivoted to data and how, as usual, the data ecosystem is a couple of decades behind
+ the larger software dev ecosystem. We ended with a conversation about how the data world
+ could look different with a true, multi-dialect SQL compiler and a robust package management
+ ecosystem at its core. Needless to say, this is a world that I am very excited about living in.
+ This was a fantastic conversation, and I think you will enjoy it. Without further ado, let's get into it.
+ Lucas, welcome to the Analytics Engineering podcast. Before we dive into the main topic
+ of the day, compilers, I want to give you an opportunity to just say hi to the audience
+ and tell everybody a little bit about yourself. Hi, Tristan. Thanks for having me. I'm excited
+ to be here. I never thought I'd be doing a podcast with you, to be totally honest, but
+ here we are. It's great. Have you done a podcast before? I've done a handful, maybe.
+ They're fun. Sometimes you don't really know where the conversation is going to go,
+ and those are the ones where it gets real interesting. That's actually just on one with
+ Anders. I'm Lucas. I'm one of the former co-founders of a company called STF Labs.
+ We're working primarily on compiler technologies for SQL understanding.
+ So specifically, SQL is different across different dialects, across different warehouses,
+ and we wanted to build a unified tool chain for them. Before that, I initially studied
+ electrical and computer engineering and have always been interested in slightly more
+ low-level things and specifically building out tools for other people to use.
+ What is a low-level tool that you can build in electrical engineering? We've been doing
+ electrical engineering for a long time. Are people still innovating on brand new tool sets there?
+ Yeah. Chips are getting smaller every year. There's new sensors that are coming out,
+ and a lot of those sensors are exposed as platforms that other people can build on top
+ of brands. So if you think about a light sensor or a heart rate sensor, you can use in a bunch
+ of different ways or step counting. You can use it in a bunch of different ways.
+ Did you work in that world in sensors? That was my sort of initial introduction to data,
+ actually, was sensors and the logs that those things were throwing off.
+ That's very cool. So you alluded to this in your intro. You joined DBT Labs as a part of an
+ acquisition of your company. By the way, you're never a former co-founder. You're always a
+ co-founder because it's just a thing that you did. Then no one can fire you from having
+ co-founder to company. I think that it's fair to say that the core way that you think about
+ the technology that you and your team built at SDF is a multi-dialect sequel compiler.
+ I want to get back to the sequel part of that in a little bit, but maybe we can start
+ more broad-based than just the compiler part of that. My guess is that basically everybody
+ listening to this is going to be familiar with the term compiler and it's going to,
+ on some level, have a conceptual understanding of what a compiler does. You write code,
+ much of the code that we write is compiled into something that machines can understand.
+ Fine. But you maybe can help us dive into this topic a little more at a little more depth.
+ How would you define a compiler?
+ Yeah. I mean, I think that the one sentence is essentially what you said, right? That's
+ something that takes higher level of human readable code and translates, compiles,
+ rewrites, code generates, lower level machine code that is much harder for humans to understand
+ and much easier for machines to understand. Compilers typically have phases. This isn't
+ like a one-shot process. They have a front end that deals with the language that you're working
+ with. And then some middle component, usually that's called an IR, an intermediate representation.
+ And then they have a backend and the backend takes that intermediate representation and
+ then actually compiles and optimizes and generates the actual machine code that machines use.
+ So compilers, it's a single word for a very, very complex process that happens all around
+ us. It's like how computing works. It's amazing.
+ I want to go deeper into the different phases and how all of it works. But in preparation for
+ this, because I'm not a compiler historian, I was asking 03, I just got access to 03.
+ I don't know if you played around with it yet. I found my experience so far to be a little
+ bumpy. I think they're still refining. But I was asking it, who built the first compiler?
+ Do you know? I actually don't know. I know Fortran is the first, like,
+ people like Fortran as kind of the first real compiled language, but I'm curious who built
+ the first compiler. So apparently, and this is like a language that I think none of us ever
+ ever heard of, but it was Grace Hopper. It started being used in 1952. Cool.
+ Like kind of neat. That's amazing. So we've been building compilers for a long,
+ freaking time. What are these common elements that essentially all compilers you would expect
+ to have? You talked about the front end of the back end. There's intermediate representations.
+ How does it all come together? There's a lot of different ways that this
+ comes together, quite frankly. Is that true? There's no single standard
+ way that all compilers work. It is standard structurally, but exactly what happens.
+ For example, there are interpreted languages like Python, and there's compiled languages,
+ but somehow there's still a compiler that takes Python code and makes sure that it can actually
+ run on your machine. Is that fair to say that even if it is not called a compiled language,
+ like Python is an interpreted language, like you say, there still is a thing in the flow of
+ executing Python code that one could refer to as a compiler. It's just called a JIT compiler,
+ a just-in-time compiler because it does things like line-by-line, essentially.
+ And it's really great for debugging. Writing Python code, it's very clear to see exactly
+ where things are because, hey, we don't have to compile the entire project. You kind of get
+ to step through line-by-line and follow along with what the compiler is doing. So yeah,
+ although structurally things are similar, but practically under the hood, what's happening
+ is different. I think the closest that you can get to something that is more universal
+ is something like LLBM, where there's sort of an intermediate representation in the back end,
+ a set of tools, tool chain that is common. But yeah, there's a lot of different ways
+ for accomplishing the same thing. Okay, at the front end, there's some ability to
+ kind of rip apart the text that a programmer has written and to turn that into symbols.
+ Is that the right way to refer to that? Yeah, absolutely. Typically, there's
+ a preprocessor and the preprocessor starts by work at DBT. DBT deals a lot with macros.
+ Preprocessor, for example, will expand macros in a compiler and it'll get rid of
+ comments and other things that are not necessary for the machine to be able to understand.
+ And then there is a lexer and often a grammar that defines what the language should be.
+ And then you get a symbolic representation, essentially tokens that you can work with.
+ So yeah, absolutely. You start getting a lot of symbols, and then you package those symbols
+ into a tree and then you're able to start doing syntax validation and semantic analysis and so
+ on and so forth. You're using a lot of big words. Syntax validation and semantic
+ understanding and I can totally imagine this kind of rough first stage where I ship
+ my hundred lines of Python to adjust the time compiler and its first job is to just like
+ understand the things that I have written and map those two concepts that it knows about.
+ At some point, it needs to reach a level of certainty about what you are trying to express
+ such that it can actually start to point to memory locations and perform mathematical
+ operations and all of that. How do we proceed through those kind of subsequent stages?
+ Yeah, so this is, now we're starting to get to the middle of the compiler.
+ Maybe to sort of break down the, before I get to the middle, maybe to break down
+ some of the bigger words, like the difference between syntax and semantics,
+ they kind of feel like the same thing. But maybe the simplest way to think about it is,
+ let's say you have a Python program, and you have whatever, x equals x plus one. You can write
+ that has like syntax, that is a correct Python program, and then there's semantics.
+ There's a meaning that, hey, we're increasing x by one, but you could also write that as
+ x plus equals one, different syntax, but same semantics, because the result is still going
+ to be x incremented by one. So this is kind of how to think about syntax versus semantics,
+ where syntax defined, hey, what is a correct, an allowed way to represent something,
+ and semantics are, hey, what does that actually mean? So semantics of x equals x, what is the
+ idea that you're expressing? Yes, exactly. Yeah, that little analogy always helped me
+ with us learning about this stuff. Yeah, syntax and semantics, once we have a semantic representation
+ of our program in SQL and this is our logical plan, right? It's a logical representation
+ of the algebra that we would like to do on some data. You had to the middle of the
+ compiler, right? So going from a logical plan in SQL and to a physical plan, right, the physical
+ representation of, hey, how many cores and how much memory and how are we going to load
+ exactly what our K files or CSV files, that middle part can then do a whole bunch more
+ optimization and additional analysis, and validation. And, you know, sometimes,
+ I think in, in databases, right, we might have a better understanding of like the bytes
+ scanned, for example, right, you have to have a very perfect understanding of the program,
+ and you have to have a perfect understanding of the data that we're accessing to have a good
+ understanding of, hey, how many bytes are we going to going to be working with?
+ And then once you have that sort of transition from logical to physical plan, right, that you
+ also start doing machine level, like optimizations, where, hey, maybe we are on an Intel machine,
+ and we have exactly this instruction set, or we're on an ARM machine, and we have that other
+ instruction set. And in modern toolchains, at least for things like Rust and C++, you have LLBM,
+ which is this compiler tool chain that helps to go from this unified intermediate representation
+ to many different backends, right, so many different target operating systems, CPU architectures,
+ etc. This is very interesting to me, because it gets into the history of all of it. If you go back
+ in time, not 75 years to Grace Hopper, but if you go back in time, I don't know, to the 70s
+ and 80s, you're like fully in the mainframe era. And my understanding, certainly I was not
+ practicing professional during this period, but my understanding is that in the mainframe era,
+ the dominant characteristic of the software ecosystem was that all software was built to
+ run on a particular type of mainframe, essentially, like that all the programs were compiled and
+ really could only be run on that computing architecture. You couldn't have a universal
+ binary that runs on Mac OS and also in Windows and also in Linux. You mentioned LLBM, have we been
+ working on abstraction layers for multiple decades to provide this cross-chip set portability?
+ I also was not a practicing professional in the mainframe era. But from my understanding,
+ the software ecosystem is built on abstractions and increasingly higher levels of abstractions,
+ even used to have to care about garbage collection and whether you're accessing the right bytes.
+ That's a huge efficiency gain in the history of languages, right?
+ Exactly. It's very analogous to what I think happened with compilers as well,
+ where we talked about these three big phases, front and middle and back end. But within those,
+ by creating sort of unified intermediate representations, you have a unified framework
+ that you can build the back end off of to make sure, hey, we can compile this for
+ a MacBook arm chip and a MacBook Intel chip. That I think is just years and years and years
+ of work to make sure that you get the right intermediate representation that has the right
+ level of flexibility and depth to be able to express everything that you want to
+ express in C or C++ or Swift in this intermediate representation and can be compiled to many
+ different architectures. So yeah, layers of abstraction, it's a beautiful thing.
+ I get really curious about who has spent all the time to build all those layers of abstraction,
+ because, and I don't want to fully get to here because I want to get here later, but
+ similar layers of abstraction have not taken place or have not been created in the data ecosystem,
+ I think, to correct as much of an extent. But like, who is it an academic community,
+ is an open source community? Like, who builds compiler technology such that they have incentives
+ to provide these layers of abstraction? I think the tech giants have invested a huge
+ amount and then various academic institutions as well. LLVM was super heavily invested in
+ at Apple in part because they started working on chipsets quite early. They started working
+ on mobile chipsets. That's so interesting that Apple would do that because one of their big
+ problems 20 years ago was that they had their own chips and nobody compiled stuff for their
+ chips. So you can totally imagine why they would have an incentive to create this cross
+ compatibility. Yeah, and they tried it a second time and they did much better. And I think a large
+ in large part due to the ability of the advancements of compiler technology. This
+ allows you to create an application that runs exactly the same on an Intel MacBook or
+ an ARM MacBook with relatively little effort. And that used to be completely right.
+ So you folks have been working in Rust with SDF for a long time. And what percentage of your
+ time investment goes into making sure that you can chip Rust binaries on both Windows and Mac?
+ I've never thought about that question. It's like negligible, right?
+ It's less than you would think. Yeah, it's what it really, what it does,
+ any compiled language requires you to set up infrastructure, right, for all the target
+ architectures that you want to hit. But once the infrastructure is there,
+ right, we just make sure that tests run the same test run on Windows that run on Linux
+ that run on Mac. We test different architectures, but once the test infrastructure is set up,
+ the tool chain is there to be able to automatically compile test, validate,
+ etc. So our infrastructure looks almost identical on Windows as it does on Mac,
+ as it does on Linux. And once that tool chain has been built up, using it costs only, you know,
+ some GitHub actions minutes. Yeah, CI minutes. That's pretty neat. But you folks, you built
+ the tool chain. You didn't have to like rewrite the application. You didn't have to build
+ really any kind of foundational technology. You're like using stuff that exists to make that
+ happen. Absolutely. And again, like LLBM sits under the hood of that.
+ We've mentioned LLBM several times. Can you just define what that is? When did it become a thing?
+ Yeah. It's it's been evolving for the last 15 years or so. It is a it's not a compiler,
+ per se. It is a tool chain for compiler development that provides a unified or a series of
+ unified intermediate representations. And then the backend to compile to target to target
+ dialects. So what that means for like for development and Rust, for example, I can say, hey, here's my
+ Rust, you know, code. Let us add a target. And then the Rust compiler creates an intermediate
+ representation. And that intermediate representation is then turned into machine code for the target
+ CPU and operating system micro architecture that you have selected. And that flexibility
+ means that we can write code once, but build it for many different platforms simultaneously.
+ Are there trade offs involved in LLBM? Like you got a bunch of portability, but
+ your compiler is slower or I don't know. It used to be just like everybody now just does it this
+ way. It used to be slower. Yeah. I think GCC for quite a while was faster. But I believe that
+ in the last like five, six-ish years, I don't even think there's a significant performance
+ penalty. So there's been real consolidation around the LLBM architecture. That's interesting.
+ Okay. I perceive this as a weird thing about the compiler world. Maybe people who live in it,
+ just kind of accept this as normal. But I find the act of bootstrapping to be such a weird
+ thing. So compilers are one of these things that like are infinitely self-recursive.
+ Because in order to build a compiler, you have to write programming code. And then, well,
+ what are you going to use to interpret that programming code? Well, I get like a compiler.
+ And so there's this weird, almost like mitochondrial DNA type of thing where like all compilers can
+ be traced back to the original compiler because they've all been used to build each other.
+ Can you explain like, what does it mean to bootstrap and how does that process work?
+ You know, this kind of goes back to your more levels of abstraction, right? Like it is
+ ultimately just adding new levels of abstraction. So I can't remember if it was written in C or
+ C++, but the original Rust compiler was not written in Rust, obviously, right? Because Rust
+ didn't exist yet. Right. It didn't exist. So then, you know, Rust became better.
+ And then the maintainers of the Rust ecosystem decided to rebuild the Rust compiler in Rust.
+ So now Rust is compiled in Rust and written in Rust. And is the results is the language
+ Rust and the tool chain for Rust that lets you build Rust if you want to. So you are correct.
+ It is, it is now fully self contained and they were kind of infinitely recursive in a funny way.
+ I think that that plays out with like basically every language, because
+ you clearly have to like get there from somewhere. So you have to choose another
+ language. But then you probably don't want two different language skill sets in your community.
+ Like one skill set in C++ that built the compiler in the first place. And then another
+ skill set in Rust where people are actually building programs, you'd like one everybody to work in
+ the same ecosystem. Yeah, it's a weird, weird dynamic. I would, is that saying that one day
+ we will move from Rust into SQL and SQL would just be not the whole world is going to be
+ everything is going to be SQL. Everything's going to be SQL. I think that might not be a
+ great idea. Okay, we talked about Python a little bit and how it's interpreted. And
+ there's just the time compiler. There's a couple of other ones, you know, we talked about C++
+ and Rust. Those are kind of more pure compiled languages. What about Java? What about TypeScript?
+ Java is compiled, but there is a, there's a automatic like a garbage collection mechanism.
+ So it is, it is a, it feels like a slightly higher level compiled language than,
+ than something like C or C++. And then TypeScript is actually interesting. Like TypeScript
+ is a little bit more analogous to dbt and dbt SQL and that there are the intermediate
+ representation, right, that you compiled, that you compiled down to is another language, right?
+ It's actually just JavaScript, exactly. And then you interpret JavaScript. So this was an
+ incredibly, I think incredibly clever design choice, because it meant that you have
+ compatibility between TypeScript and anything that runs JavaScript in the same way that I
+ think was incredibly clever of dbt to start with. And the, the, the intermediate representation
+ being just SQL, right, even though dbt has all these other syntax and macro capabilities.
+ But that means that dbt can run anywhere that SQL can run. And I think this helps,
+ helps TypeScript to get a lot of adoption very quickly.
+ So you can't take TypeScript and like create a binary out of that. That's just like not how
+ TypeScript is built to work.
+ No, you can package it up and you could, yeah, you could package it up in another thing that
+ contains an interpreter, but you all, you still need the JavaScript interpreter.
+ Interesting. Okay. You made a statement to me one time that I thought was a really,
+ it was a throwaway for you, but it really has stuck with me. You said something like
+ compilers are the foundation for every software ecosystem. Can you explain what that means?
+ Like what, in what ways does a compiler enable a software ecosystem to either thrive or not thrive?
+ How much, how much time do we have?
+ It's a big, that's a big question. Yeah. I think that there's, there are two really big
+ drivers and software in my opinion. One is, one is abstract, which we've talked about a
+ little bit already. And the other one is standards.
+ You want to have like one way to interface with a USB device, not, not 10 different ones.
+ And the same, same goes for software, right? You want to have one clearly defined way to
+ express a TypeScript application, not multiple, same goes for Python, same goes for C.
+ So there's, you know, an SI, there's standards bodies, but they can only do so much.
+ So very frequently, what you have is a sort of canonical compiler that is broadly accepted
+ and compatible with some very, you know, base level, like bare metal CPU architecture, right?
+ So you can take Python. It doesn't matter if you go to Azure. It doesn't matter if you go to
+ a Raspberry Pi. It doesn't matter if you go to like a Mac arm machine, you can run
+ the same Python code and get pretty much the same results guaranteed.
+ And that is incredibly powerful because it enables portability of code.
+ And it also enables portability of like mind share, right? People can move to different
+ companies and take their learnings and add new contributions in different places and potentially
+ reuse contributions from other places with a certain certainty that those things are going
+ to work. It's kind of funny that, you know, I'm very novice when it comes to my software
+ engineering skill set, but I like literally never think about will my Python output the same
+ results in AWS and Azure and on my local machine and wherever else. But that doesn't happen
+ automatically. That happens because there is a standardization effect that comes from
+ compilers. Is that what you're saying? Yes, exactly. Like imagine there's so many libraries
+ and package managers. You want those packages and libraries to behave the same, no matter
+ who's installing it at what point in time and on what machine and the compiler is kind of the
+ very, the very base primitive that enables that sort of consistency.
+ Are there language ecosystems that do a better and worse job at this? You're like,
+ you're smiling right now. Are you worried about inciting a flame war?
+ Yeah, maybe. No, SQL does a particularly bad job at this.
+ Which is maybe how we got started as the f in the first place. But yeah, SQL does a particularly
+ poor job, right? Because as anybody that's worked at more than one company that uses SQL
+ knows, you can't take a SQL statement and guarantee that there's portability from one
+ from one data warehouse to another. You might get different results even for like very basic
+ things like what identifiers look like and so on and so forth.
+ Leaving SQL aside for one second and then we'll get right back to there.
+ So, software engineers tend to adopt programming languages because they have neat features
+ or because they have really mature compiler and package management and these types of,
+ could you make a statement that the like package management and compiler ecosystem
+ inside of Rust is like some way, in some way, differentiating or more mature?
+ Absolutely, people make, those are, I think, convenience-based decisions and that is great.
+ Like, I do that all the time, right? Where, hey, I want to build, you know, a database
+ application. It turns out that Java has been sort of the root of so many data tools for a
+ long time, that you have all the connectors, you have the right libraries, you have authentication
+ methods, you have sort of other compute primitives. So, hey, Java feels like a really great place
+ to start if you want to take advantage of a rich sort of ecosystem of tools and libraries
+ that you can build on top of. But there are also other, there are other sort of trends taking place
+ that influence what is really not just state of the art in terms of capability,
+ but state of the art in terms of usability 20 years ago. I think we were at like core to duo,
+ right? Like, it was a novelty to have two processing cores on a machine.
+ Now, this MacBook has 12 cores or 14 cores or something like that, right?
+ So, hey, now you actually need a different sort of programming paradigm and potentially
+ a different programming language, different compiler technology to be able to take advantage
+ of the fact that we now are now deeply in the world of many core architectures.
+ And it turns out that C is much more annoying to write multi-threaded things in than Rust.
+ Rust makes that stuff super simple. And a lot of it has to do with the compiler,
+ the language features that are available. So, we're going to pick that because of the
+ forward-looking and current sort of world state that we're in, whereas, you know, 20 years ago,
+ maybe it would have picked a different language.
+ Yeah, okay. It's interesting that, and seems like, would kind of be, obviously,
+ true that the changes in the technology ecosystem necessitate, like, changes in
+ developer tooling. So, let's finally make our way around to data.
+ You started us off by saying that SQL is not standardized. I think that that's
+ obviously true for anybody who is listening to this podcast. We've all had to work with
+ different dialects and dealt with non-capatibility and all of this stuff.
+ And that's honestly, sometimes I feel like, what's it called when the person who has been kidnapped
+ develops sympathetic feelings for their kidnappers? Is it Stockholm Syndrome?
+ Yeah, right. I feel like all of us in the data industry have, like,
+ Stockholm Syndrome for the databases, because we, like, forget that everybody else is
+ software engineers, like, live in a world of portability and have for a while.
+ So, this is the world today. And it does seem a little bit analogous
+ to what you were talking about before. They're, like, multi-backends and, like,
+ the multi-the, like, different chip architectures. But we're kind of missing our LLVM.
+ Is that a fair comparison?
+ I think that's a very fair comparison.
+ Why is this the way that the world is in data? Is there, like, an
+ inevitability to, like, SQL dialects being different from one another, or can that change?
+ It is already starting to change, right? There are, there are certain, like, commoditization
+ trends that are happening, right, where people are sort of agreeing on more unified
+ architectures, or consolidation trends, like the consolidation creates commodities.
+ So, iceberg, I think, is like a very clear and very public one, right, where, hey, you know,
+ it wasn't, you know, one of the things that was proprietary for a long time was how we deal
+ with storage. Turns out, hey, if we create a unified standard for how we deal with
+ storage, metadata, versioning, et cetera, a lot of companies could benefit.
+ And many databases could plug into that storage mechanism.
+ Now, for SQL, we haven't seen the same technology be developed just yet.
+ There are really interesting tool chains out there that are moving in this direction.
+ Substrate is one, right, the goal there for substrate was to create a unified,
+ intermediate representation of what a logical plan looks like. There is data fusion,
+ which is looking to sort of standardize what the compute backend looks like, and make,
+ and trying to make functions more pluggable. So, the technology trends are starting to appear,
+ but it does seem like we're, you know, at least in SQL and still, you know, 10, 15-ish years
+ behind where the software ecosystem is at the moment.
+ So, if we're 10, 15 years behind, okay, we're, like, trying to get ourselves out of
+ the Stockholm Syndrome situation, where we kind of accept that this is the way that the world
+ is. And we're not even, like, trying, data ecosystem isn't, like, clamoring for standardization at
+ this level, for, like, a common representation where they can kind of be compiled down to
+ all of the different targets. Can you convince me that this is possible?
+ The promise of SDF, if I can speak for you, and please tell me if I get this wrong,
+ is that you should be able to write a piece of SQL, and transparently to you,
+ that piece of SQL should be able to run on any of the underlying dialects or engines
+ that SDF supports. And today, that's, you know, a handful, and in the future, it will be many
+ more. And that doesn't require that capability of running that same piece of SQL in multiple
+ different platforms does not require intervention by a user. And it's not probabilistic. It,
+ like, it doesn't mostly work. It, like, always works. Is that a fair way to summarize with the
+ kind of core technical benefit that you think? Yes. I think you summarize the user benefit,
+ the taking this back to compilers, the goal, maybe very similar to LLVM, is to create
+ a unified, intermediate representation that is the same across all dialects.
+ And then, given that unified representation, then you can decide what you want to do with
+ that representation. Maybe you want to, um, yeah, translate from one dialect to another.
+ Maybe you want to analyze that logical plan for, um, data governance reasons.
+ But the target for the technology is this unified, intermediate representation.
+ And then you can do with it what you want. Exactly.
+ If this has worked in the land of maybe, honestly, the most directly analogous thing
+ is not LLVM. Maybe it's like you were saying before. It's like TypeScript and JavaScript.
+ This is an era of computing that I actually was like very active in, but like the early days of
+ building web applications, you almost like just didn't want to use JavaScript at all.
+ You just did everything on the server side because part of my language,
+ JavaScript compatibility across multiple browsers was like, God damn nightmare.
+ That's true. And, and nobody even thought that, like, of course, that's true. Like, we,
+ it's not even clear that we should be trying to fix that problem. Like, let's just shovel
+ the logic into the server and just like do minimal JavaScript when required.
+ But we have gotten to a world where you can pretty reliably write front-end code.
+ I don't know about pretty reliably, like maybe completely reliably.
+ Yeah. Right. Front-end code. And it just like, you didn't care what the target browser is at all,
+ right? Yeah. No, this is, this is totally true. And I think, you know, to your point about,
+ oh, we were not going to wait for JavaScript to get better. We're just going to render
+ everything on the server. If you think about the time horizons there, right,
+ you're probably thinking it in the terms of like, hey, let's get a feature out in the next three
+ months or then in the next, you know, six months or a year, compiler development does
+ have a longer horizon for, for improvement. But the, because it, there are such ecosystem
+ knock-on effects, that the even relatively small changes there result in huge usability
+ improvements long-term. So, so, you know, what can I do to convince you that we can get there
+ in SQL? I, you know, the, maybe best, best thing I could say is look at historically
+ those improvements, right, for how much JavaScript development has improved across browsers over,
+ over the last years, or how easy it is, you know, for, for us at SDF at this point to write
+ some rust code and have it be executable with exactly the same behavior on so many different
+ architectures. There's, there's proof that these increased levels of abstraction will keep
+ happening as long as there are drivers in the ecosystem and really material user benefits.
+ I think we have those in SQL and I think we're at that point in SQL where that investment
+ really, really makes sense. And yeah, that's why we were super excited to start SDF.
+ And that's what I'm excited to sort of continue the journey here at TBT.
+ It's almost crazy to imagine that we couldn't accomplish this because in order to make that,
+ in order to believe that we couldn't do it, you would have to believe that SQL and it's
+ anybody who is listening to this. If you ever get a chance to meet Lucas in person at a
+ conference or something like that, just like start asking him about the like weird
+ inconsistencies between SQL dialects and like they're very real. And then they are numerous
+ that they are not even close to as widely divergent as the Win32 API versus the Mac,
+ whatever they call the underlying programming API is like it like we have developed reliable
+ abstractions in the past and they work and we rely on them to run like literally the infrastructure
+ of the world's compute fleet. And I think we can, we can do it again with SQL.
+ I think so too. What does the world look like in data in a world where you've got an abstraction
+ layer like this? How does it impact the way we build data systems, the way that practitioners
+ work on a data basis? Blue skies and sunshine. No, one very material improvement that I
+ think maybe even DBT can play a role in driving is more formation of libraries and other
+ higher level abstractions. Remember I said there's two things. It's like compilers and
+ abstractions. Abstractions you get through libraries. SQL has no very good abstraction model.
+ There's no important statement for SQL. And being able to
+ to create those libraries kind of want two things. One is you want the ability to run code
+ across platforms, right? Because otherwise you have to create multiple different package
+ managers depending on which data warehouse you're using. And B, you need a community that's
+ large enough to actually start investing in those libraries. And if every SQL writer on the
+ planet is sort of siloed into their, you know, pick your fighter team of data warehouse,
+ that ecosystem is much smaller and much more fragmented. So I think there's a, you know,
+ chance for this to have this very unifying effect and create a big driver and opportunity for
+ libraries and packages to evolve in the ecosystem. I have talked about this publicly before,
+ but it doesn't come up that often. The original thread that I was pulling on with DBT was
+ package management. It was a way to figure out how to deploy standardized code alongside of
+ standardized data ingestion pipelines to users warehouse. And in the early days of what was
+ then Fishtown Analytics, we spent a lot of time building packages. And the DBT package
+ management ecosystem like works better than not having one, which is, which is the world
+ without it. But gosh, there are so many things that you run into when you try to build
+ analytical packages. And the first irritating one is just nobody wants to spend their time
+ building a package that can be used by multiple people, then and then realize like, actually,
+ it's really only useful for the people that use the database that you're using,
+ as it like cuts down the utility immediately. And, you know, I remember back in the day,
+ using some kind of very unsophisticated methods to kind of provide some cross database
+ compatibility. But it's like an uphill climb, which makes you just want to go back to your
+ own corner and say like, never mind, I'm not going to generalize this.
+ Yeah, that's true. And I think DBT's success in part, it is incredible to see how much
+ traction adoption there is for code reuse. Given even, you know, the small semblance of a
+ package manager, I were, hey, we're going to provide a little bit of imperative capabilities
+ to SQL through Ginger. You can write for loops and things. And we're going to create a package
+ management system so that you can import a package, and at least for the major ones,
+ know that it's going to run the same whether you're on Snowflake or Redshift.
+ How powerful has that already been? It's been incredible to see the adoption of that.
+ And I think that is such a great thread to keep pulling on, because SQL still is very,
+ very widely written language. It is up there in the top three, four, five languages in terms of
+ actual use, all without having this sort of ecosystem or great amount of consolidation behind it.
+ Yeah. It is very hard to predict exactly how a software ecosystem will evolve.
+ But it has been very consistently true over time, that if you give engineers the right
+ abstractions and the right kind of foundational tooling to create reliability
+ across platforms, then novel, interesting things will happen.
+ And so I almost look at the technology that your team has worked on, and it is now
+ becoming a part of the DBT platform as this like fascinating event horizon.
+ It's like very challenging to see beyond it. But I guarantee you that I will want to go back to
+ building more DBT packages in a world where I can just like reliably ensure that they
+ work across every database platform. Me too.
+ Lucas, thank you so much. We could have done a full four-hour episode here. We've
+ tried to cram a lot into a little bit of time. Maybe we'll have to get you back on here after
+ we've seen some of the fascinating things that folks are building. But thank you for
+ hanging out in for educating us. Thanks for having me.
+ The Analytics Engineering podcast is sponsored by DBT Labs. I'm your host Tristan Handy.
+ Email us at podcast@dbtlabs.com with comments and guest suggestions.
+ Our producers are Jeff Fox and Dan Poppy. If you enjoyed the show,
+ drop us a review or share with a friend. Thanks for listening.

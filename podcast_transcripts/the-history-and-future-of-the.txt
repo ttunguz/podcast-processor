@@ -1,0 +1,1128 @@
+--- METADATA START ---
+Show: The Analytics Engineering Podcast
+Episode: The history and future of the …
+Host: Tristan Handy 
+Guests: Lonnie Jaffe
+Source URL: https://podcasts.apple.com/us/podcast/the-history-and-future-of-the-data-ecosystem-w-lonne-jaffe/id1574755368?i=1000711976721
+--- METADATA END ---
+
+1
+Welcome to the Analytics Engineering Podcast, featuring conversations with practitioners inventing the future of analytics engineering.
+2
+This is a fascinating episode.
+3
+I got the opportunity to interview Lonnie Jaffe, Managing Director of Insight Partners and prior CEO of Precisely.
+4
+Lonnie may know more about the history of the data ecosystem than anyone I've ever spoken to.
+5
+It's not totally clear how he knows all of this, as we started our careers at roughly similar times, but the depth he can speak to things that occurred back in the 1970s is impressive.
+6
+I used the hour we spent together to suck as much knowledge out of his brain as I could.
+7
+My goal was to start at the beginning and just march through 50 years of history as efficiently as we could.
+8
+We start with the mainframe and why sorting was a big deal in a world of hierarchical databases.
+9
+We track through the advent of the relational database, early ETL, data warehouse appliances, Hadoop, and now the cloud.
+10
+We talk about why data prep and data management have historically been different categories, and why it's historically been challenging to overcome switching costs in ETL.
+11
+Finally, Lonnie shares his view as an investor on where the ecosystem is today and what problems remain to be solved.
+12
+As you might expect, he and I are very aligned.
+13
+The future of the AI and standards era is bright.
+14
+I think you'll enjoy this conversation, and I know I learned a ton.
+15
+Without further ado, let's get into it.
+16
+Lonnie Jaffe, welcome to the Analytics Engineering Podcast.
+17
+Great to see you, Tristan.
+18
+Thanks for having me.
+19
+This is one of those fun excuses that podcasts hosts get to catch up with folks that they haven't been able to chat with in a little while as an invite on a podcast episode.
+20
+So it's, I don't know, it's been a couple years since we've caught up.
+21
+Yeah, no, it's a lot has happened.
+22
+Looking forward to talking about it.
+23
+You have had a long career in tech.
+24
+I thought maybe we'd just start out by giving us the 30,000-foot view of what you've been up to over the last couple decades.
+25
+Sure.
+26
+So I have been at Insight Partners for about eight years,, eight years exactly as of yesterday.
+27
+I joined after being CEO of an Insight portfolio company, though.
+28
+So I was in orbit for a few years before that.
+29
+The company was called SyncSort.
+30
+It's now called Precisely.
+31
+It was an older software company founded in 1968 that I did not found, but joined in the 2013-ish timeframe.
+32
+And at Insight, I've been working on some of our deeper tech investments.
+33
+So that ends up being things some AI infrastructure companies Run AI and Desk EAI, both of which got acquired by NVIDIA last year.
+34
+I've done some application layer investments, but they tend to be deeper tech, deeper tech oriented.
+35
+So Feature Space, which was issuing bank fraud detection.
+36
+It felt a little bit a financial services application, but the people who showed up every day at the engineering team were deep tech machine learning folks.
+37
+They got acquired by Visa last year.
+38
+I've also worked on a number of data infrastructure investments.
+39
+So things single store, which is a fast analytical and operational database in the cloud.
+40
+And then before I joined.
+41
+I love this.
+42
+We're going backwards in time instead of forwards in time.
+43
+Yeah.
+44
+I was at IBM for about 13 years.
+45
+IBM is a very old technology company based in suburban New York.
+46
+At IBM, I had a lot of different kinds of jobs and was relocated a bunch of times, including once internationally.
+47
+For a lot of the time I was at IBM, I was at the application and integration middleware division.
+48
+So this included things Webster Application Server, CICS, which was one of the original, very foundational mainframe transaction platforms, TPF.
+49
+IBM, by the way, had a lot of other mainframe databases that were very interesting.
+50
+If you added them up, it was a very large amount of annual revenue that was extremely high margin.
+51
+And yeah, that's a quick flyby of my career.
+52
+I don't know a ton about precisely, but I was doing a little bit of research.
+53
+And when you ran it, it was called SyncSort.
+54
+Is that right?
+55
+That's right, exactly.
+56
+Okay.
+57
+And my understanding is that inorganic growth played a major role in both what you did at IBM and at SyncSort.
+58
+Is that fair to say?
+59 there were a bunch of roll-ups involved there?
+60
+Yeah.
+61, SyncSort, so have a very long history, right?
+62
+So it was founded in 1968.
+63
+It was one of the first software companies that was created, right?
+64
+Back in the late 60s, the IBM 360 mainframe and the software layer were pretty tightly coupled.
+65
+There was an antitrust activity that at one point helped to catalyze the decoupling of the software layer from the mainframe.
+66
+And there were a few software companies then and more emerged soon after that.
+67
+But SyncSort's original vision at the time was we're going to have a better sorting system.
+68
+And sorting was a huge portion of what you would do in computing back then.
+69
+And when you say sorting, you literally mean an order-by clause, right?
+70
+Yeah, it ended up being more complex fairly quickly.
+71
+So people called it sorting, but it was doing not just large-scale telecom billing sorting, but you started to see early things emerge merging and joins and aggregations and things that.
+72
+But a lot of the data back then was hierarchical, right?
+73
+So it was stored in things IMS.
+74
+And so you think about it, there were, it's basically trees, right?
+75
+Parents and children.
+76
+And in order to do anything with the data, you had to traverse the trees and basically flatten the hierarchical data into a file.
+77
+So you can imagine the algorithms used to do any of this stuff are totally different than the way that you would do it in a relational context.
+78
+Is that fair?
+79
+For sure.
+80
+And you were, I'd say, even more significantly than the hierarchical versus relational was that you were working.
+81
+It's a little hard to wrap your mind around how much more disk space or tape drive space and memory and things that you were constrained around.
+82, all of NASA had less computing power than probably my Apple watch does today.
+83
+Right.
+84
+And so you were, so the efficiency of the algorithms were very important, but they're still very important.
+85 if you look at what,, when Spark first emerged as a thing out of the whole big data Hadoop universe, you,, what was the first thing that they did to show off how good Spark was is they had it compete in the gray sort benchmark.
+86
+Right.
+87
+So, sorting was still,, if you look at the internals of even something MapReduce, there was the MapSort and the reduce merge, right?
+88
+There's an enormous amount of sorting that's going on.
+89
+And,, even though you have a lot more compute to work with and it's easier in a relational context, performance in sorting and related things merging and joins and aggregation still is very, very important.
+90
+Okay, that was a fascinating answer to a question.
+91
+I didn't realize we were going to get into history so quickly.
+92
+I did do a lot of MA.
+93
+So I always viewed MA as an important tool in the innovation toolkit.
+94
+So you can build things, and we did build a number of things while I was at SyncSort.
+95
+But there were just a lot of really interesting assets out there that we could give lift to and integrate with the rest of our portfolio.
+96
+So the first company I acquired while we were there was this company called Circle Computing Group that had what was called a transparency solution.
+97
+So this was something where, so on the mainframe, you had a lot of data that was still stored in IMS in a hierarchical format and was being accessed.
+98
+So IMS has two pieces to it.
+99
+There's IMS the database, and then there's IMS TM, which is the basically the application server where you would write the COBOL code to write the application itself.
+100
+And what the transparency solution would do is it would trick the application into still thinking that it was accessing the data in IMSDB, the database, but you would intercept the call and you would send it to where the data was now, which was in often DB2Z, which is a relational database that is still pretty popular in the mainframe.
+101
+And so you could move your data into DB2Z without having to rewrite the application.
+102
+And being in a relational format in DB2Z was useful for a bunch of different reasons.
+103
+One, the database was getting better more quickly, but also you could access it by all the other kinds of tools that needed data to be in a relational setting.
+104
+So you can see how,, in our strategy was very much at the time this big iron to modern data stack systems value proposition, which is there's a lot of data that's locked up in these systems that are working fine and people are not moving it.
+105
+And we, I'm sure we'll get to the topic of the things that Gen AI might do in the ETL world, but the one thing it could do is erode switching costs, which is, I think, an interesting topic.
+106
+But if you liberate some of the data on the mainframe, now your modern analytical system, your dashboarding products, your analytic systems, things that, they're not toys because they can access your actual data, which is important.
+107
+Just as an aside, many of your titles in these roles were VP of strategy and things this.
+108
+Very business-oriented roles.
+109
+But you talk somebody that has an undergrad degree in computer science or something similar.
+110, do you have a technical background?
+111
+I did a couple of years of programming at Cyveson High School.
+112
+I worked.
+113
+Shout out to your high school CS teacher.
+114
+Yeah.
+115
+In college, I worked summer after freshman year at Columbia Records doing web design stuff.
+116
+It was mostly a Perl system.
+117
+And then interned at Microsoft summer after sophomore year and junior year.
+118
+But no, my undergrad was not in computer science.
+119
+And then I did a master's in the fourth year in history of science.
+120
+I did focus on the use of encryption technology in scientific publishing from old days to Galileo's era to the present, which is long time.
+121
+That's a different podcast, but we'll do that someday.
+122
+Since you mentioned your undergrad, this is my favorite fun fact that I've ever found while doing research for a show.
+123
+You participated in a juggling society.
+124
+Is that correct?
+125
+Yeah, it was interesting.
+126
+I got to Harvard thinking that I was an extremely good juggler, and it turns out I was probably the worst juggler at the Harvard.
+127
+Harvard has a way of putting you in your place.
+128, I thought I was good at math.
+129
+I thought I was good at juggling.
+130
+How many things can you keep, how many balls can you keep in the air at once?
+131
+I can juggle five.
+132
+I can only do three.
+133
+I'm a rank amateur.
+134
+Three to four is hard, but four to five is a big jump.
+135
+And I can't say that I'm completely reliable.
+136, I can't do it forever.
+137
+But yeah, it's very,, juggling is an interesting metaphor for keeping a lot of things in the air, which we all have to do.
+138
+Totally.
+139
+It's one of my favorite things to,, I don't have a lot of random skills.
+140
+Most of my time is just spent on, I don't know, work and being a dad.
+141
+But every once in a while, somebody will ask me,, tell me a random fact, and I'll grab three things and juggle them.
+142
+And they're just,, you're blown away every time.
+143
+Do you ever use this as a party trick?
+144, it's...
+145
+Oh, come on.
+146
+Not very often, but occasionally,, we'll have,, you'll have a talent show or something, right?
+147
+And it's useful for that.
+148
+Yeah, okay.
+149
+I am glad that we went into history right off the bat because the reason I wanted to have you on is because you, I have to imagine, partially because of the IBM experience, but also because of the SyncSort experience, which Syncsort,, had this deep history of backstory.
+150
+I have, in the past, had some of the most interesting conversations with you of anyone I know about the trends and forces in the data industry.
+151
+And so I wanted to talk with you a little bit about the backstory.
+152
+So,, certainly, I think most listeners will be very familiar with the rise of the cloud data platform.
+153, that we're living in that now, or maybe we're at the mature stages of that, and maybe that's even being disrupted by AI and standards Iceberg and whatever.
+154
+But you go back before that, and you've got the Hadoop big data era.
+155
+You go back before that, and you're,, probably at Teradata, Vertica.
+156
+But I think that many practitioners today, including me, I have very little insight into,, data, the data ecosystem's been around for freaking ever.
+157
+So I'm curious,, what these proto-trends were that still impact our lives today.
+158, Informatica, MicroStrategy, a bunch of companies that are still very much alive and kicking were born, I think, in the 90s.
+159
+So I'm just interested to get your take on how do we extend this view of history pre, let's call it 2010?
+160
+Yeah, it goes way back, right?
+161, you had in 1971 or two, you had there was a IBM CICS added the journal shipping capability.
+162
+So this was allowing regional banks to replicate transaction logs every night.
+163
+And this was the first change data capture product.
+164
+Oh my gosh, replicate transaction logs.
+165
+It's a question of milliseconds or seconds or nope, overnight.
+166
+Yeah, everything was overnight.
+167
+But, it was, you saw some things, I think it was in the mid-70s, there was this thing called JCL, job control language.
+168
+And,, you had, there was an insurance company that had a single missing JCL comma that halted every overnight batch.
+169
+And it was,, a major data pipeline problem.
+170
+And,, you had the sorting systems, IBM eventually had their block set algorithm and DF sort and Sync sort And those were proto ETL products in a way nobody was calling it that I think the first time people used the concept of extract transform load was in 74.
+171
+It was that IBM Systems Journal article.
+172
+And then I guess you had Michael Stonebreaker's Ingris project in 79.
+173
+That was where you started to get things copy commands that could bulk load flat files into relational tables.
+174
+So I think that was a big inspiration for some of the early ETL startup founders.
+175
+And then DB2.
+176
+But that was in 79.
+177
+When you say early ETL startup founders, when was the first pure play ETL tool?
+178
+I think the first one that you would say was a true ETL startup was probably Prism Solutions in 88.
+179
+So they had this product that was called Warehouse Manager, I believe.
+180
+And so they had a GUI, a graphical interface on Unix workstations.
+181
+And it was expensive.
+182
+I think they charged something a million dollars a license.
+183
+And this showed people that, and this,, in 1988 dollars, right?
+184
+And so I think this showed people that you could do data integration as a standalone market and it could be pretty interesting.
+185
+But there were things going on even in the early 80s, IBM had DB2 on MVS.
+186
+And so you had these teams that would write generator programs that parsed COBOL copybooks and they would shoot out load utility cards.
+187
+And so you had mass schema moves and a lot of the subcomponents that you would eventually see in ETL tools.
+188
+And, I just one big macro point is there's a lot of stuff that people don't call ETL that when you really squint at it is ETL, right?
+189 you have these systems in industrial automation environments where you're pulling data off devices and you're moving it through SCADA systems and putting into these things called data historians to predict when machines are going to fail.
+190
+And nobody calls that ETL, but you're extracting data from places and you're transforming it and you're loading it into these systems that look a little bit databases or data warehouses and you're doing analytics on them.
+191
+Or, even today you have companies my wife works at Plaid, which is a fintech company and she co-chairs the technical steering committee for the financial data exchange, which is the open standards body that defines how banks can share consumer banking data with fintechs and other authorized third parties.
+192
+And if you look at what they do, it looks a little bit ETL, right?
+193
+They're extracting structured data from banks and they have schemas and they're doing metadata management and they're loading that data into other systems.
+194
+So I think there's always been a lot of that.
+195, Teradata, when they showed up, I think there is, and we came across a lot of Teradata customers,, because you would go to these,, these Hadoop conferences back in the Hadoop era, and it's half the companies that were exhibiting there were doing some form of Teradata offload, right?
+196 the use case for Hadoop often was just, reduce my Teradata costs.
+197
+Right.
+198
+You would put it in front of the simplest architecture there was you would put it between your source systems and Teradata.
+199
+And you would do a lot of the pre-processing in Hadoop at orders of magnitude lower cost.
+200
+And then you would load Teradata because the other way you were doing it was you would do the pushdown ELT in Teradata.
+201
+And it wasn't just that it was much more expensive, but it would use up limited Teradata capacity.
+202
+So there was contention with the actual thing that Teradata was good at, which was the analytics.
+203
+And,, so, and I, that's also still true today, where you look at the lines have started to blur a little bit, but, when you're talking about that, it's not that dissimilar to the way that,, maybe circa 2019, customers would think about Databricks and Snowflake.
+204, Databricks and Snowflake and blah, blah, blah.
+205
+Yeah, and a huge portion of Databricks is really doing some form of pre-processing and ETL, just you saw with Hadoop before Spark emerged.
+206
+But I guess the real ETL market really kicked into gear with DataStax and Informatica, which was the early 90s, as you said.
+207
+So DataStage was a VMARC, which then became essential, which got acquired by IBM.
+208
+Informatica was around 1993.
+209
+Yeah, I was going to say, I don't know DataSage without the word IBM in front of it.
+210
+So that makes sense.
+211
+To your question earlier about inorganic growth,, a lot of these things even that people perceive as organic products, because they were within the companies for such a long period of time, started out as acquisitions.
+212
+But yeah, you started to see the first replace hand coding COBOL queries and things that with drag and drop design that compiled into something that looked an optimized execution plan,, that had intermediate representation layers that were sophisticated and different from the actual thing that happened in the boxes and lines designer tool and different from the actual plan that got implemented in the physical hardware.
+213
+Why did both of these companies start in the early 90s?
+214
+Was it the rise of database technology or the internet?
+215
+Or what unlock made that happen for two companies at once?
+216
+Yeah,, it's probably worth mentioning another company that people may not be as familiar with anymore, but was pretty important at the time called Ab initio.
+217
+Oh, yeah.
+218
+Which was a.
+219
+We still run into a company.
+220
+It's a lot of large banks, and they're just, we still have this big Ab initio footprint.
+221, okay.
+222
+Their angle was an extremely high-performance ETL product that was highly parallelized.
+223
+And,, before the PurePlay ETL products, you did do a lot of data transformation in databases of various kinds.
+224
+And I think part of what you were seeing is an early Jevins paradox dynamic where you had hard drive prices went from something $500,000 a gigabyte in 1982 to what is it, three or four cents a gigabyte today, something that.
+225
+So six called six orders of magnitude price declines.
+226
+But you saw a tremendous amount of expansion of usage.
+227
+So the market is much bigger.
+228
+Separate question about how much profit pool emerged in that market, which is different from the market size itself.
+229
+But you saw a number of those things happening.
+230
+So network I/O, storage, which was very important to store all the intermediate representations as you were doing these transformations, memory, compute, all of them were dropping in price.
+231
+And so people started to be able to do things parallelize the ETL task and do more sophisticated types of joins and merges and aggregations.
+232
+It was very high elasticity of demand.
+233
+So as you made it more powerful, better algorithms and more compute and more storage and all of that, as you dropped the cost of those things, it was more than eaten up by people's appetites to do more interesting and more sophisticated analytics.
+234
+And it was an ASIC in a way, a special purpose system that you could offload the ETL work to something that wasn't happening in the database or the warehouse.
+235
+And that became a really popular pattern because it freed up your on-prem data base or MPP data warehouse capacity to do more interesting things the interactive SQL queries or sporting or whatever you were doing with it.
+236
+Is it fair to say that the space that I believe Gartner would identify today as data management started off with extract, transform, and load?
+237
+That was the seed, the core use case.
+238
+Because right now, data management has grown well beyond what you would,, just the Informatica Power Center.
+239
+There became a classic ETL vendor bundle, right?
+240
+Informatica did it, and then you saw others Talend and a few others mimic the same suite of products.
+241
+But it was basically there was usually an ETL product.
+242
+There was a change data capture product.
+243
+You would also see them bundle in this thing that people would sometimes call app-to-app integration.
+244
+It just started out, there's this whole other world.
+245
+Is this booming?
+246
+Yes, you had these other products.
+247
+At IBM, we had WebServe MessageQ, WebServe MQ, and Message Broker.
+248
+You had Software AG had a bunch of products in this category, web methods.
+249
+And these were you pull data from an application via the application API, and you usually moved it somewhat more real time, and then you put it into often another application or a data warehouse.
+250
+And that world stayed really separate from the ETL world for much longer than I would have thought it would.
+251
+Because you're,, these days it's been blurring a little bit.
+252
+But at the time, it was, no, there's a whole separate type of tooling that you use for pulling data from databases and moving it into data warehouses than the stuff you would pull from, say, Salesforce and move it into Workday.
+253
+But the ETL vendors often had that functionality as part of their bundle.
+254
+And then you eventually started getting catalogs and what used to be called metadata repositories and are now called data catalogs and a few other things that.
+255
+And yeah, that,, when I was at SingSort at the time, I think the ETL market was about, call it 3 billion or so a year.
+256
+And to put that in perspective, the database market was probably around 30 billion or something at the time.
+257
+So call it about a tenth, if you think of it as an attach rate to what was going on in the database space.
+258
+There's this interesting dynamic that starts to occur.
+259
+I think, well, maybe on some level, it's occurred since the 80s when you were talking about this market starting where spreadsheets and ETL started around the same time.
+260
+And so you've got your IT people that are doing data management and your business people that are doing spreadsheets.
+261
+But this dichotomy matures a little bit.
+262
+I think in the around the 2000 era, but you can tell me if that date's wrong, where data prep becomes a category.
+263
+So it's interesting, there's this persistent difference in tool set.
+264
+You would think that there's a job to be done.
+265
+That job to be done is moving data, reshaping it, whatever.
+266
+And you would hope that those tools could service different personas.
+267
+But in fact, there's completely different market segments and tooling for these different personas.
+268
+Is that fair?
+269
+Yeah, it was definitely persona-driven, right?
+270
+So you would get these new capability unlocks that would make something either easier to use or you would develop the ability for people to do stuff without having to go through central IT within large enterprises, which was often a bottleneck.
+271
+So yeah, you had, I'd say, in the early 2000s, a couple of things happened.
+272
+The data warehouses started to hit the MPP data warehouses Teradata and Atiza and GreenPlum and Vertica, they started to hit size limits.
+273 you couldn't add more nodes or it became too expensive or what?
+274
+It was very expensive.
+275
+You were running into capacity constraints and people, just talking through the bottlenecks, and people were really experiencing that as a bottleneck.
+276
+And the ELT pattern of pushing transforms into the warehouse, which is what a lot of the boxes and lines ETL tools were doing.
+277 if you looked at a lot of the Teradata capacity, it was doing workloads that were say pushed down from Informatica.
+278
+Oracle Warehouse Builder pushed down in 2003.
+279
+Right.
+280
+So you saw then,, this is when SyncSort launched its DMX product, which was a very fast ETL product.
+281
+And then DMXH, which ran on Hadoop.
+282
+And you started to see these open source ETL alternatives show up, Talend, but also some of these self-service systems Pentaho, Kettle.
+283
+So they all showed up in that era, specifically because that's when the scalability of the Kulner database appliance was running out of Steam.
+284
+Right.
+285
+So you were running into this issue where it's limited human bandwidth on the data teams and limited capacity on the data, the centralized data warehouses.
+286
+But people still wanted to do the stuff.
+287
+They weren't, oh, okay, I guess I'm just not going to try to figure out turn prediction on my customers, or I'm not going to do marketing mix management.
+288
+Right.
+289
+So they're,, who has some compute capacity?
+290 I do on my laptop.
+291
+Totally.
+292
+Yeah, that's exactly what happens.
+293
+And there were a lot of false start things too.
+294 you saw this whole world of what people called data federation.
+295
+Sometimes they called it data virtualization, which is a little confusing because the word virtualization was already taken.
+296 composite software from Cisco and Denodo and a few others.
+297
+That market never got huge, right?
+298
+It was this idea that you could keep data on the source systems and just put a catalog or cache or something in a centralized location and then send all the queries to the source systems to do the work and then bring aggregated or pre-processed data into centralized location,, zero copy analytics.
+299
+I don't know if you've ever seen big deployments of that, but in practice, people still bring data to centralized locations.
+300
+That's the main way that people do stuff.
+301
+And then there was clickstream data, which started to show up around then because you had the internet became a thing.
+302
+And so you got all these web clipsites, clickstreams, and unstructured logs.
+303
+And so that was starting to drive the whole big data phenomenon, the release of HDFS and MapReduce, and then eventually Spark.
+304
+A lot of that was being used to offload the pre-processing capacity.
+305
+And yeah, you had these self-service analytics products.
+306
+And you had a similar thing happening on the dashboarding side, right?
+307
+You saw the emergence of Tableau,, to mirror the big BI tools that ran against the larger dashboard, the larger data warehouses.
+308
+Earlier in this conversation, you were talking about, it was the 1970s, and you were talking about how essentially the way I translated it was there were abstraction layers developed so that you didn't have to rewrite an entire application and you could essentially point the application logic to a new data layer.
+309
+So it speaks to just how sticky some of this code can be because the cost of replatforming is so unbelievably high.
+310
+In my travels, I certainly run into lots and lots of install base that still exists from tools that we've mentioned that were built 30 years ago.
+311
+What makes this stuff sticky?
+312
+Is it just it's expensive to move off of it?
+313
+And if that's just the answer, then, are we still going to see people, are the revenue streams of these companies still going to be flat in 50 years?
+314 what the hell is it?
+315, are we all going to be running all this stuff when we're all in the grave?
+316
+This is a very interesting topic.
+317
+Take this with a little bit of a grain of salt because I haven't seen a lot of evidence of this yet.
+318
+But if you just think about, there's a huge number of products in this category, but also I would say the database world has a lot of products this too.
+319
+Where I'll exaggerate for the purposes of this discussion, just to make the point.
+320
+It's you might have a situation where you ask a thousand customers, do you love this product?
+321
+And 0% of them will say yes.
+322
+All of them would love to move off of the thing that they're on to something that already exists, right?
+323
+You don't need to wait for something to get built that's new.
+324
+There's already a better, faster-growing, more modern thing that they could move to, but they don't, right?
+325
+And the vendor is able to raise prices, cut costs, extract enormous amounts of profits, right?
+326
+This is a huge portion of the software industry.
+327
+A lot of,, a huge portion of the investing landscape has this too.
+328
+And it's, well, why does that work?
+329, why is that a thing?
+330
+Why would the customers stay on these products if they don't them?
+331
+And it usually comes down to some form of switching costs.
+332
+But then,, what are the switching costs?
+333, when you really stare at them, what are they?
+334
+It's, well, it's really hard to rewrite these jobs and tasks onto a new platform or to take this code that's written in this language and get it to work in a new thing.
+335
+It's not just that you can't do it at all.
+336
+It's just that it needs to be really good when it's done.
+337
+It needs to be extremely reliable.
+338
+If you take an enormous amount of code and you redo it, the best case is you have a new thing that does the same thing as your old thing.
+339
+And if it doesn't work reliably, it's not going to bump up to the top of your list of priorities.
+340
+And historically, it's been too hard to automate.
+341
+And so that's lasted decades.
+342
+As a business model, it's been very lucrative.
+343
+But is it science fiction to imagine, especially with these code gen systems, the ability to have computer use agents that can explore the functionality and just keep iterating on code bases and test things?
+344
+To imagine that some subset of these systems that have historically been too hard to automate could go from really insurmountable switching costs to no switching costs or very, very, very mild, right?
+345
+Where you could just redo the thing on the new platform and it works.
+346
+And if your entire business model is relying on the customers being stuck as a vendor, right, you could be in a pickle pretty quickly.
+347
+I'm imagining a boardroom setting.
+348, there's 16 people in very nice businessware, and somebody says, well, we're in a pickle.
+349
+I don't think that's the words that they would use.
+350
+Yeah,, it doesn't seem a great time to bet on lock-in as a or switching cost as a strategy.
+351
+Yeah, look, obviously, we should, you don't want to be naive about it.
+352, it's some of these switching costs are very complicated, right?
+353,, you look at code, and code,, when you're,, was often very hardware aware, you're compiling it to specific hardware topologies.
+354
+But,, there's a lot of intermediate representations with Java, you have the JVM,, with compilers, you have LVM and a bunch of other things on the way to the ultimate topology that you're deploying to, that can make it a little easier to move things.
+355
+So you have emulators and a whole class of things, and you can test it in a way that you have maybe built a whole bunch of test cases.
+356
+You're more familiar with this than anyone, but in the data world, a lot of that just isn't there.
+357
+And yet the stuff is just really hardware aware anyway.
+358
+And performance is important, right?
+359
+So, if you move it to a new system and the performance gets worse, that's not ideal.
+360
+And, also, I would just say there are some of these existing systems are better than people think they are in some ways, right?
+361
+So, yeah,, I was going to ask you about that.
+362
+It's cool to new technology, but my guess is that there were a bunch of really smart people that built some of the core technologies around the ETL, the original ETL tools 30 plus years ago.
+363
+And they probably solved some pretty hard problems on the way.
+364, if I were sitting here as the founder of one of those companies, what would I say?
+365, all this new shit,, we figured this out 30 years ago.
+366
+Yeah, a lot of these systems are quite robust and mature.
+367
+And, the hardware too, right?
+368, the mainframe is an I/O supercomputer, right?
+369
+If you're trying to build a global scale credit card processing system or ATM network or something that, you would be very hard pressed to find a system that can run tens of thousands of concurrent transactions against the same refrigerator side machine and have perfect asset compliance.
+370
+And the real reliable transactions, if you're LinkedIn and you do a status update and then you refresh the page and it's not there yet, and you refresh the page again and now it's there, that's fine, right?
+371
+But if you're doing a banking transaction, it's not fine, right?
+372
+And so there's, and then at the software layer,, you have something Epic is still running on primarily on intersystems cache A, which was built probably 30 years ago or so.
+373
+Those are words that I've never heard before.
+374
+Inter-systems Cache A.
+375
+Is that a mainframe system?
+376
+It's a database, a hierarchical database that has been powering Epic, which is one of the key leaders in the electronic medical records and practice management systems.
+377
+And you've got enormous amounts of concurrent updates happening to patient records, basically in a very robust way at massive scale.
+378
+It was written in the M slash mumps programming language, primarily the core of the system, which is originally developed in the late 60s.
+379
+And these systems are very resilient.
+380
+And so if you're going to embark on the project of replatforming something that, you need the new system to not only be cheaper or something, right?
+381
+You need it to be as good.
+382
+You need to be able to handle the workload.
+383
+You also have this thing, and you see this with a lot of the new databases, right?
+384
+There's constantly people building new databases and trying to convince people to use them.
+385
+And the idea is, well, we're faster for some use case, right?
+386
+And it's, well, okay, but, how much faster are you?
+387
+And can we also make our existing system faster by just adding more nodes?
+388
+Right.
+389
+And also, do you have all the mature database features that take a decade or 15 years to build out?
+390
+Sometimes the answer is not really.
+391
+And now you're asking people to ETL their data out of their database into your database to do this one thing, right?
+392
+And you're competing with Moore's Law a little bit, right?
+393
+Because,, okay, maybe it's a little cheaper to use your special purpose database for that workload, but you could also just use your more generic database and add more hardware to it.
+394
+And maybe today that hardware is slightly more expensive, but the hardware is going to get cheaper, right?
+395
+So,, if you're making a multi-year bet, is it really worth bringing in a whole new stack?
+396
+So I think those are all real-world factors.
+397
+But I do think there's some very vulnerable players who have, there's other types of economic power that a company can have, right?
+398
+It can be a platform with a lot of stuff built on top of it.
+399
+It can be, you can have network effects or data modes or whatever.
+400
+But if your only source of defensibility is switching costs and the switching costs go away, it's not a good situation.
+401
+Yeah.
+402
+The conversations that we run into, the breadth of the platform, it's a combination of two things.
+403
+It's the breadth of the platform where any modern data stack vendor is not going to go in and replace all of Informatica.
+404
+This is not going to happen.
+405
+They're just, it's a very broad product.
+406
+And if you can't replace the whole thing, then can you really take the whole budget line?
+407, no, that's just very challenging.
+408
+You also have the other advantage of, there are still lots of folks who have built entire careers on writing code in these tools.
+409
+And a lot of them will fight tooth and nail to retain these tools forever.
+410
+So there's technical switching costs, I think, are not the only thing.
+411
+It is a challenging moat to cross.
+412
+Yeah, I think you're probably experiencing some of this firsthand, but what we're seeing when it comes to adopting data integration-oriented Gen AI features is that the companies that seem to be doing the best with it are not today the pure play, let's start from a white sheet of paper Gen AI startups, and they're not the legacy declining companies that struggle with doing anything at all.
+413
+It's this,, medium-tier, super high-growth company with a fresh product and a team that has a lot of wherewithal to do new things that can infuse, Atlan is a good example.
+414
+I know the team there well, right?
+415, they were already a really good product, right?
+416
+And it's, well, if you're going to do the obvious Gen AI things for a data catalog, don't you want to do it with a really good data catalog?
+417
+And you can, part of what the system is doing is it's using, Gen AI is using your product as a tool, right?
+418
+It knows how to, you can give it access.
+419
+If you're the vendor, you can give it access to all of your unpublished APIs.
+420
+You can give it deep hooks into the functionality of your product.
+421
+You can reimagine, it can do things sometimes that are much more ambitious than the underlying product itself, that still need the underlying product in order to work.
+422
+And from the customer perspective, it could be tackling a thing that's 10 times the value, but you need the distribution, the trust, the fact that the customers are already storing, in their case, all their metadata with you, and the product functionality in order to get that to work.
+423
+So, I'd say that in the data integration world, database world in general, I'm even seeing this at the application layer.
+424
+That seems to be the first generation of winners.
+425
+And I do think if the,, you are seeing a surprisingly large number of incumbents who have a set of obvious things that they should be doing with Gen AI and they're just not doing it or they do it and it's terrible.
+426
+Right.
+427
+And Gen AI doesn't solve the problem of you being a company that doesn't do things.
+428
+One of the things I want to make sure to ask you about while I have you, I'm starting to develop a new job title for you as we talk.
+429
+How do you feel about the data anthropologist?
+430
+Will you put that on your name card at conferences?
+431
+Archaeology.
+432
+Yeah, I that.
+433
+There was this era that I would call the modern data stack era, which maybe lasted depending on how you measure it from 2012 to 22 or something that.
+434
+And the idea for a little while was that there was so much TAM in this new cloud world that, in fact, all of these different things that have previously,, not just Informatica, but you could just take Informatica and their product catalog, and you say every one of these SKUs is going to be disaggregated.
+435
+It's going to be a new company.
+436
+And so for a little while, I don't know if you've ever seen this diagram of the Craigslist homepage where you circle the little parts of the Craigslist homepage.
+437
+It's, this became Uber, this became DoorDash, et cetera.
+438
+And this was what was happening with Informatica.
+439
+But then in 22, everyone was, wait, is there enough TAM?
+440
+And so I'm curious, we're now three years beyond that.
+441
+Do you feel your thoughts relative to where we were in 2020 versus 2022 versus 2025?
+442
+Now with Gen AI here, what's your thought on the TAM of this space?
+443
+Yeah, the TAM effect is very interesting, right?
+444
+So when you see in a regular macroeconomic environment, we're used to inflation, right?
+445
+Call it 2% to 9% inflation or something, depending on the year.
+446
+Normally.
+447
+That's not what we're used to in technology, right?
+448
+In technology, we're used to relentless price declines.
+449
+And a lot of what we see is one generation of, say, application performance monitoring to the next, right?
+450
+You might see a 90% price decline, but a 10x market size increase.
+451
+So call it 100x on a per price basis.
+452
+This is high elasticity of demand.
+453
+People have been talking a lot about Jeffin's paradox in AI.
+454
+That's what they mean by that.
+455
+That's a TAM statement.
+456
+In software, it's interesting because you will frequently have the situation where the companies are much more profitable when that happens because so much of the cost structure is fixed costs that are amortized over more revenue.
+457
+What you do really care about is not just the TAM size, but as a vendor, you care about the profit pool size.
+458 nobody, it doesn't make sense to invest in a company or spend your time building a company if it's only ever going to make revenue at negative margin and be an investor-enabled service.
+459
+But one thing that you start to need to map out microeconomically is: okay, so let's say this new set of technologies drives down a whole bunch of additional costs.
+460
+Some of these areas have very high elasticity of demand and others have very low.
+461
+Some cases, the TAM might completely evaporate, right?
+462 if you, I would be a good example, the corporate logo redesign market.
+463
+I don't know if this is, I'm not an expert in this market, but let's say there's a fixed amount of companies that want to change their corporate logo every year instead of a very elastic number, which doesn't seem implausible to me.
+464 if you cause the price to go from $15,000 per logo to five cents.
+465
+Yeah, if you told me I could do it for five cents, I would still keep our logo.
+466
+I love our logo.
+467
+Right.
+468
+And so you could just see the total, the entire TAM just get vaporized when the price declines, right?
+469
+And then there's other things where,, a lot of software markets are this, where the TAM expands massively.
+470
+I think some of these infrastructure markets, especially things that touch data, are, and when you think about the modern data stack, which I think of as the 5tran to snowflake to DBT,, maybe a reverse ETL thing at the end market, that was really benefiting from, I was talking about all the contention in the ELT world in the Teradata on-prem environment, right?
+471
+Once you got into the cloud, you had separation of storage and compute and dynamic elasticity.
+472
+And so a lot of that was just not an issue, right?
+473
+You could scale up and scale down.
+474
+And so you saw a big shift away from the boxes and lines, ETL tools back into the warehouse.
+475
+And I'm sure you're already starting to see early versions of this.
+476
+you're going to be able to do a lot more.
+477 we even have an interactive, a thing where we can now write in natural language within our,, we already store a lot of our portfolio company information and our prospect information in a repository.
+478
+And in theory, you could have always written a looker query or whatever to get access to that.
+479
+But in practice, people didn't do it.
+480
+No one did it, right?
+481
+It's not they couldn't have learned how to do it, but they just didn't.
+482
+And now we can just ask a natural language question and it will generate the query and give us an answer.
+483
+And it's quite good.
+484
+And you were talking about,, opening up new personas, right?
+485 you had this whole class of self-service tools that were empowering the Power Excel user type person to do their own data integration or their own dashboarding.
+486
+But even,, there's another wave of person who has never been unlocked in that way, right?
+487
+That is still there.
+488
+And that's an enormous market.
+489
+That you get to all knowledge workers becomes that next wave, right?
+490
+For sure.
+491
+And, yeah, there's some infrastructure stuff.
+492,, do you run it on your laptop or are you calling out to some centralized repository and things that?
+493
+But I think a lot of it is just giving them something that allows them to ask questions that they want to know the answer to and get correct answers.
+494
+And I'm not saying the correct answer thing lightly.
+495 I had a situation recently where I needed to do a bunch of cap table analysis and I asked one of the language models and it completely crushed the task.
+496 beautiful charts and pictures and but it was wrong.
+497
+Okay.
+498
+But, but you could taste it.
+499 you could, you could.
+500
+And you had to have done that 100 times before so that you could look at it and know it was wrong.
+501
+If it had worked, it would have saved me at least a half a day worth of associate and my time iterating.
+502
+And to be fair, the humans who do this thing are not perfect either.
+503
+But we're spitting distance from being able to work with structured data in a more reliable way with these tools.
+504
+And I think my intuition is it's going to unlock a TAM in the data management space unlike anything anyone's ever seen.
+505
+All right.
+506
+Well, that's all that time.
+507
+No, just kidding.
+508
+I love that line.
+509
+It's we are so early in this that it's easy for tinkerers to be excited and yet people that work in go-to-market to be, yeah, and show me the deal that we landed on this.
+510
+We just had a win come in through Slack yesterday that I got to see.
+511
+We launched an MCP server for DBT.
+512
+I don't know.
+513
+Makes sense.
+514
+That's a good idea.
+515
+Yeah, three weeks ago or something.
+516
+And you take all the DBT metadata and you make it accessible via API, which we already had.
+517
+And then you teach Claude or whatever to interact with it.
+518
+And a medium-sized financial institution, but a traditional financial institution, without even us really trying,, we don't make a ton of money off this.
+519
+We don't monetize our API right now, which is the question of monetization in an AI world is a very interesting topic.
+520
+But they fired their data catalog and they say we're going to the DBT MCP server.
+521
+I was, oh, I didn't know that we were there, but hell yeah, let's get on this ride.
+522
+One thing you'll see, which is a little bit the erosion of searching costs, I haven't seen a lot of evidence of this yet, is there may be whole product categories that,, even though there's,, they're not the legacy products I was talking about where none of the customers them,, people may love the product, things that, but no one's ever going to do it that way anymore.
+523
+Right?
+524
+Their product just doesn't make sense.
+525
+It's a really good car service dispatch company in London when Uber shows up.
+526
+It doesn't matter how well run you are,, it's just not the way people are going to do it.
+527
+And the, and then I think you'll also see for something,, DBT has a just, it, I think, lends itself really well to this world of wanting to test things, especially when you're dealing with agents that,, are not 100% sure about their work, but can operate in a reinforcement style way as a MCP- interface.
+528
+I think it's pretty well suited to that.
+529
+So yeah, that doesn't surprise me.
+530
+I think we're seeing our catalog companies get a lot of lift from this, Atlan.
+531
+I'm sure Atlan's metadata coverage is in their APIs far beyond ours.
+532
+So I have to imagine there's a ton of value there.
+533
+Yeah, and,, single store has been,, they rolled out a vector similarity search layer that is extremely high performance and allows you to reattach data after you get results.
+534
+We're also seeing a pattern, which you may start to come across as well, where instead of doing search and then trying to figure out which data you want to retrieve and chunking it up and stuffing it into the context window before sending it to a model, you instead give your model, which is getting better at tool use, access to your data infrastructure as a tool and let it go and look up the stuff in a catalog and it can do searches and it can get results and then do different searches.
+535
+So you go through the model on the way to your data infrastructure.
+536
+And that,, I think you may see even database choices.
+537
+I don't know how much people will care about some of their data infrastructure choices if they're building things with a vibe coding platform, right?
+538 they may, they may, so that could change a lot of the go-to-market activity.
+539
+But yeah, in structured data, I think one of the reasons why it hasn't manifested so much yet in terms of real world enterprise sales is that it just doesn't work that well yet.
+540
+And the customers sometimes care about the thing working.
+541
+Yeah, yeah.
+542
+I am very excited about MCP because it's very challenging if the answer that a vendor us has for a customer is, well, teach all of these users to come into our interface.
+543
+And then if they come into our interface, then they can do a thing.
+544
+But if the answer is, we can build a tool that is exposed inside of the interface that they already use, then that's, I think, very much more compelling.
+545
+Then you think about the TAM from our perspective as, well, how many people have Claude Enterprise or ChatGPT Enterprise or whatever?
+546
+And ever ask a question for which,, calling out to something DBT, is it a useful ingredient in the answer?
+547
+Sure, which I think is a reasonably high percentage for the enterprise folks.
+548
+But yeah, I don't know the answer to it.
+549
+I don't know if you have any anecdotal data or anything, but, are these products birthright apps inside of the enterprise yet?
+550, what percentage of US knowledge workers have access to the enterprise version of ChatGPT or Claude or whatever?
+551, I do think you saw a first wave of large companies think that they needed to build their own janky front end to a back-end API that was a frontier model because of compliance reasons or something that, because it was a six-month window before you could get a industrial grade compliant version of things ChatGPT Enterprise.
+552
+But,, the adoption, I think, is extraordinarily fast.
+553
+Yeah.
+554
+And it's all ELA-based or seat-based or something, right?
+555
+Right.
+556 that.
+557
+They do it seat-based today.
+558
+Yeah.
+559, but I imagine as it scales up into really large companies, you'll start to see bulk discounts.
+560
+And there's definitely makes the product better when more people have access to it, right?
+561
+Because you can do things share custom GPTs and things that.
+562
+And the,, the IT team,, I think the goal in a lot of these cases is to get these technologies into the hands of the people who are doing the work so you can see what they're going to do with it rather than try to guess that ahead of time.
+563
+And then the role of centralized IT is to harden things, but harden things in these cases, maybe giving them access to the TPT MCP server, building that connection.
+564
+And then I think the vendors, the Anthropic and OpenAIs of the world,, when you have something Deep Research, right, today it just basically does web search, but it's obviously going to do file search too, right?
+565
+And then also, don't you want it to have access to your data?
+566, wouldn't that be useful?
+567, how many questions do you ask within a company where you don't also want it to look at your data, right?
+568
+Yeah.
+569
+I have to imagine data providers Pitchbook and other,, that becomes a highly monetizable data set in this context.
+570
+Right.
+571
+You should also be able to subscribe somehow through your API keys or whatever to your data providers that you subscribe to.
+572
+That's obviously a useful ingredient in the answer to the question.
+573 if a model is going to run for 30 minutes,, iterating on the stuff that it learns and then doing more research to give you a really sophisticated report, it's a toy if it can't access your actual data.
+574
+Oh, this has been a lot of fun.
+575
+I'm looking forward to the next episode of this where we do the whole thing again for BI.
+576
+No, I've learned a lot and it's not often that I get to spend an hour going into 50 years of history in the data industry.
+577
+So thank you so much for joining.
+578
+Yeah, thanks for having me.
+579
+Really enjoyed it.
+580
+The Analytics Engineering Podcast is sponsored by DBT Labs.
+581
+I'm your host, Tristan Handy.
+582
+Email us at podcast at dbtlabs.com with comments and guest suggestions.
+583
+Our producers are Jeff Fox and Dan Poppy.
+584
+If you enjoyed the show, drop us a review or share with a friend.
+585
+Thanks for listening.

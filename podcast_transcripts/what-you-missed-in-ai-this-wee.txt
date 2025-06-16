@@ -1,0 +1,750 @@
+--- METADATA START ---
+Show: a16z Podcast
+Episode: What You Missed in AI This Wee…
+Host: Justine Moore, Olivia Moore 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/what-you-missed-in-ai-this-week-google-apple-chatgpt/id842818711?i=1000712730045
+--- METADATA END ---
+
+1
+AI video completely taking over our social feeds in the span of a week, which is absolutely insane.
+2
+V03 was sort of like the chat GPT moment for AI video, where we were suddenly seeing all of these VO3 generations blowing up with millions of views.
+3
+It feels like between this and VO3, like a world of possibilities has been opened up for AI storytelling, especially in video form.
+4
+Yes, it's an exhausting time for AI creatives.
+5
+It's great, but exhausting.
+6
+The median ARR annualized revenue run rate is now $4.2 million at month 12 for consumer startups.
+7
+Consumers back.
+8
+In today's episode, we have a takeover.
+9
+Justine and Olivia Moore, twin sisters, creators, and partners on the A16Z consumer team.
+10
+They're diving into everything happening in the fast-moving world of consumer AI, from the explosion of AI-generated video content across your feeds to the tools powering the next wave of creative startups.
+11
+You'll hear them demo Google's new VO3 video model, break down major upgrades to voice tools like ChatGPT and 11 Labs, and walk through how Justine used AI to create an entire frozen yoga brand, complete with logo, product shots, and a storefront.
+12
+It's a fast-paced look at what's new, what's working, and where things are going next for creators, builders, and consumer AI companies.
+13
+Let's get into it.
+14
+As a reminder, the content here is for informational purposes only, should not be taken as legal business, tax, or investment advice, or be used to evaluate any investment or security, and is not directed at any investors or potential investors in any A16Z fund.
+15
+Please note that A16Z and its affiliates may also maintain investments in the companies discussed in this podcast.
+16
+For more details, including a link to our investments, please see a16z.com forward slash disclosures.
+17
+I'm Justine.
+18
+I'm Olivia.
+19
+And this is our very first edition of this week in Consumer AI.
+20
+So we are both partners on the investing team here at A16Z, and we are also identical twins.
+21
+Very confusing.
+22
+Extremely confusing, but should be fun for a podcast.
+23
+And we're excited to chat about some of the cool things we saw in the wild world of consumer AI this week, starting with VO3.
+24
+Yes, and things are moving so quickly that it feels like we went from exciting but maybe not super realistic AI video to AI video completely taking over our social feeds in the span of a week, which is absolutely insane.
+25
+Yeah, I've been following AI video for a few years now.
+26
+You probably remember I've been an early user of all these models and I have wanted them to work and to make cool things that everyday people would like for so long.
+27
+And I would say VO3 was sort of like the chat GPT moment for AI Video where we were suddenly seeing all of these VO3 generations blowing up with millions of views, channels only featuring VO3 videos, getting hundreds of thousands of subscribers within days.
+28
+Yeah.
+29
+What's actually different about VO3?
+30
+Yeah, so I should give the overview first.
+31
+So VO3 is Google DeepMind's latest video model effort.
+32
+So they released VO2 late last year, which was the first sort of breakthrough in showing that you could get really high quality video, like a consistent scene, consistent characters, physics, like things that just looked good.
+33
+And VO3 is the next iteration of that model series.
+34
+And what's very different about it is it generates audio natively at the same time it generates video.
+35
+So you can actually prompt it with a text prompt to say something like a street style interview where a man and a woman are talking about dating apps.
+36
+Or you can be even more specific and say something like a street style interview where a man walks up to a woman and asks her, What dating apps are you on?
+37
+And she replies, Why are you asking?
+38
+and then gives him a suspicious look.
+39
+And so you no longer have to go to another platform to do an audio voiceover or anything like that.
+40
+You can get a full-featured talking human video with multiple characters in one place.
+41
+Yeah, it feels like a real unlock to me as someone who's been following AI video less closely and that people are now able to generate in one prompt a full vlog, a full talking head video, something that looks like a podcast.
+42
+Yes.
+43
+In one go.
+44
+And I think that's why we've seen things like the stormtrooper vlogs completely blowing up on TikTok and Instagram.
+45
+Yes.
+46
+So the interesting thing about VO3 is it's limited to eight-second generations only.
+47
+And it doesn't generate audio if you start from an image to video, only if you start from text, which means that it's really hard to have longer than an eight-second clip with character consistency unless in your text prompt you're referencing a character that the model already knows.
+48
+And so that's why we've seen all of these hacks of all the viral vlogs featuring like stormtroopers or a Yeti.
+49
+Yeti can't see their faces.
+50
+They're covered by a mask.
+51
+Yes.
+52
+Or the Yeti, the model knows what the Yeti looks like, or a Capybara.
+53
+If it's not a human face, I think we're less sensitive to little changes between the eight-second clips.
+54
+And so you have people generating minutes-long videos that look like a consistent vlog character.
+55
+Yeah, they've been super fun to watch.
+56
+And then how do you actually use VO3?
+57
+It feels like there's been some confusion.
+58
+Yes.
+59
+So when VO3 first came out, it was only available on the Google AI Ultra plan.
+60
+Very confusing.
+61
+Through Flow, Google's new creative studio.
+62
+And you had to be on the $250 a month plan.
+63
+So there was a lot of hype, a lot of FOMO.
+64
+Now, the model is available via API.
+65
+So what that means is a bunch of consumer video platforms like HIDR or CRIA are offering access to VO3 on their $10 a month plan, or some of the more developer-oriented API platforms like Fall or Replicate are offering generations where you pay per video.
+66
+It's priced around 75 cents per second today.
+67
+So still pretty expensive.
+68
+You have to be careful about how you prompt it, but the results are amazing.
+69
+And then what do we expect next, either from Google, from creators?
+70
+Like what does this mean for AI video?
+71
+Yeah, I think on the creator front, we've already started to see this explosion of basically, I think what people have called faceless channels.
+72
+So this idea of like now you don't have to put your own face behind a camera or on a screen to be able to talk about a topic or film a vlog or something like that.
+73
+You can have a fully AI generated character essentially telling your story or acting out your narrative for you, which is huge.
+74
+And I think like people are using it to tell extremely funny jokes, have these narrative storylines like Greg, the incompetent stormtrooper who's crashing all of the missions, things like that that people are getting really invested in.
+75
+In terms of from the model providers and the companies, VO3 is clearly very expensive to run.
+76
+So I would imagine Google will want to train the next model that's even bigger and is able to generate longer videos, but will struggle with things like coherence and will also struggle with, honestly, the pricing of the model.
+77
+Hopefully we'll see more sort of condensed, optimized, distilled models that are able to do similar things at a lower cost.
+78
+Okay, so there was a lot of news last week, so this got kind of lost, but I heard there was a big update to ChatGPT's advanced voice mode.
+79
+Yes, they announced it on Saturday, which was an interesting choice.
+80
+Weird time to drop.
+81
+Yeah, I think they actually dropped the improvements last Thursday or Friday.
+82
+It was first only for all paid users, and now I think it started rolling out across the broader user base.
+83
+But essentially, they made advanced voice mode a lot more human.
+84
+The really interesting thing was ChatGPT was the first one to do what I would call kind of real-time consumer voice, where you could have like a conversation.
+85
+And this was like last September in the ChatGPT app.
+86
+But then they didn't really improve the product or the model that much, at least from my perspective.
+87
+And we saw Sesame and other open source providers come out with arguably better and way more human-like models.
+88
+We saw Gemini, we saw Grok launch voice products that were much more realistic.
+89
+So I think it was kind of a question mark for a lot of people what ChatGPT was doing with consumer voice.
+90
+And so, what makes it better now, or what were the main upgrades?
+91
+We should actually just maybe talk to it and see.
+92
+It's live demo time, folks.
+93
+Hey, ChatGPT, are you there?
+94
+Hey there.
+95
+Yep.
+96
+I'm here and ready for the demo.
+97
+What can I help you with today?
+98
+Did they make some improvements to your voice over the last week?
+99
+Yeah, they did.
+100
+They've been rolling out some updates to make my voice sound more natural and expressive.
+101
+I'm glad you noticed.
+102
+Yeah, I can hear like your voice may be inflex upwards when you're approaching a question, or sometimes you'll say um or uh or something that sounds like a mistake, but actually makes you sound more human.
+103
+Exactly.
+104
+Those little touches are all intentional to make the conversation feel more natural and relatable.
+105
+It definitely makes things a bit more fun and engaging, I think.
+106
+Very cool.
+107
+Amazing.
+108
+Yeah, it's crazy to hear it's always wild when a voice model like coughs or even funner things like taking on an accent or speaking in another language or things like that.
+109
+But then also, I think just the pure realism of the voice that that demonstrated is also extremely impressive.
+110
+It's so funny, too, because when Advanced Voice Mode first came out, my feeling was like, wow, this is amazing.
+111
+This is incredible.
+112
+This is so human-like.
+113
+But then, like, a month or two later, Notebook LM came out.
+114
+And that was the first real voice experience that put in those ums, ahs, pauses, other things that are so human-like, and felt like such a huge upgrade.
+115
+And then when you use advanced voice mode, you're like, this is not that advanced anymore.
+116
+And so now it's finally there, which is super cool.
+117
+So it went from advanced voice mode to basic voice mode to advanced voice mode.
+118
+It's advanced voice mode again.
+119
+Yeah.
+120
+I think one of my questions then has been like, what took them so long?
+121
+Right.
+122
+Because they're on the cutting edge of so many models.
+123
+And yet it feels odd to me that it took maybe six plus months for them to roll out improvements that we saw from other model companies much faster.
+124
+Yeah.
+125
+I honestly think a big part of it might have been when they first released advanced voice mode, if you remember all the controversy around her.
+126
+Yes.
+127
+And was this going to be a companion that replaced humans and some of what people would think of as kind of scary implications of that?
+128
+Right.
+129
+It seemed like that maybe spooked them a little bit.
+130
+And so they didn't want to put anything out there that sounded too human.
+131
+Yeah, I mean, that.
+132
+And then also, I mean, OpenAI has been super busy.
+133
+This has always, I think, been the question about the Frontier, largely LLM labs, which is like, how do they balance priorities between the North Star of like text-based AGI, then what they're doing in video with Sora, all the image stuff they did, which we'll talk about a bit later with the 4-0 image model, reasoning, all of those sorts of things.
+134
+Yeah, totally.
+135
+It reminds me a little bit actually of one of the other, I say big tech, like OpenAI is now big tech in some ways.
+136
+But the other big tech consumer update this week, which was the Apple developer conference and all of the things that they announced around AI.
+137
+Or didn't announce.
+138
+Or didn't announce.
+139
+And the fact that I think that people have been so far somewhat disappointed by Apple Intelligence, which is their bundled set of AI features.
+140
+I think we've all been waiting on like the AI version of Siri or some kind of true personal assistant on mobile.
+141
+So I had this the other day where I asked Siri, okay, tomorrow's Monday.
+142
+What Monday is it of the month?
+143
+Because SF Street Clean A, I had to know if it was going to be the second Monday of the month.
+144
+And it said, I don't know that.
+145
+Can I search ChatGPT for you?
+146
+And I was like, Siri, how can you not answer this basic question?
+147
+Okay, it does seem like from a lot of Apple's updates that they put out, they're kind of outsourcing a lot of the true AI features to ChatGPT just running on your phone.
+148
+And I think a similar story, it seemed like when they rolled out those AI-powered notification summaries, where they would group like three or four sets of notifications into one and they got a little jumbled and people got upset, it seems like that spooked Apple a little bit and they keep kind of retrenching on the timeline of releasing AI Siri.
+149
+So we'll see what happens.
+150
+They were, at least in the announcement yesterday, leaning into things like updates to Genmoji and call transcription.
+151
+I think the coolest thing I saw was real-time translation of calls and FaceTimes across languages.
+152
+I've been surprised.
+153
+We haven't seen more on that because that feels like a really natural and obvious use case.
+154
+Yeah.
+155
+Especially, I think did Google, I think Google might have done a real-time translation, but I haven't seen a ton of adoption yet.
+156
+I did see for the first time a viral Gen Z TikTok featuring Genmojis, which I'm surprised it took that long to hit because Gen Z loves Genmojis.
+157
+Yeah.
+158
+Holding out hope for those to make it really big.
+159
+Yes.
+160
+Okay.
+161
+And before we get too far off voice, should we talk about 11v3?
+162
+Yes.
+163
+So 11 Labs, the text-to-speech company, actually broader AI voice company, released their third generation model called 11v3 also last week, I believe, maybe last Thursday or Friday.
+164
+It was a very busy week on the voice front.
+165
+And what makes 11v3 really special is it does a bunch of stuff with voice that you used to have to do via speech to text to speech.
+166
+So before, if you wanted to have a character that was crying while talking or had some sort of emotion or even had like a weird inflection, you would have to record yourself saying it like that, upload it to 11, and then they would translate it into the AI voice.
+167
+And now they essentially take all of the weird inflections, emotion, even accents, and they turn it into text prompting through these things called tags.
+168
+So basically the 11 interface is an editor where you can take a sentence that you want the character to say, you pick your voice, you write your sentence, and then you can tag it like sadly or resigned or whispering or something like that.
+169
+And you can do sound effects too, right?
+170
+That is huge.
+171
+Okay, so I made this one.
+172
+And what's the prompt on it?
+173
+Oh, it's a text prompt.
+174
+It'll say, hey, y'all, my name is Austin.
+175
+I'm coming to you live from our family farm in Fort Worth.
+176
+Then he's going to walk through milking a cow and someone's going to interrupt him.
+177
+Great.
+178
+Hey, y'all, my name is Austin.
+179
+I'm coming to you live from our family farm in Fort Worth.
+180
+Today, I'm going to walk through what it's like.
+181
+Austin, are you faking an accent again?
+182
+It's not faking.
+183
+I was born here.
+184
+It could say.
+185
+Everyone knows you don't talk like that.
+186
+So, my favorite thing about that is it showcases a couple of things about the model.
+187
+It can do bad accents, it can do terrible accents, it can do great accents.
+188
+That was two different characters.
+189
+At first, I prompted the Austin character of having a thick Texas accent.
+190
+Then, I prompted the cows mooing, and then you can also prompt interruptions, which is really cool.
+191
+So, a tag is literally like starts talking and gets interrupted, and then the next character that comes in, you can say cuts the other character off.
+192
+And so, for narrative storytelling, for ads, marketing, anything, it makes it sound like a natural conversation, which we've never had with AI voice before.
+193
+Yeah, it feels like between this and VO3, like a world of possibilities has been opened up for AI storytelling, especially in video form.
+194
+Yes, it's an exhausting time for AI creatives.
+195
+It's great, but exhausting because there's just way too many fun stuff to test.
+196
+Yeah, I think 11's actually doing a competition now where they're soliciting the best examples of people using V3 from all around the world.
+197
+So, I'm gonna be very curious to see.
+198
+We've made all sorts of fun stuff, but how the professional narrative builders and storytellers are using it because I think we've just scratched the surface of what's possible here.
+199
+Amazing.
+200
+Okay, so you put out some data last week about AI revenue ramp and how fast companies are growing.
+201
+Let's chat through the main takeaways from that.
+202
+Yeah, so basically, the methodology here, or maybe even to back up, the purpose here was: I think we all have this idea in mind, or maybe we have that idea because we've heard it a billion times that like we're in a new era of growth now.
+203
+Thanks to AI, companies are scaling faster than ever before.
+204
+But my question was: what does that really mean, and how fast is that?
+205
+Is it 20% faster?
+206
+Is it 50% faster than what we saw pre-AI?
+207
+Right.
+208
+So, we are blessed to get to meet tons of companies here every day.
+209
+We meet dozens of companies a week.
+210
+So we went back and essentially just pulled all the data from companies we've met in the gen AI era, which I would say is the last 22 to 24 months.
+211
+And we looked at once they started monetizing, how fast are they growing?
+212
+I would say pre-AI, if you're a B2B startup selling to enterprises, if you got to a million dollars in ARR in the first year, that's like amazing.
+213
+Best in class.
+214
+That was like the rule of thumb.
+215
+I remember that.
+216
+That's the known metric.
+217
+Very exciting.
+218
+If you were a consumer startup, you would not make money for three, five years, maybe longer.
+219
+Yes.
+220
+The whole idea was to build up a user base and then probably monetize them directly via ads.
+221
+Or transactions for like a marketplace, maybe.
+222
+Yes, down the line.
+223
+And there were counterexamples to that, some subscription companies, but that was definitely not the dominant model.
+224
+That has fully shifted in the AI era, and most companies are now making money directly from consumers via subscription.
+225
+What we found was actually pretty surprising, which is that the median ARR annualized revenue run rate is now $4.2 million at month 12 for consumer startups.
+226
+The bottom quartile is 2.9 million.
+227
+And the top quartile is 8.7 million.
+228
+Wow.
+229
+So like a median company, median B2C company in the age of AI is getting to 4 million ARR after a year.
+230
+And the best in class companies are getting to 8 million in a year.
+231
+Upwards of 8 almost.
+232
+In the pre-AI era, I never would have seen anything like that.
+233
+And the even more surprising thing is those numbers are twice as high as the B2B benchmarks in the AI era.
+234
+So consumer companies are actually ramping revenue faster, which again is like a total reversal from what we saw before.
+235
+I think there's a couple reasons why this was happening.
+236
+First, it's like, why have consumer AI companies adopted subscription?
+237
+They were kind of forced to because especially in the early era of models, they were so expensive that you as a company had pretty high costs of goods sold.
+238
+Right.
+239
+The inference costs, you mean, of running the model.
+240
+Historically, software, the benefit was like there was no marginal cost.
+241
+So you made an app.
+242
+There's no additional cost to serving the next user.
+243
+In AI, that is actually not true at all.
+244
+Especially if you're running inference on a model, it costs you cents, maybe even dollars for each query.
+245
+So each user could be costing you dozens of dollars a month.
+246
+Yeah, absolutely.
+247
+So a lot of companies had to at least try to charge.
+248
+And it turns out that these new products that are AI native are so powerful that consumers are willing to pay.
+249
+So we also ran some additional data analysis that shows that on average, consumer AI startups are charging $22 a month across the average user, which again is like more than double what they were able to charge pre-AI for subscription companies on average.
+250
+And do we have theories?
+251
+I mean, on the creative tool side, what I've seen is like for people who weren't creative, AI tools allow them, like I can make photos or images or art for the first time.
+252
+I can make videos.
+253
+I can make animations.
+254
+And then for creative people, like we have a cousin who's a creative, they can genuinely use this to supercharge their workflows and do their job a lot faster.
+255
+So they're willing to pay for it.
+256
+Have we seen examples of that outside of creative tools yet?
+257
+It's a good question.
+258
+We've seen some of it around companion apps, I would say.
+259
+Yes.
+260
+Where again, the products are just so powerful to have a friend with you 24-7 that people are excited to pay.
+261
+We've also seen this around categories like language learning, teaching your kid how to read, other things that previously you'd have to pay a human being, I don't know, $50 an hour if that to get access to.
+262
+That now $22 a month with AI feels pretty cheap.
+263
+Totally.
+264
+I mean, I'm even thinking some of the things I've seen monetized while are in like nutrition or coaching, where for the first time, thanks to vision models, you can take a picture of what you're eating and have a vision model pull out how many calories are in this, how much protein, and then at the end of a day or a week can summarize insights about what you should be eating more or less of.
+265
+Yes.
+266
+Which is something that pre-AI people, like, I don't know, you could take a picture and upload it to a forum.
+267
+Yes.
+268
+But like, it was not a problem.
+269
+Or you have to find a nutritionist, wait weeks to book an appointment, maybe get a referral from your doctor.
+270
+Like it would take forever.
+271
+So it's really exciting.
+272
+I think it's monetizing people who never would have paid for that before.
+273
+Yes.
+274
+And then people who would have paid for it are switching over to the AI version or they're willing to pay even more, which is super exciting.
+275
+The other thing that I think people have questions about or maybe doubts about would be like, okay, great, they're growing fast, but they're not retaining a lot of users.
+276
+We did some analysis on this too.
+277
+There's definitely a lot of tourism, we call it AI tourism behavior in terms of free users, which means you get a lot of hits on your website, essentially, and most of those users don't stick around.
+278
+But if you look at it on a paid user basis, so once you actually subscribe, consumer AI companies are retaining at the median pretty much just as well as pre-AI consumer companies, which is really exciting.
+279
+I feel like what we've seen, especially on revenue retention, which is fascinating, is like you might have more tourists.
+280
+So you might have more people who subscribe and then cancel.
+281
+But then for the first time, you have like real sort of upsell activity in consumer subscriptions.
+282
+Whereas you're not just paying $10 a month for the app, you're paying $10 a month for the image model.
+283
+But then, if you love it and you run out of credits, you're paying another $10, $12, $50 for additional credit packs before the next month of your subscription starts.
+284
+And so that means you see revenue expansion opportunity now in consumer that we only used to see in enterprise.
+285
+Absolutely.
+286
+Or honestly, in games, what they call like monetizing the whales, the people who are the really high spenders, which is to me one of the most exciting things about consumer AI products right now.
+287
+Yeah.
+288
+And we're seeing, I would say, companies convert consumer revenue to enterprise revenue way faster than they ever did before.
+289
+Like companies like Canva previously took five, six, seven plus years to really move from consumer prosumer to enterprise.
+290
+Right.
+291
+And now we're seeing companies like 11 Labs is a great example where someone might start using it as a $10 a month plan to make their own fun videos at home.
+292
+Yeah.
+293
+Make voiceovers for their fun videos at home.
+294
+And then turns out they work at some big entertainment company and they bring it in there to work and then they convert to a really high ACB enterprise contract, which is super exciting.
+295
+I mean, I feel like we even saw that in the very early days of consumer AI.
+296
+I remember our friends at ad agencies or entertainment companies would tell us that they were using Midjourney to mock things up or even using the images in their final work product.
+297
+So it was like a true enterprise use case, but growing bottoms up, which is a fascinating motion.
+298
+Yeah, it's exciting.
+299
+Consumers back.
+300
+All right.
+301
+Awesome.
+302
+We're moving on to our demo of the week.
+303
+So, one fun fact about us is that we genuinely love, at least for me, it's probably my number one hobby now.
+304
+Yeah.
+305
+Trying out all of the AI creative tools, especially, but also AI like consumer products more broadly, figuring out how to make cool things and then sharing the workflows to other people whose number one hobby is not doing this and who do not have hours.
+306
+So, this week we are going to talk about brand creation and ideation using AI.
+307
+I made this new frozen yogurt brand called Melt that I iterated on with ChatGPT.
+308
+Then I took to Ideogram and then I took to Korea to kind of do the final touches and to make these really cool product photos and even store photos.
+309
+And I think that the initial idea about this was seeing Flux Context come out, which is the new image editing model from Black Forest Labs, which is hosted on Korea.
+310
+And Flux Context, you can kind of think of it like the GPT 4.0 image model, where you can upload an image and then you can say, you know, make this Ghibli style was the viral example.
+311
+You can also say, like, take the person from this photo and put them in a new environment or take the logo and change it slightly, add a remove object.
+312
+I've seen it described as kind of like Photoshop, but with natural language prompts.
+313
+Yes.
+314
+Like you can edit with words for the first time.
+315
+And I think that is what makes it different than the 4-0 image model, which is the consistency to which it retains the item or the character or whatever is much, much better.
+316
+We'll show some examples here, but basically, if you're taking a photo of yourself and uploading it to GPT 4.0 and saying, put me in a podcast studio, you will likely end up looking completely different in the new photo than you did in the initial photo.
+317
+Or maybe some similar features, but quite different.
+318
+Whereas this model does an amazing job at maintaining consistency.
+319
+And so that sparked this idea for me: oh, that means that this can actually be used for like brands, product photos, or other sorts of marketing collateral because the logos and the products can be consistent.
+320
+Awesome.
+321
+And you know, I'm a huge Froyo fan.
+322
+I feel like Froyo has gotten an unfair shake in recent years.
+323
+It's kind of seen as the little kid thing.
+324
+And so I wanted to make a cool hip modern 20s New York Froyo brand.
+325
+Okay.
+326
+I went back and forth with ChatGPT on this idea to land on the name Melt, which I love, and to land on the branding of like, this is sort of what the font of the logo will look like, and then this is the color of the packaging.
+327
+And then I took that prompt for the logo to Ideogram, which is an image generation and sort of editing canvas.
+328
+And it's super good, I think, at logos, typography, anything sort of product or word related.
+329
+And I had it generate this photo of this Froyo cup that is floating in the air with the Melt logo and branding.
+330
+Then I downloaded that photo and I took it to Kria, where I used the Flux Context new editing model to run all different kinds of scenarios.
+331
+So what's really cool about that is you can upload the photo and then you can say, take this Froyo and put it sitting on a counter at a trendy restaurant, put it in the hand of a woman at a park, or even make the Froyo cup instead of blue, make it white and give it a pink border.
+332
+Make the Froyo itself purple if they're having like an ube Froyo special.
+333
+And then I think the next step, which I didn't do here, I kind of stopped at the product images and I actually made an image of the store too.
+334
+I took the logo and I superimposed the store I generated.
+335
+I know, it's like you want to go there.
+336
+But the next step even further would be video.
+337
+Yes.
+338
+So my idea is to take all of those sort of product shots, take it to VO3 or Higgsfield, which does really cool special effects stuff.
+339
+Yeah.
+340
+And have the Froyo cup in action.
+341
+See how good it is.
+342
+You can have it actually melting over the side.
+343
+It has to melt.
+344
+I'm very curious to see: do the models understand the physics of Froyo?
+345
+Like if it tosses the cup in the air, how does the Froyo land?
+346
+Does it kind of plop like we all know Froyo would in real life?
+347
+And obviously, this was just like a fun, fun experiment for me.
+348
+I'm not, unfortunately, actually going to be starting a Froyo brand, but it sort of makes you start thinking about like, why would if you work at an ad agency, for example, and you were mocking up a deck for your client about your latest campaign, why would you not use something like this to show them what it might look like?
+349
+And you did it in, I mean, less than a couple hours.
+350
+And honestly, the branding does look more exciting than a lot of kind of professional brands that we see out there.
+351
+And so it makes me think about the next generation of entrepreneurs are going to be completely AI assisted in a lot of these assets that they're putting together.
+352
+And I think they're going to be able to make full stack AI brands.
+353
+There's also products where you can design with AI.
+354
+You can make ads with AI.
+355
+Like, I think there'll be no reason for any person not to have their own product line, small business, open a store if they want to.
+356
+Like AI is assisting with these kinds of things too.
+357
+Totally.
+358
+Yeah.
+359
+I think we'll see brands that are like logo, product photo, maybe even product itself designed by AI, vibe-coded/slash vibe-designed website or mobile app, and then kind of drop shipped to the end consumer.
+360
+Social media ads also generated with AI that holds it up for you and sells it on TikTok.
+361
+Yeah, it's promoted by AI influencers who are VO3.
+362
+They don't actually exist.
+363
+I think that sort of thing is going to be really fascinating to see because it kind of like you no longer have to know how to work all of these technical tools that you had to be able to use.
+364
+Like even Photoshop, there's so many buttons.
+365
+It's like very complicated.
+366
+And now you can just ask for what you want in a text prompt, get something generated, and iterate on it until you end up with something that you really love, which I think is crazy powerful.
+367
+Awesome.
+368
+Thanks for listening to the A16Z podcast.
+369
+If you enjoyed the episode, let us know by leaving a review at rate thispodcast.com/slash A16Z.
+370
+We've got more great conversations coming your way.
+371
+See you next time.

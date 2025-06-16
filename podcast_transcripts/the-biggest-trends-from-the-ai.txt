@@ -1,0 +1,518 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: The Biggest Trends from the AI…
+Host: Unknown 
+Guests: Sean (Swix), Greg Brockman
+Source URL: https://podcasts.apple.com/us/podcast/the-biggest-trends-from-the-ai-engineer-worlds-fair/id1680633614?i=1000711906377
+--- METADATA END ---
+
+1
+Today on the AI Daily Brief, the most important trends coming out of the AI Engineer World's Fair.
+2
+And before that, in the headlines, June's fastest-growing software vendors are all agent companies.
+3
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+4
+All right, friends, quick announcement section.
+5
+First of all, thanks to today's sponsors, Blitzy.com, Plum, Vanta, and agency.org.
+6
+To get an ad-free version of the show, which starts at just $3 a month, go to patreon.com/slash AI Daily Brief.
+7
+And other housekeeping reminders: one, we're starting to do a big sponsorship push for the fall.
+8
+There are surprisingly only a few slots left, so if you are interested, shoot me a note at nlw at breakdown.network with the word sponsor in the subject.
+9
+And I'm excited to see the cool things you guys are building.
+10
+One of the things that I love about the sponsors on this show is that they are always interesting, dynamic, and just building genuinely awesome things.
+11
+But with that, let's get into today's headlines.
+12
+Welcome back to the AI Daily Brief Headlines Edition, all the daily AI news you need in around five minutes.
+13
+Every month, RAMP, which is a corporate card and bill pay platform, processes billions of dollars of business expenses and uses that information as a way to see what types of software is trending.
+14
+One of the interesting stats they look at is which software vendors are the fastest growing.
+15
+And when it comes to customer growth right now, it is all agent companies.
+16
+RAMP's top five fastest growing software vendors for June 2025 were in this order.
+17
+Google One, Anthropic, Descript, N8N, and Lindy.
+18
+About Google, they write, Google One, a Google subscription targeting consumers, launched AI Pro and AI Ultra last month, driving new subscriptions and for the first time, placing Google on our top vendors list.
+19
+Google's Gemini model still lags OpenAI and Anthropic in business adoption according to our latest RAMP AI index, but placement on this list suggests businesses are starting to take advantage of Google's latest 2.5 Pro models, which are popular with coders.
+20
+Now, of course, you are familiar with Anthropic.
+21
+Descript, the reason that I think also counts as an agent company is that their big push is basically to become like a cursor for video.
+22
+Their integrated AI tool is called Underlord, and it can do everything from auto-detecting ums and ahs and you-knows and likes and other vocal ticks to other more advanced agentic editing features.
+23
+Maybe the most interesting though is that NIDN and Lindy, which both offer some version of automated and agentic workflow builders, are in this top five as well.
+24
+Of NIDN, RAMP said, users tell us that NIDN's greatest strength is its customizability, including the ability to add a human review step into agentic workflows.
+25
+Where of Lindy, they wrote, users told us they use Lindy to take sales templates and customize them for individual leads to drive higher conversion rates.
+26
+Now, of course, RAMP is going to be dealing with a particular slice of the business market.
+27
+It's going to be more tech-forward organizations.
+28
+And so perhaps it's not surprising that they are a little bit more attuned to these AI tools.
+29
+But to see agent builders and automated workflow builders like NATN and Lindy appearing on this top five fastest growing is, I think, an indication that agents are not just something for the future, but are very, very real.
+30
+Next up, poor 11 Labs choosing the absolute craziest news day ever to try to launch a new product.
+31
+I have been wondering for some time when we were going to get a new 11 Labs model.
+32
+We've been on the same version for so long that you guys have basically run me out of using it for Long Read Sunday, but we now have 11v3 Alpha, which they call their most expressive text-to-speech model ever.
+33
+It supports more than 70 languages, multi-speaker dialogue, and also has a new feature called audio tags, so you can say things like excited, size, laughing, whispers.
+34
+And people's first impression of this is really positive.
+35
+Hey, Jessica, have you tried the new 11v3?
+36
+I just got it.
+37
+The clarity is amazing.
+38
+I can actually do whispers now like this.
+39
+Ooh, fancy.
+40
+Check this out.
+41
+I can do full Shakespeare now.
+42
+To be or not to be?
+43
+That is the question.
+44
+Nice.
+45
+Though I'm more excited about the laugh upgrade.
+46
+Listen to this.
+47
+I'm super excited to use this new idea of kind of tags or metadata to give more information around how the output is supposed to sound.
+48
+This gives so much more fine-grained control.
+49
+So I'm super excited to get in there and play around with it.
+50
+Give 11 Labs some love.
+51
+Like I said, they launched into absolute chaos yesterday.
+52
+Go check out the model.
+53
+It's 80% off for June.
+54
+Again, no sponsorship, no shell.
+55
+I just like the company.
+56
+Obviously, I use their tools for things like Long Read Sunday.
+57
+So I'm excited to check out V3, and I think you should go check it out as well.
+58
+Some funding and performance news: Cursor has apparently crossed the 500 million ARR mark, which is up 2.5x for March.
+59
+Bloomberg writes that their latest round valued the company at 9.9 billion.
+60
+Finally, one more startup that I'm excited to try that has a ton of buzz right now is Higsfield.
+61
+The company has gone from zero to 11 million ARR in just eight weeks.
+62
+And part of why its video generation tools are so popular is that they offer, once again, reminiscent of what we just saw with 11 Labs V3, the ability to control camera angles, to create consistent characters, and to use more cinematic shots, meaning that people are actually using it to go create ads right out of the gate.
+63
+Higgsfield represents a new generation of startups that are not just thinking about model performance in general, but are actually building tooling for specific use cases to try to capture that application layer that we keep talking about.
+64
+So, again, if you are doing anything with video generation, go check out Higgsfield.
+65
+You're going to be hearing a lot more about them if for no other reason than they are just rocketing right now when it comes to their business.
+66
+For now, though, that is going to do it for today's AI Daily Brief Headlines Edition.
+67
+Next up, the main episode.
+68
+This episode is brought to you by Blitzy.
+69
+If you're a technology leader, here's something that probably sounds familiar: your organization's competitive edge is buried in legacy code that desperately needs modernization, but the resources required feel out of reach.
+70
+That was the case for a global investment analysis firm.
+71
+They needed to migrate 70,000 lines of complex MATLAB financial algorithms to Python, algorithms that drive investment decisions for trillions in assets.
+72
+Their estimate, months of high-cost specialized engineering work.
+73
+Instead, they partnered with Blitzy.
+74
+Blitzy's autonomous AI preserved mathematical precision and generated over 80% of the new code base, completing the migration with just five days of engineering time.
+75
+They cut the timeline by 95% and saved 880 engineering hours.
+76
+If your organization is facing similar modernization challenges, visit blitzy.com to schedule a consultation and discover how AI-powered development can transform your technical capabilities.
+77
+Today's episode is brought to you by Plum.
+78
+If you build agentic workflows for clients or colleagues, you need to check out Plum.
+79
+Plum is the only AI-native workflow builder on the market designed specifically for automation consultants with all the features you need to create, deploy, manage, and monetize complex automations.
+80
+Features like one-click updates that reach all your subscribers, user-level variables for personalization, and the ability to protect your prompts and workflow IP.
+81
+Make your life easier, your clients happier, and your business thrive with Plum.
+82
+Sign up today at useplum.com.
+83
+That's Plum with a B forward slash NLW.
+84
+Today's episode is brought to you by Vanta.
+85
+In today's business landscape, businesses can't just claim security, they have to prove it.
+86
+Achieving compliance with a framework like SOC2, ISO 27001, HIPAA, GDPR, and more is how businesses can demonstrate strong security practices.
+87
+The problem is that navigating security and compliance is time-consuming and complicated.
+88
+It can take months of work and use up valuable time and resources.
+89
+Vanta makes it easy and faster by automating compliance across 35 plus frameworks.
+90
+It gets you audit ready in weeks instead of months and saves you up to 85% of associated costs.
+91
+In fact, a recent IDC white paper found that Vanta customers achieve $535,000 per year in benefits, and the platform pays for itself in just three months.
+92
+The proof is in the numbers.
+93
+More than 10,000 global companies trust Vanta.
+94
+For a limited time, listeners get $1,000 off at Vanta.com slash NLW.
+95
+That's Vanta.com/slash NLW for $1,000 off.
+96
+Today's episode is brought to you by Agency, an open source collective for interagent collaboration.
+97
+Agents are, of course, the most important theme of the moment right now, not only on this show, but I think for businesses everywhere.
+98
+And part of that is the expanded scope of what agents are starting to be able to do.
+99
+While single agents can handle specific tasks, the real power comes when specialized agents collaborate to solve complex problems.
+100
+However, right now there is no standardized infrastructure for these agents to discover, communicate with, and work alongside one another.
+101
+That's where Agency, spelled A-G-N-T-C-Y, comes in.
+102
+Agency is an open source collective building the internet of agents, a global collaboration layer where AI agents can work together.
+103
+It will connect systems across vendors and frameworks, solving the biggest problems of discovery, interoperability, and scalability for enterprises.
+104
+With contributors like Cisco, CrewAI, Langchain, and MongoDB, Agency is breaking down silos and building the future of interoperable AI.
+105
+Shape the future of enterprise innovation, visit agency.org to explore use cases now.
+106
+That's agntcy.org.
+107
+Welcome back to the AI Daily Brief.
+108
+Today we are talking about the big trends in the discussion among AI engineers.
+109
+And here's why this is a relevant discussion for you, even if you are not yourself an AI engineer.
+110
+Basically, everything that comes next when it comes to AI and agents is somewhere right now being conceived of, concocted, collaborated on, or created by an AI engineer, right?
+111
+This is the cohort who are not just thinking about how to use today's technology, but about inventing the next technology to come.
+112
+When it comes to the more capable agent swarms that you'll be using in six months, the kings are being worked out in the rooms with the AI engineers right now.
+113
+And so if you are trying to get a preview of the future, understanding where the discourse is with AI engineers is one of your fastest paths to that.
+114
+Now, the AI Engineer World's Fair is part of the AI Engineering Summit family.
+115
+You might remember that a few months ago, I MC'd their AI Engineering Summit in New York City.
+116
+And I've had Swix from Leighton Space, who's one of the creators of this event on the show numerous times before.
+117
+And they have just completed their big annual World's Fair in San Francisco.
+118
+I unfortunately was not able to go this year because I have family stuff this weekend and I have upcoming travel next week, but I was still watching very closely from afar.
+119
+And I think that this set of content, even more than previous AI Engineer Summits and World Fairs, really gives you an incredibly detailed and fairly complete picture of where the agent in AI world is headed.
+120
+This was a dense three days, so much so that we even had attendees like Ishan Anand create their own little tools for allowing ChatGPT to go figure out what to go to.
+121
+You can see if you're watching just how densely packed things were at any given time, there were about 10 different workshops or talks going on.
+122
+And one of the best ways to try to understand all the different areas is to look at the more than 20 different tracks they had.
+123
+So in brief, they had tracks for AI architects, AI product management, AI in action, AI and Fortune 500, agent reliability, autonomy and robotics, design engineering, evals, general session, generative media, graph rag, infrastructure, keynote, MCP, reasoning and RL, retrieval and search, software engineering agents, security, tiny teams, vibe coding, voice, and workshops.
+124
+Now, obviously, even that is too packed to take on its own.
+125
+So I broke it into four themes that I see running throughout a bunch of these tracks that I think broadly speak to what's going on.
+126
+Trend number one, to the surprise of no one, is agents.
+127
+They had tracks for agent reliability, software engineering agents, MCP, which is, of course, key infrastructure for helping agents improve and take advantage of other tools and knowledge sources.
+128
+Voice was a massive theme.
+129
+We talked about 11 Labs new release in our headlines today, and they were there at the event.
+130
+OpenAI did a session about building voice agents.
+131
+There were keynotes about voice as well.
+132
+And so, all in all, agents, major theme for the conference across different tracks.
+133
+A second is what I'll call infrastructure and building, which honestly could in some ways be bundled with agents.
+134
+But the point here is that this is the meat of the builders part of the conference, right?
+135
+You had tracks for MCP, for infrastructure, for retrieval and search, for security, and one for evals, which we're going to come back to in a little bit.
+136
+One of the cool things that happened as part of the MCP track is that Anthropic actually put out a request for startups as part of their presentation.
+137
+Their RFS included server, server, servers.
+138
+They want servers beyond dev tools.
+139
+They want sales servers, finance, legal education.
+140
+Basically, if MCP is going to help agents live up to their full possibilities, we need servers in new domains.
+141
+Anthropic also wants to see people simplify server building.
+142
+They want both enterprise and integrated hosting, testing, and deployment tooling, as well as automated MCP server generation.
+143
+Finally, they want to increase the AI security observability and auditing stack.
+144
+Security was a track that I found interesting because secretly, this might be more relevant for the Fortune 500 than the AI for the Fortune 500 track.
+145
+So much of what's holding back enterprise-grade deployments of agents and AI is issues around security.
+146
+And you saw just tons of sessions about cutting-edge thinking about this.
+147
+OpenAI did a session about safety and security for code executing agents.
+148
+There was a session about open standards and agent security.
+149
+Another session about chief information security officer approved agent fleet architecture, which, by the way, gets into another theme which we'll talk about in a minute, which is the shift towards thinking about multi-agent orchestration and agent systems, agent swarms.
+150
+And anyways, if you spend any time at all on X/Twitter really digging into the AI engineering community's response to this event, so many of the tweets and posts are about the workshops in this sort of infrastructure and building mode.
+151
+Yes, the keynotes, of course, get a ton of attention, especially that from Greg Brockman, but it was very clear from afar that people were there to build, and these were the places where that was getting done.
+152
+A third theme, which I thought was really interesting, I called new ways of working.
+153
+So, some of this is new roles, AI architects, and AI product management.
+154
+But one of the really interesting subtracks was called tiny teams.
+155
+Now, obviously, this gets into some of the conversations that people have been having around solopreneurs and seed strapping and just broadly how much more you can do with smaller teams.
+156
+And many of the sessions here were from companies that were basically executing big, huge projects with undersized teams.
+157
+Gumloop did their path to be a 10-person unicorn.
+158
+Gamma talked about how small their team is and how they use agents to make that work.
+159
+And of course, part of how companies make that work is the last theme that I'll call out from these tracks, which is agents in AI for coding.
+160
+They had a vibe coding track as well as a software engineering agent track.
+161
+And this was obviously a huge, huge focus, given how much of what it means to be an AI engineer is changing based on this set of tooling and capabilities.
+162
+But let's hear from the man himself, Sean, better known as Swix, around what he thinks the big themes from the conference were.
+163
+Yeah, how to do great AI PMing, how to run a tiny team, have a robotics track for the first time that is Tesla Optimus is speaking, physical intelligence.
+164
+Waymo just overtook Lyft.
+165
+I saw that already.
+166
+Voice is the hottest thing in terms of multiple modalities.
+167
+Like everyone's sort of building with voice because I think it's finally good enough.
+168
+And I think maybe the last thing I will highlight to you is we are also emphasizing security for the first time.
+169
+Security is kind of a boring topic.
+170
+Nobody really wants to talk about how to secure your system, but they actually do now because they have real money running through their products.
+171
+So there's all that.
+172
+And then that is roughly important, equal in size to the excitement about MCP.
+173
+And so we have an entire MCP track with the Anthropic team here because they're nice enough to come by.
+174
+And that fills out the whole ballroom that we have.
+175
+Swix also did a mini keynote as a standard for these events.
+176
+And the slide that I saw that got the most attention was this one that I think should put the dagger in the heart of the debate around what is or isn't an agent.
+177
+The slide reads, the value of the AI product is in the value of the AI leverage on your effort.
+178
+Doesn't matter how agentic, just increase the ratio of human input to valuable AI output.
+179
+His session was called Designing AI-intensive applications.
+180
+And the description read: Whether you call it a workflow or an agent, AI-engineered applications are seeing user input to LLM call ratios go from one to one, i.e., chat GPT, to one to 100, deep research and codec, and even zero to n, i.e., ambient and proactive agents.
+181
+How does AI engineering change as you build increasingly AI-intensive applications?
+182
+And I think that this actually gets at one of the key themes that was underlying all of this, which is this shift to multi-agent systems.
+183
+This was also one of the interesting segments from the keynote discussion with OpenAI co-founder Greg Brockman, who basically argued that the AGI future doesn't look like one big AI in the sky, but instead a panel plea of specialized agents that can work together.
+184
+First of all, it's all on the table, right?
+185
+Maybe we reach a world where it's just like the AIs are so capable that we all just let them write all the code.
+186
+Maybe there's a world where you have like one AI in the sky.
+187
+Maybe it's that you actually have a bunch of domain-specific agents that require a bunch of specific work in order to make it happen.
+188
+I think the evidence has really been shifting towards this like menagerie of different models.
+189
+And I think that's actually really exciting, right?
+190
+So there's actually a lot of power to be had by models that are actually able to use other models.
+191
+And so I think that that is going to open up just a ton of opportunity because we're heading to a world where the economy is fundamentally powered by AI.
+192
+We're not there yet, but you can see it right on the horizon.
+193
+And the economy is a very big thing.
+194
+There's a lot of diversity in it.
+195
+And it's also not static.
+196
+I think when people think about what AI can do for us, it's very easy to only look at, well, what are we doing now?
+197
+And how does AI slot in?
+198
+And the percentage of human versus AI, but that's not the point.
+199
+The point is, how do we get 10x more activity, 10x more economic output, 10x more benefit to everyone?
+200
+And the barrier to entry will be lower than ever.
+201
+And so things like healthcare, that you can't just, you know, it requires responsibility to go in and think about how to do it right.
+202
+Things like education, where there's multiple stakeholders, the parent, the teacher, the student, each of these requires domain expertise, requires careful thought, requires a lot of work.
+203
+And so I think that there is going to be just like so much opportunity for people to build.
+204
+And so I'm just so excited to see everyone in this room because that's the right kind of energy.
+205
+Beyond just Greg, there were a lot of great keynotes.
+206
+Conviction BC and fellow AI podcaster Sarah Gro made the very strong argument that the key differentiator right now is execution capability.
+207
+Product lead for Google's AI Studio Logan Kilpatrick not only talked about Google's triumphant year, but straight up launched their latest Gemini 2.5 Pro update on the stage.
+208
+Logan's whole speech in Google's presence at this event, which was way bigger than just this one keynote, definitely shows how hard Google is competing for developers.
+209
+And coming back to this theme of coding agents and agendaic IDEs, you can see in this video that it was standing room only for the keynote with WinServe, head of product engineering, Kevin Howe.
+210
+So where do I think AI Engineer is ahead of the curve and you can get some specific alpha?
+211
+Number one, evals.
+212
+If you follow Swix, he's been talking about this a lot and finally had a chance to really bring it together.
+213
+Just before the conference, he tweeted, after over a year of saying I need to do an evals conference, we finally have the speakers and practitioners who lead these evals at work instead of trying to sell you on their evals to do a dedicated evals track for the first time ever.
+214
+Every AI engineer serious enough about their product should work on their evals.
+215
+Now, this is a big theme even outside this event.
+216
+Lenny Ryczycky from Lenny's podcast and Lenny's newsletter just shared a long post about this where he dumped a ton of quotes around how important this topic is.
+217
+Gary Tan saying evals are emerging as the real moat for AI startups.
+218
+Kevin Wheel, OpenAI CPO, saying writing evals is going to become a core skill for product managers.
+219
+Mike Krieger, Anthropic CPO, saying if there is one thing we can teach people, it's that writing evals is probably the most important thing.
+220
+And Greg Brockman saying evals are surprisingly often all you need.
+221
+Anyways, this is a huge topic, probably deserving of an entire show.
+222
+It's something that we've spent a ton of time on at Super Intelligent in terms of building evals into our agent readiness audit voice agent.
+223
+And what tends to happen when Swix and AI Engineer put a spotlight on something is that it tends to take a bigger share of the collective discourse after that.
+224
+So I would expect to hear a lot more about evals in the months to come.
+225
+A second place where AI Engineer is ahead of the curve is definitely this tiny team theme.
+226
+Now, obviously, they are not the only progenitors of this.
+227
+There are tons of people talking about solopreneurship and seed strapping, but bringing it together as a discipline is, I think, new and really important.
+228
+Swix even tried to put some metrics around this, saying there's an idea I'm trying to push of companies that have more millions in ARR than employees.
+229
+I think it's potentially a nice, simple definition for how to think about a successful tiny team.
+230
+So, your revenue efficiency is so high because obviously, if you pay each employee less than a million dollars, you're probably profitable and therefore you don't actually need the venture money except to pour into marketing.
+231
+And that's your choice.
+232
+You can be profitable.
+233
+I have a six-person team making more than $40 million.
+234
+A third area where I think AI Engineer is ahead of the curve is something that we actually talked about after Microsoft build as well, which is that these folks are not talking about single agents and how capable they are.
+235
+They are talking about architecting agentic systems, groups of different agents that can work together.
+236
+We obviously heard about this from Brockman a minute ago, and there was also a product manager for AI coding at Google Labs who did a session called Your Coding Agent Just Got Cloned and Your Brain Isn't Ready.
+237
+The description reads: Will the future engineer code alongside a single coding agent, or will they spend their day orchestrating many agents?
+238
+Traditional development rewards synchronous focus.
+239
+This session dives into the significant mind shift required to move from sequential coding to orchestrating parallel agents.
+240
+I think this is an absolutely massive theme.
+241
+It is a mindset shift.
+242
+It is an organizational design shift.
+243
+It is an operational shift.
+244
+I've got an interview coming up in a couple of days while I'm traveling that will get even more into this.
+245
+But basically, this AI engineer community is designing for a world replete with agents and absolutely thinking about multi-agent systems.
+246
+Now, if you have been listening to all of this, and by the way, I have no affiliation with AI Engineer.
+247
+They're not sponsoring anything.
+248
+I just love what they do.
+249
+One of the extra cool things is that they put basically all of this content live for free on the web.
+250
+You can go to their YouTube, which is youtube.com slash at AI.engineer and watch all of these keynotes and many of the sessions underneath as well.
+251
+So I will conclude by saying a big congrats to Swix and the entire team at the AI Engineer World's Fair.
+252
+For those of you who are there, let me know how it was, what you think the big themes coming out of it were, and what you think people who weren't there should take away from it.
+253
+For now though, that is going to do it for today's AI Daily Brief.
+254
+Thanks as always for listening or watching.
+255
+And until next time, peace.

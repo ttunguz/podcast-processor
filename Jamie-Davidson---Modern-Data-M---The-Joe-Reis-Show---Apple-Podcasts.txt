@@ -1,0 +1,1400 @@
+
+- That's good.
+- How's it going?
+- You doing great?
+- Yeah, thanks for having me.
+- Yeah, of course, of course, yeah.
+I think before we hit the chord,
+we were talking about skiing and...
+- Yeah.
+- Yeah, yeah, it's winter right now and record this.
+And yeah, what kind of skiing do you like to do?
+- I am a, you know,
+as a kid, I was a little bit crazier,
+but now I'm definitely much more subdued.
+I like, I like some powder,
+I like a little bit of backcountry,
+but nothing crazy these days.
+- Nice.
+I have an RX or anything, okay.
+- Yeah, no, no, definitely not.
+No, I'll tell you what you will do that.
+- Yeah, that's awesome.
+Cool, I guess for people who don't know who you are,
+do you want to give a quick intro?
+- Yeah, sure.
+So Jamie Davidson, I'm one of the co-founders at Omni.
+I had a polar customer facing stuff
+and been in data for a long time,
+was a practitioner kind of starting my career,
+was sort of a data scientist,
+product manager for a long time.
+And then most recently before Omni was,
+you probably could look her for five or six years or so too.
+So pre-able acquisition and post.
+- Wow, yeah, that was the big one in the eye space.
+- Yeah, yeah, yeah, yeah, no, it's a ton of fun.
+Yeah, it was a great experience, for sure.
+- That's super cool.
+And I guess you loved the eye so much
+you decided to start a company, right?
+- Yeah, exactly, kick, kick, kick it enough.
+That's exactly right.
+- No, I mean, it's just a passionate space for me.
+It felt like it was still a lot left to be done still too.
+- So I guess what is left to be done in the eye?
+- Yeah, I mean, super high level context,
+and this is definitely without it out talking our book,
+but I spent five, six years at Looker,
+probably met with 1,000 or 1,500 customers when I was there.
+I, firm believer in the value of a semantic model,
+defining things in a single place,
+gives democratized access and change management on top of it.
+But saw, effectively, 100% of Looker customers
+using other tools alongside it,
+to be able to go touch and feel the data
+to evolve the data model.
+Data model is great, but in particular,
+in environments like that, it's low to evolve,
+it's costly, it's effectively instantaneously stale.
+And so people were forced to use BigQuery SQL runner,
+they're forced to use mode, they're forced to use Tableau
+to go and touch and feel the data in a really lightweight,
+quick way.
+And it was done in a disjointing fashion, too.
+So it ends up with sort of data teams become a bottleneck,
+they are forcing the organization to use other tools,
+and those tools are basically independent silos,
+where the logic goes and sits,
+but basically never can come back
+and to benefit the rest of the organization.
+Especially what we wanted to do was bridge that gap.
+How do we believe in sort of a semantic model,
+but make it way, way easier to build it,
+make it much easier to do lightweight ad hoc analysis,
+kind of regardless of where the user is
+on a technical sophistication.
+That was sort of the high level context for us to,
+I'm sure there's a bunch more left to do in data
+beyond that as well.
+>> For sure, so for the audience, when you say data model,
+are you referring to the look at the model
+that was in Looker or--
+>> Yeah, yeah, so it would be sort of the logical construct
+that Looker had, which is sort of a data relationships
+and business logic, we sort of firmly believe
+that there's value in sort of encoding those things
+and having a technical person build it,
+and it can be sort of progressively materialized
+in data warehouse for cost performance
+or sort of, to use outside of like the BI context as well.
+But yeah, that was sort of, we believed
+that that foundation is super useful.
+We just found it to be really hard to build inside Looker.
+We found it to be many customers
+would have sort of stale data models.
+I remember actually working with the customer
+in my last year there, where they estimated something
+like half of their model was pointing to tables
+or columns that no longer existed to
+because it was sort of a disjoint fashion
+where they're pointing to a data warehouse
+that is changing, it's evolving over time.
+The business is changing, like the questions
+you're asking the business is changing.
+And so as a result, the system needs to be much more fluid
+and sort of reactive.
+- Interesting, I wasn't aware of that.
+I wasn't aware that Looker was often used
+in conjunction with other tools
+to sort of patch the, huh.
+That gives me a lot to think about all day.
+- Oh yeah, that's interesting.
+- Yeah, you sort of end up seeing folks doing
+kind of operational standardize reporting inside Looker
+or inside sort of like the schedule.
+And then doing other, you know, basically going
+to other tools to, you know, as your data models,
+or as your database is changing as the, you know,
+operations are changing, your application changing,
+your questions are changing too,
+that, you know, the data you're materializing,
+snowflake or big query is often changing.
+And then, you know, in order to do the data
+on the first place, you gotta go touch and feel the data
+and look at it and see, like understand the cardinality
+of the joins or understand what the, you know,
+transformational logic might be.
+And so it ended up being, you know, oftentimes folks
+using Tableau and Looker together inside,
+inside an orientation to be able to go do, you know,
+like Tableau is great for like the lightweight
+little discovery and Looker was great
+for the operational stuff.
+And you sort of suddenly have these two disjoint
+siloed sort of places where people have to go
+and figure it out.
+- Interesting, and I can imagine that for customers
+that sort of leads to a not ideal state for one,
+it just seems expensive.
+- Yes, yes, it's a lot of cognitive overhead.
+So what was your solution to this?
+- Yeah, I mean, so the highest level,
+that was sort of the core problem on dissolve.
+And it's basically how do we bring both of these paradigms
+in a single platform where we wanna have very easy
+lightweight ad hoc analytics inside a workbook like
+environment, you know, if it's writing SQL that's great,
+if it's sort of no code, low code, it's sort of, you know,
+easy visual discovery, if it's natural language,
+sort of whatever basic mechanism we want
+can be done inside a workbook.
+But then basically it's tied to and sort of built on top
+of a platform that then enables sort of contribution
+to a semantic model.
+So there's sort of a foundation of, you know, common,
+we call it our shared model, but basically ends up being
+like an organizational place where you define things.
+And to the extent you find that custom logic,
+that new, you know, new definition of a customer
+or new definition of fraud or, you know, gross market
+or whatever it might be, in a workbook, you know,
+the data team can come back and say,
+hey, I wanna promote this back,
+I wanna share this with the rest of the organization too.
+In effect, doing data modeling sort of in the tools
+or facilitating that easy ad hoc experience too
+with the tie back into that platform.
+- Interesting.
+That makes a lot of sense.
+Is this, what's been the response to this so far?
+- Yeah, yeah, I mean, so far folks, folks like a lot.
+I think, you know, the, we're still early,
+so like it's, you know, by no means,
+we haven't proven, you know, everything had to,
+but, you know, the team has a lot of data experience,
+so we built a bunch of, we built a bunch of, you know,
+in the, I guess, almost three years since we started,
+but folks, folks seem to really resonate with it
+and it's sort of interesting, you know,
+that we've certainly got folks that are kind of coming
+from the looker DBT world where they like data modeling
+in the first place and basically they view this as,
+you know, we love data modeling,
+this is sort of an evolution on top of data modeling
+where you can make it even easier to evolve it,
+easier to build it over time.
+And then sort of super exciting to us,
+we also have folks coming from kind of the opposite
+of the spectrum where folks, folks where, you know,
+hey, they're like, data modeling's not worth it
+in the first place, or like, I'm gonna go, you know,
+rip, rip a bunch of code real quickly,
+SQL's amazing, I love it, and so they sort of say,
+oh, this is cool, like, hey, I can go do that,
+I can go do this really quick lightweight analysis,
+but actually sort of almost like it's a byproduct
+of that, I actually start standard, you know,
+as I have like one core analysis,
+and like, as I do the presentation,
+like, I can actually start to standardize it,
+and I can send it to, you know, my operations person
+or my finance person or my marketer,
+or whomever it might be, too,
+and start to get to some of the benefits
+of a data model in the first place.
+'Cause it's been, you know, it's still early days,
+but super fun so far.
+- What were some of the arguments
+that data modeling wasn't worth it?
+- Yeah, I, it's hard, so data modeling, you know,
+if you were starting like a data team of one
+or a company of one, creating sort of the abstractions
+that data modeling, you know, enabled,
+may not be worth it.
+It may be that, you know, the upfront effort
+to go encode data relationships or encode data logic,
+you know, for that team of one where it's maybe really fluid
+and changing really quickly, and like, it's sort of,
+the leverage you get from that model
+is not sort of worth the sort of upfront investment.
+I'd say it's mostly around arguments like that.
+Like, hey, we're moving too quickly,
+most of the team is sort of technical, like, too.
+You know, we sort of, like, you know,
+I sort of think that once you get to the point
+where you're, you know, sort of have a data person
+serving non-technical folks,
+I think the data model is wildly useful.
+And like, you want, I think there's sort of always argument
+to remove friction from the data modeling process.
+Like, how do you, how do you go and define it?
+But I think a lot of that is, you know, ultimately,
+it's like, how do you define your business operations?
+And how do you, like, what do you want to optimize
+for what questions you're asking?
+Those are, those are hard questions, period,
+that are worth asking, probably because you want to,
+you want to run your business as opposed to,
+like, data modeling is almost like the exhaust of,
+or it's sort of like, it's like the byproduct of that,
+that thinking that you kind of get.
+- Yeah, that is interesting.
+It is interesting too, 'cause a lot of times
+when you're an analyst, you know, you're working with,
+you know, as you say, sort of exhaust,
+but the exhaust of application data or third-party data,
+and then you have to think about, okay,
+so how am I going to represent this
+in a way that's useful from my own analysis
+if I'm an end-of-one team, but then, yeah.
+And it's interesting 'cause I feel like just writing
+about the state of the day, but it feels like data modeling,
+even upstream when you're talking for engineers,
+it's also, yeah, here's some of the things it gets.
+It takes too much time to think about my data.
+I just need to pop it into a database
+and make my work and stuff, so it's--
+- Yeah, yeah, no, I think you definitely get that too,
+and you sort of hear, like, the sort of frustrations,
+or, you know, I've done a startup before,
+you know, we use Mongo as our backend,
+and it's great from the perspective of, you know,
+we didn't think ahead of time about a ton,
+about our data model too, but then also too,
+as soon as we hit any, you know, scale,
+or any concurrency, we ran into some problems.
+We're like, you know what, hey, it turns out,
+if we thought about, like, how do we want to index this data?
+And what, like, what the usage patterns are going to look like,
+we probably would have been better off
+putting it in a structured transactional database too,
+with good indexes and the like.
+And so, I think it's sort of similar, like, hey, you know,
+you were, if you're going fast and loose,
+you're effectively taking on technical debt,
+and like, you gotta be implicit about that.
+- How do you recommend data teams starting with a team of one,
+and then moving up?
+How do you recommend that they balance that tension
+between moving fast and, at the same time,
+probably incurring debt as you go along?
+- Yeah, so, I mean, it's the highest level.
+That's really what we want to enable organizations to do,
+is pick sort of, you know, they're sort of,
+we joke about it when we get started,
+they're sort of like the looker spectrum,
+where it's like, you know, heavily locked down,
+you have to be a developer to go ahead and, you know,
+change, look, I'm out.
+And then they're sort of the, you know, free form,
+maybe SQL based tool or something,
+where like it's kind of, you know, a wild west,
+anyone can go right, write anything.
+And I think that, like, when you're getting started,
+you want it to be really quick,
+you want it to be really agile,
+because like, honestly, speed of question-asking
+is probably gonna be highly correlated
+to the value that you're ultimately creating.
+But, you know, sort of as things start to get hardened,
+as things start to be common,
+as you start to have like a little bit more,
+you know, more people in your organization,
+or more frequency, you know,
+that you're interacting with the data,
+or more commonly, you know, viewed reports,
+you want to start to harden it.
+So like, if you're looking at something like, you know,
+I don't know, like we were a SaaS company,
+we look at our sales pipeline all the time.
+As I'm looking at my sales pipeline,
+it changes, it changes probably on like a monthly,
+or, you know, quarterly basis, you know,
+or what our operations are doing,
+or what we're, you know, encoding things
+in Salesforce and all like.
+But, you know, it's still reasonably standardized.
+And so like, if my, you know, my head of sales
+wants to come in and look at,
+hey, how are we doing for this segment, for this region?
+I want him to be able to come in and do that
+without having to go into SQL.
+I want him to be able to go and reuse
+sort of the common primitives that we've got.
+And so it's sort of like, the balance is like,
+hey, you want the tool to be an enabling,
+enabling sort of piece of technology,
+help you ask more questions,
+have a foundation where you're starting
+with a lot of common alley.
+But like, as, you know, I don't know,
+the canonical example I like, I always love to get it.
+It's like, you know, as you start to have
+deleted records in Salesforce,
+which they still are ETL-ing, you know,
+through through five trainers, something.
+You probably want to remove those.
+And maybe like, you want to remove those
+in a kind of canonical way.
+Maybe you want to put that in your DBT model.
+So like, you're never really looking
+at those deleted records because like,
+it's only in a blue moon where you actually need to go,
+need to go use those for kind of an analytical workload.
+So it's sort of, sort of, hopefully progressive.
+I think it's like, start with really lightweight things.
+As you find things that are reusable,
+you want to sort of standardize them either
+inside a semantic model that's kind of a virtual layer
+or in directly in DBT, you know,
+materializing it directly in the data warehouse
+and sort of managing that too.
+- Makes a lot of sense.
+Well, one question I've always wanted to ask somebody
+at Looker.
+- Yeah, yeah.
+- And I get to ask.
+- Yeah, sure.
+- And people working with semantic layers in general
+is, you know, on one spectrum,
+I think that there's the kind of the orthodoxy
+of say, Kimball and established modeling methods
+for analytics.
+On the other hand, there's sort of the fast and loose
+will make, you know, at some extreme,
+maybe a DBT model for every question
+that needs to be asked or something like that.
+How do you view this spectrum of kind of orthodoxy
+versus more ad hoc?
+- Yeah, I think it's a super interesting question.
+Like I think it also probably comes kind of aggressively,
+you know, here too.
+I think it's sort of like the, you know,
+designing the perfect, you know, Kimball model
+to answer any potential question
+the organization ever is going to have to, you know,
+for the world as it is exactly there
+for the world that's in the future, it's a hard task.
+You know, I think in general,
+I tend to be kind of ruthlessly pragmatic about these things.
+It's like, hey, let's solve for the problems
+that we have today too.
+And, you know, in a way that hopefully it's performance
+and reusable with the right levels of abstraction
+so that you can go in and change definitions
+in a simple enough way to and have it be reflected everywhere,
+you know, changing gross margin to better reflect
+like what, you know, the sales tax that you started to take.
+I don't know, but maybe it's a bad example.
+Definitely not, I'm definitely not a finance or accountant.
+But, you know, like, I tend to think of it as like,
+hey, you know, doing as much modeling basically
+as it serves the organization.
+But like, I think in general, you know,
+needs to solve a problem, especially I think, you know,
+today, today may be relative to, you know, five years ago.
+I think data teams were super robust.
+They had lots of people, they had lots of tooling, you know,
+and they've sort of increasingly become very focused
+on like, how do we drive business ROI and the like?
+And so it's less about designing the perfect model
+with like the best point solutions for like 15 different
+point solutions, you know, across the data stack.
+And now it's more like, hey, how do we make sure
+we're solving the business problems
+that the organization has to and do it in a way
+where we create a ton of leverage.
+And I think the data model ends up being,
+being a lot of that leverage actually.
+It turns out like, that's how data people can take their logic
+or their technical understanding and their business savvy
+and basically apply it so that, you know,
+the rest of it, like the sales person,
+the operations person, the customer support person
+can go and ask a bunch of questions
+to drive their business value.
+- Right.
+That seems like it, that is what it's about
+at the end of the day is that the business users
+being able to use the data to drive.
+- Definitely.
+- Whatever outcomes they need.
+You know, it's interesting when you talk to, you know,
+especially data modeling, I think to use word purists,
+but more orthodoxy, right?
+It's like, it's always like, well, if you're not doing it
+according to X, Y, or Z, Y, then it's,
+yeah, it's completely crap and it's over you as a person,
+actually, I'm just kidding.
+(laughing)
+But it's almost the impression I get, right?
+But at the end of the day, I don't think any end user
+really asks, well, is this a Kimball straw scheme?
+I can see the benefit, and I'm actually in the middle
+of writing about this right now, but I feel like the benefit
+of using something like Kimball would be,
+if you're on a data team, that you have a standard
+vocabulary talking about the data, right?
+If you say the word fact, this hopefully means
+what it means to Kimball in dimensions
+and conform dimensions and so forth,
+so that could help from a performance standpoint
+entirely with the team, but for the end user,
+ideally they want to get the data they need
+and it's correct, or at least believable,
+as I think Bill Imman says, it's not really correct data,
+but it's at least believably correct.
+- Yeah, yeah, I think that's right,
+and I think it's like, as data teams are larger,
+so, you know, we see as sort of,
+you go into larger and larger enterprises too,
+where you maybe have like standardized platform teams
+where they're building kind of canonical things
+that are being reused by many departments
+or by many different functions.
+I think it is worthwhile, like it's sort of,
+it's sort of not premature optimization,
+then it's like, hey, it's worth it to get the data model
+right, because to me, used many times,
+we're gonna create a ton of leverage from it,
+so we want to be able to have common,
+like best practices, sort of a standard excellence,
+and all like, when you're maybe like a smaller company
+or like a more, you know, a company that's changing faster
+or whether it's like a early stage startup or something,
+there you might want to not like, over-engineering
+or prematurely optimize and kind of is potentially like,
+you know, just, you know, not worth it, ultimately,
+to sort of do that sort of level of a,
+level of a skating or something.
+- What's it like, you mentioned something else
+that I think is interesting to talk about,
+which is data teams five years ago to data teams today.
+- Yeah, definitely.
+- Yeah, what have you seen, and what are you seeing?
+- You know, it's funny, like I...
+So when Looker got started, you know,
+it was kind of the start of the modern day cycle,
+or like, sort of similar timing, you know,
+where sort of like the common stack was,
+call it five turns, snowflake,
+and Looker and that was sort of like the three-legged stool
+or something, and then over time,
+we saw more and more sort of point solutions pop up,
+where they're small, like smaller tooling,
+you know, we're like creating a ton of value,
+but like new categories, or, you know,
+like I remember talking with a company,
+I'm pretty boo, when it got started with Ami,
+and it was like a, it was a 100 or 200 person start up,
+and they had 15 different data vendors
+that they were working with too,
+like from, you know, multiple different ETL tools,
+doing data modeling, and, you know,
+the data warehouse, and maybe like multiple different
+sort of databases designed for sort of
+slightly different sort of use cases,
+and like that feels, it feels like those days are over,
+where folks are not, you know,
+it's not just about individual point solutions,
+even if they're like marginally better
+than the platform sort of solution,
+it's about like, hey, how do we drive as much leverage
+as we possibly can, like we've seen a bunch of folks
+kind of like going from, you know,
+going from those Lookers and Tableau's,
+and consolidating actually down, like, hey,
+let's replace these siloed tools too,
+with a, you know, platform that can sort of satisfy
+those use cases, or going from, you know,
+data teams that were, you know,
+like large percentages of the org in terms of people
+are like, you know, you had dedicated people
+for each one of these, you know, vendors that you're using,
+and instead you have a little bit more channel lists,
+and people that are really creating a ton of value.
+So it seems like there's an increased focus on,
+you know, efficiency, you know,
+increased focus on sort of like ease of use,
+and sort of, you know, even consolidation,
+it feels like to kind of across that tool space.
+- Yeah, what's it like then as a BI companies,
+just the inventor in terms of selling in.
+- Yeah.
+- 'Cause they're like, well, but we're,
+we're not just another tool, unlike the other 15 tools
+you just pull out, I mean, what's that?
+- Yeah, yeah, exactly.
+I'd say like, it cuts both ways.
+So there's, it's a very noisy space,
+and there's a ton of different players, you know,
+a bunch of different point solutions
+with sort of slightly different points of view.
+So like from that perspective, I think like the messaging
+is hard, honestly, and like, you know,
+in getting the foot in the door is kind of hard,
+and understanding, like, you know,
+people are too busy to try and go and understand
+the differences between all these tools, understandably so.
+The sort of, the flip side is people are frustrated
+with the price of a lot of these, these tools,
+and they're frustrated with like the sprawl
+that they've seen in sort of the tooling.
+And so like managing 15 relationships alone is, you know,
+painful managing, you know, 15 different siloed
+sort of the environments are like in non
+or like marginalized connected environments
+is expensive and painful and alike too.
+And so coming in with a message of, hey, you know,
+we are a new tool.
+We seek to do a lot of what, you know,
+a lot of these different tools to actually, you know,
+we want to be the best of what looker does
+from a governance perspective.
+We want to do the best of what tablet does
+from a visual discovery perspective.
+That's what mode did from SQL or, you know,
+best of what thoughts about does for natural language,
+or, you know, Excel does from like a, you know, easy,
+sort of that the name was Omni, like all of your data use cases
+are all your people sort of the idea.
+But like the, you know, there, like the consolidation story,
+I think is actually something where like people
+are finding some residents and like, hey, like can't,
+you know, can we replace the, you know,
+the like two or three tools that we're using
+for analytics that are all kind of overlapping
+and bring them into a single platform
+where maybe even the sort of mutually beneficial use cases
+that actually help each other on the platform.
+So that part's been good, but like it's definitely,
+I'd say the messaging, you know, sort of the market
+is definitely crowded.
+- Interesting.
+And what's it like from working with other partners
+these days versus back in the day?
+- Yeah, so on that front, like we are very, you know,
+very focused on working with partners.
+So we want to basically make the sort of like
+the whole end-to-end problem we think is sort of
+part of what we want to solve for you.
+So like that's like ultimately creating value
+from your data really like making decisions
+based on the data, you know, based on insights you get from it.
+And that really, you know, BI is never going to be
+the all-end all there.
+You always have, you know, data storage,
+data processing and like the, you know,
+the data warehouse ultimately, you know,
+and so working with Snowflake is a close partner
+and, you know, investor in us.
+We're also got Google Ventures and investor in us
+to a BigQuery is definitely a big, big partner as well.
+You know, there we want to basically very tightly couple
+and we sort of have done a bunch of things
+to make it much easier to integrate
+with the data warehouse, you know, sort of going forward.
+So starting with a data warehouse native sort of approach.
+We also want to partner sort of kind of across the board.
+So we've got a really tight partnership with DBT,
+for example, where you sort of have
+bi-directional syncing of metadata and content.
+So you can generate, you know, models from Omni
+and push them into DBT and run them inside your,
+you know, your DBT cloud and managing your orchestration
+of their DAG in a more complex way.
+We also want to, in a something we're sort of probably
+pushing on more this year.
+Stuff that's kind of upstream of us.
+So data catalogs and like we've had a bunch of customers
+now ask us to integrate with some of the observability tools,
+some of the cataloging tools too, where they're sort of,
+you know, hey, we want to look at our dashboards.
+We want to understand a lineage and sort of the full context
+and that makes a ton of sense too.
+We've sort of, we've started to develop APIs there
+but like don't have yet full integrations with partners
+but like are super excited about that also.
+- That's super cool.
+Yeah, essentially just having lunch with somebody to stay
+who worked at, what are the big data vendors?
+And he said that the looker at the time was like the big,
+the big thing, the biggest vendor they had back then.
+So if partnerships are so key, I think for the audience,
+it's what I see is where you don't really see
+the behind the scenes stuff but that it's real.
+- Absolutely.
+And like, you know, we sort of, we strictly,
+we don't work unless you have a database period full stop.
+Like if you don't have a database, like we can't really help you.
+And so like it's just a supernatural thing for us
+to want to go partner with all these databases and make it
+so that we kind of uniquely show off the best of snowflake
+or playcouse or mother duck or BigQuery and, you know,
+sort of, you know, I think we've had a ton of innovation
+on the infrastructure side, which is awesome.
+And we want to sort of make sure you can take advantage
+of it in sort of modern tooling too.
+- For sure.
+And you mentioned natural language, I guess,
+is kind of just the other next big thing
+since it's happened concurrently, sort of the, you know,
+the modern data second, whatever we want to call it now,
+the stack, but AI, the thing, what are your thoughts?
+What are your thoughts on how AI is impacting
+the entire, I don't know, data universe at this point?
+- Yeah, so at the very least, everyone is wildly excited
+about it and I am too.
+I think they've got like sort of transformative potential
+to remove friction, you know, in particular,
+sort of enabling, you know, semi-technical
+and non-technical folks to sort of have superpowers
+that like I use it, you know, I use co-pilot every day,
+I use chat GPT non-stop, like I am blown away by it.
+I think the sort of, we had a wave of, you know,
+sort of text to sequel, like honestly,
+I feel like I saw probably 40 different companies
+doing stuff sort of along those lines.
+I think that people realize, you know, that's sort of hard
+and I think there's a couple of different reasons
+why the data domain is in particular hard.
+You know, data is a high precision problem.
+Like if I ask you, how much revenue did we have last quarter?
+There is a single answer, it's not like
+up to interpretation, hallucinations are not acceptable.
+And I think also beyond that,
+it's a highly contextual problem.
+Like what's the definition of revenue?
+What's the definition of quarter?
+These things that like, you know, seem trivial
+and are like kind of commonly understood,
+actually you have a precise definition
+and like, can't deviate from it.
+The other example I like to give is, you know,
+like one of our customers, like e-commerce company too,
+and their marketing team had like how many users do we have?
+And that like turns out that's also, you know,
+I mean, Facebook's had problems with the SEC
+with the definition of this, but like it is a nuance.
+It's like, does that count star users in the user table?
+Does that count the state of users in your events table?
+Is that a kind of distinctive users on transactions?
+Like what's a transaction?
+So it certainly becomes a nuanced thing.
+So our sort of firm belief is natural language
+is a really, it's like a great interface
+for semi-technical, non-technical folks to engage with data,
+but it has to be integrated into the core BI experience.
+And we sort of firmly believe too,
+this is an area where having semantic models incredibly important.
+You need to have a sort of a predefined vocabulary
+that the semi-technical, non-technical user
+can appreciate and understand in the context
+of sort of the analytical environment
+to be able to go kind of constrain the input space
+and constrain the output space of what the, you know,
+these sort of gender and AI, you know,
+ELOMs are going to give you a two.
+But, you know, the highest level,
+like super excited about it too.
+But I think it has to be thoughtfully integrated
+into the experience as a, it's not like, you know,
+if a user asks like how much revenue do I have to,
+I can't give them a SQL query, you know,
+they definitely can't appreciate that.
+I can't give them a number either
+'cause they don't know how to interpret that number
+or ask the next question
+or understand what that number is even representing.
+- Mm, that's fair.
+Yeah, you all right.
+There was, I think, a giant interest at first
+with the Texas SQL, but it,
+- Yeah.
+- My friend, once again, over at Data.world,
+he did some good research on basically the hallucinations.
+- Yeah.
+- It was pretty bad, actually.
+Like, I think, at least the study that he did,
+it was on insurance data, but it was like,
+yeah, without a knowledge graph, for instance,
+you're seeing basically hallucination rates at like,
+or accuracy rates at about 10, 15%, which is--
+- Yeah, I think that's right.
+- Using, yeah.
+- Yes.
+- Yeah.
+- So maybe worse than not anything, actually, honestly.
+Like, it's sort of a scary world
+where if a user feels like that's the right answer,
+that's scary, actually.
+- Oh yeah, plus, I mean, if people saw,
+I mean, you can see what happens, obviously,
+if people will get very strange results,
+and so, I think I say, well, this whole thing sucks,
+and we're not using it.
+- Yeah, yes.
+- So, you know, and it looks, as you say,
+it's a high-position thing.
+If you get one answer wrong, I mean,
+I could sink the entire trust of what it's also trying to do.
+I've seen it happen.
+I don't even know how many games a lot, right?
+So.
+- Yes, absolutely, even with, even with like,
+intelligent analysts with contacts for the business
+and stuff too, it's hard.
+So like, you have to really, like, you know,
+we sort of firmly believe, like,
+it needs to be human in the loop,
+it needs to be something more.
+It's like, I do think that there's potential
+to dramatically remove friction,
+but it has to be thoughtfully integrated
+in a way where it builds trust as opposed to erodes.
+- What do you think are the highest friction points
+right now that AI can help with?
+- So, you know, one feature is like a small feature
+that we build that, like, I've been blown away
+by how much usage we've got.
+So we've got, basically, direct one-to-one parity
+with Excel functions.
+So like, most BI tools have like a post-processing language,
+like a looker had a, we call it the looker expression language,
+like Tableau's got it, Power BI has got it.
+Like, everyone had to post-processing languages
+to do, like, lighter weight things, like,
+hey, can I go do an offset or, okay,
+and it's custom language that's proprietary
+that you have to go and learn.
+And so we instead, you know, integrated
+or basically replicated Excel functions directly,
+and it turns out that LLMs are incredible at writing,
+so it's been around for, you know, I don't know, decades.
+There's a, you know, infinite purpose of content on it too,
+so LLMs are really good at it.
+So passing exclusively,
+metadata about, like, a result set or a table,
+we pass that to the LLM and the LLM
+will generate a basic Excel function for a user.
+So you can sort of go from natural language,
+say something like, like, kind of crazy things.
+Like, hey, you know, the example I always liked to demo
+is, like, say you have a bunch of user emails,
+like, parse the domain from this email,
+and the LLM will write some Excel function
+that basically finds, you know, the gmail.com
+or something for it, which is, you know,
+sort of mind-blowing when you first see it,
+it's really, really pretty cool.
+It's like, it's like, things like that,
+where it's like, how do we make it, like,
+easier to do more sophisticated things,
+easier to do higher, you know,
+I can write some Excel functions.
+I can read what the LLM writes,
+but I'm not an Excel, like, I'm not,
+I don't know all of the string string, you know,
+concatenation or, like, string splitting, you know,
+functions that Excel can do.
+And like, it ends up being, like, a sort of a high value place,
+you can sort of integrate with it.
+That's like one example.
+I think that it's probably a bunch of other stuff too.
+It's kind of like almost everywhere, honestly.
+Can you help with, you know, describing data sets
+and, like, describing what's happening in the chart
+or give me prompts for, you know,
+questions I can ask, you know,
+next questions I can ask, those types of things,
+I think are super, super interesting.
+We're just sort of starting to see people
+build out some functionality there.
+- That's really fascinating.
+And they can't be thinking about something
+where it seems like-- - Yeah, again.
+- What the world you're describing really is,
+it almost seems like it could be a BI 2.0 type of world
+where it's more of a backend for analytics.
+'Cause you mentioned Excel.
+I think a lot of, you know, especially five years ago,
+whatever, there was this superiority complex against Excel.
+Like, if you're using Excel, like, you may as well talk to me.
+- Yeah, yeah. - But, you know,
+but the thing is business users always say,
+"Well, can I export the report to Excel?"
+- Yes, that's right, that's right.
+It's for BI, all BI goes anyway.
+It's like, yeah. - Yeah.
+- But what you described is sort of,
+it's just things happen behind the scenes.
+You made it a lot easier for somebody to do things in Excel.
+And I'm like, well, is there a world where, you know,
+the world, I think, the BI world is, you know,
+I grew up in front of you, you go to the BI tool,
+you interface in the BI tool, that's for your BI,
+but it seems like there's also a world where
+that sort of magically happens behind the scenes
+you can interface with however you want, I don't know.
+- Yeah, I think it's exactly right.
+Yeah, you know, we have, like, another example
+we've got an embedded product, so like, you know,
+our customers using our dashboards and their products
+to, you know, to their customers and stuff too.
+And we've got a natural language query
+that goes through our semantic model,
+but like, you know, is an example,
+we've got a travel company that uses us,
+basically to report to their hotel managers.
+So like, you know, not technical folks, you know,
+people that are like experts in running their business,
+like running their hotels, but like,
+maybe don't know what a database is
+and certainly don't know what SQL is.
+And we built this natural language queryer
+that basically, you know, sort of on top of this
+kind of constrained, you know, vocabulary
+that they've created at this knowledge graph
+or the Smith model that they've got
+where the hotel people can come in and say,
+hey, show me, you know, my, you know, daily room rate
+for, you know, these hotels compared to last period
+or compared to last year or whatever it is.
+And like, ends up being a supernatural interface
+where like the technology can help them,
+you know, you don't want them redefining it.
+You don't want it to write SQL.
+Like, it shouldn't redefine what like the daily room rate is.
+Maybe that's a complex thing that like, you know,
+the, you know, the data person should really be engaged with.
+But like, can they reference those things?
+Probably, actually, like, and there's probably any,
+like maybe they don't know exactly how to construct that queryer.
+Look at it over time.
+They don't know how to use the interface.
+Maybe it can make it easier for them.
+Yeah, but it's, like, I think it's like,
+I am cautiously optimistic.
+I do think that folks are altogether too often
+looking for a silver, you know, sort of a silver bullet.
+Like, they're looking for like, you know, kind of, like,
+imagine, you know, I love the way it moves the XPCB.
+Like, it's like, star from this perfect table
+that doesn't exist, you know, or something like that.
+It's kind of, people want magic, of course.
+They want a magic wand.
+And like, you know, it solves my problems.
+I think it's nuanced.
+I think it's hard.
+Often they're business problems.
+Like, it's like, they're their business questions.
+Like, how do you define these things
+and what your operations are?
+Like, what these things, you know, can be,
+should be nuanced.
+It should be hard to do and thoughtful.
+And you want to understand the, you know,
+various interpretations of, you know, of these definitions.
+But I do think it's possible to kind of like,
+hopefully, you know, speed up the interaction, you know,
+make these sort of the feedback loops faster and easier.
+And like, that's a good point about feedback loops.
+'Cause it feels like when the feedback loop is tight
+and it's quick, you resolve a lot of errors very quickly
+and you give value to wait, you know, so it's, you know.
+- Honestly, I feel like the, like the,
+when we integrate the Excel, you know, functions.
+So basically, we have the Excel functions
+and we actually will translate it
+and see if we run against Snowflake and the like.
+But when we first integrated with it,
+I'd say the best part about it was you saw it immediately.
+Like, you know, like, I'd write, you know,
+whatever, column A divided by column B or something.
+I'd be like, oh shoot, I got it reversed.
+I meant, I meant column B divided by column A.
+Like, you know, I can't tell you how many times
+I've done that.
+Like, it's like, it's just, it is.
+It is like that instantaneous response time
+that makes it so that you can ask those questions faster
+and have more intuitive sort of understanding
+of what you're doing.
+- Yeah.
+You mentioned something just a second ago
+where it was basically simplifying the use cases
+for business users.
+What role do you think data literacy has
+in a world where people can ask questions
+almost instantaneously of their data?
+- I mean, I hope it's even more important honestly.
+And like, it's ultimately what, like,
+my sort of, my bold case for sort of data teams in general
+is like, suddenly now data is going to be infused everywhere.
+And like, it's, if it's lower friction to access it,
+like, it should be in slack.
+It should be on your, like, whatever on your phone
+on your, you know, on any device
+that you basically can engage with,
+you should be able to, you know, the sales person
+who's like walking into a store he's trying to sell to
+can ask, you know, wait, tell me all the context
+about all the similar customers like this person
+and what's the best way for me to sell to them.
+Like, you know, it feels like by removing friction,
+we're going to increase the value of those core assets
+and data teams need to spend more time
+defining these core ontologies
+or defining these core vocabularies
+and making it so that it's going to be easy for humans
+and also for the LLMs, which are consuming it
+through probably very similar interfaces now.
+To do this, like, my guess is it's actually ever more important
+actually to, to, you know, have your, like, I mean, like,
+no, no, no business has their data in a clean spot.
+Like, no one really is, you know, like,
+I think sort of it's funny, like, we were talking about the,
+you know, the Kimball versus sort of like a fast and loose,
+you know, I feel like I've very rarely seen
+really, really well-modeled data.
+I feel like maybe people start out with well-modeled data
+and suddenly like, you know, just through, like,
+sort of the natural evolution of a business.
+Like, it's suddenly stale and like, you got, like, weird,
+you know, works bolted onto it, like, it's never,
+it's never, you know, it never stays clean.
+I think that the sort of increased, you know,
+in use cases that data actually can be inserted into,
+too, may actually encourage more.
+And like, I kind of hope it will be,
+like, it's ever more important to use data.
+It's ever more important to have clean data
+or like, interpretable data and understandable data, too.
+But, yeah, I don't know, I'm an optimist.
+I'm like, you know, you probably don't start a company.
+If you don't, you're not a hopeless, you know,
+naive in some way or something like that.
+- That is true.
+You definitely have to push through.
+- Actually, no, why can't we do that?
+Like, what's it like going from working at a company
+to a very successful one that had to go to a great exit
+to, you know, doing a startup?
+- Yeah, I mean, honestly, I've loved it so far.
+We, it's sort of, one of these, like, you know,
+we, like, lookers sold to Google,
+basically right before COVID happened.
+So like, I think literally we, like,
+we're onboarded into Google the week,
+the week before shelter in place.
+So like, I got my laptop on Wednesday and then Monday,
+I think shelter in place happened in San Francisco.
+And it's, you know, weird time for everyone, I'm sure too.
+But like, it was not a bad time to,
+to be a part of one of the biggest companies in the world.
+When like, the world sort of seems to be melding down
+as it is, is positing.
+And like, I, you know, had a really, you know,
+I had like a lot of that experience was really positive
+and like, it's fascinating to learn about Google Cloud.
+I think the other, the other side of it,
+just Google was a much bigger business
+than Denver careers and it's, you know,
+and Looker even still was a big business
+and was starting to slow down naturally
+because, you know, you've got a huge customer base
+and like, it's harder to make incremental changes
+and like, you have a big, you know,
+established product too.
+It's harder to iterate on top of it.
+And so the, you know, it was sort of a, you know,
+interesting time where, you know,
+about two years into the acquisition, you know,
+we started to have these ideas and like realize
+that maybe we would better off doing it outside.
+And like, man, it's been so fun.
+We've gone just so fast.
+There's a core of us.
+We're kind of a handful of a long time
+with our engineers, a couple of product people,
+some designers and stuff.
+And then my co-founder, too, came from Stitch Data,
+like the ETL company.
+I am kind of a cohort of a bunch of Stitch engineers too.
+But like, you know, a bunch of people
+with a ton of experience in data
+that like had a pretty strong view
+about what we want to go do.
+And then like kind of unfettered, you know,
+we could free reign, we could kind of go build
+as much as we can.
+And like it's up to us to go do it.
+So that part has been just so, like the team is amazing.
+It's fun.
+I mean, I love, I love data.
+So like it's fun to go build and solve problems.
+Like it's been really cool.
+- Well, it totally is.
+And I remember actually the first time
+I visited the Looker office was in 2014.
+I think it was.
+- Yeah.
+- And in Santa Cruz.
+- Yeah.
+- Yeah.
+And it just had this really fun vibe.
+'Cause I think it was, in Santa Cruz,
+it was a bit far off from the valley where it was.
+- Definitely.
+- It just, it had a really cool,
+yeah, I guess an energy tool.
+And then I'd go back there and part a company
+as with where it partners with a Looker.
+So yeah, visited periodically.
+But it just, yeah, it was a great place to work.
+And the people that really felt like everyone was about data,
+everyone was having fun.
+And the customer service people that I felt were just,
+it was top-notch data people I think had ever seen in my life.
+- 100%.
+That's absolutely right.
+No, I totally agree.
+We've got a bunch, a bunch of them now,
+and I'd honestly as well too.
+- That's awesome.
+- And I think too, like, I mean, Kudos to Lloyd,
+you know, as the founder of Looker,
+he built an amazing culture.
+Like, I absolutely loved it.
+You know, it's an early customer.
+I loved it then.
+I even, yeah, it became a full-time employee.
+I absolutely loved it.
+Like, he did an awesome job.
+It was, it was a fun fun.
+- Are there some parts of that
+that you're trying to emulate over it on me?
+- I mean, very much so.
+Like, I'd say like the extreme customer focuses
+with that doubt, the same.
+And like, we want to take it, you know,
+almost even further where, you know,
+it's very high touch sort of customer support motion.
+Like, we do, you know, Slack channels.
+We've got like, it is sort of a, you know,
+very much inspired by that core Looker experience.
+I think that, you know, data is hard.
+Like, honestly, my most frequent question I get, you know,
+is more of a product gap.
+It's like still like, okay, great.
+I got an Omni, like, now what?
+Now, how do I be data driven?
+Like, how do I change my business?
+And it's like, you know what, these things are all,
+it ends up being very consultative.
+You know, a lot of our customers can kind of,
+you know, we hope to build good community
+and sort of like have folks helping each other out too.
+Cause like, they're all, you know,
+they're in wildly different spaces, you know,
+not competitive at all.
+But like, honestly too, a lot of these businesses
+have very similar, you know, very similar problems.
+It's like, you know, there's like technology problems
+or people in process questions and stuff.
+And so like, how do we help build best practices?
+And how do we help, you know, our customers share,
+share amongst themselves and sort of share
+various solutions and stuff.
+So it's, yeah, we, I mean, very much inspired by a looker
+from like, you know, from a like kind of customer orientation
+and extreme customer focus perspective too.
+And a lot of the sort of core problems
+that we want to solve are, I think we, you know,
+we sort of, we think of ourselves as kind of like a logical
+successor to, to some of the looker, looker, you know,
+philosophy at least.
+- That's super cool.
+That makes my day.
+Cause it was something where, you know, when Google,
+you know, bought a booker, that was the one thing
+where they like all the customer services.
+- Yeah.
+- That's, I was like, you guys made the biggest mistake ever.
+- It was crazy.
+And like it was like the highest, highest like promoted,
+you know, net promoter score of anything ever.
+Like it was, you know, it was, it maybe it's just not
+the Google way and like not scalable to sort of Google's
+perspective too.
+But like it was, it was, it was a, it killed me.
+I, I loved, I loved our, our, you know,
+the department of customer love.
+I loved it.
+- So good.
+- Yeah.
+- And you know, and it's interesting cause I feel like,
+I tell you, I run these, these data therapy sessions
+where I just get people together.
+And they, we just talk about whatever's online,
+but I feel like people, I feel like they want others
+to talk to, right?
+- Yeah.
+- And so the department of customer love or whatever,
+but, or, you know, or the standard that you're building
+with a, it's like, yeah.
+The data is one of these things too, where you can read
+the instruction books, you can read the manuals all day,
+but a lot of it is just talking to other practitioners.
+- Yes.
+- You know, and I think also having that feeling
+that you're not alone in this world with it,
+with whatever you're feeling with.
+So.
+- No, totally.
+Cause like it ends up being like your, you know,
+a data team of one or two people in like an, you know,
+an Oregon 500 or something like that.
+Like you don't have, you don't have the peers
+to bounce the ideas off of just because like,
+that's the way that sort of the, the, the sort of,
+the function works.
+I, I totally agree.
+I love, I love data therapy.
+That's like, that's the best way to frame it.
+It's awesome.
+- Oh yeah.
+It happens every week.
+I do it for US and Europe and then US and Asian Pacific
+cause of time zone stuff.
+But yeah.
+- Yeah, it's cool.
+- It's cool.
+- And you'd be surprised.
+It's, it's a lot of interesting people
+in the industry just show up randomly.
+And it's like, it's, it's cool.
+But everyone's there to support and.
+- I love it.
+Yeah.
+- I feel like a lot.
+- Data people are just so fun too.
+Like it's like, they're technical enough to do
+kind of almost anything too.
+They're business savvy enough to understand what's important.
+Like they end up being like kind of,
+this interesting intersection of, you know, like they,
+they can drive real change in businesses.
+Like that's awesome.
+Like a fun, fun spot to be.
+- Oh, it is.
+It's super fun.
+Yeah.
+So what do you excited about over the next couple of years?
+- Yeah.
+I mean, like a bunch of different stuff.
+I like, I think that we will continue to see AI play out
+and like remove friction and sort of the end experience too.
+And I think that hopefully it's lawfully integrated
+into these are experience.
+And I think that, I think it will,
+I think we'll get there.
+We'll see kind of material, material changes the product.
+I think that like, honestly, I think we are in a new wave
+of analytics.
+So like my hope is how do we make it?
+So that's both, you know, agile and governed.
+And like, how does that, you know,
+how does that evolve with an organization?
+Or how is it best facilitate kind of workflows and process?
+But like the technology is an enabler,
+not like a constraint on it.
+So like that's definitely a core piece.
+I think we're, you know, we're also seeing some cool stuff
+with, you know, data platforms.
+Like I think, you know, we're super excited
+about stuff Snowflake's doing and some of their AI work too.
+And I'm excited about what Databricks is doing
+kind of across the board.
+You know, I think that there's a bunch
+of really interesting sort of data, you know,
+data vendors, I was listening to your podcast.
+That's true.
+I love what they're doing.
+They're super, super interesting.
+Like, I think there's, there's cool new database technologies
+like Clickhouse and Mother Duck that I'm personally excited
+about too and sort of, you know, they're like, you know,
+use cases that they seem to be tailored for in a, you know,
+that, you know, absolutely enormous market.
+Like these use cases are pretty big actually too,
+even if they're, you know, not 100% of sort of data,
+data warehouse workload.
+So I, you know, I feel like I'm, I'm, I'm a mentor
+of some of the offices.
+I'm excited for sort of everything kind of on this.
+I'm like both from like end user experience perspective,
+from like the infrastructure perspective
+and sort of how it meets in the middle.
+- What are your thoughts on iceberg and the, I guess
+the looming proliferation of open table formats?
+- I, you know, I think it's super interesting.
+And like there's clear,
+there's clear demand for kind of lower cost alternatives
+for like less, like lower value data warehouse workloads
+or analytical workloads that should be cheaper.
+And like, it's like, hey, I've got, you know,
+all of my historical data.
+I don't want to keep it hot inside snowflake
+and pay an arm and a leg for a giant warehouse.
+I instead want to have it be sort of maybe, you know,
+more of like a data lake kind of a framework.
+And to the extent that iceberg enables that, that's good.
+I also worry though, it kind of, I kind of get some flashbacks
+to kind of the Hadoop world where, you know,
+it's sort of the complexity, I mean,
+maybe this is going to go away.
+And this may be just sort of natural technology thing
+where like, hey, you get like technical innovation
+and then sort of over time people smooth it over,
+make it easier, more abstract to engage with.
+But I do get a little bit of, hey, you know,
+this is like a new HDFS Hadoop kind of,
+and you have to hire a small, small army of engineers
+to go and manage this.
+And like, it'll be cheaper, I swear,
+but like don't think about total cost ownership
+of like your full data team.
+You just think about it, it's like, I don't know,
+I get worried about that a little bit,
+but my hope, and I'm generally just sort of an optimist,
+like my hope is, you know, these open frameworks
+or open platforms too, are adopted by the entire industry
+and like snowflake and BigQuery and Databricks
+and you know, all of these vendors, you know,
+adopt them and it's better for all the consumers.
+It's better because like, you know,
+it's in a more interoperable,
+it's better for cheaper workloads
+or sort of gives you more choice.
+But, but yeah, it still feels early.
+It still feels early, even though it's the clear factor.
+Yeah, the clear winner.
+Yeah, it still feels early for sure.
+Yeah. You can't tell if it's going to be,
+yeah, it definitely gets the same vibes.
+Yeah, it goes into these articles about that
+where I feel like a dupe.
+Then at the same time, it's, you know,
+maybe as a battle with the query engines,
+everybody comes to query engine or, you know,
+you go to the platform if you want specialized storage
+and whatnot.
+But on the other hand, you have DuckDB and so forth,
+which is, you know, the extreme opposite of one of the--
+Yeah, exactly, exactly.
+What are you guys doing inside DuckDB?
+Yeah, we are. I love DuckDB.
+So we used DuckDB, basically we wrap it in Wasm,
+run it in the browser for basically,
+we call it a refriable cache.
+So like, you know, we connect the data warehouse
+will query directly, but then we'll also sort of reuse
+data sets to make it faster, cheaper for the end customer.
+So I have been blown away by DuckDB.
+It's awesome.
+And like, just, like, I think there's just a ton
+of technical innovation that's happening.
+Like, it's really like--
+Yeah, it's, you know, the technology is great.
+Like, I'm super excited about it.
+I think what Mother Duck doing, too, is super exciting.
+Also, it resonates with maybe smaller data workloads
+and sort of like hybrid execution, like sort of on my laptop
+versus on the sort of sort of some, you know,
+distributed system in the cloud or something like that, too.
+It feels like that can be really pretty interesting, too.
+So like, I'm curious to see how that evolves.
+It's literally, but yeah.
+Yeah, it is.
+I'm super excited for Mother Duck, too.
+I think that they're doing it right, too.
+I don't think they're trying to go in this bombastic,
+like, let's blow it out to everybody.
+Definitely.
+They're taking very methodical steps.
+100%.
+It's like the team has been here before and has done this.
+Yeah, exactly.
+Maybe they've done this once in once in a voice.
+That's exactly right.
+No, I love it.
+No, they're-- and yeah, they're super exciting.
+So yeah, you know, it feels like we're getting, you know,
+a bunch more sort of tailored specific.
+You know, you basically can pick, like,
+if you've got giant data sets that aren't super hot,
+like, hey, maybe you've got the data lake framework.
+You've got, you know, sort of classic data warehousing,
+or snowflake is incredible.
+Like, you've got, you know, sort of smaller data sets
+where maybe Mother Duck, you know,
+could be the sort of a cost performance, you know,
+improvement, or-- and I'm sure it's going to push everyone
+to innovate, and like, you know, all the vendors
+are going to, you know, compete in a good way
+for the end customer.
+And so, yeah, we love it all.
+Yeah, I'm just saying time to be a customer,
+I think, right now.
+So I think so, too.
+Yeah, I think so, too.
+Well, awesome.
+Got any plans this winter?
+Nothing too crazy.
+Yeah, just kind of keep in one foot in front of the other.
+You've got to build, you know, a great experience.
+Got a really great customer sort of experience
+to build good products.
+You know, that's the focus, though.
+Yeah, well, it's easier.
+It's a lot of work that you learn to describe.
+That's exactly right.
+And it's kind of a continuous thing, you know?
+I got to, you know, I got to love it.
+Like, it's, yeah, it's about every interaction.
+It's about every feature, and like, you know,
+smoothing it over and for everyone.
+But yeah, I know it's a ton of fun, though.
+And definitely, the team is amazing.
+So that makes it so much easier.
+Yeah, it's awesome.
+It is a great team, too, whenever I run into conferences.
+Yeah, yeah, yeah.
+Yeah, yeah, I walk by the pass a lot of booths.
+I always stop by Ami and just go hang out for a while.
+Yeah, yeah.
+Got to go down a little bit.
+You just look for the paint, you'll find us.
+That's that you're right.
+Very easy to see.
+Yeah, yeah, yeah, yeah.
+Thank you, right?
+Awesome.
+Well, Jamie, thanks for the great chat, man.
+So--
+Yeah, no, thanks so much.
+I really enjoyed it.
+This is awesome.
+Yeah, and if you're-- you don't hit me up,
+we'll go skiing or snowboarding, whatever.
+Yeah, absolutely.
+I will, without a doubt, do that.
+I'm hoping to be out there in a month or something.
+So I'll definitely shoot you now.
+Sounds great.
+All right, take care.
+Awesome.
+It's like, cool.
+

@@ -1,0 +1,860 @@
+--- METADATA START ---
+Show: Y Combinator Startup Podcast
+Episode: Cursor CEO: Going Beyond Code,…
+Host: Unknown 
+Guests: Michael Trull
+Source URL: https://podcasts.apple.com/us/podcast/cursor-ceo-going-beyond-code-superintelligent-ai-agents/id1236907421?i=1000712439356
+--- METADATA END ---
+
+1
+For us, the end goal is to replace coding with something much better.
+2
+I think that this is going to be a decade where just your ability to build will be so magnified.
+3
+If you keep pushing the frontier faster than other people, you can get really big gains occurring to you.
+4
+Building a company is hard, and so you may as well work on the thing that you're really excited about.
+5
+And so, yeah, we set off to work on the future of code.
+6
+Welcome back to another episode of How to Build the Future.
+7
+Today, I'm joined by Michael Trull, co-founder and CEO of AnySphere, the company behind Cursor, the AI coding platform we all know and love.
+8
+They recently hit a $9 billion valuation and are one of the fastest growing startups of all time, reaching $100 million ARR just 20 months after launching.
+9
+Michael, thanks for joining us.
+10
+Thank you for having me.
+11
+Excited to be here.
+12
+You've said the goal of Cursor is to actually invent a new type of programming where you can just describe what you want and it gets built.
+13
+Talk to me about that.
+14
+Yeah, the goal with the company is to replace coding with something that's much better.
+15
+Me and my three co-founders, we've been programmers for a long time.
+16
+More than anything, that's what we are.
+17
+The thing that attracted us to coding is that you get to build things really quickly.
+18
+To do things that are sort of simple to describe, coding requires editing millions of lines of kind of esoteric formal programming languages, requires doing lots and lots of labor to actually make things show up on the screen that are kind of simple to describe.
+19
+We think that over the next five to 10 years, it will be possible to invent a new way to build software that's higher level and more productive.
+20
+That's just distilled down to defining how you want the software to work and how you want the software to look.
+21
+And so our goal with Cursor is to get there.
+22
+And our path to getting there is to, at any given point in time, always be the best way to code with AI and then evolve that process, evolve it away from normal programming to something that looks very different.
+23
+So some people would say that is what we have today.
+24
+You sort of describe what you want and out it comes.
+25
+What would you say to that?
+26
+Like, are we there yet?
+27
+You know, what are the steps to where you really want to go?
+28
+We're seeing the first signs of things really changing.
+29
+I think you guys are probably on the forefront of it with YC, because I think that in smaller code bases with smaller groups of people working on a piece of software, that's where you feel the change the most.
+30
+Already there, we see people kind of stepping up above the code to a higher level of abstraction and just asking essentially agents and AIs to make all the changes for them.
+31
+In the professional world, I think there's still a ways to go.
+32
+I think that the whole idea of kind of vibe coding or coding without really looking at the code and understanding it, it doesn't really work.
+33
+There are lots of nth order effects.
+34
+You know, if you're dealing with millions of lines of code and dozens or hundreds of people working on something over the course of many years, right now, you can't really just avoid thinking about the code.
+35
+Our primary focus is to help professional programmers, to help people who build software for a living.
+36
+In those environments, people are more and more using AI to code.
+37
+On average, we see about people using, you know, having AI write 40%, 50% of the lines of code produced within Cursor.
+38
+But it's still a process of reading everything that comes out of the AI.
+39
+And so an important chasm for us to cross as a product will be getting to a place where we become less of a productivity tool that's helping you look at, read, write, understand code, and where the artifact kind of changes.
+40
+And I think for professional developers, there's still a ways to go there.
+41
+In your head, do you think of it as different tiers?
+42
+Obviously, startups are starting out with zero lines of code, so that's very easy.
+43
+Is there a point that you're tracking right now where, oh, well, that's when, you know, just vibe coding it stops working, and that's when things sort of become real?
+44
+The vibe coding style of things is definitely not something that we recommend if you're going to have the code stay around for a really long time.
+45
+I think that one of the things that characterizes software development when you're a two, three-person, four-person startup, and you're kind of moving around and trying to figure out what you're doing is often the code is only going to be around for weeks.
+46
+Right now, we're in this phase where AI is kind of operating as a helper for you, right?
+47
+So kind of like the main ways in which people are using AI to code, they're either delegating tasks to an AI, and they're saying, go do this thing for me, go answer this question for me, or they have an AI looking over their shoulder and taking over the keyboard every once in a while.
+48
+That's kind of the tab form factor.
+49
+And I think that the game in the next six months to a year is to make both of those, you know, an order of magnitude more useful.
+50
+Coding sometimes is incredibly predictable when you're just looking over someone's shoulder, you know, the next 10, 15, 20 minutes of their work.
+51
+And so the tab form factor can go very far.
+52
+And then the agent form factor of delegating to another human can go very far too.
+53
+And then I think that once those start to get mature, and you know, for 25, 30% of professional development, you can just entirely lean on those end-to-end without really looking at things.
+54
+Then there will be all of these other things to figure out about how you make that work in the real world.
+55
+One way in which you can view LLMs is you interface with them like a human, like a helper.
+56
+Another way in which you can view LLMs is they're kind of an advance in compiler or interpreter technology.
+57
+It's going to be always helpful if we are a tool to help a human go from an idea in their head to something on the screen to give people control over the finest details, right?
+58
+That's one of the product challenges we have in front of us: you should always be able to move something a few pixels over.
+59
+You should always be able to edit something very specific about the logic.
+60
+I think one useful UI always to have there is to have written down the logic of the software.
+61
+And you can point at various bits of the logic and actually edit them.
+62
+But if we were to get to a place where you don't have to pay attention to the code as much, that written down version of the logic of the software is going to have to get a higher level.
+63
+And so, yeah, we're excited about after you get agents working, after you get kind of the tap form factor very mature, does AI actually evolve what it means to be writing and looking at a programming language?
+64
+Is it a context window thing?
+65
+You know, it sort of makes sense that, well, once you get past about a million to two million tokens, only even in the, I feel like the last hundred days did we get a usable two million token length.
+66
+Is that naturally one of the places where once your code base reaches a certain size, you know, you got to use rag, it has incomplete context, and then it just can't do what a human coder could do.
+67
+Yeah, I think that there are a bunch of bottlenecks to agents being human level.
+68
+I think one is the context window side of things is definitely an issue where if you have 10 million lines of code, that's maybe 100 million tokens.
+69
+And both having a model that can actually ingest that, having it be cost-effective, and then not just having a model that can physically ingest that into its weights, but also one that actually pays attention effectively to that context window is tricky.
+70
+And I think that that's something that the field needs to grapple with.
+71
+And it's not just a code base thing there.
+72
+It's also just a continual learning problem of knowing the context of the organization and things that have been tried in the past and who your coworkers are.
+73
+And that problem of having a model really continually learn something.
+74
+Kind of something that the field, I think, still doesn't really have a great solution to.
+75
+It has always been suspected that it will be, or for a lot of people, have suspected you just make the context windows infinite and that ends up working out.
+76
+I think that there's a dearth of really good long context data available to the institutions that are training these models.
+77
+And so I think that that will be tricky.
+78
+But continual learning and long context is definitely a bottleneck to being superhuman.
+79
+It's kind of related, but being able to do tasks over very long time horizons and continue making forward progress.
+80
+Going around on the internet, there's this amazing chart of progress in the last year or two on the max length of time an AI can make forward progress on a task.
+81
+And it's gone up from, you know, seconds to, I think, I don't know the details of how these numbers are actually gotten, but I think someone's claiming some of the latest models, it's like an hour.
+82
+Then there are problems with different modalities.
+83
+So to be a software engineer, you kind of need to run the code and then play with the output.
+84
+If you didn't, you would be way superhuman.
+85
+That would be insane.
+86
+But so computer using is kind of going to be important for the future of code.
+87
+Being able to run the code, being able to look at data dog logs and interface with those tools that humans use.
+88
+There are a lot of known devils that we will have to face, and then a lot of unknown devils that we will have to face in the task of making coding agents superhuman.
+89
+And then one thing I will note, kind of harkening back to a last response, is that even if you had something you could talk to that was human level at coding or faster and better, better than a human at coding, sort of the skill of an entire engineering department, I think that the UI of just having a text box asking for a change of the software is imprecise.
+90
+And so even in the limit, if you care about humans being able to control what shows up on the screen, you will need a different way for them to interface.
+91
+And so one potential UI there is an evolution of programming languages to be something that's higher level.
+92
+Another is maybe direct manipulation of the UI, right?
+93
+Being able to point at things on the screen and say, oh, change this, or actually kind of finic with the values yourself.
+94
+Yeah, I mean, that seems like a bunch of things that are kind of just nascent in the wings, right?
+95
+Like the models don't seem to have a really clear sense for aesthetics, for instance.
+96
+And so the idea that maybe this human-level designer needs to actually, you know, be able to, they need to be able to see, actually.
+97
+Yeah, and it's been interesting seeing them improve at the aesthetic side of things.
+98
+And I think that that's actually like an interesting specific example about how we've hacked around these continual learning problems.
+99
+But our understanding is that, you know, the way you teach these models to be better at something like aesthetics is not in the way you would a human.
+100
+It is by, you know, basically collecting a bunch of data, doing RL on them.
+101
+And that's like how you've taught it that task.
+102
+And that's a task that enough people care about that you can pay the cost to do all of that and you can go and train and have it into sort of baked into the base model.
+103
+But it's kind of a hack around the continual learning problem.
+104
+So given this sort of future that everyone's building towards, and you're certainly a leader at the forefront of it, what do you think will be irreplaceable or like sort of the essential pieces of being a software engineer in the future?
+105
+We think that one thing that will be irreplaceable is taste.
+106
+So just defining what do you actually want to build.
+107
+People usually think about this when they're thinking about the visual aspects of software.
+108
+I think it's also there's a taste component to the non-visual aspects of software too, about how the logic works.
+109
+And right now, the act of programming kind of bundles up you figuring out how exactly you want the thing to work, like what product you're really defining with the logic that you're writing, and the kind of high-level taste of the implementation details of how that maps onto a physical computer.
+110
+But then right now, a lot of programming is kind of this human compilation that you're doing where you kind of know what you want, you could tell it to another human being, but you really have to spell it out for the computer because the language that you can you have to describe things to a computer is for normal programming just you know for loops and if statements and variables and methods, and you really have to have to spell it out.
+111
+And so, I think that more and more of that, like human compilation step will go away, and computers will be able to kind of fill in the gaps, fill in the details.
+112
+But since we you know are a tool that's it's helping you make things happen, helping you build things, that kind of taste for what is actually useful for what you want to build, I don't think will ever go away.
+113
+That makes sense.
+114
+There's that quote: good people will help you hit this bar, but the truly great, the truly masterful, they hit a bar that you can't even see.
+115
+Yeah.
+116
+So, and that requires taste.
+117
+You've called it sort of people need to become logic designers.
+118
+What does that mean in terms of intent-driven programming?
+119
+As this tech matures more and more, as we get closer to a world where programming can be automated and can be replaced with a better way of building software, I think there are a bunch of implications.
+120
+I think one is that professional devs will just get so much more productive.
+121
+It's just crazy how slow 1,000 people software projects move and 100 people's software projects move, and real kind of professional software projects move.
+122
+And a lot of that comes down to the weight of the existing logic just kind of getting the best of you.
+123
+When you're in a new code base, you can start from scratch, you can do things very quickly.
+124
+When you change something, there's not a bunch of other things that then break that you need to fix.
+125
+I think that one of the implications of it will be that the next distributed training framework or the next database or the next visual design tool will just be way faster to build.
+126
+The next AI model, which if you talk to the labs, largely they're bottlenecked on engineering capacity.
+127
+I think all of that will just improve a ton.
+128
+I think that one second-order effect too will be many more pieces of niche software will exist.
+129
+One of my first jobs actually was working for a biotech company.
+130
+And it was a company staffed by wet lab scientists.
+131
+They were developing drugs to to cure cure diseases.
+132
+And I was the first software engineer hired.
+133
+And they were generating massive amounts of chemicals and then putting them through these biological experiments and then they needed a readout to kind of figure out which which chemicals to then pursue further and they needed a ton of just internal software development to do that and it was amazing both looking at the existing existing tools off the shelf just how bad they were and then it was crazy to think that this company for whom software was not their core competency had to go out and do this crazy laborious thing of hiring a real software engineering team and turning them up and having them do internal product development and for companies like like that company there will just be many more options available to them the physics of digital space already are so great but I think that that's just gonna you know get turned up many notches into the future things that you want to want to happen on computers will then just kind of be able to happen switching gears like I wanted to hear about the early days of Cursor you met your co-founders Swale Arvid and Amon at MIT and this company started in 2022 what drew you together and when did you realize this was a team that could build something really ambitious together I think we had a lot of youthful naivete I think probably unjustified at the time so from the start we were we were pretty ambitious cursor came out of an ambitious idea exercise actually for the four of us you know we all found programming fairly young and then some of our first engineering projects actually had to do with AI so one of us worked on improving the data efficiency of robotic reinforcement learning so teaching robots very quickly to learn new tasks that was one of our early AI projects you know another one of us worked on building actually a competitor to Google using using neural networks to try and sort of speedrun building an amazing search engine for the web you know others did academic work in AI.
+134
+But there were two moments in 2021 that got us really excited about building a company that was focused on AI.
+135
+One of them was using the first useful AI products where AI was really at the center.
+136
+And GitHub Copilot was honestly the moment where that, viscerally, we really felt like now it was possible to make just really useful things with AI and that we shouldn't go to work in a lab to work on these things, you know, in an academic lab.
+137
+Instead, it was time for this stuff to come out into the real world.
+138
+The other thing that got us really excited was seeing research come out of OpenAI and other places that showed there were these very predictable natural laws that showed if you scaled up the data and you scaled up the compute that goes into these models, they were just getting better.
+139
+And so that meant that even if we ran out of ideas for how to make AI better, there were a couple of orders of magnitude of that to still run.
+140
+From the start, we wanted to pick an area of knowledge work and then work on what that knowledge work became as AI got more mature.
+141
+We were very interested in the shape of a company where you build a product for that area of knowledge work because that lets you do a couple of things.
+142
+One, as the underlying tech gets more mature, you can then evolve the form factor of what doing that thing looks like.
+143
+And then two is, even back then, it was clear you were probably going to need more than just scaling up the size of language models to GPDN.
+144
+And one way to continue carrying forward progress on the underlying machine learning is to get product data of what suggestions do people like?
+145
+What do they dislike?
+146
+What are the hard pieces of human work that the AI still can't really access?
+147
+And you get that if you're the paint of glass where the knowledge work happens.
+148
+And so initially, we set out to do that for an area of knowledge work we actually didn't know that well, which was mechanical engineering.
+149
+And we worked on a co-pilot for computer-aided design for a VET.
+150
+And so we were training 3D autocomplete models.
+151
+So helping people who are doing 3D modeling of a part that they want to build in something like SOLIDWORKS or Fusion 360 and trying to predict kind of the next changes to the geometry they were going to make.
+152
+And it's an interesting problem.
+153
+It's one that academics have worked on.
+154
+It's actually one that DeepMind's worked on a bit too.
+155
+And these were not large language models per se.
+156
+You can do it entirely 3D, or what you can do is one thread that we worked on for a while is turning it into a language problem where you take the steps that someone's doing in a CAD system and you kind of turn it into method calls.
+157
+So if they're making a circle, you make that a method call.
+158
+And it's just kind of like a list of method calls.
+159
+It's not really programming, but it sort of looks like it.
+160
+The problem is, if you're going to do it entirely text-based, you're asking the model to do something really tricky.
+161
+Not just predict what the user is going to do next, but also in its mind's eye, simulate the geometry.
+162
+Because CAD kernels, like this software underlying these CAD applications, they're fairly complicated.
+163
+And just from seeing the sequence of actions the user took, it's kind of hard to hallucinate what the final thing looks like.
+164
+It's pretty tricky.
+165
+But we worked on that for a bit.
+166
+There was a ton of data work to do there, a ton of data scraping, where there's CAD data that exists on the open internet.
+167
+We needed to get that to make the models better and better.
+168
+And then we put that aside.
+169
+And that was for a couple of reasons.
+170
+One was we really weren't as excited about mechanical engineering as we were about coding.
+171
+We were all coders.
+172
+The other one was, I think that the science back then wasn't yet ready for 3D.
+173
+It's like the pre-trained models weren't that good at it.
+174
+There wasn't a lot of data.
+175
+There's orders of magnitude less data of CAD models in the internet than code.
+176
+And so it's hard to make a useful model, or it was back then hard to make a useful model for that domain.
+177
+Did you end up going to sit with, I don't know, people who used CAD or machinists and people like that?
+178
+So we did.
+179
+We did tons of user interviews.
+180
+And I think we could have done that even better.
+181
+And I think that, again, on the maybe useful naivete, we were operating day-to-day, week to week, counting tasks by the hours.
+182
+And looking back on the time we spent on that, I think it would have been better upfront to actually just go work at a company that was employing mechanical engineers for three weeks.
+183
+Just go undercover.
+184
+Get a better sense for the results of.
+185
+Just get a job as a draftsperson.
+186
+Yes, yes.
+187
+I think that would have been immensely valuable.
+188
+And substituting some of the hundreds of user interviews for that.
+189
+I guess alongside that, you were also getting into training your own models to be able to do this, which were, you know, and using RL.
+190
+And that was very useful.
+191
+And also learning how to spin up large clusters to actually train these models.
+192
+Yeah.
+193
+So in that kind of period of false starts, we didn't know it at the time, but yeah, some of the stuff we did there ended up being useful for us.
+194
+It was doing a lot of behavior cloning, less RL, but you were kind of looking at good examples of what humans did and then training the AI to do those things.
+195
+But yeah, training large language models in the order of tens of billions of parameters was not something a ton of people were doing back then.
+196
+Even though the kind of end product of the product and models that we were working on at that time wasn't that useful, it was a great dry run of training models at scale.
+197
+And, you know, also doing inference at scale.
+198
+They're both back then, and honestly, also now, there weren't that many people training 10 billion plus parameter scale large language models, machine learning models.
+199
+And so the state of the infrastructure was very, very early, and we were doing things like forking Megatron LM or Microsoft Deep Speed and kind of ripping out the internals and then deploying that for training.
+200
+Even on the inference side of things too, there were a couple of, during that period, a couple of things that we ran at scale.
+201
+Now in Cursor, we do over half a billion model calls per day on our own inference.
+202
+And some of the experience of doing inference back then and training back then has definitely been immensely useful for the cursor experience.
+203
+So one of the things that's, I mean, A, incredibly brave, but also incredibly prescient was to take a moment and say, actually, we don't know enough about CAD.
+204
+You know, we need to do something else.
+205
+Was it a straight B line from training the CAD models, you know, sort of recognizing that scaling laws were holding and here was a domain that we could go down.
+206
+And then you realize, actually, we need to do something else.
+207
+Like, what was it to actually pivot it to what it is today?
+208
+It wasn't a straight B line.
+209
+We, I mean, being programmers ourselves and being inspired by products like Copilot and also papers like the early Codex papers.
+210
+I remember at the time, one of the things we did to justify to investors that they should kind of like invest in our crazy CAD idea is we did that back of the envelope math for what Codex, the first coding model, costed to train.
+211
+From my memory, it only cost about 90K or 100K by our calculations.
+212
+That really surprised investors at the time, and it was kind of helpful in us getting enough money to pursue the CAD idea where you had to start training immediately.
+213
+So, we always knew about coding.
+214
+We were always excited about it.
+215
+We were always excited about how AI was going to change coding.
+216
+We had a little bit of trepidation about going and working on that space because there were so many people already doing it.
+217
+And we thought Copilot was awesome.
+218
+And there were dozens of other companies working on it too at the time.
+219
+When we decided to put aside CAD, which was a little bit of an independent idea, that was sort of the science not really working out, us not really being excited about that domain.
+220
+The thing that drew us back into coding was our personal interest.
+221
+And the thing that gave us the confidence then to continue with it was one, seeing the progress that others had made over the course of nine months or whatever it was.
+222
+Felt like it was a little bit slower than it could have been.
+223
+And then also just sitting down and thinking that if we were being really consistent with our beliefs in five years, all of coding was going to flow through these models.
+224
+And the active programming was going to entirely change.
+225
+And there were going to be all these jumps you needed both at a product level and at a model level to get there.
+226
+And the ceiling was just so high.
+227
+And it really didn't seem like the existing players in the space were aiming for a completely different type of coding.
+228
+It didn't seem like they had that ambition, like they were really set up to execute on that too.
+229
+That first experience taught us that building a company is hard.
+230
+And so you may as well work on the thing that you're really excited about.
+231
+And so, yeah, we set off to work on the future of code.
+232
+It sounds extra prescient in that Sam Altman sat in this chair maybe a year ago and talked about how if you're betting against the models getting smarter, that's bad.
+233
+You should always bet that the models are going to get a lot smarter.
+234
+And, you know, 12, 18, 24 months later, that's been only more and more true.
+235
+And then it sounds like you had been taking that bet a full 12 months before even that was said.
+236
+Yeah, we had a phrase back then, which was follow the line.
+237
+And you wanted to always be following the line and planning for where the line was.
+238
+I mean, kind of harkening back to the scaling loss of like, you know, these things are just going to keep getting better and better and better.
+239
+The classic Peter Thielism is what do you believe that nobody else believes?
+240
+And you believe this, and you were so right that that's what allowed you to actually go to where the puck was going to be.
+241
+Yeah, I think it was one of the things that was helpful.
+242
+And now, obviously, it's become much more in vogue.
+243
+But back then, you know, 2022 was this crazy pivotal year where you start at the beginning of the year.
+244
+No one's really talking about AI.
+245
+I mean, GPT-3 had happened the year before.
+246
+Copilot had happened.
+247
+Copilot was beta 2021 and then maybe GA 2022.
+248
+And then it started picking up.
+249
+And we still remember all the launches of InstructGPT, which made GPT3 a little bit better.
+250
+It was fine-tuning on instructions.
+251
+And then DALI in the summer.
+252
+I remember that was kind of the visceral moment that convinced a lot of people who weren't focused on the space to pay a bit more attention to it.
+253
+But then there was Palm and Stable Diffusion.
+254
+And then you start to get RLHF.
+255
+You start to get 3.5.
+256
+You have these models getting way better without a big increase in the training costs, which was an interesting development.
+257
+Heard it rumored that to go from GPT-3, which had existed for a while and didn't impress some people, but was certainly not the breakout moment ChatGPT was, to ChatGPT, it was like a 1% increase in the training costs.
+258
+Oh my God.
+259
+Because it was from fine-tuning on instructions, RLHF, some other details too.
+260
+Do you remember, were there specific features or product choices that you made because you knew that the models were going to get not just a little bit smarter, but significantly smarter?
+261
+Did that change specific products or roadmaps that ended up sort of causing you to win?
+262
+Because you mentioned, I mean, there were certainly maybe a dozen other companies that were quite good that were also in the area.
+263
+So one of the product decisions that we made early on that was non-obvious that came from being excited about a bit more of a radical future was not building an extension and was building an editor.
+264
+was not obvious to people at the time.
+265
+And yeah, that came from a place of thinking, all of programming is going to flow through these models.
+266
+It's going to look very different in the future.
+267
+You're going to need a control UI.
+268
+It also came too from interesting anecdotes we knew about.
+269
+So we knew a little bit about the internal inside baseball of building GitHub Copilot, the first version.
+270
+The whole building GitHub Copilot story, from what I understand, and don't have first-hand knowledge, so some of these details might be wrong, is pretty interesting, where it started from a very solution search for a problem place of being interested in just taking GPT-3 and making it useful for coders.
+271
+And I think it came from leadership.
+272
+It came from the CEO of GitHub at the time.
+273
+He just said, we need to be doing this.
+274
+And he kind of sent a tire team off, figure out.
+275
+Was that Matt Friedman at the time?
+276
+Yeah.
+277
+Yeah.
+278
+My understanding is this came from Matt.
+279
+And I think they spent almost a year wandering in the desert, experimenting with different product ideas.
+280
+And of course, they had the, these were people really excited about the future of AI.
+281
+So they thought immediately, can we just automate PR's intent a little before or it's time?
+282
+And they worked on that for a bit and then decided that was impossible.
+283
+And they tried all these other wacky product ideas until they just found the simple thing of autocomplete.
+284
+But even after they got autocomplete to work, they needed to make changes at the editor level.
+285
+They couldn't do it entirely as an extension.
+286
+They had to go and change things in the mainline VS Code and expose different editor APIs to even just show that ghost text.
+287
+Then there was some, from my understanding, that was actually kind of hard to do organizationally.
+288
+If you were going to need to change the editor for something as simple as Ghost Text Autocomplete, we knew we're going to have to do it a bunch.
+289
+And so that was non-obvious, and we got a lot of flack for that.
+290
+And we actually initially started by building our own editor from scratch, obviously using lots of open source technology, but not basing it off of VS Code, kind of like how browsers are based off of Chromium.
+291
+It was a little bit more akin to building all the internal rendering of a browser from scratch.
+292
+And we launched with that.
+293
+And then we switched to basing it off of VS Code.
+294
+But the editor thing was not obvious.
+295
+So cursor's out.
+296
+You made a bunch of decisions that turned out to be right.
+297
+When did you know it was going to work?
+298
+It took a little bit of time.
+299
+If you'll remember, there's this initial year, roughly a year in the wilderness of working on something that was precursor to cursor and the mechanical engineering side of things.
+300
+And then there was an initial development period for cursor that was fairly small before we released the first version to the public.
+301
+I think that it was from lines of code to first public beta release.
+302
+It was three months.
+303
+But then there was this year of iterating in public at very small scale where we did not have Lightning in the model.
+304
+And it was growing, but it was, you know, the numbers were small.
+305
+Dialing in the product at that point took maybe a year of getting all of the details right.
+306
+Then it was only after that initial period of cursor being out for nine months to a year of working on the underlying product, building out the team.
+307
+Also, not just the product side of things, but also starting to get the first versions of custom models behind cursor to power underneath cursor that things started to click.
+308
+And then growth started to pick up.
+309
+And then, yeah, since then, it's been, you know, we sort of have a tiger by the tail.
+310
+And if we are to be successful, there's a lot of things that we need to continue to execute on in the future.
+311
+I think one of the challenges we have, and a lot of other companies in parallel spaces have, is just the rate at which we need to build the company, I think, is really fast.
+312
+And I think rules of thumb around don't grow headcount more than 50% or year over year.
+313
+Iron loss.
+314
+Have to be broken, I think.
+315
+Interesting.
+316
+Were there like sort of True North metrics or things that you and your co-founders were monitoring to figure out like, is this working?
+317
+Was it week on week retention or open rate?
+318
+How did that influence what you were working on in a given week?
+319
+So we looked at all the normal things like retention.
+320
+For us, the main activity metric we looked at, or the main top line metric we looked at, we looked at revenue.
+321
+We looked at paid power users measured by, are you using the AI four or five days a week out of seven days a week?
+322
+And that was the number we were trying to get up.
+323
+And why was it paid?
+324
+Well, I think that we're a tool that serves professionals.
+325
+And I also think that to deliver the tool, it has real costs.
+326
+And so we care about you graduating to that paid tier.
+327
+And that's where things are sustainable.
+328
+Hey, power users.
+329
+That was what we, you know, it wasn't DAUs, MAUs, or anything like that.
+330
+It was, are you using this every single day for your work?
+331
+That's what we were trying to get up.
+332
+And then once that was the metric, I guess, did you work backwards from that?
+333
+It's like, well, we know the segment of people we want to grow.
+334
+And then what do they want?
+335
+Or what would prevent people from becoming that?
+336
+I think that building for yourself doesn't work in a lot of spaces.
+337
+For us, it did.
+338
+And I think it was actually clarifying because one of the siren songs involved in building AI products is optimizing for the demo.
+339
+We were really nervous about optimizing for the demo.
+340
+Because with AI, it's easy to kind of take a couple of examples and put together a video where it looks like you have a revolutionary product.
+341
+And then I think that there's a long line, there's a lot of work between the version that can result in that great-looking demo and then a useful AI product, which means kind of dialing in the speed side of things, the reliability side of things, the intelligence side of things, the product experience side of things.
+342
+For us, the kind of main thing that we really acted on was just we reload the editor.
+343
+Our product development process early on, it was very experimental.
+344
+It was very focused on kind of like what we understand Apple to be, like very focused on dog fooding and usable demos, like things we could just immediately start using in the editor internally.
+345
+And then we would look at these metrics to make sure that, you know, week on week, month on month, we were kind of on the right path.
+346
+So earlier you said, I mean, sometimes you got to break these iron laws around hiring.
+347
+When did you decide to break it?
+348
+I mean, you know, was it just the co-founders and a few people until sort of, you know, some revenue goal?
+349
+How did you think about the gas pedal?
+350
+Did you like sort of feather it?
+351
+And then like once it was clear, like you hit your numbers, like we're pushing the pedal all the way down.
+352
+So it was just the co-founders for a long time, and then the co-founders and a few people until we got to the point where things were really kind of dialed in and taking off.
+353
+Who were some of the first hire?
+354
+I mean, I assume more engineers, but you know, so we agonized over the first hires.
+355
+And I think that if you want to go fast on the order of years, actually going slow on the order of, you know, six months is super helpful.
+356
+Because if you really nail the first 10 people to come into the company, they will both accelerate you in the future because when the nth person comes in that's, you know, is thinking about working with you, comes in and hangs out with the team, they'll just be shocked by the talent density and then really excited to work there.
+357
+And then the other reason they can help you go faster in the future is if someone comes in and they're not a great vet, these people will act as an immune system against that, right?
+358
+And they will be kind of keepers of holding the bar really high.
+359
+And so we hired very, very, very slowly at the start.
+360
+We were able to do that also partially because we had such a big founding team and all the co-founders were technical.
+361
+But yeah, the people we got are fantastic and are really core to the company today.
+362
+And folks who bled across disciplines where we are this company that needs to be something in between a foundation model lab and a normal software company.
+363
+And the models and product have to work together under one roof.
+364
+And so we had fantastic people who were product-minded, commercially-minded, but had actually trained models at scale.
+365
+So generalist polymath is really, really great at sort of that first 10 people stage.
+366
+Yeah, and making, building things quickly.
+367
+Yeah.
+368
+And shipping production code quickly.
+369
+These days, I mean, everyone's sort of trying to figure out how to deal with this, but simply because the AI tools are so great, it's making it harder at times to even figure out how do you evaluate great engineers.
+370
+Has that changed over time for you as literally your own product has become more and more common?
+371
+Do you select for people who are really great at using the AI tools?
+372
+Or is it really just the, you know, let's stick with the classics and anyone could learn how to use the AI tools?
+373
+So for interviewing, we actually still interview people without allowing them to use AI other than autocomplete for our first technical experience.
+374
+Programming without AI is still a really great time-boxed test for skill and intelligence and kind of the things that you would always want someone on your team to have as a programmer.
+375
+But then the other reason is we've hired lots of people who are fantastic programmers who actually have no experience with AI tools.
+376
+And we don't want to unfairly disadvantage them because these tools are so useful.
+377
+So we would much rather hire those people and then teach them on the job to use these things and also kind of mine the product insights from that beginner's mind of them using the tools for the first time.
+378
+Cursor is now worth $9 billion.
+379
+How do you keep the hacker energy alive, you know, as the team scales?
+380
+And do you still write code and I do, yes.
+381
+It's something that we think about a lot because I think that cursor in the future will have to look very different from cursor today.
+382
+One, I think you can do it by hiring the right people.
+383
+So the last step of our hiring process is a two-day on-site where you come and you just work on a project with us.
+384
+And so this is after an initial set of technical screens.
+385
+And you're in the office and you're kind of a member of the team and you come to meals with us and work on something, then you demo it at the end and then we ask you questions.
+386
+That gets at energy and excitement and passion for the problem space.
+387
+And usually you're probably not going to be super willing to do that if you maybe just view it as a job and you're applying to a bunch of technology companies at the same time.
+388
+So I think a big way to do it is by getting passionate people through the hiring process.
+389
+There are big projects that require a lot of coordination amongst people where you need top-down alignment.
+390
+I think that we always want to be a place that does a good degree of bottoms-up experimentation too.
+391
+And so we really try and encourage that, both people taking time on the side to do that, and then also explicitly taking teams of engineers, sectioning them off from the rest of the company, and kind of just giving them carte blanche to experiment on what they'd like.
+392
+So one of the things that I think all startups and maybe all businesses right now are even trying to figure out in the face of some of the most impressive and incredible models in the world is what are the moats that are going to actually be durable and usable.
+393
+How do you think about that?
+394
+Well, I think that the market that we're in and that others are in resembles markets that you've seen in the past that actually aren't enterprise software markets.
+395
+So I think that a lot of enterprise software markets are kind of characterized by, well, there's sort of a low ceiling for the good core value you can deliver in the product, and there's a lot of lock-in.
+396
+And the market we're in kind of mirrors search at the end of the 90s, where the product ceiling is really high.
+397
+Search could get a lot better for a long, long period of time.
+398
+And, you know, for us, the end goal is to replace coding with something much better and automate coding.
+399
+And I think that there's a long, long, long way to go on that.
+400
+One of the things that characterize search, and I think also characterize our market, is distribution is really helpful for making the product better.
+401
+And so if you have lots of people using your thing, you have an at-scale business who get a sense of where the product's falling over and where it's doing well.
+402
+And so in search, that's seeing, you know, what are people clicking on?
+403
+What are they bouncing back from?
+404
+What was a good search result?
+405
+What is a bad search result?
+406
+Which then feeds into the RD and then helps them make a better search engine.
+407
+For us, it's seeing, you know, where are people accepting things?
+408
+Where are they rejecting things?
+409
+In the places where they accept things and then they correct it later, what's going on there?
+410
+How could we have been better?
+411
+I think that that will be a really, really important driver to making the product better and kind of the underlying models better in the future.
+412
+I think another market to take inspiration from is consumer electronics at the beginning of the 2000s.
+413
+The thing there was getting the iPod moment right and then the iPhone moment right.
+414
+And I think the chat GPT moment is kind of like the iPod or iPhone moment of our age of if you keep pushing the frontier faster than other people, you can get really big gains occurring to you.
+415
+And I think that there are a couple more of those that exist in our space.
+416
+And so it's hard to do, but we're really focused on trying to be the ones to race toward those the fastest.
+417
+It's 2025.
+418
+I feel like we're actually even in the opening stages of this age of intelligence.
+419
+What a revolution.
+420
+You know, what are you personally most excited about right now?
+421
+I think that this is going to be a decade where just your ability to build will be so magnified.
+422
+Both people who already, that's their living and that's what they do, but then I think it'll also become accessible for a ton of smart people.
+423
+What a time to be alive.
+424
+Thanks for joining me today.
+425
+Thank you.
+426
+Thanks for having me.

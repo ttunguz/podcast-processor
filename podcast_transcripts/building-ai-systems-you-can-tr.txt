@@ -1,0 +1,927 @@
+--- METADATA START ---
+Show: AI + a16z
+Episode: Building AI Systems You Can Tr…
+Host: Derek Harris
+GUESTS: Scott Clark, Matt Bornstein 
+Guests: Scott Clark, Matt Bornstein
+Source URL: https://podcasts.apple.com/us/podcast/building-ai-systems-you-can-trust/id1740178076?i=1000709586075
+--- METADATA END ---
+
+1
+After helping people optimize models for about a decade and a half, I came to a really interesting realization that I was solving the wrong problem.
+2
+And foundationally, it was that the thing that's holding back people getting value from these AI systems is not performance.
+3
+It's not about squeezing out that last half a percent from some eval function or some performance metric.
+4
+It's about being able to confidently trust these systems.
+5
+And I can't tell you how many times over the decades we would help someone optimize a system and they would say, okay, but what did you break?
+6
+What bad behaviors are you introducing?
+7
+What lack of robustness do I now have because I've overfit this system?
+8
+And we're seeing people do the exact same thing again today with LLMs, where they're focusing on these high-level metrics, these end outputs, these performance evals, and that ends up masking all of these potentially undesired behaviors within the system itself.
+9
+Welcome to the A16Z AI Podcast.
+10
+I'm Derek Harris, and I'm joined this week by A16Z partner Matt Bornstein and distributional co-founder and CEO Scott Clark for a deep dive on deploying and testing AI systems, particularly, but not exclusively LLMs, in enterprise environments.
+11
+We cover a number of topics under this broad umbrella, but the focus was really on how enterprise users can and are trying to establish a trusting relationship with AI so they can actually put it to work on important work and scale their deployments beyond small projects.
+12
+Generative AI can be inherently chaotic at a systems level, so it's a process that involves invoking some level of control over usage and lots of monitoring and testing to track behaviors and ensure small changes to one part of the system, the system prompt, for example, don't have unexpected impacts in other parts, including customer-facing outputs.
+13
+The discussion begins with Scott giving his somewhat tongue-in-cheek definitions of machine learning and artificial intelligence before sharing some of his background, including the hard-earned realization that trust, not performance optimization, is the biggest factor in how heavily large companies will deploy AI.
+14
+As a reminder, please note that the content here is for informational purposes only, should not be taken as legal, business, tax, or investment advice, or be used to evaluate any investment or security, and is not directed at any investors or potential investors in any A16Z fund.
+15
+For more details, please see a16z.com/slash disclosures.
+16
+So, can you just define for us what's machine learning, what's AI?
+17
+Like, as someone who's lived through the ups and downs of this market, I remember answering a similar question, I think, on an A16Z podcast, maybe eight years ago.
+18
+All right, maybe we can pop in the old answer.
+19
+Pop in the right here, and I think the answer is somewhat the same.
+20
+Like, machine learning is the stuff that's now become easy, and then AI is all the fun, new stuff.
+21
+And then, as soon as it stops becoming the cutting edge, then it just becomes, oh, that's just machine learning.
+22
+It's not magic anymore.
+23
+It's not magic anymore.
+24
+And I mean, you can go all the way back to the old like Dartmouth conference and things like that, of like, oh, spell check is AI because that's an untractable problem.
+25
+But I don't think anybody would constitute that as AI today.
+26
+Now, of course, with generative AI, I think one of the big differences is instead of these systems being focused on just kind of like classification or regression, trying to determine whether something exists in a set or what the next element should be, now they're actually much more interactive.
+27
+And like the types of applications, the types of ways that you can use these systems is becoming so much larger because, I mean, gen is in the generative aspect of them is in the name, but that's fundamentally different, I think.
+28
+And I think that's opened this whole new wave of value for enterprises.
+29
+Before we get too deep into the state of the world today, can you quickly talk through like your background and then how you ended up with the realization that inspired DistributionL?
+30
+It starts about 10 or 15 years ago with my first startup, SIGOPT.
+31
+That company was based off of my PhD research, and it was all about how we help companies optimize AI systems.
+32
+So, how do you get a little bit more performance out of a very sophisticated model?
+33
+And so, this is in the sort of traditional machine learning days, right?
+34
+Exactly.
+35
+This was all traditional first-wave ML and AI.
+36
+The definition of AI has obviously shifted over the last decade or so, but it was, yeah, tuning XGBoost models, tuning like ConfNets, tuning reinforcement learning algorithms, that sort of thing.
+37
+But it was all about how do I tune all the different parameters.
+38
+And now, of course, these parameters still exist with temperature and different ways that you can segment various aspects of these foundational models.
+39
+But it was all about how do I get this peak performance.
+40
+And we did this for about a decade and ended up selling the company to Intel in 2020, where I led the AI and HPC division for their supercomputing group.
+41
+And after helping people optimize models for about a decade and a half, I came to a really interesting realization that I was solving the wrong problem.
+42
+And foundationally, it was that the thing that's holding back people getting value from these AI systems is not performance.
+43
+It's not about squeezing out that last half a percent from some eval function or some performance metric.
+44
+It's about being able to confidently trust these systems.
+45
+And I can't tell you how many times over the decades of working with SIGOP and going all the way back to my PhD, we would help someone optimize a system and they would say, Okay, but what did you break?
+46
+Like, what bad behaviors are you introducing?
+47
+What lack of robustness do I now have because I've overfit this system?
+48
+And we're seeing people do the exact same thing again today with LLMs, where they're focusing on these high-level metrics, these end outputs, these performance evals.
+49
+And that ends up masking all of these potentially undesired behaviors within the system itself.
+50
+But it's really a much harder problem because instead of just having a binary output, now you have maybe more freeform text.
+51
+Maybe you have an agentic system that can do all of these different things.
+52
+And behavior matters more now than ever.
+53
+But there aren't great systems out there to help you understand, define, and test these systems.
+54
+And that's really what distributional is aimed to do: trying to attack this problem of confidence through testing instead of just optimization through performance, like SIGOPT was.
+55
+You were managing a pretty large team at Intel, right, and managing a pretty large customer base.
+56
+Was that part of what kind of helped you see a different form of this problem?
+57
+Definitely.
+58
+That was a big jump from managing a team of about 25 when we were acquired by Intel to leading a team of about 200 by the time I left Intel.
+59
+I got to see problems at a higher level.
+60
+And I got to start to see some of the things that some of our customers now are frustrated with, where, yes, it's great to build these models.
+61
+Yes, it's great to have them be performant and things like that.
+62
+But at the end of the day, if you're responsible to your customers, whether they be internal or external, you care about reliability.
+63
+You care about consistency.
+64
+And we kept running into problems there.
+65
+And I mean, people are running into this problem across the Fortune 500 and Global 2000 today of, okay, how do I sleep at night effectively?
+66
+And I couldn't find a good solution when I was at Intel.
+67
+I couldn't figure out a way to outsource.
+68
+And so, like any good entrepreneur, if you have a problem and then you see it's a very pervasive problem, you can't see the solution, you go try to build it yourself.
+69
+And it's been really exciting to do that again the second time.
+70
+Again, taking all of those past learnings, all those past mistakes.
+71
+I've made a ton of mistakes as just a naive PhD student trying to build a company.
+72
+I won't force you to go through the mistakes that you made.
+73
+Maybe that's for a follow-up podcast.
+74
+Yeah, we'll need a handful of podcasts to enumerate all of those.
+75
+But now we get to do it again and now make all new mistakes 10 times faster.
+76
+We work with a lot of founders who cycle through focus areas very quickly, which can be great.
+77
+That's a great way to sort of find product market fit.
+78
+I think your persistence is rare in a sense, where actually spanning three companies, you've sort of worked on a similar core problem, and you're just really almost obsessed with finding the right way to solve it.
+79
+What was it like to sort of have this light bulb moment where you're like, oh crap, I wasted X years doing the wrong form of this?
+80
+Or is it like, oh my God, this is so exciting.
+81
+Like I finally found the right angle on this problem.
+82
+Or can you just talk a little personally what that was like for you?
+83
+Yeah, I think it's more of the latter.
+84
+And one of the joys of being persistent, for better or worse, is that it allows us to really empathize with the people who are building these systems.
+85
+And we've been able to work with people doing machine learning, AI, for the better half of a decade or more now.
+86
+And we get to see a lot of the same patterns, a lot of the same systems, a lot of the same mistakes being made.
+87
+And we get to help them do a little bit better, do a little bit more.
+88
+That's really been one of the ethos of both SIGOPT and now distributional.
+89
+It's about building tools to allow these domain experts to do their expertise better, to do it more confidently, to really not have to worry about some of the things that they know they should be worried about and really focus on where they can apply their expertise to make something great.
+90
+And it's been great to be able to work with, honestly, a lot of the same types of people.
+91
+A lot of the people who are now in charge of building Gen AI platforms or productionizing these massive use cases are the same people who built those original machine learning systems.
+92
+At a systems level, though, how does generative AI compare to those other machine learning systems that these folks have been working on, let's say, in the pre-LLM era?
+93
+I think one of the main distinctions is how atomic some of these units maybe are.
+94
+And so with a lot of traditional ML and AI, it was all about: can I make a specific decision?
+95
+Can I make a yes-no decision on whether or not I have a loan?
+96
+Can I make a specific prediction?
+97
+Do I know which direction this stock is going to go in the next minute or something like that?
+98
+And with generative AI, it becomes much more collaborative and it's much more expansive in what it can actually do, from literally just being able to have a conversation with it to some of these agentic systems that we're seeing come up where now you have a model calling a model, calling an MCP server, calling a model, making a decision.
+99
+And these pipelines have always existed, but the kind of end-to-end nature of them and how hands-off they can be, how dependent they can be on these internal components and how some of these behaviors can propagate through the system, I think is fundamentally different from the more atomic, like unit-based, almost microservice aspect of traditional ML and AI systems.
+100
+So I guess what does that mean if for like a product owner, what do they kind of worry about once something goes to prod in kind of new AI land versus traditional machine learning land?
+101
+Yeah, so I think some of the concerns are the same in the sense that they want these systems to be performant.
+102
+They have to do better than whatever the status quo is today, whether that's a human or whether that's a traditional machine learning and AI system.
+103
+But fundamentally, again, and this is the learning that I got after doing this for such a long time, focused squarely on optimization, is it's more than just performance too.
+104
+It's this behavior of these systems.
+105
+And it's making sure that not only does it hit whatever KPI you want it to do, but it also doesn't do the bad thing.
+106
+It doesn't have some sort of undesired behavior.
+107
+And that undesired behavior could be, I just don't want it to change dramatically without me knowing, or it could be that I explicitly don't want it to exhibit a specific bias or a specific type of response.
+108
+And I think the main thing that's shifted, though, is just how large that output space can be.
+109
+There's really three main things that make it difficult to quantify and understand the behavior of these AI systems.
+110
+And one is that they're inherently non-deterministic.
+111
+And so this is true of some traditional machine learning and AI systems as well.
+112
+But basically, the idea here is the same question can get you different answers.
+113
+And this non-determinism isn't just that the exact same question can get you different answers, but it can also be a very chaotic system where like slightly different questions can get you very different answers.
+114
+Another aspect of this is that they're inherently non-stationary.
+115
+And so they're literally shifting underneath you.
+116
+And this can be because your LLM provider decided to change their infrastructure.
+117
+And then that changes the way.
+118
+Or it can be because maybe upstream of your application, somebody added more things to your vector database, or they changed the retrieval prompt, or they changed something else.
+119
+These systems are constantly shifting underneath you when it comes to a product perspective.
+120
+And this gets to this third component of the complexity of these systems.
+121
+It's just getting larger and larger.
+122
+Again, they're no longer these atomic units where you're just getting a single yes-no answer out of them.
+123
+It can be these systems where, yeah, you're retrieving and then you're generating a response, and then that response is being fed into another system, being fed into another system where maybe an autonomous decision is being made.
+124
+And so some of those issues around non-determinism and non-stationary end up just propagating through that system.
+125
+If it's chaotic at the beginning and chaotic at every step along the way, these very small changes to the input that we're creating, large changes to a single output, can now create massive behavioral changes by the time it actually starts to affect an end user.
+126
+And so it's really important.
+127
+And what I think a lot of firms are running into right now is if you're only looking at that last step, if you're only looking at the system's performance as a whole, it can be very difficult to understand when, where, and why behaviors are shifting within this application upstream and be able to use that information to adapt, make changes to your application, or understand exactly what's happening.
+128
+I think we're pretty rapidly entering a world where trust in AI systems is even more important than their raw performance, right?
+129
+Because these things are really good at doing a lot of different stuff.
+130
+But how do users, how do customers actually accept that?
+131
+Yeah, and that trust can come in many different forms.
+132
+It can be making sure it's reliable, making sure it's consistent, or even going so far as to say making sure that these kind of latent behaviors are aligned with my desires.
+133
+And there's obviously a lot of great companies out there trying to solve this at the kind of AGI global level.
+134
+But for individual enterprises, you want these applications to also be aligned with your business, with the values of your business, with your individual goals, not just trying to squeeze out a little bit more click-through rate, a little bit more retrieval performance or whatever.
+135
+So it's almost like the enterprise has to trust what the model or what the system is going to do in order for their customers to kind of trust them.
+136
+Is that sort of a fair way to think about it?
+137
+Definitely.
+138
+And like anything in life, it's important to trust, but also to verify.
+139
+And that's where testing comes in, because you do need to be able to trust these systems, but you want a mechanism to be able to consistently, reliably, and adaptively verify that they're doing this, both as you're making changes, as the world changes underneath you, and as these models change as well.
+140
+And this is what you're doing at Distributional, right?
+141
+Definitely.
+142
+So Distributional is an enterprise platform to allow teams to test these applications in production to make sure that they are behaving as expected.
+143
+You say behavior a handful of times, but behavior can mean a lot of things to a lot of people when it comes to AI.
+144
+So how do you define behavior in the context of what you're trying to sell for, what Distributional is trying to sell for?
+145
+Behavior for these applications ends up being not just what it produces, but how it produces it.
+146
+So it's all of these characteristics potentially of the text itself.
+147
+So, not just was this a good answer, but maybe what was the toxicity of the answer?
+148
+What was the leading level of the answer?
+149
+What was the tone?
+150
+How long was the answer?
+151
+All of these just properties that can be characteristics of just the language itself.
+152
+But if it's part of maybe a rag system, too, it's like what was retrieved?
+153
+How often is that what's being retrieved?
+154
+What were the time stamps related to these individual documents?
+155
+Was it starting to ignore things that it used to cite all the time, or vice versa?
+156
+And as we start to get into these agentic systems, and a lot of teams speak about this, I know Google's deep research team spoke about this recently.
+157
+It's like, well, in the reasoning step, how long did that take?
+158
+How many reasoning steps did it take?
+159
+All of these are characteristics for how the model is actually behaving on the way to that end answer, on the way to that performance metric.
+160
+And I definitely don't want to say the performance doesn't matter because it definitely does.
+161
+And that's an aspect of behavior.
+162
+You want good behavior, you want good performance, you want consistent performance, but it is fundamentally this very high-level bit.
+163
+And it can mask all of these underlying latent behaviors that could have an effect on the system.
+164
+And especially because these are inherently non-stationary and chaotic systems, you want to be able to catch those latent behaviors as quickly as possible.
+165
+And some of them might actually turn out to be things that you want to be performance metrics, much in the same way that with traditional machine learning, fraud detection, you want to be as accurate as possible.
+166
+But by detecting that you have bias, maybe you want to factor that into your performance metric over time.
+167
+And this is about adapting that desired behavior over time as you learn more.
+168
+And then what you do as well, too.
+169
+Because at the end of the day, if you have a lawyer or something, having a high score on the LSAT's great, but that doesn't tell you anything about how they're going to behave in the courtroom.
+170
+So AI, you know, bedside manner or courtroom rabbitas.
+171
+And there's so many classic examples, too, from traditional ML and AI of, and you'll remember some of these, I'm sure, too.
+172
+You train a reinforcement learning algorithm to pitch a baseball, and it decides that just running the baseball up to the catcher is the most effective way to do it.
+173
+And you're like, well, okay, I did just tell you to get the ball in the mitt.
+174
+You technically solved it, but that's not great.
+175
+But even in these Gen AI systems, like there's this classic example that came out recently of chess, where if you just tell it to win a chess game and you give it access to board state, it's going to rewrite the board state to win.
+176
+And that's an example of a behavior where, yes, if the performance metric was games one, it's got a great performance metric, but the behavior was it cheated.
+177
+One thing that we've seen that's really interesting over the last year, year and a half, is people have started to shift from kind of science project prototype land where they have a bunch of individual teams trying to roll their own stack and trying to like build everything that they need to get something out individually into starting to build more centralized platforms.
+178
+This is again very similar to what we saw in the early ML and AI days where maybe every individual data scientist was like, I'm going to spin up scikit-learn and I'm going to have all my data locally and I'm going to have some model that works incredibly well for rapid prototyping and exploration.
+179
+But when it comes to exploiting these models and really making sure that you can do it at scale, making sure that the organization can protect itself, can really leverage all of its resources, you want to have more centralized tooling.
+180
+And so, much in the same way that we saw the rise of ML and AI platforms over the last decade, we're now starting to see the rise of these Gen AI platforms.
+181
+And this has organizational benefits from, again, making sure you can scale, making sure you have proper cost allocations, but it can also really tamp down on a lot of what we're hearing from CIOs and CTOs of kind of shadow AI.
+182
+People calling models they shouldn't, feeding them things that they shouldn't, creating vulnerabilities that they shouldn't.
+183
+And so, this is the perfect kind of harness to start to do testing, though, as well, too.
+184
+Because once you have this centralized Gen AI platform, once you have a gateway or a router that's logging all of your API requests, all of your traces, et cetera, testing can live on top of those logs, on top of that data store to give you this more holistic view across all of your applications.
+185
+How are they behaving, which ones are behaving differently, and provide that behavioral analysis and testing to the end developer for free as part of that platform?
+186
+And so, is this shadow IT problem worse with language models and generative AI compared to the past?
+187
+I would say so because everybody's doing it.
+188
+You had to know what scikit-learn is.
+189
+Yeah, you know, exactly.
+190
+And it was a somewhat localized problem because, like, you're doing data science on your laptop versus now I'm just shipping off a secret IP to some SaaS company or something like that.
+191
+And it's really easy to do it.
+192
+We just need an API key, basically.
+193
+Exactly.
+194
+I mean, it's great that all these developer tools exist and they've made it really easy.
+195
+The downside is they've made it really easy for people to do things they shouldn't do.
+196
+So not only do you have the benefit of centralization and scaling and support and things like that, you're also mitigating the harm that sometimes is accidentally being done where it's like, oops, I guess our code base is now public or whatever it may be.
+197
+So if I'm a technology executive at a big company right now experiencing this phenomenon of little AI projects popping up everywhere, some of them doing really well and actually becoming important parts of our business, what should I think about doing, just practically speaking, to kind of get my arms around this?
+198
+And what should I think about building to reach kind of like this target state of like platform nirvana?
+199
+So we see a lot of different variations of this, to be honest, across all the different companies that we're talking with or working with.
+200
+And I'd say there's two things that they're trying to solve here.
+201
+One is trying to make a platform be useful enough to basically draw in these people who are saying, no, don't worry, I've got it covered.
+202
+Like I've built my own stack.
+203
+And so some of that is by providing value-add services.
+204
+So it's like, we're going to take care of scaling for you.
+205
+We're going to take care of cost optimization for you.
+206
+We're going to take these things off your plate.
+207
+And one of the things that they do is like, well, we'll build kind of a centralized router so you can access all of these great LLM models.
+208
+And we're going to basically create a store that you can switch between versions and models and things like that.
+209
+We can centralize logging as part of this.
+210
+So you don't have to deal with the fact that this is producing maybe a large number of logs.
+211
+And on top of that, too, you can provide testing.
+212
+So now we can do this layer of making sure that you can detect and understand these underlying behaviors.
+213
+And this is fundamentally different than the way a lot of people are rolling this today, because if you're using one of these kind of all-in-one out-of-the-box platforms focused on developers, they allow you to get going very quickly, but maybe they're not logging everything, or maybe they have very rudimentary monitoring that is just looking at a handful of performance evals, or they have the ability to kind of look at individual inputs and outputs and do hand annotations, but it's very difficult to do that at scale.
+214
+And so for these technology executives, they need to be able to come up with this way to create this kind of uniform or lowest common denominator interface so that everybody can leverage it.
+215
+But then they also have to provide that value add, and we're seeing this from a lot of executives to entice people to move onto that platform.
+216
+I mean, you made an interesting point about giving developers a reason to want to get onto the platform.
+217
+If I now switch to my developer hat, it's like, consume logs for me, that sounds great.
+218
+I don't know where to stick logs.
+219
+Test for me, that sounds great.
+220
+I don't like writing tests.
+221
+Give me a store that somehow standardizes the interface across a bunch of different LLMs.
+222
+That sounds less good to me.
+223
+It sounds like you're just adding a layer between the thing I actually want to use.
+224
+Just practically speaking, what pieces often come first?
+225
+And how do you actually do this if this is your job?
+226
+One of the first pieces that we see is this kind of gateway or router.
+227
+And some of it is less a value add and more of this is the only way we're going to let you access these things.
+228
+It comes down to some of these models need to go through a GRC process.
+229
+It's like we're going to let you use OpenAI, but we're not going to let you use hosted DeepSeek or something like that.
+230
+And by centralizing that, they can then start to rein in some of the chaos.
+231
+Here are the 30 different models that we do support and the 20 different versions of each that we do support.
+232
+Oh, wow.
+233
+So you're seeing enterprises will actually support that.
+234
+Because I was sort of picturing in my mind.
+235
+And different models, different versions have different trade-offs, different costs, different context windows, different rate limits, all these sorts of things.
+236
+And we're also starting to see more and more people wanting to fine-tune or create SLMs or use more kind of static weight models as well, too.
+237
+And so it ends up being this difficult infrastructure problem of hosting against a handful of non-stationary APIs, against a handful of internal models, and things like that.
+238
+Creating this uniform interface ends up being extremely valuable for that developer to be able to pick and choose, to be able to A-B test, et cetera.
+239
+So one big complication is that sometimes the incentives are misaligned.
+240
+So OpenAI obviously wants to create the best general purpose foundational models, but an individual business may want a model that solves a very specific problem a very specific way very well.
+241
+And a developer may just want to be able to get something stood up and integrated into their application as quickly as possible.
+242
+And so this platform engineer, this technology executive, is kind of stuck between these two things where they need to be able to provide access to all of these cool tools and all of these great abilities while also making it as easy as possible for the developer.
+243
+And so we've seen kind of two approaches here.
+244
+One is where they will leverage kind of a Gen AI platform for maybe a cloud provider, and there's many great examples of this from the various clouds, or build up from best-in-class tools.
+245
+They're going to pick the vector database that fits their needs the best.
+246
+They're going to pick the log store that fits them the best and the testing solution that fits them the best, et cetera.
+247
+But fundamentally, they're trying to solve.
+248
+Here's all the great research that's happening across the world and changing every day.
+249
+And here's what my developers need to move their things forward.
+250
+How do I create this kind of universal kind of puzzle piece adapter in between and then provide enough value on top of that?
+251
+And so that's a real technical problem.
+252
+If I have 30, as you said, 30 models with variants and fine tunes and all that, like that's actually a real problem that needs to be solved, not just I'm going to lock this down.
+253
+Yeah, exactly.
+254
+And something that if you were just trying to get stand something up, you're just going to pick one route, one path, et cetera.
+255
+After you've built that router or gateway, though, the very next obvious thing to do is say, okay, well, this is actually, there's a lot of data going through this.
+256
+I should probably log that data somewhere instead of just throwing it away.
+257
+And that's where they start to leverage sometimes more traditional data stores that they have in place today, where it's like, okay, we already have a way to log API calls or traces or some of this richer information.
+258
+But once you have those logs, then you can start to do analytics, testing, monitoring, and things like that on top of it.
+259
+And so it starts to accrue this value and end up looking more like a traditional platform as well.
+260
+And meanwhile, the developer starts to get some of these capabilities kind of off the shelf.
+261
+And so they don't have to think about logging.
+262
+They don't think about having to test.
+263
+They don't have to think about any of this.
+264
+They can focus on fine-tuning their prompts.
+265
+They can focus on building these hygienic systems into their current user workflows.
+266
+I think a lot of developers, to your point, when they're trying to solve a narrow problem, kind of think they have it covered, right?
+267
+They've got a handful of test cases.
+268
+They just kind of play with it for a little while.
+269
+You know, what people used to call Vibe Check.
+270
+What really should they be thinking about?
+271
+And from an enterprise standpoint, what should people be thinking about?
+272
+We believe that they should be thinking about the holistic behavior of these applications at scale.
+273
+And so that's not just looking at a handful of performance checks on a small data set.
+274
+That's not just throwing in your 100 favorite inputs and making sure that you always get your 100 favorite outputs.
+275
+We talk to a lot of firms that are terrified to cross this AI confidence gap from: I've developed something that works good in theory.
+276
+How do I actually scale it up in practice?
+277
+And a lot of times we'll talk to individuals who say, every single time I bring on a new user, every single time I add more data to this, it changes a little bit.
+278
+And right now I'm doing that incrementally, but when I turn on the fire hose, I have no idea what's going to happen.
+279
+And I'm terrified about what that is.
+280
+And this can create this gap where things languish in this prototype phase.
+281
+They languish in this, I've got this great proof of concept, but I still am terrified to turn it on to a million users, 10 million users, whatever it may be, or turn it on to real enterprise value.
+282
+And so I think the shift in mindset needs to be not just, does it work the way that I want to look at it, does it work more holistically?
+283
+Do you have any good stories about things that have gone wrong when people don't test?
+284
+Yeah, I mean, there's a handful of stories where people think that they're doing the right thing, think that they're, of course, this is a no-regrets value add to the system, and it ends up having these weird trickle-down effects.
+285
+And so rag has obviously become very prevalent in a wide variety of industries, and people use it for a lot of different things.
+286
+We've spoken with different firms that they were like, Okay, I'm just going to continue to add more and more data to the corpus because more data is better.
+287
+Like, of course, but this ends up messing up the retrieval mechanism.
+288
+And so, where before it all had very recent data and it was giving very good responses because people were asking about things that had a lot of recency, now they put their whole history into it.
+289
+Now, it's grabbing old stuff and pretending like 1902.
+290
+Yeah, exactly.
+291
+I wanted last quarter's earnings, and now you're giving me six quarters ago's earnings, or I wanted this specific entity, and that was relatively unique to begin with.
+292
+But now that you've flooded it with all these other things, I'm picking up all these things that are kind of around the edges of it as well.
+293
+Have you seen anything released that upset all their customers or trading strategy that just was a bottomless pit of money?
+294
+So, thankfully, we haven't seen anything like that quite yet, but there's definitely hallucination remains a problem.
+295
+And it's one of these things where the system can convince itself that there's evidence that there isn't, or will convince itself that you want an answer that's different than what you actually want.
+296
+And sometimes that's because it's been given information that it tries to interpolate between.
+297
+Sometimes it's just trying to fill in the gaps.
+298
+Like, fundamentally, that's what these systems are trying to do.
+299
+And that can lead to really bad behavior for users.
+300
+And it can lead to another example, is people using the system in the way that they've always used it, but for some reason, it's starting to trigger all these guardrails.
+301
+And it's because intermediate parts of the system have transformed it or morphed it in different ways that all of a sudden it's flipping a switch somewhere.
+302
+And now they're getting this terrible user experience because they're being told they violated some policy when in reality maybe they only changed a single word in their prompt.
+303
+Is your belief that AI systems should basically be tested atomically, like in the same way that we had unit tests for traditional software?
+304
+You can sort of isolate each piece and make sure it's performing up to spec.
+305
+Is that sort of the same idea for AI systems?
+306
+I think you need to be able to quantify the behavior atomically, but then be able to test across that behavior more holistically, like a regression test.
+307
+And so you do want to be able to quantify the characteristics of how the retrieval step is happening.
+308
+You don't want to just look at the very end answer.
+309
+But you also want to be able to see how changes in inputs have propagated through the system.
+310
+I see.
+311
+And so it's a mixture.
+312
+And I know you've done some pretty intense math.
+313
+I'm resisting the urge to ask too many math questions because I know the two of us will go a little too far down the rabbit hole.
+314
+But I know you have done some pretty sophisticated work as a team to think about the right way to approach these sorts of tests.
+315
+Did you mind giving just a brief overview of why it's a hard problem and how you've addressed it?
+316
+Yeah.
+317
+So one thing that's a little bit counterintuitive and maybe a little bit different than the way people approach evals today is instead of having a small number of strong estimators that can conclusively tell you whether or not something's performing, testing is a difficult problem because, I mean, just being able to quantify behavior and trying to understand what it is that's like intrinsically happening within these systems is a very difficult problem.
+318
+And this is where we differ a little bit from maybe traditional approaches to LLM eval, because instead of trying to come up with a small number of strong estimators for performance, where we want to be able to conclusively say A is better than B.
+319
+Instead, what we want is a large number of potentially weak estimators to be able to determine whether or not A is different than B.
+320
+And you're asking a fundamentally different mathematical question at that level because having these weak estimators that are maybe higher entropy and things like that can give you an insight into the subtle shifts in the way that the system is behaving or acting or processing information that will then have some end result in performance that you actually care about.
+321
+But being able to correlate that, being able to go back and root cause and be able to say, my performance dropped because this shifted, because this component changed, here's evidence of what distributions shifted, here's evidence of the results that are no longer the same, can be an extremely powerful tool to not only give teams understanding, but allow them to actually react to this.
+322
+Because one of the things we've seen is when your performance drops, that's helpful because you know something must be broken, but it kicks off this net new research process to be able to be like, okay, now I need to build again from scratch versus performance dropped because this thing is not what it used to be, that gives you this foothold to be able to go fix that.
+323
+Or maybe not all change is bad.
+324
+Maybe that's actually something that you want to factor into your performance as well today.
+325
+So you're almost saying it's like rather than a normal software stack where you're just kind of testing end-to-end what's happening, you're sort of saying you've got some little lab subjects.
+326
+Exactly, exactly.
+327
+And it's really upping all of those sensors and probes, basically.
+328
+So don't just see whether or not lab subject A versus lab subject B was able to complete the maze, but like what was their heart rate?
+329
+Like what was all of these types of things that then would enable you to say.
+330
+And so are you effectively doing statistical testing to sort of understand the change in each of these sensors from one iteration to the next?
+331
+Or just again at a very high level, how does it work?
+332
+So this gets into the name of the company.
+333
+We think of all of these things as distributional.
+334
+And so fundamentally, it's not about having a single input be bad that you might want to trigger or something, but it's about holistically how is this behavior changing in a population setting?
+335
+How is one distribution of behavior today versus a distribution from yesterday?
+336
+And that distribution isn't just what's the distribution of performance, but this higher dimensional distribution, this distributional fingerprint of behavior.
+337
+How has that shifted?
+338
+And that allows you to get these insights, which fundamentally allow you to root cause and understand your models in a way that you couldn't otherwise.
+339
+Which is very interesting because there's a lot of talk, especially with large language models, about what's in distribution versus what's out of distribution.
+340
+And typically people are talking about what was sort of well represented in the training data versus what wasn't, which is important because these models tend to do well at things that were in their training data or similar to and not so well at out of distribution things.
+341
+I've seen very little actual kind of quantification of this, right?
+342
+There's a few good papers about it, but what you're sort of saying is for any particular system, meaning using a certain set of models in a certain way with a certain set of prompts, you can actually characterize literally what the distributions are and then sort of check how those change over time.
+343
+Yeah, exactly.
+344
+And there's a lot of rich information there.
+345
+And a lot of it's being masked today by only looking at individual things.
+346
+It's very cool.
+347
+I mean, it's really an industry-wide problem.
+348
+And so, what's the benefit to an enterprise in the end of deploying distribution or something like a testing solution in general?
+349
+Yeah, so it's more confidence, which allows them to tackle harder problems, to be completely honest.
+350
+We see some firms attacking the low-hanging fruit internal chatbots to ask questions about HR because they're afraid to take that leap to develop the difficult problem because it's so unwieldy and there is so much risk associated with it.
+351
+A lot of the most valuable use cases also have the most inherent risk.
+352
+And testing and confidence is a way to understand and mitigate those operational risks, whether they be financial, reputational, or regulatory.
+353
+Given what you're seeing in that regard, do our definitions of things like reliability need to evolve as we adopt more generative AI?
+354
+Like, for example, how can someone be confident a system is going to act the way they expect it to if, say, it's never exposed to real-world conditions?
+355
+So being able to define like what does reliable mean, it starts with change.
+356
+It starts with, at least, is today different than yesterday.
+357
+Like, that's a question you can ask in an unsupervised way because you don't need to have any preference between the two.
+358
+But then from that, you can start to say, okay, I liked this change.
+359
+I didn't like this change.
+360
+You can start to become more and more specific about what types of change are acceptable or not.
+361
+But just by being able to see differences, then you can start to apply supervision, start to apply a preference for one versus the other.
+362
+Maybe originally they were just replacing kind of classic NLP models with LLMs and things like that.
+363
+And they're starting to push the boundaries of what used to be possible, not just making it better.
+364
+Yes, it's easier than doing LDA to just like hit an LLM or something like that.
+365
+But now, especially with agents, they're starting to really see what this completely new frontier.
+366
+But with that, comes a lot of uncertainty.
+367
+With that, you need kind of a flashlight to be able to say, this is how I understand this.
+368
+This is how I can really get confidence.
+369
+So, kind of on the same topic, how should organizations think about change management, cost creep, and that sort of thing as we're tweaking things, or I guess even swapping models in order to settle a system that both delivers what they want and also that they can trust?
+370
+One thing that we've seen with enterprises, especially over the last six to 12 months, is as they've started to roll more and more applications into production, they start to be able to make different trade-offs and they start to accrue tech debt, to be completely honest.
+371
+And that doesn't exist when you're first building, but of course, like any technology, it accrues over time.
+372
+And so, they're starting to try to make trade-offs between, like, hey, can I use a cheaper model?
+373
+Can I clean up this system prompt that I've just appended to over and over again over the last year?
+374
+But in order to make that decision, you need to understand what the trade-offs are.
+375
+What if I switch from this expensive model to this cheaper model?
+376
+What if I refactor my system prompt or whatever it may be?
+377
+And so, again, understanding the performance impact is an aspect of that, but understanding how does this change the way that I'm tokenizing things?
+378
+How does this change the way that this application is behaving?
+379
+Can also lead to an ability to make these decisions in a more clear-eyed way.
+380
+And, like traditional software, you have a build, you have a test suite when you're refactoring to say whether or not you actually made it cleaner or you broke the build.
+381
+And by having good behavioral test coverage, you can now ask that exact same questions with these Gen AI apps: Did I make it better or did I actually break the build?
+382
+So, you're saying my system prompts shouldn't be full of capital letters and exclamation points and pleading, please, please do what I ask.
+383
+Potentially.
+384
+Whatever works for you, again, the right tool for the job.
+385
+Maybe you can go back and make it one long capitalization, please, instead of a hero on Twitter, whose name I won't say, who extracts system prompts from all these things.
+386
+And my biggest takeaway from this is the system prompt often reflects the organization it came from.
+387
+Like it's some new form of Conway's law.
+388
+You know, Conway's law is this thing that you kind of ship your org structure as a software company.
+389
+Like, I think as an AI-like, you know, system company or like a prompt writer, you're kind of shipping your org to.
+390
+It's like the Google one is like very, you know, comprehensive and technical and dry.
+391
+And then there's the startup one that's like kind of all over the place.
+392
+So it's an interesting thing you say.
+393
+Like the system and even the prompt sent to a language model kind of reflects the organization it's coming from and the behavior they're looking for in a way.
+394
+Exactly.
+395
+And as you modify that, or as you, I mean, it's nested system prompts all the way down, right?
+396
+As you modify yours that's calling theirs, like you're going to get different behaviors.
+397
+And it's a combinatorial mess, even just selecting a model, let alone you exploring system prompt space yourself.
+398
+And again, having at least insight into the behavioral implications.
+399
+Because, I mean, fundamentally, once something's actually making money, once something's actually useful, you need to take a little bit more of a conservative stance to make sure you don't break things as opposed to just trying to build something as fast as possible.
+400
+I just love the idea of every new person, you know, it's like the engineer, then the compliance person, and the marketer, everybody's just tacking onto the prompt.
+401
+This poor, confused language model probably has no idea what to do.
+402
+And some of them are conflicting, and like whatever it may be, and policies shift.
+403
+We've talked to a lot of firms.
+404
+They're afraid to change that prompt because they're like, well, the GRC team wanted this line in there, and this team wanted this line in there.
+405
+And what happens if we combine them?
+406
+But with a system like yours, basically, they're able to check how things change once they do make some of these fixes.
+407
+That's very cool.
+408
+So, one thing that seems to be true to me, at least, is that there's a pretty big delta between the people building a lot of the major foundation models and, you know, in the sense that they're more researcher than a traditional entrepreneur and then enterprise buyers.
+409
+But at least with many previous tech shifts, like it's enterprise adoption and sales that ultimately provide the bulk of revenue for these new technologies.
+410
+So, how do you see enterprise users ultimately exerting influence over product design?
+411
+Or is this wave of AI sufficiently novel that even large buyers are just going to have to keep reacting to the model changes that the large labs introduce and maybe have less control or less influence than they might have had historically?
+412
+Most of these AI labs are not enterprise folks, which is fine.
+413
+You know, it's a lot of very, very, very smart researchers who know their field very well.
+414
+But yeah, I'm curious if you see this interface.
+415
+You know, because I guess some of the very big customers for the big labs do have more influence than ordinary devs.
+416
+I mean, I think it's going to be a co-evolution where obviously some of these labs are very focused on.
+417
+And so they're going to adapt to what their users need, and then the industry is going to adapt to the tools that are available.
+418
+And it's going to be back and forth.
+419
+It's going to be like the finches on the Galapagos Island.
+420
+And overall, we're going to get some, I think, specialization.
+421
+Certain models are going to come out.
+422
+They're going to solve specific enterprise needs incredibly well.
+423
+But in general, too, the enterprise is going to continue to adapt to, hey, I've got this new tool.
+424
+Hey, I have access to this new thing.
+425
+How can I make it fit?
+426
+But unfortunately, again, I feel like the platform owner within these enterprises ends up being this connector.
+427
+And they need to be able to be this interface to this technology while also providing it in a way that's accessible, consumable, and understandable, and ultimately fits the needs of the enterprise, whether that's through testing and auditing and things like that or just scalability.
+428
+That makes a lot of sense.
+429
+And you're sort of saying that these enterprise platforms actually have a pretty important role to play and like the whole industry.
+430
+If I'm sort of understanding, right, because the labs put out what they put out.
+431
+Developers love experimenting with things.
+432
+Some of them work.
+433
+But if there's nobody connecting the puzzle pieces, as you say, that actually could be a real problem.
+434
+Definitely.
+435
+And somebody needs to make sure that these models continue to work.
+436
+These applications continue to work over time as well, too.
+437
+And I've seen this with traditional ML and AI, and this happens in traditional software, too, where the developer moves on and then it needs to be maintained.
+438
+It needs to stay up.
+439
+Yeah, because we don't have like AI ops teams yet, right?
+440
+There's no dedicated group of people that just try to make sure the system is running.
+441
+And in the way that we do with sort of traditional, you know, DevOps and things like that.
+442
+Who gets paged in the middle?
+443
+Exactly.
+444
+And who has to figure out whose fault it was at the end of the day, too?
+445
+Yeah, I think as we see the rise of these Gen AI platforms, we're going to see the rise of more AI ops, the people who have to make sure the system's working and understand when it isn't and then fix it.
+446
+We talked about global versus local solutions to this reliability problem.
+447
+What's your view?
+448
+What should be solved kind of by the industry as a whole versus what needs to, you know, this kind of like local context?
+449
+Definitely.
+450
+So I think there's aspects of this that are universal.
+451
+Just being able to define some of these behaviors and detect large-scale changes in them, being able to set up a system that's able to give you that level of insight, again, at that extremely high level.
+452
+But then every individual team has different behaviors that they want or things that they don't want.
+453
+And so very quickly, you need to be able to take from a system like ours an ability to detect change at a global level and then be able to go through a workflow to adapt that and build a better behavioral test coverage that becomes more and more specific and bespoke to your individual application.
+454
+But fundamentally, that same global level can help many different teams within an organization or even across different organizations get that foothold.
+455
+And that's what we're trying to develop with our platform.
+456
+But then beyond the platform itself, that workflow is about fine-tuning it and specifying it to the behaviors that you care about individually.
+457
+And there you have it.
+458
+Another episode in the books.
+459
+As always, if you enjoyed this discussion, please do share the podcast far and wide and keep listening.

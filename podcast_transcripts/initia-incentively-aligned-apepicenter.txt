@@ -1,0 +1,1253 @@
+--- METADATA START ---
+Show: Learn about Crypto, Blockchain, Ethereum, Bitcoin and Distributed Technologies
+Episode: Initia: Incentively Aligned Ap…–Epicenter
+Host: Brian Crane
+GUESTS: Zahn, Jose Macedo, Anil 
+Guests: Zahn, Jose Macedo, Anil
+Source URL: https://podcasts.apple.com/no/podcast/initia-incentively-aligned-appchains-ez/id792338939?i=1000708783656
+--- METADATA END ---
+
+1
+What's interesting to note is that app chains, at least in the broadest sense of an app-specific execution environment, are winning.
+2 in the first cycle, there was Ronin and Flow and Stepin.
+3
+This cycle there was DuIDX, Hyperliquid.
+4
+It's clear that there's product market fit for large projects doing app-specific environments.
+5
+Most of them are going for L2s nowadays rather than L1s, and I think that makes a lot of sense, which is also why Initia design makes so much sense.
+6
+Allowing teams to build entire Cosmos SDK chains in whatever VM they want as roll-ups on Initia and have instant access to basically everything they need from explorers, liquidity, integrations, rewards, all the participants of a world that's so fragmented in terms of L2s that care about themselves and their growth, users on the L1, stakers.
+7
+How do we align all these people?
+8
+And we've basically built a very robust economic framework that lets us do that, which is called Initiative VIP.
+9
+Welcome to Epicenter of the Show, which talks about the technologies, projects, and people driving decentralization and the blockchain revolution.
+10
+I'm Brian Crane, and today I'm speaking with Zahn, who's the co-founder of Initia.
+11
+And we are joined today by two very special guests, guest hosts.
+12
+So Jose Macedo, who's the co-founder of Delphi, and he runs Delphi Labs part.
+13
+And then Anil, who is the CEO and founder of Delphi.
+14
+So Initia is a layer one blockchain that's designed around deploying customized, interconnected, or interwoven, as they call it, roll-ups.
+15
+They've just launched.
+16
+So, really excited to dive into the initia today.
+17
+So, just before we get started, we'd to share a few words from our sponsors this week.
+18
+If you're looking to stake your crypto with confidence, look no further than CourseOne.
+19
+More than 150,000 delegators, including institutions BitGo, Pentera Capital, and Ledger, trust ChorusOne with their assets.
+20
+They support over 50 blockchains and are leaders in governance on networks Cosmos, ensuring your stake is responsibly managed.
+21
+Thanks to their advanced MEV research, you can also enjoy the highest staking rewards.
+22
+You can stake directly from your preferred wallet, set up a white label node, restake your assets on Eigenei or Symbiotic, or use the SDK for multi-chain staking in your app.
+23
+Learn more at chorus.1 and start staking today.
+24
+This episode is proudly brought to you by Gnosis, a collective dedicated to advancing a decentralized future.
+25
+Gnosis leads innovation with Circles, Gnosis Pay, and Metri, reshaping open banking and money.
+26
+With Hashi and Gnosis VPN, they're building a more resilient, privacy-focused internet.
+27
+If you're looking for an L1 to launch your project, Gnosis Chain offers the same development environment as Ethereum with lower transaction fees.
+28
+It's supported by over 200,000 validators, making Gnosis Chain a reliable and credibly neutral foundation for your applications.
+29
+Gnosis DAO drives Gnosis governance where every voice matters.
+30
+Join the Gnosis community in the Gnosis DAO forum today.
+31
+Deploy on the EVM-compatible Gnosis chain or secure the network with just one GNO and affordable hardware.
+32
+Start your decentralization journey today at Gnosis.io.
+33
+Cool.
+34
+Well, thanks so much for coming on, guys.
+35
+This is going to be fun.
+36
+And it's a different format than we usually do, but I think it will be a good one.
+37
+So maybe we can just do some introduction.
+38
+Let's just go around.
+39
+Maybe Zahn, do you want to start?
+40
+Sure.
+41
+Howdy, fellas.
+42
+I'm Zahn.
+43
+As Brian initially said, I'm one of the co-founders of Initia.
+44
+We just launched.
+45
+It was pretty awesome.
+46
+I think we launched the Initia L1 plus around 10 layer 2s all on different VMs all at the same time.
+47
+It might be the largest orchestrated multi-chain launch ever, probably.
+48
+I don't think people usually launch multiple changes at the same time.
+49
+So this is probably the only one that happened, but also, I guess, the largest.
+50
+Yeah, I'm sure we'll dive further into it, but pass it over to Eniel.
+51
+Yeah, so I'm one of the co-founders of Delphi.
+52
+We've been early supporters of Zahn and the Initia team for a while now.
+53
+So we're super excited about this launch.
+54
+And yeah, excited to be here to talk about Initia.
+55
+I'm sure Jose and I will talk about our whole app chain thesis, the failure with it, and then how we ended up,, diving down initial rabbit hole.
+56
+Yeah.
+57
+I'm Jose.
+58
+I split my time between Delphi Labs and Delphi Ventures.
+59
+Adventures led this initial investment and known Zon for a few years now.
+60
+And yeah, hoping Zahn can make AppChains finally work and avenge our avenge.
+61
+I think all of us on this call have been bullish Cosmos, which isn't ideal, hasn't been ideal.
+62
+So hoping Zahn can run it back and make AppChains finally work.
+63
+Inshallah, brother.
+64
+Yeah.
+65
+Maybe, Zahn, so you were building on Terra before.
+66
+I'm curious, what was your experience building on Terra and how did that led to you starting in Isha?
+67
+Yeah, so I wasn't just building on Terra.
+68
+Before that, I worked at Terra as a smart contract dev.
+69
+It was my first time getting into smart contracting and building in crypto.
+70
+Before that, I was just a regular software engineer.
+71
+I played a lot with Ethereum, but never built contracts there.
+72
+And so Cosmosm and Terra were my first time,, doing that.
+73
+And it was a lot of fun.
+74
+I thought it was really interesting.
+75
+Cosmosmo was cool.
+76
+I got to learn Rust for the first time.
+77
+All these new principles when it comes to building smart contracts.
+78
+And the craziest one is just that stuff doesn't execute automatically.
+79 something has to poke a smart contract to move.
+80
+And that was just a crazy paradigm shift in my mind as opposed to building in Web 2.
+81
+And so that was a lot of fun.
+82
+I got to build some really cool applications.
+83
+And then I left Terraform to build my own project with my current co-founder, Stan.
+84
+And it was an options project that was basically hooked into Anchor along with we had a lot of the ecosystem teams ready with integrations.
+85
+And it was really exciting because Terra as a chain was one of the most vibrant ecosystems out of any blockchain that existed at the time.
+86
+Obviously, a lot of it was fueled by Anchor, which we know was super unsustainable, but it was this crazy run that was happening in Cosmos.
+87
+And Terra really was all of Cosmos.
+88
+And I think it was somewhat propping up the app chain thesis to a big extent because we're, hey, look, this one app chain really succeeded, but none of the others really also succeeded in their own merits.
+89
+And so once Terra collapsed, I think that with it, a lot of the app chains and Cosmos just crumbled.
+90
+And obviously, the project that I was building there didn't make any sense anymore.
+91
+And so we scrapped that, returned money back to our investors who funded us back then.
+92
+And then basically a few months later, we're thinking about what to build next because me and Stan still wanted to do something.
+93
+And we started basically thinking about Initia and rebuilding the app chain thesis with a much heavier guiding hand, one where you shape its creation, the first few app chains, and how everything comes to play, rather than leaving it all up to an open source system.
+94
+Yeah, that was the beginnings of that.
+95
+And when I was working on Terra is when I first met Jose and Anil.
+96
+I think at the time they were on the labs team working on Astroport.
+97
+That's how I met my co-founder, Stan.
+98
+He was designing building Uni V3 or concentrated liquidity pools for Astroport.
+99
+And I was supposed to help build it.
+100
+So thanks, Jose.
+101
+You're welcome.
+102
+So, yeah, let's talk about the app chain thesis more generally.
+103, I guess if you zoom out, right, then the thing that everyone competes for the most in crypto, I would say, is application developers, right?
+104
+And application developers have a lot of different options today.
+105
+You could build maybe on ETH mainnet, but, fees are high, so that's probably not the preferred choice for most people.
+106
+But you have things Solana and base,, that are at the top, right?
+107
+Where you can just build your smart contract on there.
+108
+Or you could say you build your own L1, right?
+109
+So that has maybe struggled a bit, but it's still happening quite a lot, right?
+110
+People still build their own L1, whether it's a totally new L1 or whether it's maybe Cosmos chains or some other people competing, trying to compete here, maybe Avalanche and some others trying to go in.
+111
+Or there's roll-ups, right?
+112
+And then roll-ups, again, there's many options, right?
+113
+You could deploy on an existing roll-up or do your own roll-up and you do your own roll-up.
+114
+You can do it on Ethereum.
+115
+You could do maybe some sovereign roll-up on Celestia, right?
+116
+Or you could build on Initia, right?
+117 Interwoven roll-up.
+118
+How, maybe for any of you guys, how do you guys see the pros and cons here and the state of the app chain thesis?
+119
+So yeah, I think that the trade-offs, and I think one thing that's interesting to note is that app chains, at least in the broadest sense of an app-specific execution environment, are winning.
+120, we've seen it across all cycles, right?
+121 in the first cycle, there was Ronin and Flow and Stepin.
+122
+In this cycle, there was DYDX, Hyperliquid, Last, Abstract, Converge now.
+123
+It's clear that there's product market fit for large projects doing app-specific environments.
+124
+Most of them are going for L2s nowadays rather than L1s.
+125
+And I think that makes a lot of sense, which is also why Initi's design makes so much sense.
+126
+And I think the main reason that people do this is because sovereignty and customizability matter, right?
+127
+Developers want to control the ground they build on.
+128
+They want to be able to build fully vertically integrated experiences.
+129
+They don't want to necessarily compete for block space, face uncertain costs.
+130
+They might want to customize parts of their stack.
+131
+They might even want to be able to roll back state if they need to, right, without relying on an L1 having to do that if there's a hack or something that.
+132
+So I think there's a lot of reasons for going into an app-specific environment.
+133
+And I think that thesis is winning.
+134
+The thing that didn't win was Cosmos, right?
+135
+Or I guess Cosmos SDK has done well, has done okay.
+136
+But Cosmos or Atom as a token and the tokens in that ecosystem haven't really done well.
+137
+And to me, Cosmos just misunderstood the role of the hub that a hub needs to provide to app chains, right?
+138
+And I think part of it is because it was conceived 10 years ago before anyone was even talking about L2s.
+139
+And most of the design decisions were made optimizing for sovereign chains rather than roll-ups.
+140
+But the second thing, and most important, I think, is that it's misunderstood what projects want from their hub, right?
+141
+From a hub, the realities of what they want.
+142
+They thought, oh, all they need is this optional security, but, that's not at all the stuff that's most pressing.
+143
+The hardest things about doing an app chains and the biggest trade-offs in launching one versus launching on an existing chain is simple stuff wallet integrations.
+144
+You have to do your own wallet integrations.
+145
+You have to do, if you integrate with a centralized exchange, they need to integrate with your chain.
+146
+It's way, way harder to get that done.
+147
+Block explorers, there's no block explorer.
+148
+Even some of the biggest chains today,, Solana Block Explorer is notoriously crap, right?
+149
+You don't have canonical bridged assets with liquidity, right?
+150
+So you won't have stable coins.
+151
+You're going to have this alphabet soup of stable coins with different prefixes.
+152
+And then there's the intangibles, which is the business development and ecosystem development, which is one of the most important parts.
+153
+If you're a hype project on Solana, you get a lot of benefit from that.
+154
+There's a bunch of people that go farm your airdrop.
+155
+People are active on Solana Foundation, tweets you.
+156
+People will be active on your Discord just because you have that ecosystem behind you of everyone that owns Seoul and wants your project to succeed because it's good for Seoul.
+157
+And all of this was missing from Cosmos.
+158
+There was no unified way to bet on Cosmos.
+159
+It never happened, right?
+160
+And at the same time, every time you launched a new chain, you faced all these issues.
+161
+And so it was just very costly to build an app chain.
+162
+And this doesn't even go for the fact of bootstrapping validators, having to pay out inflation, fragmenting UX.
+163
+And so Initia just, from my perspective, really reinvented rethought from first principles.
+164
+What do you want from a hub?
+165
+Assuming we go into this roll-up-centric, app-specific world, what do these roll-ups want from a hub?
+166
+And then they rebuild it from the ground up, thinking about all these things and solving all the problems.
+167
+And I really have just rambled for a while.
+168
+So maybe Zon, you want to come in and say how you guys did that?
+169
+Sure.
+170
+Yeah, I think Jose is right, right?
+171 there totally are two ways that crypto scales, right?
+172
+We all know it's either the fast chain or the app chains.
+173
+And everybody's working on the fast chain camp.
+174
+I don't know what's going to win in the long run, but I can put my horse in the race for the app chain thesis because it seems it's the natural evolution, right?
+175
+It's an application's final destination is what we call Initia.
+176
+And it's because apps will want to capture their value and potentially make customizations that lead them to winning one specific vertical because they've altered something that lets them edge out competition on that sector.
+177
+And that's the way we've seen things play out over time.
+178, you have perptexes on every chain, then one takes it seriously, builds their own chain, and they just fucking win.
+179
+And this is going to happen along other verticals as well.
+180
+So I think the app chain thesis will play out.
+181
+Now it's about how do we make this very easy?
+182
+What do teams need?
+183
+How do we get more of them to build?
+184
+And I think Initia is just designed in the right way to provide these teams everything they need.
+185
+But if you look at some of the other options, they're just still so infeasible.
+186 building a Cosmos layer one, you get the flexibility, but it's still goddamn hard.
+187
+Building a roll-up on Ethereum, very easy.
+188
+You have so many RAS solutions, but you fragment all the infrastructure because these RAS solutions give you 10 DA options and 15 interop solutions and all these oracles and you need shared standards across a multi-chain world for UX to properly work.
+189
+And then you have no customizability.
+190 OP Stack, Arbitrum Orbit, these things are great, but you can't,, for example, reorder transactions.
+191
+You can't use a different type of virtual machine.
+192
+The choices that do matter for developers day in and day out are things that you can't edit, but you get to change the DA layer.
+193 those are not what's interesting.
+194
+So at Initia, we've combined the best models by using some of the hindsight and history that we've been through as builders in Cosmos as well as big users on Ethereum, allowing teams to build entire Cosmos SDK chains in whatever VM they want as roll-ups on Initia and have instant access to basically everything they need from explorers, liquidity, integrations, rewards, and then ensuring that we have a very tight hand on what the product UX looks.
+195
+So what does it look and feel for end users interacting with 15 different roll-ups?
+196
+And do we control those touch points so that over time we can get to a world where it feels one and the Initia team can envision that and build that ourselves.
+197
+And then, lastly,, how do we ensure that value is retained?
+198
+And how do we align all the participants of a world that's so fragmented in terms of L2s that care about themselves and their growth, users on the L1, stakers?
+199, how do we align all these people?
+200
+And we've basically built a very robust economic framework that lets us do that, which is called Initia VIP.
+201
+What that does is it essentially just distributes rewards to users that are using applications, simple as that.
+202
+And as a layer two, to get more rewards, you have to build use cases for the native Init token and basically care and have a reason to care about it.
+203
+And that's either you build a demand sync or integrate the native token on your chain, or you try and influence holders on the layer one to vote for you.
+204
+And so, in this way, we make sure that everybody still cares about init.
+205
+I to use an example that Initia is the federal government, and roll-ups are states within the US, where everyone has their own sovereignty, but they still care about the ultimate growth of the entire country as a whole.
+206
+And I think having this federated stance will allow us to build this app chain future correctly at first.
+207
+And then in the future, we can think about how to properly decentralize the control of everything.
+208
+Yeah.
+209
+I think,, one of my favorite things that you guys have focused on your approach is,, the target customer in the immediate near term, has been definitely devs, right?
+210
+Building, especially with the flexibility that you have,, supporting EVM, Moo VM, WASM VM.
+211
+Devs can,, build using Solidity, move, WebAssembly, right?
+212 anything.
+213
+But I think what's really cool about it is I think at the end of the day, the end user is going to also reap all these benefits, right?
+214
+And curious,,, would Lota get more into how the launch went?
+215
+You guys just launched recently.
+216
+How did it go?
+217
+I know you guys launched with, I guess, 10 minutes.
+218
+Curious, which ones are you maybe not most excited about, but which ones are you most surprised about coming to market this fast?
+219
+And which ones do you think are necessary for users who are going to start bridging the initial?
+220, how's that experience?
+221
+And what can they do right now or in the near term?
+222, launch is never as smooth as you think it's going to go.
+223
+Everything always has some problems.
+224
+But I would say things went relatively smoothly, at least on the L1 side.
+225
+I think one of the things we've seen in the past is just when an airdrop happens, chains always break because you have hundreds of thousands of users just trying to spam transactions within the same two seconds.
+226
+And so we built a really nice batching system that essentially just batches requests and then we do one transaction that sends a hundred people their airdrop at one time instead of each of those being its own transaction.
+227
+And so that really helped make sure that the launch went smooth.
+228
+And then in terms of layer twos,, we we did our best to have all 10 and their front ends live before the public launch.
+229
+But I think it was around all 10 chains were live, but maybe only around five of them had their front ends up.
+230
+But over the weeks since launch, all of those have come online now.
+231
+So we're in a good place, and we have, I think, five or six more roll-ups that will go live over the next month.
+232
+So that's pretty exciting.
+233
+And there's quite a few things that people have been doing on the chain.
+234
+The first and foremost is we have this system called Intrine Liquidity.
+235
+We use our inflation to basically build a hub of liquidity on the L1 that's accessible, but you also stake that with validators.
+236
+And so I think there is a $15 million in it USDC pool on the layer one that has a pretty good APY.
+237
+Obviously, NFA.
+238
+Don't ape into that pool if you don't want to.
+239
+So that has been pretty awesome to see just that growing and people using the system.
+240
+And then the first VIP distributions happen within the next three days.
+241
+I think that is one of the most exciting things to have been watching because there's a gauge vote on the underlying layer one where stakers vote which roll-ups they want to receive rewards through the VIP system and watching that evolve has been really interesting.
+242
+So right now you basically have people playing some games behind the scenes with these whale stakers to try and incentivize them to vote for their roll-up to allocate them more rewards.
+243
+And you see a little bit of dominance moving towards the DeFi applications for these because they obviously are trying to sustain larger amounts of TBL.
+244
+But what's interesting still is that even if you are not a DeFi application and you still get some of the votes here, that is probably hugely advantageous for you and your users because you're not trying to maintain 20, 40, 50 million TVL in a lending market.
+245
+You're trying to give a little bit of boost for doing actions in a game.
+246
+And VIP basically just helps you bootstrap that.
+247
+I think one of the things about bribing behind the scenes is that it's a little bit sus.
+248
+If you don't know the right people, it's going to be hard to get the gauge vote up.
+249
+But that is why I'm excited about platforms Cabal, which make this transparent.
+250
+I think you guys are investors in Cabal, but it basically allows anyone to,, provide incentives to voters to vote for them inside this gauge vote.
+251
+And that'll be good once it becomes fully transparent.
+252
+But the economy has been pretty exciting.
+253
+I think, so one of the ones that I point to is Kamagotchi.
+254
+They're a fully on-chain game.
+255
+Just probably the most cracked game that I've ever seen get built that is all on-chain.
+256
+And it makes perfect sense for them to be their own roll-up because they capture the value from their sequencer.
+257
+I think in the past four days alone, the sequencer has minted 15K worth just off of transaction fees.
+258 that's that's already a very awesome sign, right?
+259
+There are paths to being profitable as a roll-up because you aren't distributing these fees back to a set of validators.
+260
+You're just keeping these rewards.
+261
+And,, 15K in four days is probably enough to sustain your runway for a small team of people.
+262
+And it only increases as your game becomes more exciting or you get more users.
+263
+So that's pretty cool to see.
+264
+And then they also held a public sale.
+265
+Their token is backed by baseline.
+266
+I think they raised over two or three million in that public sale all on chain.
+267
+That's pretty awesome for a young, healthy economy.
+268
+And then a couple of other cool projects that you might want to look at are Echelon and Inertia.
+269
+They're basically just lending markets, but Echelon has, I think, maybe 300 mil TVL across Aptos.
+270
+And now on Initia, they have an early lending market for Init, USDC, Tia, some of these other assets.
+271
+Yeah, it's,, what have you guys been seeing?
+272
+Have you tried any of these roll-ups yet?
+273
+Not yet.
+274
+Maybe just liquidity providing on 101.
+275
+Thank you.
+276
+Honest work.
+277
+Yes, sir.
+278
+I've seen some of these NFTs going crazy too.
+279
+Yeah, the Stargaze team, they deployed a roll-up called Intergaze, which is basically just Stargaze, but as a roll-up, which is pretty cool because they are definitely one of the last remaining builder teams in Cosmos.
+280
+And they have just been launching a few collections Tuesies, Raccoons, Annios.
+281
+Those have been fun.
+282
+Yeah,, regarding the launch, right, maybe one thing briefly to mention since we have this group together,, we, of course, won, right?
+283
+We've been working with Initia for a while and now worked also with Delphi, right, to launch the first Delphi validator.
+284
+So, maybe Anil,, what was the thinking for you behind doing a validator for Initia?
+285
+Yeah, to be honest, Brian's been annoying me for a while to do Delphi do its first validator on some chains, right?
+286
+And to be honest, one thing that we always discussed internally was we wanted to make sure we feel it's a big responsibility of us tying our brand or using our brand to have this voting confidence.
+287
+So we honestly didn't really think about it till we really started getting excited about the initial launch.
+288
+And I think we chatted with Brian and said, hey, is this possible?
+289
+And didn't even realize how closely you guys were working together.
+290
+I think it made a lot of sense.
+291
+I think our team's super excited about that.
+292
+It's gone really well since we first started.
+293
+It's a whole different validator business that we've launched.
+294
+So maybe we'll do more.
+295
+But I think for now, we're pretty excited to see how this one goes.
+296
+And to be honest, I think Delphi as a whole, the way that we have operated and learned in the space is rolling our sleeves up and getting our hands dirty.
+297
+And I think the validator side of crypto has been some side of business that obviously with people Brian and our network, we've been able to learn a lot from.
+298
+I think getting our hands dirty and getting involved helps us just understand it way better.
+299
+And I think Initial was a chain that we wanted to support and get as close to as possible.
+300
+Yeah.
+301
+Let's talk about the whole economic model because that feels one of the most interesting parts.
+302, I think we on a high level, right?
+303, proof of stake chains have basically so far used their native inflation to incentivize people to stake and secure the chain.
+304
+And, that makes sense, right?
+305
+But of course, if you think of the success of a chain, people just staking and securing it, it's not enough, right?
+306
+And especially,, liquidity is such a crucial thing.
+307
+And,, we've seen BearChain do something very interesting there with proof of liquidity, which is,, we will see how it works in the long run, but it's definitely,, for us as a validator, it's been,, very challenging, but very interesting, right, to really understand how to optimize this and how to generate higher rewards.
+308
+Now, you guys have done this enshrined liquidity.
+309
+How have you thought about designing this?
+310
+And maybe also in reference to the BearChain model, where do you want to differ here in terms of how it works?
+311
+Yeah, I think the justification here is,, chains are interesting because of their apps.
+312
+That's why users come and use them.
+313
+So what can we do to ensure and help apps win?
+314
+And what else does an ecosystem need?
+315
+Where should inflation really be going in a network?
+316
+And it's not to staking.
+317
+Why is that?
+318
+Well, if you're staking inflation and your security budget is the vast majority of your inflation and one of the highest rewarding things to do, you're directly cannibalizing your own ecosystem.
+319
+If I'm getting,, 10, 20% stake tokens with the L1, which is probably the most secure and safe thing I can do with my tokens, and a lending market is paying 6%, I'm never going to go lend my tokens there because I'm just going to stake them.
+320
+And so I think using that security budget and inflation in a way that adds value is hugely advantageous and probably the way that most new chains are going to move towards in the future.
+321
+You can get to a level of security that is safe enough by using tokens that would otherwise not be able to be used.
+322
+So for example, in our case, we allow investors to stake their tokens for around the base inflation rate, which is around 2% to 3% APY.
+323
+So relatively low.
+324
+The rewards are locked and vested over the same four-year vesting schedule.
+325
+So,, you're not going to be jeated on.
+326
+And now we have built up a layer of security and economic stake that is enough that we need.
+327
+So instead of using 40% of the supply to pay to these stakers, let's use it to do something meaningful.
+328
+And we basically do two things.
+329
+One is Inshrine Liquidity and the other is VIP.
+330
+So Inshrine Liquidity is built basically just to incentivize the Initia L1 to be a liquidity hub for all of the roll-ups on Initia.
+331, these, one of the interesting things about Initia is that no team is building a general purpose layer two, right?
+332
+We think that is a losing fight.
+333
+Every layer two on Ethereum is a general purpose layer two, and the difference between them is the color of their apps or their branding.
+334
+Really, just not interesting.
+335
+We want people to build app chains, focus on one thing, go try and win on that vertical.
+336
+And because of that, you're probably not building a DEX on your chain, or you're probably not trying to build liquidity on your chain, or you don't want to do that.
+337
+And so, the initial layer one acts as the base hub of liquidity for everyone.
+338
+And so, we repurpose a lot of the inflation for 25% of the entire supply for staking basically LP tokens with validators.
+339
+This allows us to just build a hub of liquidity for major assets.
+340
+And because of how interwoven roll-ups work, it's all accessible from L2s.
+341
+So, right now, it's just init USDC.
+342
+We might add other pairs soon, probably init SUSDE from Athena.
+343
+And then, if there is enough demand for assets ETH or BTC, we'll build for that as well using the same inflation.
+344
+Then, the second part of inflation, another 25% of the supply, is basically to VIP.
+345
+And this is allocated to users of layer two applications.
+346
+As mentioned earlier, layer twos get rewards based on how much init they have, plus a gauge vote on the layer one.
+347
+And then, on each of these layer twos, the teams set metrics on-chain on what users should be doing to receive these rewards.
+348
+So, if I'm echelon, for example, I need to lend init and lend USDC.
+349
+And for that reasons, those on-chain metrics count for my VIP scoring, and I'll get init rewards based on that.
+350
+And these rewards aren't just distributed upfront, they're vested as escrowed init.
+351
+And basically, the way to unlock these rewards is by maintaining your engagement over time.
+352
+So it's essentially a programmatic airdrop system where every two weeks users are being airdropped rewards, and they have to keep using these chains to unlock these rewards.
+353
+And is this a vested interest program that's happening on the L1 or is happening on the L2s?
+354
+So it's based on the L2 activity, but you get these rewards on the L1 directly to a user.
+355
+So,, it can't be a team can't just give it all to themselves and then take some of that.
+356
+They can set an operator commission just a validator.
+357
+Yeah, I think the launch has been pretty cool.
+358, we have probably around these 10 roll-ups, around 30 to 40 million TVL, and all of that is natural.
+359
+I think one of the things I've seen from a lot of chain launches this past cycle is TVL deals before launch, so that right when you launch the chain, you basically have a few hundred million or even billions of dollars of TVL.
+360
+But this is an incredible waste of money, almost always.
+361
+The vast majority of this TVL has no mandate, so it's just sitting on the chain, or it's in a form that is entirely useless, right?
+362 not to throw Etherfy under the bus, amazing team.
+363
+We have Wii on the initial L1, but a WETH ETH pair is probably not going to do much for advancing your economy on chain.
+364
+But maybe a stable pair with a native token or an ETH USDC pair might.
+365
+And so a lot of the liquidity is basically just a way to show on DeFi Llama that you have larger numbers.
+366
+And you pay for that in tokens that were usually at some seed valuation rather than the currently trading price.
+367
+And these tokens are phantom tokens, props to teams BearChain, which did this at least publicly.
+368
+So everyone knew how much rewards were being emitted for these pre-TVL farms.
+369
+But there's other teams that essentially just promise investors lock tokens at a discount to bring TVL on the chain.
+370
+And these tokens just will suddenly appear in the circulating supply because they came from something the foundation.
+371
+And I think that's a pretty unhealthy habit that the industry has gotten into.
+372
+And I'm hoping that we can do things a bit more cleanly going forward with Initia.
+373
+Yeah, it's a big thing.
+374
+You guys have done, I think, done things the clean way at every turn.
+375 whether going out to community round at the same or lower round than the last VC round, the way you've launched, the float, being transparent about it and stuff, launching at a lower valuation.
+376
+I think all these things, you guys have done things the right way.
+377
+Let's see if it pays off.
+378
+Hope it pays off.
+379
+I think one thing we spoke about this a lot leading up and when we're advising teams on this, is that there's a reason everyone does things the wrong way, right?
+380
+Or the wrong way.
+381, there are a lot of benefits to launching at a higher valuation with a scammy float, all all the stuff that you see, I think, I guess, most egregiously in the movement type situations.
+382
+There are benefits to doing that.
+383
+And I hope that,, I think Initia is probably the highest quality project that's done things the right way.
+384
+There are a few others, but I'm hoping it can start a trend because, yeah, it's cool to see.
+385
+Yeah,, I think this is definitely ties into, well, there's a little bit of a crisis in the industry, I would say, at this point, right?
+386
+Where we have all of these new tokens launching and people trying to manipulate the price, the FTV, the TVL, and it works until it doesn't work.
+387
+And then I think we have seen now that just retail, I think it worked in the past, right?
+388
+Because it looks great.
+389
+And then retail users would buy it and it would sustain.
+390
+And maybe you could fake it till you make it type thing.
+391
+But then I think users have woken up to that, right?
+392
+And they're, well, these things are down only and I'm not going to buy it.
+393
+And so we see basically almost all the new launches struggling, right?
+394
+And just going down and not being able to sustain it.
+395
+And everyone worried about the unlocks that are coming.
+396
+So I think different ways are needed.
+397
+So it's very cool that you guys are going that direction.
+398
+Yeah, I think what matters is just how long do you expect to be working on this project and what is your time horizon?
+399
+The incentives are just totally not set up for you to be a long-termist in crypto.
+400
+By no means possible, right?
+401
+And no, I just think that Initia can be huge.
+402
+I love my team.
+403
+I love the people that we're working with.
+404
+And I hope to be working on this for years to come.
+405
+And so if you have that mindset, I think starting somewhere reasonable and growing with your ecosystem and with the project only makes sense.
+406
+But we'll see what happens.
+407
+Yeah.
+408
+Yeah.
+409
+I think even the most long-term teams and that we work with on the venture side or even the consulting side of Delphi,,, once you have a token live, because of the short attention span that,, the community and a lot of,, people just within crypto has, there's just so much pressure.
+410
+I think we really love how long term you and Stan have been thinking about Initia and,, just the amount of time you put into even the launch.
+411 I'm curious,, one year after mainnet, what's a single stat that will tell you Initia is working or not?
+412 what for you guys, what are you guys thinking about,, long term?
+413
+Obviously not,, price or anything that, but I'm curious what you think about.
+414
+Yeah, I think number of roll-ups is a great thing.
+415
+But I think it's very easy to be number of roll-ups doesn't matter.
+416
+What matters is probably more so there's a well-known ecosystem with over a hundred roll-ups.
+417
+Yeah.
+418
+Yeah, exactly.
+419
+I think all that really matters is a few applications.
+420
+So rather it should be metrics revenue generated by roll-ups, right?
+421
+Stuff the fees that are generated.
+422
+Are these teams making money.
+423 how profitable are these roll-ups?
+424
+Users that are cross-pollinating.
+425
+That'll really show if this interwoven thesis is working out where you have all these app chains that users can move between very easily.
+426
+And then probably TVL is just a standard metric to look at across the roll-ups.
+427
+But I think the biggest one is really just revenue.
+428
+One question I have, it feels Initia and the app chain thesis generally is a bet on crypto innovation, right?
+429
+That hasn't happened yet.
+430
+Because I don't know if you agree with this, but to some extent, if Anatoly and some of the Solana people are right, that the only use cases are minting and trading tokens, then I think Solana or something it is probably the right design, right?
+431 a monolith with shared state, all the deep applications, share state and stuff, is probably the right design.
+432
+So I think to believe in the app chain thesis in Initia, you have to be bullish long-term, crypto innovation.
+433
+And I'm curious how you feel about that.
+434
+And also the other two,, yeah, how do you guys feel about that?
+435
+Are you bullish at this point?
+436
+And what applications, pockets are you most interested in?
+437
+And especially for you on Initia, Zun?
+438
+Yeah, I think you're right.
+439
+It really just depends on how hard are people going to start tinkering.
+440
+Are we going to start getting some interesting experiments?
+441
+I've been thinking about it when a new PlayStation comes out,, you get some of the same games that you had before, but then a few years down the line, people start taking advantage of all the specs of the PS5 and you get the fucking most awesome games possible, Elden Ring.
+442
+And so I'm thinking that's,, it's a similar bet here with the app chain thesis, right?
+443
+That now that it's easy to do this, teams will spend a bit more time and want to control their stack and will build something super interesting.
+444
+The problem is what is going to be built.
+445
+And the spectrum is so huge in the design space.
+446
+And I think the Initia team itself has a range of ideas that we want to experiment with.
+447
+But it's hard to say exactly what will be done.
+448
+And what I think is also interesting is these new virtual machines that are opening up the design space too.
+449 move has only been around for so long, but it is a phenomenal language to work with.
+450
+But I think the viewpoint that new virtual machines will unlock net new applications is totally wrong.
+451
+Because based on examples, we haven't seen any net new applications on Aptor Sur Sui.
+452
+We just see the same things written in Move.
+453
+And I think that's just about expressivity as a developer.
+454
+And so I am bullish on experimentation, but I totally think that it takes time for those experiments to play out.
+455
+What about you, you guys?
+456
+Curious?
+457
+Yeah,, I do think there's strong evidence that,, DeFi or financial use cases Is just is the thing that blockchains are incredibly powerful for.
+458
+And I think that's also where the blockchain advantage really comes in, right?
+459
+Because the composability in DeFi is just amazing, right?
+460
+You can do something and then it leverages this protocol and then use the token in some other protocol and maybe borrow against it and do something again.
+461
+So I think if you compare the traditional financial system and the on-chain system, then I think that composability and DeFi and innovation there does feel really the unique superpower.
+462
+Now, of course, I think what it does open up is now you can maybe financialize and incentivize a much wider range of stuff than you can in the traditional world.
+463
+You can start having maybe social networks that have some incentive component or games.
+464
+Now, yeah,, I think social networks to me has been one of the things where,, even from the very beginning, I felt if you look at something Facebook, right, Facebook managed to get this enormous scale, but the power users who really helped make it a success, they didn't benefit from the success.
+465
+So I've always felt that if you could build something a social network type thing where you have much more of an incentive alignment and the people driving it forward can benefit and you have markets that work,, that could be extremely powerful.
+466
+I don't think we've seen that yet, right?
+467, you had some brief spikes with friends tech and but,, it didn't really make sense.
+468
+They weren't well designed.
+469
+So I think that is one example where as a category I feel very bullish on in the longer term.
+470
+Gaming, I don't know as much about, but I could see that also being one.
+471
+Oh yeah, what do you think, Anil?
+472
+Yeah, I think,, obviously within Delphi, we talk about this question a lot.
+473
+And I think when it comes to app chains, we've,, to your guys' point, I think we've really seen specifically not just DeFi, but perp dexes be the biggest winners in this app chain thesis, whether it's DYDX, Hyperliquid, et cetera.
+474
+I think more broadly though,, the way that I see crypto, I've said this a bunch, it's just humans most powerful human coordination tool, right?
+475
+And I think that becomes more and more useful with all this abundance that's created with things AI going forward.
+476
+So yeah, I'm still very bullish on a lot of these use cases that we have been investing over the years, even though,, something gaming, obviously we were,, big investors and big proponents of Axie and, alluvium and stuff way back in the day.
+477
+I do think games have this big potential of being this,, every, I think year in crypto, you always,, are hoping for,, one, two, or three big,, mainstream applications that not just,, show off the power of this technology, but also onboard a lot of the masses that maybe aren't in crypto yet.
+478
+And I think games are still a bet that a team still, it's very hard to make that bet because I think a lot of them won't work out, right?
+479
+But I think we've invested in a lot of really strong teams that think about this in the right way.
+480
+And,, we're all obviously hopeful that one of those works out.
+481
+I think when it comes to,, DeFi and its place in crypto,, I think I go back and forth on this, honestly.
+482
+I think when I first got into crypto, I was super excited about DeFi for sure, but I still thought that there was this huge potential for a majority of long-tail use cases.
+483
+And DeFi would not be the biggest portion of this.
+484
+And I think over time, I've come to realize that DeFi is the backbone of all these other use cases anyway.
+485
+And what percent is that?
+486
+Is that 50, 60% of what crypto will enable?
+487
+Is it 80%, 90%?
+488
+Is the thing I go back and forth on.
+489
+And I think it's the question of us doing research, us building, us investing to figure that out.
+490
+I think the next big boom for applications will be once ZKTLS is here and ready.
+491
+That's you can just bring anything from anywhere on chain and create primitives for it.
+492
+And that just widens the scope of what we can bring on chain by trillions.
+493
+Right now, it's still pretty hard to bring new assets on chain, whether those are RWAs that no one cares about, a wine bottle.
+494
+But once you have the ability to bring someone's gaming data on chain or their scores and stuff or their medical records, these are all things that ZKTLS just enables a lot quicker.
+495
+And I think that's when you have the next boom of crypto.
+496
+And I'm pretty excited for that.
+497
+So just ZKTLS basically means you have some VEP session and then you can verify the results from that, write it back on chain.
+498
+So let's say if I the medical record thing, I log into my, I don't know, medical website and then you can verify some data that I chose there leveraging SSL.
+499
+Right and then and then you can verify it on chain.
+500
+Yep.
+501
+So I think ideas medical records on chain have been always one of the things that people have said blockchain is great for and theoretically it makes sense.
+502
+We've just never gotten that which is crazy right no one has done it well yep.
+503
+And so maybe ZKTLS will make that easier.
+504
+But, I'm just looking for more fun things to do on chain.
+505
+And I think allowing people to bring their world of Warcraft or their league data on chain and start trading stuff or the ways that we can start to stack financial primitives here.
+506, maybe I'm lending against some of my skins or who knows what can be created.
+507
+But the design space just becomes so much bigger.
+508
+My take is that basically crypto is in the trough of disillusionment stage.
+509
+And, I don't know, I've been speaking to a lot of teams recently that have been building for a few years and are now seeing big upticks.
+510
+And this is everywhere from world coin to stuff in the energy space, the decentralizing grid stuff that we've talked about for years.
+511 all these things have been building in the background for sometimes seven, eight years and are really starting to see upticks.
+512
+And I think eventually almost all the things that people imagined in 2017 will end up happening.
+513
+It'll just take much longer than everyone expected.
+514 how it happened with the internet, right?
+515 all the most ridiculous, laughed-at ideas that people had in the late 90s ended up happening.
+516
+They just happened way later.
+517
+So, yeah, I don't know.
+518
+I think the same thing is going to probably end up happening in crypto.
+519
+It's just tough because at the same time, there's a lot of very overvalued vaporware because of just the nature of public market, giving public market liquidity to early stage things.
+520
+And so you have these, these two forces happening at the same time.
+521
+Yeah.
+522
+But I'm pretty bullish on a lot of these different applications coming to market.
+523
+And I do think it's a no-brainer to me that pretty much every asset will end up on chain.
+524 you're already seeing it.
+525
+And stablecoins, anyone who's ever owned a stablecoin for a sufficient amount of time just knows it's you'd rather have that than a fiat dollar in a bank account.
+526
+It's just better in every way, right?
+527
+You don't have a bunk bank cucking you every time you want to make a transaction or asking you to go into the asking you to go into branch.
+528, yeah, it's seamless, interoperability with any, anything you want to do with it.
+529
+So I just think that's going to be the case for every asset.
+530
+And you're seeing it with stocks.
+531
+I think Superstate just announced today they're bringing stocks on chain.
+532
+We know a few people working on that too.
+533
+Yeah, I'm pretty, yeah, I'm pretty sure on that one.
+534
+And that's just the DeFi use case.
+535 I'm, I think there's no way to put the cat back in the cat back in the bottle.
+536
+Doesn't sound right.
+537
+Genie back in the bottle.
+538
+Yeah.
+539
+Don't know why you'd put a cat in a bottle really.
+540
+Yeah, I think it's gonna happen.
+541
+I think this goes back to what we were saying earlier about patience.
+542 I think the crypto industry has this mental illness of just wanting everything to be done ASAP and now.
+543
+And I think one thing I always think about is taking a step back and thinking about how far we've come even since when we've gotten into crypto.
+544
+I think a lot of the successes and headlines that you're seeing week by week right now or would be things that you'd be in disbelief in that we would even have the opportunity to see even six, seven, eight years ago.
+545
+So yeah, I think to your point and to Zahn's point, as you bring all these assets on chain, I think another cool part is all this experimentation, all these maybe dumb games that people view as not value productive at all have been making the info more robust, have made a lot of these mechanisms and the design decisions way clearer.
+546
+So when these assets do get on chain, we have, we're not starting from zero and have to go and work through all those things while we bring these assets on chain.
+547
+So yeah,, I'm super excited about that.
+548
+I think,, one thing I've learned building Delphi at large is just that you just got to be patient.
+549
+This stuff doesn't happen overnight.
+550
+But if you take a step back, progress is being made.
+551
+I wanted to ask about one thing that maybe goes a little bit more technical regarding initial.
+552
+So, if you think of the app chain,, one of the big struggles with, if you look at Cosmos, but if you look at app chains more generally, has been the fragmentation of user experience and the challenge with liquidity as well, right?
+553
+So, you'd have basically the nice thing in Solana or Ethereum, right?
+554
+You have all of this liquidity, everything is there.
+555
+Now, you have different chains, it gets fragmented out.
+556, you guys are addressing that, but, how exactly are you guys solving that problem?
+557
+So, assets are all issued on the initial layer one, or the vast majority of them.
+558
+And then to and from roll-ups, there's essentially two ways to bridge, but to simplify things, let's just say they all use IBC.
+559
+And so, if you have USDC on one roll-up and you want to send it to another roll-up, those tokens transfer through the layer one.
+560
+Because IBC has pairwise dependencies, if I went from roll-up A to roll up B directly, I'd get USDC one.
+561
+And if I went through the layer one from rollup A to initial layer one to roll up B, I'd get USDC two.
+562
+And so, what we do is we essentially route all transfers through the initial layer one and access this hub because that's where all the liquidity is.
+563
+And because of that, you can have fungibility of these assets.
+564
+Where if I'm sending USDC from one roll-up to another, I'm going to get the same version, and we're not going to get any new token standards.
+565
+Essentially, that's just the key way that we avoid liquidity fragmentation.
+566
+Cosmos was created as this a web design, but really it should have been more of a hub and spoke.
+567
+And so, we just said, let's hub and spoke this thing.
+568
+That was the original even design and idea around the Cosmos hub was that you would have this hub and spoke IBC routing thing and then I think it was just a to some extent it was a failure of execution, right?
+569
+That that didn't happen and that you ended up having more of these pairwise IBC thing and then that didn't end up working.
+570
+Everything was a bit too permissionless.
+571
+Yeah.
+572
+You got to start off a little bit permissioned.
+573 bring the thing into the world the way you want it to be brought in, grow it a bit, and then you can start to give it the reins.
+574
+It's having a child.
+575
+So it's it's where Ethereum probably is maybe trying to go towards as well in their very slow methodical researchy way.
+576
+The nice thing is you have everyone using the same standard, right?
+577
+Whether that's to get into Initia you use layer zero and then around Initia use IBC.
+578
+All the standards are the same and that means we're going to have consistency of assets but we're also going to have consistency when it comes to trust assumptions.
+579
+So as an asset issuer if you trust one rollup you're going to be able to trust the other rollup in the same way.
+580
+You're not going to have to look into the details and see how is this rollup run?
+581
+What's its sequencer setup?
+582
+Do I trust this bridging or not?
+583
+Because they're all going to be the same.
+584
+And those are going to be enshrined at the L1 level.
+585
+And once you have this consistency of shared standards, we can start to build a lot of better UX experiences over all of this.
+586
+I think the UX that we have right now is not bad, but there's definitely a lot of work to be done.
+587
+We're currently going to do a full redesign of the Initial app.
+588
+The Initial Bridge page is going through a change.
+589
+We're going to change a bit of the way that you connect to wallets.
+590
+It's already nice that you can use EVM wallets on any virtual machine chain.
+591
+I think that's just the biggest blocker for getting anyone into Cosmos: they have to download a Cosmos wallet.
+592
+So I'm never going to switch from my Rabbi wallet, and so I need to ensure that would work on Initia as well.
+593
+And so slowly we'll make this user experience better.
+594
+We have the assets all nice and unfragmented, and the economy is just getting started, and I'm excited for where it goes.
+595
+So, maybe a final topic.
+596
+With Delphi, you guys are investors in Initia right now.
+597
+You guys were on the valid Initial, you invested in a bunch of Initial projects.
+598
+I think you guys have done some research reports on Initia.
+599
+So, a lot of involvement already.
+600
+I don't know, is there anything on the lab side you guys are also doing with Initial?
+601
+Not right now.
+602
+Probably a bit early for that.
+603
+We could maybe do something in the future.
+604
+But yeah, not right now on the lab side.
+605
+But yeah, as you said, pretty active on the ventures and research side.
+606
+Yeah, so people should definitely check out that research report.
+607
+I think if people want to go deep on Initia, then that's probably the best place to go.
+608
+Yeah, I think we'll make it public for this pod.
+609
+So we'll drop it, drop it in the show notes and everything that.
+610
+Cool.
+611
+So, Zahn, maybe to end off, what does the roadmap look?
+612
+So, if you think of the next two years, what are the most important things?
+613
+I can tell you the next two years, but I can probably tell you the next six months at least.
+614
+Okay, let's do the next six months.
+615
+Next six months is getting more roll-ups that we are already working with live and out to mainnet, adding more assets to in shrine liquidity, revamping the Initia app bridge and wallet widget to have a better UX, and then probably tweaking Initia VIP.
+616
+So, VIP is great in the way it is right now, but it only allocates rewards based on the gauge vote in the balance pool.
+617
+And I think more interesting ways to allocate these rewards will show up over time.
+618
+And so, we want to make sure that we're consistently evaluating and adjusting our economic models.
+619
+I think people usually don't change the parameters of their chain after it's live, but these are totally things that you should tweak.
+620
+It's basically changing the Fed rates, whether you want savings or people spending.
+621
+And so, we're going to continue to adjust these things, and that's probably what the next six months looks.
+622
+Awesome.
+623
+And then,, what about devs and users?
+624, what actions should they be taking?
+625
+If devs want to build on initial,, what's the process of that?
+626
+And then,, if users want to get set up and everything that, what's the process for that?
+627
+If you are a user looking to get in, go to initia.xyz/slash onboarding.
+628
+There's a whole flow there for connecting your wallet, bridging in funds, seeing what apps you can play with, and just getting in there.
+629
+If you are a developer, docs.initia.xyz, that's your place to go.
+630
+Or my DMs, if you want to yap.
+631
+You can hit me up at It's AlwaysZani on Telegram or Twitter.
+632
+If you have an interesting idea, I always love to chat.
+633
+Cool.
+634
+Well, thanks so much, Som, for coming on.
+635
+And thanks so much, Anil and Jose, for doing this episode together.
+636
+It was really fun and I'm super excited how this initial is going to play out and what's the impact going to be for the larger way of how people build in crypto.
+637
+Definitely.
+638
+Yeah, I appreciate you guys.
+639
+It was nice to be on.
+640
+Yeah.
+641
+Yeah, thanks very much.
+642
+Thank you, Amigos.

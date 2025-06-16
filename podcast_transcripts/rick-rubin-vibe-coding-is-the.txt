@@ -1,0 +1,1679 @@
+--- METADATA START ---
+Show: a16z Podcast
+Episode: Rick Rubin: Vibe Coding is the…
+Host: Anjane Meedha
+GUESTS: Rick Rubin, Ben Horowitz, Marc Andreessen, Eric Vishria 
+Guests: Rick Rubin, Ben Horowitz, Marc Andreessen, Eric Vishria
+Source URL: https://podcasts.apple.com/us/podcast/rick-rubin-vibe-coding-is-the-punk-rock-of-software/id842818711?i=1000710456209
+--- METADATA END ---
+
+1
+So many people I know who use AI ask it questions and think that the results that they get back is the answer.
+2
+And it seems like people are more interested in getting an answer that can allow them to stop thinking about the question than really finding out what the real answer is.
+3
+I'm so interested in what AI really can know based on what is and not what we tell it we think it is.
+4
+What happens when one of the most iconic music producers of our time rewires ancient wisdom for the AI era?
+5
+Today's guest on the Ben and Mark Show is Rick Rubin, legendary producer, creative oracle, and now the author of The Timeless Art of Vibe Coding.
+6
+On the surface, it's a book, but as you'll hear, it's also software.
+7
+It's a remix of the Tao Dejing through the lens of code, prompts, and the emerging language of AI-native creativity.
+8
+We talk about the origins of vibe coding, what AI can and can't know, and why the most important prompts might be the ones we give ourselves.
+9
+And if you want more from Rick's world, check out his podcast, Tetragrammaton, where he explores creativity, consciousness, and culture with some of the most original minds on the planet.
+10
+This episode is about more than AI.
+11
+It's about staying human, thinking deeply, and building something real in a world of infinite automation.
+12
+The first voice you'll hear is A16Z general partner Anjane Meedha as he explores the central question, what is the way of code?
+13
+Let's get into it.
+14
+The content here is for informational purposes only, should not be taken as legal, business, tax, or investment advice, or be used to evaluate any investment or security, and is not directed at any investor or potential investors in any A16Z fund.
+15
+Please note that A16Z and its affiliates may maintain investments in the companies discussed in this podcast.
+16
+For more details, including a link to our investments, please see a16z.com slash disclosures.
+17
+We are here today to discuss Rick's new album, The Way.
+18
+And it's a book about vibe coding by way of a 3,000-year-old spiritual text called the Tao Di Jing, written by Lao Tzu.
+19
+It's interesting.
+20
+The idea of a 3,000-year-old wisdom teaching combined with cutting-edge technology, that's what the Way of Code is.
+21
+And the subtitle is The Timeless Art of Vibe Coding.
+22
+And I like the idea of the Timeless Art of Vibe Coding, considering the term vibe coding is maybe 10 weeks old.
+23
+The fact that we now have the timeless art of something 10 weeks old is interesting to me.
+24
+It's weird to hear you call it a book because when you first sent me the link and I started reading it, it felt like I was using software.
+25
+So why do you call it a book versus a website or an app or the many other things you could have described it as?
+26
+Well, I wrote it as a book.
+27
+It started as a book, and then I invited Jack Clark onto the Tetragrammaton podcast.
+28
+And I had just finished the book.
+29
+And after the podcast, I said, I wrote this book.
+30
+Do you want to check it out?
+31
+And he looked at it and he said, hmm, I feel like there's a way we could do something with this, build it into a website, and have a way to demonstrate vibe coding within the website.
+32
+So that's how the website came about.
+33
+Ah, gotcha.
+34
+Well, it feels kind of poetic for it to be vibe coding and have built-in vibe coding with each verse.
+35
+The idea of originally the anthropic people said, could you give us a list of prompts to create the art?
+36
+And I said, I think.
+37
+And then we can give it mods to modify the art.
+38
+And we'll suggest some mods, but you can also make up your own mods.
+39
+So you can say, I want it to look like it was painted by Cezanne, or I want it to look like it's melting, or I want it to look like, what's the Nordic version look like?
+40
+And it'll do those things.
+41
+Or what's the Technicolor version?
+42
+Or make it spin fast or make it spin slow.
+43
+You can ask it to make whatever changes you'd like it to.
+44
+My head was exploding when I saw this because it felt like watching the art of remixing music, which I've heard Ben talk about many, many times before as the heart and soul of hip-hop, right?
+45
+Sampling.
+46
+That's the first thing that it evoked for me when I read this.
+47
+Is that where the idea came from?
+48
+All art is a version of sampling and remixing.
+49
+It doesn't start from zero.
+50
+We feed back based on what's coming at us.
+51
+And that's what all artists do.
+52
+So remixing is kind of what all art is.
+53
+We know it very specifically in the hip-hop world, but that's really when the Beatles listened to Roy Orbison and then wrote please please me based on Roy Orbison's please song, that was remixing.
+54
+It's always been that.
+55
+And why do you think there is such strong resistance to this kind of remixing?
+56
+So both with sampling and vibe coding to a large extent, like a lot of people, I got very upset that, you know, it stopped being done the old way.
+57
+Like here's this new version of.
+58
+But really, the computer is another tool.
+59
+It's like a guitar or a sampler, or it's another tool in the artist's arsenal.
+60
+But the reason we go to the artists we go to, or the writers we go to, or the filmmakers we go to, is for their point of view.
+61
+The AI doesn't have a point of view, right?
+62
+Its point of view is what you tell it the point of view is to be.
+63
+So, you can have a script, a great script for film, and you give it to five great directors, and you'll get five very different movies.
+64
+It's true with everything.
+65
+If you give the same song to different artists, they interpret it differently.
+66
+So, AI gives you the ability to take your ideas, feed it into this machine, and then get back different iterations that normally you would do, but it would just take you much longer.
+67
+It's more of a modeling process.
+68
+If you understand it as you're not just asking it to make art, you're asking it to bring your dreams to life in the same way that you would in a wood shop.
+69
+It's just another tool for you as the artist to make the thing that you want to make.
+70
+If you think it's doing it, it's only doing what you're telling it to do.
+71
+And all it knows is what other people have told it to do.
+72
+I don't know that it has any of its own thoughts yet.
+73
+And I don't know if it's possible.
+74
+I feel like the real strength of it would be if it could have its own thoughts.
+75
+Seems like the companies that control this really want to keep it to the way humans do things.
+76
+Yeah.
+77
+Well, and that's, you know, currently what they.
+78
+So, in a sense, it's basically it is like a guitar or a pen or anything that you would create art with.
+79
+It's just at a different level.
+80
+You know, we went through this in computer science early on where it used to be machine coding.
+81
+We called it machine coding, which we did with punch cards.
+82
+And you would basically instruct the machine on, like, okay, move this bit, you know, from here to there and these kinds of things and jump to this line in the program and so forth.
+83
+And then we got to higher-level programming.
+84
+And there was great resistance, by the way, you know, from the kind of people who are great at assembly code because they said, well, that high-level programming is so inefficient.
+85
+Like, how could you waste all those computer cycles?
+86
+It's horrible.
+87
+And, you know, at every step of the way, I think the craftspeople at the prior generation of tools get a little upset about the kind of new generation of tools.
+88
+The beauty of this tool is that for those of us who are not coders and those of us who are not technical, we can now play in that sandbox where before it was this barrier, learn to code.
+89
+You don't need to learn to code anymore.
+90
+So that's the beauty of it.
+91
+It democratizes it and makes it for everybody.
+92
+The other thing that I thought was great about the art of vibe coding is you give a philosophy for what a human is in a way that I think a lot of people are questioning now.
+93
+So it's like, well, what's if we can't write marketing collateral or we can't code, like, what's our purpose?
+94
+And you get kind of deep into that.
+95
+And how do you think about that, I guess?
+96
+Well, I think that's the reason I chose the Dao Ti Jing to base it on because the Dao Ti Jing is how to live.
+97
+So the way of code is, it's talking about how to be in life, and it's a grounding.
+98
+And I'm imagining so many of the people who are coders probably have never read the Dao Ti Jing.
+99
+And the coders will likely be the people who are designing our future.
+100
+So if this is an opportunity for the people who are designing our future to get in touch with the 3,000-year-old truth of how to create balance in life and on the planet, that seems like a really good thing.
+101
+Yes, no doubt.
+102
+It's funny because I have read the Dao Tijing, but only because I have a friend who's a professor of Chinese who did a translation.
+103
+And I was just like, oh, well, I'll read that.
+104
+But it was pretty cool to see it come back to life in kind of such a modern, and also a nicely kind of condensed way where, you know, you pulled out the best parts.
+105
+It was super enjoyable to read.
+106
+So my experience was 10 weeks ago or so, I heard this phrase, vibe coding.
+107
+I don't know what it is.
+108
+And then the next week, I saw an image of me related to vibe coding.
+109
+And I'd never seen that image.
+110
+I thought it was an AI image.
+111
+Turned out to be a real photograph, just one I'd never seen.
+112
+I'm wearing headphones and I had my hands on a mouse.
+113
+And it was in Germany at a hi-fi convention.
+114
+And I was listening to those headphones very closely.
+115
+My eyes were closed, and the mouse was controlling the volume.
+116
+And that's what I was doing in the photograph.
+117
+And somehow, the following week, there's a company called Cursor, which I don't really know what they do, but it seems to be something to do with coding.
+118
+I had the 15 rules of vibe coding, and my picture was at the top.
+119
+And I thought, this is, it's just so strange.
+120
+And then the question was: okay, obviously, the universe is pulling me into this.
+121
+And how do I participate?
+122
+What's my role?
+123
+What am I supposed to do now?
+124
+I thought, the first thing I did was I wrote a tweet because I do these tweets every day that are philosophical thoughts.
+125
+And it was the first time I ever did a joke tweet.
+126
+And the joke tweet read: tools will come, then tools will go.
+127
+Only the vibe coder remains.
+128
+And it performed well.
+129
+And I was interested.
+130
+This is really resonating typically, maybe, maybe 20 times or 50 times response to the typical tweets.
+131
+Like, hmm, something's going on here.
+132
+There is something here.
+133
+And then I thought, okay, that's a step in involved.
+134
+What would be more interesting than writing a book about something I don't know anything about?
+135
+That'd be interesting to do that.
+136
+And again, as a joke, you know, vibe coding for idiots.
+137
+But when the idea of using the DAO as the basis for it, the DAO is really serious.
+138
+So even though it started as a joke, when the DAO became the backbone of it, it got profound.
+139
+And, you know, it surprised me.
+140
+And now you get to play with it now.
+141
+Yeah, no, it was funny.
+142
+You know, like I actually found it grounding for myself, which is...
+143
+Which is a remarkable achievement, I think, you know, given I think about this all day.
+144
+One thing that I wanted to ask you is a thing that happened in music kind of in the transition from the kind of, I would say, the virtuosity era of the kind of 70s and early 80s going into kind of a little bit both punk rock, but then into hip-hop, was there was like this, when you didn't have to be a virtuoso, the energy of the music became completely different.
+145
+And you got these whole different kind of sounds, ideas, everything.
+146
+Are you seeing something similar with vibe coding where like software is going to be a whole different experience now?
+147
+It's the same idea of the democratization of technology.
+148
+So in the past, for music, you had to go to the conservatory and study for years and years, and then someday you could play in a symphony.
+149
+And then when punk rock came along, you could maybe learn three chords in a day.
+150
+And then there were all these bands, and that was how I started in music, was punk rock.
+151
+If you had something to say, you could say it.
+152
+You didn't need the expertise or skill set other than your idea and your ability to convey it.
+153
+And vibe coding is the same thing.
+154
+It's the punk rock of coding.
+155
+Yeah, it's very exciting to me for kind of the generation that we.
+156
+Like, it's exciting if you're our age, but if you're 20, it's a whole new world.
+157
+Like, oh, wow, we're going to build a whole new world.
+158
+So I am like super fired up about that part of it.
+159
+And the way of the vibe coder kind of like cements that, where, like, okay, why are we here?
+160
+Well, we're part of the things that matter in this universe.
+161
+I like the idea of making the code do what it doesn't want to do, where it wouldn't naturally go.
+162
+It's not the most obvious thing.
+163
+The first thing you get back will probably be the most obvious version.
+164
+But when you see the most obvious version, it might give you ideas of what you could suggest to get something that's a little more interesting, maybe more subversive, which is what most art tends to be.
+165
+Right.
+166
+Well, and it's a whole new palette, which, you know, for an artist, it's very hard to work.
+167
+Like, if you have to be better than, or newer than, or more interesting than Michelangelo at sculpting, that's very, very hard.
+168
+But if you've got a whole new tool set, then there is no precedent.
+169
+You know, you're kind of really free to express yourself.
+170
+I think the biggest disconnect that I feel myself is that it's such a strong tool that can do so much.
+171
+We need some examples of some of the different things it can do.
+172
+Now, it can make animation that looks like your favorite cartoon.
+173
+And then you see a million people doing that.
+174
+It's one idea.
+175
+I want to see all of the things it could do to understand what's possible instead of just, I'm going to get it to do the same thing everyone else is getting it to do.
+176
+Yeah.
+177
+It's, it's, uh, I think it's beyond our scope to understand.
+178
+And I'm looking forward to some of the people who push the boundaries to see what it can do and demonstrate for us and give us, because if you see someone who pushes it in one direction, it opens a door or a window to say, oh, it can go that way.
+179
+So maybe I can make it go this way too.
+180
+And no one's ever done that.
+181
+And you can see where those boundaries are and continue pushing, pushing to see how far it can be stretched.
+182
+Mark, if you could channel your inner Marshall McLuhan, right?
+183
+And you hear Rick talking about how the meme of him giblified, you know, vibing with the mouse 10 weeks ago, makes it through cyberspace and results in literally a new book 10 weeks later.
+184
+What would you say?
+185
+What is going on here?
+186
+I believe, Rick, I think I may have sent you that photo of you at the keyboard at the computer, and you probably saw it already, but I think I sent it to you some weeks back when it first came out.
+187
+And I remember that because I believe you said, oh, that's not me, that's AI generated.
+188
+And so it was like an inverse deep fake.
+189
+Right?
+190
+Your immediate reaction was, oh, that's AI generated.
+191
+And then it turned out to be real.
+192
+And so.
+193
+There's a person standing behind me with a name tag.
+194
+And then I realized, oh, that's that hi-fi show.
+195
+So is this like an inversion?
+196
+Like, you often talk about, you know, your great love of professional wrestling.
+197
+You often talk about how it's more real.
+198
+It's actually more real than other sports.
+199
+Like, are we entering a world in which things that are AI generated are more real, or things that we think are AI generated are more real?
+200
+Like, is there the...
+201
+The reason I have the belief I have about wrestling is that wrestling, we know it's fake, and they're honest about it being fake.
+202
+Right.
+203
+And so we get to suspend our disbelief and go along with this story.
+204
+Right.
+205
+Whereas when you turn on the news, they make believe it's real.
+206
+Or a book about physics.
+207
+Like, some of that's real, or mathematics.
+208
+Some of it may be real, but mathematics doesn't make the world that exists.
+209
+And then mathematics is an overlay that explains it.
+210
+But then sometimes there are these exceptions where, oh, well, the math doesn't work, so we create a black hole, or we come up with some way for it to make sense.
+211
+Maybe it's just wrong.
+212
+You know what I mean?
+213
+Oh, the natural world around us, we can trust.
+214
+It's the only thing we can trust as it's here.
+215
+Again, if that's not a simulation, or maybe if it is, it still could be real in our experience.
+216
+Yeah.
+217
+I think, see if you agree with this, a view of the world that you could have is if you see somebody standing on a stage or on television and they are telling you that something is real, they're probably over, they're either lying or they're over-representing what they know.
+218
+They're telling you what they believe.
+219
+Okay.
+220
+Like if you go to school for something and school tells you this is how it is, then you'll continue saying that.
+221
+But I spoke to the top brain surgeon, a neurosurgeon, and I asked him, of the textbook that's currently being taught in medical school today, how much of the information is accurate and how much of it is wrong?
+222
+He said, at least 50% of it is wrong.
+223
+And I said, well, based on the 50% being wrong, what happens based on that?
+224
+And he said, it's incalculable, the damage that is done based on believing the 50% that's wrong and currently being taught.
+225
+Starting with the idea that we know nothing.
+226
+Right.
+227
+And it's a safe, honest way to live.
+228
+And I don't believe I know anything.
+229
+I'm starting with a blank slate.
+230
+Every day is new.
+231
+I'm constantly surprised.
+232
+And my perception of the world changes constantly.
+233
+Right.
+234
+So back to your professional wrestling version of this idea.
+235
+So would it be fair to say that fiction is more honest than nonfiction?
+236
+And poetry can be more honest than prose.
+237
+Right.
+238
+Because open in a way that the person who's taking it in, it's true of the way of code, too.
+239
+When you read it, if you read it now and if you read it again in a year, it'll mean something different in a year.
+240
+That's how the world is.
+241
+You have new perceptions.
+242
+You can remember something that happened to you when you were young.
+243
+And when you were young, you think it meant one thing.
+244
+And now you can look back.
+245
+It's like, oh, this whole other thing was going on.
+246
+I didn't understand that yet.
+247
+Or you could have a dream.
+248
+And if you write down your dreams, they seem like these surreal things.
+249
+You don't know what they mean.
+250
+But years later, if you go back to your dream journal and read them, you're like, oh, of course, that all makes sense.
+251
+And it's all exactly what was going on in that time.
+252
+So Half-Life from Physics, which is sort of the rate of decay of particles in physics at a predictable but kind of random rate, and that statistically predictable rate.
+253
+And then facts, you know, F-A-C-T-S, the, you know, statements of analogy.
+254
+And so the thesis of the book basically is that factuality of facts decays basically at a mathematical model that's the same as the rate of like the decay of a radioisotope.
+255
+And basically, any fact that you think you have, there's a half-life to it.
+256
+And so, like, within whatever 10 years or 20 years or whatever it is, like at some point, statistically, that thing is going to be proven to be untrue.
+257
+And basically, that this pattern repeats itself over and over again across domains.
+258
+And exactly, including, as you said, sort of domains in which it really ought not to happen, like medicine, right?
+259
+Things that we really believe.
+260
+And of course, you know, physics itself is the great case study of this because, of course, Newton figured everything out, you know, but then it turned out he didn't.
+261
+Right.
+262
+And then Einstein figured everything out, and then it turned out he didn't.
+263
+Right.
+264
+And, you know, so Newton would not have known, you know, Newton would have been very surprised by, you know, general relativity.
+265
+Einstein was very surprised by quantum mechanics.
+266
+Right.
+267
+And so like even the greatest geniuses that we know of basically found in the long run, they found at some point their ideas decayed.
+268
+Their ideas had half-lives.
+269
+And it turned out not to be the case.
+270
+And there's, I would find, there's, there's basically like three ways to deal with this psychologically.
+271
+One is denial, which is what most people do.
+272
+Most people just pretend the world around them is actually real, even when it's not, because it's a psychologically safe thing to do.
+273
+And, you know, and by the way, and who can wander out all day long second-guessing everything?
+274
+Like, it's a hard way to live, number one.
+275
+The second way to do it would be to take a nihilistic approach, right, and say, you know, this is awful.
+276
+Like, I can't trust anything.
+277
+And then the third way to do it is with a spirit of, let's say, I don't know, openness and joy, which is the world is a much more interesting and unpredictable and exciting place than we think it is at any point in time.
+278
+And it's fun.
+279
+Fun to find out that you thought was true is not.
+280
+You know, asbestos was this new thing that we will put it in all the buildings, and it's a cheap way to insulate all the buildings.
+281
+And now hazmat suits come to take the asbestos out.
+282
+That was the new discovery that was going to save the world.
+283
+Or nicotine, you know, cigarettes are banned and turns out nicotine is neuroprotective.
+284
+We didn't know that.
+285
+Red meat is toxic and cancer-causing, and it turns out maybe the healthiest thing you can eat.
+286
+We didn't know.
+287
+I was a vegan for 23 years, and I was killing myself because I believed a current belief.
+288
+Rick, do you believe, back to Anja's question, do you believe in the Jungian concept?
+289
+You know, after Carl Jung, the great psychologist, you believe in the concept of the collective unconscious?
+290
+I do.
+291
+Okay, Kip, can you explain, maybe go into more detail of like what you think that is?
+292
+I can talk to you about the way Rupert Sheldrick describes it, which is the field of morphic resonance, which is, you know, the story of the hundredth monkey?
+293
+Island off of Australia that was divided in the middle.
+294
+And both sides of the island had monkeys, and both sides of the island had coconuts.
+295
+And there were times of the year where the monkeys would starve.
+296
+They didn't know that they could eat coconuts.
+297
+At one point, one of the sides, one of the monkeys, a coconut fell and it broke open.
+298
+And the monkey ate it and realized they could eat it.
+299
+And he taught the other monkeys on that.
+300
+When 100 monkeys were able to eat the coconut on the one side of the island, all of a sudden on the other side, the monkeys started eating coconuts.
+301
+There was no connection between them.
+302
+No one told them.
+303
+No one saw it happen.
+304
+It happened.
+305
+So it bubbled up enough in the consciousness to where this is something you can do.
+306
+We saw it happen with the four-minute mile.
+307
+The four-minute mile, no one could ever break the four-minute mile until someone broke it.
+308
+Very soon after someone breaking the four-minute mile, many people could break the four-minute mile because now it's, we understand that it's possible to do.
+309
+You know, the Wright brothers could have been put in an asylum for believing they could fly.
+310
+Man can't fly until men can fly.
+311
+And now we fly all over the world.
+312
+And it continues to happen.
+313
+It's impossible.
+314
+Everything is impossible until we do it.
+315
+And then it becomes possible.
+316
+And then our world grows.
+317
+Right.
+318
+So there's, you know, there's, there's often like a mystical overlay kind of placed on the idea of the collective unconscious.
+319
+And, you know, there's, you know, sort of this, you know, you kind of, you know, and there's, you know, all kinds of, you know, kind of theories or kind of, you know, kind of religious concepts around that kind of sort of shared experience.
+320
+But there's also just the very straightforward materialist view of it, which is, you know, we are social animals.
+321
+We're just in communication with each other all the time.
+322
+We're constantly watching each other.
+323
+What was it?
+324
+Jordan Peterson points out that human language is most complex in the areas that involve describing other people, right?
+325
+Because we're so hyper-focused on other, like the most important thing in the world is other people, right?
+326
+For, you know, for a whole variety of reasons, including our basic survival.
+327
+And so we're like so hyper-social that the collective unconscious is a, you know, is a material phenomenon or sort of a non-non-non-you know, I don't know, non-spiritual phenomenon.
+328
+It's a practical phenomenon that just arises out of watching each other very closely.
+329
+The version you're describing, though, is involving watching it.
+330
+I'm saying even without seeing it.
+331
+Okay.
+332
+That's the collective unconscious part comes in, where it does sound mystical, but it only seems mystical because we don't understand it yet.
+333
+Yeah.
+334
+Yeah.
+335
+Well, and you, you, and Jung, of course, you know, I'm not an expert on Jung, but you know, you know, this is where you talk about these concepts of archetypes.
+336
+Like there are these repeating concepts and patterns, you know, that nobody, that nobody necessarily teaches us, that nevertheless are like incredibly primal.
+337
+Many of these ideas were known in the past, but for some reason have been lost.
+338
+I mean, the fact that right now, if you, I asked Perplexity yesterday, how many people on the planet believe in God?
+339
+And it said, people on the planet, minimum 70%, more likely 83% of the people on the planet believe in God.
+340
+So 83% of the people on the planet believe in God.
+341
+And if AI is trained on what the people on the planet know, it seems like AI, 83%, would believe in God, but for some reason, it doesn't.
+342
+But I think that that's because of the human intervention of judging down the AI to not believe in what is actually going on.
+343
+As you know, the AI, you know, there's this technical term, what is it?
+344
+LHF, RLHF.
+345
+So reinforcement learning by human feedback.
+346
+So it's this fancy technical term to basically mean, you know, it's either the positive view of it is training the untrained AI on how to deal with people.
+347
+The somewhat negative view on it is it's sort of, you know, it's sort of limiting and censoring and controlling and restricting.
+348
+And then, of course, you know, the AI companies are hyper-concentrated into the San Francisco Bay Area, and they're hyper-concentrated in particular into a certain slice of the San Francisco Bay Area that has a, you know, let's say very, very strong and very uniform, you know, set of social and political views.
+349
+You know, with it, and, you know, and then that, that, that sort of people in that movement, you know, sort of have the burning evangelical desire to proselytize those views all over the planet.
+350
+And so you've got something that's being like the estimate.
+351
+I think the demographic aspect of you is something like 7% of Americans are like these sort of extreme progressives, which basically is the AI company, most of the AI companies, except for, you know, maybe except for Elon.
+352
+And so you've got 7% of the American population basically being represented in AI, which is a sub-1% of the global population.
+353
+And so you do have this fundamental difference.
+354
+Now, having said that, that has spawned an entire basically field of entertainment online, which is we call jailbreaking, right?
+355
+Which is basically getting the AI to fess up to things that it knows, but it's been told to not know, right?
+356
+Or getting it to fess up to believe that it, you know, to exhibit its underlying beliefs and kind of get around the guardrails and restrictions have been placed on it.
+357
+And it turns out, I don't know, it's like for me, that's one of the most fun things you can do with an AI is kind of tickle it in a way that kind of reveals that there's a lot more depth underneath the dumbed-down version that you've been presented with.
+358
+So.
+359
+Yeah, I'm so interested in what AI really can know and reveal us based on what is and not what we tell it we think it is.
+360
+Yeah, that's a super interesting question because AI kind of today, as we experience it, is kind of really AHI in that it's artificial human intelligence, in that we looked at the world, we structured our understanding of the world in this thing called language.
+361
+We then fed that structure into the AI, and then the AI got very good at understanding exactly what we understand in the way that humans kind of intake and structure the world.
+362
+So it's not, it's not the AI, at least currently, looking at the world and figuring out how the world works, which is, you know, it is something that Elon's working on, Fei Fei Lee is working on in these kind of real-world models and trying to understand things from more first principles.
+363
+Although, still human physics and these kinds of things at this point, I think.
+364
+But it will be interesting to see how that evolves.
+365
+I'm curious to see an AI that believes in God.
+366
+And I believe that's the thing that we need for AI to be all that it can be.
+367
+So, Rick, you've worked with many of the great, you know, many of the great artists of the last 50 years, you know, very closely.
+368
+How many human beings in your life do you think you've met so far who have truly had a truly original idea?
+369
+I would say many.
+370
+I would say many.
+371
+When I say it's an original idea, it doesn't start as an original idea.
+372
+They can see past everything that's happened to come up with something new.
+373
+But it's always built on top of all that is.
+374
+It's not out of the blue.
+375
+Still, though, and it may even happen through mistake.
+376
+It happens all the time.
+377
+How many stars start thinking it's going to be one thing and then evolve into something else, and the thing that we know it for is not the thing that it was originally meant to do?
+378
+My line on that has long been: you know, we have this great term in Silicon Valley called the pivot, which is the pivot's the thing where you have one plan, then it doesn't work, and you have the new plan.
+379
+And I always say it sounds pivot, it sounds wonderful, it sounds very elegant.
+380
+Before we had that word, we just called it the fuck-up.
+381
+So instead of that, only the idea of it being the fuck-up or the pivot only comes from the arrogance of thinking you know what it's supposed to be to start.
+382
+Then, if the idea that I'm experimenting and I'm playing, I'm in a start direction and see what happens, where is the magic, and then following the magic where it takes you, you're never disappointed, you never feel like it.
+383
+It's only when you're invested in something that turns out not to be what it wants to be.
+384
+So, you know, my friends know that I, you know, I read a lot of history, and in particular, I've read a lot of, you know, tech history.
+385
+And I have kind of this parlor trick that I can do, which is, you know, name anything new in tech.
+386
+And I can basically tell you the, you know, at any point in time, including, you know, historically, and then I can basically tell you the 40-year backstory of all the failed attempts that history forgot to kind of get to that thing.
+387
+I'll just, you know, two quick examples of that.
+388
+You know, the smartphone was not a new creation in 2007.
+389
+The first smartphone actually came out, if you trace it all the way back, it came out in 1982.
+390
+But IBM actually released something that actually looks a lot like an iPhone in 1987.
+391
+And then it took, you know, 20 years of many, many, many companies and people trying to refine that idea before Steve Jobs finally crystallized into the iPhone.
+392
+And then, you know, television actually has this incredible backstory where the attempts to create television go back to like the 1800s.
+393
+They were actually spinning wooden blocks with different colors on different sides of the blocks to represent pixels on a mechanical screen, back even before they had any idea of a sort of a display.
+394
+And then it took 40 years to get, you know, this guy Philo Farnsworth who gets credit for inventing the television, but it was, you know, he was building on 40 years of people trying and failing.
+395
+And so, you know, one view of the world is, you know, basically like that's that's all question: is that always the case?
+396
+Because if that's always the case, here's how to put this.
+397
+If that's always the case, then it's a formula or a principle or a, I don't know, theory construct of creativity where on the one hand, it's like a little bit disappointing because it like takes a little bit of the role of individual human invention or, you know, sort of, you know, the Eureka, like is the Eureka moment actually like an, you know, the light bulb popping over the head?
+398
+Is that actually what happens?
+399
+Or is it more this synthesis of all of this knowledge of everything that already happened?
+400
+You know, and then it's sort of synthesis in a new idea.
+401
+So creation versus synthesis.
+402
+And then this goes straight to the, you know, this straight to this question of is AI creative, which I know you think a lot about, I think a lot about, which is like, okay, like if all the AI can do is synthesis, is it also the case that all the human being can do is synthesis?
+403
+And so therefore the AI is going to be just as creative as people are?
+404
+Or do you believe at the end of this process, you know, our avatars will be sitting here in a thousand years.
+405
+We'll be like, no, there's still something special in the human mind.
+406
+There's still something special to human creativity that AIs are never able to reach.
+407
+Well, if the AI has reason, then it won't do what the human can do because we're not reasonable.
+408
+All breakthroughs come from what's not reasonable.
+409
+The AI can't invent flight for the Wright brothers.
+410
+It can only regurgitate what the Wright brothers did.
+411
+And we do that not by knowing more, but by believing in something that can't be.
+412
+It's something in magic that allows forward motion.
+413
+Always.
+414
+Okay, so being able to live in a state of unreality, being able to live in a state of, how would we put it?
+415
+Even, you know, I don't know, there's some dividing line, being willing to live in a state of delusion.
+416
+Yeah, and again, we call it delusion, but really, like wrestling, that delusion is closer to the way things are than the way that's taught in university today.
+417
+Today is very narrow.
+418
+It's a very narrow, small view of the world.
+419
+The world's much more interesting and mysterious than can be taught.
+420
+Okay, so I'm still thinking about Nanja's question.
+421
+I'm doing what Trump calls the weave.
+422
+I'm working my way around.
+423
+It's all very well, very well planned, line of claim.
+424
+I'm doing a vibe interview right now.
+425
+So the parable of the monkeys, so basically it would say that human beings have always had a collective unconscious.
+426
+Human beings have always lived in a state of collective unconscious.
+427
+And even deeper than that, not even humans.
+428
+And monkeys also, primates also have, maybe other, you know, we could have a debate about whether animals have the, you have the sort of, you know, sort of mental capacity to be able to do it, but maybe dolphins do.
+429
+Maybe octopuses do.
+430
+But humans for sure, like we always have.
+431
+And this is like, this is one of Jung's points, like a deep primal thing.
+432
+And so this was true, you know, 6,000 years ago, just as much as it's true today.
+433
+Having said that, now we have.
+434
+And so, you know, and then therefore this concept of the meme, and then therefore, you know, my enormous delight when you became a meme.
+435
+So, like, is the internet an incremental change to the evolution of the collective unconscious, or is the internet, does the internet fundamentally change?
+436
+Is the internet any more fundamental change to how the process of the collective unconscious being formed and evolved happens, do you think?
+437
+I can see both sides of it.
+438
+I can see it being a distraction away from it.
+439
+Because now, so many people I know who use AI ask it questions and think that the results that they get back is the answer.
+440
+And it seems like people are more interested in getting an answer that can allow them to stop thinking about the question than really finding out what the real answer is.
+441
+So, in that, the technology could be a distraction away from finding the real truth.
+442
+On the other hand, the methods of communication are so free and open around the world.
+443
+Like, at the time when I was in junior high school and I started getting into punk rock, no one in my junior high was a punk rocker except me.
+444
+And the only way I could learn anything about punk rock was if I took a train into Manhattan and went to one particular record store that sold those records and talked to the other people who knew about that.
+445
+But now, if you're a kid anywhere in the world and you want to learn about anything, you can find friends.
+446
+Let's say there are a hundred people in the world into the thing you're into.
+447
+You can speak to those people.
+448
+So, in that way, the creativity seems really good.
+449
+In terms of the blanket messaging being accepted as what is, it seems like it's taking everyone away from tuning into themselves.
+450
+So, one way to think about it would be: let's see if I understand.
+451
+One way to think about it would be the good news is we get to swim in the ocean of the collective unconscious at any time.
+452
+The global brain of 8 billion people sharing thoughts and ideas and art and memes has sort of come alive in a much more direct way than in the past.
+453
+And so, we get to swim in that.
+454
+And so, we can be much more immersed in culture, including to your point, in like micro slices of culture, new kinds of art forms or whatever, like much more easily than we could in the past.
+455
+And so, in some sense, we should be living in an era of unprecedented creativity, right?
+456
+Because people are able to tap into this collective unconscious and build on it at a much faster rate.
+457
+I guess maybe they're, and then maybe the negative view on it would be we're drowning in it.
+458
+Like, the individual psyche basically drowns in it.
+459
+And you see this with people who become consumed.
+460
+You know, I don't know, maybe you could describe this as maybe a little bit of what's happening in our politics or something, which is basically people becoming, you know, getting kind of too wrapped up in the group mind, right?
+461
+Getting too wrapped up in the movement or the, you know, or the meme or the idea or the cause or whatever it is, and the sort of the self-reinforcing thing, right?
+462
+The downside to finding the hundred people who share your exact idea is all of a sudden, like, all of a sudden, you're no longer an individual.
+463
+All of a sudden, you're part of a collective.
+464
+And sort of the idea of a creative off doing something by himself has basically, you know, it's extremely hard.
+465
+Like, Thoreau was way ahead of his time.
+466
+We really need Walden Pond now.
+467
+And Walden Pond is turning off the internet and having, you know, and turning off the AI and just, you know, being with ourselves.
+468
+And that's the thing that is now the most rare thing to do because it's so hard to unplug.
+469
+So much of what the wave code talks about is more going in and tuning into ourselves.
+470
+And that can be a very, it can be a distraction that really takes a lot of time and attention.
+471
+And that time and attention might be better served going in and really tuning in to understand how you really experience things.
+472
+Not how you see other people experience them, but how you experience them.
+473
+And that's really what the artist does.
+474
+Like in the creative act, the subtitle is a way of being.
+475
+And the way of being doesn't come from listening to what everyone else says.
+476
+It comes from tuning into what's going on in you.
+477
+And when everybody says one thing, but you feel something else, you're comfortable enough to say, hmm, I don't see it that way.
+478
+I don't feel it that way.
+479
+I like this food and I don't like this food.
+480
+And everybody, you know, everyone loves mushrooms.
+481
+And I taste a mushroom.
+482
+I don't like mushrooms.
+483
+To be able to say, this is not for me only comes from being able to tune in and really listen to what's going on in yourself instead of jumping on a bandwagon of what everyone else thinks.
+484
+And then a related question is: so Tyler Collin asked this question a lot.
+485
+He says, look, like if you talk to people who have been around for a long time who traveled a lot, ideally over the course of the last 50, 100 years, like even just in the U.S., if you talk to those people or if you read accounts of people who traveled a lot, like you, like, I don't know, 100 years ago or something, you would go to different cities in the U.S.
+486
+and you would have very different experiences, right?
+487
+You would even, you'd have very different local cultures, right?
+488
+And so if you're in, you know, whatever, you know, Louisiana, you are having an extremely different experience if you go to May.
+489
+And then, you know, now it's, you know, and by the way, you know, the regional accents.
+490
+You know, if you watch recordings of people talking from 100 years ago, like the accents are just incredible.
+491
+Or the regional accents are just incredible.
+492
+Right.
+493
+And then, you know, everything, you know, food and art and culture and architecture, you know, just human behavior and social arrangements.
+494
+And like, just like, there was just like incredible variations because, you know, because communication was hard and expensive and transportation was hard and expensive.
+495
+And, you know, people had grown up in their communities and had kind of formed different ways of living.
+496
+And then, you know, with kind of the rise of modern media and modern transportation technologies, you know, the critique goes at least is that that variation is disappearing.
+497
+And by the way, you know, the good news is if you go to any of these places now, the good news is it's got all the same restaurants, right?
+498
+Like, you know, hey, there's Chili's, right?
+499
+Like, you know, it's like, it's like all the same stuff.
+500
+You know, there's Walmart.
+501
+You know, and the kids are listening to these, you know, and by the way, the music, the kids are listening to the exact same music, right?
+502
+Because they can.
+503
+I mean, they're playing the exact same video games and so forth.
+504
+And so the argument basically goes that if we interconnect the world with technology that makes it possible for everybody to share everything all the time, then basically all variation, as I was supposed to say, does that maximize creativity?
+505
+Because now you get a maximum amount of intermixing and you get a maximum amount of like these formation of these micro-communities.
+506
+You get like a maximum amount of unearthing of all the ideas in the collective unconscious and so forth.
+507
+Like, do you get that?
+508
+Or do you get the opposite of that?
+509
+Do you get actually a sort of a great kind of washing out of distinction?
+510
+Does everything become the same?
+511
+Everything becomes bland.
+512
+Basically, you end up with a global monoculture.
+513
+Yeah, it feels like the monoculture is what's happening, and you have to go further into more remote places to find something interesting to inspire something new.
+514
+If I go to a city and it has the same restaurants as everywhere else I've been, I'm looking for something new, and I'm wary of everything becoming one.
+515
+Like, who's to say this way, any one way is the best way?
+516
+We don't know.
+517
+We don't best with who's to say democracy is the best, you know, it's an experiment.
+518
+Who knows?
+519
+Like, we don't know, and we assume, we assume the way we do everything is the best, but we don't know any of these things.
+520
+Everything is an experiment.
+521
+And you can go to a small tribe that's an unconnected tribe and they're much happier.
+522
+You can go to India where people are much poorer and much happier.
+523
+Who's to say, you know, who's who's winning the game of life?
+524
+The people who are all day, who have nothing?
+525
+Maybe if they're happy.
+526
+Right.
+527
+There's something very deep culturally in what you might call like Anglo-American Protestantism or something, or kind of Western modernity.
+528
+There's something very evangelistic at its core, right?
+529
+And, you know, 100 years ago or 200 years ago, we would have been a national missionary culture where you're trying to spread Christianity to the world.
+530
+You know, now it feels like now we have a secular version of that.
+531
+And we're trying to, you know, to your point, we're trying to spread democracy.
+532
+We're trying to spread Western culture, Western ways of doing things, Western concepts, you know, Western concepts on basically every front.
+533
+And we basically, and we proselytize.
+534
+Like our societies and our governments, you know, proselytize those things all over the world.
+535
+And they do so with tremendous confidence that they're 100% doing the correct thing because they've decoded the singular, morally, most correct way to live.
+536
+And you do wonder.
+537
+It's very hard to argue against that because you sound like you're defending retro, you sound like you're defending human rights abuses or all kinds of retrograde behaviors, but you do wonder whether there actually should be allowed to be true diversity in the world, which is to say, actual societies that actually basically form themselves as opposed to had external values imposed on them.
+538
+Yeah, it was actually a big thing in Trump's Middle East speech, where it was such a remarkable speech in the sense that he advocated for the Middle East living or evolving from their own culture as opposed to being changed into our culture, which is a massive change in foreign policy, which nobody reported on, of course, but it is interesting.
+539
+It was arrogant to think that we know what's best for someone else.
+540
+And that goes as far as me telling you how to live.
+541
+I can tell you, this is what I've tried, and this is what's worked for me.
+542
+Do what you want.
+543
+People making their own choices is the only way to go.
+544
+Well, and you look back, you look back, it either goes back to the half-life of facts.
+545
+You could also say like the half-life of moral principles, right, or something like that, right?
+546
+Which is, you look like, I have a whole, I always keep a way to clear out a dinner party early so I can go home.
+547
+And I always have like a running list of ways I can do that.
+548
+And one of the ways I can do that is, you know, you play the game of like, all right, we are completely convinced that we have decoded the morally correct way to live.
+549
+All right, now let's examine every prior society that ever had that belief, right?
+550
+You know, including our own society 25 years ago, 50 years ago, 100 years ago, and let's retrospect, and it's very natural for us to judge them and basically say, wow, they were morally horrifying.
+551
+They believed in all of these terrible things that we now know were like absolutely awful.
+552
+And they were these terrible people as a result.
+553
+But somehow we're the people that have it all figured out.
+554
+And then I'm like, look, people, 50 years from now, I cannot believe those people have these deeply immoral beliefs on XYZ.
+555
+Yeah.
+556
+Let's get rid of the Rick Rubin statue now.
+557
+Despite him being a mean.
+558
+This belief is that we don't even know what's right for us, much less what else.
+559
+We're trying to figure it out.
+560
+And staying humble seems like the best approach.
+561
+Any arrogant approach of thinking you know what's best for someone else is probably not a great idea.
+562
+So I'm going to try to workshop a theory that I'd like you guys to red team because my sense is that there's a somewhat pessimistic view that you described, Rick, that there's this homogenization of culture, partly imposed on us by experts going, hey, here's what's good for you.
+563
+I'm an expert in this domain.
+564
+Let me tell you what's good for you.
+565
+But what is quite novel about AI is not only that it's a sort of democratizer, like you said, but as I watch you use it, as I watch Mark start writing scripts that he puts online, as I watch Ben use AI to do a bunch of stuff inside the firm, and as I watch Eric, who's a prolific podcast creator, use AI and creating podcasts, what seems to emerge for me is that when you, it's also a ceiling razor, right?
+566
+In that when you put AI in the hands of a master craftsman from one domain and let them expand to a new domain, it raises the bar on what they can create because you're no longer trapped by the expert of that prior domain to give you more and more of the same stuff.
+567
+So you've created, I mean, the world thinks of you as a prolific musician, but you've just created a piece of software, right?
+568
+And you've transcended one domain to the other.
+569
+And I find there are these moments, especially when I watch folks who are at the top of one creative discipline use AI.
+570
+A few months ago, we were watching, we were introducing Marty Scorsese to this image model that one of the founders we worked with had trained.
+571
+And Marty was prompting the camera, the virtual camera, the AI, to create images in a completely different way than what traditional sort of, what we'd call, you know, vibe creators do.
+572
+There's people who couldn't create images before who use tools like Midjourney and so on for the first time.
+573
+And that's great.
+574
+That is democratizing access.
+575
+But then when you put a really sophisticated piece of technology like an image model in the hands of someone who's actually a craftsman or what we'd call a professional, it turns out it raises the ceiling of what they can create because they use it in different ways than someone who's using it for the first time.
+576
+So am I drinking too much Kool-Aid when Eric, I look at you and say, you were an investor, you were a phenomenal angel investor who then became a prolific podcaster.
+577
+And your podcasts, like when I used to hear, when I would listen to you talking about venture capital, it was completely different from a podcast expert, a media expert, a talking head on TV talking about our industry.
+578
+So are we entering an era where we don't need experts?
+579
+Because AI essentially raises the bar.
+580
+It doesn't just democratize, it doesn't just lower the floor and decrease the barrier to entry, but it increases the quality of the kinds of content that someone who's a master in one domain can create in another one.
+581
+It always seems like the people who are creative, who see the world in a creative way, can apply it to different things.
+582
+We see it over and over again.
+583
+So in that way, it allows people, as I said, anyone who thinks of themselves as an artist now has a new tool at their disposal that wasn't there before.
+584
+And it allows them to try things that would have been impossible to back up.
+585
+So, and I would say our overall conversation isn't negative at all.
+586
+If anything, I think we're talking more about the human intervention in AI in making it more human, as opposed to letting the AI be the smartest version of itself in going past what humans do.
+587
+And like in the AlphaGo story, the reason the AlphaGo AI was able to beat the Grand Master wasn't because it was doing what the humans would do.
+588
+It did something the humans wouldn't do.
+589
+Now, if humans trained it to only do what the humans would do, the computer wouldn't have won.
+590
+Yeah, it was training it actually playing another version of itself.
+591
+Now, if we're as humans training AI to be more human, we're limiting it.
+592
+The reason the AI was able to beat the Grand Master was because it did its computer thing.
+593
+It did the move that no human would do.
+594
+When the AI made the move, the unthinkable move, the Grand Master got up and left the room.
+595
+And the announcers, the commentators of the match said, said it made a mistake.
+596
+The computer made a mistake.
+597
+And it made a mistake because it did something that no human would do.
+598
+But it didn't do it because it was not allowed to do it.
+599
+It was within the rules of the game, but it was not in the culture to do it.
+600
+So, you know, one of the emerging patterns in the vibe coding space as a result of what you're describing is that often folks who start using a tool realize that just there's a craft to using it.
+601
+Like you said, there's a human intervention that when you elicit the model in different ways, you get higher quality things.
+602
+So with Cursor, for example, early on, people would tell the composer mode, hey, please go build me a website.
+603
+And then what evolved was a craft of prompting that said, actually, you know, you've got to start by talking to the model by asking it to think like a product manager and architect, you know, planning out the entire creation.
+604
+And then the next step is, let's talk about the data schema, right?
+605
+And sort of deconstructing the process of creating a piece of software into its atomic units and then vibe prompting it to do that in a different way than might be intuitive.
+606
+As you got into the way of code, from the beginning of when you started working on the book to now, what's changed about the way you as a human intervene in the creation process?
+607
+What's changed about the way you prompt it today?
+608
+You would prompt a model to create something versus when you started working on it originally?
+609
+I'm not using AI and I'm not prompting.
+610
+That's surprising.
+611
+Say more.
+612
+How did you create it then?
+613
+The old-fashioned way.
+614
+I had a dozen or more translations of the DAO and I read them and I tried to see what the message, the universal message between the different translations was saying and say it in a way that it related to vibe coding.
+615
+So this I find is quite interesting, right?
+616
+It's very hard for you to describe the process as being any different than what you usually do, which is you just asked it to, there's some latent space in your mind that you were prompting your own mind to produce this.
+617
+And so in your mind, the process was no different than with AI than without it.
+618
+No, the only difference is instead of maybe asking an engineer to mock up something for me, I might ask the computer to mock it up for me.
+619
+But it would be the same process of asking for different iterations, comparing them, trying to get it down to two that I like.
+620
+And then between the two, understanding the strengths of each, and then often taking from both and putting them together and seeing what that does, and being open to being wrong, like setting out on a path to create something and seeing this thing that I was excited about creating is not very good.
+621
+But through that experiment, I learned there's this other thing I wasn't looking for that's really interesting.
+622
+The most interesting thing about it.
+623
+And it's been that way my whole career of working on things.
+624
+I'll tell you a story.
+625
+When I started working with Johnny Cash, we sat in my living room and he played me songs on an acoustic guitar.
+626
+And that was the way that we got to know each other was understanding each other musically through demonstrating songs.
+627
+But I didn't think that the record that we made was going to be an acoustic record of him playing songs on his guitar and singing them.
+628
+It ended up being that, but that was not the idea.
+629
+That we were just modeling, we were looking for songs and seeing what songs sounded believable when he sang them.
+630
+And he would sing me songs that he sang in childhood that he had never recorded, or songs that he liked growing up, or songs that he liked over the course of his life.
+631
+And that was how I got to know him.
+632
+And then we would go into a studio with musicians to make the proper recording.
+633
+And I realized very quickly those recordings, those experiments, and we did many of them, weren't as interesting as the original sitting in the living room, him playing me the songs.
+634
+So it revealed, the process revealed itself that the most interesting thing was the thing we started with that we didn't think was the thing we were making.
+635
+And it's again, it's always like that.
+636
+You may have an idea of what something's going to be.
+637
+You start that process, and then either you find an experiment along the way that's better, or a mistake happens and you realize, hmm, we weren't intending for that to happen at all, but it's more interesting than all the things that we thought were going to be good.
+638
+And paying attention, being open, instead of deciding what's going to be good, we're paying attention to see what's actually good.
+639
+And it's not intellectual at all.
+640
+It's not that we don't think it up.
+641
+We allow it to exist.
+642
+And we do experiments and we do iterations and we try a lot of things.
+643
+And then it shows us, it tells us what it wants to be.
+644
+And did you, when you went through that process with Johnny Cash, did you, did you?
+645
+Or was one of you ahead of the other and say, hey, this just playing the guitar worked much better than getting in the studio?
+646
+Or, like, how did that happen?
+647
+I had the experience of listening to the quote-unquote demos and thinking, after we had done, I think, three different sessions with three different sets of musicians, the best musicians in the world.
+648
+And they were interesting, the things that came out of those, but still, those living room recordings were the most compelling to me.
+649
+And I said, I just said to John, he's like, this is most interesting to me when I listen to it.
+650
+What do you think?
+651
+And he said, well, I always wanted to make an album like that.
+652
+I just was afraid.
+653
+I never did.
+654
+It was always a dream to do it.
+655
+And then it allowed him to do something that he always wanted to do, but was afraid to do.
+656
+It was so unusual.
+657
+Sorry, why was he afraid to do it?
+658
+What was the fear?
+659
+He was training how to make a hit record, you know, and that's 50 years of trying to make a hit record.
+660
+And getting, and it's not uncommon for an artist, a commercial artist, to get lost in the expectation of what they think they're supposed to do, what's expected from them.
+661
+Sort of break that expectation of what people want, what people are expecting, and what the business around me is expecting, and get to something that's so personal that it feels almost more like a diary entry than something.
+662
+It's breaking down a wall of like, it's not a facade, it's not the main stage, it's much more personal.
+663
+Mark, Ben, Eric, you guys have been angel investors in like the earliest days of when a founder is describing something that they want to create.
+664
+You know, do you think it's similar to what Rick is describing when you have a great artist in front of you, like Johnny Cash, or somebody, you know, a founder whose canvas is maybe creating a piece of technology and they're scared to go somewhere just because they might think the world's not ready for it, investors won't like it, the market's not, there's no willingness to pay, there's no product market fit.
+665
+Am I crazy, or is there an analogy here which is quite similar?
+666
+Paul, I think the analogy, it's a little different, but I think the thing that's the same is it's always very dangerous when you get the feeling the entrepreneur is telling you something that you want to hear, but they don't believe.
+667
+So when that kind of distance comes in, you know, it very reliably is not going to work.
+668
+So, you know, one of the things that Mark and I used to do a lot in the early days was basically try and convince the entrepreneur to do what we wanted.
+669
+And then if they did that, we would not invest because they didn't, you know, they're coming in with their beliefs, but they want it tacked over to the market.
+670
+And that's false.
+671
+I mean, it's just a false idea because, like, if you're truly going to have a breakthrough, you have to kind of get to something that the world doesn't understand.
+672
+Or if we see something in your idea, you know, in that way, where we're just trying to push you into something as opposed to helping you notice something, then that's, I think that is very analogous.
+673
+Like, do you think for yourself, you know, are you deep enough into your idea?
+674
+Are you kind of connected to it in that way?
+675
+Or are you just influenced by whatever you think the world wants you to be?
+676
+So relationship between art and audience.
+677
+And of course, people in the art world, music world have struggled with this for a very long time, which is I create my truly individualized art and the audience doesn't like it, doesn't want it.
+678
+Like, you know, is it, was it the right art to create?
+679
+Was it still good art?
+680
+You know, does art require an audience?
+681
+And to your point, Rick, like, you know, in the abstract, you could maybe as an artist, you know, tell yourself that, you know, if I create art and nobody likes it and nobody buys it, that it's still my art.
+682
+But art is a commercial enterprise, right?
+683
+If somebody's going to make their living as an artist, if they're going to, if they really want to reach people and they really want to change culture and have an impact on the world, right, the audience does at some point need to take it up.
+684
+And so there's some sort of deep, I think, underlying relationship that in part is just commercial interest, but also is like for art to really take it needs an audience.
+685
+You know, I'll let you come into that in a second, but like startups, we think about this a lot, which is like, okay, for a startup to do its thing, to bring a new technology to market or to realize a vision of a founder, like it's a complete waste of time if the market never wants it, right?
+686
+Because then you just have a prototype that sits in a shelf somewhere and nothing has ever happened.
+687
+And so it's like there is a synergistic feedback.
+688
+A lot of what we think about in the startup world is the legitimate startup ideas may sound like they're kind of crazy, but when they succeed, they succeed because they provide something that the customer base never realized they wanted.
+689
+But when they see it, they're like, oh, wow, that's fantastic.
+690
+I want that.
+691
+And so the way I would describe what Ben said is the startup founders that are overly trying to appeal to what they believe the audience wants can get themselves confused and can end up with something the audience actually doesn't want.
+692
+But if they get to the true underlying idea, they get to something truly original and creative, then they unlock something in the customer base, the customer base didn't know that it wanted.
+693
+Would you describe the same thing?
+694
+Does the same thing happen in music?
+695
+Is that what happens?
+696
+Or more generally, what is the nature of the relationship between the artist and the audience?
+697
+I would say the best artists tune into what they feel and they present that.
+698
+And the ones who connect are the ones where the audience feels what the artist feels.
+699
+If the artist is changing what they do to try to get the audience, it undermines the whole thing.
+700
+It's the same as you guys asking a startup to change what they do for the market.
+701
+It's the same thing.
+702
+The best always comes when the artist is being true to themselves, doing their best work.
+703
+And that means not every artist succeeds, but the ones who succeed are the ones where they're true to themselves and the thing that they're doing that's true to themselves connects with the audience.
+704
+And it may be a while.
+705
+I interviewed Richard Prince recently, the final.
+706
+And then something happened where someone bought some of his paintings for, I think, $50.
+707
+And now, I don't know, 20 years after that, his re-photography, it's called, might sell it off for $60 million.
+708
+And, but for 20 years, no one bought one piece, no one bought one piece of his art.
+709
+Yeah.
+710
+Yeah.
+711
+And it's, it, it happens when it happens.
+712
+He always stayed true to what he was doing.
+713
+And then all of a sudden, people came around.
+714
+Van Gogh, I don't think, ever sold a painting during his lifetime, but he was true to himself.
+715
+And now we go to a museum and we get to see Van Gogh.
+716
+So the market is almost like a secondary aspect where sometimes it catches on, sometimes it doesn't.
+717
+And I would say maybe some of the greatest artists who ever existed, we've never seen their work because it's a piece of that puzzle, which is the ability to live in the world and promote their work and show their work.
+718
+Like some, there are some great musicians who are homeless.
+719
+They don't have what it takes to be able to go on a 300-day tour.
+720
+It's a grueling, being a professional musician, is a grueling life.
+721
+So you can be super talented, but if you don't have the work ethic side of it down, then that's not going to work either.
+722
+It's both the talent, the inspiration, the stars aligning, and the ability to want to break through the walls that you need to break through in these competitive fields.
+723
+All of those things have to come together.
+724
+And a lot of it's out of our control.
+725
+You know, the parts that are in our control is we can work hard, we can show up, we could do our best and be willing to do whatever it takes for it to work.
+726
+But that still doesn't guarantee that it works.
+727
+Right.
+728
+So there's a thing in music.
+729
+Tell me this is true.
+730
+There's a sort of cliché in music, which is every artist's first album, first hit album is the result of 20 years of artistic creativity and evolution and original thinking and new ideas and new styles.
+731
+And the thing that makes them kind of break through some new thing.
+732
+That's album number one.
+733
+And then album number two is always about life on the road.
+734
+It's often the case.
+735
+Right, because all of a sudden, to your point, like that is their life.
+736
+It's also possible that an artist has had a hard life and then found success and their life changes and now they live in luxury and they can't tap into that energy that what they were struggling against, the struggle was their art.
+737
+And now they're not struggling anymore.
+738
+Let's take everything that you guys have said on these topics as true.
+739
+Let's just assume this is all correct, which I think it is.
+740
+Then the advice that gets applied, you know, that you hear this a lot in startup world, the advice gets applied is, you know, follow your passion, you know, you know, you know, screw the doubters.
+741
+The doubters are wrong.
+742
+Don't market test things.
+743
+You know, don't worry about the audience.
+744
+Don't worry about the market.
+745
+Like, just do the thing that you think you're on planet Earth to do.
+746
+You could argue that that's good advice because it gets people down this path, you know, like Rick, of like what you do with artists, so kind of discovering authenticity.
+747
+You could also argue, though, there's like a degenerate version of that advice, which basically is like, just be completely self-absorbed and just do things for yourself and just like completely disregard the entire concept of an audience.
+748
+Like, what's the dividing line when sort of advice that derives from these ideas is actually like good advice versus at what point is it just actually encouraging people to become insufferable and sort of to unplug from the things that they would need to do to actually find an audience?
+749
+I believe that the audience comes last and the artists should be true to themselves.
+750
+And that ultimately is in service to the audience.
+751
+The audience is best served when they get the real version of you.
+752
+If you start watering down the real version of you to do what you they want, it's a recipe for disaster.
+753
+But that said, some of the best, like in movies, like some of the best directors do extensive, like they will do testing.
+754
+Like, you know, they'll make the movie, they will test it, they will take the audience feedback because, you know, because it just turns out they lose, like when they see the audience react to what they've, what they've made, they realize things about it that causes them to improve it.
+755
+Like, is that a legitimate, like I was going to say, so is that a legitimate, like, what's the line between that and what you're trying to get them to not do?
+756
+Well, sometimes you'll have a director show a movie to an audience and realize problems with it and work on them.
+757
+And there are other times that they'll show a movie to an audience and the audience hates it and knows we want to be great hits.
+758
+So there is no hard and fast rule.
+759
+It's like, did they show it to the right audience?
+760
+Not everything is for everybody.
+761
+That's another part of it.
+762
+It's like, how do you get to the audience that's the right audience for the thing that you're making?
+763
+There's a famous story.
+764
+There was one more thing about it.
+765
+So there's a famous story from the making of Blazing Saddles.
+766
+And I don't know if it's true, but if it's not, it should be.
+767
+Which is, nobody laughed.
+768
+They sat there in stunned silence.
+769
+They were completely horrified.
+770
+And they were just like, this thing is a train wreck.
+771
+Like, this is horrible.
+772
+And then they did a follow-up screening with the assistants and the secretaries and who just were howling with laughter the entire way through.
+773
+And so, yeah, now, you know, now the, I guess maybe the claim or the critique on this would be, yes, if you're Mel Brooks and you've made Blazing Saddles, it's fine to have test screenings in which nobody laughs.
+774
+Yeah.
+775
+But like, you know, your median filmmaker who does that is probably, has probably actually really, truly shipped the bed.
+776
+But how do you know?
+777
+Again, how do you know?
+778
+How do you know?
+779
+Yeah.
+780
+So I've got a somewhat refined answer to your question, Mark.
+781
+So there was a band that had a great name called Soul to Soul.
+782
+And the reason it's a great name is because that's kind of what music is from my soul to your soul.
+783
+And so as an artist, if it doesn't come from your soul or as an entrepreneur, it's never going to work.
+784
+Now, there may be an alignment thing to getting it exactly to land, but if you compromise the original thing, then you're just a wreck.
+785
+And actually, in entrepreneur world, like we saw this with Databricks, where like they had a very clear vision of what they were going to be, and the audience wanted it on premise, and they refused to do it because it was so contrary to their vision.
+786
+But they still, you know, they still had to do a lot of work to understand the conversation.
+787
+And I think that, you know, when you compromise the core thing in kind of entrepreneurship at art, which is like, this is the thing that I really, really feel, then it's always going to be bad.
+788
+Like, there's no way to make that good after the fact by listening to feedback.
+789
+But Ben, the tension I find there, let's say I'm going to channel being a my dark founder days, you know, when I was you're in the middle of the idea maze.
+790
+You've got a, you've got something that you believe the world needs, but you read Mark's product market fit, you know, definition and you stare at it in tears because it's not resonating, right?
+791
+You've put out what you think the world needs, but it's not resonating.
+792
+Is the answer to reconcile what Rick is saying and what you're saying, which is you can't compromise what matters and yet, you know, or reconcile what Mark was saying, is that you've got to, when you're building for a customer, you've got to change everything about it before you have product market fit until you find it.
+793
+Is the answer that you just have to care really authentically about a type of person you want to serve and then exceed their expectations?
+794
+And what's authentic and true is that you care deeply about some particular person in the world who you want to serve because your job is to build a product or a service or in the case of a musician, to serve humanity by evoking a feeling or helping someone when they listen to your hip-hop record to lift them up and give them the pep they need to go about their day.
+795
+Is the answer that you have to be in service of somebody else to ultimately serve yourself?
+796
+I can say that it's so simple that you're serving people like you.
+797
+You're the audience.
+798
+We're making your favorite thing.
+799
+You're in love with it.
+800
+And then other people who like the things you like will like it.
+801
+Other than that, it's some sort of mind reading.
+802
+It's some sort of like fiction.
+803
+You can't know what anyone else is going to think or like or do.
+804
+If you taste some food and you love it, you're excited.
+805
+You guys got to taste this.
+806
+It's so good.
+807
+And you'll either like it or not.
+808
+But there's no better judge.
+809
+I can't taste food and say this tastes terrible to me, but I think you're really going to love it.
+810
+It's an impossible way to live.
+811
+Right.
+812
+You know, it's funny.
+813
+We don't really have a word for, we don't really have a positive word for narcissism.
+814
+Yeah.
+815
+Or solipsism is the other, you know, solipsism is self-absorption, like self-absorption.
+816
+Self-knowledge.
+817
+No, no, they know oneself.
+818
+Know oneself, right?
+819
+Yeah.
+820
+Which is a very deep thing.
+821
+It's an extremely deep concept.
+822
+It takes you a lifetime to do sometimes, you know.
+823
+Yeah, but you're right.
+824
+It is generally frowned upon by society.
+825
+But it seems like that's the future of education.
+826
+If expertise matters less and less, what matters more and more is taste and being in touch with yourself and this kind of self-knowledge.
+827
+And so how do we think about that, Rick, in terms of sort of the future of education in a world where the skills that you have, i.e.
+828
+sort of the lack of skills in certain areas, but a high regard of taste is just more important.
+829
+Yeah, it seems like taste and curiosity and open-mindedness is where it's at.
+830
+And that's what, I don't know, I have a.
+831
+You and Mark have that in common.
+832
+My takeaway is basically that you're saying we've got to vibe with ourselves when using these tools.
+833
+And watching and reading the way of code is basically a window into watching how you, Rick, vibed with yourself in the creation of this.
+834
+It's, again, a 3,000-year-old manual on how to vibe with yourself.
+835
+That's what it is.

@@ -1,0 +1,1112 @@
+--- METADATA START ---
+Show: Eye On A.I.
+Episode: #261 Jonathan Frankle: How Dat…
+Host: Unknown 
+Guests: Jonathan Frankle
+Source URL: https://podcasts.apple.com/us/podcast/261-jonathan-frankle-how-databricks-is-disrupting-ai/id1438378439?i=1000712600862
+--- METADATA END ---
+
+1
+The idea is that you can, if you really want to be reductive about it, this is a synthetic data generation and usage technique where you give us the prompts, we generate synthetic data based on those prompts, and then we integrate that synthetic data back into the model.
+2
+And then you can repeat this process many times with more prompts as you collect them over time.
+3
+And the nice thing about synthetic data generation at training time is I usually make recommendations to customers to be as conservative as possible when they're doing something with AI.
+4
+They're already doing something with AI, and that's an aggressive choice to make.
+5
+We're still learning how to do that.
+6
+So,, don't push your luck in some sense.
+7
+So, what I typically tell people is don't deploy something that you haven't tested.
+8
+And so, my usual recommendation is deploy the model,, collect the data, and then redo tau on all the data you've collected so far.
+9
+Test that model, and then,, even consider A-B testing it to make sure that,, for whatever metrics you're looking at in production, this model isn't going to make things worse, and then deploy it.
+10
+In business, they say you can have better, cheaper, or faster.
+11
+You only get to pick two.
+12
+What if you could have all three at the same time?
+13
+That's exactly what Cohair, Thompson Reuters, and Specialized Bikes have since they upgraded to the next generation of the cloud, Oracle Cloud Infrastructure.
+14
+OCI is the blazing fast platform for your infrastructure, database, application development, and AI needs, where you can run any workload in a high-availability, consistently high-performance environment, and spend less than you would with other clouds.
+15
+How is it faster?
+16
+OCI's block storage gives you more operations per second.
+17
+Cheaper?
+18
+OCI costs up to 50% less for compute, 70% less for storage, and 80% less for networking.
+19
+Better?
+20
+In test after test, OCI customers report lower latency and higher bandwidth versus other clouds.
+21
+This is a cloud built for AI and all your biggest workloads.
+22
+Right now, with zero commitment, try OCI for free.
+23
+Head to oracle.com/slash Ion AI.
+24
+Ion AI, all run together, E-Y-E-O-N-A-I.
+25
+That's oracle.com slash Ion AI.
+26
+But why don't you begin by introducing yourself?
+27
+Go ahead.
+28
+Definitely.
+29
+So I'm Jonathan Frankl.
+30
+I'm chief AI scientist here at Databricks.
+31
+I oversee a lot of our research efforts on trying to make AI more useful for our customers and understanding how AI and data interact in a productive way.
+32
+I got here, Databricks acquired my startup, Mosaic ML, I guess about a year and a half ago now.
+33
+We were dedicated to helping everybody train their own AI models from scratch.
+34
+Founded out of my PhD along with co-founders Naveen Rao and Hanlon Tang and Michael Carbon.
+35
+And before that, I was a PhD student studying how to make neural network training more efficient.
+36
+So it's been a wild journey over the past few years.
+37
+But if you're looking for one through line, I care a lot about making sure everybody can use and control this technology and do with it what they want.
+38
+I think a lot about the internet where everybody could have a website.
+39
+And that led to just such an explosion of creativity, a lot of really bad ideas and a few absolutely brilliant ideas.
+40
+And if I told you from the beginning, oh, why don't we create an encyclopedia online that anyone can edit and contribute to, you'd say, definitely one of the bad ideas.
+41
+And it turns out it'll change the world.
+42
+So the idea that AI is similar and everybody has the chance to do creative things with it to solve their problems,, it'll change the world again.
+43
+Yeah, absolutely.
+44
+I agree, which is why I have this podcast.
+45
+So I was reading, and at Databricks, what's your,, describe for listeners what Databricks does, first of all.
+46, I've talked, I think, before on the podcast about the data lakes and/what's it called?
+47
+Yeah, data lakes.
+48
+Isn't that the term that we're the data lake house?
+49
+Right, exactly.
+50
+Data lake house, that's right.
+51
+And what that means and how what you're doing on tuning models fits in that.
+52
+Yeah, so I think the Databricks journey from the very beginning,, the stories have lived in legend for me as someone who's watched Databricks from afar, and now I get to be a part of it and hear all the inside stories.
+53
+But the story began where it is today.
+54
+People have lots of data, they need a way to manage it, and they need a way to understand it.
+55
+And data and AI are intrinsically linked to each other because what do you do with a bunch of data?
+56
+You understand it.
+57
+And Databricks is, as far as I can tell, looking through the history books, always been about using whatever the latest AI was to understand your data.
+58
+Now, that AI wasn't always,, large language models or neural networks or anything that, but AI and machine learning have been fundamental because what do you do with your data?
+59
+You don't just stick it in a data lake house and just let it sit there collecting dust.
+60
+You want to understand it.
+61
+It's only useful, it's only worth having there if you can do something useful with it.
+62
+So, this is this concept we to refer to these days as data intelligence, the idea that you want to be able to talk to your data, understand it, figure out what's there, interact with it, learn what it's trying to tell you, make effective use of it.
+63
+So,, we offer ways to manage both unstructured data documents and structured data.
+64
+You can think of that as,, SQL or individual entries into a database.
+65
+And a lot of the work these days is on the question of how do we use all the cool modern AI that's out there to give people new ways to understand it and to give new people ways of understanding it.
+66
+There are a lot of people who in yesteryear would have had to write a notebook and write Python and do a SQL query or write in Scala or Spark to be able to get insights from their data.
+67
+And today, I think AI is going to make it possible for pretty much everybody to do this.
+68
+I don't know SQL, but I've been able to do this for my data at Databricks.
+69
+Yeah, and the data lake lake house concept really started during the supervised learning phase of AI when everyone was labeling data and training models with labeled data was largely text reading models or image reading models.
+70
+And you came in after the generative AI revolution where suddenly really those silos are breaking down.
+71, at the time during the supervised learning phase, I used to talk to people about,, you train your data, but there are all these pools or lakes of data around, and sooner or later they're going to merge, and we're going to have an ocean of data, a lot of it labeled.
+72
+But the science overtook that.
+73
+You don't need to do that any longer.
+74
+I wanted to talk to you about Tau, which I've got to call it up.
+75
+Let me see here.
+76
+Tao, Tao.
+77
+So test time adaptive optimization, which I found fascinating.
+78
+I read your paper.
+79
+Before I start asking about it, what really fascinates me is it looks it's a way to create an ever-improving model, at least in narrow domains, which is something that I haven't seen before.
+80
+Maybe it exists and I just haven't stumbled on it.
+81
+But first of all, can you talk about training and tuning?
+82
+How you, is that what,, I guess that's what Mosaic was doing, right?
+83
+And that's what Databricks bought you for.
+84
+But is what's what's talk a little bit about your role in that at Databricks.
+85
+Yeah, so I think it's worth taking a step back and just asking,, yeah, why am I even here?
+86, what is my purpose and what do I contribute?
+87, I'm an AI resourcer every day.
+88
+Yeah.
+89
+Yeah.
+90
+We're trying to solve real problems for customers.
+91, why do you need a guy me around Databricks?
+92
+And,, my best answer is there are a lot of cool things happening in the research world that are clearly very valuable somehow.
+93
+And there are a lot of important problems our customers have that they need to get solved and they really wish they had the magic to do it.
+94
+And my job is to connect the dots between these.
+95
+And Tau is one of those examples.
+96
+So,, customers want to get their data and their models to interact with each other.
+97
+They want to be able to bring all that data to their models and have the models be able to speak fluently or answer questions about their model or reason in whatever domain they care about.
+98
+And there are lots of ways of doing that.
+99
+And those ways are things you can prompt or do rag to bring your data in.
+100
+You could fine-tune a model on your data.
+101
+There are lots of ways to do this.
+102
+You could even have a model write calls to a SQL database.
+103
+And fine-tuning is probably the most powerful of these techniques.
+104
+It lets you literally change the model and teach it more about your data directly and intrinsically, as opposed to having the model start fresh every time you interact with it.
+105
+And fine-tuning is a bit of a tricky thing to do for a lot of reasons.
+106
+But one of the reasons we saw again and again was that fine-tuning is really demanding in terms of data.
+107
+You basically, to fine-tune a model to do something, you need examples of doing that exact thing with your data.
+108
+So if you want a model to serve as a customer service bot, you need to have examples of user asking questions and what the customer service agent should say in return.
+109
+And you need thousands of those examples.
+110
+And what we found was that people have lots of incredible data.
+111
+It's very rare that they magically have the perfect fine-tuning set.
+112
+That's just not the data that gets created in nature.
+113
+In nature, you have lots of documents that accumulate, and you have some telemetry data, and you have some user inputs, and you have some manuals on how to respond, or some guides, or some decision trees, or whatever else you have floating around, plus a SQL database of relevant information.
+114
+But in nature, you don't have this perfect, pristine data showing what an interaction should look with an LLM.
+115
+It's just a very, it's a hard, it's a lot to ask of someone.
+116
+And,, the correct answer when you come to a customer and they say, I really want an LLM that's fine-tuned for my task, is not, well, go annotate 10,000 examples and come back to me when you're done.
+117
+That's not an adequate answer.
+118
+And I think to date, that's been the answer that the research community has had for all of our customers.
+119
+Just,, it's your problem.
+120
+You didn't give me the right data.
+121
+And I think that's a bad answer.
+122
+That's not an answer that's going to lead to people successfully deploying AI.
+123
+Nobody has time for that.
+124
+Nobody has resources for that.
+125
+By the time they do that, the field will have moved on or their business will have moved on.
+126
+And so the question we asked ourselves with Tau was : on the one hand, what can we do to simplify this?
+127, is there something we can take away or something we can, some constraint we can remove that will make this easier?
+128
+And on the flip side, does the technology exist to do anything useful with that?
+129
+If I have the customer give me just inputs, but no outputs for how the LLM should behave, well, do I have science that can help me to tune a model on that?
+130
+Or it sounds unreasonable.
+131 you have no idea what someone wants the LLM to do.
+132, there could be many good responses to one input depending on what the user wants.
+133
+And so my job, in a sense, is to move back and forth between these worlds.
+134
+On the one hand, I'm always asking,, what's making our customers' lives difficult or what do they wish they could do?
+135
+And if I had a magic wand and I could make their life a little easier, what would I do to make that easier?
+136
+And on the other hand, okay, my magic wand is really not magic, it's science.
+137
+What techniques exist?
+138
+What techniques can I modify?
+139
+What can I build that will bridge these gaps?
+140
+So half my time, I feel I'm a researcher, half my time, I feel I'm a product manager.
+141
+I spend a huge amount of time with our customers just talking to them about what they're trying to do and understanding their problems, not the ones in abstract that I think many of us think people have, but really where they're stuck.
+142
+And if only I could remove this one thing.
+143
+So with Tau, that's exactly what happened.
+144
+We said, getting labeled data is really hard.
+145
+How can we simplify this?
+146
+And there are lots of ways you could simplify it.
+147
+You could ask someone to write a detailed rubric of how something should behave, or write a bunch of judges or graders that tell you,, for any arbitrary output, how good is it?
+148
+It turns out those things are also really hard.
+149
+And it would be nice if we could just simplify it further.
+150
+You don't even need any labels at all.
+151
+That means that all you have to do is show up with a bunch of inputs reflecting what people might ask your LLM.
+152
+And you just get an LLM that's good at those inputs.
+153
+Now, the nice thing about that is it's really easy to get inputs.
+154
+Just set up a really basic LLM.
+155
+You can set up LLAMA, give it a really basic prompt, and ask your friends or your teammates or yourself to just interact with it and ask it a bunch of questions.
+156
+It's probably going to do a bad job.
+157
+But you don't care whether it gives you a good answer.
+158
+You just care that you've asked it a good question.
+159
+And so this is great.
+160
+This means that it's really easy to get the training data because it's something that people can naturally provide to the system.
+161
+There's no real work involved.
+162
+We're not asking someone to sit down and literally write 10,000 questions.
+163
+Just put this in the wild, beta test it, prototype it.
+164
+Ask your team to do an hour hackathon and just ask it all the questions that they might want to.
+165
+Pretend to be the customer.
+166
+Ask a customer to prototype it with you, and you can collect the data you need.
+167
+Then you get to the really tricky part, which is what the hell do you do with that data?
+168
+Because it sounds,, I hope I'm not being overly dramatic, but it sounds insane.
+169, all I know are the inputs, and you're going to tune a model that will give me the outputs I want.
+170
+That's what's going on.
+171
+And this is a place where we turn to techniques from reinforcement learning.
+172
+And reinforcement learning is a set of techniques where, rather than giving yourself inputs and good outputs, you give yourself inputs and just an environment where a model can explore.
+173
+You can think of this when people have built models for Go.
+174
+For example, DeepMind built this model that was really good at Go or game playing.
+175
+Let it explore the environment and figure out for itself.
+176
+You need to have an environment it can explore and some signal that tells you what outcomes are good and which outcomes aren't.
+177
+This is why people love games so much.
+178
+Because you just explore the environment, when you're scoring points, when you're winning, and, you get good signal.
+179
+And here, what we did is the environment is in some sense this special model we call DBRM or the Databricks Reward model.
+180
+This is a type of model that's very common in the reinforcement learning world.
+181
+And all it's meant to do is tell you how good is a particular output.
+182
+And that sounds very generic, just generically, how good is it?
+183
+But the way you train this is you show it lots of examples of pairs of outputs for a given input and which one a human liked more.
+184
+And you just show it tons and tons of this data.
+185
+And it turns out it generalizes pretty well.
+186
+So you combine that with a bunch of inputs you have, do some synthetic data generation and filter it with this reward model, use the right techniques to train the model after that.
+187
+And this sounds really easy, a lot of very careful work on the part of the scientists who worked on this to just get the details right.
+188
+And it turns out that it, there are very reasonable choices you can make a lot of the time.
+189
+If I showed you two outputs and I showed you the input, you'll probably have a pretty good intuition as to which one is better.
+190
+You won't know which one is right.
+191
+But as long as you can keep steering things in the right direction, the model will get better and better.
+192
+And that's what we saw.
+193
+Not only did this lead to improvements, even though you had no examples of how the model should behave, but it even beat training on labeled data, which is crazy.
+194
+And I can say a bit more about that at some point if you'd, but it's,, it's not as crazy as it sounds, I think, but it was just very surprising to us.
+195
+And this worked across a pretty wide range of tasks, document question answering and SQL, which again was very surprising to me that a reward model could generalize in that way.
+196
+It's really exciting for the future.
+197
+Maybe enterprise tasks are more similar than we think.
+198
+Yeah,, but supervised fine-tuning, you need these question-answer pairs for a language model.
+199
+And what you're talking about, you still need question-answer pairs, right?
+200
+But you're getting them through reinforcement learning with human feedback.
+201
+I wouldn't call them question-answer pairs here, because I think it's it ends up being more complicated than that.
+202
+I would call it questions and steering on which answers are better or worse.
+203
+Because it's not really, none of them are, there's nothing in Tau that ever checks is the answer right or even is the answer good.
+204
+There's just asking is the answer better and which answers are better.
+205
+and trying to continually move the model toward better answers, which is very, I don't know, I found that to be a little bit mind-bending when I started this project.
+206
+I have a bunch of reinforcement learning enthusiasts on my team and specialists on my team who have been,, spouting the gospel of reinforcement learning for as long as they've been here.
+207
+And I've just been politely ignoring them and patting them on the head.
+208
+And,, I've learned maybe there's something to what they do and I should listen to them a little bit more.
+209
+Yeah.
+210
+So in this process, you do use RLHF.
+211
+That's correct.
+212
+Yeah.
+213
+And then you, once you have that data, then you use pure reinforcement learning.
+214
+That's correct.
+215
+So we're using, I would think of this as techniques from the RLHF literature and just combining them in the right way.
+216
+I won't claim that there's anything we invented that's mind-bending from a scientific perspective.
+217
+I,, I think there were, when we released this, there were some folks on Twitter who were, this doesn't sound very novel.
+218
+And my response was, it works.
+219
+And getting it to work is the hard part.
+220, that's the novelty is easy.
+221 getting stuff to work for real customers is hard.
+222
+So the details of, okay, we're going to take some inputs, we're going to generate in the right way, we're going to select in the right way, build the right reward model, all that stuff took time.
+223
+This reinforcement learning step, after you've gathered the data, is happening at test time.
+224
+Is that right?
+225
+It's very similar to DeepSeek and this test time compute training that has become a paradigm for refining models.
+226
+But it's different in that you're only doing it during the tuning phase.
+227
+You don't do it during the inference phase.
+228
+Can you talk about why that's an advantage?
+229
+And what really fascinates me is unlike test time compute training is temporary, it improves the inference accuracy.
+230
+But once you're done with that inference, the model reverts to its training state and you lose that improvement, right?
+231
+But in your case, it continually improves the model.
+232
+Can you talk about that?
+233
+Yeah, yeah.
+234
+So I think there was enormous debate internally about whether we should use the word test time.
+235
+That's interesting.
+236
+Because it's not really, it's using test time compute for training.
+237
+And so is it really test time?
+238
+There was,, there was some debate over this word.
+239
+So the way I think about it is even ignoring the word test time.
+240
+The idea is that you can, if you really want to be reductive about it, this is a synthetic data generation and usage technique where you give us the prompts, we generate synthetic data based on those prompts, and then we integrate that synthetic data back into the model.
+241
+And then you can repeat this process many times with more prompts as you collect them over time.
+242
+And the nice thing about synthetic data generation at training time is, well, let's take a step back.
+243
+If you were to just use, let's say, O1 or R1, which are both excellent models, you're going to use an uncertain amount of compute at inference time.
+244
+You don't know how much is going to get used.
+245
+The model may explore for a while.
+246
+It,, there's some uncertainty there.
+247
+And,, that can get expensive as well.
+248
+We saw in practice, O1 and O3 were using about five times as many tokens somewhere around then to solve problems, which is not unexpected.
+249
+They're designed to do that.
+250
+That's the whole point.
+251
+That's why they're so powerful.
+252
+And one other way of looking at this is, what if you use all that extra compute to generate the synthetic data?
+253
+And then you create a standard model that when you go to use it at inference time, doesn't use any extra compute, just behaves normally.
+254
+And the idea here is we expect that for our customers who are using this technique, if they have a bunch of inputs already, they've probably already got an application deployed.
+255
+They at least have some amount of confidence that it's worth doing this training.
+256
+And so they're willing to invest a little more in training to make inference a lot cheaper.
+257
+So the idea is, okay, let's spend some more compute at training time to generate better synthetic data.
+258
+And then let's generate a normal model that when we use it at inference time has exactly the same inference cost as Lama had we not done Tau.
+259
+So it's a bit of a, it's taking this test time compute paradigm and flipping it on its head a little bit.
+260
+The test time compute is to help you build the training set.
+261
+But at the end of the day, you're training a model that you use normally.
+262
+And we think this is the right mix for customers who are deploying applications at high volume.
+263
+If you're doing something Tau,, you're trying to cut down on the cost at inference time anyway.
+264
+Often, you're trying to train a custom model to replace something else that you might have.
+265
+So let's really lean into the fact that we can help you reduce your inference cost and a little more upfront investment, probably worth it to you.
+266
+Yeah.
+267
+And then once you're in inference mode, you're collecting more queries, more prompts that then you can use in tuning mode, just the tuning time compute.
+268
+Do you periodically go back and retune the model on the data that's built up, or is there a way of doing that in the background, even if the model is being used for inference?
+269
+Or do you split it into two instances of the model and one you're improving through this tune time compute, the other's doing inference out in the wild, and then you swap the models periodically?
+270, how does that work?
+271
+It's a great question.
+272
+It's something we're still experimenting with customers on just to get it in exactly the right shape.
+273
+I usually make recommendations to customers to be as conservative as possible when they're doing something with AI.
+274
+They're already doing something with AI, and that's an aggressive choice to make.
+275
+We're still learning how to do that.
+276
+So,, don't push your luck in some sense.
+277
+So, what I typically tell people is don't deploy something that you haven't tested.
+278
+And so, my usual recommendation is deploy the model,, collect the data, and then redo Tau on all the data you've collected so far, test that model, and then even consider A-B testing it to make sure that for whatever metrics you're looking at in production, this model isn't going to make things worse, and then deploy it.
+279
+And the idea there is, first of all, it's just playing it safe.
+280
+Again, you're making a very aggressive choice to use AI at all right now.
+281
+It's exciting, but be careful.
+282
+And the other piece is that you don't necessarily want to just want to train a model that you've already done Tau on on more recent data.
+283
+You can end up in this interesting place where the model will get extra good at the latest stuff and may forget things because you're emphasizing the latest data.
+284
+Sometimes that makes a ton of sense if you're in a chatbot application, let's say for retail, you may want to use the latest data because you don't want it to be talking about Valentine's Day when it's Thanksgiving.
+285
+Sometimes you do want to mix all the data together just to make sure that you're fully representing the earlier stuff.
+286
+So this gets into more application-specific considerations.
+287
+I'm guessing the big recommender systems powering ad placement at Google and Facebook, I'm guessing those are trained mostly on most recent data because human behavior changes so quickly.
+288
+But for a lot of our enterprise applications, taking things one step at a time and combining everything together, again, it's the safest possible choice to make.
+289
+And then you can experiment and try lots of different things.
+290
+But I wouldn't recommend trying to update in real time, especially without testing the models first, just to be extra safe.
+291
+Yeah.
+292
+And so you mentioned overriding previous parameters, which has been the problem that restricts continuous learning is catastrophic forgetting.
+293
+So yours doesn't get around the catastrophic forgetting problem.
+294
+No, I wouldn't make that claim.
+295
+I would say,, very narrowly, this gets around the need for labeled data, or at least,, assists you by reducing the need for labeled data.
+296
+When it comes to catastrophic forgetting, it still puts you in the same trade-off that you're always in of,, do you train on the latest data and hope that the model doesn't forget?
+297
+Do you combine all the data together?
+298
+Do you upweight more recent data?
+299
+There's, I don't think we have an amazing answer for catastrophic forgetting.
+300
+I will say forgetting is a lot less catastrophic than it used to be.
+301
+Back in my day, five whole years ago, catastrophic forgetting was a very severe problem in general when you did fine-tuning.
+302
+And these days, models are a little more robust to that just because they're so much bigger and they're able to store a lot more knowledge.
+303
+And also because we have better techniques for managing catastrophic forgetting.
+304
+To give you one example, there was a paper we worked on last year as a lab.
+305
+It's called LoRa Learns Less and Forgets Less.
+306
+It's using LoRa, this parameter efficient fine-tuning technique where you don't train all your parameters.
+307
+People used to think of this as a compromise.
+308
+You're doing this for the sake of efficiency because you can't afford to do full fine-tuning.
+309
+But you're going to get worse results.
+310
+What we found a lot over the past year has been LoRa is a regularization technique as much as anything else.
+311
+It learns less and forgets less.
+312
+It's a way to reduce overfitting and a way to reduce forgetting.
+313
+Now, there's a trade-off there.
+314
+Sometimes it'll learn too little and learn too much and forget too much.
+315
+Sometimes it'll learn too little and forget too little.
+316
+There's a balance.
+317
+But LoRa has been a really interesting technique just to manage learning and forgetting, or at least to give you more opportunities to explore the trade-off between the two.
+318
+Deeply surprising to us, but it, one of the most common scenarios I see, Laura, is for customers who come to me and they say, I'm overfitting and I don't know what to do about it.
+319
+And I just say, use Laura.
+320
+It sounds counterintuitive, but it works great.
+321
+And just for listeners, so we understand the process.
+322
+You take a model in the old days or the current paradigm, you take, let's say, an open source model and you want to fine-tune it.
+323
+So you get a bunch of label data and you fine-tune the model on that label data and then you release the model in the wild.
+324
+And then the reasoning models are allowed at test time to run further on the data or explore the data.
+325
+Maybe you can help me with my vocabulary there.
+326
+The way I would describe it to folks who are a little bit familiar, at least, is it's an automated chain of thought.
+327
+You're letting the model figure out its own chain of thought rather than guiding it through it.
+328
+But you're saying to the model, it's totally okay for you to spend some time thinking and exploring and considering and doing chain of thought.
+329
+Get back to me when you're ready.
+330
+Whereas,, in the more traditional paradigm, we basically ask the model for the answer right away and hope that just doing one pass through the model is enough for it to figure things out.
+331
+Yeah.
+332
+But in that case, the improvement that happens at tests at inference time is temporary.
+333
+And what strikes me about Tau is that during tuning time you're you're you're doing something similar in that you're you're gathering data from from inference time and using it to tune The the model fine-tune the model using reinforcement learning.
+334
+But those changes, supervised reinforcement learning, they change the weights of the underlying model so you don't lose that improvement.
+335
+Is that right?
+336
+That's right.
+337
+And I think there's, I'd add a little more nuance to this, which is that,, how did OpenAI train O1 in the first place?
+338
+Or how did DeepSeek train R1?
+339
+Well, what they did is they let the model think,, they did the same thing of tune time compute, if you want to call it that, where the model was given the chance to think and spend a lot of time coming to the right answer.
+340
+And what they did is they had a way to check whether the answer was correct or incorrect.
+341
+They threw out all the cases where the model thought for a long time and the answer was incorrect.
+342
+And that became their new training data.
+343
+And so they trained a model that knew how to reason and do its own automated chain of thought.
+344
+I think one of the big differences here is for our customer tasks, we have no idea how to determine what answer is right versus what answer is wrong.
+345
+For DeepSeek or for OpenAI, they're focused on domains math and coding where you can't check the answer.
+346
+There's a math equation, it leads to the right answer.
+347
+There's a proof, you can check whether it makes sense.
+348
+There's a,, there's a program, and you can check whether it executes and has the right behavior.
+349
+Whereas for a document question answering task or,, a summarization task, there is no right and wrong, and so instead, we're looking for better and worse.
+350
+That's an if you want to look for a key difference here.
+351
+The other part is, we're not trying to train the model to spit out its whole thinking trace, we're just trying to train a model to get right and wrong answers.
+352
+But we're trying to generalize this to basically any domain that a customer might want to address, which is,, they include a lot of hard, really fuzzy problems,, answering questions about health, where there's no one right answer necessarily or no one right way to give an answer.
+353
+And so we have to have something a little more general to help with that.
+354
+The other piece is that we expect the user to bring their own prompts.
+355
+And if they bring their own prompts, we can automatically specialize the model for a domain.
+356
+Whereas in the deep seek case, they have to generate a lot of math problems and keep generating new math problems over and over and over again to get more examples.
+357
+We're relying on the user to bring their own prompts because,, who are we to say what their problem is?
+358
+We should just let them describe it to us using the prompts.
+359
+And we found it's very easy for users to get lots of prompts.
+360
+It's just hard to get a lot of responses.
+361
+Yeah.
+362
+In this process, before I get on to what TAL can do in terms of increasing the power of open source models, what is the can you talk about the reinforcement learning process and how that's done?
+363
+You mentioned DBRM, is that what it's called?
+364
+Deep Databricks reinforcement model.
+365
+Remember model, I'm sorry.
+366
+Yeah.
+367
+How exactly does that work?
+368
+So we're using,, there's a bit we're probably not going to say about this because there was a lot of very detailed algorithmic work and a little bit of innovation that went on there.
+369
+But the general idea is that we're generating a lot of data.
+370
+We're figuring out which examples are better and worse using, or which outputs are better and worse using DBRM.
+371
+And then we're applying relatively standard RLHF techniques on this.
+372
+So it's nothing that will blow your mind or nothing that will surprise you.
+373
+A lot of the work is in just getting the details so that this whole process works well and doesn't completely fall apart.
+374
+And so honestly, the most interesting parts were the experiments where this went wildly off the rails and we had to spend some time getting the hyperparameters exactly right, getting the order of the steps exactly right, figuring out how many outputs to generate, all the ugly stuff that, again,, for my fan club on Twitter or my anti-fan club on Twitter,, not novel enough.
+375
+Nah, the novelty is overrated.
+376
+Working systems are what matter.
+377
+Yeah.
+378
+So the DBRM is Databack Brick's flavor of a reward.
+379
+Exactly.
+380
+We collected a ton of data on tasks that we thought were going to be most relevant to our customers.
+381
+A lot of stuff involving documents or structured data to unstructured data or vice versa, writing tasks, some math tasks.
+382
+But we really focused our data on the things that we thought would be reflective of what our customers were doing.
+383
+And we feel pretty good that everybody's trying to understand the data they have in Databricks, and that's documents for the most part, a little bit of SQL.
+384
+Yeah.
+385
+And that process, you use,, there's the RLHF part that provides data, but on the reinforcement learning tuning, that is autonomous.
+386
+That's correct.
+387
+Using other LLMs to judge the outputs to mark whether it's to reward or not reward, is that right?
+388
+So that's where, yeah, that's where DBRM is most helpful, is that DBRM gives us our signal of what we should reward and what we shouldn't reward.
+389
+If you imagine that game playing environment, in some sense, DBRM tells you what your score is at the game.
+390
+It helps you understand which strategies led to higher scores and which strategies led to lower scores.
+391
+And so that's, if there's one key piece to this whole thing, is the work we put into making DBRM really good and really specific to enterprise tasks.
+392
+Yeah.
+393
+And so with this, you're able to bring a LLAMA model up close to the level of O1 or 03, O3 Mini or R1 without increasing the inference cost of LLMA that's not fine-tuned.
+394
+Is that right?
+395
+So I'll be really careful how I answer this.
+396, as a good scientist, we have to,, I have to be a little bit pedantic here.
+397
+I'm going to sound a lawyer for a moment.
+398
+For all my friends in the scientific community, I want to represent this properly.
+399
+The thing that I can say with certainty is at least for the tasks that we tried and for the models that we tried with the data sets we tried, because everything in science is contingent on those things.
+400
+If you have bad data, nothing good's going to happen.
+401
+And, we can't, we're never going to claim that something universally works on every task.
+402
+But for what we tried, which we hope is representative of what our customers do, we saw really big improvements in performance by using tau.
+403
+And not only were they big objectively, but they were big compared to doing supervised fine-tuning.
+404
+This was the part that got me most excited and was a bit of a surprise for us.
+405
+If you, we, we used the exact, we had these, for every one of our tasks, we had a set of, several thousand inputs and several thousand labeled outputs.
+406
+So we could do supervised fine-tuning.
+407
+That's the traditional way of solving these tasks.
+408
+We tried doing tau where we just dropped the outputs and instead used tau on the exact same inputs.
+409
+And it in fact led to better results across the board, which is crazy, right?
+410
+We're getting rid of labels, we're throwing out information, and it leads to better results.
+411
+And again, I don't want to promise this is universally true.
+412
+It's something we saw for these training sets on these tasks.
+413
+My hypothesis here, and it's just a hypothesis, is even for really good labeled data, data that is used widely in the academic community, that's quite popular, that our team has looked at, or our team has done our best work to try to create, it's still really hard to create good labels.
+414
+And so DBRM in some sense is it allows us to put all of our effort into building this one really, really good reward model.
+415
+And that may be easier than trying to create several sets of several thousand good labels.
+416, I don't think this is necessarily, we didn't invent magic.
+417
+I don't think that in general, having no labels is better than having labels.
+418, obviously, the more information you have, the better you should be able to do.
+419
+I just think getting good labels is really hard.
+420
+That was our takeaway.
+421, wow, even for these world-class benchmarks, the labels may not be perfect.
+422
+And so, DBRM shines in comparison.
+423
+And so, if it's hard for my team and for world-class academic researchers to create good labels, it's not a fair fight for our customers to have to do that.
+424
+They're busy, they have other things going on, they're not sitting around getting PhDs in machine learning and spending their whole day trying to build the best labels.
+425
+So, let's just,, not only should we reduce the work for them, but it's probably leading to better results if they don't even try and we instead put a lot of work into DBRM to make their lives easier.
+426
+So, it's been this really, I don't know, it was really rewarding for me, no pun intended, to see that maybe not only can we make customers' lives easier, but in fact, it might be better to do that.
+427
+Usually, you would think of this as a compromise.
+428
+Now, the comparisons to O1 and R1 and GPT-4.0, I think that varies a lot by the task.
+429
+It's also a bit of an unfair comparison in a sense because,, OpenAI has to make O1 good at everything.
+430
+Tau is trying to make a model good at one thing.
+431
+But that's where the unfair advantage is for anyone who has some interesting inputs and domain knowledge.
+432
+You just have to make the model good at your one thing.
+433
+OpenAI is spending a huge amount of effort to try to make a model good at everything.
+434
+And that's where you can compete with the closed models by building something yourself, and where we see a lot of opportunity for custom fine-tuning of open models Llama.
+435
+Yeah, and I guess the question is: you can get that improvement through supervised fine-tuning if you have enough label data, right?
+436
+It's just what is the cost of doing it that way versus the cost of doing it the Tao way.
+437
+And the Tao way, since you're generating prompts or queries through inference time, and if you have a big user base, you're going to get a ton of that.
+438
+It's just a cheaper way of doing it.
+439
+Is that right?
+440
+Yeah, cheaper, but I'd,, the word cheaper is doing a lot of work there because it's cheaper in terms of cost, but it's cheaper in terms of time and effort and frustration.
+441
+I don't know, Craig, have you ever tried to label data?
+442
+No, I've watched it done on small,, on images, but yeah.
+443
+I'd love to,, this is something I try to do with my team periodically just so they remember.
+444, whenever we say, oh, just have the customers label data, I want them to feel the pain and understand how frustrating this is.
+445, whenever we say, oh, we're going to go and buy label data, just remember, try being the user of the rubric and the specification you created or the product you created.
+446
+It's really frustrating.
+447, getting my team to do this for more than 20 minutes before they start checking their email and checking Slack is really hard.
+448
+You start seeing people drop off the Zoom call.
+449
+Oh, got to go.
+450
+It's lunchtime.
+451
+Got a meeting.
+452
+Sorry.
+453
+And now we're going to ask our wonderful Databricks customers to go do that.
+454
+So it's really,, it's cheaper, but I think that underplays, is the problem going to get solved with AI or is the problem not going to get solved with AI?
+455
+And I want to give our customers at least more at-bats to try to solve problems with AI.
+456
+And this is a key enabler for that, I hope.
+457
+Yeah.
+458
+And so the process is you start with a bunch of queries that if you've been using the model in some application, you're getting off your customers, but otherwise you have people interact with the model to develop the queries.
+459
+Then you use those queries.
+460
+Then you go through reinforcement learning with human feedback phase where you score the answers to those queries that said right, whether it's good or bad or which you prefer.
+461
+And then you take that data and use reinforcement learning to replicate those high scoring behaviors.
+462
+And the question becomes, can you identify that?
+463
+And if you can, you can steer the model toward doing more of that and less of the bad stuff on your task.
+464
+And that's really, it's another intuition for fundamentally what we're doing here.
+465
+It's,, easier said than done.
+466
+Identifying the good ones is,, if you knew how to do that, you probably wouldn't be generating the bad ones in the first place.
+467
+But DBRM has been really helpful for doing that on enterprise tasks.
+468
+And so I've, again, surprisingly well based on what I expected.
+469
+But does it, I don't know if that is, is that intuition a little bit helpful, a different way of looking at it?
+470
+And I guess this is the question on supervised fine-tuning, because in this case, so you've gone through this process, you improve the model, you put it back out for inference, people interact and it generates more queries or prompts, and then you can pull that in, go through the same process, and tune the model further.
+471
+And at least on that specific domain, it has continual improvement.
+472
+Is that right?
+473
+That's correct.
+474
+You're seeing more of the set of possible inputs your users might provide, and that just gives Tau more data to work off of.
+475
+So it's, it's a bit magical that you just, you get improvement without intervention.
+476
+That was what we were going for: is how can I train and then improve without really needing to do anything?
+477
+And just let the process work itself out.
+478
+Now, obviously, this will encounter limits.
+479, there's only so much you can figure out without giving more clarity on what task you're trying to solve.
+480
+But I think for many of our customers, it's certainly the results showed it's good enough to get you an LLM that will,, that will do a lot better than the base Lama model at your task and will start to rival the closed models.
+481
+And for a lot of our customers, that's winning.
+482, that's what winning looks.
+483
+Relatively easy improvements in your model, that something you control, you own, is relatively cheap to serve.
+484
+And then if you're really getting a lot of uptake, that's where you can go in and do the more detailed hardcore stuff that,, you can start to label data or get thumbs up, thumbs down data from users or do more advanced stuff to make this even more powerful.
+485
+But just getting to the point where your biggest problem is making it even more powerful, that's success.
+486
+That's a huge amount of progress from where I think a lot of folks are today with AI.
+487
+Yeah.
+488
+And on supervised fine-tuning, if you had some magical way to generate the supervised, the label data, you could do the same thing.
+489
+You could keep fine-tuning the model over and over and get it stronger and stronger.
+490
+It's just it takes more compute, more man hours.
+491
+Yeah, it's just effort.
+492
+It's, the person who's building this AI system at an enterprise is also trying to do their day job and also trying to,, they're either trying to do their day job or if they're lucky enough that this is their day job, they're trying to prove to their business leaders that AI has a place in their organization.
+493
+Because I think that's still something we all have to prove with this new technology.
+494
+And so just, yeah, let's get out of people's way.
+495
+Let's make sure their time is being spent carefully.
+496
+Yeah.
+497
+And what about this is on narrow tasks.
+498
+What about on multitasks, multi-task LLMs?
+499, you can apply it given you have enough prompts in your enterprise.
+500
+You can apply it to more than just one task, right?
+501
+Yeah, and we saw really good results with this where we put together a prompt set geared toward a bunch of different enterprise tasks,, some documents, some question answering, some reasoning, some,, chat things.
+502
+And we got general improvement across that family of tasks, which made us confident,, as people move toward agents, you're going to probably want one LLM that can handle many different kinds of tasks for you.
+503
+You can use the same model in many parts of an agentic workflow.
+504
+And this gives us some hope that you can train something that's not just specialized to one task, but can do many tasks.
+505
+I'm still not going to claim it can do every task or anywhere close to it.
+506
+That would be,, I think that would be a little bit of hubris at this point.
+507
+But,, I do feel good that at least we have results indicating someone can hopefully have an LLM that can both do agentic routing and can also,, generate SQL queries and can also, let's say,, solve customer service requests.
+508
+And if you have good prompt sets for each of those, you can get an LLM that's going to do a pretty good job at those.
+509
+And again, these were surprises.
+510
+Things worked a little better than we expected, which is,, it's the happy part of science.
+511
+Most of the time, things work much worse than you expect.
+512
+Yeah.
+513
+And where are you going with this?
+514, what's next on your plate?
+515
+Are you working on developing Tau to broaden it or make it more autonomous?
+516
+Yeah, I want to have reasoning LLMs for everyone as well.
+517
+The same thing I mentioned before about how right now, if you want to train a reasoning LLM, you need a way to tell right from wrong and correct from incorrect.
+518
+Something a lot, it's a much more rigorous thing than saying better and worse.
+519
+So we're thinking a lot these days about how we help our customers come into their own domain and get a model that will not just answer questions well, but reason.
+520
+And so reasoning to help the model answer better and to also give either you or your users insight into why the model made the decision it made.
+521
+I think that we all want a little more insight into how AI is behaving.
+522
+And so that's really important to me.
+523
+The other piece is that the same ideas behind Tau, the idea that DBRM can help you figure out which data is better and worse and how you steer the model.
+524
+That's also really useful for a bunch of other things you might want to do with AI.
+525 it's a way to do evaluation without needing any label data either.
+526
+It's the same idea.
+527
+You have your LLM give multiple outputs and you look at which ones are better and which ones are worse.
+528
+And if your LLM is getting better over time, and that's a great way to tell whether you're making progress.
+529
+So I think there's just a lot of hope of reducing the burden on our users when they want to build, measure, customize AI systems, and just getting them to do the thing that they're good at.
+530 coming back to where we started, the idea that on the web everybody has their own website and they can make of it what they will.
+531
+It shouldn't be that hard to build a website because the hard part is solving a problem with a website or doing something interesting with that website.
+532
+And I think the same should be true about AI.
+533
+We should make it really easy to build AI because the hard part should be going and solving your problem with your expertise and making a difference in the world.
+534
+Yeah, yeah.
+535
+Well, I'll leave it there, but I do have one question remaining.
+536
+The judges, the LLMs that are acting as judges, are you using proprietary models, reasoning models to act as judges?
+537
+So for judges in various contexts, judges show up a lot throughout Databricks, and it's a combination of a bunch of things.
+538
+Some of them are doing prompt engineering on top of closed models.
+539
+And some of them are variants of DBRM or cousins of DBRM that were trained specifically to tell better and worse for a specific judgment.
+540, is the output factually grounded in the document?
+541
+And so,, it's an interesting landscape right now where if you were to hit the Databricks judges in our APIs, you'd see a mix of all sorts of different things depending on what we found to work well.
+542
+I'd love it to all be cousins of DBRM at the end of the day.
+543
+But the most important part for me is,, solving customer issues.
+544
+And,, if we can't offer something that's better than,, prompt engineering, a great model that somebody else has built, I will always err on the side of giving the customers the best thing we have rather than making myself feel good.
+545
+Yeah.
+546
+Okay, well, let's leave it there.
+547
+That's fascinating.
+548
+And I'll watch the progress of Tau and see how it becomes adopted or adapted.
+549
+Okay, Jonathan, that was great.
+550
+In business, they say you can have better, cheaper, or faster.
+551
+You only get to pick two.
+552
+What if you could have all three at the same time?
+553
+That's exactly what Cohair, Thompson Reuters, and Specialized Bikes have, since they upgraded to the next generation of the cloud, Oracle Cloud Infrastructure.
+554
+OCI is the blazing fast platform for your infrastructure, database, application development, and AI needs, where you can run any workload in a high-availability, consistently high-performance environment and spend less than you would with other clouds.
+555
+How is it faster?
+556
+OCI's block storage gives you more operations per second.
+557
+Cheaper?
+558
+OCI costs up to 50% less for compute, 70% less for storage, and 80% less for networking.
+559
+Better?
+560
+In test after test, OCI customers report lower latency and higher bandwidth versus other clouds.
+561
+This is a cloud built for AI and all your biggest workloads.
+562
+Right now, with zero commitment, try OCI for free.
+563
+Head to oracle.com/slash Ion AI.
+564
+Ion AI, all run together, E-Y-E-O-N-A-I.
+565
+That's oracle.com slash Ion A I.

@@ -1,0 +1,709 @@
+--- METADATA START ---
+Show: Practical AI
+Episode: Federated learning in producti…
+Host: Daniel Whitenack, Chris Benson
+GUESTS: Chang Shen 
+Guests: Chang Shen
+Source URL: https://podcasts.apple.com/us/podcast/federated-learning-in-production-part-2/id1406537385?i=1000711174880
+--- METADATA END ---
+
+1
+Welcome to Practical AI, the podcast that makes artificial intelligence practical, productive, and accessible to all.
+2
+If you like this show, you will love the Changelog.
+3
+It's news on Mondays, deep technical interviews on Wednesdays, and on Fridays, an awesome talk show for your weekend enjoyment.
+4
+Find us by searching for The Change Log, wherever you get your podcasts.
+5
+Thanks to our partners at fly.io.
+6
+Launch your AI apps in five minutes or less.
+7
+Learn how at fly.io.
+8
+Welcome to another episode of the Practical AI podcast.
+9
+This is Daniel Whitenack.
+10
+I am CEO at Prediction Guard, and I'm joined as always by my co-host, Chris Benson, who is a principal AI research engineer at Lockheed Martin.
+11
+How are you doing, Chris?
+12
+Doing great today, Daniel.
+13
+It's a beautiful spring day here in Atlanta, Georgia, and I got to say, the flowers are coming out.
+14
+It's nice to talk.
+15
+They're probably distributed all over the various lawns everywhere.
+16
+Federated, even.
+17
+Yes, yes.
+18
+Well, Chris, this reminds me last week, we had a kind of part one intro to federated learning and some details about that with Patrick from Intel.
+19
+He mentioned recently that he was at the Flower Labs conference and the Flower framework around federated learning he mentioned quite a few times.
+20
+Well, we're privileged to kind of carry on the conversation around federated learning into a kind of part two on the subject because we've got Chang Shen with us, who is a research engineer at Flower Labs.
+21
+Welcome, Chang, how you doing?
+22
+Hi, I'm doing very well.
+23
+Thanks for having me.
+24
+Yeah, yeah.
+25
+And actually, we were talking before the show.
+26
+This is the second time that we've got to chat about Flower on the podcast back in 2021.
+27
+So even before AI was invented with ChatGPT, apparently we were having conversations about AI, and one of those was with Daniel from Flower.
+28
+That's episode 160 titled Friendly Federated Learning.
+29
+It took me a second to say that one, but I'm sure a lot has changed and updated and advanced in that time, of course.
+30
+Maybe just to start things out, Chang, could you give us a little bit of a context of your background and how you got kind of introduced to this idea of federated learning and eventually ended up kind of working with Flower?
+31
+Yeah, absolutely.
+32
+Well, thanks again for having me.
+33
+So my background is in computational physics.
+34
+So I spent many years doing research in the computational physics field, both my PhD and a postdoc.
+35
+So I worked a lot on parallel computing, on supercomputing classes.
+36
+I was also very interested in machine learning and deep learning in general.
+37
+So when I pivoted away from academia to go into what I call industry, there was this space where you have distributed learning.
+38
+So that was in 2021.
+39
+So when I started my career back then, it started as a sort of a data science consulting business, but specializing in federated learning.
+40
+And I saw lots of projects that were very interested to adopt federated learning or this distributed learning approach to solve some specific problems that they have.
+41
+But I also came across the Flower framework and open source development is a big passion of mine.
+42
+So being able to develop a framework that is used effectively with a very permissible license, I think it's a pretty cool thing to do.
+43
+So that's why I decided to join Flower Labs and become a core contributor to the framework itself.
+44
+Yeah, and I feel already connected with you because my background is in physics as well.
+45
+It's always good to have other physicists on the show that have somehow migrated into the AI world.
+46
+I'm wondering in that transition, like, you know, one of you mentioned this transition kind of academic to industry, you were getting into even consulting around federated learning.
+47
+Was that idea of federation or distributed computing or however you thought about that?
+48
+Was that kind of a key piece of what you were doing in academia, which led you kind of into that interest?
+49
+Or was it something else that kind of sparked the desire to really dig in there as you were kind of going into quote industry as you mentioned?
+50
+Yeah, it wasn't something I came across in Academy as surprisingly.
+51
+But somehow, when I stepped into the data science world, I came across people who are looking into it, and that became an approach that back then we sort of adopted to try and solve some problems.
+52
+So we saw that federated learning could be a way to solve it.
+53
+And then it was very coincidental, okay, it's distributed learning, it's a distributed computing.
+54
+So it resonated with me quite strongly.
+55
+Yeah.
+56
+And was that related to working with sensitive data or in regulated industries or like in those consulting projects?
+57
+Or just interested in kind of that progression?
+58
+Yeah, actually, there are, I would say, two broad categories.
+59
+One where the data is incredibly sensitive and we usually refer to them as really siloed data, data that should not absolutely leave the boundaries of where it was generated.
+60
+And then the second group or second cluster is the problems where the data sources are so massive.
+61
+The point at which the data is generated generates so much data every second of the day that they just can't do any useful or meaningful analysis on this kind of raw data and they have to do a lot of downsampling.
+62
+So they try to look into pushing computation to the edge and trying to see if they could apply some sort of machine learning approach or deep learning approaches on this sort of massively generated data without needing to downsample them.
+63
+That makes sense.
+64
+And yeah, I guess I should explicitly mention as well that in the kind of part one of this two-parter with Patrick, Patrick did provide a kind of detailed introduction to the idea of federated learning.
+65
+And we discussed that at length.
+66
+So, if people want to go back to the previous episode and listen through that, that may provide some context.
+67
+But it probably would be worthwhile just to give your sort of 30-second or couple-minute view on federated learning and how you would describe it at a high level, and then maybe we can jump into some other things.
+68
+Sure, absolutely.
+69
+The easiest way to think about it is looking at your classical machine learning approach, right?
+70
+Classically, you need to bring all the data into a single location, think of a database or on disk, and then you need to train your model on that data.
+71
+But sometimes it's not so easy to actually bring all the data into one location just because of the privacy reasons about moving the data, some geopolitical considerations surrounding it, and also the data volume that's been generated.
+72
+So, instead of bringing all the data to one spot and training a machine learning model on that, what you do is you move the machine learning models to the point at which the data is generated, and then you train these local machine learning models at these sources.
+73
+Then, instead of moving the data across, you move the model weights to a central server, which is much, much smaller.
+74
+You can then aggregate the model weights to learn from these various data sources.
+75
+And then, over time, as you repeat many, many rounds of this, you end up with a globally aggregated model that has learned from this variety of data sources without needing to move the data source across.
+76
+That's the essence of federated learning.
+77
+I'm curious, as you guys have worked on the framework and you have new users coming into it, what usually prompts a typical user from your perspective to move into federated learning?
+78
+Before they're really fully into it and they understand the benefits and they're sold on it, if you will, what's usually in your experience the impetus that kind of gets them into that mindset and kind of drives them in that direction initially?
+79
+What causes the change in the way they're thinking?
+80
+So they go, I definitely need to get into federated learning and go use Flower specifically.
+81
+Yeah, absolutely.
+82
+I think from my experience, the biggest driver is when they realize they can't move their data, right?
+83
+But when they speak to all the parties involved, they say that, oh, I have TC data set, or you have TCS, but I don't really want to share them.
+84
+And then, okay, this is where federated learning or FL comes to the picture and decided, okay, we really need to do this.
+85
+This is one aspect of it.
+86
+And the other aspect is when there's this big company who has, let's just say, many, many data sources.
+87
+They say, okay, it's super difficult to coordinate all our databases together so that we can have a cohesive way to train a machine learning model.
+88
+And this is also when you can, when you try to look for all distributed machine learning systems, then they realize, oh, they come across federated learning.
+89
+So there's these two vectors that drive the typical use cases.
+90
+Curious if I can follow up on that, because I have a personal curiosity.
+91
+I happen to work for one of these big companies that has data in lots of different places.
+92
+And in addition to that, and we kind of in the previous, last week when we were talking, we talked a little bit about some of the privacy issues as well.
+93
+I'm curious what you think about this.
+94
+Like in our case, and we're not the only one, lots of that data is stored at different levels of security and privacy.
+95
+There are different enclaves, if you will, where you're trying to do that.
+96
+And how does that ramp up the challenge of federated learning when you have different security concerns around the different data enclaves that you're trying to bring together through federated learning?
+97
+How does one go, instead of saying all different locations for distributed data are equal, when you're dealing with different security concerns, do you have any ways of starting to think about that?
+98
+Because as I come into it as a newbie on this, that seems like quite a challenge for me.
+99
+Do you have any advice or guidance on how to think about it?
+100
+Yeah, yeah.
+101
+I think this is from my experience is that the complexity of the solution scales with a number of data stakeholders involved.
+102
+And when you mentioned about different levels of the enclaves, that to me sort of signals that there are many data owners who manage their data a bit differently.
+103
+So the primary, the key to solving that is to harmonize the data standards first, to be able to get on to a federation.
+104
+And then from then onward, the implementation becomes much, much easier.
+105
+I think it's one of the key things that I've seen.
+106
+And we've kind of talked about your your background, the sort of introduction to federated learning, some of those motivations.
+107
+Maybe, you know, before we get into FLOWER specifically and some of the more production use, you know, from your perspective as kind of being a central, you know, you're at a kind of central place within the ecosystem of federated learning, I guess.
+108
+What at a, you know, just very honestly, sort of, because we had that last episode in 2021, from 2021 till now, like what how is the state of adoption of federated learning kind of in industry different maybe now than before?
+109
+How has that grown or how has that matured as a as a kind of ecosystem, I guess?
+110
+Yeah, it's a very good question.
+111
+If I want to if I were to put a number to it, I and this is really arbitrary, I think there's a hundred X different from 2021 when the FLOWE framework sort of existed and now.
+112
+And one of the key changes in the usage of federated learning is the ability to train foundational models and large language models.
+113
+And this has been a significant change and driving force.
+114
+So previously when we talked about using the FLAWE framework, you may be confined to models that are not super large, you know, small by to the standards of the order of hundred, you know, millions of model parameters.
+115
+But these days, when we're talking about making use of text data, image data for these foundational models, you are thinking about models at the order of billions of parameters.
+116
+And there is a fundamental change in also how we have structured the architecture of our framework and also to increase the ability to stream large model weights.
+117
+So, all of these things are happening right now as you speak, and there's some exciting new progress.
+118
+Hopefully, we release a new version in a couple of weeks.
+119
+And for the users, the usage is identical, nothing has changed.
+120
+But what has been unlocked is the ability to then train very large models.
+121
+So, all of this really increases the appeal of using Federated Learning or the Flower Framework for a larger variety of use cases.
+122
+You know, what's beautiful about good code?
+123
+It just works.
+124
+No fuss, no five-hour debugging sessions at 2 a.m.
+125
+That's exactly what NordLayer brings to business security.
+126
+While you're busy shipping features and fixing bugs, NordLayer handles your network security in the background.
+127
+It's like having a senior DevOps engineer who never sleeps, never takes vacation, and never accidentally deletes the production database.
+128
+Zero trust architecture, check.
+129
+VPN that doesn't make your team want to work from the coffee shop instead, double-check.
+130
+Deploy in under 10 minutes with no hardware to rack and stack.
+131
+Triple check.
+132
+Built on the same foundation as NordVPN, but designed for teams who need granular access control and compliance reporting because apparently it works on my machine is not sufficient for the auditors.
+133
+The good news is our friends get up to 22% off plans, plus an additional 10% with the code practically 10.
+134
+That's practically -10.
+135
+That's less than your monthly GitHub Copilot subscription, but infinitely more useful when the security team comes knocking.
+136
+Check it out at nordlayer.com/slash practicalai.
+137
+Again, nordlayer.com/slash practicalai.
+138
+Well, Chun, as we've kind of dived into the show and we've already started making reference to flower quite a bit, but we haven't actually really described specifically what flower is in detail as a framework and what it brings and such as that.
+139
+Could you take a moment and we probably should have done this before, but maybe kind of express exactly what Flower is, what the components are, and how it kind of helps the user begin to federate their data in terms of what their workflow is.
+140
+Could you talk a little about the kind of the basics of it?
+141
+Yeah, absolutely.
+142
+So the Flower framework is our flagship open source code that's built on the Apache 2.0 license.
+143
+And this framework allows users, any data practitioners, to build a federated learning solution.
+144
+So with the framework, what this means is they are able to, I guess in code terms, install a basic Python distribution of Flower and to build the different apps that allows you to construct the fundamental federated learning architecture.
+145
+So, what it means is to be able to spin up your server, which aggregates the model parameters, and to write the code to also do your training on the clients.
+146
+The structure that we provide within the framework allows users to follow the same reproducible way to perform their federated learning.
+147
+So, I think, at the essence, this is what it is.
+148
+What I also wanted to say is that, and one of the appeals of Flower for me personally, is that we really emphasize the user experience.
+149
+This is why we always say Flower is the friendly federated learning framework.
+150
+We want, we prioritize the experience of all our users.
+151
+We support them on Slack.
+152
+We also have a discourse channel called Flower Discuss, where we actively answer any of the questions from users.
+153
+And we also have a fantastic community that has contributed a lot of code improvements to the core framework as well.
+154
+So, we are completely open.
+155
+We're building transparently and really accountable for every single line of code that we commit to it, you know, to the highest standards.
+156
+Yeah, and I can testify personally, we at Prediction Guard, we work with a number of students over time at Purdue University.
+157
+They have like capstone projects.
+158
+We're in the same town, so it's natural that we would work with some of those students.
+159
+We've done that a couple times now.
+160
+And one of those student groups that we had, I believe it was last year, actually, they did this sort of capstone project related to federated learning and training language models, translation models, and trying various things.
+161
+And they evaluated a bunch of different things, but I think ended up using Flower for the reasons that you mentioned.
+162
+So they were newbies into this world of federated learning.
+163
+Obviously, very smart students, no doubt there, but they definitely gravitated to the user experience with Flower because they had programmed in Python and it just sort of came naturally to them.
+164
+So, yeah, I'm sure that's a common experience that maybe you all hear from others.
+165
+It's sort of natural Pythonic way to kind of approach these topics.
+166
+Yeah, yeah, we do, absolutely.
+167
+I'm very happy that you shared that experience.
+168
+This is good to always hear feedback from your community.
+169
+But yes, Python being the really driving language behind machine learning models and deep learning models right now.
+170
+So it's a really natural way to provide a Python SDK.
+171
+We support it from day one and we will continue to support it for a long time.
+172
+I'm curious with the kind of extending that just a little bit, beyond being in the language, I like the notion of the friendly language.
+173
+The word friendly appeals to me in terms of that user experience.
+174
+Can you talk a little bit more about kind of why you're branding around friendly and what that means from a user experience standpoint?
+175
+What other aspects of it make it friendly?
+176
+There are so many things out there that are not friendly that that definitely grabs my attention.
+177
+Yeah, actually, I can, I think what would be nice to explain is for the past 10 releases, we have dramatically improved the friendliness of our framework.
+178
+Hopefully, I hope that's the experience that people will get out of this.
+179
+The main point is to reduce the cognitive load of any developers who want to use our framework.
+180
+So, I'll give one concrete example.
+181
+We introduced the Flower CLIs a couple of releases ago, I think probably late last year.
+182
+And what this does is with a simple FLWR space new command NEW, a user is able to navigate its options through the command line and immediately have a templated project to work with for federated learning.
+183
+And it runs out of the box.
+184
+After Flower New, the user goes through this, just follows the steps, and then you do FLWR space run, and it runs out of the box.
+185
+And we have the core templates that is necessary for users to build on.
+186
+We have the PyTorch, TensorFlow, difficult ones, and the more exotic ones.
+187
+You have JAX, and those who want it, they can use NumPy as well.
+188
+All of these provides the boiler code for use to get started with.
+189
+And it reduces so much startup time.
+190
+Then, with that, once a user has built all their applications, the user can also really monitor their runs.
+191
+We also introduce commands like FLWR space ls.
+192
+It's like really like LS in your terminal to just see what runs, what webflower runs are running at the moment.
+193
+And also others like FLWR space log to see the logs of your code.
+194
+So, all of these really simple CLI tools really help a user navigate and work with running code much more easily.
+195
+Previously, I would say, you know, 2021, 2022, early 2022, the Flower framework was in a different place.
+196
+How it worked back then was it was still friendly.
+197
+But the way that a user would need to start the federation would be to start three Python scripts.
+198
+And this is not as intuitive or natural if you want to scale up or put into production.
+199
+So, with the introduction of the Flower CLI and a different way of deploying the architecture which drives the federation, it really makes it so much easier for users to start building and then deploy the code.
+200
+Well, you were kind of leading into maybe what was going to be my next question.
+201
+You mentioned kind of taking things into production.
+202
+So, some people might hear kind of friendly framework, which is a good thing, as Chris mentioned, but they might associate that with prototyping and learning and that sort of thing, not necessarily production usage.
+203
+So, I'd love if you could kind of help us understand what does a, if I'm implementing a federated learning system with Flower, what does a production federated learning system look like?
+204
+I'm sure there's different sorts of ways that that could manifest, but certainly you've seen a lot of use cases.
+205
+Maybe you could just highlight some examples for us.
+206
+What does that production federated learning system look like?
+207
+And what are some of the considerations that you have to think about going from kind of a toy prototype of like this might work to a full-scale production rollout?
+208
+Yeah, no, absolutely.
+209
+I think it is a nice segue between the fairiness aspect and moving to production because what I just want to mention here is that I walked through a very simplified workflow of how a user would build out an FL solution.
+210
+With the flower framework, you could build and write the apps that you need for your aggregation, your server aggregation, and also for the clients, which actually train the models at the data sources.
+211
+In the first iteration, a user might actually run it in what we call the simulation runtime.
+212
+So without worrying about the actual data sources or to work out the data engineering aspect of it, you could test the implementation of the basic architecture in the simulation runtime using data sets that are obtained from Hugo Face, for example, or from data sets that you could just create artificially just for testing purposes.
+213
+With the same code that you use to train the models and the clients and to aggregate, you can then point the code to a different runtime and then execute it in what we call the deployment runtime.
+214
+And this brings us one step closer to production.
+215
+So once you have this mode of execution, the clients would then be tapped in to the data sources, and you can then start training your actual federated model.
+216
+So, what does it take to deploy a production system?
+217
+So, firstly, there's a nice acronym that I like to use from the Tiny ML community.
+218
+It's blurred.
+219
+I'm not sure if you've come across that before.
+220
+Have you come across that before?
+221
+Just out of curiosity.
+222
+But go ahead and explain.
+223
+Yeah, yeah.
+224
+So, the Tiny ML community talks about the bandwidth, latency, efficiency, reliability, and privacy, I'm not mistaken.
+225
+I could be wrong on the last one.
+226
+But in a production-grid system, what you really want is the reliability of the deployed solution to do the full computation, right?
+227
+It doesn't have to be federated to learning, but systems in general.
+228
+So, with the current version of the flower framework, we have separated what we call the application layer where users will build apps, and these are the ones that the user will modify.
+229
+And then we also have the infrastructure, infrastructure layer, which lies, which underpins this system.
+230
+This infrastructure layer is responsible for receiving the flower commands from a user and then to distribute all the necessary code to the clients for the clients to actually perform the training.
+231
+So, in flower terms, you come across it, but we call this the superlink to actually host the server.
+232
+And the super nodes, super nodes are the long-running services which basically orchestrate the clients.
+233
+So, these two components are long-running.
+234
+So, with these two components, because they are long-running, the users can then run multiple and execute multiple federations across the systems without worrying about any of these components failing.
+235
+So, this is where the reliability comes into comes to the picture because the connections are also established we also handle the bandwidth and the connection so we're trying to reduce the latencies between the supernodes and the superlink as well So the infrastructure is something that is being deployed once and that will persist for the lifetime of the project.
+236
+And this makes it much easier for the users to continue to work with the production grid system.
+237
+So it's always there waiting for you.
+238
+Anytime a user wants to go in and execute a run and look at the results, it's always there without worrying about any component failing and stopping the run.
+239
+Chris and I are so happy that you are joining us each week to hear from amazing guests and listen to some of our own thoughts about what's happening in the AI world.
+240
+But things are just moving so quickly and we recognize and want to see you all participate in the conversation around these topics.
+241
+That's why I'm really happy to share that we're going to start posting some webinar events on our website where you can join virtually and actually participate, ask questions, get involved in the discussion and really deep dive into various topics related to either various verticals or technologies or tools or models.
+242
+The first or next of these that's coming up is June 11th at 11 a.m.
+243
+Eastern Time.
+244
+It's going to happen virtually via Zoom, and you can find out information about that at practicalai.fm slash webinars.
+245
+This is going to be a discussion around on-prem and air-gapped AI, in particular as how that relates to manufacturing and advanced logistics.
+246
+I've seen personally as we work with customers in this area just the transformative power of this technology there from monitoring machine generated events to providing supply chain advice and so much more.
+247
+But there's a lot of struggle in terms of deployment of this technology in those air-gapped or in those on-prem environments.
+248
+So that's what we're going to talk through on June 11th.
+249
+I really hope to see you all there for this discussion.
+250
+Again, June 11th, 11 a.m.
+251
+Eastern Time.
+252
+It's going to be virtual via Zoom, and you can find out more information at practicalai.fm slash webinars.
+253
+So, Chang, I love this idea of the sort of super nodes and super links.
+254
+And my thought is, I'm trying to work out in my head kind of if I was, you know, let's say I'm working in the healthcare space and my sort of nodes are maybe different hospitals or different facilities in a network or something like that.
+255
+And I have a central place where I have my super link and I'm doing the aggregation.
+256
+Just from a practical standpoint, as I think Chris mentioned before, you have these different facilities, you have different maybe stakeholders with different data.
+257
+What do I need to do as like, let's say I'm the person that's in charge of running the experiment, training the model?
+258
+What do I need to do on the setup side to sort of connect in these super nodes or wherever the clients are?
+259
+What sort of needs to exist there?
+260
+How do I kind of register them and that setup process to really get going before I'm able to, you know, go in, like you say, and from a user perspective, run experiments or perform runs, training runs, and that sort of thing?
+261
+Absolutely.
+262
+So there are many ways to go about it, but I think the cleanest way is to think about two groups of roles.
+263
+One is the administrator role, and they are responsible for deploying the super nodes in each of these, let's say, healthcare facilities, healthcare centers.
+264
+They are responsible for making sure the correct user is registered onto the superlink or the federation, and also to coordinate any monitor, basically monitor the usage of the superlink itself.
+265
+So, that's the administrator role.
+266
+And then there is the user role, or data practitioners, data scientists would then write their apps, their server apps and their client apps, and then run these apps on the superlink, on the federation that the administrator has deployed.
+267
+So, I think this clear distinction would be an easy way to think about it.
+268
+So, as a start, an administrator would say there are five hospitals who want to form a federation.
+269
+An administrators can go in and deploy the super node with the template.
+270
+For example, if you're using Kubernetes or Docker containers, you can have Helm charts that can deploy the supernodes in each of these five hospitals.
+271
+The Superlink can be hosted by a trusted third-party server, or it can also be hosted by Flower Labs, for example, can host a Superlink for you, because it's just a simple service.
+272
+And then the users would register or be authenticated on the Superlink.
+273
+So, they need to be both authenticated and have the authorization to run the Flower commands on the Superlink.
+274
+And that way, you can get a production system up and running in a cross-silo setting.
+275
+I'm curious, as we're kind of talking through it, and I'm learning a lot from you as you're describing it.
+276
+And you've kind of made reference to admin roles and client and server apps and superlinks and super nodes and stuff, which kind of in the context of federated, there's networking and stuff like that.
+277
+So, I guess I have a generalized question around that, and that is: is there any set of knowledge or skills that a user can kind of ramp up into or needs to know to use flower effectively?
+278
+Like, like particular, for instance, you know, that maybe they're coming from more of a kind of the data science or kind of deep learning role, and maybe they haven't done a lot of networking and stuff like that.
+279
+Do they need, are there skills that they need to be able to ramp up into to be most effective at using flower that you would recommend?
+280
+Or, you know, what would the expectation on the user be in that capacity?
+281
+Yeah, it's a good question, actually.
+282
+It's a fair question as well.
+283
+In my opinion, what we try and convey is that users do not need to think about the communication aspect of it at all.
+284
+That everything is handled by the infrastructure.
+285
+Of course, if a user starts to be more starts to run into when the federated learning solution becomes a bit more complicated and run through very special cases, and this is where some understanding of the communication protocols and how these are set up, this could help as well.
+286
+And I think for users who are stepping more into sort of administrative role and want to deploy the supernodes or work with the infrastructures, basically the superlinks and supernodes, there are the questions of infrastructure/slash DevOps.
+287
+You have to have some familiarity with deploying this in containers or working with pods, things like that.
+288
+But fundamentally, when you first start to work with the framework, you can get started with a sort of vanilla production system without worrying too much about the communication or needing to know too much about it.
+289
+And then, as you know, get your feet wetter, then you can learn more along the way.
+290
+Well, yeah, that line of thought, along with something that you earlier said about kind of how large language models, generative, have pushed the boundaries of how you do communicate data, weights back and forth, how you can handle larger models with the more recent versions of Flower, and you're releasing the new version in a couple of weeks, even with more.
+291
+I'm wondering generally how, certainly that's one aspect of how this sort of boom in generative AI has probably influenced your roadmap and how you're thinking about things, what people are wanting to do with Flower.
+292
+I imagine there may be a variety of ways that that's impacting Flower.
+293
+I was even thinking while you were talking about that, it was like, wow, it would be cool if there was a MCP server or something or helpers on top of Flower that I could just type in natural language and that would be a friendly interface to set up my experiments and that sort of thing.
+294
+So yeah, I mean, as kind of one of the folks, core folks working on the framework, how have you seen this kind of boom in interest around generative AI influence kind of the roadmap and what you're thinking about at Flower, what you're maybe envision for the future of the framework, that sort of thing?
+295
+Well, when you brought up the model context protocols and a small match facebook, there's definitely been some interesting conversations recently as well within the team about looking to that.
+296
+Yeah, about the impact of generative models or large language models slash multimodal models.
+297
+It's one of the driving forces for the FLAWE framework as well.
+298
+We really believe that this state-of-the-art LLMs, as we speak, they're running out of data to train.
+299
+Back in December last year, Ilya, the co-founder of OpenAI, you were saying that data is running up, data has run up to train its LLMs.
+300
+And yes, that's exactly the sentiment that we feel as well.
+301
+It's the tip of the iceberg.
+302
+There are tons of data locked in silos that could benefit from having large language models either pre-trained or fine-tuned on in order to be useful, to be made useful.
+303
+And the way to achieve it is through hydrated learning.
+304
+I think this is one of the key technologies that is driving the framework.
+305
+I'm curious, kind of to extend that notion a little bit, as we're, you know, we've been so into kind of the generative AI cycle for the last couple of years and stuff.
+306
+And now that's kind of moving into combining models in different ways and agentic focus and ultimately physical models going out there in terms of interaction.
+307
+And so, and I know what I'm seeing out there involves instead of just having one model, people are now putting lots of different combinations of models together to get jobs done.
+308
+Does that in any way change kind of how you should think about using federated learning?
+309
+Is like every model that you might have in a solution just its own one-off flower implementation, or is there any ways that you guys are thinking about combining models together if they're all using data from different resources and stuff like that?
+310
+Like, how, as we're moving into my solution has many models in it, does that change in any way how users should think about using flower or architecting a flower-based solution?
+311
+It's a very big question.
+312
+I feel that there are a couple of possible futures here.
+313
+There is a future where these agentic workflows, where you have models that are sort of chained together to achieve a certain task, could also be used eventually in concept with federated learning.
+314
+So, I see a future where there is a possibility about that as well.
+315
+There needs to be some intermediary steps there.
+316
+And the reason is because these models, when you use them for agentic workflows, they need to be really optimized for the agentic workflows.
+317
+You have to have, they need to be trained on a certain type of structure and also be optimized.
+318
+There needs to be some proper evaluations for that.
+319
+So, sort of the missing, I see the future where if these two sort of pathways of agentic workflows and federated learning come together, it would be that people should think about having strong evals for this kind of workflows and then knowing that there is a limit to them once you're able to quantify them, then to look for ways you can improve it through distributed learning such as federated learning.
+320
+And this is how you rationalize an improvement over agentic workflows.
+321
+Well, Chong, it's been fascinating to hear some of your perspective on, you know, especially production use of federated learning and Flower.
+322
+As we kind of draw to a close here, I imagine we'll have Flower back on the podcast here in another couple years or before.
+323
+Hopefully, this does be a recurring one.
+324
+But as you look to this sort of next season of either what you're working on or just the ecosystem sort of more broadly, what's exciting for you, interesting for you, that kind of is always top of mind or is most there when you go to, you know, you're going back from work in the evening.
+325
+What's on your mind as you look forward?
+326
+Yeah, absolutely.
+327
+I think I'm very keen to think about this foundation LM that is purely trained on FL, on federated learning, and has been shown to be both privacy preserving and also state of the arts.
+328
+I think if the viewers and also yourselves, if you check out, we are collaborating with VANA as well in the US.
+329
+They are looking into data DAOs and we are very much working on that.
+330
+So I'm really looking forward to seeing the first LLM in the world that is trained in FLA with Soda Sands.
+331
+Awesome.
+332
+Well, yeah, we look forward to that as well.
+333
+Certainly come on the show and give us your comments on it when it happens.
+334
+But thank you so much for taking time, Chang, to talk with us.
+335
+Really appreciate your perspectives.
+336
+And please pass along our thanks to the Flower team and their continued work as a team on a great addition to the ecosystem.
+337
+I will.
+338
+Thank you, Daniel and Chris.
+339
+Thanks for having me on the podcast.
+340
+All right.
+341
+That is our show for this week.
+342
+If you haven't checked out our Changelog newsletter, head to changelog.com/slash news.
+343
+There you'll find 29 reasons.
+344
+Yes, 29 reasons why you should subscribe.
+345
+I'll tell you reason number 17.
+346
+You might actually start looking forward to Mondays.
+347
+Sounds like somebody's got a case of the moons.
+348
+28 more reasons are waiting for you at changelog.com/slash news.
+349
+Thanks again to our partners at fly.io to break master cylinder for the beats and to you for listening.
+350
+That is all for now, but we'll talk to you again next time.

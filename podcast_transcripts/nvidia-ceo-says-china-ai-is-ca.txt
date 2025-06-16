@@ -1,0 +1,433 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: Nvidia CEO Says China AI is Ca…
+Host: Unknown
+GUESTS: None 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/nvidia-ceo-says-china-ai-is-catching-up-fast/id1680633614?i=1000710667701
+--- METADATA END ---
+
+1
+Today on the AI Daily Brief, the latest in the global AI arms race, and before that in the headlines, a dire prediction from an AI entrepreneur.
+2
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+3
+Thanks to today's sponsors, Blitzy.com, Superintelligent, and Plum.
+4
+And to get an ad-free version of the show, go to patreon.com/slash AI DailyBrief.
+5
+Welcome back to the AI Daily Brief Headlines Edition, all the daily AI news you need in around five minutes.
+6
+Earlier this week, we discussed a recent job report around how entry-level tech jobs were not happening at nearly the same rate they were just a couple of years ago.
+7
+A lot of the conversation is around what part of that was coming from AI.
+8
+Well, Anthropic CEO Dario Amadei has waded into that conversation with some fairly dire warnings.
+9
+Speaking with Axios, Amade accelerated his timeline on AI job displacement and warned that young workers would be the first hit.
+10
+He forecasts that AI-related downsizing could see unemployment spike to between 10 and 20%.
+11
+His belief is that we could end up in a world where, to use his words, cancer is cured, the economy grows at 10% a year, the budget is balanced, and 20% of people don't have jobs.
+12
+Now, Amade has been warning that this was coming for years, but his concern is only growing more urgent.
+13
+He said that governments and AI companies need to stop sugarcoating what's coming and told Axios that lawmakers generally don't get it, CEOs are afraid to speak up, and workers don't believe AI is coming for their job until it happens to them.
+14
+He said, Most of them are unaware that this is about to happen.
+15
+It sounds crazy and people just don't believe it.
+16
+We, as the producers of this technology, have a duty and an obligation to be honest about what is coming.
+17
+One proposal for how AI companies could have responsibility around this issue is a 3% token tax that would be levied on AI companies and redistributed in some way.
+18
+He commented, Obviously, that's not in my economic interest, but I think that would be a reasonable solution to the problem.
+19
+Still, it's very clear from listening to Dario that the main point is not any one particular solution that he's promoting, but just increasing the urgency of the conversation.
+20
+On the one hand, I've said frequently on this show that I think one of the most comforting lies we tell ourselves is this notion that AI isn't going to take our jobs, but someone using AI will.
+21
+I think AI is coming for our jobs in the sense that it's coming for basically every task we do now.
+22
+But if you've listened to me talk about, for example, the Microsoft idea of agent bosses, it's not that I think everyone's not going to have a job, I think that the jobs are going to look really different.
+23
+At the same time, that is a long-term view.
+24
+And I think in the transition, there will be a lot of displacement.
+25
+And I tend to agree with Dario that we need to be having conversations around what that displacement is going to look like, what our remediations are in the short and medium term, and how we transition people and companies to a different future.
+26
+Now, speaking of companies in AI, as we'll discuss later with NVIDIA, it is earnings seasons, of course, and upgraded forecasts from Salesforce suggests that their AI products are beginning to pay off.
+27
+During this week's earnings, the company boosted revenue projections by around $500 million for the year.
+28
+Salesforce also disclosed that their AgentForce product now has 4,000 paid deals signed, up from 3,000 in February.
+29
+AI revenue is up 120% year-on-year.
+30
+Overall revenue growth came in at 7.6%, but Salesforce projects growth ticking up to between 8% and 9% this year as AI leads a return to strength.
+31
+Alongside growing sales, the company is also starting to see efficiency gains from their internal use of their AI products.
+32
+CFO Robin Washington told analysts, we've reduced some of our hiring needs.
+33
+She said the firm has been able to redeploy 500 customer service workers to other roles, saving $50 million.
+34
+Salesforce is also hiring fewer engineers due to productivity gains from AI.
+35
+Washington commented, We view these as assistants, but they are going to allow us to have to hire less and hopefully make our existing folks more productive.
+36
+Executives also discussed the $8 billion acquisition of Informatica, which will add a data management layer to the company's suite to facilitate agentic workflows.
+37
+Now, that Informatica news was actually one of the stories that got Shuncha to the side based on some travel, and so I wanted to come back to it.
+38
+This is the largest acquisition for Salesforce since they spent $27.7 billion buying Slack in 2020.
+39
+It's an $8 billion deal to acquire Informatica, which is a data management company that offers data integration and governance solutions.
+40
+This deal has been a long time in the making, with the Wall Street Journal first reporting talks in April of last year.
+41
+Now, this is very clearly about beefing up Salesforce's Agentic offering.
+42
+One of the bottlenecks for enterprise agent deployments is ensuring access to proprietary data.
+43
+Brad Zelnick of Deutsche Bank wrote in a research note: Without proper governance and the ability to manage and contextualize data, which Informatica excels at, the utility of what Salesforce AI generates is likely limited.
+44
+One of the things that we hear as a challenge all the time with agents in general, but Agent Force and Salesforce in specific, is anytime you have data that's locked in a closed ecosystem or an agent that can only access a certain portion of enterprise data, you tend to run up against real limits of what agents can do.
+45
+Informatica is definitely about helping Salesforce break out of the constraints of their current data cloud and give them access to information outside of the Salesforce ecosystem for those enterprises.
+46
+I actually thought that this long tweet thread from Prokalpa on Twitter was pretty dead on.
+47
+She writes, Salesforce just bought Informatica for $8 billion, but something felt off.
+48
+I reread the press release.
+49
+Why wasn't data integration Informatica's core business front and center?
+50
+Turns out, it's barely mentioned.
+51
+I counted the keywords: data integration three times, metadata five times, governance nine times.
+52
+Over 50% of Informatica's revenue comes from data integration.
+53
+It's one that goes beyond Salesforce and Informatica.
+54
+It's about how enterprise platforms are quietly re-architecting themselves for AI.
+55
+Just look at what Mark Benioff said: Enterprise-grained AI demands data transparency, deep contextual understanding, and rigorous governance.
+56
+Translation, AI isn't just about models or LLMs, it's about metadata infrastructure.
+57
+Salesforce isn't alone.
+58
+A few weeks ago, ServiceNow acquired DataWorld, another metadata platform.
+59
+Why are business application giants suddenly buying metadata companies?
+60
+My take, we're hitting the limits of the agent hype cycle.
+61
+Yes, AI agents look great in demos, but in production, they fail without context, without trust, without governance.
+62
+Metadata makes agents work.
+63
+The new AI game plan for enterprise software?
+64
+Keep data in your ecosystem, keep agents in your ecosystem, win the CIO, buy and build metadata infrastructure to hold it all together.
+65
+But here's the paradox: enterprise data is only getting more fragmented.
+66
+More tools, more agents, more data silos, heterogeneity isn't going away.
+67
+AI is accelerating it.
+68
+That's why I believe in a fragmented world of data, compute, and agents, the metadata and governance layer must be the most unified part of the stack.
+69
+Open, neutral, interoperable.
+70
+A control plane for the enterprise.
+71
+Like I said, I think that that is pretty spot-on and explains a lot of this acquisition.
+72
+Lastly today in the headlines, one cool feature update.
+73
+Perplexity seems to want to go way beyond AI search.
+74
+The company has released a new tool for generating reports, spreadsheets, dashboards, and more.
+75
+Collectively known as Perplexity Labs, the features are available to paying subscribers.
+76
+And in an announcement blog post, Perplexity wrote, Perplexity Labs can help you complete a variety of work and personal projects.
+77
+Labs is designed to invest more time, 10 minutes or longer, and leverage additional tools to accomplish tasks, such as advanced file generation and mini-app creation.
+78
+The idea is to leverage Perplexity's agentic features to go beyond deep research into producing actual deliverables.
+79
+Rather than just spitting out a raw report, they want to use a combination of coding and image creation tools to create something that's a little more final and polished.
+80
+Now, interestingly, you're also seeing some of the other general agent companies start to hone in around specific use cases and build UIs around them.
+81
+I noticed, for example, that almost at the same time, Manus announced Manus Slides.
+82
+They write, Manus creates stunning structured presentations instantly.
+83
+With a single prompt, Manus generates entire slide decks tailored to your needs.
+84
+Whether you're presenting in a boardroom, a classroom, or online, Manus ensures your message lands.
+85
+Pretty interesting to see then these deep research type tools move into the production of the end documents as well.
+86
+Let me know if you've had a chance to play around with Perplexity Labs or Manus Slides yet.
+87
+For now, though, that's going to do it for today's AI Daily Brief Headlines Edition.
+88
+Up next, the main episode.
+89
+Today's episode is brought to you by Blitzy, the Enterprise Autonomous Software Development Platform with Infinite Code Context, which, if you don't know exactly what that means yet, do not worry, we're going to explain, and it's awesome.
+90
+So, Blitzy is used alongside your favorite coding co-pilot as your batch software development platform for the enterprise, and it's meant for those who are seeking dramatic development acceleration on large-scale code bases.
+91
+Traditional co-pilots help developers with line-by-line completions and snippets, but Blitzy works ahead of the IDE, first documenting your entire code base, then deploying more than 3,000 coordinated AI agents working in parallel to batch-build millions of lines of high-quality code for large-scale software projects.
+92
+So, then, whether it's code-based refactors, modernizations, or bulk development of your product roadmap, for every line of code eventually provided to the human engineering team, Blitzy will have written it hundreds of times, validating the output with different agents to get the highest quality code to the enterprise and batch.
+93
+Projects then that would normally require dozens of developers working for months can now be completed with a fraction of the team in weeks, empowering organizations to dramatically shorten development cycles and bring products to market faster than ever.
+94
+If your enterprise is looking to accelerate software development, whether it's large-scale modernization, refactoring, or just increasing the rate of your STLC, contact Blitzy at blitzy.com, that's B-L-I-T-Z-Y dot com, to book a custom demo or just press get started and start using the product right away.
+95
+Today's episode is brought to you by Super Intelligent and more specifically Super's agent readiness audits.
+96
+If you've been listening for a while, you have probably heard me talk about this.
+97
+But basically, the idea of the Agent Readiness Audit is that this is a system that we've created to help you benchmark and map opportunities in your organizations where agents could specifically help you solve your problems, create new opportunities in a way that again is completely customized to you.
+98
+When you do one of these audits, what you're going to do is a voice-based agent interview where we work with some number of your leadership and employees to map what's going on inside the organization and to figure out where you are in your agent journey.
+99
+That's going to produce an agent readiness score that comes with a deep set of explanations, strengths, weaknesses, key findings, and of course, a set of very specific recommendations that then we have the ability to help you go find the right partners to actually fulfill.
+100
+So, if you are looking for a way to jumpstart your agent strategy, send us an email at agent at bsuper.ai and let's get you.
+101
+If you build agentic workflows for clients or colleagues, you need to check out Plum.
+102
+Plum is the only AI-native workflow builder on the market designed specifically for automation consultants with all the features you need to create, deploy, manage, and monetize complex automations.
+103
+Features like one-click updates that reach all your subscribers, user-level variables for personalization, and the ability to protect your prompts and workflow IP.
+104
+Make your life easier, your clients happier, and your business thrive with Plum.
+105
+Sign up today at useplum.com.
+106
+That's Plum with a B forward slash NLW.
+107
+Welcome back to the AI Daily Brief.
+108
+One of the recurring themes on this show is, of course, the geopolitical competition around AI.
+109
+AI is very clearly not just a technology movement.
+110
+It is also not just a business consideration.
+111
+It is right at the heart of geopolitical competition, obviously, with China and the U.S.
+112
+at the center of that.
+113
+Today, we kind of have a grab bag of stories that all relate to that in some way, and we're kicking it off with comments from NVIDIA CEO Jensen Huang.
+114
+Now, it is earnings season, and so this is always a time of the quarter when we have a little bit more commentary from big leaders.
+115
+And Jensen recently has been using every chance that he's gotten to beat this drum of China's increased competition.
+116
+Speaking with Bloomberg, he said, The Chinese competitors have evolved.
+117
+Like everybody else, they are doubling, quadrupling capabilities every year, and the volume is increasing substantially.
+118
+Now, one of the companies that Huang is referring to is Huawei, who are testing a chip that's roughly equivalent to NVIDIA's previous generation flagship, the H100.
+119
+Mobile company Xiaomi also recently announced their first proprietary chip in eight years, which was manufactured using second-generation three-nanometer architecture.
+120
+This would be the first time a Chinese firm has mass-manufactured a three-nanometer chip, which even if that doesn't mean anything to you, the key point is that it achieves parity with the technology that's used to create NVIDIA's leading chips.
+121
+Still, rather than heed Jensen's warning that export controls were a failure, the new administration is extending controls in a different direction.
+122
+Bloomberg reports that the Commerce Department has written to firms that provide chip design software to halt supply to China.
+123
+And from Commerce Department spokespeople, it sounds like this is part of just a broader review of how every part of this ecosystem interacts with China in some way.
+124
+Now, one of the big areas of dispute or questions whenever Jensen Huang talks about China is how much he truly believes the export controls are pointless or if he's merely speaking out of self-interest.
+125
+China was one of the company's largest markets even with chip controls in place.
+126
+In their earnings report on Wednesday night, NVIDIA disclosed that the ban on H20 units will cost the company $8 billion in revenue during Q2.
+127
+That's around a 15% hit on their revenue projection of $45 billion.
+128
+It's also up from when the ban was first announced in April when NVIDIA believed that they would only lose out on $5.5 billion in revenue for the quarter.
+129
+On the earnings call, Jensen said, China is one of the world's largest AI markets and a springboard to global success with half of the world's AI researchers based there.
+130
+The platform that wins China is positioned to lead globally today.
+131
+However, the $50 billion China market is effectively closed to us.
+132
+The H20 export ban ended our Hopper data center business in China.
+133
+We cannot reduce Hopper further to comply.
+134
+Taiwanese tech publication Digi Times reported that both NVIDIA and AMD now have new downrated chips in the manufacturing pipeline to comply with adjusted export controls.
+135
+NVIDIA's chips will be based on the Blackwell architecture and will be named the B20.
+136
+And Reuters reported that the new chip will be available at around a third of the cost of the H20.
+137
+Digi Times added that both companies are expected to begina from July.
+138
+Still, one of the reasons to think that this isn't just self-interest is that NVIDIA is doing quite well from the rollout of their new Blackwell chips everywhere outside of China.
+139
+Sales for the first quarter were up 69% compared to the previous year and beat expectations.
+140
+Huang's statement said, global demand for NVIDIA's AI infrastructure is incredibly strong.
+141
+Now, the stock was up about 3% following earnings, so Wall Street clearly isn't too concerned about the loss of the Chinese market as long as the rest of the world is still buying.
+142
+Still, Huang restated his position on export controls for investors during the earnings call, commenting, The question is not whether China will have AI.
+143
+It already does.
+144
+The question is whether one of the world's largest AI markets will run on American platforms.
+145
+Shielding Chinese chipmakers from U.S.
+146
+competition only strengthens them abroad and weakens America's position.
+147
+Now, part of the reason that the whole discussion of China has increased over the last six months is, of course, DeepSeek.
+148
+When DeepSeek came out with models that could compare to the top American models that were theoretically trained at a fraction of the cost, and when they then released those reasoning models into a free public application that got tons and tons of consumer downloads, everyone sat up and took notice.
+149
+Well, that company has now released an updated version of their R1 reasoning model.
+150
+The model was posted to Hugging Face on Wednesday, along with an announcement from the company on WeChat.
+151
+The announcement said that this was a minor upgrade but didn't provide a description of the changes or significant technical notes.
+152
+Model cards and benchmarks were added on Thursday, with DeepSeek claiming model performance approaching that of the leading closed reasoning models, OpenAI's O3 and Google's Gemini 2.5 Pro.
+153
+It's a big step up from the original version of R1, but there is a question of whether this is a significant improvement on the previous open source leader, Quen's QWQ.
+154
+Importantly, for those who thought that Chinese labs were going to start pulling ahead and actually being state-of-the-art, this would suggest instead that we're still in a paradigm where those Chinese labs are capable of keeping up with the leaders of the US in a few months' lag, but are not yet able to pull ahead.
+155
+Overall, in the four months since R1 was first released, app downloads have fallen by about 75% from their peak in February.
+156
+As of April, which is the latest month for which I could find numbers, DeepSeek seemed to have around 96 million monthly active users, which would be around triple of the amount from January.
+157
+Around a third of those are in China with significant user bases in India and Indonesia as well.
+158
+The latest upgrade is the top trending model on Hugging Face, but it's not significantly ahead of Mistral's new developer model or Google's GEMA small model.
+159
+Rather than a handoff from US to Chinese labs, then, the DeepSeek moment in retrospect seems more like a wake-up call.
+160
+As I mentioned before, it was the first reasoning model available for free, which allowed it to wow casual AI users.
+161
+Since then, Anthropic, Google, and OpenAI have all made reasoning models available in their free tiers.
+162
+And when it comes to the policy response, it's even more confused.
+163
+Professor Ethan Malik had interesting comments on this.
+164
+He said, Given that the US, China, and Europe are all players in frontier open weights models, I am not sure what it means for a nation to win in AI.
+165
+Unless you're positing a takeoff scenario where one closed weights AI dominates everything else, won't open models diffuse worldwide?
+166
+Is the idea that models will go closed as soon as they reach some AGI-ish level and be restricted in use?
+167
+If so, wouldn't the other national models catch up a few months later?
+168
+I don't actually think many people in policy believe in a takeoff scenario for what it's worth.
+169
+And if you believe that the competition over AI is motivated by a sincere belief in takeoff, the lack of any other policies that would suggest preparation for rapid increases in AI ability to superhuman level are somewhat confusing.
+170
+Now, the other area of the world that is key in the geostrategic story of AI is the U.S.
+171
+and China.
+172
+One psychodrama story out of that region, Elon Musk's feud with Sam Altman, continues to fester with the Wall Street Journal reporting that Musk tried to derail a deal to build a gigantic data center in the UAE if XAI wasn't included.
+173
+Last week, OpenAI led a consortium of U.S.
+174
+tech companies to partner with UAE firm G42 on a 1-gigawatt supercluster in Abu Dhabi, known as Stargate UAE.
+175
+Sources told the journal that on a group call with G42 officials, Musk warned that their plan had no chance of President Trump signing off on it unless XAI was included in the deal.
+176
+Just before the president's tour of Gulf states, Musk learned that Altman would be on the trip and that a UAE deal was in the works.
+177
+White House sources said he became angry about it, complained about the administration treating all AI companies fairly, and invited himself to also join the trip.
+178
+Musk ultimately appeared alongside the president in Saudi Arabia with Altman, but didn't continue on to the UAE.
+179
+Still, after Musk's complaints, Trump and other admin officials reviewed the deal terms and decided to move forward.
+180
+White House sources said that Musk was opposed to a deal that would seem to benefit Altman, but he seems to have not had as much sway over decision-making as he had thought.
+181
+The journal writes, AIDS discussed how to best calm Musk down because Trump and David Sachs wanted to announce the deal before the end of the president's trip to the Middle East.
+182
+These behind-the-scenes details seem to give some additional context on Musk's recent decision to step back from politics and his exit from the administration.
+183
+Reporting suggests that Musk had fallen out of favor with power brokers.
+184
+Reuters stated his departure was quick and unceremonious.
+185
+He did not have a formal conversation with Trump before announcing his exit, according to a source with knowledge of the matter who added that this departure was decided at a senior staff level.
+186
+Still beyond the Elon story, the Wall Street Journal report also included previously unknown details about the OpenAI.
+187
+They wrote that UAE officials had been lobbying the administration for months to gain access to a ton of AI chips and were willing to spend heavily to get them.
+188
+G42 has reportedly agreed to pay all costs for the data center's construction, as well as pledging to fund a similar-sized project in the U.S.
+189
+The initial 1 gigawatt of AI computing power is just the start of the planned 5 gigawatts to be installed in total at the site.
+190
+The plan is to make the facility available to host infrastructure for various U.S.
+191
+companies, and XAI is viewed as a likely candidate for future sites at the sprawling data center hub.
+192
+They're on the shortlist of companies with conditional approval to buy some of the 500,000 chips annually permitted to be exported to the UAE.
+193
+And one more from the Gulf region: Saudi Arabia's new state-owned AI company, Humane, is set to launch a $10 billion venture fund to pair with their aggressive data center strategy.
+194
+The Financial Times reports that the fund will invest in startups across the U.S., Europe, and Asia.
+195
+Tariq Amin, Humane's CEO, said the firm was already in talks with American companies, including OpenAI, Andreessen Horowitz, and XAI.
+196
+He said Humane was also looking for a U.S.
+197
+tech group to become an equity partner in the company's ambitious data center business.
+198
+Amin declined to name specific potential partners but said, We're in discussions with all of them.
+199
+Some of them, which you will hear about very soon, are massive names in the data center segment.
+200
+Humane has already inked deals worth $23 billion across U.S.
+201
+tech companies, including Nvidia, AMD, Amazon, and Qualcomm.
+202
+They aim to establish 1.9 gigawatts of data center capacity by 2030 and add another 6.6 gigawatts in the following four years.
+203
+Amin estimates the buildout will cost around $77 billion at current prices.
+204
+He said, The world is hungry for capacity.
+205
+There are two paths you could take.
+206
+You take it slow, and we are definitely not taking it slow, or you go fast.
+207
+Whoever reaches the end line first, I think, is going to secure a good chunk of the market share.
+208
+The $10 billion venture fund will also immediately put Humane in the mix as one of the larger funds in the space.
+209
+You might remember back in April, Andreessen Horowitz raised a $20 billion AI investment fund that was one of the largest in the firm's history.
+210
+So, again, all in all, yet another indication of how the Gulf states are positioning and leveraging significant capital to become a player in the global AI sphere.
+211
+For now, though, that is going to do it for today's AI daily brief.
+212
+Appreciate you listening or watching, as always, and until next time, peace.

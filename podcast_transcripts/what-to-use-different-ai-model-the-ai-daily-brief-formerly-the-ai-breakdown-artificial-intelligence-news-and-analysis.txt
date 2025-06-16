@@ -1,0 +1,24 @@
+--- METADATA START ---
+Show: N/A
+Episode: What to Use Different AI Model… - The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Host: Unknown
+GUESTS: None 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/what-to-use-different-ai-models-for/id1680633614?i=1000708398248
+--- METADATA END ---
+
+def prime number(n):
+"""
+Returns the prime number of elements in the range 1 to 50.
+Args:
+n: The number to check.
+Returns:
+The prime number of elements in the range 1 to 50.
+"""
+start = 1
+primes = []
+for i in range(start, 51):
+if i % 2 == 0:
+primes.append(i)
+return len(primes)
+print(prime_number(50))

@@ -1,0 +1,1153 @@
+
+(upbeat music)
+- Hello everybody, welcome back to another episode
+of the Boring AppSec podcast.
+In this episode, we are super excited to welcome
+Webov Shrikanti.
+Webov is a founder and CEO of Profit Security
+where he is leading the development
+of an AI SOC analyst for security operations.
+In the career focus on startups,
+Webov was most recently VP of engineering
+at Stack Rocks, a Kubernetes native security platform
+that was acquired by Red Hat in 2021.
+Prior to that, he was part of the team
+that built Oracle's public cloud OCI
+where he led the object storage service
+and later managed the security products portfolio.
+Webov holds a degree in computer science
+from Carnegie Mellon University,
+bringing both academic and practical expertise
+to his work in AI.
+In this episode, Webov and I discuss
+the evolving landscape of AI in cybersecurity,
+the skepticism around gender-day AI
+and the importance of experimentation with AI agents.
+Webov shares insights on building specialized agents
+for security operations,
+the challenges of deploying AI in production
+and the critical need for security in AI infrastructure.
+We explore the importance of centralized authentication,
+the need for human oversight in AI applications
+and the lessons learned from Webov's startup journey.
+I hope you enjoy the conversation.
+Welcome, Webov, super happy to have you here.
+- Thanks so much, Ashima.
+I really appreciate the opportunity
+and super excited to speak with you.
+- Well, yeah, is there anything else
+you want to add to that introduction, Webov?
+- No, that was great.
+It was a very kind introduction.
+Thank you.
+I would just say for better or for worse,
+I sent my career at startups.
+This is the fourth startup
+that I've been a part of.
+I've been an early employee, been a founder,
+been a part of the management team
+or recently an angel investor.
+So I really love this journey of going from zero to one,
+building a product, building a team,
+working with customers.
+It's hard work.
+I haven't found the easy button just yet,
+but I really enjoy it and super excited to have you.
+- Yeah, yeah.
+It's awesome.
+So considering that, you know,
+you've been through a few startups already
+and this is, I said, I believe you said the fourth startup
+and based on my research on profit security,
+I believe profit security is only the first companies
+that is tackling the security problems using AI agents, right?
+Especially the automating the SOC analysis, right?
+So since you've been building profit security
+for the past couple of years,
+what has that been like in this ever evolving
+a landscape of generative AI technologies
+and the extremely at which things are changing
+and improving on a daily basis,
+how do you keep up with everything?
+- Yeah, it's hard.
+I'm skeptical of anyone who says they know everything
+that's going on.
+It's such a fast-moving space.
+You know, I think for better or for worse,
+on Shman, it starts with Twitter.
+You know, Twitter is just incredibly useful
+for keeping up with what's going on, staying in the loop.
+You know, just yesterday, I believe OpenAI
+announced their predictive output support.
+I don't know if you saw this,
+but it's a way for you to reduce latency
+in your API calls to GPT,
+and you know, my best understanding of that feature
+is it's based on some of the research
+around speculative decoding that was published last year.
+And super exciting feature,
+obviously something that I think everyone,
+including us, is excited about.
+Not a lot of detail just yet,
+and there's this discussion on Twitter,
+and one of the OpenAI engineers themselves
+is answering questions about the feature.
+So I just think, you know,
+everything is happening on Twitter.
+I've just learned so much from being on Twitter
+and following the right folks.
+You know, the other thing that's interesting is just,
+you know, the fact that you can only glean so much,
+I think, from reading papers,
+don't get me wrong, they're important,
+but to me, I just love, you know, being hands-on,
+playing with new products and tools.
+There's just this Cambrian explosion happening
+outside of security across every industry
+where everyone is thinking about how do we leverage,
+you know, these foundational models in our products.
+You know, most recently, I think Notebook LM
+has taken everyone by storm,
+and everyone's really excited about it.
+So I just think you have to get out there
+and play with products, feel them,
+see what folks are doing,
+and see what is applicable to your industry.
+And maybe the last thing I'll say is,
+you have to keep an open mind.
+You know, 18 months ago,
+we were all manually implementing function calling support,
+and probably had a bunch of, you know, bad code
+around parsing JSON and, you know,
+making sure that arguments were being specified.
+And I believe it was June of last year,
+or maybe it was May that OpenAI came out
+with first-class function calling support.
+And all of us got to go delete a bunch of code
+that we had written.
+And so I think you have to make sure
+you're just keeping an open mind
+and being able to stay up to date
+to what's going on and be willing to delete some code.
+- Yeah, I know absolutely welcome,
+although that I didn't come.
+So I easily played with OpenAI's SWAN,
+the AI-engine-dick framework.
+And even on the GitHub repository, it says experimental.
+So I can understand why they don't want people
+to use it for production systems.
+But it was so easy to use and I was able to build
+in like an agent to go for pretty soon, right?
+So, and I think I would really want more people
+to sort of go out and experiment
+with these technologies and frameworks
+because unless you do that, right?
+Unless you're voting for something to be, you know,
+like production grade, you know,
+it's not going to happen, right?
+Especially with it, more moderns coming up,
+more features coming up.
+I also, I believe I saw Entropic came up
+with this period of parsing feature sometime last week
+where I think you can have Entropic's
+cloud model parse complex architecture diagrams
+and whatnot, right?
+Well, something like that is very relevant
+in the application security space, right?
+Because we have a bunch of technical specifications,
+documents and whatnot.
+And I have played with it and it's, yeah,
+like parsing complex videos is not easy.
+So you and I, I appreciate that you also have this mindset
+of going out and playing and basically not being afraid
+of revamping the codebase all together, right?
+Yeah, so that's good to know.
+So I'm speaking about Jenny and I, right?
+Like I've also seen some folks as,
+practical about the screen at which this space is evolving
+and also sort of they're not really sure
+of the value that it brings to,
+especially to big enterprise organizations.
+What are your thoughts on that, right?
+Like, do you feel like this skepticism is very informed
+or is it mostly because people haven't gone
+and, you know, explored with these technologies?
+Yeah, you know, as a skeptic myself, I can relate.
+I totally understand.
+You know, I'll say there's natural skepticism
+'cause there's a long history in the industry
+of over-promising and under-delivering,
+whether that be SOAR, UEBA, if you remember that,
+or even SIM, you know, starting 20, 25 years ago.
+I have to say that security teams, security practitioners
+have seen enough of these next big things
+and they have every right to be cautious.
+I also think we can't afford to be Luddites, right?
+I think skepticism doesn't mean we get
+to stick our head in the sand.
+I think ignoring advancements in AI,
+especially generative AI is probably a mistake
+and I think we could be missing some real solutions
+to longstanding problems in the industry.
+You know, I think one area where skepticism is warranted
+or is important to apply is around bolt-on
+versus built-in AI.
+Everything is an AI product these days
+and I think, you know, folks need to dig
+a little bit deeper to understand just how AI is being used
+in different security tools or products.
+I don't know about you on some of that.
+I walked the show floor at RSA last year
+and every product, every UI, every demo
+had a little chat panel on the right
+and it had like some GPT integration
+and they were all calling themselves AI products.
+You know, AI doesn't mean just having it
+some sort of chat feature, right?
+I think I think we're deeply about, you know,
+how AI is solving the problem.
+Obviously, I'm biased here, I'm talking to my book,
+but I think if thoughtfully and carefully implemented,
+you know, AI can improve security operations workflows.
+I think there is an opportunity to handle repetitive tasks
+and really help analysts focused on things that matter,
+but it's important to not throw the baby out
+with the bath water.
+It's important to ask tough questions.
+I think, you know, if you are approaching this
+as an opportunity to enhance or augment human capabilities
+as opposed to, you know, trying to replace humans,
+I think there's an opportunity here
+where generally AI really makes a difference,
+but again, not all AI is created equal,
+so it's really important to ask those questions
+and try to get one level deeper.
+- Yeah, no, absolutely.
+And speaking about alternative AI, right?
+And your company profit security,
+I believe you're using AI agents, right?
+And based on my research and experience, you know,
+AI agents have just kind of come onto the scene, right?
+Very recently, so have you sort of experimented
+with different agent framework, right?
+Like, I know this land graph, this crew AI,
+it's auto-genders, a bunch of other options,
+and what have those experimentations been like for you?
+And how do you even decide whether, you know,
+when you use AI agents versus when you can just simply use
+like function calling and whatnot?
+Like, how, like, can you have a framework?
+How do you approach these problems?
+- Yeah, great question, a great set of questions.
+You know, we think about these
+and debate these almost every day internally.
+You know, I think we've experimented with several,
+on all of the popular frameworks out there.
+You know, I think they're really fantastic
+for getting off the ground.
+You mentioned Swarm a moment ago.
+Really, really easy for building something quickly,
+initial prototypes.
+You know, Carpathi said that, you know,
+there's a class of problems that are easy to imagine
+and build demos for, but I think very
+or extremely difficult to build products out of.
+And I think that's completely true for agents.
+You know, these frameworks give you a really fast start.
+But in our experience, they fall short
+when you're trying to get the reliability
+or the control you need to build production-grade applications,
+especially in security where the bar is really high.
+You know, I'm reminded of the history of Ruby on Rails
+if you're familiar with it.
+And my understanding of the history is,
+Rails emerged from 37 signals application called Basecamp,
+which I think was a project management tool.
+And they started building Basecamp
+and they realized they had built these abstractions
+and frameworks internally.
+And they extracted that into Rails.
+And of course, you know, Rails has turned into this
+or has become the mainstay in web application development.
+And I think, you know, we may see a similar pattern here
+with agentic frameworks rather than trying to come up
+with the framework ahead of time.
+You know, something might merge organically
+out of a successful application.
+You know, Brett Taylor and Clay before at Sierra
+have talked about their internal framework.
+They may call it SierraOS
+for building their own agentic solutions.
+I don't know, maybe one day they'll open source SierraOS
+and we'll all be using that
+instead of one of the other ones that you mentioned.
+You know, for us at Profit Security,
+we've decided to build our own for sort of the reasons
+we've talked about.
+And one of the existing solutions quite gave us
+the observability, the visibility, the control
+and the customizability that we felt
+that we needed for our application.
+But, you know, the team internally hears me say this
+all the time, I'm not very dogmatic.
+If we find something better, you know,
+I'm sure we'll go and use that instead.
+- Yeah, no, I think building POC is fine.
+So like you said, using some of these frameworks
+which is what I've been doing.
+But then the area that I'm struggling with right now
+is, you know, how do you take it to the next stage
+where you can actually deploy it in production
+and have other users use it?
+So, you know, evaluations and consistency and reliability
+and just kind of chain of thought, right?
+Like how the AI is thinking and making it more transparent
+and visible, I think are, at least I believe in my opinion
+are going with some very hard problems to solve, right?
+Especially as we start using AI agents
+in more security-based workflows and whatnot, right?
+So, do you have any recommendations
+of sort of word evaluation
+and what frameworks folks should consider
+if they were to use only open-source frameworks
+like SWAM or QA and whatnot?
+- Yeah, I think you made a great point earlier
+that I just want to touch on briefly,
+which is around knowing when and when not to use agents.
+I think, you know, it's important to know
+or use the right tool for the job.
+You know, the agents and I guess LLMs behind them
+are stochastic machines.
+They produce probabilistic outputs.
+And I think you have to be comfortable with that.
+There are probably scenarios where you need determinism
+and expecting, you know, a stochastic process
+to give you determinism is not very wise.
+So, that sort of starts there
+and knowing where are you comfortable with that determinism
+or probabilism, I should say.
+You know, in terms of frameworks,
+you touched on it yourself earlier.
+I would say you need,
+or no agentic system is complete without EVALS.
+And, you know, I think you have to have
+a very solid understanding of say agentic performance,
+both in an offline and an online sense offline
+when you're developing the system
+and trying to understand, you know,
+performance, accuracy, efficacy,
+what are the metrics that you're evaluating the agents on?
+And certainly online, once you put this in production,
+you have to make sure that, you know,
+agents are behaving or acting as expected.
+You, of course, certainly in our case,
+need to have the ability to make changes
+if things are not acting or not behaving appropriately.
+You need the ability to modify, you know,
+production, production execution.
+You need the ability to really control
+these agentic workflows.
+So, I think understanding the use case
+that you're applying it to understanding the expectations
+that your customers have, understanding, you know,
+what are error cases or error scenarios
+and your ability to respond to them
+are probably some questions I would start
+with asking sort of any generic agentic system.
+- Yeah, I think you have a good point
+about agentic frameworks being probabilistic, right?
+Like, yeah, so if, and I think that kind of makes sense
+because if the use case of what you're trying to solve
+using agents, you know, if the outcomes are,
+if you're okay with the outcomes being probabilistic,
+then it's okay to use the agentic frameworks
+versus, you know, you could do something
+like function calling, which I think kind of gives you
+most structure around it because what I've seen is like,
+if I use an agentic framework and if I deploy multiple agents
+to solve certain problems, I don't have much control
+over what the agent is gonna do, right?
+Like, even though I might give it the instruction,
+the prompt and whatnot, like, I just feel like the agents
+still have some kind of autonomy to go and do whatever
+they are asked to do using their own brain.
+Yeah, sometimes I'm scared because, you know, like,
+the plans, I think, in the end of the day itself,
+about the prompt and how concise it is
+and what is it exactly that you want the agents to do, right?
+And, you can say I haven't found a good balance,
+like, again, just kind of sharing the example, right?
+Like, if we were to think about the security space, right?
+There are, any organization has multiple security teams,
+right? There's product security,
+there's instant response or a team, you know, privacy, legal.
+And I was thinking maybe if we can build agents
+that represent each teams to do their things, right?
+It could work, but then, even within teams, right?
+Like, there are so many different kinds of activities
+that they actually do.
+So, building a generic agent for one particular domain,
+I don't know, I, for me, it means I don't think
+that's a good idea.
+I think understanding the problem statement
+and then trying to build an agent around it
+would probably make more sense.
+But, you know, I'm really excited about this space
+and the other number of reasons I wanted to talk to you
+was just want to understand how you approaching
+solving the short, unrealistic problem,
+by automating that using agents, like,
+can you share some of your, you know, secrets
+or whatever you can, it's fine.
+- Yeah, well, I'm happy to share more.
+The challenge is around nomenclature.
+Sometimes, you know, people may not understand
+whether it may be a mismatch in what they think of
+for what is an agent.
+And, you know, there's, some of it is just, you know,
+in popular dialogue, you might say,
+oh, I have an agent that does X, that does Y,
+I have a pen testing agent or a red teaming agent.
+But in reality, at least from an implementation
+perspective, I think you end up with far more granular agents,
+right, you know, architecturally,
+you end up with far smaller pieces of responsibility
+and you're right that there is a certain amount
+of autonomy or agency in each one of these components.
+But I think the smaller or better defined
+their scope of responsibility is the more controlled
+or the more predictable, perhaps, you know,
+their outcomes or outputs will be.
+So really, it's not one agent that I think, you know,
+people end up building, but it's a fleet or a combination
+of agents that have some very specific jobs
+or responsibilities that they're focused on.
+And you probably end up with a far more effective outcome.
+And so when we think about our architecture
+and we think about the problems we're solving,
+you know, we have dozens of integrations
+that we've built, as you well know, you know,
+every customer may use slightly different tools
+depending on their security stack.
+And, you know, part of our job requires us to go
+and gather evidence, gather data from a variety
+of these different tools.
+You know, these are dozens and dozens of agents
+that we've built for very specific purposes.
+Some of which might be evidence gathering,
+some of which might be evidence analysis.
+And so there are all these tasks that we have to perform
+in order to help our customers in the, you know,
+incident response or security operations use cases.
+And so, you know, when we think about profit AI,
+it's really a suite of agents.
+It's not a single monolithic agent per se.
+>> Yeah, I think that makes sense.
+So, I'm going to switch gears here, Salty, right?
+So when we think about AI and, you know, security,
+there are two things.
+There's using AI to solve some of the security problems.
+And then the other is to actually secure
+or some of these AI initiatives, right?
+So, well, as you're building, you know,
+profit security with this suite of agents and whatnot,
+how are you thinking about securing that infrastructure
+internally or if you're using third-party integration
+or not, like, have you thought about this, like,
+to the extent that you're confident
+that the interactions between the agents
+and the orchestration where all of that is secure
+or how are you approaching these problems?
+>> Great question.
+I think it's something that we take seriously.
+Obviously, you know, we're dealing
+with fairly sensitive customer data.
+And so, really, it's no different
+or it starts on a basis that I think securing
+you'd start with for securing any distributed system.
+And I think some of the best practices
+that we've learned over the past couple of decades
+around, you know, infrastructure security apply here too.
+If anything, you know, agentic architectures
+are just another form of a distributed system.
+You can call it a service architecture
+or a microservice architecture.
+And so understanding, you know, root of trust,
+understanding, you know, transport layer of security,
+understanding, you know, mutual authentication
+and authorization between systems,
+all of this is applicable to an agentic system, right?
+It's just another form of a distributed system
+in my personal opinion.
+And, you know, the fact that it's agentic
+is just an implementation detail.
+You know, you can think of distributed systems
+or service architectures today where you have a database,
+you have an API server written maybe in node,
+you have some sort of backend service written in Ruby
+or Python, these are just implementation details, right?
+And we have, you know, a well-defined
+or best practices for what does security look like
+in those systems.
+And I think it's no different agentically.
+There's maybe another element to this
+which you might be asking and I've certainly heard
+a lot of our customers ask us about, you know,
+security of data being sent to hosted model providers, right?
+What's my data being used for it?
+You know, is there an inadvertent data leakage possibility here?
+And I think a lot of customers, rightfully so,
+are just concerned or asking the tough questions
+to ensure that they understand what's happening
+with their data.
+And so that I think takes a slightly different approach.
+I think you'd be very thoughtful about
+if you're using hosted models,
+what are the hosted model providers doing with that data?
+Every provider is slightly different.
+They have different, you know, terms and conditions.
+From a training perspective, there's a lot of effort
+that we've gone through to make sure that we're very careful
+about what we train on and what we don't train on.
+There's some best practices around data anonymization
+and data masking, which allow us to perhaps give these customers
+some more comfort that, you know,
+that their data is being handled securely
+and there isn't, you know, inadvertent data leakage
+that, you know, could occur here.
+So security has multiple elements to it.
+I'd say there's, starts at the infrastructure level.
+We certainly eat our own dog food at profit security.
+So we use profit AI to secure, you know, our own product,
+but it goes all the way up the stack
+and it has to do with, you know, the data that you're ingesting
+from customer environments, how you're handling that,
+how you're training on that data
+and really what sort of guarantees
+you're able to provide customers.
+- Yeah, so I think what I'm hearing from you is
+to ask those hard questions to those providers
+that you plan to use like OpenAI or Entropy or whatever.
+And, yeah, you know, I think that makes sense
+because, yeah, like if you can't host a model locally
+or if you just don't want to deal with, you know,
+training and like all of the other stuff,
+then you should be asking all the questions
+to wherever you're sending the data to, right?
+Do you feel like, you know, in an infrastructure
+where essentially you are sending data to,
+let's say OpenAI, right, where, and then you're asking
+or maybe you're using something like the function calling
+to sort of, you know, some of these elements capabilities.
+If you like the outbound traffic also needs to be sort of
+run through some kind of scanning process
+where you know, you scan for things like injection attempts
+or AI going out and whatnot.
+Do you think like that's a good approach to solve,
+like solve solves for some of these problems?
+Because I'm asking this because, you know,
+if you do that, you can have some confidence
+that you're not sending all the sensitive information
+to OpenAI, right, you'll have some of your processes
+on your infrastructure as well.
+- Yeah.
+- Any thoughts on this?
+- Totally.
+And I think the short answer is it depends on the use case, right?
+If you are ingesting free form input from a user,
+then yes, potentially prompt ejection is a concern.
+And if so, there's no validation that's happening,
+you know, application side.
+And again, there's always been, I think,
+best practices, think of OWASP
+in terms of validation and securing application input,
+then I think yes, you may want to do a certain amount
+of filtering before you go and construct a prompt
+and send that prompt to a hosted model.
+On the other side, if the use case is not coming directly
+from a user, but perhaps, you know, your own code
+or some other integration or system
+where you have more trust in the input,
+then maybe that's not as important or as warranted.
+So I think, you know, it makes sense.
+And, you know, some of our customers
+have what I'll call model gateways that they've deployed
+and they want all application traffic
+to a hosted model provider to go through
+their model gateway or proxy.
+Makes sense to us.
+And if that's where they want to impose policies
+or, you know, restrict access, detect policy violations,
+I think that's a reasonable approach.
+You know, historically we've had proxies,
+we've had, you know, gateways,
+not always the most scalable approach.
+So in the back of my mind, I wonder, you know,
+if this is a short-term or a long-term solution,
+you know, does policy need to be enforced centrally?
+Or can it be enforced, you know, distributed fashion?
+You know, we thought a lot about this somewhat,
+you know, in our past lives at Stock Rocks
+where we built a policy engine for, you know,
+Kubernetes environments.
+And, you know, there were some competitors out there
+that did central policy enforcement.
+And we thought it was a more scalable approach
+to go distributed.
+So I do think about the trade-offs there
+between distributed and central.
+But I think gateways are a reasonable starting point.
+And if that's what helps some of our customers
+get more comfortable with generative AI
+and still take advantage of it,
+then I say that's fine, you know,
+everyone has to do what they have to do.
+- Yeah, I think more, Rafael and Opa
+are open policy agents.
+Yeah, yeah.
+Yeah, I've played with Opa as well.
+I think the whole idea of centralized sort of authentication
+authorization or what have you using something like Opa
+is really compelling, right?
+But I think every organization is different, right?
+Like, so, okay, got it.
+That makes sense.
+So speaking about, you know,
+server platforms, right?
+And for those who are aware of SOAR
+and just kind of it's security orchestration,
+automation and response.
+So profit security is actually trying to solve some
+of these problems that they've observed
+in the source space, right?
+So of all the different, you know, security domains, right?
+Like we spoke about apps like infrastructure security.
+What made you sort of start a company
+on solving this problem in the source space?
+Like then did you see them that really go towards this?
+- Yeah, you know, it's funny.
+I would say that we heard this problem
+from our customers at Stock Rocks that, hey,
+Stock Rocks generates too many alerts, right?
+Like, I don't know what to do with all of these.
+And I sometimes joke that, you know,
+we started this company to really repent for our sins.
+You know, we were part of the problem,
+I shouldn't mind if I'm honest with you.
+And Stock Rocks was certainly guilty
+of generating too many alerts.
+Whenever we were in doubt, we heard on more alerts, not less.
+But as you know, you know, the average, you know,
+incident response or security operations team
+is just inundated by alerts.
+We call it alert fatigue.
+You know, there are all sorts of names for it,
+but it's been a long-standing problem.
+And I don't think we've really had a great opportunity
+or a great solution or answer to this problem
+for many years.
+You know, you mentioned SOAR earlier and 10, 12 years ago,
+you know, SOAR came out as a potential, you know,
+answer to this.
+And certainly a lot of promises were made.
+I think in retrospect, SOAR failed.
+I don't think SOAR quite lived up to its expectations.
+You know, different analysts now describe SOAR
+as just obsolete.
+One of the really main challenges with SOAR and in my opinion
+is the fact that automation isn't something
+you can build once and forget about.
+It's, you know, environments are constantly changing,
+constantly evolving.
+And therefore SOAR workflows need constant maintenance.
+And from my perspective, very few security teams
+have the resources or bandwidth to really dedicate to this.
+I think SOAR ends up being very focused
+on specific predefined actions,
+like resetting credentials or isolating a host,
+well-defined, you know, they're straightforward.
+You have predictability, almost rules-based.
+You can trust SOAR to go and take those actions.
+But where SOAR falls short is in the hard part
+of the investigative side of incident response.
+So it involves understanding what happened.
+Before I go reset creds or isolate a host,
+how do I know that's the right thing to do?
+How do I go and understand what happened, you know,
+querying and analyzing evidence,
+understanding organizational context?
+Yeah, even just being able to cope with the determination.
+You know, is this a true positive?
+Do I need to go take these actions
+that my playbook is telling me?
+That's where SOAR has fallen short.
+And that's where, you know, to our prior point,
+we think there's a promise of AI agents
+where we're able to do or perform
+far more complex investigative tasks,
+really emulate the investigative process
+that a expert incident responder or operations analyst
+would go through themselves as they're tasked
+with conducting an investigation.
+You know, querying those systems, gathering data
+and not being limited to just basic automations
+or basic actions.
+Yeah, no, I think, yeah, I could be more with that.
+And the reason why I see that is
+because I've played with some SOAR platforms as well, right?
+Like, I believe I understand SOAR platforms
+is that you can basically integrate multiple services, right?
+Like there's Slack, there's Jira
+and then based on your workflows,
+you can sort of call certain services and whatnot, right?
+So all that, the integration part is fine.
+But then, yeah, how do you decide when to trigger
+a workflow not is where the,
+I think the main problem is, right?
+Because no, often the not,
+I remember when I was playing with
+a SOAR platform in one of my previous workplaces,
+yeah, I moved with constantly trigger alerts
+and workloads when there was no need.
+It was just kind of a bunch of false positives.
+And like you mentioned, there was alert fatigue
+and it was just too overwhelming for the entire team
+and we had to shut the entire platform down
+because it wasn't providing us value.
+It was just adding more work on our plates.
+So that makes a lot of sense.
+And I'm very intrigued by the fact
+that we're using AI agents to sort of
+solve some of those reasoning, you know, problems.
+And I think that is essentially what AI agents
+are going to do based on, again, my experience.
+So, yeah, that's pretty fascinating.
+So if you really draw parallels, right,
+with the SOC space, and then, so let's say,
+since I am not an upset guy, right?
+So if I take abstract domain,
+again, based on your familiarity with the apps experience,
+what areas do you think or do you have any suggestions
+of like some of these areas that could be solved
+with the AI agents, right?
+Where it's just very difficult to reason
+and automate and a bunch of other things.
+- Yeah. - Yeah.
+- Yeah, you know, I don't think there's a lot of difference
+between apps, and other domains.
+Take, you know, vulnerability, as an example,
+in areas that I'm very familiar with from my past life.
+I'm sure you're very familiar with Ansham,
+and I'm sure you can, you know, think about CVs in your sleep.
+I certainly did for a long time.
+- You know, take a very common scenario.
+I've been on the other side.
+You have as well, alert fires.
+In this case, an alert is a CVE has been released.
+It's affecting one of your dependencies in your application.
+There is a process that I believe most engineers,
+appsec engineers, would go there and understand.
+Okay, you know, he's fixable, first of all.
+- Yeah, yeah, yeah. - Don't bother me, right?
+I don't need to know, or is there a workaround for this?
+- Right. - What is it impacting?
+Which application, who owns that application or service?
+Is it in production?
+Is it touching, you know, PII or PCI?
+There's some organizational context that's missing.
+You know, if it is in production, you know, is it being used?
+I don't know about you.
+I have plenty of dependencies that are unused.
+Is it used?
+Is it in memory, you know, what code paths are touching?
+Or is this dependency touching?
+And so, you know, it's really hard to just take a CVE
+and at face value, determine is this good or bad?
+I think it's no different than an alert
+that a, you know, a SOC analyst or incident response engineer
+might deal with.
+The alert is just the beginning.
+And there's all these interesting questions
+which need to be asked context around the organization
+that has to be gathered, sort of tribal knowledge,
+which for the most part is sitting between, you know,
+your two years or my two years
+and it isn't codified anywhere.
+And so, I think there's a huge opportunity for us to go
+and do something very similar to what we're doing today,
+security operations in AppSec and say,
+hey, what do we, what do we do?
+Before I even bother a single human,
+there's all this homework which can be done.
+You know, and when I think of us being in grade school
+and doing math homework, I don't know if you remember this,
+we couldn't just write the answer, right?
+We had to show our work go step by step
+before we got to the answer
+and we get full credit for that problem.
+I don't think this is any different
+before we can ever go and bother, you know,
+either an AppSec engineer or, you know,
+operations engineer.
+I think there's a lot of homework which we need to go do.
+And in, you know, the case it might be vulnerability based
+in, you know, operations, it might be more of a runtime alert
+or a user alert, but really I think fundamentally
+the process is the same.
+- Yeah, yeah, no, I think that's right on.
+And I've been thinking about these problems as well.
+I think especially when it comes to vulnerabilities, right?
+So like I mentioned, when a new CV comes out,
+yeah, it's basically a situation where everybody is
+in this chaotic mode trying to figure out, right?
+Like so, and I think solve these problems.
+I think more than AI agents, it also sort of depends on
+how you do long empty management in the first place, right?
+Like what are the systems you integrate?
+What does the process look like?
+What does the triaging process look like,
+so on and so forth?
+And bringing all of those systems together and, you know,
+sort of building an agent that could interact
+with these different systems.
+And then based on the outcomes,
+it couldn't decide what to do next, right?
+Well, I think this is essentially,
+I believe the future of vulnerability, right?
+Because all the companies I've worked out so far,
+you know, both and small, the one common problem
+I've seen is management.
+Also, the triaging of vulnerability in the first place
+is very difficult, right?
+And then the second problem I've seen is,
+you know, you have all these like SaaS tools,
+DaaS tools and all of these tools
+have so many new findings, like thousands of findings.
+And it's just very difficult for any engineer
+to go into the dashboards.
+And so if we are in a meaningful way,
+where you're actually spending, let's say I spend an hour,
+and in that hour, I'm actually triaging one of these.
+Most of the time when I try to do that,
+I'm just so over and I'm like,
+where do I even start, right?
+So I believe that, you know,
+there are some problems where even when there's like
+same way up and whatnot, right?
+Like both cold start building the agents
+to solve some of these problems, right?
+To make the lives of apps again,
+efficient engineers, like I'm sure they are.
+I'm sure they are.
+I don't think this is a very novel problem.
+You know, the other thing I'll say on showman,
+and you may know the history here better than I do,
+but my understanding is NVD,
+which is, you know, the vulnerability database
+that everyone uses, was never designed for this purpose, right?
+It's sort of, you know, outgrown,
+whatever its original intention was,
+and again, I could be wrong here.
+And I've certainly seen a lot of very ugly code
+that's been written to parse unstructured
+or semi-structured data is coming out of NVD.
+It's inconsistent at best.
+And it's another example,
+going back to our topic around agents,
+where, you know, it's already such a mess,
+and I don't know.
+I certainly don't want to write all this Python code
+to parse that.
+I'm sure you don't either.
+And maybe that's an opportunity, again, for us to,
+you know, use something a little more determined,
+sorry, probabilistic, like an agent,
+and have that give us, you know, some sort of context.
+So what is this vulnerability about?
+Where does it impact it, you know, what,
+how should I think about it?
+- Yeah, yeah, I know, absolutely.
+I mean, I have one more question in the AI space
+before we can sort of branch into other things.
+So, you know, this concept of emailing the loop, right?
+Like, we can't, or at least what I've seen in hard is,
+we shouldn't be trusting the outcome from AI completely.
+There has to be some kind of human element involved
+in the loop, right?
+So how are you thinking about this problem
+with profit security?
+Like, do you have aspects of human approvals
+or, you know, like, things like that?
+- Totally, yeah, you know, security,
+I think keeping the human in the loop is essential.
+You know, while profit AI can handle a lot of the triage,
+investigation and response process, you know,
+our customers are always in charge.
+And, you know, they decide how much oversight they wanna have.
+I think each customer is gonna have, you know,
+a different level of comfort with autonomy.
+So I think that is first and foremost.
+You know, we talked a little bit about transparency already,
+and I think that's really been a key product tenant for us,
+from day one, you know, we're not trying to build
+an autonomous sock, we're really trying
+to support our customers, trying to supercharge, you know,
+the security analysts, engineers, incident responders
+who are looking at that wall of alerts
+and trying to figure out, you know, what to do with it.
+And if we start with that basic premise,
+that basic product tenant,
+then I think we're in this trust building exercise
+with our customers.
+We've built the system with explainability in mind.
+You know, I gave you the example of math homework earlier.
+We have to show our work.
+If we don't, the no, I think user or a customer
+is gonna trust the determinations that we come to.
+And so, you know, our product, our AI agents,
+don't just provide conclusions,
+but they also show their reasoning to your previous point.
+They show the evidence.
+They show how the evidence was gathered,
+which data sources were leveraged,
+what the query was, you know, users can trust
+but verify our work if they wanna double check the analysis
+that we performed.
+And so again, it's always around giving the analysts
+their information that they need
+to come to the right answer.
+So that's really how we think about it.
+And the last thing I'll say is, you know,
+while there's a lot of discussion,
+rightfully so around human in the loop,
+there's not enough discussion around feedback.
+I don't think any system is perfect ourselves included.
+And so we've, you know, consciously
+or explicitly designed the system
+so that we can learn from user feedback.
+And I think security is a great example
+where there's all this tribal knowledge sitting
+in people's heads and isn't codified anywhere,
+isn't in run books or isn't documented.
+So we make it really easy for analysts, engineers,
+and student responders to give us feedback
+around the actions that our AI agents took,
+the overall conclusions that we came to.
+And this feedback directly informs future investigations.
+It allows us to learn from the feedback,
+learn more about different organizations,
+continuously improve and really make sure
+that, you know, the system becomes, you know,
+custom fit or tailored to each organization.
+There's a feedback element to the human in the loop as well
+that I don't think is talked about as much as the--
+- And as much here, yeah, yeah, yeah, I think
+that's a good point because if you're not sort of,
+if you don't have this constant feedback loop, right,
+like where you take the outcomes
+from whatever you're doing and then you improve upon it,
+which means you could either train your models
+with that data or you use those as test cases
+to provide as input, yeah, I think it's a good point
+and I think it's a good point, yeah, right.
+- All right, go ahead.
+- Mm-hmm, please, go ahead.
+- Oh, no, speaking to one of our customers a few months ago
+and they were, without naming names,
+they were decided with their CNAAP.
+And they were actually using this as an example
+where the CNAAP was generating a bunch of alerts
+that weren't relevant to their organization
+and they even shared their screen on Zoom
+and showed me there was an ability to give feedback
+and they would like try to like suppress these alerts
+or something and it just, you know, from their perspective,
+it just went to DevNol, it didn't go anywhere, right?
+That feedback wasn't utilized.
+So that's incredibly frustrating from a customer
+or user perspective to deal with something like that.
+So if you don't feel like the system is learning
+from your input, your actions,
+I think you'll end up being dissatisfied very, very quickly.
+- Yeah, no, absolutely, okay, cool.
+So we have some more time.
+So I would love to sort of branch slightly
+into more of the startup world, you know?
+This is your fourth company that you've co-founded
+and you're the CTO of, yeah, like what has this startup journey
+been like for you, like what have you learned
+and how do you decide whether it's the right time
+to basically start a new company versus canoeing,
+what you've been doing and any thoughts
+around this that you can share.
+- Oh man, it's hard.
+I just wanna feel like I know less than I did.
+Not more.
+I think I'll say a couple of things
+and both of these will probably sound trite,
+but I think first is just the value and importance
+of people and team.
+You know, you're in the trenches with these folks,
+60, 80 hours a week.
+And if these are not folks whom you trust and respect,
+folks you can learn from, folks you enjoy working with,
+I think it's gonna be really, really hard.
+I think that's a lesson I've learned.
+You know, time and time again,
+I've also optimized for this.
+I've always made sure that I've picked the right people,
+the right team over name brands and titles and other things.
+It implies not only, or applies not only for your,
+you know, co-founders and founding team,
+but also applies equally for your investors
+and anyone else who you bring on board this journey.
+And I just don't think we can emphasize enough
+the importance of the caliber of your team,
+the integrity of your team.
+If you get that wrong,
+I find it varied very hard to get anything else right.
+It always starts with people.
+We're in the people business
+and I think making sure you surround yourself
+with the right people is important.
+That being said, I don't think the team
+is a guarantor of success.
+It's probably a prerequisite of success.
+And, you know, I'm butchering this,
+but this is probably an old Andy Radcliffe saying
+around, you know, great teams meeting bad markets
+end up with bad results.
+And, you know, you have okay teams, you know,
+intersecting with create markets
+and you end up with great results.
+Again, I might be butchering that or paraphrasing that
+incorrectly, but I've learned the lesson the hard way
+around the importance of markets
+and really making sure that you're tackling,
+you know, not only a big market,
+which everyone talks about and, you know,
+we can argue about big today versus big five years
+or 10 years from now.
+And so there is a growth trajectory,
+but it's also understanding the current state
+of the market, right?
+You know, you have to understand,
+is the market ready for product like yours?
+Is the market ready for, you know,
+what you're, what you're selling.
+You talked a little bit about skepticism earlier,
+certainly in the market we're in,
+by no means do I think it's insurmountable,
+but you have to understand that,
+hey, this is a headwind that you were facing.
+And, you know, folks have been sold in stake oil before
+and they're not going to fall for it a second time.
+So understanding market dynamics, understanding,
+you know, what type of market is this?
+Just as an example, in my personal experience,
+we started a container security company in 2013.
+We were probably too early to that market.
+And, you know, that was very early,
+Docker wasn't even 1.0, Kubernetes did not exist.
+You know, in the subsequent, I think four or five years,
+we had what I call the orchestrator wars.
+There was Kube and Swarm and Mesos and Yarn
+and I think Marathon from how I should know.
+There were just all these orchestrators
+that we don't talk about anymore.
+But we went through this whole process of, you know,
+containerization and what does that mean
+from an orchestration perspective?
+So we were just too early.
+And I think Howard Marks says, you know,
+being too early is indistinguishable from being wrong.
+And I often think about that or share that anecdote,
+which is, you know, you have to understand market dynamics
+in addition to team dynamics for a winning company.
+- Yeah, that's pretty interesting.
+So do you feel like what happened
+with the container sort of all, right?
+Like you mentioned, there was a bunch of frameworks
+and whatnot.
+Do you feel like same thing is happening
+with the agents right now?
+- I, to a degree, yes.
+I think to a degree, yes.
+I think the hype is certainly there.
+I don't think there was as much hype on orchestrators.
+I think I called them the Orchestrator Wars
+because everyone knew that an individual container
+was a building block from an infrastructure perspective,
+but was insufficient, right?
+You didn't just deploy individual containers,
+although I recall some customers started that way,
+but you really were deploying applications
+or, you know, a distributed application
+which needed orchestration to a degree.
+So that was more of a necessity in some ways.
+Someone was going to win those wars.
+But AI agents, it's a little bit different, right?
+I think it's more of this potential that all of us see
+and, you know, there's this explosion of opportunity
+trying to capture that potential.
+As you said earlier, all these unknowns
+about how we're going to do this
+and what's the right application for agents?
+Where can they be trusted?
+Where does the human need to step in?
+So I feel like we're far more early in the journey
+with agents, and this is maybe a little bit
+before my time, I'm sure, but I can't help
+but think of the sort of dot com boom
+where we knew the internet was going to change the world,
+but 25 or 30 years ago, I'm not sure, you know,
+anyone could have predicted everything that we've seen,
+you know, or the course of the past few decades.
+- Yeah, yeah, right on.
+Okay, awesome.
+Well, I didn't very well go down.
+We spoke quite a bit about the agents
+and agent-free works and security problems.
+And yeah, I'm excited for the future.
+I'm excited to see what you folks are doing
+at profit security and, you know, yeah.
+So if you end up, you know, finding or serving
+and interesting security challenges,
+please do share that knowledge forward
+because I think the industry at large needs
+are more companies like profit security
+to come in, you know, sort of build things
+and also share about how they're building.
+So yeah, I'm personally excited about the future here.
+And again, thank you so much for both for coming on to the show
+and, you know, sharing all your experience
+and everything else, I really appreciate it.
+- Yeah, it was great.
+I really enjoyed the conversation.
+I appreciate the opportunity.
+And, you know, hopefully I'll be back in a year or so
+and we can catch up on, you know,
+the state of AI agents and...
+- Oh, yeah.
+That would be nice, yeah.
+State of AI, even if I, you know, we kind of do it.
+Yeah, that's on the exam.
+- Ah, so we'll put it on the counter.
+- Ah, yeah. - Thank you so much.
+- Wish, wish her, okay.
+Thank you, above.
+- Thanks.
+- Thank you for joining us.
+If you like the show, please share this
+with your friends and colleagues.
+If you have any questions or comments,
+you can reach Anshman on Twitter
+@anshman_bh.
+That's A-N-S-H-U-M-A-N_bh.
+And me, Sandesh, are Juba on jeans.
+That's J-U-B-B-A-O-N-J-E-A-N-S.
+See you next time.
+(upbeat music)
+You
+
+

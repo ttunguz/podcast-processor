@@ -1,0 +1,2592 @@
+--- METADATA START ---
+Show: Latent Space: The AI Engineer Podcast
+Episode: The Shape of Compute (Chris La…
+Host: Abestio, Swix 
+Guests: Chris Lattner
+Source URL: https://podcasts.apple.com/us/podcast/the-shape-of-compute-chris-lattner-of-modular/id1674008350?i=1000712768842
+--- METADATA END ---
+
+1
+Hey everyone, welcome to the Latin Space Podcast.
+2
+This is Abestio, partner and CTO at Decibel, and I'm joined by my co-host Swix, Founder of Smallia.
+3
+And we're so excited to be back in the studio with Chris Latner from Mojo Modular.
+4
+Welcome back.
+5
+Yeah, I'm super excited to be here.
+6
+As, I'm a huge fan of both of you, also the podcast, and a lot of what's going on in the industry.
+7
+So thank you for having me.
+8
+Thanks for keeping us involved in your journey.
+9
+And I think you spend a lot of time writing when obviously your time is super valuable, educating the rest of the world.
+10
+I just saw a two and a half hour workshop with the GPU mode guys, and that was super exciting.
+11
+We're decked out in your swag.
+12
+Amazing.
+13
+I love it.
+14
+We'll get to the part where you are a personal human machine of just productivity and you do so much.
+15
+And I think there's a lot to learn for people just on a personal level.
+16
+But I think a lot of people are going to be here just for the state of Modular.
+17
+We're also calling it the shape of compute, I think, is going to be probably the podcast title.
+18
+Yeah, it's super exciting.
+19, there's so much going on in the industry with hardware and software and just innovation everywhere.
+20
+Most people can catch up on the first episode that we did and we introduced modular.
+21
+I think people want to know, I think since then you open sourced it.
+22
+There's been a lot of updates.
+23
+What would you highlight as the past year or so of updates?
+24
+Yeah.
+25
+So if you zoom out and say, what is Modular?
+26
+We're a company that's just over three years old.
+27
+Three and a quarter.
+28
+So we're quite a ways in.
+29
+The first three years was a very mysterious time to a lot of people because I didn't want people to really use our stuff.
+30
+And so why that?
+31
+Why do you build something that you don't want people to use?
+32
+Well, it's because we're figuring it all out.
+33
+And so the way I explain it is we were very much in a research phase.
+34
+And so we were trying to solve this really hard problem of how do we unlock heterogeneous compute?
+35
+How do we enable GPU programming to be way easier?
+36
+How do we enable innovation that's full stack across the AI stack by making it way simpler and driving out complexity?
+37 there are these core questions.
+38
+And I had a lot of hypotheses, right?
+39
+But building an alternate AI stack that is not as good as the existing one isn't very useful because people will always evaluate it against state-of-the-art.
+40
+What I did and what the team did and what we all did together is we said, okay, well, let's get to the point where at least Chris is happy.
+41
+And I have very high standards.
+42
+And so we need to be state-of-the-art on NVIDIA GPUs, beating NVIDIA's best on things a LAMA 3 model, which, by the way, is serving end-to-end very high bar.
+43
+By the way, this is something that's a pretty well-studied problem.
+44
+It's not NVIDIA that's working on this.
+45
+It's the entire industry.
+46
+It's the best in the world.
+47
+That's doing this.
+48
+Exactly.
+49
+What is state-of-the-art just as a rough-I don't remember the number of tokens per second.
+50
+It's tokens per second, and it's roughly between 800 to 1,000 shared GPT benchmark and industry standard kinds of things.
+51
+And so I said to the team, look, until we can do that, I don't believe it's real.
+52
+It turns out that, yeah, there's all these things.
+53
+There's page attention, continuous batching, there's GPU kernels, there's programming languages, there's a whole bunch of hardware stuff, and there's all this stuff.
+54
+And I said, oh, by the way, we can't use CUDA.
+55
+That's the whole point.
+56
+That's the whole point.
+57
+And so it's not a, let's pick the shortest, easiest path to get to a demo.
+58
+This is a, let's do the hardest, most fundamental thing that everybody is telling me, as usual, that it's impossible.
+59
+This can't be done.
+60
+And so for those first three years, right, the challenge is prove that we can do something that people think is impossible and at least prove to me.
+61
+And so, what do you do for that?
+62
+What you do is you clear the deck.
+63
+You try to get enough distractions out of the way so you can focus, you can iterate, you can move quickly.
+64
+You don't have to argue with committees.
+65
+And so, we want to be open to a certain extent because we want people to be aware of Mojo and the things we were doing before so we can hire people.
+66
+And there's very specific reasons.
+67
+We don't really want design by committee.
+68
+We don't want a lot of these other things.
+69
+And so, across that research mode, it's the primary thing I care about is prove that it's possible and make me happy.
+70
+And we transitioned right at the end of December.
+71
+We had this release where we achieved that goal and it was a super narrow release.
+72
+It ran just on A100, just one model, but it had state-of-the-art performance.
+73
+It was a full stack vertically integrated thing.
+74
+My whole team is telling me,, oh my God, it's fine.
+75, they pass out and could take time off for Christmas.
+76
+But then they come back and it's, okay, well, everything sucks.
+77
+It's not very good.
+78, we got to work.
+79
+They changed their minds after they went around.
+80
+No, no, no, it worked.
+81
+Okay.
+82
+We achieved the goal, but it's not very good.
+83
+The code is ugly.
+84
+There's technical debt.
+85
+There's this and that and the other thing.
+86
+It only runs on A100.
+87
+It's only one model.
+88
+This isn't useful.
+89
+This isn't a valuable contribution.
+90
+And,, I built some things in the past, right?
+91
+And so I said, well, that's okay.
+92
+We have one thing that works end-to-end and we know 400 ways to make it better.
+93
+And so instant mode switch.
+94
+And at that point, you say, okay, well, let's just break it down a normal engineering problem.
+95
+It's not RD anymore.
+96
+It's an engineering problem.
+97
+You say, okay, cool.
+98
+Let's refactor these APIs.
+99
+Let's deprecate this thing.
+100
+Let's, oh, yeah, let's add H100 support.
+101
+Let's add function calling and token sampling and all the different things you need.
+102
+You can project manage that, right?
+103
+And so every six weeks we've been shipping a new release.
+104
+And so we added all the function calling features.
+105
+And now you have agent chip workflows.
+106
+We have 500 models.
+107
+We have H100 support.
+108
+We're about to launch our AMD, MI300, and 355 support.
+109
+That'll be a big deal for the industry.
+110
+And as you do that in Blackwell, all this stuff is all now in the product and so as this happens now suddenly it's oh okay i get it but this is a very fundamentally different phase for us because it works right and once it works you can see it end-to-end lots of people can put the pieces together in their brain it's not just in my brain and have few other few other people that understand how all the different individual pieces work now everybody can see it so as we phase shift now suddenly it's yeah okay let's open source it well now we want more people involved now let's do each of these things it's we had hackathon and so we invited 100 people to come visit and spend the day with us and we learned gpu programming from scratch and so some of it we built a very fancy inference framework the winning team for the hackathon took that four-person team and one day they had not used mojo before they hadn't programmed gpus before and they had built a training system they wrote an atom optimizer a bunch of training kernels they built a simple backprop system and they showed that you could train a model using all the stuff we'd built for inference because it's so hackable and also because ai coding tools are awesome but but this is the power of what you can do when when you're ready to scale now if we had done that six months ago or 12 months ago or something it would have been a huge mess right because everything would break and there are a lot of bugs and honestly today it's still an early state system there's still some bugs but now it's useful it can solve real world problems and so that's that's the difference and that's the evolution that we've gone through as a team i remember when we first had you at the start you were focused on cpu yes optimization.
+111
+How long did you work on cpu and then how much of a jump was it to go from cpu to gpu so so the way i would the way i explained modular is if you take that first three-year R<unk>D journey and if you round a little bit, first year was prove compilation philosophy.
+112
+And so this was writing very abstract compiler stuff and then prove that we can make a matrix multiplication go faster than Intel MKL's matrix multiplication on Intel silicon and make it configurable and multiple D types and prove a very narrow problem and do that by writing this MLAR compiler representation directly by hand, which was really horrible, but we proved the technology.
+113
+It's a technology milestone.
+114
+Year two was then say, okay, cool.
+115
+I believe the fundamental approach can work, but guess what?
+116
+Usability is terrible.
+117
+Writing internal compiler stuff by hand sucks.
+118
+And also, Matmob is a long ways from an AI framework.
+119
+And so year two embarked on two paths.
+120
+One is mojo.
+121
+So programming language syntax, member of the Python family, make it much more accessible and easy to write kernels and performance and all that stuff.
+122
+And then second, build an AI framework for CPUs, as you say, where you could go beat OpenVino and things this on Intel CPUs.
+123
+End of year two, we got and we're, poof, we've achieved this amazing thing.
+124
+But what's cool?
+125
+GPUs.
+126
+And so again, two things.
+127
+We said, okay, well, let's prove we could do GPUs.
+128
+Number one.
+129
+Also, let's not just build,, air quotes, a CUDA replacement.
+130
+Let's show that we could do something useful.
+131
+Let's take on LLM serving.
+132
+No big deal.
+133
+And so again, two things where you say, let's go prove that we can do a thing, but then validate it against a really hard benchmark.
+134
+And then that's what brought us to year three.
+135
+So in each of these stages, it's really hard and lots of interesting technical problems.
+136
+Probably the biggest problem that you face is you face people that are constantly telling you it's impossible.
+137
+But again, you just have to be a little bit stubborn and believe in yourself and work hard and stay focused on milestones.
+138
+When they say impossible, do they mean impossible or very, very hard?
+139
+Well, so, it's common sense that CUDA is nearly 20 years old.
+140
+NVIDIA's got hundreds or thousands of people working on it.
+141
+The entire world's been writing CUDA code for many years.
+142
+Very, very hard.
+143
+And so it's no,, many people think it's impossible for a startup to do anything in the space.
+144, that's just common sense.
+145
+All these people have thrown all this money at all these different systems.
+146
+They've all failed.
+147
+Why is your thing going to succeed when all these other things built by other smart people have failed?
+148
+And so it's conventional wisdom that change is impossible.
+149
+But hey, we're in AI, this.
+150 change is all around us all the time.
+151
+And so what you need to do is you need to map out what are the success criteria, what causes change to work.
+152
+And across my career, with LLVM, all the GCC people told me it was impossible.
+153 LLVM will fail because GCC is 20 years old and it's had hundreds of people working on it and blah, blah, blah, and spec benchmarks and whatever.
+154
+Nobody told me it was impossible outside because it was secret.
+155
+So that was a little bit different.
+156
+But everybody inside Apple that knew about it said, no, no, no, Objective-C is fine.
+157 we should just improve Objective-C.
+158
+The world doesn't need new programming languages.
+159
+New programming languages never get adopted.
+160
+And it's common sense that new programming languages don't go anywhere.
+161
+That's conventional wisdom.
+162
+MLIR, super funny.
+163
+MLIR is another compiler thing.
+164
+And so I built this thing, brought it to the LLVM community, said, Hey, we open source this.
+165
+Does LLVM want it?
+166
+I know a few LLVM people, right?
+167
+It was my PhD project.
+168
+And all the LLVM Illuminati in the community had been working on LLVM for 15 years or something.
+169
+They're, no, no, LVM is good enough.
+170
+We don't need a new thing.
+171
+Machine learning is not that important.
+172
+And so, again, obviously, we have developed a few skills to work through this challenge, but you get back to the reality that humans don't change.
+173
+And when you do have change, it takes time to diffuse into the ecosystem for people to process it.
+174
+And this is where when you talk about hackathon, well, you have to teach people about new things.
+175
+And so this is why it's really important to take time to do that.
+176
+And the blog post series and things this are all part of this education campaign because none of the stuff is impossible.
+177
+It's just really hard work.
+178
+It requires an elite team and good vision and guidance and stuff this.
+179
+But it's understandably conventional wisdom that it's impossible to do this.
+180
+And it's the idea to build serving basically, I don't need to tell you how much better this is.
+181
+I can just serve the models using our platform.
+182
+And then you can see how much faster it is.
+183
+And then obviously you'll adopt it.
+184
+Yeah, well, so today you can download Macs.
+185
+It's available for free.
+186
+You can scale it to thousands of GPUs you want for free.
+187
+I'll tell you some cool things about it.
+188
+So it's not as good as something VLLM because it's missing some features and it only supports NVIDIA and AMD hardware, for example.
+189
+But by the way, the container is a gigabyte.
+190
+Wow.
+191
+Right?
+192
+Well, why is it a gigabyte?
+193
+Well, it's a completely new stack.
+194
+It doesn't use CUDA.
+195
+You can run arbitrary PyTorch models.
+196
+And if that's the case, then, okay, you pull in some dependencies.
+197
+But if you're running the common LLMs and the Gen AI models that people really care about, well, guess what?
+198
+It's a completely native stack.
+199
+It's super efficient.
+200
+It doesn't have Python in the loop.
+201
+And for eager mode op dispatch and stuff this, because you don't have all that dependency, guess what?
+202
+Your server starts up really fast.
+203
+So if you care about horizontal auto-scaling, that's pretty cool.
+204
+If you care about reliability, it's pretty cool.
+205
+You don't have all these weird things that are stacked in there.
+206
+If you're wanting to do something slightly custom, guess what?
+207
+You have full control over everything.
+208
+And stuff's all open source.
+209
+And so you can go hack it.
+210
+This thing's more open source than VLLM.
+211
+Because VLLM depends on all these crazy binary CUDA kernels and stuff this that are just opaque blobs from NVIDIA.
+212
+And so this is a very different world.
+213
+And so I don't want everybody to just overnight drop VLM because I think it's a great project, right?
+214
+But I think there's some interesting things here, and there's specific reasons that it's interesting to certain people.
+215
+Can you just maybe run people through the pieces of Macs?
+216
+Yeah.
+217
+Because I think last time none of this existed.
+218
+Yeah, exactly.
+219
+Last time it's been a long time ago, both in AI and also in Marshall time.
+220
+Yeah, so the bottom of our stack is, we think about it as concentric circles.
+221
+So the inside is a programming language called Mojo.
+222
+Chris, why did you have to build another programming language?
+223
+Well, the answer is that none of the existing ones solve the problem.
+224
+So what's the problem?
+225
+Well, the problem is that all of compute is now accelerated.
+226
+You have GPUs, you have TPUs, you have all these chips, you have CPUs also.
+227
+And so we need a programming language that can scale across those.
+228
+And so if you go shopping and you look at that, the best thing-ish is C.
+229 there are things OpenCL and SQL, and there's a million things coming out of the HPC community that have tried to scale across different kinds of hardware.
+230
+Let me be the first to tell you, and I can say this now, I feel comfortable saying this, that C sucks.
+231
+I've earned that right, having written so much.
+232
+And so, and let me also claim: AI people generally don't love C.
+233
+What do they love?
+234
+They love Python.
+235
+And so what we decided to do is say, okay, well, even within the space of C, there isn't an good unifying thing that can talk to tensor cores and things this.
+236
+And so we said, okay, I want, again, Chris being unreasonable, I want something that can expose the full power of the hardware.
+237
+Not just one chip coming from one vendor, but the full power of any chip.
+238
+It has to support the next level up very fancy compilers and other stuff this with graph compilers and stuff that.
+239
+It needs to be portable, so portable across vendors and enable portable code.
+240
+So yeah, it turns out that an H100 and an AMD chip are quite different.
+241
+That is true.
+242
+But there's a lot that you can reuse across that.
+243
+And so the more common code that you can have, the better.
+244
+The other piece is usability.
+245
+And so we want something people can use and learn.
+246
+And so it's not good enough just to have Python syntax.
+247
+You want to have performance and control and again, full power of the hardware.
+248
+And so this is where Mojo came from.
+249
+And so today, Mojo is really useful for two things.
+250
+And so Mojo will grow over time.
+251
+But today, I recommend you use it for places you care about performance.
+252
+So something running on a GPU, for example, or really high-performance, doing continuous batching within a web server or something this, where you have to do fancy hashing.
+253
+And, if you care about performance, Mojo is a good thing.
+254
+Other cool thing that we're about to ship, so stay tuned, is it's the best way to extend Python.
+255
+And so if you have a big blob of Python code, you care about performance, you want to get the performance part out of Python, you can make it, we make it super easy to move that to Mojo.
+256
+Mojo is not just a little faster than Python, it's faster than Rust.
+257
+So it's tens of thousands of times faster than Python, and it's in the Python family.
+258
+And so you can literally just rip out some for loops, put it in Mojo, and now you get performance wins.
+259
+And then you can start improving the code in place.
+260
+You can offload it to GPU, you can do this stuff, and all the packaging is super simple.
+261
+And it's just a beautiful way to make Python code go fast.
+262
+Just a double code.
+263
+You said you were about to ship this?
+264
+It's technically in our nightlies, but we haven't announced it yet.
+265
+Isn't it okay?
+266
+Okay.
+267
+We do a lot of that, by the way, because we're very developer-centric.
+268
+And so, if you join our Discord or Discourse.
+269
+Night Lisa is great.
+270
+It's the best program.
+271
+Yeah, and so we have a ton of stuff that's unannounced but well known in the community.
+272
+I thought this was already released.
+273
+Yeah.
+274
+And when you say rip out, is this you have a Python binding to then run the mojo?
+275 you have C bindings or this is the cool thing, it's binding free.
+276
+So think about, so today, again, sorry, I get excited about this.
+277
+I forget how tragic the world is without outside of our walls.
+278
+The thing we're competing with is if you have a big blob of Python code, which a lot of us do, you build it, build it, build it, build it, performance becomes a problem.
+279
+Okay, what do you do?
+280
+Well, you have a couple of different things.
+281
+You can say, I'm going to rewrite my entire application in Rust or something, right?
+282
+Some people do that.
+283
+The other thing you can do is you can say, okay, I'm going to use PyBind or NanoBind or some Rust thingy and rewrite a part of my module, the performance critical part.
+284
+And now I have to have this binding logic and this build system goop and all this complexity around I have Rust code over here and I have Python code over here.
+285
+Oh, by the way, you now have to hire people who can work on Rust and Python and that.
+286
+This fragments your team.
+287
+It's very difficult to hire Rust people.
+288 I love them, but there's just too few of them.
+289
+And so what we're doing is we're saying, okay, well, let's keep the languages basically the same.
+290
+So Mojo doesn't have all the features that Python does.
+291
+Notably, Mojo doesn't have classes, but it has functions.
+292
+Yeah, you can use arbitrary Python objects.
+293
+You can get this binding-free experience, and it's very similar.
+294
+And so you can look at this as being a super fast, slightly more limited Python, and now it's cohesive within the ecosystem.
+295
+And so I think this is useful way beyond just the AI ecosystem.
+296
+I think this is a pretty cool thing for Python in general.
+297
+But now you bring in GPUs.
+298
+You say, okay, well, I can take your code and you can make it real fast.
+299
+CPUs have lots of fancy features their own tensor cores and SIMD and all this stuff.
+300
+Then you can put it on a GPU.
+301
+And then you can put it on eight GPUs.
+302
+And then you can, and so you can keep going.
+303
+And this is something that Rust can't do.
+304
+You can't put Rust on a GPU, really, right?
+305
+And things this.
+306
+And this is part of this new wave of technology that we're bringing into the world.
+307
+And also, I'm sorry, I get excited about the stuff we've shipped and what we're about to ship.
+308
+But this fall is going to be even more fun.
+309
+Okay, stay tuned.
+310
+There may be more hardware beyond AMD and NVIDIA.
+311
+Nice.
+312
+So that was Mojo.
+313
+The first concentric circle.
+314
+Yeah, thank you for keeping me on track.
+315
+So the inner circle is the programming language, right?
+316
+And so it's a good way to make stuff go fast.
+317
+And next level out is you say, okay, well, what's cool?
+318
+AI.
+319
+Have I convinced you?
+320
+And so if you get into the world of AI, you start thinking about models.
+321
+And beyond models, now we have Gen AI.
+322
+And so you have things pipelines, right?
+323
+And the entire pipeline where you have KVCache orchestration and you have stateful batching.
+324
+And, you guys are the experts, agentic, everything, and all this stuff.
+325
+And so next level out is a very simple Gen AI inference-focused framework we call Max.
+326
+And so Max has a serving component.
+327
+Is it Max Engine?
+328
+Yeah, we just call it Max.
+329
+We got too complicated with sub-brands.
+330
+This is also part of our RD on branding.
+331
+HBI has the same problem.
+332
+Yeah, exactly.
+333
+Well, and also,, who named LLVM?
+334, what the heck is that?
+335
+Honestly, it's short.
+336
+It's Google Global.
+337
+Not the worst.
+338
+Yeah, and VLLM came and decided to mess with AI.
+339
+So, Max, the way to think about it is not a PyTorch.
+340
+That's not what it wants to be, but it's really focused on inference.
+341
+It's really focused on performance and control and latency.
+342
+And if you want to be able to write something that then gets Python out of the loop of the model logic.
+343 it's really good for control.
+344
+And so it dovetails and is designed to work directly with Mojo.
+345
+And so within a lot of LLVM or LLM applications, as you all know, there's a lot of very customized GPU kernels.
+346
+And so you have a lot of crazy forms of attention, the DeepSeq things that just came out.
+347
+And all this stuff is always changing.
+348
+And so a lot of those are custom kernels.
+349
+But then you have a graph level that's outside of it.
+350
+And the way that has always worked is you have, for example, CUDA or things Triton Lang or things this on the inside.
+351
+And then you have Python on the outside.
+352
+We've embraced that model, don't fix what ain't broken.
+353
+So we use straight Python for the model level.
+354
+And so we have an API.
+355
+It's very simple.
+356
+It's not designed to be fancy, but it feels a very simple PyTorch.
+357
+And you can say, give me an attention block, give me these things.
+358
+I can figure out these ops.
+359
+But it directly integrates with Mojo.
+360
+And so now you get full integration in a way that you can't get because none of the other frameworks and things this can see into the code that you're running.
+361
+And so this means that you get things automatic kernel fusion.
+362
+What's that?
+363
+Well, that's a very fancy compiler technology that allows you to say, okay, you write one version of flash attention.
+364
+And then, cool, we can auto-fuse in siliu and the other activation functions that you might want to use.
+365
+And you don't have to write all the permutations in these kernels.
+366
+Well, that just means you're more productive.
+367
+That means you get better performance.
+368, it's a lot of things, it just drives down complexity in the system.
+369
+And so you shouldn't have to know there's a fancy compiler.
+370
+Everybody should hate compilers.
+371 the only reason people should know about compilers is if they're breaking, right?
+372
+And so it just feels a very nice, very ergonomic and efficient way to build custom models and customize existing models and things this.
+373
+And so with Macs, we have five, six hundred very common model families and implemented in that.
+374
+You can see buildstopmodular.com.
+375
+We have a whole bunch of models and you can scroll through them and you can get the source code and play with them and do that.
+376
+That's really great for people who care about serving and research and all this stuff.
+377
+Next layer out, you say, okay, well, you have a very fancy way to do serving on a single node.
+378
+That's pretty useful and pretty important.
+379
+But, it's cool, large-scale deployment.
+380
+And so we have a next level out cluster level.
+381
+And so that's the, okay, cool.
+382
+I have a Kubernetes cluster.
+383
+I've got a platform team.
+384
+They've got a three-year commit on 300 GPUs.
+385
+And now I have product teams.
+386
+I want to throw workloads against this shared pool of compute.
+387
+And the folks carrying the pagers want the product teams to behave.
+388
+And so they want to keep track of what's happening.
+389
+And so that's the cluster level that goes out.
+390
+And each of the, and so very fancy prefix caching on a per node basis.
+391
+And then you have intelligent routing.
+392
+And there's a whole bunch of disaggregated pre-fill and a whole bunch of cool technologies at each of these layers.
+393
+But the cool thing about it is that they're all co-designed.
+394
+And because the inside is heterogeneous, you can say, hey, I have some in AMD, I have some NVIDIA.
+395
+Hey, I throw a model on there, run it on the best architecture.
+396
+Well, this simplifies a lot of the management problems.
+397
+And so a lot of the complexity that we've all internalized as being inherent to AI is really, a consequence of these systems that are being designed together.
+398
+And so, to me, what, my number one goal right now is to drive out complexity, both of our stack, because we do have some tech debt that we're still fixing, but of AI in general.
+399
+And AI in general has way more tech debt than it deserves.
+400
+Well, yeah,, there's only so much that most people, excluding you, can do to comprehend their part of the stack and optimize it.
+401
+I'm curious if you have any views or insider takes on what's happening with VLM versus SG Lang and everything coming out of Berkeley.
+402
+Yeah, I don't.
+403
+I have outsider perspective.
+404
+I don't have any inside knowledge.
+405
+SG Lang seems, to me, it's an outsider, so I'm not directly involved with either community.
+406
+I just don't have time.
+407
+So I can be a fanboy without participating.
+408
+But SG Lang.
+409
+They have a beef going on.
+410
+So I see.
+411
+I don't know the politics and drama, but SG Lang to me seems a very focused team that has specific objectives and things they want to prove, and they're executing really hard towards a specific set of goals, much the modular team.
+412
+So I think there's some kindred spirits there.
+413
+VLM seems much more a massive community with a lot of stakeholders, a lot of stuff going on, and it's a hot mess.
+414
+But they want to be the default inference platform that everyone benchmarks against.
+415
+Well, and, as far as I know, it's crushing TRT-LLM and some of the other older systems and things that.
+416
+So I think metrics are good probably for that.
+417
+And so I can't speak to their ambition, but it seems structurally they're very different approaches.
+418
+One is say, let's be really good at a small number of things that are really important.
+419
+That's our approach too.
+420
+One is saying, let's just say yes to lots of things, and then we'll have lots of things, and some of them will work, and some of them don't.
+421
+One of the challenges I hear constantly about VLLM, for what it's worth, is if you go to their webpage, they say, yeah, we support all of this hardware.
+422
+We support Google TPUs and Infrantia and AMD and NVIDIA, obviously, and CPUs and this and that and the other thing.
+423
+So they have this huge, huge list of stuff that they support.
+424
+But then you go and you try to follow any demo on some random web page saying, here's how you do something with VLLM.
+425
+And if you do it on a non-NVIDIA piece of hardware, it fails.
+426
+And so what is the value of something VLLM?
+427
+Well, the value is you want to build on top of it generally.
+428
+You don't want to be obsessing about the internals of it.
+429
+If you have something that advertises that it works and then you pick it up and it doesn't work and I have to debug it, it's a betrayal of the goal.
+430
+And so to me, again, I know how hard it is.
+431
+I know the fundamental reason why they're trying to build on top of a bunch of stuff below them that they didn't invent that doesn't work very well, honestly, right?
+432
+Because we know that the hardware is hard and software for hardware is even harder these days.
+433
+So I understand why that is, but that approach of saying, here's all the things we can do, and then having a sparse matrix of things that work is very different than the conservative approach, which is saying, okay, well, we do a small number of things really well and you can rely on it.
+434
+And so I can't say which one's better.
+435, I appreciate them both.
+436
+And they both have great ideas.
+437
+And the fact that there's the competition is good for everybody in the industry.
+438
+And so they're in the benchmark wars state of the way that this industry evolves.
+439
+That's right.
+440
+But I also hear, just on the enterprise side of things, that they're all so good.
+441
+They don't want to follow the drama.
+442
+And so this is where having less chaos and more I can work with somebody is really valuable these days.
+443
+And you need state-of-the-art, you need performance and things this, but but having somebody that is executing well and works together, can work with you is also super important.
+444
+Have we rounded out the offerings?
+445
+You talked about Max.
+446
+Yeah, yeah, I realized that it impresses me that you named the company modular and you've designed all these things in a very modular way.
+447
+Yeah, I'm wondering if there are any sacrifices to that, or is modular everything the right approach?
+448, there's no trade-offs.
+449
+If you allow me to show my old age, my obsession with modular design came from back when creating LLVM.
+450
+Okay, so at the time, there was GCC.
+451
+GCC is, again, I love it as a C and C compiler and stuff, right?
+452
+And have tons of respect for it, but it's a monolith.
+453
+It was designed from the old school Unix, compilers are Unix pipe, everything is global variables, C code.
+454
+It was written in K and R C if you even know what that is anymore.
+455
+And so it was from a different epoch of software.
+456
+And LLVM came and said, what, everybody teaches you in school is you have a front end, an optimizer, and a co-generator.
+457
+Let's make that clean.
+458
+And so at the time, people told me, again, first of all, it's impossible to replace GCC because it's so established, et cetera, et cetera.
+459
+But then also that you can't have clean design because look at what GCC did and it's successful and therefore you can't have performance or good support for hardware or whatever it is without that.
+460
+They might be right if in an infinitely perfect universe, but we don't live in an infinitely perfect universe.
+461
+Instead, what we live in is a universe where you have teams.
+462 you have people that are really good at writing parsers, people that are really good at writing optimizers, people that are really good at writing a code generator for x86 or something that.
+463
+And so these are very different skill sets.
+464
+Also, we see in AI, the requirements change all the time.
+465
+And so if you write a monolith that is super hard code and hack today, well, two years from now, is it's going to be relevant.
+466
+And this is why what we see a lot in AI is we see these really cool and very promising systems that rise and grow very rapidly, and then they end up falling.
+467
+It's because they're almost disposable frameworks.
+468
+This concept really comes.
+469
+Each of these systems end up being different, but what I believe in very strongly is that in AI, we want progress to go faster, not slower.
+470
+That's controversial because it's already going so fast, right?
+471
+But if we can accelerate things, we get more product value into our lives.
+472
+We get more impact.
+473
+We get all the good things that come with AI.
+474
+I'm a maximalist, by the way.
+475
+But with that comes the reality that everything will change and break.
+476
+And so if you have modularity, if you have clean architecture, you can evolve and change the design.
+477
+It's not over specialized for a specific use case.
+478
+The challenge is you have to set your baseline and metrics, right?
+479
+This is why it's compare against the best in the industry.
+480
+And so you can't say, or at least it's unfulfilling to me, to say, let's build something that's 80% as good as the best.
+481
+But it's got this other benefit.
+482
+I want to be best of in the categories we care about.
+483
+And when it comes to using prefix caching, page attention, how do you decide what you want to innovate on versus, hey, you are the team that has built the best thing.
+484
+We're just going to go ahead and use that.
+485
+Yeah.
+486
+I'm very shameless about using good ideas from wherever they come.
+487 everything's a remix, right?
+488
+And so somebody, if I don't care who it is, if it's NVIDIA, if it's SG Lang or VLM, and if somebody has a good idea, let's pull it together.
+489
+But the key thing is make it composable and orthogonal and flexible and expressive.
+490
+To me, what I look at is not just the things that people have done and put into VLM, for example, but the continuous stream of archive papers.
+491
+And so I follow,, there's a very vibrant industry around inference research.
+492
+Yep.
+493
+It used to be just training research, right?
+494
+And much of that never gets into these standard frameworks.
+495
+And the reason for that is you have to write massively hand-coded CUDA kernels and all this stuff for any new thing.
+496
+And I would want one new D-type and I have to change everything because nothing composes.
+497
+And so this is, again, where if you get some of these software architecture things right,, which admittedly requires you to invent a new programming language.
+498
+There's a few hard parts to this problem, but the cool thing about that is you can move way faster.
+499
+And so I'll give you an example of that.
+500
+This is fully public because not only do we open source our thing, we open source all the version control history.
+501
+And so you can go back in time and say, and Chris likes open source software, by the way.
+502
+Let me convince you of this.
+503
+I don't people meddling in my stuff too early.
+504
+But I open source software.
+505
+And so you can go look at how we brought up H100, built flash attention from scratch in a few weeks, built all the stuff.
+506
+We're beating the tree DAO reference implementation that everybody uses, for example, right?
+507
+Written fully in Mojo.
+508
+Again, all of our GPU kernels are written in Mojo.
+509
+You can go see the history of the team building this, and it was done in just a few weeks, right?
+510
+And so we brought up H100, entirely new GPU architecture.
+511
+If you're familiar, it has very fancy asynchronous features and tensor memory accelerator things and all this goofy stuff they added, which is really critical for performance.
+512
+And again, our goal is meet and beat QDNN and TRTLM and these things.
+513
+And so it's not, you can't just do a quick path success.
+514
+You have to get everything right and everything line up because any little thing being wrong nerfs performance.
+515
+And we did that in, I think it was less than two months.
+516
+Public on GitHub, right?
+517
+And so that velocity is just incredible.
+518
+I think it took nine months or 12 months to invent flash attention.
+519
+And it took another six months to get into VLM.
+520
+And this is just the latter part is just integration work.
+521
+And so now you're talking about building all this stuff from scratch in a composable way that scales against other architectures and has these advantages.
+522
+It's just a different level.
+523
+So anyways, our stuff's still early in many ways.
+524
+And so we're missing features.
+525
+But if you're interested in what we're doing, you can totally follow the change logs and you can follow them nightly where we publish all the cool stuff and all the kernels are public.
+526
+And so you can see and contribute to this as well if you're interested.
+527
+Yeah, do you have any requests for projects that people should take on outside of modular that you don't want to bring in?
+528
+Absolutely.
+529
+So we're a small team.
+530, we're over 100 people, but compared to the size of the problem we're taking on.
+531
+We're going to use the size of your missions.
+532
+Yeah, we're infinitesimal compared to the size of the AI industry.
+533
+And so this is where, for example, we didn't really care about Turing support.
+534
+Turing's an older GPU architecture.
+535
+And so somebody on the community is, okay, I'll enable a new GPU architecture too.
+536
+It's contributed Turing support.
+537
+Now you can use Max and Colab for free.
+538
+That's pretty cool.
+539
+There's a bunch of operators.
+540
+So we're very focused on AI and Gen AI and things this.
+541
+By the way, our stuff isn't AI specific.
+542
+So people have written ray tracers and there's people doing flight safety and all kinds of weird things.
+543
+Flight simulation?
+544
+At our hackathon, somebody made a demo of looking at, I think it was a voice transcript, the black box type traffic, and then predicting when the pilot had made a mistake and the airplane was going to have a big problem and predicting that with high confidence.
+545
+So it's your car,, you're driving your car until it starts beeping when you're aiming down.
+546
+Yeah, yeah, yeah, yeah, yeah.
+547
+Okay, that thing for the FAA and stuff this, right?
+548
+And I know nothing about that.
+549, this is not my domain, trust me.
+550
+This is the power of there's so many people in our industry that are almost infinitely smart, it feels they're way smarter than I am in most ways.
+551
+And you give them tools and you enable things, and also you have AI coding tools and things this that help bridge some of the gap.
+552
+I think we're going to have so many more products.
+553
+But this is, this is really what motivates me, right?
+554
+And this is where I think we talked about last time.
+555
+One of the things that really frustrated me years ago and inspired me to start modular in the first place is that I saw what the trillion dollar companies could do.
+556
+You look at the biggest labs with all the smart people that built all the stuff vertically top to bottom, and they could do incredible product and research and other work that nobody with a five-person team or a startup or something could afford to do.
+557
+And here we're not even talking about the compute.
+558
+We're just talking about the talent.
+559
+Well, the reason for that is just all the complexity.
+560
+It only worked, for example, at Google because you could walk proverbially walk down the hallway, tap on somebody's shoulder and say, hey, your stuff doesn't work.
+561
+How do I get it to work?
+562
+I'm off of the happy path.
+563
+How do I get this new thing to work?
+564
+And they'll say, I'll hack it for you.
+565
+Well, that doesn't work at scale.
+566
+We need things that compose right, that are simple, that you can understand, that you can cross boundaries.
+567
+And so much of AI is a team sport.
+568
+And we want it so more people can participate and grow and learn.
+569
+And if you do that, then I think you get, again, more product innovation and less just gigantic AI will solve all problem solutions and more fine-grained, purpose-built, product-integrated AI.
+570
+Yeah.
+571
+I think one way of phrasing what you're doing is,, you you have this line about it's it's you're you want AI to accelerate and that's contrarium because it's already fast and people are already uncomfortable.
+572
+But I think you're more you're accelerating distribution I have mixed feelings about the words democratizing, but that's really what you're doing Well, it used to be democratizing AI used to be the cool thing back in 2017 Yeah, I know but it used to be the cool thing and what it meant and what it came to mean is democratizing model training right and it's super interesting again as veterans back in 2017 AI was about the research because nobody knew both what the product applications were but then we didn't know how to train models and so things PyTorch came on the scene and I think PyTorch gets all credit for democratizing model training right it's taught to pretty much every computer science student that graduates that's a huge deal but nobody democratized inference inference always remained a black art right and so this is why we have things vlm and sgling because they're the black box that you can just hopefully build on top of and not have to know how any of that scary stuff works is because we haven't taught the industry how to do this stuff and it'll take time but i think that that's not an inherent problem i think it's just that we don't have a pytorch for inference or something that and so as we start making the stuff easier and breaking it down we can get a lot more diffusion of good ideas i want to double click a little bit more on some technical things but just just to sidetrack on vlm is an open source project led by academics and all that and i think a lot of the other inference teams effectively every team Is a startup the fireworks together all those guys your business model is very different from them and i want to spend a little bit of time on that.
+573
+Happy to talk to you you.
+574
+You intentionally, well, you believe in open source, but it's not it's not just that you just choose not to make money from a lot of the normal hosted cloud offerings that everyone else does.
+575
+Yeah, there's a philosophical reason and a differentiation reason.
+576
+There's a whole bunch of reasons.
+577
+Yeah.
+578
+So,, maybe remind people of what that is,, how basically how do they pay you money and what they get for that and why you why you picked that.
+579
+So, again, we're doing this in hard mode, right?
+580
+We took a long path to product.
+581
+We're not just write a few crude kernels and have some alpha and go buy a GPU reserve thing and resell our GPUs.
+582, that path has been picked by many companies, and they're really good at it.
+583
+So, that's not a contribution that I'm very good at.
+584
+And I'm not going to go build a data center for you.
+585, that's there's people that are way better than that.
+586
+Okay.
+587
+And so, all the best luck.
+588
+I want to cruso walking the Stargate grounds.
+589
+I want those people to use Macs.
+590
+I'm pretty good at this.
+591
+Yeah, I'm pretty good at this software thing.
+592
+And so you can handle all the compute.
+593
+Moreover, if you get out of startups, you have a lot of people that are struggling with GPUs and cloud.
+594
+And so GPUs and cloud fundamentally are a different thing than CPUs in cloud.
+595
+And a lot of people walk up to it and say it's all just cloud, right?
+596
+But let me convince you that's not true.
+597
+And so, first of all, CPUs and cloud, why was that awesome?
+598
+Well, all the workloads were stateless.
+599
+They all could horizontally auto-scale.
+600
+CPUs are comparatively cheap.
+601
+And so you get elasticity.
+602
+That's really cool.
+603
+You can load them pretty quickly.
+604
+It's gigabytes of weights.
+605
+Yeah.
+606
+And so it turns out, what business do knows what they're doing in two and a half years?
+607
+Nobody.
+608
+Nobody, right?
+609
+And so cloud for CPUs is incredibly valuable because you don't have to capacity plan that far out, right?
+610
+Now you fast forward to GPUs.
+611
+Well, now you have to get a three-year commit.
+612
+A three-year commit on a piece of hardware that Jensen's going to make obsolete in a year.
+613
+Right?
+614
+And so now you get this thing, and so you make some big commit.
+615
+And what do you do with it?
+616
+Well, you have to overcommit because you don't know what your needs are going to be and you're not ready to do this.
+617
+Also, all the tech is super complicated and scary.
+618
+Also, GPU workloads are stateful.
+619
+And so you talk about the fancy agentic stuff and all this stuff.
+620
+Yeah, it's stateful.
+621
+And so now you don't get horizontal auto-scaling.
+622
+You don't get stateless elasticity.
+623
+And so you get a huge management problem.
+624
+And so what we think we can do, and we can help with people is say, okay, well, let's give you power over your compute.
+625
+And a lot of people have different systems, and there's very simple systems that go into this, but you can get a 5x performance TCO benefit by doing intelligent routing.
+626
+That's a big deal.
+627
+For a platform team, they don't to have to deal with this.
+628
+They want hardware optionality to get to AMD.
+629
+They want this power and technology.
+630
+And so we're very happy to work with those folks.
+631
+The way I explain it in a simple way is that a lot of the endpoint companies, and there's a lot of them out there, and so you can't make, they're not all one thing.
+632
+They obviously have pros and cons of trade-offs, but generally the value prop of an endpoint is to say, look, AI and AI software and applications and workloads, it's all a hot mess.
+633
+It's too complicated.
+634
+Don't worry your little head about it.
+635
+I'll take AI off your plate so that you don't have to worry about it.
+636
+We'll take care of all the complexity for you.
+637
+And it'll be easy.
+638
+Just talk to our endpoint.
+639
+Our approach is to say, okay, well, guess what?
+640
+It's all a hot mess.
+641
+Yes, 100%.
+642, it's horrible.
+643
+It's worse than you probably even know.
+644
+And get to tomorrow.
+645
+It's going to be even worse because everything keeps changing.
+646
+We'll make it easy.
+647
+We'll give you power.
+648
+We'll give you superpowers for your enterprise and your team because every CEO that I talk to not only wants to have AI in their products, they want their team to upskill in AI.
+649
+And so, we don't take AI away from the enterprise, we give power over it back to their team and allow them to both have an easy experience to get started because a lot of people do want to run standard commodity models and you do want stuff to just work as table stakes.
+650
+But then, when they say, Hey, I want to fine-tune it, well, I don't want to give my proprietary data to some other startup, right, or even some big startups out there, and who these are.
+651
+That's my proprietary IP.
+652
+And then you get to people who say, Hey, I have a fancy data model, I have data scientists, I have a few GPUs, I'm going to train my model.
+653
+Cool, that got democratized.
+654
+Now, how do I deploy it?
+655
+Right?
+656
+Well, again, you get back into hacking the internals of VLM, and PyTorch isn't really designed for KBCash optimizations and all the modern transformer features and things this.
+657
+And so, suddenly, you fall off this complexity cliff if you care about it being good.
+658
+And so, we say, Okay, well, yeah, this is another step in complexity, but you can own this and you can scale this, and so we can help you with that.
+659
+So, it's a different, it's a different trade-off in the space.
+660
+But I will admit that their time to market and revenue growth and stuff that has been much faster because they didn't have to build an entire replacement for CUDA to get there.
+661
+Nice.
+662
+And when it comes to charging, people are buying this as a platform, it's not tied to token, inferred, anything that.
+663
+We have two things going on: so, the Max framework and the Mojo language, free to use on NVIDIA and CPUs, any scale, go nuts, do whatever you want.
+664
+Please send patches, but free, right?
+665
+Why is this?
+666
+Well, it turns out CUDA is already free, NVIDIA is already dominant in here.
+667
+We want the technology to go far and wide.
+668
+Use it for free.
+669, it would be great if you send us patches, but you don't even have to do that, right?
+670, we do ask you to allow us to use your logo on our webpage, and so send us an email and say, Hey, you're using it, and you're scanning on 10,000 GPUs.
+671
+That'd be awesome.
+672
+But that's the only requirement.
+673
+If you want cluster management and you want enterprise support and you want things this, then you can pay on a per GPU basis and you can contact our sales team and then we can work out a deal and we can work with you directly.
+674
+And so that's how we break this down.
+675
+And also, let me say,, one thing I would love to see, again, it's still early days, but I would love to see PyTorch adopt Macs.
+676
+I'd love to see VLM adopt Macs.
+677
+I'd love to see SG Lang adopt a Macs.
+678
+We have our own little serving thing, but go look at it.
+679
+It's really simple.
+680
+It would be amazing.
+681
+And again, we're in the phase now where I do want people to use our stuff.
+682
+And so we have historically been in the mode of no, our stuff's closed, stay away.
+683
+But we're phase shifting right now.
+684
+And so you'll see much more of this being announced.
+685
+Yeah.
+686
+I don't know how to make this happen, but I think you win when Mistral, Meta, DeepSeek, and Quinn adopts you and ship you natively, right?
+687
+How does that happen?
+688
+I don't want to talk that far in the future.
+689
+I don't think it's that far.
+690
+We may have an industry leading state-of-the-art model launching first on Mac soon.
+691
+I'll stay tuned for that, but also let us know.
+692
+Yeah, so but that hasn't happened, so assume it doesn't happen.
+693
+I think that's when it really tips because then everyone's, okay, it's good enough for them, it's good enough for us, right?
+694
+And then you get the rest of the industry.
+695
+Yeah, but again,, I'm in it for a long game, right?
+696
+And I realize, again, the stuff I work on, it takes time for people to process.
+697
+And so what we need to do and what I want us to do and what I ask the team to do is keep making things better and better and better and better and better.
+698
+And there's an S curve of technology adoption.
+699
+And so I think it's great that there's a small number of crazy early adopters that were using our stuff in February before it was open source.
+700
+And it made no rational sense.
+701
+It barely worked.
+702
+But it was amazing.
+703
+And I'm very thankful for those people.
+704
+And then, of course, we open source it and we start teaching people and you get a much bigger adoption curve.
+705
+You make it free, go adopt and go.
+706
+And then, as you say, there's more validation that will be coming soon.
+707
+And each of these things is a knee in the curve.
+708
+But what it also does is it gives us the ability to fix bugs and improve things and add more features and roll out new capabilities.
+709
+How does this feel rolling this out as compared to Swift?
+710
+Oh, well, so let me reinterpret your question of, given you've done a few interesting things in the past, what have you learned and what are you not doing again?
+711
+Yeah.
+712
+That is a better question than the one I asked of these.
+713
+Because Swift is too narrow almost.
+714
+The character of Swift, so just because I assume most people don't know about this, character of Swift was I started as a nights and weekends project in 2010, hacked on it alone nights and weekends for a year and a half, eventually told management at Apple about it.
+715
+Their heads exploded.
+716, why do we need something?
+717
+Objective-C is good enough.
+718
+Why do you need this?
+719
+Got approval to have a couple more people get involved.
+720
+Were you on a fellowship or an internship at Apple at the time?
+721
+No, I was leading the developer tools.
+722
+I was leading a...
+723
+You're doing something.
+724
+Yeah, okay.
+725
+Yeah, no, I was leading a huge team.
+726
+And let's just say this was not my day job.
+727
+But so it started in 2010.
+728
+It launched publicly by Apple in 2014.
+729
+And by the time it launched in 2014, only about 250 people in the world knew about it.
+730
+Most of whom were in my team.
+731
+About 200 and something of them were in my team.
+732
+And then it was senior execs, marketing, Tim Cook, et cetera, right?
+733
+And this was the category of people that knew about Swift.
+734
+So we had built it in secret, literally an NDA, yet within Apple, to know about it.
+735
+When we launched it, part of the requirement was that you had to be able to submit apps to the App Store in Swift, right?
+736
+That was the requirement put on me.
+737
+And so it's, cool, that sounds great.
+738
+And so we launched it and said it's a 1.0.
+739
+So you're launching a 1.0 brand new programming language.
+740
+Nobody has ever seen it before.
+741
+No internal user, one demo app.
+742
+It was a freaking nightmare.
+743
+So it was a nightmare for the community because,, fortunately, a lot of people were excited and wanted to adopt it.
+744
+And a lot of people did adopt it right away.
+745
+But it was not battle hard and had tons of bugs.
+746
+We should have launched it as a 0.5, right?
+747
+And so it took another year for it to become pretty good and then two years for it to become quite good, in my opinion.
+748
+Also, none of the software engineers at Apple knew about it.
+749
+And so their heads exploded.
+750
+They said, wait a second, why are you replacing Objective-C?
+751
+I joined Apple because I love Objective-C.
+752
+Why didn't you ask me my opinions about the new programming language?
+753
+And so there's that whole dynamic.
+754
+Was there a company mandate that they had to write Swift non?
+755
+No, but still, it's, wait a second, this isn't the company I thought I joined, right?
+756
+And stuff this, right?
+757
+And so, and so there's this huge amount of turmoil and drama and nonsense that came out of that.
+758
+And so, okay, fast forward to Mojo, lessons learned.
+759
+Hey, one, don't have a hot start.
+760
+And so we launched Mojo a long time ago, before it even made sense, and we called it a 0.1.
+761
+And so that, how's that honesty in advertisement?
+762
+It's,, this is 0.1.
+763
+Please don't use it.
+764
+But if you're interested, we'd love your feedback, right?
+765
+And so so SoftStart, Go.
+766
+Second thing that's very different is that in Swift, we had one demo app.
+767
+And so you have,, a very, I think, high-powered team building a language that had done lots of credible stuff, but was building a language for iOS developers.
+768
+And the compiler is written in C<unk>.
+769
+And so, yeah, there's sympathy for the user, but not a lot of understanding and not a lot of learning internally when we launch.
+770
+In the case of Mojo, guess what?
+771
+Modular is Mojo's first customer.
+772
+We have more Mojo code in our repository than any other language.
+773
+And it's open source.
+774
+And we open source 650,000 lines of Mojo code.
+775
+This is a lot.
+776
+And so we suffer, and we drive the features and the improvements based on our needs.
+777
+We also appreciate the community, and we have a whole bunch of contributions coming in, and somebody just optimized my string,, to get rid of a bit out of my string implementation, which was suboptimal.
+778
+And so that was super awesome.
+779
+But driving it that way, make sure it's real.
+780
+It's grounded.
+781
+It's on the use case.
+782
+We're trying not to overpromise.
+783
+Even when you're asking me what it's useful for earlier, I didn't say it's a replacement for Python.
+784
+I said it's a go fast language.
+785
+Someday it may be a pretty credible Python alternative.
+786
+But for right now, it's good at a specific class of use cases.
+787
+And if you're interested in those use cases, making GPUs go burr, Mojo's awesome.
+788
+But if you want a replacement for Rust end-to-end, give us six months.
+789
+Yeah.
+790
+Yeah.
+791, you're a force of nature.
+792
+I think there's a lot of mystery around what is going on with Apple's AI initiatives.
+793
+And I think the consumers suffer.
+794
+At the end of the day, the end users are waiting for this.
+795
+And it's not.
+796
+Unfortunately, anything I know is massively out of data.
+797
+They've changed and reorged and grown and culture.
+798
+And it's a very successful company.
+799
+And so I think that they probably feel success.
+800
+And they're having trouble adapting to changes in the industry.
+801
+And that's pretty typical of a lot of big companies.
+802
+And so I can't speak to the specific causes.
+803
+Speaking of Google, obviously, I think they were one of the earliest.
+804
+What are we talking about?
+805
+They invented Transformers.
+806
+A lot of other things.
+807
+TensorFlow, remember that?
+808
+Yeah, exactly.
+809
+Huge.
+810
+Yeah.
+811
+NTP is.
+812
+I credit Google with making AI open source.
+813
+Well, they did not have to open source TensorFlow.
+814
+That was an incredible decision.
+815
+Full kudo to Jeff Dean and many of the other people that were involved in this because they said,, what's the most important thing for Google is for AI to go faster.
+816
+How do we do that?
+817
+We open source TensorFlow rather than making it some proprietary internal thing, which they had a previous system called Disbelief.
+818
+And so that is a huge moment that set the stage for PyTorch to be open source and for the research to be open and for all of these things because they decided the value system was AI go faster.
+819
+The Transformer paper being published, so many contributions from Google came from that.
+820
+Okay.
+821
+I don't think Google gets enough credit for that.
+822
+Yeah.
+823 why is it better for Google for AI to be open source rather than Google owns it?
+824
+Well, so I can't tell you if the bet worked, but I can tell you that that was a bet.
+825
+But from my outsider now perspective, because I haven't been at Google for over five years, somehow time flies, the bet makes sense when you have an amazing team of researchers and Swedes that can go incorporate this into your products.
+826
+And so Google does have billions of users.
+827
+It has all the product services.
+828
+It has all the different applications.
+829
+And it has an incredible density of talent.
+830
+And I think that Google's recent announcements, so we're just after Google.io and things this.
+831
+Yeah, they were both there.
+832
+Yeah, it's Google's working, I think.
+833
+It's pretty impressive.
+834
+And for a while, they were dealing with organizational drama and Google Brain versus DeepMind and some of this stuff.
+835
+And I can't speak to what they've done, but it seems they're a much more unified team.
+836
+They're executing well.
+837
+They're getting research into product.
+838
+And so it feels a different Google to me.
+839
+Yeah, it totally does.
+840
+It used to be that there was just two of everything in Google, and you didn't know which one to use.
+841
+And, killed by all they all deprecated in a year.
+842
+So,, yeah, I think they've gotten the memo, whatever.
+843
+And the other thing that's super impressive to me about them, and this meet fanboying Google, right?
+844
+The after railing.
+845
+That's the trillion dollar companies.
+846
+But the things that they announced, they're shipping.
+847
+Yeah.
+848
+So much in AI is.
+849
+This is more Apple shade.
+850
+I was specifically saying Apple.
+851
+This is very common in AI.
+852
+And Modular's done this in the past, too.
+853
+This is why.
+854
+So I gave this very deep tech talk.
+855
+I sent you a link to the GPO talk.
+856
+And the slide two was warning.
+857
+You can use this.
+858
+This is not vaporware.
+859
+Everything here you can reproduce.
+860
+These claims you can download.
+861
+This is real.
+862, here's links to the source.
+863
+I was wondering why you stressed that so much.
+864
+I'm, who hurt you?
+865, there's so many claims.
+866
+No one knows what is real anymore.
+867
+And, there's literally been product demos where it's some electric semi rolled downhill instead of working under its own power.
+868
+And nobody knows what's real.
+869
+I knew they started to work.
+870
+There's a WhatsApp chat with playing soccer at the Google field during the week.
+871
+And about six months ago, the admin posted, it's, hey, not enough people are showing up anymore to play soccer at lunch.
+872
+What is going on?
+873
+And I think that's when people started working again.
+874
+Yeah.
+875
+There you go.
+876, Sergei Bryn was at IO, and he's definitely, he's working again.
+877
+It's awesome.
+878
+Yeah, so I have mad respect for that.
+879
+And so my values are aligned with people who ship stuff.
+880
+Yeah.
+881
+Because that's what impacts the world.
+882
+Let's talk about open source a little more.
+883
+There's the more recent maybe open source thing, which is DeepSeek, obviously.
+884
+And I think specifically in your case, they worked at the BTX layer of the GPU, which is even lower and more profitary than CUDA.
+885
+I'm curious how, both in terms of, obviously the impact was huge, but maybe impact on how much people should try and move away from this profit theory thing.
+886
+Because now the next, from my understanding, is the next set of chips, all the code is useless.
+887
+Well, so it's basically widely known, but Blackwell is not compatible with Hopper.
+888
+Hopper kernels don't always run on Blackwell, for example, right?
+889
+But so your question is, what does it mean for the industry?
+890
+Well, it's, why is it so important?
+891, why the DeepSeek, the DeepSeek example is so important of needing to navigate all this profit theory stuff just to make it work.
+892
+So I'll give you my lived experience because DeepSeek came out in December, which is when I and probably you noticed it, right?
+893
+But then the world had a big wake-up call and NVIDIA stock price went down and all that stuff a month later.
+894
+So here's my explanation of what happened.
+895
+What the DeepSeek team did was really impressive research.
+896
+They pushed MLA forward, which is a form of attention.
+897
+And they pushed low-precision training forward.
+898
+They pushed a whole bunch of stuff forward.
+899
+They reverse engineered some PTX instructions that weren't well known at the time.
+900
+And so a lot of people were just, and it was a Chinese team, right?
+901
+Which put Americanism, it threatened Americanism, right?
+902
+And things this.
+903
+And so what I found really exciting about it was they pushed the research forward and they did this incredible things.
+904
+They showed the world that it was possible and they opened it and they published it and they taught the world about it because I don't know why they chose to do that, but it's because they believe in openness and AI moving forward, right?
+905
+And so the thing that I found striking is that the world's reaction to that was more striking to me than the actual models or whatever.
+906
+I don't know.
+907
+Yeah.
+908
+Because so first of all, there's the Chinese American drama, which geopolitics is not exactly my strong point.
+909
+So I get it, but I push that aside, right?
+910
+But the other thing I found really interesting is that people said, wow, okay, only DeepSeek is able to go down to the PTX level.
+911
+But that is standard.
+912
+That is what all of the leading teams do.
+913
+In the case of modular, we go literally,, we only work at that level because we get rid of all of code, right?
+914
+And so we've replaced the entire stack.
+915
+And so we only do that.
+916
+But a lot of teams that care about performance will go down and use the PTX TensorCore instruction foo, which isn't really documented.
+917 you have to figure it out and look at cutlass code.
+918
+NVIDIA doesn't make it as easy as they should to do this.
+919
+Wonder why?
+920
+Well, I think it's because they're breaking in Blackwell, and so they didn't want people to use it.
+921
+And so they had their own issues, right?
+922
+But good luck with that.
+923
+There's a lot of smart people out in the world.
+924
+And so to me, I thought it was really interesting because there wasn't a lot of awareness of how that level of the stack worked.
+925
+For me, I thought it was a great wake-up call where people are, oh, wow, if you work at this level of the stack,, level of the stack I have inhabited for decades now, you have power over compute.
+926
+You can understand and solve problems.
+927
+You can drive research forward in ways that nobody else can do.
+928
+And this is what the trillion-dollar companies do.
+929
+It's not just DeepSeek.
+930
+But I think DeepSeek was a huge wake-up call, and it drew attention to that layer of the stack because it wasn't just throwing layers on top of PyTorch or VLM, or it was doing that fundamental work.
+931
+And I thought that was incredible.
+932
+Now, the challenge with it, and the challenge with the way DeepSeek did it, and the way that everybody else does all this work, is that it's completely specific to one GPU.
+933
+It's not just that you're working at the PTX level, it's that you're writing code that really can only work on that one GPU, and that means that when Blackwell comes out, you have to throw it away and write a new one.
+934
+Here's the open secret: that's what VLM is.
+935
+Go look at VLM.
+936
+They have different kernels for A100 than H100.
+937
+They're now trying to catch up with Blackwell.
+938
+And so, state of the art for these systems, since Gen AI, before that, there were fancy AI compilers XLA and that stuff in the trad AI world provides some scalability.
+939
+But in Gen AI, it's a rewrite all the things when a new piece of hardware comes out.
+940
+And so, this is what Mojo is solving, right?
+941
+And this is where, again, we can't turn the incremental cost of a new piece of hardware to zero, but we can massively reduce it.
+942
+And so, this is a really exciting time, I think, for us that we've demonstrated now, but also what it means for the future.
+943
+I still also wonder their hiring or internal training that they managed to have a small team that does this in the same way that you do.
+944
+I think they have a pretty significant team.
+945
+I don't have no insider information, of course, but it's not a five-person team.
+946
+It's hundreds of people.
+947
+Okay, yeah.
+948
+So,, it's not a thousand.
+949
+It's amazing, especially,, presumably, there's some language barrier, but even ignoring that, just getting that amount of talent density in one company is not a significant problem.
+950
+I agree with that.
+951
+Building a company is hard.
+952
+I have no visibility on how they built DeepSeek, but all I can say is thank you to DeepSeek for publishing their work.
+953
+Yeah.
+954
+Because they didn't have to do that.
+955
+And I think it left temporarily, a lot of people flat-footed.
+956
+And it was embarrassing for certain groups.
+957
+And I think a lot of people paused and were, ooh, crap, what do I do about this?
+958
+But I think that what it did is it pulled forward progress in AI by six months.
+959
+Yeah.
+960
+They didn't just do GPU level stuff.
+961
+They also had a file system.
+962
+Oh, yeah.
+963
+If you looked at modular's bread and butter, but do you see a potential there for someone else to, I don't know, take that and run with it?
+964
+I've been very obsessed with the inference problem for a couple of years.
+965
+And so I don't know the best way to solve that problem for training.
+966
+Google internally has a great.
+967
+And so where is that for the rest of the world?
+968
+Yeah, I'm honestly just not the right person to answer that question because I have my own obsessions.
+969
+Yeah.
+970
+Well, talking about inference, reasoning models and inference time compute, very big topic.
+971
+Does anything change or does nothing change?
+972
+Because it's just more inference.
+973
+It depends on change from what, right?
+974
+So we, so when we started modular over three years ago, we made the ridiculously weird bet at the time to focus on inference instead of training.
+975
+Yeah.
+976
+And again, at the time, I'm used to this.
+977
+People are, what's wrong with you?
+978
+Everybody obviously knows that training is the thing and training, training, training, and people building these massive clusters and all the spend is on training, et cetera, et cetera, et cetera.
+979
+And I said, well, yeah, I understand why you see that, but I've lived this at Google.
+980
+Google's five years ahead of the rest of the industry in many ways.
+981
+Inference, yeah.
+982
+Yeah.
+983
+Training scales the size of your research team.
+984
+Inference scales the size of your customer base.
+985
+Right.
+986
+And so the thing that happens between those is research gets into production.
+987
+And so the gap is research getting production.
+988
+Once you do that, suddenly it scales crazy.
+989
+So I didn't plan for Gen AI, I did not plan for inference time compute and things this.
+990
+But that bet on the production use case, because it scales with the number of applications of AI, not just the hot research team, right?
+991
+Which,, is pretty important.
+992
+It's just not something I've focused on for the last few years.
+993
+That was controversial.
+994
+And so I think now the whole world's flipped, and I think the world gets it, right?
+995
+But that was really because of lived experience.
+996
+And so when you come to these new techniques, right, another controversial thing, going back to the CPU thing, is why are you starting with CPUs?
+997
+The answer at the time was pre-processing, post-processing, full system integration, networking, you need CPU to feed the GPU, very standard things.
+998
+But now you say KV caches.
+999 your eviction policy runs on a CPU.
+1000 that radix hashing algorithm and block hashing and all that stuff happens primarily CPU.
+1001
+That's really important for performance because if you have latency in these steps, you're not keeping your GPU utilized.
+1002
+Again, this comes back to the rewrite and rust and things this.
+1003
+All the agentic stuff and things this, I didn't predict that, but I'm not surprised.
+1004
+And I think we're going to see more.
+1005
+And so tight integration, optimization across boundaries, these are things I believe in.
+1006
+I think this is how you move the world forward.
+1007
+It's amazing how basically every all the smart programmers I know always focus on where the bottleneck is.
+1008
+And it always leads you to the right answer.
+1009 if you just are very clear-eyed about that.
+1010
+And I don't know.
+1011
+It's nice to see that happening.
+1012
+The other talking point I'll mention for you, because you didn't bring it up, but it's something that other people are talking about is that now because of the requirement for chain of thought and reasoning models, inference is now part of training.
+1013
+Okay.
+1014
+Yeah.
+1015
+Because you need to inference to RL.
+1016
+Yeah.
+1017
+Yeah.
+1018
+Yeah.
+1019
+And so it's, it's getting, that is a plus in favor of what you're doing anyway.
+1020
+Yeah, absolutely.
+1021
+Because it's the same code.
+1022
+Well, and so my experience with RL systems were at scale, Deep mind style, alphaGo, and things this.
+1023
+Right.
+1024
+So it's been a couple of years ago, but setting those things up was incredibly complex because now you're dealing with cluster-scale orchestration, you're batching across all these agents.
+1025
+And again, none of the systems are set up for that, right?
+1026
+You've got PyTorch if you want to train a model, but nothing is set up to do this.
+1027
+And so, again, I can't speak to all RL systems everywhere, but they ended up being duct tape and bailing wire and super crazy stuff.
+1028
+And it was incredible.
+1029
+Again, it's incredible what a team of experts who knows the full stack and what they can achieve, but it shouldn't be that hard.
+1030
+And so we're much just not focused on solving that problem yet.
+1031
+Maybe we'll get there.
+1032
+We have the building blocks.
+1033
+And again, we're not focused on solving training yet.
+1034
+Maybe we'll get there.
+1035
+I have some ideas on logical steps to do that, but I want to make sure we're grounded and we solve things all the way end-to-end.
+1036
+We make people happy.
+1037
+People talk about our stuff from their voice.
+1038
+It's not just me talking about our stuff.
+1039
+And so we're in that phase where you'll hear people talking about our stuff soon.
+1040
+I think people already are, but they will even more.
+1041
+And I think I appreciate you coming on the podcast to talk about that more.
+1042
+We want to turn to some personal stuff.
+1043
+So I think that was a great Major's story.
+1044
+I think now on the personal side, there's a couple of things.
+1045
+So when you first joined us, I think I saw it was September 2023.
+1046
+So there was a year and a half into building the company, something that.
+1047
+Now three years and a quarter.
+1048
+And what are personal learnings, both from obviously being a leader in a company, having a growing team that you're managing, having a lot of responsibilities that are not technical anymore?
+1049 run us through some of that.
+1050
+Yeah, so for me, I've built large teams from scratch before, but they've all been at established companies.
+1051
+I've worked at a startup before, but it was somebody else's startup.
+1052
+And so, this is the first startup that I've founded and then built a significant team and built a product that takes years to build.
+1053
+So, a lot of the lessons I learned were super valuable and allowed me to achieve some of the stuff, but it's also very different, right?
+1054
+And so, one of the things that's very different is it's very personal.
+1055
+And so I've lost people from our team before, many times.
+1056
+I've had to fire people and people have quit and gone,, Apple to Google or whatever, right?
+1057
+But that was never personal in the same way it is at modular, right?
+1058
+And so, this is something where the intellectual side of my brain knows,, if somebody leaves, it makes sense.
+1059
+They had a life change.
+1060, I don't want to get in the way of their family or,, whatever, right?
+1061, I intellectually know that.
+1062
+But on the other hand, it hurts a little bit.
+1063
+And so I think I'm getting better at handling some of that stuff.
+1064
+The other thing is that when you're growing a team from zero to 100 people at a big company, you have all of the infrastructure and the infrastructure is mature.
+1065
+Right.
+1066
+And so you're, even if you grow to a team of 100 people, you're still tiny,, compared to an Apple or Google or company this.
+1067 you're still tiny in proportion to the size of the overall scale.
+1068
+And so they've already got all the recruiting and all the other stuff and all the legal and finance and all that stuff going.
+1069
+They've got the manager training.
+1070
+They got all this stuff going.
+1071
+And so in a startup, you sometimes get into some hot messes where it's, okay, well, I need to do a reorganization and things this.
+1072
+And so that's been good learnings.
+1073
+I think we've scaled into that well.
+1074
+And another thing, coming back to the people telling you it's impossible,, here's probably the most important thing is that I'm used to being told that things are impossible.
+1075
+And then I'm pretty bullheaded and I have a formula.
+1076
+And so there's a path to success that I can explain if you want.
+1077
+But I'm used to the feeling when it's,, that year one and it's just a completely skunk works.
+1078
+Let's prove a thing phase.
+1079
+I'm used to that, okay, cool.
+1080
+Now we're telling people about it, but it's still not good enough.
+1081
+And people tell you, all your stuff sucks.
+1082
+I'm used to that,, okay, well, you get into that window where all this stuff is almost there.
+1083
+People are sweating.
+1084
+It's really hard.
+1085
+There's all these seemingly impossible things.
+1086
+It's a significant team, but the pieces don't line up yet.
+1087
+And so we went through some of that last fall.
+1088
+And people are, oh my gosh, maybe it will never work.
+1089
+And you get this anxiety.
+1090
+And I think the thing that I didn't appreciate going through that, and this is also why I'm so excited to be in this phase, that impacts other people's, their thought processes, because they haven't been through it.
+1091
+And they, and they're, trust me, we'll get there.
+1092
+Well, when?
+1093, exactly what?
+1094, you get these super analytical engineers who want to understand everything.
+1095
+And they're really expert in their part of the stack.
+1096
+And they don't really have that established trust with the other department and the other department and the other department all lining up.
+1097
+And so definitely some learnings from that.
+1098
+But this is where, again, you get out of that R<unk>D phase and you get into the execution phase.
+1099
+And it's, okay, well, engineers are really good at taking an imperfect thing that works end-to-end and making it better and better and better and better and better.
+1100
+And so it just feels fundamentally different modular now than it did in any of those previous phases.
+1101
+Yeah, what's your day-to-day?
+1102 you have a lot of meetings, you have just a few.
+1103
+Yeah, I have a lot of, you're talking about my lived life.
+1104
+A normal weekday for me is I wake up about 7.15.
+1105
+My wife, I get the kids out the door and she drives them to school at about 8.
+1106
+I usually do a half hour to 45 minute walk with my dogs, get exercise, strenuous, up and down a hill, heart rate goes up, which is good.
+1107
+Listen to podcasts, for example, yours.
+1108
+So that's why I have time to follow exciting, cool things that other people are doing.
+1109
+Get to work at 9.
+1110
+And so work 9 to 6 or 7 or something that.
+1111
+And most of that is meetings.
+1112
+And so that's me trying to solve whatever the problems are of the day, get home, dinner with the kids.
+1113
+I insist on eating with my family.
+1114
+Hang out with them until bedtime and then crush through for two, three more hours until I pass out.
+1115
+And then do that regularly.
+1116
+Second workday.
+1117
+And then on the weekend, it's amazing because I get a lot of time to work, not all day because I do things with kids and stuff, but I get a lot of time and there's no meetings.
+1118
+And so that's amazing.
+1119
+That's when stuff gets done.
+1120
+Yeah, exactly.
+1121
+I think the key here is some strategic review time that you lock off.
+1122
+Because I think people often say,, there's times when you're working in the business and then there's times you're working on the business where you step out for a bit.
+1123
+Often for founders, it's when you do a board meeting.
+1124
+But I wonder if there's anything that's very meaningful for you.
+1125
+Do you have a coach?
+1126
+Do you have something that?
+1127
+Yeah, so I guess there's two people I really owe a lot to.
+1128
+Or two categories.
+1129
+So one is my co-founder, Tim.
+1130
+So Tim and I formed the company together.
+1131
+We walk every week, every Friday, catch up, and it's that zoom out and try not to make it tactical.
+1132
+And so make sure that we can bounce crazy ideas off.
+1133
+And I have a lot of crazy ideas, believe it or not.
+1134
+He does too.
+1135
+But then ground ourselves on execution and go.
+1136
+The other thing is this combination between my wife, who's a sounding board, and the executive team.
+1137
+And I, I'll admit, get a little bit crazy and want to solve the industry problem.
+1138
+And the exec team pulls it back to, okay, next quarter, let's make sure we have a plan.
+1139
+Let's make sure we can communicate.
+1140
+Let's decide what the actual priorities are.
+1141
+Okay, we can have three priorities, max for the whole team, not 50 or something.
+1142
+Yeah, exactly.
+1143
+Everything can't be the top priority, otherwise, nothing is right and things this.
+1144
+And then my wife, who keeps me sane and is,, an amazing life coach.
+1145
+How much do you get your wife involved on the actual work?
+1146, does she know?
+1147, you don't, yeah.
+1148
+Yeah, she has her own thing going on.
+1149
+My wife runs the LVM Foundation, and so she's got a bunch of things going on, plus kids and everything else.
+1150
+She's, I don't want to hear about this kernel.
+1151
+Well, then she's great for helping me.
+1152
+So I'm more IQ than EQ.
+1153
+And so working with humans is not, it's an acquired skill, not a natural skill.
+1154
+And so I think this is something where once, I often end up this place where some weird thing is happening.
+1155
+What the heck is going on?
+1156
+It's, Chris, it's obvious.
+1157, they're saying this, but this is what they mean.
+1158
+I'm, oh, I never thought about that.
+1159
+You mentioned coding agents.
+1160
+Yeah.
+1161
+What do you guys use internally?
+1162
+What do you?
+1163
+Yeah.
+1164
+So,, as of this recording, I personally use cursor.
+1165
+And so cursor is great for,, it's the best thing I've seen.
+1166
+And I don't spend a lot of time dabbling with things.
+1167
+And so, but cursor is, so I write a lot of C and Mojo code.
+1168
+The key thing for working on Mojo code in AI coding tools is make sure you have a lot of code in the context window.
+1169
+Yeah.
+1170
+And so cursor and these tools can index really well.
+1171
+I was thinking you open source Mojo code.
+1172, that's pretty good.
+1173
+That's right.
+1174
+That's one of the reasons we did this.
+1175
+Yeah.
+1176
+And one of the many reasons we did this.
+1177
+And so this is what we saw at our hackathon: people could go zero to hero with Mojo because you could just put, you just index this entire huge code base.
+1178
+And it's phenomenal.
+1179
+And then learning a new language is easy when the AI is doing a lot of the mechanical stuff for you.
+1180
+And also looks Python, so you could read it.
+1181
+But it just massively scales the on-ramp.
+1182
+And so for new language adoptions, AI is, let me convince you, AI is cool.
+1183
+I would just go ahead and ask the data sets people at the big labs what they need.
+1184
+Yeah.
+1185
+And then just I've asked them all to feed it to devs.
+1186
+Yeah, just take the code, please.
+1187
+What does it label it for them?
+1188
+It's Apache 2.
+1189, just go.
+1190
+Yeah, we're adding markdown files.
+1191
+There's a cloud.md, and so we're doing some of the basic stuff.
+1192
+People within the company are dabbling with cloud code and some of the stuff.
+1193
+And so I don't have personal experience with that.
+1194
+But for me, I found that it's mostly very useful, but it's really about boilerplate.
+1195
+And so it's not about inventing new algorithms and stuff this.
+1196
+And it's probably because I'm not building a React component.
+1197
+Yeah, so the labs are touting that they are training or benchmarking their models for writing CUDA kernels.
+1198
+Right.
+1199
+I wonder if you see a noticeable performance improvement when you change model to model.
+1200
+I don't know if you probably don't benchmark them.
+1201
+I haven't looked at that specific use case.
+1202
+But people often ask me, hey, Chris, why are you building a new programming language when AI is going to write all the code?
+1203
+Similarly, if you look at a lot of this, let's generate a CUDA kernel, you start to ask and wonder, or at least I do a lot, what is the purpose of code?
+1204
+What I've reflected on in the way I currently think about it, subject to change, obviously, because we're all learning.
+1205
+I take a step back and I say, well, code isn't really about telling a computer what to do.
+1206
+Code is about humans being able to understand what code does.
+1207
+And so someday when we get AGI or ASI or something this, maybe it can be completely opaque and I really don't have to know.
+1208
+We're not there yet.
+1209
+And I don't know when that will happen.
+1210
+But in the meantime, I want to be able to look at what the code does.
+1211
+And I live in a world of constraints.
+1212
+I need to know, I have a product which has all these features.
+1213
+If I go add another feature, what happens?
+1214
+It's going to hit my latency budget.
+1215
+Is it going to crash, run out of memory?
+1216
+Is it going to do?
+1217
+Is it going to cost too much?
+1218, I need to be able to reason about this.
+1219
+And so, to me, I look at a lot of these coding tools,, scaled beyond where they currently are now, but into the foreseeable future, is saying, okay, well, it's hiring another engineer onto your code base or into your team.
+1220
+And fundamentally, coding and software engineering is a team sport.
+1221, you have product managers, you have engineers, you have a lot of things.
+1222
+And if you automate all the engineering of code, maybe you get to product managers only and marketing only or something theoretically, but you still want to reason about what the code does.
+1223
+And so, in that interpretability argument, and so in that world, what is the most important thing?
+1224
+The most important thing is you can express everything the hardware can do because you don't want to have some capability or some costs or some boundary you can't penetrate.
+1225
+Mojo does that.
+1226
+The second is you want readable code that you can understand, right?
+1227
+And so, you don't want assembly language or something that.
+1228
+You want something high-level and expressive and easy to understand.
+1229
+And so,, this is where I think Mojo is really unique.
+1230
+And then, the AI coding tools I see is a straight value add for adoption.
+1231
+Because,, I've already seen what people that have never touched any of this stuff can do.
+1232
+And it's just incredible.
+1233
+You put somebody that's intelligent, they know the use case, and now you put these tools in their hands, and they can do amazing things already.
+1234
+And so, I find it super empowering.
+1235
+And again, come back to me wanting to see humans being empowered with new technology and being able to upskill and be able to learn.
+1236, you're not a GPU programmer today, but tomorrow, hopefully, there will be 10 times as many people programming GPUs.
+1237
+I think that'll make the world a better place.
+1238
+And so, I don't think we're going back to the world of CPUs.
+1239
+I think GPUs will only get more important.
+1240
+And if we can help people do that, I think it's great.
+1241
+You mentioned some of the research on inference and the archive papers.
+1242
+How do you keep up with archive?
+1243
+Yeah, well, we're a Slack shop, and so we have a papers channel.
+1244
+I think there's, I don't know, somewhere between three to ten papers a day that come through, and so we have amazing, smart people that do that.
+1245
+I also follow the Reddit communities and things this.
+1246
+I'm an old school person that uses RSS still.
+1247
+And so if you have an RSS feed, then it's way easier for me to follow you.
+1248
+Which reader?
+1249
+And I use Feedly.
+1250
+Feedly.
+1251
+Yeah, but Archive has the ability to follow specific groups.
+1252
+And so I do that for various groups.
+1253
+And so that's another technique.
+1254
+Any notable papers come to mind that you want to give a mention to or authors that you're really watching?
+1255
+Anytime they publish, you're, I'm reading that one.
+1256
+I can't give you a well-considered answer.
+1257
+Just this morning, a person from Microsoft published a paper.
+1258
+I forget his name offhand, but he just published a really cool paper about auto-generating flash attentions and doing Blocker or something.
+1259
+It had some cute name with Block in it.
+1260
+And so anyways,, there's a ton of things going on.
+1261
+Okay, so that, yeah,, it's interesting to just see what you pay attention to.
+1262
+Last but not least, the question that everybody wants the answer to.
+1263
+Have you finished building the Lego robotics table for your kids that you mentioned last time?
+1264
+And what's the new project that you're working on?
+1265
+Massively forgot about it.
+1266
+So we still use the Lego Robotics table.
+1267
+So this is a big 4x8 sheet of plywood with a bunch of 2x3s around the edge.
+1268
+But a 4x8 sheet apply was pretty hard to work with.
+1269
+And so it breaks apart into three decomposable modular sections.
+1270
+And so it's super great.
+1271
+And the kids are getting way better at programming and Legos and all this stuff.
+1272
+Gosh, what's my most recent project?
+1273
+I was just building swords in the shop with kids on a bandsaw.
+1274
+And so you take a piece of wood, you have a bandsaw, give it to a kid, and you say, Don't cut your fingers off.
+1275
+Turns out that a band,, I'm obviously joking a little bit, they get a lot of oversight, but a bandsaw is a very safe tool.
+1276
+And so, the reason for that is that a bandsaw, which if you probably a lot of people have never seen a bandsaw, you can do a Google search for it.
+1277
+You have two wheels, and then you have a blade that goes around the wheels, and you've got a table.
+1278
+And the cool thing about a bandsaw is that you can crank down the opening towards the blade, so it's just as big as a piece of wood, and also it pulls the wood into the table.
+1279
+And so, because it pulls the wood into the table, the risk of something called kickback, and there's a lot of other things this is very low.
+1280
+And so, you can basically tell a kid, look, you see your fingers, keep them away from the blade.
+1281
+And there's no sudden jerking or other things that if you use the wrong technique, you can get yourself into real trouble.
+1282
+And if you keep the guard all the way down, then you can't get an arm in there or something that.
+1283
+Did you make your whole garage woodworking?
+1284
+Yeah, I'm a cars outside guy.
+1285
+So, that's again, my thank you to my wife for tolerating my odd behaviors.
+1286, I love building things, right?
+1287
+And so, this is fundamentally when you talk about what makes me tick is I love the joy of discovery, right?
+1288
+And so, whether it's building an amazing team or building a new table,, built dining room table or things this.
+1289
+You can look at my website.
+1290
+I'm not a very good web designer, but I have some woodworking projects on there, but I love building software.
+1291
+I love building and solving the problems that come to this.
+1292
+I'm not super great at building things that are rote mechanical.
+1293
+And so, maybe I'd be good at building one chair, but I'm not going to build eight chairs go around a dining room table.
+1294
+That would just drive me crazy.
+1295
+So, the discovery and the learning is what you can build the machine that builds the chairs.
+1296
+There you go.
+1297
+That sounds great.
+1298
+You go spend 10 years building new things and just three weeks cranking out.
+1299
+Yeah, awesome.
+1300
+Yeah, any call to actions?
+1301, are you hiring?
+1302
+Yeah, we're hiring a small number of elite nerds?
+1303
+And so, if you care about GPU programming, you care about AI models, you care about inference, you care about Kubernetes and cloud scale stuff, please check us out.
+1304
+We expect to grow a lot more later this year.
+1305
+The other thing is that we have a ton of open source code.
+1306
+And so if you've heard about Mojo, but you looked at it a year ago, guess what?
+1307
+Everything's completely different now.
+1308
+And so if you are interested in a lot of these things, if you're interested in learning about GPUs, we have a ton of content that will teach you about GPU programming, GPU puzzles and things this.
+1309
+People are now picking up Mojo and putting in a lot of lead GPU.
+1310
+It came out today, and there's a whole bunch of other people that are taking the stuff and putting it out there.
+1311
+And I think it's just such an exciting time because I think that lots more people should be programming GPUs.
+1312
+I think this is a huge opportunity for the industry.
+1313
+And of course, if you're an enterprise and you're having trouble scaling your AI, let us know.
+1314
+We can help.
+1315
+Awesome.
+1316
+Thank you so much for coming on.
+1317
+You're inspiration as always.
+1318
+Yeah.
+1319
+Well, thank you for having me.

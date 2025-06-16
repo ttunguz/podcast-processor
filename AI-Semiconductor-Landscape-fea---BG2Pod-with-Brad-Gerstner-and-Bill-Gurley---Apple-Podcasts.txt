@@ -1,0 +1,1035 @@
+
+is scaling dead? Then why is Mark Zuckerberg building a two gigawatt data center in Louisiana?
+Right. Why is Amazon building these multi gigawatt data centers? Why is Google? Why is Microsoft
+building multiple gigawatt data centers? Plus buying billions and billions of dollars of fiber
+to connect them together because they think, Hey, I need to win on scale. So let me just connect
+all the data centers together with super high bandwidth. So then I can make them act like one
+data center, right? Towards one job. Right. So this is this this whole like, is scaling over a
+narrative, it falls on its face when you see what the people who know the best are spending.
+Great to be here. Psych two, both are in the shop today. Dylan, this is one of the things we've
+been talking about all year, which is, you know, how the world of compute is radically changing.
+So Bill, why don't you, why don't you tell folks who, who Dylan is and let's get started.
+Yeah, we're thrilled to have Dylan Patel with us from Simey analysis. Dylan has,
+has quickly built, I think the most respected research group on global semiconductor industry.
+And so what we thought we'd do today is, is dive deep on, on the intersection, I think,
+between everything Dylan knows from a technical perspective about the architectures that are
+out there, about the scaling, about the key players in the market globally, the supply chain,
+and the best and the brightest of people we know are all listening and reading Dylan's work,
+and then connect it to some of the business issues that our audience cares about.
+And see where, see where it comes out. What I was hoping to do is kind of get a moment in time
+snapshot of all the semiconductor activity that relates to this big AI way and try and put it
+in perspective. Dylan, how did you get into this? So when I was eight, my Xbox broke and I have a
+immigrant parents, I grew up in rural Georgia, so I didn't have much to do besides being nerd.
+And I couldn't tell them I broke my Xbox. I had to open it up, short the temperature sensor,
+and fix it. And that was the way to fix it. I didn't know what I was doing at the time,
+but then I stayed on those forms. And then it became a form warrior, right? You know,
+you see those people in the comments always yelling at you, Brad, you know, it's like,
+uh, that was me, right? As a child. And you didn't know as a child then, but, you know,
+awesome. It was just like, you know, arguing with people online as a child and then, uh,
+being passionate, uh, as soon as I started making money, I was reading earnings from
+semiconductor companies and investing in them, you know, with my internship money and, uh,
+yeah, uh, reading technical stuff as well, of course, and then working a little bit and then,
+yeah. And, and, and to just tell us, give us a quick thumbnail on semi analysis today. Like,
+what is the business? Yes. So today we are, uh, semiconductor research firm, AI research firm,
+we service companies, our biggest customers are all hyperscalers, uh, the largest semiconductor
+companies, uh, private equity as well as hedge funds. And we, uh, sell data around where every
+data center in the world is, how, what the power is in each quarter, what, how the build outs are
+going. Um, we sell data around, uh, fabs. We track all 1500 fabs in the world. For your purposes,
+only 50 of them matter, but like, you know, all 1500 fabs around the world. Uh, same thing with,
+uh, the supply chain of like, whether it be cables or servers or boards or transformer
+substation equipment. We try and track all of this on a very, uh, number driven basis as well as
+forecasting. Um, and then we do consulting around those areas. Yes. I mean, you know,
+bill, you and I just talked about this. I mean, for altimeter, our team talks with Dylan and
+Dylan's team all the time, I think you're right. Um, he's quickly emerged really just through hustle
+hard work doing, doing the grindy stuff that matters. Um, I think is a, you know, a benchmark
+for what's going on in the semiconductor industry. We're at this, you know, I suggested we're two
+years into this maybe, you know, this build out and it's been hyper kinetic. And one of the things
+Bill and I are talking about is as we, we enter the end of 2024, taking a deep breath, thinking about
+25, 26 and beyond, because a lot of things are changing and there's a lot of debates.
+And it's going to have consequence for trillions of dollars of value in the public markets,
+in the private markets, how the hyperscalers are investing and where we go from here. So Bill,
+why don't you take us a little bit through the start of the questions?
+Well, so I think if you're going to talk about AI and semiconductors, there's only one place to
+start, which is to talk about Nvidia broadly. Um, Dylan, what percentage of global AI workloads
+do you think are on Nvidia chips right now? So I would say if you ignored Google, it would be
+over 98%. But then when you bring Google into the mix, it's, it's actually more like 70,
+because Google is really that large of percentage of AI workloads, especially production workloads,
+you know, they have less production, you mean in house workloads for production as in things
+that are making money, things that are making money, they're actually probably, it's probably
+even less than 70%, right? Because you think about Google search and Google ads are the two largest,
+you know, two of the largest AI driven businesses in the world, right? You know, the only things
+that are even comparable are like TikTok and, and then Metas, right?
+And those Google workloads, and I think it's important just to kind of frame this,
+those are running on Google's proprietary chips there. They're non-LLM workloads, correct?
+So Google's production workloads for non-LLM and LLM run on their internal silicon. And
+I think one of the interesting things is, yes, you know, everyone will say Google dropped the ball
+on transformers and LLMs, right? How did open AI do GPT, right? And not Google, but Google
+was running transformers even in their search workload since 2018, 2019. The advent of BERT,
+which was one of the most most well known, most popular transformers before we got to the GPT
+madness, is has been there in their production search workloads for years. So they run transformers
+on their own in their search and ads business as well. Going back to this number, you'd use 98%.
+If you just look at, I guess, workloads, people are purchasing to do work on their own. So you take
+the captives out. You're at 98, right? This is a dominant landslide at this moment in time.
+Back to Google for a second. They also are one of the big customers of NVIDIA.
+They do buy a number of GPUs. They buy some for, you know, some YouTube video related workloads,
+internal workload, right? So not everything internal is like, is Google is a GPU, right?
+They do buy some for some other internal workloads, but by and large, their GPU purchases are for
+Google Cloud to then rent out to customers, right? Because they are, while they do have some customers
+for their internal silicon externally, such as Apple, the vast majority of their external
+rental business for AI, in terms of cloud business, is still GPUs.
+And that's NVIDIA GPUs.
+Correct. NVIDIA GPUs.
+Why are they so dominant? Why is NVIDIA so dominant?
+So I like to think of it as like a three-headed dragon, right? I would say every semiconductor
+company in the world sucks at software, except for NVIDIA, right? So there's software. There's,
+of course, hardware. People don't realize that NVIDIA is actually just much better at hardware
+than most people. They get to the newest technologies first and fastest because they drive like crazy
+towards hitting certain production goals, targets. They get chips out faster than other people from
+thought designed to deployed. And then the networking side of things, right? They bought
+Melanox and they've driven really hard with the networking side of things. So those three things
+kind of combine to make a three-headed dragon that no other semiconductor company can do alone.
+Yeah, I'd call out a piece you did, Dylan, where you helped everyone visualize the complexity of
+one of these modern cutting-edge NVIDIA deployments that involves the racks, the memory, the networking,
+the size of its scale of the whole thing. Super helpful.
+I mean, there is this comparison oftentimes between companies that are truly standalone chip
+companies. They're not systems companies. They're not infrastructure companies.
+And NVIDIA, but I think one of the things that's deeply underappreciated is the level of competitive
+moats that NVIDIA has. Software is becoming a bigger and bigger component of squeezing efficiencies
+and total cost of operation out of these infrastructures. So talk to us a little bit about that schema
+that Bill's referring to. There are many different layers of systems architecture and how that's
+differentiated from maybe a custom ASIC or an AMD.
+When you look broadly at the GPU, no one buys one chip for running an AI workload. Models have
+far exceeded that. You look at today's leading-edge models like GPT-4 was over a trillion parameters.
+A trillion parameters is over a terabyte of memory. You can't get a chip with that capacity.
+A chip can't have enough performance to serve that model, even if it had enough memory capacity.
+So therefore, you must tie together many chips together. And so what's interesting is that
+NVIDIA has seen that and built an architecture that has many chips networked together really
+well called NVLink. But funnily enough, and the thing that many ignore is that Google actually
+did this alongside Broadcom. And they did it before NVIDIA, right? Today, everyone's freaking
+out about or not freaking out, but everyone's very excited about NVIDIA's Blackwell system.
+It is a rack of GPUs. That is the purchased unit. It's not one server. It's not one chip. It's a rack.
+And this rack weighs three tons and it has thousands and thousands of cables and all these things
+that Jensen will probably tell you. Extremely complex. Interestingly, Google did something
+very similar in 2018 with the TPU. Now, they couldn't do it alone. They know the software.
+They know what the compute element needs to be, but they didn't know anything. They can't do
+a lot of the other difficult things like package design, like networking. And so they had to work
+with other vendors like Broadcom to do this. And because Google had such a unified vision of
+where AI models were headed, they actually were able to build the system, the system architecture
+that was optimized for AI, right? Whereas at the time NVIDIA was like, well, how big do we go?
+I'm sure they could have tried to scale up bigger, but what they saw as the primary workloads
+didn't require scaling to that degree, right? Now everyone sort of sees this and they're running
+towards it, but NVIDIA has got black while coming now. Competitors like AMD and others have to,
+you know, make an acquisition recently to help them get into the system design, right? Because
+building a chip is one thing, but building many chips that connect together,
+cooling them appropriately, networking them together, making sure that it's reliable at that
+scale is a whole host of problems that semiconductor companies don't have the engineers for.
+Where would you say NVIDIA has been investing the most in incremental differentiation?
+I would say for differentiating, NVIDIA has primarily focused on supply chain things,
+which, you know, might sound like, oh, well, like, yeah, they're just like ordering stuff. No,
+no, no, no. You have to work deeply with the supply chain to build the next generation technology
+so that you can bring it to market before anyone else does, right? Because if NVIDIA stands still,
+they will be eaten up, right? They're, you know, sort of the Andy Grove, only the paranoid will
+survive. Jensen is probably the most paranoid man in the world, right? He's known for many years.
+Since before the LLM craze, all of his biggest customers were building AI chips,
+right? Before the LLM craze, his main competitors were like, oh, we should make GPUs. And yet,
+he stays on top because he's bringing to tech market technologies at volume that no one else
+can't, right? And so whether it be in networking, whether it be in optics, whether it be in
+water cooling, right? Whether it be in, you know, all sorts of other power delivery,
+all these things, he's bringing to market technologies that no one else has, and he has to work with
+the supply chain and teach those supply chain companies, and they're helping, obviously,
+have their own capabilities to build things that don't exist today. And NVIDIA is trying to do this
+on an annual cadence now, right? Blackwell, Blackwell, Ultra Rubin, Rubin, Ultra. They're,
+they're going so fast. They're driving so many changes every year. Of course,
+people are going to be like, oh, no, there, you know, there are some delays in Blackwell. Yeah,
+of course, you're driving. Look how hard you're driving the supply chain is.
+Is that part like how big a part of the competitive advantage is the fact that they're now on this
+annual cadence, right? Because it seems like by going there, it almost precludes their competitors
+from catching up because even if you skate to where Blackwell is, right, you're already on
+next generation within 12 months. He's already planning two or three generations ahead because
+it's only two to three years ahead. Well, the funny thing is a lot of people in NVIDIA will say
+Jensen doesn't plan more than a year, a year and a half out because they change things and they'll
+deploy them out that fast, right? Every other semiconductor company takes years to deploy, you
+know, make architecture changes. But you said if they stand still there, they would have competition,
+like what would be their area of vulnerability or what would have to play out in the market
+for other alternatives to take more share of the workload?
+Yeah. So the main thing for NVIDIA is, you know, hey, this workload is this big, right?
+It's well over $100 billion of spend for the biggest customers. They have multiple
+customers that are spending billions of dollars. I can hire enough engineers to figure out how
+to run my model on other hardware, right? Now, maybe I can't figure out a train on
+other hardware, but I can figure out how to run it for inference on other hardware.
+So NVIDIA's moat in inference is actually a lot smaller on software, but it's a lot bigger on,
+hey, they just have the best hardware. Now, what does what does the best hardware mean? It means
+capital cost and it means operation cost and then it means performance, right? Performance TCL.
+Yes. And NVIDIA's whole moat here is if they stand still, the performance TCL doesn't grow.
+But interestingly, they are, right? Like with Blackwell, not only is it way, way, way faster,
+anywhere from 10 to 15 times on really large models for inference because they've optimized it
+for very large language models, they've also decided, hey, we're going to cut our margin to
+somewhat because I'm competing with Amazon's chip and TPU and AMD and all these things.
+They've decided to cut their margin too. So between all these things, they've decided that
+they need to push performance TCL, not 2x every two years, right? You know, Moore's law, right?
+They've decided they need to push performance 5 performance TCL 5x, maybe every year, right?
+At least that's what Blackwell is and we'll see what Rubin does, but you know, 5x plus in a single
+year for performance TCL is an insane pace, right? And then you stack on top like, hey,
+AI models are actually getting a lot better for the same size. The cost for delivering LLMs is
+tanking, which is going to induce demand, right? So just to clarify one thing you said or at least
+restated to make sure I think when you said the software is more important for training,
+you meant CUDA is more of a differentiator on training than it is on inference.
+So I think a lot of people in the investor community, you know, call CUDA, which is just like one layer
+for all of NVIDIA software. There's a lot of layers of software, but for simplicity sake,
+you know, regarding networking or what runs on switches or what runs on, you know,
+all sorts of things, fleet management stuff, all sorts of stuff that NVIDIA makes that we'll just
+call CUDA for simplicity sake. But all of this software is, is dependously difficult to replicate.
+In fact, no one else has deployments to do that besides the hyperscalers, right?
+And a few thousand GPUs is, is like a Microsoft inference cluster, right? It's not, it's not a
+training cluster. So, so when you talk about, hey, what is, what is the difficulty here, right?
+On training, this is users constantly experimenting, right? Researchers saying, hey, let's try this,
+let's try that, let's try this, let's try that. I don't have time to optimize and handring out
+the performance. I rely on NVIDIA's performance to be quite good with existing software stacks
+or very little effort, right? But when I go to inference, Microsoft is deploying five, six models
+across how many billions of revenue, right? So all of OpenAI's revenue plus whatever they have
+10 billion of inference revenue. Yeah. So, so they have 10 billion dollars of revenue here,
+and they're deploying five models, right? GBP4, 4.0, you know, 4.0 Mini, and now, you know, the
+reasoning, yeah, the reasoning models. Oh, one and yeah. So, so it's like they're, they're
+deploying very few models. And those change what every six months, right? So every six months,
+they get a new model and they deploy that. So within that timeframe, you can, you can handring
+out the performance. And so Microsoft has deployed GPD style models on, on other competitors hardware,
+such as AMD, they've, and some of their own, but mostly AMD. And so they can ring that out with
+software, because they can spend hundreds of engineers, dozens of engineers hours, hundreds
+of engineer hours or thousands of engineer hours on working this out, because it's such a unified,
+sort of workload, right? I want to, I want to get you to comment on this chart. This is a chart we
+showed earlier in the year that I think was kind of a moment for me with Jensen when he was in,
+I think the Middle East. And for the first time, he said, not only are we going to have a trillion
+dollars of new AI workloads over the course of the next four years, he said, but we're also going
+to have a trillion dollars of CPU replacement of data center replacement workloads over the
+course of the next four years. So that's an effort to model it out. And I, you know, we referenced it
+on, on the pod with him. And, and he seemed to indicate that it was directionally correct,
+right? That he still believes that it's not just about, because there's a lot of fuss in the world
+about, you know, pre training and what if what if pre training doesn't continue a pace. And it
+seemed to suggest that there was a lot of AI workloads that had nothing to do with pre training
+that they're working on, but also that they had all of this data center replacement. Do you buy
+that? I've heard a lot of people push back on the data center replacement and say there's no way
+people are going to, you know, rebuild a CPU data center with a bunch of NVIDIA GPUs. It just
+doesn't make any sense. But he, his argument is that an increasing number of these applications,
+even things like Excel and PowerPoint, are becoming machine learning applications
+and require accelerated compute. NVIDIA has been pushing non AI workloads for accelerators for
+a very long time, right? Professional visualization, right? Pixar uses a ton of GPUs, right? To make
+every movie, you know, all these Siemens engineering applications, right? All these things do use GPUs,
+right? I would say there are drop in the bucket compared to, you know, AI. The other aspect I
+would say is, and this is sort of a bit contentious with your chart, I think, but I'd be a mainframe,
+sell more volume and revenue every single cycle, right? So, you know, yes, no one in the bay uses
+made frames or talks about made frames, but they're still growing, right? And so like, I would say
+the same applies to CPUs, right? To classic workloads. Just because, you know, AI is here,
+doesn't mean web serving is like going to slow down or data basing is going to slow down. Now,
+no, what does happen is that that line is like this and the AI line is like this. And furthermore,
+right? Like when you talk about what, you know, hey, these applications, they're now AI, right?
+You know, Excel with copilot or Word with copilot, whatever, right? There's, they're going to be,
+they're still going to have all those classic operations. You don't get rid of what you used
+to have, right? Southwest doesn't stop booking flights. They just run AI analytics on top of
+their flights to maybe, you know, do pricing better or whatever, right? So I would say that still
+happens. But there is an element of replacement that is sort of misunderstood, right? Which is,
+given how much people are deploying, how tight the supply chains for data centers are,
+data centers take longer, they're longer time supply chains, unfortunately, right?
+Which is why you see things like what Elon's doing. But when you think about that, well,
+how can I get power then, right? So you can do what Corweave is doing and go to crypto mining
+companies and just like clear them out and put a bunch of GPUs in them, right? We retrofit the
+data, put a JPs on them, like they're doing in Texas. Or you can do what some of these other
+folks are doing, which is, hey, well, my depreciation for CPU servers has gone from three years to
+six years in just a handful of years. Why? Because Intel's progress has been this, right?
+So in reality, like the old Intel CPU is not that much better. But all of a sudden, over the last
+couple of years, AMD's burst onto the scene, ARM CPUs have burst onto the scene, Intel's started
+to write the ship. Now I can upgrade the most, the plurality of Amazon CPUs in their data centers
+are 24 core Intel CPUs from that were manufactured from 2015 to 2020. Same more or less the same
+architecture. There's 24 core CPU. I can buy 128 or 192 core CPU now today, where each CPU core is
+higher performance. And well, if I just replace like six servers with one, I've basically invented
+power out of thin air, right? I mean, like, you know, in effect, because these old servers,
+which are six plus years old, or even, you know, they can, they can just be deprecated and put.
+So with CapEx of new servers, I can replace these old servers. And now, you know, when I do every
+time I do that, I can throw another AI server in there, right? So this is sort of the, yes,
+there is some replacement. I still need more total capacity, but that total capacity can be served
+by fewer machines, maybe, if I buy new ones. And generally, the market is not going to shrink,
+it's still going to grow, just nowhere close to what AI is. And AI is causing this behavior of,
+I need to replace so I can get power. Hey, Bill, this reminds me of a point such
+you made on the pod last week that I've seen replayed a bunch of times. And I think is fairly
+misunderstood. He said last week on the pod that he was power and data center constrained,
+not chip constrained. What I think it was was more a assessment on the real bottleneck,
+which is data centers and power, as opposed to GPUs, because GPUs have have come online.
+And so I think the case you just made, I think helps to clarify that.
+But before before we dive into the alternatives to NVIDIA, I thought we would hit on this,
+this pre-training scaling debate that you wrote about in your last piece, Dylan, and we've already
+talked about quite a bit. But why don't you give us your view of what's going on there?
+I think Ili was the one, the most credible AI specialist that brought this up, and then it got
+repeated and cross-analyzed quite a bit. And Bill, just to repeat what it is,
+I think Ili said, data is the fossil fuel of AI that we've consumed all the fossil fuel,
+because we only have but one internet. And so the huge gains we got from pre-training are not
+going to be repeated. And some experts had predicted that data, the data would run out
+a year or two ago. So it wasn't, it wasn't like out of nowhere that that argument came to
+like, anyway, let's your word down essay. So pre-training scaling laws are pretty simple,
+right? You get more compute, and then I throw it out a model and it'll get better. Now, what is
+that that breaks out into two axes, right? Data and parameters, right? You know, the bigger the model,
+the more data, the better. And there's actually an optimal ratio, right? So Google published a
+paper called Chinchilla, which says the optimal ratio of data to parameter, you know, model size.
+And that's the scaling thing. Now, what happens when the data runs out? Well,
+I don't really get much more data, right? But I keep growing the size of the model because my
+budget for compute keeps growing. This is a bit not fair, though, right? We have barely, barely,
+barely tapped video data, right? So there is a significant amount of data that's not tapped.
+It's just video data is so much more information than written data, right? And so therefore,
+you're throwing that away. But I think that's like, that's part of the, the like, you know,
+that there's a bit of much misunderstanding there. But more importantly, text is the most efficient
+domain, right? Humans generally, yes, a picture paints a thousand words. But if I write 100 words,
+I can probably you can tell figure out the transcripts of most of those videos were already.
+Yeah, the transcripts of many of those videos are in there already. But you know, regardless,
+the data data is like a big axis. Now, the problem is this is only pre-training, right?
+Quote, pre-training a model is more than just the pre-training, right? There's, there's many
+elements of it. And so people have been talking about, Hey, inference time compute. Yeah, that's
+important, right? You can continue to scale models if you figure out how to make them think and
+recursively like be like, Oh, that's not right. Let me think this way. Oh, that's not right. That
+let me, you know, much like, you know, you don't have hire an intern and say, Hey,
+what's the answer to X? Or you don't hire a PhD and say, Hey, what's the answer to X?
+You're like, go work on this. And then they come back and bring something to you. So
+inference time compute is important. But really what's more important is, as we continue to get
+more and more compute, can we improve models if data is run out? And the answer is, you can
+create data out of thin air almost, right? In certain domains, right? And so this is the whole,
+the debate around scaling laws is how can we create data, right? And so what is, what is
+Ilya's company doing? Most likely, what is, what is Mira's company doing? Most likely,
+Mira Maradi, CTO of OpenAI. What are, what are, you know, all these companies focused on OpenAI?
+What are all these companies focused on? They have known Brown is like sort of one of the big
+reasoning people on road shows just going and speaking everywhere, basically, right? What are
+they doing, right? They're saying, Hey, we can still improve these models. Yes, spending
+compute at inference time is important. But what do we do at training time? Because you,
+you can't just tell a model, think more, and it gets better. You have to do a lot of training time.
+And so what that is, is I take the model, I take an objective function I have, right?
+What is the square root of 81, right? Now, if I told you the square, ask, ask many people what's
+the square root of 81, many could answer. But I bet many people could answer if they thought
+about it more, like almost, you know, a lot more people, right? And maybe this is simplistic
+problem. But you say, Hey, let's have the existing model do that. Let's have it just run every
+possible, you know, not every possible, many permutations of this start off with say five,
+and then anytime it's unsure, branch into multiple. So you start out, you have hundreds of quote,
+unquote rollouts or trajectories, gender of generated data, most of this is garbage, right?
+You prune it down to, Hey, only these paths got to the right answer. Okay, now I feed that
+and that is now new training data. And so I do this with every possible area where I can do
+functional verification, functional verification, IE, Hey, this code compiles. Hey, this unit test
+that I have in my code base, how can I generate the solution? How can I generate the function?
+Okay, now now, and you do this over and over and over and over again, across many, many,
+many different domains, where you can functionally prove it's real, you generate all this data,
+you throw away the vast, vast majority of it, but you now have some chains of thought that you
+can train the model on, which then it will learn how to do that more effectively. And it generalizes
+outside of it, right? And so this is the whole domain. Now, when you talk about scaling laws,
+it's it's point of diminishing returns. It's kind of not proven yet, by the way, right?
+Because it's it's more so, Hey, the scaling laws are a log log access, a log IE, it takes 10x more
+investment to get the next iteration. Well, 10x more investment, you know, you know, going from
+30 million to 300 million, 300 million to three billion is relevant. But when Sam wants to go from
+three billion to 30 billion, right, it's a little difficult to raise that money, right? That's why
+you know, the most recent rounds are a bit like, Oh, crap, we can't spend 30 billion on the next
+run. And so the question is, well, that's just one axis. Where have we gone on synthetic data?
+Oh, we're still like very early days, right? We've spent tens of millions of dollars, maybe,
+on synthetic data. And with synthetic data, you used to qualify in certain domains.
+When they released a one, it also had a qualifier like that in certain domains.
+I'm just saying those two scaling axis do better in certain domains and aren't as applicable in
+others. And we have to figure that out. Yeah, I think I think one of the interesting things about
+AI is, is that first in 2022, 2023, with the release of diffusion models with the release of
+text models, people are like, Oh, wow, artists are the one that are the most, you know, out of luck,
+not not technical jobs. Actually, these things suck at technical jobs. But with these new acts,
+this new axis of synthetic data, and test time compute, actually, where are the areas where we
+can teach the model, we can't teach it what good artists, because we have no way to functionally
+prove what good artists, we can teach it to write really good software, we can teach it how to do
+mathematical proofs, we can teach it how to engineer systems, because there are, while there are
+trade offs, and this is not like, it's not just a one zero thing, especially on engineering systems,
+this is something you can functionally verify is this works or not, or this is correct or not,
+grade the output and then the model can iterate more often, exactly.
+It goes back to the AlphaGo thing and why that was a sandbox that could allow for a novel,
+novel moves in place, because you could traverse it and run synthetically, you could just let it
+let create and create and create. Putting on my investor hat, public investor hat here,
+there is a lot of tension in the world over in videos we look forward at 2025, and this question
+of pre-training, right? And if in fact, we've seen, we plucked 90% of the low-hanging fruit that
+comes from pre-training, then do people really need to buy bigger clusters? And I think there's
+a view in the world, particularly post-illius comments that, no, the 90% benefit of pre-training
+is gone. But then I look at the comments out of Hocktan this week, during their earnings call that
+all the hyperscalers are building these million XPU clusters, I look at the commentary out of
+X.ai that they're going to build 200 or 300,000 GPU clusters, meta reportedly building much bigger
+clusters, Microsoft building much bigger clusters, how do you square those two things, right?
+If everybody's right and pre-training's dead, then why is everybody building much bigger clusters?
+So the scaling, right, goes back to what's the optimal ratio, how do we continue to grow, right?
+Just blindly growing parameter account when we don't have any more data, or the data is very
+hard to get at i.e. because it's video data, wouldn't give you so many gains. And then there's
+also the access of it's a log chart, right? You need 10X more to get the next job, right? So when
+you look at both of those, oh crap, like I need to invest 10X more. And I might not get the full
+gain because I don't have the data. But the data generation side, we are so early days with this,
+right? So the point is I'm still going to squeak out enough gain that it's a positive return,
+particularly when you look at the competitive dynamic, our models versus our competitor models.
+So it's a rational decision to go from 100,000 to 200,000 or 300,000, even if the kind of big one-time
+gain and pre-training is behind us. Or rather it's it's exponentially more it's logarithmically
+more expensive to do that game, right? So it's still there, like the gain is still there, but like
+the sort of whole like Orion has failed sort of narrative around OpenAI's model, and they didn't
+release Orion, right? They released O1, which is sort of a different axis. It's partially because
+hey, this is, you know, because of these like data issues, but it's partially because they did
+not scale 10X, right? Because scaling 10X from four to this is actually was like they didn't happen.
+This is Gavin's point, right? Well, I would also let's go to Gavin a second. One of the reasons
+this became controversial, I think, is and I don't know. Dario and Sam had prior to this moment,
+at least the way I heard him made it sound like they were just going to build the next
+biggest thing and get the same amount of gain. They had left that impression. And so we get to
+this place, as you described it, it's not quite like that. And then people go, oh, what does that
+mean? Like it causes them to raise their head up. So I think, I think they have never said
+the Chinchilla scaling laws were what delivers us, you know, AGI, right? They've had scaling.
+Scaling is you need a lot of compute. And guess what? If you have, you know, if you have to generate
+a ton of data and throw away most of it because hey, only some of the paths are good, you're spending
+a ton of compute at train them, right? And this is sort of the access that is like, we may actually
+see models improve faster in the next six months to a year than we saw them improve in the last year,
+because there's this new axes of synthetic data generation and the amount of compute we can
+throw at it is we're still we're still right here in the scaling law, right? We're not here. We
+haven't pushed it to billions of dollars spent on synthetic data generation, functional verification,
+reasoning, training. We've only spent millions, tens of millions of dollars, right? So what happens
+when we scale that up? So there's, there is a new axes of spending money. And then there's, of course,
+test time compute as well, i.e. spending time at inference to get better and better. So it's
+possible. And in fact, many people at these labs believe that the next year of gains or the next
+six months of gains will be faster because they've unlocked this new axis through a new methodology,
+right? And it's still scale, right? Because this requires stupendous amounts of compute.
+You're generating so much more data than exist on the web. And then you're throwing away most of it,
+but you're generating so much data that you have to run the model constantly, right?
+What what domains do you think are most applicable with this approach? Like where where we're
+synthetic data be most effective? And maybe maybe you do a both a pro and a like a scenario where
+it's going to be really good and one where it wouldn't work as well?
+Yes, I think that goes back to the point around what can we functionally verify is true or not?
+What can I grade and it's not subjective? What class can, you know, you take in college and you
+get the card, you get the thing back and you're like, Oh, this is BS or like, dang, I messed that
+up, right? There's certain classes where you can determinism of of grading the output.
+Right. Exactly. So if there if it can be functionally verified, amazing, if it has to be judged,
+right? So there's sort of two ways to judge an output, right? There is, you know, without using
+humans, right? This is sort of the whole scale AI, right? What were they initially doing?
+They were using a ton of manpower to to create good data, right? Label data. But now humans
+don't scale for this level of data, right? Humans post on the internet every day and we've already
+tapped that out, right? Kind of more or less than a text. What are the domains that work?
+So, so this, these are domains where, hey, in Google, when they push data to, you know,
+any of their services, they have tons of unit tests, these unit tests make sure everything's working.
+Well, why can't I have the LLM just generate a ton of outputs and then use those unit tests
+to grade those outputs, right? Because it's pass or fail, right? It's not. And then you can also
+like grade these outputs in other ways like, Oh, it takes this long to run versus this long to run.
+So then you have various, there's other areas such as like, Hey, image generation, well,
+actually it's harder to say which, which image looks more beautiful to you versus me, you know,
+I might, I might like, you know, some like sunsets and flowers and you might like the beach, right?
+You can't really argue what is good there. So there's no functional verification. There is only
+subjective, right? So the objective nature of this is where, so where do we have objective
+grading, right? We have that in code. We have that in math. We have that in engineering.
+And while these can be complex, like, Hey, engineering is not just this is the best solution. It's
+Hey, given all the resources we've had and given all these trade offs, we think this is the best
+trade off, right? That's usually what engineering ends up being. Well, I can still, I can still look
+at all these axes, right? Whereas in, in, in subjective things, right? Like, Hey, what's the
+best way to write this email or what's the best way to negotiate with this person? That's difficult,
+right? That's not something that is objective. What are you hearing from the hyperscalers? I mean,
+they're all out there saying our cap X is going up next year. We're building larger clusters.
+You know, is that in fact happening? Like, what's happening out there?
+Yeah. So I think when you look at the streets estimates for cap X, they're all far too low,
+you know, based on a few factors, right? So when we, we track every data center in the world,
+and it's, it's insane how much, especially Microsoft, and now meta and Amazon and, and, and, you know,
+and many others, right? But those guys specifically are spending on data center capacity. And as
+that power comes online, which you can track pretty easily, if you look at all of the different
+regulatory filings and you satellite imagery, all these things that we do,
+you can see that, Hey, they're going to have this much data center capacity, right?
+So it's accelerating. What are you going to fill in there?
+Right? It turns out you have to fill to fill it up. You know, you can make some estimates around
+how much power is your GPU all in everything, right? It's not just said he's going to slow down that
+a little bit, but they've signed deals for next year rentals, right? For some, in some of these cases,
+right? As part of the reason he said is he expects his cloud revenue in the first half of next year
+to accelerate, because he said we're going to have a lot more data center capacity
+and we're currently capacity constrained. So, you know, what they're, you know, like, again,
+going back to the is scaling dead, then why is Mark Zuckerberg building a two giga watt data
+center in Louisiana? Why is why is Amazon building these multi giga watt data centers? Why is Google?
+Why is Microsoft building multiple giga watt data centers plus buying billions and billions of
+dollars of fiber to connect them together? Because they think, Hey, I need to win on scale. So let me
+just connect all the data centers together with super high bandwidth. So then I can make them act
+like one data center, right? Towards one job, right? So this is this this whole like,
+is scaling over narrative fails falls on its face when you see what the people who know the best
+are spending on, right? You talked a lot at the beginning about NVIDIA's differentiation around
+these large coherent clusters that are used in pre training. Can you see anything like,
+I guess one someone might be super bullish on inference and keep building out of data center,
+but they might have thought they were going to go from 100,000 nodes to 200 to 400. It might not be
+doing that right now. If, if this pre training thing is real, are you seeing anything that gives
+you any visibility on that dimension? So, when you think about training a neural network, right?
+It is, it is doing a forwards pass and a backwards pass, right? Forward pass is generating the data
+basically. And it's half as much compute as the backwards pass, which is updating the weights.
+When you look at this new paradigm of synthetic data generation grading the outputs and then
+training the model, you are going to do many, many, many forward passes before you do a backwards
+pass. What is serving a user? That's also just a forwards pass. So it turns out that there is a
+lot of inference in training, right? In fact, there's more inference in training than there is
+updating the model weights because you have to generate hundreds of possibilities. And then,
+oh, you only train on a couple of them, right? So there, there is, that paradigm is very relevant.
+The other paradigm I would say that is very relevant is when you're, when you're training
+a model, do you necessarily need to be co-located for every single aspect of it, right? And this
+is what's the answer. The answer is depends on what you're doing. If you're in the pre-training
+paradigm, then maybe you don't, yeah, you need it to be co-located, right? You need everything to
+be in one spot. Yeah, why Microsoft in Q1 and Q2 sign these massive fiber deals, right?
+And why are they, why are they building multiple similar size data centers in Wisconsin and Atlanta
+and Texas and so on and so forth, right? In Arizona, why are they doing that? Because
+they already see the research is there for being able to split the workload more appropriately,
+which is, hey, this data center, it's not serving users, it's running inference. It's just running
+inference and then throwing away most of the output because some of the output is good.
+Because I'm grading it, right? And it's doing, they're doing this while they're also updating
+the model and other areas. So the whole paradigm of training, you know, pre-training is not slowing
+down. It's just, it's logarithmically more expensive for each generation, for each incremental improvement.
+People are finding other ways to, but there's other ways to not just continue this, but hey,
+I don't need a logarithmic increase in spend to get the next generation of improvement.
+In fact, through this reasoning, training and inference, I can get that logarithmic improvement
+in the model without ever spending that. Now I'm going to, I'm going to do both, right? Because
+this is because each model jump has unlocked huge value, right?
+I mean, the, you know, the thing that I think so interesting, you know, I hear Kramer on CNBC
+this morning, you know, and they're talking about, is this Cisco from 2000. I was in Omaha,
+Bill Sunday night for dinner. You know, they're obviously big investors and utilities and they're
+watching what's going on in the data center built out. And they're like, is this Cisco from 2000?
+So I have my team pull up a chart for Cisco, you know, 2000 and we'll show it on the pod. But,
+you know, they peaked at like 120 PE, right? And, you know, if you look at the fall off that
+occurred in revenue and in EBITDA, you know, and then it had 70% compression in the, in the price
+earnings multiple, right? So the price journeys multiple went from 120 down to something closer to
+30. And so I said to, you know, in this dinner conversation, I said, well, in videos, you know,
+P today is 30. It's not 120, right? So you would have to think that there would be 70%
+PE compression from here, or that their revenue was going to fall by 70%, or that their earnings
+were going to fall by 70%. You know, in order to have a Cisco-like event, we all have post-traumatic
+stress about that. I mean, hell, I, you know, I lived through that too. Nobody wants to repeat
+that. But when people make that comparison, it strikes me as uninformed, right? It's not to say
+that there can't be a pullback. But given what you just told us about the build out next year,
+given what you told us about scaling laws continuing, you know, what do you think when you hear,
+you know, the Cisco comparison when people are talking about Nvidia?
+Yeah, so I think there's a couple of things that are not fair, right? Cisco's revenue, a lot of it
+was funded through private/credit investments into building out telecom infrastructure, right?
+When we look at Nvidia's revenue sources, very little of it is private/credit, right? And in some
+cases, yes, it's private/credit like CoreWeave, right? But CoreWeave is just backed up by Microsoft.
+There is significant amounts of like difference in like what is the source of the capital, right?
+The other thing is at the peak of the dot com, you know, especially when two inflation adjusted,
+the private capital entering the space was much larger than it is today, right?
+As much as people say the venture markets are going crazy, throwing these huge valuations at,
+you know, all these companies, and we were just talking about this before the show, but like,
+hey, the venture markets, the private markets have not even tapped in, right?
+Guess what? Private market money like in the Middle East, in these sovereign wealth funds,
+it's not coming in yet, has barely come in, right? Why wouldn't there be a lot more spent from them
+as well, right? And so there is a significant amount of the difference of capital, the source is
+positive cash flows of the most profitable companies that have ever lived or ever existed in humanity
+versus credit speculatively spent, right? So I think that is like a big aspect. That also gives
+it a bit of a knob, right? These companies that are profitable will be a bit more rational.
+Yeah, I think corporate America is investing more in AI and with more conviction than they did
+even in the internet wave also. Maybe we can switch a little bit. You've mentioned inference time
+reasoning a few times now. It's clearly a new vector of scaling intelligence. And I read some
+of your analysis recently about how inference time reasoning is way more compute intensive,
+right, than simply pre-training, scaling pre-training. Why don't you walk us through? We have a really
+interesting graph here about why that's the case that we'll post as well. But why don't you walk us
+through first just kind of what inference time reasoning is from the perspective of compute
+consumption? Why it's so much more compute intensive? And so leading to the conclusion that if this
+is in fact going to continue to scale as a new vector of intelligence, it looks like it's going
+to be even more compute intensive than what came before it. Yeah, so pre-training maybe slowing out
+or it's too expensive, but there's these other aspects of synthetic data generation and inference
+time compute. Inference time compute is on the surface sounds amazing, right? I don't need to
+spend more training a model. But when you think about it for a second, this is actually very,
+very, this is not the way you want to scale. You only do that because you have to, right?
+The way, because, or think about it, GPT-4 was trained with hundreds of billions of dollars
+and it's generating billions of dollars of revenue. Hundreds of millions of dollars to
+train GPT-4. And it's generating billions of dollars of revenue. So when you say like,
+hey, Microsoft's CapEx is nuts, sure, but their spend on GPT-4 was very reasonable
+relative to the ROI they're getting out of it, right? Now, when you say, hey, I want the next gain,
+if I just spend sort of a large amount of capital and train a better model, awesome.
+But if I don't have to spend that large amount of capital and I deploy it, I deploy this better
+model without, at the time of revenue generation rather than ahead of time when I'm training the
+model, this also sounds awesome. But this comes with this big trade-off, right? When you were
+running reasoning, right, you're having the model generate a lot. And then the answer is only a
+portion of that, right? Today, when you open up chat GPT, use GPT-4, 4.0, you say something,
+you get a response. You send something, you get a response, whatever it is, right? All of the
+stuff that's being generated is being sent to you. Now you're having this reasoning phase, right?
+And OpenAI doesn't want to show you, but, you know, there's some open source Chinese models like
+Alibaba and DeepSeek. They've released some open source models, which are not quite as good
+as OpenAI, of course. But they show you what that reasoning looks like if you want to.
+OpenAI is really some examples. It generates tons of things. It's like sometimes switches
+between Chinese and English, right? Like whatever it is, it's thinking, right? It's turning. It's
+like this, this, this, this. Oh, should I do it this way? Should I break it down in these steps?
+And then it comes out with an answer, right? Now on the surface, awesome. I didn't have to spend
+any more on R&D or capital, right? I'm saying this in the loose terms. They don't, they don't
+treat training models as R&D. I think on Microsoft on a financial basis, but they don't have to
+treat this. They don't have this R&D ahead of time, right? You get it at spend time. But
+think about what that means, right? If for you, right, for example, one simple thing that we,
+you know, we've done a lot of test on is, hey, generate me this, this, this code, right? Like
+make this function. Great. I put, I describe the function and, you know, a few hundred words.
+I get back a response that's, you know, a thousand words. Awesome. And I'm paying per token. When I
+do this with 01 or any other reasoning model, I'm sending the same response, right? A few hundred
+tokens. I'm paying for that. I'm getting the same response, roughly, you know, a thousand tokens.
+But in the middle, there was 10,000 tokens of it thinking. Right. Now, what, what is that 10,000
+tokens of thinking actually mean? It means, well, the model spinning out 10 times as many tokens.
+Well, if Microsoft's generating, you know, call it 10 billion dollars of inference revenue,
+and their margins on that are good. They've stated this, right? They're anywhere from 50 to 70 percent.
+Depending on how you count the open AI profit share, you know, anywhere from 50 to 70 percent
+gross margins, their cost for that is a few billion dollars for 10 billion dollars of revenue.
+Right. If now, obviously the better model gets to charge more, right? So 01 does charge a lot more,
+but you're now increasing your cost from, hey, I output it a thousand tokens to I output it
+11,000 tokens. I have 10 X to my spend to generate now, not the same thing, right? It's higher quality.
+Right. And that's, that's only part of it. That's deceptively simple. It's not just 10 X,
+right? Because if you go look at 01, despite it being the same model architecture as GPD 4O,
+it actually costs significantly more per token as well. And that's because of, you know, sort of
+this chart that we're looking at here, right? And this chart shows, hey, what is GPD 4O, right?
+If I'm generating, you know, call it a thousand tokens, right? And that's what GPD 4O on the bottom
+right is. Of LAMO 405B, this is an open model, so it's easier to simulate, you know, the exact
+metrics of it. But, you know, if I'm doing that, I'm keeping my users, you know, experience of the
+model constant, the number of tokens they're getting at the speed, then, you know, when I,
+when I ask it a question, it generates the unit, generates the code, whatever it is,
+I'm, I can group together many users requests. I can group together over 256 users requests
+on one server for LAMO 405B of, of, of NVIDIA server, right? Like, you know, $300,000 server. So,
+when I do this with 01, right, because it's doing that thinking phase of 10,000,
+right? This is, this is basically the whole context length thing. Context length is not free,
+right? Context length or sequence length means that it has to calculate attention,
+the attention mechanism, i.e., it spends a lot of memory on generating this KV cache and reading
+this KV cache constantly. Now, the maximum batch size, i.e., concurrent users I can have,
+is a fraction of that. One fourth to one fifth, the number of users can currently use this server.
+So, not only do I need to generate 10x as many tokens, each, each token that's generated is
+4 to 5x less users. So, the cost increase is, is stupendous when you think about a single user.
+Cost increase for a single token to be generated is 4 to 5x, but then I'm generating 10x as many
+tokens. So, you could argue the cost increases 50x for an 01-style model on input to output versus
+the 10x, because it was on the original one release, but with the log scale, but I didn't.
+Well, it's 10x. It just requires you to have, I, you know, again, to service the same number of
+customers, you have to have multiples more compute. Well, this, there's good news and bad news here,
+Brad, which I think is what Dylan's telling us. If you're just selling Nvidia hardware and they
+remain the architecture, and this is our scaling path, you're going to consume way more of it.
+Correct. But the margins for the people who are generating on the other end,
+unless they can pass it on to the end consumer, are going to, you know, are going to compress.
+And the thing is, you can pass it on to the end consumer, because, hey, it's not really like,
+oh, it's x percent better on this benchmark. It's, it literally could not do this before,
+and now it can. Right. And they're running assess right now where they're 10x-ing,
+what they're charging, the end consumer, you know, 10x for token, right?
+Remember, they're also paying for 10x as many tokens, right? So it's actually, you know,
+the consumer is paying 50x more per query, but they're getting value out of it because now all of a
+sudden it can pass certain benchmarks, like sweet bench, right? Software engineering
+benchmark, right? Which is just a benchmark for generating like, you know, decent code, right?
+There's front-end web development, right? What do you pay front-end web developers? What do you
+pay back-end developers versus, hey, what if they use 01? How much more code can they output?
+How much more can they output? Yes, the queries are expensive, but they're nothing close to the
+human, right? And so each level of productivity gain I get, each level of capabilities jump
+is a whole new class of tasks that it can do, right? And therefore I can charge for that, right?
+So this is the whole like axes of, yes, I spend a lot more to get the same output, but you're not,
+you're not getting the same output with this model. Are we overestimating or underestimating
+end demand, enterprise level demand for the 01 model? What are you hearing?
+So I would say the 01 style model is so early days people don't even like get it, right? 01
+is like they just cracked the code and they're doing it. But guess what? Right now on, you know,
+some of the anonymous benchmarks, they're, you know, it's called LLM SIS, which is like an arena
+where different LLMs get to like compete sort of, sort of, and people vote on them. There is a Google
+model that is doing reasoning right now, and it's not released yet, but it's going to be released
+soon enough, right? Anthropic is going to release a reasoning model. These people are going to
+one up each other, and also they've spent so little compute on reasoning right now,
+in terms of training time. And they see a very clear path to spending a lot more, i.e. jumping
+up the scaling laws. Oh, I only spent $10 million. Well, wait, that means I can jump up two to three
+logarithms in scaling like that, because I've already got the compute. You know, I can go from
+$10 million to $100 million to $10 billion on reasoning in such a quick succession. And so this,
+this, the performance improvements will get out of these models is humongous, right? In the coming,
+you know, six months to a year in certain benchmarks where you have functional verifiers.
+A quick question, and we promised we'd go to these alternatives, so we'll have to get there
+eventually. But if you go back, we've used this internet wave comparison multiple times, when all
+of the venture back companies got started on the internet, they were all on Oracle and Sun.
+And five years later, they weren't on Oracle or Sun. And some have argued it went from a
+development sandbox world to a optimization world. Is that likely to happen? Is there an
+equivalency here or not? And if you could touch on why the, the, the back end is so steep and cheap,
+like, you know, just you go a model, you know, behind or you like the, the, the, the price you
+can save by just backing up a little bit is nutty. Yeah, yeah. So, um, today, right? Like,
+Oh, one is stupendously expensive. You dropped down to four oh, it's a lot cheaper. You jumped
+down to four oh mini. It's so cheap. Why? Because now I'm compete with four oh mini. I'm competing
+against llama and I'm competing against deep-seek. I'm competing against mistrial. I'm competing
+against Alibaba and I'm competing against tons of companies. Do you think those are market clearing
+prices? I think in an addition, right? There is also the problem of inferencing a small model is
+quite easy, right? I can run llama 70b on one AMD GPU. I can run llama 70b
+on one Nvidia GPU and soon enough, there'll be on one set of Amazon's new trainium, right? I can
+sort of run this model on a single chip. This is a very easy, not, I won't say very easy problem,
+still hard, but it's quite a bit easier problem than running this complex reasoning or this very
+large model, right? And so there is, there is that difference, right? There's also the fact that,
+hey, there's literally 15 different companies out there offering API inferences,
+inference APIs on llama and Alibaba and deep-seek and Mistral, like these different models, right?
+We're talking about cerebras and grok and fireworks and all these others.
+Yeah, fireworks together, you know, all the companies that aren't using their own hardware.
+Now, of course, grok and cerebras are doing their own hardware and doing this as well,
+but the market, the margins here are bad, right? You know, sort of, we had this whole thing about
+the inference race to the bottom when Mistral released their mixtral model, which was like very
+revolutionary, sort of late last year, because it was such a level of performance that didn't
+exist in the open source, that it drove pricing down so fast, right? Because everyone's competing
+for API. What am I as an API provider providing you that, like, why don't you switch from mine
+to to his? Why? Because, well, there's no, it's pretty fun to, right? I'm still getting the same
+tokens on the same model. And so the margins for these guys is much shorter. So Microsoft's earning
+50 to 70% gross margins on open AI models. And that's with the profit share they get to get,
+or the share that they give a very high, right? Or, you know, anthropic, similarly,
+in their most recent round, they were showing like 70% gross margins. But that's because they have
+this model. You step down to here, no one uses this model. From, you know, a lot less people
+use it from open AI or anthropic, because they can just like take the weights from
+llama, put it on their own server or vice versa, go to one of the many competitive API providers.
+Some of them being venture funded, some of them, you know, and losing money, right? So there's all
+this competition here. So not only are you saying, I'm taking a step back and it's easier problem,
+and so therefore, like, if the model's 10x smaller, it's like 15x cheaper to run. And on top of that,
+I'm removing that gross margin. And so it's, it's not 15x cheaper to run. It's 30x cheaper to run.
+And so this is, this is sort of the beauty of like, well, is everything commodity? No, but like,
+there is a huge chase to like, if you're deploying in services, that's going to be, this is great
+for you. A, right. B, you have to have the best model or you're no one if you're one of the labs,
+right? And so you see a lot of struggles for the companies that were trying to build the best
+models, but failing and arguably not only do you have to have the best model, you actually have to
+have an enterprise or a consumer willing to pay for the best model, right? Because at the end of
+the day, you know, the best model implies that somebody's willing to pay you these high margins,
+right? And that's either an enterprise or a consumer. So I think, you know, you're quickly
+narrowing down to just a handful of folks who will be able to compete, you know, in that market.
+I think on the model side, yes, I think on the, who's willing to pay for these models is,
+I think of, I think a lot more people will pay for the best model, right? When we use models
+internally, right? We have, we have, we have language models go through every regulatory filing
+and permit to look at data center stuff and pull that out and tell us where to look and where to
+not to. And, and we just use the best model because it's so cheap, right? Like the data that I'm
+getting out of it, the value I'm getting out of it is so much higher. What model are you using?
+Um, we're using anthropic action right now. Five three point five,
+Senate new, um, sonnet. Um, and so, uh, just because O one is a lot better on certain tasks,
+but not necessarily regulatory filings and permitting and like things like that,
+because the cost of errors is so much higher, right? Same with a developer, right? If I can
+increase a developer who makes $300,000 a year here in the Bay, by 20%, that's a lot. If I can,
+if I can take a team of a hundred developers and use 75 or 50 to do the same job or I can ship
+twice as much code, this is so worth using the most expensive model because O one as expensive
+it is relative to four oh, it's still super cheap, right? The cost for intelligence is so high in
+society, right? That's why intelligent jobs are the most, you know, high paying jobs, white color
+jobs, right? Or the most high paying jobs. If you can bring down the cost of intelligence or augment
+intelligence, then there's a high market clearing price for that, which is why I think that like
+sort of the, oh, yes, O one is expensive. Um, and people will always gravitate to what's the cheapest
+thing at a certain level of intelligence, but each time we break a new level of intelligence,
+it's not just, Oh, you know, we've, we've got a few more tasks we can do. I think it grows the
+mode of tasks that can be done dramatically. Very few people could use GP two and three, right?
+A lot of people can use you before when we get to that quality of jump that we see for the next
+generation, the amount of people that can use it, the tasks that it can do balloons out and
+therefore the amount of sort of white color jobs that it can augment increased productivity on
+will grow. And therefore the market clearing price for that token will be very super interesting.
+I could make the other argument that someone that's in a high volume, you know, this replacing
+tons of customer service calls or whatever, um, might, might be tempted to minimize the
+spend absolutely and maximize the amount of value that they build around this thing,
+database, rights and reads. Absolutely. So one of the funny things I like to, uh,
+that the calculations we did is if you take one quarter of NVIDIA shipments and you said,
+all of them are going to inference llama seven B, you can give every single person on Earth 100
+tokens per minute, right? Um, or sorry, under tokens per second, you give every single person
+on Earth 100 tokens per second, which is like absurd. Um, you know, so like, if we're just
+deploying llama seven B equality models, we've so overbuilt, it's not even funny. Now,
+if we're deploying things that can like augment engineers and increase productivity and help us
+build robotics or AV or whatever else faster, um, then that's, that's a very different like
+calculation, right? And so that's sort of the whole thing like, yes, small models are there,
+but like they're so easy to run. And it may just, both these things may be true.
+Right. We're going to have tons of small models running everywhere, but the compute
+cost of them is so low. Yeah. Fair enough. Bill and I were talking about this earlier with respect
+to the hard drives, um, you know, that you used to cover. But if you look at the memory market,
+it's been one of these boomer bust markets. The idea was you would always, you know,
+sell these things when they're nearing peak. Um, you know, you always buy them at trough,
+you don't own them anywhere in the, you know, in between. They trade at very low earnings
+multiples. I'm talking about high next and I'm talking about, you know, micron. As you think
+about the shift toward inference time compute, it seems that the memory demanded of these chips,
+and Jensen has talked a lot about this just is on a secular shift higher,
+right? Because, um, if they're doing these passes, you know, and you're running, like you said,
+10 or a hundred or a thousand passes for inference time reasoning, you just have to have more and
+more memory as this context length expands. So, uh, you know, talk to us a little bit about,
+you know, kind of how you think about the memory market. Yeah. So, um, you know, to sort of like,
+uh, set the stage a little bit more is, uh, thinking reasoning models output thousands and
+thousands of tokens. Yeah. And, um, when you, when, when we're looking at transformers attention,
+right? The, the, like, holy grail of transformers, i.e. how, how it like understands the entire
+context, uh, grows dramatically. And, and the KV cache, i.e. the memory that is keeping track
+of how, what this like context means is growing dramatically, right? And therefore, if I go from
+a context length of 10 to 100, it's not just a 10x. It's much more, right? Um, and so you,
+you treat that, right? Like today's reasoning models, they'll think 10,000 tokens, 20,000
+tokens. When we get to, hey, what is complex reasoning going to look like? Models are going
+to get to the point where they're thinking for hundreds of thousands of tokens. And there,
+and then this is all one chain of thought or it might be some search, but it's going to be
+thinking a lot and this KV cache is going to balloon. So you're saying memory could grow
+faster than GPU. And it objectively is when you look at the cost of goods sold of Nvidia,
+their highest cost of goods sold is not TSMC, which is a thing that people don't realize.
+It's actually HBM memory, uh, primarily for now also. Yeah. So there's, there's three memory
+companies out there, right? There's, there's Samsung, SK Hynix and Micron. Nvidia has majority
+used SK Hynix. And this is like a big shift in the memory market as a whole because historically
+it has been a commodity, right? IE, it's fungible. Whether I buy from Samsung or SK Hynix or Micron
+is the socket replaceable. Yeah. And even now, uh, Samsung is getting really, really hard because,
+there's a Chinese memory maker, uh, CXMT and their memory's not as good as the less, but it's fine.
+And in low end memory, it's, it's fungible. And therefore the price of low end memory has fallen
+a lot. In HBM, Samsung has almost no share, right, especially in video. Um, and so this is like,
+this is hitting Samsung really hard, right? Even despite them being the largest memory maker in
+the world has, oh, everyone's always like, if she said memory, it's like, yeah, Samsung's a
+little bit ahead in tech and their margins are a little bit better and, and they're killing it,
+right? But now it's not quite not the case because on the low end, they're getting a little bit hit
+and on the high end, they can't break in or they keep trying, but they keep failing. Um,
+on the flip side, you have, you have companies like SK Hynix and Micron who are converting
+significance amounts, significant amounts of their capacity of, you know, sort of commodity
+DRAM to HBM. Now HBM is still fungible, right? In that if someone hits a certain level of technology,
+they can swap out Micron to Hynix, right? So it's fungible in that sense, right? It's a commodity
+in that sense. But because reasoning requires so much more memory and the cost of goods sold of
+an H100 to Blackwell, the percentage of costs to HBM has grown faster than the percentage of costs to
+leading edge silicon. Um, you've got this big shift or dynamic going on. And this applies not
+just to, um, Nvidia's GPUs, but it applies to the hyperscalers GPUs as well, right? Or accelerators
+like the TPU, Amazon, Trainium, et cetera. And SK has higher gross margins than memory companies
+have. Correct. Correct. If you listen to Jensen, at least describe it, he, you know, it's not all
+memory is created equal, right? And so it's not only that the product is more differentiated today,
+there's more software associated with the product today, but it's also how it's integrated into the
+overall system, right? And going back to the supply chain question, it sounds like it's all
+commodity. It just seems to me that at least there's a question out there. Is it structurally
+changing? We know the secular curve is up and to the right. I'm hearing you say maybe it may be
+differentiated enough to not be a. It may be. And I think another thing to point at is, um,
+funnily enough, the gross margins on HBM have not been fantastic. Right. They've been, they've
+been good, but they haven't been fantastic. Actually regular memory, high end, like server
+memory, that is not HBM is actually higher gross margin than HBM. And the reason for this is because
+Nvidia is pushing the memory maker so hard, right? They want the faster and newer generation of
+memory faster and faster and faster for H, for HBM, but not necessarily like everyone else for
+servers. Now, what is this like? What does this like, Matt, is that, hey, even though Samsung may
+achieve level four, right, or level three or whatever that they had previously, they can't reach
+what high next is that now? What are the competitors doing? Right? What is AMD and Amazon saying?
+AMD explicitly has a better inference GPU because they give you more memory, right? They give you
+more memory and more memory bandwidth. That's literally the only reason AMD's GPU is even considered
+better on chip HBM memory, which is on package, right, specifically, yeah. And then when we look
+at Amazon, their whole thing at reinvent, if you really talk to them when they're announced
+tranium two and our whole post about it and our analysis of it is like supply chain wise,
+this is looks in your eyes, this looks like an Amazon basics TPU, right? It's decent, right?
+But it's really cheap A and B, it gives you the most HBM capacity per dollar and most HBM memory
+bandwidth per dollar of any chip on the market. And therefore, it actually makes sense for certain
+applications to use. And so this is like a real, real shift, like, hey, we maybe can't design as
+well as Nvidia, but we can put more memory on the package, right? Now, this is just only one
+vector of like, you know, there's a multi vector problem here, they don't have the networking nearly
+as good, they don't have the software nearly as good, their compute elements are not nearly as good.
+They've, by golly, they've got more memory bandwidth per dollar.
+Well, this is where we wanted to go before we run out of time is just to talk about these
+alternatives, which, which you just started doing. So despite all the amazing reasons why no one would
+seemingly want to pick a fight with, with Nvidia, many are trying, right? And I even hear people
+talk about trying that haven't tried yet, like OpenAI is constantly talking about their own chip.
+What, how are these other players doing? Like, how would you handicap? Let's start with AMD,
+just because they're standalone company, and then we'll go to some of the internal program.
+Yeah, so AMD is, is computing well, because Silicon engineering wise, they're amazing,
+right? They're competitive. But yeah, they kicked in tells us, but that's, that's like, you know,
+stealing candy from the baby. They started waiting on here. Over a 20 year period is pretty
+amazing. So AMD is, AMD is really good, but they're missing software. AMD has no clue how to do
+software, I think they've got very few developers on it. They won't, they won't spend the money
+to build a GPU cluster for themselves so that they can develop software, right?
+Which is like insane, right? Like Nvidia, you know, the top 500 supercomputer list is not
+relevant because most of the super biggest super computers like Elon's and Microsoft's and so
+on and so forth, they're not on there. But Nvidia has multiple super computers on the top 500
+computer, super computer list, and they use them fully internally to develop software,
+network software, whether it be network software, compute software, inference software, all these
+things, you know, test all these changes they make and then roll out pushes, you know, where,
+where if XAI is mad because of, you know, software is not working and video will push it the next
+day or two days later, like, like clockwork, right? Because there's tons of things that break
+constantly when you're training models. AMD doesn't do that, right? And, and I don't know why they
+won't spend the money on a, on a, on a big cluster. The other thing is they have no idea how to do
+system level design. They've always lived in the world of, I'm competing with Intel, so if I make
+a better chip than Intel, then I'm great. Because software, X86, it's, it's X86.
+Presumably, I mean, Nvidia doesn't keep it a secret to their systems company. So presumably
+they've read that. Yeah. And so they bought this systems company called ZT systems.
+But they're, you know, the whole rack scale architecture, which Google deployed in 2018 with
+the TPU V3. Are there any hyperscalers that are so interested in AMD being successful that they're
+co-developing with them? So the hyperscalers all have their own custom silicon efforts,
+but they also are helping AMD a lot in different ways, right? So meta and Microsoft are helping
+them with software, right? Not enough that like AMD is like caught up or anything close to it.
+They're helping AMD a lot with what they should even do, right? So the other thing that people
+recognize is if I have the best engineering team in the world, that doesn't tell me what the
+problem is, right? The problem has this, this, this, this, it's got these trade-offs. AMD doesn't
+know software development. It doesn't know model development. It doesn't know inference,
+what inference economics look like. And so how do they know what trade-offs to make? Do I push
+this lever on the chip a bit harder, which then makes me have to back off on this? Or what exactly
+do I do? Right? So the hyperscalers are helping, but not enough that AMD is on the same timelines
+as Nvidia. How successful AMD be in the next year on AI revenue and what kind of sockets
+might they succeed in? Yes, I think they'll have a lot less success with Microsoft than they did this
+year. And they'll have less success than they did with meta than they did this year. It's because
+like the regulations make it so actually AMD's GPU is like quite good for China, because the way
+they shaped it. But generally, I think AMD will do okay. They'll profit from the market. They just
+won't go gangbusters like people are hoping. And they won't be a... Their share of total revenue
+will fall next year. Okay. But they will still do really well, right? Billions of dollars of
+revenue is not nothing to suck. Let's go with the Google TPU. You earlier stated that it's got the
+second most workloads. It seems like by a lot. Yes. It's firmly in second place.
+Yeah. So this is where the whole systems and infrastructure thing matters a lot more.
+Each individual TPU is not that impressive. It's impressive. It's got good networking,
+it's got good architecture, et cetera. It's got okay memory. It's not that impressive on its own.
+But when you say, "Hey, if I'm spending X amount of money, and then what's my system,
+Google's TPU looks amazing." So Google's engineered it for things that NVIDIA maybe has not focused
+on as much. So actually, their interconnects between chips is arguably competitive, if not
+better in certain aspects, worse in other aspects than NVIDIA's. Because they've been doing this
+with Broadcom, the world leader in networking, building a chip with them. And since 2018,
+they've had this scale up, right? NVIDIA's talking about GB 200, NVL 72, TPUs go to 8,000 today, right?
+And while it's not a switch, it's a point-to-point, it's a little bit... There's some technical nuances
+there. So it's not just like those numbers are not all you should look at. But this is important.
+The other aspect is Google's brought in water cooling for years, right? NVIDIA only just realized
+they needed water cooling on this generation. And Google's brought in a level of reliability
+that NVIDIA GPUs don't have. The dirty secret is to go ask people what the reliability rate of
+GPUs is in the cloud or in a deployment. It's like, "Oh, god." They're reliable-ish,
+but especially initially, you have to pull out 5% of them.
+Why would it be not been more commercially successful outside of Google?
+I think Google keeps a lot of their software internal when they should just have it be open,
+because who cares? That's one aspect of it. There's a lot of software that DeepMind
+uses that just is not available to Google Cloud. Even their Google Cloud offering relative to AWS
+had that bias. The good way about it. Number two, the pricing of it is sort of...
+It's not that it's egregious on list price. List price of a GPU at Google Cloud is also
+egregious. But you as a person know, when I go rent a GPU, I tell Google, like, "Hey,
+blah, blah, blah." You're like, "Okay, you can get around the first round of negotiations,
+get both down." But then you're like, "Well, look at this offer from Oracle or from Microsoft or
+from Amazon or from CoreWeave or one of the 80 Neoclouds that exist." Google might not match
+like many of these companies, but they'll go down. Then you're like, "Oh, well, what's the
+market clearing price for a... If I wanted an H100 for two years or a year, I could get it for
+like two bucks, a little bit over," versus the $4 quoted. Whereas a GPU is here, you don't know
+that you can get here. People see the list price and they're like, "Do you think that'll change?"
+I don't see any reason why it would. Number three is sort of Google is better off using all of their
+TPUs internally. Microsoft rents very few GPUs, by the way, right? They actually get far more profit
+from using their GPUs for internal workloads or using them for inference because the gross
+margin on selling tokens is 50 to 70 percent, right? The gross margin on selling a GPU server
+is lower than that, right? So while it is a good gross margin, it's like, you know, it's...
+And they've said out of the $10 billion that they've quoted, none of that's coming from external
+renting of GPUs. If Gemini becomes hyper-competitive as an API, then you indirectly will have third
+parties using the Google TPU. Is that accurate? Yeah, absolutely. Ads, search, Gemini applications,
+all of these things use TPUs. So it's not that you're not using... Every YouTube video you upload
+is going through a TPU, right? Like it goes through other chips as well that they've made themselves
+custom chips for YouTube. But there's so much that touches a TPU, but you indirectly would never
+rent it, right? And therefore, when you look at the market of renters, there's only one company
+accounts for over 70 percent of Google's revenue from TPUs as far as I understand, and that's Apple,
+right? And I think there's a whole long story around why Apple hates Nvidia.
+But, you know, that may be a story for another time, but... You just did a super deep piece
+on Trainium. Why don't you do the Amazon version of what you just did with Google?
+Yeah, so funnily enough, Amazon's chip is the Amazon... I call it the Amazon's basics TPU, right?
+And the reason I call it that is because, yes, it uses more silicon, yes, it uses more memory,
+yes, the network is like somewhat comparable to TPUs, right? It's a four-by-four-by-four
+torus. They just do it in a less efficient way in terms of, you know, hey, they're spending a
+lot more on active cables, right? Because they're working with Marvell and Alchip on their own
+chips versus working with Broadcom, the leader in networking, who then can use passive cables,
+right? Because their 30s are so strong. Like, there's other things here, their
+30 speed is lower. They spend more silicon area. Like, there's all these things about the
+Trainium that are... You could look at it and be like, wow, this would suck if it was a
+merchant-silicon thing, but it doesn't because it's... Amazon's not paying Broadcom margins,
+right? They're paying lower margins. They're not paying the margins on the HBM. They're paying
+lower margins in general, right? I'm paying the margins to Marvell on HBM. There's all these
+different things they do to crush the price down to where their Amazon basics TPU, the Trainium 2,
+right, is very, very cost-effective to the end customer and themselves in terms of HBM per dollar,
+memory bandwidth per dollar, and it has this world size of 64. Now, Amazon can't do it in one rack.
+It actually requires them two racks to do 64, and the bandwidth between each chip is much
+lower than NVIDIA's rack, and their memory per chip is lower than NVIDIA's, and their memory
+bandwidth per chip is lower than NVIDIA, but you're not paying, you know, north of 30,000,
+you know, $40,000 for this per chip for the server, you're paying, you know, significantly less,
+right? $5,000 per chip, right? Like, you know, it's like such a golf, right, for Amazon, and then
+they pass that on to the customer, right, because when you buy an NVIDIA GPU. So there is legitimate
+use cases, and because of this, right, Amazon and Anthropic have decided to, you know, make a
+400,000 Trainium supercomputer, right? 400,000 chips, right? Going back to the whole of scaling
+laws dead? Oh, they're making a 400,000 chip system, because they truly believe in this, right? And
+400,000 chips in one location is not useful for serving inference, right? It's useful for making
+better models, right? You want your inference to be more distributed than that. So this is a huge,
+huge investment for them. And while technically it's not that impressive, there are some impressive
+aspects that I kind of glossed over. It is so cheap and so cost effective that I think it's a decent
+play for Amazon. Maybe just wrapping this up. I want to, I want to shift a little bit to kind of
+what you see happening in 25 and 26, right? For example, over the last 30 days, right, we've seen
+Broadcom, you know, explode higher NVIDIA trade trade off a lot. I think there's about a 40%
+separation over the last 30 days, you know, with Broadcom being this play on custom basics,
+you know, people questioning whether or not NVIDIA's got a lot of new competition pre-training,
+you know, not not improving at the rate that it was before. Look into your crystal ball for 25,
+26. What are you talking to clients about, you know, in terms of what you think are kind of the
+things that are most misunderstood, best ideas, you know, in the spaces that you cover?
+So I think a couple of the things are, you know, hey, Broadcom does have multiple custom
+ASIC wins, right? It's not just Google here. Metas ramping up mostly still for recommendation
+systems, but their custom chips are going to get better. You know, there's other players like
+OpenAI who are making a chip, right? You know, there's Apple who are not quite making the whole
+chip with Broadcom, but a small portion of it will be made with Broadcom, right? You know,
+there's a lot of wins they have, right? Now these all won't hit in 25, some of them will hit in 26,
+and it's, you know, it's a custom ASIC, so like it could be a failure and not be good,
+like Microsoft's and therefore never ramp, or it could be really good and like, like, or at least,
+you know, good price to performance, like Amazon's and it could ramp a lot, right? So there are risks
+here, but Broadcom has that custom ASIC business, one, and two, really importantly,
+the networking side is so, so important, right? Yes, NVIDIA is selling a lot of networking equipment,
+but when people make their own ASIC, what are they going to do, right? Yes, they could go to
+Amazon or not, but they could also, they also need to network many of these chips together,
+or sorry, to Broadcom or not, they could go to Marvell or many other competitors out there,
+like Al Chipper and Juicy, like you could, you can, you can, Broadcom is really well positioned to
+make the competitor to Envy Switch, which many would argue is one of NVIDIA's biggest competitive
+advantages on a hardware basis versus everyone else, and Broadcom is making a competitor to that
+that they will seed to the market, right? Multiple companies will be using that, not just, you know,
+AMD will be using that competitor to Envy Switch, but they're not making it themselves because they
+don't have the skills, right? They're going to Broadcom to get it made, right? So make a, make,
+make a call for us as you think about the semi's market today, you know, you've got Arm, Broadcom,
+you've got NVIDIA, you've got AMD, et cetera. Does a whole market continue to elevate as we
+head into 25 and 26? Who's best positioned from current levels to do well? Who's most, you know,
+overestimated? Who's least, who's most underestimated? I think, I, Bob Broadcom long-term, but like in
+the next six months, there is a bit of a slowdown in Google TPU purchases because they have no
+data center space. They want more. They just literally have no data center space to put them,
+so we actually like, you know, can see how they're like, there's a bit of a pause, but people may
+look past that. Beyond that, right? It's the question is like, who wins what custom ASIC deals,
+right? Is Marvell going to win future generations? Is Broadcom going to win future generations?
+How big are these generations going to be? Are the hyperscalers going to be able to internalize more
+and more of this or no, right? Like, it's no secret. Google's trying to leave Broadcom.
+They could succeed or they could fail, right? It's not just like,
+Broad now beyond Broadcom. I'm talking NVIDIA and everybody else. Like, you know,
+we've had these two massive years, right, of tailwinds behind this sector. Is 2025 a year of
+consolidation? Do you think it's another year that the sector does well? Just kind of?
+Yeah, I think the plans for hyperscalers are pretty firm. They're going to spend a
+crapload more next year, right? And therefore, the ecosystem of networking players, of ASIC vendors,
+of systems vendors, is going to do well, whether it be NVIDIA or Marvell or Broadcom or AMD or,
+you know, generally, you know, some better than others. The real question that people
+should be looking out to is 2026. Does the spend continue, right? The growth rate for
+NVIDIA is going to be stupendous next year, right? And that's going to drag the entire component
+supply chain up. It's going to bring so many people with them. But 2026 is like where the
+reckoning comes, right? You know, will people keep spending like this? And it's all points to
+where will the models continue to get better? Because if they don't continue to get better,
+in my opinion, will get better faster in fact next year, then there will be a big, you know,
+sort of clearing event, right? But that's not next year, right? You know, the other aspect I
+would say is there is consolidation in the Neocloud market, right? There are 80 Neoclouds that we're
+tracking that we talked to, that we see how many GPUs they have, right? The problem is,
+nowadays, if you look at rental prices for H100s, they're tanking, right? Not just at
+these Neoclouds, right, where you can, you used to have to pay, you know, do four-year deals and
+pre-pay 25%. You'd sign a venture ground and you'd buy a cluster and that's about it, right? You'd
+rent one cluster, right? Nowadays, you can get three months, six-month deals, at way better
+pricing than even the four-year, three-year deals that you used to have
+for Hopper, right? And on top of that, it's not just through the Neoclouds. Amazon's pricing for,
+you know, on-demand GPUs is falling. Now, it's still really expensive, relatively,
+but like pricing is falling really fast. 80 Neoclouds are not going to survive.
+Maybe five to 10 will. And that's because five of those are sovereign, right? And then the other
+five are like actually like market competitive. What percentage of the industry AI revenues have
+come from those Neoclouds that may not survive?
+Yeah. So roughly, you can say hyperscalers are 50-ish percent of revenue, 50 to 60 percent.
+And the rest of it is Neocloud/sauvert AI, because enterprises' purchases of GPU clusters
+are still quite low. And it ends up being better for them to just outsource it to Neoclouds,
+when they can get through the security, which they can for certain companies,
+like Corby even. Is there a scenario where in 2026, where you see industry volumes
+actually down versus 2025, or Nvidia volumes actually down meaningfully from 2025?
+So when you look at custom ASIC designs that are coming, as well as Nvidia's chips that are coming,
+the revenue, the content in each chip is exploding. The cost to make Blackwell
+is north of 2X that of the cost to make Hopper, right? So Nvidia can make the same,
+obviously they're cutting margins a little bit, but Nvidia can ship the same volumes and still
+grow a ton, right? So rather than uni volumes, is there a scenario where industry revenues
+are down in 26, or Nvidia revenues are down in 26. The reckoning is, do models continue to get
+much faster better? And will hyperscalers, are they okay with taking their free cash flow to zero?
+I think they are, by the way. I think I think Meta and Microsoft may even take their free cash
+flows close to zero and just spent. But then that's only if models continue to get better,
+that's A, and then B, are we going to have this huge influx of capital from people we haven't
+had it yet from the Middle East, the sovereign wealth funds in Singapore and Nordics and Canadian
+pension fund and all these folks, they can throw, they can write really big checks they haven't,
+but they could. And if things continue to get better, I truly do believe that OpenAI and XAI
+and anthropic will continue to raise more and more money and keep this game going of not just
+hey, where's the revenue for OpenAI? What's 8 billion and it might double or whatever,
+even more next year? And that's their spend. No, no, no, like they have to raise more money to spend
+significantly more and that keeps the engine rolling because once one of them spends, Elon is
+forcing everyone to spend more actually, right? With his cluster, and his plans, because everybody's
+like, well, we can't get outscaled by Elon, we have to spend more, right? And so there's sort of
+a game of chicken there too, like, oh, they're buying this, we have to, we have to match them or
+go bigger because it is a game of scale. So, you know, in sort of Pascal's wager sense, right?
+If I underspinned, that's just the worst scenario ever and I'm like the worst CEO ever of the most
+profitable business ever. But if I overspend, yeah, shareholders will be mad, but it's fine, right?
+It's, you know, $20 billion, $50 billion. You can paint that either way though, because if that
+becomes the reasoning for doing it, you're more the probability of overshooting goes up.
+For sure. And every bubble ever we overshoot. To me, you know, you said it all hangs on models
+improving. I would take it a step further, you know, and go back to what Satya said to us last week.
+It all comes down ultimately to the revenues that are generated by the people who are making the
+purchases of the GPUs, right? Like he said last week, I'm going to buy a certain amount every single
+year. And it's going to be related to the revenues that I'm able to generate in that year or the
+next couple of years. So like they're not going to spend way ahead of where those revenues are.
+So he's looking at what, you know, he had 10 billion in revenues this year. He knows the growth
+rate associated with those inference revenues. And they're making he and Amy are making some
+forecast as to what they can afford to spend. I think Zuckerberg's doing the same thing. I
+think Sundar is doing the same thing. And so if you assume they're acting rationally,
+it's not just the models improving. It's also the rate of adoption of the underlying,
+you know, enterprises who are using their services. It's the rate of adoption of consumers and what
+consumers are willing to pay to use chat GPT or to use cloud or to use these other services.
+So, you know, if you think that infrastructure spent expenses are going to grow at 30% a year,
+then I think you have to believe that the underlying inference revenues,
+right, both on the consumer side and the enterprise side are going to grow somewhere in that range as
+well. There is definitely an element of spend ahead though, right? And at this point in time,
+spend versus, you know, what do I think revenue will be for the next five years for the server,
+right? So I think there is an element of that for sure. But absolutely, right? Models,
+the whole point is models getting better is what generates more revenue, right? And it gets deployed.
+So I think that's, I'm in agreement, but people are definitely spending ahead of what's, what's,
+what's charted. Well, that's what makes it spicy. You know, it's fun to have here. I mean,
+you know, a fellow analyst, you guys do a lot of digging. Congratulations on the success of your
+business. You know, I think you add a lot of important information to the entire ecosystem.
+You know, one of the things I think about the wall of worry, Bill, is the fact that we're all
+talking about and looking for, right, the bubble. Sometimes that's what prevents the bubble from
+actually happening. But, you know, you know, as both an investor and an analyst, you know,
+I look at this and I say, there are definitely people out there who are spending who don't have
+commensurate revenues, to your point, spending spending way ahead. On the other hand, and I,
+and frankly, you know, we heard that from Satya last week, he said, listen, I've got the revenues.
+I've said what my revenues are. I haven't heard that from everybody else, right? And so it'll be
+interesting to see in 2025 who shows up with the revenues. I think you already see some of these
+smaller second and third tier models changing business model, falling aside, no longer engaged
+in the arms race, you know, of investment here. I think that's part of the creative destructive
+process. But it's been fun having you on. Yeah, thank you so much, Dylan. Really appreciate it.
+You know, fun having you here in person, Bill, and until next year.
+Awesome. Thank you. Take care.
+As a reminder to everybody, just our opinions, not investment advice.
+

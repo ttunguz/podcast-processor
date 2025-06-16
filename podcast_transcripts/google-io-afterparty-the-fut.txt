@@ -1,0 +1,1468 @@
+--- METADATA START ---
+Show: Training Data
+Episode: Google I/O Afterparty: The Fut…
+Host: Unknown 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/google-i-o-afterparty-the-future-of-human/id1750736528?i=1000710987190
+--- METADATA END ---
+
+1
+You know, I was talking to a founder, he gave me the analogy of, you know, you want the user to almost be like the way that a director would direct the cast and crew, of, you know, change the lighting here.
+2
+Like, can you say this with a little bit more of an accent there?
+3
+And like, almost like natural language, the way that a director would direct a cast and crew.
+4
+What do you think is the right way to mold the play?
+5
+I still think it's show and tell everywhere.
+6
+So I don't think you do everything from text.
+7
+I think it's kind of actually counterintuitive to have to.
+8
+transcribe everything.
+9
+So I think there's a lot of like showing and acting and mimicking or giving a reference just as inspiration in addition to the text.
+10
+Yeah.
+11
+But the one thing that's starting to become more clear, at least for me, is kind of video generation, simulation, games, they're kind of like the same thing in this new world.
+12
+And what that means is basically you're kind of world building.
+13
+You're saying, this is the stage, these are the assets, these are how things are supposed to look.
+14
+And then you shoot in it, and it can reshoot and refine and pause and correct something and go back in time and regenerate.
+15
+Like I think that's where this is heading and UI is going to be fairly novel.
+16
+Yeah.
+17
+Welcome to Training Data.
+18
+Fresh off of Google I.O., we're exploring some of the exciting AI updates with three leaders from Google Labs who are the leads on Google's product experiments around generative video, computer use, and notebook.
+19
+Thomas Ildrick of Whisk and VO reveals why the future of content isn't just about generation.
+20
+It's about remixable experiences where the line between movies and games blurs and where your creations become starting points for others.
+21
+Jacqueline Konzelman of Mariner explains how computer use agents will fundamentally change e-commerce by removing human friction from purchasing.
+22
+And Simon Takamine of Notebook LM shares why personalized AI content designed for an audience of one represents a completely new media category.
+23
+It's been exciting to see Google's just cooking in AI.
+24
+And I.O.
+25
+last week was very exciting.
+26
+And it seems like the core of public opinion has just turned on its head so quickly.
+27
+And right now, everyone's just like, Google's out in front in AI.
+28
+Why do you think that is?
+29
+Why did the public opinion change so quickly?
+30
+I mean, the models, you know, to start with, I think they have a big thing to play with.
+31
+Good.
+32
+Good answer.
+33
+Definitely the models.
+34
+And I think just the number of products that we have and seeing all of this breakthrough in technology and AI come out into all of those products, but also all the net new products that we're launching and the net new experiences.
+35
+It just, it was a lot last week.
+36
+And even not just at I.O., but like the week leading up to it.
+37
+I think you had a big moment the day before.
+38
+Yes.
+39
+Yeah, I did.
+40
+I did.
+41
+Yeah, it's definitely validating to see the public opinion on the models and Google's position in AI changing maybe recently.
+42
+It does feel to us on the inside at least that it's kind of the result of a lot of work though.
+43
+So it feels like we've been improving to me at least for at least the last three years in this area of Gen AI.
+44
+And maybe what we're seeing externally is people seeing what we've been up to.
+45
+It helps that we're number one on many of the leaderboards and it helps that some of the stuff that the models can do is state of the art and I think is only possible with some of the Google models.
+46
+But I think internally it just feels like the end of chapter one and the start of chapter two.
+47
+Yeah.
+48
+Wonderful.
+49
+So here's what I'd love to do today.
+50
+We have three of the leaders from Google Labs in the room with us for those in the audience.
+51
+What I'd love to do is spend a little bit of time on each of the topics that you are responsible for, and then we can round up with some overall thoughts now.
+52
+Does it sound good?
+53
+The three topics we'll cover: we'll go into Whiskflow and VO with Thomas, which is Google's video models and kind of creative image generation playgrounds, for lack of a better word.
+54
+We'll go into Mariner, Google's computer use agent, with Jacqueline.
+55
+And then we'll close on Notebook with Simon.
+56
+And everyone knows Notebook, so that needs no introduction.
+57
+Awesome.
+58
+Sounds good?
+59
+Okay.
+60
+Thomas, let's start with you.
+61
+Tell us about the history of how you all have been cooking and building and experimenting in the creative image video generation space.
+62
+And how long have you been experimenting with these products?
+63
+And what have been the key milestones so far?
+64
+Sure.
+65
+Yeah, it's been a really exciting space.
+66
+I think that's a very long question.
+67
+So I'll probably rant a little bit.
+68
+I think the, I mean, we've had for a long time good imaging models.
+69
+There was like ImageN, there's been DALI, obviously, externally, et cetera.
+70
+But something like two, three years ago is when, at least for us in labs, when we were thinking about products, we had the control net paper for people who remember.
+71
+So it's kind of like how do you take the model and start channeling it where you want?
+72
+So it's not just like a push-button thing.
+73
+You can start saying, I want the pose to be like this or the scene to be like this.
+74
+That was one.
+75
+And then the second thing was Laura's, where you can kind of show the model a range of things, and then suddenly you're able to kind of pull from the image and be like, what's the range of possibilities for that particular piece?
+76
+And so that iteration, the sense that you can start controlling the outputs, that felt like the right moment for us to start exploring the creative process.
+77
+When was that?
+78
+Probably two and a half to three years ago.
+79
+And so then a lot of stumbling and trying things and failing.
+80
+I think we had things where we trained a bunch of our people.
+81
+We even had a little animation thing going on where we created half an episode with artists.
+82
+And we published, I think it's the Not So Super villain, if you want to check it out on YouTube.
+83
+And then more recently, we ended up with a bunch of convictions out of that exercise.
+84
+So we had things like creation has to be iterative, so we need to build kind of these controls next to the models.
+85
+Media comes with the blueprint, which is this idea that if I generate something, you're able to kind of pick off where I left off.
+86
+And then the third one was like, it should be show and tell.
+87
+So basically, this driving force was instead of just telling the model with very long prompts, I can actually show you images, say, it should look kind of like this, and we can build off of that.
+88
+So this is where we started with WISC on the consumer side for imagery and flow for everything that's high-end filmmaking exercise.
+89
+Really cool.
+90
+And do you imagine WISC and Flow will be kind of end-consumer products in the Google portfolio of billions of user-scale consumer products eventually?
+91
+Or is it your playground for testing model UX and how best to bring this magic to users?
+92
+Yeah, I think we see it as a spectrum.
+93
+So I think WISC is kind of our play in the really consumer space and thinking about everybody now has this visual language at their fingertips.
+94
+They might not have it necessarily the most advanced ideas in terms of storytelling, but they can quickly remix each other's things.
+95
+And so we're trying to see what those dynamics look like.
+96
+So I think that's kind of our exploration space with WISC.
+97
+We'll see how it picks up.
+98
+I think a lot of the lessons will probably also graduate in just how we deal with user inputs and treat those across multiple.
+99
+And then Flow is the other side of like, you have a vision, you know what you want, and it's kind of like, how do we give you all the tools to create the best version of this in video?
+100
+Yeah.
+101
+Okay, super cool.
+102
+Who's the ideal user, do you think, for Flow and WISC?
+103
+For Flow, I think it's pretty clear for us.
+104
+We're starting with AI filmmakers.
+105
+And the reason is we want to build this kind of, we call it the generative AI camera.
+106
+Like, you know, you're doing world building, then you're shooting inside this world.
+107
+How do we actually develop the DSLR camera of generative AI video?
+108
+Yeah.
+109
+And then we'll distill kind of the Android version of the pixel camera version out of it.
+110
+WISC is much more a consumer.
+111
+There's a wide range of audiences.
+112
+Is it you creating something funny with your friends in a chat?
+113
+Is it kind of more inside the company, you're trying to create some visuals for slides?
+114
+Just kind of like all this, this whole range that we're exploring.
+115
+We'll see where it lands.
+116
+Yeah, so cool.
+117
+Okay, you said AI filmmakers.
+118
+Is that a thing?
+119
+Are people calling themselves AI filmmakers now?
+120
+And does it tend to be existing filmmakers that are looking to be more AI savvy?
+121
+Are you seeing net new creators come in and try to create feature films?
+122
+I think it's certainly an ill-defined term.
+123
+But the reason why I like to say AI filmmakers versus filmmakers is I think if you take the extreme end of the spectrum, these are people who need very bespoke tools.
+124
+They have entire workflows and processes and need to develop very specific ideas.
+125
+There's one tier under that, which maybe I classify as AI filmmaker, but potentially is pre-visualizations, where you're trying to quickly get a version out, and then you do the full process.
+126
+Or people who just don't have the budget.
+127
+So they're like, I don't have $100,000 to put my idea out there, but now I can at least take a shot at it.
+128
+And so those people are interesting to us because you can really start from the ground up thinking of if you had this generative AI camera, what would the user flow look like?
+129
+How would you fit those pieces?
+130
+Yeah.
+131
+Your answer to my initial question: the models are the reason that the core of public opinion has flipped so quickly.
+132
+It's been amazing to see VO's progress and VO3.
+133
+And for me, I don't know what evals you all look at to look at performance, but for me, it's the Will Smith spaghetti eating test.
+134
+And we seem to have passed that.
+135
+So, are we at Video AGI?
+136
+Or how do you think about the quality and the performance and what's ahead?
+137
+There's still some room that it's pretty cool.
+138
+I mean, the GDM team has done really great with VO3.
+139
+It beat, I think, the joke this week was that it beat VO2 in the rankings.
+140
+So it's kind of VOV in VO.
+141
+So people are very happy about this.
+142
+I think it's adherence is going up.
+143
+Yes, we don't have the six-finger problem.
+144
+Physics are getting pretty good.
+145
+There's still things where if you want to have, for example, multiple characters and kind of choreographed those characters have full consistency across multiple scenes, that's where there's still a lot to come.
+146
+How do you refine your output?
+147
+Can we propagate changes across clips?
+148
+There's going to be still a lot of improvements, but in general, a huge step up.
+149
+And the biggest reveal this time was audio.
+150
+So to be able to co-generate audio with the video that brings kind of like, you know, an image is what?
+151
+Like a video is more than an image, and a video-based sound is way more than a regular video.
+152
+That sort of has opened up a lot of virality.
+153
+Do you think the RD left to do to make the ideal tool for the craft?
+154
+How much do you think is in the product and in the UI?
+155
+And how much do you think is going to need to happen in the model research layer and things like steerability?
+156
+I think it's both, but at least I'm sure people will have a wide range of opinions, but it's almost like we're at a state where everything we imagine in terms of controls, I think we have visibility in how they can be built.
+157
+You know, you want to have consistency of characters, of scenes, of location.
+158
+There's like different ideas around this.
+159
+You want to reshoot.
+160
+So that part, I think the part that's hard is still the abstraction of all of it.
+161
+So how do you put this in the head?
+162
+What are the inputs that you want from users?
+163
+In the context of audio, for example, where do I define the voice?
+164
+How do I touch the voice to the character?
+165
+How do you find the mannerism?
+166
+How do that propagate?
+167
+So I think there's going to be a lot of work in that abstraction layer on top of the models and on top of the controls.
+168
+Oh, so interesting.
+169
+So you think most of the model kind of RD is almost a solve problem, it's maybe too strong of a word.
+170
+Not solved, but I think we know how to do it.
+171
+It will happen.
+172
+I think it's pretty clear that it's moving very fast.
+173
+And then we see a lot of things just like week after week coming up.
+174
+But how we do the connective tissue on top, I think, is still pretty much open.
+175
+Audio is one of those new frontiers, for example, of like, should I be talking and driving the audio, then changing my voice?
+176
+Should I be typing the text?
+177
+How do I do diarization?
+178
+There's a lot of like, what are the inputs?
+179
+How do you give, how do you let people mold clay with all these models?
+180
+What's your guess for how that future is for how people will mold clay?
+181
+And, you know, I was talking to a founder, he gave me the analogy of, you know, you want the user to almost be like the way that a director would direct the cast and crew: of, you know, change the lighting here.
+182
+Like, can you say this with a little bit more of an accent there?
+183
+And like almost like natural language, the way that a director would direct a cast and crew.
+184
+What do you think is the right way to mold the clay?
+185
+I still think it's show and tell everywhere.
+186
+So I don't think you do everything from text.
+187
+I think it's kind of actually counterintuitive to have to transcribe everything.
+188
+So I think there's a lot of like showing and acting and mimicking or giving.
+189
+But the one thing that's starting to become more clear, at least for me, is kind of, how would I say it?
+190
+You know, the video generation, video generation, simulation, games, they're kind of like the same thing in this new world.
+191
+And what that means is basically you're kind of world building.
+192
+You're saying, this is the stage, these are the assets, these are how things are supposed to look.
+193
+And then you shoot in it, and it can reshoot and refine and pause and correct something and go back in time and regenerate.
+194
+Like, I think that's where this is heading.
+195
+And UI is going to be fairly novel.
+196
+Yeah.
+197
+You mentioned games.
+198
+I wanted to ask about this.
+199
+It feels to me like, you know, the existing way that we consume games versus movies is, you know, is because there's such a tremendous fixed upfront cost of producing a movie.
+200
+If you imagine that, you know, in a world where every movie frame is generated, not pre-rendered, and that, you know, entire story arcs can unfold, it does feel like the movie and the game worlds start to merge.
+201
+How do you think that plays out?
+202
+I think with, I mean, so for example, we have the Gini model that's been really interesting.
+203
+So you give an image and you can kind of move your character and the world builds in front of the eyes.
+204
+But what's going to be really interesting is how do you ground it.
+205
+Games are fun because there's like very set constraints.
+206
+Movies are good because there's like very small details that matter, you know, the expression and the moment and the timing.
+207
+And so I think it's all about, it's almost about like the constraining of the capabilities towards what we need.
+208
+So I don't know.
+209
+I think, and the other thing that strikes me, and I think a couple of people on the team is like, it's not clear that we think in terms of these static formats that we have today, like an image, a video, and a game, is there something in between all?
+210
+Like, I can share an image with you, but you can instantly turn it into a scene that you're walking into.
+211
+So am I sharing an image, or am I sharing an experience?
+212
+Lots of questions, I guess.
+213
+And it does feel like, you know, the story is almost the common thing that makes a game and a movie good.
+214
+So, and that's different from an image, it's just a visual, right?
+215
+Yeah, exactly.
+216
+It's the setting, the constraints.
+217
+You define the rules of the game basically and then you let other people enjoy themselves in it.
+218
+Really cool.
+219
+My understanding is that video is still expensive and somewhat slow to generate.
+220
+Is your sense that that's getting solved quickly?
+221
+And will we have everybody's going to be able to generate two-hour films in their pocket in a couple years' time?
+222
+Or is your sense that this is a longer, we got a lot of efficiencies that we need to build in order to make this kind of cost practical?
+223
+I think, I mean, we've seen in imagery and we've seen in video kind of like the same speed of cost reductions that we've seen in other places.
+224
+Both, you know, the hardware is getting better.
+225
+I think the efficiency, to your point, we have like the regular models and then we learn how to distill them to kind of so that they just take less processing to get to whatever you asked for.
+226
+So I'm actually pretty optimistic that the costs are just going to keep coming down and the speed is going to increase, kind of aligned with what we're seeing with other models.
+227
+Yeah, got it.
+228
+Fantastic.
+229
+What do you think is ahead for AI in the creative space, at least from a Google Labs perspective?
+230
+Well, we just launched Flow, so we have a lot of things to do to just deliver on that promise of keeping you iterating.
+231
+I think that's the first thing.
+232
+Refinement of outputs and keeping there going there.
+233
+But I think the holy grail will be some of these new formats and experiences.
+234
+What does it mean as a creator to share something with you that we can interact with?
+235
+That's something that we want to explore.
+236
+Really cool.
+237
+I want to be able to talk to Will Smith as he's eating the spaghetti.
+238
+Really cool.
+239
+Thank you so much for sharing what you all are doing over in the creative sphere.
+240
+Of course.
+241
+Okay.
+242
+Jacqueline?
+243
+Yes.
+244
+I would love to talk about computer use and Mariner.
+245
+Maybe first off, why is it called Mariner?
+246
+Great question.
+247
+So we wanted to give the project a name that really embodied what we were trying to do with this space, which was enable users to just go out and explore, enable agents to go out and explore.
+248
+And Mariner is sort of this whimsical, open-ended name that just sort of embodies the spirit that we have on the team right now.
+249
+I love that.
+250
+Actually, you guys have really good product names across Google Labs.
+251
+These are all really whimsical.
+252
+I'm still trying to get rid of the LM bit on over here.
+253
+Apart from that, I'm going to be a little bit more.
+254
+I'm pretty happy with Whiskin Flow.
+255
+I think we can be sick in there.
+256
+We're evolving our approach to naming.
+257
+That's what we evolved.
+258
+There we go.
+259
+That's a statement for it.
+260
+Yeah.
+261
+Oh, that's funny.
+262
+Can you say a little bit about how Mariner works?
+263
+Like, is it a computer vision model behind the scenes?
+264
+Like, it just feels like pure magic in a box, but give us a peek under the hood.
+265
+I will take pure magic in a box any day.
+266
+So the way it works is really leveraging the power of Gemini.
+267
+That's kind of, you know, it's an action-tuned model on a recent version of Gemini.
+268
+But what that means is that we have all of the multimodal capabilities that Gemini gives us.
+269
+So it's able to plan and read.
+270
+And then, the way it actually works is taking that and understanding the screenshots.
+271
+So, this is where the multimodality of the Gemini model really comes in handy.
+272
+We're able to continue to take screenshots, continue down the trajectory of what it is that we're trying to achieve from the users' tasks that they gave us, and bring it all together that way.
+273
+Yeah, got it.
+274
+Super interesting.
+275
+What's the history of the project, and when do you anticipate you'll be rolling it out on this?
+276
+So, the project initially started last year, shortly after this time.
+277
+Okay.
+278
+Actually, if we go back at I.O.
+279
+Last year, we kind of graduated the Google AI Studio and Gemini API out of the labs team onto the developer team now, and that freed us up to start exploring what we thought was coming next.
+280
+And that happened to be agents that could actually take action on behalf of users, not just answer questions or generate content.
+281
+So, the team started working on it.
+282
+At that point, we started grouping up with a bunch of different folks across Google to kind of bring together what we launched in December last year, which was Project Mariner as a Chrome extension that took action on your browser.
+283
+And then we continued to iterate on it based off of a lot of the feedback that we got from the trusted testers of that initial launch.
+284
+So, we actually had a large group of trusted testers that we would be talking with regularly and understanding what was working well for them, what wasn't.
+285
+And we took that feedback and iterated on the most recent launch of Project Mariner, which we announced last week at Google I.O.
+286
+Really cool.
+287
+What was some of the feedback?
+288
+And, like, what do people, what are the magic sparks when people really are like, this is a game-changing product for me?
+289
+Yeah, great question.
+290
+One of the initial kind of magic moments that everybody had was watching Project Mariner take control of the mouse on the browser and being able to click, scroll, typing text into text boxes actually felt net different when you realized it was an agent doing it.
+291
+But quickly as you were using the initial version, the feedback became, this is super cool.
+292
+Can I please use my browser again?
+293
+Like, I'd also like to be able to do work.
+294
+Yeah.
+295
+Which makes a lot of sense.
+296
+And so that was one of the big motivations behind moving towards this idea of users entering a task in the web app that could then run in the background on virtual machines.
+297
+Okay.
+298
+Exactly.
+299
+But one of the key things that we did also try to keep true to the initial vision was how can we start to think about bridging the context that a user had on what they were doing in their current environment to the tasks that they were sending to the VM and Mariner executing in the background.
+300
+And the way we tried to do that was if you install the companion extension now, it'll actually be able to see all the tabs you have open.
+301
+So when you're giving Project Mariner a task, let's say you happen to be looking at a recipe on a recipe site and you're like, oh, wouldn't it be great if I could canonical use case, add all these ingredients to my Instacart cart.
+302
+Now when you go to Project Mariner, you could say, hey, add all the ingredients from this chicken recipe to Instacart, and you can select the tab that you have open with that chicken recipe.
+303
+And Mariner will understand that context, will be able to revisit that site on the VM and complete the task with the context that you had in your local browser as well.
+304
+And it's almost superhuman in a way because as a human, I only, it's like hard to context switch between browser tabs.
+305
+Yes.
+306
+Yeah, I think a big net win also was the ability for Project Mariner to do 10 tasks at once, not just one.
+307
+And that was really a big net unlock.
+308
+I was using it the other day, and I'd just come back from running an errand, and there was a bunch of stuff on my mind that needed to get done.
+309
+And the first thing I did was open up Project Mariner, enter in three different tasks for it, and then just sent them off to start making progress.
+310
+And I was able to jump back into the document that I happened to be working on.
+311
+And it was this like magic moment of just, okay, not only is progress being made on these things, but I just got it off my mind.
+312
+Like I didn't have to keep thinking about it.
+313
+Do people want to see the computer mouse moving around first for a while before they're like, okay, I trust that thing to go off and do things for me?
+314
+If they do, they have that opportunity in the current Project Mariner experience.
+315
+You can go into full screen mode.
+316
+You can see the agent moving around and clicking on things, entering text.
+317
+You could also pause the task at any point and be able to take over it.
+318
+So having or giving the user the ability to take over and/or provide oversight on these tasks is something that we think is still very important when we have an open-ended platform like this or an open-ended experiment like this that really lets it up to or leaves it up to the user to try out different things.
+319
+And what's the user behavior you're seeing?
+320
+Like, are they like, please just take the wheel, I don't want to deal with it?
+321
+Or are they actually want to backseat drive and watch the agent and make sure it's doing what it's supposed to be doing?
+322
+That's a great question.
+323
+I think initially watching it is this fun element, but also it develops a comfort for knowing how the agent is thinking and what it's doing.
+324
+But one of the pieces of feedback we also got from the initial launch was.
+325
+And what users ended up wanting was just a summary of like, what did Project Mariner do to complete this task so I can make sure it did it correctly?
+326
+And that really kind of points to the question you're getting at, which is, I want to just hand the task off to this agent, but then I want to be able to just verify what it did at the end of the task, not sit there the entire time and watch it.
+327
+Yeah, yeah, so interesting.
+328
+What do you think are the solved and the unsolved technical problems so far with computer use?
+329
+Because computer use still feels like to me we're maybe in the Will Smith, you know, the spaghetti is still sort of disappearing a little bit phase.
+330
+And maybe that's an unfair characterization.
+331
+But I'm curious where you think we are on the evals and the performance so far for computer use, and what are the unsolved problems right now?
+332
+I think that's actually a totally valid comparison.
+333
+There's a reason we launched this as a research prototype with the experiment label on it right now.
+334
+I think we've seen really big gains from December to what we launched last week.
+335
+That said, there's definitely still model quality improvements to go.
+336
+I think there's also just application level improvements to go.
+337
+There's more seamlessly being able to have the user provide context up front, which will make the agent more capable of understanding what it is it should be doing.
+338
+And then there's just more planning and reasoning that we could do, like at inference time or at the application layer time that sort of, in addition to the model improvements, improve system instructions, improve checks and calls to different models.
+339
+And then, of course, right now, Project Mariner entirely completes a task by actuating or taking action on a browser.
+340
+You want an agent that has more skills than that.
+341
+You want an agent that knows when to call the right tools.
+342
+So I think it's just integrating a lot of that in and starting to innovate and climb on that.
+343
+And then, of course, right now, Project Mariner, it's in the browser.
+344
+People use computers.
+345
+So, you know, we call this computer use.
+346
+So there's that entire dimension as well that I think we're going to continue to see innovations in.
+347
+Really cool.
+348
+Were there any contrarian opinions you all took in building Mariner?
+349
+So, for example, I think some people have said screenshots, it's going to be too slow.
+350
+It's not going to be fast enough.
+351
+You should use the website DOM or whatever.
+352
+Like, any contrarian bets you guys made?
+353
+So, the reason we went with the screenshot is we wanted to make sure that it was a skill that we could develop that could be applied across things that aren't just websites.
+354
+I think the other aspect of that is like DOM versus accessibility settings or accessibility is another leverage.
+355
+We're kind of betting on this one right now, but I would say everything's evolving.
+356
+So, we're just willing to take pivots if and when it makes sense.
+357
+Yeah.
+358
+Makes sense.
+359
+What is it capable of doing it today and doing today?
+360
+And what is the speed?
+361
+Like, if I tell it to go, you know, the canonical go order me a pizza from Domino's, can it do that and how long does it take?
+362
+The speed is definitely an area that we want to keep hell climbing on, is what I would say.
+363
+But it's interesting you say that, because one of the things that I, so I was recently using Mariner to help me complete the task, which was come up with, let me take a step back.
+364
+I have a three-year-old at home.
+365
+She is going to be four soon.
+366
+Part of that means organizing a birthday party for.
+367
+This task, as you can imagine, involves understanding what to put in the loot bag and then actually buying all of those things or like finding links somewhere to go buy them.
+368
+And I gave Project Mariner this task and it was basically a personal research that turned into an action-taking task, which is find me the links and save them.
+369
+And the thing that really resonated the most with me on that one is as it was performing this task, first it did a search for good ideas to go in a loot bag.
+370
+And then as it just remembered those five items, that's something any of us could do.
+371
+Like that itself wasn't impressive.
+372
+But the first one was, I think, temporary tattoos.
+373
+So then it started looking for temporary tattoos.
+374
+It found a great link for it.
+375
+Instead of having to copy that link and paste it in a dock somewhere else, it could just remember it.
+376
+It could remember this like massive URL.
+377
+And then it moved on to the next one.
+378
+And then at the end of these five items, it just gave me all five URLs that it had been able to inherently store.
+379
+So when we talk about speed and efficiency, I think there's two dimensions.
+380
+One is just the model calls and the, you know, taking action and like how do we improve it with different tool use.
+381
+But then the other one is, how can agents just do things in a different way that are inherently faster than the way we would do things?
+382
+And I think we're going to continue to see improvements on both dimensions.
+383
+Yeah, I wish I could remember five URLs.
+384
+Oh, gosh.
+385
+Okay, good point.
+386
+Let's see.
+387
+What do you think is ahead for Mariner?
+388
+Where do you see it evolving from here?
+389
+I think there's a couple things.
+390
+Number one, we had a bunch of announcements last week around Project Mariner-like capabilities making their way into different Google products.
+391
+And I think that this is a kind of core capability that you'll start to see emerge everywhere from the Gemini app to AI mode in search.
+392
+And then I think for Project Mariner itself, I actually like to think of things in three categories.
+393
+There's the agent itself.
+394
+I think that's going to get smarter, that's going to get better, that's a better model, that's tool use, that's memory, that's context.
+395
+Then there's the environment.
+396
+We talked about how in December it operated on your local desktop in your Chrome browser.
+397
+So that's in the foreground.
+398
+Then we moved towards this idea of Project Mariner operating in virtual machines, which meant that it's now operating on VMs.
+399
+I think there's this middle layer, which is an agent that can still operate on your device, but in the background.
+400
+And there's a bunch of reasons and types of tasks where that becomes a really important kind of way for the agent to operate.
+401
+And then, of course, there's all the other devices.
+402
+But really, what you want is a capable agent that's able to operate in a way that is omnipresent across all your devices, locally, on VMs.
+403
+And then the last one is the ecosystem part, which is where you start to get into the agent-to-agent interaction and like how does your agent interact with all of the things that exist outside of its own world, essentially.
+404
+Yeah, so cool.
+405
+I think the canonical examples for computer use are, you know, book me a flight or order me a pizza.
+406
+Is that your sense of what computer use agents will actually be really good for?
+407
+Or what do you think?
+408
+I'm sure you spend a lot of time thinking about what applications will actually be the bullseye here.
+409
+How do you think that shapes out?
+410
+So I think we default to those because they're just easy to understand.
+411
+Like travel planner.
+412
+I mean, literally, it's a travel agent.
+413
+It couldn't be more analogous when you think of agents right now.
+414
+But no, the way I like to think about it is on a spectrum where you have tasks that are sort of in what I would consider do-it-with-me, where you have your agent alongside and you can easily offload certain tasks to it, but it's really working in unison with you.
+415
+And then you have these like do-it-for-me tasks, which is, hey, I just want to give my agent a bunch of stuff to go do, and it will run it in the background.
+416
+I think part of the reason we see these tasks being used is twofold.
+417
+One, they're just incredibly easy to understand, and everybody kind of gets what that use case is.
+418
+And they're usually starting from scratch, like there's no context you need up front.
+419
+You can just send out an agent out to go do it, and the demo, as a result, is pretty easy to put together.
+420
+And then the other one is just where the capabilities are at today.
+421
+And so, as agents get more capable and you start to have more of these realizations on what they are actually able to do, you'll see much more advanced use cases or much more complex use cases.
+422
+And that also requires the user having more trust that they can give to the agent.
+423
+So, I think that that will evolve over time, and we'll see people come up with even more interesting use cases that they're willing to give an agent to do on their behalf.
+424
+Yeah, totally.
+425
+It's also going to require, I guess, it's going to inspire, I think, a shift in business model, right?
+426
+Because, like, if you have a bunch of agents going off and browsing, you know, trip planning, for example, they're not necessarily looking at the ads and the first things that show up.
+427
+And so, it is, I think it's going to create some business model evolution as well.
+428
+I agree.
+429
+I think there's a lot of evolution that's going to happen across business models, across how websites work, across how users will always want to use the internet going forward.
+430
+But there's also a lot of other tasks that it's just ripe for disruption in a lot of ways.
+431
+Yeah.
+432
+Yeah.
+433
+Like, I mean, I'm thinking like humans are suboptimal in some ways.
+434
+We see the ad, we get excited, distracted, and you know, I go and buy the dress.
+435
+And my agent, maybe it's, maybe I can instruct it to ignore the ads.
+436
+Maybe it actually knows like it's going to find the best content regardless of what's what's showing up on the page.
+437
+So it's kind of interesting to think about how that future plays out for, you know, as agents do more of our browsing.
+438
+It's super interesting.
+439
+I will say that the dress that, you know, maybe you got distracted, I always get distracted by things too and end up purchasing stuff that gets sent my way, but I'm always happy with it by the time I do end up purchasing it.
+440
+So I think that there's like new opportunities to think about how do you actually involve agents in this new sort of business model ecosystem and hence that third bucket of like there's going to be a lot of evolution happening in that space.
+441
+And I think that that's where we need to evolve as an entire ecosystem.
+442
+And it's not just like one player that's going to say this is how it's done.
+443
+So it's been interesting just talking to different companies and different people who are also thinking in that space right now.
+444
+Yeah, really cool.
+445
+I mean, I do think also just as a user as well, you know, I often don't buy things on the internet because it's such a pain.
+446
+Oh, I've definitely dropped off.
+447
+I cannot, I can't navigate this thing.
+448
+Either I don't understand it.
+449
+Yeah.
+450
+That happens quite a lot.
+451
+Or it's just like, I've just not got time.
+452
+That happens as well.
+453
+Or I'm just, I can't be, I can't be bothered, you know.
+454
+Yeah.
+455
+Maybe it's just me, but I'm not a fan of shopping.
+456
+Let's put it that way in the real world and online.
+457
+But I'm a fan in what I get.
+458
+You know, I'm a fan in the outcome.
+459
+And so I don't know.
+460
+You know, if I if I didn't have that barrier of actually having to do the shopping bit, I don't know, that would be me, though.
+461
+No, I agree.
+462
+And what's what's really interesting is, I don't know about you, there are certain stores that I'll go on to and I'll just like accumulate stuff in my cart, and I won't want to pull the trigger until a little bit later on when I've had a chance to think about it.
+463
+Yeah, yeah, yeah.
+464
+But then I end up with a bunch of like half-built carts across a bunch of different websites.
+465
+And part of me also wonders: is there a world where my agent is that universal cart, essentially, where I'm like, add all this stuff to it, or like create this aggregate area of all the items that I might be interested in buying?
+466
+And it can be across any site at this point because the agent represents me and it can remember which sites to go on.
+467
+And then when I'm ready, it's sort of like, okay, one click, like make this entire purchase, basically.
+468
+And it can go and check out on all of the different sites or all the different stores.
+469
+So that'll be, yeah, that'll be an interesting area to think about.
+470
+Yeah.
+471
+Okay.
+472
+What I just heard from you guys is e-commerce conversion is about to get about to skyrocket then.
+473
+I mean, on my computer, it will go up.
+474
+That's all I'm saying.
+475
+I don't know about anyone else.
+476
+Also, diversity as well.
+477
+You know, like I go to the same old sites, right?
+478
+But I would love suggestions.
+479
+Yeah.
+480
+Yeah.
+481
+So, yeah, it's like once you've kind of democratized computer use, then the laziness of humans to get through checkout is no longer the determining factor of which e-commerce companies will do well.
+482
+It's just like the best product wins.
+483
+It's, yeah.
+484
+So interesting.
+485
+Okay, cool.
+486
+Thank you for sharing.
+487
+You're welcome.
+488
+Okay, Simon.
+489
+Any last?
+490
+Hi.
+491
+Notebook.
+492
+Notebook LM or notebook?
+493
+We'll go with notebook LM.
+494
+We're still notebook LM.
+495
+I think it's been so long now that it's definitely notebook LM.
+496
+There was a period where we were like, which we can talk about.
+497
+And yeah, it's going to be hard to remove it.
+498
+I like it, though.
+499
+I mean, you know, maybe every product that is kind of like has an acronym or some weird letters after it, and there are a couple of them in the AI space regrets that.
+500
+But at the same time, they become part of the team and the identity.
+501
+Totally.
+502
+Yeah, it's nice.
+503
+I like it.
+504
+I love that.
+505
+Okay, so Notebook LM was, you know, one of the biggest, one of Google's biggest viral hits last year?
+506
+Last year?
+507
+Last year.
+508
+It went viral last year.
+509
+Yeah.
+510
+Yeah.
+511
+And the team had been building it for a while before it took off.
+512
+Totally.
+513
+Yeah.
+514
+Tell me about how it's evolved in the last year.
+515
+Yeah, yeah.
+516
+Well, so firstly, the viral moment.
+517
+So my way into Notebook LM was through audio overviews.
+518
+So me and the team had a kind of, we were also exploring the future of content, but from a different angle, I think.
+519
+And, you know, Notebook was the perfect balance of kind of user control, but also kind of the power of the technology.
+520
+And, you know, our hypothesis was that there was an opportunity for personal content.
+521
+So not content that is for everybody, actually content that's for an audience of one, maybe two, maybe three, small group maximum.
+522
+And that was kind of how we shaped the product.
+523
+We didn't think it was going to, you know, looking at the Notebook user base back then, we didn't, we thought that it was a great place to, you know, kind of like test PMF, just kind of iterate on the product.
+524
+We didn't, we were totally unprepared for the massive success of audio overviews and then through that Notebook LM as well.
+525
+Firstly, it was making sure that the TPUs don't fully melt as Riser, I think, had a GIF out back then.
+526
+But there was also just a lot of iterations and fixing things and improving things.
+527
+And that was really the first couple of months.
+528
+I think since the start of this year, maybe we've managed to take stock.
+529
+So at the end of last year, we launched the join mode, the ability to join in a podcast and an audio overview, I should say, and talk with the hosts and ask questions and all this kind of stuff.
+530
+But at the start of the year, we kind of took stock.
+531
+And we've really been thinking about what is a notebook for the notebook users?
+532
+How are notebook users really leaning into notebooks once they've come in the front door to audio overviews?
+533
+And we've started to think about, and Jacqueline, you kind of touched on this, I think, the criticality of context in really enabling these AI systems to be genuinely useful for you.
+534
+And we found that a lot of users, when they're using Notebook, they use them for these kind of more longer-running, almost like projects that they have.
+535
+So either their hobbies or if they're in the world of work, they can be ongoing projects or they can be projects with a goal, like I've got to prepare for a presentation or something like that.
+536
+And so a lot of what we've been really doing is retooling how we look at notebook and also building a strategy as well that leans more into, I think, those more sort of longer-running opportunities that we see in the notebook user data.
+537
+Of course, we've done a whole bunch of kind of improvements too.
+538
+So we've just launched the mobile applications finally.
+539
+And we also launched international audio overviews as well, which was kind of the end.
+540
+It was the end of a long road, honestly, of upgrading the underlying AI infrastructure and models away from the very first, almost like research-grade model that we used for the initial launch to native Gemini audio.
+541
+So what you hear now in international audio overviews, at the very least, is native Gemini audio.
+542
+And that was a big push for many teams across labs and also GDM.
+543
+Yeah, super cool.
+544
+It feels like audio overview was almost the viral hook.
+545
+And you guys have been building out a lot in almost like the rag UI and just imagining what that workspace looks like.
+546
+What do you think the actual just audio overview podcast thing becomes?
+547
+And actually, I'm curious how you even ended up on the shape of two podcast hosts talking to each other.
+548
+It's just like, it's such an engaging format.
+549
+I'm curious how you even landed on that.
+550
+And I feel like it's only in its infancy still in terms of I would love a podcast every morning to pipe me up for my day and things like that.
+551
+And so how much of your time is thinking about Notebook, the kind of rag workspace environment, for lack of a better word, versus Notebook, the podcast killer, the training data is going to be built on Notebook in the future.
+552
+Yeah, yeah, yeah.
+553
+Well, I hope not.
+554
+But maybe it can help.
+555
+So the way that we're starting to increasingly look at notebooks is they're comprised of kind of three, they give you sort of like three superpowers.
+556
+So one of them is they help you really accumulate information over time.
+557
+And that's, you know, there's a lot of amazing underlying database technology.
+558
+The second is they bundle in intelligence.
+559
+And when we launched last year, we used the old Gemini 1.5 Pro model back at that time.
+560
+But obviously, now we've got thinking models and so on.
+561
+But the third thing is this ability for content and information to be adaptive to your situation.
+562
+And so, you know, podcasts or audio overviews, a conversation, it's one form that the information might take, but you can imagine many other forms that that informational knowledge might take as well.
+563
+So you might imagine it coming at you in the form of a comic book, or maybe a short movie, or maybe a mind map, which we've also launched.
+564
+But you can imagine many other types of media that fit the right circumstance and form and function for the moment for you to understand information, to be able to analyze it, make decisions with it, kind of do something with it.
+565
+So that's the mindset that I think we have when we're thinking about the different, you might hear us talk about transforming information from one state to another.
+566
+I think it's a fine word.
+567
+It's a little bit technical, to be honest.
+568
+It's more like adapting to you and fitting you, I think.
+569
+That's really what we're going for.
+570
+But in terms of just going back to your actual question around audio overviews and where it's going, there is a huge amount, I think, of room left in that technology.
+571
+So I enjoy audio overviews and I use them a fair amount, but I also, every now and then, I'll be like, they've kind of lost the plot there.
+572
+I didn't quite get the right narrative.
+573
+Sometimes it like the uncanny valley or the illusion is broken, you know, when you're when you're listening to them.
+574
+And, you know, while it might seem like there's a small amount of work we might need to do to kind of to fix that last step, there's actually a ton of work that we've got to do.
+575
+You know, and so there's a lot of effort being placed into all of the various components that you'll need to make the experience feel like something where you suspend your disbelief more completely.
+576
+And alongside that, you know, there are many other different show types.
+577
+We've kind of had one show type for a bit too long, I think, actually.
+578
+And we're bringing more out.
+579
+So we're actually working on some really cool things.
+580
+A lot of them are inspired by users, honestly.
+581
+So one of the things that we saw users do right back at the start, but you keep on seeing it, is users putting in their LinkedIn.
+582
+They're putting in their LinkedIn.
+583
+Well, why?
+584
+Number one, it's kind of fun to hear people talk about you, but a lot of users are using it to get feedback.
+585
+to understand from another person's perspective who they may not have access to.
+586
+Feedback is truly a gift, like real feedback is hard to find.
+587
+So how would somebody else look at me?
+588
+How would somebody else talk about my strengths?
+589
+And how might somebody else talk about areas to improve?
+590
+This is something that we see users already using audio overviews to kind of access that sort of content or sort of information.
+591
+We think we can make that easier for people.
+592
+So a lot of what we're thinking about now are different show types that flip in into some of the more viral successes that we've seen that I use.
+593
+Okay, so we're going to have training data, the comic, the comic strip.
+594
+I'm not saying we're definitely going to have it, but I mean, it's, I think, not everything has a story, you know.
+595
+And so applying different adaptations will almost be sort of context-dependent, I think.
+596
+But oftentimes, it does help.
+597
+So, one of the things that we were looking at the other day was we were looking at a 150-page PhD dissertation on, it was invasive wolves, I think, in some part of Europe.
+598
+And yeah, you could have looked at a mind map, you could have maybe listened to an audio overview if you had like 10, 15 minutes to spare.
+599
+But actually getting a kind of a comic book rendition of that PhD was really helpful just to kind of understand the overall narrative within it.
+600
+So, you know, we're still working on things like that.
+601
+But I think there's a lot of opportunity there.
+602
+And of course, you know, comic books are very similar to storyboards and that intersects.
+603
+I was thinking exactly.
+604
+And Thomas is doing too, as well.
+605
+So, yeah, there's a lot of interesting ways that I think labs projects intersect, and we'll continue to explore them.
+606
+So you can create a hero's journey comic book of somebody's LinkedIn career arc.
+607
+I mean, for an audience of one person and one person only, that's probably going to be the most awesome movie that we'll ever have seen.
+608
+So maybe, yeah, maybe.
+609
+That's awesome.
+610
+Really cool.
+611
+Where do you see the outbook going from here?
+612
+Yeah, well, like I said, we're really, I think our focus is, aside from a whole bunch of different adaptations.
+613
+And so, both in the world of the knowledge worker, but also in the world of students, these are our kind of like core users, I think.
+614
+The project is really an area where those users both need the most assistance, but it's also where it's also the point of highest value, I think, for them.
+615
+So, if you're in the world of work, the project is where value accumulates.
+616
+It's a unit of work.
+617
+Yeah, right.
+618
+It's a real unit of work.
+619
+We actually call them units of knowledge, but it's a great way of putting it.
+620
+And the same for a student as well.
+621
+You know, the project, if it's a project with a goal, passing a test, that's a big deal.
+622
+Or if it's an ongoing lifelong learning thing, that's also really important as well.
+623
+So, I think really focusing on use cases in those domains is something we're thinking a lot about.
+624
+I'll say the other thing is, I think one of the things I'm personally very excited about, I've been in the consumer product space for many, many years.
+625
+And I guess one of the things that we did at Google when we went kind of mobile first, in the mobile-first era, is we moved a lot of our desktop products to mobile.
+626
+And if you look at those mobile products, many of them are the desktop products shrunk down to a small screen.
+627
+And that's okay.
+628
+And I think because we were one of the first, because we built Android and a lot of our big products basically got mobilified at that point, we find it hard to change at that point forwards.
+629
+But I've always been really interested in thinking about if you have a desktop experience, what is a companion mobile experience that doesn't have to just be a carbon copy of the desktop experience and maybe leverages the form factor, the sensors, you know, the actual fact that it's with you all at all times to deliver an additive experience on top of the desktop experience.
+630
+So, you know, we've just launched the mobile experience after a fair amount of time in developments, fair to say.
+631
+But what I'm really most excited about there is the opportunity to actually iterate on that kind of novel mobile experience going forward.
+632
+So, like, for example, wouldn't it be cool if I was, you know, maybe I'm in a discussion with some amazing, really smart people and I've popped Notebook down, I've opened a voice, its native voice recorder, and it's just able to record the conversation for me.
+633
+And then I can transform that to later dates and accumulate them and all this kind of stuff.
+634
+You know, that's the thing that it's probably going to be weird if I open my laptop and push record on my laptop.
+635
+But for the mobile device, it's the perfect opportunity.
+636
+Totally.
+637
+Yeah.
+638
+Really cool.
+639
+Thank you for sharing.
+640
+Yeah, no.
+641
+Okay, we're going to close it out with some predictions on AI as a whole.
+642
+Please jump in.
+643
+Hot takes, welcome.
+644
+Let's see.
+645
+Let's start with: what are your favorite Google Labs projects that we didn't talk about today?
+646
+Like, what is under, what is the, what are the gems right now that you're most excited about?
+647
+The unreleased Google products that we're not allowed to talk about.
+648
+Not the unreleased ones.
+649
+But you guys just announced 50 things.
+650
+There has to be others beyond the three we talked about today.
+651
+Yeah, I have one, which is kind of still in this video and image space, but I think the virtual try-on stuff that you just presented, like this was exploration.
+652
+And I think that one to me is really nice because I think it meets a real direct user need.
+653
+It's the strength of Google.
+654
+Obviously, we have all the inventory and we know how to connect this.
+655
+And it's just so fun to just see things on your.
+656
+So I'm very excited about that one.
+657
+I think this has like a good one.
+658
+Stitch, I think, is really cool to be able to just talk to the product and describe what design you want and have it actually come out with that front-end design.
+659
+I'd been using it a little in dog food before it was launched.
+660
+And so it's just, I want to spend more time using it now that it's actually live.
+661
+Really cool.
+662
+What about you?
+663
+Well, mine is going to be Stitch.
+664
+So I'm going to have to be a little bit more.
+665
+Two votes for Stitch, one vote for shopping.
+666
+Yeah, yeah.
+667
+I'm with you.
+668
+Two votes for shopping.
+669
+Yeah, there we go.
+670
+There we go.
+671
+What, I guess, what areas do you think will be hottest in the application space for AI broadly in 2025?
+672
+Like, I think coding was, you know, maybe the breakout application of the last 12 months.
+673
+What do you think will be the breakout application of the next 12 months?
+674
+Video.
+675
+Yeah, I think there's something around these remixable content.
+676
+You know, you generate something, I take your thing, I just riff off of it.
+677
+There's something around this that I think is going to pop up somewhere.
+678
+I hope it's us.
+679
+So that part feels really interesting.
+680
+It's kind of like whisk is heading a bit that way.
+681
+View obviously power a lot of this in video.
+682
+Really?
+683
+That's going to be something this year.
+684
+As you look back at past predictions of what you thought was going to be interesting in AI, where have you gotten been really right and where have you been really wrong?
+685
+Let's say we're really wrong altogether.
+686
+All right.
+687
+321 timing.
+688
+Okay, say Mark.
+689
+I think there's been several examples where we definitely felt like we were onto something and we were onto something.
+690
+We were just too early into the space.
+691
+And so it's been fun to see projects kind of go on pause or stop for a little bit.
+692
+And then some of them are starting to even come back around again.
+693
+Good problem to have.
+694
+Yeah.
+695
+What do you think you've been really right on in like sticking to your convictions on?
+696
+I think this, at least for me in my space, like the show and tell piece, this idea that like you shouldn't you shouldn't ask users to kind of write two pages of text to describe, for example, an image.
+697
+The idea is like you should be able to show and tell like you would do a friend or an artist that's working with you.
+698
+I think that has stuck and it's kind of moving people away from prompting and towards kind of instructing and relying on the intelligence that lives behind.
+699
+So I think that's one that one I'm sticking with my guns.
+700
+I think you're here.
+701
+It's there to stay.
+702
+Yeah.
+703
+I mean, this is probably obvious at this point, but when we all started in labs, there was no Google LLM API.
+704
+Google didn't have a functional instruction-tuned language model or anything like that.
+705
+And believe it or not, back then, in fact, I think the general consensus was that these were not really things that are easy to build a business around, you know, because of their cost.
+706
+And I think one of the things that we've all done actually is we've kind of stuck with the technology.
+707
+And now it's obvious, right?
+708
+But in the early days, it certainly was not obvious.
+709
+Totally.
+710
+So, yeah.
+711
+But we got that bit of timing right.
+712
+Yeah.
+713
+Yeah.
+714
+Yeah.
+715
+Inference costs, just riding that curve and just setting capabilities up, costs down, and what will you build, assuming that those curves continue.
+716
+Yeah, exactly.
+717
+In fact, when we joined, one of the traditions is write to think inside labs that Josh started actually.
+718
+And a lot of the docs that we'd write were around, well, what happens in two years?
+719
+You know?
+720
+And of course, yeah, that curve is something that I think inspired a lot of us.
+721
+Thank you all so much for joining to share what you're doing across the creative sphere, the computer use sphere, and the what do I call the notebook sphere?
+722
+The podcast killer/slash.
+723
+Let's not say podcast killer, but yeah, we can say knowledge.
+724
+Knowledge, creation, transformation space.
+725
+It's just, it's really, really cool what you all are building.
+726
+And you guys have such a cool job getting to kind of cook in the little test kitchen of Google.
+727
+And thank you for giving a preview of some of the stuff that's coming down the pipeline.
+728
+Thank you for having me.
+729
+Thanks for having me.
+730
+Thank you.

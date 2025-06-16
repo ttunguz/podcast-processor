@@ -1,0 +1,1862 @@
+ What they achieved is singular, never been done before.
+ Just to put it in perspective, 100,000 GPUs,
+ that's easily the fastest supercomputer on the planet,
+ that's one cluster, a supercomputer that you would build
+ would take normally three years to plan,
+ and then they deliver the equipment,
+ and it takes one year to get it all working.
+ We're talking about 19 days.
+ (upbeat music)
+ - Jensen's--
+ - Nice glasses.
+ - Hey, yeah.
+ - You too.
+ It's great to be with you.
+ - I got my ugly glasses on just like you.
+ - Come on, those aren't ugly.
+ It is pretty good.
+ Do you like the red ones better?
+ - There's something only your family could love.
+ (laughing)
+ - Well, it's Friday, October 4th,
+ we're at the NVIDIA headquarters
+ just down the street from Altimeter.
+ - Well done.
+ - Thank you, thank you.
+ And we have our investor meeting,
+ our annual investor meeting on Monday,
+ where we're gonna debate all the consequences of AI,
+ how fast we're scaling intelligence,
+ and I couldn't think of anybody better
+ really to kick it off with than you.
+ - You should do that.
+ - As both a shareholder, as a thought partner,
+ kicking ideas back and forth, you really make us smarter,
+ and we're just grateful for the friendship,
+ so thanks for being here.
+ - Happy to be here.
+ - You know, this year, the theme is scaling intelligence
+ to AGI, and it's pretty mind-boggling
+ that when we did this two years ago,
+ we did it on the age of AI,
+ and that was two months before chat GPT,
+ and to think about all this change.
+ So I thought we would kick it off with a thought experiment,
+ and maybe a prediction.
+ If I colloquially think of AGI
+ as that personal assistant in my pocket.
+ - Thanks. (laughing)
+ - If I think of AGI as that colloquial assistant,
+ - I was getting used to it.
+ - I was getting used to it.
+ - Yeah.
+ - You know, that knows everything about me.
+ - Mm-hmm.
+ - That's perfect memory of me,
+ that can communicate with me,
+ that can book a hotel for me,
+ or maybe book a doctor's appointment for me.
+ When you look at the rate of change in the world today,
+ when do you think we're going to have
+ that personal assistant in our pocket?
+ - Soon, in some form.
+ - Yeah.
+ - Yeah, soon, in some form.
+ And that assistant will get better over time.
+ That's the beauty of technology as we know it.
+ And so, I think in the beginning,
+ it'll be quite useful, but not perfect,
+ and then it gets more and more perfect over time,
+ like all technology.
+ - When we look at the rate of change,
+ I think Elon has said,
+ the only thing that really matters is rate of change.
+ It sure feels to us, like the rate of change
+ has accelerated dramatically,
+ is the fastest rate of change we've ever seen
+ on these questions.
+ Because we've been around the rim like you on AI
+ for a decade now, you even longer.
+ Is this the fastest rate of change
+ you've seen in your career?
+ - It is because we've reinvented computing.
+ You know, a lot of this is happening
+ because we drove the marginal cost of computing down
+ by 100,000 X over the course of 10 years.
+ Moore's law would have been about 100 X.
+ And we did it in several ways.
+ We did it by one introducing accelerated computing,
+ taking what is work that is not very effective on CPUs
+ and putting it on top of GPUs.
+ We did it by inventing new numerical precision.
+ We did it by new architectures,
+ inventing the tensor core.
+ The way systems are formulated,
+ NVLink added insanely, insanely fast memories, HBM,
+ and scaling things up with NVLink and Infiniban.
+ And working across the entire stack.
+ Basically, everything that I described
+ about how NVIDIA does things,
+ led to a super Moore's law rate of innovation.
+ Now, the thing that's really amazing
+ is that as a result of that,
+ we went from human programming to machine learning.
+ And the amazing thing about machine learning
+ is that machine learning can learn pretty fast,
+ as it turns out.
+ And so, as we reformulated the way we distribute computing,
+ we did a lot of parallelism of all kinds, right?
+ Tensor parallelism, pipeline parallelism,
+ parallelism of all kinds.
+ And we became good at inventing new algorithms
+ on top of that and new training methods.
+ And all of this, all of this invention
+ is compounding on top of each other as a result, right?
+ And back in the old days,
+ if you look at the way Moore's law was working,
+ the software was static.
+ It was pre-compiled,
+ this shrink raft put into a store, it was static.
+ And the hardware underneath was growing at Moore's law rate.
+ Now, we've got the whole stack growing, right?
+ Innovating across the whole stack.
+ And so, I think that's the...
+ Now, all of a sudden, we're seeing scaling.
+ That is extraordinary, of course.
+ But we used to talk about pre-trained models
+ and scaling at that level
+ and how we're doubling the model size
+ and doubling, therefore, appropriately doubling the data size.
+ And as a result, the computing capacity necessary
+ is increasing by a factor of four of a year.
+ That was a big deal.
+ But now, we're seeing scaling with post-training
+ and we're seeing scaling at inference, isn't that right?
+ And so, people used to think that pre-training was hard
+ and the inference was easy.
+ Now, everything is hard,
+ which is kind of sensible.
+ The idea that all of human thinking is one shot
+ is kind of ridiculous.
+ And so, there must be a concept of fast thinking
+ and slow thinking and reasoning and reflection
+ and iteration and simulation and all that.
+ And now it's coming in.
+ - I think to that point,
+ one of the most misunderstood things about NVIDIA
+ is how deep the true NVIDIA mode is.
+ I think there's a notion out there
+ that as soon as someone invents a new chip,
+ a better chip that they've won.
+ But the truth is you've been spending the past decade
+ building the full stack from the GPU to the CPU
+ to the networking and especially the software and libraries
+ that enable applications to run on NVIDIA.
+ So I think you spoke to that.
+ But when you think about NVIDIA's mode today, right,
+ do you think NVIDIA's mode today is greater
+ or smaller than it was three to four years ago?
+ - Well, I appreciate you recognizing
+ how computing has changed.
+ In fact, the reason why people thought,
+ and many still do,
+ that you designed a better chip.
+ It has more flops, has more flips and flops and bits
+ and bytes.
+ You know what I'm saying?
+ And you see their keynote slides
+ and it's got all these flips and flops
+ and a bar charts and things like that.
+ And that's all good.
+ I mean, look, horsepower does matter.
+ So these things fundamentally do matter.
+ However, unfortunately, that's old thinking.
+ It is old thinking in the sense that
+ the software was some application running on Windows
+ and the software static,
+ which means that the best way for you to improve
+ the system is just making faster and faster ships.
+ But we realized that machine learning
+ is not human programming.
+ Machine learning is not about just the software.
+ It's about the entire data pipeline.
+ It's about, in fact, the flywheel
+ of machine learning is the most important thing.
+ So how do you think about enabling this flywheel
+ on the one hand and enabling data scientists
+ and researchers to be productive in this flywheel?
+ And that flywheel starts at the very, very beginning.
+ A lot of people don't even realize
+ that it takes AI to curate data to teach an AI.
+ And that AI alone is pretty complicated.
+ And is that AI itself is improving?
+ Is it also accelerating, you know, again,
+ when we think about the competitive advantage, right?
+ It's combinatorial of all these systems.
+ >> Exactly, exactly, and I was exactly going to lead to that.
+ Because of smarter AI's to curate the data,
+ we now even have synthetic data,
+ generation and all kinds of different ways
+ of curating data, presenting data to...
+ And so before you even get the training,
+ you've got massive amounts of data processing involved.
+ And so people think about, oh, PyTorch,
+ that's the beginning and end of the world,
+ and it was very important.
+ But don't forget, before PyTorch is a month of work,
+ after PyTorch is a month of work.
+ And that, the thing about the flywheel
+ is really the way you got to think, you know,
+ how do I think about this entire flywheel
+ and how do I design a computing system,
+ a computing architecture,
+ that helps you take this flywheel
+ and be as effective as possible?
+ It's not one size, a slice of an application, training.
+ Does that make sense?
+ That's just one step, okay?
+ Every step along that flywheel is hard.
+ And so the first thing that you should do,
+ instead of thinking about, how do I make Excel faster,
+ how do I make, you know, doom faster?
+ That was kind of the old days, isn't that right?
+ Now you have to think about,
+ how do I make this flywheel faster?
+ And this flywheel has a whole bunch of different steps.
+ And there's nothing easy about machine learning,
+ as you guys know, there's nothing easy
+ about what OpenAI does or X does or Gemini
+ and the team that DeepMind does.
+ I mean, there's nothing easy about what they do.
+ And so we decided, look,
+ this is really what you ought to be thinking about.
+ This is the entire process.
+ You want to accelerate every part of that,
+ you want to respect Amdau's law.
+ You want to, Amdau's law would suggest,
+ well, if this is 30% of the time,
+ and I accelerated that by a factor of three,
+ I didn't really accelerate the entire process by that much.
+ Does that make sense?
+ And you really want to create a system
+ that accelerates every single step of that,
+ because only in doing the whole thing,
+ can you really materially improve that cycle time?
+ And that flywheel, that rate of learning
+ is really in the end what causes the exponential rise.
+ And so what I'm trying to say is that our perspective
+ about a company's perspective about what you're really doing
+ manifests itself into the product.
+ And notice, I've been talking about this flywheel.
+ - The entire cycle, yeah. - That's right.
+ - And we accelerate everything. - Right.
+ - Right now, right now, the main focus is video.
+ A lot of people are focused on physical AI
+ and video processing. - Right.
+ - Just imagine that front end. - Right.
+ - The terabytes per second of data
+ that are coming into the system,
+ give me an example of a pipeline
+ that is gonna ingest all of that data,
+ prepare for training in the first place.
+ - So that entire thing is Cuda accelerated.
+ - And people are only thinking about text models today.
+ But the future is this video models,
+ as well as using some of these text models,
+ like 01, to really process a lot of that data
+ before we even get there.
+ - Yeah. - Right.
+ - Yeah, yeah.
+ So language models are gonna be involved in everything.
+ It took the industry enormous technology
+ and effort to train a language model
+ to train these large language models.
+ And now we're using a large language model
+ in every single step of the way.
+ It's pretty phenomenal.
+ - I don't mean to be overly simplistic about this,
+ but again, we hear it all the time from investors, right?
+ Yes, but, what about custom basics?
+ Yes, but, their competitive mode is going to be pierced by this.
+ What I hear you saying is that in a combinatorial system,
+ the advantage grows over time.
+ So I heard you say that our advantage is greater today
+ than it was three to four years ago
+ because we're improving every component
+ and that's combinatorial.
+ Is that, when you think about, for example,
+ as a business case study, Intel, right?
+ Who had a dominant mode, a dominant position in the stack
+ relative to where you are today.
+ Perhaps just, again, boil it down a little bit.
+ Compare contrast, your competitive advantage
+ to maybe the competitive advantage
+ they had at the peak of their cycle.
+ - Well, Intel is extraordinary.
+ Intel is extraordinary because they were
+ probably the first company that was incredibly good
+ at manufacturing, process engineering, manufacturing
+ and that one click above manufacturing,
+ which is building the chip.
+ - Right.
+ - And designing the chip and architecting the chip,
+ in the x86 architecture
+ and building faster and faster x86 chips,
+ that was their brilliance and they fused that
+ with manufacturing.
+ Our company is a little different in the sense that,
+ and we recognize this, that in fact, parallel processing
+ doesn't require every transistor to be excellent.
+ Serial processing requires every transistor to be excellent.
+ Parallel processing requires lots and lots
+ of transistors to be more cost effective.
+ I rather have 10 times more transistors, 20% slower,
+ than 10 times less transistor, 23% faster.
+ Does that make sense?
+ They would like the opposite.
+ And so single threaded performance,
+ single threaded processing and parallel processing
+ was very different.
+ And so we observed that, in fact, our world,
+ it's not about being better going down.
+ We wanna be very good as good as we can be,
+ but our world is really about much better going up.
+ Parallel computing, parallel processing is hard
+ because every single algorithm
+ requires a different way of refactoring
+ and re-architecting the algorithm for the architecture.
+ What people don't realize is that you can have
+ three different ISAs, CPU ISAs,
+ they all have their own C compilers,
+ you could take software and compile down to that ISA.
+ That's not possible in Excel-related computing,
+ that's not possible in parallel computing.
+ The company who comes up with the architecture
+ has to come up with their own OpenGL.
+ So we revolutionized deep learning
+ because of our domain-specific library called KuDNN.
+ Without KuDNN, nobody talks about KuDNN
+ because it's one layer underneath PyTorch
+ and TensorFlow and back in the old days,
+ Cafe and Theano and now Triton.
+ And there's a whole bunch of different frameworks.
+ So that domain-specific library, KuDNN,
+ a domain-specific library called Optics,
+ we have a domain-specific library called Ku Quantum,
+ Rapids, the list of, you know,
+ aerial for industry-specific algorithms
+ that sit below, you know, that PyTorch layer
+ that everybody's focused on, like I've heard oftentimes,
+ well, you know, with LLMs.
+ >> If I didn't, if we didn't invent that,
+ no application on top could work.
+ You guys understand what I'm saying?
+ So the mathematics is really,
+ what NVIDIA is really good at is algorithm.
+ That in the fusion between the science above
+ the architecture on the bottom,
+ that's what we're really good at.
+ Yeah.
+ >> There's all this attention now on inference, finally.
+ But I remember, you know, two years ago,
+ Brad and I had dinner with you,
+ and we asked you the question,
+ you know, do you think your moat will be as strong
+ in inference as it is in training?
+ >> Yeah.
+ >> And I'm sure I said it would be greater.
+ >> Yeah, yeah.
+ And you touched upon a lot of these elements just now,
+ just, you know, the composability between,
+ or, you know, we don't know the total mix at one point
+ into a customer.
+ It's very important to be able to be flexible
+ in between. >> That's right.
+ >> But can you just touch upon, you know,
+ now that we're in this era of inference?
+ >> Yeah.
+ It was, you know, inference,
+ training is inferencing at scale.
+ I mean, you're right.
+ And so, if you train well,
+ it is very likely you'll inference well.
+ If you built it on this architecture,
+ without any consideration,
+ it will run on this architecture, okay?
+ You could still go and optimize it for other architectures,
+ but at the very minimum,
+ since it's already been architect, you know,
+ built on NVIDIA, it will run on NVIDIA.
+ Now, the other aspect, of course,
+ is just kind of, you know,
+ capital investment aspect,
+ which is when you're training new models,
+ you want your best new gear to be used for training,
+ which leaves behind gear that you used yesterday.
+ Well, that gear is perfect for inference.
+ And so, there's a trail of free gear.
+ There's a trail of free infrastructure
+ behind the new infrastructure that's good and compatible.
+ And so, we're very disciplined
+ about making sure that we're compatible throughout
+ so that everything that we leave behind
+ will continue to be excellent.
+ Now, we also put a lot of energy
+ into continuously reinventing new algorithms
+ so that when the time comes,
+ the Hopper architecture is two, three, four times better
+ than when they bought it,
+ so that infrastructure continues to be really effective.
+ And so, all of the work that we do,
+ improving new algorithms, new frameworks,
+ notice it helps every single install base that we have,
+ Hopper is better for it, Ampere's better for it,
+ even Volta is better for it, okay?
+ And I think Sam was just telling me
+ that they had just decommissioned the Volta infrastructure
+ that they have at OpenAI recently.
+ So, I think we leave behind this trail of install base
+ just like all computing, install base matters.
+ And NVIDIA is in every single cloud
+ where on-prem and all the way out to the edge.
+ And so, the Vila vision language model
+ that's been created in the cloud
+ works perfectly at the edge on the robots
+ without modification.
+ It's all good and compatible.
+ And so, I think this idea of architecture compatibility
+ was important for large, it's no different for iPhones
+ and no different for anything else.
+ I think the install base is really important for inference.
+ But the thing that we really benefit from
+ is because we're working on training
+ these large language models in the new architectures of it,
+ we're able to think about
+ how do we create architectures that's excellent
+ at inference someday when the time comes.
+ And so, we've been thinking about iterative models
+ for reasoning models and how do we create
+ very interactive inference experiences
+ for this personal agent of yours.
+ You don't want to say something I have to go off
+ and think about for a while.
+ You wanted to interact with you quite quickly.
+ So, how do we create such a thing
+ and what came out of it was NVLink.
+ You know, NVLink so that we could take these systems
+ that are excellent for training,
+ but when you're done with it,
+ the inference performance is exceptional.
+ And so, you want to optimize
+ for this time to first token.
+ And time to first token is insanely hard to do, actually,
+ because time to first token requires a lot of bandwidth,
+ but if your context is also rich,
+ then you need a lot of flops.
+ And so, you need an infinite amount of bandwidth,
+ infinite amount of flops at the same time
+ in order to achieve just a few millisecond response time.
+ And so, that architecture is really hard to do
+ and we invented a Grace Blackwell NVLink for that.
+ - Right, in the spirit of time,
+ I have more questions about that, but-
+ - Well, don't worry about the time.
+ Hey, guys, hey, hey, hey, listen.
+ Janine? - Yeah.
+ - Look. - Let's do it 'til right.
+ - Let's do it 'til right, there you go.
+ - I love it, I love it.
+ So, you know, I was at dinner with Andy Jassy.
+ - See, now we don't have to worry about the time.
+ - Early, with Andy Jassy earlier this week.
+ And Andy said, you know, we've got training him,
+ you know, coming and in Francia coming.
+ And I think most people, again,
+ view these as a problem for Nvidia,
+ but in the very next breath, he said,
+ Nvidia is a huge and important partner to us
+ and will remain a huge and important partner for us
+ as far as I can see into the future,
+ the world runs on Nvidia, right?
+ So when you think about the custom ASICs that are being built,
+ that are going to go after targeted application,
+ maybe the inference accelerator at Meta,
+ maybe, you know, Trainium at Amazon, you know,
+ or Google's TPUs, and then you think about the supply shortage
+ that you have today.
+ Do any of those things change that dynamic, right?
+ Or are they compliments to the systems
+ that they're all buying from you?
+ - We're just doing different things.
+ - Yes.
+ - We're trying to accomplish different things.
+ You know, what Nvidia is trying to do
+ is build a computing platform for this new world,
+ this machine learning world, this generative AI world,
+ this agentic AI world.
+ We're trying to, we're trying to create, you know,
+ as you know, what's just so deeply profound
+ is after 60 years of computing,
+ we reinvented the entire computing stack.
+ The way you write software from programming
+ to machine learning, the way that you process software
+ from CPUs to GPU, the way that the applications
+ from software to artificial intelligence, right?
+ And so software tools to artificial intelligence.
+ So every aspect of the computing stack
+ and the technology stack has been changed.
+ You know, what we would like to do
+ is to create a computing platform
+ that's available everywhere.
+ And this is really the complexity of what we do.
+ The complexity of what we do is,
+ if you think about what we do,
+ we're building an entire AI infrastructure
+ and we think of it as one computer.
+ I've said before, the data center
+ is now the unit of computing.
+ To me, when I think about a computer,
+ I'm not thinking about that chip.
+ I'm thinking about this thing.
+ That's my mental model and all the software
+ and all the orchestration,
+ all the machinery that's inside.
+ That's my mic, that's my computer.
+ And we're trying to build a new one every year.
+ That's insane.
+ Nobody has ever done that before.
+ We're trying to build a brand new one every single year.
+ And every single year, we deliver
+ two or three times more performance.
+ As a result, every single year,
+ we reduce the cost by two or three times.
+ Every single year, we improve the energy efficiency
+ by two or three times, right?
+ And so we ask our customers,
+ "Don't buy everything at one time, buy a little every year."
+ And the reason for that,
+ we want them cost average into the future.
+ All of it's architecturally compatible, okay?
+ Now, so that building that alone
+ at the pace that we're doing is incredibly hard.
+ Now, the double part, the double hard part,
+ is then we take that all of that
+ and instead of selling it as a infrastructure,
+ we're selling it as a service.
+ We disaggregate all of it
+ and we integrate it into GCP.
+ We integrate it into AWS.
+ We integrate it into Azure.
+ We integrate it into X.
+ We integrate, doesn't make sense.
+ And so everybody's integration is different.
+ We have to get all of our architectural libraries
+ and all of our algorithms and all of our frameworks
+ and integrate into theirs.
+ We get our security system integrated into theirs.
+ We get our networking integrated into theirs, is that right?
+ Then we do basically 10 integrations
+ and we do this every single year.
+ Now, that is the miracle, that is the miracle.
+ - Why, I mean, it's madness.
+ It's madness that you're trying to do this every year.
+ - I'm going the same thinking about it.
+ - So, what drove you to do it every year
+ and then related to that,
+ Clark's just back from Taipei and Korea and Japan
+ when meeting with all your supply partners
+ who you have decade-long relationships with.
+ How important are those relationships
+ to again, the combinatorial math
+ that builds that competitive mode?
+ - Yeah, that's when you break it down systematically,
+ the more you guys break it down,
+ the more everybody breaks it down,
+ the more amazed that they are.
+ - Yes.
+ - And how is it possible that the entire ecosystem
+ of electronics today is dedicated in working with us
+ to build ultimately this cube of a computer
+ integrated into all of these different ecosystems
+ and the coordination is so seamless.
+ So, there's obviously APIs and methodologies
+ and business processes and design rules
+ that we've propagated backwards
+ and methodologies and architectures and APIs
+ that we propagated forward.
+ - They'd have been hardened for decades.
+ - Hardened for decades, yeah,
+ and also evolving as we go
+ and but these APIs have to come together.
+ When the time comes, all these things in Taiwan,
+ all over the world being manufactured,
+ they're gonna land somewhere in Azure's data center,
+ they're gonna come together,
+ they're click, click, click, click, click, click.
+ - Someone just calls an open AI API and it just works.
+ - That's right.
+ - Yeah, exactly.
+ - It's kind of crazyness, right?
+ - It's a whole chain.
+ - And so that's what we invented.
+ That's what we invented.
+ This mass of infrastructure of computing,
+ the whole planet is working with us on it.
+ It's integrated into everywhere.
+ It's, you could sell it through Dell,
+ you could sell it through HPE.
+ It's hosted in the cloud.
+ It's all the way out at the edge.
+ People use it in robotic systems now,
+ human and robots.
+ They're in self-driving cars.
+ They're architecturally compatible.
+ Pretty kind of craziness, yeah.
+ - It's craziness.
+ - Clark, I don't want you to leave your impression.
+ I didn't answer the question.
+ In fact, I did.
+ What I meant by that when I went to your ASIC
+ is the way to think about
+ we're just doing something different.
+ - Yes.
+ - As a company, as a company,
+ we want to be situationally aware
+ and I'm very situationally aware
+ of everything around our company and our ecosystem.
+ I'm aware of all the people doing alternative things
+ and what they're doing and sometimes it's adversarial to us
+ sometimes it's not.
+ I'm super aware of it.
+ But that doesn't change what the purpose of the company is.
+ The singular purpose of the company
+ is to build an architecture
+ that a platform that could be everywhere.
+ That is our goal.
+ We're not trying to take any share from anybody
+ and video is a market maker, not share taker.
+ If you look at our company slides,
+ we don't show, not one day does this company
+ talk about market share, not inside.
+ All we're talking about is how do we create the next thing?
+ What's the next problem we can solve in that flywheel?
+ How can we do a better job for people?
+ How do we take that flywheel that used to take about a year?
+ How do we crank it down to about a month?
+ - Yes.
+ - You know, what's the speed of light of that?
+ Isn't that right?
+ And so we're thinking about all these different things
+ but the one thing we're not to,
+ we're situationally aware of everything
+ but we're certain that what our mission is,
+ is very singular.
+ The only question is whether that mission is necessary.
+ Does that make sense?
+ - Yes.
+ - You know, and all companies, all great companies
+ ought to have that at its core.
+ It's about what are you doing?
+ - For sure.
+ - The only question is it necessary?
+ Is it valuable?
+ - Right.
+ - Is it impactful?
+ Does it help people?
+ And I am certain that you're a developer,
+ you're a generative AI startup
+ and you're about to decide how to become a company.
+ The one choice that you don't have to make
+ is which one of the A6 do I support?
+ If you just support a CUDA,
+ you know you could go everywhere.
+ You could always change your mind later
+ but we're the on ramp to the world of the AI.
+ Isn't that right?
+ Once you decide to come onto our platform,
+ the other decisions you could defer.
+ You could always build your own A6 later.
+ You know, we're not against that.
+ We're not offended by any of that.
+ When I work with,
+ when we work with all the GCPs, the GCPs Azure,
+ we present our roadmap to them years in advance.
+ They don't present their A6 roadmap to us
+ and it doesn't ever offend us.
+ Does that make sense?
+ We create, if you have a sole purpose
+ and your purpose is meaningful
+ and your mission is dear to you
+ and is dear to everybody else,
+ then you could be transparent.
+ Notice my roadmap is transparent at GTC.
+ My roadmap goes way deeper
+ to our friends at Azure and AWS and others.
+ We have no trouble doing any of that,
+ even as they're building their own A6.
+ I think, you know, when people observe the business,
+ you said recently that the demand for Blackwell is insane.
+ You said one of the hardest parts of your job
+ is the emotional toll of saying no to people
+ in a world that has a shortage
+ of the compute that you can produce and have on offer.
+ But critics say this is just a moment time, right?
+ They say this is just like Cisco in 2000.
+ We're over building fiber.
+ It's gonna be boom and bust.
+ You know, I think about the start of '23
+ when we were having dinner.
+ The forecast for Nvidia at that dinner in January of '23
+ was that you would do 26 billion of revenue
+ for the year 2023.
+ You did 60 billion, right?
+ The 25 people.
+ - Let's just let the truth be known.
+ That is the single greatest failure
+ of forecasting the world has ever seen.
+ - Right, right, right.
+ - Can we all at least admit that?
+ - To me, to me.
+ - That was my takeaway.
+ I just got--
+ - And that was, we got so excited in November of '22
+ because we had folks like Mustafa from Inflection
+ and no one from character coming in our office
+ talking about investing in their companies
+ and they said, well, if you can't pencil out
+ investing in our companies, then buy Nvidia
+ because everybody in the world is trying to get Nvidia chips
+ to build these applications that are gonna change the world.
+ And of course, the Cambrian moment occurred with chat GPT
+ and not withstanding that fact.
+ These 25 analysts were so focused on the crypto winner
+ that they couldn't get their head around an imagination
+ of what was happening in the world, okay?
+ So it ended up being way bigger.
+ You say, in very plain English,
+ the demand is insane for Blackwell,
+ that it's going to be that way for as far as you can see.
+ Of course, the future is unknown and unknowable,
+ but why are the critics so wrong
+ that this isn't going to be the Cisco-like situation
+ of overbuilding in 2000?
+ - Yeah.
+ The best way to think about the future
+ is reason about it from first principles.
+ - Correct.
+ - So the question is, what are the first principles
+ of what we're doing?
+ Number one, what are we doing?
+ What are we doing?
+ The first thing that we are doing
+ is we are reinventing computing.
+ Do we not?
+ We just said that.
+ The way that computing will be done in the future
+ will be highly machine learned.
+ - Yes.
+ - Highly machine learned, okay?
+ Almost everything that we do,
+ almost every single application,
+ Word, Excel, PowerPoint, Photoshop, premiere,
+ you get an AutoCAD.
+ You give me your favorite application
+ that was all hand engineered.
+ I promise you, it will be highly machine learned
+ in the future, isn't that right?
+ And so all these tools will be,
+ and on top of that,
+ you're going to have machines, agents,
+ that you help you use them, okay?
+ And so we know this for a fact at this point, right?
+ Isn't that right?
+ We've reinvented computing.
+ We're not going back.
+ The entire computing technology stack has been reinvented.
+ Okay, so now that we've done that,
+ we said that software is going to be different,
+ what software can write is going to be different,
+ how we use software will be different.
+ So let's now acknowledge that.
+ Those are my ground truth now.
+ - Yes.
+ - Now the question, therefore, is what happens?
+ And so let's go back and let's just take a look
+ at how is computing done in the past.
+ So we have a trillion dollars with the computers in the past.
+ We look at it, just open the door,
+ look at the data center,
+ and you look at it and say,
+ are those the computers you want doing that?
+ Doing that future, and the answer's no, right?
+ You got all these CPUs back there.
+ We know that what it can do and what it can't do.
+ And we just know that we have a trillion dollars
+ with the data centers that we have to modernize.
+ And so right now, as we speak,
+ if we were to have a trajectory over the next four,
+ five years to modernize that old stuff,
+ that's not unreasonable, sensible.
+ So we have a trillion.
+ - And you're having those conversations
+ with the people who have to modernize it.
+ - Yeah, so you're using it.
+ - And they're modernizing it on GPU.
+ - That's right.
+ I mean, let's make another test.
+ You have $50 billion of CAPX, you would like to spend.
+ Option A, option B.
+ Build CAPX for the future,
+ or build CAPX like the past.
+ Now, you already have the CAPX of the past.
+ It's sitting right there.
+ It's not getting much better anyways.
+ More as long as it largely ended.
+ And so why rebuild that?
+ Let's just take $50 billion,
+ put it into generative AI, isn't that right?
+ And so now your company just got better.
+ Now, how much of that $50 billion would you put in?
+ Well, I would put in 100% of the $50 billion,
+ because I've already got four years
+ of infrastructure behind me.
+ That's of the past.
+ And so now you just, I just reasoned about it
+ from the perspective of somebody thinking about it
+ from first principles.
+ And that's what they're doing.
+ Smart people are doing smart things.
+ Now the second part is this.
+ So now we have a trillion dollars
+ with a capacity to go build, right?
+ A trillion dollars worth of infrastructure.
+ We're about, call it 150 billion dollars into it.
+ - Right.
+ - Okay, so we have a trillion dollars
+ in infrastructure to go build over the next four or five years.
+ Well, the second thing that we observe
+ is that the way that software is written is different,
+ but how software is gonna be used is different.
+ In the future, we're gonna have agents, isn't that right?
+ We're gonna have digital employees in our company.
+ In your inbox, you have all these little dots
+ and these little faces.
+ In the future, there's gonna be little icons of AI's,
+ isn't that right?
+ I'm gonna be sending them,
+ I'm gonna be no longer gonna program computers
+ with C++, I'm gonna program AI's with prompting.
+ Isn't that right?
+ Now, this is no different than me talking to my,
+ you know, this morning,
+ I wrote a bunch of emails before I came here.
+ I was prompting my teams, right?
+ And I would describe the context,
+ I would describe the fundamental constraints that I know of
+ and I would describe the mission for them.
+ I would leave it sufficiently directional
+ so that they understand what I need
+ and I wanna be clear about what the outcome should be
+ as clear as I can be.
+ But I leave enough ambiguous space, you know,
+ a creativity space so they can surprise me, isn't that right?
+ - Absolutely.
+ - There's no different than how I prompt an AI today.
+ - Yeah.
+ - It's exactly how I prompt an AI.
+ And so what's gonna happen is,
+ is on top of this infrastructure of IT
+ that we're gonna modernize,
+ there's gonna be a new infrastructure.
+ This new infrastructure are going to be AI factories
+ that operate these digital humans.
+ - Right.
+ - And they're gonna be running all the time, 24/7.
+ We're gonna have them for all of our companies
+ all over the world, we're gonna have them in factories,
+ we're gonna have them in a ton of systems, isn't that right?
+ So there's a whole layer of computing fabric,
+ a whole layer of what I call AI factories
+ that the world has to make that doesn't exist today at all.
+ So the question is how big is that?
+ Unknowable at the moment, probably a few trillion dollars.
+ Unknowable at the moment,
+ but as we're sitting here building into the beautiful thing is,
+ the architecture for this modernizing this new data center,
+ and the architecture for the AI factory is the same.
+ - Right.
+ - That's the nice thing.
+ - And you made this clear.
+ You've got a trillion of old stuff,
+ you've got to modernize you,
+ at least have a trillion of new AI workloads coming on.
+ Your give or take, you'll do 125 billion in revenue this year.
+ You know, there was at one point somebody told you
+ the company would never be worth more than a billion.
+ As you sit here today, is there any reason, right?
+ If you're only 125 billion out of a multi-trillion, Tam,
+ that you're not going to have two X the revenue,
+ three X the revenue in the future that you have today.
+ Is there any reason your revenue doesn't?
+ - No.
+ - Yeah.
+ - Yeah, as you know, it's not about,
+ it's not about everything is, you know,
+ companies are only limited by the size of the fish pond.
+ You know, a gold fishing can only be so big.
+ And so the question is, what is our fish pond?
+ What is our pond?
+ And that requires a little imagination.
+ And this is the reason why market makers think
+ about that future, that creating that new fish pond,
+ it's hard to figure this out looking backwards
+ and try to take share.
+ You know, sharetakers can only be so big.
+ Market makers can be quite large.
+ - For sure.
+ - And so, you know, I think the good fortune
+ that our company has is that since the very beginning
+ of our company, we had to invent the market
+ for us to go swim it.
+ That mark, and people don't realize this back then,
+ but anymore, but you know, we were at the ground zero
+ of creating the 3D gaming PC market.
+ - Right, right.
+ - We largely invented this market.
+ And all the ecosystem and all the graphics card ecosystem,
+ we invented all that.
+ And so, the need to invent a new market,
+ to go serve it later, is something that's very comfortable
+ for us.
+ - Exactly, exactly.
+ And speaking to somebody who's invented a new market,
+ you know, let's shift gears a little bit to models
+ and open AI, open AI raised, as you know,
+ six and a half billion dollars this week.
+ At like 150 billion dollar valuation,
+ we both participated.
+ - Yeah, we're really happy for them.
+ Really happy they came together.
+ - Right, yeah, they did a great stand,
+ and the team did a great job, yeah.
+ - Reports are that they'll do five billion-ish of revenue
+ or run rate revenue this year,
+ maybe going to 10 billion next year.
+ If you look at the business today,
+ it's about twice the revenue as Google was
+ at the time of its IPO.
+ They have 250 million, yeah, 250 million weekly average users,
+ which we estimate is twice the amount Google had
+ at the time of its IPO.
+ And if you look at the multiple of the business,
+ if you believe 10 billion next year,
+ it's about 15 times the forward revenue,
+ which is about the multiple of Google and Meta
+ at the time of their IPO, right?
+ When you think about a company that had zero revenue,
+ zero weekly average users 22 months ago.
+ - Brad has an incredible command of history.
+ - When you think about that,
+ talk to us about the importance of open AI
+ as a partner to you and open AI as a force
+ and kind of driving forward,
+ kind of public awareness and usage around AI.
+ - Well, this is one of the most consequential
+ companies of our time.
+ A pure play AI company pursuing the vision of AGI
+ and whatever its definition.
+ I almost don't think it matters fully what the definition is,
+ nor do I really believe that the timing matters.
+ The one thing that I know is that AI's going to have
+ a road map of capabilities over time
+ and the road map of capabilities over time
+ is going to be quite spectacular.
+ And along the way,
+ long before it even gets to anybody's definition of AGI,
+ we're going to put it to great use.
+ All you have to do is, right now as we speak,
+ go talk to digital biologists,
+ climate tech researchers, material researchers,
+ physical sciences, astrophysicists, quantum chemists.
+ And you go ask video game designers,
+ manufacturing engineers, roboticists,
+ pick your favorite, whatever industry you want to go pick.
+ And you go deep in there and you talk to the people
+ that matter and you ask them,
+ has AI revolutionized the way you work?
+ And you take those data points and you come back
+ and you then get to ask yourself,
+ how skeptical do you want to be?
+ Because they're not talking about AI
+ as a conceptual benefit someday.
+ They're talking about using AI right now.
+ Right now, ag tech, material tech, climate tech,
+ you pick your tech, you pick your field of science.
+ They are advancing, AI is helping them
+ advancing their work right now as we speak.
+ Every single industry, every single company,
+ every university, unbelievable, isn't that right?
+ Right.
+ It is absolutely going to somehow transform business.
+ We know that.
+ Right.
+ I mean, it's so tangible, you could...
+ It's happening today.
+ It's happening today.
+ It's happening today.
+ Yeah, and so I think the awakening of AI,
+ the chat GPT triggered is completely incredible.
+ And I love their velocity
+ and their singular purpose of advancing this field.
+ And so really, really consequential.
+ And they build an economic engine that can finance
+ the next frontier of models, right?
+ And I think there's a growing consensus in Silicon Valley
+ that the whole model layers commoditizing,
+ llama is making it very cheap
+ for lots of people to build models.
+ And so early on here, we had a lot of model companies,
+ character and inflection and cohere and Mistral
+ and go through the list.
+ And a lot of people question whether or not
+ those companies can build the escape velocity
+ on the economic engine that can continue funding
+ those next generation.
+ My own sense is that there's going to be,
+ that's why you're seeing the consolidation, right?
+ It's open AI clearly has hit that escape velocity.
+ They can fund their own future.
+ It's not clear to me that many of these other companies can.
+ Is that a fair kind of review of the state of things
+ in the model layer that we're going to have
+ this consolidation like we have in lots of other markets
+ to market leaders who can afford,
+ who have an economic engine and an application
+ that allows them to continue to invest?
+ First of all, there's a different fundamental difference
+ between a model and artificial intelligence, right?
+ A model is an essential ingredient
+ for artificial intelligence.
+ It's necessary but not sufficient.
+ Correct.
+ And so an artificial intelligence is a capability,
+ but for what?
+ Right.
+ Then what's the application?
+ The artificial intelligence for self-driving cars
+ is related to the artificial intelligence
+ for human or robots, but it's not the same.
+ Which is related to the artificial intelligence
+ for a chatbot, but not the same.
+ Correct.
+ And so you have to understand the taxonomy of the stack.
+ Yeah, of the stack.
+ And at every layer of the stack, there will be opportunities.
+ But not infinite opportunities for everybody
+ at every single layer, the stack.
+ Now, I just said something.
+ All you do is replace the word model with GPU.
+ In fact, this was the great observation
+ of our company 32 years ago,
+ that there's a fundamental difference
+ between GPU, graphics chip, or GPU,
+ versus accelerated computing.
+ And accelerated computing is a different thing
+ than the work that we do with AI infrastructure.
+ It's related, but it's not exactly the same.
+ It's built on top of each other.
+ It's not exactly the same.
+ And each one of these layers of abstraction
+ requires fundamental different skills.
+ Somebody who's really, really good at building GPUs
+ have no clue how to be an accelerated computing company.
+ I can, there are a whole lot of people who build GPUs.
+ And I don't know which one, we invented the GPU,
+ but you know that we're not the only company
+ that makes GPUs today, you know?
+ And so there are GPUs everywhere.
+ But they're not accelerated computing companies.
+ And there are a lot of people who,
+ you know, they're accelerators, accelerators
+ that does application acceleration.
+ But that's different than an accelerated computing company.
+ And so for example, a very specialized AI application
+ could be a very successful thing.
+ - Correct.
+ - You might as MTIA.
+ - That's right.
+ But it might not be the type of company
+ that had broad reach and broad capabilities.
+ And so, so you've got to decide where you want to be.
+ There's opportunities probably in all these different areas,
+ but like building companies,
+ you have to be mindful of the shifting of the ecosystem
+ and what gets commoditized over time,
+ recognizing what's a feature versus a product,
+ versus a company.
+ - For sure.
+ - Okay.
+ I just went through, okay.
+ There's a lot of different ways you can think about this.
+ - Of course, there's one new entrant
+ that has the money, the smarts, the ambition,
+ that's an x.ai, right?
+ And well, there were reports out there
+ that you and Larry and Elon had dinner.
+ They talked to you out of 100,000 H100s.
+ They went to Memphis and built a large coherent supercluster
+ in a matter of months.
+ - So first, three points don't make a line, okay?
+ Yes, I had dinner with them.
+ (laughing)
+ - Causality is it.
+ - What do you think about their ability
+ to stand up that supercluster?
+ And there's talk out there that they want another 100,000 H200s,
+ right, to expand the size of that supercluster.
+ You know, first talk to us a little bit about x
+ and their ambitions and what they've achieved,
+ but also are we already at the age of clusters of 200
+ and 300,000 GPUs?
+ - The answer is yes.
+ And then the first of all,
+ acknowledgement of achievement where it's deserved.
+ From the moment of concept to a data center
+ that's ready for NVIDIA to have our gear there
+ to the moment that we powered it on,
+ had it all hooked up and it did its first training, okay?
+ - Sure.
+ - So that first part, just building a massive factory
+ liquid cooled, energized, permitted
+ in the short time that was done.
+ I mean, that is like super human.
+ Yeah, and as far as I know,
+ there's only one person in the world who could do that, you know?
+ I mean, Elon is singular in this understanding
+ of engineering and construction and large systems
+ and marshalling resources.
+ Yeah, it's unbelievable.
+ And of course, then his engineering team is extraordinary.
+ I mean, the software team's great,
+ the networking team's great,
+ the infrastructure team is great.
+ You know, Elon understands this deeply.
+ And from the moment that we decided to go,
+ the planning with our engineering team,
+ our networking team, our infrastructure computing team,
+ the software team, all of the preparation and advance,
+ then all of the infrastructure,
+ all of the logistics and the amount of technology
+ and equipment that came in on that day
+ and NVIDIA's infrastructure and computing infrastructure
+ and all that technology to training, 19 days.
+ Hang on, do you know what, do you know what?
+ Did anybody sleep 24/7?
+ No question, then nobody slept.
+ But first of all, 19 days is incredible.
+ But it's also kind of nice to just take a step back
+ and just do you know how many days, 19 days is?
+ This is a couple of weeks.
+ And the amount of technology, if you're able to see it,
+ is unbelievable.
+ All of the wiring and the networking
+ and you know, networking and NVIDIA gear
+ is very different than networking
+ hyperscale data centers, okay?
+ The number of wires that goes in one node,
+ the back of a computer is all wires.
+ It's just getting this mountain of technology integrated
+ and all the software incredible.
+ Yeah, so I think what Elon and the next team did
+ and I'm really appreciative that he acknowledges
+ the engineering work that we did with him
+ and the planning work and all that stuff.
+ But what they achieved is singular.
+ Never been done before.
+ Just a put in perspective, 100,000 GPUs,
+ that's easily the fastest supercomputer on the planet.
+ That's one cluster.
+ A supercomputer that you would build
+ would take normally three years to plan.
+ Right.
+ And then they deliver the equipment
+ and it takes one year to get it all working.
+ Yes.
+ We're talking about 19 days.
+ Wow.
+ What's the credit of the NVIDIA platform, right?
+ That the whole processes are hardened.
+ That's right.
+ Yeah.
+ Everything's already working.
+ And of course, there's a whole bunch of X algorithms
+ and X framework and X stack and things like that.
+ And we've got a ton of integration we have to do.
+ But the planning of it was extraordinary.
+ Just pre-planning of it to, you know.
+ N of one is right.
+ Elon isn't N of one.
+ But you answered that question by starting off saying,
+ yes, 200 to 300,000 GPU clusters are here, right?
+ Does that scale to 500,000?
+ Does it scale to a million?
+ And does the demand for your products
+ depend on it scaling to millions?
+ That part, the last part is no.
+ My sense is that distributed training will have to work.
+ And my sense is that distributed computing will be invented.
+ Right.
+ And some form of federated learning
+ and distributed, you know, asynchronous,
+ distributed computing is going to be discovered.
+ And I'm very enthusiastic and very optimistic about that.
+ The, of course, of course, the thing to realize
+ is that the scaling law used to be about pre-training.
+ Now we've gone to multi-modality.
+ We've gone to synthetic data generation.
+ Post-training has now scaled up incredibly synthetic data
+ generation and reward systems,
+ reinforcement learning based.
+ And then now inference scaling has gone through the roof.
+ The idea that a model before it answers your answer
+ had already done internal inference 10,000 times,
+ it's probably not unreasonable.
+ And it's probably done tree search.
+ It's probably done reinforcement learning on that.
+ It's probably, you know, it's probably done some simulations.
+ Surely done a lot of reflection.
+ It probably looked up some data,
+ it looked some information, isn't that right?
+ So this context is probably fairly large.
+ I mean, this type of intelligence is, well,
+ that's what we do.
+ Right.
+ That's what we do, isn't that right?
+ And so, so the ability, this scaling,
+ if you just did that math
+ and you compound that with 4X per year
+ on model size and computing size.
+ And then on the other hand, demand continues to grow
+ in usage.
+ Do we think that we need millions of GPUs?
+ No doubt.
+ Yeah, that is a for certainty now.
+ And so the question is,
+ how do we architect it from a data center perspective?
+ And that has a lot to do with, you know,
+ are there data centers that are gigawatts at a time?
+ Or the 250 megawatts at a time?
+ And my sense is that, you know, you're going to get both?
+ I think analysts always focus on the current architectural bet.
+ But I think one of the biggest takeaways
+ from this conversation is that you're thinking about
+ the entire ecosystem and many years out.
+ So, you know, the idea that, you know,
+ because in videos just scaling up or scaling out,
+ it's to meet the future.
+ It's not to, you know, not such that, you know,
+ you're only dependent on a world
+ where there's a 500,000 or a million, you know, GPU cluster.
+ It's, you know, by the time there's distributed training,
+ you'll have written, you know, the software to enable that.
+ That's right.
+ Remember, without Megatron, that we developed
+ with some seven years ago now,
+ the scaling of these large training jobs
+ wouldn't have happened.
+ And so we invented Megatron, we invented Nickel,
+ GPU direct, right?
+ All of the work that we did with our DMA,
+ that made it possible for easily to do pipeline parallelism,
+ you know, right?
+ And so, you know, all the model parallelism
+ that's being done and, you know,
+ all the breaking of the distributed training
+ and all the batching and all that.
+ All of that stuff is because we did the early work.
+ And now we're doing the early work
+ for the future generation.
+ - So let's talk about strawberry no one.
+ - I want to be respectful of your time.
+ - I got all the time in the world, actually.
+ - Well, you're very generous.
+ - Yeah, we've got all the time in the world.
+ - But first, I think it's cool that they named 01
+ after the 01 visa, right?
+ Which is about recruiting the world's best and brightest,
+ you know, and bringing them to the United States.
+ It's something I know we're both deeply passionate about.
+ So I love the idea that building a model that thinks
+ and that takes us to the next level of scaling intelligence,
+ right, is an homage to the fact that it's these people
+ who come to the United States by way of immigration
+ that have made us what we are,
+ bring their collective intelligence to you.
+ - Surely an alien intelligence.
+ - Certainly, you know, it was spearheaded
+ by our friend, Noah Brown, of course.
+ He worked at Pluribus and Cicero when he was at meta.
+ How big a deal is inference time reasoning?
+ As a totally new vector of scaling intelligence,
+ separate and distinct from, right,
+ just building larger models.
+ - It's a huge deal, it's a huge deal.
+ I think a lot of intelligence can be done a priori, you know?
+ And a lot of computing, even a lot of computing
+ can't be reordered.
+ I mean, just that, you know,
+ out of order execution can't be done a priori, you know?
+ And so a lot of things can only be done in runtime.
+ - Right. And so whether you think about it
+ from a computer science perspective,
+ or you think about it from an intelligence perspective,
+ too much of it requires context, the circumstance,
+ right, the type of answer you're looking for,
+ sometimes just a quick answer is good enough.
+ - Right. - Depends on,
+ depends on the consequential, you know,
+ impact of the answer, you know,
+ depending on the nature of the usage of that answer.
+ And so some answers, please take a night.
+ Some answers take a week. - Yes.
+ - Is that right?
+ So I could totally imagine me sending off a prompt
+ to my AI and telling it, you know,
+ think about it for a night. - Right.
+ - Think about it overnight.
+ Don't tell me right away. - Right.
+ - I want you to think about it all night.
+ And then come back and tell me tomorrow
+ what's your best answer and reason about it for me.
+ And so I think the, the quality,
+ the segmentation of intelligence
+ from now from a product perspective,
+ there's going to be one shot versions of it.
+ - Right, sure. - Yeah.
+ And then there'll be some that take five minutes, you know?
+ - And the intelligence layer that roots those questions
+ to the right model for the right use case.
+ I mean, we were using advanced voice mode
+ and 01 preview last night.
+ It was, I was coaching my son for his AP history test.
+ And it was like having the world's best AP history teacher.
+ - Yeah, right.
+ - Sitting right next to you thinking about these questions,
+ it was truly extraordinary.
+ Again, the-- - My tutor is an AI today.
+ - Right, I'm serious. - Of course.
+ They're here today. - Yeah.
+ - Which comes back to this, you know,
+ over 40% of your revenue today is inference.
+ But inference is about ready because of chain of reasoning.
+ - Yeah. - Right?
+ - It's about to go up by a billion times.
+ - Right, by a million x, by a billion x.
+ - That's right. - That's right.
+ That's the part that most people have, you know,
+ haven't completely internalized.
+ This is that industry we were talking about,
+ but this is the industrial revolution.
+ - That's the production of intelligence.
+ - That's right. - Right?
+ - And-- - Yeah.
+ - It's gonna go up a billion times.
+ - Right, and so, you know,
+ everybody's so hyper-focused on NVIDIA
+ as kind of like doing training on bigger models.
+ - Yeah. - Right?
+ Isn't it the case that your revenue of its 50/50 today,
+ you're gonna do way more inference in the future.
+ - Yeah. - Right?
+ Then, I mean, training will always be important,
+ but just the growth of inference
+ is gonna be way larger than the growth in training.
+ - We hope. - We hope.
+ - It's almost impossible to conceive other ones.
+ - Yeah, we hope, that's right, that's right.
+ - Right. - Yeah, it's good to go to school.
+ - Yes.
+ - But the goal is so that you can be productive
+ in society later.
+ And so, it's good that we train these models,
+ but the goal is to inference them, you know?
+ - Are you already using chain of reasoning
+ and, you know, tools like 01 in your own business
+ to improve your own business?
+ - Yeah, our cybersecurity system today
+ can't run without our own agents.
+ We have agents helping design chips,
+ Hopper wouldn't be possible,
+ Blackwell wouldn't be possible.
+ Ruben, don't even think about it.
+ We have digital, we have AI chip designers,
+ AI software engineers, AI verification engineers.
+ And we build them all inside because, you know,
+ we have the ability and we rather use the opportunity
+ to explore the technology ourselves.
+ - You know, when I walked into the building today,
+ somebody came up to me and said,
+ you know, Ash Jensen about the culture,
+ it's all about the culture.
+ I look at the business, you know,
+ we talk a lot about fitness and efficiency,
+ flat organizations that can execute quickly,
+ smaller teams.
+ You know, NVIDIA is in a league of its own really,
+ you know, at about 4 million of revenue per employee,
+ about 2 million of profits are free cash flow per employee.
+ You've built a culture of efficiency
+ that really has unleashed creativity and innovation
+ and ownership and responsibility.
+ You've broken the mold on kind of functional management.
+ Everybody likes to talk about all of your direct reports.
+ Is the leveraging of AI the thing that's going to continue
+ to allow you to be hyper creative
+ while at the same time being efficient?
+ - No question.
+ I'm hoping that someday NVIDIA has the 32,000 employees today.
+ And we have 4,000 families in Israel.
+ I hope they're well, I'm thinking of you guys.
+ And I'm hoping that NVIDIA someday
+ will be a 50,000 employee company.
+ With a 100 million, you know, AI assistants.
+ - Wow.
+ - And they're in every single group.
+ - All right.
+ - We will have a whole directory of AI's
+ that are just generally good at doing things.
+ We'll also have our inbox is going to full of directories
+ of AI's that we work with that we know are really good,
+ specialized at our skill.
+ And so, AI's will recruit other AI's to solve problems.
+ AI's will be in slack channels with each other.
+ - And with humans?
+ - Right, and with humans.
+ And so, we'll just be one large employee base, if you will,
+ some of them are digital and AI some of them are biological.
+ And I'm hoping some of them are even megatronics.
+ - I think from a business perspective,
+ it's something that's greatly misunderstood.
+ You just described a company
+ that's producing the output of a company
+ with 150,000 people.
+ But you're doing it with 50,000 people.
+ Now, you didn't say,
+ I was going to get rid of all my employees.
+ You're still growing the number of employees
+ in the organization.
+ But the output of that organization, right,
+ is going to be dramatically more.
+ - This is often misunderstood.
+ AI is not, AI will change every job.
+ AI will have a seismic impact
+ on how people think about work.
+ Let's acknowledge that.
+ AI has the potential to do incredible good.
+ It has the potential to do harm.
+ We have to build safe AI.
+ - Yes.
+ - Let's just make that foundational.
+ - Yes.
+ - Okay, the part that is overlooked is
+ when companies become more productive
+ using artificial intelligence,
+ it is likely that it manifests itself into
+ either better earnings or better growth or both.
+ - Right.
+ - And when that happens, the next email from the CEO
+ is likely not a layoff announcement.
+ - Of course.
+ - 'Cause you're growing.
+ - Yeah, and the reason for that
+ is because we have more ideas than we can explore
+ and we need people to help us think through it
+ before we automate it.
+ And so the automation part of it, AI can help us do.
+ Obviously, it's going to help us think through it as well,
+ but it's still going to require us to go figure out
+ what problems do I want to solve.
+ There are a trillion things we can go solve,
+ what problems does this company have to go solve,
+ and select those ideas and figure out a way
+ to automate and scale.
+ And so as a result, we're going to hire more people
+ as we become more productive.
+ People forget that, you know?
+ And if you go back in time,
+ obviously we have more ideas today than 200 years ago.
+ That's the reason why each piece are larger
+ and more people are employed.
+ And even though we're automating like crazy underneath.
+ It's such an important point of this period
+ that we're entering.
+ One, almost all human productivity,
+ almost all human prosperity is the byproduct
+ of the automation, the technology of the last 200 years.
+ I mean, you can look at, you know, from Adam Smith
+ and Shumpeter's creative, you know, destruction,
+ you can look at chart a GDP growth per person
+ over the course of the last 200 years,
+ and it's just accelerated.
+ Which leads me to this question.
+ If you look at the 90s, our productivity growth
+ in the United States was about two and a half
+ to three percent a year, okay?
+ And then in the 2000s, it slowed down to about 1.8%.
+ And then the last 10 years has been
+ the slowest productivity growth.
+ So that's the amount of labor in capital
+ or the amount of output we have
+ for a fixed amount of labor in capital.
+ The slowest we've had on record, actually.
+ And a lot of people have debated the reasoning for this,
+ but if the world is as you just described,
+ we're going to leverage and manufacture intelligence.
+ Then isn't it the case that we're on the verge
+ of a dramatic expansion in terms of human productivity?
+ - That's our hope. - Right.
+ - That's our hope.
+ And of course, you know, we live in this world
+ so we have direct evidence of it.
+ - Right.
+ - We have direct evidence of it.
+ Either as isolated of a case as an individual researcher.
+ - For sure.
+ - Who is able to, with AI, now explore science
+ at such an extraordinary scale that is unimaginable.
+ That's productivity.
+ - Right, 100%
+ - Measure of productivity.
+ Or that we're designing chips that are so incredible
+ at such a high pace.
+ And the chip complexities
+ and the computer complexities we're building
+ are going up exponentially
+ while the company's employee base is not
+ measure of productivity.
+ - Correct.
+ - The software that we're developing
+ is better and better and better
+ because we're using AI and supercomputers
+ to help us.
+ The number of employees is growing barely linearly.
+ Okay, okay, okay.
+ Another demonstration of productivity.
+ So whether it's, I can go into,
+ I can spot check it in a whole bunch of different industries.
+ I could gut check it myself.
+ - Yes, you're right, business.
+ - That's right.
+ And so I can, you know, and of course you can't,
+ you can't, we could be overfit.
+ But the artistry of course is to generalize
+ what is it that we're observing
+ and whether this could manifest in other industries.
+ And there's no question that intelligence
+ is the single most valuable commodity
+ the worlds have been known.
+ And now we're gonna manufacture it at scale.
+ And we, all of us have to get good at,
+ you know, what would happen
+ if you're surrounded by these AIs
+ and they're doing things so incredibly well
+ and so much better than you.
+ And when I reflect on that, that's my life.
+ I have 60 direct reports.
+ The reason why they're on,
+ the reason why they're on E-staff
+ is because they're world class of what they do.
+ And they do a better than I do.
+ Much better than I do.
+ I have no trouble interacting with them.
+ And I have no trouble prompt engineering them.
+ I have no trouble programming them.
+ And so I think that that's the thing
+ that people are going to learn
+ is that they're all gonna be CEOs.
+ They're all gonna be CEOs of AI agents.
+ And their ability to have the creativity,
+ the well, and some knowledge
+ and how to reason break problems down
+ so that you can program these AIs
+ to help you achieve something like I do.
+ And that's called running companies.
+ - Right, no, you mentioned something,
+ this alignment and the safe AI.
+ You mentioned the tragedy going on in the Middle East.
+ We have a lot of autonomy and a lot of AI
+ that's being used in different parts of the world.
+ So let's talk for a second about bad actors,
+ about safe AI, about coordination with Washington.
+ How do you feel today, are we on the right path?
+ Do we have a sufficient level of coordination?
+ You know, I think Mark Zuckerberg
+ has said the way we beat the bad AIs
+ is we make the good AIs better.
+ Is how would you characterize your view
+ of how we make sure that this is a positive benefit
+ for humanity as opposed to leaving us
+ in this dystopian world without purpose?
+ - The conversation about safety is really important
+ and good.
+ - Yes, the abstracted view, this conceptual view
+ of AI being a large giant neural network, not so good.
+ - Right, right.
+ - Okay, and the reason for that is because as we know,
+ artificial intelligence and large language models
+ are related, not the same.
+ There are many things that are being done
+ that I think are excellent.
+ One, open sourcing models so that the entire community
+ of researchers and every single industry
+ and every single company can engage AI
+ and go learn how to harness this capability
+ for their application, excellent.
+ Number two, it is under-celebrated the amount of technology
+ that is dedicated to inventing AI to keep AI safe.
+ - Yes.
+ - AI is to carry data to carry information,
+ to train an AI, create it to align AI,
+ synthetic data generation, AI to expand the knowledge
+ of AI, the cause it to hallucinate less,
+ all of the AI's that are being created for vectorization
+ or graphing or whatever it is, to inform an AI,
+ guard railing AI, AI's to monitor other AI's
+ that the system of AI's to create safe AI
+ is under-celebrated.
+ - Right, then we've already built.
+ - That we're building everybody all over the industry.
+ The methodologies, the red teaming, the process,
+ the model cards, the evaluation systems,
+ the benchmarking systems, all of the harnesses
+ that are being built at the velocity
+ that's been built, it's incredible, under-celebrated.
+ Do you guys understand?
+ - And there's no government regulation saying
+ you have to do this.
+ This is the actors in the space today
+ who are building these AI's, are taking seriously
+ and coordinating around best practices
+ with respect to these critical matters.
+ - That's right, exactly, and so that's under-celebrated,
+ under-understood.
+ Somebody needs to, well, everybody needs to start talking
+ about AI as a system of AI's and system of engineered systems,
+ engineered systems that are well-engineered,
+ built from first principles, well-tested,
+ and so on and so forth, regulation.
+ Remember, A.I. is a capability that can be applied.
+ It's necessary to have regulation for important technologies,
+ but it's also, don't overreach to the point
+ where some of the regulation ought to be done,
+ most of the regulation ought to be done at the applications.
+ The FAA, NHTSA, FDA, you name it, right?
+ All of the different ecosystems
+ that already regulate applications of technology
+ now have to regulate the application of technology
+ that is now infused with AI,
+ and so I think there's, don't misunderstand,
+ don't overlook the overwhelming amount of regulation
+ in the world that are going to have to be activated for AI,
+ and don't rely on just one universal galactic AI council
+ that's gonna possibly be able to do this,
+ because there's a reason why all of these different agencies
+ were created, there's a reason why
+ all these different regulatory bodies were created,
+ go back to first principles again.
+ - I'd get in trouble by my partner, Bill Gurley,
+ if I didn't go back to the open source point,
+ you guys launched a very important, very large,
+ very capable open source model.
+ - Yeah, we will try, yeah.
+ - Recently. - Yeah.
+ - Obviously, meta is making significant contributions
+ to open source. - Yep.
+ - I find when I read Twitter,
+ you know you have this kind of open versus closed,
+ a lot of chatter about it.
+ How do you feel about open source,
+ your own open source models,
+ ability to keep up with frontier?
+ That would be the first question.
+ The second question would be,
+ is that having that open source model
+ and also having closed source models
+ that are powering commercial operations,
+ is that what you see into the future
+ and do those two things,
+ does that create the healthy tension for safety?
+ - Open source versus closed source
+ is related to safety, but not only about safety.
+ So for example, there's absolutely nothing wrong
+ with having closed source models
+ that are the engines of an economic model
+ necessary to sustain innovation.
+ - Right.
+ - Okay.
+ I celebrate that wholeheartedly.
+ - Right.
+ - It is, I believe,
+ wrong-minded to be closed versus open.
+ - Right.
+ - It should be closed and open.
+ - Lots open. - Yeah, right.
+ Because open is necessary
+ for many industries to be activated.
+ Right now, if we didn't have open source,
+ how would all these different fields of science
+ be able to activate it on AI, right?
+ Because they have to develop their own domain-specific AI's
+ and they have to develop their own
+ using open source models,
+ create domain-specific AI's.
+ They're related, again, not the same.
+ - Right.
+ - Just because you have an open source model,
+ doesn't mean you have an AI.
+ And so you have to have that open source model
+ to enable the creation of AI's.
+ So financial services, healthcare, transportation,
+ the list of industries, fields of science,
+ that has now been enabled as a result of open source,
+ unbelievable.
+ - Are you seeing a lot of demand
+ for your open source models?
+ - Our open source models, so first of all,
+ llama downloads, right?
+ Obviously, yeah, Mark and the work
+ that they've done, incredible.
+ Off to charts. - Yes.
+ - And it completely activated and engaged
+ every single industry, every single field of science.
+ - Right, that's true.
+ - The reason why we did Nemotron was
+ for synthetic data generation.
+ It intuitively, the idea that one AI
+ would somehow sit there and loop and generate data
+ to learn itself, it sounds brittle.
+ And how many times you can go around
+ that infinite loop, that loop, you know, questionable.
+ However, my mental image is kind of like,
+ like a super smart person, put him into a padded room,
+ close the door for about a month.
+ You know, what comes out is probably not a smarter person.
+ And so, but the idea that you could have,
+ have two or three people, sit around,
+ and we have different AIs,
+ we have different distributions of knowledge,
+ and we can go QA back and forth,
+ all three of us can come out smarter.
+ And so the idea that you could have AI models
+ exchanging, interacting, going back and forth,
+ debating reinforcement learning,
+ synthetic data generation, for example,
+ kind of intuitively suggests it makes sense, yeah.
+ And so our model, Nemotron 350B is 340B is,
+ is the best model in the world for reward systems.
+ And so, it is the best critique.
+ - Okay, interesting. - Yeah.
+ And so, fantastic model for enhancing
+ everybody else's model.
+ So, irrespective of how great somebody else's model is,
+ I'd have recommend using Nemotron 340B
+ to enhance and make it better.
+ And we've already seen mates, lama better,
+ made all the other models better.
+ - Well, we're coming to the end.
+ - Thank goodness.
+ - As somebody who delivered DGX1 in 2016,
+ it's really been an incredible journey.
+ Your journey is unlikely and incredible at the same time.
+ - Thank you.
+ - You survived, like, just surviving the early days
+ was pretty extraordinary.
+ You delivered the first DGX1 in 2016.
+ We had this Cambrian moment in 2022.
+ And so, I'm gonna ask you the question
+ I often get answer, get asked,
+ which is how long can you sustain
+ what you're doing today?
+ With 60 direct reports, you're everywhere.
+ You're driving this revolution.
+ Are you having fun?
+ And is there something else
+ that you would rather be doing?
+ - This is a question about the last hour and a half.
+ The answer is, I great time, I couldn't imagine
+ anything else I'd rather be doing.
+ Let's see.
+ I think it's, I don't think it's right
+ to leave the impression that our job is fun all the time.
+ My job isn't fun all the time.
+ Nor do I expect it to be fun all the time.
+ Was that ever expectation that it was fun all the time?
+ I think it's important all the time.
+ I don't take myself too seriously.
+ I take the work very seriously.
+ I take our responsibility very seriously.
+ I take our contribution and our moment in time very seriously.
+ Is that always fun?
+ No. - Yeah.
+ - But do I always love it?
+ Yes. - Yeah.
+ - Like all things.
+ Whether it is family, friends, children,
+ is it always fun?
+ No.
+ Do we always love it?
+ Absolutely, deeply.
+ And so, I think the,
+ how long can I do this?
+ The real question is, how long can I be relevant?
+ And that only matters, that piece of information,
+ that question can only be answered with
+ how am I gonna continue to learn?
+ And I am a lot more optimistic today.
+ I'm not saying this simply because of our topic today.
+ I'm a lot more optimistic about my ability
+ to say relevant and continue to learn because of AI.
+ I use it, I don't know, but I'm sure you guys do.
+ I use it literally every day.
+ There's not one piece of research
+ that I don't involve AI with.
+ There's not one question that even if I know the answer,
+ I double check on it with AI.
+ And surprisingly, you know,
+ the next two or three questions I ask it
+ reveals something I didn't know.
+ - That's right.
+ - You pick your topic. - Right.
+ - You pick your topic.
+ And I think that AI is a tutor,
+ AI is an assistant, AI as a partner to brainstorm with,
+ double check my work, you know, boy,
+ you guys, it's completely revolutionary.
+ And that's just, you know, I'm an information worker,
+ my output is information.
+ And so I think the contributions
+ that I'll have on society is pretty extraordinary.
+ So I think the, if that's the case,
+ if I could stay relevant like this,
+ and I can continue to make a contribution,
+ I know that the work is important enough
+ for me to want to continue to pursue it.
+ And my quality of life is incredible.
+ So I'll say, I can't imagine,
+ you and I have been at this for a few decades.
+ I can't imagine missing this moment.
+ - Yeah, right. - So most consequential moment
+ of our careers. - That's right.
+ - We're deeply grateful for the partnership.
+ - Don't miss the next 10 years.
+ - For the thought partnership.
+ - They make it smarter. - Thank you.
+ - And I think you're really important
+ as part of the leadership, right,
+ that's going to optimistically and safely lead this forward.
+ So thank you for being with us.
+ - Really enjoyed it. - Really, thanks Brad.
+ - Thanks, Clark. - Good job.
+ (upbeat music)
+ - As a reminder to everybody,
+ just our opinions, not investment advice.

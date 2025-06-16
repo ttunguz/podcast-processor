@@ -1,0 +1,1969 @@
+
+Welcome back, MCP, MCP, MCP.
+After the NYC summit, we wrote a popular piece explaining
+why we think the model context protocol from Anthropic
+seems to have won the agent open standard wars of 2023 to 2025.
+It seems everyone is now jumping on the MCP bandwagon
+from cursor and windsurf to open AI to Google DeepMind.
+Our AI engineer community is hungry for more,
+so we are doing two things to explore the MCP phenomenon.
+First, today's guests, Justin Spar-Summers and David Sawyer
+Para, are the co-creators of the model context protocol
+who were kind enough to do their first-ever podcast with us
+about the origin, challenges, and future of MCP
+and gamely indulged all the questions that we asked
+from the latent space community.
+Second, Swix has announced that there will be a dedicated MCP
+track at the 2025 AI Engineer World's Fair,
+taking place June 3rd to 5th in San Francisco,
+where the MCP core team and major contributors and builders
+will be meeting.
+Join us and apply to speak or sponsor at ai.engineer.
+Watch out and take care.
+Hey, everyone.
+Welcome back to latent space.
+This is Alessio, partner and CTO at Decibel,
+and I'm joined by my co-host, Swix, founder of Smiley AI.
+Hey, morning, and today we have a remote recording, I guess,
+with David and Justin from Entropic over in London.
+Welcome.
+Hey.
+What's it be here?
+Welcome.
+You guys have created a storm of hype because of MCP,
+and I'm really glad to have you on,
+and thanks for making the time.
+What is MCP?
+Let's start with the crisp, what definition from the horse's
+mouth, and then we'll go into the origin story.
+But let's start off, right off the bat, what is MCP?
+Yeah, sure.
+So model context protocol, or MCP for short,
+is basically something we designed to help AI applications
+extend themselves, or integrate with a ecosystem
+of the plugins, basically.
+The terminology is a bit different.
+We use this client server terminology,
+and we can talk about why that is and where that came from.
+But at the end of the day, it really
+is that it's extending and enhancing
+the functionality of AI application.
+David, would you add anything?
+Yeah, I think that's a good description.
+I think there's a lot of different ways
+for how people are trying to explain it.
+But at the core, I think what Justin said
+is extending AI applications is really
+what this is about.
+And I think the interesting bit here that I want to highlight,
+it's AI applications and not models themselves
+that this is focused on.
+That's a common misconception that we can talk about a bit
+later.
+But yeah.
+Another version that we've used and gotten to like
+is the MCP is the USB-C port of AI applications,
+and that it's meant to be this universal connector
+to a whole ecosystem of things.
+Yeah, specifically an interesting feature is, like you said,
+the client and server.
+And it's also sort of two-way in the same way
+that it's at a two, USB-C is two-way,
+which could be super interesting.
+Yeah, let's go into a little bit of the origin story.
+There's many people who've tried to make standards around agents.
+Many people tried to build open source.
+I think there's an overall-- also, my sense
+is that entropic is going hard after developers
+in the way that other labs are not.
+And so I'm also curious if there was any external influence,
+or was it just you two guys just in a room somewhere riffing?
+It is actually mostly us two guys in a room, I think.
+So this is not part of a big strategy.
+If you roll back time a little bit and go into July 2024,
+I was started at entropic three months earlier,
+two months earlier.
+And I was mostly working on internal developer tooling,
+which is what I've been doing for years and years before.
+And as part of that, I think there was an effort of how
+do I empower more employees at entropic
+to integrate really deeply with the models we have,
+because we've seen how good it is, how amazing it will become,
+even in the future.
+And of course, just talk for your own model as much as you can.
+And as part of that, from my development tooling background,
+I quickly got frustrated by the idea that, on one hand,
+I did have Cloud Desktop, which is this amazing tool
+with artifacts, which I really enjoyed.
+But it was very limited to exactly that feature set,
+and there was no way to extend it.
+And on the other hand, I worked in IDEs,
+which could greatly act on the file system
+and a bunch of other things.
+But then they didn't have artifacts or something like that.
+And so what I constantly did was just copying things
+back and forth between Cloud Desktop and the IDE.
+And that quickly got me honestly just very frustrated.
+And part of that frustration was,
+and how do I go and fix this?
+What do we need?
+And back to this developer-focused that I have,
+I really thought about, well, I know
+how to build all these integrations.
+But what do I need to do to let these applications let me do this?
+And so it's very quickly that you see that this is clearly
+like an M times N problem.
+You have multiple applications and multiple integrations
+you want to build and like what is better there
+to fix this than using a protocol.
+And at the same time, I was actually working on an LSP
+related thing internally that didn't go anywhere.
+But you put these things together in someone's brain
+and let them wait for like a few weeks and out of that
+comes like the idea of like, let's build some protocol.
+And so back to like this little room,
+like it was literally just me going to a room with Justin
+and go like, I think we should build something like this.
+This is a good idea.
+And Justin, lucky for me, just really took an interest
+in the idea and took it from there
+to like to build something together with me.
+That's really the exception story.
+It's like it's us too from then on just going and building it
+over the course of like a month and a half
+of like building the protocol,
+building the first integration.
+Like Justin did a lot of the, like they had the lifting
+of the first integrations from Cloud Desktop.
+I did a lot of the first proof of concept
+of how this kind of looked like in an IDE.
+And if you we could talk about like some of the tidbits
+you can find way before the inception of like before
+the official release.
+If you were looking at the right repository
+at the right time, but there you go.
+That's like some of the rough story.
+- Well, what was the timeline when?
+I know November 25th was like the official announcement date.
+When did you guys start working on it?
+- Justin, when did we start working on that?
+- I think it was around July, I think.
+Yeah, as soon as David pitched this initial idea,
+I got excited pretty quickly and we started working on it.
+I think almost immediately after that conversation.
+And then, I don't know, it was a couple,
+maybe a few months of building
+the really unrewarding bits, if we're being honest,
+because for establishing something
+that's like this communication protocol
+has clients and servers and like SDKs everywhere.
+There's just like a lot of like laying the groundwork
+that you have to do.
+So it was a pretty, that was a pretty slow couple of months.
+But then afterward, once you get some things
+talking over that wire, it really starts to get exciting
+and you can start building all sorts of crazy things.
+And I think this really came to a head,
+I don't remember exactly when it was maybe like
+approximately a month before release,
+there was an internal hackathon
+where some folks really got excited about MCP
+and started building all sorts of crazy applications.
+I think the coolest one of which was like an MCP server
+that can control a 3D printer or something.
+And so like suddenly, people are feeling this power
+of like cloud connecting to the outside world
+in a really tangible way.
+And that really added some juice to the release.
+Yeah, and we'll go into the technical details,
+but I just want to wrap up here.
+You mentioned you could have seen some things coming.
+If you were looking in the right places,
+we always want to know what are the places to get alpha.
+How do you find MCP early?
+I'm a big Zad user.
+I like the Zad editor.
+The first MTP implementation on ID was in Zad.
+It was written by me and it was there
+like a month and a half before the official release.
+Just because we needed to do it in the open
+because it's an open search project.
+And so it was not, it was names slightly differently
+because we were not set on the name yet, but it was there.
+I'm happy to go a little bit anthropic.
+Also had some preview of a model with Zad, right?
+Some sort of fast editing model.
+I confess, you know, I'm a cursor, a windsurf user.
+Haven't tried Zad.
+What's your, you know, unrelated or, you know,
+unsolicited two second pitch for Zad?
+That's a good question.
+I, it really depends what you value in editors.
+And for me, I wouldn't even say I like,
+I love Zad more than others.
+I like them all like complimentary.
+And in a way, another like a do-use-wincer for the Zad.
+But I think my main pitch for Zad is low latency,
+super smooth experience editor
+with a decent enough AI integration.
+- I mean, I mean, maybe, you know,
+I think that's all of this for a lot of people.
+I think a lot of people obviously very tied to the VS code.
+Paradigm and the extensions that come along with it.
+Okay.
+So I wanted to go back a little bit, you know,
+on some of the things that you mentioned, Justin,
+which was building MCP.
+On paper, you know, obviously we only see the end result.
+It just seems inspired by LSP.
+And I think both of you have acknowledged that.
+So how much is there to build?
+And when you say build, is it a lot of code
+or a lot of design?
+'Cause I felt like it's a lot of design, right?
+Like you're picking JSON or PC.
+Like how much is it based off of LSP?
+And, you know, what, what was the sort of hard parts?
+- Yeah, absolutely.
+I mean, we definitely did take heavy inspiration from LSP.
+David had much more prior experience with it
+than I did working on developer tools.
+So, you know, I've mostly worked on products
+or sort of the infrastructural thing.
+So LSP was new to me.
+But as a, like, or from design principles,
+it really makes a ton of sense
+because it does solve this M times N problem
+that David referred to where, you know,
+in the world before LSP,
+you had all these different IDEs and editors
+and then all these different languages
+that each wants to support
+or that their users want them to support.
+And then everyone's just building,
+like, one-off integrations.
+And so, like, you use Vim
+and you might have really great support for, like,
+honestly, I don't know, C or something.
+And then, like, you switch over to JetBrains
+and you have the Java support.
+But then, like, you don't get to use the great JetBrains
+Java support in Vim
+and you don't get to use the great C supported JetBrains
+or something like that.
+So LSP largely, I think, solved this problem
+by creating this common language that they could all speak.
+And then, you know, you can have some people
+focus on really robust language server implementations
+and then the IDE developers can really focus on that side
+and they both benefit.
+So that was, like, our key takeaway for MCP
+is, like, that same principle
+and that same problem in the space of AI applications
+and extensions to AI applications.
+But in terms of, like, concrete particulars,
+I mean, we did take JSON RPC
+and we took this idea of bidirectionality,
+but I think we quickly took it down a different route
+after that.
+Yes, there is one other principle from LSP
+that we try to stick to today,
+which is, like, this focus on how features manifest
+more than the semantics of things, if that makes sense.
+David refers to it as being presentation focused
+where, like, basically thinking and, like,
+offering different primitives not because necessarily
+the semantics of them are very different,
+but because you want them to show up
+in the application differently.
+Like, that was a key sort of insight about how LSP was developed.
+That's also something we try to apply to MCP.
+But, like I said, then from there, like, yeah,
+we spent a lot of time, really a lot of time,
+and we could go into this more separately,
+like, thinking about each of the primitives
+that we want to offer in MCP
+and why they should be different,
+like, why we want to have all these different concepts.
+That was a significant amount of work.
+That was the design work, as you'll do, too.
+But then also, already out of the gate,
+we had three different languages
+that we wanted to at least support to some degree.
+That was TypeScript Python
+and then for the Z integration, it was Rust.
+So there was some SDK-building work
+in those languages, a mixture of clients and servers
+to build out, to try to create this, like,
+internal ecosystem that we could start playing with.
+And then, yeah, I guess just trying to make everything,
+like, robust over, like, I don't know,
+this whole, like, concept that we have for local MCP
+where you, like, launch subprocesses and stuff
+and making that robust stuff at some time as well.
+- Yeah, maybe adding to that, I think the LSP inference
+goes even a little bit further.
+Like, we did take actually quite a look
+at criticisms on LSP.
+Like, things that LSP didn't do, right?
+And things that people felt they would love to have different
+and really took that too hard to, like, see, you know,
+what are the some of the things that we wish, you know,
+we should do better.
+We took, you know, like a lengthy, like, look at, like,
+their very unique approach to JSON RPC, I may say,
+and then this, we decided that this is not what we do.
+And so there's, like, these differences,
+but it's clearly very, very inspired
+because I think when you're trying to build and focus,
+you know, if you're trying to build something like MCP,
+you kind of want to pick the areas you want to innovate in,
+but you kind of want to be boring about the other parts
+in pattern matching LSP to the problem
+allows you to be boring in a lot of the core pieces
+that you want to be boring in.
+Like, the choice of JSON RPC is very non-controversial to us
+because it's just like, it doesn't matter at all.
+Like, what you, what the action, like, bites on the bar
+that you're speaking, it makes a difference to us.
+The innovation is on the, the primitives you choose
+and these type of things.
+And so there's way more focus on that that we want it to do.
+So having some prior art is good there, basically.
+- It does.
+I wanted to double click.
+I mean, there's so many things you can go into.
+Obviously, I am passionate about protocol design.
+I wanted to show you guys this.
+I mean, I think you guys know,
+but, you know, you already referred to the M times N problem
+and I can just share my screen here
+about anyone working in developer tools
+that's faced this exact issue
+where you see the Godbox, basically.
+Like, the fundamental problem and solution
+of all infrastructure engineering is you have things
+going to end things and then you put the Godbox
+and you'll all be better, right?
+So here is one problem for Uber, one problem from GraphQL,
+one problem for a temporal we are used to work at
+and this is from React.
+And I was just kind of curious, like, you know,
+did you solve M times N problems at Facebook?
+Like, it sounds like David, you did that for a living, right?
+Like, this is just M times N for a living.
+- Yeah, yeah, to some degree, for sure.
+I did, what a good example of this,
+but like I did a bunch of this kind of work
+on like source control systems and these type of things
+and so there were a bunch of these type of problems as well
+and so you just shove them into something
+that everyone can read from and everyone can write to
+and you build your Godbox somewhere and it works.
+But yeah, it's just in developer tooling,
+you absolutely right, in developer tooling,
+this is everywhere, right?
+And that, you know, it shows up everywhere.
+- And what was interesting is I think everyone
+who makes the Godbox then has the same set of problems,
+which is also you now have like composability of
+and the remote versus local, you know,
+that there's this very common shared set of problems.
+So I kind of want to dig a meta lesson
+on how to do the Godbox, but you know,
+we can talk about the sort of development stuff later.
+I wanted to double click on again,
+the presentation that Justin mentioned
+of like how features manifest
+and how you said some things are the same,
+but you just want to verify some concepts
+so they show up differently.
+And I had that sense, you know,
+when I was looking at the MCP docs,
+I'm like, why do these two things need to be the difference
+in other paradigms, they're basically the same.
+I think a lot of people treat tool calling
+as the solution to everything, right?
+And sometimes you can actually sort of view kinds
+of different kinds of tool calls as different things.
+And sometimes they're resources.
+Sometimes they're actually taking actions.
+Sometimes they're something else that I don't really know yet,
+but I just want to see like,
+what are some things that you sort of mentally group
+as adjacent concepts and why would they important
+to you to emphasize?
+- Yeah, I can chat about this a bit.
+I think fundamentally we,
+every sort of primitive that we thought through,
+we thought from the perspective
+of the application developer first,
+like if I'm building an application,
+whether it is an IDE or, you know,
+call a desktop or some agent interface
+or whatever the case may be,
+what are the different things that I would want to receive
+from like an integration?
+And I think once you take that lens,
+it becomes quite clear that tool calling is necessary,
+but very insufficient.
+Like there are many other things you would want to do
+besides just get tools and plug them into the model.
+And you want to have some way of differentiating
+what those different things are.
+So the kind of core primitives that we started MCP with,
+we've since added a couple more,
+but the core ones were really tools,
+which we've already talked about is like adding tools
+directly to the model that we're function calling
+is sometimes called resources,
+which is basically like bits of data or context
+that you might want to add to the context.
+So excuse me to the model context.
+And this is the first primitive where it's like,
+we decided this could be like application controlled.
+Like maybe you want a model to automatically search
+through it and find relevant resources
+and bring them into context.
+But maybe you also want that to be an explicit UI
+for instance in the application,
+where the user can like, you know,
+picture a dropdown or like a paperclip menu
+or whatever and find specific things and tag them in.
+And then that becomes part of like their message
+to the LLM.
+Like those are both use cases for resources.
+And then the third one is prompts,
+which are deliberately meant to be like user initiated
+or like user substituted text or messages.
+So like the analogy here would be like,
+if you're an editor like a slash command
+or something like that,
+or like an @, you know, autocompletion type thing,
+where it's like, I have this kind of macro effectively
+that I want to drop in and use.
+And we have sort of expressed opinions through MCP
+about the different ways that these things could manifest,
+but ultimately it is for applications developers
+to decide, okay, you get at these different concepts
+expressed differently.
+And it's very useful as an application developer
+because you can decide the appropriate experience for each.
+And actually this can be a point of differentiation too.
+Like we were also thinking, you know,
+from the application developer perspective,
+they, you know, application developers don't want to be
+commoditized.
+They don't want the application to end up the same
+as every other AI application.
+So like what are the unique things that they could do
+to like create the best user experience?
+Even while connecting up to this big open ecosystem
+of integration.
+- Yeah, and I think to add to that the,
+I think there are two aspects to that that I want to mention.
+The first one is that interestingly enough,
+like while now there's two colonies,
+obviously like probably like 95% plus of the integrations.
+And I wish there would be, you know,
+more clients doing to a resources doing prompts.
+The very first implementation in that is actually
+a prompt implementation, it doesn't deal with tools.
+And we found this actually quite useful
+because what it allows you to do is for example,
+build an MCP server that takes like a back trace
+from the sentry or any other like online platform
+that tracks your crashes.
+And just lets you pull this into the context window beforehand.
+And so it's quite nice that way that it's like a user driven
+interaction that uses a user decide when to pull this in
+and don't have to wait for the model to do it.
+And so it's a great way to craft the prompt in a way.
+And I think similarly, you know,
+I wish, you know, more MCP servers today
+would bring prompts as examples of like how to even use
+the tools that they're providing at the same time.
+The resources bit are quite interesting as well.
+And I wish we would see more usage there
+because it's very easy to envision,
+but yet nobody has really implemented it.
+A system where like an MCP server exposes,
+you know, a set of documents that you have,
+your database, whatever you might want to
+as a set of resources.
+And then like a client application
+would build a full rag index around this, right?
+I think this is definitely an application use case
+we had in mind as to why these are exposed
+in such a way that they're not model driven
+because you might want to have way more resource content
+than is, you know, realistically usable in a context window.
+And so I think, you know, I wish applications
+and I hope applications will do this in the next few months.
+Use these primitives, you know, way better
+because I think there's way more rich
+experiences to be created that way.
+- Yeah, I completely agree with that.
+And I would also add that that's my favorite.
+I'll return to it if I have it.
+- I think that's a great point.
+And everybody just, you know, has a hammer
+and wants to do a tool calling on everything.
+I think a lot of people do tool calling
+to do a database query, they don't use resources for it.
+What are like the, I guess maybe like pros and cons
+or like when people should use a tool versus a resource?
+Especially when it comes to like things
+that do have an API interface.
+Like for a database, you can do a tool
+that does a SQL query versus when should you do that
+or a resource instead with the data.
+- So like the way we separate these is like tools
+are always meant to be initiated by the model.
+It's sort of like at the model's discretion
+that it will like find the right tool and apply it.
+So if that's the interaction you want
+as a server developer where it's like, okay,
+this, you know, suddenly I've given the LLM
+the ability to run a SQL queries, for example,
+that makes sense as a tool.
+But resources are more flexible basically.
+And I think to be completely honest,
+the story here is practically a bit complicated today
+because many clients don't support resources yet.
+But like I think in an ideal world
+where all these concepts are fully realized
+and there's like full ecosystem support,
+you would do resources for things like the schemas
+of your database tables and stuff like that.
+As a way to like either allow the user to say like, okay,
+now, you know, Claude, I want to talk to you
+about this database table.
+Here it is, let's have this conversation
+or maybe the particular AI application that you're using,
+like, you know, could be something agentic like Claude Code
+is able to just like, agentically look up resources
+and find the right schema of the database table
+you're talking about.
+Like both those interactions are possible.
+But I think like anytime you have this sort of like,
+you want to list a bunch of entities
+and then read any of them,
+that makes sense to model as resources.
+Resources are also, they're uniquely identified by a URI,
+always, and so you can also think of them
+as like, you know, sort of general purpose transformers,
+even like, if you want to support an interaction
+where a user just like drops a URI in
+and then you like automatically figure out
+how to interpret that,
+you could use MCP servers to do that interpretation.
+- One of the interesting side notes here back
+to the Z example of resources is
+as that has like a prompt library
+that you can do people can interact with
+and we just exposed a set of default prompts
+that we want everyone to have
+and as part of that prompt library,
+be a resources for a while.
+So that like, you boot up Z and Z will just
+populate the prompt library with from an MCP server,
+which was quite a cool interaction.
+And that was again, a very specific like,
+both sides needed to agree upon the URI format
+and the underlying data format.
+But that was a nice and kind of like,
+neat little application of resources.
+- There's also going back to that perspective
+of like, as an application developer,
+what are the things that I would want.
+We also applied this thinking to like,
+what existing features of applications
+could conceivably be kind of like factored out
+into MCP servers if you were to take that approach today.
+And so like basically any IDE
+where you have like an attachment menu
+that I think naturally models as resources,
+it's just, you know, those implementations already existed.
+- Yeah, I think the immediate, like, you know,
+when you introduced it for Cloud Desktop
+and I saw the @ sign there, I was like,
+oh, yeah, that's what cursor has.
+But this is for everyone else.
+And you know, I think like that,
+that is a really good design target
+because it's something that already exists
+and people can map on pretty neatly.
+I was actually featuring this chart from Mahash's workshop
+that presumably you guys agreed on.
+I think this is so useful
+that it should be on the front page of the docs, like.
+- Probably surely.
+I think that's the suggestion.
+Do you wanna do you wanna do a PR for this?
+I love it.
+- Yeah, do a PR.
+I've done a PR for just Mahash's workshop in general
+just 'cause I'm like, you know.
+- I know, I approve.
+- Yeah, thank you.
+Yeah, I mean, like, but, you know,
+I think for me as a developer relations person,
+I always insist on having a map for people.
+Here are all the main things you have to understand.
+We'll spend the next two hours going through this.
+So, one image that kind of covers all this,
+I think it's pretty helpful.
+And I like your emphasis on prompts.
+I would say that it's interesting that like,
+I think in the early days of like Chachi BT and Claude,
+people often came up with,
+"Oh, you can't really follow my screen, can you?"
+In the early days of Chachi BT and all that,
+like a lot of people started like, you know,
+GitHub for prompts, like,
+"Well, we'll do prompt manager libraries."
+And like, those never really took off.
+And I think something like this is helpful and important.
+I would say like, I've also seen prompts file from human loop.
+I think as other ways to standardize how people share prompts.
+But yeah, I agree that like,
+there should be more innovation here.
+And I think probably people wants some dynamicism,
+which I think you, you afford, you allow for.
+And I like that you have multi-step that this was,
+this is the main thing that got me like,
+like these guys really get it.
+You know, I think you maybe have published on research
+that says like, actually sometimes to get the model
+working the right way, you have to do multi-step,
+prompting or geo-breaking to behave the way that you want.
+And so I think prompts are not just single conversations,
+they're sometimes changed to conversations.
+- Yeah, another question that I have
+when I was looking at some server implementations,
+the server builders kind of decide what data
+gets eventually returned, especially for tool calls.
+For example, the Google Maps one, right?
+If you just look through it, they decide what, you know,
+attributes kind of get returned.
+And the user cannot override that.
+If there's a missing one, that has always been my gripe
+with like SDKs in general.
+When people build like API wrapper SDKs
+and then they miss one parameter, then maybe it's new.
+And then I cannot use it.
+How do you guys think about that?
+And like, yeah, how much should the user be able
+to intervene in that versus just letting
+the server designer do all the work?
+- I think we probably bear responsibility
+through the Google Maps one.
+I think that's one of the reference service we've released.
+I mean, in general for things like for tool results
+in particular, we've actually made the deliberate decision,
+at least thus far for tool results to be not like sort
+of structured JSON data, not matching a schema really,
+but as like a text or images or basically like messages
+that you would pass into the LLM directly.
+And so I guess the core layer from that is
+you really should just return a whole gendered data
+and trust the LLM to sort through it and sift
+and extract the information it cares about
+because that's exactly what they excel at.
+And we really try to think about how to use LLM
+to their full potential and not maybe over specify
+and then end up with something that doesn't scale
+as LLM's themselves get better and better.
+So really, yeah, I suppose what should be happening
+in this example server, which again,
+well, we'll request welcome, it'd be great.
+It's like, if all these result types were literally
+just passed through from the API that it's calling
+and then the LLM can do whatever it wants with the data.
+- Yeah, yeah, that to me is like the USPC part of this,
+which is like, hey, this is kind of the file,
+so to speak, on this server, which is what the API returns
+and then you're kind of funneling it through
+without doing too much in the middle.
+Yeah, but at the same time, it's like,
+you need to do some work on some of the pieces
+because sometimes they have weird encoding
+or all these different things
+that maybe the server should handle,
+but yeah, it's a hard design decisions
+on where to draw the line.
+- I'll maybe throw AI under the bus a little bit here
+and then just say that Claude wrote a lot
+of these example servers as well.
+(laughing)
+- No surprise at all.
+- But I do think, sorry, I do think there's an interesting
+point in this that I do think people at the moment
+still to mostly still just apply their normal
+software engineering API approaches to this.
+And I think we're still need a little bit more relearning
+of how to build something for LLMs and trust them,
+particularly as they are getting significantly
+better year to year, right?
+And I think two years ago,
+maybe that approach would have been very valid,
+but nowadays just throw data at that thing
+that is really good at dealing with data
+is a good approach to this problem.
+And I think it's just like unlearning like 20, 30, 40 years
+of software engineering practices
+that go a little bit into this to some degree.
+- If I could add to that real quickly,
+just one framing as well for MCP is thinking
+in terms of like how crazily fast AI is advancing.
+I mean, it's exciting, it's also scary.
+Like thinking, us thinking that like the biggest bottleneck
+to the next wave of capabilities for models
+might actually be their ability to like interact
+with the outside world to like read data
+from outside data sources or like take stateful actions.
+Working at a topic, we absolutely care
+about doing that safely and with the right control
+and alignment measures in place and everything.
+But also as AI gets better, people will want
+that that'll be key to like becoming productive with AI
+is like being able to connect them up to all those things.
+So MCP is also sort of like a bet on the future
+and where this is all going at how important that'll be.
+- Yeah, yeah, I would say any API attribute
+that says formatted underscore should kind of be gone
+and we should just get the raw data from all of them
+because why are you formatting for me?
+The model is definitely smart enough to format an address.
+So I think they should go to the end user.
+- Yeah, I have, I think Alessia is about to move on
+to like server implementation.
+I wanted to, I think we're still talking
+about sort of MCP design and goals and intentions.
+And we've, I think we've indirectly identified
+like some problems that MCP is really trying to address.
+But I wanted to give you the spot to directly take on MCP
+versus OpenAPI because I think obviously there's,
+this is a top question.
+I wanted to sort of recap everything we just talked about
+and give people a nice little segment
+that people can say say, like this is a definitive answer
+on MCP versus OpenAPI.
+- Yeah, I think fundamentally, I mean,
+OpenAPI specifications are a very great tool.
+I'm like I've used them a lot in developing APIs
+and consumers of APIs.
+I think fundamentally, or we think that they're just like
+too granular for what you want to do with LLMs.
+Like they don't express higher level AI specific concepts.
+Like this whole mental model that we've talked about
+with the primitives of MCP and thinking from the perspective
+of the application developer, like you don't get any of that
+when you encode this information
+into an OpenAPI specification.
+So we believe that models will benefit more
+from like the purpose built or purpose design tools,
+resources, prompts and the other primitives
+that just kind of like, here's our REST API go wild.
+- I do think there's another aspect, I think,
+that I'm not an OpenAPI experts.
+I might, everything might not be perfectly accurate,
+but I do think that we're like, there's been,
+and we can talk about this a bit more later,
+there's a deliberate design decision
+to make the protocol somewhat stateful
+because we do really believe that AI applications
+and AI like interactions will become inherently
+more stateful and that we're the current state
+of like, like need for statelessness
+is more a temporary point in time
+that will, you know, to some degree that will always exist,
+but I think like more statefulness
+will become increasingly more popular,
+particularly when you think about additional modalities
+that go beyond just pure text-based, you know,
+interactions with models, like it might be like video,
+my audio, whatever, other modalities exist
+and out there already.
+And so I do think that like having something
+that bit more stateful is just inherently useful
+in this interaction pattern.
+I do think they're actually more complimentary,
+OpenAPI and MCP, then if people wanted to make it out,
+like people look for these like, you know,
+A versus B and like, you know, have all the,
+all the developer of these things go in a room
+and fist fight it out, but that's rarely what's going on.
+I think it's actually they're very complimentary
+and they have their little space
+where they're very, very strong.
+And I think, you know, just use the best tool for the job.
+And if you want to have a rich interaction
+between an AI application, it's probably like,
+it's probably MCP, that's the right choice.
+And if you want to have like an API spec somewhere
+that is very easy and like a model can read and to interpret
+and that's what worked for you, then OpenAPI is the way to go.
+- One more thing to add here is that
+we've already seen people, I mean, this happened very early,
+people in the community built like bridges
+between the two as well.
+So like, if what you have is an OpenAPI specification
+and no one's, you know, building a custom MCP server for it,
+there are already like translators
+that will take that and re-expose it as MCP
+and you could do it the other direction too.
+- Awesome. Yeah.
+I think there's the other side of MCPs
+that people don't talk as much about
+because it doesn't go viral, which is building the servers.
+So I think everybody does the tweets about
+why connected cloud desktop to XMCP, it's amazing.
+How would you guys suggest people start with building servers?
+I think this back is like,
+so there's so many things you can do
+that it's almost like how do you draw the line
+between being very descriptive as a server developer
+versus like going back to our discussion before,
+like just take the data
+and then let the model manipulate it later.
+Do you have any suggestions for people?
+- I think there, I have a few suggestions.
+I think that one of the best things I think about MCP
+and something that we got right very early
+is that it's just very, very easy to build
+like something very simple that might not be amazing,
+but it's good enough because models are very good
+and get those going within like half an hour, you know?
+And so I think that the best part is just like,
+pick the language of, you know, of your choice
+that you love the most, pick the SDK for it,
+if there's an SDK for it, and then just go,
+build a tool of the thing that matters to you personally
+and that you wanna see the model like interact with,
+build the server, throw the tool in,
+don't even worry too much about the description
+just yet like do a bit of like write a little description
+as you think about it and just give it to the model
+and just throw it to standard IO protocol,
+transport-wise into like an application that you like
+and see it do things.
+And I think that's part of the magic that,
+or like, you know, empowerment and magic for developers
+to get so quickly to something
+that the model does something that you care about
+that I think really gets you going
+and gets you into this flow of like,
+okay, I see this thing can do cool things.
+Now I go and can expand on this
+and now I can go and like really think about like,
+which are the different tools I want,
+which are the different raw resources and prompts I want.
+Okay, now that I have that, okay, now do I,
+what do my evils look like for how I want this to go?
+How do I optimize my prompts for the evils
+using like tools like that?
+This is infinite depth that you can do,
+but just start as simple as possible
+and just go build a server in like half an hour
+in the language of your choice
+and how the model interacts with the things that matter to you.
+And I think that's where the fun is at.
+And I think people, I think a lot of what MCP makes
+and what like great is it just adds a lot of fun
+to the development piece to just go and have models
+to things quickly.
+- I also, I'm quite partial again to using AI
+to help me do the coding.
+Like I think even during the initial development process
+we realized it was quite easy to basically just take
+all the SDK code again, you know,
+what did it suggest in like, you know,
+pick the language you care about and then pick the SDK.
+And once you have that, you can literally just drop
+the whole SDK code into an LLM's context window
+and say, okay, now that you know MCP,
+build me a server that does this, this, this.
+And like the results I think are astounding.
+Like, I mean, it might not,
+it might not be perfect around every single corner
+or whatever and you can refine it over time.
+But like it's a great way to kind of like one shot
+something that basically does what you want
+and then it can iterate from there.
+And like David said, there has been a big emphasis
+from the beginning on like making servers as easy
+and simple to build as possible,
+which certainly helps with LLM's doing it too.
+We often find that like, like getting started
+is like, you know, 102 and a blinds code
+and the language of your choice is really quite easy.
+- Yeah, but with, and I, if you don't have an SDK again,
+give the like, give the subset of the spec
+that you care about to the model and like another SDK
+and just have it build you an SDK.
+And it usually works for like that subset.
+Building a full SDK is a different story,
+but like to get a model to tool call in a Haskell
+or whatever like language you like,
+it's probably pretty straightforward.
+- Yeah, I, sorry.
+- No, I was gonna say I co-hosted a hackathon
+at the AGI house on personal agents
+and one of the personal agents somebody built
+was like an MCP server builder agent
+where they would visit you for the URL of API spec
+and it would build an MCP server for them.
+Do you see that today?
+It's kind of like, yeah, most servers are just kind of like
+a layer on top of an existing API without too much opinion.
+And how, yeah, do you think that's kind of like
+how it's gonna be going forward?
+Just like AI generated,
+expose the API that already exists?
+Or are we gonna see kind of like
+net new MCP experiences that you couldn't do it before?
+- I think, go for it.
+- I think both, like I think there will always be value
+in like, oh, I have, you know, I have my data over here
+and I want to use some connector
+to bring it into my application over here.
+That use case will certainly remain.
+I think, you know, this kind of goes back to like,
+I think a lot of things today are maybe default thing
+to tool use when some of the other primitives
+would be maybe more appropriate over time.
+And so it could still be that connector
+could still just be that sort of adapter layer
+but could like actually adapt it on to different primitives
+which is one way to add more value.
+But then I also think there's plenty of opportunity
+for use cases which like do, you know,
+or for MCP servers that kind of do interesting things
+in and out themselves and are just adapters.
+Some of the earliest examples of this were like,
+you know, the memory MCP server
+which gives the L and the ability to remember things
+across conversations or like someone
+who's a close co-worker built the,
+how much does that, not a close cook.
+Someone built the sequential thinking MCP server
+which gives a model the ability
+to like really think step by step
+and get better at its reasoning capabilities.
+This is something where it's like,
+it really isn't integrating with anything external.
+It's just providing this sort of like way of thinking
+for a model.
+I guess either way though,
+I think AI authorship of the servers is totally possible.
+Like I've had a lot of success in prompting just being like,
+hey, I want to build an MCP server that like does this thing.
+And even if this thing is not adapting some other API
+but it's doing something completely original,
+it's usually able to figure that out too.
+- Yeah, I do think that the, to add to that,
+I do think that a good part of what MCP servers will be
+will be these like just API wrapper to some degree.
+And that's good and valid because that works.
+And it gets you very, very far.
+But I think we're just very early like in exploring
+what you can do.
+I mean, I think as client support for like certain primitives
+get better, like we can talk about sampling
+with my favorite topic and greatest frustration
+at the same time.
+I think you can just see it very easily see like way,
+way, way richer experiences.
+And we have built them internally for as prototyping aspects.
+And I think you see some of that in the community already
+but there's just, you know, things like,
+hey, summarize my, you know, my favorite subreddits
+for the morning MCP server that nobody has built yet
+but it's very easy to envision
+and the protocol can totally do this.
+And these are like slightly richer experiences.
+And I think as people like go away from like the,
+oh, I just want to like, I'm just in this new world
+where I can hook up the things that matter to me
+to the LLM to like actually want a real workflow,
+a real like like more richer experience
+that I really want to expose to the model.
+I think then you will see these things pop up.
+But again, there's a little bit of a chicken
+and neck problem at the moment
+with like what a client support versus, you know,
+what sort of like authors want to do.
+- Yeah, that was kind of my next question on composability.
+Like, how do you guys see that?
+The plans for that was kind of like the import of MCPs,
+so to speak, into another MCP.
+Like if I want to build like the subreddit one,
+this probably going to be like the Reddit API MCP
+and then the summarization MCP
+and then how do I, how do I do a super MCP?
+- Yeah, so this is an interesting topic.
+And I think there are two aspects.
+I think that the one aspect is like,
+how can I build something agentically
+that do you require an LLM call
+in like a one form of fashion like for summarization or so?
+But I'm staying model independent.
+And for that, that's where like part of this
+by directionality comes in and this more rich experience
+where we do have this facility for servers
+to ask the client again who owns the LLM interaction, right?
+Like we talk about cursor who like runs the loop
+with the LLM for you.
+There that for the server author to ask the client
+for a completion and basically have it
+like summarize something for the server and return it back.
+And so now what model summarizes this
+depends on which one you have selected in cursor
+and not depends on what the author brings.
+The author doesn't bring an SDK,
+doesn't have you had an API key.
+It's completely model independent how you can build this.
+This is one aspect to that.
+The second aspect to building richer systems with MCP
+is that you can easily envision an MCP server
+that serves something to like something like cursor
+or Windsor for a cloud desktop.
+But at the same time also is an MCP client at the same time
+and itself can use MCP servers to create a rich experience.
+And now you have a recursive property
+which we actually quite carefully
+the design principles try to retain.
+You know, you see it all over the place
+and authorizations and other aspects to the spec
+that we've changed is like a recursive pattern.
+And now you can think about like,
+okay, I have this little bundle of application
+that's both a server and a client
+and I can add these in chains
+and build basically graphs like a DAGs out of MCP servers
+that can just richly interact with each other.
+Agentic MCP server can also use
+the whole ecosystem of MCP servers available to themselves.
+And I think that's a really cool environment,
+cool thing you can do and people have experimented with this.
+And I think you see hopefully more of this,
+particularly when you think about
+like auto selecting, auto installing,
+there's a bunch of these things you can do
+that make it make a really fun experience.
+- I think practically there are some niceties
+we still need to add to the SDKs
+to make this really simple and like easy to execute on,
+like this kind of recursive MCP server
+that is also a client or like kind of multiplexing together,
+the behaviors of multiple MCP servers into one host,
+as we call it.
+These are things we definitely want to add.
+We haven't been able to yet,
+but like I think that would go some way
+to showcasing these things that we know are already possible,
+but not necessarily picking up that much yet.
+- Okay, this is very exciting and very,
+I'm sure a lot of people get very, very,
+a lot of ideas and inspiration from this.
+Is an MCP server that is also a client?
+Is that an agent?
+- What's an agent?
+There's a lot of definitions of agents.
+- Because like in some ways you're requesting something
+and it's going off and doing stuff
+that you don't necessarily know,
+there's like a layer of instruction
+between you and the ultimate raw source of the data,
+but you could spew that.
+- Yeah, I just, I don't know if you have a heartache on agents.
+- I do think that you can build an agent that way.
+For me, I think you need to define the difference
+between an MCP server plus client
+that is just a proxy versus an agent.
+I think there's a difference
+and I think that difference might be in,
+for example, using a sample loop
+to create a more rich experience
+to you have a model called tools
+while like inside that MCP server through these clients.
+I think then you have an actually agent.
+- Yeah, I do think it's very simple to build agents that way.
+- Yeah, I think there may be a few paths here.
+Like it definitely feels like there's some relationship
+between MCP and agents.
+One possible version is like maybe MCP is a great way
+to represent agents.
+Maybe there are some like features or specific things
+that are missing that will make the ergonomics a bit better
+and we should make that part of MCP.
+That's one possibility.
+Another is like maybe MCP makes sense.
+It's kind of like a foundational communication layer
+for agents to like compose with other agents
+or something like that.
+- Or there could be other possibilities entirely.
+Maybe MCP should specialize and narrowly focus
+on kind of the AI application side
+and not as much on the agent side.
+I think it's a very live question
+and I think they're sort of trade-offs in every direction.
+- Going back to the analogy of the Godbox.
+I think one thing that we have to be very careful about
+when designing a protocol and kind of curating
+or shepherding an ecosystem is like trying to do too much.
+- I think it's a very big, yeah,
+with you know, you don't want a protocol that tries
+to do absolutely everything under the sun
+because then it'll be bad at everything too.
+And so I think the key question which is still unresolved
+is like to what degree are agents really naturally
+fitting into this existing model and paradigm
+or to what degree is it basically just
+like orthogonal it should be something.
+- I think once you enable two way
+and once you enable client server to be the same
+in delegation of work to another MCP server,
+it's definitely more agentic than not.
+But I appreciate that you keep in mind simplicity
+and not trying to solve every problem on this one.
+- Cool, I'm happy to move on there.
+I mean, I'm gonna double click on a couple of things
+that I marked out because they coincide with things
+that we wanted to ask you anyway.
+So the first one is just a simple,
+how many MCP things can one implementation support?
+So this is the sort of wide versus deep question.
+And this is direct relevance to the nesting of MCPs
+that we just talked about.
+In April of 2024, when Claude was launching
+one of its first context,
+the first million token context example,
+they said you can support 250 tools.
+And so to me that's wide in the sense
+that you don't have tools that call tools,
+you just have the model and a flat hierarchy of tools.
+But then obviously you have tool confusion,
+it's going to happen.
+When tools are adjacent, you call the wrong tool,
+you're gonna get the bad result, right?
+But do you have a recommendation of like a maximum number
+of MCP servers that are enabled at any given time?
+- I think to be honest,
+like I think there's not one answer to this
+because to some extent it depends on the model
+that you're using, to some extent, it depends on like
+how well the tools are named and described for the model
+and stuff like that to avoid confusion.
+I mean, I think that the dream is certainly like,
+you just furnish all this information to the LLM
+and it can make sense of everything.
+This kind of goes back to like the future we envision
+with MCP is like all this information is just brought
+to the model and it decides what to do with it.
+But today the reality or the practicalities might mean
+that like, yeah, maybe in your client application,
+like the AI application,
+you do some filtering over the tool set
+or like maybe you run like a faster smaller LLM
+to like filter to what's most relevant
+and then only pass those tools to the bigger model
+or you could use an MCP server which is a proxy to other MCP
+servers and does some filtering at that level
+or something like that.
+I think hundreds as you referenced is still a fairly safe bet,
+at least for Claude, I can't speak to the other models.
+But yeah, I don't know, I think over time
+we should just expect this to get better.
+So we're wary of like constraining anything
+and preventing that sort of long.
+- Yeah, obviously it highly depends on the overlap
+of the description, right?
+Like if you have like very separate servers
+that do very separate things
+and the tools have very clear unique names,
+very clear, well written descriptions,
+your mileage might be more higher
+than if you have a GitLab and a GitOps server
+at the same time in your context
+and then the overlap is quite significant
+because they look very similar to the model
+and confusion becomes easier.
+- There's different considerations
+to depending on the AI application.
+If you're trying to build something very agentic,
+maybe you are trying to minimize the amount of times
+you need to go back to the user with a question
+or minimize the amount of configurability
+in your interface or something.
+But if you're building other applications,
+you're building an IDE
+or you're building a chat application or whatever,
+like I think it's totally reasonable to have affordances
+that allow the user to say like at this moment,
+I want this feature set or at this different moment,
+I want this different feature set or something like that.
+And maybe not treated as like always on,
+the full list always on all the time.
+- Yeah, that's where I think the concepts of resources
+and tools get to blend a little bit, right?
+Because now you're saying you want some degree
+of user control, right?
+Or application control.
+And other times you want the model to control it, right?
+So now we're choosing just subsets of tools, I don't know.
+- Yeah, I think it's a fair point or a fair concern.
+I guess the way I think about this is still like
+at the end of the day and this is a core MCP design principle
+is like ultimately the client application
+and by extension the user.
+Ultimately they should be in full control
+of absolutely everything that's happening via MCP.
+When we say that tools are model controlled,
+what we really mean is like tools should only be invoked
+by the model, like there really shouldn't be an application
+interaction or a user interaction where it's like,
+okay, as a user, I now want you to use this tool.
+I mean, occasionally you might do that for prompting reasons,
+but like I think that shouldn't be like a UI affordance.
+But I think the client application or the user deciding
+to like filter out things that MCP servers are offering
+totally reasonable or even like transform them.
+Like you could imagine a client application
+that takes tool descriptions from an MCP server
+and like enriches that makes them better.
+We really want the client applications
+that have full control in the MCP paradigm.
+- That in addition though, like I think there,
+one thing that's very, very early in my thinking
+is there might be addition to the protocol
+where you want to give the server off of the ability
+to like logically group certain primitives together
+potentially to inform that
+because they might know some of these logical groupings
+better and that could like encompasses,
+prompts, resources, and tools at the same time.
+- I mean, personally we can have a design discussion on there.
+I mean, personally my take would be
+that those should be separate MCP servers
+and then the user should be able to compose them together,
+but we can figure it out.
+- Is there gonna be like a MCP standard library,
+so to speak, of like, hey,
+these are like the canonical servers do not build this.
+We're just gonna take care of those
+and those can be maybe the building blocks
+that people can compose or do you expect people
+to just rebuild their own MCP servers
+or like a lot of things?
+- I think we will not be the prescriptive in that sense.
+I think there will be inherently,
+you know, there's a lot of power.
+Well, let me really face it.
+Like I have a long history in an open source
+and I feel the bizarre approach to this problem
+is somewhat useful, right?
+And I think so that the best and most interesting option wins
+and I don't think we want to be very prescriptive.
+If I do, we'll definitely foresee
+and this already exists that they would like 25 GitHub servers
+and like 25, you know, Postgres servers and whatnot
+and that's all cool and that's good.
+And I think they all add in their own way.
+But effectively, eventually over months or years,
+ecosystem will converge to like a set
+of very widely used ones who basically,
+I don't know if you call it winning,
+but like that will be the most used ones.
+And I think that's completely fine
+because being prescriptive about this,
+I don't think it's any useful, any use.
+I do think of course that there will be like MCP servers
+and you see them already that are driven by companies
+for their products and of, you know,
+they will inherently be probably the canonical implementation.
+Like if you want to work with Cloudflow workers
+and use an MCP server for that,
+you'll probably want to use the one developed by Cloudfair.
+- Yeah.
+- I think there's maybe a related thing here too,
+just about like one big thing worth thinking about.
+We don't have any like solutions completely ready to go.
+Is this question of like trust or like, you know?
+- Zedding is maybe a better word.
+Like how do you determine which MCP servers
+are like the kind of good and safe ones to use?
+Regardless of if there are implementations
+of GitHub MCP servers, that could be totally fine,
+but you want to make sure that you're not using ones
+that are really like sus, right?
+And so trying to think about like how to kind of
+endow reputation or like, you know,
+if hypothetically anthropic is like,
+we've vetted this, it meets our criteria
+for secure coding or something.
+How can that be reflected in kind of this open model
+where everyone in the ecosystem can benefit?
+- I don't really know the answer yet,
+but that's very much that will not.
+- But I think that's like a great design choice of NCPs,
+which is like language agnostic.
+Like already, and there's not to my knowledge
+a anthropic official Ruby SDK, nor an opening I SDK
+and Alex Rudal does a great job building those.
+But now what MCPs is like,
+you don't actually have to translate an SDK
+to all these languages.
+You just do one interface and kind of bless
+that interface as anthropic.
+So yeah, that was nice.
+- I have a quick answer to this thing.
+So like obviously there's like five or six different
+registries already popped up.
+You guys announced your official registry
+that's gone the way and a registry is very tempting
+to offer like download counts, likes, reviews
+and some kind of trust thing.
+I think it's kind of brittle.
+Like no matter what kind of social proof
+or other thing you can offer, the next update
+can compromise a trusted package.
+But actually that's the one that does the most damage, right?
+So abusing the trust system is like setting up a trust system
+creates the damage from the trust system.
+And so I actually want to encourage people
+to try out MCP inspector because all you gotta do
+is like actually just look at the traffic.
+And like I think that goes for a lot of security issues.
+- Yeah, absolutely.
+I think it's like this very classic
+just supply chain problem that like all registries
+effectively have and you know,
+they're different approaches to this problem.
+Like you can take the Apple approach and like vet things
+and like have like an army of both of those options
+system and review teams to do this.
+And then you effectively build an app store, right?
+That's one approach of this type of problem.
+It kind of works in a very certain set of ways.
+But I don't think it works in an open source
+kind of ecosystem for which you always have a registry
+kind of approach like similar to NPM and packages and PIPI.
+And they all have inherently these like
+these supply chain attack problems, right?
+- Yeah, yeah, totally.
+Quick time check.
+I think we're going to go for another like 20, 25 minutes.
+Is that okay for you guys?
+Okay, awesome.
+Cool.
+I wanted to double click take the time.
+So I'm going to sort of we previewed a little bit
+on like the future coming stuff.
+So I want to leave the future coming stuff to the end
+like registry, the the the stateless servers
+and remote servers, all the other stuff.
+But I wanted to double click a little bit more
+on the launch, the core servers that are part
+of the official repo.
+And some of them are special ones.
+Like the like the ones we already talked about.
+So let me just pull them up already.
+So for example, you mentioned memory,
+you mentioned sequential thinking.
+And I think I really, really encourage people
+should look at these, what I call special servers.
+Like they're not normal servers in the sense
+that they they wrap some API and it's just easier
+to interact with those than to work at the APIs.
+And so I'll highlight the memory one first,
+just because like I think there are a few memory startups,
+but actually you don't need them if you just use this one.
+It's also like 200 lines of code, it's super simple.
+And obviously then if you need to scale it up,
+you should probably do some some more battle tested thing.
+But if you're interested, if you're just introducing memory,
+I think this is a really good implementation.
+I don't know if there's like special stories
+that you want to highlight with some of these.
+- I think no, I don't think this particular special,
+I think a lot of these, not all of them,
+but a lot of them originated from the hackathon
+that I mentioned before where folks got excited
+about the idea of MCP, people internally inside Empathy
+who wanted to have memory or wanted to play around
+with the idea could quickly now prototype something
+using MCP in a way that wasn't possible before.
+Someone who's not like, you don't have to become
+the end-to-end expert, you don't have to have access
+to this like private proprietary code base,
+you can just now extend cloud with this memory capability.
+So that's how a lot of these came about.
+And then also just thinking about like,
+what is the breadth of functionality
+that we want to demonstrate at launch?
+- Totally, and I think that is partially why
+it made your own successful because you launch with
+a sufficiently spanning set of, here's examples,
+and then people just copy, paste and expand from there.
+I would also highlight the file system MCP server,
+only because it has edit file.
+And basically, I think people were very excited
+when we had Eric, who built your sort of,
+three bench projects on the podcast as well.
+And people were very interested in this sort of like
+file editing tool that is basically open source
+via this project.
+And I think a lot of, there's some libraries out there,
+there's some other implementations that like,
+you know, this is core IP for them.
+And now it's just, you guys just put it out there,
+it's just really cool.
+- Yeah, I believe, I mean,
+honestly the file system server is one of my favorites
+because I think it really speaks to like a limitation
+but I was feeling, you know, I was like hacking on a game
+as a site project and really wanted to connect it
+to like cloud and artifacts like they talked about before,
+just giving cloud or like suddenly being able
+to give cloud the ability to like actually interact
+with my local machine was huge.
+I really love that sort of capability.
+- Yeah, I mean, this is the classic example of like
+this server directly comes out of the frustration
+that both created MCP and that server,
+that was a very clear direct path of like,
+here's the frustration we're currently having
+to MCP plus the server that we both have felt
+and just in particular.
+So that regard is close to our heart as like,
+as a spiritual inception point of the protocol itself.
+- So.
+Okay, and then I think the last thing I'll highlight
+is sequential thinking, which you already talked about.
+This is, this gives like branching,
+which is kind of interesting.
+It gives a sort of, you know, I need more space to write,
+which is kind of super interesting.
+And I think one thing I also wanted to clarify
+was anthropic this week, well, this past week,
+put out a new engineering blog with a think tool.
+And there's a bit of community confusion
+how sequential thinking overlaps with the think tool.
+I just think that it's just different teams
+doing similar things in different parts of the world.
+But I just wanted to let you guys clarify.
+- I think, I mean, there's definitely like,
+sorry, let me start over.
+- As far as I know, there is no common lineage
+between these two things.
+But I think it just speaks to a larger thing
+that like, there are many different strategies
+to get an algorithm to be more thoughtful
+or hallucinate less or whatever it might be,
+to kind of like, express these different dimensions
+more fully or more reliably.
+And I don't know, I think this is like the power of MCP
+that like, you could build different servers
+that do these different things
+or have like, you know, different prompts
+or different tools within the same server
+that do these different things.
+And like, ask the LLM to apply particularly
+like mental model or thinking pattern or whatever
+for different results.
+So I don't know, I think I guess don't know
+that there will be like one ideal prescribed method,
+like LLM, here's how you should think all the time.
+I think there will be different applications
+for different purposes and MCP allows you to do that, right?
+- Yeah, I think in addition, there's also like the way
+that the approach of this, that some of the MCP servers,
+they're filling a gap that existed at a point in time
+that the models later catch up to by themselves
+because you know, they have this training time
+and preparation, the least research that goes
+into making models to things natively, so to speak.
+And you can get a lot of mileage of something
+as simply as a sequential thinking tool like server.
+It's not simple, but it's like,
+it's doable within a few days,
+which is definitely not the time from you look at
+adding thinking to a model natively.
+- I guess to come up with an example on the fly,
+like I could imagine building, you know,
+if I'm working with a model that is not particularly reliable
+or, you know, maybe someone considers the generation today
+overall not particularly reliable,
+like I could imagine building an MCP server
+that gives me like best of three, you know,
+tries like three times to answer query with the model
+and then picks the best one or something like that.
+Like you could get this kind of like recursive
+and composable L M interactions with MCP.
+- Awesome, okay, cool.
+I think, so, you know, we, sorry,
+thanks for indulging on some of the servers,
+I just wanted to double click on these.
+I think we have time for just like future roadmap things.
+People were most excited about this recent update,
+moving from stateful to stateless servers.
+You guys picked SSE as your sort of launch protocol
+and transport and obviously transport is pluggable.
+The behind the scenes of that.
+Like was it Jared Palmer's tweet that caused it
+or were you already working on it?
+- No, we have, we have GitHub discussions going back,
+like, you know, in public going back months really,
+talking about this, this day, lemme on.
+The trade offs involved, you know,
+we do believe that like the future of AI applications
+and ecosystem and agents, all of these things,
+I think will be stateful
+or will be more in the direction of statefulness.
+- So we had a lot of, I think honestly,
+this is one of the most contentious topics
+we've discussed as like the core MCP team
+and like gone through multiple iterations
+on and back and forth,
+but ultimately just came back to this conclusion
+that like if the future looks more stateful,
+we don't want to move away from that paradigm completely.
+Now we have to balance that against,
+it's been operationally complex
+or like it's hard to deploy an MCP server
+if it requires this like long-lived persistent connection.
+This is the original like SSC transport design
+is basically you deploy an MCP server
+and then a client can come in and connect
+and then basically you should remain connected indefinitely
+which is that's like a tall order
+for anyone operating at scale.
+It's just like not a deployment
+or operational model you really want to support.
+So we were trying to think like,
+how can we balance the belief that statefulness is important
+with sort of simpler operation and maintenance
+and stuff like that.
+And the news sort of we're calling it
+the streamable HTTP transport that we came up with
+still has SSC in there,
+but it has more like a gradual approach
+where like a server could be just playing HTTP
+like have one endpoint that you send HTTP posts to
+and then get a result back.
+But then you can like gradually enhance it with like,
+okay, now I want the results to be streaming
+or like now I want the server
+to be able to issue a tall request.
+And as long as the server and client
+both support the ability to like resume sessions
+like to disconnect and come back later
+and pick up where you left off,
+then you get kind of the best of both worlds
+where it can still be this stateful attraction
+and stateful server,
+but allows you to like horizontally scale more easily
+or like deal with spotty network connections
+or whatever the case may be.
+- Yeah. And you had a, as you mentioned, session ID.
+How do you think about auth going forward?
+For some MCPs, I just need to like paste my API key
+and the command is there kind of like a,
+but yeah, what do you see as the future of that?
+Is there going to be like the .m equivalent
+of like a for MCPs or yeah?
+- We do have authorization as a specification
+in the current draft of the next submission of the protocol.
+It's mostly at the moment focused
+on user to server authorization
+using like OAuth 2.1 or like, you know,
+a subset of modern wall, basically.
+And I think that has seems to be working well for people
+and people building a top of that.
+And that will solve a lot of these issues
+because you don't really want to have people bring API keys
+in particular when you have like when you think about a world
+which I truly believe will happen
+where the majority of servers will be remote servers.
+So you need some sort of authorization with that server.
+Now for the local case, because the authorization
+is defined on the transport layer
+and so requires framing,
+which means like headers effectively,
+this does not work in San Diego.
+But in San Diego, you run locally
+and you can do whatever you want anyway
+and you might just pop open a browser
+and deal with it that way.
+And then there's also like some thinking
+that is somewhat somewhat not fully decided on about,
+you know, even using HTTP locally
+which would solve that problem.
+And Justin is laughing with us.
+He's very much in favor of this
+where I'm very much not in favor of this.
+So there's some debate going on there.
+But like authorization, I think, you know,
+we have something I think it's like it's,
+as everything in the protocol is like fairly minimal,
+like trying to solve a very practical problem
+and tries to be very minimal in what it does.
+And then we go from there and add
+based on practical pain points people have
+on top of the protocol
+and don't try to overdesign it from the beginning.
+So we'll just see how far our kernel aspect gets us basically.
+- Yeah, I want to build on that a bit
+because I think that last point is really important.
+And like, you know, when you're designing a protocol,
+you have to be extremely conservative
+because if you make a mistake,
+you basically can't undo that mistake
+or you break backwards compatibility.
+So it's far easier to like only accept things
+or like only add things that you're extremely certain about
+and let people kind of do ad hoc extensions
+until maybe there's more like consensus
+that's something as worth adding to the core thing
+and like supporting indefinitely going forward.
+And with all of that particular
+and this example in API keys,
+I think this is really illustrative
+because we did a lot of this sort of like brainstorming
+like, okay, if I have this use case,
+could I accomplish that with this version of auth?
+And I think the answer is yes for like the API key example.
+Like you can have an MCP server
+which is an OAuth authorization server
+and at the like slash authorized web page,
+it just has like a text box for you to put in an API key.
+Like that would be a totally valid OAuth flow
+for the MCP server.
+Maybe not the most ergonomic
+or not what people would ideally like,
+but because it does fit into the existing paradigm
+and is possible today,
+we're worried about like adding too much other,
+too many other options
+that both then clients and servers need to think about.
+- Yeah.
+Have you guys gave scopes any thought?
+If it's like we had an episode
+with Dharmesh Shah yesterday from H&A and Hopspot
+and he was given the example of like email.
+Like he has all of his emails
+and you know, he would like to have more granular scope
+for a, hey, you can only access these types of emails
+or like emails to this person.
+Today most scopes are like rest driven basically.
+It's like what endpoints can you access?
+Do you see a future in which the model kind of access
+like the scope layer, so to speak
+and kind of dynamically limits the data that passes through?
+- I think there's a potential need for scopes
+that goes back to like, we have discussions around this,
+but what we currently trying to do is just like rooting them
+in very specific example and like have a good set of like,
+these are actual problems that you cannot currently solve
+with the current implementations.
+And that's like the bar we set to add to the protocol.
+And I think that, and then, you know, based on that prototype
+using that extensibility that we have at the moment
+where every structure that's returned is extensible
+and then build on top of that and prove that you,
+that this will have a good user experience
+and then we put it at the protocol.
+That's usually been for the most part of the case.
+It's actually not quite the case for authorization in general.
+That's been a bit more top down.
+But I can totally see why people want it.
+It's just a matter of like showcasing the specific examples
+and like what the, what the potential solutions would be.
+So that we don't accidentally run into this like,
+yeah, the soft, the, into this approach
+where like it sounds roughly right and we put it in
+and it was actually not really right.
+And now you're back to this like adding is easy,
+removing as hard in protocol design.
+And so we just a little bit, we just a little bit, you know,
+careful around this, so to speak.
+That being said, you know, every time I hear it
+like in the rough description, it makes sense.
+I would love to have a very practical and trend user
+example of this and where it falls apart
+at current implementation, then we can have a discussion.
+- There's a little bit of weariness from my perspective too.
+Maybe not with go specifically.
+I think those could make a lot of sense
+as long as we have the use cases in mind.
+But I do think, you know,
+in thinking about composability
+and what logical groupings of things,
+I think it does often make sense for MCP servers
+to be quite small things.
+And if you want lots of collection for functionality
+for those to be discrete servers
+that you kind of combine together as a user
+or in the application layer.
+And so some of the pushback about off has been like,
+well, if I need to authorize with like 20 different things
+on the other side, how can I do that?
+It's like, well, maybe that's not what the server should be doing.
+And maybe it shouldn't be connecting to 20 different things.
+Maybe those should be separate servers
+that combine up somehow.
+- Awesome. Lots of discussion there.
+Where should people go if they want to get involved
+in these debates?
+Is it just the specification repo discussion page?
+- That is, that's a good start.
+I want to caveat it slightly that
+on the internet, it's very easy to be part of a discussion
+and having an opinion without then actually doing the work.
+And so I think there we were both Johnson and I,
+very old school open source people
+that like it's marriage driven in the sense
+that if you have done work
+and if you showcase this with like practical examples
+and working as the case towards the extensions
+you want to make, you have a good chance that it gets in.
+If you're just there to have an opinion,
+you're very likely just being ignored to be frank
+because there's a limit to how much discussion points
+we can rate.
+Of course, we've valued the discussion
+and we want to have the discussion,
+but we also need to manage our time and our engagement
+and we obviously select for the people
+who are doing the most work.
+- We're trying to figure out, you know,
+that honestly like I think even compared
+to open source work out down in the past,
+just the this year volume of conversation
+and notifications or an MCP stuff is extraordinary
+which is great on one hand,
+but I think we do need to figure out more scalable structures
+to both engage with the community
+but also keep conversations high signal and like effective.
+And I guess there's something else to be aware
+of related to David's point is like I do believe
+that a big part of running a successful open source project
+is sometimes making hard decisions
+that people will be unhappy about
+and you kind of just have to like, you know,
+learn to like figure out like what are the things,
+what is like the actual vision for the project?
+Where do we as the kind of like maintainers
+or like shepherds or whatever believes that it's going
+and just commit to that and like understand
+that some people won't agree with that vision
+and that's totally fine.
+But then maybe there will be other projects
+that are more in line with what they're hoping for
+or something like that.
+- I think that's a very interesting
+and quite good point is like they're like a product
+like MCP is an entry into like into a solution space
+of the problems in that in the general like a space
+and it's one of many entries in a way.
+And if you do not like the direction, you know,
+that we and like people that are very close, you know,
+in the development of the protocol,
+choose them and then we cannot,
+then there's always place for more, right?
+That's a beauty of open source, right?
+The good old, you know, forget approach.
+- We do always want to hear the feedback
+and we need to make it scalable, I think,
+but also just a recognition that like
+sometimes we will be going with our intuition
+about what is the right choice.
+There might be a lot of like flame
+in the open source discussions about it,
+but that's just the nature of projects like this sometimes.
+- Yeah, fortunately neither of you are new to that.
+I would also say there's a lot of history
+to be drawn from Facebook open source, right?
+And both of you, if you weren't directly involved,
+you'd know everyone who was directly involved.
+I would say React, we eventually started
+because I was obviously deeply part
+of the React ecosystem.
+We eventually started working groups where it was open,
+it was conducted in discussions
+and each member of the working group had a voice
+that represented a significant part of the community,
+but also showed that they did the work,
+they had the significance,
+if they weren't sort of drive by people
+with no skin in the game.
+And I think that was helpful for a while.
+I'm not sure it's like an actively managed thing
+because of React's own issues
+with the multi-company situation they're in.
+The other thing that actually is to me
+is more interesting is GraphQL.
+Because MCP where like currently has the hype
+that GraphQL had and I lived through that one.
+And eventually, Facebook donated GraphQL
+to an open source foundation.
+And I think that there's a question of like,
+do we want to do that?
+This trade offs, right?
+It's not a clear yes or no.
+I would say that most people are happy with anthropic
+and you guys obviously because you created it,
+you guys being a stewards.
+But at some point, at some scale,
+you're going to hit some ceiling there
+where you're like, okay,
+this is owned by one company.
+And eventually people want to,
+the truly open standard is a nonprofit,
+and there's multiple stakeholders,
+there's a good governance process,
+all of which is governed by the index foundation,
+Apache, whatever.
+So I want to ask like, any thoughts there?
+I personally would say it's too early.
+What are your thoughts?
+- Yeah, I think governance and journalism
+has a super interesting problem
+in a kind of open source space.
+I think there are two things.
+On one hand side, we really, really, really want to make this
+and have this be an open standard and open protocol
+and an open project with participation from everyone
+who wants to be partaked.
+And I think that actually is working quite well so far.
+If you look at the pull request,
+if you look, for example,
+a lot of the inputs on the streamable HTTP thing
+came from companies like Shopify and others
+that had discussed and worked on this
+and brought proposals to the table.
+And I think that works really well.
+The thing that we are a bit wary about is
+any type of official standardization,
+particularly going through an actual standardization body
+or any type of like foundational work
+that starts having processes as part of this
+to stay somewhat fair to everyone.
+That can act process that in a fast movie field like AI
+can be detrimental to the project.
+And that's what we worry about.
+We worry about processes that are slowing us down.
+And so we're trying to find this nice middle ground
+of like, how can we have participation?
+They'll be luckily do you have from everyone,
+work towards everyone's, you know?
+Everyone's like, the problem is that they have potentially
+with the governance model
+and figure the right path forward out
+without accidentally slowing down the project.
+I think that's what we're trying to do.
+Like, yeah, we genuinely, we were very genuine
+in our desire to have this be an open project.
+And like, yes, it was initiated by anthropic
+and David and I work at anthropic,
+but like we don't want it to be seen as like,
+this is anthropics protocol.
+I think it's very important for the whole ecosystem
+that this is something that like any AI lab
+could have a stake in or contribute to or make use of.
+But yeah, it's just, it's bouncing that against
+avoiding death by committee, basically.
+And so like, I think there are a lot of models
+for doing this successfully in open source.
+I think most of the delicacies are really around like,
+you know, sort of corporate sponsorship
+and corporate saying and we'll kind of navigate
+that as it comes up,
+but we absolutely want this to be like a community project.
+- That being said, I want to highlight this
+that at the moment, as we speak,
+there's plenty of people that are not anthropic employees
+who have committed access and admin access
+to the repository is right there.
+You know, some of the people from pedantic have committed
+access to the Python SDK
+because they did a lot of really good work there.
+And we had a lot of contributions
+from blocking others to the specifications.
+As the case like the Java SDK and the C# SDK,
+they're completely done by different companies.
+Like the C# one is done by Microsoft.
+It's a very recent edition last week
+and they do everything there.
+They have full admin rights over that.
+The same goes with JetBrange doing the Kotlin one
+and Spring AI doing the Java one.
+So it is actually, if you really look at it,
+it's already like a multi-company big project with everyone.
+It was a lot of people beyond just us
+to having committed access to and rights
+to the project as is.
+- Yeah.
+Awesome guys, this was great.
+Just to wrap up, do you have any MCP server wish list?
+What do you want people to build you?
+That is not there yet. - Or client.
+- Client or server?
+- I want some, I want more sampling clients.
+That's all I want.
+I want someone to build a client that is sampling
+and someone else that builds me a server
+that does summarize my Reddit threats or summarize.
+Like I'm an old even line player.
+Summarize what happened in even line in the last week for me.
+I wish that someone would do that.
+But for that, I want a sampling client.
+I want this model independent.
+Not because I wanted to use any other modeling cloth
+because cloth is by far the best,
+but I just wanna, I just wanna have a sampling client
+for the sake of having a sampling client
+just out of the view.
+- I'll echo that and just even broadly say like,
+I think just more clients that support the full breadth
+of the spec would be amazing.
+I mean, we kind of designed things
+so that things can be adopted in commercially anyway,
+but like still.
+- It would be great if, you know, all these primitives
+that we put this thought into do get manifested somehow.
+That would be amazing.
+But going back to, you know,
+some of my initial motivation for working on MCP
+and like excitement about the file system server,
+you know, like I like hacking on a game as a side project.
+So I would really love to have an MCP client
+and or MCP server with like the Godot engine
+which I was using to build the game
+and just like have really easy like AI integration with that
+or like have, you know,
+cloth run and play test my game or something.
+Like cloth, please Pokemon, who knows?
+- Hey, at least you have them already built,
+they have already built your 3D model
+from now on with Blender, right?
+- But yeah, I mean, honestly, even like Shader code
+and stuff already, I was just like,
+this is not my wheelhouse.
+- It's amazing what you can do when you enable builders.
+Yeah, we're actually working on a cloud,
+please Pokemon hackathon with David Hershey.
+So it's also to bring MCP into that.
+I had no plans, but if he wants to, he can.
+- Awesome guys, well, thank you for the time.
+Yeah, keep up the good work.
+- Thank you both, this was fun.
+- Yeah, thank you, I really appreciate it.
+Cheers.
+(upbeat music)
+(upbeat music)
+(upbeat music)
+

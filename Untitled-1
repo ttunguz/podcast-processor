@@ -1,0 +1,51 @@
+require 'io/console'
+require 'open3'
+
+# Flag to track if transcription is running
+transcribing = false
+
+# Store the last transcribed text
+last_transcription = ""
+
+# Function to handle the F7 key press
+def handle_f7
+  if transcribing
+    # Stop transcription
+    Process.kill("INT", $pid)
+    puts "Transcription stopped. Last text: #{last_transcription}"
+  else
+    # Start transcription in a separate thread
+    Thread.new do
+      Open3.popen2e("whisperkit-cli transcribe --model \"tiny\" --stream") do |stdin, stdout_err, wait_thr|
+        $pid = wait_thr.pid  # Store process ID for later termination
+        stdout_err.each_line do |line|
+          last_transcription = line.chomp
+        end
+      end
+    end
+    puts "Transcription started..."
+  end
+  $transcribing = !$transcribing  # Toggle transcription state
+end
+
+# Main loop to listen for key presses
+loop do
+  if STDIN.getch == "\e"
+    if STDIN.getch == "["
+      case STDIN.getch
+      when "A" # Up arrow
+        # Handle up arrow key press if needed
+      when "B" # Down arrow
+        # Handle down arrow key press if needed
+      when "C" # Right arrow
+        # Handle right arrow key press if needed
+      when "D" # Left arrow
+        # Handle left arrow key press if needed
+      when "1"
+        if STDIN.getch == "8" && STDIN.getch == "~"
+          handle_f7
+        end
+      end
+    end
+  end
+end

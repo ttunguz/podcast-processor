@@ -1,0 +1,1082 @@
+
+Hello AI engineers! We're excited to bring you a special conversation with Brett Taylor,
+CEO of Sierra, the conversational AI platform now worth $4.5 billion, as well as Chairman of the
+Board of OpenAI, which needs no introduction. He has had a long-established career in tech,
+including co-creating Google Maps and the Facebook like button, starting quip, and serving as co-CEO
+of Salesforce and Chairman of Twitter Inc. Through all his dizzying accomplishments,
+Brett is an AI engineer at heart and is incredibly passionate about the future of software development,
+arguing that we are moving forward from the autopilot era of software engineering to the
+autonomous era. He's also equally at ease talking about the internals of JavaScript React Web Apps,
+as he is talking about the human side of negotiating high-stakes situations like the OpenAI board
+drama of 2023. He's observed the rise of the specialist AI architect role, which is a more
+senior technical AI leader complimenting the AI engineer, in the various high-level conversations
+with senior AI leaders in his roles at Sierra and OpenAI. Throughout Brett's career, we observed a
+strong formula of his success being the tight integration of product management and engineering
+in small teams, aligned with customers by AI, and I quote, maniacal focus on outcomes rather than
+exposing implementation details on the pricing chart. We organized this conversation in the lead-up
+to the AI leadership track at the AI Engineer Summit in New York City on February 20th, where we
+have gathered CTOs and VPs of AI of major companies from Bloomberg to LinkedIn to talk about their
+AI strategy with a close grounding on technical detail. This is our last call for AI leadership
+attendees to join us. The engineering track is now sold out and we expect our leadership slots to
+close soon. Apply for an invite at apply.ai.engineer. See you in two weeks. Watch out and take care!
+Hey everyone, welcome to the lead-in space podcast. This is Alessio, partner and CTO
+accessible partners, and I'm joined by my co-host Swix, founder of small AI.
+Hey, and today we're super excited to have Brett Taylor join us. Welcome.
+Thanks for having me. It's a little unreal to have you in the studio. I've read about you so
+much over the years, even before opening AI effectively. I use Google Maps to get here.
+So thank you for everything that you've done. Your story history, I think people can find out
+what your greatest hits have been. How do you usually like to introduce yourself when you talk
+about your summer as your career? How do you look at yourself?
+Yeah, it's a good question. Before we went on the mics here, we're talking about the audience
+for this podcast being more engineering. And I do think depending on the audience, I'll introduce
+myself differently because I've had a lot of corporate and board roles. I probably self-identify
+as an engineer more than anything else though. So even when I was co-CF Salesforce, I was coding
+on the weekends. So I think of myself as an engineer and then all the roles that I do in my
+career sort of start with that just because I do feel like engineering is sort of a mindset
+and how I approach most of my life. So I'm an engineer first, and that's how I describe myself.
+You majored in computer science like 1998. I was high school actually. My college degree
+was 0-200 grad, 0-3 masters at that old. I mean, I was going like 1998 to 2003. But like
+engineering wasn't a thing back then. We didn't have the title of senior engineer,
+you know, kind of like it was just your programmer, your developer maybe. What was it like in Stanford?
+Like was that feeling like, you know, was it, were you feeling like on the cusp of a great computer
+revolution or was it just like a niche interest at the time? Well, I was Stanford as you said from
+1998 to 2002. 1998 was near the peak of the dotcom bubble. So this was back in the day where most
+people that they're coding in the computer lab just because there was these sun microsystems,
+genix boxes there that most of us had to do our assignments on. And every single day there was
+a dotcom, like buying pizza for everybody. I didn't have to slice line. I was just, I got free food
+like my first two years of university. And then the dotcom bubble burst in the middle of my college
+career. And so by the end, there was like tumbleweed going through the job fair, you know, it was
+hard to describe unless you were there at the time, the like level of hype and being a computer
+science major at Stanford was like a thousand opportunities. And then when I left, it was like
+Microsoft IBM. And then the two startups that I applied to were VMware and Google.
+And I ended up going to Google in large part because a woman named Marissa Meyer had been
+a teaching assistant when I was what was called a section later, which was like a junior teaching
+assistant kind of for one of the big interest. He asked classes, she had gone there and she was
+recruiting me and I knew her and it was sort of felt safe. You know, like, I don't know, I thought
+about it much, but it turned out to be a real blessing. I realized like, you know, you always
+want to think you'd pick Google, if given the option, but no one knew at the time. And I wonder
+if I'd graduated in like 1999 where I've been like, Mom, I just got a job at pets.com. It's good.
+But you know, at the end, I just didn't have any options. So I was like, do I want to go like
+make kernel software? VMware? Do I want to go build search at Google? And I chose Google 5050
+ball and not really 5050 ball. So I feel very fortunate in retrospect that the economy collapsed.
+Because in some ways, it forced me into like one of the greatest memories of all time. But I kind
+of lucked into it, I think. So the famous story about Google is that you rewrote the Google Maps
+backend in one week after the quest maps acquisition. What was the story there? Is it
+actually true? Is it being glorified? Like, how did that came to be? And is there any detail that
+maybe Paul hasn't shared before? It's largely true, but I'll give the color commentary. So
+it was actually the front end, not the back end. But it turns out for Google Maps, the front end was
+sort of the hard part just because Google Maps was largely the first ish kind of really interactive
+web application. I say first ish, I think Gmail certainly was, though Gmail, probably a lot of
+people who weren't engineers probably didn't appreciate its level of interactivity was just fast.
+But Google Maps, because you could drag the map and it was sort of graphical. It really in the
+mainstream, I think made people-- Was it a request back then that was you had the arrows up and down?
+There was up and down arrows. Each map was a single image and you just clicked left and then
+wait for a few seconds to the new map to let it was really small too, because generating a big image
+was kind of expensive on computers that day. So Google Maps was truly innovative in that regard.
+The story on it, there was a small company called Wear2 technology started by two Danish brothers,
+Lars and Jensma Erasmusen, who are two of my closest friends now. They had made a Windows app
+called Expedition, which had beautiful maps. Even in 2004, whenever we acquired or sort of
+acquired their company, Windows software was not particularly fashionable. But they were really
+passionate about mapping and we had made a local search product that was kind of
+middling in terms of popularity, sort of like a yellow page of search product. So we wanted to
+really go into mapping. We had started working on it. There are small teams who seem passionate
+about it, so they come join us. We can build this together. It turned out to be a great blessing
+that they had built a Windows app, because you're less technically constrained when you're doing
+native code than you are building the web browser, particularly back then when there weren't really
+interactive web apps. It ended up changing the level of quality that we wanted to hit with the app,
+because we were shooting for something that felt like a native Windows application. So it was a
+really good fortune that their unusual technical choices turned out to be the greatest blessing.
+So we spent a lot of time basically saying, "How can you make an interactive, draggable map in a web
+browser? How do you progressively load new map tiles as you're dragging?" Even things down in the
+weeds of the browser at the time, most browsers like Internet Explorer, which is dominant at the time,
+would only load two images at a time from the same domain. So we ended up making our map tile servers
+have like 40 different sub-domains so we could load maps. And parallel is like lots of hacks.
+I'm happy to go into this. Oh, just for like HTTP. There was just maximum parallelism of two.
+And so if you had a map set of map tiles that gave it home. So we were down in the weeds of
+the browser. Anyway, so lots of plumbing. I know a lot more about browsers than most people.
+But then by the end of it, it was fairly, it was a lot of duct tape on that code. If you've ever
+done an engineering project where you're not really sure the path from point A to point B,
+it's almost like building a house by building one room at a time. There's not a lot of architectural
+cohesion at the end. And then we acquired a company called Keyhole, which became Google Earth,
+which was like that three. It was a native Windows app as well. Separate app, great app. But with that,
+we got licenses to all this satellite imagery. And so in August of 2005, we added satellite imagery
+to Google Maps, which added even more complexity in the code base. And then we decided we wanted to
+support Safari. There was no mobile phones yet. So Safari was just like nascent browser on the
+Mac. And it turns out there's like a lot of decisions behind the scenes sort of inspired by
+this Windows app, like heavy use of XML and XSLT and all these like technologies that were like
+briefly fashionable in the early 2000s. And everyone hates now for good reason. And it turns out that
+all of the XML functionality and Internet Explorer wasn't support in Safari. So people are like
+reimplementing like XML parsers, and it was just like this like pile of shit. I wanted to say a
+shit on your project. So it went from this like beautifully elegant application that everyone was
+proud of to something that probably had hundreds of K of JavaScript, which sounds like nothing now.
+We're talking like people in modems, you know, not old modems, but it was a big deal. So it was like
+slow. It took a while to load. And just it wasn't like a great code base. Like everything was fragile.
+So I just got super frustrated by it. And then one weekend, I did rewrite all of it. And at the time,
+the word JSON hadn't been coined yet to just to give you a sense. So it's all XML. Yeah. So we used
+what is now you would call JSON. But I just said like, let's use eval so that we can parse the data
+fast. And again, that's it would literally is JSON. But at the time, there was no name for us.
+We just said, let's pass on JavaScript from the server and eval it. And then simply just refact
+or the whole thing. And it wasn't like I was some genius. It was just like, you know, if you knew
+everything, you wish you had known at the beginning. And I knew all the functionality because I was
+the primary one of the primary authors of the JavaScript. And I just like, I just drank a lot
+of coffee and just stayed up all weekend. And then I guess I developed a bit of refutation.
+And no one knew about this for a long time. And then Paul who created Gmail and I ended up starting
+a company with him to after all of this told this on a podcast. And now it's lower, but it's largely
+true. I did rewrite it. And it my proudest thing. And I think JavaScript people appreciate this. Like
+the ung zipped bundle size for all Google Maps when I rewrote it was 20k. G zipped it was like
+much smaller for the entire application. It went down by like 10x. So what happened on Google,
+Google's a pretty mainstream company. And so like our usage is shot up because it turns out like,
+it's faster. Just being faster is worth a lot of percentage points of growth at a scale of Google.
+So how much modern tooling did you have like test suite, you know, compilers?
+Actually, that's not true. We did have one thing. So actually in Google, you can download it.
+There's a Google has a closure compiler. Yeah, closure compiler. I don't know if anyone
+still uses it. It's gone. Yeah, it's sort of gone out of paper. Yeah. Well, even until recently,
+it was better than most JavaScript minifiers because it was more like it did a lot more renaming of
+variables and things. Most people use ES build now just because it's fast and closure compilers
+built on Java and super slow and stuff like that. But so we did have that. That was it.
+Wow. Okay. And that was traded internally. It was a really interesting time at Google at the time
+because there's a lot of teams working on fairly advanced JavaScript when no one was. So Google
+suggests which Kevin Gibbs was the tech lead for was the first kind of type ahead autocomplete,
+I believe, in a web browser. And now it's just pervasive in search boxes that you sort of see
+a type ahead there. I mean, chat, you'd be teachers edit it. It's kind of like a round trip.
+Totally. No, it's now pervasive as a UI affordance, but that was like Kevin's 20% project. And then
+Gmail, Paul, you know, he tells the story better than anyone, but he's like, you know,
+basically was scratching his own itch. But what was really neat about it is email because it's
+such a productivity tool just needed to be faster. So, you know, he was scratching his own itch or
+just making more stuff work on the client side. And then we, because Lars and Yen sort of like
+setting the bar of this Windows app, or like we need our maps to be draggable. And so we ended up
+not only innovating in terms of having a big sync, what would be called a single page application
+today, but also all the graphical stuff. You know, we were crashing Firefox like it was going
+out of style because, you know, when you make a document object model with the idea that it's a
+document, and then you layer on some JavaScript, and then we're essentially abusing all of this.
+It just was running into code paths that were not well trodden, you know, at just time.
+And so it was super fun. And you know, in the building you had, so you had compilers, people
+helping minify JavaScript just practically, but there was great engineering teams. So they were
+like, that's why Closure Compiler so good. It was like a person who actually knew about programming
+languages doing it, not just, you know, writing regular expressions. And then the team that is now
+the Chrome team believe, and I don't know this for a fact, I'm pretty sure Google is the main
+contributor to Firefox for a long time in terms of code. And a lot of browser people were there.
+So every time we would crash Firefox, we'd like walk up to floors and say like, what the hell is
+going on here? And they would load their browser like in a debugger, and we could like figure out
+exactly what was breaking. And you can't change the code, right? Because it's the browser, it's like
+slow, right? I mean, slow to update. So but we could figure out exactly where the bug was and
+then work around it in our JavaScript. So it was just like new territory, like so super, super fun
+time, just like a lot of a lot of great engineers figuring out new things. And now, you know, the
+word this term is no longer in fashion, but the word Ajax, which was asynchronous JavaScript
+and execution XML. Because I'm telling you XML. But see, the word XML there to be fair,
+the way you made HTTP requests from a client server was this object called XML HTTP request,
+because Microsoft and making outlook web access back in the day made this and it turns out to
+have nothing to do with XML. It's just a way of making HTTP requests, because XML was like the
+fashionable thing. Like, that was the way you, you know, you did it. But the JSON came out of that,
+you know, and then a lot of the best practices around building JavaScript applications was pre
+react. I think react was probably the big conceptual step forward that we needed. Even my first social
+network after Google, we used a lot of like HTML injection and making real time updates was still
+very hand coded. And it's really neat when you see conceptual breakthroughs like react, because it's
+I just love those things. It's like obvious once you see it, but it's so not obvious until you
+do. And actually, well, I'm sure we'll get into AI, but I sort of feel like we'll go through that
+evolution with AI agents as well that I feel like we're missing a lot of the core abstractions
+that I think in 10 years will be like, gosh, how'd you make agents before that, you know,
+but it was kind of that early days of web applications.
+There's a lot of contenders for the react of jobs of AI, but no clear winner yet, let's say.
+One thing I was, I mean, there's so much we can go into there, you just covered so much.
+One thing I just observed is that I think the early Google days have this interesting mix of
+PM and engineer, which I think you are. You didn't you didn't wait for a PM to tell you these are
+my this is my PRD, this is my requirements. It's like a blend. And I feel like these days
+product is his own discipline and with his own lore and own industry and engineering is his own
+thing. And there's this process that happens and they're kind of separated, but you don't produce
+as good of a product as if they were the same person. And I'm curious, you know, if that sort
+of resonates in terms of like comparing early Google versus modern startups that you see out there.
+I certainly like wear a lot of hats. So, you know, sort of biased in this, but I really
+agree that there's a lot of power and combining product design engineering into as few people as
+possible because, you know, few great things have been created by committee, you know. And so,
+if engineering is an order taking organization for product, you can sometimes make meaningful
+things, but rarely will you create extremely well crafted breakthrough products. Those tend to be
+small teams who deeply understand the customer need that they're solving, who have a maniacal
+focus on outcomes. And I think the reason why it's, I think for some areas, if you look at like
+software as a service five years ago, maybe you can have a separation of product and engineering
+because most software as a service created five years ago, I wouldn't say there's like a lot of
+like technological breakthroughs required for most, you know, business applications. And if
+you're making expense reporting software or whatever, it's useful. Might not mean to be
+dismissive of expense reporting software, but you probably just want to understand like,
+what are the requirements of the finance department? What are the requirements of an
+individual filing expense report? Okay, go implement that. And you kind of know how web
+applications are implemented. You kind of know how to how databases work, how to build auto
+scaling with your AWS cluster, whatever, you know, it's just you're just applying best practices to
+yet another problem. When you have areas like the early days of mobile development or the early
+days of interactive web applications, which I think Google Maps and Gmail represent or now
+AI agents, you're in this constant conversation with what the requirements of your customers
+and stakeholders are and all the different people interacting with it and the capabilities of the
+technology. And it's almost impossible to specify the requirements of a product when you're not
+sure of the limitations of the technology itself. And that's why I use the word conversation. It's
+not literal. That's sort of funny. These that were in the age of conversational AI. You're
+constantly sort of saying like, ideally, you could sprinkle some magic AI pixie dust and solve all
+the world's problems, but it's not the way it works. And it turns out that, actually,
+I'll just give an interesting example. I think most people listening probably use
+co pilots to code like cursor or Devin or Microsoft co pilot or whatever. Most of those tools are
+they're remarkable. I couldn't, you know, imagine development without them now. But they're not
+autonomous yet. Like, I wouldn't let it just write most code without my interactively inspecting it.
+We just are somewhere between it's an amazing co pilot and it's an autonomous software engineer.
+As a product manager, like your aspirations for what the product is are like kind of meaningful,
+but if you're a product person, yeah, of course, you'd say, it should be autonomous. You should
+click a button and program should come out the other side. The requirements meaningless,
+like what matters is like, what is based on the like very nuanced limitations of the technology?
+What is it capable of? And then how do you maximize the leverage it gives a software engineering team
+given those very nuanced trade offs coupled with the fact that those nuanced trade offs are changing
+more rapidly than any technology in my memory, meaning every few months you'll have new models
+with new capabilities. So how do you construct a product that can absorb those new capabilities
+as rapidly as possible as well? That requires such a combination of technical depth and
+understanding of the customer that you really need more integration of product design and
+engineering. And so I think it's why with these big technology waves, I think startups have a bit
+of a leg up relative to incumbents because they tend to be sort of more self actualized in terms
+of just like bringing those disciplines closer together. And in particular, I think entrepreneurs,
+the proverbial full stack engineers, you know, have a leg up as well because I think most breakthroughs
+happen when you have someone who can understand those extremely nuanced technical trade offs,
+have a vision for a product. And then in the process of building it, have that, as I said,
+like metaphorical conversation with the technology, like gosh, I ran into a technical limit that I
+didn't expect. It's not just like changing that feature, you might need to refactor the whole product
+based on that. And I think that's that it's particularly important right now. So I don't you know,
+if you're building a big ERP system, probably there's a great reason to have product and
+engineering, I think in general, the disciplines are there for a reason. I think when you're dealing
+with something as nuanced as the like technologies like large language models today, there's a ton
+of advantage of having individuals or organizations that integrate the disciplines more formally.
+That makes a lot of sense. I've run a lot of engineering teams in the past. And I think the
+product versus engineering tension has always been more about effort than like whether or not the
+feature is buildable. But I think yeah, today you see a lot more of like models actually cannot do
+that. And I think the most interesting thing is on the startup side, people don't yet know where
+a lot of the AI value is going to cruise. So you have this rush of people building frameworks,
+building infrastructure layer things. But we don't really know the shape of the compute.
+I'm curious at Sierra, like how you thought about building an house, a lot of the tooling for
+emails or like just, you know, building the agents and all of that versus how you see some of the
+startup opportunities that is maybe still out there. We build most of our tooling and house
+at Sierra, not all. It's not like not invented here syndrome necessarily, though maybe slightly
+guilty of that in some ways. But because we're trying to build a platform that's enduring,
+you know, we really want to have control over our own destiny. And you made a comment earlier that
+like, we're still trying to figure out who like the reactive agents are and the jury is still out.
+I would argue it hasn't been created yet. I don't think the jury is still out to go use that metaphor.
+We're sort of in the jQuery era of agents, not the react era. And that's like a throwback
+for people listening. We shouldn't rush it. You know, no, yeah, that's my point is. And so
+because we're trying to create an enduring company at Sierra that outlives us, you know,
+I'm not sure we want to like attach our cart to some like to a horse where it's not clear that
+like we've figured out and I actually want as a company, we're trying to enable just at a high
+level and I'll quickly back the tech at Sierra. We help consumer brands build customer facing
+AI agents. So everyone from Sonos to ADT home security to SiriusXM, you know, if you call them
+on the phone and AI will pick up view, you know, chat with them on the SiriusXM homepage. It's an
+AI agent called Harmony that they've built on our platform. We're one of the contours of what it
+means for someone to build an in complete customer experience with AI with conversational AI.
+You know, we really want to dive into the deep end of all the trade offs to do it. You know,
+where do you use fine tuning? Where do you string models together? You know, where do you use
+reasoning? Where do you use generation? How do you use reasoning? How do you express the guardrails
+of an agentic process? How do you impose determinism on a fundamentally non-deterministic technology?
+There's just a lot of really like is an important design space. And I could say
+or tell you we have the best approach every entrepreneur will, you know, but I hope that in two years,
+we look back at our platform and laugh at how naive we were because that's the pace of change.
+Broadly, if you talk about like the startup opportunities, I'm not
+wholly skeptical of tools companies, but I'm fairly skeptical. There's always an exception
+for every role, but I believe that certainly there's a big market for frontier models, but
+largely for companies with huge CapEx budgets. So, OpenAI and Microsoft and Thropic and Amazon Web
+Services, Google Cloud, which is very well capitalized now. But I think the idea that a company can make
+money sort of pre-training a foundation model is probably not true. It's hard to you're competing
+with just, you know, unreasonably large CapEx budgets. And I just like the cloud infrastructure
+market. I think will be largely there. I also really believe in the applications of AI. And
+I define that not as like building agents or things like that. I define it much more as like
+you're actually solving a problem for a business. So it's what Harvey is doing in legal profession
+or what Cursor is doing for software engineering or what we're doing for customer experience and
+customer service. The reason I believe in that is I do think that in the age of AI, what's really
+interesting about software is it can actually complete a task. It can actually do a job, which
+is very different than the value proposition of software was to ancient history two years ago.
+And as a consequence, I think the way you build a solution and for a domain is very different
+than you would have before, which means that it's not obvious. Like the incumbents have like a leg
+up, you know, necessarily, they certainly have some advantages, but there's just such a different
+form factor, you know, for providing a solution. And it's just really valuable. You know, it's like
+just think of how much money Cursor is saving software engineering teams or the alternative,
+how much revenue it can produce. Toolmaking is really challenging. If you look at the cloud
+market, just as a analog, there are a lot of like interesting tools companies, you know,
+Confluent monetized Kafka, Snowflake, Hortonworks, you know, there's a bunch of them. A lot of them,
+you know, have that mix of sort of like, like confluence or have the open source or open core
+or whatever you call it. I'm not an expert in this area. You know, I do think that developers are
+fickle. I think that in the tool space, I probably like default towards open source being like the
+area that will win. It's hard to build a company around this. And then you end up with companies
+sort of built around open source to that can work. Don't get me wrong. But I just think that it's
+nowadays the tools are changing so rapidly that I'm like, not totally skeptical of tool makers,
+but I just think that open source will broadly win. But I think that the CAPX required for building
+frontier models is such that it will go to a handful of big companies. And then I really believe in
+agents for specific domains, which I think will sort of the analog just offers a service in this
+new era. You know, it's like, if you just think of the cloud, you can lease a server. It's just a
+low level primitive, or you can buy an app, like, you know, Shopify or whatever. And most people
+building a storefront would prefer Shopify over hand roll in their e-commerce storefront. I think
+the same thing will be true of AI. So I tend to like, if I have like an entrepreneur ask me for advice,
+I'm like, you know, move up the stack as far as you can towards a customer need broadly. But I,
+but it doesn't reduce my excitement about what is the reactive building agents kind of thing,
+just because it is, it is the right question to ask. But I think we'll probably play out
+probably an open source space more than anything else. Yeah. And there's a lot of priority for you.
+There's a lot in there. I'm kind of curious about your idea maze towards there are many
+customer needs. You happen to identify customer experiences as your yours, but it could equally
+have been coding assistance or whatever. I think for some, I'm just kind of curious at the top down,
+how do you look at the world in terms of the potential problem space? Because many people out
+there who are very smart and picked the wrong problem. Yeah, that's a good question. By the way,
+I would love to talk with the future of software too, because despite the fact I didn't pick code
+in, I was thinking about that. But I can talk to you. I can answer your question though. You know,
+I think when a technology is as cool as large language models, you just see a lot of people
+starting from the technology and searching for a problem to solve. And I think it's why you see
+a lot of tools companies, because as a software engineer, you start building an app or a demo,
+and you you encounter some pain points, you're like, it's too hard. But a lot of people are
+experiencing the same pain point. What if I make a thing to solve that? It's just very incremental.
+And, you know, I was like to use the metaphor, like, you can sell coffee beans, roasted coffee
+beans. You can add some value. You took coffee beans and you roasted them, and roasted coffee
+beans largely, you know, are priced relative to the cost of the beans. Or you can sell a latte.
+And a latte is rarely priced directly, like, as a percentage of coffee bean prices. In fact,
+if you buy a latte at the airport, it's a captive audience. So it's a really expensive latte. And
+there's just a lot that goes into, like, how much does a latte cost? And I bring it up,
+because there's a supply chain from growing coffee beans to roasting coffee beans to, like,
+you know, you could make one at home, or you could be in the airport and buy one. And the margins of
+the company selling latte in the airport is a lot higher than the, you know, people roasting the
+coffee beans. And it's because you've actually solved a much more acute human problem in the
+airport. And it's just worth a lot more to that person in that moment. It's kind of a way to think
+about technology too. It sounds funny to liken it to coffee beans, but you're selling tools on top
+of a large language model. Yeah, in some ways, your market is big, but you're probably going to,
+like, be price compressed just because you're sort of a piece of infrastructure. And then you
+have open source and all these other things competing with you naturally. If you go and solve a
+really big business problem for somebody that's actually like a meaningful business problem
+that AI facilitates, they will value it according to the value of that business problem. And so,
+I actually feel like people should just stop. You're like, no, that's unfair. If you're searching
+for an idea of people, I love people trying things, even if most of it, a lot of the greatest
+ideas have been things no one believed in. So I like, if you're passionate about something,
+go do it. Like who am I to say? Yeah, gmail, like Paul, I mean, some of it's Laura at this
+point, but like, gmail is Paul's own email for a long time. And then I am musingly at it. Paul
+K. Kirkby, I'm pretty sure he's centered on a link. And like, the first comment was like,
+this is really neat. It would be great. It was not your email, but my own. I don't know if it's a
+true story. I'm pretty sure. Yeah, I've read that before. So scratch on it. It's fine. Like,
+it depends on what your goal is. If you want to do like a venture back company, if it's a
+passion project, fucking passion, do it. Like, don't listen to anybody. In fact, but if you're
+trying to start, you know, an enduring company, solve an important business problem. And I do
+think that in the world of agents, the software industries are shifted where you're not just
+helping people more people be more productive, but you're actually accomplishing tasks autonomously.
+And as a consequence, I think the addressable market has just greatly expanded just because
+software can actually do things now and actually accomplish tasks. And how much is coding auto
+complete worth? A fair amount. How much is the eventual? I'm certain we'll have it. The software
+agent that actually writes the code and delivers it to you. That's worth a lot. And so, you know,
+I would just maybe look up from the large language models and start thinking about the economy and,
+you know, think from first principles. I don't want to get too far afield, but just think about
+which parts of the economy will benefit most from this intelligence and which parts can absorb it
+most easily. And what would an agent in this space look like? Who's the customer of it?
+Is the technology feasible? And I would just start with these business problems more. And I think,
+you know, the best companies tend to have great engineers who happen to have great insight into
+a market. And it's the last part that I think some people, whether or not they have it's like
+people start so much from the technology, they lose the forest for the trees a little bit.
+How do you think about the model of still selling some sort of software versus selling more
+package labor? I feel like when people are selling the package labor, it's almost more
+stateless, you know, like it's easier to swap out if you're just putting an input and getting an
+output. If you think about coding, if there's no IDE, you're just putting a prompt and getting
+back an app, it doesn't really matter who generates the app. You know, you have less of a buy-in
+versus the platform you're building. I'm sure on the back end, customers have to like put on
+their documentation, they have, you know, different workflows that they can tie in. What's kind of
+like the line to draw there versus like when full, where your managed customer support team
+as a service, our source versus this is the CR platform that you can build on? What was that
+decision? I'll sort of like decouple the question in some ways, which is when you have
+something that's an agent, who is the person using it? And what do they want to do with it?
+So let's just take your coding agent for a second. I will talk about CR as well. Who's the customer
+of an agent that actually produces software? Is it a software engineering manager? Is it a
+software engineer? And it's their, you know, interns, so to speak? I don't know. I mean,
+we'll figure this out over the next few years. Like, what is that? And is it generating code
+that you then review? Is it generating code with a set of unit tests that pass? What is the actual,
+for lack of a better word contract? Like, how do you know that it did what you wanted it to do?
+And then I would say like the product and the pricing, the packaging model sort of emerged from
+that. And I don't think the world's figured out. And I think it'll be different for every agent,
+you know, in our customer base, we do what's called outcome based pricing. So essentially,
+every time the AI agent solves the problem or saves a customer, whatever it might be,
+there's a pre negotiated rate for that. We do that because it's, we think that that's sort of the
+correct way agents, you know, should be packaged. I look back at the history of like cloud software
+and notably the introduction of the browser, which led to software being delivered in a browser,
+like Salesforce, who famously invented sort of software as a service, which was both a technical
+delivery model through the browser, but also a business model, which is you subscribe to it,
+rather than pay for a perpetual license. Those two things are somewhat orthogonal, but not really,
+if you think about the idea of software running in a browser that's hosted
+data center that you don't own, you sort of needed to change the business model because you
+can't really buy a perpetual license or something. Otherwise, like how you afford making changes to
+it. So it only worked when you're buying like a new version every year or whatever. So to some
+degree, but then the business model shift actually changed business as we know it because now like
+things like Adobe Photoshop, now you subscribe to rather than purchase it ended up where you had a
+technical shift and a business model shift that were very logically intertwined that actually the
+business model ship was turned out to be as significant as the technical as the shift. And I think with
+agents because they actually accomplish a job, I do think that it doesn't make sense to me that
+you'd pay for the privilege of like using the software, like that coding agent, like if it writes
+really bad code, like fire it, you know, I don't know, or what the right metaphor is like you should
+pay for a job. Well, then in my opinion, I mean, that's how you pay your software engineers, right?
+And and well, not really, we paid put them on salary and get them options and they've asked over
+time. My point is that you don't pay them for how many characters they write, which is sort of the
+token based, you know, whatever, like there's a that famous Apple story where we're like asking
+for a port of how many lines of code you wrote and one of the engineers showed up with like a
+negative number because he had just like done a big refactoring. There was like a big F you to
+management who didn't understand how software is written. You know, my sense is like the traditional
+usage based or seat based thing is just going to look really antiquated because it's like asking
+your software engineer how many lines of code did you write today? Like who cares? Like, because
+absolutely no correlation. So my old view is I don't think it's be different in every category,
+but I do think that that is the if an agent is doing a job, you should, I think it properly
+incentivizes the maker of that agent and the customer of your pain for the job well done.
+It's not always perfect to measure. It's hard to measure engineering productivity, but you can.
+You should do something other than how many keys you typed, you know, talk about perverse
+incentives for AI, right? Like I can write really long functions to do the same thing, right?
+So broadly speaking, you know, I do think that we're going to see a change in business models of
+software towards outcomes. And I think you'll see a change in delivery models too. And, you know,
+in our customer base, you know, we empower our customers to really have their hands on the steering
+wheel of what the agent does. They want to need that. But the role is different. You know,
+at a lot of our customers, the customer experience operations folks have renamed themselves the AI
+architects, which I think is really cool. And, you know, it's like in the early days, the
+internet, there's the role of the webmaster. And I don't know whether your webmaster is not a
+fashionable term, nor is it a job anymore. I just, I don't know, will AI architects stand the
+test of time? Maybe, maybe not. But I do think that again, I like, you know, because everyone
+listening right now is a software engineer, like what is the form factor of a coding agent? And
+actually I'll take a breath because I actually have a bunch of pins on them. Like I wrote a blog
+post right before Christmas just on the future of software development. And one of the things
+that's interesting is like if you look at the way I use cursor today as an example, it's inside of
+a repackaged visual studio code environment. I sometimes use the sort of
+agentic parts of it, but it's largely, you know, I've sort of gotten a good routine of
+making it auto complete code and the way I want through tuning it properly. When it actually can
+write code completely, I do wonder what like the future of development environments will look like.
+And to your point on what is a software product, I think it's going to change a lot in ways that
+will surprise us. But I use, I use the metaphor in my blog post of, have you all driven around
+in a way, Mo around here? Everyone has in there, these jaguars, really nice cars. But it's funny,
+because it still has a steering wheel, even though there's no one sitting there and the steering wheel
+is like turning it and stuff. Clearly in the future, if once we get to that be more ubiquitous,
+like why have the steering wheel and also why have all the seats facing forward, maybe just for
+car sickness, I don't know, but like you could totally rearrange the car. I mean, so much of the
+car is oriented around the driver. So it stands to reason to me that like, will autonomous
+agents for software engineering run through Visual Studio? Okay, that seems a little bit silly,
+because having a single source code file open one at a time is kind of a goofy form factor for
+when like the code isn't being written primarily by you. But it begs the question of what's your
+relationship with that agent? And I think the same is true in our industry of customer experience,
+which is like, who are the people managing this agent? What are the tools do they need? And they
+definitely need tools, but it's probably pretty different than the tools we had before. It's certainly
+different than training a contact center team. And as software engineers, I think that I would
+like to see particularly like on the passion project side or research side, more innovation
+in programming languages. I think that we're bringing the cost of writing code down to zero.
+So the fact that we're still writing Python with AI cracks me up, just because it's like literally
+was designed to be ergonomic to write, not safe to run or fast to run. I would love to see more
+innovation and how we verify program correctness. I studied for formal verification in college a
+little bit. And it's not very fashionable because it's really like tedious and slow and doesn't work
+very well. If a lot of code is being written by a machine, you know, one of the primary values we
+can provide is verifying that it actually does what we intend that it does. I think there should
+be lots of interesting things in the software development lifecycle, like how we think of testing
+and everything else. Because if you think about if we have to manually read every line of code that's
+coming out as machines, it will just rate limit how much the machines can do. The alternative is
+totally unsafe. So I wouldn't want to put code in production that didn't go through proper code
+review and inspection. So my whole view is like, I actually think there's like an AI native, I don't
+think the coding agents don't work well enough to do this yet. But once they do, what is sort of an
+AI native software development lifecycle? And how do you actually enable the creators of software to
+produce the highest quality, most robust, fastest software and know that it's correct? And I think
+that's an incredible opportunity. I mean, how much C code can we rewrite and rust and make it safe so
+that there should be security vulnerabilities? Can we like have more efficient, safer code than ever
+before? And can you have somebody who's like that guy in the matrix, you know, like staring at the
+little green things like where could you have an operator of a code generating machine be like
+superhuman? I think that's a cool vision. And I think too many people are focused on like
+autocomplete, you know, right now. I'm not even I guilty as charges. I just like, I'd like to see
+some bolder ideas. And that's why when you were talking about what's the reactive, whatever,
+I think we're clearly in a local maximum, you know, metaphor, like sort of conceptual local
+maximum. Obviously, it's moving really fast. I think we're moving out of it.
+Yeah, at the end of 23, I wrote this blog post from syntax to semantics. Like if you think
+about Python, it's taking C and making it more semantic. And LLMs are like the ultimate semantic
+program, right? You can just talk to them and they can generate any type of syntax from your
+language. But again, the languages that they have to use were made for us, not for them. But the
+problem is like as long as you will ever need a human to intervene, you cannot change the language
+under it. You know what I mean? So I'm curious at what point of automation we'll need to get.
+We're going to be okay making changes to the underlying languages, like the programming
+languages versus just saying, hey, you just got to write Python because I understand Python.
+And I'm more important at the end of the day than the model. But I think that will change. But I
+don't know if it's like two years or five years. I think it's more nuanced, actually. So I think
+there's a some of the more interesting programming languages bring semantics into syntax. So maybe
+that's a little reductive. But like Rust is an example. Rust is memory safe statically. And
+that was a really interesting conceptual break. It's why it's hard to write Rust. It's why most
+people write Python instead of Rust. I think Rust programs are safer and faster than Python,
+probably slower to compile, but like broadly speaking, like given the option, if you didn't
+have to care about the labor that went into it, you should prefer a program written in Rust over
+program written in Python. And just because it will run more efficiently, it's almost
+certainly safer, et cetera, et cetera, depending on how you define safe. But most people don't
+write Rust because it's kind of a pain in the ass and the audience of people who can is smaller,
+but it's sort of better in most ways. And again, unless you're making a web service and you didn't
+have to care about how hard it was to write, if you just got the output of the web service,
+the Rust one would be cheaper to operate, certainly cheaper, and probably more correct,
+just because there's so much in the static analysis implied by the Rust programming language,
+they probably will have fewer runtime errors and things like that as well. So I just give
+those an example because so Rust, at least my understanding that came out of the Mozilla team,
+because there's lots of security vulnerabilities in the browser, and it needs to be really fast.
+They said, okay, we want to put more of a burden at the authorship time to have fewer issues at
+runtime. And we need the constraint that it has to be done statically because browsers need to
+be really fast. My sense is if you just think about the needs of a programming language today,
+where the role of a software engineer is to use an AI to generate functionality and audit that it
+does in fact work as intended, maybe functionally, maybe from a correctness standpoint, some combination
+thereof, how would you create a programming system that facilitated that? And you know,
+I bring up Rust because I think it's a good example of like, I think given a choice of writing in
+C or Rust, you should choose Rust today. I think most people would say that even C aficionados,
+just because C is largely less safe for very similar trade offs for the system. And now with
+AI, it's like, okay, well, that just changes the game on writing these things. And so like,
+I just wonder if a combination of programming languages that are more structurally oriented
+towards the values that we need from an AI generated program verifiable correctness and all of that,
+if it's tedious to produce for a person, that maybe doesn't matter. But one thing like if I
+asked you, is this Rust program memory safe, you wouldn't have to read it, you just have to compile
+it. So that's interesting. I mean, that's like an injury. That's one example of a very modest form
+of formal verification. So I bring it up because I do think you have AI inspect AI, you can have AI
+review to AI code reviews. It would disappoint me if the best we could get was AI reviewing Python
+and having scaled a few very large websites that were written on Python, it's just like, you know,
+expensive. And it's like every trust me, every team has written a big web service and Python is
+experimented with like, pi pi and all these things just to make it slightly more efficient than it
+naturally is you don't really have true multi threading. Anyway, it's just like clearly that you do it
+just because it's convenient to write. And I just feel like we're, I don't say it's insane. I just
+mean, I do think we're at a local maximum. And I would hope that we create a programming system,
+a combination of programming languages, formal verification, testing, automated code reviews,
+where you can use AI to generate software in a high scale way and trust it. And you're not limited
+by your ability to read it necessarily. I don't know exactly what form that would take, but I feel
+like that would be a pretty cool world to live in. Yeah, we are Chris Ladner on the podcast. He's
+doing great work with modular. I love LVM. Yeah, basically merging Rustin and Python. That's kind
+of the idea. But here's like, for them, a big use case was like making it compatible with Python,
+same API's so that Python developers could use it. And so I wonder what point
+at least my understanding is they're targeting the data science machine learning crowd, which is
+all written in Python. So still feels like a local maximum. Yeah, exactly. I'll force you to make
+a prediction. You know, Python's roughly 30 years old in 30 years from now is Rust going to be
+bigger than Python. I don't know this, but just I don't even know this is a prediction. I just
+am sort of like saying stuff. I hope is true. I would like to see an AI native programming language
+and programming system. And I use language because I'm not your language even the right thing.
+But I hope in 30 years, there's an AI native way we make software that is wholly uncorrelated
+with the current set of programming languages. I'm not uncorrelated, but I think most programming
+languages today were designed to be efficiently authored by people. And some have different trade
+offs. You know, you have Haskell and others that were designed for abstractions for parallelism
+and things like that. You have programming languages like Python, which are designed to be
+very easily written sort of like Pearl and Python lineage, which is why data scientists use it. It's
+has a interactive mode, things like that. And I love a huge Python fan. So despite all my Python
+trash talk, a huge Python fan wrote at least two of my three companies were exclusively written in
+Python. And then see came out of the birth of Unix. And it wasn't the first, but certainly the
+most prominent first step after assembly language, right, where you had higher level abstractions
+rather than and going beyond go to to like abstractions, like the for loop and the while loop.
+So I just think that if the act of writing code is no longer a meaningful human exercise,
+maybe it will be, I don't know, I'm just saying it sort of feels like,
+maybe it's one of those parts of history that just will sort of like go away. But there's still
+the role of this offer engineer, like the person actually building the system, right? And what does
+a programming system for that form factor look like? And I just have a, I hope to be just like
+I mentioned react. I remember I was at Facebook in the very early days, and when what is now react
+was being created. And I remember when the it was like released open source, I had left by that
+time. And I was just like, this is so fucking cool. Like, you know, to basically model your app
+independent of the data flowing through it just made everything easier. And it now, you know, I
+can create like there's a lot of the front end software is like a little chaotic for me to be
+honest with you, this like, it's sort of like abstraction soup right now for me. But like,
+some of those core ideas felt really ergonomic. I just want to, I'm mixed looking forward to the
+day when someone comes up with a programming system that feels both really like an aha moment,
+but completely foreign to me at the same time, because they created it with sort of like,
+from first principles, recognizing that like authoring code and an editor is maybe not like
+the primary like reason why a programming system exists anymore. And I think that's like, that
+will be a very exciting day for me. Yeah, I would say like the various versions of this discussion
+have happened. At the end of the day, you still need to precisely communicate what you want.
+As a manager of people, as someone who has done many, many legal contracts, you know how the hard
+that is. And then now we have to talk to machines doing that and AI is interpreting what we mean
+and reading our minds effectively. I don't know how to get across that barrier of translating human
+intent to instructions. And yes, it can be more declarative. But I don't know if it'll ever
+cross over from being a programming language to something more than that.
+I agree with you. And I actually do think if you look at like a legal contract, you know,
+the imprecision of the English language. It's fucking like a flaw in the system.
+How many holes there are. And I do think that when you're making a mission critical software
+system, I don't think it should be English language prompts. I think that is silly because you want
+the precision of a programming language. My point was less about that and more about
+if the actual act of authoring it. Like if you think of some embedded systems do use formal
+verification, I know it's very common in like security protocols now so that you can
+because the importance of correctness is so great. My intellectual exercise is like,
+why not do that for all software? I mean, probably that's silly just literally to do what we literally
+do for these low level security protocols. But the only reason we don't is because it's
+hard and tedious and hard and tedious or no longer factors. So like, if I could, I mean,
+just think of like the silliest app on your phone right now. The idea that that app should be like
+formally verified for its correctness feels laughable right now because like God, why would you spend
+the time on it? But if it's zero cost, like yeah, I guess so. I mean, it never crashed. That's
+probably good. You know, why not? I just want to like set our bars really high. Like we should make
+software's been amazing. Like there's that Mark Andreessen blog post software's eating the world.
+And you know, our whole life is mediated digitally and that's just increasing where they are. And now
+we'll have our personal agents talking to the agents on the zero platform and it's agents all
+the way down. You know, our core infrastructure is running on these digital systems. We now
+have like, and we've had a shortage of software developers for my entire life. And as a consequence,
+you know, if you like remember like health there got health care dot gov that fiasco,
+security vulnerabilities leading to state actors getting access to critical infrastructure. I'm like,
+we now have like created this like amazing system that can like, we can fix this, you know, and I
+just want to, I'm both excited about the productivity gains of the economy. But I just think as software
+engineers, we should be bolder. Like we should set it have aspirations to fix these systems so that
+like in general, as you said, as precise as we want to be in the specification of the system,
+we can make it work correctly now. And I'm being a little bit hand wavy. And I think we need some
+systems. I think that's where we should set the bar, especially when so much of our life
+depends on this critical digital infrastructure. So I'm, I'm just like super optimistic about it.
+But actually, let's go to what you said for a second, which is specifications. I think this
+is the most interesting part of AI agents broadly, which is that most specifications
+are incomplete. So let's go back to our product engineering discussions. You're like, okay,
+here's a PRD product requirements document. And there's it's really detailed mockups and
+disks. And like, when you click this button, it does this. And it's like, I 100%, you can think
+of a missing requirement in that document. Let's say you click this button and the internet goes out.
+What do you do? I don't know if that's in the PRD. It probably isn't. You know, there's there's
+always going to be something because like humans are complicated, right? So what ends up happening
+is like, I don't know if you couldn't measure it, like what percentage of a product's actual
+functionality is determined by its code versus a specification, like for a traditional product.
+Oh, 95%. I mean, a little bit, but a lot of it. So like code is the specification. It's actually
+why if you just look at the history of technology, why open source has won out over specifications,
+like, you know, for a long time, there was a W3C working group on HTML specification. And then,
+you know, once WebKit became prevalent, the internet evolved a lot faster. And it's not the
+expense of the standards organizations. It just turns out having a committee of people are used,
+like, a lot less efficient than someone checking in code. And then all of a sudden,
+you had vector graphics and you had like all this really cool stuff that, you know,
+someone who in the Google Maps day is kind of like, God, that would have made my life easier,
+you know, like SVG support, right? Life would have been a breeze. Try driving a driving
+directions line without vector graphics. And so, you know, in general, I think we've gone from
+these protocols defined in a document to basically open source code that becomes an implicit standard,
+like systems calls and Linux, like, there is a specification, there is POSIX as a standard, but
+like, the kernel is the, like, that's what people write against. And it's both the documented behavior
+and all of the undocumented behaviors as well for better for worse. And it's why, you know,
+Linux and others are so adamant about things like binary compatibility and all that, like,
+this stuff matters. So one of the things I really think about is, like, working with agents broadly
+is how do you, it's, I don't want to say it's easy to specify the guardrails you know,
+but what about all those unspecified behaviors? So, so much of, like, being a software engineer
+is like, you come to the point where you're like, the Internet's out and you get back the
+error code from the call and you got to do something with it. And, you know, what percentage of the
+time do you just be like, yeah, I'm going to do this because it seems reasonable. And what percentage
+of time do you, like, write a slack to your PM and be like, what do I do in this case?
+It's probably more the former than the latter, otherwise it'd be really fricking inefficient to
+write software. But what happens when your AI makes that decision for you? It's not a wrong
+decision. You didn't say anything about that case. The AI agent or agent comes from the word
+agency, right? So it's demonstrating its agency and it's making a decision. Does it document it?
+That would probably be tedious too. Like, because there's so many implicit decisions.
+What happens when you click the button and the Internet's out, it does something you don't like.
+How do you fix it? I actually think that we are like entering this new world where like,
+the how we express to an AI agent what we want is always going to be an incomplete
+specification. And that's why agents are useful because they can fill in the gaps
+with some decent amount of reasoning. How you actually tune these over time and imagine like
+building an app with an AI agent as your software engineering companion. There's like an infinitely
+long tail. Infinite is probably over exaggerating a bit. But there's a fairly long tail of functionality
+that I guarantee is not specified. How you actually tune that. And this is what I mean about creating
+a programming system. I don't think we know what that system is yet. And then similarly,
+I actually think for every single agent domain, whether it's customer service or legal or software
+engineering, that's essentially what the company building those agents is building is like the
+system through which you express the behaviors you want esoteric and small as it might be.
+Anyway, I think that's a really exciting area though, just because I think that's where the
+magic or that's where the product insights will be in the space is like, how do you encounter that
+those moments? It's kind of built into the UX it and it can't just be the answer can't just be
+prompt better. You know, the prompt would be too long. Like imagine getting a PRD that literally
+specified the behavior of everything that was represented by code. The answer would just be code.
+Like at that point, there's my point like prompts are great, but it's not actually a complete
+specification for anything and never can be. And so, and I think that's how you do interactivity,
+like the sort of human loop thing when and how you do it. And that's why I really believe in
+domain specific agents, because I think answering that in the abstract is like a
+interesting intellectual exercise, but I that's why talking to agents in the abstract kind of
+I'm actively disinterested in it because I don't think it actually means anything.
+All it means is software is making decisions. That's what, you know, at least that a reductive way.
+But in the context of software engineering, it does make sense because you know, like what is the
+process of first you specify what you want in a product, then you use it, then you give feedback.
+You could imagine building a product that actually facilitated that closed loop system. And then
+how is that represented that complete specification of both what you knew you wanted, what you discovered
+through usage, the union of all of that is what you care about. And the rest is less to the AI.
+In the legal context, I'm certain there's a way to know like when should the AI ask questions,
+when shouldn't it, how do you actually intervene when it's wrong. And certainly in the customer
+service case, it's very clear, you know, like how we our customers review every conversation,
+how we help them find the conversations they should review when they're having millions so
+they can find the few that are interesting, how when something is wrong in one of those conversations,
+how they can give feedback. So it's fixed the next time in a way where we know the context of
+why they I made that decision. But it's not up to us what's right, right? It's up to our customers.
+So that's why I actually think for right, you know, right now when you think about building an
+agent in a domain to some degree, how you actually interact with the people specifies
+behaviors actually where a lot of the magic is. Yeah, it's not me. This is a little bit annoying
+to you. But I have a bit of a trouble squaring domain specific agents with the belief that AGI
+is real or AJ is coming, because the point is general intelligence. And some part some way one
+way to view the better lesson is we can always make progress on being more domain specific, take
+whatever soda is, and you make progress be more domain specific. And then you will be wiped out
+the next advance happens. Clearly, you don't believe in that. But how do you personally square those
+things? Yeah, it's a really heavy question. And yeah, I think a lot about AGI, given my roll out
+open AI, but it's even hard for me to really conceptualize. And I love spending time with
+open AI researchers and actually just like people in the community broadly just talking about the
+implications because there's the first order effect and effects of something that is super
+intelligent and some domains. And then there's the second and third order effects are harder to
+predict. So first, as I think that it seems likely to me that, you know, at first, and something that
+is AGI will be good in digital domains, you know, because it's software. So if you think about
+something like AI discovering a new, say, like pharmaceutical therapy, the barrier to that is
+probably less the discovery than the clinical trial. And NAI doesn't necessarily help with a
+clinical trial, right? That's a process that's independent of intelligence. And it's a physical
+process. Similarly, if you think about the problem of climate change or like carbon removal,
+there's probably a lot of that domain that requires great ideas. But like whatever great idea you
+came up with, if you wanted to sequester that much carbon, there's probably a big physical
+component to that. So it's not really limited by intelligence. It might be I'm sure it could be
+accelerated somewhat by intelligence. There's a really interesting conversation with an economist
+named Tyler Cohen Cohen recently. He just I just watched a video of him and he was just talking
+about how there's parts of the economy where intelligence is sort of the limited resource that
+will take on AI slash AGI really rapidly and will drive incredible productivity gains. But
+there are other parts of the economy that aren't and those will interact. It goes back to these
+complex second or effects like prices will go up in the domains that can't absorb absorb
+intelligence rapidly, which will actually then slow down. So it's going to the I don't think
+it'll be evenly spread. I don't think it'll be perhaps as rapidly felt in all parts of the economy
+as people think I might be wrong. But I just think you can generalize in terms of its ability to
+reason about different domains, which I think is what AGI means to most people. But it may not
+actually generalize in the world and tell because there's a lot of intelligence is not the limiting
+factor in like a lot of the economy. So going back to your more practical question is like,
+why make software at all of you know AGI is coming and you can say it that way.
+Should we like to code? There's all variations of this.
+You know, my view is that I really do view AI as a tool and AGI as a tool for humanity.
+And so my view is when we're talking about like, is your job as a maker of software to author code
+and an editor? I would argue no, just like a generation ago, your job wasn't to punch cards
+in a punch card. That is not what your job is. Your job is to produce digital something.
+Whatever it is, what is the purpose of the software you're making? Your job is to produce that.
+And so I think that like our jobs will change rapidly and meaningfully. But I think the idea
+that like our job is to type in an editor is an artifact of the tools that we have,
+not actually what we're hired to do, which is to produce a digital experience to,
+you know, make firmware for a toaster or whatever it is we're doing, right? Like that's our job,
+right? And as a consequence, I think with things like AGI, I think the certainly software engineering
+will be one of the disciplines most impacted. And I think that it's very so like, I think if you're
+in this industry and you define yourself by the tools that you use, like how many characters
+you can type into them every day, that's probably not like a long term stable place to be because
+that's something that certainly AI can do better than you. But your judgment about what to build
+and how to build it still apply. And that will always be true. And one way to think about it's
+like a little bit reductive is like, you know, look at startups versus larger companies, like
+companies like Google and Amazon have so many more engineers than the startup, but then startups
+still win. Like, why was that? Well, they made better decisions, right? They didn't type faster
+or produce more code. They did the right thing in the right market the right time. And, and similarly,
+if you look at some of the great companies, it wasn't the lack of they had some unique idea.
+Sometimes that's a reason why a company succeeds, but it's often a lot of other things and a lot
+of other forms of execution. So like, broadly, like the existence of a lot of intelligence will
+change a lot and I'll change our jobs more than any other industry. Maybe not maybe it's
+exactly, but certainly as much as any other industry. But I don't think it like changes like why the
+economy around digital technology exists. And as a consequence, I think I'm really bullish on like
+the future of the software industry. I just think that like some things that are really expensive
+day will become almost free. And but I think that, I mean, let's be honest, the half-life of
+technology companies is not particularly long as it is. Yeah, I brought this anecdote in a
+recent conversation. But when I started at Google, we were in one building a mountain view and then
+a venture moved into a campus, which was previously the Silicon Graphics campus. That was the first
+campus good one. I'm pretty sure it still has that campus. I think it's got a billion now.
+SGI was a company that was like really, really big, big enough to have a campus and then went
+out of business. And it wasn't that old of a company, by the way, it's not like IBM, you know,
+it was like big enough to get a campus and go to business in my lifetime, you know, that type of
+thing. And then at Facebook, we had an office in Palata. I moved. I didn't go into the original
+office when I joined. It was the second office, this old HP building near Stanford. And then we
+got big enough to go on a campus and we bought Sun Microsystems campus. Sun Microsystem famously
+came out of Stanford, went high-flying, was one of the dot-com darlings, and then eventually sort
+of like bought for pennies on the dollar by Oracle. And you know, like all those companies,
+like in my lifetime, we're big enough to go public, have a campus, and then go out of business. So
+I think a lot will change. I don't mean to say this is going to be easy or like no one's business
+model is under threat, but will digital technology remain important? Will entrepreneurs having good
+judgment about where to apply this technology to create something of economic value still apply,
+like a hundred percent? And I've always used the metaphor, like, if you went back to 1980 and
+described many of the jobs that we have, it would be hard for people to conceptualize. Like imagine,
+I'm a podcaster. You're like, what the hell is that mean? Imagine going back to like 1776 and
+describing to Ben Franklin our economy today, like let alone the technology industry, just the
+services economy. It would be probably hard for him to conceptualize just like who grows the food,
+just because the idea that so few people in this country are necessary to produce the food for so
+many people would defy so much of his conception of just like how food has grown, that it would
+just be like, it would probably take a couple hours of explaining. It's kind of like the same
+thing. It's like, we have a view of like how this world works right now that's based on just the
+constraints that exist. But there's gonna be a lot of other opportunities and other things like that.
+So I don't know. I mean, as certainly writing code is really valuable right now and it probably will
+change rapidly. I think people just need a lot of agility. I was used the metaphor for like a
+bunch of accountants since Microsoft Excel was just invented. Are you gonna be the first person
+who sets down your HP calculator and says, I'm gonna learn how to use this tool because it's just
+a better way of doing what I'm already doing. Or you're gonna be the one who's like, you know,
+begrudgingly pulling out their slide rule and HP calculator and saying these kids these days,
+you know, in their Excel, they don't understand, you know, it's made a little bit reductive. But I
+just feel like the probably the best thing all of us can do not just in software industry. But I do
+think it's really kind of interesting, just reflection that we're disrupting our own industry
+as much as anything else with this technology is to lean into the change, try the tools, like
+install the latest coding assistance. You know, when 03 Mini comes out, write some code with it
+that you don't want to be the last accountant to embrace Excel, you might not have your job anymore.
+So we have some personal questions on like how you keep up with AI and, you know, all the other
+stuff. But I also want to let you get to your question. I just wanted to say that the analogy
+that you made on food was really interesting and resonated with me. I feel like we are kind of in
+like an agrarian economy of like a barter economy for intelligence and obviously sort of industrializing
+intelligence. And that really just was an aha moment for me. I just wanted to reflect that.
+Yeah, how do you think about the person being replaced by an agent and how agents talk to each
+other? So even a Sierra today, right? You're building agents that people talk to. But in the
+future, you're going to have agents that are going to complain about the order they place to the
+customers who bought it. Exactly. And you know, you were the CTO Facebook, you built Open Graph
+there. And I think there were a lot of pros, things that were being enabled and then maybe a lot of
+cons that came out of that. How do you think about how the agent protocols should be built,
+thinking about all the implications of a, you know, privacy, data, discoverability and all that?
+Yeah, I think it's a little early for a protocol to emerge. I've read about a few of the attempts
+and maybe some of them will catch on. One of the things that's really interesting about large
+language models is because they're trained on language as they are very capable of using the
+interfaces built for us. And so my intuition right now is that because we can make an interface that
+works for us and it also works for the AI, maybe that's good enough. You know, I mean a little bit
+hand-wavy here, but making a machine protocol for agents that's inaccessible to people.
+There's some upsides to it, but there's also quite a bit of downside to it as well. I think it's
+Andrei Karpathy, but I can't remember, but like one of the more well-known AI researchers wrote,
+like I spent half my day writing English, you know, in my software journey. I have an intuition
+that agents will speak to agents using language for a while. I don't know if that's true, but
+there's a lot of reasons why that may be true. And so, you know, when your personal agent speaks
+to a CIRA agent to help figure out why your son or speaker has a flash in orange light,
+my intuition is it will be in English for a while. And I think there's a lot of like benefits to
+that. I do think that we've still are in the early days of like long-running agents. I don't know if
+you tried the deep research agent that just came up. We have one for you on the deep research.
+Oh, that's great. It was interesting because it was probably the first time I really got like
+notified by opening eye when something was done. And I brought up before the interactive parts of
+it. That's the area that I'm most interested in right now, just as like most agentic workflows
+are relatively short-running. And the workflows that are multi-stakeholder, long-running, multi-system,
+we deal with a lot of those in that CIRA. But broadly speaking, I think that those are
+interesting just because I always use the metaphor that prior to the mobile phone,
+every time you got like a notification from some internet service, you get an email.
+Not because email was like the best way to notify you, but it's the only way to notify you.
+And so you used to get tagged on a photo in Facebook and you get an email about it.
+Then once this was in everyone's pocket, every app had equal access to buzzing your pocket.
+And now for most of the apps I use, I don't get email notifications, I just get a directly
+from the app. I sort of wonder what the form factors will be for agents. How do you address
+and reach out to other agents? And then how does it bring you the operator of the agent into the loop
+at the right time? I certainly think there's companies with chat TPT that will be one of
+the major consumer surfaces. So there's a lot of gravity to those surfaces. But then if I think
+about domain-specific workflows as well, I think there's just a lot to figure out there.
+So I'm less the agent agent protocols. I actually think I could be wrong because I haven't thought
+about a lot. It's sort of interesting, but actually just how it engages with all the people in it
+is actually one of the things I'm most interested to see how it plays out as well.
+Yeah, I think to me the things that are at the core of it is kind of like our back. It's like
+can this agent access this thing? I think in the customer support, use cases maybe less prominent,
+but like in the enterprises, it's more interesting. And also like language, you can compress the
+language if the human didn't have to read it. You can kind of save tokens, make things faster.
+So speaking of energy.
+You mentioned being notified about deep research. Is there an open AI deep research
+as being achieved internally in notification that goes out to everybody and the board gets
+summoned and you get to see it? Can you give any backstory on that process?
+Open AI is a mission-driven non-profit that I think of primarily as a research lab.
+It's obviously more than that. In some ways, like chat GPT is a cultural defining product,
+but at the end of the day, the mission is to ensure that our official general intelligence
+benefits all of humanity. So a lot of our board discussions are about research and its implications
+on humanity, which is primarily safety. Obviously, I think the one cannot achieve AGI and not
+think about safety as the primary responsibility for that mission, but it's also access and other
+things. So things like deep research, we definitely talk about because it's a big part of if you
+think about what does it mean to build AGI, but we talk about a lot of different things, you know,
+so it's like sometimes we hear about things super early. Sometimes if it's not really related,
+if it's sort of far afield from the core of the mission, you know, it's like more casual.
+So it's pretty fun to be a part of that just because it's my favorite part of every board
+discussion is just hearing from the researchers about how they're thinking about the future and
+just like the next milestone and creating AGI. Well, lots of milestones. Maybe we'll just start
+at the beginning. Like, you know, there are very few people that have been in the rooms that you've
+been in. How do these conversations start? How do you get brought into Open AI? Obviously,
+there's a bit of drama that you can go into if you want to just take us into the room. Like,
+what happens? What is it like? Was it a Thursday or Friday when Sam was fired? Yeah, so
+I heard about it like everyone else, you know, just like saw it on social media and I remember
+where I was walking here. I was totally shocked and messaged with my co-founder, Clay, and I was
+like, gosh, I wonder what happened. And then on Saturday, trying to just protect sort of like
+people's privacy laws, but I ended up talking to both Adam D'Angelo and Sam Altman and basically
+getting a kind of synopsis of what was going on. And my understanding that you could you'd have to
+ask them for sort of their perspective on this was basically like they both the board and Sam
+both felt some trust in me. And it was a very complicated situation because the company was
+reacted pretty negatively, understandably, negatively to Sam's being fired. I don't think
+they really understood what was going on. And so the board was, you know, in a situation where they
+needed to sort of figure out a path forward and they reached out to me and then I talked to Sam
+and basically ended up kind of the mediator for lack of a better word. Not really formally that,
+but fundamentally that. And as the board was trying to figure out a path forward, you know,
+we we ended up with a lot of discussions with like how to reinstate Sam as a CEO of the company,
+but also do a review of what happens so that the board's concerns could be fully sort of
+adjudicated, you know, because they obviously did have concerns going into it. So it ended up
+there. So I think broadly speaking, I was just like a known like a lot of the stakeholders in it
+knew of me. And I'd like to think I have some integrity. So it was just sort of like,
+you know, they were trying to find a way out of a very complex situation. So I ended up kind of
+meeting that and have formed a really great relationship with Sam and Greg and pretty challenging
+time for the company didn't plan to be, you know, on the board. I, you know, got pulled in because
+of the crisis that happened. And I don't think I'll be on the board forever either. I posted when I
+joined that I was going to do it temporarily. That was like a year ago, you know, I really
+like to focus on Sierra, but I also really care about it. It's just an amazing mission. So yeah,
+I've been in maybe been in like high stakes situations like that, like twice, but obviously
+not as high stakes. But like what principles do you have when you know, like these, this is the
+highest egos, highest amount of stakes possible, highest amount of money, whatever, what principles
+do you have to go into something like this? Like, obviously you have a great reputation,
+your great network. What are your must do's and what are your must not do's?
+I'm not sure there's a, if there were a playbook for these situations, there would be a lot simpler.
+Please share. So, you know, I just probably go back to like the way I operate in general. One
+is first principles thinking. So I, I do think that there's crisis playbooks, but there was nothing
+quite like this. And you really need to understand what's going on and why. I think a lot of
+moments of crisis are fundamentally human problems. You can strategize about people's incentives and
+this and that and the other thing. But I think it's really important to understand all the people
+involved and what motivates them and why, which is fundamentally an exercise in empathy, actually,
+like, do you really understand why people are doing what they're doing? And then getting good
+advice, you know, and I think people, what's interesting about a high profile crisis is everyone
+wants to give you advice. So there's no shortage of advice, but the good advice is the one. I think
+that really involves judgment, which is who are people based on first principles analysis of the
+situation based on your assessment of what, you know, all the people involved who would have true
+expertise and good judgment, you know, in these situations so that you can either validate your
+judgment if you have an intuition or if it's an area that's like an area of, like, say, legal
+expertise, you're not an expert, and you want the best in the world to give you advice and
+actually find people often seek out the wrong people for advice. And it's really important in
+those circumstances. Well, I mean, it's super well navigated. I have got one more, and then we can
+sort of move on on this topic. The Microsoft offer was real, right? For Sam and team to move over
+at some at one point in that weekend. I'm not sure. Okay. I was sort of in it from one vantage point,
+which was she's in she and is like, I didn't really have particular skin in the game. So like,
+I can write this as I still don't own any equity and open AI. I was just, I was just a
+meaningful bystander, you know, in the process. And the reason I got involved, and I will get to
+answer your question, but the reason I got involved was just because I cared about open AI. So,
+you know, I had left my job at Salesforce and by coincidence, the next month,
+Chachibidi comes out and, you know, I got nerd sniped like everyone else. I'm like,
+I want to spend my life on this. This is so amazing. And I wouldn't, I don't know if I'd be,
+I wouldn't, I'm not sure I would have started another company if not for open AI kind of inspiring
+the world with Chachibiti. Maybe I would have, I don't know, but it was like, it had a very
+significant impact on you, all of us, I think. So the idea that it would dissolve in a weekend,
+just like bothered me a lot. And I'm very, like, I'm very grateful for, for open AI's existence.
+And, and I, my guess is that is probably shared by a lot of the competing research labs to different
+degrees too. It's just like, it kind of, that rising tide lifted all boats. Like, I think it,
+it created the proverbial iPhone moment for AI and changed, changed the world. So, there were lots of
+Microsoft as an investor in open AI and has a vested interest in it. The Sam and Greg,
+their interests, the employees had their interests. And there's lots of wheeling and dealing. And that,
+you know, you can't AB test decision making. So I don't know if like things had fallen apart with
+that. I don't, I don't actually know. And you also don't know like what's real, what's not. I mean,
+so you'd have to talk to them to know it was really real. So mentioning advisors. I heard,
+it seems like Brian Armstrong was a surprisingly strong advisor on doing, doing a whole journey,
+which is my understanding was both Brian Armstrong and Ron Conway were really close to Sam through it.
+And I ended up talking to him, but also tried to talk a lot to the board to, you know,
+trying to be the mediator I was trying to do. You obviously have a position on it. Like, and I,
+I felt that, you know, from the outside looking in, I just really wanted to understand like,
+why did this happen? And the process seemed, you know, perhaps amfisted, you know, to say the least.
+But I was trying to remain sort of dispassionate because one of the principles was like, if you
+want to put Humpty Dumpty back together again, you can't be a single issue voter, right? Like,
+you have to go in and say like, so it's a pretty sensitive moment. But yeah, my, I think Brian's
+one of the great entrepreneurs and a true, true, true friend and ally to, to Sam through that.
+He's been through a lot as well. The reason I bring up Microsoft is because, I mean, obviously,
+huge backer, we actually talked to David Luan, who pitched, I think it was Satya at the time on,
+on the first billion dollar investment in OpenAI. The understanding I had was that the best
+situation was for OpenAI, for Microsoft was OpenAI as they as is. Second best was Microsoft,
+Echo hires, Sam and Greg and whoever else. And that was the relationship at the time,
+super close, exclusive relationship and all that. I think now things have evolved a little
+bit and, you know, with, with the, with Stargate. And there's some, some uncertainty or fun about
+the relationship between Microsoft and OpenAI. And I just wanted to just kind of bring that up
+because like we're also working like one Satya's, we're fortunate to have Satya as a subscriber
+to the interface and we're working on an interview with him. And we're trying to figure out how
+this has evolved now. Like, what is, how would you characterize the relationship between
+Microsoft and OpenAI? Microsoft, you know, the most important partner of OpenAI, you know,
+so we have a really like deep relationship with them on many fronts. So I think it's all
+evolving just because the scale of this market is evolving. In particular, the capital requirements
+for infrastructure are well beyond what anyone would have predicted two years ago, let alone
+whenever the Microsoft relationship started. Well, was that six years ago? I actually don't,
+I should know off the top of my head, but it's a long time long, sorry. In this, in the world
+of AI, a long, longer time ago, I don't really think there's anything to share. I mean, it's,
+I don't, I think the relationships evolved because the markets evolved, but the
+core tenets of the partnership have remained the same. And it's, you know, by far open eyes,
+most important partner. Just double clicking a little bit more, just like a lot of, obviously,
+a lot of our listeners are, you know, care a lot about the priorities of OpenAI. I've had
+it phrased to me that OpenAI had sort of five top-level priorities, like always have frontier models,
+always be on the frontier sort of efficiency as well, be the first in sort of multimodality,
+whether it's a video generation or real-time voice, anything like that. How would you characterize
+the top priorities of OpenAI apart from just the highest level AGI thing?
+I always come back to the highest level AGI. As you put it, it is a mission-driven organization.
+And I think a lot of companies talk about their mission, but OpenAI is literally like the mission
+defines everything that we do. And I think it is important to understand that if you're trying to
+like predict where OpenAI is going to go, because if it doesn't serve the mission, it's very unlikely
+that it will be a priority for OpenAI. You know, it's a big organization. So occasionally, you might
+have like side projects. You're like, you know what, I'm not sure that's going to really serve
+the mission as much as we thought. Like, let's not do it anymore. But at the end of the day, like,
+people work at OpenAI because they believe in the benefits the AGI can have to humanity.
+Some people are there because they want to build it. And the actual
+active building is incredibly intellectual rewarding. Some people are there because they
+want to ensure that AGI is safe. I think we have the best AGI safety team in the world. And
+there's just so many interesting research problems to tackle there as these models become
+increasingly capable as they have access to the internet, they have access to tools. It's just like
+really interesting stuff. But everyone is there because they're interested in the mission. And
+as a consequence, I think that, you know, if you look at something like deep research that lends,
+it's pretty logical, right? It's like, of course, that's if you're going to think about what it means
+to create AGI enabling AI to help further the cause of research is meaningful. You can see why a lot
+of the AGI labs are working on software engineering and code generation because that seems pretty
+useful if you're trying to make AGI, right? Just because a huge part of it is code, you know,
+to do it. Similarly, as you look at sort of tool use and agents right down the middle of what you
+need to do AGI, that is the part to become. I don't think there is like a top, I mean, sure,
+there is like a maybe an operational top 10 list, but it is fundamentally about building AGI and
+ensuring AGI benefits all of humanity. But that's all we exist for. And the rest of it is like,
+not a distraction necessarily, but that's like the only reason the organization exists.
+The thing that I think is remarkable is if I had described that mission to the two of you
+four years ago, like, you know, one of the interesting things is like, how do you think
+society would use AI? We probably think almost maybe like industrial applications, robots, all
+these other things. I think chat TPT has been the most delightful and it doesn't feel counterintuitive
+now that like counterintuitive way to serve that mission because the idea that you can go to
+chat TPT.com and access the most advanced intelligence in the world. And there's like a free tier is
+like pretty amazing. So actually, one of the neat things I think is that chat TPT, you know,
+famously was a research preview that turned into this brand, you know, industry defining brand.
+I think it is one of the more key parts of the mission in a lot of ways because it is the way
+many people will use this intelligence for their everyday use. It's not limited to the few. It's
+not limited to, you know, a form factor that's inaccessible. So I actually think that it's been
+really neat to see how much that has led to. There's lots of different contours of the mission of
+AGI, but benefiting humanity means everyone can use it. And so I do think like to your point on
+is cost important. No, yeah, cost is really important. How can we have all of humanity access AI,
+if it's incredibly expensive, and you need the $200 subscription, which I pay for because I think,
+you know, one pro mode is mind blowing, you know, but it's you want both because you need the
+advanced research. You also want everyone in the world to benefit. So that's the way, and if you're
+trying to predict where we're going to go, just think, what would I do if I were running a company
+to, you know, go build AGI and it shows it benefits humanity. That's how we prioritize everything.
+I know we're going to wrap up soon. I would love to ask some personal questions. One,
+what are maybe have been guiding principles for you one and choosing what to do? So, you know,
+you were co CEO of Salesforce, you were CTO Facebook. I'm sure you get it done a lot more things,
+but those were the choices that you made. Do you have frameworks that you use for that?
+Yeah, let's start there. I try to man for like presence and grounded in the moment.
+So meditation? No, I wish I did it more, but I don't. I really try to focus on like impact,
+I guess, on what I work on, but also do I enjoy it. And sometimes I think we talked a little bit
+about, you know, what should an entrepreneur work on if they want to start a business? And
+I was sort of joking around about sometimes the best businesses are passion projects.
+I definitely take into account both. Like, I want to have an impact on the world. And I also
+like want to enjoy building what I'm building. And I wouldn't work on something that was impactful
+if I didn't enjoy doing it every day. And then I try to have some balance in my life. I've got a
+family and one of the values of Sierra is competitive intensity, but we also have a value
+called family. And we always like to say intensity and balance are compatible. You can be in a really
+intense person. And I don't have a lot of like hobbies. I basically just like work and spent time
+with my family, but I have balance there. And but I do try to have that balance just because,
+you know, if you're a proverbially, you know, on your deathbed, what do you, what do you want?
+And I want to be surrounded by people I love and to be proud of the impact that I had.
+I know you also love to make handmade pasta. I'm Italian. So I would love to hear favorite pasta
+shapes, maybe sauces. Oh, that's good. I don't know where you found that. It was a deep research
+or whatever. It was deep research. I'm sorry. Where is this from? It was from from. I forget.
+It was it was the source was laying. I do love to cook. So I started making pasta when my kids
+were little, because I found getting them involved in the kitchen made them eat their meals better.
+So like, participating in the act of making the food made them appreciate the food more. And so
+we do a lot of just like when Getty, Linguini, just because it's pretty easy to do. And the
+crank is turning and the part of the pasta making for me was like, they could operate the crank and
+I could put it through. And it was very interactive. Sources I do a bunch probably. I mean, I the like
+really simple marinara with really good tomatoes and is like just a classic, especially if you're
+really good pasta, but I like them all. But I mean, I just, you know, it's probably the good
+too. Just because it's easy. So I just had to ask, when I saw it come up in the research, I was like,
+I mean, you have to weigh in as the Italian here. Yeah, I would say. So there's one type of spaghetti
+you call a like hitara. It's kind of like they're almost square. These are really good. We're like,
+you do a cherry tomato sauce with oil, you can put on do again there. Yeah, we can do a different
+podcast on head of the Italian technology. Yeah, very, very good restaurants. I highly recommend
+going to the Italian restaurants with him. Yeah, okay. So then my question would be,
+how do you keep up on the eye? There's so much going on. Do you have some special news resource
+that you use that no one else has or? No, but I, most mornings, I'll try to sort of like read,
+kind of check out what's going on on social media, just like any buzz around papers. But the thing
+that I don't, the thing I really like, we have a small research team at Sierra and we'll do
+sessions on interesting papers. And I think that's really nice. And usually it's someone who like
+really went deep on a paper and kind of just a, you know, you bring your lunch and just kind of
+do a readout. Yeah, I found that to be the most rewarding just because, you know, I love research,
+but sometimes, you know, some simple concepts are, you know, surrounded by a lot of ornate language
+and you're like, let's get a few more, you know, Greek letters in there to make it seem like we did
+something smart, you know, and sometimes just talking it through conceptually, I can
+grok the so what, you know, more easily. And so that's also been interesting as well. And then
+just conversations, you know, I always try to, when someone says something I'm not familiar with,
+like I've gotten over the feeling dumb thing, I'm like, I don't know what that is, explain it to me.
+And yes, you can sometimes just find neat techniques, new papers, things like that. It's
+impossible to keep up that. For sure. If you're struggling, I mean, imagine the rest of us, but
+like, you know, you have really privileged and special conversations. What research directions
+do you think people should pay attention to just based on the buzz you're hearing internally or,
+you know, this isn't surprising to you or anyone. But I think the, I think in general,
+the reasoning models, but it's interesting because two years ago, you know, the chain of thought
+reasoning paper was pretty important, you know, and in general, chain of thought has always been
+a meaningful thing from the time. I think it was a Google paper, right? If I'm remembering correctly.
+And Google authors, yeah. And I think that it has always been a way to get more robust results,
+you know, from models. What's just really interesting is the combination of distillation
+and reasoning is making the relative performance. And I'll say actually performance is an ambiguous
+word, basically the latency of these reasoning models, more reasonable, because if you think about,
+say, GPT four, which was, I think, a huge step change in intelligence, it was quite slow and quite
+expensive for a long time. So it limited the applications. Once you got to for and for a mini,
+you know, it opened the door to a lot of different applications, both for cost and latency.
+We know one came out really interesting quality wise, but it's quite slow, quite expensive. So
+just the limited applications. Now I just saw like someone post one of they distilled one of the
+deep seek models and just made it really small. And you know, it's doing these chains of thoughts
+so fast, you know, it's achieving latency numbers, I think sort of similar to like GPT four back in
+the day. And now all of a sudden you're like, wow, this is really interesting. And I just think,
+especially if there's lots of people listening or like applied AI people, it's basically like
+price performance quality. And for a long, like for a long time, the market's so young.
+If you really had to pick which quadrant you wanted for the use case, and the idea that we'll
+be able to get like relatively sophisticated reasoning and that like, Oh, through me,
+it's just been amazing. If you haven't tried, it's like the speed of it makes me use it so
+much more than I want, just because I want, I'd actually often craft my prompts using four
+row and then put it into a one just because it was so slow. You know, I just didn't want to like
+the turnaround time. So I'm just really excited about them. I think we're in the early days in the
+same way with the rapid change from GPT three to three, five to four, and you just saw like every
+and I think with these reasoning models, just how we're using sort of inference time compute and
+the techniques around it, the use cases for it, it feels like we're in that kind of campaign
+explosion of ideas and possibilities. So I just think it's really exciting. And certainly,
+if you look at some of the use cases, we're talking about like coding. These are the exact
+types of domains where these reasoning models do and should have better results. And certainly
+in our domain, there's just some problems that like thinking through more robustly,
+which we've all was done, but it's just been like these models are just coming out of the
+box a lot more batteries included. So I'm super excited about them. Any final call to action,
+are you hiring, growing the team? More people should use here, obviously.
+We're growing the team and that we're hiring software engineers, agent engineers. So
+some email, bread@seer.ai, we're growing like weed. Our engineering team is exclusively in
+person in San Francisco that we do have some kind of forward deployed engineers and other
+offices like London. Awesome. Thank you so much for the time, Brett. Thanks for having me.
+[Music]
+

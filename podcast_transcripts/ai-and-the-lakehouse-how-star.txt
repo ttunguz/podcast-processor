@@ -1,0 +1,530 @@
+--- METADATA START ---
+Show: Data Engineering Podcast
+Episode: AI and the Lakehouse: How Star…
+Host: Tobias Macy 
+Guests: Alex Albu
+Source URL: https://podcasts.apple.com/us/podcast/ai-and-the-lakehouse-how-starburst-is-pioneering/id1193040557?i=1000712368860
+--- METADATA END ---
+
+1
+Hello and welcome to the Data Engineering Podcast, the show about modern data management.
+2
+Poor quality data keeps you from building best-in-class AI solutions.
+3
+It costs you money and wastes precious engineering hours.
+4
+There is a better way.
+5
+CoreSignal's multi-source, enriched, cleaned data will save you time and money.
+6
+It covers millions of companies, employees, and job postings and can be accessed via API or as flat files.
+7
+Over 700 companies work with CoreSignal to develop AI solutions in investment, sales, recruitment, and other industries.
+8
+Go to dataengineeringpodcast.com slash CoreSignal and try CoreSignal's self-service platform for free today.
+9
+This is a pharmaceutical ad for Soda Data Quality.
+10
+Do you suffer from chronic dashboard distrust?
+11
+Are broken pipelines and silent schema changes wreaking havoc on your analytics?
+12
+You may be experiencing symptoms of undiagnosed data quality syndrome, also known as UDQS.
+13
+Ask your data team about SODA.
+14
+With Soda Metrics Observability, you can track the health of your KPIs and metrics across the business, automatically detecting anomalies before your CEO does.
+15
+It's 70% more accurate than industry benchmarks and the fastest in the category, analyzing 1.1 billion rows in just 64 seconds.
+16
+And with collaborative data contracts, engineers and business can finally agree on what done looks like, so you can stop fighting over column names and start trusting your data again.
+17
+Whether you're a data engineer, analytics lead, or just someone who cries when a dashboard flatlines, Soda may be right for you.
+18
+Side effects of implementing SODA may include increased trust in your metrics, reduced late-night Slack emergencies, spontaneous high-fives across departments, fewer meetings and less back and forth with business stakeholders, and in rare cases, a newfound love of data.
+19
+Sign up today to get a chance to win a $1,000-plus dollar custom mechanical keyboard.
+20
+Visit dataengineeringpodcast.com/slash soda to sign up and follow Soda's launch week, which starts on June 9th.
+21
+Your host is Tobias Macy, and today I'm interviewing Alex Albu about how Starburst is extending the lake house to support AI workloads.
+22
+So, Alex, can you start by introducing yourself?
+23
+My name is Alex Albu.
+24
+I have been with Starburst for about six years now, and I currently am the tech lead for our AI initiative.
+25
+And do you remember how you first got started working in data?
+26
+Yeah, I come from a software engineering background, but a few jobs ago, I was working for IDEX, working on their veterinary practice software.
+27
+And we had to build a few ETL pipelines, pulling in data from various practices into IDEX.
+28
+And I think maybe the point where I really got into data engineering was when I was working on rebuilding an ETL system based on Hadoop.
+29
+And I replaced that with a Spark-based system.
+30
+And the results were actually pretty spectacular.
+31
+I think performance gains let us go from running a five-node cluster, like 24-7, to like a smaller three-note cluster that was just running a few hours a day.
+32
+So that got me into big data.
+33
+And when I moved on to my next job at a company called Tracelink, I built there an analytics platform using Spark for ETL and Redshift for querying data.
+34
+And we started running into limitations of Redshift at that point.
+35
+Started looking at other solutions for analytics.
+36
+And we came across Athena for querying data that we were dumping into a data lake.
+37
+I thought this was a great solution until, again, we started using it for more serious use cases.
+38
+And I started running into limitations.
+39
+And as I was researching ways to optimize my queries, at that point, you could even get a query plan from Athena.
+40
+But my research took me to Starburst.
+41
+And that's basically how I ended up at Starburst.
+42
+And at Starburst, I've been, you know, I had kind of a non-linear trajectory.
+43
+I started as a software engineer.
+44
+Then I took on an engineering management job for a few years, for about four years.
+45
+And now I'm back as an IC working on the AI initiative.
+46
+And for people who want to dig deeper into Starburst and Trino and some of the history there, I'll add links in the show notes to some previous episodes I've done with other folks from the company.
+47
+But for the purpose of today, given the topic of AI on the lake house and some of the different workloads, I'm wondering if you can just start by giving a bit of an overview of some of the ways that the lake house architecture, the lake house platform, intersects with some of the requirements and some of the use cases around AI workloads.
+48
+Yeah, so as part of the AI initiative, you know, we like we started this with two goals in mind.
+49
+One was to make Starburst better for our users by using AI, and the other one was to help our users build their own AI applications.
+50
+And so, but what does making Starburst better for users?
+51
+You know, that covers a wide range of things.
+52
+But one of the things we've done was build an AI agent that allows users to explore their data using a conversational interface.
+53
+And sort of the central point of that is data products, which are curated data sets where users can add descriptions and make them discoverable.
+54
+And so we wanted to take that a step further.
+55
+And we've added a workflow that allows users to use AI to generate some of this metadata to enrich these data products.
+56
+And then users can review these changes, this new metadata that was created, and they have the possibility to correct or add to what the machine did.
+57
+So then what this gives users is not just better documentation and helps them understand and discover their data, but it also enables an agent, the agent that we created to be able to answer questions and gain deeper insights into the data instead of just letting it look at schemas.
+58
+We do other things with AI to make our users' lives easier.
+59
+For example, we've had for a while auto-classification and tagging of data, right?
+60
+Using LLMs to mark, for example, PII columns.
+61
+And we're also looking at using AI for things that are sort of more behind the scenes, like workload optimizations and analyzing query plans and decide, you know, using that as input for our work on the optimizer, producing recommendations for users, to write their queries in a more efficient way.
+62
+So, and then the other direction that we've been taking with AI was helping our users employ AI in their own applications.
+63
+And so, what we did for that was we built a set of SQL functions, right, that users can invoke from their queries and that give them access to models that they are able to configure in Starburst.
+64
+So, as with, you know, for listeners who are not very familiar with Starburst, I'll say that one of our tendencies is optionality.
+65
+So, we allow our users to bring their own backends to query, their own storage, their own access control systems.
+66
+So, we provide flexibility at every step of the way.
+67
+And AI models are no different.
+68
+We allow users to configure whatever LLMs they want to use.
+69
+Well, you know, from a set of supported models, obviously.
+70
+But the key is that they can use a service like Bedrock or they can run an LLM on-prem in an air-gapped environment.
+71
+And we support those scenarios.
+72
+And essentially, what these functions allow you to do is express, basically implement a RAC workflow in a query.
+73
+Truly, you can generate embeddings, you can do a vector search, and you can feed the results as context to an LLM call and get your result back.
+74
+I think it's the easiest way to basically get started with an LLM.
+75
+You don't need to know anything about APIs, don't need to know Python, nothing.
+76
+And another interesting aspect to the overall situation that we're in right now with LLMs and AI being the predominant area of focus for a large number of people is that there are a number of different contexts, particularly speaking as data practitioners, where we want to and need to interact with these models, where you need to be able to use them to help accelerate your own work as a data practitioner in terms of being able to generate code, generate schema diagrams, generate SQL, but you also need to provide data sets that can be consumed by these LLMs for maybe more business-focused or end-user-focused applications.
+77
+And I'm wondering, particularly for some of those end-user-facing use cases, what you see as some of the existing limitations of warehouse and lake house architectures to be able to support those end-user use cases?
+78
+I would say one area where we see limitations is the typical data types or the typical data sets that LLMs, that users will want to feed to LLMs.
+79
+So, for example, you know, a lot of work that users do with AI models is on unstructured data, you know, like Excel spreadsheets or video, image data, stuff like that.
+80
+And that doesn't fit well into a warehouse typically, right?
+81
+There are other areas where things may not be ideal.
+82
+So, for example, you were mentioning query generation, things like that.
+83
+You need good quality metadata in order to be able to generate accurate queries, right?
+84
+And a lot of times, just a schema, reading the schema of a table or of a set of tables is going to be insufficient.
+85
+So, there are some limitations around the metadata that a typical warehouse or lake house will be able to expose.
+86
+You know, we say here at Starbucks that your AI is going to be only as good as your data is, but maybe it's even more true that your AI is going to be only as good as your metadata is at the end of the day.
+87
+And then there are other aspects.
+88
+So, for example, if you consider training a model, providing it a training set, right?
+89
+So, I think that here again, maybe warehouses are not going to be ideal in the sense that the data access patterns that you need when you train a model, like where you need to sample data, you know, specific data sets, that would be an access pattern that would be typical for an LLM.
+90
+Well, warehouses are optimized typically, right, for aggregating data and basically doing huge scans.
+91
+And then, on the other side, for data practitioners who want to be able to use LLMs in the process of either processing data or iterating on table layouts or being able to generate useful SQL queries for doing data exploration, what are some of the current points of friction that you're seeing people run into?
+92
+I think one classic one is I think around data privacy and regulatory compliance.
+93
+That's going to be challenging, especially in multi-tenant lake houses.
+94
+I can tell you from experience that many of our customers have pretty strict rules about what data can be sent to an LLM.
+95
+And they're even stricter than essentially the rules on what specific users can access, right?
+96
+So, like, it's possible that the user is allowed to access, say, a column, but they don't want that to be sent to an LLM.
+97
+So, that's where I think a lot of these friction points are.
+98
+LLMs can also struggle with large schemas when it comes to query generation.
+99
+And also, if large tables, complex lineage, those are all problems for them.
+100
+And then, as far as the interaction of being able to feed things like the schemas, the table lineage, the query access patterns into an LLM, generally that would be done either by doing an extract of that information and then passing it along, or using something like an MCP server or some other form of tool use to be able to instruct the LLM how to retrieve that information for the cases where it needs it.
+101
+And that's generally more of a bolt-on use case, whereas what it seems like you're doing right now with the Starburst platform is actually trying to bring the LLM into the context of the actual execution environment.
+102
+And I'm wondering what are some of the ways that you're seeing that change the ways that people think about using LLMs to interact with their lake house data and some of the new capabilities or some of the efficiencies that you're able to gain as a result?
+103
+Yeah, I think that's a very pertinent observation.
+104
+So, I mean, I'll say that the advent of MCP is great, I think.
+105
+It opens up a lot of data to data sources, to LLMs.
+106
+It's similar to how Trino opens up, has all these adapters for other data sources, and opens up access to lots of data sources.
+107
+But if you think about it, MCP is defines a protocol for communicating with a data source, but it doesn't really say anything about the data that's going to be exposed, right, or the tools.
+108
+Those are all left at the implementer's latitude.
+109
+And so I think the usefulness of MCP is going to depend on the quality of the servers that are going to be out there.
+110
+I do think it's going to be a very useful tool.
+111
+But with any tool, it has to be used for the right use cases.
+112
+So for example, you might have some data sitting in a Postgres database and some data sitting in an iceberg table.
+113
+And you might have MCP servers that provide you access to both of those.
+114
+And you're going to ask your LLM or your agent to provide a summary of data like that that requires joining the two data sets.
+115
+I mean, I suppose it may be able to pull data from the two sources and join it, but that doesn't seem right.
+116
+So what we're proposing is go the other direction, right?
+117
+So you can, using Starburst, you have access to both.
+118
+You can federate the data, you can join it, and then you can gather the data and pass it through a SQL function to the LLM and have it summarize it or whatnot.
+119
+So I do see what we're building as complementary to MCP, if you want, right?
+120
+We're definitely also considering building, you know, like exposing an MCB server.
+121
+But again, it's, you know, use the right tool for the right job.
+122
+Data migrations are brutal.
+123
+They drag on for months, sometimes years, burning through resources and crushing team morale.
+124
+Datafold's AI-powered migration agent changes all that.
+125
+Their unique combination of AI code translation and automated data validation has helped companies complete migrations up to 10 times faster than manual approaches.
+126
+And they're so confident in their solution, they'll actually guarantee your timeline in writing.
+127
+Rated to turn your year-long migration into weeks?
+128
+Visit dataengineeringpodcast.com/slash datafolds today for the details.
+129
+And digging into the implementation of what you're building at Starburst to bring more of that AI-oriented workflow into the context of the actual query engine, this federated data access layer.
+130
+I'm wondering if you can give an overview of some of the features that you're incorporating, the capabilities that you're adding, and some of the foundational architectural changes that you've had to make both to the Trino query engine and the iceberg table format to enable those capabilities.
+131
+So there are a few things.
+132
+I did mention SQL functions, right?
+133
+Like we do we do have sort of three sets of SQL functions that that we provide.
+134
+There are a few task specific SQL functions that basically have some can some some predetermined use some predetermined prompts to perform things like summarization or classification sentiment analysis things like that.
+135
+We do provide like a more open-ended prompt function that you can use to experiment with different different prompts.
+136
+You know we we think that they may not be opened up to the same groups of users.
+137
+Like the prompt function may be used by maybe the data scientists or like somebody who's more of a prompt engineer, while the task specific ones, they don't really require much background in LLM, so it can be used by a wider group of users.
+138
+And then the third category is we provide functions that allow you to generate, to use, again, LLMs, generate embeddings for rag use cases.
+139
+So one thing I think I've mentioned before is that we allow users to configure their own models.
+140
+And it's worth mentioning that you can configure multiple models.
+141
+We do offer quite a few knobs when you configure a model, not just temperature and top T and other parameters, but we also allow users to customize prompts used by model because one thing we've learned is that there's a pretty wide behavior gap between them.
+142
+And the other thing that we offer for models is governance, right?
+143
+So we do offer governance at several levels.
+144
+One is you can obviously control who can access specific functions, but then we take it a step further.
+145
+And these functions actually, I should mention, take as one of the arguments the specific model that they are supposed to operate with.
+146
+And so we do offer the possibility for an admin to control access to specific models.
+147
+You know, it does make sense to restrict access to models that are very expensive, right?
+148
+So that gives admins, data stewards, quite a few levers in configuring that.
+149
+Being able to provide governance at the model level has required, you know, like is required a bit of a novel approach in the way we have tackled governance in general and access control.
+150
+Some other things that we're building here are model usage observability.
+151
+So our users are very interested in being able to set usage limits, budgets, even controlling the bandwidth that a specific user might use up in terms of tokens per minute or so.
+152
+And I did mention the conversational data interface that we've created.
+153
+And we do think that sort of the differentiator there was building them around data products which act as semantic layer and allow users to provide insights into the data that are actually difficult to glean by an LLM or even a human.
+154
+So as far as architectural changes, I did allude a bit to governance, access control.
+155
+The other area where we kind of have encountered technical challenges was in the area of sending higher volumes of data to LLMs.
+156
+So that LLMs are fairly slow to respond, right?
+157
+So they don't fit very well with processing large data sets.
+158
+And so we're looking into ways to cost efficiently and be able to process large amounts of data.
+159
+LLM providers do offer batch interfaces for such use cases.
+160
+However, the challenge there is integrating that with a SQL interface.
+161
+These batch APIs are typically async, so they're not going to work well with a select statement.
+162
+We are considering a slightly different paradigm there.
+163
+Some other things that we've built is or are currently in the process of building our auditing.
+164
+That's another big component.
+165
+And some of our users actually require a fair amount, capturing a fair amount of audit data for their elements.
+166
+So that's again another challenge.
+167
+And then on the storage layer, a lot of people who are using Trino and Starburst are storing their data in iceberg tables on object storage.
+168
+And iceberg as a format generally defers to Parquet or Ork as the storage layer.
+169
+So there are a lot of pieces of coordination to be able to make any meaningful changes to the way that they behave.
+170
+And I'm wondering what are some of the ways that you have addressed the complexity of being able to store and access some of these vector embeddings living in lake house contexts and some of the reasons for sticking with iceberg for that versus looking to other formats like Lance?
+171
+So that's actually a very interesting question.
+172
+So it turns out that there are already discussions in the iceberg community for supporting Lance as a file format.
+173
+And we are looking into that.
+174
+We're going to be working with the iceberg community, but definitely using an alternate file format like Lance is on the table.
+175
+It's an option that we evaluate.
+176
+I'll also say that for smaller data sets, it's also possible to store data in a different data source like pgVector, for example.
+177
+So we do offer support for pgVector, so it's possible to use that as a vector database.
+178
+But there is a lot of interest in storing data in iceberg.
+179
+And the right data format and the right shape of the indexes that are going to be required for efficiently doing vector searches, doing semantic searches, that's very much an area that's under sort of active investigation and development.
+180
+And so for teams who are adopting these new capabilities as you roll them out, what are some of the ways that you're seeing them either add new workloads to what they've been using Starburst for or some of the ways that it's changing the ways that they use Starburst for the work that they were already doing?
+181
+Yeah, so like I mentioned before, the capabilities that we've added open up the possibility of essentially building and running an entire RAG workflow in SQL.
+182
+You can generate embeddings for data you have, and we do have sort of bulk APIs for doing that.
+183
+You can perform a semantic search, and then based on your top hits, you can build your context and pass that to another without using a framework like Langchain, for example.
+184
+I think this opens up new possibilities for analysts who otherwise would probably not have gotten into, you know, gotten close to these capabilities.
+185
+You can imagine dashboards built based on queries that employ SQL functions.
+186
+And then, in terms of the education around these capabilities, everybody is at a different stage of their journey of overall adoption of generative AI, LLMs, being able to bring it into the work of building their data systems.
+187
+And I'm wondering how you're approaching the overall kind of messaging around the capabilities, rolling out the features and some of the validation that you're doing as you bring these capabilities to your broader audience and loop that feedback into your successive iterations of product development.
+188
+Yeah, I think that the way we ran this project was to get feedback, customers in the loop quite early by doing demos of essentially unreleased software, right?
+189
+Like our product would be demoing development builds to get feedback and validate that we're on the right track and we're building useful stuff for our users.
+190
+I do think that in this area, the best way to document and sort of make customers aware of the value that we're providing is by showing them, you know, sort of like small applications that you can build using this functionality, right?
+191
+So, like, you could envision, you know, like say, say, a database storing restaurant reviews.
+192
+You could essentially show how you can do a sentiment analysis on that and then render that, you know, like sort of the daily reviews as in a dashboard as like red, yellow, green bar charts.
+193
+And, you know, what's cool about it is showing people how they actually can compose these functions.
+194
+So, for example, if you had restaurant reviews that are in different languages, you could translate them all to English before doing sentiment analysis or summarizing the general, maybe summarize the general complaints that people might have or things like that.
+195
+So, I think in general, it's important to come up with some good examples that can highlight truly the new capabilities that this opens up.
+196
+In the work that you did to bring these AI-focused capabilities into Starburst, into Trino, and tack them onto the iceberg capabilities, what are some of the interesting engineering challenges that you had to address?
+197
+And what were some of the pre-existing functionality that helped you in that path?
+198
+Yeah, I think that the main pre-existing functionality is the capability to access a wide variety of data sources, right?
+199
+Because the name of the game here is getting your AI access to the data.
+200
+And in that sense, Starburst is uniquely positioned to be able to be plugged in into all of our users' data.
+201
+And so making that available to LLMs is challenging and is an ongoing effort.
+202
+I did mention how sending, processing large amounts of data is challenging from a technical perspective because it doesn't fit well with the SQL paradigm.
+203
+But we do have some innovative ways in which we are going to allow that sort of processing to be embedded in, say, a workflow that our users might have.
+204
+A few things that we've learned along the way were that essentially working with LLMs is a paradigm shift, right?
+205
+So we did learn that LLMs can be fickle and writing tests is a real challenge.
+206
+Being able to write tests is very challenging when you're back and when the system that you're testing is probabilistic and it's not deterministic, right?
+207
+So, you need to get to some extent into the mindset of a data engineer and of a data scientist, I'm sorry, and embrace experimentation.
+208
+Be ready to, I mean, everything here depends on, is very data-driven, right?
+209
+So, generating meaningful data sets is critical for building such a product.
+210
+And we're looking at various approaches for getting data sets that we can thoroughly test our models on, our functionality on.
+211
+And as you have been releasing these capabilities, onboarding some of your early adopters, what are some of the most interesting or innovative or unexpected ways that you've seen these AI-focused capabilities applied?
+212
+We're obviously at the beginning of this journey, right?
+213
+Like everybody, like the whole industry, I mean, right?
+214
+So, we do have a few customers who are more advanced, and we've seen them do some interesting things.
+215
+So, for example, when exploring different data sets, right, coming from, say, different providers, they might be ingesting data from, they'll need to join these data sets, but they won't necessarily have similarly named columns, right?
+216
+So, inferring the, say, the join columns is not always easy based on just like doing a column name match.
+217
+But with AI, you can actually do some semantic analysis and find the matching columns that way and be able to join data, you know, figure out the join essentially, or have the machine figure out the join in ways that were not possible before.
+218
+Some other interesting things that we've seen our customers do is, and this is actually something that we're also looking into is for internal use, is generating synthetic data sets, which removes the danger of using PII testing, PII data and testing and things like that.
+219
+So, using LLMs to generate synthetic data sets is another interesting use case that we've seen.
+220
+For people who are interested in being able to use AI in the context of their data systems, what are the situations where either Starburst specifically or the lake house architecture generally are the wrong choice?
+221
+So, I think at this point, I wouldn't recommend using Starburst for a use case that uses data like video or large blobs of unstructured data, you know, like whatever sensor data or something like that.
+222
+So, we're not ready at this point to deal with these types of data.
+223
+Also, high-volume, high-concurrency operations are not going to fit well in here.
+224
+And a lot of it is actually due to the performance of LLMs and the lack of support for such operations.
+225
+But again, as with everything, choose the right tool for the right task and you know while I think Starburst can handle a lot of use cases, it's definitely not going to handle all of them.
+226
+And as you continue building out these AI-focused capabilities the landscape around you continues to evolve at a blistering pace what are some of the things you have planned for the near to medium term or any particular projects or problem areas you're excited to explore yeah you're you're right this this is moving at a fast pace we we do have a lot of plans we we do plan to add uh mcp support and we're thinking about how to make this the most useful working with with our customers but you'll you'll notice that a lot of databases out there just just expose a simple api to run run a query in in their native query language i think we can we can do better we can do more than that and uh and allow agents to to use an mcp server to to automate a lot of the tasks users might might want to do say you know in galaxy like spinning up clusters or setting up various resources i think there there are lots of lots of opportunities there for uh integrating with agents that uh our users uh have already built actually i i did mention you you were asking about the the work uh for storing vectors in uh iceberg where that's definitely an area that uh we're building in um you know uh more more essentially making making starburst a more performant vector database and you know that that includes looking at new file types for storing the data and looking at various indexes for vector indexes as well as indexes that support full text search.
+227
+We're also talking about some of the weaknesses that I've mentioned that are common for warehouses and where Starburst is no exception.
+228
+We are going to be working in that area to provide better support for these data types that are currently maybe not as well supported in PDF file, Excel spreadsheets, whatever, like sort of more unstructured data, potentially like images and video.
+229
+So we're looking at extending IceHouse, our managed platform for data ingestion and transformation.
+230
+And we're looking at extending it to be able to ingest various types of data and generating embeddings for it, potentially applying AI transformations.
+231
+Again, there are lots of possibilities that we see there.
+232
+And we do want to continue extending the use of AI features throughout the product.
+233
+For things that I've mentioned, I think that would allow us to essentially make the product more efficient and provide recommendations to our users for improving their queries and the way that they can use the data.
+234
+And then finally, we're working on extending the agent that we built to be able to generate graphical visualizations, you know, data explorations, and sort of make it the way.
+235
+I personally think this is sort of the way in which BI tools are headed, right?
+236
+So, like allowing users to provide ad hoc explorations just using natural language and visualizing the results of their questions.
+237
+Are there any other aspects of the work that you're doing, the AI-focused capabilities that you're adding into Starburst, or just the overall space of building for and with AI as data practitioners that we didn't discuss yet that you would like to cover before we close out the show?
+238
+I think we discussed a fair amount of topics.
+239
+We did cover a fair amount of topics here.
+240
+I think it's definitely a very exciting area that is going to be a game changer for the way we interact with data and we gain insights from it.
+241
+All right.
+242
+Well, for anybody who wants to get in touch with you and follow along with the work that you and the rest of the Starburst team are doing, I'll have you add your preferred contact information to the show notes.
+243
+And as the final question, I'd like to get your perspective on what you see as being the biggest gap in the tooling or technology that's available for data management today.
+244
+Oh, tough question.
+245
+I think if I was to choose something, maybe it's a lack of kind of intelligent data observability and context understanding of your data.
+246
+So I think current tools still struggle at, well, while they're good at, say, syntax validation, basic data profiling, they still struggle at understanding, you know, semantic understanding.
+247
+of relationships between data.
+248
+And incidentally, I think this is an area where AI is going to be able to help and provide insights that were not achievable before.
+249
+All right.
+250
+Well, thank you very much for taking the time today to join me and share the work that you and the rest of the Starburst folks are doing on bringing AI closer into the process of building with and for AI and ways that we can use them to accelerate our own work as data practitioners and working with these large and complex data suites that we're responsible for.
+251
+So I appreciate all the time and energy that you're putting into that and I hope you enjoy the rest of your day.
+252
+Thank you.
+253
+I really appreciate the opportunity to talk to you and it was a great conversation.
+254
+Thanks.
+255
+Thank you for listening and don't forget to check out our other shows.
+256
+Podcast.inet covers the Python language, its community, and the innovative ways it is being used.
+257
+And the AI Engineering Podcast is your guide to the fast-moving world of building AI systems.
+258
+Visit the site to subscribe to the show, sign up for the mailing list, and read the show notes.
+259
+And if you've learned something or tried out a project from the show, then tell us about it.
+260
+Email hosts at dataengineeringpodcast.com with your story.
+261
+Just to help other people find the show, please leave a review on Apple Podcasts and tell your friends and co-workers.

@@ -1,0 +1,939 @@
+--- METADATA START ---
+Show: Eye On A.I.
+Episode: #255 Eric Topol: Why AI is the…
+Host: Craig Cannon
+GUESTS: Dr. Eric Topol 
+Guests: Dr. Eric Topol
+Source URL: https://podcasts.apple.com/us/podcast/255-eric-topol-why-ai-is-the-most-powerful-tool-in/id1438378439?i=1000708923375
+--- METADATA END ---
+
+1
+Now, things are different.
+2
+First of all, you have all these different layers that are orthogonal that back up each one, you know, from another, looking to the same try-to-forecast.
+3
+I call it precision medical forecast.
+4
+Like the weather forecasting, AI is completely revamping that, making it at accuracy levels that are hard to fathom how great it will be.
+5
+The same thing is true here.
+6
+So, basically, the difference is you've got all these additional layers of data we didn't have.
+7
+And what's really noteworthy is you can give a person's projection in time when this is going to be an issue if they don't do anything about it.
+8
+About the science of aging, it's not about the drugs, it's about being able to, you know, clock a person, a person, and their organ systems, including their immune system.
+9
+We never had that before.
+10
+That's what's different right now.
+11
+AI is everywhere right now.
+12
+But with all the buzz, how do you cut through the noise and focus on what really matters?
+13
+If you're looking to dive deep into the big questions shaping AI's role in business today, you need to tune in to Where AI Works: Conversations at the Intersection of AI and Industry.
+14
+Brought to you by the Wharton School in collaboration with Accenture.
+15
+Each episode cuts through the hype, blending cutting-edge research from Wharton professors with real-world case studies.
+16
+You will discover how leading companies are leveraging AI to upskill their teams, boost productivity, and streamline operations.
+17
+And you will hear directly from executives and industry pioneers who are implementing AI in their businesses today.
+18
+No fluff, just practical insights.
+19
+Listen to Where AI Works Now on your favorite podcast app and get the strategies that matter most for today's business leaders.
+20
+Introduce yourself to listeners.
+21
+Obviously, you're a doctor, but how you got so deeply involved in the tech space and what your book is about, and then we'll talk about that.
+22
+Well, I'm Dr.
+23
+Eric Topo.
+24
+I am a professor and EDP at Scripps Research in La Jolla, California.
+25
+I've been involved from the earliest days of digital medicine back in the 90s with biosensors, with smartphones connected to the internet, even before there was a real digital infrastructure.
+26
+So, back many years ago, I wrote a book called The Creative Destruction of Medicine, which was about going digital in medicine.
+27
+And then, most recently, about to be published is a book called Super Agers.
+28
+It's actually about using AI to promote health span.
+29
+It has not been previously laid out like that.
+30
+It's a blueprint for how we can go forward.
+31
+And we couldn't do it without the current types of models with AI, and that's what makes it especially exciting.
+32
+Yeah, I just saw Bill Gates at an interview talking about how someday soon, within the next decade, we're all going to be accessing medical information through agents, AI agents.
+33
+So, super agers, the yeah, give me the thesis of the book.
+34
+Is it about how AI is going to spread knowledge, or is it more about aging strategies or how to combat aging?
+35
+Yeah, so there are the three major age-related diseases: heart, neurodegenerative Alzheimer's, and cancer.
+36
+They all take 20 years to incubate.
+37
+They all have common threads.
+38
+And now we can tell in any given individual who is at high risk by a full stack of data, depth that we've never had before.
+39
+But that's not including, not just including electronic health records, and labs and images, but it's also including the genome, proteins, metabolites, the gut microbiome, environmental exposures, social determinants of health.
+40
+Anyway, for all these different layers of data, the AI will tell us if you are at high risk, when, pinpointing when this will show up and nothing is done, and then that can be used to direct surveillance and prevention strategies.
+41
+So you never have one of those three age-related diseases, which are the biggest burden of our chronic disease and killers, of course.
+42
+So this is an exciting time.
+43
+It's unique.
+44
+It's momentous in many respects because we didn't have the AI that could input, ingest all this data, and we didn't have the data to ingest.
+45
+So what we have now is just extraordinary time to be able to help each person know, especially at a younger age, what's in store for them and to do these things that would help prevent, at the very least, markedly delay a condition.
+46
+Yeah, and that data, I mean, there are two issues.
+47
+One issue that's kept a lot of healthcare data locked up and inaccessible to AI models, but also personal health data that is not necessarily digitized or very complete, longitudinal.
+48
+I mean, I've moved around the country.
+49
+I don't know where all my data, not the country, the world, where all my data is, if it exists.
+50
+How do you tackle those two problems?
+51
+I mean, first of all, on just more broadly, in order to train models, you need access to large populations, data of large populations.
+52
+And I've talked to people, spoken to people over the years about that.
+53
+It seems that that's been addressed to a certain extent.
+54
+But where do you see that today and how it's going to improve?
+55
+Okay, well, firstly, the data story that you bring up is that I've written about extensively, even had a book about it, the patient will see now.
+56
+People should have all their data.
+57
+It's their data.
+58
+They should own it.
+59
+And it should be kept in a secure platform.
+60
+And so other countries do that, just not here in the U.S.
+61
+But that's the ideal scenario because you're not going to put your genome sequencing data or your biosensor data or other layers of data into your electronic health record because we don't protect people fully for things like disability insurance and life insurance and various things that are not related to health insurance and the so-called gena, the discrimination of people about their genetic information.
+62
+So we have to come up with a better plan about where all that data sits and that each person is entitled, is their data, their body, that's critical.
+63
+Now, it turns out the AM models that we have now are very well suited for supervised fine-tuning for this task.
+64
+I mean, the fact is they're multimodal, they're now foundation, we can use, of course, domain-specific agents.
+65
+But no problem here with respect to the models.
+66
+If you were talking pre-transformer architecture, yes.
+67
+But in the current environment, we even are getting these reasoning capabilities.
+68
+And it's not like a lot of these things have to be outputs in seconds.
+69
+We can wait minutes, hours, days, even for the best output.
+70
+So the models are not to hold up.
+71
+The data ownership is actually an issue that has to be grappled with.
+72
+In the meantime, though, many people have been able to collect all their data, curate everything of theirs, particularly engineers and certain people, patients of mine that have everything.
+73
+And so they're very well suited to enact this now.
+74
+And is.
+75
+Okay, so that's the person.
+76
+What about this more universal data to train the models?
+77
+Yeah, it's surprising that it's not as big a challenge as you would expect because a lot of the things in medicine and life science, we would never have predicted that the models that already were appearing, like in GBT-4 and LAMA and others, really were remarkably well suited for this, just by having ingested everything known to mankind about medicine and the whole corpus of knowledge related to this.
+78
+So in the work that's been done so far to look at being able to predict the arc of a person's, let's say, risk for Alzheimer's and when they would get out.
+79
+We can do that now.
+80
+We don't need new models, in fact.
+81
+So the difference now is, Craig, is that up until now, let's say you had a so-called polygenic risk score where you could go to 23ME or a whole bunch of different companies.
+82
+They tell you, you know, Craig, you have a risk of, it's high for, let's say, Alzheimer's disease.
+83
+And the only problem with that is, well, there are two problems.
+84
+One is it might not be that accurate.
+85
+But the bigger problem is, what if the risk is when you're 98 rather than 68?
+86
+They're different.
+87
+And there was no way to be able to ascribe a time range.
+88
+Now things are different.
+89
+First of all, you have all these different layers that are orthogonal that back up.
+90
+I call it precision medical forecasting.
+91
+Like the weather forecasting, AI is completely revamping that, making it at accuracy levels that are hard to fathom, how great it will be.
+92
+The same thing is true here.
+93
+So basically, the difference is you've got all these additional layers of data we didn't have.
+94
+And what's really noteworthy is you can give a person's projection in time when this is going to be an issue.
+95
+They don't do anything about it.
+96
+Now, many of the interventions or preventive tactics involve lifestyle changes.
+97
+And we know a lot of those, but most people don't do any of those or change behaviors.
+98
+But we've also learned that when you have specific knowledge about yourself, the chances of you taking on some of these changes are much higher.
+99
+So it would now much more specifically bespoke to your situation.
+100
+But by the way, it isn't just lifestyle changes that can help prevent these conditions.
+101
+I mean, obviously, there's surveillance, whether it's cancer surveillance with multi-cancer early detection blood tests, or whether it's surveillance for neurodegeneration with these new P-Tower 217 biomarkers, which was a really big breakthrough.
+102
+Each of these disease, age-related diseases, has ways we can stay ahead of it.
+103
+Yeah.
+104
+Just reminds me, it's an aside.
+105
+So this is really about prediction.
+106
+Yes.
+107
+I've been talking over the years.
+108
+No, I know him.
+109
+He sends me stuff all the time.
+110
+Yeah.
+111
+Well, and his, you know, he's all on, you know, anti-aging, and that's kind of his motivation.
+112
+And he's, you know, he's got a very sophisticated process for drug discovery and molecule synthesis.
+113
+Yeah.
+114
+And he's working on inflammatory diseases because he sees that as one of the major manifestations of aging that end up leading to death.
+115
+Yeah, fibrosis.
+116
+Yeah.
+117
+Have you looked at, in the book, do you look at using this technology to develop drugs to target specific diseases that are endemic to aging?
+118
+Yeah, so this is, I do review all the different strategies that are now being pursued.
+119
+And, you know, everything from partial epigenetic reprogramming to, you name, or, you know, different repair, like what in silicon medicine is on to with pulmonary fibrosis.
+120
+You know, I review all that, but basically the conclusion is there, these are years away, if ever.
+121
+You know, things like synolytics to take out our senescent cells in our body, but it can't tell the good senescent cells from the bad senescent cells.
+122
+So they're risky, they're iffy, they're often time.
+123
+But today, what we can achieve is using AI tools and rich data, deep data for each person, to forecast like we've never been able to do before.
+124
+And so one of the biggest breakthroughs was these so-called organ clocks.
+125
+So where Alex and I and many others in the anti-aging field converge is there have been dramatic advances in the science of aging.
+126
+And what is an outgrowth of that are these things, these molecular clocks, like epigenetic clocks, like the Horovath clock, where you look at methyl groups on the DNA.
+127
+There's also organ clocks of from a tube of blood, you can get 11,000 plasma proteins that will tell you which organ.
+128
+So say, Craig, all your organs are great, but it turns out your heart is seven years accelerated aging, which tells us right away, you know, that's what we've got to zoom in and for you.
+129
+So we're seeing tools that we never have, you know, breakthrough tests about the science of aging.
+130
+It's not about the drugs.
+131
+It's about being able to clock a person, a person, and their organ systems, including their immune system.
+132
+We never had that before.
+133
+That's what's different right now.
+134
+And with these different proteins and assays, we can say, hmm, we measured it this year.
+135
+We measured it this year.
+136
+Oh, that means for you to be worried about this, if you don't really go full core practice.
+137
+So, with that point, that we have 20 years to undo the natural history of risk, this is a whole different strategy.
+138
+The book is about a different strategy than the one that these companies are pursuing, like Altos Labs and Unity, and in Silico.
+139
+You know, there's 50 of these anti-aging companies, right?
+140
+I'm saying, good, good luck to them.
+141
+I hope they're successful.
+142
+But I have a different plan that's not risky, okay?
+143
+Because preventing diseases is a dream in medicine that's been a fantasy that's been around for multiple millennium.
+144
+Now we have a chance to do something about it.
+145
+Yeah.
+146
+How much of this is productized at this point?
+147
+Everything's like, yeah, you're right, everything's piecemeal.
+148
+So you got to go here to get your organ clock.
+149
+You got to go here to get your epigenetic clock.
+150
+You got to go here to get your metabolome, you know, here to go to get your gut microbiome.
+151
+So it isn't, the package isn't, but you could do it.
+152
+You can do it.
+153
+It's just that the AI tool is separated from each of the layers of data.
+154
+It's just a matter of time when this comes together.
+155
+Yeah.
+156
+Your point is a good one, Craig.
+157
+Yeah, I just wrote a piece for Forbes about MCP.
+158
+I can remember what it stands for, but this Anthropic developed standard protocol for connecting AI systems to disparate data sources or disparate tools and that sort of thing.
+159
+This one is being cracked every day with multi-omic.
+160
+So in the life science field, which is what this is really converging with, they already are looking at every layer of DNA, RNA, single sequence, a single cell sequence, nucleus, and all the other ones I've mentioned.
+161
+They've already figured out how to do all that.
+162
+And that's exciting because that's just part of this.
+163
+All you've got to do is add in a couple of traditional medical pieces like the electronic records, which contain labs and images, and you're there.
+164
+Yeah.
+165
+In the book, do you go through how somebody could collect all of this data?
+166
+Because for the layperson, I would, I mean, just the list that you mentioned, I don't know anything about, did you say melanome?
+167
+Oh, the metabolome.
+168
+Metabolome, yeah.
+169
+I mean, I don't know what that is, where it is, how I could find it.
+170
+Yeah, well, there's a company, Metabolon, that does that and other companies as well.
+171
+I don't go through that step by step.
+172
+I'm just basically trying to say, look, folks, we're going to a new era where you're going to know your risk.
+173
+And I lay out, you know, what are the layers of data, how we're going to do this.
+174
+In the next year or two, we'll see the companies that have the whole package.
+175
+Right now, there's these companies pitching data for longevity.
+176
+I mean, this is not my science.
+177
+But they have the right idea, okay?
+178
+Because some of them are assembling these different layers of data already.
+179
+They're not using AI.
+180
+Sometimes they say on their website they use AI, but no, they're not.
+181
+They're not real AI.
+182
+So we're already seeing the budding.
+183
+You know, there are several companies that this is in their sites right now.
+184
+And it's not going to take long for them to adapt to the opportunity, which, you know, this is a very clear path to achieving something we've never been able to do before.
+185
+Our ability to give a person's risk assessment of a disease has been rudimentary at best, but actually incredibly weak and inaccurate.
+186
+And it's our most important thing is that we should be knowing well in advance what we have to prevent and how we do it.
+187
+Yeah, and one thing you said, I was thinking as you were talking, you know, I've looked a lot at EdTech and I've spoken to a couple of companies that have an assembly of algorithms.
+188
+And one of the things that struck me as most promising is that you can have a knowledge tracing algorithm that tracks the knowledge of a student as the student studies, provided that they're interacting digitally, and then you can have a prediction algorithm that predicts the student's score in an exam or in a course.
+189
+And then you can have a recommendation engine that recommends stuff to fill in the knowledge gaps.
+190
+And when you put it all together, I mean, theoretically, the student, if he follows the recommendations, can see his predicted score going up.
+191
+And that's a huge motivator.
+192
+It could be the same thing with more compelling because it's your lifespan that you're increasing, not yeah, exactly.
+193
+And just to add to it, so you know the likes of Jeff Hinton, Demis Pasabas, Gustavo Silliman, all three of them reviewed the book, and they all thought this is extraordinary.
+194
+They supplied endorsements, not, you know, because they see that, you know, both, actually, both Demis and Jeff have said that the most important ever use of AI will be to improve our health.
+195
+And this is, I think, and thus I don't know, Craig, but I don't think anybody has laid out how we're going to do this yet.
+196
+This is kind of, that's why I'm excited about it.
+197
+And they were excited about it.
+198
+So, you know, we have now a way, it's very similar to what you just described in education.
+199
+Of course, it's a totally different application.
+200
+It's a little more complex, but it's ready to go.
+201
+It's not going to take long to get there.
+202
+Building multi-agent software is hard.
+203
+How do you achieve accuracy and consistency in non-deterministic agentic apps?
+204
+That's where agency comes in: AGNTCY.
+205
+The agency is an open source collective building the Internet of Agents.
+206
+And what's the Internet of Agents?
+207
+It's a collaboration layer where AI agents can communicate, discover each other, and work across frameworks.
+208
+For developers, this means standardized agent discovery tools, seamless protocols for interagent communication, and modular components to compose and scale multi-agent workflows.
+209
+Build with other engineers who care about high-quality multi-agent software.
+210
+Build with other engineers who care about high-quality multi-agent software.
+211
+Visit agency.org and add your support.
+212
+That's agntcy.org.
+213
+Yeah.
+214
+Are you free to mention companies that you think are on the right track in coming out with an application?
+215
+Well, I reviewed all of them that are out there.
+216
+And, you know, I'll just pull up the chart I made from the ground truths that I did.
+217
+One sec here, if you can bear with me.
+218
+Sure.
+219
+Yeah, I just put it out a week ago.
+220
+I called it the business of promoting longevity.
+221
+Basically, the 12 companies, there was one that started this years ago, a decade ago, called Human Longevity.
+222
+They get total body MRI and genome sequence.
+223
+This was before there was any AI.
+224
+I got all these labs and whatnot.
+225
+That company is just basically almost non-existent now, charging $25,000 to come and have all these things done.
+226
+That's a no-brainer, not going to work.
+227
+Function Health, they do 100 lab tests.
+228
+That's it.
+229
+So that's not exactly what we're talking about.
+230
+And of the ones, LifeForce is, I think, on the right track.
+231
+Let's see, going down the list, Fountain Life is trying to get a whole lot of tests.
+232
+Actually, when you look at them, they have the right idea that you need more layers of data, but none of them are getting the right data.
+233
+I wrote about that in the post.
+234
+They have this idea that, oh, if I know much more data about a person, I can guide them.
+235
+They're just not getting the right data.
+236
+And they don't, none of these companies have a significant AI effort yet.
+237
+But some of them have raised immense capital.
+238
+Like, for example, Function has a valuation of $2.5 billion already.
+239
+It has 50,000 members and a wait list.
+240
+Necco Health has 100,000 people on a wait list.
+241
+So people want this.
+242
+But they're a little clueless about they're not getting what they should get.
+243
+Yeah.
+244
+Are you advising?
+245
+I mean, you obviously are deep.
+246
+Well, why you have a deep knowledge of AI and you have a deep knowledge of medicine?
+247
+Have you thought about doing exactly what we're talking about?
+248
+Yeah, I mean, okay, so the function health, the one that has this massive valuation, one of the principals is a doctor named Mark Hyman.
+249
+He flew here, right?
+250
+He was sitting in my office and he offered me to be part of the company and get all sorts of financial incentives.
+251
+I told him, Mark, I just can't do that.
+252
+Because if I do that, then people will read this book or see me as, you know, I'm doing this for financial gain, just like they sell supplement, which I don't agree with.
+253
+That's another reason I wouldn't do it, right?
+254
+So basically, I can't, for me, it's much more important to put out the ideas and not have any profit motive whatsoever.
+255
+Yeah.
+256
+Yeah, well, I didn't mean it so much as profit motive.
+257
+I mean, obviously, you've had a financially lucrative career, but just as you see the problem, you see the solution, you have the knowledge, and certainly the contacts to pull together a team that could solve the problem.
+258
+Well, I just wanted to get it done.
+259
+And like I have done in the other previous books, I gave a lot of people the ideas.
+260
+So many people have written me or come visit me and tell me, you know, I built my company because of what you wrote.
+261
+And that's kind of what I'm hoping: is other people can execute.
+262
+Now, the reason I mentioned these companies, they already have a head start.
+263
+They have revenue, they have, you know, some of them have pretty strong participation, memberships, whatever.
+264
+So I'm perfectly happy to see them pivot, do this right, get there where we eventually all will be.
+265
+I don't want this to be a thing just for the affluent either.
+266
+In fact, the people who need this the most are the ones who can't access or afford it.
+267
+Yeah.
+268
+How much of this, I mean, you understand the relevant data, how to get the relevant data.
+269
+How much of that have you done yourself?
+270
+Most of it.
+271
+So in the book, I got an immunome, the beginning of an immunome, from a company, Infiniti Bio, Johns Hopkins spin-off, which is another essential part of the layers of data.
+272
+I've had most of the other layers of data, you know.
+273
+So I have done this, and the only risk of this big three that I'm facing is the cardiovascular risk.
+274
+And so now I know what I got to do.
+275
+I'm going to get my LDL down to the lowest level, and 10 other things that I got to do.
+276
+But there's things that, you know, turning to much better sleep, health, getting much better deep sleep, and many other things that we can do.
+277
+Once we know, you know, what we're up to.
+278
+Now, if you find that you don't have a risk for one of these big three diseases, well, you're lucky, right?
+279
+It doesn't mean you should go out and go into self-destruct mode, but you're lucky.
+280
+The point is, most people, one of them, top 5%, top 10%, that's something that is still going to be debatable for years to come.
+281
+What is risk, right?
+282
+Well, and you were talking about the timing, predicting the timing of risk.
+283
+How accurate do you think that can be?
+284
+I mean, yeah, I think it can be, it's hard to get it on one shot.
+285
+But if you have a person that you see is at high risk, by the time you do a second assessment, then you have it.
+286
+So if you have just two points on the curve, you'll know what's about the brain amyloid accumulation, what about microscopic cancer showing up, what about atheroma forming in arteries.
+287
+So, yeah, it doesn't take, it's hard to do it on a single point basis, but two data points separated in time by six months or a year, and you nail the key is that first baseline to determine the risk and then use the second point to determine the timing.
+288
+Yeah.
+289
+And for the timing, for example, let's pick one, cancer.
+290
+Yeah, yeah.
+291
+You know, you look at your family history, you look at presumably different biomarkers, maybe your personal genome.
+292
+What would the prediction be?
+293
+That in three years, in 15, 20 years, you have a 95%.
+294
+I mean, what does the prediction look like?
+295
+Okay, well, the 95%, that's what we were talking about earlier, top 5%, that would be 95%, or very high risk, that is.
+296
+Somewhere I'm thinking, you know, most people, if they're not in the top 5 or 10%, they're not going to really, that's really where you draw the threshold.
+297
+That's where some medical health systems, like, for example, Mass General Brigham, has drawn the threshold for genetic risk.
+298
+So let's just say we're talking about top 5 or 10%.
+299
+We're not likely to get out a readout that this is going to happen in 18 years, but certainly when it's more approximate, like three to five years, that would be the way it shows.
+300
+Now, how do we get this?
+301
+Well, it turns out, and I make a really important point early in the book, we have overestimated the family history genetic story.
+302
+Now, for cancer, it's more of an issue than it is for the other two, because if you have any of these cancer predisposition genes, I'm not just talking about BRCA genes, but other genes, that puts you in a different strata of risk.
+303
+But the point being here is that there are many other factors like the level of your body inflammation, those organ clocks, again, your whole body aging clock.
+304
+If you're seeing things that are out of kilter, and then you get a multi-cancer early detection test, the chance of that being abnormal, see, today, what's amazing, these tests are advocated for people age 50, period.
+305
+Now, talk about a senseless way to use a test.
+306
+Okay, but when you use that test, when you have these other things that are suggesting increased risk, then the yield is so much higher.
+307
+I mean, this is Bayes' theorem.
+308
+So that's how we get the risk of cancer nailed down.
+309
+And then, of course, if there's an organ clock that's already showing up, you can start to, and you're going to get images, of course, like a total body MRI if you really, but the multi-center cancer detection test already with AI can tell you which organ is lighting up most of the time.
+310
+Very accurate, actually.
+311
+So the cancer story, I think, is not that hard to see through.
+312
+As long as you don't say it's just the genes, that's our biggest problem.
+313
+Is we think we have this kind of over emphasis about our family history and this kind of dooms, impending doom thing that we live our whole life.
+314
+And my father had a heart attack when he was 50, and you think about that all the time.
+315
+We got to get that out of our system because that just doesn't really play out.
+316
+We did a so-called welderly study, we called it here.
+317
+1,400 people lived through past age 85, never sick, none of these diseases.
+318
+We sequenced the whole genome, all of them.
+319
+And what did we find?
+320
+Very little, almost nothing.
+321
+So the secret in the genes thing is not that much to it.
+322
+There's a little, but not much.
+323
+Yeah.
+324
+Let me think, where do we go with this?
+325
+The conclusion of the book then is that there's this promising technology that's here and there's ways to get the data to make the technology useful.
+326
+What are you, this is, I would presume, not only for AI technicians, but for general readers.
+327
+What is the recommendation?
+328
+I mean, what is the book telling us to do?
+329
+Well, there's a whole chapter on these lifestyle things that, you know, it'd be great if we adopted all those now, right?
+330
+Because without even knowing your risk for a particular condition, it'd be good.
+331
+But I review all the data, you know, everything from protein and ultra-processed foods and environmental hazards, microplastic.
+332
+I mean, all this stuff.
+333
+Each of us have at least some potential to affect, right?
+334
+And then I get into what I call, you know, brimming with optimism that we have a much more exciting way to go forward in medicine, to be able to be informative early in a person's life.
+335
+And I mean, it's never too late, but for people of our age, but even better as somebody in their 40s or 50s or younger even.
+336
+But the point here is that I think is transformative in medicine.
+337
+We couldn't do it without multimodal AI models that exist today and keep getting better.
+338
+And we couldn't do it without the layers of data that were discovered largely through the science of aging.
+339
+But a lot of people are using that, you know, of course, for companies to come up with drugs.
+340
+And I'm saying, no, no, no.
+341
+We got it for a different purpose now.
+342
+And let's stamp out age-related diseases.
+343
+Let's do it.
+344
+So the book leaves the lay reader, I hope, with an optimistic view in otherwise pretty dark times for life science right now when our funding is getting gutted every day.
+345
+People are getting laid off from NIH, FDA, CDC.
+346
+So on the one hand, the world isn't doing too well right now.
+347
+But here's something that's hopefully exciting to read about, know where we're headed.
+348
+I mean, each of the books I've written, this is my fourth book, probably my last book, is about the future of medicine.
+349
+And this one is the most exciting yet.
+350
+This one, I think, is something we can really make a huge difference in the future.
+351
+Yeah.
+352
+You know, there's a lot of talk about personalized medicine and with the ability now to edit the genome and create novel proteins.
+353
+What's your view just generally?
+354
+I know this is not what your book's about, but about the promise of precision personalized medicine becoming widely available.
+355
+Yeah, I'm really glad you asked that, Craig, because this is the nuts of it right here.
+356
+We haven't really done it.
+357
+You know, here and there we did a little with, oh, well, you have this mutation and cancer, we're going to treat you with this drug.
+358
+But precision medicine largely has been a disappointment.
+359
+It's been talked about a lot, but we haven't achieved it.
+360
+This is our segue.
+361
+This is a way to get there because we didn't have the depth of data.
+362
+So when we talk about precision individualized medicine, we couldn't really define the person well.
+363
+We're still missing the immunome data, which is one of the most, if not the most important layer, but there are companies that are pursuing that intensely right now.
+364
+And I tried one of them, and there's a couple others, a group at Stanford that plans a spin out of a company that does B and T cell sequencing that looks really exciting.
+365
+So we just didn't have the goods to do it.
+366
+And it was all talk and no action, largely.
+367
+Now we have the goods, and I hope we have the action.
+368
+I don't want to keep you too much longer, but you also mentioned epigenetic research or strategies.
+369
+I had Sebastiano Vittorio Sebastiano on the podcast years ago, who works on using Yamanaka factors to hold back the aging of cells.
+370
+And you mentioned the risk is that a lot of this leads to cancer.
+371
+But what do you feel about that?
+372
+And you mentioned organ-specific, or I don't remember the word you use, but treating specific groups of cells epigenetically.
+373
+Sedescent cells.
+374
+Yeah.
+375
+Yeah.
+376
+So the first one you mentioned is huge bets have been put on this.
+377
+Many companies are pursuing the Yama Naka factors.
+378
+And a brief exposure to them and you can turn an old mouse into a young mouse.
+379
+I mean, it's like, wow.
+380
+But the problem is, is that you can't just give these a shot to somebody with muscle.
+381
+Excuse me.
+382
+Then you have a real risk of tumor.
+383
+So what's fascinating is these companies have figured out you just can't give it like you can give it to a mouse.
+384
+So what they're trying to do is figure out how can you do a human trial.
+385
+So one of the companies is thinking about going in the knee for people who have horrible knee arthritis that otherwise need a knee replacement.
+386
+Another company is putting it in the eye.
+387
+You know, so they're not achieving the fountain of youth here.
+388
+They're going to try to do it in a limited compartment test zone, if you will, right?
+389
+It's going to be dicey because we've already learned that the exposure to those powerful factors.
+390
+It's like the reward's really high, but putting that in human, it's going to take a long time before we see a whole human get exposure to those intravenously or whatever systemic pathway.
+391
+The other companies, like I mentioned, that these senescent cells that are thought to be bad actors because they secrete very noxious proteins and they rev up inflammation in the body.
+392
+The problem is some of them are really good.
+393
+And we don't have a way to say, just go after the bad actors.
+394
+We leave the good ones that are promoting healing and doing lots of good things.
+395
+So we don't have smart ways to eradicate the bad cells.
+396
+And if you go through each of these, and there's at least 10 different ideas, which I go through in the book, they all carry significant risk.
+397
+They're all some years away.
+398
+And I hope that they're successful.
+399
+But they're not here and now.
+400
+What we've been talking about in this conversation is a kind of here and now thing, right?
+401
+It can be done today or imminently.
+402
+Those are years off and maybe never.
+403
+I hope they're successful.
+404
+Each one of them has some good ideas, but we'll see.
+405
+Yeah.
+406
+Another thing about sort of the aging debate that you hear people talk about, I'm just curious what your view is.
+407
+Of course, I want to live much longer than I'm slated to live.
+408
+But if everybody added five years to their lifespan, the demand for resources would quickly be overwhelming.
+409
+I mean, how do you balance a human desire with resources?
+410
+Yeah, well, first say the desire really isn't for lifespan, it's for health span, right?
+411
+I mean, if they're demented, they don't really want to live longer.
+412
+So you're right.
+413
+I mean, it's hard to meet a person when you talk about would you like to live healthier, you know, long life.
+414
+And, you know, rarely would you say no.
+415
+You hear someone say no.
+416
+So the demand will be high.
+417
+And, you know, what we're talking about here is largely software because these tests that get you those additional layers, they can be done inexpensively.
+418
+You know, every one of these is, you know, it's below $100, $50, you know.
+419
+So even if you take the whole package, it's not like putting somebody in a total body MRI, which now you're getting into the thousands.
+420
+So the interesting thing is it may get done in other countries before the U.S.
+421
+because we have terrible perverse incentives here.
+422
+We have these insurance companies that they don't think they're going to have you next year, so they only care about immediate gratification, right?
+423
+Whereas if you're in other countries, like I was asked to review the National Health Service in the UK, they're representative of most other rich countries, which is they take care of all their people for life.
+424
+So they're going to be the countries that make these, you know, basically implement.
+425
+And here it will be more likely to be, you know, if you're affluent and you, you know, the demand, I do think the demand will ultimately be high, you know, some years out from now when this is widely available.
+426
+But we're not in a good position in this country to make it equitable or accessible relative to other countries because they can see a small investment can lead to a huge downstream reductions of cost, no less healthier lives.
+427
+Yeah.
+428
+Yeah.
+429
+Okay.
+430
+Well, this is just fascinating, and I'm going to go buy the book right now on Amazon.
+431
+It's coming out May.
+432
+I could send you the PDF if you like instead of.
+433
+Yeah, I don't mind pre-ordering it.
+434
+I'm waiting to get the actual hard copy tomorrow or Thursday, finally.
+435
+Yeah.
+436
+And I think it was Stephen Morrow that got us together.
+437
+Is that right?
+438
+I'd have to go back.
+439
+Oh, okay.
+440
+I thought maybe he was the one that you said you got to talk to Craig.
+441
+I don't know.
+442
+Well, it may very well have been.
+443
+Anyway, it's been a joy, Craig.
+444
+I really enjoy.
+445
+You asked a lot of great questions that I think are really spot on.
+446
+Yeah, well, I'm probably, once I get the book, well, how about this?
+447
+I just, my wife writes, and I always think you should, people, if they're interested in a book, they should buy it, not get a free copy.
+448
+But if you could send me the PDF, I'll write something.
+449
+I'm a contributor at Forbes, not that that gets a lot of traction, but.
+450
+Oh, great.
+451
+Darren, can you send me your email address?
+452
+Yeah, I'll do it right after this.
+453
+Excellent.
+454
+All right.
+455
+We'll get it off to you.
+456
+And it's been a pleasure to talk with you.
+457
+AI is everywhere right now.
+458
+But with all the buzz, how do you cut through the noise and focus on what really matters?
+459
+If you're looking to dive deep into the big questions shaping AI's role in business today, you need to tune in to Where AI Works: Conversations at the Intersection of AI and Industry.
+460
+Brought to you by the Wharton School in collaboration with Accenture.
+461
+Each episode cuts through the hype, blending cutting-edge research from Wharton professors with real-world case studies.
+462
+You will discover how leading companies are leveraging AI to upskill their teams, boost productivity, and streamline operations.
+463
+And you will hear directly from executives and industry pioneers who are implementing AI in their businesses today.
+464
+No fluff, just practical insights.
+465
+Listen to Where AI Works Now on your favorite podcast app and get the strategies that matter most for today's business leaders.

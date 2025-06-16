@@ -1,0 +1,704 @@
+--- METADATA START ---
+Show: Practical AI
+Episode: AI-Automated Film Making
+Host: Daniel Weitnack 
+Guests: Sami Arpa
+Source URL: https://podcasts.apple.com/us/podcast/ai-automated-film-making/id1406537385?i=1000712613354
+--- METADATA END ---
+
+1
+Welcome to Practical AI, the podcast that makes artificial intelligence practical, productive, and accessible to all.
+2
+If you like this show, you will love the Changelog.
+3
+It's news on Mondays, deep technical interviews on Wednesdays, and on Fridays, an awesome talk show for your weekend enjoyment.
+4
+Find us by searching for The Change Log, wherever you get your podcasts.
+5
+Thanks to our partners at fly.io.
+6
+Launch your AI apps in five minutes or less.
+7
+Learn how at fly.io.
+8
+Welcome to another episode of the Practical AI podcast.
+9
+This is Daniel Weitnack.
+10
+I am CEO at Prediction Guard.
+11
+And today we're really excited to talk about AI in filmmaking and content production as we have with us Sami Arpa, who is CEO and co-founder at Largo AI.
+12
+Welcome, Sami.
+13
+Thank you.
+14
+Thank you for having me.
+15
+Yeah, yeah.
+16
+It's great to have you here.
+17
+I remember specifically, you know, of course, we're always looking for interesting folks to join us on the show and talk about, you know, how AI is being used in various verticals and industries.
+18
+And I remember seeing a variety article about this sort of Sylvester Stallone-backed team at Largo AI.
+19
+And, you know, it talked about the world's first fully AI-automated film company, which was very intriguing to me.
+20
+I'm sure we'll get into a lot of those details, but maybe before we hop into the specifics about Largo AI, I know that you all have been in the industry for some time and been doing this work.
+21
+Could you just give us maybe a high-level picture of how AI and kind of advanced technology has been evolving in recent times in the film industry?
+22
+Of course, for a long time, maybe many people know about CGI and certain technology that's actually fairly advanced that's been used in filmmaking for some time.
+23
+But maybe give us your kind of state of AI in filmmaking and how that's evolved in recent years.
+24
+Yeah, absolutely.
+25
+So the film industry has always been advanced with the technology.
+26
+But yeah, the progress, the adoption with AI has not been easy.
+27
+I can tell that with our journey during past six, seven years.
+28
+So, I mean, we can think the primary adopters of AI in industry as Netflix and Amazon, because they started to use AI for recommendation systems.
+29
+That was already 20 years ago.
+30
+And then they started to create their own content with original content.
+31
+And that also provides that created another step for AI because they could analyze the content and select order the type of content that they know already that would work.
+32
+That was also with AI because specifically, for example, for Netflix, they were having the system of micro genres, which they still have that.
+33
+Knowing the audience's behavior and also understanding content at earlier stage by using AI tools, you could order the right content right from the start.
+34
+So, this way they could get larger audience with narrower catalogs.
+35
+And so, then if you put this as two phases, then we can also name a third phase.
+36
+This is the phase that we see starting with ChatGPT, like every industry in the film industry as well, that we saw more of applications.
+37
+And also, that has changed the adoption of the industry.
+38
+We measure adoption of the industry for usage of AI tools during past six, seven years.
+39
+It was one, two percent when we started Larbo AI.
+40
+Now it is around 30%.
+41
+And that is a great progress, and it is a progress despite the things like strikes.
+42
+We had a two big strikes also in Hollywood and party that was also against AI.
+43
+Yeah, and you know, maybe just to dig in a little bit there, what some people might think of as kind of the first or the first thing that pops into their mind with AI and film is maybe what they've seen around the actual video generation side or changing the visual effects.
+44
+But it sounds like you're talking a little bit more kind of wide reaching and operationally across the film industry.
+45
+So, could you give us a little bit of a picture of maybe the question is how kind of an overall categorization of how AI might be used in different parts of the of the AI industry?
+46
+I know you're digging into certain parts of that, but maybe you could help us understand kind of more generally the different categories or ways that it that it could be used.
+47
+Yeah, I think for that it's important to understand the chain of development of a film.
+48
+A film is a very big project and it takes many years.
+49
+As audience, we just see the end results on the screen.
+50
+But any film has four main stages of development.
+51
+The first part is development of overall story, then pre-production, the stage that we attach also people to the story and also raising the budgets.
+52
+Then we have production and then post-production and distribution stages.
+53
+So at any stage, there are many people involved and there's a lot of work and many projects cannot finish all this process.
+54
+And actually, so for example, going to development to pre-production, already 90% of the films are eliminated.
+55
+Or even coming to development, there's a big amount of projects are eliminated, like there are scriptwriters, writing, scrumples that are never picked by the producers.
+56
+But at each of these steps, there are a lot of works, and eventually, obviously, the goal is to bring that to the screen, but only a few projects are coming to that stage.
+57
+And so here, so of course the sexy part is text to video, the visual parts, but for all other parts that there is applications of AI, and actually there is a big benefit of usage of AI.
+58
+That's something we have focused as well.
+59
+We have focused more on earlier stages for the usage of AI, understanding the content, character casting, and predicting financial results for helping to raise the budget for the project.
+60
+But of course, there is strong applications for post-production, production, with new text-to-image tools that we will see more promising applications of that as well.
+61
+That we have seen recently, Google VO3 has been released, which is amazing.
+62
+Actually, the results look amazing.
+63
+So, that will change still significantly post-production and production parts as well.
+64
+So, we will still observe that there is not enough strong applications at that stage, for especially live-action movies.
+65
+But the point here, to summarize, for every step, there is important efforts.
+66
+Some parts are not visible to the audience.
+67
+And for every step, there is type of AI tools that we can apply.
+68
+Yeah, and just for, of course, probably most of the audience that has not been directly involved in any of these stages of film production, maybe except watching it on Netflix or wherever the venue might be.
+69
+But could you give us a sense of the kind of investment and kind of how much effort is put in kind of proportionally in each of these stages leading up to the distribution investment in both kind of time and people and scale?
+70
+Yeah, biggest investment is in terms of money, it is for production and distribution stages.
+71
+At production, really just to produce the content on the sales, and then I include post-production budget in that as well.
+72
+And then distribution is the part for spending marketing budgets.
+73
+So these are investment-wise, these are the biggest parts.
+74
+But for time-wise, for most of films, they are not actually.
+75
+But for many projects, development and pre-production stage are taking much, much more time.
+76
+There are projects, even like having like six, seven years of development or pre-production.
+77
+The biggest challenge over here to convince many people to bring around a project.
+78
+And while doing that, you need to make a lot of iteration.
+79
+The producer, screenwriter, even director might be involved at that stage.
+80
+So you create a story, and that's if you engage people around that story, and you need to find people to put money in that project.
+81
+That might be studios, investors, etc.
+82
+So that's actually normally the biggest, most difficult step for most of projects.
+83
+And in general, most of projects are not good, actually.
+84
+That's also a reality, which we can see in our AI system as well: that we have producers, they put their projects to get financial results.
+85
+And in most of cases, it says that project will fail.
+86
+Because, yeah, I mean, finding good project is not an easy task.
+87
+And it requires a lot of work, a lot of study.
+88
+That's why AI tools at that stage can be very, very helpful, very critical.
+89
+And for a producer, filmmaker, the biggest hurdle for future is to fail at the current project because that's also a way to open the door for next projects or not.
+90
+That's why making sure that that project will be successful is very critical.
+91
+Yeah, and that's very interesting to me that you're sort of focused in this.
+92
+I guess what I'm hearing is there's sort of noisy early phases of these projects where you've got a lot of kind of maybe good projects mixed with a lot of noise.
+93
+There's difficulty in kind of parsing through that.
+94
+Also, for those that maybe have written the story or are promoting the production of a project, it's hard maybe to stand out.
+95
+How is, from your perspective, is this sort of technology, and we'll get into exactly what you all are doing, but generally in digging, bringing technology to these early stages, does that change the dynamics of smaller studios or script writers or maybe lesser known folks that could maybe use technology to help them play on maybe more of a level playing field with kind of the big studios or well-known folks?
+96
+How is that dynamic sort of shifting or is it?
+97
+Absolutely, yeah.
+98
+I mean, the AI and new technology create much more opportunity for smaller production companies, newcomers.
+99
+I mean, if we think from studio perspective, they have, especially at early stage, they have a lot of resources to understand if a content can be successful or not.
+100
+They have experience, but they can get many research done, including focus groups at very early stages.
+101
+So, those kind of things are not available for early stage for newcomers or small capacity production companies.
+102
+At development stage, you don't have your movie budget you have not raised yet.
+103
+So, if you are lucky, you can find some people or some institutions are investing at the development stage.
+104
+If not, they use their own resources to understand if a content will be successful or not.
+105
+That's why using AI tools at that stage is a very cost and time-effective way to understand the potential success of content.
+106
+That's also for later stages.
+107
+It will be the same as well, by the way, because we will see the cost of production post-production will reduce significantly with the AI tools.
+108
+If $100 million budget can be produced for $1 million budget, that will change the whole ecosystem, right?
+109
+Because $1 to $10 million budget films can be produced by independent producers, but not $100 million others.
+110
+We will see also all those changes in next years.
+111
+Okay, friends, build the future of multi-agent software with Agency AGNTCY.
+112
+The agency is an open source collective building the internet of agents.
+113
+It is a collaboration layer where AI agents can discover, connect, and work across frameworks.
+114
+For developers, this means standardized agent discovery tools, seamless protocols for inter-agent communication, and modular components to compose and scale multi-agent workflows.
+115
+Join Crew AI, Langchain, Lambda Index, Browser Base, Cisco, and dozens more.
+116
+The agency is dropping code, specs, and services, no strings attached.
+117
+You can now build with other engineers who care about high-quality multi-agent software.
+118
+Visit agency.org and add your support.
+119
+That's agntcy.org.
+120
+Well, Sami, we've kind of talked or referenced some of Largo AI and the way that you're digging into these early stages.
+121
+Could you give us a little bit now, kind of digging in specifically to what you all are doing?
+122
+Could you give us a little bit of the backstory of Largo, kind of how it came about, what those initial ideas were?
+123
+Obviously, you mentioned it's existed for, I think you said six years.
+124
+So this is, you know, before the latest kind of boom of AI, at least as far as the general public has perceived it.
+125
+So, yeah, give us a little bit of the backstory.
+126
+I'd love to understand how all this came about.
+127
+Yeah, sure.
+128
+I will connect that with my personal backgrounds because that's how Largos started, the story of Largos started.
+129
+I did my PhD at EPFL, which is a university in Lausanne, Switzerland, in the field of computational aesthetics, understanding art and generating art by using computers.
+130
+And film has been also one of the subfields over there.
+131
+So that's the technical part, technical scientific part.
+132
+But parallel to that, I been also a director-producer on some small projects.
+133
+So I've been on the creative side as well, like just working hands-on.
+134
+While working on my own projects with a bit of head of engineer as well, I was always curious why we don't have a way of representing films similar to music.
+135
+Because music we can represent with musical shifts with the partitions, which gives a way of understanding of certain formats, the rhythms, and the type of structures for different genres.
+136
+That doesn't make music less creative.
+137
+In reverse, actually, it makes more creative because you can focus on a specific structure and go deeper on that.
+138
+And when you say that sort of partitions or structures, you would mean like a pop song or something like that has a verse chorus verse bridge or something, or even in the musically, there's bars and other things like that.
+139
+Exactly, all those things.
+140
+In film, there is a bit of structures, but these are like too much formulated.
+141
+So it's not like the same type of these low-level structures.
+142
+That was a bit of my curiosity, also.
+143
+That's something I shared with my PhD advisor at that time as well.
+144
+So we work a bit on that.
+145
+We were thinking how we can create a similar type of structures for film as well.
+146
+That can be useful both for people working on that creatively, but also for machine.
+147
+Because understanding and learning from films is also very difficult for machines because, yeah, like a film is like two hours of content, all the frames, millions of pixels, or like a screenplay is like hundreds of pages of content, and you need to associate this with all metadata.
+148
+So there is not even enough sample of data to learn confidently on those.
+149
+So if we can represent any film in a more structured way, in a smaller space, smaller vector space, that's even easier for the machine to learn from that.
+150
+So that was our starting point.
+151
+And it was with that starting point, we created this, we call that genre recipes, emotion recipes.
+152
+So this is like we put any film in nine-dimensional space of genres.
+153
+And then, for example, let's say drama.
+154
+Drama is like one of these patterns.
+155
+We find how drama is evolving over the story from start to the end.
+156
+Same thing for comedy, for romance, for trigger, horror.
+157
+So this way we get like on a timeline, we get a map of a film or of a TV series, or for any content.
+158
+That can be from screenplay or from direct video material of a content.
+159
+So, this is like a baseline representation of a film for us.
+160
+That was our starting point.
+161
+And with that, of course, then you engage many other points, metadata, like the actors, the budget, all the other content.
+162
+that becomes a representation for a film.
+163
+So, we start to use those as a base both to provide feedback to creatives so they can see the really structure of the content, but also to the machine.
+164
+Once the machine is learning from that type of data, it becomes much easier to learn.
+165
+For example, easier to learn financial predictions, box office predictions, streaming predictions.
+166
+Yeah, yeah, that makes sense.
+167
+I can sort of imagine this graph of drama or comedy going up or down on the arc of a movie.
+168
+So, that gives kind of an understanding level, I guess, of the movie.
+169
+How then does that connect to more concretely, how can that connect to concrete kind of value for those involved in promoting or writing a story or producing a movie?
+170
+Yeah, I mean, for producing movie, there is three important elements.
+171
+The first one is content itself.
+172
+The second part, the people are involved, primarily the cost.
+173
+And the third part, the financial part, the budget and expected return for that.
+174
+And our forecast insights are also in these three main categories.
+175
+So, the content analysis, it provides insights related to weak, strong points of the content and audience's emotional reaction to that content.
+176
+Character casting part is about understanding the characters and then making casting propositions.
+177
+So the AI is making propositions for the cast.
+178
+It has for this character, that actor will be best fit.
+179
+for example and then the the third part is the financials part so here for that part it makes the predictions directly how much money the film will make with given content and then all invested money and the other metadata like attached casts direct etc and that part we of course there's many sub part of that because that part is also relevant to the to understand the audience because how much money you make is relevant to understanding audience writing the right marketing all these things so it goes deeper to predict the demographics of the audience for specific countries and along with that we have also the simulated focus groups which is like one of our most exciting tools there you can really get quantitative and qualitative feedback from from the audience yeah that's that's great uh i i'm wondering you know because in the earlier stages like you talked about of you know determining what what type of content to make you know casting all of that i'm assuming the assets if if you i'm thinking more from the i guess from the technical side now the assets that you have to work off of i guess are the the script and maybe some some other things.
+180
+Could you talk a little bit about kind of the inputs to this?
+181
+Like what's required to really get good results out of a system like this um as a as a starting point?
+182
+Yeah, it depends on the stage, but if starting very early stages the system would need at least a treatment.
+183
+A treatment is a very short version, early version of story.
+184
+Typically it can be even like a two, three page.
+185
+And a bit later stages it will be a screenplay.
+186
+It's like a full storyline of a film.
+187
+Coming to screenplay stage, together with that, the system would ask also basic packaging information.
+188
+Because a screenplay, if you look at, if you think about financial forecasts, a screenplay can make any money, bad or good.
+189
+It can make any money because how much it makes is also very relevant the attached people to that project and also the budgets, how much budgets that has been put.
+190
+Like with the current standards, let's say if you try to make a perfect sci-fi screenplay with $1 million budgets, we can tell that the results will be very, very bad, right?
+191
+So it's not difficult to tell even for regular people, but yeah, I mean, like that AI will give the same warning as well.
+192
+So actually in that manner, that's like we always say content is the king.
+193
+It is very important, but once we look at once we put all the features of making a film and look at AI learning, we see the parameter that is impacting most the financial results is budgets.
+194
+And it doesn't mean having a high budget, it means the right budget, especially for a good return on investment.
+195
+Sometimes some films are having too much of budgets than what they need, then it becomes very difficult to make it profitable for people who make the project.
+196
+Yeah, and just practically for maybe some of the practitioners out there that are working, maybe not in the film industry, but they might be working on simulating other things in other verticals or different types of production processes or whatever that might be, maybe unrelated to film.
+197
+But just for their benefit, it sounds like the system that you've kind of built with Largo works on various types of projections.
+198
+There's various stages to it.
+199
+I'm assuming sometimes there's this misconception now, I think, exacerbated by Gen AI that you have kind of one model, you put one thing in and then you get everything out.
+200
+I'm assuming that your system, which has been developed over years, kind of involves multiple models that maybe do different things.
+201
+Like you mentioned the one around kind of detecting or mapping these genre distributions or semantics across a film.
+202
+I'm assuming there's different stages of these things with different models involved.
+203
+Maybe the financial forecasting model would be different than the model that's producing the genre results.
+204
+Could you give us just kind of at a high level an understanding of how this kind of all fits together as a system?
+205
+Yeah, absolutely.
+206
+You're right that we have a lot of models.
+207
+So, using the models that we use for genre prediction for financial forecasts, it wouldn't work.
+208
+So, because especially financial forecasts is typically very, very different models, more shallow models compared to content understanding models, which are much deeper models.
+209
+So, that's also like the important thing with the current AI wave: that LLMs are really great, that to answer for many things.
+210
+But even if you go to LLMC and ChatGPT, we see that they have many models.
+211
+Actually, each model is better at different types of solutions.
+212
+The same thing, of course, for us as well.
+213
+So, we have like for each type of task, we have different models.
+214
+And also, we have two main categories.
+215
+One category is for the models that are learning from past data and it uses this learning to predict to make the predictions for new content.
+216
+That's one way of learning.
+217
+The second learning is learning audience.
+218
+There, what we do is basically we are creating digital twins of real people.
+219
+So, we don't learn anything content-related, we learn people themselves, and then we show the content to these digital twins of real people.
+220
+And actually, the second one is having advantage of not missing outliers almost because like the one big danger for like yeah, just learning from past data is yeah, outliers in film industry that we can often have, okay, so for general content we can predict successfully, but you can always have something completely new that we don't know well the type audience behavior for that type of content.
+221
+The model would miss that.
+222
+But with the second approach, with this digital twin approach, we can even capture outliers because you are much closer to humans.
+223
+You are already creating their digital twins and that digital twins are having very short lifetime, like one year, so you are very close to the current behavior of people.
+224
+And it is very successful also to capture new approaches.
+225
+Well, I'm really intrigued by kind of the way that you've built up this system of tools that kind of helps in various ways throughout the film creation, film production process.
+226
+I'm wondering, in terms of, and this is probably something on a lot of people's mind in relation to AI models and content, especially, you know, art or movies or images, that sort of thing.
+227
+Obviously, you need some sort of reference data with which to train models and kind of help them produce results.
+228
+You know, maybe for financial projections or something, you know how much a movie has brought in or something, and that's public information.
+229
+I'm not sure actually how much of that is public information.
+230
+Yeah, yeah.
+231
+Yeah, so basically my question is, how do you go about kind of creating the data sets you need in an industry where, of course, there's a lot of, you know, there's proprietary or copyrighted content, that sort of thing.
+232
+What does that look like for you as a company?
+233
+Yeah, I mean there are open data that that we can learn like for example movie summaries that's like a pretty open or movie metadata like who has been engaged with which film.
+234
+So there is already a lot of open data or box office data like how much they have done which is for most of films is publicly announced.
+235
+But there are also type of data that is not publicly available and one of the most important of them is streaming data.
+236
+Streaming platforms do not provide data.
+237
+Netflix has started to publish some data recently in terms of like a viewership but it's it is still very limited and also yeah like not having that type of data is shaping the industry not just going outside of like AI perspective because we know many producers are complaining not to have that data because like the value of a film is very much related to the size of audience and that relationship is very clear in the box office because you are just putting the film in the box office and get the money as much as the tickets have been sold but that relationship at least from the producer side is not clear on the streaming platforms of course platforms themselves they know they can make a value on their sites but it becomes a bit one-sided that that has been a bit problem a bit of a problem.
+238
+We do streaming forecasts as well and and the way we approach to that is is analyzing social noise in the past.
+239
+And we created the models to correlate social noise with the household's viewership.
+240
+And from that, we even started to create a fair value calculations.
+241
+So basically, if streaming platforms were paying according to households' viewership share, how much they should have been paying, considering also their subscription revenues.
+242
+We also make this kind of fair value calculations.
+243
+Of course, it is not relevant with what they are paying because they are paying according to their own calculations.
+244
+That's the way we calculate.
+245
+We say if it was open, like box office, that will be the share of the film.
+246
+So, yeah, I mean, the data part is like that.
+247
+Obviously, there's like a different model that requires different types of data, content models, more content data, financial models, content, metadata, and financial results.
+248
+And then again, here our data dependency is a bit reducing with our simulated focus group, this digital twins approach, because there you don't need anyway the past films data.
+249
+Because we just get people, people's digital twins, so their reaction becomes our data.
+250
+And it already tells us how a film will perform.
+251
+And one of the things that has been going through my mind as you've talked about this platform that you've built, which is fascinating, is you know, what was occurring to my mind is: well, why don't we just make this thing a loop if we have this whole if we have this whole process which can give us these projections and put the right casting together and all of those things?
+252
+There's one thing to say, well, we can take in a script or a screenplay into the input of this process and then create all of those projections and help them plan.
+253
+What's preventing us, or maybe there's nothing preventing us, from just looping that feedback back and modifying the screenplay or script to kind of update the projections in a sort of more favorable way.
+254
+Has that been discussed or part of the conversation?
+255
+Yeah, I mean, it's not that easy for several reasons.
+256
+Of course, with the models, you can put in the loop and make continuous improvement even automatically.
+257
+But even that, I mean, it's like a reaching a point of perfection is not easy.
+258
+Because you know, even like the current stage, like our financial forecast models are having like 80% accuracy, which is like a for it might be looking low for if you think like a many machine learning models is coming like 95, 97, 99% accuracies.
+259
+It's difficult to go over 80% because there is many elements that you cannot control.
+260
+Because a film success becomes a success together with audience behavior, and audience behavior might change even very quickly in the short term.
+261
+Like a big natural disaster happens that changes all the ambience, or like some political situation changes overall behavior.
+262
+Like a heat wave arrives, for example, for a box office movie, they were not calculating that, and then it people go to the beach instead of movie theaters.
+263
+So there's a lot of factors that you cannot still fully determine because it is relevant to audience behavior with many factors.
+264
+That's one element.
+265
+The second thing is the dynamic of creatives.
+266
+Because films are done with many people, many people are contributing for certain decisions.
+267
+It's not like somebody can tell, hey, let me make this script better and people better, this, et cetera, and let's go to the next stage.
+268
+No, because you have many companies involved.
+269
+So still, you need a lot of agreements to be done among many people.
+270
+So I think that's also like some blocking point, even if we have a machine looping, making it better, that wouldn't be easily the case.
+271
+Maybe more in the future, but yeah.
+272
+But then if the machine is all the time looping without human touch, that might be also creates too much alike movies as well.
+273
+Of course, that kind of dangerous as well.
+274
+Yeah, yeah, maybe on that point specifically, the other question I had, which you actually already just mentioned in passing, was outliers.
+275
+I think, you know, there would be a lot of, maybe there are some people out there that might think, well, I've seen what sort of AI does to content, let's say on LinkedIn.
+276
+I go on LinkedIn and there's just like a feed of AI-generated posts that are sort of all similar, right?
+277
+They just sort of look the same, right?
+278
+And I think, you know, here we're talking more about forecasting, maybe simulation, focus groups, that sort of thing.
+279
+But, you know, there might be people that would say, well, that's really good.
+280
+You know, you can hone that in and obviously help these.
+281
+You know, there's a really beneficial part to that, as we talked about to helping bring up smaller studios, give them tools, augment them with technology.
+282
+That's really amazing.
+283
+But then there might be other people that say, well, if we start doing that sort of projection, everyone will be kind of shooting for the same thing or trying to hit the same metrics.
+284
+So what about kind of the artistic piece of it?
+285
+And I'm sure even hearing your background, that is likely a very important piece of why you love this sort of art and content, right?
+286
+So yeah, I would love to hear your perspective on that.
+287
+Yeah, I think that's a very important point.
+288
+And firstly, in our product, we don't do the reverse process for that reason.
+289
+So it's always forward process.
+290
+That's what I mean.
+291
+So we always get human content as an input and we provide all AI insights and then they take a decision and then they again go forward.
+292
+So we don't tell them, hey, you should do this type of content, write this kind of story.
+293
+That's the reverse side.
+294
+So we don't do this reverse site formulation.
+295
+I think one reason for that is exactly that danger because we think if you do forward process, AI would augment creativity.
+296
+Reverse side, it might create too much AI content.
+297
+That is definitely one thing.
+298
+And we can see as well in the results that we are looking in forward process that the variations of the content and improvements are really great because then with the AI insights, again, humans are improvising over that.
+299
+It gives them inspiration to do something different.
+300
+That's amazing to see.
+301
+That's why I'm telling you, I mean, I don't think we should put in a basket AI will just make all content same or like it will augment creativity.
+302
+I think it really depends how you use it.
+303
+And this is also one thing related to fear because we see that there's a lot of people are having fear of that, especially in the film industry.
+304
+The part of strikes were relevant to that as well, the strikes that happened in Hollywood.
+305
+So, I mean, in our view, it's still very difficult to beat a human, like a very good scriptwriter, filmmaker, it's very difficult to beat their version of using AI.
+306
+So that's what we see.
+307
+Because a regular person, they can go and write a screenplay as well now using ChatGPT.
+308
+But that's always very average.
+309
+If a very good scriptwriter is also using AI and writing screenplay, it's difficult to reach that level.
+310
+So we will see that bar will get higher and higher.
+311
+But again, to go above that bar, we need really skilled people in that field.
+312
+Yeah, well, you already started going there, but as we kind of draw to a close here, I'd love to hear your perspective on what you're really excited about as this technology gets adopted more and more in this industry.
+313
+You know, what excites you kind of looking to the next year or two?
+314
+What do you expect to see?
+315
+What are you excited to see?
+316
+Well, what I am excited about is first the production budgets.
+317
+I think the production budgets will go down.
+318
+That means we will see more films to be done.
+319
+We will have some content inflation, but because of that, I think there will be also more competition.
+320
+We will augment the creativity over there.
+321
+I think we will see like much better films.
+322
+It doesn't mean we didn't have good films.
+323
+We definitely have a lot of great films from great directors, but we will see much more of those.
+324
+So, that's great news for the audience.
+325
+But of course, that creates a problem a bit with the industry itself because the way that they will work will change.
+326
+I think it will be more of a frequency game.
+327
+So, a good filmmaker, let's say they were making one film per year, maybe now they will do two, three of them.
+328
+Yeah.
+329
+Awesome.
+330
+Yeah, well, I certainly look forward to consuming some of that great content that you're helping produce.
+331
+So, yeah, thank you for your work.
+332
+Thank you for digging into this over years and kind of really innovating in this industry in a way also that I think is responsible in promoting kind of the human augmentation of the process with the kind of human as pilot.
+333
+So, really appreciate your perspective there.
+334
+Thank you for joining, Sami, and hope to have you on the show again.
+335
+Yeah, thank you very much.
+336
+I really enjoyed the conversation.
+337
+Thank you.
+338
+All right.
+339
+That is our show for this week.
+340
+If you haven't checked out our Changelog newsletter, head to changelog.com/slash news.
+341
+There you'll find 29 reasons.
+342
+Yes, 29 reasons why you should subscribe.
+343
+I'll tell you: reason number 17.
+344
+You might actually start looking forward to Mondays.
+345
+Sounds like somebody's got a case of the Mondays.
+346
+28 more reasons are waiting for you at changelog.com/slash news.
+347
+Thanks again to our partners at fly.io, to Breakmaster Cylinder for the Beats, and to you for listening.
+348
+That is all for now, but we'll talk to you again next time.

@@ -1,0 +1,689 @@
+--- METADATA START ---
+Show: Eye On A.I.
+Episode: #257 Ankur Banerjee: How cheqd…
+Host: Unknown
+GUESTS: Ankur Banerjee 
+Guests: Ankur Banerjee
+Source URL: https://podcasts.apple.com/us/podcast/257-ankur-banerjee-how-cheqd-io-is-building-trust-for/id1438378439?i=1000709814143
+--- METADATA END ---
+
+1
+What an AI agent might need to do is to go and carry out that authentication.
+2
+So when you talk about digital identity, it breaks down to questions of like who am I?
+3
+What am I allowed to do?
+4
+So what is what the login with Google question or entering a username and a password, what that is doing is it's answering at a very basic level, who am I.
+5
+I don't think any of these companies necessarily want to run the run it as a centralized service because A, there's a lot of content, billions, billions, billions of images and videos and so on.
+6
+But if they become the centralized registry of what is AI generated or what is not AI generated, that then becomes a very big political challenge in terms of content motivation.
+7
+Build the future of multi-agent software with agency.
+8
+That's AGNTCY.
+9
+The agency is an open source collective building the internet of agents.
+10
+It's a collaborative layer where agents can discover, connect, and work across frameworks.
+11
+For developers, this means standardized agent discovery tools, seamless protocols for inter-agent communication, and modular components to compose and scale multi-agent workflows.
+12
+Join Crew AI, Langchain, Lama Index, BrowserBase, Cisco, and dozens more.
+13
+The agency is dropping code, specs, and services.
+14
+No strings attached.
+15
+Build with other engineers who care about high-quality multi-agent software.
+16
+Visit agency.org and add your support.
+17
+That's agntcy.org, agency.org, and support the project.
+18
+Let's start by having you introduce yourself, tell us a little bit about yourself.
+19
+And then tell me how you got to Checkt and what you guys are doing in a larger context.
+20
+Absolutely.
+21
+So, hi, my name is Anka Banerjee.
+22
+I'm the CTO and co-founder at Checkt, which is a decentralized identity company.
+23
+I'll go into a second to explain what decentralized identity is.
+24
+But we are a fairly small startup.
+25
+We started about four years ago in 2021.
+26
+And the reason why we wanted to go and tackle some of these problems that we see cropping up in the online space around digital identity is because both me and my co-founders have had a background in working on digital identity and fraud within for governments, for banks, for enterprises, large enterprises in healthcare and education.
+27
+And at the time, we'd sort of been working since around 2017-2018 on how this could be moved to a new form of identity where people are at the center and in control.
+28
+And we wanted to solve some of the challenges that we saw cropping up within the decentralized identity space.
+29
+I also happen to have a background in working in AI and NLP before I got into digital identity, which relates to a lot of the recent advancements and developments that have been happening.
+30
+And I've got a couple of patents in that space myself, having worked, for example, on one of the world's first spoken chatbots in spoken Arabic.
+31
+So, yeah, like, you know, it's been a bit of a full circle coming back to looking at some of the challenges that are cropping up in the AI and machine learning space, having spent a couple of years in the digital identity space.
+32
+Yeah.
+33
+Well, my interest was initially piqued by this issue.
+34
+You know, I did an article on Manus, the multi-agent system out of China.
+35
+And a lot of people have, I don't have access, but have had access online.
+36
+And it's amazing.
+37
+It does amazing things.
+38
+But you send it out into the digital world or onto the internet, and it very quickly runs into roadblocks.
+39
+And that have to, the human has to intervene to get them past those things like CAPTCHA.
+40
+And it occurs to me that everyone's talking about what Microsoft calls societies of agents that will eventually be kind of a base layer to the economy, taking care of a lot of the less creative work or bureaucracy that needs to be done.
+41
+And there's going to have to be a paradigm change in the way the internet is, guardrails are set up, to allow agents to do that.
+42
+Was that at all part of your initial motivation, or is there a broader issue that I'm not seeing?
+43
+I think that was partly the motivation.
+44
+How does identity get solved for agents?
+45
+Because if there's one way I can put it, a lot of the AI agents right now are like naive children.
+46
+They would essentially go and believe everything that they say because there's not a lot of intelligence.
+47
+And where I think it becomes quite interesting is I think there's a couple of different facets to where this identity aspect comes in.
+48
+The first is you, as an individual, when you go and ask an agent to go do something on your behalf, let's say make a travel booking or go and book a restaurant reservation on your behalf, it might need to prove that it's been given that task by a real human being and that it has permissions for a specific time and duration.
+49
+And what I mean by that is obviously these services are also trying to keep out the bad actors who are running bots or AI to perhaps make those same travel bookings.
+50
+Or the most famous example of this is Ticketmaster when they're trying to prevent bots which are being run by scalpers from getting all of the Taylor Swift tickets.
+51
+So big Taylor Swift fan myself and if I wanted to delegate the task to an agent to say when the tickets go on sale at say midnight, I don't want to be awake myself.
+52
+How does the AI agent prove that it's acting on behalf of a real fan with certain real listening history to Taylor Swift on Spotify and let that through, but don't let the other bots through?
+53
+And then, secondly, how does the AI agent prove that it has been given the permission by me to buy tickets for this specific concert or this specific artist, but not to go on a spending spree and book 50 different concerts?
+54
+So, I think that is increasingly going to become a challenge when services start interacting with agents.
+55
+The second piece of this is agent-to-agent trust.
+56
+Perhaps my agent needs to talk to an AI agent that is specialized in the process of ticket buying, maybe because it doesn't know how to do the specific task of ticket buying itself.
+57
+So, how does the AI agent perhaps understand that in this entire universe of different sites and services that it's coming across, what is a trustworthy agent and what's just the equivalent of a scalper that it shouldn't talk to?
+58
+And so, even when you start looking at the idea of agent-to-agent trust of whom they, which other agent do they go and trust, and which piece of content do they go and trust, it becomes increasingly beyond just the simple problem of do you prove you're human online or do you prove you're an agent.
+59
+So it's a lot more multifaceted and not just binary.
+60
+Yeah.
+61
+And how then do you solve that problem?
+62
+I mean, it seems on the one hand a problem on the agent provider side that the agent needs to be able to provide a verified identity, but it's also a problem on the service provider side that they have to make their site available for whatever protocol you guys or whoever it is comes up with.
+63
+So it's a little bit of a chicken and an egg, but how do you solve that?
+64
+I think I'll explain the way that people are currently solving it, which is you essentially do the same thing that you do when you click login with Google or log in with Facebook.
+65
+So you would give ChatGPT or any other form of sort of agent like Manos, for example, just unfettered access to some service.
+66
+And that's how people are currently solving it.
+67
+Where we sort of got into this space is we originally started off building enterprise-level tools for how does human identity get solved.
+68
+So for example, how can people have a trustworthy, tamper-proof, digital copy of all of the data that belongs to their life and then have the ability to go and delegate it as well?
+69
+So there's a lot of governments around the world that are currently right now trialing or in the early stages of deploying some of these digital identity systems, which also have baked in the capability of delegation.
+70
+And the reason why the governments thought of it initially is there's very common scenarios where a parent might be acting as the guardian or the delegate on behalf of their child, or a person could be acting on behalf of somebody they care for who's older or perhaps less abled to carry out actions online.
+71
+So initially we'd started off solving around how does digital identity and decentralized identity work for humans.
+72
+And because within those contexts, when we've been working with large enterprises and governments, they'd already been thinking of those challenges and problems of how does permissions and delegations work across different humans.
+73
+When this sort of AI agent revolution started off, it was like that's an obvious answer to the problem in a completely different space.
+74
+And we were early, I think, to recognize that and start applying the same techniques to the AI agent permissioning space and human-to-agent permissioning space.
+75
+And what's quite interesting is there are governments like the European Union that is currently working on an initiative called the EU Digital ID Wallet Initiative, which is built on those exact same industry standards.
+76
+I mean, I work as a CTO at CHECHT, but I'm also on the steering committee for something called the Decentralized Identity Foundation, which has loads of large companies that participate and set the specifications on how do these digital identity standards work.
+77
+And it's an easy sort of step to take to say like the kind of robust permissioning, which is a lot more granular than what's been possible with logging with Facebook or logging with Google, can now be applied in a completely different context where similar sort of challenges are present.
+78
+Yeah, and just as you were talking, I'm thinking, I mean, not all sites are protected by CAPTCHA or the equivalent.
+79
+I don't know if that's the only system.
+80
+A lot of places use two-factor identification, and you could give an agent access to your phone messages, for example, and just have them receive the code and input the code.
+81
+Is that one way to do this?
+82
+It's part of the picture of doing this, yes, because what an AI agent might need to do is to go and carry out that authentication.
+83
+So when you talk about digital identity, it breaks down to questions of like, who am I?
+84
+What am I allowed to do?
+85
+So what is what the login with Google question or entering a username and a password, what that is doing is it's answering at a very basic level who am I.
+86
+What I'm allowed to do is authorization and that is I am allowed to read emails once I log in with this.
+87
+I'm allowed to carry out a bank transaction.
+88
+The kind of technology that we work on for decentralized identity goes a bit beyond those two questions.
+89
+It is part of the journey, but it also helps to go and answer beyond the question of who am I and what am I allowed to do, which a lot of the current systems are quite capable of solving.
+90
+It goes to then answer what are my preferences?
+91
+What is my history of interacting with a particular service?
+92
+And having a full digital copy of that, which also actually comes into when you go and delegate an agent to act on your behalf.
+93
+Let's say you've asked it to go and make a travel booking on your behalf.
+94
+Not only is it a question of who is it acting on behalf of and are they allowed to make that travel booking or not, but also capturing through these digital credentials how many members do you have in your family?
+95
+What do they like doing?
+96
+Like, you know, what are their likes?
+97
+Where are their dislikes?
+98
+Where have they already been?
+99
+And being able to also provide that to AI agents in a machine-readable form.
+100
+So, in a way that I guess AI agents will be able to understand it because they need to go and then express that in a set of actions they take on your behalf.
+101
+So, yes, I think being able to carry out the two-factor steps is definitely part of the picture.
+102
+Because while it's going and making the booking on your behalf, it might need to carry out those actions.
+103
+But at a broader level, it's about going a bit deeper than just the who am I and what am I allowed to do, and also look at what are the hopes and the preferences and the likes and the dislikes, and being able to express that to AI agents as well in a sort of readable fashion.
+104
+Now, what's perhaps like an extension to this is when we've been working on this for the government use cases, there's a large part of that is if you take a digital credential that has, say, been issued in France and take it across to the US and prove that you're allowed to enter the country at a border, let's say, showing a driver's license or showing a passport.
+105
+Governments needed a way of actually creating these things called trust registries or trust lists to say this is a recognized country with a passport that we trust, or this is a type of driving.
+106
+So we adapt the same technology to the AI agent space for the creators of these AI agents and perhaps third-party independent assessors and auditors to also go and issue digital credentials to AI agents to say this particular agent is trustworthy on the topic of travel bookings.
+107
+This other agent is trustworthy on the topic of accountancy.
+108
+And they can have a multitude of these, the same way that I have a lot of different pieces of plastic in my wallet.
+109
+Some of these are my driver's license, some of these are my residency permits.
+110
+The same way an AI agent might hold multiple digital credentials that say, so these are the topics that an AI agent is good at.
+111
+Here's maybe a separate digital credential that proves it has been assessed against the EU AI Act and found to be an AI agent that is low-risk rather than the high-risk category.
+112
+And you might choose to behave or trust an AI agent with that set of credentials a lot differently than something that is not able to go and prove those capabilities.
+113
+Yeah.
+114
+Is there.
+115
+Well, let's talk about the tech behind it all.
+116
+I mean, I'm thinking: is there a biometric aspect to this?
+117
+I mean, judging from your name, you have some roots in the subcontinent.
+118
+Is it tied?
+119
+In that case, it's fingerprint, I think, unless it's evolved.
+120
+But is this going to be iris scans like the WorldCoin or World Orb or whatever they call it, is trying to do?
+121
+So, I mean, you can imagine a day when, yeah, when pieces of plastic and paper passports are really things of the past, and you walk up and scan your iris, and maybe there's a secondary validation or verification.
+122
+So, how does it work in your case?
+123
+So, that is definitely, I think, different than our vision or our technology for starters, because biometrics are great when you need a really high degree of assurance, as it's called.
+124
+So, things like when you travel across international borders, typically your passport has a chip on it that has your biometrics, your face biometrics, usually.
+125
+And that allows when you're going through e-passport gates or presenting it to an official for them to check if it's the same person that the passport was issued to who's entering through that e-passport gate.
+126
+WorldCoin obviously is trying to do something very similar.
+127
+The Aadhaar system in India ties things to biometrics.
+128
+But in those government use cases, they're often trying to make a very high degree of assurance of use case happen.
+129
+Usually, in day-to-day life, you don't need that same level of assurance, and it is probably scope and mission creep and also a privacy risk to constantly have to prove biometrics in every other scenario.
+130
+Just an example of this is many people, when you go through Touch ID or Face ID on your phone, it doesn't actually know that it's tied to one single human being.
+131
+Many people will put their kids or their partners on the same device because it's easy to, you know, my hands are tied, I'm driving, can you reach my phone and check it?
+132
+And that's completely allowed.
+133
+Like, you know, I am trusting them as my partner or my kid to give access to my device.
+134
+And I should completely be allowed to do that.
+135
+So the kind of technology that we work on, I'd say it's very different from what Waltcoin is using and especially most other blockchain-based use cases.
+136
+So most of the time on blockchain, what you do is you go and write some information as the source of truth to a blockchain or a ledger and you trust that everybody can see it at the same time, which is great when you're thinking about things like money balances and you want everybody to have the same value.
+137
+It's a really bad idea for biometrics and even if you apply any kind of encryption so that the data can't be read by anybody who shouldn't have access to it, you can never erase that.
+138
+You can never take that back.
+139
+So even if I'm a consenting user today, at some point, maybe 5, 10, 20 years in the future, that particular encryption technology is going to get broken, probably because of Quantum.
+140
+But even before Quantum comes along, encryption standards go out of date all the time.
+141
+And sometimes there are vulnerabilities in them.
+142
+So instead of going and writing that information to some sort of blockchain or ledger, what we do is we only store the cryptographic information that is needed to verify the information on-chain.
+143
+So unlike most other use cases, maybe 5% of the action is happening on a blockchain.
+144
+The rest of it, the actual digital credentials themselves, are in tamper-proof files that you can store on your phone, on your laptop, on any sort of device.
+145
+You can even print them out into backups, in things that work like QR codes.
+146
+Interesting part of my history into how I got into this, the very first project I worked on was to work on decentralized identity for refugees and with the UN High Commission for Refugees.
+147
+And one of the big aspects of that is: do they have smartphones?
+148
+They didn't, but they did have $100 Chinese Android phones, which were good enough to hold a piece of digital identity that they've been issued by the UN.
+149
+And a large part of that was what happens when the phone dies?
+150
+What happens if somebody loses their phone?
+151
+So it is possible to back up as well, so that if you do lose your device, if it's out of power, there are alternatives that you can fall back to.
+152
+But the core of the way our technology works is you have some cryptographic hashes or proof that get written to the chain that allow me, when I go and show that digital credential to you, anybody who sees it can cross-check it against the blockchain and say, I can see that the hash matches, or I can see that the cryptographic seal is untampered, and therefore I know I can go and trust this.
+153
+And I guess the distinction that I'm taking from the kind of technology that WorldCoin is working on is these digital credentials, you can put biometrics into them, but by default, most of them don't.
+154
+Because actually, putting in a biometric into every single piece of information that is related to you is massive overkill.
+155
+And it's actually been a big debate amongst the browser vendors around the world where they want to put in something called the digital credentials API into every single large browser that exists.
+156
+And if every single thing that you held had a biometric, it's very easy to go into the scope creep sort of area where governments say, well, before you access a porn site, you should have, you should go and prove your identity with a digital credential like your driver's license that has your biometrics attached to it.
+157
+And I don't think that's necessarily where the world should be moving towards.
+158
+Build the future of multi-agent software with agency.
+159
+That's AGNTCY.
+160
+The agency is an open source collective building the internet of agents.
+161
+It's a collaborative layer where agents can discover, connect, and work across frameworks.
+162
+For developers, this means standardized agent discovery tools, seamless protocols for inter-agent communication, and modular components to compose and scale multi-agent workflows.
+163
+Join Crew AI, Langchain, Llama Index, BrowserBase, Cisco, and dozens more.
+164
+The agency is dropping code, specs, and services.
+165
+No strings attached.
+166
+Build with other engineers who care about high-quality multi-agent software.
+167
+Visit agency.org and add your support.
+168
+That's agntcy.org.
+169
+Agency.org and support the project.
+170
+Yeah.
+171
+So how what are the I mean, the the the the the the blockchain registry is is uh kind of a validation.com, and there's a registry that sits behind it that says this is the info, this is what that address leads to.
+172
+In a very similar fashion, you create things that are called decentralized identifiers or DIDs.
+173
+This is what a lot of the people in the group that's working on Decentralized Identity Foundation work on.
+174
+Those DIDs are typically cryptographic hashes or cryptographic seals that are written quite often through a blockchain, but it doesn't necessarily have to be.
+175
+And then go ahead.
+176
+And then on the other side, on your own devices, you create or you keep things that are called digital credentials or verifiable credentials, verifiable in a cryptographic sense.
+177
+And what that means is if you show it to someone, they can cryptographically verify that they have been untampered.
+178
+And you can also choose during these processes to apply additional steps for privacy, like apply something called selective disclosure.
+179
+So for example, if you want to know what my name is, I can show you a digital credential that was derived from my passport or driver's license without actually sharing my home address, which might also be on that same digital credential, but actually that's irrelevant to the interaction that we are having.
+180
+And so therefore, I shouldn't need to go and show you the other parts of that, like my home address, that maybe don't relate to the interaction.
+181
+Yeah, which reminds me, I hate putting my address into those forms because you have no idea where it's going.
+182
+And so, is it the same process then that you're porting over to the digital identity of AI systems?
+183
+And I started talking about agents and the issues that arise for identity with agents, but is it broader than agents?
+184
+Are you looking at something larger than that?
+185
+There's a, yes, so it's exactly the same technology.
+186
+So, the same way that you could go and describe a digital credential that has things like your passport, driver's license, education history, healthcare history, financial history into these digital credentials.
+187
+You could similarly go and capture and put into these digital credentials: these are the topics that I trust this particular AI agent on, and this is the duration that it's authorized for.
+188
+Or a company could go and issue a credential to that AI agent that says it's been accredited or assessed to this standard.
+189
+The sort of tangential and related space that comes in is something called content credentials.
+190
+And content credentials is a coalition that includes companies like Microsoft and Intel, Google, Adobe, who've been working on how can you have a chain of custody that proves a particular image or video or audio is AI generated or human generated.
+191
+But again, not as a binary question, but as a chain of history of every single edit that has happened to that picture.
+192
+Because editing is not bad.
+193
+Like maybe you have a human model and you're using an AI backdrop.
+194
+That's okay.
+195
+But somebody who's viewing that picture should be able to see that there was a human model used and there was an AI backdrop that got inserted in.
+196
+You can actually try this now.
+197
+Like if there's ever an image that you create using ChatGPT or DALI, go paste it into one of the websites that support reading content credentials like LinkedIn.
+198
+And you'll see a tiny logo that says CR, that stands for content credential.
+199
+And you click on it and it will start showing you the history behind all of this.
+200
+Now what's quite interesting is I don't think any of these companies necessarily want to run it as a centralized service because A, there's a lot of content, billions, billions of images and videos and so on.
+201
+But if they become the centralized registry of what is AI generated or what is not AI generated, that then becomes a very big political challenge in terms of content moderation.
+202
+They want it to be self-contained and cryptographically provable along with the video or the piece of image that comes along to understand what edits happen to it.
+203
+And also because I think some edits are fine.
+204
+Maybe you use AI to remove a building from the background in a picture that you've taken on your holiday.
+205
+Or Getty Images is blurring out the pictures that were taken by someone at a protest to protect their identity.
+206
+What's quite fascinating is there are companies like Leiker and Samsung that are building in the capability of starting this from the chip on the camera itself.
+207
+So from the moment a picture is taken, every single step will have a content credential of what the edit was made to it.
+208
+What we've been working on is how can then AI agents understand, use this as part of their assessment of when they come across information to see is this trustworthy or not, the same way that a human might perhaps try and apply the same filter in a couple of years' time.
+209
+Where it also sort of like, you know, becomes quite interesting is when you then go and train AI agents, a lot of the, over the past sort of two, three years, a lot of the data has become computer-generated.
+210
+And essentially, because these are very good parrots of parroting information, people do want to start distinguishing this training on what's based on actual human-generated data that it wants to go and mimic and what is synthetic data.
+211
+There are already studies that show at somewhere close to just five or seven percent of the information being synthetic or AI generated, it just starts producing garbage because it's not able to distinguish what's the right thing that it should be able to go and mimic versus just AI-generated slop that it shouldn't start skewing towards.
+212
+Yeah.
+213
+So how does, where do I go from this?
+214
+Yeah.
+215
+How, well, let's focus on agents.
+216
+How do agents, how do you see this being implemented?
+217
+And as I said, on the one hand, you need to build a critical mass of agents using this protocol, but on the other side, you need to build a critical mass of websites or other services that are accepting or have a reader or something that allows agents through based on this protocol.
+218
+I think that's absolutely early days on a lot of these topics.
+219
+One of the, what we've worked on is, I don't know if you've heard of something that came out of Anthropic called Model.
+220
+And it's a way of giving AI agents structured access to tools or structured access to different kinds of information.
+221
+And so we're one of the first decentralized identity or digital identity sort of software creators to give MCP or create MCP tools that can talk and understand decentralized identifiers, that can talk and understand digital credentials that could either be credentials for the AI agent themselves, permissions that they have received from human beings, or digital credentials that have been attached to content in terms of content credentials.
+222
+And what's been quite fascinating is a lot of these ideas were bubbling around for a long time within the identity as well as the AI industry.
+223
+MCP only came out last year, November, so just before Christmas.
+224
+And I think what was sort of unsure for a while is how does this scale beyond just the AI agents based on, created by Anthropic or the people that support MCP.
+225
+What's happened within the past one or two weeks is OpenAI has come out and said, yes, we are going to go and add this to OpenAI's ChatGPT desktop app and to the OpenAI agent sort of toolkit.
+226
+And a very similar statement came out from Google, which is one of the other.
+227
+So, what we start sort of seeing is the problem is being recognized by people.
+228
+That on one hand, we have capture and we have bot protection that we run on websites that keep AI agents out.
+229
+On the other hand, every single one of these companies wants to give people the idea of, like, actually, you know what, let's offload, take that task off your hands.
+230
+And so, they do want to go and solve these problems.
+231
+The big breakthrough, I'd say, in terms of adoption that's happened is the number of services and the number of AI agent makers that have started supporting MCP or Model Context Protocol within the last five to six months.
+232
+Yeah, and so you would chector some other verified identity protocol would be, or would be a tool that Model Context Protocol could interface with or integrate into a model, is that right?
+233
+Exactly.
+234
+And what Model Context Protocol is great at is to capture those things into sort of rigid rules or sort of rules, because before that, people were doing the same thing that MCP does by using very long and complicated prompts, which is not guaranteed to work.
+235
+We've also been engaged with some other emerging standards and protocols.
+236
+There's some very interesting research coming out of Stanford on something called DSP, which is writing prompts as code.
+237
+But I think the biggest sort of evolution on this side has been modeled context protocol.
+238
+And what that sort of currently doesn't do is it entirely does not talk about how does identity get handled, how do you handle permissions, how do agents get some mechanism through which they can understand what is the content they're seeking and how trustworthy it is.
+239
+And that's where checked and hopefully other decentralized identity providers can add that sort of toolkit to the set of arsenal that AI agents have on how they can be trusted and how they can trust the information they're coming across.
+240
+Yeah, and MCP is like the universal interface, right?
+241
+So you don't have to use API keys and things like that.
+242
+How does an AI agent that has MCTV in its architecture, I'm not quite sure how to say that, but how does it find checked?
+243
+Do you have to, does the agent have to know about checked or does when the various verification tools out there through MCP and to find the one that's going to unlock that website?
+244
+There's an answer for what happens now versus what happens in perhaps the future.
+245
+So, right now, you have to tell the AI agent, simplest example is Claude Desktop, which comes from Anthropic.
+246
+It's one of the big places where people are testing and building all of this software.
+247
+So, you have to go and explicitly tell it that here's the set of tools that I'm attaching and giving to you.
+248
+So, you might go and attach a tool for Google search.
+249
+You might go and attach a tool for understanding digital credentials and explicitly tell it that go use this.
+250
+But, given how core some of these problems are, two things that I expect to happen within the next year.
+251
+The first is the same way that you have Apple Wallets or Google Wallet built in on your phone, and that's where you currently store digital credentials, or maybe there's a different digital ID app you use.
+252
+Agents will come with an identity wallet built in the way that they currently don't particularly do or handle right now.
+253
+And this is where they'll store digital credentials they have been given to handle, as well as things.
+254
+And the second thing is where MCP sort of evolves to is looking, giving agents the ability to autonomously determine which tools to go and pick.
+255
+And that again comes back to similar sort of challenges like which AI agents do we go and trust.
+256
+But because these trust models can often be started off by government lists or government trusted lists or maybe industry association lists of what's a trustworthy agent, that I think starts becoming the starting, the launch pad for an initial set of tools that the AI agents can discover by themselves.
+257
+And then from maybe those trusted tools or trusted agents, they can go and ask almost in a sense, what are the other tools?
+258
+And what are the other agents do you trust?
+259
+And start discovering from that basis.
+260
+So I think there's a lot of steps to get there because MCP itself is fairly new.
+261
+But what I think is quite interesting in this space is the way that this can be expressed is explicitly what a lot of the decentralized identity digital credentials have been built to solve.
+262
+And where is it?
+263
+So right now, if you're, I mean, you can do this now, right?
+264
+So if you're building an agent, you can pick checked, or you can pick, I don't know who else is out there, this is all new to me, and give it access through an MCP to those tools.
+265
+And then, when the agent is out in the cyberspace and runs across something that is asking for it to verify its identity, it would cough up checked.
+266
+But if that service or site doesn't use or recognize checked, I mean, what's going to happen?
+267
+That the, I mean, going back to the Taylor-Swift ticket issue, will Ticketmaster just, you know, review all these various identity tools and add a whole bunch of them?
+268
+So, if you come in, if your agent comes in and offers checked, checked is one of the tools that Ticketmaster uses, and it'll verify the agent's identity and let it through.
+269
+Is that how you imagine that happening?
+270
+Yes, it would partly be that they would need to understand the digital credential formats.
+271
+Now, what's quite interesting is that this kind of technology is not just proprietary to us at checked.
+272
+We have built our own improvements and additions on top, but a lot of the technology standards for this get set at places like W3C, which is World Wide Web Consortium, and that is the non-profit organization that sets how HTML works and how websites work.
+273
+So the same way that Ticketmaster has adopted HTML to go create its website, it would have to add support for the digital credential specification that has come from W3C, which is, again, yes, that is a step that the website would need to take, but given that a lot of the web standards do get set and adopted by companies from what's happening at W3C, it's a bit of an easier ask than saying, just go and do this specific thing for what CHECT has done.
+274
+It works not just with the kinds of digital credentials that we might build, but hopefully someday that WorldCoin also does.
+275
+WorldCoin, hopefully, instead of going and doing their own thing, hopefully adopts the digital credential standard that W3C has come up with and expresses it in that format.
+276
+The second answer is, the second part of that is we've also acknowledged the fact that not every single company is immediately going to switch over to starting to use decentralized identities.
+277
+And so we worked with a research institute in Germany called Fraunhofer Institute.
+278
+Fun fact, they're the people who invented MP3.
+279
+So as a format.
+280
+So, we worked with Fraunhofer on a piece of software and a specification that allows you to tie these decentralized identifiers that are written usually on blockchains to standard domain names.
+281
+So, like, this identifier will attach to Craig's home sort of domain name, and this one attaches to Check's website, and this one attaches to Microsoft.com.
+282
+And they're able to go through that entire list of accreditations or trust, that additional credential that might have received, and translate it back to the traditional domain name system.
+283
+What's quite powerful about that is there are already mechanisms that exist to understand: do I trust this website more than that website?
+284
+And there's a lot of ranking that gets done by things like search engines or some sort of assessment that can be done.
+285
+Because I fully understand that sort of transition from the way that identity and trust gets handled now to a decentralized way of doing it might take time.
+286
+And there will be people who are further ahead and people who are further behind.
+287
+And so, that's why we worked on this sort of project with Fraunhofer to look at what happens in the middle.
+288
+What happens when maybe five companies have adopted decentralized identity, but then the rest of the billions or millions of companies haven't done that yet?
+289
+How can they still go and utilize this?
+290
+And that's one of the other sort of like unique aspects of the work that we've done at CHECT, which a lot of the other sort of like, you know, models, for example, like the one that WorldCoin is building, doesn't actually accommodate that.
+291
+Like, you know, it's very much come across to like, you know, all or nothing into the new world, which I don't think is very pragmatic, unfortunately.
+292
+Does this mean that CAPTCHA will eventually go away?
+293
+Or will CAPTCHA run alongside?
+294
+There'll be, you know, if an agent runs into a site, there'll be something unseen to the user that happens, that allows the agent through?
+295
+I think CAPTCHA will still be around because CAPTCHA is solvable by AI, but it's expensive.
+296
+So you have to be really motivated to take a screenshot of something and feed it to OpenAI, to ChatGPT.
+297
+It could probably solve it, but do you care that much?
+298
+So it does take out a lot of low-level automation.
+299
+And the way that I sort of describe this proof of humanity or proof of personhood is it lies on a spectrum.
+300
+At one end, you have CAPTCHA and just prove you are a human.
+301
+There's a very different question, which is prove that you are that specific human and prove that you're Craig Smith.
+302
+Or prove that you are a human that lives in the US or prove that you're a human that lives in the UK.
+303
+Capture is only looking at: are you non-automated to a very low-level extent?
+304
+And to be honest, there's definitely value in that.
+305
+Like, it just takes out the dumbest, simplest kinds of automation that somebody might be able to write.
+306
+Where you get into after that is, I think proof of humanity is useful, but sometimes there are other different aspects to that which also need to get solved that don't necessarily get solved.
+307
+Like, it's great that you can prove proof of humanity that it's backed by a biometric and it's definitely a person, but people have multiple passports.
+308
+People might go and register with multiple systems.
+309
+And it still doesn't go and solve the question of, like, are you specifically Craigsmith?
+310
+And that's the legal identity that you have.
+311
+It doesn't solve, like, you know, do you live, have you lived in a particular part of town for the last five years or ten years?
+312
+Those become more complicated questions.
+313
+And what's quite good about these industry standards that have been created at W3C is it's flexible enough to go and accommodate the whole range of those questions and not just one narrow piece of it, which is, are you a human or not?
+314
+Yeah.
+315
+Just as you're talking, I'm thinking about some of the verifications on the internet.
+316
+So many websites will ask you.
+317
+You know, YouTube, you have to log in with an identity in which you put in your...
+318
+your birth date, but most is just a button.
+319
+You know, yes, I'm over 18, which to me seems like a pretty big loophole for certainly for parents who are concerned about what their children are seeing on the internet.
+320
+Do you see that being solved?
+321
+And we're getting into human identity now, which is different from what you guys are doing.
+322
+We are also working on problems like that because at the core of it, the big sort of problem we wanted to solve is decentralized identity and having a copy of your own data for yourself sounds great.
+323
+But why would any company ever do that?
+324
+Like, what's the commercial incentive or value for them?
+325
+The reason why we have your data in a silo held by big tech companies is because they derive a lot of value out of it.
+326
+They sell ads off the back of that.
+327
+So they have absolutely zero incentive to give you a copy of your own information because they see it as that just lets you walk out of the door to our competitor more easily.
+328
+And so although the space has existed for a while, what we are quite uniquely doing at CHECT is we built a privacy-preserving mechanism where if you use a digital credential that has been issued by a company to say maybe transfer across your e-commerce preferences or prove that you're above the age of 18 without revealing too much information.
+329
+So, not revealing your name, not revealing your actual data birth, maybe from something that was issued by your bank because your bank did a background check on you before they allowed you to open the bank account.
+330
+We built a mechanism that allows the bank to get paid in a completely privacy-preserving fashion.
+331
+They don't know who went and used the credential, they don't know what information got shared, they don't know absolutely anything about when that interaction happened.
+332
+But it then starts giving them an incentive to give you a copy of that information.
+333
+It doesn't mean the bank doesn't need to hold on to your information.
+334
+Of course, they do, because they, you know, you're their customer, they need to know where you live, they need to know your name, et cetera, et cetera.
+335
+But by giving you a digitally tamper-proof copy that you can then start using to prove that you're human online or prove you're above 18 or prove that you live at that specific address when you're about to go and buy a $5,000 MacBook and prove to Apple that you're not a scammer who's buying this with a stolen credit card, your bank knows that you've lived there for five years.
+336
+There's a lot of value in answering that question.
+337
+So the AI agent piece of it has been a large part of the focus for, I guess, the last sort of like year and a half.
+338
+But we actually have 50 different app developers and companies that are building solutions on top of the checked sort of network.
+339
+Some of them, in fact, are going and solving problems for humans and pub, you know, in various different sort of like, you know, countries and use cases.
+340
+Yeah.

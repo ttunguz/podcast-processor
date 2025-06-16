@@ -1,0 +1,494 @@
+Here are the relevant sections from the transcript:
+
+1. EPISODE CONTEXT
+- Podcast does not seem to have a stated name or episode topic
+- Hosts: Not explicitly stated, seems to be an interviewer 
+- Guest: Tom, Founder and CEO of SPHICs (a webhook sending service)
+- Featured Company: SPHICs - Early stage startup that provides webhooks as a service. No funding details mentioned.
+
+2. KEY INSIGHTS
+
+- Building and maintaining robust webhook infrastructure in-house is surprisingly complex and time-consuming, even for experienced engineers.
+"And then essentially what you see is that you find yourself dealing with, you know, 100,000 paper cuts that, I mean, some of them are not paper cuts, maybe some of them are much larger, but like 100,000 things that you either haven't considered, or maybe considered, but haven't realized how big of a problem that's going to be when things start picking up."
+
+- For most companies, webhooks are not a core differentiator, so outsourcing to a specialized service can provide better reliability and features while saving engineering effort. 
+"And again, it's not that they're like not capable of doing it. It's just like, I don't want to keep maintain this. And I don't want to keep adding that new like features and it's like kind of like yet another one of those examples..."
+
+- Providing an outstanding developer experience through excellent documentation, fast support and making developers feel like an "extension of their team" is crucial for adoption.
+"We want to feel like an extension of your team. In the sense that if Barack from your team decides to build webhooks and you have a problem, you can ping him and he will help you figure out why you went wrong, and that's the experience we're trying to replicate."
+
+- Being opinionated about not providing "footguns" that can be misused and being very careful about adding new functionality that could unexpectedly break things is part of their philosophy.
+
+- The rise of autonomous agents and event-driven architectures is increasing adoption of webhooks from early-stage startups.
+
+3. COMPETITIVE LANDSCAPE
+- Companies mentioned: LaunchDarkly, Dropbox
+- Positioning: Focused on making webhooks a reliable utility that engineering teams don't have to think about, rather than a core product.
+
+No other sections had substantial relevant information in this transcript.
+
+# Named Entities
+
+## PERSON
+- ##ram
+- Barack
+- Charlie
+- Dunn
+- Edith Harbaugh
+- God
+- Hi
+- K
+- Ku
+- Paul
+- Tom
+
+## ORGANIZATION
+- API
+- Dropbox
+- GoLang
+- SAC
+- SP
+- SPHICs
+- SaaS
+- VEM
+
+## LOCATION
+- Ben
+
+## PRODUCT
+
+## EVENT
+
+## WORK_OF_ART
+
+## DATE
+
+## MONEY
+
+## QUANTITY
+
+
+
+# Transcript
+
+
+All she wanted was to send webhooks and not have to think about it, I'm sure.
+You know what? I know another guy that had the exact same problem.
+So I came to her like, "Hey, you know, if I build it for you, will you pay me?"
+We want to feel like an extension of your team.
+In the sense that if Barack from your team decides to build webhooks and you have a problem,
+you can ping him and he will help you figure out why you went wrong, and that's the experience
+we're trying to replicate. But by the way, I can build your product much better than you can.
+This is the approach that almost every developer has.
+Especially the more senior you become, it's like the more skeptical you are of net view.
+And then the most senior engineers are like, "No, why would I build this? I'm going to use it."
+Again, this kind of bell curve there too. Those have been our best customers as well.
+It's the ones that have really tried and felt the pain.
+And again, it's not that they're not capable of doing it.
+Yeah, well, Tom, thanks for taking the time to join us in the office today for...
+Yeah, this is a set of hard software. Especially as you know, our team's always been a pretty big
+fan of SPHICs and I've been users in the past, especially Barack on our team who was heavily
+leveraging y'all at Benchling with especially at the crazy scale that they ended up hitting
+before you joined the VEM team. So I decided to have you on board and discuss
+all things developer experience, what folks are really missing about webhooks.
+And I think especially the importance of all these event-driven access patterns with
+how folks are just really implementing a lot more autonomous and probabilistic systems
+like across the board throughout their stack. But yeah, I definitely won't do it just as if I
+fell in the blank for you. So we'd just love to have you kind of introduce yourself as well as,
+you know, talk through a bit more about like SPHICs and the product as it is now. And then
+we can go from there. Yeah, sounds like a pan. So I'm Tom, founder and CEO of SPHICs. We do webhook
+sending as a service. And what it means is actually essentially, sorry, is that we give you a simple
+API. Yeah. And then we take care of webhooks for you. Maybe I can start with what we started.
+Yeah, let's do that. So I think really, our origin story is really all about how like,
+it was really luck. You know, we were like, I was like, in this, actually, I built a product
+before this. And like, in our previous business, people were asking us for webhooks. And we kind of
+like looking into it. It's just like how it makes sense. And we started looking into building it.
+And then we just realized, you know, we don't have to capacity build it down. So we kind of like
+said though. And then people, you know, came back, more people as well, like asking us for
+webhooks still and we just looked into it, like, you know, let's figure out, we're going to build
+it. But like, what about the maintenance? And then we looked into that and we just, you know what,
+it's just too much maintenance. We need to get focused on our roadmap. So sitting there again.
+Yeah. And then people kept asking us still, and then we figured out, you know, we can find a time
+to build it maintenance, we can figure it out. But then we realized that, you know, we built this
+like perfect API. I'm not perfect. They're a very good API, great product. We're very proud of that.
+We're not going to have a terrible webhook experience. And so we said no again, because we just don't
+have the capacity to do like 2x3x to work. So we previously did it. And I wish I realized at that
+point that there was a business there. But it was only like a few months later when I actually wasn't
+working on that business anymore. And that's like someone asked like a silly question about
+webhooks on a SAC community I'm a member of. And it's not like explaining to her, you need to do
+the X and you need to do one thing. And I just realized she actually couldn't tell us about
+anything I was saying. All she wanted was to send the webhooks and not have to think about it.
+I'm sure, you know what? I know another guy that had the exact same problem. So I came to her,
+like, hey, you know, if I build it for you, will you pay me? Like as a product? No, there's a thing.
+And she just like, hell yeah. And then someone else trying to like, yeah, I'll pay you as well.
+And like someone else, yeah. Someone else said like, you know, like current company,
+not selling webhooks, previous company, massive hassle, happy to interview you.
+Yeah. So I built it. By the way, she never became a customer. But the other people from the
+thread became our first customers. And that's kind of like how it started.
+Awesome. Yeah, no, like, and I think that's, that's the best way to kind of, I feel like,
+find like an early like sense of like, okay, there's like a product that could be looking,
+like there's like PMF like possible, like there's just when people are pulling you into it and
+actually just being like, I will throw a dollars at you and just timing up. Like,
+I think that is funny enough, like a similar fashion to like how we ended up like starting
+VEM as well. It was like, number one, we faced this problem ourselves internally. And kind of as
+you were, you know, alluding to with some of your, you know, customers with that ask was that,
+even though it may be something where it's like, oh, we're engineers, we can build it. It's like,
+do we have the bandwidth and the time and the capacity just given all of the other pieces that
+we need to own this part of a core, like our core infrastructure and would love to kind of
+get into build versus buy like later. But first, maybe we can jump into like, you know,
+web hooks are one of those, you know, problem spaces that especially for, you know, very strong
+software engineers ostensibly is like, it's straightforward. You know, it's like, it's like,
+it's basic event driven stuff. But you throw a queue there, you manage some light state and blah,
+blah, blah. But like, what do folks get wrong, especially when they start like scaling up and
+it goes from handfuls to like, maybe millions of events an hour, let's say.
+Yeah. So I think first of all, let me tell you what I'm saying. I'm like an engineering
+maximalist after this. Like, I think we can build anything. Yeah. Like every, you know,
+competent engineers can really build the world. I mean, by the way, all the other software was
+built by competent engineers. So exactly. Yeah. So every, I think like every product that we use,
+you know, people can build it and we can build it. The question is like, should we spend the time
+on it? Exactly. And so actually that's so specific about web hooks, like what you're asking.
+Web hooks are really just post requests, right? So like, you get something happens,
+you just make a post request. That's very easy. Exactly. And but then what happens is that,
+you know, if that post request takes a bit more time. So just like, okay, yeah, you can't do it
+inbound in land in band. Yeah. It's a bit silly. So let's like move it to our background worker.
+Again, as I said, engineers can do it. We do track attacks all the time, durable execution or
+anything like that. Yeah. Great. Okay. So we've solved that. But they're like, what about noisy
+neighbor? You know, like we have one customer that's very big, another else, another small,
+are we going to, you know, we're going to affect small one? No. So you have to deal with that.
+And then essentially what you see is that you find yourself dealing with, you know, 100,000
+paper cuts that, I mean, some of them are not paper cuts, maybe some of them are much larger,
+but like 100,000 things that you either haven't considered, or maybe considered, but haven't
+realized how big of a problem that's going to be when things start picking up. And also, to be
+honest, like we, you know, we focus all of our time on web hooks, we were also surprised a few
+times to look at the way, just like, Oh, God, this is something that, you know, we need to take care
+of. And it comes in a variety of flavors, right? I mean, first of all, like infrastructure stuff,
+like, you know, these neighbors that I mentioned all of that. But also just comes in terms of
+functionality, like, yes, I think yesterday or the day before I spoke with a friend of mine,
+and he was talking, talking about like, we yesterday, and he was talking one of his, like,
+the products that they use, like a very famous SaaS company, and they do web hooks, they're very
+competent engineers, they build a great system. But there are like a few things that they need,
+but the system doesn't provide. Yeah. And for all that service they care about,
+like, you know, like, they, they built web hooks. So like, what happens is that this
+customer's having like a terrible experience. He's complaining to me about it. Yeah. And not,
+not just because I do web hooks, it was actually complaining about regardless. And it just like,
+the thing is, you want to make it easy for your customers to consume those events, because you
+want to, you want them to integrate with you. Exactly. Yeah. So like every alpha you can get
+there is like super important. And I think that's, that's why a lot of the pain comes from. It's
+just like having to, you know, come, yeah, iterates on the products on and on.
+Yeah. And you know, I, you've already started kind of touching on this and like the value
+prop here, but like, you know, I think for, and you know, we had been really empathized with this,
+especially in our sales process. And we're, we're very close to the launch darkly team and,
+and Edith Harbaugh, who was one of the founders there. And you know, again, like, just like with,
+with fix and web hooks, it is one of those problems that, you know, obviously really
+competent engineers can obviously like solve if they put the time and effort into it.
+So like from y'all's perspective, how do you approach that build versus buy conversation,
+especially with, you know, maybe let's say, you know, there's like a, you know, a higher
+rock better organization that knows this is something they don't want to spend time on,
+and it's trying to get by and from the engineering team being like, it's just a pose for request.
+It is just some state management where like, you know, and I kind of touch on like launch
+darkly, for example, in comparison for them is just like, it's just feature flags, you know, like,
+we can just build this. And even for, for them, for us, it's like, you know, despite the relative
+complexity of like all these variations with documents, it's like, we're just writing file
+parsers or like, we're just doing some light semantic analysis, we can throw into not even
+open AIs like API, just like, we just use chat GBT for so would love to hear your perspective on that.
+And what you've noticed has been successful for y'all. And you know, even more importantly,
+just like for like, all of us have done like, what, you know, maybe early mistakes you may have made
+along the way to like, that help you learn about that bill versus by kind of value prop there.
+Yeah. And so I think it varies. It changes pair to, you know, based on the business, but like,
+I mean, taking even launched out to you, right? It is literally just an if statement, like,
+at its core. Yes. And even like the famous hack and use comment about Dropbox, what are you talking
+about? It's just like our sink and, and I don't know where you are. And I think that's true. Like,
+yeah, you know, launch darkly is just, you know, it's just an statement. We're just like a post
+request. Yeah. But the question is, is that like, what is the value that you want to get? And like,
+if you don't use launch darkly, you know, like all of a sudden, if statement means a redeploy.
+Yes. Or reconfigure it like, yeah, or what, what team, what engineering team that's built
+future flags and Charlie is actually disciplined about cleaning them up. Yeah, zero. Yeah, like,
+show me that team. I would love to beat that too. But I don't think I'm that one. Yeah.
+Yeah. No, wait, we're definitely not that much. Yeah. I mean, we kind of every, you know, every
+few years you come in and just like, Oh my God, I guess this needs to go this bad. It's been only
+zero for four years or new engineer joins. And then they're like, a very valid question. It's like,
+Oh, like this flag has turned on for maybe two out of hundreds of our users. What does it mean?
+And then folks are like, what does it like? How does that affect like, anyway? Yeah. Yeah.
+So for sure. So, so I think first of all, like, I think the first thing about buildings is by
+it's kind of like taking out of this, like, reductionist attitude of looking at the components and really
+looking at kind of like, essentially ROI, right? So again, people actually, you know, we have a
+lot of teams that switch to us after they built webhooks and spend a few years on it,
+but I've seen a lot of things. And the reason why is that they don't want to deal with it anymore.
+They don't want to like be woken up. Well, you know, a page engineer's a page in the middle of the
+night for like something they don't care about. Yeah. And so our approach really differs depending
+on the company and where they are. But you know, like, if they're just building webhooks for the
+first time, for example, like the time to market is a significant advantage. And we can we can talk
+about that. And yeah, you can build yourself that you're going to iterate on this for like the next
+year and you're going to have an initial version only six months. And then also you remember all
+of those nice, nice to have. And I put it with like air quotes, things, you're not going to have
+them for a little while, you just keep pushing them off on your technical roadmap, because you know,
+the product and user experience always comes first. Yeah. And then essentially what happens is that
+you kind of like you build webhook, you check that box, but actually your customers don't think
+you built webhooks because they don't have what they expect. Yeah. Out of like, whether it's,
+you know, fanning out to multiple endpoints, retries, observability, all of that signatures,
+like just some basic authentication and like check sums that kind of thing.
+So I think like time to market is definitely an important one. And then like another thing is
+just showing them kind of going back to lunch darkly. Yeah. Showing them like, what is
+their beyond the if statement? Exactly. And then, you know, like the other people that switch to
+you after they build their own solution. And I think that is like a very, you know, it's a much
+easier discussion because they already, they already been through the journey. They know all
+the pain and they kind of like, okay, you know, we're ready to, we don't want the pain anymore.
+Those have been our best customers as well. It's the ones that like have really tried and
+felt the pain. And again, it's not that they're like not capable of doing it. It's just like,
+I don't want to keep maintain this. And I don't want to keep adding that new like features and
+it's like kind of like yet another one of those examples and especially a technology engineering
+of that Dunning Kruger effect of like, you start and you're being like, well, what's so
+complicated about that? And then you like kind of end up in this pit of like, I'm just like treading
+water to keep these things up and balance like all the rest of these priorities. And then you kind
+of, you know, come up in the hell of like, maybe you've scaled your engineering team
+large enough to be like, cool, we can eat the cost. And this is, this is, you know,
+not just critical infrastructure, but this is actually like our IP, you know, there's very rarely
+is our web hooks your IP or document processing or feature flags being your like IP. There are
+some cases where that is. And of course, like, you know, that decision is to build like in house,
+but very rarely, like, is it there? And I think that, you know, for us segue is like really well
+into developer experience, given like, you know, similar kind of challenge that all all of these
+kind of teams that we've discussed like, like have is just that, obviously, even when you are
+hoisting away, like the relative like complexity after like getting like implemented like in your
+like product like there, you still need to nail an appeal to developers given like,
+look like a lot of your best customers are extremely strong engineering teams. They,
+and they also very understand we're really discerning of that experience. It really does have to
+make sense, feel intuitive, actually improve their like lives like day to day there. So
+we love to think about like both philosophically and like even a bit more tangibly like how you
+all kind of approach that like think through that and how you guys think through designing
+that product experience. It was like developers are, it's just like a sigh of relief when they
+aren't able to kind of use a tool like fix. Yeah. So I think I'm going to start with the
+in the end with the end for a second, but then I'm going to jump to the beginning. I think,
+you know, one of the size of relief is that when they, someone comes back with a requirement,
+six months now that I know two months on the line, like from a customer that's like a deal
+that has to close. Yes. You know, if only if they add MTLs, you know, they just go to us and they
+just go to the dash one and just enable MTLs. That's it. Yeah. And so I think just knowing that
+whatever it is that they don't even know that they need yet is going to be there because,
+you know, you guys are experts, right? We are experts. So like we, we, this is literally what
+we do day in, day out. So like, whatever you're facing, trust me, I've seen it a hundred times
+already and I'm going to have something for you. Yeah. And so I think that is like a good part
+of what developers also look for is just knowing that this is a long term partner and not just,
+yeah. I mean, one of, you know, a recent is one of our customers and like in this case study,
+which I really appreciate it. He said that we are one of the only vendors or maybe the only vendor
+under the AWS that they actually grew with. And everyone else was just like good for that beginning.
+And they're like, oh, you know, we outgrew you guys and like, yeah, not, not fix. Yeah. And I think
+this is something you care about. But now do you quit the actual question and the beginning.
+So tell me if you disagree with this, but I think developers, we're very skeptical of everyone.
+And of course, yeah. And again, by the way, I can build your product much better than you can.
+Like this is the approach that almost every developer has. Yeah, always. We've all got a little
+bit, especially like the more senior you become, it's like the more skeptical you are of that new.
+And then like the most senior engineers are like, no, why would I build this? I'm going to use it.
+Again, like this kind of bell curve like there too. Yeah, I love that meme with the Jedi say.
+That's my life. Yeah. Oftentimes. Yeah. So, so I think, you know, like,
+just making them feel like, you know, what you're doing, I think is like an important part and
+showing that every step of the way. And I think, you know, like one thing, one key part of developer
+exchange, in my point of view, and like I tell it to the team all the time, it's actually support.
+Yeah. And you know, the best support is not needing support. So the product needs to
+expand itself. And like the docs need to be amazing. And we focus a lot on both of them. And
+these are more traditional developer experience aspects. But like fast support is a big aspect.
+Like, you know, like, we want to feel like an extension of your team. Yeah. And in the sense that
+if, you know, Barack from your team, like decides to build web hooks, yeah, and you have a problem,
+you can ping him. Yeah. And he will help you figure out why you went wrong. Like, oh, and that's the
+experience we're trying to replicate. So really get it. So the developers know that we actually,
+we are there for them. And we are, we are essentially an equivalent replacement to building it yourself
+in more aspect than one. Yeah. Yeah. That's a really good way of putting it and like being,
+and I think that, that bit about being, being that team, I think that's a really great way of
+framing it because it's like, you know, when folks build these services in house, there's always that
+one expert like initially. And then, but then like there's this like kind of senior engineering
+problem where unfortunately they, they, they become a blocker and they feel like they are a
+blocker because it's like, anyone needs to build a net new service. It's like, they got to go to
+them. And it's like, and you know, engineers, it's like, you know, folks can be, you know, good at some
+point with documentation and whatnot. And even with, you know, the advent, a lot of these, you know,
+co-pilot tools that kind of help and analyze that. But it's still, it is still that kind of funnel and
+like blocker, like they're to really being able to succeed as fast as possible. And like framing
+that product as being a an excellent engineering team member that's always there that is kind of
+explainable and like intuitive, like, I think is a really solid framing like there. Are there like
+also like, are there any particular like tools or like open source software or like other other
+companies old or knew that you think like really philosophically aligned with you or you've taken
+like a lot of inspiration from or you just kind of admire from a developer experience perspective.
+Yeah, I don't know if I can put up a specific, I mean, recent one of our customers, I think they
+really focus on that. And it shows, you know, like, they just really spend a lot of time on making
+that easier for people. And so I think they're really pushing the boundaries in many ways. And
+you know, maybe some in some ways, stuff that we haven't replicated yet because yeah, either we
+don't fully agree with that or we think like it doesn't apply to us. And but I think really my
+approach always in life, like it's just kind of kind of the smallest of the world. Yeah, it's just
+like I absorb everyone. And I really can't actually point out who did a great job because I'm just
+like, I'm absorbing every night, all the time. The real only reason why I recently self of mine is
+because like, you know, like, I speak with them every now and then and then I see them pushing the
+envelope. But other than that, that's awesome. Yeah, like switching gears a bit given, you know,
+I know you kind of obsess and think about this a lot. And it's like, you know, built into as like a
+first class, when your platform is like this differentiation between polling and read, like,
+and in real time, like, or real time itch, like streaming there. And like, you know, this like
+classical, I would say rather than problem, like decision making between synchronous and like
+asynchronous, like I think like all of these kind of access patterns really, you know, or
+difficult and interesting choices to make at for various products, like even within like,
+you know, like internally, like within teams there. So would love to hear your perspective about like
+how you guys like approach those problem spaces and you build and how you've kind of built that
+into your product where it helps maybe make decision making and testing of like the pros
+and cons between those approaches easier for your users. Yeah, so actually, you know, I'm going to
+jump back to developer experience for just one second because it really relates to here. Like,
+what one of our philosophies as well is not giving people foot guns. Yeah, and just like,
+don't help people hang themselves. Exactly. Yeah. So we've been and the reason why I'm mentioning
+it now is actually we've been very careful about adding functionality that we think can be
+misused. And we're very careful about adding, you know, like the problem with an API product
+is the moment we add a flag that is there to stay. Exactly. There's there's there's a quote that
+or there's like a concept that at least like Barack and I on our team talk about a lot called
+Hiram's Law. And like you can actually see exam, there's like one example of this that I can think of
+off the top of my head in GoLang's like net HTTP package where it's like, there's a comment over
+this one type of error where it's like, you cannot change this because so much critical infrastructure
+like, like, like, I can't imagine what would break in Kubernetes, for example, if like that error
+message and that string was like the hinge and like what not there. So it's like, if it exists
+and it's like out there, it will be used. It will be used. It will be relied on for something
+critical, especially with something like a product like yours, which is relied on as infrastructure.
+Yeah. And the thing is, right? Like having an issue at one time is like the worst kind of
+like compile time. We're like, okay, with that, you know, like, we can, yeah, we can fix it.
+Yeah, that's it. But like runtime, and especially if it will only happen like one is in a million
+is it's terrible. Yeah. So I mean, I think that's kind of like one of the challenges of like having
+an API is just like, you can't break stuff. And so we're very careful about adding stuff. And when
+it comes to like polling, it's actually a long time to decide to really add it. The thing is,
+what's nice about webbooks? What's really what I really love about webbooks is that they're
+stateless and HTTP. So take any engineer or any AI agent off the street. They will know how to
+deal with webbooks. Yeah. And when it comes to polling, actually, you know, there are like a
+lot of challenges come with it. And you see that in the Kafka world a lot, which is like people,
+you know, Paul for the same kind of like, from the same place. And then they over they pull the
+same thing or they override the marker or the iterator. Even though like topics and repeatability
+are supposed to be first class features, like, do we always utilize those interfaces the best?
+Yeah. And it's sometimes very hard, right? Sometimes like it's not very clear how you should do it.
+So like, yeah, we've been again, we've been like avoiding this for the longest time. But actually,
+now we've built like enough of an ecosystem around SWIX that we can, you know, just embed that polling
+endpoint in like some of the utilities that we already built. And we hope that people are not
+going to use them wrong. And we're going to add like some, you know, guard rails, even more guard
+rails. But yeah, that's kind of like why, why we've avoided it. But the nice thing about polling
+is that you get it, you get everything in order, you can control the pace,
+page through it, sort like batch, like read and like, yeah. And it's fully because it's
+poor versus push. It's like, it's fully controlled by the consumer. Totally. Yeah. But I love
+my books. Like, I think, I think, again, and actually it's a lot of hate relation, but I don't
+think they're like the best solution for everything. But I think they are ubiquitous for a reason.
+Totally. Totally. And I think, you know, you reference agents there. And I think what I want
+to like dig in with you next is, you know, especially just where your kind of product is situated,
+like has the advent of like, you know, this change between, you know, folks like previously
+probably using offer, very straightforward, deterministic kind of processes and communication
+that I wouldn't necessarily say is the most predictable, but at least there are trends in
+throughput and whatnot, as well as like that direct access pattern. Like now we moved into
+where there's much more probabilistic computing is much more out on the what is much more regular.
+It's like really taking over in a lot of senses and like, you know, web hooks and polling like
+really do fall into place there with a lot of how these like agents or like probabilistic systems
+need to access certain services and like data or whatnot. I would love to hear your kind of
+observation around like, like how that's like effective. It's fixed if you guys are seeing like
+a lot of pull or like usage on those notes as well as like, if like this, you know, new change and
+kind of advent in how folks are building my software has changed your perspective on like how fix is
+design or how these access patterns should evolve. So I think first of all, I mean, you know, like
+one of the metrics that we track as a company is the, I mean, we're, we did YC and like, one of the
+things we track is like how much of the batch is using us. Totally. And in a way, kind of like
+web books are kind of a funny beast because like usually a two person startup doesn't need
+web books yet. Yeah, not always anyway. Yeah. And especially like, you know, like the batches
+nowadays are a lot, they have a lot of AI agents. Yeah. And it's been great to see that, you know,
+like the are the percentage of the batch users, like we're one of the top deals like on bookface
+and like share the percentage actually keeps in just growing up. Oh, cool. And so I think people
+are assigned to use web books earlier. So I think that's great. And that is driven by the
+kind of like the AI agents, what you said, which is, you know, they're autonomous computing, you
+know, like they essentially they react to events and they want to do something. And in that world,
+like event driven, which is what we do is, is, you know, as a key part. Yeah, essentially.
+Awesome. Yeah. Like, I mean, that's really all I have on my end. Anything else you want
+to kind of chat through from your end or highlight or any, any announcements to make from this fix
+and do you want to talk through it? No, no, yeah, not spoil it. But like a lot of,
+yeah, we have like a lot of product lunches that plan for the next few months. Stay tuned.
+Yeah. Yeah. So we're, we're excited to see what y'all like cook up. And I'm sure a lot of other
+folks are. But yeah, no, thank you so much for taking the time. They're going to hop on with us
+today. Yeah. And it always like, you know, love to hear like experiences from other folks like
+also focusing on these like critical infrastructure products, especially folks who our team really
+is enjoying kind of worried within the past and like appreciate your sharing those like
+perspectives like there. And yeah, y'all hope you enjoyed it. Stay tuned. Thank you.
+Bye.
+you
+
+
+
+
+
+
+That's like, someone asked like a silly question about webhooks on a SAC community I'm a member of.
+And that's not like explaining to her, you need to do X and you need to do Y and I just realized she actually couldn't tell us about anything I was saying.
+All she wanted was to send the webhooks and not have to think about it.
+I'm sure, you know what?
+I know another guy that had the exact same problem.
+So I came to her like, hey, you know, if I build it for you, will you pay me like as a product?
+No, there's a thing.
+And she just like, hell yeah, then someone else trying to like, yeah, I'll pay you as well.
+And like someone else, yeah, someone else like, you know, like current company not sending webhooks, previous company, massive hassle, happy to interview you.
+Yeah, so I built it.
+By the way, she never became a customer.
+But the other people from the thread became our first customers.
+And that's kind of like how it started.
+All she wanted was to send the webhooks and not have to think about it.
+I'm sure, you know what?
+I know another guy that had the exact same problem.
+So I came to her like, hey, you know, if I build it for you, will you pay me like as a product?
+No, there's a thing.
+And she just like, hell yeah, then someone else trying to like, yeah, I'll pay you as well.
+Like someone else, yeah, someone else like, you know, like current company not sending webhooks, previous company, massive hassle, happy to interview you.
+Yeah.
+So I built it.
+By the way, she never became a customer.
+But the other people from the thread became our first customers.
+And that's kind of like how it started.
+
+Webhooks are really just post requests, right?
+So like you get something happens, you just make a post request.
+That's very easy.
+>> Exactly.
+>> And but then what happens is that, you know, if that post request takes a bit more time.
+So just like, okay, yeah, you can't do it inbound in land in band.
+Yeah, it's a bit silly.
+So let's like move it to our background worker again.
+As I said, engineers can do it.
+We do track attacks all the time.
+You know, durable execution or anything like that.
+Yeah.
+Great.
+Okay.
+So we've solved that.
+But they're like, what about noisy neighbor?
+You know, like we have one customer that's very big.
+Another customer that's small.
+Are we gonna, you know, we're gonna affect small one?
+No.
+We're gonna do that.
+And then essentially what you see is that you find yourself dealing with, you know, 100,000
+paper cuts that, I mean, some of them are not paper cuts.
+Maybe some of them are not larger, but like 100,000 things that you either haven't considered
+or maybe considered, but haven't realized how big of a problem that's gonna be.
+Yeah.
+Yeah.
+So I think first of all, let me say what I'm saying.
+I'm like an engineering maximalist after this.
+Like, I think we can build anything.
+Yeah.
+Like every, you know, competent engineers can really build the world.
+I mean, by the way, all the other software was built by competent engineers.
+Exactly.
+Yeah.
+So every, I think like every product that we use, you know, people can build it and we
+can build it.
+The question is like, should we spend the time on it?
+Exactly.
+So the best support is not needing support.
+So the product needs to spend itself and like the docs need to be amazing and we focus
+a lot on both of them.
+And these are more traditional developer experience aspects.
+But like, fast support is a big aspect, like, you know, like we want to feel like an extension
+of your team.
+Yeah.
+And in the sense that if, you know, Barack from your team, like decides to build webhooks
+and you have a problem, you can ping him.
+Yeah.
+And he will help you figure out why you went wrong or like, oh, oh, and that's the experience
+we're trying to replicate.
+So really get it.
+So the developers know that we actually, we are there for them and we are, we are essentially
+are an equivalent replacement to building it yourself in more aspect than one.
+Again, people actually, you know, we have a lot of teams that switch to us after they
+build webhooks and spend a few years on it, but I've seen a lot of things.
+And the reason why is that they don't want to deal with it anymore.
+They don't want to like be woken up, well, you know, a page, engineer's a page and I'm
+middle of the night for like something they don't care about.
+

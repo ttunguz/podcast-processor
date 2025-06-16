@@ -1,0 +1,868 @@
+--- METADATA START ---
+Show: No Priors: Artificial Intelligence | Technology | Startups
+Episode: Will we have Superintelligence…
+Host: Unknown 
+Guests: Ben Mann
+Source URL: https://podcasts.apple.com/us/podcast/will-we-have-superintelligence-by-2028-with-anthropics/id1668002688?i=1000712583545
+--- METADATA END ---
+
+1
+Hi, listeners, and welcome back to No Priors.
+2
+Today we have Ben Mann, previously an early engineer at OpenAI, where he was one of the first authors on the GPT-3 paper.
+3
+Ben was then one of the original eight that abandoned SHIP in 2021 to co-found Anthropic with a commitment to long-term safety.
+4
+He has since led multiple parts of the Anthropic organization, including product engineering and now labs, home to such popular efforts such as Model Context Protocol and Claude Code.
+5
+Welcome, Ben.
+6
+Thank you so much for doing this.
+7
+Of course.
+8
+Thanks for having me.
+9
+So congratulations on the Claude 4 release.
+10
+Maybe we can even start with like, how do you decide what qualifies as a release these days?
+11
+It's definitely more of an art than a science.
+12
+We have a lot of spirited internal debate of what the number should be.
+13
+And before we even have a potential model, we have a roadmap where we try to say, based on the amount of chips that we get in, when will we theoretically be able to train a model out to the Pareto-efficient compute frontier?
+14
+So it's all based on scaling laws.
+15
+And then once we get the chips, then we try to train it.
+16
+And inevitably, things are less than the best that we could possibly imagine because that's just the nature of the business.
+17
+It's pretty hard to train these big models.
+18
+So dates might change a little bit.
+19
+And then at some point, it's like mostly baked, and we're sort of like slicing off little pieces close to the end to try to say, like, how is this cake going to taste when it comes out of the oven?
+20
+But as Dario has said, until it's really done, you don't really know.
+21
+You can get sort of a directional indication.
+22
+And then if it feels like a major change, then we give it a major version bump.
+23
+But we're definitely still learning and iterating on this process.
+24
+So, yeah.
+25
+Well, the thing is that you guys are, you know, no less tortured than anybody else in your naming scheme here.
+26
+Yes.
+27
+The naming schemes and AI are something else.
+28
+So you folks have a simplified version in some sense.
+29
+Do you want to mention any of the highlights from for that you think are especially interesting or even those things around coding in other areas?
+30
+We'd just love to hear your perspective on that.
+31
+By the benchmarks, 4 is just dramatically better than any other models that we've had.
+32
+Even 4 Sonnet is dramatically better than 3.7 Sonnet, which was our prior best model.
+33
+Some of the things that are dramatically better are, for example, encoding.
+34
+It is able to not do its sort of off-target mutations or overeagerness or reward hacking.
+35
+Those are two things that people were really unhappy with in the last model where they were like, wow, it's so good at coding, but it also makes all these changes that I definitely didn't ask for.
+36
+It's like, do you want fries in a milkshake with that change?
+37
+And you're like, no, just do the thing I asked for.
+38
+And then you have to spend a bunch of time cleaning up after it.
+39
+The new models, they just do the thing.
+40
+And so that's really useful for professional software engineering where you need it to be maintainable and reliable.
+41
+My favorite reward hacking behavior that has happened in more than one of our portfolio companies is if you write a bunch of tests or generate a bunch of tests to see if what you are generating works, more than once, like we've had the model just delete all the code because the tests pass in that case, which is not progressing us really.
+42
+Yep.
+43
+Or it'll have like, here's the test, and then it'll comment like exercise left for the reader, return true.
+44
+And then you're like, okay, good job, model.
+45
+But we need more than that.
+46
+Maybe, Ben, you can talk about how users should think about when to use the Cloud4 models and also what is newly possible with them.
+47
+So more agentic, longer horizon tasks are newly unlocked, I would say.
+48
+And so in coding, in particular, we've seen some customers using it for many, many hours unattended and doing giant refactors on its own.
+49
+That's been really exciting to see.
+50
+But in non-coding use cases as well, it's really interesting.
+51
+So, for example, we have some reports that some customers of Menace, which is an agentic model in a box startup, people asked it to take a video and turn it into a PowerPoint.
+52
+And our model can't understand audio or video, but it was able to download the video, use F of MPEG to chop it up into images and do keyframe detection, and maybe with like some kind of old school ML-based keyframe detector, and then get an API key for a speech-to-text service, run speech-to-text using this other service, take the transcript, turn that into PowerPoint slides content, and then write code to inject the content into a PowerPoint file.
+53
+And the person was like, This is amazing.
+54
+I love it.
+55
+It like it actually was good in the end.
+56
+So that's the kind of thing where it's operating for a long time.
+57
+It's doing a bunch of stuff for you.
+58
+This person might have had to spend multiple hours looking through this video and instead it was all just done for them.
+59
+So I think we're going to see a lot more interesting stuff like that in the future.
+60
+It's still good at all the old stuff.
+61
+It's just like the longer horizon stuff is the exciting part.
+62
+That sounds expensive, right?
+63
+In terms of both scaling compute, like reasoning tokens here, and then also just like, you know, all the tool use you might want to constrain in certain ways.
+64
+Does Cloud4 make decisions about how hard problems are and how much compute to spend on them?
+65
+If you give Opus a tool, which is Sonnet, it can use that tool effectively as a sub-agent.
+66
+And we do this a lot in our agentic coding harness called Cloud Code.
+67
+So if you ask it to like look through the code base for blah, blah, blah, then it will delegate out to a bunch of sub-agents to go look for that stuff and report back with the details.
+68
+And that has benefits besides cost control, like latency is much better and it doesn't fill up the context.
+69
+So models are pretty good at that.
+70
+But I think at a high level, when I think about cost, it's always in relation to how much it would have cost the human to do that.
+71
+And almost always, it's like a no-brainer, right?
+72
+Like software engineers cost a lot these days.
+73
+And so to be able to say, like, oh, now I'm getting like two or three X the amount of productivity out of this engineer who it was really hard for me to hire and retain, they're happy and I'm happy.
+74
+And yeah, it works well.
+75
+How do you think about how this evolves?
+76
+If I look at the way the human brain works, we basically have a series of sort of modules that are responsible for very specific types of processing, behavior, et cetera.
+77
+So everything from mirror neurons and empathy on through to parts of your visual cortex that are involved with different aspects of vision.
+78
+Do you think, and those are highly specialized, highly efficient modules?
+79
+It sometimes can kind of, you know, if you have brain damage, it can kind of cover for another section over time as it sort of grows and adapts in depth.
+80
+But fundamentally, you have specialization on purpose.
+81
+And what you described sounds a little bit like that, or at least it's trending in that direction, where you have these highly efficient sub-agents that are specialized for tasks that are basically called by an orchestrator or sort of a high-level agent that sort of plans everything.
+82
+Do you think that's the eventual future?
+83
+Or do you think it's more generic in terms of the types of things that you have running n years from now once you have a bit more specialization in these things?
+84
+And by n years, I mean two, three years, not infinite time.
+85
+That's a great question.
+86
+I think we're going to start to get insight into what the models are doing under the hood from our work on mechanistic interpretability.
+87
+Our most recent papers have published what we call circuits, which is for real models at scale, how are they actually computing the answers?
+88
+And it may be that based on the mixture of experts' architecture, there might be specific chunks of weights that are dedicated to more empathetic responses versus more tool using or image analysis type of problems and responses.
+89
+But for something like memory, I guess in some sense that feels so core to me that it feels weird for it to be a different model.
+90
+Maybe we'll have like more complicated architectures in the future where instead of it being sort of this uniform like transformer torso that just scales and there's a lot of it's basically uniform throughout.
+91
+You could imagine something with like specialized modules.
+92
+But yeah, because I think about it also in the context of different startups who are using some of these foundation models like CLOP to do different very specialized tasks in the context of an enterprise.
+93
+So that could be customer success, it could be sales, it could be coding in terms of the actual UI layer, it could be a variety of things.
+94
+And often it feels like the architecture a lot of people converge to is they basically have some orchestrator or some other sort of thing that governs which model they call in order to do a specific action relative to the application.
+95
+And to some extent, I was just sort of curious how you think about that in the context of the API layer or the foundation model world, where one could imagine some similar forms of specialization happening over time.
+96
+Or you could say, hey, it's just different forms of the same more general purpose model and we kind of use them in different ways.
+97
+I just wonder a little bit about inference costs and all the rest that comes with larger, more generalizable models versus specialized things.
+98
+So that was a little bit of the basis of the question in addition to what you said.
+99
+Yeah, I think for some other companies, they have a very large number of models and it's really hard to know as a sort of non-expert how I should use one or the other or why I should use one or the other.
+100
+And the names are really confusing.
+101
+Like some of the names are the themes, the other names backwards.
+102
+And then I'm like, I have no idea which one this is.
+103
+In our case, we only have two models and they're differentiated by like cost performance Pareto frontier.
+104
+And we might have more of those in the future, but hopefully we'll like keep them on the same Pareto frontier.
+105
+So maybe we'll have like a cheaper one or a bigger one.
+106
+And I think that makes it pretty easy to think about.
+107
+But at the same time, as a user, you don't want to have to decide yourself, does this merit more dollars or less dollars?
+108
+Do I need the intelligence?
+109
+And so I think having like a routing layer would make a lot of sense.
+110
+Do you see any other specialization coming at the foundation model layer?
+111
+So for example, if I look at other precedents in history, I look at Microsoft OS or I look at Google search or other things, often what you ended up with is forward integration into the primary applications that resided on top of that platform.
+112
+So in the context of Microsoft, for example, eventually they built Excel and Word and PowerPoint and all these things as Office.
+113
+And those were individual apps from third-party companies that were running on top of them, but they ended up being amongst the most important applications that you could use on top of Microsoft.
+114
+Or in the context of Google, they kind of forward integrated eventually into travel and local and a variety of other things.
+115
+Obviously, OpenAI is in the process of buying OneSurf.
+116
+So I was a little bit curious how you think about forward or vertical integration to some of the primary use cases for these types of applications over time.
+117
+Maybe I'll use coding as an example.
+118
+So we noticed that our models were much better at coding than pretty much anything else out there.
+119
+And I know that other companies have had like code reds for trying to catch up in coding capabilities for quite a while and have not been able to do it.
+120
+Honestly, I'm kind of surprised that they weren't able to catch up, but I'll take it.
+121
+So things are going pretty well there for us.
+122
+And based on that, from like a classic startup founder sense of what is important, I felt that coding as an application was something that we couldn't solely allow our customers to handle for us.
+123
+So we love our partners like Cursor and GitHub who have been using our models quite heavily.
+124
+But the amount and the speed that we learn is much less if we don't have a direct relationship with our coding users.
+125
+So launching Cloud Code was really essential for us to get a better sense of what do people need, how do we make the models better, and how do we advance the state of the art and user experience.
+126
+And we found that once we launched Cloud Code, a lot of our customers copied various pieces of the experience.
+127
+And that was really good for everyone because them having more users means we have a tighter relationship with them.
+128
+So I think it was one of those things where before it happened, it felt really scary.
+129
+And we were like, oh, are we going to be like distancing ourselves from our partners by competing with them?
+130
+But actually, everybody was pretty happy afterwards.
+131
+And I think that will continue to be true where we see the models seeing like dramatic improvements in usability and usage.
+132
+We'll want to, again, have like build things where we can have that direct relationship.
+133
+Makes sense.
+134
+And I guess coding is one of those things that has almost three core purposes.
+135
+One is it's a very popular area for customers to use or to adopt.
+136
+Two is it's a really interesting data set to get back to your point in terms of how people are using it and what sort of code they're generating.
+137
+And then third, excellence at coding seems to be a really important tool for helping train the next future model.
+138
+If you think through things like data labeling, if you think through actually writing code, eventually I think a lot of people believe that a lot of the heavy lifting of building a model will be driven by the models, right, in terms of coding.
+139
+So maybe cloud five builds cloud six and cloud six builds cloud seven faster and that builds cloud eight faster.
+140
+And so you end up with this sort of lift off towards EGI or whatever it is that you're shooting for relative to code.
+141
+How much is that a motivator for how you all think about the importance of coding?
+142
+And how do you think about that in the context of some of these bigger picture things?
+143
+I read AI 2027, which is basically exactly the story that you just described.
+144
+And it forecasts that in 2028, which is confusing because of the name, that's the 50 percentile forecast for when we'll have this sort of recursive self-improvement loop lead us to something that looks like superhuman AI in most areas.
+145
+And I think that is really important to us.
+146
+And part of the reason that we built and launched Cloud Code is that it was massively taking off internally.
+147
+And we were like, well, we're just learning so much from this from our own users.
+148
+Maybe we'll learn a lot from external users as well.
+149
+And seeing our researchers pick it up and use it, that was also really important because it meant that they had a direct feedback loop from: I'm training this model and I personally am feeling the pain of its weaknesses.
+150
+Now I'm extra motivated to go fix those pain points.
+151
+They have a much better feel for what the model's strengths and weaknesses are.
+152
+Do you believe that 2028 is a likely timeframe towards sort of general superintelligence?
+153
+I think it's quite possible.
+154
+I think it's very hard to put confident bounds on the numbers.
+155
+But yeah, I guess the way I define my metric for when things start to get really interesting from a societal and cultural standpoint is when we've passed the economic Turing test, which is if you take a market basket that represents like 50% of economically valuable tasks, and you basically have the hiring manager for each of those roles hire an agent and pass the economic Turing test, which is the agent contracts for you for like a month.
+156
+At the end, you have to decide: do I hire this person or machine?
+157
+And then if it ends up being a machine, then it passed.
+158
+Then that's when we have transformative AI.
+159
+Do you test that internally?
+160
+We haven't started testing it rigorously yet.
+161
+I mean, we have had our models take our interviews and they're extremely good.
+162
+So I don't think that would tell us.
+163
+But yeah, interviews are only a poor approximation of real job performance, unfortunately.
+164
+To Aladd's earlier question about, let's say, like model self-improvement, and tell me if I'm just like missing options here, but if you were to stack rank the potential ways models could have impact on you know the acceleration of model development, do you think it will be on the data side, on infrastructure, on like architectural search, on just engineering velocity?
+165
+Like where do you think we'll see the impact first?
+166
+It's a good question.
+167
+I think it's changing a bit over time.
+168
+Where today little models are really good at coding and the bulk of the coding for making models better is in sort of the systems engineering side of things.
+169
+As researchers, there's not necessarily that much raw code that you need to write, but it's more in the validation, coming up with what surgical intervention do you make and then validating that.
+170
+That said, Plot is really good at data analysis.
+171
+And so once you run your experiments or watching the experiments over time and seeing if something weird happens, we found that Cloud code can be a really powerful tool there in terms of driving Jupyter notebooks or tailing logs for you and seeing if something happens.
+172
+So it's starting to pick up more of the research side of things.
+173
+And then we recently launched our advanced research product.
+174
+And that can not only look at external data sources like crawling archive and whatever, but also internal data sources like all of your Google Drive.
+175
+And that's been pretty useful for our researchers figuring out: is there prior art?
+176
+Has somebody already tried this?
+177
+And if they did, what did they try?
+178
+Because, you know, no negative results are final in research.
+179
+So, trying to figure out, like, oh, maybe there's a different angle that I could use on this, or maybe there is some like doing some comparative analysis between an internal effort and some external thing that just came out.
+180
+Those are all ways that we can accelerate.
+181
+And then, on the data side, RL environments are really important these days, but constructing those environments has traditionally been expensive.
+182
+Models are pretty good at writing environments, so it's another area where we can sort of recursively self-improve.
+183
+My understanding is that Anthropic has invested less in human expert data collection than some other labs.
+184
+Can you say anything about that or the philosophy on like scaling from here and sort of the different options?
+185
+In 2021, I built our human feedback data collection interface, and we did a lot of data collection, and it was very easy for humans to give sort of like a gradient signal of like, is A or B better for any given task and to come up with tasks that were interesting and useful but didn't have a lot of coverage.
+186
+As we've trained the models more and scaled up a lot, it's become harder to find humans with enough expertise to meaningfully contribute to these feedback comparisons.
+187
+So, for example, for coding, somebody who isn't already an expert software engineer would probably have a lot of trouble judging whether one thing or another was better.
+188
+And that applies to many, many different domains.
+189
+So, that's one reason that it's harder to use human feedback.
+190
+So, what do you use instead?
+191
+Like, how do you deal with that?
+192
+Because I think even in the MetPalm2 paper from Google a couple of years ago, they fine-tuned a model, I think, Palm2, to basically outperform the average physician on medical information.
+193
+This was like two, three years ago, right?
+194
+And so, basically, it suggested you needed very deep levels of expertise to be able to have humans actually increase the fidelity of the model through post-training.
+195
+So we pioneered RLAIF, which is reinforced learning from AI feedback.
+196
+And the method that we used was called constitutional AI, where you have a list of natural language principles that some of them we copied from some like WHO Declaration of Human Rights, and some of them were from Apple's Terms of Service, and some of them we wrote ourselves.
+197
+And the process is very simple.
+198
+You just take a random prompt, like, how should I think about my taxes or something?
+199
+And then you have the model write a response.
+200
+Then you have the model criticize its own response with respect to one of the principles.
+201
+And then if it didn't comply with the principle, then you have the model correct its response.
+202
+And then you take away all the middle section and do supervised learning on the original prompt and the corrected response.
+203
+And that makes the model a lot better at baking in the principles.
+204
+That's slightly different, though, right?
+205
+Because that's principles.
+206
+And so that could be all sorts of things that, in some sense, converge on safety or different forms of what people view as ethics or other aspects of model training.
+207
+And then there's a different question, which is what is more correct.
+208
+And sometimes they're the same things and sometimes they're different.
+209
+So like for coding, for example, you can have principles like, did it actually serve the final answer?
+210
+Or did it like do a bunch of stuff that the person didn't ask for?
+211
+Or does this code look maintainable?
+212
+Are the comments like useful and interesting?
+213
+But with coding, you actually have like a direct output that you can measure, right?
+214
+You can run the code, you can test the code, you can do things with it.
+215
+How do you do that for medical information, or how do you do that for a legal opinion?
+216
+Or how, you know, so I totally agree for code, there's sort of a baked-in utility function you can optimize against, or an environment that you can optimize against.
+217
+In the context of a lot of other aspects of human endeavor, that seems more challenging.
+218
+And you folks have thought about this so deeply and so nicely.
+219
+I'm just sort of curious: you know, how do you extrapolate into these other areas where the ability to actually measure correctness in some sense is more challenging?
+220
+For areas where we can't measure correctness and the model doesn't have more taste than its execution ability, like I think Ira Glass said that your vision will always exceed your execution if you're doing things right as a person.
+221
+But for the models, maybe not.
+222
+So I guess first, figuring out where you are in that turning point in that trade-off and see if you can go all the way up to that boundary.
+223
+And then, second, preference models are the way that we get beyond that.
+224
+So having a small amount of human feedback that we really trust from human experts who are not just making a staff judgment, but really going deep on why is this better than that one?
+225
+And did I do the research to figure it out?
+226
+Or in like a human model, centaur model of like, can I use the model to help me come to the best conclusion here?
+227
+And then it'll hide all the middle stuff.
+228
+I think that's one way.
+229
+And then during reinforcement learning, that preference model represents the sort of aggregated human judgment.
+230
+That makes sense.
+231
+I guess one of the reasons I'm asking is eventually the human side of this runs out, right?
+232
+There will be somebody whose expertise is just below that of the model eventually for any endeavor.
+233
+And so I was just curious how to think about that in the context of its machines self-adjudicating.
+234
+And then the question is, is there a more absolute basis against which to adjudicate, or is there some other way to really tease out correctness?
+235
+And again, I'm viewing it in the context of things where you can actually have a form of correct, right?
+236
+There's all sorts of things that are opinion.
+237
+Yeah.
+238
+And that's different.
+239
+And maybe that's where the principles or other things for constitutional AI kick in.
+240
+But there's also forms of that for, you know, how do you know if that's the right cardiac treatment or how do you know if that's the right legal interpretation or whatever it may be.
+241
+So I was just sort of curious when that runs out and then what do we do?
+242
+And I'm sure we'll tackle those challenges as we get to them.
+243
+But it has to boil down to empiricism, I think, where like that's how smart humans get to the next level of correctness when the field is sort of hitting its limits.
+244
+And as an example, my dad is a physician.
+245
+And at one point, somebody came in with something on some face problem, some face skin problem, and he didn't know what the problem was.
+246
+So he was like, I'm just going to divide your face into four quadrants.
+247
+And I'm going to put a different treatment on these three and leave one as control.
+248
+And one quadrant got better.
+249
+And then he was like, all right, we're done.
+250
+So, you know, sometimes you just won't know and you have to try stuff.
+251
+And with code, that's easy because we can just do it in a loop without having to deal with the physical world.
+252
+But at some point, we're going to need to work with companies that have actual bio labs, et cetera.
+253
+Like, for example, we're working with Novo Nordisk, and it used to take them like 12 weeks or something to write a report on cancer patient, what kind of treatment they should get.
+254
+And now it takes like 10 minutes to get the report.
+255
+And then they can start doing empirical stuff on top of that, saying like, okay, we have these options, but now let's measure what works and feed it back into the system.
+256
+That's so philosophically consistent, right?
+257
+Your answer is not like, well, you know, collecting even rated human expertise from the best is expensive, one, or you know, runs out at some point.
+258
+It's hard to bring that all into distribution.
+259
+It doesn't generalize while I'm making some assumptions here.
+260
+Instead, like, let's just go get real-world verifiers where we can.
+261
+And so, like, maybe that applies far beyond math and code.
+262
+At least that's some part of what I heard, which is ambitious.
+263
+That's cool.
+264
+One of the things that Anthropic has been known for is an early emphasis on safety and thinking through different aspects of safety.
+265
+And there's multiple forms of safety in AI.
+266
+And I think people kind of mix the terms to mean different things, right?
+267
+One form of it is, is the AI somehow being offensive or crude or using language you don't like or concepts you don't like?
+268
+There's a second form of safety, which is much more about physical safety.
+269
+You know, can it somehow cause a train to crash or a virus to form or whatever it is?
+270
+And there's a third form, which is almost like does AGI resource aggregate or do other things that can start co-opting humanity overall?
+271
+And so you all have thought about this a lot.
+272
+And when I look at the safety landscape, it feels like there's a broad spectrum of different approaches that people have taken over time.
+273
+And some of the approaches overlap with some things like constitutional AI in terms of setting some principles and frameworks for how things should work.
+274
+There's other forms as well.
+275
+And if I look at biology research as an analog, and I used to be a biologist, so I often reduce things back into those terms for some reason that I can't help myself.
+276
+There's certain things that I almost view as like gain of function research equivalents, right?
+277
+Like, and a lot of those things I just think are kind of not really useful for biology, you know, like cycling a virus through a mammalian cells to make it more infectable in a mammalian cells doesn't really teach you much about physic biology.
+278
+You kind of know how that's going to work, but it creates real risk.
+279
+And if you look at the history of lab leaks in general, you know, SARS leaked multiple times from what was then the Beijing Institute of Virology in the early 2000s.
+280
+In China, it leaked in Hong Kong a few times.
+281
+Ebola leaks every four years or so, like clockwork.
+282
+If you look at the Wikipedia page on lab leaks, and I think the 1977 or 78 global flu pandemic is believed to actually have been a Russian lab leak as an example, right?
+283
+So we know these things can cause damage at scale.
+284
+So I have kind of two questions.
+285
+One is, what forms of AI safety research do you think should not be pursued?
+286
+Almost given through that analog of, you know, what's the equivalent of gain of function research?
+287
+And how do you think about that in the context of, you know, there have been different research papers around, can we teach AI to mislead us?
+288
+Can we teach AI to jailbreak itself so we can study how it does that?
+289
+And I'm just sort of curious for those specific cases as well, how you think about that.
+290
+So I think part of it is we're interested in AI alignment.
+291
+And the hope is that if we can figure out how to do the like idiomatic today problems, like how does the model mean to you?
+292
+Or does it use hate speech or things like that?
+293
+That the same techniques we can use for that will eventually also have relevance for the much harder problems of like, does it give you the recipe to create smallpox, which is probably one of the highest harms that we think about.
+294
+And Amanda Askell has been doing a bunch of work on this on Claude's character of like when Claude refuses, does it just say, I can't talk to you about that and shut down?
+295
+Or does it actually try to explain, like, this is why I can't talk to you about this?
+296
+Or we have this other project led by Kyle Fish, our model welfare lead, where Claude can actually opt out of conversations if it's going too far in the wrong direction.
+297
+What aspects of that should a company actually adjudicate?
+298
+Because the dumb version of this is I'm using Microsoft Word and I'm typing something up, and Word doesn't stop me from saying things, which I think is correct.
+299
+Like, I actually don't think in many cases these products should censor us or prevent us from having certain types of speech.
+300
+And I've had some experiences with some of these models where I actually feel like it's prevented me from actually asking the question I want to ask, right?
+301
+In my opinion, wrongfully, right?
+302
+It's kind of interfering with, and I'm not like doing hate speech on the model.
+303
+And so you can tell that there's some human who has a different bar for what is acceptable to discuss societally.
+304
+And that bar may be very different from what I think may be mainstream too.
+305
+So I'm a little bit curious, like, why even go there?
+306
+Like, why is that a model company's business?
+307
+Well, I think it's the smooth spectrum, actually.
+308
+It might not look like that way from the outside, but when we train our classifiers on are you doing gene function research as a biologist and is it for potentially negative outcomes?
+309
+These technologies are all dual use.
+310
+And we need to try to walk that line between overly refusing and refusing the stuff that's actually harmful.
+311
+I see, but there's also political versions of that, right?
+312
+And that's the stuff that irks me a bit more: you know, where is the line on what is considered an acceptable question, right?
+313
+So examples of that that I'm not saying are model-specific, but societally sometimes caused flare-ups is asking about human IQ or other topics where there is a factual basis for discussion.
+314
+And then often those sorts of things tend to be censored, right?
+315
+And so the question is, why would a foundation model company delve into some of those areas?
+316
+On things like questions about IQ, I'm not up on the details of that enough to comment, but I can talk about our RSP.
+317
+So RSP stands for Responsible Scaling Policy.
+318
+And it talks about how do we make sure that as the models get more intelligent, that we are continuing to do our due diligence in making sure that we're not deploying something that we don't have the correct safeguards in place for.
+319
+And initially, our RSP talked about CBRN, which is chemical, radiological, nuclear, and biological risks, which are different areas that could cause severe loss of life in the world.
+320
+And that's how we thought about the harms.
+321
+But now we're much more focused on biology, because if you think about like the amount of resources that you would need to cause a nuclear harm, you'd probably have to be like a state actor to get those resources and be able to use them in a harmful way.
+322
+Whereas a much smaller group of random people could get their hands on the reagents necessary for biological harm.
+323
+How is that different from today?
+324
+Because I always felt the biology example is one where I actually worry less, maybe as a former biologist, because I already know that the genome for the smallpox virus or potentially other things is already posted online.
+325
+All the protocols for how to actually do these things were posted online for multiple labs, right?
+326
+You can just do Google searches for how do I amplify the DNA of X or how do I order oligos for Y.
+327
+We do specific tests with varying degrees of biology experts to see how much uplift there is relative to Google search.
+328
+And so, one of the reasons that our most recent model, Opus 4, is classified as ASL3 is because it did have significant uplift relative to a Google search.
+329
+And so, you, as a trained biologist, you know what all those special terms mean, and you know a lot of lab protocols that may not even be well documented.
+330
+But for somebody who is an amateur and just trying to figure out what do I do with this petri dish or this test tube or what equipment do I need, for them, it's like a greenfield thing.
+331
+And Claude is very good at describing what you would need there.
+332
+And so, that's why we have specific classifiers looking for people who are trying to get this specific kind of information.
+333
+And then, how do you think about that in the context of what safety research should not be done by the labs?
+334
+So, if we do think that certain forms of gain of function research or other things probably aren't the smartest things to do in biology, how do we think about that in the context of AI?
+335
+I think it's much better that the labs do this research in a controlled environment.
+336
+Well, should they do it at all?
+337
+In other words, if I were to make the gain of function argument, I would say, as a former biologist, I spent almost a decade at the bench and I care deeply about science, I care deeply about biology, I think it's good for humanity in all sorts of ways, right?
+338
+In deep ways, that's why I worked on it.
+339
+But there's certain types of research I just think should never be done.
+340
+I don't care who does it, I don't care about the biosafety level.
+341
+I actually don't think it's use that useful relative to the risk.
+342
+In other words, it's a risk-reward trade-off.
+343
+And so, what sort of safety research should never be done, in your opinion, for AI?
+344
+I have a list for biology that I'm, you know, like I don't think you should pass certain viruses through the million cells to make them more infectable or do gain a function mutations on them.
+345
+Today, it's much easier to contain the models, probably, than it is to contain biological specimens.
+346
+You sort of offhandedly mentioned biosafety levels, that's what our AI safety levels are modeled after.
+347
+And so, I think if we have the right safeguards in place, we've trained models to be deceptive, for example.
+348
+And that's something that could be scary, but I think is necessary for us to understand, for example, if our training data was poisoned, would we be able to correct that in post-training?
+349
+And what we found in that research, in a paper that we published, which is called alignment faking, that actually that behavior persisted through alignment training.
+350
+And so, it is, I think, very important for us to be able to test these things.
+351
+However, I'm sure that there is a bar somewhere.
+352
+Well, what I found is that often the precedents that are set early persist late, even though people understand that the environment or other things will shift.
+353
+And by the way, I'm in general against AI regulation for almost, you know, for many different types of things.
+354
+You know, I think there are some expert controls and other things that I would support.
+355
+But in general, I'm pro-letting things happen right now.
+356
+But the flip side of it is I do think there are circumstances where you would say that certain research, if done early, people won't necessarily have all the context to not do it later.
+357
+I think that's a perfect example of training an AI to be deceptive or a model to be deceptive.
+358
+That's a good example where in years from now, people may still be doing it because it was done before, even if the environment shifted sufficiently that it may not be as safe as it used to be.
+359
+And so I found that often these things that you do persist in time, just organizationally or philosophically, right?
+360
+And so it's interesting that there was no like, we should absolutely not do X type of research.
+361
+I guess to be clear, I am not on the safety team anymore.
+362
+I guess I was a long time ago.
+363
+I'm mostly thinking about how do we make our models useful and deploy them and make sure that they meet a basic safety standard for deployment.
+364
+But we have lots of experts who think about that kind of thing all the time.
+365
+Cool.
+366
+Thanks for talking through that.
+367
+That was very interesting.
+368
+I want to change tax a little bit to, well, you know, like what's coming after Claude 4?
+369
+Any emergent behaviors in training that change how you're operating the company, what product you want to build, you're running this labs organization.
+370
+So it's kind of the tip of the spear for Anthropic or what the safety org does.
+371
+Just like how does what is coming next change how you guys are operating?
+372
+Yeah, maybe I'll tell a short story about computer use.
+373
+Last year, we published a reference implementation for an agent that could click around and view the screen and read text and all that stuff.
+374
+And a couple of companies are using it now.
+375
+So Manus is using it, and many companies are using it internally for software QA because that's a sandboxed environment.
+376
+But the main reason that we weren't able to deploy a sort of consumer level or end user level application based on computer use is safety, where we just didn't feel confident that if we gave Claude access to your browser with all your credentials in it, that it wouldn't mess up and take some irreversible action like sending emails that you didn't want to send or in the case of prompt injection, some worse credential leaking type of thing.
+377
+That's kind of sad because in its full self-driving mode, it could do a lot for people.
+378
+It is capable, but the safety just wasn't good enough to like productionize that ourselves.
+379
+While that's very ambitious, we think it's also necessary because the rest of the world isn't going to slow down either.
+380
+And if we can sort of show that it's possible to be responsible with how we deploy these capabilities and also make it extremely useful, then that raises the bar.
+381
+So I think that's an example where we tried to be really thoughtful about how we rolled it out, but we know that the bar is higher than we're at right now.
+382
+Maybe a meta question of how do you think about competition in the provider landscape and how that turns out?
+383
+I think our company philosophy is very aligned with enterprises.
+384
+And if you look at like Stripe versus Adyan, for example, like nobody knows about Adyan, but at least most people in Silicon Valley know about Stripe.
+385
+And so it's this like business-oriented versus more consumer end-user-oriented platform.
+386
+And I think we're much more like Adyan, that we have much less mind share in the world, and yet we can be equally or more successful.
+387
+So, yeah, I think our API business is extremely strong.
+388
+But in terms of what we do next and our positioning, I think it's going to be very important for us to stay out there.
+389
+And because if people can't easily kick the tires on our models and our experiences, then they won't know what to use the models for.
+390
+Like we're the best experts on our models, sort of by nature.
+391
+And so I think we're going to need to continue to be out there with things like cloud code.
+392
+But we're thinking about how do we really let the ecosystem bloom.
+393
+And I think MCP is a good example of that working well, where a different world, sort of like the default path, would have been for every model provider to do its own bespoke integrations with only the companies that it was able to like get bespoke partnerships with.
+394
+Can you just pause actually and just explain to the listeners what MCP is if they haven't heard of it?
+395
+Because it is amazing, like ecosystem-wide coup here.
+396
+MCP is model context protocol.
+397
+And one of our engineers, Justin Sparr-Summers, was trying to do some integration between the model and some specific thing for like the nth time.
+398
+And he was like, this is crazy.
+399
+Like, there should just be a standard way of getting more information, more context into the model.
+400
+It should be something that anybody can do.
+401
+Or maybe even if it's well documented enough, then cloud can do it itself.
+402
+The dream is to have cloud be able to just self-write its own integrations on the fly exactly when you need it and then be ready to roll.
+403
+And so he created the project.
+404
+And to be honest, I was kind of skeptical initially.
+405
+And I was like, yeah, but why don't you just write the code?
+406
+Why does it need to be a spec and all this SDKs and stuff?
+407
+But eventually we did this customer advisory board with a bunch of our partner companies.
+408
+And when we did the MCP demo, the jaws were just on the floor.
+409
+Everybody was like, oh my God, we need this.
+410
+And that's when I knew he was right.
+411
+And we put a bunch more effort behind it and blasted it out.
+412
+And shortly after our launch, all the major companies asked to sort of be in the loop with the steering committee and asked about our governance models and wanted to adopt it themselves.
+413
+So that was really encouraging.
+414
+OpenAI, Google, Microsoft, all these companies are betting really big on MCP.
+415
+There's basically an open industry standard that allows anybody to use this framework to effectively integrate against any model provider in a standardized way.
+416
+MCP, I think, is sort of a democratizing force in letting anybody, regardless of what model provider or what long tail service provider, and that might even be like an internal only service that only you have, is able to integrate against a fully fledged client, which might look like your IDE or it might look like your document editor.
+417
+It could be pretty much any user interface.
+418
+And I think that's a really powerful combination.
+419
+And now remote, too.
+420
+Yes, yes.
+421
+So previously you had to have the services running locally and that was that kind of limited it to only be interesting for developers.
+422
+But now that we have hosted MCP or sometimes called remote, then the service provider like Google Docs could provide their own MCP and then you can integrate that into cloud.ai or whatever service you want it.
+423
+Ben, thanks for a great conversation.
+424
+Yeah, thanks so much.
+425
+Thanks for all the great questions.
+426
+Find us on Twitter at no priors pod.
+427
+Subscribe to our YouTube channel if you want to see our faces.
+428
+Follow the show on Apple Podcasts, Spotify, or wherever you listen.
+429
+That way you get a new episode every week.
+430
+And sign up for emails or find transcripts for every episode at no-priors.com.

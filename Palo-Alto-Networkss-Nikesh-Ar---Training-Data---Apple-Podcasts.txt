@@ -1,0 +1,715 @@
+
+like I have a principle that I was joke even on our all hands and say I have never
+met a person who comes to work to screw up. I wake up in the morning, let's go sunshine,
+it's time to go to work, let's me see how badly I can do today.
+Everybody walks in with the right attitude. It's something that happens at work
+that we create that causes the unintended outcomes. It's not the person who walks in. If you found
+the right person with the right domain knowledge, right intelligence, the right attitude, then the
+rest is upon us.
+Today on Training Data, we have a very special episode with Nikesh Aurora, the CEO of Palo Alto
+Networks. Since joining Palo Alto on 2018, Nikesh has built it into the largest and most valuable
+cyber security company in the world with 70,000 customers and more than $120 billion of market
+value. Prior to Palo Alto, Nikesh spent a decade at Google as the chief business officer as the
+company grew from $3 billion to about $65 billion in revenue. Nikesh is an extraordinary CEO with
+a inquisitive mind and a wonderful sense of what is happening in the world of AI.
+Thanks to being in the center of it with Palo Alto and all of their customers.
+Please join us for a wide range of conversation about AI, its impact on security,
+and what excellent leadership looks like. We hope you enjoy.
+Nikesh, thank you for joining us on Training Data. So, we emailed you and asked you if
+you joined us on the show and your response was, and I quote, "As long as we can talk about deep
+seek and the new world order." Let's start there. Tell us more.
+We all have our interpretation of AI and a bunch of us trying to figure out and rationalize this
+and some sort of mental framework. So, like everybody else, I've had my own. And from my
+perspective, what we've seen in the last 12 months has been phenomenal. And we have people trying to
+build effectively a brain of some sort, a brain with immense capacity to remember everything,
+to process everything, and to pattern recognition, which is kind of like,
+my interpretation of an NLM. Now, that brain, because of being trained in data that's out there,
+is susceptible to reaching the wrong conclusions, depending on the data it's
+using to train itself. So, this is not a secret. And we hear of that in various contexts of
+hallucination or not having the right answer because I've never seen it before, and that's fine.
+You can call it the early brain. But at some point in time, these things are going to become
+very smart, possibly as smart as you've had.
+You know, it takes several more years to hit Sonya stage.
+That's great. So, at that point in time, I think we all have to start getting a little
+worried. So, the question is, how much money does it take to build this brain? One and two,
+how can all of us use it effectively? I think we can all use it effectively today
+in certain use cases, as we've seen out there, whether it's in creative use cases or search use
+cases or, you know, data aggregation use cases or data regurgitation use cases.
+At some point in time, you're going to take this brain and give your arms and legs and let it do
+stuff. And that's where things start getting dangerous. And we've seen examples where people
+gave these brains the right to do stuff too soon, too early, where they started giving you
+free cars or, you know, refunding airline tickets, which is not a good idea because
+that is their version of hallucinating and giving stuff away. But, you know, on the other hand,
+people are sitting in cars where these brains have arms and legs and are driving us around,
+as a driver. So, there are examples where there are precision use cases which are narrow and
+dust specific, where we are letting these things get access to it. So, I'm sorry for the long
+preamble, but the whole notion of the new world order was, you know, and I don't have an opinion
+on whether it costs $6 million or more. My opinion is that if somebody built a brain cheaply and
+made available cheaply, it just expands the opportunity for a lot of these startups, a lot of people
+try and deploy that brain to do various tasks. And that, to me, is a major shift in what has been
+some of the mainstay of this industry, where we all talk to you about a lot of money to build
+amazing models and it looks like there could be task-specific models which we built a lot cheaper.
+And you mentioned some of the hallucinations and the attempts to geo-break these models or
+prompt-inject these models. There's a report that came out a few days ago about DeepSeek R1 that said
+50 out of 50 prompt injections worked. So, basically, 100% success rate on attacking the model.
+Is that a DeepSeek thing? Is that an open-source thing? Do you have a perspective on what the
+implications of that might be? Maybe it's not as simple as $6 million gets you the same thing
+you get out of OpenAI? Well, of course, which one do you want, right? And at the end of the day,
+every model is putting a bunch of guardrails around it. These models are all raw. If they're in the raw,
+they're in the raw. Have you remember the early versions of Chad GPT and Gemini? I think it was
+even called Vertex. Well, they called that. It was called something else before Gemini. And
+those things had the opportunity for us to prompt-inject as well. So, they were versions of these models
+which had to have guardrails built around them and those things. That's what it cost money to do,
+is build guardrails. The guardrails initially were skinned deep. As you know, one of these
+phenomenal stories in the early days where people were able to jailbreak them and get around them
+and get models to start doing crazy stuff. So, I think we will see more and more guardrails,
+more and more simpler attempts being blocked. I think there are still sophisticated things that
+can be done to these models. Even the more, in your mind, more expensive models have loopholes or
+have side doors which can be used to attack them to some degree. Have you seen that happen in the
+past? So, yes, perhaps deep-seek is not as guardrails as it is and perhaps it was built
+cheaply. But in the end of the day, whichever model it is, when you deploy it for a precision use case
+and give it arms and legs, it doesn't matter what guardrails the model comes, that you will have to
+superimpose better guardrails and controls around it. This is where people like us come in,
+where we say it doesn't matter what you got, I'm still going to put a poll to firewall
+and put a straight jack around this and make it only to spawn to task-specific stuff.
+i.e. if the model is designed to improve your manufacturing process, you can talk to it about,
+you know, rewriting Shakespeare. Let's talk about that for a minute, what's in scope and what's out
+of scope for Palo Alto Networks as it relates to securing AI? Well, from our perspective,
+look, we're seeing two interesting use cases. One, we're seeing a lot of people who are employees,
+who are kids, who are users, using AI in some way, shape, or form to augment their day job.
+And you can call an augment for now and maybe it'll creep up and do more and more for your day job,
+but it's being used as human augmentation for now, right? Because we're not giving you control.
+I'm not telling an AI agent to go write me a paper for my class. I'm not telling an AI agent to
+write me a blog and possibly one of these days they won't. But for now, it's been used for human
+augmentation and the general fear and the enterprises, my employees are taking to apply to your data
+and putting it in sub-model and it'll be used for training. And over time, you know, it'll get
+either out of copyright, it'll get stolen, it'll be, you know, become part of the general knowledge
+that's not proprietary data. So we have a use case where we can interest up data, which is being
+used by employees or AI that's being used by employees and provided disabilities to enterprises
+and to provide control so they can stop employees from going and using AI model where AI apps
+without any control. So it's kind of one use case, which is kind of interesting. We see a lot of
+companies who want their employees to use AI, but they want them to be able to do it in a control
+fashion. The other more interesting use case is I haven't found a company which is not
+experimenting with some sort of AI project, whether it's a simple as a customer service chat
+project, it seems to be the most popular example or some sort of workflow automation capability,
+which is another example, to the extreme where people are using it to perhaps slowly edge giving
+it control over a certain control system, which may not be mission critical, but they're experimenting
+there. In all these scenarios, the biggest fear is the model runs a mock, the model gives the wrong
+answer, or the model takes control, or somebody hijacks the model. All those are scenarios which
+customers are very bad, which is kind of like understandable. And that scenario, we have a product
+which is effectively, you know, formerly called the AI firewall, the AI firewall, which inspects
+anything going in, anything going out of the model, it'll make sure the model doesn't have
+the back doors, nobody can access it, the data is not being sent out of the model somewhere else,
+you can run it on-prem, you can run it in your, you know, protected cloud instances. Those are
+kind of the two use cases we're seeing. The behavior of the model is the responsibility of the people
+generating the model. Our job is to make sure that the model doesn't get hijacked, doesn't get
+intercepted, doesn't get taken over, or manipulated, so that, you know, people lose control off their
+code and code AI break. Can you say a little bit more about, you know, what are the real threats
+from AI versus the perceived or the hypothetical risks? Like, I remember back when, when self-driving
+cars were still, you know, a little bit of a pipe dream, and everyone was saying we're going to have
+these adversarial, you know, images, QR codes in the rows, they're going to make the cars,
+you know, become weapons, and, you know, things are going to go crazy. And that ended up being,
+like, very academic theoretical risk. It feels like there's some of that happening in LMLands,
+like, what are, what do you think are the made up academic risks, and what are the very real risks,
+you think, are going to, you know, where AI is actually going to really help the bad guys,
+and we have to protect ourselves? Well, look, there is the, these two scenarios, right? A scenario
+where the bad guys is going to use the LML so attack is faster, right? Because... Are you going to
+happen already? It is already happening. If there's a critical security incident or vulnerability in
+a product, you can go to certain jailbreak models or open source models out there, which will give
+you a recommendation on how to exploit the CV. Because it's 3,000 models of hugging face,
+you can pick a model, which hasn't been given, guardrails are given any morals, effectively,
+in the context of a brain, and saying, "Hey, here's the CVE. What are the five steps you take to
+protect it?" And, you know, what are the five steps that bad guys could use to attack it? So,
+it says, "Oh, by the way, watch out for these five things bad guys could do." So, there are models
+out there that can actually give you a recipe to figure out how to exploit a CVE, or you can
+actually tell it. I try to attack a customer with option A, I try option B, none of them work,
+because it give this return response, and it says, "Hey, how about you try option C?" So,
+there's a whole bunch of ways that these models can be used very, because they're very helpful
+right now, right? So, they will try and solve your problem, and there's a risk that, like,
+actually, not just a risk, it's actually true right now. And what that does is it reduces your,
+your mean time to attack and exfiltrate data, or mean time to breach, which means the only way
+to solve that problem is to be as nimble, as effective, and as quick as the bad guys are,
+which, sort of, like, you know, it's a, it's a, as I always say, it's kind of a disbalanced problem.
+They have to be right once. We have to write 100% of the time, which means they might need
+the sliver of data to attack you. We need the entire corpus of enterprise logs, enterprise data
+from every IT system to be able to understand whether there may be an almost activity,
+which is being driven by AI. So, it's going to be in right now, AI is at the margin, more helpful
+for the bad guys than it is for the good guys. Well, it depends. No, we can always sell our book
+and tell you if you're deployed or excited product, we can be as equally effective and equally helpful
+and taught to bad guys. But yes, you know, they're not fully deployed, not everybody has it. So,
+yes, there's a possibility that it just has made the ability to attack much faster for the bad guys.
+Right. And that's kind of a real threat. It's not a perceived set. And I think if you,
+if you play the movie forward and say, let's abstract ourselves from this today, and this is
+version one or version two of AI, you know, in five years from now, everything will be happening
+in real time basis. Everything, every bad actor or bad LLM agent would be able to attack an enterprise
+infrastructure, which is not fully secured. And there'll be agents running around in infrastructure
+trying to make sure that every loophole, every door, every window is locked and constantly monitored.
+So you can imagine the battle of the agents on either side. I don't think it's infeasible
+as possible. But to get there, there's going to be a serious upheaval required of the enterprise
+data that exists in the company, which by the way, is not unlike the fact that to get effective AI
+for organizations, we're going to have to have a lot of good data to automate or manage or,
+you know, run businesses. So I think that's kind of where we're going to end up in terms of the
+other parts when you asked about the perceived versus real threat. Look, the thing about it this
+way. Let's assume, and we all, I think, I don't know how you guys talk about this, but I'm guessing
+you agree that at some point in time, these models get smarter and smarter, and they'll be more and
+more capable. So let's assume that's going to happen. They get very capable. This person is
+equivalent of a PhD researcher from Pick Your Favorite University and can do drug discovery.
+Now you've trained it, you've given all the data that exists in enterprise, all proprietary,
+it's all the drug data for Alzheimer's, Parkinson's, you pick your favorite, you know,
+research project that you want to do, and you ask the model or this brain to give you an antidote
+to various medication could be amazing for society. And the question is, in the wrong hands,
+this trained brain could also be asked to make a virus to create that situation,
+right, create a bioweapon. It's possible this, this brain has no guardrails. You've trained all the
+data has all the knowledge that you need to have. Then the question is, can I make sure that this
+brain cannot be taken over by the wrong people that it falls in bad hands.
+So just for fun, if you were Supreme ruler of the universe, and you had a magic wand,
+and you could determine exactly what regulation was going to apply to this hypothetical. What sort
+of regulation would you craft? You know, Pat, this is an interesting debate, and I had a debate
+about this with a very, very smart person who's involved in some regulatory aspects of this.
+Look, at the end of this, there will be two versions, I think. One version is critical systems,
+where before giving AI control of critical systems, you'll have to go through a serious
+certification discovery process with some part of the US government, right? You cannot give
+the control systems to AI for shipping routes and running cargo containers which can crack and
+burn or control the entire electrical grid of the United States. He can't give it to an AI
+model because you need to have controls in place and need to be able to have a conversation around
+what the fallbacks are and all the controls. So I think there will be a set of classified
+activities which will need some degree of consultation, some degree of certification,
+validation. It's kind of like, you know, FDA does drug approval. So there will be some version of,
+you know, AI approval, which can have critical, irreversible impact if you give control to AI,
+and that'll have to be some sort of certification mechanism. And I think where it is not as fatal,
+where it's not as critical, perhaps, you'll have some degree of self-responsibility, you know,
+you make a bad car, people have a problem with it, you're responsible.
+Not every car goes through an inspection process, but there is tremendous amount of accountability
+to the car companies that don't have seat belts that don't comply with regulations that they're
+responsible for the bad outcomes. It's the way if you deploy AI in a bad way in your company and
+give it on to the legs and the control, then you're responsible. There'll be some degree of self,
+because it isn't impossible for any kind of utility to create an inspection system.
+Oh, this amount of computer data, which can get it right every time. So there will have to be
+self-policing and self-accountability in there, just the way it exists in today in many industries.
+Nikesh, do you think AI labs get nationalized in this, you know, your version of the Supreme
+Ruler of the universe? AI labs get nationalized. I don't think so. I think the problem is,
+if given that we're living in the hypothetical, if it is true that a new model can be produced
+at a lot lower cost, right, which is in the single digit millions or tens of millions,
+and the AI lab could be anywhere. It'd be impossible to find, discover, and control.
+So what's stopping somebody from, and part of like this, this regularly, the concepts are very
+dangerous on a global basis today, which we live in effectively a world with no borders, even though
+I know that we have a whole different conversation on borders. But, conceptually, what's stopping
+somebody from deploying $50 million in a server cluster in a country which has lacks regulation,
+vis-a-vis the stuff, and me building it there, or somebody building it there. So I don't think that
+the idea that, yes, of course, if it's a $500 billion AI cluster that needs is needed to build
+the world's super brain and AGI, yeah, you can find a way of maintaining some degree of oversight,
+perhaps, on it. But with the answer is this $20 million bucks, and I can build a world-class model,
+which is really smart, then I think all bets are all.
+Let's say I am not necessarily a CISO, I'm maybe a CEO. Let's say I'm a corporate executive of
+some sort, and I see the potential for AI, so I'm excited about trying to use AI, but I'm very
+scared. I'm very scared because I think that when my people use AI, they're just increasing the
+attack surface and making us more vulnerable. And I'm also scared because I think there are bad guys
+out there who are going to weaponize AI against us and sneak in in ways that they might not have
+been able to sneak in before. What would your advice be? You know, top three things that you
+have advised this person to do. What can people do to get the benefits of AI without exposing
+themselves to unnecessary risk? I think that would be an ill-informed fear, in my mind.
+I think there are perfectly fine use cases, which I'm sure you can enumerate, and Sonia can,
+and a lot of people can, where you can run a model in a constrained on-prem or dedicated
+cloud cluster, which cannot be intercepted, or cannot be manipulated. In the end, that model is
+all useful if you put your own data into it. And if all you do is have the model generate responses,
+which you're not letting it give it any control, you can run experiments. You can look at what the
+model produces and compare that to other things. You can do A/B testing. The model says this, and
+my best researcher says this, and he can run experiments understand the power of AI without
+giving any control. So I think that's why the fear is a bit mislight because it's not doing it.
+And he's just trying to give you the outcome, and you can see if it's faster, better,
+and both are possible, or one is possible, right? Some things happen faster, some things happen
+even better. So I think running A/B testing, being able to test it, is easily possible in
+today's world without having any fear. I think it's even possible for letting employees experiment
+with it in a way that it is not manageable. I think where it starts to get more interesting,
+not dangerous, perhaps, is when you start letting AI act on your behalf, right, in whichever capacity.
+And that's where I think any person, not just CEOs, anybody would have to go through a rigorous
+amount of testing to see how it reacts in various circumstances, because depending on what you're
+giving control to, it could have a significant impact to whatever product service business that
+you're running. But that's where I think it becomes more interesting. But I think for now,
+running experiments, running models, which cannot be hijacked or manipulated, models that
+won't run a mark, it's all possible today. I think it would be irresponsible
+for companies to not experiment. Or put, because I don't think that this thing's going away.
+Yeah, you may not know exactly how to get to the future, but you know, if you do nothing,
+you're going to get left behind. But I learned about Chad GPT on a flight to India.
+I was going there to go speak at my alma mater. And I read about this thing, I was sitting at
+Dubai airport, not doing anything but two hours. And kept playing with it. And I rewrote my entire
+speech. I went and said, you're about to witness the biggest technological revolution. Now,
+I just say it before Jensen said, this is the iPhone moment, but more important, he's got a
+bigger mouth and he's a Supreme Commander of AI. So we'll let him, we'll attribute that quote
+to him, but that's okay. And I felt it was a seminal moment. And I came back and I said,
+you know what, first things first, I have no idea about this. I got a bunch of my teams like,
+what do you guys know? What do we know? Nothing. We're all like, you know, a bunch of the important
+uninformed, but we were important. So we were, but we had an opinion. So the first thing I did is
+I put them all into a, but like a training room, I invited everyone from Thomas Kurian's team to,
+you know, Nat Garman, now his team or a bunch of startups, like just brain dump on us. And we did
+that for two days a month, we get people to brain dump. We had a bunch of our people go come with
+ideas. We had 70 ideas. People weren't executed, cut them down to seven. We started playing with it.
+We ran everything, every possible problem that you could run with vertex AI or with the first model
+of chat GPT or the first model of a cloud. We tried everything, you ran everything through,
+we had models running with AI, we had models running with semantic search, you were training
+with all kinds of data. We learned, we learned what is useful. We learned where it's not useful.
+Now it's doing some things by itself, which we had to go jerry-rig. But, you know, we are partially
+informed. It's better than being totally ignorant. What was the biggest surprise from those learnings?
+It's the biggest surprise. Well, you know, the early versions of this thing was pattern recognition,
+was data summarization, was, I'll call it infinite memory, right? Once you train it with some data,
+it's never going to forget it. Now, there are use cases where I have 50 people solving the same
+problem and depending on who answers your phone, they're going to solve it differently. In this
+case, I improved the general level of awareness and knowledge for my entire team playing,
+get it to tell you the answer and then work from there. So, it did sort of lift the average
+intelligence of the average capability of the teams. And I think as it gets better and better,
+it's going to shorten the time to answers. And at the end, I want to expose a lot of this stuff
+to our customers, right? So, they can go solve this problem. So, if you don't start learning,
+when every startup is learning, eventually the startup's two-year business, right?
+You've seen that never technological revolution that we've run into, whether it's a cloud,
+mobility, the internet. We saw it every time. And every time there was these large,
+now we can call them legacy, but large businesses with dominant market share with every asset at
+their behest, which they could have deployed. And nobody should have seen the latter day,
+who's competing with them with the new technology. But for some reason, every time you turn around,
+there was a Travis, there was a Chad Hurley at YouTube, and there was a Larry Page,
+and there wasn't Mark Zuckerberg, and there wasn't Elon Musk. So, the challenge is that
+if we don't go embrace this as early as we can and learn, while everybody else is learning,
+we run the risk that we're late. And then we go and law up on the infinite consequences.
+Maybe on that note, one thing I'd love to understand is it seems like the biggest platform
+companies in security are kind of formed around these platform shifts, like the firewall,
+identity as a perimeter, maybe the cloud and CSPM. Do you think AI is a new platform shift
+opportunity from a security point of view? And do you think a new security platform company,
+which could be you guys emerges? Or is this very much similar set of tools is going to serve the
+AI of first world? I think AI has the opportunity to turn security on its head.
+And the reason I say that is that the security is a needle and a haystack problem, right? Because
+you don't worry about it until you have to worry about it. So, to suddenly wake up and get really,
+really smart very, very quickly, because something's happened in your infrastructure.
+And it's just impossible to go from 0,000, like overnight, because somebody calls early
+shit, there's somebody in the infrastructure, they've exfiltrated, it's unlimited, or they're
+in the midst of exfiltrating data. And traditional security has been, I'd say, 95%
+at the border or on prevention, and 5% are detection and remediation.
+But you buy a firewall, it respects everything that's coming in, you block a bunch of stuff,
+you buy some sort of remote access endpoint agent, you buy an endpoint HDR capability.
+And that all works because there's a lot of prevention that happens in that process.
+But the problem in breaches is it's not what you prevent, it's what you let in.
+And this thing's like zero-day attacks, which have never been seen before. So, you haven't
+seen it very often, you can't prevent it. And the only way you figure out all that stuff is in
+just a lot of data, you look at it and look for anomalous behavior, right? You can't rely on
+security signatures. So, if you're going to look at anomalous behavior, you need to be able to
+ingest all data, you've got to look at pattern recognition and say, "Does this happen like this
+every time?" And say, "Well, I don't know, but it looks like something's different happening."
+So, I think this whole notion of doing pattern recognition, ingesting a lot of data, analyzing
+it on the fly, and looking for things is easily possible with a color machine learning, color
+AI, color whatever you want to call it. But I think that's the only way we can do this
+at real time speed. What about what it means to be a security team, a CISO, a security practitioner
+in this new world? And, you know, we get 20 pictures a week right now for like the AI-powered
+SOC analyst or the AI SOC. What is your vision for, you know, what is your vision? You already
+have one. So, you stand them our way. It's like, you know, quite a lot of them. What's everyone
+how that evolves and what the end state is for kind of humans and security? Like, insecurity
+at a very first principal level, we sell two things. We sell a sensor with senses at the edge of your
+perimeter, whatever the perimeter is, whether it's your laptop, whether it's your application,
+is it your customer accessing your bank account? That's the perimeter, right? The perimeter is the
+edge of your technological footprint. That's the perimeter. So, we all sell sensors that sit at
+the perimeter inspect. It's like having like a digital security card at the perimeter. We also
+sell parameters and we protect the parameters. We inspect the parameters. We block the parameters,
+right? And then we, and then what happens is that somebody's in the bad app, somebody's in the
+back door, somebody's in the side door by mistake, then people enters through there. So, we, that's
+we sell sensors. We protect parameters. And then we analyze data in the back end to look for any
+vulnerabilities that you might have been created by the infrastructure that you have. That vulnerability
+could be exploitable in the future. So, we look for potential exploits and that's kind of what we do.
+Which means, and the reason I tell you stories is that, which means if I want to sell
+any I-powered anything, I need to be at points of data collection in enterprise.
+Because AI requires data. So, again, this is the old adage, right? I am in the best place to collect
+all this data and analyze it. And of course, that doesn't mean anything because in history,
+people who are in the best place got knocked off their knees and somebody else came and built
+something better because they were lazy sitting on their haunches. Now, the only thing is we don't
+want to be lazy. We don't want to sit on our haunches. We're out there hustling as fast as we can.
+Not as nimble as possibly in, you know, a startup, but we're nimble enough as a company.
+We've done 27 products, which are in the magic quarter into the right. So, we're not shy. But,
+I think every security company, every security startup is going to walk to every customer like,
+I can build this for you because it's great. How do we start? It says, well, let me go
+deploy a bunch of sensors around the parameters so I can collect the data.
+Holy shit, I already got a bunch of you guys in the industry. You've got sensors out there.
+Yeah. What do you want to do? Then give me all your data. I'm like, wait a minute.
+You want all my data? Who are you again? So, I think that's kind of the risk you run into is,
+this is a large data problem and large data problems are harder to solve as a startup,
+not to say it's not being done. There are people out there raising $500, but not ever
+we can do that in security. Fair enough. Do you think security teams are comfortable giving
+arms and legs, I think, so to speak, like, agentic? Oh, no, I think they're petrified.
+Do you think that flips at some point and when? Well, I think most of the security teams aren't
+asked, right? I mean, Waymo wouldn't exist if they are toward the security guy.
+Or, test life as deep as possible, you would not exist in some security guys. Are you crazy?
+You're giving the car control to your car? Where all kinds of bad things could happen,
+right? Yeah. So, from a security perspective, these are all bad things happen.
+I mean, security leaders are, or the most part, risk managers, right?
+They're risk managers. They're trying to understand what the business need is and how do I deliver
+the business need with the least amount of risk possible. The safest room in the world is one
+with no windows and no doors, but it's not very useful. So, you got to let doors and windows be
+created, which means you're managing risk. So, security people are risk managers. They sit down
+with the business, understand what potential risk does it cause. They'll give you some ideas as to
+how to make sure that you protect against that risk and they'll set up a whole bunch of safeguards.
+It's a, you know, you know, gate one, gate two, gate three, if it doesn't stop, get stopped here,
+get stopped here, and then off to the races. So, I think security people will allow
+the arms and legs have to, because that's kind of the crying need of the hour. I think the question
+will be, what kind of security tools do we have in place to create those protections that
+customers can comfortably go ahead and use these capabilities? But that's to be true with every
+technology. Our partner Jim gets, and for any listener who's not familiar, Jim has been involved
+with Palo Alto since formation. And Jim, Jim has a creative mind. One of the things that Jim
+mentioned was after you came in about seven years ago, CEO of the Innovation Engine,
+and Palo Alto really started to pick up. And I think we see that today also with how quickly you
+guys have pounced on AI, I guess the question, maybe two questions. Question one, if you had to
+reach yourself, if you had to rate Palo Alto on agility, nimbleness, ability to respond to market
+conditions, I know you're a tough grader, so you can't give yourself an A plus. How would you
+grade yourself? And then question number two, you do have all the advantages of scale and data and
+distribution and being at those points where you need to collect the information to do whatever
+detection or mediation you need to do. But it's hard to get a big organization and move fast enough
+to respond to the market. So question one, how would you grade yourself? Question two, how do you
+drive agility at this scale? Like just practically speaking, what do you do to make that happen?
+You know, let's go first step first. I'd give us a seven or seven and a half
+on a scale of 10 in terms of agility, because we have about 15,000 people.
+And then there's a lot of stuff, a lot of complexity, a lot of legacy stuff that has to be brought
+along, a lot of stuff that has to be ticked and died to make sure that these things work. And you
+know, any part of the challenge, as you know, is that you have a stall base of 70,000 customers,
+right? Any tweak you make, which impacts 70,000 customers, brings their infrastructure down,
+you lose your license to operate. So it's not like we can innovate, throw a shit at the wall,
+see what sticks and go with that and ignore the other stuff. So we have a serious responsibility,
+and making sure stuff that we build that we put in line has to keep performing and not bring
+down any other infrastructure, because the best security is in line. We have to be able to watch
+what's going on. Inline security has a property that if it doesn't behave, it can impact your
+infrastructure. So we have a very high responsibility from an availability perspective and not disrupting
+our customers, that we have to apply a higher precision standard as it relates to inline
+securities. From that perspective, I think seven and a half is not a bad place to be.
+So you probably were at three or four, seven years ago as an industry, I don't even say a
+Palo Alto, I think as an industry with three or four, and I said the industry has moved its
+agility. If I look at some of the newer players, they're moving faster. They're not
+sitting back anymore because they see the playbook for the future is not where you let other people
+sort of come by in the new swim line. It's nice to see you, you know,
+congratulations, great job. Now it's like, oh, you sure how they get there? We're going to go
+chase them down. So I think the industry dynamics have changed. In terms of how do you drive agility
+and you as you know, possibly, you know, from talking to Jim and from talking to us that
+we have no sort of qualms about going and finding people who are doing it amazingly well
+and embracing them and saying, you got this figured out. Let's go to it together. We'll run fast.
+Right. Sometimes companies get trapped in this idea that I have so many resources I can take them
+down. They don't understand there's a team of 50, 100 motivated people funded by people like you
+are out there running at sort of, you know, light speed who build an amazing product,
+which are going to then dip to get traction and they're your competition on every day in the market
+and they get better and better and stronger. So the question is, when's the right time to say,
+oh, shit, let's embrace them. They've got less resources, but still managed to kick our ass.
+Let's go make them part of our team. We've done that 19 times as you've seen. So we're not,
+we're not shy about embracing innovation if it doesn't come forth. And having said that,
+I was looking at it the other day. I think more than half of our products are made in Palo Alto.
+Right. Not acquired. So it's not like, you know, we only have one strategy. We do both because in
+some cases, building on our platform is a lot easier from a go to market and deployment perspective
+than buying something and spending time integrating it. So we've gone to the point of scale that
+it's more important for us to innovate on our platform than just go out then will you nearly
+try and look at the fastest innovator and try and stick them on to our tech platform. So
+I think from that perspective, it's that constant balance. What do you buy? What do you build?
+How do you embrace somebody else doing it better? And then you got to be nimble and say, you know what,
+I am going to get some stuff from. The question is, you know, when you get punched in the face,
+how quickly you recover, right? Don't let them count to 10. So it's kind of like how you maintain
+agility. And then I mean, the only other thing is, I call it relentless inspection. Relentless
+inspection of your go to market capabilities of your deal, relentless inspection.
+What's warm does that take? Like, what's the sort of thing you might do in one of those relentless
+inspection conversations that somebody else might not do? Well, I'll give an example, you know,
+for the longest times, I kept seeing us doing really well in certain things. And our teams would
+create all these incentive programs to drive more behavior to get people to sell. And I have
+my sales leaders telling me that everybody has an account plan. I said, these things look like
+very interesting things. I should take a look at one. So one fine day, this is possibly an
+year and a half ago, we're having a tough quarter. I said, great, here's what we're going to do.
+We'll just start from customer number one and keep going. Let me show me your account plan.
+So what does that mean? Send them five slides and fill those five slides and show up on a Zoom call.
+Let's have a show up and explain those account plans to me.
+And I'll fast forward. I've probably been through 750 of them so far in the company.
+I did about 15 yesterday. And it's, it's like theater now. There are 500 people dialed in from
+across the company. Wow, they all get to watch. Giddy sales person about all of you can dial in
+and watch an account review and process. Because for me, it's, it's basically them learning how to do
+it. And we go through it and say, who's the person? Who's the buyer? Does they understand the product?
+What did you pitch? How do you sell it? Did you sell it? Did you talk about this? Do you not talk
+about this? Why don't you talk about this? And by the way, the best thing for our teams is if you
+feel that this is, doesn't look as robust as we'd like it to me, you know, be a Jenkins, our president,
+many of our product leaders, we would get involved. We're not there to, we're not just
+readily inspecting. We're actually assisting. I don't like, you'll be surprised that people
+spin up their laptops are open. Like people are pinging people LinkedIn, texting people saying,
+hey, do you know this person or this company? I don't think our plan is robust enough. We don't
+know the right people. Let's go. So it has kind of like grassroots. I have a little
+whiteboard in my office where I write down things which I want my team to remember. And the second
+thing we're gonna hit, it says sales is a math problem. So which people, people find hard to
+understand. Like, look, if you have the best product in the market and you are able to win
+and generate billions of dollars at TCD a year, then the question is, why are you losing?
+It's not the product because there are people buying the product is working. It's not that
+nobody's willing to buy it. It's not that lots of people are willing to buy it. What happened in
+that process where you were selling that you didn't win, somebody else did. Let's go inspect it.
+And sometimes you'll find some product things that you need to fix. Many times you'll just find
+execution errors. Let's keep going on this thread of driving performance out of people because one
+of the other things that Jim said was that you have sort of an exceptional ability to recruit
+and retain really exceptional people and that you sort of drive followership in a way that's
+unique. Like, you're pretty hard on people and you demand a lot from them. Yeah, I went to, I
+want to speak yesterday for a person who I worked with at Google. Her name was Lexi Reese and she
+actually ran for Senate. She has a startup now and she introduced me by saying, I didn't quite
+enjoy my time when I was to work for you, but I'm a better person. I learned a lot. So I'm like,
+well, I'll take it whichever you give it to me. But anyway, sorry. Well, and Jim said you balance
+that with a very nice human approach where people know that you care about them and you'll go to
+bat for them in the right situation. So I'm just curious what you've now been an executive in a
+variety of contexts and you've been successful every time. You know, Google was a consumer business,
+Palo Alto is an enterprise business. You know, you kind of grew up around marketing and sales
+and you become more of a product person. And so you've got this diversified set of experiences
+from that. I'm an enterprise person. You're a full-fledged enterprise person from now on.
+Right. Sure. I guess what leadership principles or what leadership techniques
+are sort of context independent that worked at each step in your journey. And are there other
+things that are kind of Palo Alto specific? But I'm mostly curious, like, what are the
+sort of core principles of your approach to leading people? Not a lot is Palo Alto specific,
+right? Because at the end of the day, my senior executives are not writing product documents,
+right? They're analyzing strategy, analyzing go to market, they're understanding,
+of course, do I have experts that's obscurity, of course, we can survive without that, you know?
+So New York, our founder, the client, told you product officer, some of the other product
+readers that we have, they're very smart guys. They understand what our products system is,
+industry, they act as sounding boards. Sometimes I'll challenge them. I find that I don't push
+back. So come to the next step. So there's, there's no getting this done right without the right
+domain knowledge. So you have to have that. But I think outside of that packet, there's domain
+knowledge. You have to have the right people, like, as is possibly understood that I don't suffer
+food, because I can fix a lot of things. I can't fix it out.
+And if somebody doesn't get it, like for sure. And just to make sure you surround yourself with
+smart people, what do you find them? Keep them. Because the next question becomes, you know,
+what is the attitude these people bring to the table? As long as they are willing to learn and
+humble and they understand they're part of a team, all systems go like, I have a principle that
+I was joking on all hands and said, I have never met a person who comes to work to screw up.
+I wake up in the morning, let's go sunshine. It's time to go to work. Let's me see how badly
+I can do today. Everybody walks in with the right attitude. Yeah. It's something that happens in
+work that we create that causes the unintended outcomes. It's not the person who walks in. If
+you found the right person with the right domain knowledge, right intelligence, the right attitude,
+then the rest is upon us. And then the question is, how does management create the environment
+that people can thrive? And it's not just about, you know, happy-go-lucky environment. Like I always
+say, there are three jobs that we have as leaders. One is we have to identify the North Star. People
+have to know which mantra we're going to climb. You can get the best climbers. You can find out
+you haven't told the which one. They're all on eight different mountains around you. I'm really
+sure what happened. They're all in different places. So my job is to make sure identify the
+mountain I fight or argue I debate. You know, I could Joel, whatever needs to happen to make
+sure we have a plan or record where we're going with ample degree of input. But the end, somebody's
+got to make a decision. The next thing is, is a chevel. Can we write a plan to make it happen?
+Because the last thing you want is people come and say, I get it. You wanted to build this.
+But he gave me, you know, one pickaxe and one shovel into people, right? And he wanted me to go
+dig the plant in the mine, takes a lot more than that. So the next question is, is it a feasible
+plan to get it done? And are you resourcing it right? Right? And very often companies,
+they look at our industry, right? A lot of people had the right ideas. When I came to Palo Alto,
+it's something I joke sometimes, I didn't do anything different. We had a cloud security
+acquisition, we've done. We had an XDR acquisition, we had done. We had the idea of building a sim,
+we just hadn't resourced it. We hadn't written the plan for it. It kind of knew what we wanted to do,
+but he hasn't sat down, debated, argued, so what does the future look like? And we hadn't written
+the plan. We hadn't resourced it. We had one tenth, the resources we needed.
+So you, you don't have a plan, you have an idea. Ideas are not good enough. You got to have a plan
+and a North Star. You have to resourcing that you can sort of execute it to plan. The third
+job is management is to keep communicating it and reading out things that block the executional plan.
+Whatever it is, whether it's a, the person who's not doing it, whether it's a resource that's not
+available, whether it's a contract that's not working, you know, it's blogging and tackling and
+sort of making way for your team so they can go and execute behind you. So if you follow those
+principles, they find the right people around you and you know, don't suffer fools and have a good
+time while doing it. Sometimes some people do get more scrutiny than the others, but it's good for
+their, for, for, for their career and good for their character. It's amazing. Let me ask one more
+question on sort of management leadership and then maybe we can go back to some AI topics.
+So you mentioned the 19 companies that you guys have acquired in the last six, seven years.
+Maybe two questions on that. One, at the moment when you're pulling the trigger,
+what goes through your mind? Like how do you, when it's time to make the go-no-go decision,
+how do you decide that an acquisition is actually an acquisition you want to make?
+And then maybe second question, one of the things our partner Jim mentioned was that
+pretty much all the founders who've joined forces with palettes and networks have stuck around.
+It's a majority of them. So yeah, so what do you do post acquisition to actually
+keep them around? And maybe it's the same thing that you're just talking about with leadership
+generally. I don't want that. Like I think before we get to decide it's an acquisition you
+want to make, we spend enough time to understand, you know, is it even worth engaging with the
+company for a few hours or a few days, right? And we have some principles. I don't like buying
+number two or three. It's a lot of founders for a lot of companies, you know, well, you know what,
+the first one's a billion, the third one's two hundred million. Let's just say the third one,
+we got enough resources. We'll spit and shine it. It's going to make it brand new,
+maybe worth a billion dollars. Well, there's a reason to trade the three hundred million,
+not a billion, first of all, which means they possibly have some gaps, which the customers
+have identified and you haven't. Two, you didn't actually take out the biggest player in the market.
+It's still going to be four steps ahead of you. So now all you've done is taken a nimble
+startup, which is number three. It possibly made it slower. It's quite all your love and
+attention to it. He's like, okay, well, let me like, bring me along. But so now you suddenly
+slowed down number three, you've enhanced the opportunity of a number one or two. So he said,
+then say, okay, and a lot of times you joke about it saying, I wish this this competitor,
+we bought by somebody in competition because they slow them down. So, so we make sure we're
+only like a one and two at best. And sometimes they're neck to neck. Sometimes they're chosen
+two different parts and we did that in the browser space. You know, we're very happy with
+the acquisition of talent. I think they string really well, we're that in DSPM, we're dig,
+actually in our industry, what happens in SPAT and Sony is that
+at first people looked at me and said, what the hell this guy's buying these companies,
+I don't know what his plans are. And now they actually have a slide we keep track of,
+once we buy something in a category, that category becomes hot. So people think we know
+something, they've done a good job about that. But look, I think the principle is you got to
+make sure you're buying the right sort of right player in the market. Then you got to make sure
+that you can convince the founders that they believe a better together story, then they go
+in a loan story, right? There's no selling dump because it's not going to happen. We're not going
+to take the asset because when you're buying, you're basically buying a North Star, an execution
+plan and a team that executes. But usually they're a third or 40% down their journey. It takes more
+to seven years to build a great product. Usually these things are three years out, three or four
+years out. They haven't fully matured into a full product that's going to win in the market.
+So you need them around and use the team around. And still, once we figure out this is the right
+company, the right attitude, we can actually make it work. And they are now given our scale.
+There are some technical considerations to be able to rewrite the stack, which takes longer.
+Is this a complimentary area that can just run on our stack easily? Is this something you've
+never done before, in which case it doesn't matter with stacks on? So a lot of those considerations
+from an integration and time to market perspective. But let's assume all those hurdles have been
+surmounted. And we're actually engaged with the company. I have a rule. I walk in and tell my team
+and I live it. I say, treat them on day one as their part of your team.
+Because if they're going to work with you, they're going to remember every interaction.
+Very often I find many companies, the most well-intentioned companies, start treating it as
+acquirer and acquired. I live, I come from a country which was acquired or ruled.
+And I don't like this idea. There's no one rules the other. It's like we're part of the team.
+And the day the deal gets signed, we'll all be on the same page. We'll all be trying to drive
+the same stock price and the same business forward. So for that six weeks that you're in that
+discussion phase, how is it important that you're the acquirer and you're the acquired?
+So let's assume we do that. We like a company. Then I send out the finance and accounting guys
+and legal guys to do diligence. And I tell this founder and their team saying,
+your job now in the next six weeks is to build a joint product plan and a joint org chart.
+And at the end of six weeks, if you don't like the product plan or I don't like it,
+if you don't like the org chart and I don't like it, there's no deal.
+And this is alert behavior. The first two three times we didn't do that. And we discovered we
+spent the next six months arguing about what the product should be and who should be the boss.
+Yeah. And that doesn't work. This is a bad idea. So I'm like, hey buddy, you want the money,
+you can have the money. It's my house. I'm going to paint it yellow. You don't like the color.
+Tell me now, you can get somebody else to paint it pink. No problem.
+So that has an amazing cleansing property because you're making a decision with all the facts in
+front of you saying, if I had to get part of it, it'd be part of Palo Alto. This is going to be
+the product strategy. It could be yours. It doesn't, it doesn't have to be mine. It's much smarter now.
+So we have a joint product strategy, the North Star, and we have a joint plan of execution.
+And then there you often, Pat, just goes back to Jim's comment, most often the founders we have
+bought companies from become the senior vice president of our company running their business.
+Our people work for them, which I think is unique in the market. Very often you'll find
+there was an acquirer SVP who ran crypto or blockchain or pick your favorite. I'm using non
+security terms to keep it, protect the innocent. But you say, Oh, since I'm responsible for this,
+these people are going to work for me. I'm like, wait a minute, you had all the resources you lost
+to them. We're not going to have them go work for you. Maybe you can learn a few things. So we did
+that a bunch of times. And in some cases, our teams worked for them really well. And in some cases,
+our team left, which is fine. So I think those are some of the things that allow us to make these
+amazing founders going to work here and actually drive more value for us collectively.
+Nikesh, I want to ask you about some of the chess that's now happening on the AI stage,
+because I think you've played the chess game so flawlessly in the security market. And you know,
+you've so clearly emerged the winner. The secure AI space by contrast feels just white hot competitive
+hunger games right now. I'm curious your view.
+I think a lot clearer than that. I think it's just, it's just, it's just not clear to the naked eye,
+but I think it's a lot clearer, but go on. Same more. Yeah. Yeah, tell us more.
+Look, if you think about the state of maturity of AI, you know, there are two extremes. We'll call
+them the very precise, the alpha go type situations, which, you know, them as a Google built together,
+which are, I'd say fine-tuned models, which are designed for drug discovery or the bio
+pharma field. And there you see that did a really good job. They focused on the train drive data,
+they hopefully tweak the models in such a way that that can actually become a useful thing for
+society. So you have that, which is highly tuned AI models, very toss specific or category specific.
+And then you have the generic ones. And the generic ones are, you know, the rage today between the
+clouds and, and the mistraws and the German eyes and the opening eyes of the world. And those are
+large. They're all encompassing, all knowledgeable. But you saw this movie before, right? You saw
+this movie in search. And as a Google, you know, then you had vertical search because
+the large Google search could not do as good a job of local search. So you had local search.
+The guy couldn't do a little job of product search, you had product search in Amazon.
+So how can you be amazing at everything in this space when you couldn't do it in the last few
+technological evolution? So I think over time, we're going to have to figure out what the distinction
+between, you know, general purpose, large scale, I know everything, I can do everything model,
+versus models that are fine-tuned for tasks. And I don't believe that all the perfect information
+the world exists in open domain that you can go out and build it without, you know, specialization,
+which means you are going to need specialized proprietary data to build these models. And I
+don't know how you share data between Glaxel's midline or Novartis and Pfizer and say I can
+build the best drug discovery model in the world because I have perfect information, right? So
+that's a question that remains to be seen. So I think over time, you'll see a bifurcation from
+an enterprise use case. And in our business in the enterprise side, you need precision. I can't
+afford to be wrong. You know, wrong turn by a Tesla is going to kill somebody. A wrong,
+you know, block by Palo Alto is going to bring somebody's infrastructure down or a law or
+a wrong permission is going to let a bad actor in. So I don't have that tolerance that consumer
+models can have because they have low consequence. So I think high consequence, high consequence
+applications require a lot better models, a lot more training and more precise domain data.
+I think that's going to become a sort of thing of its own. And the other thing we're seeing today
+is general purpose models and eventually they'll be like, and I don't know the answer was that
+general purpose models become task specific evolved models or there's a new category of task
+basic evolved models, which are build more in the sort of genre of the alpha go version. Now on the
+on the general models, I think the people who can deploy them against existing consumer properties
+are sitting pretty. Right. Because it creates more retention, more continued monetization of
+space. So other Google can deploy a whole bunch of AI against its three plus billion users across
+multiple properties. Or Mark Zuckerberg can do it vis-a-vis Facebook and see billion users across
+Instagram, you know, WhatsApp and Facebook. That's, that's cool. I think Sam's done a great job in
+building a consumer direct business on the subscription side, which he continues to drive
+very well. And that's become sort of, sort of his, his moat now because no other model has built a
+subscription based consumer model. So I think you're seeing the general purpose models being
+built by existing large consumer properties. You're seeing a new consumer property emerge vis-a-vis
+in an open AI. I think the enterprise use case is still early because we haven't seen the mission
+critical applications be developed because of the lack of, you know, great training data. So
+anyway, that's what I think. But let me ask you, one of the, one of the things that's not on your
+LinkedIn profile is prior to, prior to soft thing, prior to Google, prior to T-Mobile,
+if I have my facts straight, you were an award winning equity research analyst covering telecom.
+And I believe that one of your claims to fame was calling the internet bubble and the bursting
+of the internet bubble. I still have that note, a sell note I wrote in November 99.
+Not bad. So are we in an AI bubble? Lightning doesn't strike twice. How would I know?
+Look, again, for the number of times I've heard it's different this time, you know,
+we could all be very rich. So, but there are some things which are different, right? If you look at
+where the AI inflation has happened in the equity markets, it's still in the plumbing.
+And the plumbing is real, right? It's not like people are driving the plumbing up without substance
+because you're selling four times or 10 times more chips than you sold two years ago. So there's
+real revenues that underpin that. Now, clearly people are projecting that into a trajectory,
+which I don't understand. And, you know, every day you see a new development, you tell me,
+is target the future or is deep-seek the future? And I don't mean with all its negative connotations.
+I mean, as a concept, are we going to have cheaper models being built for large-scale
+application with limited specialization? Or are we going to have a supermodel in the context of AI,
+which is going to be expensive, but be able to do everything amazingly? You tell me the answer,
+and I'll tell you mine. I said, "Should we head into lighting round or do you have more people?"
+Let's do it. Great. Lighting round. Okay. You just bought a cricket team.
+Why? Yes. You know, there's a bunch of us who are together. It's not just me. There's
+10 of us, including your partner, Jim Getz. We're all failed cricketers. We all have sports
+aspirants. So it will part of that. There's part of the passion which says, "Wow, I can be
+associated with the sport at the highest level without having the talent." It's kind of interesting.
+That's one reason for it. Now, you couldn't have a bunch of us buy it who are business savvy and
+say, "Is there a business model here or not?" And if you look at it, the only thing that's left
+in streaming that is linear is sport. No longer news, television, movies. Nothing is linear. The
+only thing is linear is sport. You want to watch it when it's happening. Pretty much when it's done,
+you know, the score, and you lose the interest to watch that event. The post-event viewership is
+a lot lower in sport than live or in viewership. Every other is the other way around.
+Every of the streaming content is the other way around. The post-launch viewership is higher than
+launch viewership, whether it's movies or television or any podcast or any video streaming that do
+open this one, right? So it's the only linear sport out there. It's being bid up,
+cricketers the second most watched sport in the world. IPLism, this is the biggest franchise.
+Hundreds, it's the next best thing. It's in the country, which is the home of cricket.
+And then every fall of the same philosophy that I told you, "What are my startups? You've got to
+buy something by the best." So we bought lores, which is the home of cricket. It's going to be fun.
+What do cricket teach you about life or leadership? It's a team sport. It doesn't matter how good
+you are. If the other 10 people suck, it doesn't matter. It teaches you that, right? You can have a
+bad day in New Zealand because you participate as the best of 10 people. So it teaches you about
+life. It teaches you about business. You're wearing a Pebble Beach pullover. I hear you
+want to pro-ammer recently. What's your handicap? My handicap's 9 NCGA. And it's a combination of
+the best pros that I could find, luck, and a few misplaced good shots. Nvidia. 118 bucks a share,
+$2.9 trillion market cap, 39 times earnings. Earnies are growing about 150% year over year,
+longer short. I don't understand it. If you were Jensen, would you be making the same moves?
+Jensen has played a very long game. I think he's built a phenomenal franchise. I mean,
+what he's done is no less than what Elon has done for electric cars. I think he took
+something that he built for gaming, thought about it, understood the large need for compute,
+and put all his energy and thought behind it. He's been the longest serving CEO in the world,
+right? So you can't take it away from him. Just can't even trivialize it. You have to talk about
+him with tons of respect. What he's done is amazing. He has a vision and he's taking it beyond
+just the chips because he's slowly building an ecosystem, saying my chips work with a lot of
+other things together. So I don't think from a long-term perspective you can argue that AI is
+not going to be relevant. I don't think you can argue from a long-term perspective that we will
+be constantly doing some form of development, which requires more and more compute. In the
+history of mankind, compute and bandwidth and memory have never shrunk. So it's not about to start
+now. I think he's sitting a phenomenal asset. Is it a $3 trillion asset, $3 trillion asset today?
+I don't know. It'll be a $3 trillion asset in 10 years, possibly more.
+What CEO do you admire most? I have a collection of CEOs. I admire traits that
+CEOs exhibit. It's very hard to have one idol in life because one idol has the property that
+they could disappoint. But if you admire certain things, certain people do. You learn a lot from
+that aspect of it. If you have the same circumstance, you might do the same thing. You have different
+circumstances. You might do a different thing. I admire Elon's creativity and what he's done for
+the world. I wouldn't want to work for him. But I admire what he's done. It's amazing. I always
+joke with my team. I'm saying, would you go on a rocket to Mars built by the guys around you?
+People are like, I don't think so. But imagine he's got a bunch of people who build a rocket and
+people go up on that thing. That's amazing. We could sit in the car, which has got no driver
+and so people have done it. So what Satya did to Microsoft, he took somebody, nobody believed he
+could turn this around, a $3 trillion company, and he did. It's amazing. So like Tim Cook, Steve
+Jobs is a hard act to follow. Tim's got a phenomenal job in taking that amazing company and maintaining
+it down the middle and constantly innovating. What can Mark Zuckerberg recently, right?
+He's taking that thing around, turning around. Now, the fact that there are certain things that
+they've done, which I respect is amazing, that doesn't mean anything about the rest of their lives
+and I don't need to worry about it. Which CEO is executing the best in AI right now?
+For all the conversation around Sam, I think what he's done is amazing, right? I mean,
+before Chad GPT came about, we weren't talking about AI, right? And before Chad GPT came out,
+you think Google didn't know about AI? I knew about AI when I was at Google.
+Do you think Google didn't have a self-driving car then? They did. Do you think Satya didn't
+know what AI means? He did. But look at what's happening right now. You can run into a CEO once
+view the words AI. So Sam has created the impetus for the next technological revolution. That's the
+way Steve Jobs did it with the iPhone. And the fact that was a straight face,
+he can go out there and get people to commit to spending half a trillion dollars in building
+infrastructure. And every, I think the MAG 7, everyone with the CEO is spending way more money
+in building computing data centers because nobody wants to be left behind. I just sounds
+on a good job executing AI. Now, history is hard and business is hard and we don't know.
+That means that you'll be the winner in the future, but damn, has he done a great job in
+getting us to where we are, yes. I think that's it. Thanks, Nikesh.
+[Music]
+

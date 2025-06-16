@@ -1,0 +1,366 @@
+--- METADATA START ---
+Show: web3 with a16z crypto
+Episode: With AI, Anyone Can Be a Coder…
+Host: Unknown 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/with-ai-anyone-can-be-a-coder-with-github-ceo/id1622312549?i=1000710938850
+--- METADATA END ---
+
+1
+Hey listeners, it's Robert.
+2
+Today we're sharing a special episode of the TED Tech podcast that features GitHub CEO Thomas Domke.
+3
+This talk explores how AI tools like GitHub Copilot are changing the landscape of coding, making it more accessible and transparent.
+4
+Listen to Thomas perform a live demo of a new AI assistant he's been working on that helps you code just by speaking.
+5
+We think you're really going to love this episode, so stick around.
+6
+I was first introduced to the world of coding as a teenager.
+7
+I joined an after-school program in Seattle called the Technology Access Foundation, where inner city kids learn the basics of computer programming.
+8
+Twice a week during the academic year, we immersed ourselves in languages like C-sharp, ASP.NET, and JavaScript.
+9
+Today, however, those are almost all ancient or obsolete languages.
+10
+We are now in a world where developing software relies less on human knowledge and much more on AI tools that can build and develop without code.
+11
+I'm Sherelle Dorsey, and this is TED Tech.
+12
+Today, we hear from GitHub CEO Thomas Domke.
+13
+This talk is about his company's efforts to help everyone become a developer and create projects that can change the world, all without learning to program.
+14
+Let's listen in.
+15
+You know, I'm one of these adults that actually still loves playing with Lego.
+16
+I loved them way back in the 80s in Berlin when I grew up, and I still love them.
+17
+And these days, I build Lego with my kids on Saturday afternoons.
+18
+And the reason that my love for Lego has remained evergreen is quite simply that Lego is a system for realizing creativity with almost no barrier to entry.
+19
+And if you don't know GitHub, you can think of it as the home of coding.
+20
+It's where all the software developers, the chief nerds of our society, collaborate together.
+21
+And it's part of our mission to make it as easy as possible for every developer to build small and big ideas with code.
+22
+But in contrast to Lego, the process of building software feels daunting to most people.
+23
+This all started to change when ChatGPT came along in late 2022.
+24
+Now we live in a world where intelligent machines understand us as much as we understand them.
+25
+All because of language.
+26
+And this will forever change the way we create software.
+27
+Up until now, in order to create software, you had to be a professional software developer.
+28
+You had to understand, speak, and interpret the highly complex, sometimes nonsensical language of a machine that we call code.
+29
+Modern code still looks like hieroglyphics to most people.
+30
+Here's an example from the early 1940s, the world's first computer programming language called Plant Calcul.
+31
+It set the foundation for the modern code that we use today.
+32
+It's a few numbers, some bubbles, and some big ass brackets.
+33
+Not much humanity here, right?
+34
+Flash forward about 20 years to the programming language called COBOL.
+35
+COBOL was invented during the Eisenhower years, but it remains an important language for many of our largest financial institutions.
+36
+Wall Street, your savings account, your credit cards, all run on this today.
+37
+Flash forward another 30 years to 1991, and we saw the birth of Python, one of the most popular programming languages in this era of AI.
+38
+In 80 years, we went from bubbles to brackets to blips of English, and yet we got nowhere near as close as the intuitiveness of human language.
+39
+But then came June 2020, and we got early access to OpenAI's large language model, then called GPT-3.
+40
+It was COVID.
+41
+We were all on lockdown.
+42
+I remember we were on a video call together.
+43
+We fed random programming exercises into this raw model, and like magic, it solved 93% of them during the first few takes.
+44
+We at GitHub recognized we had something remarkable in our hands, and we quickly turned around a novel developer tool called GitHub Copilot, an AI assistant that predicts and completes code for software developers.
+45
+Copilot is now the most adopted AI developer tool on the planet.
+46
+The age of programming has been reborn.
+47
+But the possibilities of the breakthrough went further than just these business results.
+48
+Because the large language models that power ChatGPT and Copilot are trained on a vast library of human information.
+49
+They understand and interpret nearly every human language, every major human language.
+50
+They seem to get us.
+51
+We have struck a new fusion between the language of a human and a machine.
+52
+With Copilot, any person can now build software in any human language with a single written prompt.
+53
+Goodbye to the bubbles and the big S bracket.
+54
+This is the most profound breakthrough to technology since the genesis of software development itself.
+55
+Today, there are over 100 million developers on GitHub.
+56
+That's about 1% of the world's population, you know, plus-minus.
+57
+I think that number is about to explode.
+58
+We started it all with the original Copilot, or how we say the OG Copilot, and it literally just predicted and completed code in the editor.
+59
+You can think of the editor as, you know, the Google Docs for developers.
+60
+And when you have an open doc open, you know how it is, empty page, what do I actually want to do?
+61
+And I mentioned Lego, so let's build a 3D Lego break on a web page.
+62
+So what developers do, you know, they start typing, and so I type here in a JavaScript file, create a function to create a Lego break.
+63
+And you can see here this gray text, we call this ghost text.
+64
+This is coming from the large language model.
+65
+So now I can just press the tab key and press enter, or I can just do function draw Lego break.
+66
+And here again, you see ghost text from Copilot Heider Bay available for me.
+67
+And if I like what I'm seeing here, so I get into a bit more mode of writing and understanding, I can just accept this.
+68
+Developers love that, right?
+69
+Because instead of writing 10 lines of code themselves or copy and pasting them from the internet, they get them right in their editor.
+70
+They can stay in the flow.
+71
+Now, what the OG Copilot didn't offer me is a way to interact with this.
+72
+I cannot ask questions.
+73
+I cannot, you know, instruct it to do different things.
+74
+Last year, we launched a new feature, Copilot Chat.
+75
+And you can think about it as chat GPT in your editor.
+76
+Now, you know, similar to chat GitHub.
+77
+And so you can kind of see here the idea of this empowering developers and people that want to learn development.
+78
+But I want to show you something else, this little mic icon.
+79
+So I can use that to speak to Copilot, and I want to ask it in German what that code does that is on the left side in the editor.
+80
+Kanstumi Akleen was Diesek Verkode Macht.
+81
+And now you know Copilot responds again, but it's spawn is in German to me, right?
+82
+So it says, if I loosely translate, yes, of course, this JavaScript code defines a function named straw LegoBreak.
+83
+So you get the idea here.
+84
+A six-year-old in Berlin, in Mumbai and Rio, can now explore coding without their parents being around or even having a technical background.
+85
+Now what you also see is you still need to kind of figure out how you put that all together.
+86
+There's a lot of technical stuff here.
+87
+I have code I have to iterate on my machine.
+88
+I have to figure out how to deploy this to the cloud so I can share with my friends.
+89
+But here's my Lego break now.
+90
+This is what it looks like if I've done all these steps as a developer.
+91
+It's a nicely rotating brick.
+92
+I can actually use my mouse to turn it around.
+93
+These are the anti-studs.
+94
+Here, the studs.
+95
+There's nice lighting effects.
+96
+You can even zoom into this and zoom out of this.
+97
+Now I don't want to do all this developer stuff anymore.
+98
+I just want to channel my creativity straight into reality.
+99
+And so for the first time ever on stage, I'm going to show you a new product that we call Copilot Workspace that does exactly that.
+100
+I can just see a task and I can enter a task.
+101
+And so now I have my Lego break.
+102
+I want to now expand the Lego break into a Lego house.
+103
+I can save my task.
+104
+And now what happens is that Copilot Workspace analyzes what I already have and then describes what it proposes to me.
+105
+Basically, but there is no code here.
+106
+It's all describing it in English.
+107
+I can actually go into this and edit it and can make changes to this line or can add another item if I feel like the plan is not exactly what I want.
+108
+I can go a step further and generate a plan, and now an agent runs through all my files I already have and figures out how do I need to modify those files, or you know, do I need to add files to my repository?
+109
+So, you know, it wants to add a create Lego house function and call the create Lego house afterwards.
+110
+And now, Copilot uses my task, my specification, my plan to write code for me.
+111
+So, here's a button that lets me open a live preview.
+112
+Now, the bricks fall from the sky and I have a Lego house.
+113
+And this is the power of streaming my creativity into reality with natural language.
+114
+Now, one last thing.
+115
+Thank you, Copilot.
+116
+You have always to be nice to the AI.
+117
+Three leaps in three years.
+118
+Three leaps that are more progress to the accessibility of computer programming than we have made in the last 100.
+119
+Remember how I said that 1% of the world's population is a developer?
+120
+Now you can see how this will change.
+121
+Copilot Workspace may still be a developer tool right now, but soon enough, these kind of developer tools will become mainstream.
+122
+Because going forward, every person, no matter what language they speak, will also have the power to speak machine.
+123
+Any human language is now the only skill that you need to start computer programming.
+124
+This will lead to a globalized grounds full of software developers, and it will reshape the geography of our global economy.
+125
+And because of this, I think by 2030, maybe even sooner, we will have more than one billion software developers on GitHub.
+126
+Think about that.
+127
+10% of the world's population will not only control a computer, but will also be able to create software just as they were riding a bicycle.
+128
+This will generate a new renaissance of human creativity with software.
+129
+Now, anyone could have a brilliant idea right now: a website, an application, a cool computer game, an amazing song, maybe even a cure for something.
+130
+For example, last year over a couple of weeks, I built an app that tracks all the flights I've ever taken in my life.
+131
+Now, I know what you're thinking.
+132
+What a freaking nerd.
+133
+And yeah, it's true.
+134
+I love building stuff like this.
+135
+And with the help of AI, now I can do this in English or in German before I even finish a glass of wine.
+136
+And soon enough, this will be true for everyone here.
+137
+The floodgates of nerdy tube have swung wide open.
+138
+Now, this doesn't mean that everyone will become a professional software developer or even that they should.
+139
+The profession of this professional software developer is not going anywhere.
+140
+There will always be demand for those that design and maintain the largest software systems in the world.
+141
+We're adding millions of lines of code every single day to ever more complex systems, and we are barely keeping up with maintaining the existing ones.
+142
+Like any infrastructure in this world out there, we need real experts to preserve and renew it.
+143
+The point here is not a will or a should, it's that anyone can, all because the most powerful system that we have, any human language, is now fused to the language of a machine.
+144
+And very soon, building software will be just as simple and joyful as stacking a Lego.
+145
+Danka Shun.
+146
+Gosh, one billion developers makes GitHub sound more like YouTube and TikTok than it is today.
+147
+Just super exciting.
+148
+Got to ask you one question, perhaps the elephant in the room.
+149
+Amazing talk.
+150
+So you said the developer is still in charge.
+151
+You also said we've had three leaps in three years.
+152
+Fast-forwarding a little bit, do you think humans will still need to be in the loop, or will these AI systems be able to autonomously build and maintain software?
+153
+You know, the way I always think about that and talk about it is that we called it co-pilot for a reason.
+154
+We need a pilot.
+155
+We need a pilot that is creative, that can decide what to do.
+156
+It's kind of like a Lego set.
+157
+You need to take this big problem and break it down into smaller problems, into small building blocks.
+158
+And for that, you need a systems thinker.
+159
+You need a human that can figure out: am I building a point-of-sale system?
+160
+Am I building an iPhone app?
+161
+Am I building a cool computer game?
+162
+Am I building the next Facebook?
+163
+Those are very different systems.
+164
+Now, these building blocks, they will grow in size.
+165
+Today, it's a couple of lines of code, maybe a whole file.
+166
+In the future, it might be a whole subsystem.
+167
+So I get more work taken off my shoulders, but I'm still there, you know, covering the large system.
+168
+And as I mentioned, we're still running cobalt systems from the 60s.
+169
+So we have lots of work to do.
+170
+Absolutely.
+171
+So we will be in charge.
+172
+That was Thomas Domke at TED 2024.
+173
+TED Tech is part of the TED Audio Collective.
+174
+This episode was produced by Nina Lawrence, edited by Alejandra Salazar, and fact-checked by Julia Dickerson.
+175
+Special thanks to Maria Latias, Freya de Grange, Corey Hajim, Daniela Belariso, and Michelle Quint.
+176
+I'm Sherelle Dorsey.
+177
+Thanks for listening, and talk to you again next week.
+178
+Robert here again.
+179
+If you enjoyed this episode, be sure to follow TED Tech on Apple Podcasts, Spotify, or wherever you're listening now.

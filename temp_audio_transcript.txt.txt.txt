@@ -1,0 +1,815 @@
+ Welcome to the Deco podcast, where we bring you stories from founders and investors in
+ Web3. Before we get started, this is not a financial or legal advice. It's just a conversation
+ about things we find interesting in Web3. We use expressed are our own personal opinions. Deco
+ members or guests appearing on the show may have positions on assets they talk about.
+ All right. Welcome to another episode. Today we have Izzaz with us. I have been following Izzaz
+ for quite some time. And his takes on AI, how deep he is into AI, his episodes with bankless
+ as cohost on AI weekly rollup. And he's also a co-founder of AI Saturday now. So I'm looking
+ forward to this one. Welcome to the show, Izzaz. Thanks for having me, Sarah. We're looking forward
+ to this one. All right. So let's start big, pretty zoomed out view. I want to understand the
+ entire AI start from you, right? I mean, you've been in the so-called trenches for a while. So
+ make me understand the entire stack right from GPU marketplaces to training to inferences to agents
+ and agent marketplaces while explaining every stack as to what unique problems that crypto
+ solves at every layer. And, you know, does crypto need to be there in every year? I mean,
+ should we be present across the layers or if there are certain layers that we should be
+ optimizing for? Yeah. Yeah. Really good question. So I'll get into it. So the way I kind of view
+ the stack, as you described it, would be at the bottom of this layer, you kind of have what I
+ call AI resources. So these are like, you know, the minerals and the soil and the earth that
+ you need to kind of build the foundations of a building, for example, right? So what are
+ these things? You have data, you have compute, and then you have the model themselves, right?
+ So think of a model as like a really intricate designed chip or a dam where you are about to
+ allow water to flow through, right? You need to design it very precariously. You need to make
+ sure that it's, you know, set up in a way that will allow, you know, intelligence to blossom
+ from it, right? But a model in itself isn't very useful, right? So you need to feed it
+ certain things in order for it to function similar to water flowing through a dam, you know,
+ you're not going to generate electricity, right? So what are those things? It's data,
+ and it's compute. And so if we start off from this bottom stack, your question is like, you
+ know, how can crypto help here? Well, on the data side of things, most data, almost valuable
+ data is siloed. Where has it, where is it siloed? It's siloed with all your top social media
+ platforms that you use every day. It's siloed with your hospital, medical provider, and all
+ these different things. And this kind of like drives back to a very old adage within crypto
+ and blockchain, which is, you know, you don't actually own any of your data, right? And
+ blockchain is kind of like help kind of like take that leap amongst like owning your data,
+ whether that's as an asset or a token on a blockchain, or whether that's via encryption
+ through ZK encryption and many other things, right? So that's how crypto can help on the
+ data side of things. It can help aggregate, you know, crypto is very good at coordinating
+ individuals. So if you were to coordinate a bunch of individuals to aggregate certain
+ bits of data so that you can pull it together and you can have a very valuable resource that
+ you can then feed through a model, that could be really useful. And there's a few examples
+ of teams doing this. You know, you have grass protocol, which has been kind of like scraping
+ the web for a while. And then you've got another kind of like perspective or approach to that
+ is Vanna, right, which is trying to tap into the personalized data side of things. And then
+ another team could be Masa to subnet on Bitensor, which, you know, are taking another approach.
+ But the point is there are various different ways that crypto can help to get this data,
+ this valuable data. On the compute side of things, think of this as like the electricity that is
+ needed to allow your laptop or your terminal or your phone to work in the first place, right?
+ Currently, the way that the web two way to do it is to, you know, tap into a cloud provider,
+ like AWS, Azure or Google Cloud, et cetera, right? But there's a few kind of like concerns
+ that comes around with this. Number one is centralization, right? So what if AWS decides
+ to shut off your cluster or server or whatever that might be, right? Suddenly,
+ your model won't work anymore. You're reliant and you're dependent on them, right?
+ So that's why if you were to create a decentralized physical infrastructure network or depend for
+ short, you could kind of like coordinate all this compute around a specific thing, which is like
+ maybe to provide enough compute to train a model or enough compute to inference or to allow
+ model to inference and inference for those who are listening that don't know what that means.
+ It's like querying, basically. So when you type into chat, GBT, hey, can you give me an answer to
+ this? Chat, GBT queries the open AI model, right? It says, hey, like, this is the question this
+ person asked, right? So that's on the compute side. And I think crypto networks can do a really
+ good way of coordinating compute examples of this could be, I don't know, IO net, render,
+ prime intellect on the training side, new research on the training side. There's
+ plenty of examples of these kind of companies, teams or infrastructures existing.
+ Then on the third point around this, again, we're still on the fundamental layer, there's a lot
+ to go through, right? Are the models themselves? Now the models are the trickiest, because typically
+ you need a lot of research, AI and ML expertise, and just like a way to kind of like test these
+ things out. And it's quite expensive to do, sorry, up if I'm being honest, right? But we're seeing
+ kind of like open models kind of emerge. Probably the most famous and most recent one is this
+ model called deep seek, which came out of a Chinese team, essentially. And they decided
+ to open source this another example is llama, which is a famous open source AI model, which
+ came from the guys that matter. So the reason why open models are really important. It's a
+ few reasons. Number one, you're able to see how it's designed. So you can make sure that it's
+ not biased or censored in a certain way that might implicate or, you know, extract from
+ the user, the person that's using it. Like an example I always go to here is like, imagine
+ you're using a model, and it's swaying you towards certain political beliefs that aren't
+ necessarily true, or it's feeding you misinformation on the data that it's trained of. It's really
+ important to know how that model is designed. Secondly, if that model is owned by a single
+ party or single person, then you're now under the assumptions and objectives of that individual
+ and person. Right. And that's why it's so important to potentially decentralize that ownership
+ for that particular model. Right. So I call that kind of like the fundamental, the base layer.
+ Right. Now moving up, it gets kind of easier to understand. The way I say it is, it gets
+ sexier. It gets less boring. Right. So if you move up above that, you have something that I
+ call the coordination layer. And this is where crypto kind of really shines. So if you think
+ about this, you have the compute, you have the data, you have all the models. How do you know
+ which one to hit at what time? And how do you know, like, which player within each one to hit
+ at what time? It's kind of hard to figure out. Right. So if you had something like a coordination
+ layer, which can help, you know, route every single request that comes top down saying,
+ hey, like, I need an AI to help me give me a recipe to cook for dinner tonight. Oh,
+ I need an AI to help sort my taxes out or whatever. It can route everything to the right model
+ and use the right data and compute, etc. It can get better and better and better iterative
+ loops. Right. The best example of this is probably Bitensor or a network called Alora,
+ which currently just like helps route a bunch of these things and they control compute.
+ They have subnets or when I say a subnet, I'm describing like an app or a team to help with
+ data and all these different kinds of things. So that's the coordination layer that sits
+ just above the kind of like resource layer. But really the coordination layer hits across
+ everywhere in the stack. But I'll get to that in a second. Above that, in my opinion,
+ you have something called the middleware layer. Now the middleware layer is kind of like the
+ most web to component of this and how it decentralizes and whether it needs crypto
+ is a big question mark for me. Right. So the things that would exist in this middleware
+ layer are things like AI agent frameworks that we've seen from the likes of AI 16 Z,
+ arc, virtuals. And the reason or purpose for these frameworks is an open source
+ way or toolkit for people to build the application layer. And I'll get to the application layer
+ in a second. But the reason why you need this middleware layer is all the kind of like stuff
+ that happens in the back end of these applications. So we're talking about memory architecture
+ of these agents. We're talking about data repositories, you know, what kind of databases
+ do we use? How do we query them, et cetera. And that sits at the middleware layer.
+ Now whether this needs crypto is a big question mark, for me, to be honest, I'm trying to
+ figure it out. You would argue that if you wanted to create a fully decentralized
+ application, you know, all the cypherpunks in the world would be like, yeah, like it has
+ to be decentralized. How effective that is. I actually don't know. So it's something that
+ I'm exploring myself right now. And finally, at the top of the stack, you have the application
+ layer, which in my opinion will materialize in the form of not traditional apps, not
+ traditional websites, but these things call agents. And the way I would describe an agent
+ is kind of like an autonomous software fueled entity that can think for itself in just data
+ and act in real time, make its own decisions, right? And an agent is not something that I
+ think is contained within a single loop. It's something that can think in an infinite loop,
+ right, technically, or theoretically. And what I mean by this is it can think for
+ itself very much like a human, they're digital humans. And the reason why I think
+ the application layer will exist in the framework of agents is because in a world full of a
+ million websites and a million apps and a million bits of data artifacts, you need a
+ much newer interface to interface with all of these things. And I think just one terminal
+ where I can kind of talk to it, speak to it, or even like look or point in a certain direction,
+ or better yet, it reads my mind makes sense. So hopefully that makes sense. Yeah.
+ Wonderful. Thanks a lot for that explanation. I really love it. Now, while thinking of these
+ different layers, pretty sure that different layers have different value accruers, right?
+ And therefore, different business models, right? One of the examples that comes very quickly
+ to my mind is virtuals, right? When things were going all right, they were making enough fees.
+ And we did not rely too much on inflationary token supply or those things, right? I mean,
+ the application itself or the protocol or the framework itself was generating revenue to
+ sustain itself, right? What are the examples or what are the business models of every layer?
+ And have we seen early evidences of, okay, like this is the business model towards which like
+ everyone is kind of gravitating along all layers? Yeah. I think that that is the golden question
+ that no one has been able to answer. And I think if anyone gives you a straight answer to that,
+ so they're up there lying. And the reason why I say this is I think the crypto business model
+ has only been figured out for a few things. And I mean really few things. You could argue that
+ it's a monetary asset, which is Bitcoin, right? And you know, you get emissions from that. And
+ you know, eventually once that emissions schedule declines exponentially, as it were,
+ you're hoping that fees on the Bitcoin network will be worthy enough for miners to do that thing,
+ right? Or for people to transact and run nodes and validators. So that's one thing. The other
+ thing is stable coins, right? It's stable coins is like, okay, cool. We'll take just a fee.
+ It's kind of like the Visa model in a way. And in fact, Visa actually makes, you know,
+ a decent chunk of money off of fees from that. But I think when it comes to the AI stack,
+ you can look at it in similar ways. So let's kind of like approach this. Well,
+ let's look at the bottom layer of the stack. And let's look at the top layer of the stack,
+ because there's two arguments for each one, right? Right. On the bottom layer of the stack,
+ where it comes at the infra layer, you're kind of betting that the layers above it. So the
+ coordination network, the middleware network and the app player are all paying some cost or fee
+ back to that network. Right. So it's like, okay, we're going to distill these components down to
+ the most valuable things, compute data and models. Everyone's going to need it. And maybe I make
+ all my money from inference costs or training costs that are fed down to me. And the reason
+ why I say inference and training is at the end of the day, what this stack has that's most
+ valuable is the model itself. Right. So if you're training a model, you need to pay the
+ compute providers and the data providers. And maybe that's just like through their own token.
+ Right. And maybe it's just like a payments mechanism. That's what I'm seeing right now
+ today. I don't know how useful that will be another kind of model that I'm seeing is like,
+ you know, they pay each other or they pay for their each of their resources in whatever currency
+ and then they buy back their token and burn it. Right. But my question then becomes,
+ what happens when these tokens kind of like reach a certain point where it like becomes
+ in order to be expensive to use or whatever that might be. And that's an open question for a lot
+ of crypto protocols. Right. And then if you look at the top of the stack, not specific to AI,
+ I think that that is bad is across the world. Yeah. 100%. It's not specific to AI at all.
+ This is a crypto problem that needs to be resolved. Right. And then on the application layer,
+ if I'm being honest, you kind of see a similar thing. Right. So all the AI apps that I've seen
+ exist today in the form of agents use some kind of staking or payment model. Right.
+ And the common example is hey, pay to access this terminal where this agent will now give
+ you alpha. That's AI XBT. Right. Or stake a certain amount of this token. And now you
+ can get different tiered access. Right. That's cool. And everything. And I'm seeing like,
+ you know, there's potential buybacks and other agents and stuff like, I don't know,
+ hospital beds and other stuff that aren't coming to mind right now. It's all cool.
+ Whether it's sustainable in the future, I have no idea because most of these things aren't
+ revenue positive yet. Right. If you want to talk about revenue positive crypto apps,
+ they're ones that either don't have a token or just had a token. Right. I look at Kaito as the
+ most obvious example. Right. They're technically profitable, but they have an AI powered app
+ versus a crypto native AI app. If that makes sense. Yeah. 100%.
+ You know, when you were talking about this, I was thinking about how all of this is similar
+ to blockchains themselves. Right. For example, I think you have made this comparison in the
+ past time, just extending that to what you said right now. So if you look at a value chain of
+ layer ones to be precise, you have block producers that are pretty close to what the chain is.
+ Right. I mean chain is a bunch of nodes where some of the nodes are proposing and building blocks.
+ That is the one end of the value chain. And the other end of the value chain is something
+ that is pretty close to the user. Right. Which are like applications like our way
+ and whatnot. Right. Where user interacts with on a daily or regular basis. And if you see the
+ distribution of value in the blockchain stack, you see that the value from adjacent layers
+ kind of starts flowing back to either the block producer or at the top of the stack with applications.
+ What I mean by that is if you look at bridges, if you look at solvers, if you look at any of
+ the middlemen, when there is enough competition among them, they have to bribe a block producer
+ to make sure that their transaction or whatever they are building kind of gets included inside
+ a block. Right. And similarly, at the top, I mean, if you look at applications like Moonshot,
+ they are charging like a 2.5% fee for every transaction to a user. Right. And users are
+ willing to pay that because the UX is cool. Right. I mean, it's not country and people who
+ probably don't interact with change way too much or on chain applications too much.
+ These applications are solving some sort of a problem for users.
+ So I don't know if something similar can emerge in the AI stack itself.
+ Yeah, probably. I think we're going to see a lot of this come to life. Well, actually,
+ I was going to say soon, but I don't know how soon. I think there's a few other kinks to
+ be worked out, especially at the middle where layer. Right. That's why a lot of these agents
+ kind of like seem or appear very similar. Another question I have with the way you just
+ described that syrup is how efficient are these things going to be compared to like the web
+ two version, right? Where it's just all contained within a single vertical stack.
+ You know the team that's working on this stack and you don't have a million other teams that
+ you need to then query or talk to that are kind of anonymous. Right. Oh, you can't.
+ There's no support team. Right. So I'm curious whether it'll actually give an advantage
+ of a web two stuff. Yeah. And one general question before we move on. Okay. I mean,
+ I also want to understand like how the layers at the bottom, I get the layers at the top,
+ but layers at the bottom kind of compete with companies that have billions of dollars of
+ budget. Yeah. When it comes to, I mean, whether it is models or GPU stacks or whatever,
+ right? I mean, how are we competing with those companies?
+ Yeah. So the point is like, when you have many versus one, you can potentially overcome the
+ bigger person, you know, the bigger bet. And the thing that's kind of been a huge challenge
+ for the compute side of things, and I'm speaking specifically for the compute side of things,
+ is it's hard to kind of like put all these random GPUs together because, you know,
+ they're all different flavors. They look different. They act different. Some are older,
+ some are younger. And you're kind of like moving at the point of your weakest man or
+ your weakest GPU. So this guy that's like higher performing is always going to be held
+ back by the little guy that's kind of underperforming. Designing new techniques and ways to train
+ and allow models to be influenced was crucial and held us back. But now with some of the
+ advancements that we've seen from the guys at NUS research, prime intellect, they're making
+ like huge advancements, Jensen is another one, you know, they're actually figuring out ways to
+ train. So I'm convinced that at scale, if you have enough of these GPU clusters in a decentralized
+ network, they could actually end up becoming really competitive. The second reason why
+ these decentralized compute networks are super important, Syrab, is ownership. And the fact
+ that it isn't a single cluster being owned, right? And I think that that maybe philosophically,
+ and maybe in a slight way, ethically is way better than the centralized version.
+ Now on the data side of things, here's the thing. I think data is actually one of the most important
+ things. I don't know how that's going to get solved in a decentralized manner. If I'm being
+ very honest with you, like, you can scrape all the web data that you want. But there's a bunch
+ of web to companies that do that as well. Right? Exactly. The most valuable part is the
+ personal side of things, which is under silos. And you can't tap into that. You would need
+ to pay for it in some way. But you're still in some way relying on the web to side of things.
+ So I actually don't know how that's going to get resolved currently, right?
+ Maybe if we create some form of app or social app that is so valuable that people all want
+ to migrate there and give up their data in an open source manner. Sure. But it's kind of
+ harder. I don't know how to wrap my head around that particular point. And yeah.
+ All right. Yeah. I think that's the best we can think about at the moment, right?
+ I'm not sure whether we have pinpointed answers. But let's switch gears.
+ Let's get a little specific. I think a month ago, I mean, because you said money and blockchains,
+ right? In my mind, blockchains use cases in terms of whatever we do. I think when it comes to money,
+ it's really specific. And we've seen products, the product market fit, right? And stablecoin
+ is a subject of that, right? Yeah. So this is why I was looking into DeFi and where AI plays
+ a role in DeFi, right? I mean, I don't know how to pronounce it, the DFA. I call it DeFi AI.
+ DeFi AI, right? I mean, that's the best way, probably. Yeah.
+ I was looking into it about a month ago, and I was trying like different applications and
+ what was there available at that time. And I realized that most of the applications are clunky,
+ right? Either they don't do what they claim to do, or they take an awful lot of time to do
+ whatever we can do, right? I mean, if I were to swap entries and whatever, like, I would do
+ it way quicker than any DeFi AI application that is out there right now,
+ which is fine. The whole space has been around only for a quarter or so. I can't expect like
+ crazy level of smoothness out of them at this point, which is fine. But as I understood the
+ space, there are like three or four sub categories that I can divide it into, right? One is
+ intelligence. Of course, something like any HPT, right, working the relentless key to scour
+ through Twitter and figuring out what alpha is and whatever. Then there is curation bit,
+ because AI XPT is also throwing like a thousand tweets at me every day.
+ And it's not humanly possible for me to evaluate everything that AI XPT throws at me. And then
+ there is execution or abstraction, whatever you want to call it. Like something like Refinder,
+ where, you know, I don't even know, as a user, I don't know how it is bridging what
+ chain it is interacting with. All I see is, you know, swap happening or financial transaction
+ or an exchange happening. Now, if I were to look at users in terms of concentric circles,
+ for DeFi and for crypto at large, the largest one is centralized exchange users,
+ which are probably like 150 or whatever the number is that Coinbase tells us.
+ And DeFi is like a tiny circle inside of it, where it is predominant with developers,
+ then the outside of that will probably be power users. And then there will be late
+ on chain users, right, who see someone talking about Trump and they go and swap maybe like
+ once in three months or whatever. But if we are to expand these circles and capture more users
+ from centralized exchanges, it needs to get easier. I get that. Right. But we also neglect the fact
+ that centralized exchanges also perform duties of curation. Right. Because the user who goes
+ on centralized exchange doesn't have to bother about several tickers that look the same.
+ They don't have to worry about what the correct contract addresses and so many things.
+ Right. It's just way too easy because centralized exchanges are the curators as well, along with
+ everything else. So now my question is, what is happening in this stack? Where does the
+ value occur? Because centralized exchanges are kind of gatekeepers. They also are charging
+ for curation. And they have that power. Right. You have the power in the sense that
+ when a token gets listed on a centralized exchange like Binance or Coinbase, you have a lot of
+ saying what happens to that token. Right. So the question is, when all of this is happening
+ on chain with the use of AI, are there just going to be new gatekeepers who are curators and
+ they extract value from users just as centralized exchanges too? And yeah, I mean, about abstraction
+ and Intel. I don't know if there's a lot, but yeah, like let's tackle one by the
+ lot. There's a lot to unpack. So like to answer your like most imminent question that you just
+ asked. I mean, are the centralized exchanges, there's two ways to look at it, right? Are they
+ the biggest extractives? Or are they just the most efficient and easiest use case? Do they
+ have the best product out there? I mean, you could argue that it's the latter, because everyone
+ still wants to use their app. Everyone could. They know that they both. They know that they
+ are the easiest to use. Exactly. Yeah. And I don't think there's any difference between
+ crypto centralized exchanges or any other web to product market where you have, you know,
+ the top dogs and you have the bottom dogs. Right. So in my opinion, I think this plays out.
+ Oh, we've actually kind of like seeing certain trends play out. So let's look at the centralized
+ exchanges. Right. So you're saying a lot of people still use centralized exchanges. I think
+ we need to zoom out a step back a bit and ask ourselves, why are they using centralized
+ exchanges? Okay, because they want to buy crypto. Why do they want to buy crypto? Well,
+ if we're being honest with each other, they want to make one any reason. They want to make
+ money. Right. Okay. And do they know all the tokens that they want to buy? No. So they
+ go onto Coinbase because they see an article that Bitcoin has broken 100k. And they're like,
+ damn, well, Bitcoin's so expensive. I can't afford a whole Bitcoin, but I should be able
+ to buy some other coins. Right. And then they go on and they see familiar names like XRP,
+ Doge, Cardano, and they're like, Oh, these are still so cheap. What if they get to the price of
+ Bitcoin? So there's a lot of psychological stuff that go on. Right. And so your point is like,
+ well, exchanges will just own the entire moat. Right. And on chain is just too hard. It's
+ just for power users. Well, there's one main reason why people will migrate to on chain
+ eventually. And that's because the long tail is typically where you can make the most returns,
+ right? Or the most alpha can be seen that. That's number one reason. Number two is you're
+ betting that eventually the liquidity volumes on on chain exchanges or DEXs will eventually
+ match that of centralized exchanges. You're actually seeing that with a lot of major assets
+ already between Coinbase and say, if you want to compare it to Uniswap, you know, on Ethereum
+ or across base or whatever that might be. The DEX volumes on many days actually outpace
+ centralized exchanges. Right. So you can kind of see this kind of like trench.
+ Yeah. I want to push back there a little, I think the highest volume that we have seen
+ in terms of ratio of next to centralized exchanges is around one is to five. So 21 percent has
+ been the highest. Yeah. So far, one day a few at least, and I know I'm cherry pecking data
+ points there, but one day a few days or at least monthly DEX volume of lost cycle at least.
+ And maybe even this cycle where Uniswap outperformed Coinbase into.
+ Yeah. But if you, yeah, if you take aggregate decentralized exchanges versus the centralized
+ exchanges, oh, yes. Otherwise wins. Yeah. It wins hands down. Like it's like 5x from
+ correct at the best. Right. And 10 to 15x when like regularly. Yeah. But you're right.
+ I get that like on a daily basis, sometimes Uniswap has surpassed coinbase.
+ Yeah. And the point I was making is definitely not that Texas are a better experience
+ and are beating centralized exchanges. It's more so that we're starting to see a shift or a trend
+ towards, you know, DEX is being viable or a viable option for people to use or for bigger
+ institutions to potentially trade on. And I think one of the main reasons why we haven't
+ seen continued kind of or more aggressive trend towards this is because these things
+ are really hard to use. Number one, and two, there's just so many assets. So to your point,
+ like the curation has been terrible. It's been so bad. Right. So then kind of like,
+ I'm trying to remember the first question you asked, which is kind of like, you know,
+ where does this end up? Like central, do these on chain equivalents of exchanges
+ with AI end up becoming like, you know, the new extractors? I wouldn't describe them as
+ extractors. I would just describe them as like a better user experience if they're able to
+ achieve it. Right. Because at the end of the day, who cares where I'm buying it from?
+ Right. Whether it's Coinbase, whether it's Moonshot, whether it's Phantom Wallet.
+ I don't know. I just want to buy the thing and I want to make money. Right. And my bet is,
+ it's not going to be an individual app. My bet is it's going to be a singular terminal
+ that you interface with. That's going to not only help you do the execution, but it's going
+ to do the curation. And it's going to be personalized as well, Sarah. It's going to know exactly
+ the type of things you want to ape. It's going to know when you want to ape.
+ It's like, oh, Sarah, I'm getting his salary payments. So I'm obviously using this
+ hypothetically. Typically, he puts some stuff aside. So let me get the hottest picks for
+ today or for the last week, because I know what kind of data he wants to look at. Right.
+ So I think it's just going to end up with a better experience. And I think that's better
+ for the market overall. Yeah, that's fair. I mean, it's like, I should be able to give it,
+ like my risk tolerance, my goals, like your financial advisor does, like outside of crypto.
+ And then you know, suggest you a bunch of things and perhaps even execute on your
+ behalf within the limits that it is allowed, right? Correct.
+ And there are a few agents that are running kind of like internally right now
+ that are playing around with this thing that can already do this, but to your point,
+ this industry is still super early. And we haven't seen even similar things
+ emerge from like the web to agent world, right? So I do think it'll take a little bit of time
+ to play out. I recently spoke to Chris from Albert, and I think he mentioned that they are
+ working towards something similar. Are there any more names that you know of? Can you share?
+ Yeah, I mean, like the Griffin guys can already run this internally in beta.
+ Agent tank ran a demo. I haven't played around with it, but I think it was a local demo where
+ you can set guardrails on, you know, specific websites that you navigate to or that you allow
+ your agent to navigate to and they can only trade within a suspending limit and within certain
+ market cap sizes of tokens on a given particular day. That is, you know, five days old or whatever
+ that might be. So you can set all these different kind of limits up. The other kind of like,
+ much, much safer play that I've seen is like on protocols like Giza, right? Where it's,
+ these are all like, you know, do you remember year and finance where you could just like
+ deposit and like earn off of stablecoins and stuff? I feel like some of these agents are
+ running back the same playbook. It's up like, you know, it's an agent workflow and all that
+ kind of stuff. I don't know how much of this is like autonomous, if I'm being honest with you,
+ but we're starting to see kind of like safe plays from there. Wayfinder, I actually have
+ been dying to play around with Wayfinder. I don't know if you've been able to do so, but
+ you know, I've heard that they've been able to do pretty cool things as well.
+ I mean, I've already seen the Twitter videos and screenshots or whatever.
+ That's my biggest gripe, Sarab. I'm, yo, let me play around with these things.
+ Please, you know, I need to see whether these things actually work.
+ Yeah. You know, I've been, we've been burnt way too many times by the demos and videos
+ of applications, you know, that cause every time something cool, which is not in the production,
+ I see something like that. It quickly reminds me of that, me, where you know, when you start
+ the house is great. And by the time, you know, it's all terrible. Funny you should mention
+ your finance. I think that was the first attempt at automation of any sort where
+ yield aggregation was kind of automated for an end view.
+ Well, I would counter and I would say that set protocol back in the day.
+ They were the oach. But you and finance were the ones that like made it like way more
+ popular. Right. But yeah, I mean, you had a few people who were designing strategies and you
+ still relied on those people. Right. I think that is why scale was an issue for you on finance.
+ And if an agent platform or an agent can take that form, I think that would be scalable to
+ whatever users we have. But let's see if that happens. Okay. So if you were to build something
+ like this from scratch with, you know, crazy wild possibilities in your mind,
+ what would that agent look like? What would be your personal go to be fine agent? And how could
+ they be like they push the boundaries of what is possible today? Yeah. I mean, it's a boring
+ answer. But I think it's the truth. And also the nuance happens in the execution of what I'm
+ about to say, right, which is it needs to be an agent that makes me money. I don't care.
+ Anyone that says, Oh, you know, it needs to be able to handle stable coins and all this.
+ No, no, people only come to crypto right now to make money. So you need to appeal to that
+ particular use case. So it would be some kind of a trade or agent. And in my opinion, and this
+ is where like it's a hot take maybe is people that come to crypto right now. And I'm just
+ talking about right now, get dopamine hits from making a much larger amount of money
+ over a shorter period of time than they expected. So I would argue that this agent needs to
+ be able to trade on chain. That's typically where all those conditions are matched with,
+ right? And so I think it should be an agent that is able to trade within a specific range
+ bound. It can, you know, maybe play around with a couple hundred bucks to start off with.
+ So it's definitely gaps that you don't end up losing like, you know, more than your net worth
+ or more than you like, you know, want to do in the first place. And it's able to show
+ you returns within like the first like couple of days hours, or even like, you know, minutes.
+ Now what I've just described is of course, like the dream, right? It's what everyone
+ wants to make. I think it's going to come down into the execution. I think right now, a lot of
+ people have been kind of hesitant to launch early fledged product because they haven't
+ really thought about it intricately, right? So like the earliest example that I can think of is AI
+ 16 Z wanting to launch an autonomous trader, right? We haven't really seen it come into
+ production. And I think like these guys are probably like one of the more advanced teams
+ in terms of like the time that they've spent building this. But this still hasn't gone
+ production live. And I think there's many reasons for that. Number one, it's just,
+ it's such a hard problem to solve. You know, right? There's also a lot of pressure on like
+ that thing making money. If it doesn't make money, you know, you lose the entire reputation of
+ everything, right? And number three, it's like, okay, well, what do you trade? You need to like
+ take inputs from like some of the best traders in the world and all that kind of stuff. But
+ if I were to build something, it would be something along like a trade aeration that
+ actually ends up making you money, it would be on chain specific. And it would give you
+ that dopamine hit of maybe playing with higher risk ults. Of course, it needs to come with
+ the disclaimer that, you know, you could lose potentially all your money, right? And so
+ it would need to be kind of like capped in that way. So kind of like a DJ and trader bot,
+ I think would be the one that I would think would do the best. And I actually have a proof
+ point for that, right? Which is, and again, I keep mentioning this damn agent. The reason
+ why I'm mentioning is because it's just like the easiest one that I can point to, which is
+ this sports betting agent called us Billy Bats. I don't know if you've come across it at all,
+ sir. But this thing is like, it's got a higher win rate than like any average beta by far,
+ right? So it started off with 100k book. And I think it's at like 150k right now,
+ which is pretty insane, right? And I'm watching this. And I'm like, why is this so appealing to
+ me? A guy that like doesn't watch half the sports that it's betting on, right? That has
+ no idea some of the parlays that it's doing. Why is this so fascinating to me? And I'm like,
+ oh, it's because it connects to the real human world. It's because it's relevant,
+ and it's because it speaks to humans or its community in a way that is relevant and that I
+ feel is human. That's the AI XPT effect, right? It's like, why do I relate with AI XPT? It's
+ because it sounds like me. It sounds like a crypto DJ. And so there's this whole community
+ and human aspect that I think often gets overlooked. Everyone's like, hey, if I get
+ an agent that just trades and shows graphs, that's going to be cool. It's going to make me
+ so much money. Yeah, maybe for like power users, but for like a wider audience of social people,
+ probably not. So yeah, all right. So follow up question, right? I want to take your
+ trader agent and scale it, right? Let's say that everyone has access to your trader that is
+ making money, right? The question is, like, money is made in markets by exploiting
+ inefficiencies, right? Whether that is, you have some information that others don't or whatever,
+ right? For sure. When everybody has access to this trader, does the trader end up making money?
+ No, that's why I don't think everyone should have access to it. I think it will hear me out,
+ right? I think any kind of strategy that is open source is just obviously going to get
+ off a trudge. Like, that's not going to make it, right? It has to be proprietary. Why is
+ asked Billy Betts the most? Again, I keep using this as an example. Why is it so successful?
+ It's because it doesn't like lay out its bets until 10 minutes before the game starts,
+ right? So it's already raised its bets before, right? Now, of course, the crypto answer would be,
+ hey, let everyone get access to it. And I don't agree with that business model.
+ Maybe that's because I have a, I don't know, a web to background. Maybe it's because I'm
+ secretly going to order it. And so if you wanted to take it a step further, you could be like,
+ okay, fine. Eventually, when ZK encryption is able to be scaled, you can encrypt everyone's
+ bets. So therefore, you know that everyone like, you know, gets access to a certain thing,
+ but like, you know, that it wasn't shared before and everyone feels good. But at the end of the
+ day, Sarah, it needs to have some kind of tiered access. Otherwise you end up creating a savings
+ account. And that's a completely different use case. And maybe you can do that, right?
+ A higher savings account sounds great. Everyone gets access to it, but a lower APY, you can't
+ get the high APY and everyone gets access to it. It doesn't work. It's not market efficient at all.
+ Yeah. I think that's fair because it's just for split and supers, right? If everyone
+ is doing the same thing, you're not going to make money. I mean, you need to be in the minority
+ of a trade or whatever investment thesis that you have to in order to make money, which is correct.
+ I think, yeah. So far, I mean, beyond DeFi or anything else, where do you think that the whole
+ AI stack has not exploited a particular opportunity? Or what would you like
+ the agents or marketplaces or anything that is to do or to solve a problem that is currently
+ being kind of ignored by them? Yeah, it's a good question. I spend quite a bit of time
+ thinking about this. So I'll give you my boring and sexy answer first, which is,
+ there's a lot of backend stuff that I think needs a drastic, right? Which is like, you know,
+ hey, I need data for this model. Go grab me data, right? But then you need to do a ton
+ of other tasks to it. You need to clean it. You need to label it. You need to structure it.
+ I think all of that shit can get automated in a way, right? And I think agents will be the
+ smarter employee to do all of this. Like all this kind of mechanical Turk startup,
+ I think can be done by an agent effectively. So whether it's data aggregation in the example
+ that I just used, whether it's managing liquidity pools on Uniswap for certain positions,
+ for certain hedge fund managers or liquidity providers, or whatever that might be.
+ I think there's a realm for a lot of these unsexy agents to do well. It's kind of like a
+ gig economy of like unsexy agents that I think will be really useful. And then the other thing
+ that I think would be kind of interesting for me in that, again, I'm still trying to figure out,
+ like how exactly it materializes is, I'll ask you this, what's one thing that these
+ crypto agents will have in common with, you know, like web to use cases, for example?
+ Are they easy to use? I don't know. Right. Exactly. You can go through the same terminal.
+ That's the whole point, right? Right. Like it looks like chat GBT,
+ and it does all the things chat GBT does today. But I can also do some crypto stuff.
+ That's pretty cool. I'm not getting out of that app. I'm not leaving that app ever.
+ Exactly. Right. So now what I'm thinking of is, huh, what web two things can we integrate
+ into the same crypto product that will then tie in users to use more of the crypto stuff,
+ right? My guess is some kind of a finance app that I can pull up on my phone, right?
+ That earns me yield or something like that. You know, I don't know what the US equivalent
+ of those things are, but like something like that. And then it does other crypto native
+ stuff for me. Right. And ironically, Coinbase or other central exchanges are the furthest
+ along with this. Right. Like, when I was at Coinbase, I was helping build out their like
+ DeFi yield product, which allowed people to earn APY on their assets. Right. What happens when
+ Robin Hood, who allows you to already do that on certain stocks, allows you to now do that
+ with crypto assets. I think we're going to see a merge of different things here.
+ And I think there's an opportunity for agents to kind of like capture that crossover.
+ Yeah. Right. Makes sense. And the reason why I asked you this question was I was talking to
+ Shaw last week on the podcast. And he was telling me that governance is in crypto in general,
+ can be streamlined using AI agents, right? And he was mentioning that they are building
+ this particular agent using their own infrastructure, which is also a good strategy, by the way.
+ I mean, if you can talk food, your infrastructure, I think nothing more like it, right? I mean,
+ to show what it can do and how things can be built. So yeah, I mean, that was my motivation.
+ Yeah. I mean, Shaw's been saying this from the start, right, which is like,
+ I should just make the UX of using crypto way, way easier. And it's a simple, but very powerful
+ statement. Yeah. It's difficult to execute because just there are so many things that need to
+ be brought under, as you said, one application. And it needs to look clean, right? Because you
+ can't throw too many things that a user in the first go and scare them already.
+ But it's forcing crypto to do something that they've never done before did, which is like
+ build like a really good product. Like it's good. It's like forcing people to actually think from
+ first principles, what do the user want? Not, I got to create this L2, and it has to have a
+ million transactions per second. No, like, what is the thing? Why are they using the transactions
+ in the first place? I'm hopeful that the current state of the market forces. Yeah,
+ at least a few such applications. It will. Yeah. I mean, you know, those are the only,
+ I mean, there are benefits to prices going down, versus you to pay attention to certain things
+ that can work. And I just hope that it happens this time. And, you know, we don't go back to
+ launching agents that do the same thing and name coins that do nothing or whatever. But yeah,
+ I think like I was going through your Twitter to prep for the episode, right? And you've,
+ I think mentioned once or multiple times that AI will bring more capital on chain,
+ because I think that is one of the most important things that we would want as an industry
+ is to grow the pie. And nothing like growing a pie, then helping create another way through
+ which liquidity flows in. So just to walk us through how that happens, who does that?
+ How AI plays a part? Yeah. So most people probably won't like this answer, but it's
+ going to start off with the Web2 institutions. They have the mode of users to start off with.
+ So I think, and these don't happen sequentially. It happens at the same time, what I'm about
+ to describe, right? So firstly, all the attention is happening with the Web2 stuff, right?
+ Why? Because they have a higher trust, higher reputation ranking, and people already have
+ accounts there, right? So they're like, all right, I'll just go on Coinbase and use their
+ agent or I'll just navigate or let them tell me what to do. And you know, I'll trust them,
+ right? The second thing that's going to happen in parallel is I think we're finally going to
+ see some of the most useful crypto apps emerge. It's our up. And I think it'll come in the form
+ of agents. And a lot of people think I'm crazy, because I'm just like, I keep saying this word,
+ agents, agents, agents, and you are right to call me crazy. But when I look over the fence into
+ the Web2 AI world, I see a ton of these things pop up. And guess what? They're actually generating
+ revenue. And they're actually making meaningful impact on everyone's lives, right? And it's
+ in boring things, right? It's a little give me examples. Yeah, yeah, there's like an agent
+ that I was looking at yesterday. I couldn't play around with this because it was a supply chain
+ agent, right? For shipping specifically. And there have been many teams that have tried to like
+ just make this entire shipping kind of like thing really simple and easy to use. And the
+ reason why there's so much abstraction and challenge there is because there's a lot of
+ human interaction, right? There's a lot of paperwork and stuff like that. And you had this agent,
+ which basically was designed to interact with humans only digitally. So remember, I just
+ said there's a lot of human interaction that needs to happen, right? But what happens if
+ this interaction was just online, like, you know, using text or an automated call that you could
+ speak to someone, right? And they could speak back to you. And they sound like, you know, like,
+ chat GBT and voice mode, right? Have you ever used that? Like, for me, I can speak to that
+ guy all day, right? Because his tone changes when he has ascribing something. Anyway,
+ so I watched this entire, like, agent demo, where it just basically ran through the entire
+ supply chain of all the different intermediaries. And I did it within a day versus the week
+ or two weeks that it typically takes. And the reason why it was able to do that was because
+ it was already plugged into calendars, slots and everything where it was able to just book,
+ call the relevant person and act within its own realm, right? I kind of like an agent in turn
+ that ran within this, like, supply chain situation, right? And that already saved the company a
+ bunch of money and actually ended up being able to take on, like, more customers within that
+ demo. And that demo period ran between, like, I think, like a couple of months or whatever
+ that might be. I must stress that this was something that I saw on X. So it might just all be misinformation
+ completely. So I don't know. But that was the most exciting one that I kind of saw recently,
+ right? And so there's a lot of agents that I think are going to be making impact, particularly
+ within the enterprise realm, as well on the Web2 side of things. So what I'm seeing is there's
+ a few agents that are helping and software engineers hate this, but like, assist software
+ engineers, you know, check relevant code to make sure, you know, it's written in a certain format
+ away, or, you know, check whether they could add certain things to it or suggest certain
+ things to it. It's kind of like a coding co-pilot, right? And there's a bunch of these things
+ that exist on things like Langchain or autogen, which are some of the Web2 agent frameworks
+ that exist out there, right? Not Web3. So I see this kind of like happening on the Web2
+ world. And I'm like, huh, I do think they'll be spillover or a lot of similarities that
+ appear on the Web3 world simply because there's nothing novel in how that technology is being
+ used here, which couldn't explain why it couldn't be used on the Web3 world as well.
+ So, you know, I forgot what the original question was. But that's kind of like how I see it playing
+ out. Yeah. All right. Have you also seen, I mean, this is about supply chain. I mean,
+ is there anything more where you've seen something like this and seems like, okay,
+ there can be a product market fit here, for what specifically? No, no, for agents and,
+ you know, like you talked about the supply chain stuff, right? I mean, it is solving a
+ real use case. It's bringing in more efficiencies for the system, right? Was there anything that
+ you've looked at that is using a Web2 stack and, you know, kind of helping, I don't know whether
+ it is in your workflows or helping companies in any way, basically. Aside from the supply chain
+ example. Aside from the supply chain example, yeah. Yeah. So it was the enterprise stack that
+ I was mentioning earlier, right? Which is like, okay, so one thing that I've seen kind of like
+ play out is, okay, you have this agent that is able to make the whole strategy. So end-to-end
+ product process a lot more efficient. And this doesn't mean that there's an agent that's creating
+ the product and running all the meetings and stuff like that. But it's an agent that exists
+ on your own internal company database that can help things such as scrum meetings,
+ certain Slack messages for pointers, keep track of certain employees on certain kind of like
+ work schedules, like geo tickets and all that kind of stuff, basically making all of this
+ stuff a lot more efficient, trained on company specific data. And it makes sense, right? Because
+ like, you need specific data to make sure that your AI agent kind of acts effectively.
+ Now, how much revenue that actually leads to, I don't know, because all of those company things
+ are kind of internal. I'm hoping that becomes public soon. But those are kind of like the
+ less sexy, but important things that I think we'll start to see first. It'll be a lot of
+ knowledge work that gets optimized first, in my opinion. Yeah. All right, that's fair, yeah.
+ And like, you've been probably in this meta right since the start of probably even earlier,
+ I'm not sure. But like, is there a blind spot currently with people like, as far as outside
+ is a concern, are there blind spots that they are not at all thinking about in terms of
+ capabilities of AI or agents and what they can do for these people? Blind spots in terms of
+ how they can help or what how they get has actually. Yeah. Yeah. I mean, I think about
+ the challenges a lot. And I think about it in context of myself. So I think I have a ton of
+ blind spots. And I'm constantly trying to find those blind spots and then like fix them or
+ learn them or do the best that I can. And so I think data is one that we haven't,
+ we've actually mentioned a few of the challenges. So I'll just quickly run over them and then
+ move on to the second part data. I don't think it's something that we've solved, right? Okay,
+ you can have all the fancy model ownership, all the fancy apps in the world. But like,
+ you need important data to be able to make these things like really that much better
+ than the web to alternatives, the web to social media apps and all that kind of stuff.
+ The web to chat GPTs that already know enough, right? Now the pessimistic view is we're never
+ going to get that data. It's going to be useless. The optimistic view is if I create a good enough
+ app that people want to talk to, right? Like a chat GPT, but for crypto and maybe a bit of
+ web to as well, people are going to just end up giving me that data anyway, right? Because
+ they're talking to it, just like I'm talking to you, right? So I can build up a profile of
+ an individual just right now from the start. And that would should be enough of a leverage
+ for me to kind of like build out a useful product from that. So maybe it is as simple as that,
+ right? So that's on the data side. The other side of things is just like the UX is just
+ terrible to use, right? And so I kind of wonder like, will this improve or will we
+ add too many intermediaries that it still won't be good enough to use, right? And that's like
+ the point that we're trying to like kind of like figure out. We've proven that it works in
+ terms of like stablecoin transfers and all that kind of stuff. Like it's good enough,
+ it's better. People are increasingly adopting stablecoins. The US is now super
+ pro stablecoin. We'll see where that runs. But those are kind of like the challenges.
+ The opportunities that I don't think will be that has a mid looked at right now,
+ there's a few that which again, get people are very riled up that I think should be focused on,
+ you know, within a certain extent, which is the social side of things, which is, okay,
+ right now, you have a bunch of crypto DJs from siloed communities, talking about their token,
+ talking about that coin, right? But I wonder how like how you combine a bunch of these users so
+ that they become multi chain users, right? And the reason why I'm making this point is
+ agents won't care what chain they act on. They're not going to be chain specific.
+ They're going to be chain agnostic. So there's a cultural evolution that needs to happen
+ within the crypto community specifically. I actually think it'll be easier
+ to get non crypto people to use these new crypto AI apps versus encouraging the crypto people to
+ use the crypto AI apps, right? Because they're so tribalistic. And I think that's just going
+ to be a painful evolution that we need to kind of like figure out, you know, over time.
+ So I think those examples probably are like top of mind right now,
+ agents should be in total. Yeah, that's what you'll see.
+ Yeah. Well, think about it, right? Like we saw virtuals that launched on base,
+ launched on Solana and everyone on base was crying. And it's like, well, hang on a second.
+ Like you want these agents to work across both chains. You have a bigger total addressable market.
+ You want that to happen. But you know, people are just like, they're thinking too small.
+ Growing the pie is not allowed in crypto. He says, yeah, it's ironic. We talk about
+ growing the pie, but no one actually wants to go to buy it.
+ Yeah. But in that, I think I tried K and on to use, I mean, to swap token from one chain to
+ another. What do you know? It was quite quite all right at that. I did have to tell it what
+ trades or whatever. And it was all right. I mean, it took longer, but it was fine.
+ It did the job for me. Yeah. Yes. And I think that'll get quicker over time.
+ Right. Yeah. Like you think about someone who isn't you,
+ Sarab, who doesn't know, I could just click this and do it myself.
+ They'll be like, Oh, you know, this is, this is much better. I couldn't do this on coinbase.
+ You know what I mean? This is much better. Right. Now it just needs to get quicker.
+ Once it can happen in like a fraction of a second, you have a better product.
+ I mean, boring, but correct. I think analogies to use the internet, I don't need to know TCP/IP.
+ Exactly. I don't care. Correct. I shouldn't know chains and bridges and any of it.
+ You know, the saying we're so early. We are actually too early.
+ And it's preventing us from building good products.
+ Yeah. But we honestly looking at CT that changes based on the price, right?
+ Whether we had to early or it is too late. Yeah. Exactly. Yeah.
+ Let's move on to. Yeah. So the red dull. Tell us what has happened until now.
+ What does the roadmap look like? And what is your, like moonshot hope for the dark?
+ Yeah, sure. So for context to those listening, myself, this guy called Marcus and Rope Roperito,
+ who is one of the head engineers at News Research, we kind of like got together and we were like,
+ okay, we're getting a lot of inbound from builders in the space, ecosystem participants or
+ contributors to different kind of like agent ecosystems coming to us and saying, hey, like,
+ can you help, you know, maybe fund this team or, hey, we're seeing this kind of like gap in the
+ market and we think we should build A, B and C for it. And there's only so much that like
+ Rope, Marcus and I can do individually. So we were like, hey, I wonder if we can scale this
+ out into like a larger community and do something pretty cool here. So we decided to form this
+ dow called, I just call it an accelerate dow. Some call it AI accelerate, but I just call
+ it accelerate dow. And it's focused is basically to build out this entire crypto AI ecosystem
+ in as decentralized the fashion as makes sense. Right. And so we launched this dow and it had a
+ pretty spicy start. Well, Marcus Rope and I made the fumble of assuming that, you know,
+ this would go kind of like under the radar, we were like, oh, it's on a bear market day,
+ no one will care about this. It's great. We can kind of like start small and then kind of
+ build slowly, slowly, slowly. And it just had a crazy launch. It went to an absurd market cap,
+ which wasn't justified at all for the time being. And you know, we got a lot of flack and hate
+ from that, which was, in my opinion, justified to an extent, because you know, we hadn't
+ had investing and obviously we're retroactively gone back and we've added that. But the deed
+ was out there at that point. Right. And I don't want to hop too much on about that. So in terms
+ of like what we want to do with a dow, there's three things. Number one, we have an internal
+ core developer team, which is building out along a product roadmap, which we have designed.
+ And by we were talking about Marco or burrito and I, right, the core contributors right now.
+ And that roadmap is very much focused on building out things that plug gaps that we
+ see currently in the industry. So this could be ecosystem tooling. This could be agents themselves.
+ This could also be frameworks that we think meet a different bar that hasn't been satisfied
+ by other agent frameworks right now. I think what we publicly released on our roadmap,
+ I think it's pinned up the top of our official account is we're releasing two agents soon,
+ where we've currently been behind the scenes working on that for about a month right now,
+ or about a month and a half. And we're really excited to where it's getting. But you know,
+ we're going to internally test it first, which we have been doing. And then we're going to
+ release it publicly. So there's two agents. One, there's going to be a research focused
+ agent. The other is going to be that trader type agent that I mentioned earlier to you,
+ Sarah, that I kind of want to see kind of like out in the world doing things,
+ right? And then there are certain tools that come with that that I think would be useful for
+ builders specifically. So that's one kind of bucket. The second bucket is an incubator.
+ So the reason why we wanted to set up an incubator is we see all these teams that we
+ want to work with, but we don't have the means to kind of like scale that. We also
+ equally have a bunch of really passionate individuals within our own network, within our advisor
+ group that want to help these teams build something really cool. I mean, the number of
+ times that come across a really great builder that just doesn't have the resources has been
+ like too many times. So I want to be able to facilitate and foster those kind of builders
+ to do something cool. So we're building out an accelerator, which should be live soon,
+ which will basically take a very small cohort to start off with and run it on a two month
+ sprint. So by the end of those two months, you should have something that is not only
+ demoable, but accessible to the public to use within a certain beta testing group.
+ And you know, it'll be open for investment at that point, right? Similar to like a
+ white combinator model, if you like. And then the third bucket is something that
+ we're working on because we wouldn't need to set up the legal infrastructure and everything,
+ but it will allow us to invest in teams that we have really high conviction in, right? So
+ whether that is in token specifically, or other such vehicles, like we're trying to work
+ out a way that we can do that. And the reason why we think all these three buckets is super
+ important is in our opinion, it's the number one way to build out this ecosystem. We need to
+ invest in the space, but you also need to build yourself and also partner with and build with
+ other teams. That's why the accelerator partnerships that we've announced officially to date have
+ been with virtuals and would send AI. So there's some really cool things in the pipeline that
+ we're going to announce over the next hopefully couple of weeks that we're really excited by,
+ but I can't mention right now on this episode. But the point of all these partnerships is it's
+ going to allow us to scale those three buckets. Yeah, all right. Fair. Yeah. And like, what is
+ your moonshot hope for the accelerator? My moonshot hope is we build one of the best applications
+ or agents that are used by like the majority of people in crypto. And I actually really believe
+ that we have the capability to do that. And the reason why I have so much conviction is
+ between the three of us and a bunch of our Dow members right now that we have in our
+ internal discord, which we're going to make like public soon. There's just so many ideas and so
+ much talent between that network that I fully believe we can do something cool. There's a lot
+ of experience. Yeah. All right. And the problems that we talked about, right, in terms of
+ sustainability, in terms of value accrual, how do you think of yours or the dollar? Yeah.
+ So I think create a really valuable service and charge it like a web to model. So that could
+ be subscriptions. That could be a one of payment annual payment, whatever that might be.
+ And the reason why I say that is I think the number one important thing is to
+ onboard not just crypto users but non-crypto users as well. So you need to give them something that
+ very familiar with rather, right? So that's the onboarding thing. I think once you've
+ onboarded a ton of users, then their data, they use interactions, you can do a lot more
+ powerful things with that. Okay, then the critique I get with that suggestion is what's crypto
+ about it, right? Well, the crypto side of things is you can, what you do with the revenue that
+ you get is completely up to you, right? You can buy back and burn. You could put it in a
+ treasury. You can get the doubt of vote on how you spend that treasury, just like a shareholder,
+ meeting or whatever that might be. You can do a bunch of those things. But I think keeping the
+ front end very web to is way more important than people expect. Yeah.
+ Fresh. Yeah. And I know that, like, you know, if I was to ask you about if you were to do a
+ doer, what would you do differently? I think the forget about the token bit, right? I mean,
+ I think you would have added vesting here, whatever at the beginning itself, if you were
+ to do it again. That aside for a builder or a founder who's, you know, who's trying to think
+ of building agents or whatever within the stack, is there any learning or anything that you
+ could have done differently? Can you share something of that along those lines?
+ For sure. Yeah. So aside from the vesting thing, what I would do differently is I would take
+ more time, include more people in that opening round. Now, a lot of people are like, okay,
+ well, this was kind of like a cabal situation. The reality was that, and I mentioned this in
+ my kind of postmortem tweet after all of this went down, was that we were just so
+ swept up in the excitement of everything that we just wanted to get this out there.
+ I also don't know how much it would have worked if we just did a fully open launch,
+ because they would have just got sniped. And the people that would have ended up holding it
+ would have been, you know, non-believers and probably would have dumped the token anyway.
+ I don't know, right? We've seen it with a bunch of pump fund launches and all that kind of stuff.
+ So I think somewhere in between was where I was targeting, and it was too concentrated.
+ I think we should have spent a little more time kind of like building out for a wider
+ audience. That being said, I don't know whether there is a perfect way to launch a token,
+ you know, it depends on many things, which is like market conditions,
+ and who gets, you know, access to these things, how much they can buy.
+ But no one can kind of like judge in these open markets what kind of market cap it goes to,
+ right? If AICC went to like a 20 million market cap, no one would care.
+ Everyone would be like, cool, right? But it's because it was so hyped up that it just got sent,
+ and you know, there was a bunch of issues around that.
+ And then number two, I think something that's important is to have something viable,
+ ready to go right from the off. The way we were thinking about it is, okay, let's start this
+ down and then work with a really small group of down members to build this thing out, right,
+ grassroots. But I think because of the way it was launched and because of how much hype it got,
+ people were expecting a product tomorrow. And we're in reality, like, we want to take our
+ time to build this thing. I think it's super important to take good time to build something
+ really important, right? And then number three is, I think when you describe something as a
+ dow, a lot of people have a certain understanding of what that word means, right, which is like,
+ anyone and everyone can vote on this thing and, you know, decide the direction of where it goes.
+ And I don't necessarily believe that's true from day one of that dow. I think eventually
+ it's super important. But I think from day one, I think it's super important to kind of like,
+ have a focus team that's super passionate about it, typically the founding core contributors
+ to guide the direction of that dow. Yeah. So I think making that clear would have been
+ important. Yeah, fair. All right. So most of the tokens are, I don't know, 70 to 90, 95 percent
+ down, most of the tokens, right? Yeah. Like given that, which are the teams that you are still
+ excited by that, okay, these are the guys who are actually building regardless of
+ what the enthusiasm of the market looks like, and which are these like areas that they are
+ operating in. Yeah, I think I want to avoid like being described as like a shell for certain
+ things. Because like the things, the teams that I mentioned now could change like next week,
+ but I will talk about sectors that I'm super passionate about, right? The number one sector
+ that I'm excited about are these agent platforms. And the reason why I'm so excited about them
+ is I don't think they're going to just be launched platforms. I think they're going to
+ enable this thing called what I'm calling the agent app player or the services layer,
+ which I think, you know, you're talking about revenue models. I think which is where most
+ of the revenue is going to get made, right? So I don't know how you want to describe this in
+ the web tool. Maybe it's like a Zapier for agent services. But the way I think about it is,
+ okay, you have this launch platform, which allows you to create an agent and a token.
+ But realistically, you need these agents to be really useful. And how do you make these
+ agents useful? Well, you can design it custom on your own way, plug in APIs, all that kind
+ of stuff. But it's very tiresome. What if they could tap into a layer, which allows it to
+ get whatever service or function that it needs, it could even engage with another agent. I think
+ that to me is a very useful moat. And I see a bunch of these platforms that are already
+ created and are going to be created thinking along these lines, right? And with that in
+ conjunction comes this whole idea of like swarms right now. Now I have the number one
+ criticism for agents forms, which is like, why do you need a swarm? Can you just run it in a
+ singular instance? And the answer is, in most of those cases, yeah. But reality, many people
+ are building agents for specific niches and verticals. So you're going to end up with a
+ bunch of agents with you like it or not that do better service than you whether you like it
+ or not, right? So these agents are going to have to talk to each other eventually. And I think
+ figuring out how those agents interface with each other is going to be super exciting. So I'm
+ excited about those two things. On the agent side of things, I really want to see some of the
+ application agents like killer, right? So I think we're going to see an agent somewhere
+ in the DeFi AI world, whether it's like a sports betting agent or a trading agent,
+ actually end up doing really, really well. And outperforming the market, I think it's going
+ to be under proprietary trading algorithms. I don't think it's going to be public. And that's
+ completely fine. But I think it's going to be enough to get people kind of going. And then
+ the third thing that I'm really excited about is the unsexy part that I started this entire
+ episode with, which is the resource side of things. I actually think some of these
+ deep in networks, specifically compute and training are going to get really, really powerful. If you
+ look at like what news and prime intellect and now Jensen recently just announced are working on
+ it very, very early. But if you can actually create a network that people can have ownership
+ in that train AI models to like a really good like specification, that's friggin awesome.
+ Right. In my opinion.
+ Now, I think funny that you mentioned why should there be multiple agents and this is my thinking,
+ correct me if I'm wrong. So I think when I was writing the DeFi article, I talked about how
+ hedge funds have different teams. Right. I mean, one would be doing research, one would be doing
+ simple trade, literally the trade execution. One would be, you know, kind of monitoring the
+ risk, whatever like risk team. And there does need to be these separate teams because they
+ are very, very specialized. But only when all of these work together, they can make a hedge fund
+ like successful. Right. It should be a very well oiled machinery. So does it matter that
+ whoever is building agent has that kind of nuance in that field. Right. And it is difficult
+ for a one person or a one team to do it all to do it all by themselves.
+ Agreed. Agreed. I mean, the most obvious data point is humanity's market. Right.
+ Like, we're all specialized in doing certain things, you know, yeah, I agree.
+ And there's a reason why XPT is not doing everything together. Right. And so I just feel that
+ eventually that was what it will be. I agree with you. It's the conclusion I've also reached,
+ and I used to be a swarm hater. All right, he says, is there anything else that you
+ want to end this with? Any advice anything that you want to share? Something that I might have
+ missed out on. I don't know. No, I don't think you've been very thorough. All I would
+ say is what I say to a lot of people at times like this when the markets are down is study
+ and don't give up. I think a lot of the alpha, whether it's investment alpha that you're looking
+ for or just, you know, a chance to satisfy your curiosity, which is like what I try and do a
+ lot of the time is there during down markets. And put it this way. If it is all bullshit,
+ you'll find out the same way. So you would rather study and figure it out now so that
+ you can spend your time doing all the stuff. And all I will say is my head has been down
+ studying and I still haven't come up for a so there's a lot to learn. Keep studying.
+ Thanks a lot, Jesus. Thanks for spending the time.
+ Always, thanks for having me.

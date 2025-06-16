@@ -1,0 +1,369 @@
+
+the world needs around like 12 million cyber defenders today and there are 12 million job postings
+out there. But the actual workforce is only around 7 million. There's a shortage of 5 million
+cyber security analysts or defenders, but unless somebody invents cloning or some sort of mind
+transfer, then some sort of software-based automation seems to be the only other solution.
+Welcome to Founded and Funded. I'm Majorna Parker of the Vikramaswamy, and today I have the pleasure
+of hosting Edward Wu, the founder of 2024 IA40 winner DropZone, which is building a next-generation
+AI security operations center. Edward decided to take the leap and start his own company after
+spending eight years at ExtraHop, where he rose to the role of senior principal scientist,
+leading AIML and detection. Now at DropZone, he's tackling some of the most pressing challenges
+at the intersection of AI and cybersecurity. On this episode, we'll explore Edward's
+decision to leave ExtraHop to build DropZone. His thoughts on why generative AI is uniquely
+suited to addressing alerts and investigation in cybersecurity, and how DropZone is redefining
+the role of AI in the security operations center. We'll unpack Edward's decision to leap into
+entrepreneurship, how he landed key customers like UiPath, and why transparency is vital in a
+category often skeptical of AI. You'll also share his perspectives on how AI unlocks new
+opportunities in cybersecurity, along with lessons he learned as a first-time solo founder.
+Well, Edward, thank you so much for joining us today. My pleasure. Well, let's kick off with
+having you share a little bit about your journey into security. What sparked your
+interest in the space to enter into security? Yeah, I was quite similar to a lot of security
+practitioners. I grew up playing with computers, playing games, cracking games, and I think that's
+what got me started with security, because a lot of the skills or tools who use to crack
+games or cheat in games, I would say jibe a lot with reverse engineering and malware analysis.
+So that's what got me started, and then after I got into my undergrad program at UC Berkeley,
+I really, I would say made the decision to eventually pursue a PhD in cybersecurity. So that's kind of
+where I spent three years in my undergrad doing cybersecurity-related research, like automated
+malware analysis, binary analysis, you know, reverse engineering, Android apps. And yeah,
+that's kind of what got me started in security. Yeah, that's great. So even back then you were
+thinking about security and cybersecurity, and obviously there was a lot of attacks and things
+like that. Even back then, you spent eight years at Extra HOP, which is a major portfolio company,
+and you know, eventually became the senior principal scientist, led AIML and detection there.
+Tell us a little bit about that journey, and then you can tell us a little bit about why you
+decided to leave and launch your own company in drop zone. Yeah, Extra HOP was definitely a very
+fun ride for me. I joined or I picked Extra HOP when I decided to quit my PhD due to a variety of
+reasons. Part of it is cybersecurity academic research. Frankly, it's not as interesting
+as a real thing in the industry. So when I decided to quit my program, I actually applied to and
+interviewed practically anywhere in every stage cybersecurity companies I can found. I remember
+one of them was Iceberg. I was offered to be employee number four, which, and Iceberg was a
+mock drone, a portfolio company as well. So while I was looking around, Extra HOP really
+struck me because back then, Extra HOP wasn't in cybersecurity at all. It was in network performance
+analytics. And when I saw the demo of Extra HOP's product, I saw so much potential because what
+Extra HOP had in terms of potential is very similar to what the police department and state agencies
+discovered about traffic cameras. Initially, you have a lot of traffic cameras for monitoring
+traffic. But after a while, everybody discovered how much more valuable information you can get
+out of traffic cameras, whether it's fugitives or help identifying other sorts of suspicious
+activities. So I really saw that opportunity and ended up joining Extra HOP and essentially
+helping Extra HOP to build and pivot from a network performance company to a network security company.
+And along the way, build Extra HOP's AIML and detection product from scratch and really
+spend a lot of time working with Extra HOP customers and understanding how security teams actually work.
+How did you think about even joining a startup or a scaling startup back then? Obviously,
+your interest in security probably could have looked at Palo Alto Networks or Fortnite or
+a much larger platform. What attracted you to a startup at the time?
+Yeah, I would say while I was in college, I came across a couple of blogs talking about the founding
+journey of a couple of different security startups. And I think those really struck me
+and got me really excited and interested to eventually start my own company.
+So while I was looking for, you know, my first job out of college, the number one criteria is
+this opportunity to learn how to actually build a startup someday in the future for myself.
+And that's why when I interviewed the Extra HOP and I met Extra HOP's back then CEO and
+co-founder, Jesse Rosson, I told him, "Hey, the reason I'm looking at startups is I want to start
+my own company someday in the future, which actually is a great foreshadow when I told him I'm going
+to resign and start my own thing, you know, eight years later." Because, you know, I told him so
+before I got started. You couldn't act shocked because he would have known eight years before.
+Correct. But yeah, back then I was really looking for opportunity to learn how to build a product
+from scratch. And that's kind of where, like between Extra HOP and iceberg, I picked Extra HOP
+because it was a little bit more mature. And because of that, I could learn from the existing
+lessons and the, you know, the potholes Extra HOP falling to and then dug themselves out of.
+No, and it sounds like you had that kernel of idea in your head from early on that you wanted
+to go and start your own company. Before we get into the aha moment that led you to leaving in
+founding drop zone, would you suggest to other founders that it's helpful to spend time at a
+company, even if you had that idea early on back in your, you know, even when you're in academia,
+thinking about starting a company, would you suggest it's good for founders to go in
+and spend a number of years, add another startup to learn? Or how would you think about that journey
+that founders have to go on before they start their own business? At least in my experience,
+I do believe that if you're going to start a B2B company, I think it's vitally important to work
+somewhere first because that really gets you the exposure to how B2B actually works. I think
+there's a number of, you can say whether it's processes, structures that all B2B company has
+to go through. And by working at the established organization, I think that really teaches you,
+you know, what good engineering looks like, what good customer success looks like, what good
+marketing looks like, what good sales looks like, because all of these will become tremendously
+important when you do start your own B2B company. So now, you know, you've been at Extra HOP for
+eight years, you've learned, you know, good marketing, good sales, you've seen this journey,
+and you know, you've obviously had this idea now for eight years in your head that you want to go
+found your own company. So what was sort of the the aha moment, like just walk us through like,
+what was the idea you had in your head? Where did you see the opportunity, you know, that led you
+to actually go out and leave Extra HOP and found drop zone? The biggest thing is, while I was at
+Extra HOP, I have always been keeping track of industry movements and trends, because I know
+the only way I can find my own company someday in the future is by looking for kind of this next
+big thing. So during my time at Extra HOP has done a lot of analysis and paid attention to
+every single year's RACC innovation sandbox, as well as other movements within cybersecurity
+to see, okay, what are other people building? And if I were to be a, you know, investor,
+or that invest my money or time, right? Because as a founder, to some extent, you're also an
+investor. You're investing is the most precious resource you have, which is your time. So yeah,
+I've been doing a lot of that for years. And then when Jen and I came around, that really got me
+excited because for the first time, I saw an idea where we can tackle one of the holy grail
+unsavable problem within cybersecurity by leveraging this new technical catalyst. And that combination
+of a very concrete universal pain point and a new technical catalyst, which essentially means
+there is no way to solve this problem previously, which obviously makes starting a new company
+a lot easier because you don't have tons of incumbents to deal with. And all the factors combined,
+I will say, are working reasonings behind my departure.
+And you bring up a good point, which is, and I think many of the founders that listen to this
+podcast that we work with over the last few years after college at GPT came out or after,
+you know, transformers really were becoming a big thing is that they also said, hey,
+there's an opportunity in AI. I want to go found a business. You mentioned that if it wasn't for AI,
+or the current versions of that we have in AI, some of these problems likely couldn't have been
+solved in security. Maybe just take us through that. Like, you know, what specifically were you
+seeing in this intersection of AI and security that said, hey, there's a technical change,
+like something is different now that's going to unlock problems that we couldn't unlock before.
+And then maybe you can tell us a little bit about how that led you to what your core focus is at
+drop zone today. So for people who are not familiar with security, one of the biggest challenge
+within cyber security today is ability to process all the security alerts. To some extent, it's
+actually a very similar problem to modern day police departments have, which is they have all
+source of crime reports, but not enough detectives to follow up on every single report. And this is
+kind of where historically it has been very difficult problem to solve because the act of
+investigating security reports and security alerts actually requires tons of human intelligence.
+You cannot out code your way through an investigation process because when a security
+analyst are looking at security reports and alerts, what they are going through in their head is a
+very detective recursive reasoning process. So that has been one of the biggest bottleneck
+within cyber security. There's a couple workforce reports out there that share the world needs
+around like 12 million cyber defenders today. And there are 12 million job postings out there,
+but the actual workforce is only around seven million. So there's a shortage of five million
+cyber security analysts or defenders that the world needs to truly protect themselves. But
+unless somebody invents cloning or some sort of mind transfer, then some sort of software-based
+automation seems to be the only other solution. Yeah, as you say, there is a shortage in the
+number of security practitioners that can do these kinds of things. It's interesting because I feel
+like in this first wave of AI, we saw a lot of companies going after, hey, there's this intersection
+of AI and security, let's just go secure the models, or let's think about like the models
+themselves. It seems like what you were thinking about is there's an existing workflow today that
+is understaffed. And that's where we see AI actually helping. Had you worked with these practitioners
+before in your time in actual hobby, had you seen these problems of alerting and alert fatigue and
+how do we actually get AI to solve problems where we don't have enough people to scale and solve
+these problems? To some extent, what I did at actual hub was probably one of the reasons why
+security practitioners are overwhelmed by alerts because while what I built at actual hub is a
+detection engine. So it looks at network telemetry and identifies suspicious activities. You know,
+user A uploaded five gigabytes of data to Dropbox, user B established a persistence connection
+with an external website for 48 hours, user C, SSH into the database. All of these security alerts
+takes time to investigate. And those are exactly the type of alerts that historically have overwhelmed
+security practitioners. To some extent, my work in the past eight years has contributed or maybe
+partially caused some of the alert fatigue and overload. So I'm definitely intimately familiar
+with this particular problem. And the way you said when Gen AI came along, a lot of people had this
+idea. Oh, let's just secure the models. My train of thought is very similar to like a post I saw
+on Twitter, which says like one way you can think of Gen AI is essentially we as humans
+discovering in New Island, where there are 100 billion people with college level education
+and intelligence willing to work for free. And we just talked about this huge staff shortage
+in cyber security. So why don't we take those, you know, 100 billion people with college level
+intelligence and, you know, willing to work for free and have them look at all the security alerts
+and help to improve the overall cyber security posture. Yeah, well, you have this great term that
+you're describing to us was you're saying drop zone is like having a number of interns or having
+a whole new set of staff. How do you describe it? Maybe if we were to zoom out, we view drop zone
+as essentially a software based staff augmentation agency for cyber security teams.
+So what we're building are essentially, you can say AI agents or AI digital workers
+that work alongside of the human cyber security analysts engineers to allow security teams
+to do five to 10 next more than what they are capable of doing today. But without five or 10
+next things about it or headcount. And I think you're primarily selling to CISOs, right? The chief
+security officer chief information security officer. But the actual practitioners of who is using
+drop zone tends to be folks that are actually in the security operations center, right? So
+so who are usually the people who are actually using drop zone on a day to day basis or interacting
+with it? So the primary user of our product are essentially security analysts who are working
+socks or security operations centers and are responsible for responding to security alerts
+and confirm breaches. And you know, I think just going back to one thing you were saying before,
+which is the nice thing about building when there's a new tech change, like what we have with AI,
+is that you don't have these incumbents, right? Or the incumbents tend to be a little bit slower
+to move or or they're more reactive. In this case, you can build a net new business and you can help
+create a category. One thing you and I have talked about is this is such an obvious problem in the
+sense that every large company or mid market enterprise company has an understaff security
+operation center. And a number of startups have sort of popped up and started to build, you know,
+what they call AI socks, right? Or agents for the socks. And so if we zoom out, how do you view
+this landscape? How do you view this category where, you know, on one hand, it's a total validation
+of the market saying that something like this needs to occur because people clearly want this product.
+And on the other hand, it's like, okay, well, how am I supposed to disaggregate and decide between
+10 or 12 competitors at all, maybe look to the same on the surface?
+I would say if we were to zoom out, the market drops on operates in the AI stock analyst market
+or autonomous stock platform market is probably the single most competitive market within cyber
+security today. And like I said, one challenge is the intersection of cyber security in AI is
+tremendously interesting. And the alerting investigation use case, to some extent is kind of an obvious
+use case that a lot of people can see. So the way we think about competition is actually not
+that different from all previous generations of the, you know, startups, which is having a lot
+of competitors, it's great validation for the market. But the reality is most startups or most
+players are not going to be successful for a variety of different reasons. So to some extent,
+it's not a competition in terms of like who gets the highest grades. It's actually a competition
+of who finishes the marathon. So from our perspective, when we think about competition, a lot of it
+actually has to do with how could we do better? How could we ensure that we're delivering real
+world concrete value to our end users? Because we know we're solving a very large problem
+with a lot of needs in very large total addressable market. We actually don't need to worry too much
+about our competitors right now, because frankly, most of them are still pre-product at this moment.
+Our focus right now is sort of like, can we sign up one? Can we sign up five? Can we sign up 10,
+20, 50 paying customers who are getting real world value out of our technology? As long as
+we could do that, the success will come regardless of what our competitors do.
+Yeah. So focus, you just have to have to focus and focus on your customers and make sure that
+you're delivering a product and experience that they really like. You could say this about other
+areas of security in the past too. Endpoint security 10 years ago was a very hot category,
+and it's created several multi-billion dollar companies, CrowdStrike and Sentinel One and others.
+As you say, the reason that there's so many competitors is because
+people clearly see there's a lot of value in this market. But as you think about the ecosystem of
+there's many existing security tools already, and you went to RSAC and you'll see a thousand
+booths and everyone has a booth. So outside of even just the AI sock space, but in security
+in general, has an early stage startup that's not as much on the map as some of these incumbents.
+What are the things that you find are valuable to have customers recognize you and think about you?
+What are some of the tips you have for other founders in a crowded market and how to stand out?
+The biggest learnings we had so far on marketing front is make sure you're very precise on how
+you describe yourselves because cybersecurity is so fragmented. If you just say, "Hey, we are using
+AI to solve all the problems with cybersecurity," that's not going to work because there are too
+many vendors out there. But instead, you need to be very focused in your messaging and positioning.
+So the prospects or security buyers can immediately tell where do you fit in the larger security
+ecosystem. Because there is no security teams that only use as a single product. Most security
+teams have five, 10, 15, 20 products. It's very important to be precise. So people don't kind of
+conflate you with other products and they can immediately understand what you're trying to do.
+And that's kind of where you mentioned RSAC. I always love RSAC and I love walking through
+Expo Force because I find that to be a really good opportunity to level up on product marketing.
+Like when you walk through the Expo halls and see a thousand vendors, you can really
+quickly tell who has good product marketing because every time you walk through a booth,
+you might have like five seconds before you start looking at the next fancy shining booth.
+So within that five seconds, can you immediately tell what they're doing or you get confused?
+Like, what is this thing? So I think that's actually a great exercise. Like I know I myself
+have been doing and I've been encouraging a lot of folks in my company to do as well as
+to really make sure our positioning and messaging is very clear. So people can immediately tell
+what we're trying to do versus some, you know, kind of panacea, AI, magic.
+Well, there's, and there's a lot of those, right? I mean, I think now that we're a few years into
+this post chat GPT wave, we've seen so many of these vendors that say they do AI security.
+And if you go to the last two RSA conferences, all you would hear is AI, AI, AI,
+but then what are you actually delivering to customers, right? And so in that way,
+I think it's really helpful to hear from you, Edward, about you all landed UiPath as a customer,
+you know, really impressive. And they're obviously a very discerning and sophisticated business
+themselves. Take us through that journey. Like, how did you land UiPath? You know, what went
+into that? Are they finding value from Dropzone today? So UiPath's actually, one of their security
+engineers actually reached out to me personally on LinkedIn and saying, Hey, I saw Dropzone somewhere
+it seems you guys are doing interesting stuff. Guys, you don't get a demo. And then we kicked
+off the POC where, you know, the end goal of the POC is to evaluate how much time saving we can
+create for their security team, because the UiPath is growing very quickly. And
+unsurprisingly, their security budget is not growing linearly compared to the overall headcount.
+And as a result of that, yeah, during the POC, you know, we worked with UiPath very closely to
+not only make sure our product is automating tasks that allow zero security engineers to,
+you know, essentially get higher leverage, but also working with them to align on the future
+roadmap of the product. So they are not only buying us for what the product can do today,
+but also what the product can be three months, six months down the road. And that's actually
+very interesting because most of the time it's founder, like reaching out to like a thousand people,
+leading back in for a demo, not the other way around. And they think we actually have a very
+large chunk of our customers and active prospects come from organic inbound. And I think part of
+that is because echoing my previous point, by having really good positioning and messaging and
+also very transparent kind of product marketing, it really allows security buyers to really find
+you versus you trying to, you know, push the ropes and trying to force the product down
+people's throats. And this is where we took a very conscious effort and a strategic decision
+to be very transparent. For example, our entire product documentation is public on the internet.
+We have over 30 interactive recorded product demos, as well as an ungated test drive and
+full transparent pricing. And so we are able to allow interested early adopters within security
+community to complete essentially 80% of the buyer journey without talking to us. And that
+really allows us to get these high quality hand raisers who have already to some extent self
+qualified themselves and know they want to try this technology. I love the point you made about
+being very transparent and being open. And that's not common in security, right? I mean, there's a
+lot of closed selling and you never really know how deals are done. And I think I'm sure there's
+some set of new generation of buyers that want that transparency. What led you to sort of stray
+from the path of what we would call as normal and security to be more transparent than what
+the norm is. Yeah, I would say a lot of it actually came from my times with sexual hop. While I was
+actual hop, I really advocated for an interactive online demo. And back then, actual hop probably
+was the single security vendor in the entire detection and response space, where you can
+access an ungated interactive demo like actual product, not like recorded video, but an actual
+product. And I saw that how that how much additional credibility that marketing tactic really helped
+so I decided to really bring that and keep that with drops on as well.
+Well, last last point on this is that I'm sure as you've noticed,
+CISOs are sold a lot of bad products, right? And we have a CISO advisory council here at
+Madrona. And the one thing that they'll say is that they're just inundated with products and a lot
+of inbound to them. And with you with this transparent marketing and being able to show the demo and
+show the value, is there another step that needs to happen for you to bridge that gap to have them
+come and say, hey, take a look at our products. Is that an evolution? How do you think about
+the push versus poll nature of what you're selling and how CISOs are typically sold into?
+Yeah, I think it's definitely a combination of the two. Over time, generally, what I've seen
+with cyber security is initially most startups are in a push market because there's no category
+awareness. Most of the security startups actually solve a problem. That's more or less
+kind of obscure to the general public. So they need to do a ton of eventualization.
+I would say for us, it's a little bit easier because the problem we solve, again, is one of the most
+universal and concrete and well understood problem within cyber security. It's just that nobody has
+been able to come up with a technical solution to actually solve it. So that definitely makes our
+lives a lot easier because to some extent, we don't really need to evangelize the problem
+we solve due to the fact that it's already been there for like 20 years and every single team
+experiences that every single day. But I think part of getting security teams to raise their hand,
+part of it also has to do with the overall macro environment. For example, I think people have
+heard of Stargate Project, you know, $500 billion of investment, as well as DeepSeek and all sorts
+of interesting reactions from different vendors when they really start to see competition as well
+as GNAI becoming real. And I would say is that actually played in a big part as part of our
+marketing tailwind because now it's actually very common for board. I mean, obviously, I'm sure you
+guys have been saying the same thing to your portfolio companies, right, which is regardless
+what kind of business you are in. I want to know why you are not using GNAI in every single business
+function. And that's actually a question. I would say every single board has been asking,
+you know, say executives. And when that trick goes down to security teams, you know, alerting
+investigation and software-based staff augmentation for Salk is generally one of the first places
+people look for. Yeah, and to your point, I mean, we're seeing our own companies and the
+customers of the companies we work with, everyone is saying we're using AI, but they don't want to
+use AI foolishly, right? They want to be smart about how they use AI. And to your point, I mean,
+in the security space, it's hard to just put AI and say, hey, let's walk away, right? And
+security security, right? It's a very important piece of both the application and the infrastructure
+side of businesses. So being able to already have that pull from the Salk team saying, we're already
+drowning in alerts. We need help. However way you can help us is going to be important. And you
+can come in and execute against that, I think is really interesting. Absolutely. And the other
+thing we have seen, actually, is thanks to chat GPT, I think chat GPT is probably the biggest
+marketing gift open AI has given to all these gen AI startups, because they really enlightens
+everybody, you know, whether they are technical or non-technical on the potential and capabilities
+of gen AI or just kind of new technology. Like, I remember getting calls from my parents asking,
+like, hey, you know, Edward, you have been doing AI stuff right for eight years. Why don't you,
+like, this gen AI thing looks very cool, you know, why don't you go build a stock trading thing,
+you know, Bob, we're using this technology. And because of that, I think that really,
+you know, makes a lot of security practitioners actually started to play with this technology
+themselves. We have actually seen a good number of open source projects. And some, I would say,
+a good subset of the prospects we run into a lot of times, we'll be like, hey, you know,
+drops on seems very cool. And by the way, we have been like internally playing with like GPTs and
+trying to build our own, you know, open source AI agents to do automated small stuff within
+diverse security. So we know the technology can get there, but at the same time, we know as a
+security team, we are not like 100% developers. This is not our specialization. So we already
+build confidence, have confidence in the technology all we need to find is a reputable trust towards
+the actually technology solution provider. And that, that's meant to me again, makes it a little bit
+more kind of a pool based marketing versus trying to kind of push ropes.
+Yes. Well, you can tell your parents that, hey, you may not be building a stock trading app,
+but stock trading apps can use drops, which is really cool. So I'm going to transition into
+just some rapid fire questions we have for you, Edward, but you've been a founder for a couple
+years now. You're both a solo founder and a first time founder. So what are the hardest learned
+lessons that you've had so far? You know, what is something that you wish you knew or wish you
+did better on this, on this early journey of yours? I would say probably is the biggest thing,
+and surprisingly, as a solo first time founder with kind of engineering background is I wish
+I learned more about sales before I started. One common misconception
+technical founders have is as long as we build the best product on the planet,
+people will magically come to us. But that's definitely not not the reality. And, you know,
+sometimes you could argue it couldn't be further versus from the truth. So sales is actually
+very important. To be frank, while I was extra help, I obviously had a number of engagements with
+customers. But one thing I always wanted to do extra help, I wasn't able to is actually,
+you can say part-time as a sales engineer for like six months. I never got a chance to do that,
+even though I always had this idea in the back of my mind. But after funding drop zone, I think
+that kind of forced myself to learn how to be a sales engineer as actually also how to be a
+account executive. And I think those skills are tremendously important. Because if a technical
+founder cannot sell a technology or product with all the vision, enthusiasm, and in-depth product
+understanding, then nobody else could. So I think sales capability and knowing how to use different
+techniques, how to qualify customers, actually how to have a good like sales demo, I think our key
+skills, I wish I had before I got started. Great point, sales is so important. It doesn't matter
+what your product or business is, sales is very important. What is something you believe about the
+AI market that others may not? One thing I believe about the AI market is the fact that
+distribution is going to be a very important factor. And how I think most people probably
+underestimate the power of human trust and how much that plays within the overall business ecosystem.
+And this is where I've seen kind of a number of startups trying to build technologies that
+completely substitute certain roles and responsibilities. And I think, at least from my perspective,
+I think there are roles where the technical deliverables is maybe a fraction of the value
+proposition, but the other fraction is actually like this human trust, human responsibility,
+ability, and accountability. So I think this is where when AI startups are looking at different
+world industries and verticals and trying to identify, you know, insertion points for AI agents,
+I do believe we should be very respectful of the fundamental human trust and how having
+automation itself does not completely obvious. That's actually one of the reasons why I suspect
+software engineers will get more automation versus, for example, account executives.
+Because nobody is going to really build have a relationship with an AI agent, you know, posing
+as an account executive. And this is where like this human relationship human trust building
+channel is something that I think is a lot more difficult for AI to substitute.
+Well, we see this when you're driving down the 101 and you see multiple AISDRs.
+Which do I go with, right? Who do I have a relationship with? I'm not sure right now,
+but outside of drop zone, or you can even think outside of security, what company or trend
+are you most excited about? Probably robotics. Part of it is I love watching animates and there's
+a number of animates where they top out future societies with all sorts of cyborgs and robots,
+and I think humanoids, robots, I think those are all very cool. But also part of it is a little bit
+maybe self-fulfilling because obviously as a cyber security vendor, see more robots there are
+around us. I think the more important cyber security will become as well.
+Okay, last question. This will be an easy one for you. There's a 90s movie with Wesley Snipes
+called Drop Zone. Is the company named after that movie or what was the basis for calling the company
+Drop Zone? I actually have never heard of that movie, so maybe I should check it out or maybe
+ask chat GPT about it. We named the company Drop Zone because we envision the future someday in
+the future when we have the resources and the needs to sponsor a Super Bowl ad. We want the ad to
+involve a scene where you have cyber defenders surrounded at a hilltop overwhelmed by attackers
+and a cyber defender essentially deploy Drop Zone, which is in my mind I've been thinking about some
+sort of portal or Stargate kind of a warp gate kind of a construct. There will deploy this portal
+and through that they can summon additional reinforcements to help them push by the attackers.
+So we named the company Drop Zone because we view Drop Zone as a portal of you can say software-based
+staff augmentation for cyber security teams. Love that. Well, thank you so much at work. We
+really appreciate it. Great to be here.
+[Music]
+
+

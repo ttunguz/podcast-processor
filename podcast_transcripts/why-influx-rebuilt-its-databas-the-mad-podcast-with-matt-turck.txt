@@ -1,0 +1,411 @@
+--- METADATA START ---
+Show: N/A
+Episode: Why Influx Rebuilt Its Databas… - The MAD Podcast with Matt Turck
+Host: Matt Turck
+GUESTS: Evan Kaplan
+Guests: Evan Kaplan
+Source URL: https://podcasts.apple.com/us/podcast/why-influx-rebuilt-its-database-for-the-iot-and/id1686238724?i=1000706796698
+--- METADATA END ---
+
+ IOT felt like this was gonna be gigantic and it wasn't gigantic. It was more of a buzzword.
+ But I'd say now here we are 2025 and probably 60 to 70 percent of our business is now IOT.
+ Welcome back to the mad podcast. Today, my guest is Evan Kaplan, the CEO of Influx Data,
+ the world's most used open source time series database. This conversation is a perfect mix of
+ data in front of a nerdery and real world start lessons. On the deep tech side, we unpack how
+ InfluxDB obliterates high cardinality bottlenecks, streams straight to S3 and parquet, and why FDAP
+ might become the next LEM stack. If Influx were to disappear tomorrow, that stack would still
+ be tremendously valuable. And so we really kind of bet the company on that. But we also zoom out
+ and talk about startup building, what it really takes to trash seven years of code and start
+ of our own rust, the two home runs rule for making money in open source. You have to build a project
+ that developers love. They deploy and they use and they love. And then you have the second
+ home run, which you have to figure out a model to monetize it. And the strange but exciting day
+ AWS moved from competitor to partner. Amazon could have forced us. They chose not to.
+ So we have one last stomping in competitor. This episode was recorded live during a recent
+ data-driven NYC, the monthly meetup we host in partnership with our friends at four square.
+ So if you're curious about both merely second level data pipelines and had to build a great
+ business while giving you code away to millions of developers for free, stick around and enjoy
+ this great conversation with Evan Kaplan. Thank you for being here. This is the third time that
+ we have Influx data at the event and session, extremely of your CTO and original founder Paul
+ here in the audience. And I was looking at this the first time we had Influx at the event was
+ actually in 2015, which is kind of crazy. And then we have all back in 2019, I guess around
+ the time of Influx. So as it turns out, it takes a long time to build this great company.
+ It's an overnight success. Yes, exactly. And part of the reason why it's super interesting
+ to have you guys tonight is that the big news is Influx 3. So we're going to talk about all
+ of that in detail. But first thing is first, what is Influx and maybe what is time series
+ but getting an effort as in prior conversation to make this broadly interesting to folks that
+ may not follow the very, you know, every single detail of this space.
+ So first of all, I should make Paul stand up and take a bow. So if you have any questions,
+ Paul is the original author of Influx TB. He's a native New Yorker. And I love telling this
+ story because he can't stop me from telling it in my own way. And I met Paul in 2015. I was
+ working at a venture firm, helping out with other CEOs. Paul and I connected on something
+ totally unrelated to technology is we were both crossfitters. And so those of you know the joke
+ is if you've ever met a crossfitters, they tell you that in the first 30 seconds.
+ So we bonded around that. And over time, I met him just after he spoke here.
+ And over time, he asked me if we would work together. And I said yes. And so we've been
+ married now for almost 10 years. And we could do a whole speech on what it means to have a
+ technology partner and a CEO coming together on that. But anyway, Influx started in 2013.
+ And Paul, as many companies, they had originally started to build basically
+ a data dog sign a server monitoring kind of SaaS service and then had to build a database
+ to service that then realized in a pivot that the database actually was more important than
+ actually the SaaS service that they could build and built Influx, which was it was built in Go.
+ And it was built specifically for the time series use case. Paul had done a lot of work
+ on Wall Street and had done multiple imitations of time series databases and felt like he could
+ build one with no dependencies. He was deeply committed to the open source community,
+ which he remains today. It's so funny actually setting this with him in the room. Usually I
+ say without him in the room. But he's deeply committed to the open source community.
+ He ran the machine learning meet up in New York, which is probably how you met him
+ that originally. And so he built this purpose and it was immediately popular.
+ When I met Paul, there were about 3,000 users out there using the open source of Influx DB.
+ By the time I joined the company, there were maybe 7,000. Today, there are 1.3 million
+ people who use it daily that we can see. And so as soon as people say addresses or locals,
+ but it's a rough approximation. And so lots of hobbyists, lots of home users, lots of folks.
+ And the primary benefit, I think the original idea that was so brilliant was
+ build a package that's really easy to use, build the tic stack, which included the collectors,
+ the visualizations, those sorts of things, and make it super easy to build something
+ powerful that eventually became something that enterprises would use.
+ Great. Fantastic. Maybe so the one-on-one on what time series.
+ So think about it is the easiest way to think about it is sensor analytics, but anything
+ it's measuring time, anything you want to measure, any telemetry that you're capturing over time,
+ that you want to describe time, time, what happened, what happened, what happened.
+ So at a very broad case, anything that's really observable that you want to
+ observe over time, it turns out that most data sets are really easily understood at the time
+ or most easily understood in the kinds of time. And so if you build something optimized for
+ time series, it can be really useful, particularly as it relates to the physical world.
+ Yeah. And so I guess you sort of just alluded to it, but why do you need a separate database
+ for that kind of data? Why can't a general purpose database do this?
+ There's always just two kinds of people in the world. Those who believe there are two kinds of
+ people in the world, and those who don't. So yes, in some cases there are, for many use cases,
+ you can use a general purpose database. People have built stuff on Postgres, people have built
+ time series on Mongo. Those are how useful. But if you're ingesting huge amounts of data,
+ you want the query response time, you want really zero time to be read, you want low latency
+ data, you want a truly operational platform, you get to a level where the thing that you use
+ to monitor your swimming pool or your home thermostat isn't the same thing that you'd monitor,
+ you know, 50,000 power walls and a locality.
+ All right. So we alluded to Influx 3.0, which effectively you all just announced,
+ well, congratulations. So it's from the outside, it looks like a major effort that rewriting
+ a bunch of things. Why did you do that in the first place? And what is it that you did?
+ We started writing, depending on how you look at it, we started writing Influx 3.0. I don't
+ remember when the first repository opened, let's call it three, three and a half years ago.
+ So it's been a really big project. And there were certain assumptions after being in the
+ market for, you know, at that point for seven years. And, you know, probably at that point
+ having 12, 1300 customers, we just learned a lot about what customers were doing, what issues
+ they were having. And so we set out to solve, let's call four or five problems.
+ So the first problem we set out to solve is, is the issue of cardinality.
+ So when you get a database that's describing a rich set of data around a time series thing,
+ you can run into cardinality problems that can choke off, can choke off the performance
+ of the data. Do you want to define what cardinality or high cardinality is for us?
+ So think about a measurement and think about all the metadata around the measurement
+ and think about ephemeral measurements like networks, you know, source and destination.
+ You get these, you know, millions and billions of combinations. They're really unique to time
+ series. And so when you start getting those, they can really choke off a database and kill
+ performance. So what we found is that the upper bounds of our series one and series two databases,
+ you know, performance would slow down. And customers would have to cut out some of
+ the measurements and they would have to pull back on the richness of their data,
+ which is not what you really want. And so we had to solve the cardinality problem.
+ And so that required a different look at the architecture. Two is we had to solve the storage
+ problem. So what was happening is our compute and our and our storage were linked. And so
+ customers wanted to keep their data around a long time. It could be really expensive.
+ And so if you were keeping, we have some customers sort of utilities, things like that,
+ they had to keep data for 10 years. And so all of a sudden, computing storage becomes a really
+ expensive burden. And so we wanted to have an object storage based system, which was non-trivial,
+ to build a real time object-based storage is non-trivial. And so we embark on that.
+ The third thing was, and Paul came here and talked about 2019, we took a hard attempt
+ at building a functional language for time series that was open source.
+ So completely open source MIT license is called Flux. And it was a really powerful
+ language. It did a lot of different things. It was functional. It was modeled somewhat after
+ the Prometheus, the Prometheus model, but much deeper for the kind of tasks
+ and things we were doing. And frankly, there was a learning curve to it, but it wasn't big.
+ But it just didn't see the adoption that we really wanted to. And so a language without
+ much adoption doesn't serve any commercial purposes in long-term, doesn't even serve
+ developed purposes. And so there weren't a lot of contributors to Flux other than us.
+ And so it was pretty clear. I think if our assumption was, and I'm guilty of this,
+ too, if my assumption was back in '18 or '19, that SQL couldn't be the language of the future.
+ Like, just couldn't be. Like, how could a language, I think Paul even wrote a blog post,
+ how could a language written 40 years ago be the language of the future?
+ All right, listening to Mike's talk, well, we still use Excel from 1985.
+ So there was a little bit of humble pie for us to eat because it was pretty clear that the
+ language, and this is right around the time of the, you really started to see the clarity of
+ Snowflake. And you started to see the clarity of the emergence and Databricks.
+ Ali Gozi is an advisor. The company has been a friend for a long time. And you can start to
+ see the clarity that maybe we were wrong on SQL. Maybe we should support native SQL because
+ that is the lingua-fanka for a lot of this stuff. And so we had to solve that SQL problem.
+ So we had cardinality, we had objects towards a SQL. But this next point may be the biggest
+ point. We had the assumption that the world was fundamentally changing around
+ what really is a database. What is a database? And I think I'm old enough that I grew up in an
+ industry where really there were two main databases. There were Oracle and IBM DB2.
+ And then there were some formics inside base and these side cases. But if you ran
+ any sort of enterprise, you had Oracle or IBM DB2. I think now our assumption is that we
+ live in a world where there are two main platforms and some variants. And those two main platforms
+ are Databricks and Snowflake. Those are increasingly look-like databases to us.
+ They're called lake houses. And so they combine data warehouses and the old notion
+ of data lakes. But they look like databases. And I think, you know, from my historical
+ perspective on the industry, I think lots of capability that sits outside those things
+ will fall inside those things. Whether it's data governments, whether it's different ETL,
+ whether it's different conversions, these things are giant sucking sounds. And then there are
+ the fabrics of the world, the redshifts, the thinners and the big queries, which also have
+ those same dynamics. And I think that's where increasingly we're going to start.
+ And so we had to ask ourselves the fundamental question. It's like, okay, what do we do?
+ What does a specialized database do in a world where lake houses are dominant,
+ where they become the sinks for all data and a lot of functionality. And we got very clear
+ about what we needed to be when we grew up, which we're still growing up.
+ And that is we need to be an operational time series data. We need to really be oriented
+ operational, which to us, man, we need to be greater three things.
+ What does that mean? Operational versus transactional.
+ For most of our customers, they use us for two broad use cases, real time monitoring.
+ So you're looking at systems and behaving and alerting on actions that are happening
+ in real time. And so you want your queries to be ideal queries, your last queries,
+ to be sub 100 milliseconds, sub 50 milliseconds, and in some cases more.
+ So not fundamentally an analytical tool. Obviously you do analytics coming out of the database,
+ but fundamentally you have to be operational in real time.
+ That had to be because we felt that the lake house architectures would never do that well,
+ or weren't structured to do that well for very natures.
+ And so we need to be, it sounds like, we need to be really great at three simple things.
+ And this is what we say to all of our employees. We need to be amazing at ingest,
+ which we need to be able to handle a huge volume of sensor data coming in at a fast time.
+ And that stuff has to be available for query very, very fast.
+ Two is we had to be great. And by the way, we're not great at all of this,
+ but we have to be great at all of it. We have to be great at organizing the data
+ in a proper location, in object storage, as an index, in cache,
+ potentially on disk, whatever happens to be so that data is available.
+ And that's no small task. If you want that data to be queried fast,
+ you have to be super good at organizing it.
+ And then the last thing, we have to be great at querying the data.
+ And so if we're great at those three things, we feel like we have a very defensible
+ and very relevant platform. If we're not great at them, use Mongo,
+ use Postgres, use something else. And I would say the same for all the specialty databases,
+ whether it's elastic, whether it's Neo4j. I'm not sure how I feel about the vector databases,
+ but whatever these open source category leaders are, they have to find a place where they
+ have to live in this lake house. So to answer your final question is,
+ so the fourth back, we says, how do we live in a lake house world?
+ And so this is, I think we started building this pre Delta share being obvious and iceberg
+ being obvious, but we built it around Parquet. And of course, we knew that's a
+ file format that the lake houses would use. And so our notion is we had to live in this world
+ and our data, whether down sampled or live, had to end up in those lake houses.
+ That was, so those are the four things that drove it. And I think if Paul were up here,
+ we'd talk about the value of rust. We moved from goat of rust. And so we've been able
+ to draw a really good developer because we've really pushing at the edge of rust,
+ both the open source and our close source components.
+ You know, it's super interesting in so many ways, even, you know, having the kind of self
+ awareness and then will to just burn the boats for on a few things and say, well, the world
+ has changed, and we need to change dramatically. And then releasing my kudos to you guys.
+ In retrospect, it sounds like it's like, you know, it's just really smart architectural
+ decision. But if you saw us, Paul and I fighting like cats and dogs, you'd go like, oh,
+ these are really hard decisions.
+ So the idea is to live on top of S three. Is that is that the rights?
+ S three or I mean, I owe anything that would have an object towards interfaith.
+ So you went from disk to basically disk less. And then sitting on top of it. Okay. All right.
+ So that's that part, which by the way is, I mean, that's the reason why you did it.
+ But like seems to be such a fundamental trend in the industry of a big three years and
+ default storage. So that and then for the sort of data breaks, lake house, iceberg kind of world.
+ So first of all, like I saw that you guys coined your own acronym.
+ What was it? The F-DAP. F-DAP. Right. So there used to be the lamb stack and this F-DAP.
+ And if that is what it's flights that are fusion. You got it.
+ Our own parquet. That's right.
+ So maybe we walk us through some of the components at a high level and what roles they play.
+ So the idea is to build on largely an Apache stack. We felt very because of the lake house,
+ because of the view of the lake house and the view of what a modern data architecture would
+ look like. We decided, okay, how do we and I say we, I'd say Paul and the technical team decided.
+ I was there to witness it. But but decided to build. So building and rust is a start,
+ but then we built on object storage because we know object storage will be technically
+ not open source, but anything in test three compatible gives you tremendous number of options.
+ So might as well be and built on Apache Parquet. Right.
+ Those are the standards that the lake houses are built on and things like Redshift and
+ BigQuery and so. So that was advanced. It's then built on above that the notion of
+ the table format, the open table format being at the delta share or iceberg.
+ And now it seems like iceberg is certainly with with Databricks buying tabular.
+ That'll be interesting. But iceberg feels like the base format, although delta share.
+ It's also relevant. And then above that, the interesting product is Data Fusion.
+ We're one of the PMCs for Data Fusion. Data Fusion is a query engine and query planner,
+ super fast vector. It's available. It's a super popular open source product.
+ It's got a lot of love for something that really doesn't have an end product.
+ Like you wouldn't just, you wouldn't just take Data Fusion and say, okay, I'm going to run
+ this. Like it's built into other products. It's built into Apache Comet.
+ It competes with some of the other query engines. But the idea is to commoditize the query engine.
+ So that anybody go out there can build services based on a really sophisticated
+ vector query engine for columnar database.
+ So commoditize some of the stuff that you'd have to, you know, if you wanted to use
+ ClickCalc or other stuff, aren't tend to just commoditize that by an Apache project.
+ And then Flight is the RPC and Flight SQL is the driver that allows you to run any
+ SQL on top of it. And so that stack, all the way to its integration to the lake house at the
+ bottom at the tables, all the way up is something that's driven by the open source.
+ And so we feel like that is a long term sustainable.
+ If influx were to disappear tomorrow, that stack would still be tremendously valuable.
+ And the work that we do on that stack is we've done a lot of the work to convert that stack
+ to rust. And so we really, we kind of bet the company on that.
+ So whether FDAP is a name or FIDAP catches on is sort of relevant.
+ Those projects are really relevant and they're going to be here a long time.
+ Very cool. And just to drive it home from a functional standpoint,
+ where we didn't flux DB sits in lake house kind of world. Are you moving the data
+ into the lake house? Are you analyzing data that sits in the lake house? Where are you in the
+ overall kind of data movement charts? I think the way different people use it different.
+ One of the things that developed Conviction is as we went out and talked to our customers,
+ even the most industrial oriented customers had built something on Hadoop.
+ And we're now moving it to snowflake or data bricks and do it.
+ And so what happens is they run their operational data, they run their dashboards,
+ they run their queries, they do all that stuff in real time.
+ And then our view of how the future is just starting now. It's just really starting,
+ despite all the hype. Our view is is they're exporting a lot of that data into the lake houses.
+ And the idea of using iceberg is you effectively have zero ETL. You never really have zero ETL.
+ But you kind of do. You kind of have zero ETL because you can pull on the iceberg tables
+ directly without moving it. But the intelligence, where the intelligence gets built is really
+ important. We don't think the intelligence get built on our platform. I know that's a hard
+ thing to say because everything's AI now, we believe that we're fundamentally mining the data
+ and making it available so that the intelligence models, which are largely going to run
+ out of the lake house, where the really structured time series data comes together
+ with the unstructured data and potentially the business data. And you build your models
+ based on that. We think the intelligence get built at that layer above us. But then the
+ application of that intelligence to real time, we do. Because the application of that intelligence
+ is effectively a query. It's effectively how quickly can you execute a query to change
+ a behavior in a system that's live. Most of our business today is, in fact, real-time monitoring.
+ Which is, you know, interesting and important. But the real opportunity is control. Real-time
+ monitoring controls. You build control systems based on this data. In order to build a control
+ system, you have to have that intelligence. You have to have the model and the inferences
+ so you know what to do when the query acts. So in a very real way, we view ourselves as a
+ census. Eyes, ears, nose of data coming in, pulling that data in. And then the action,
+ the hand that takes the action in the real world. And this is appropriate because
+ robotics is obviously a big place for us. Because data about the real world will come
+ to the robot and you'll fit it into a model. And then you'll send it to
+ for the action part that you were describing. We'll put the data, the model of model building
+ inference engine, where a really smart model will be running. And we'll take action based on
+ what the actions are taking. And those latencies need to be time.
+ So this is the, I was going to say the future world, but it's moving also fast. That might
+ be tomorrow morning. In terms of pedestrian use cases of machine learning, it sort of feels
+ like if you're in an IoT world, there should be a bunch of use cases where, okay, well,
+ your temperature goes up by a certain whatever, recognize that pattern,
+ machine learning model, and then do something. Do you have a bunch of that already?
+ Yeah. That's what most people do with our stuff. I would call those pretty simple control
+ loops. A good example that is the Tesla power laws, I think, are roughly a million of them
+ out there now. They all spew into influx into the database and they can trade energy and
+ a four second interval based on that data that's coming off. And so in my house, I have a bunch,
+ I have three Tesla power walls. And so I can sell my energy back to the grid based on that.
+ It's all based on influx in the app runs. But that's the kind of stuff that people are
+ increasingly doing. Because any, you know, the fundamental, our fundamental belief is that
+ any human design systems want to become increasingly autonomous.
+ Doesn't mean it has to be, doesn't mean it will be, but it wants to be. Anything that you can do,
+ it wants to be increasingly autonomous with less human intervention. It's a long journey.
+ And implied in the robot example that you just used, there is a concept that you can work in
+ sort of embedded manner. And you can sit on hardware devices, maybe talk to that a bit.
+ Yeah, we're really early in that. I think, you know, obviously, people have been putting us
+ on Raspberry Pi's for a long period of time. The new version three, the open source can
+ probably be embedded. Obviously, telegraph, which is our most popular open source project is
+ embedded in a lot of different places. Data capture. It's the collector. Yeah.
+ So telegraph is, is part of what we call it. And the tick stack is, I think is 350 or so
+ systems that can collect from it, puts it in line protocol, allows it to go in the database.
+ Super popular. Microsoft uses it. Amazon uses it. That's part of the tick stack.
+ Okay. And T I C K. C and K. So C is chronograph, which we support, but we don't actively
+ develop. Most people use us with guffana today, or super set increasingly, or some of these
+ other tools are emergent, or they don't. Visualization. And capacitor.
+ And I'm glad you bring it up. Capacitor was our, let's call it a task engine built around the
+ database. But the version three of the database has an embedded Python VM with a set of triggers
+ that allows you to do a variety of stuff at the database, to, you know, whether it's alerting
+ or taking an action or taking a system action, things like that. It's actually a really cool
+ thing. We're super excited about it. And that's available in the new open source.
+ And that, that replaced capacitor. And by the way, I said, to this discussion, a lot of it is
+ since you mentioned monitoring as an infrastructure monitoring, but there are a bunch of IoT use
+ cases. Yeah. And I'm very curious about that, because the, you know, IoT, for people like me,
+ as we see that, you know, get sometimes carried away in the hype, the internet of things,
+ IoT was like this big ID in, you know, 2000, whatever, 14, 15, 16, 17. And I'm very curious
+ what your view of the reality of it might be today.
+ Well, if you'd asked, well, since my background wasn't database, as it was networking and
+ security, one of the primary reasons I joined in flux in the first place, I just, you know,
+ at the time, 5G networks were just trying to emerge and things were, were very much connected.
+ And so IoT felt like this was going to be gigantic. And, and, and it wasn't gigantic.
+ It was more of a, more of a buzzword. But I'd say now, here we are 2025. And probably 60 to
+ 70% of our business is now IoT. And I almost, we have to use the word IoT because it's well
+ understood, but it really is about sensory analytics. And so when we think about our
+ long-term businesses or the time series space in general, we just think to yourself, are we,
+ are we going to see more or less sensors in the world? Are they going to be collecting more,
+ more or less data? And is that data going to be richer? And is that data going to be important?
+ And is that data going to feed the AI models? And so we think, we think a lot about how do we
+ service that, those workloads coming up. And by the way, we say sensors as a physical
+ things, but software sensors too. Lots of our businesses network telemetry, it's API monitoring,
+ which basically behave like time series centers.
+ Let's get into the fun territory of a competitive differentiation.
+ To the extent that you're willing to bad mouth, you're competitive.
+ I'm not, I'm not willing to bad.
+ All right. Well, so we'll remain at a high level. But time series is a very important
+ category in the data world. It's also a competitive category between some products from startups,
+ like time scale, hyperscalers, open source. How do you think about it? How do you position
+ you know, to win?
+ We don't win anything unless people love our open source.
+ So we don't have any evangelical sales force who comes in and finds your front end people.
+ Our customers are data engineers, but people have to solve problems.
+ So it's not useful for me to have a meeting with the CIO. The CIO does not care about this
+ time series database. I mean, he should maybe, but he doesn't. It is very useful for us to have
+ with an architect CTO developer. And so all of our stuff comes from developers liking our open source
+ and us developing around it. So so that differentiates us from a lot, a lot of other folks.
+ The people who we see as primary competition is, of course, the substitutes.
+ Like my problem is not that big. I can use a postgres database.
+ I can use Mongo time series stuff. Perfectly workable. It's fine. Understand that.
+ But when we see direct time series competitors, it tends to come from the hyperscalers because
+ those are easy buttons. I'm already in Amazon. I can use time stream. I could use Azure data
+ insight or Azure Explorer. And I can use those things. That's our primary competition.
+ Other players we see, but let's be honest, as an open source vendor, we don't know what's
+ happening. We don't even talk to a customer unless they've been running our stuff for
+ three months, generally, or they built something. And so we don't get to see the early part.
+ So we have to win the hearts and minds early in the cycle. And the way we have to win the
+ hearts and minds is, is it relatively easy to get started? Is it relatively easy to build?
+ And do I see a way to scale it? The interesting dynamic that's happened for us recently,
+ that people might be interested in is last year, we did a very unique deal with Amazon,
+ where they have Amazon's time stream. What their customers kept asking them for for inflock.
+ And so they approached us. They could have forked the database. We have a very strict
+ view that we should open source should be open source. It should be MIT or Apache,
+ and people should be able to use it freely. And companies should be able to build on our
+ stuff and even compete with us. Because if we can't, if we can't win with our own code,
+ then maybe we don't, we don't deserve it. But Amazon could have forked us.
+ They chose not to. They built a relationship with us.
+ And they're hosting InfluxDB, open source 2.0, and they will be hosting 3.0.
+ And we build add-ons above that to monetize that. And we have a relationship with them.
+ We do second level support. And the nice thing about that is,
+ now they don't stand everything behind time stream. They're very comfortable with people.
+ So we have one less dominant competitor. And two is, it's a new model for open source.
+ Most people who take open source actually spin up a cloud instance anyway to run it.
+ I mean, a lot of people run it. But a lot of people run it.
+ And so I think for a lot of us open source companies, having these relationships really
+ work, because now you just go to Amazon, you run it up. And for the price of a server,
+ you're running open source InfluxDB. It's a good model. So we'll see how that develops over time.
+ I think it's a change in the industry.
+ All right. And we started alluding to this. But let's just learn building this open source
+ company in terms of like the community, then go to market.
+ I think one of the, actually to quote something Ollie said a few years ago,
+ I thought was really on is, you know, it sounds great. You build an open source project,
+ everybody loves it. And you monetize it. And you know, and you ride off into the sunset
+ being super successful. It's actually really freaking hard. So with open source, you have
+ to hit two home runs. You have to build a project that developers love. And they deploy,
+ and they use, and they love. And then you have the second home run, which you have to figure
+ out a model to monetize it. And you've watched these open source companies with all these
+ different models. So in the beginning, it was you buy support. Well, after two or three years,
+ I know how to support it as well as you do. I don't need it. Or you change your license,
+ where you say, Oh, okay, no, we're going to prevent the hyperscalers from ever using this,
+ or people using it for commercial purposes. And so people have played with all sorts of
+ models to make it work. And I would say we didn't get it right the first time.
+ I argue that our first versions of one and two in open source were so good that you have 1.3
+ million users and only 2,600 paying customers. That ratio is, you know, you'd like it to be
+ a little bit better if we're going to be a really good going concern. And so you have
+ to figure out like what makes sense to empower developers to build cool things,
+ but to hold something back so that you can actually grow a business that you can keep
+ funding all of this open source activity. And so it's tricky. It's two home runs. I thought
+ that was a great quote, not mine. I guess what is next? You mentioned that the earlier part
+ of this conversation that you wanted to remain focused on beginning operational time series,
+ database, I guess the broader question is, so should specialized people remain specialized?
+ This is natural tendency to try and want to do more. How do you navigate that tension?
+ It navigates itself a little bit. So if you have a gigantic cash engine
+ that you're generating a lot of business, then you bite off bigger and bigger chart.
+ So we have pretty good cash engine, but it's not quite the point where I'm willing to bite
+ off higher up the stack or do different stuff. But also the competitive dynamics in the industry.
+ I think a lot of that stuff falls into the lake house and you have to figure out where you can
+ be elite and whether that space will be big. And so we have two convictions, really simple.
+ We believe we can be elite based on the strength of our own open source efforts and based on
+ the strength of the products that we built upon, the patches. So we believe we can be elite.
+ And we believe this space can be super, super large. We think we're not having less sensors.
+ We think the physical world is getting instrumented at higher and higher.
+ We think the requirements for AI and telemetry are going to be super high for the roof.
+ And so we're just trying to stay the course and build something that we can create long-term
+ sustainable competitive advantage and still keep to our open source, you know, grounding.
+ Thank you so much. We appreciate it. Thank you.
+ Thanks.
+ Hi, it's Matt Turkigan. Thanks for listening to this episode of The Mad
+ Podcast. If you enjoyed it, we'd be very grateful if you would consider subscribing if you haven't
+ already or leaving a positive review or comment on whichever platform you're watching this or
+ listening to this episode from. This really helps us build a podcast and get great guests.
+ Thanks and see you at the next episode.

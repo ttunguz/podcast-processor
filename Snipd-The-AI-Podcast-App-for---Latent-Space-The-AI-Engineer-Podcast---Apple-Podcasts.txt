@@ -1,0 +1,2094 @@
+
+(upbeat music)
+- Hey, I'm here in New York with Kevin Bensmith.
+Oh, SNPs, welcome.
+- Hi, hi, amazing to be here.
+- Yeah, this is our first ever,
+I think outdoors, podcast recording.
+- Oh, it's quite a location for the first song outside.
+(laughing)
+- I was actually unsure because, you know, it's cold,
+it's like, I checked the temperature,
+it's like kind of one degree Celsius,
+but it's not that bad with the sun.
+- No, it's quite nice.
+- Yeah, yeah, especially with our beautiful tea.
+- With the tea, yeah.
+- Perfect.
+- We're gonna talk about SNPs, I'm a SNPs user,
+I had to basically, you know, apart from Twitter,
+it's like the number one use app on my phone.
+- Nice.
+- When I wake up in the morning, I open SNPs
+and I, you know, see what's new.
+And I think in terms of time spent,
+or usage on my phone, it's, I think it's number one
+and number two.
+- Nice, nice.
+- So I really had to talk about it,
+also because I think people interested in AI,
+want to think about like, how can they,
+where in the AI podcast,
+we have to talk about the AI podcast app.
+But before we get there,
+we just finished the AI Engineer Summit,
+and you came for the two days, how was it?
+- It was quite incredible.
+I mean, for me, the most valuable was just being
+in the same room with like-minded people
+who are building the future and who are seeing the future.
+You know, especially when it comes to AI agents,
+it's so often I have conversations with friends
+who are not in the AI world,
+and it's like so quickly it happens that you,
+it sounds like you're talking in science fiction.
+And it's just crazy talk.
+It was, you know, it's so refreshing to talk
+with so many other people who already see these things,
+and yeah, be inspired then by them,
+and not always feel like, like, okay,
+I think I'm just crazy and like, this will never happen.
+It really is happening.
+And for me, it was very valuable.
+- So day two more relevant for you then, day one.
+- Yeah, day two.
+So day two was the engineering track.
+- Yeah, that was definitely the most valuable for me,
+like also as a practitioner myself,
+especially there were one or two talks
+that had to do with voice AI and AI agents with voice.
+- Okay.
+- So that was quite fascinating.
+Also spoke with the speakers afterwards.
+- Yeah.
+- And yeah, they were also very open
+and you know, there's sharing attitudes.
+That's, I think, in general,
+quite prevalent in the AI community.
+I also learned a lot like really practical things
+that I can now take away with me.
+- Yeah, I mean, on my side,
+I think I watched only like half of the talks
+'cause I was running around.
+And I think people saw me, like, towards the end,
+I was kind of collapsing.
+I was on the floor, like, towards the end
+'cause I needed to get a rest.
+But yeah, I'm excited to watch the voice AI talks myself.
+- Yeah, yeah, do that.
+And I mean, from my side,
+thanks a lot for organizing this conference
+or bringing everyone together.
+- Do you have anything like this in Switzerland?
+- Yes, the short answer is no.
+I mean, I have to say the AI community in,
+especially Zurich, where we're based.
+It is quite good and it's growing,
+especially driven by ETH, the Technical University there.
+And all of the big companies,
+they have AI teams there.
+Google, like Google has the biggest tech hub
+outside of the US in Zurich.
+Facebook is doing a lot in reality labs.
+Apple has a secret AI team.
+Open AI and it's what big just announced
+that they're coming to Zurich.
+So there's a lot happening, yeah, so.
+- Yeah, I think the most recent and vulnerable move,
+I think, the entire vision team from Google,
+LucasBire, and all the other authors of Siglip,
+left Google to join Open AI,
+which I thought was like,
+it's like a big move for a whole team to move all at once.
+Oh, it's the same time.
+So I've been to Zurich and it just feels expensive.
+Like it's a great city, it's a great university,
+but I don't see it as like a business hub.
+Is it a business hub?
+I guess it is, right?
+Like it's kind of.
+- Well, historically it's a finance hub.
+- Finance hub?
+- Yeah, I mean, there are some large banks there, right?
+Especially UBS, the largest wealth manager in the world.
+But it's really becoming more of a tech hub now
+with all of the big tech companies there.
+- Right, I guess, yeah.
+And research wise, it's all ETH.
+There's some other things.
+- Yeah, yeah, yeah.
+- Yeah, it's all driven by ETH
+and then it's sister university EPFL,
+which is in Lausanne, which they're also doing a lot,
+but it's really ETH.
+And otherwise, no, I mean, it's a beautiful,
+really beautiful city.
+I can recommend to anyone to come visit Zurich,
+let me know, happy to show you around.
+And of course, you have the nature so close,
+you have the mountains so close,
+you have so beautiful lakes.
+I think that's what makes it such a livable city.
+And the cost is not cheap,
+but I mean, we're in New York City right now.
+And I don't know, I paid $8 for a coffee this morning.
+So the coffee is cheaper in Zurich than the New York City.
+- Okay, let's talk about snips.
+What is snips?
+And then we'll talk about your origin story,
+but let's get a crisp, what is snips?
+- Yeah, I always see two definitions of snips.
+So I'll give you one really simple, straight forward one,
+and then a second more nuanced,
+which I think will be valuable
+for the rest of our conversation.
+So the most simple one is just to say,
+look, we are an AI-powered podcast app.
+So if you listen to podcasts,
+we're now providing this AI enhanced experience.
+But if you look at the more nuanced perspective,
+it's actually we have a very big focus on people
+who like your audience who listen to podcasts
+to learn something new.
+Like your audience, they want to learn about AI,
+what's happening, what's the latest research,
+what's going on.
+And we want to provide a spoken audio platform
+where you can do that most effectively.
+And AI is basically the way that we can achieve that.
+- Yeah, means to an end.
+- Yeah, exactly.
+- When you started, was it always meant to be AI,
+or was it more about the social sharing?
+- So the first version that we ever released
+was like three and a half years ago.
+- Okay.
+- Yeah, so this was before chat, GPT.
+- Before Whisper.
+- Yeah, before Whisper.
+So I think a lot of the features that we now have in the app,
+they weren't really possible yet back then.
+But we're already from the beginning,
+we always have the focus on knowledge.
+That's the reason why, you know, we in our team,
+why we listen to podcasts.
+But we did have a bit of a different approach.
+Like the idea in the very beginning was,
+so the name is Snipped.
+And you can create these, what we call Snips.
+Which is basically a small snippet,
+like a clip from a podcast.
+And we did envision sort of like a social TikTok platform
+where some people would listen to full episodes
+and they would snip certain like the best parts of it.
+And they would post that in a feed.
+And other users would consume this feed of Snips
+and use that as a discovery tool,
+or just as a means to an end.
+And yeah, so you would have both people who create Snips
+and people who listen to Snips.
+So our big hypothesis in the beginning was, you know,
+it will be easy to get people to listen to these Snips,
+but super difficult to actually get them to create them.
+So we focused a lot of our effort on making it as seamless
+and easy as possible to create a Snip.
+- Yeah, it's similar to TikTok, you need cap cut
+for there to be videos on TikTok.
+- Exactly, exactly.
+And so for Snips, basically,
+whenever you're here in an amazing inside a great moment,
+you can just triple tap your headphones.
+And our AI actually then saves the moment
+that you just listened to and summarizes it to create a note.
+And this is then basically a Snip.
+So yeah, we built all of this, launched it.
+And what we found out was basically the exact opposite.
+So we saw that people use the Snips to discover podcasts,
+but they really, you know,
+really love listening to long-form podcasts.
+But they were creating Snips like crazy.
+And this was definitely one of these aha moments
+when we realized like, hey, we should be really doubling down
+on the knowledge of learning, of, yeah,
+helping you learn most effectively
+and helping you capture the knowledge that you listen to
+and actually do something with it.
+'Cause this is, in general, we live in this world
+where there's so much content and we consume
+and consume and consume.
+And it's so easy to just, at the end of the podcast,
+you just start listening to the next podcast.
+And five minutes later, you've forgotten everything.
+90%, 99% of what you've actually just learned.
+- Yeah, you don't notice, but, and most people don't notice,
+but this is my fourth podcast.
+My third podcast was a personal mixed-state podcast
+where I snipped manually sections of podcasts that I liked
+and added my own commentary on top of them
+and published them in small episodes.
+- Nice.
+- So those would be maybe five to 10 minute slips
+of something that I thought was a good story
+or like a good insight.
+And then I added my own commentary
+and published in a separate podcast.
+- It's cool, is that still alive?
+- It's still alive, but it's not active.
+But you can go back and find it if you're curious enough,
+you'll see it.
+- Nice, nice.
+Yeah, you have to show me later.
+- It was so manual because basically what my process would be,
+I hear something interesting, I note down the timestamp
+and I note down the URL of the podcast.
+I used to use overcast, so it would just link
+to the overcast page and then put in my note-taking app,
+go home, whenever I feel like publishing,
+I will take one of those things
+and then download the MP3, clip out the MP3
+and record my intro outro and then publish it as a podcast.
+But now SNPs, I mean, I can just kind of double click
+but triple tap.
+- I mean, those are very similar stories
+to what we hear from our users.
+You know, it's normal that you're doing something else
+while you're listening to a podcast.
+So I love our users, they're driving,
+they're working out, walking their dog.
+So in those moments when you hear something amazing,
+it's difficult to just write them down
+or you have to take out your phone,
+some people take a screenshot right down the timestamp
+and then later on you have to go back
+and try to find it again.
+Of course, you can't find it anymore
+because there's no search, there's no command F.
+And these were all of the issues
+that we encountered also ourselves as users.
+And given that our background was in AI,
+we realized like, wait, hey, this should not be the case.
+Like podcast apps today, they're still,
+they're basically repurposed music players,
+but we actually look at podcasts as one of the largest
+sources of knowledge in the world.
+And once you have that different angle of looking at it,
+together with everything that AI is now enabling,
+you realize like, hey, this is not the way
+that we, that podcast apps should be.
+- Yeah, yeah, I agree.
+You mentioned something there, you said your background's in AI.
+Well, first of all, who's the team?
+And what do you mean your background's in AI?
+- Those are two very different questions.
+(laughs)
+Maybe starting with my backstory.
+My backstory actually goes back,
+like let's say 12 years ago, something like that.
+I moved to Zurich to study at ETH.
+And actually I studied something completely different.
+I studied mathematics and economics.
+Basically, this specialization for quant finance.
+- Same, okay, wow.
+- All right.
+So yeah, and then as you know,
+all of these mathematical models for asset pricing,
+derivative pricing, quantitative trading.
+And for me, the thing that fascinated me the most
+was the mathematical modeling behind it,
+mathematics, statistics.
+But I was never really that passionate
+about the finance side of things.
+- Really?
+Okay, yeah.
+- Yeah, I mean.
+- We're different there.
+(laughs)
+- I mean, one just, let's say symptom
+that I noticed now, like looking back.
+During that time, I think I never read an academic paper
+about the subject in my free time.
+And then it was towards the end of my studies,
+I was already working for a big bank.
+One of my best friends, he comes to me and says,
+"Hey, I just took this course.
+"You have to, you have to do this.
+"You have to take this lecture."
+- Okay.
+- And I'm like, what, what is it about?
+It's called machine learning.
+I don't know, like, what kind of stupid name is that?
+(laughs)
+So you sent me the slides and like over a weekend,
+I went through all of the slides
+and I just, I just knew like freaking hell.
+Like this is it, I'm in love.
+- Wow.
+- Yeah.
+- Okay.
+- And that was then over the course of the next thing,
+like 12 months, I just really got into it,
+started reading all about it,
+like reading blog posts,
+starting building my own models.
+- Was this course by a famous person,
+famous university?
+Was it like the Andrew Inko Sara thing?
+- No, so this was a ETH course?
+- I was a ETH teacher.
+- So a professor at ETH?
+- Did you teach in English, by the way, or?
+- Yeah, yeah, yeah.
+- Oh, okay.
+So these slides are somewhere available.
+- Yeah, definitely.
+I mean, now they're quite outdated.
+(laughs)
+- Well, I think, you know,
+reflecting on the finance thing for a bit.
+So I used to be a trader,
+sell side and buy side, I was options.
+I was a trader first,
+and then I was more of like a quantitative hedge fund analyst.
+We never really used machine learning.
+It was more like a little bit of statistical modeling,
+but really like you fit, you know, a regression.
+(laughs)
+- No, I mean, that's what it is.
+And all you solve partial differential equations
+and have them American methods to solve these.
+- That's for your degree.
+And that's not really what you do at work, right?
+Unless, I don't know what you do at work.
+- In my job, no, no, we weren't.
+So in the past.
+- Yeah, you learn all this in school and then you know, you say.
+- I mean, we, well, let's put like that.
+In some things, yeah, I mean, I did code algorithms
+that would do it, but it was basically,
+like it was the most basic algorithms.
+And then you just like slightly improved them a little bit.
+Like you just tweaked them here and there.
+It wasn't like starting from scratch.
+Like, oh, here's this new partial differential equation.
+How did we detect?
+No.
+(laughs)
+- Yeah, I mean, that's real life, right?
+Most, most of it's kind of boring
+or you're using established things because they're established
+because they tackle the most important topics.
+Yeah, portfolio management was more interesting for me.
+And we were sort of the first to combine like social data
+with quantitative trading.
+And I think, I think now it's very common, but yeah.
+(laughs)
+Anyway, then you went deep on machine learning
+and then what, you quit your job?
+- Yeah, yeah, I quit my job.
+Because I mean, I started using it at the bank as well.
+Like, you know, I desperately tried to find any kind of excuse
+to like use it here or there out there.
+But it just was clear to me like, no, if I wanna do this,
+like I just have to like make a real cut.
+So I quit my job and joined an early stage tech startup
+in Zurich where I then built up the AI team over five years.
+- Wow.
+- Yeah, we built various machine learning things for bands
+from like models for sales teams to identify which clients,
+like which product to sell to them and with what reasons
+or the way to, we did a lot with bank transactions.
+One of the actually most fun projects for me was,
+we had an NLP model that would take the booking text
+of a transaction, like a credit card transaction
+and pretty fire it.
+- Yeah.
+- Because they had all of these, you know,
+like numbers in there and abbreviations and whatnot.
+And sometimes you look at it like, what is this?
+- Yeah.
+- And it was just, you know, it would just change it to,
+I don't know, CVS.
+- Yeah, yeah, yeah.
+But I mean, would you have hallucinations?
+- No, no, no.
+The way that everything was set up, it wasn't,
+like it wasn't yet.
+- That's right.
+- It's fully end to end generative neural network
+as what you would use today.
+- Okay.
+- Okay.
+- Awesome.
+- And then when did you go like full time on SNIT?
+- Yeah.
+So basically that was afterwards.
+I mean, how that started was the friend of mine
+who got me into machine learning.
+Him and I, like he also got me interested into startups.
+He's had a big impact in my life.
+And the two of us were just jam on like ideas
+for startups every now and then.
+And his background is also in AI data science.
+And we had a couple of ideas,
+but given that we were working full times,
+we were thinking about,
+so we participated in Hacksuit,
+that's Europe's biggest hackathon,
+or at least was at the time.
+And we said, hey, this is just a weekend.
+Let's just try out an idea,
+like hack something together and see how it works.
+And the idea was that we'd be able to search
+through podcast episodes like within a podcast.
+- Yeah.
+- So we did that.
+Long story short, we managed to do it.
+Like to build something that we realized,
+hey, this actually works.
+You can find things again in podcasts
+and be like a natural language search.
+And we pitched it on stage
+and we actually won the hackathon,
+which was cool.
+I mean, we also, I think we had a good,
+like a good pitch or good example.
+So we used the famous Joe Rogan episode with Elon Musk,
+where Elon Musk smokes a joint.
+- Okay.
+- It's like a two and a half hour episode.
+So we were on stage
+and then we just searched for like smoking weed.
+And we would find that exact moment
+and we would play it and just like,
+come on with Elon Musk, just like smoking.
+- Also his video as well.
+- No, it was actually completely based on audio,
+but we did have the video for the presentation,
+which had of course an amazing effect.
+Like this gave us a lot of activation energy,
+but it wasn't actually about winning the hackathon.
+But the interesting thing that happened was
+after we pitched on stage,
+several of the other participants,
+like a lot of them came up to us
+and started saying like, hey, can I use this?
+Like I have this issue.
+And like some also came up and told us about other problems
+that they have like very adjacent to this with a podcast,
+was like, like, could I use this for that as well?
+And that was basically the moment where we realized,
+hey, it's actually not just us
+who are having these issues with podcasts
+and getting to the, making the most out of this knowledge.
+There are other people.
+That was now, I guess like four years ago or something like that.
+And then, yeah, we decided to quit our jobs
+and start this whole snip thing.
+- How big is the team now?
+- We're just four people, we're just four people.
+Yeah, like four, we're all technical.
+Basically two on the backend side.
+So one of my co-founders is this person
+who got me into machine learning and startups
+and we won the hackathon together.
+So we have two people for the backend side
+with the AI and all of the other backend things
+and two for the front-end side building the app.
+- Which is mostly Android and iOS.
+- Yeah, it's iOS and Android.
+We also have a watch app for Apple,
+but yeah, it's mostly, it was very funny
+'cause in the land space discord,
+most of us have been slowly adopting snips.
+You came to me like a year ago
+and you introduced snip to me.
+I was like, I don't know, I'm very sticky to overcast
+and doing a slowly research.
+Why watch?
+- So it goes back to a lot of our users,
+they do something else while listening to a podcast, right?
+And one of us giving them the ability
+to then capture this knowledge,
+even though they're doing something else
+at the same time is one of the killer features.
+Maybe I can actually, maybe at some point
+I should maybe give a bit more of an overview
+of what all of the features that we have.
+- Sure.
+- So this is one of the killer features
+and for one big use case
+that people use this for is for running.
+- Yeah.
+- So if you're a big runner, a big jogger
+or cycling, like really cycling competitively.
+And a lot of the people,
+they don't want to take their phone with them
+when they go running.
+- So you load everything onto the watch?
+- So you can download episodes.
+I mean, if you have an Apple watch
+that has internet access with a SIM card,
+you can also directly stream.
+That's also possible.
+Yeah.
+So of course it's basically very limited
+to just listening and snipping.
+And then you can see all of your snips later on your phone.
+- Let me tell you this error I just got.
+Error playing episode sub stack,
+the host of this podcast,
+does not allow this podcast to be played on an Apple watch.
+- Yeah, that's a very beautiful thing.
+So we found out that all of the podcasts hosted on sub stack
+you cannot play them on an Apple watch.
+- Why is this restriction?
+- Like don't ask me, we try to reach out to sub stack.
+We try to reach out to some of the bigger
+podcasters who are hosting the podcast on sub stack
+to also let them know.
+Sub stack doesn't seem to care.
+This is not specific to our app.
+You can also check out the Apple podcast app.
+It's the same problem.
+It's just that we actually have identified it
+and we tell the user what's going on.
+- I would say we host our podcast on sub stack,
+but they're not very serious about their podcasting tools.
+I've told them before, I've been very upfront with them.
+So I don't feel like I'm, you know,
+shitting on them in any way.
+And it's kind of sad because otherwise
+it's a perfect creator platform,
+but the way that they treat podcasting as an afterthought,
+I think it's really disappointing.
+- Maybe, given that you mentioned all these features,
+maybe I can give a bit of a better overview of
+the features that we have.
+Because for us it's clear in our mind,
+maybe for some of the...
+- I mean, okay, I'll tell you my version.
+- Yeah. - You can correct me, right?
+- So first of all, I think the main job is for it to be
+a podcast listening app.
+It should be basically a complete superset
+of what you normally get on overcast or Apple podcast,
+anything like that.
+You pull your show list from listen notes.
+Like how do you find shows?
+Like how to type in anything, you find them, right?
+- Yeah, we have a search engine that is powered by listen notes,
+but I mean, in the meantime, we have a huge database
+of like 99% of all podcasts out there ourselves.
+- Yeah.
+- What I noticed, the default experience is
+you do not auto download shows.
+And that's one very big difference for you guys
+versus other apps, where like, you know,
+if I'm subscribed to a thing, it auto downloads
+and I already have the mp3 download over and overnight.
+For me, I have to actively put it onto my queue
+then it auto downloads.
+And actually, if initially didn't like that,
+I think I maybe told you that I was like,
+oh, it's like a feature that I didn't like.
+'Cause it means that I have to choose to listen to it
+in order to download and not to...
+This is like the difference between opt-in and opt-out.
+So I opt-in to every episode that I listen to.
+And then like, you know, you open it
+and depends on whether or not you have the AI stuff enabled,
+but the default experience is no AI stuff enabled.
+You can listen to it.
+You can see the SNPs, the number of SNPs
+and where people snip during the episode,
+which roughly correlates to interest level.
+And obviously you can snip there.
+I think that's the default experience.
+I think snipping is really cool.
+Like I use it to share a lot and on Discord,
+I think we have tons and tons of just people
+sharing SNPs and stuff.
+Tweeting stuff is also a nice, pleasant experience.
+But like the real features come
+when you actually turn on the AI stuff.
+And so the reason I got SNPs,
+because I got fed up with overcast,
+not implementing any AI features at all.
+Instead, they spent two years rewriting their app
+to be a little bit faster.
+And I'm like, like in 2025,
+I should have a podcast that has transcripts
+that I can search.
+Very, very basic thing.
+Overcast will basically never have it.
+- Yeah, I think that was a good like basic overview.
+Maybe I can add a bit to it with the AI features that we have.
+So one thing that we do every time a new podcast comes out,
+we transcribe the episode.
+We do speaker diarization.
+We identify the speaker names.
+Each guest, we extract a mini bio of the guest,
+try to find a picture of the guest online added.
+We break the podcast down into chapters
+as an AI generator.
+- That one's very handy.
+With a quick description per title
+and quick description per each chapter,
+we identify all books that get mentioned on a podcast.
+- We can tell I don't use that one.
+(laughing)
+- It depends on a podcast there.
+There are some podcasts where the guests
+often recommend like an amazing book.
+Also later on, you can find that again.
+- So you literally, you search for the word book,
+or I just read blah, blah, blah.
+- No, I mean, it's all LLM based.
+So basically we have an LLM
+that goes through the entire transcript
+and identifies if a user mentions a book.
+Then we use perplexity API together
+with various other LLM orchestration
+to go out there on the internet,
+find everything that there is to know about the book,
+find the cover, find who the author is,
+get a quick description of it.
+For the author, we then check on which other episodes
+the author appeared on.
+- Yeah, that is so cool.
+- Because that, for me, if there's an interesting book,
+the first thing I do is I actually listen
+to a podcast episode with the writer,
+because he usually gives a really great overview
+already on a podcast.
+- Sometimes the podcast is with the person as a guest.
+Sometimes his podcast is about the person
+without him there.
+Do you pick up both?
+- So yes, we pick up both in our latest models,
+but actually what we show you in the app,
+the goal is to currently only show you the guest
+to separate that.
+In the future, we wanna show the other things more.
+- For what it's worth, I don't mind.
+I don't think, if I like somebody,
+I'll just learn about them regardless of whether they're not.
+- Yeah, I mean, yes and no.
+We have seen there are some personalities
+where this can break down.
+So for example, the first version
+that we released with this feature,
+it picked up much more often a person
+even if it was not a guest.
+For example, the best examples for me is Sam Altman
+and Elon Musk.
+Like they're just mentioned on every second podcast
+and they're not on there.
+And if you're interested in actually learning from them.
+- Yeah, I see.
+- Yeah, we updated our algorithms and proved that a lot.
+And now it's gotten much better
+to only pick it up if they're a guest.
+Yeah, so this is maybe to come back to the features,
+two more important features
+like we have the ability to chat with an episode.
+- Yes.
+- Of course, you can do the old style
+of searching through a transcript with a keyword search.
+But I think for me, this is how you used to do search
+and extracting knowledge in the past.
+- Old school.
+- The AI way is basically in LLM.
+So you can ask the LLM,
+"Hey, when do they talk about topic X
+if you're interested in only a certain part of the episode?"
+You can ask them for to give a quick overview
+of the episode key takeaways afterwards also
+to create a note for you.
+So this is really like very open-ended.
+And yeah, and then finally the snipping feature
+that we mentioned just to reiterate.
+Yeah, I mean, here the feature is that
+whenever you hear an amazing idea,
+you can triple tap your headphones
+or click a button in the app
+and the AI summarizes the insight you just heard
+and saves that together with the original transcript
+and audio in your knowledge library.
+- I also noticed that you skip dynamic content.
+- So dynamic content, we do not skip it automatically.
+- Oh, sorry.
+You detect.
+- But we detect it.
+Yeah, I mean, that's one of the thing
+that most people don't actually know that.
+Like the way that ads get inserted into podcasts
+or into most podcasts is actually that every time
+you listen to a podcast,
+you actually get access to a different audio file.
+And on the server, a different ad is inserted
+into the MP3 file automatically.
+- Yeah, missile IP.
+- Exactly.
+And that, what that means is if we transcribe an episode
+and have a transcript with timestamps,
+like word specific timestamps,
+if you suddenly get a different audio file,
+make the whole timestamps are messed up.
+And that's like a huge issue.
+And for that, we actually had to build another algorithm
+that would dynamically on the fly,
+re-sync the audio that you're listening to,
+the transcript that we have,
+which is a fascinating problem in and of itself.
+- You sync by matching up the song waves
+or do you sync by matching up words?
+Like basically you do partial transcription.
+- We are not matching up words.
+It's happening on the, basically like a bytes level.
+Matching, yeah.
+- Okay.
+- So it relies on this.
+It relies on the, there'll be exact matches, some point.
+- So it's actually not,
+we're actually not doing exact matches,
+but we're doing fuzzy matches.
+- Wow.
+- To identify the moment.
+It's basically, we basically build Shazam for podcasts.
+(laughing)
+Just as a little side project to solve this issue.
+- Yeah, yeah.
+Actually fun fact, apparently the Shazam algorithm is open.
+It's this, they publish the paper.
+Let's talk about it.
+- Yeah, yeah.
+- I haven't really dived into the paper.
+I thought it was kind of interesting that
+basically no one else has built Shazam.
+(laughing)
+- Yeah, I mean, well, the one thing is the algorithm.
+Like if you now talk about Shazam, right?
+The other thing is also having the database behind it.
+- Yes.
+- And having the user mindset that
+if they have this problem, they come to you, right?
+- Yeah, yeah.
+Yeah, I'm very interested in the tech stack.
+There's a big data pipeline.
+- Could you share like, you know, what is the tech stack?
+Why are the, you know, the most interesting
+or challenging pieces of it?
+- So the general tech stack is our entire backend is,
+or 90% of our backend is written in Python.
+- Okay.
+- Hosting everything on Google Cloud platform.
+And our front end is written with,
+well, we're using the Flutter framework.
+So it's written in Dart and then, but compiled natively.
+So we have one code base for that handles both Android and iOS.
+- You think that was a good decision?
+It's something that a lot of people are exploring.
+- So up until now, yes.
+- Okay.
+- Look, it has its pros and cons.
+Some of the, you know, for example, earlier I mentioned
+we have an Apple watch app.
+- Yeah.
+- I mean, there's no flutter for that, right?
+So that you build native and then, of course,
+you have to sort of like sync these things together.
+I mean, I'm not the front end engineer.
+So I'm not just relaying this information,
+but our front end engineers are very happy with it.
+It's enabled us to be quite fast
+and be on both platforms from the very beginning.
+And when I talk with people
+and they hear that we are using Flutter,
+usually they think like, ah, it's not performing.
+It's super junk, janky and everything.
+And then they use our app and they're always super surprised.
+Or if they've already used that,
+- I couldn't tell.
+- They're like, what?
+- Yeah.
+- So there is actually a lot that you can do.
+- The danger of the concern, there's a few concerns.
+Like one, it's Google.
+So when are they gonna abandon it?
+- Two, they're optimized by Android first.
+So iOS is like a second thought.
+Or like you can feel that it is not a native iOS app.
+But you guys put a lot of care into it.
+And then maybe three, from my point of view,
+JavaScript as a JavaScript guy,
+React native was supposed to be that dream.
+And I think that it hasn't really fulfilled that dream.
+Maybe Expo is trying to do that.
+But again, it does not feel as productive as Flutter.
+And I've spent a week on Flutter and Don't.
+And I'm an investor in Flutter Flow,
+which is the low-code Flutter startup
+that's doing very, very well.
+I think a lot of people are still Flutter skeptics.
+Wait, so are you moving away from Flutter?
+- I know, we don't have plans to do that.
+- You're just saying about the watch out.
+Okay, let's go back to the stack.
+- You know, that was just to give you a bit of an overview.
+I think the more interesting things are, of course,
+on the AI side.
+- Yeah.
+So we, like as I mentioned earlier,
+when we started out, it was before chat GPT,
+for the chat GPT moment,
+before there was the GPT 3.5 Turbo API.
+So in the beginning, we actually were running everything
+ourselves, open-source models,
+trying to fine tune them.
+They worked, there was us,
+but let's be honest, they went.
+- What was the soda before, Whisper?
+- The transcription. - Yeah.
+- We were using Wave to Wake, like.
+- There's a Google one, right?
+- No, it was a Facebook one.
+That was actually one of the papers.
+Like when that came out,
+for me, that was one of the reasons why I said
+we should try something to start a startup in the audio space.
+For me, it was a bit, like before that,
+I had been following the NLP space quite closely.
+And as I mentioned earlier,
+we did some stuff at the startup as well,
+that I was working at before.
+And Wave to Wake was the first paper that I had at least seen,
+where the whole transformer architecture moved over to audio.
+- Oh, yeah.
+- And a bit more general way of saying it is like,
+it was the first time that I saw the transformer architecture
+being applied to continuous data,
+instead of discrete tokens.
+- Okay.
+- And it worked amazingly.
+And like the transformer architecture
+plus self-supervised learning,
+like these two things moved over.
+And then for me, it was like,
+hey, this is now gonna take off similarly
+as the text space has taken off.
+And with these two things in place,
+even if some features that we wanna build
+are not possible yet,
+they will be possible in the near term
+with this trajectory.
+So that was a little side note.
+No, it's in the meantime, yeah, we're using Whisper.
+We're still hosting some of the models ourselves.
+So for example, the whole transcription,
+speaker, diarization, pipeline.
+- You need it to be as cheap as possible.
+- Yeah, exactly.
+I mean, we're doing this at scale,
+where we have a lot of audio that we have.
+- What numbers can you dispose?
+Like what are just to give people an idea?
+- 'Cause it's a lot.
+- So we have more than a million podcasts
+that we've already processed.
+- When you say a million.
+So processing is basically,
+you have something on the list of podcasts
+that you auto process.
+And others where a paying member can choose to
+press the button and transcribe it, right?
+Is that the rough idea?
+- Yeah, yeah, exactly.
+Yeah, and when you press that button
+or we auto transcribe it,
+yeah, so first we do the transcription,
+we do the speaker diarization.
+So basically you identify speech blocks
+that belong to the same speaker.
+This is then all orchestrated with an LLM
+to identify which speech block belongs to which speaker.
+Together with, as I mentioned earlier,
+we identify the guest name and the bio.
+So all of that comes together with an LLM
+to actually then assign speaker names to each block.
+- Yeah.
+- And then most of the rest of the pipeline,
+we've now migrated to LLM APIs.
+So we use mainly open AI Google models.
+So the Gemini models and the open AI models.
+And we use some perplexity.
+Basically for those things where we need web search,
+that's something that I'm still hoping,
+especially open AI will also provide as an API.
+- Oh, why?
+- Well, basically for us as a consumer,
+the more providers there are.
+- The more downtime.
+- You know, the more competition
+and it will lead to better results.
+And lower costs of the time.
+- I don't see much flexibility as expensive.
+- If you use the web search,
+the price is like $5 per a thousand queries.
+- Okay.
+- Which is affordable.
+But if you compare that to just a normal LLM call,
+it's much more expensive.
+- Have you tried it, sir?
+- We've looked into it, but we haven't really tried it.
+I mean, we started with perplexity and it works well.
+And if I remember correctly,
+Excel is also a bit more expensive.
+- I know, I don't know.
+They seem to focus on the search thing.
+As a search API, where it's perplexity,
+maybe more consumer-y business that is higher margin.
+Like, I'll put it, like,
+perplexity is trying to be a product.
+Exist trying to be infrastructure.
+- Yeah.
+- So that'll be my distinction there.
+And then the other thing I will mention is
+Google has a search grounding feature.
+- Yeah.
+- Which you might want.
+- Yeah, yeah.
+We've also tried that out.
+- Not as good.
+So we didn't go into too much detail
+in really comparing it quality-wise,
+because we actually already had the perplexity one
+and it's working.
+- Yeah.
+- I think also there,
+the price is actually higher than perplexity.
+- Oh, really?
+Yeah.
+- Google should cut their prices.
+- Maybe it was the same price.
+I don't want to say something incorrect,
+but it wasn't cheaper.
+- It wasn't like comparing.
+- And then there was no reason to switch.
+So I mean, maybe in general, for us,
+given that we do work with a lot of content,
+price is actually something that we do look at.
+Like for us, it's not just about
+taking the best model for every task,
+but it's really getting the best,
+like identifying what kind of intelligence level you need
+and then getting the best price for that
+to be able to really scale this and provide us,
+yeah, let our users use these features
+with as many podcasts as possible.
+- Yeah.
+I wanted to double click on diarization.
+- Yeah.
+- It's something that I don't think people do very well.
+So, you know, I'm a bee user, I don't have it right now,
+but they were supposed to speak,
+but they dropped out, that's been it.
+But we've had them on the podcast before
+and it's not great yet.
+Do you use just py anodes, the default stuff,
+or do you find any tricks for diarization?
+- So we do use the open source packages,
+but we have tweaked it a bit here and there.
+For example, if you mentioned the bee AI, guys.
+- Yeah, I actually listened to the podcast episode,
+which was super nice.
+- Thank you.
+- And when you started talking about speaker diarization
+and I just have to think about their use case,
+like with all of the different environments,
+it can basically be anything.
+- It's completely all the domain.
+Like there's no data for this.
+- Yeah, I mean, I was feeling with them
+because like our advantage is that we're working
+with very high quality audio.
+It's very controlled, usually recorded in a studio.
+This is quite an exception, I guess.
+- It is kind of a studio, it's pretty quiet.
+There's consistent background noise,
+which you can get it out.
+This New York, it's nice, it's a character.
+- No, so that of course helps us.
+Another thing that helps us is that
+we know certain structural aspects of the podcast.
+For example, how often does someone speak?
+Like if someone, like let's say there's a one hour episode
+and someone speaks for 30 seconds,
+that person is most probably not the guest
+and not the host.
+It's probably some speaker from an ad.
+- Okay.
+- So we have like certain of these--
+- Heuristics.
+- Heuristics, yeah, exactly.
+That we can use and we leverage to improve things.
+And in the past, we've also changed the clustering algorithm.
+So basically how a lot of the speaker diarization works is
+you basically create an embedding for the speech
+that's happening and then you try to somehow cluster
+these embeddings and then find out
+this is all one speaker, this is all another speaker.
+And there we've also tweaked a couple of things
+where we again used heuristics that we could apply
+from knowing how podcasts function.
+And that's also actually why I was feeling so much
+with the BAI guys because like all of these heuristics,
+like they, like for them, it's probably almost impossible
+to use any heuristics because it can just be any situation,
+any, anything.
+- So that's one thing that we do.
+Yeah, another thing is that we actually combine it
+with LLMs.
+So the transcript, LLMs and the speaker diarization,
+like bringing all of these together
+to recalibrate some of the switching points,
+like when does the speaker stop,
+when does the next one start.
+- And then the LLMs can add errors as well.
+You know, I wouldn't feel safe using them
+to be so precise.
+- I mean, at the end of the day,
+like also just to not give a wrong impression
+like the speaker diarization is also not perfect
+that we're doing, right?
+- I basically don't really notice it.
+Like I use it for search.
+- Yeah, yeah, yeah.
+- It's not perfect yet, but it's gotten quite good.
+Like especially if you compare,
+if you look at some of the,
+like if you take a latest episode
+and you compare it to an episode that came out a year ago,
+we've improved it quite a bit.
+- Well, it's beautifully presented.
+Oh, I love that I can click on the time,
+the transcripts and it goes to their timestamp.
+- It's so simple, but you know, it should exist.
+- Yeah, I agree, I agree.
+- So this, I'm loading a two hour episode
+of the tech meme right home
+where there's a lot of good for guests calling in
+and you've identified the guest name.
+And yeah, indeed, yeah.
+So these are all LLM based, yeah.
+It's really nice.
+- Yeah, yeah, like the speaker names.
+- I would say that, you know,
+I always say I'm a power user of all these tools.
+You have done a better job than the script.
+- Okay, well.
+- The script is so much fun thing.
+You have, they're open AI invested in them
+and they still suck.
+So I don't know, like, you know, keep going.
+Like you're doing great.
+- Yeah, thanks, thanks.
+- I mean, I would say that,
+especially for anyone listening
+who's interested in building a consumer app with AI,
+I think the, like especially if your background is in AI
+and you love working with AI and doing all of that,
+I think the most important thing is just to keep
+reminding yourself of what's actually the job to be done here.
+Like what does actually the consumer want?
+Like, for example, you know, we're just delighted
+by the ability to click on this word and it comes there.
+- Yeah.
+- Like this is not, this is not rocket science.
+Like you don't have to be like, I don't know,
+Andrei Kapathy to come up with that and build that, right?
+And I think that's something that's super important
+to keep in mind.
+- Yeah, yeah, amazing.
+I mean, there's so many features, right?
+It's so packed, there's quotes that you pick out,
+the summarization.
+Oh, by the way, I am going to use this
+as my official feature request.
+I want to customize what, how it's summarized.
+I want to have a custom prompt.
+- Yeah.
+- Because your summarization is good,
+but, you know, I have different preferences, right?
+Like, you know.
+- So one thing that you can already do today,
+I completely get your feature request
+and I think it just--
+- I'm sure people have asked it.
+- I mean, maybe just in general as a how I see the future,
+you know, like in the future, I think all,
+everything will be personalized.
+- Yeah, yeah.
+- Like, this is not specific to us.
+- Yeah.
+- And today we're still in a phase
+where the cost of LLMs, at least if you're working
+with like such long context winners as us.
+I mean, there's a lot of tokens
+in, if you take an entire podcast.
+So you still have to take that cost into consideration.
+So for every single user, we regenerate it entirely.
+It gets expensive, but in the future,
+this, you know, cost like will continue to go down
+and then it will just be personalized.
+So that being said, you can already today,
+if you go to the player screen
+and open up the chat,
+you can go to the chat
+and just ask for a summary in your style.
+- Yeah, okay.
+I mean, I listen to consume, you know?
+- Yeah, yeah.
+- I've never really used this feature, I don't know.
+I think that's me being a slow adopter.
+- No, no, I mean, that's...
+- When does the conversation start?
+Okay.
+- I mean, you can just type anything.
+I think what you're describing, I mean,
+maybe that is also an interesting topic to talk about.
+- Yes.
+- Where they basically, yeah, I told you like,
+look, we have this chat, you can just ask for it.
+- Yeah.
+- And this is how chat TBT works today.
+But if you're building a consumer app,
+you have to move beyond the chat box.
+People do not want to always type out what they want.
+So your feature request was,
+even though theoretically it's already possible,
+what you are actually asking for is,
+hey, I just want to open up the app
+and it should just be there in a nicely formatted way,
+beautiful way such that I can read it or consume it
+without any issues.
+And I think that's in general
+where a lot of the opportunities lie currently
+in the market if you want to build a consumer app,
+taking the capability and the intelligence,
+but finding out what the actual user interface is,
+the best way how a user can engage with this intelligence
+in a natural way.
+- Is this something I've been thinking about as kind of like,
+AI that's not in your face?
+Because right now, you know, we like to say like,
+oh, use Notion has Notion AI
+and we have the little thing there and this,
+or like some other, any other platform has like
+the sparkle magic wand emoji.
+Like that's our AI feature, use this.
+And it's like really in your face, a lot of people don't like it.
+You know, it should just kind of become invisible.
+Can I look like an invisible AI?
+- 100%, I mean, the way I see it as AI
+is the electricity of the future.
+And like no one, like we don't talk about,
+I don't know, this microphone uses electricity at this phone.
+You don't think about it that way, it's just in there, right?
+It's not an electricity enabled product.
+No, it's just a product.
+- Yeah.
+- It will be the same with AI.
+I mean, now it's still a something that you use
+to market your product.
+I mean, we do the same, right?
+Because it's still something that people realize,
+"Ah, they're doing something new."
+But at some point, no, it'll just be a podcast app.
+- Yeah.
+- And it will be normal, that is the AI in there.
+- I noticed you do something interesting in your chat
+where you would source the timestamps.
+- Yeah.
+- Is that part of the prompts?
+Is there a separate pipeline that adds sources?
+- This is actually part of the prompt.
+So this is all prompt engineering.
+(laughing)
+You should be able to click on it.
+- Yeah, yeah, yeah, yeah, yeah.
+- This is all prompt engineering with how to provide
+the context, because we provide all of the transcript,
+how to provide the context, and then,
+yeah, get the model to respond in a correct way
+with a certain format, and then rendering that
+on the front end.
+This is one of the examples where I would say
+it's so easy to create like a quick demo of this.
+I mean, you can just go to chat to be deep,
+place this thing in and say like, "Yeah, do this."
+- Okay.
+- Like 15 minutes and you're done.
+- Yeah.
+- But getting this to like then production level
+that it actually works 99% of the time.
+- Okay.
+- This is then where the difference lies.
+- Yeah.
+- So for this specific feature,
+like we actually also have like countless rag exes.
+(laughing)
+- Ah.
+- That they're just there to correct certain things
+that the LLM is doing, because it doesn't always adhere
+to the format correctly, and then it looks super ugly
+on the front end.
+So yeah, we have certain rag exes that correct that.
+And maybe you'd ask like,
+"Why don't you use an LLM for that?"
+'Cause that's sort of the, again, the AI native way,
+like who uses rag exes anymore.
+But with a chat, for user experience,
+it's very important that you have the streaming,
+because otherwise you need to wait so long
+until your message has arrived.
+So we're streaming live just like chat QPT, right?
+You get the answer and it's streaming the text.
+So if you're streaming the text
+and something is like incorrect,
+it's currently not easy to just like pipe like stream--
+- Stream this into another stream.
+- Yeah, yeah, yeah.
+- Stream this into another stream
+and get the stream back which corrects it.
+That would be amazing.
+I don't know, maybe you can answer that.
+Do you know of any--
+- There's no API that does this.
+- Yeah.
+- But you cannot stream in.
+- If you own your models, you can, you know,
+whatever token sequence has been emitted,
+start loading that into the next one.
+If you fully own the models,
+I don't probably, it's probably not worth it.
+That's what you do.
+- Yeah, that's better.
+- Yeah, I think most engineers were new to AI research
+and benchmarking.
+I actually don't know how much reggaxing there is
+that goes on in normal benchmarks.
+It's just like this ugly list of like 100 different,
+you know, matches for some criteria that you're looking for.
+- Yeah.
+(laughs)
+- No, it's very cool.
+I think it's an example of like real world engineering.
+- Yeah.
+- Do you have a tooling that you're proud of
+that you've developed for yourself?
+Is it just a test script?
+- Or is it? (laughs)
+- Yeah, I think it's a bit more,
+I guess the term that has come up is a vibe coding.
+- Okay.
+- We have a vibe coding, no, sorry,
+that's actually something else in this case,
+but no, no, yes, vibe evals.
+It was the term that in one of the talks actually on,
+I think it might have been the first,
+the first day at the conference,
+someone brought that up.
+- Okay. (laughs)
+- Yeah.
+- Because yeah, a lot of the talks were about evals, right?
+Which is so important.
+And yeah, I think for us it's a bit more vibe, evals.
+You know, that's also part of, you know, being a startup,
+we can take risks, like, we can take the cost of maybe
+sometimes it failing a little bit or being a little bit off,
+and our users know that,
+and they appreciate that in return, like,
+removing fast and iterating and building,
+building and raising things.
+But, you know, a Spotify or something like that,
+half of our features will probably be in a six month review
+through legal, or I don't know what,
+before they could sort of help.
+- Let's just say Spotify is not very good at podcasting.
+I have a documented dislike for their podcast features.
+Just overall really, really well integrated.
+Any other, like, sort of LLM focused engineering challenges
+or problems that you want to highlight?
+- I think it's not unique to us,
+but it goes again in the direction of
+handling the uncertainty of LLMs.
+So, for example, last year, at the end of the year,
+we did sort of a snipped wrapped,
+and one of the things, we thought it would be fun
+to just do something with an LLM
+and something with the snips that a user has,
+and three, let's say, unique LLM features
+where that we assigned a personality to you
+based on the snips that you have.
+I mean, it was just all, like,
+is a bit of a fun, playful way.
+- I'm gonna look at mine.
+I forgot mine already.
+- Yeah, I don't know whether it's actually still in the--
+- Yeah, we all took screenshots of it.
+- Ah, we posted it in the Discord.
+- And the second one was we had a learning scorecard
+where we identified the topics that you snipped on the most,
+and you got, like, a little score for that,
+and the third one was a quote that stood out.
+And the quote is actually a very good example
+where we would run that for a user,
+and most of the time, it was an interesting quote,
+but every now and then, it was, like,
+a super boring quote that you think,
+like, why did you select that?
+Like, come on.
+For there, the solution was actually just to say,
+hey, give me five candidates,
+so it extracted five quotes as a candidate,
+and then we piped it into a different model as a judge,
+LLM as a judge, and there we used a much better model.
+- Okay.
+- Because with the initial model, again,
+as I mentioned also earlier,
+we do have to look at the costs,
+because we have so much text that goes into it,
+so there we use a bit more cheaper model,
+but then the judge can be, like, a really good model
+to then just choose one out of five.
+- Okay.
+- This is a practical example.
+- I can't find it.
+Bad search and discord.
+So you do recommend having a much smarter model as a judge.
+- Yeah, yeah.
+- And that works for you.
+- Yeah, yeah.
+- Interesting.
+I think this year I'm very interested in LLM as a judge
+being more developed as a concept.
+I think for things like, you know, snipped wraps,
+like it's fine, like, you know, it's entertaining,
+there's no right answer.
+- I mean, we also have it,
+we also use the same concept for our books feature,
+where we identify the mentioned books.
+- Yeah.
+- Because there it's the same thing,
+like 90% of the time it works perfectly out of the box,
+one shot, and every now and then it just starts identifying
+books that were not really mentioned or that are not books
+or made, yeah, starting to make up books.
+And they are basically, we have the same thing
+of like another LLM challenging it.
+Yeah, and actually with the speakers we do the same,
+now that I think about it.
+- Yeah.
+- So I think it's a great technique.
+- Interesting.
+You run a lot of calls.
+- Yeah. (laughs)
+Okay, you know, you mentioned costs,
+you move from self-hosting your lot of models
+to the, you know, big live models,
+OpenAI and Google.
+No topic.
+No, we love Claude.
+Like in my opinion, Claude is the best one
+when it comes to the way it formulates things.
+- The personality.
+- Yeah, the personality.
+- Okay.
+- I actually really love it.
+But yeah, the cost is still high.
+- So you cannot, you tried Haikou,
+but you're like, you have to have Sonnet.
+- Like basically we, like with Haikou,
+we haven't experimented too much.
+We obviously work a lot with 3.5, Sonnet.
+Also, you know. - For coding.
+- Yeah, for coding, like incursor.
+Just in general, also brainstorming.
+We use it a lot.
+I think it's a great brainstorm partner.
+But yeah, with a lot of things that we've done done,
+we opted for different models.
+- What I'm trying to drive at is,
+how much cheaper can you get
+if you go from closed models to open models?
+And maybe it's like zero percent cheaper.
+Maybe it's five percent cheaper.
+Or maybe it's like 50 percent cheaper.
+Do you have a sense?
+- It's very difficult to judge that.
+I don't really have a sense,
+but I can give you a couple of thoughts
+that have gone through our minds over the time.
+Because obviously we do realize like,
+given that we have a couple of tasks
+where there's just so many tokens going in.
+And at some point, it will make sense
+to offload some of that to an open source model.
+But going back to like real startup, right?
+Like we're not an AI lab or whatever.
+Like for us, actually the most important thing
+is to iterate fast,
+because we need to learn from our users,
+improve that.
+And yeah, just this velocity of these iterations.
+And for that, the closed models hosted by OpenAI,
+Google and topic, they're just unbeatable.
+Because it's just an API call.
+And so you don't need to worry about
+so much complexity behind that.
+So this is, I would say, the biggest reason
+why we're not doing more in this space.
+But there are other thoughts also for the future.
+Like I see two different,
+like we basically have two different usage patterns of LLMs,
+where one is this pre-processing of a podcast episode,
+like this initial processing,
+like the transcription, speaker data realization,
+chapterization.
+We do that once.
+And this usage pattern, it's quite predictable,
+because we know how many podcasts get released when...
+So we can sort of have a certain capacity
+and we're running that 24/7.
+It's one big queue running 24/7.
+What's the queue, job runner?
+Is it Django, it's just like the Python one?
+- No, that's just our own, like we are on database
+and the backend talking to the database,
+picking up jobs, finding it back.
+- I'm just curious in the orchestration and queues.
+- I mean, we of course have a lot of other orchestration
+where we use the Google Pub/Sub thing.
+But okay, so we have this usage pattern
+of like very predictable usage.
+And we can max out the usage.
+And then there's this other pattern
+where it's, for example, who's snippet,
+where it's like a user, it's a user action
+that triggers an LLM call.
+And it has to be real-time.
+And there can be moments where it's buying some usage
+and there can be moments where it's very little usage.
+For that, that's basically where these LLM
+AI calls are just perfect,
+because you don't need to worry about scaling this up,
+scaling this down, handling issues.
+- Serverless versus Server 4.
+- Yeah, exactly.
+Like I see them a bit, like I see OpenAI
+and all of these other providers.
+I see them a bit as the Amazon, sorry, AWS of AI.
+So it's a bit similar how like back before AWS,
+you would have to have your servers and buy new servers
+or get rid of servers.
+And then with AWS, it just became so much easier
+to just ram stuff up and down.
+And this is like the taking it even to the next level for AI.
+- Yeah, I am a big believer in this.
+Basically, it's intelligence on demand.
+We're probably not using it enough in our daily lives
+to do things.
+Actually, we should be able to spin up 100 things at once
+and go through things and then stop.
+And I feel like we're still trying to figure out
+how to use LMs in our lives effectively.
+- Yeah, yeah, 100%.
+I think that goes back to the whole,
+like that's for me where the big opportunity is
+for if you want to do a startup.
+It's not about, but you can let the big labs handle
+the challenge of more intelligence.
+- Yeah.
+- But it's the--
+- Existing intelligence, how do you integrate?
+- Yeah, how do you actually incorporate it
+into your life?
+- It's AI engineering.
+(laughs)
+Okay, cool, cool, cool.
+One other thing I wanted to touch on
+was multi-modality in frontier models.
+Door cache had an interesting application
+on Gemini recently where he just fed raw audio in
+and got diarized transcription out or timestamps out.
+And I think that will come.
+So basically what we're saying here is
+another wave of transformers eating things
+because right now models are pretty much
+single modality things.
+You have whisper, you have a pipeline, everything.
+- No, no, no, no.
+We only feel like the raw files.
+Do you think that will be realistic for you?
+- I 100% agree.
+- Okay.
+- Basically everything that we talked about earlier
+with like the speaker diaries, the heuristics
+and everything, I completely agree.
+Like in the future, that would just be put everything
+into a big multi-modal LLM.
+- Okay.
+- And it will output everything that you want.
+- Yeah.
+- So I've also experimented with that like just--
+- With Gemini, too?
+- With Gemini, too, when I flash.
+- Yeah, yeah.
+- Just for fun.
+Because the big difference right now
+is still like the cost difference
+of doing speaker diarization this way
+or doing transcription this way
+is a huge difference to the pipeline that we've built up.
+- Huh, okay.
+I need to figure out what that cost is
+because in my mind, too flash is so cheap.
+- Yeah.
+- But maybe not cheap enough for you.
+- No, I mean, if you compare it to yeah,
+whisper and speaker diarization,
+I'm especially self-hosting it and--
+- Yeah, yeah, yeah.
+- But we will get there, right?
+Like this is just a question of time.
+And at some point, as soon as that happens,
+I will be the first one to switch.
+- Yeah, awesome.
+Anything else that you're sort of eyeing on the horizon
+is like, we are thinking about this feature,
+we're thinking about incorporating
+this new functionality of AI into our app.
+- Yeah.
+I mean, there's so many areas that we're thinking about.
+Like our challenge is a bit more--
+- Choosing.
+- Yeah, choosing.
+So I mean, I think for me,
+like looking into like the next couple of years,
+they have the big areas that interest us a lot,
+basically four areas.
+Like one is content.
+Right now, it's podcasts.
+I mean, you did mention, I think you mentioned,
+like you can also upload audio books and YouTube videos.
+- YouTube, I actually use the YouTube one a fair amount.
+- But in the future, we wanna also have audio books
+natively in the app.
+And we want to enable AI-generated content.
+Like just think of take deep research
+and notebook, LM, podcast generation,
+like put these together.
+That should be, that should be in our app.
+The second area is discovery, I think in general--
+- Yeah, I noticed that you don't have,
+so you have download counts and most SNPs, right?
+Something like that.
+Yeah.
+- Yeah, on the discovery side,
+we wanna do much, much more.
+I think in general, discovery as a paradigm in all apps
+is we'll undergo a change.
+Thanks to AI.
+You know, there has been a lot of talk.
+Before Elon bought Twitter,
+there was a lot of talk about
+bring your own algorithm to Twitter.
+And that was Jack Dorsey's big thing
+or like he talked a lot about.
+- Yeah.
+- And I actually think this is coming,
+but with a bit of a twist.
+So I think what actually AI will enable
+is not that you bring your own algorithm,
+but you will be able to talk.
+You will be able to communicate with the algorithm.
+So you can just tell the algorithm,
+like, "Hey, you keep showing me cat videos."
+And I know I freaking love them.
+And that's why you keep showing that to me.
+But please, for the next two hours,
+I really want to like get more into AI stuff.
+Do not show me cat videos.
+And then it will just adapt.
+And of course, the question is,
+you know, like big platforms like,
+I don't know, let's say TikTok,
+they do not have the incentive to offer that.
+- Exactly, that's what I was gonna say.
+But we actually, like, our, we are driven by helping you learn,
+get the most, like, achieve your goals.
+And so for us, it's actually very much our incentive,
+like, "Hey, no, you should be able to guide it."
+Yeah, so that was a long way of saying
+that I think there will happen a lot in recommendation.
+- Order by.
+(both laughing)
+- You're most popular.
+- Yeah, yeah, I think collaborative filtering
+will be the first step, right?
+For XS and then some LLM fancy stuff.
+- Yeah, maybe I could go back to the question
+that you had before.
+So the other, like, these were the first two areas,
+like the other two are voice, voices and interfaces
+and voice AI.
+- Well, how is this gonna exist?
+- Yeah, so maybe I can tell you a bit first,
+like, why I find it so interesting for us.
+- Yeah.
+- Because voice as an interface, like historically,
+there has been so much talk about it
+and it always felt flat.
+The reason why I'm excited about it,
+this time around is with any consumer app,
+I like to ask myself, what is the moment in my life?
+What is the trigger in my life
+that gets me to open this app and start using it?
+So for example, I don't know, take Airbnb.
+It's, the trigger is like, "Ah, you want to travel?"
+And then you do that.
+And then you open up the app.
+Apps that do not have this already existing natural trigger
+in your life.
+It's very difficult for a consumer app
+to then get the user to open up.
+- You need a hook, yeah.
+- There's basically only one app,
+one super successful app that has been able to do that
+without this natural trigger and that is Duolingo.
+So Duolingo, like everyone wants to learn a language,
+but you don't have this natural moment during your day
+where it's like, "Ah, now I need to open up this app."
+- We have the notifications.
+- Exactly, our means.
+- Exactly, so they, I mean, they gamified
+and set out a bit and super successful, super beautiful.
+They are the gods in this giving up.
+But the much easier is actually,
+no, there is already this trigger
+and then you don't have to do all of the streaks
+and leaderboards and everything.
+That's a bit of a context.
+Now, if you look what we are doing
+and our goal of getting people to really maximize
+what they get out of their listening,
+we're interested in, there are a couple of features
+where we know we can sort of 10X the value
+that people get out of a podcast.
+- Okay.
+- But we need them to do something for them.
+There is friction involved
+because it's all about learning, right?
+It's about thinking for yourself.
+Like that's, those are the moments
+when you actually start, yeah, really 10Xing the value
+that you got out of a podcast instead of just consuming it.
+- Apply, apply the knowledge, yeah, okay.
+- Yeah, basically being forced to think about like,
+what was actually the main takeaway for you from this episode?
+- Okay.
+- There's something that I like doing myself
+for every episode that I listen to.
+I try to boil it down to,
+like, try to decide one single takeaway.
+- Yeah.
+- Even though there might have been 10 amazing things.
+- You pick one.
+- One, most important one.
+- Yeah.
+- And this is an active process
+that is like a forcing function in your brain
+to challenge all of the insights
+and really come up with the one thing
+that is applicable to you and your life
+and what you might want to do with it.
+So it also helps you to turn it into actions.
+This is basically a feature that we're interested in,
+but you have to get the user to use that, right?
+So when do you get the user to use that?
+If this is all text-based,
+then we're basically playing the same game as Duolingo,
+where at some point you're going to get a notification
+from Snip and be like, hey, Swix, come on,
+you know you should do this.
+Maybe there's a blue L, (laughs)
+but if you have voice,
+you can basically hook into the existing habits
+that the user already has.
+So you already have this habit
+that you listen to a podcast.
+You're already doing that.
+Once an episode ends,
+instead of just jumping into the next episode,
+you can actually have your AI companion come on
+and you can have a quick conversation.
+You can go through these things.
+And how that looks like in detail,
+that is still, we need to figure that out.
+But just this paradigm of you're staying in the flow.
+This also relates to what you were saying,
+like AI that is invisible.
+You're staying in the flow what you're already doing,
+but now we can insert a completely new experience
+in there that helps you get the most out of real estate.
+- Yeah.
+I think your framing of this is very powerful,
+because I think this is where you are a products person
+more than an engineer.
+Because an engineer would just be like,
+"Oh, it's just chat with your podcast."
+It's like chat with PDF, chat with podcasts.
+Okay, cool.
+But you're framing it in the different lights
+that actually makes sense to me now,
+as opposed to previously,
+I don't chat with my podcast.
+Like, why?
+I just listen to the podcast, right?
+But for you, it's more about retention and learning
+and all that.
+And because you're very serious about it,
+it's why you started a company.
+So you're focused on that.
+Whereas, yeah, I'm still me, like I will admit,
+I'm still stuck in that consume, consume, consume mentality.
+And I know it's not good, but this is, you know, my default.
+Which is why I was a little bit lost
+when you were saying all the things about Duolingo,
+and you're saying the things about the trigger.
+This is my trigger for listening to the podcast is,
+you know, I'm by myself.
+That's my trigger.
+But you're saying the trigger is not
+about listening to the podcast.
+The trigger is remembering and retaining
+and processing the podcast I just listened to.
+So, no, so what I meant,
+like you already have this trigger
+that gets you to start listening to a podcast.
+Yes.
+Like this you already have.
+Yes.
+And so do, I don't know.
+Millions of people.
+Yeah.
+So there are more than half a billion monthly active
+podcast listeners.
+OK.
+So you already have this trigger
+that gets you to start listening.
+But you do not have this trigger.
+As you just said yourself,
+basically, you do not have this trigger
+that gets you to regularly...
+Process.
+Process this information, right?
+And voice basically for me is the ability
+to hook into your existing trigger.
+With the trigger that I was talking about
+is basically your podcast ends
+and you're just still listening.
+So we just continue and we can now spend,
+you know, this can be two minutes.
+Like I'm not saying now this is like a six-minute process.
+I think like two minutes, three minutes
+that can just come on completely naturally.
+And if we manage to do that
+and you start noticing as a user,
+like freaking hell.
+Like I'm just now spending three minutes
+with this AI companion.
+But like...
+Your retention is more.
+Taking this much AI and it's not...
+And like retention is one thing,
+but you like...
+You start to take what we've learned
+and apply it to what's important to you,
+like you're thinking.
+Yeah.
+If we get you to notice that feeling,
+then, yeah, then reform.
+Yeah, I would say like a lot of people rely on unkey notes,
+like flashcards and all that to do that.
+But making the notes is also a chore.
+And I think this could be very, very interesting.
+Now, I think that I'm just noticing
+that it's kind of like a different usage mode.
+Like you already talked about this,
+you know, the name of SNPs.
+It's very SNP centric.
+And actually originally also resisted adopting SNPs
+because of that.
+But now you're like, you know,
+you observe that people are listening
+to long-form episodes and you're talking at the end.
+Like the ideal implementation of this is
+I brought through a bunch of SNPs
+of the things that I've subscribed to.
+I listened to the SNPs, I talked with it,
+and then maybe it double clicks on the podcast
+and it goes and finds other timestamps
+that are relevant to the thing that I want to talk about.
+Just, I was just thinking about that.
+I mean, I don't know if that's interesting.
+I think these are all areas that we should explore.
+Yeah.
+Where we're still quite open
+about how this will look like in detail.
+What are your thoughts on voice cloning?
+Everyone wants to continue.
+I have had my voice clones
+and people have talked to me, the yeah version of me.
+Is that too creepy?
+I don't think it's too creepy in the future.
+(laughing)
+Okay.
+With a lot of these things,
+you know, society is going through a change.
+And things seem quite weird now
+that in the future will seem normal.
+I think already voice cloning has become much more normalized.
+I remember, I was at the,
+I think it was more NT-17,
+NIP's conference, right back, my name.
+San Diego?
+I know, L.A.
+L.A.
+There was a four-writer one.
+Yeah.
+Yeah, four-writer, yeah.
+So everyone says that was peak NIP's.
+(laughing)
+Yeah.
+I remember there was this talk or workshop
+by Laya Bird.
+They actually got acquired by a D-script later.
+They were doing voice tour.
+And they were showing off their tech
+and there was this huge discussion later on,
+like they're all of the moral implications
+and ethical implications.
+And it really felt like this would never be accepted
+by society.
+Mm-hmm.
+And you look now, you have 11 maps
+and just anyone can just clone their voice
+and like no one really talks about it as like,
+"Oh my God, the world is going to end."
+Yeah.
+In society, we'll get used to that.
+In our case, I think there are some interesting applications
+where we'd also be super interested
+in working together with creators, like podcast creators,
+to play a bit around with this concept.
+I think that would be super cool
+if someone can, you know, comment or snip,
+go to the latent space podcast
+and start chatting with AIs weeks.
+Yeah.
+No, I think we'll be there.
+We want to, obviously, I think as an AI podcast,
+we should be first consumers of these things.
+Yeah.
+And then one observation I've made about podcasting,
+this is the general state of the market.
+And you can ask me your questions, you know,
+things you want to ask about podcasters.
+We are focusing a lot more on YouTube this year.
+YouTube is the best podcasting platform.
+It is not MP3s, it is not Apple Podcast,
+it is not Spotify, it's YouTube.
+And it's just the social layer of recommendations
+and the existing habit that people have of logging
+onto YouTube and getting that.
+That's my observation, you can riff on that.
+The only thing I would just say is like,
+when you were listing your list of priorities,
+you said all your books first over YouTube
+and I would suggest if I were you.
+Yeah, like as in YouTube, video, video podcasts,
+I mean, it's obvious, they have video podcasts
+I hear to stay, I...
+Not just here to stay, bigger.
+Yeah.
+What I want to do with SNPs
+is obviously also add video to the platform.
+Oh yeah?
+The way I see video is, I do believe it's,
+I like this concept of backgroundable video.
+I didn't come up with this concept,
+was actually good stuff, pseudostrome.
+The CPU is Spotify.
+Exactly, exactly.
+When I speak with people, it remains true
+that they listen to podcasts
+when they do something else at the same time.
+Like this is like 90% of their consumption.
+Also if they listen to on YouTube.
+But every now and then, it's nice to have the video.
+It's nice if you're, for example, just watching a clip.
+It's nice if they sometimes mention something,
+like they show some slides or they show something
+where you need to have the visual with it.
+It helps you connect much more with your host
+as a listener.
+But the biggest benefit I see with video is discovery.
+I think that is also why YouTube has become
+the biggest podcast player out there
+because they have the discovery.
+And discovery in video is just so much easier
+and so much better and so much more engaging.
+So this is the area where I'm most interested
+about when it comes to video and SNPs
+that we can provide a much better, much more engaging,
+a much more fun discovery experience.
+- For consumers?
+- For consumers.
+- Okay.
+I think that you almost have like three different audiences.
+The vast majority of people for you
+is the people listening to podcasts, right, of course.
+Then there's a second layer of people who create SNPs,
+who add extra data, annotation, value to your platform.
+By the way, we use the SNP count as a proxy for popularity.
+Because we have download counts,
+but for example, platforms like Spotify rehost our MP3 file,
+so we don't get any download count for Spotify.
+SNP count is active, like I opt in to listen to you
+and I shared this, those are really, really good metrics.
+But the third audience that you haven't really touched
+is the podcast creators like myself.
+And for me, discovery from that point of view,
+not from your point of view.
+Discovery for me is like, I want to be discovered
+and I think YouTube is still there.
+Twitter obviously for me, Substack, Hacker News,
+I try to, I really try very hard to rank on Hacker News.
+I think when TikTok took this very seriously,
+they prioritized the creators of the content.
+And for you, the creator of the content was the SNPs,
+but there may be a world for you in which you prioritize
+the creators of the podcast.
+- Yeah, interesting observation.
+What are some of your ideas or thoughts?
+You have some specific--
+- Riverside is the closest that has come to it.
+Descript is number two.
+Descript bought a Riverside competitor
+and as far as I can tell, it's not been very successful.
+Descript just like has a very, very good niche,
+very, very good editing angle
+and then just hasn't done anything interesting since then.
+Although Underlord is good, it's not great.
+Like your chapterization is better than Descripts.
+Again, like they should be able to be you, they're not.
+And Riverside is good also, very, very good,
+very, very, very good.
+Like so we actually recently started a second series
+of podcasts within LaneSpace that is YouTube only,
+'cause you only find it on YouTube.
+And it's also shorter.
+So like this is like a one and a half hour, two hour thing.
+It's a remote only 30 minutes, chop chop,
+send it on to Riverside.
+Riverside, pretty good for that, not great.
+It doesn't do good thumbnails.
+It doesn't do, the editing is still a little bit rough.
+It has like this auto editor where like, you know,
+whoever's actively speaking, it focuses on the editor,
+on the active speaker.
+And then sometimes it goes back to like the multi-speaker view,
+that kind of stuff, people like that.
+Okay, but like the shorts are still not great, you know,
+like I still need auto, I need to need to manually download it
+and then republish it to YouTube.
+The shorts I still need to pick, they mostly suck.
+There's still a lot of rough edges there
+that ideally me as a creator, like, you know what I want,
+you definitely know what I want.
+I sit down, record, press the button, done.
+We're still not there.
+And I think you guys could do it.
+- Okay, so if I can translate that for you,
+it's really about the simplifying the creation process
+of the podcast, yeah.
+- And I'll tell you what, this will increase the quality
+because the reason that most podcasts
+or YouTube videos are shit, is they are made by people
+who don't have life experience,
+who are not that important in the world,
+they're not doing important jobs.
+And so what you want to actually enable is CEOs
+to each of them make their own podcasts, who are busy.
+They're not gonna, you know, sit there
+and figure out Riverside.
+There are a lot of the reason that people likely in space
+is it takes an idiot like me who could be doing
+a lot more with my life, making a lot more money,
+having a real job somewhere else.
+I just choose to do this because I like it.
+But otherwise, they will never get access to me
+and the access to the people that I have access to.
+- So, that's my pitch.
+(laughing)
+- Cool.
+- Anything else that you normally wanna talk
+to the podcasters about?
+- I think we've covered everything.
+I guess like last messages, you know, go try out snips.
+It's a freemem version, so you can use
+and try out everything for free.
+Also, I'll be to provide you with a link
+that you can add to the show notes.
+Try out the premium version also for free for months.
+If people wanna do that, yeah, give it a shot.
+- I would say, yeah, thanks for coming on.
+I would say that after you demoed me,
+I did not convert for another four to six months
+because I found it very challenging to switch over.
+And I think that's the main thing.
+Like you basically had, you have import OPML, right?
+But there's no way to import like all the existing,
+like half listened to episodes or like my rankings or whatever.
+And for that, for listeners who are,
+I have a blog post where I talked about my switch,
+just treated as a chance to clean house.
+(laughing)
+- That was a good point, yeah.
+- Any things and, you know, just re-focus your--
+- First start, 2025 first start.
+(laughing)
+- Yeah, great.
+Well, thank you for working on SNF.
+Thank you for coming on.
+You know, we usually spend a lot of time talking to
+like big companies, like venture startups, B2B SaaS,
+you know, that kind of stuff.
+But I think your journey is like, you know,
+it's a small team building a B2C consumer app.
+It's the kind of stuff that we like to also feature
+because a lot of people want to build what you're doing.
+And they don't see role models that are successful,
+that are confidence, they're like having success
+in this market, which is very challenging.
+So yeah, thanks for sharing some of your thoughts.
+- Thanks, yeah, thanks for having me.
+And thank you for creating an amazing podcast
+and an amazing conference as well.
+- Thank you.
+(upbeat music)
+(upbeat music)
+(upbeat music)
+

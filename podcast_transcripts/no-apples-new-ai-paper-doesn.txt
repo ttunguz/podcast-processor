@@ -1,0 +1,460 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: No, Apple's New AI Paper Doesn…
+Host: Unknown 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/no-apples-new-ai-paper-doesnt-undermine-reasoning-models/id1680633614?i=1000712332145
+--- METADATA END ---
+
+1
+Today on the AI Daily Brief, a look at Apple's non-existent AI strategy at WWDC, plus a deep dive on a very controversial paper from the Cupertino company that I think you can, in most cases, safely ignore, but which is probably still worth talking about, anyways.
+2
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+3
+All right, friends, quick announcements, as always.
+4
+First of all, thank you to today's sponsors, KPMG, Blitzy.com, Vanta, and Superintelligent.
+5
+As always, if you are looking for an ad-free version of the show, you can get it for just $3 over at patreon.com/slash AI DailyBrief.
+6
+Also, I am traveling this week, which always means that there might be a little bit of variability in the show format.
+7
+Obviously, you got an interview yesterday, and today we have a full episode dedicated to the main.
+8
+There are a bunch of important headlines, though, so we will most certainly be coming back to our normal format tomorrow.
+9
+For now, though, let's talk about WWDC and the illusion of thinking.
+10
+Welcome back to the AI Daily Brief.
+11
+And today, of course, we are talking about Apple.
+12
+First, we're going to talk about their non-existent AI at WWDC, but then we're going to spend more time on this paper that everyone is talking about, the illusion of thinking.
+13
+You can probably tell from my title how I feel about it, but that is for just a minute from now.
+14
+First of all, however, let's talk about WWDC yesterday.
+15
+Now, you might remember that last year, Apple finally came out of the gate and shared an AI strategy for the first time since the launch of ChatGPT.
+16
+It was, of course, Apple Intelligence, because Apple had to brand its own thing.
+17
+And the idea of it was, in short, to provide regular everyday users with the use cases that actually would matter to them.
+18
+AI that wasn't big and techie and burdensome, but was just useful.
+19
+The principle of it was good.
+20
+It felt just like Apple.
+21
+The problem has been in execution.
+22
+None of the solutions they were talking about were really ready.
+23
+Siri was an absolute disgrace.
+24
+And basically, Apple has pushed nothing of note on Apple intelligence, which just falls farther and farther behind.
+25
+Now, expectations were already on the floor heading into this event when it came to AI specifically, because it basically seemed like they were going to forego the topic entirely.
+26
+And indeed, that's exactly what we got.
+27
+There were no big announcements like we've seen in previous years.
+28
+AI Siri was completely absent from the conference.
+29
+There were some minor feature updates and a new image model, but nothing really compelling was unveiled.
+30
+We did, I guess, get a new numbering system for iOS models.
+31
+And we caught a graphical redesign of iOS that has just been universally maligned for being confusing and weird and not really clearly having any particular purpose.
+32
+Reports were pretty grim out on the conference floor.
+33
+Linus Ekenstam tweeted: Apple has clearly missed the mark for far too many times now.
+34
+I felt today was yet another one of these occurrences.
+35
+Sadly, Apple is trying hard to do too much.
+36
+There's too much fat.
+37
+They need to trim it and back to basics.
+38
+Apple desperately needs to reinvent itself or become the new Nokia.
+39
+During the first 40 minutes, there was nothing that made me feel wow.
+40
+Actually, there was one thing after another leaving me with way more questions than answers.
+41
+Genmoji, backgrounds in group messages, visual intelligence, Apple games, and what is up with the new unified design language?
+42
+The Glass UI is a UX nightmare.
+43
+Visual after visual in the presentation is worse than the previous.
+44
+Apple needs to go back to its roots, make a really good operating system, make really good scaffolding for others to make the apps, and stuff that lives on the device.
+45
+I'm completely underwhelmed.
+46
+Apple needs a step change to their entire existence if things are going to turn around.
+47
+Sure, I'm typing this on an Apple device because there are not a lot of options out there, but clearly this WWDC might go down as the most boring one ever.
+48
+Now, Apple Watcher Bloomberg's Mark German was a little more charitable.
+49
+He said, excellent WWDC.
+50
+Cohesive story, deep integration, and continuity across the devices.
+51
+Zero false promises, impressive new UI, and significant new productivity features on the Mac and iPad.
+52
+But the lack of any real new AI features, despite that being my expectation, is startling.
+53
+Hazeem Azar said, can it really be excellent without an AI feature?
+54
+And also, as I mentioned, clearly German is in the minority when it comes to his thoughts, for example, on the new UI.
+55
+Even investors who aren't as plugged into the tech scene are starting to see Apple's AI strategy as what it is, a crisis.
+56
+Andrew Choi, a portfolio manager at Parnassus Investments, commented, It's hard to argue that Apple's lack of standing with AI isn't an existential risk.
+57
+If it can paint a future where it's integrating and commoditizing AI, that would be compelling, because otherwise, what is going to get people to buy their next phone for a lot more money?
+58
+Still, rather than a breathtaking conference rollout, Apple is trending on AI Twitter for a very different reason.
+59
+They've just released a controversial new paper entitled The Illusion of Thinking, understanding the strengths and limitations of reasoning models via the lens of problem complexity.
+60
+AI threader Ruben Hasid writes, Apple just proved AI reasoning models like Claude, DeepSeek R1, and 03 Mini don't actually reason at all.
+61
+They just memorize patterns really well.
+62
+Now, Rubin actually went on to provide a lengthy explanation of the paper, but judging the way the likes fell off after these 13.4 million views, very few people made it past the first post.
+63
+Now, for many who follow AI development, the notion that Apple would release an authoritative paper on the topic was perhaps somewhat ironic.
+64
+Henry Arithmaquine wrote, be Apple, richest company in the world, every advantage imaginable.
+65
+Go all in on AI, make countless promises.
+66
+Get immediately lapped by anyone, two years into the race, nothing to show for it, give up, write a paper about how it's all fake and doesn't matter anyway.
+67
+Pliny the Liberator wrote, I'm not reading a single AI research paper coming out of that giant stale donut in Cupertino until Siri can do a little bit more than create calendar events on the fourth try.
+68
+If I were CEO of Apple and someone from my team put out a paper focused solely on documenting the limitations of current models, I'd fire everyone involved on the spot.
+69
+Andrew White of Future House SF noted that this isn't even the first paper from Apple on the limitations to AI.
+70
+He writes, Apple's AI researchers have embraced a kind of anti-LLM cynic ethos, publishing multiple papers trying to argue that reasoning LLMs are somehow limited and cannot generalize.
+71
+Apple also has the worst AI products.
+72
+No idea what their quote-unquote strategy is here.
+73
+Now, on the flip side, the paper was absolutely jumped on by AI skeptics who believe the technology won't get better than it currently is.
+74
+Gary Marcus, who when it comes to AI is basically a real-life version of the well-actually meme, published his own lengthy screed on the paper, calling it a knockout blow for LLMs.
+75
+He wrote, Anyone who thinks LLMs are a direct route to the sort of AGI that could fundamentally transform society for the good is kidding themselves.
+76
+This does not mean that the field of neural networks is dead or that deep learning is dead.
+77
+LLMs are just one form of deep learning, and maybe others, especially those that play nicer with symbols, will eventually thrive.
+78
+Time will tell, but this particular approach has limits that are clearer by the day.
+79
+Now, Marcus has been declaring that AI development has hit a wall every few months since at least March of 2022, back when it was still referred to as deep learning.
+80
+So that is important context that you can do what you will with.
+81
+Remarking on the state of the discourse, AI safety discussor extraordinaire Kat Woods wrote, I hate it when people just read the titles of papers and think they understand the results.
+82
+The illusion of thinking paper does not say LLMs don't reason.
+83
+It says currently large reasoning models do reason, just not with 100% accuracy and not on very hard problems.
+84
+This would be like saying human reasoning falls apart when placed in tribal situations, therefore humans don't reason.
+85
+It even says so in the abstract.
+86
+People are just getting distracted by the clever title.
+87
+So with that in mind, let's talk about what the research actually set out to demonstrate.
+88
+The study was designed to test the limits of a reasoning model by asking it to solve a number of puzzles, specifically a Tower of Hanoi puzzle.
+89
+This puzzle features a number of differently sized disks stacked on a game board consisting of three poles.
+90
+The goal is to transfer all of the disks without stacking a larger disk on a smaller disk.
+91
+The game has an algorithmic solution for any number of disks, but the number of steps increases exponentially as you add disks to the puzzle.
+92
+The paper measured the point at which the reasoning models fail to reason through the steps and observed how the models fail.
+93
+The core finding was that Claude 3.7 with Thinking Enabled could easily complete a six-disk game, struggled a little more with a seven-disk game, and had little ability to reason through the solution to a game with eight or more disks.
+94
+Similar results were found for O3 Mini High, and the results were consistent across other logic puzzles where complexity can be modulated.
+95
+The abstract for the paper stated, We found that reasoning models have limitations in exact computation.
+96
+They fail to use explicit algorithms and reason inconsistently across puzzles.
+97
+Essentially, the big takeaway was that reasoning doesn't scale beyond a certain point, even if there are resources left, with the notion being that simply getting the models to think longer won't yield better performance.
+98
+There were a lot of issues with the methodology that the internet quickly went to task unpacking.
+99
+Luzan Algabe, scaling 01, repeated the exact prompts used in the paper and found that the models were running up against token limits.
+100
+The structured output required 10 tokens for each move, and the number of moves is known for this puzzle.
+101
+Therefore, the models were running into their limits at predictable levels of complexity.
+102
+They weren't hitting the limits of reasoning.
+103
+They couldn't physically print out all of the moves while staying inside the output limits.
+104
+Now, the most interesting part of this failure was that the models actually recognized that they couldn't reason through the solution with their current limits.
+105
+Instead of starting off the reasoning process and failing when the number of disks was too large, they recognized this fact and provided instructions for how to use the solution algorithm instead.
+106
+For Claw, this behavior started at eight disks, hence the sharp drop-off in performance.
+107
+Luzan commented, all of this is just nonsense.
+108
+But no, they didn't even bother looking at the outputs.
+109
+The models literally recite the algorithm and their chains of thought in plain text and in code.
+110
+Basically, the takeaway from this analysis was that the Apple researchers weren't measuring the limits of reasoning models.
+111
+They were kind of just using a ton of extra steps to measure the engineering limits that AI labs have imposed on the models.
+112
+That's a fairly big problem when the AI research is being used to suggest that reasoning has hit a fundamental wall rather than a technical limitation.
+113
+Today's episode is brought to you by KPMG.
+114
+In today's fiercely competitive market, unlocking AI's potential could help give you a competitive edge, foster growth, and drive new value.
+115
+But here's the key: you don't need an AI strategy.
+116
+You need to embed AI into your overall business strategy to truly power it up.
+117
+KPMG can show you how to integrate AI and AI agents into your business strategy in a way that truly works and is built on trusted AI principles and platforms.
+118
+Check out Real Stories from KPMG to hear how AI is driving success with its clients at www.kpmg.us/slash AI.
+119
+Again, that's www.kpmg.us slash AI.
+120
+This episode is brought to you by Blitzy.
+121
+Now, I talk to a lot of technical and business leaders who are eager to implement cutting-edge AI, but instead of building competitive moats, their best engineers are stuck modernizing ancient code bases or updating frameworks just to keep the lights on.
+122
+These projects, like migrating Java 17 to Java 21, often mean staffing a team for a year or more.
+123
+And sure, copilots help, but we all know they hit context limits fast, especially on large legacy systems.
+124
+Blitzy flips the script.
+125
+Instead of engineers doing 80% of the work, Blitzy's autonomous platform handles the heavy lifting, processing millions of lines of code and making 80% of the required changes automatically.
+126
+One major financial firm used Blitzy to modernize a 20 million line Java code base in just three and a half months, cutting 30,000 engineering hours and accelerating their entire roadmap.
+127
+Email jack at blitzy.com with modernize in the subject line for prioritized onboarding.
+128
+Visit blitzy.com today before your competitors do.
+129
+Today's episode is brought to you by Vanta.
+130
+In today's business landscape, businesses can't just claim security, they have to prove it.
+131
+Achieving compliance with a framework like SOC2, ISO 27001, HIPAA, GDPR, and more is how businesses can demonstrate strong security practices.
+132
+The problem is that navigating security and compliance is time-consuming and complicated.
+133
+It can take months of work and use up valuable time and resources.
+134
+Vanta makes it easy and faster by automating compliance across 35 plus frameworks.
+135
+It gets you audit ready in weeks instead of months and saves you up to 85% of associated costs.
+136
+In fact, a recent IDC white paper found that Vanta customers achieve $535,000 per year in benefits, and the platform pays for itself in just three months.
+137
+The proof is in the numbers.
+138
+More than 10,000 global companies trust Vanta.
+139
+For a limited time, listeners get $1,000 off at Vanta.com slash NLW.
+140
+That's vanta.com/slash NLW for $1,000 off.
+141
+Today's episode is brought to you by Superintelligence, specifically agent readiness audits.
+142
+Everyone is trying to figure out what agent use cases are going to be most impactful for their business, and the agent readiness audit is the fastest and best way to do that.
+143
+We use voice agents to interview your leadership and team and process all of that information to provide an agent readiness score, a set of insights around that score, and a set of highly actionable recommendations on both organizational gaps and high-value agent use cases that you should pursue.
+144
+Once you've figured out the right use cases, you can use our marketplace to find the right vendors and partners.
+145
+And what it all adds up to is a faster, better agent strategy.
+146
+Check it out at bsuper.ai or email agents at bsuper.ai to learn more.
+147
+Now, one of the big criticisms from Gary Marcus was that the models didn't choose to access readily available solutions algorithms on the internet and write Python code to solve the problem.
+148
+Careful reading of the paper, however, uncovers that the researchers had actually prevented the models from coding, which is fine if we're strictly talking about the limitations of scaling up reasoning.
+149
+But if we're talking about model capabilities in general and specifically model capabilities in practice, then access to coding tools, which is something they have access to, should be a part of the discussion.
+150
+Matthew Berman commented that access to tools really changes the math, writing, The biggest weakness of Apple's paper showing large reasoning models might not actually be reasoning all that well is that they do not include the ability for models to write code to solve problems.
+151
+State-of-the-art models failed the Tower of Hanoi puzzle at a complexity threshold of greater than eight disks when using natural language alone to solve it.
+152
+However, ask it to write code to solve it, and it flawlessly does up to seemingly unlimited complexity.
+153
+Kevin Bryan, a professor of strategic management at the University of Toronto, remarked that this paper is really measuring self-imposed limits to reasoning rather than reasoning itself.
+154
+He wrote, We can, of course, program an LLM to spit out millions of tokens in response to good evening and use reinforcement learning to iterate creatively on all sorts of possible interpretations, then collate, then brainstorm more, etc.
+155
+When the models don't do that, it's not because they can't.
+156
+It's because we use post-training to stop them from doing something so crazy.
+157
+This does mean that in some cases it should think longer.
+158
+We know from things like code with Claude and internal benchmarks that performance strictly increases as we increase in tokens used for inference.
+159
+On circa every problem domain tried.
+160
+But LLM companies can do this.
+161
+You can't because the model you have access to tries not to overthink.
+162
+Now, as one case in point, you might remember when OpenAI tested O3 with essentially limitless compute and found a model that effectively beats the Arc AGI test.
+163
+However, these runs cost millions of dollars, so the model that was finally released was constrained to a more reasonable amount of reasoning.
+164
+TLDR on all of this is the paper is measuring engineering and cost constraints rather than detecting a scaling wall.
+165
+Models predictably fail when they know they can't churn out enough tokens to present a full solution.
+166
+This is actually the desired behavior.
+167
+You don't want a reasoning model to spend hundreds of dollars failing to reach a full solution.
+168
+The failure case is also very telling.
+169
+Rather than spinning their wheels on pointless reasoning that won't reach a conclusion, the models instead describe an algorithmic solution.
+170
+That is categorically different to just giving up on a more complex problem as some of the commentary suggested was happening.
+171
+TLDR, the paper, ultimately says absolutely nothing about the fundamental limits of reasoning models.
+172
+It just runs up against resource constraints in currently deployed AI systems.
+173
+And yet, this is not even my biggest beef.
+174
+My biggest beef is who cares?
+175
+If you tell me right now that O3 isn't actually reasoning, I'm going to look over at the copious amount of work that I have done with this tool over the last month, shrug my shoulders, and then I'm going to keep on prompting O3 to go do business in ways that wasn't possible before.
+176
+This gets to a bigger divide right now, where some people are looking at AI in the context of research and the long-term pursuit of AGI, and others are just focused on capabilities in the here and now.
+177
+Broadly speaking, it's the research community on the one hand and the business community on the other.
+178
+Now, of course, these things do relate to one another.
+179
+The research community needs its place because it's going to drive the advancements that ultimately manifest as better performance.
+180
+But in the same way that I've said before that AGI is the least relevant term in all of AI for business people, this is sort of the same idea.
+181
+I don't care if my agent is an automated workflow as long as it significantly increases my human leverage and upscales my valuable AI output.
+182
+I don't care if my reasoning model is actually reasoning in air quotes as long as it can do things my non-reasoning models can't.
+183
+Josh Gans, who's a professor of management at the University of Toronto, published a long piece, basically articulating a version of what I'm saying.
+184
+After explaining that reasoning models are actually doing a ton of incredible work in enterprise and academia, he commented: they work exactly as people explained they would work and did not work in some miraculous way that the hyperconcern around them generated.
+185
+And if you worked with them, you would know all this.
+186
+Now, to the extent that you are looking for a steelman argument for why these issues actually do matter, and that we in the business side of this and the applied side of this should care about some of these questions, machine learning scientist François Cholet commented: Beyond the perhaps superficial semantic distinction between reasoning and pattern matching, there is a fundamental gap in the practical capabilities and behavior of these systems.
+187
+You don't create an invention machine by iterating on an automation machine.
+188
+The reason we care about reasoning is because of what it enables.
+189
+It's not about definitions, it's about capabilities.
+190
+You can use pattern matching to emulate specific well-known skills, but you cannot use pattern matching to produce autonomous skill acquisition in new domains.
+191
+All of that is well taken.
+192
+I just don't care, man.
+193
+And for the vast majority of you who are listening now, also doesn't matter to you.
+194
+At least not in the here and now.
+195
+Maybe it does in terms of what we get to in the future.
+196
+As Gann summed it up, I don't care whether my tool is thinking or reasoning.
+197
+I care how much it's helping, which is a very different thing.
+198
+Sure, there is an intellectual question regarding cognition, but that's far removed from the transformational impact AI can have right now.
+199
+Nathan Snell wrote: I'm surprised Apple's research paper on LRM is getting so much attention.
+200
+LRM has limited reasoning capacity.
+201
+Shocker?
+202
+It's clear if you use it, doesn't make it less valuable.
+203
+He also said what we're all thinking when he added, Also, is anyone else inherently skeptical about research put out by Apple related to AI?
+204
+They don't exactly have a great track record there.
+205
+And this is one of the, I think, sort of sad things for these researchers.
+206
+This all feels to me like it might have been a case of very bad timing.
+207
+WWDC was gearing up to announce literally squat zero about AI, and Apple researchers dropped this paper that seemed to sort of self-servingly say that AI matters less than we all think it does.
+208
+Essentially, the paper was a Rorschach test on AI.
+209
+For some reason, there is an entire sector of AI discourse in the economy that seems to be dedicated to turning Paul Krugman's internet is no more significant than a fax quote from 1998 into an entire career positioning.
+210
+Author Ewan Morrison posted: AI is hit a wall.
+211
+AI companies will try to hide this.
+212
+Hundreds of billions have been spent on the wrong path.
+213
+Kevin Roos really sums it up when he writes: There is a strain of AI skepticism that's rooted in pretending like it's still 2021 and nobody can actually use this stuff for themselves.
+214
+It's survived for longer than I would have guessed.
+215
+Look, when it comes down to it, I think it's important that researchers have great debates about all of these things.
+216
+And I think it's great from the standpoint of what I want as a person in business who uses these tools for business, which is constantly improving models.
+217
+The academic discussion and discourse that is so important is way upstream from business value, yes, but it is still part of the same stream.
+218
+And academic research should be a place where different ideas can compete and people can disagree strenuously.
+219
+I just think that when it comes to the practical day-to-day for most people using these tools, it doesn't matter a fig.
+220
+And for those who are trying to turn this into some sort of gotcha, I just don't know what they're trying to accomplish.
+221
+Signal hilariously tweets: Apple proves that this feathered aquatic robot that looks, walks, flies, and quacks like a duck may not actually be a duck.
+222
+We're no closer to having robot ducks after all.
+223
+What are we even doing here anymore?
+224
+The answer, at least for people who are listening to this probably, is building really cool stuff, doing really cool things, being really excited about what capabilities AI has, and ultimately, not caring all that much over whether you call it a duck or a feathered aquatic robot.
+225
+That's going to do it for today's AI Daily Brief.
+226
+Until next time, peace.

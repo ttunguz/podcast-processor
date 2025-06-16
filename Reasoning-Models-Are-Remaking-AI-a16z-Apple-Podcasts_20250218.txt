@@ -1,0 +1,487 @@
+Here is the analysis of the podcast transcript, including only the relevant sections:
+
+1. EPISODE CONTEXT
+- Podcast name and episode focus: A16Z AI Podcast exploring the intersection of professional services and AI agents via a conversation between A16Z partner Alex Zimmerman and Hebbia founder and CEO George Savulescu 
+- Hosts and their backgrounds/roles:
+Alex Zimmerman, Partner, Andreessen Horowitz (A16Z)
+- Guests and their roles/backgrounds:
+George Savulescu, Founder and CEO, Hebbia
+- Featured company overview:
+Hebbia - an early application of agentic workflows using reasoning models and a user interface that doesn't rely on chatting. Still in early stages but working with large financial services firms.
+
+2. KEY INSIGHTS
+- Financial services is an industry where the most important data for decision making is offline and unstructured. Putting the right information in, getting the right result, having custom processes, and transparency is critical.
+- "Nobody knows what to use AI for. People pretend to go and create all these amazing demos, but nobody knows what to do with it... It's actually no longer a technology problem. It's really a sociology and change management problem."
+This highlights that the key challenges now are figuring out the right applications and workflows for AI and driving organizational change.
+- Hebbia's goal is to build a tool/platform that AGI would choose to use, rather than trying to build the AGI itself. This means creating the best way to do structured and unstructured data processing and knowledge work tasks.
+- In 2023-2024, AI was about experimentation. In 2025, boards are now asking about the ROI and P&L impact of AI investments. The focus has shifted to measurable value creation.
+- Private investing will be transformed more than public investing by AI, because private markets lack structured data like the public markets have. AI can help build the equivalent of a Bloomberg terminal for private companies by structuring the unstructured data.
+
+3. TECHNOLOGY & PRODUCT DEVELOPMENTS  
+- Hebbia has an "infinite effective context window" that allows it to review entire libraries of documents
+- It builds a grid with every document as a row and columns representing prompts/agentic actions. This collateral acts as an "agent orchestration system" showing the AI's work in a transparent way.
+- Hebbia is leveraging "computer use" by aiming to be the tool/platform AGI would use, integrating with products like Instacart for specific tasks. It provides a universal API to orchestrate sub-agents.
+
+5. TEAM & CULTURE SIGNALS
+- Hebbia's philosophy is to design interfaces that empower humans and make them better, rather than seeking to replace humans. The focus is on software that serves humans.
+- The best deployments have both senior executives and junior staff adopting the AI tools. Change starts with early adopters doing mundane work but needs C-suite support.
+
+6. KEY METRICS & BUSINESS DETAILS
+- Common use cases include:
+1) Screening investment opportunities faster (one firm screened 137% more in the same time) 
+2) Instantaneously extracting insights across long credit agreements or expert calls, saving hundreds of hours
+- Concrete ROI examples:
+1) Saving tens/hundreds of thousands of dollars per complex deal on legal review of credit agreements
+2) AML/KYC checks that used to take 5-8 hours per customer now done instantaneously 
+3) Associates saving 4-8 hours per week benchmarking portfolio companies
+- Currently prices per seat to incentivize adoption and usage. Expects pricing to evolve to consumption/agent-based models in the future.
+
+7. NOTABLE TECHNOLOGIES  
+- Agents that can review marketing materials, screen deals, extract insights from credit agreements and expert calls
+- Goal is to build a "Bloomberg terminal for private companies" by structuring unstructured private company data
+
+8. COMPANIES MENTIONED
+No other companies were mentioned in significant detail beyond Hebbia and Andreessen Horowitz (A16Z).
+
+9. PEOPLE MENTIONED  
+George Savulescu (Founder and CEO, Hebbia): Quoted throughout discussing the vision, product and use cases for Hebbia. Has background in applied physics and neuroscience.
+
+Alex Zimmerman (Partner, Andreessen Horowitz): Interviewer probing on various aspects of Hebbia's business and vision. Provides context that A16Z is an investor.
+
+Steve Jobs: Referenced by George when discussing how AI interfaces should be "bicycles for the mind" that empower humans.
+
+# Transcript
+
+
+a lot of my peers, if they were smart and they were lucky, they were going into financial services
+jobs, they would go and become an investor. And I realized that the smartest people in the world,
+incredibly smart kids, were going and doing the stupidest tasks. So many tedious things,
+a lot of repetition, boom, boom, boom, night after night. And I saw pain. I noticed in my friends
+that they literally hated their lives. And at Stanford, maybe the only other thing that I took
+from the entrepreneurship community there was build a company where there's pain. And you know,
+my, my 22 year old brain said, well, there's a lot of pain here. And there's the most important
+technology in the world that can solve it. That's where I'm going to go and build a business before
+anyone else sketches onto it. Thanks for listening to the A16C AI podcast. Today,
+we're exploring the intersection of professional services and AI agents via conversation between
+A16C partner, Alex Zimmerman, and heavy a founder and CEO, George Savalca. Although we're very early
+on in the development of agentic workflows, heavy a can safely stake its claim as an early
+application of them, thanks to its embrace of reasoning models and a user interface that does
+away with the reliance on chatting. In this discussion, George and Alex explore the rationale
+behind some of these design decisions. They talk about building products for an AI native user base
+and dive into the industry changing benefits of AI, especially in areas like financial services,
+investing and law, where smart people spend way too much time on tedium and checking boxes.
+Oh, and George also gives his opinion on deep-seek and dishes on his favorite AI tools. All that
+and more after these disclosures. As a reminder, please note that the content here is for informational
+purposes only, should not be taken as legal, business, tax or investment advice or be used to
+evaluate any investment or security and is not directed at any investors or potential investors
+in any A16Z fund. For more details, please see hay16z.com/disclosures.
+George, it's really fun to have you here. I've enjoyed getting to know you the last couple
+of years. I'm excited for the world at large to hear more from you.
+I'm excited to be here. Amazing. Well, we're going to open with a lightning round,
+get into the heat of AI. Great.
+Let's rip it. Do you think scaling laws are going to hold?
+It's a good question. I think that there's two types of scaling laws. You have scaling
+laws for training, which is what I think you're referring to. And then more recently, people have
+started to talk about scaling laws at inference. And I think they're both effectively mathematical
+properties of the universe. I don't think they're just an experimental, observed thing.
+You just know as you add more data and you add more compute, these models get better for training
+like this. And I think that they will always hold if there's enough data. And that is the question.
+But I do think that GPD 5 will be significantly better than GPD 4. At the same time, you're starting
+to see models like kind of 01, 03, doing this like reasoning at inference, scaling at a deep
+seek as well. And this is a technique scaling at inference that was first actually pioneered at
+HEDEA. And we quickly noticed another scaling law, where if we ran more models and basically
+more compute at inference time, you could get much better results for very complex tasks.
+And I think that scaling law has already proven to kind of extend the runway of AI. And I think
+it will continue to hold as a mathematical property in itself.
+All right. So scaling laws are going to hold. We talked about deep seek briefly there.
+Is deep seek a nothing burger or is it a big deal? I am a believer that like it was more than
+nothing burger or side of things. I think China has shown time and time again that they're able to
+take technologies that are invented oftentimes in the United States and make them more efficient.
+And I think China has also shown time and time again that they're willing to obfuscate the truth
+or omit certain things when talking about certain technologies or the science behind a variety of
+different things. Regardless of the truth with deep seek, I generally also think it's really an
+American technology that's cheaper. And Americans can also make it cheaper. And it was invented here
+in the United States. And China has not shown that they can actually continue to play ball
+pushing the frontier of AI. So this is not an example. Yeah, I think the one piece on it was
+also like pushing open source in the US here and making us rethink potentially things on the
+regulatory side there. It's a good point. I think open source is important. And I think that as
+software becomes open source, it stops being a geopolitical strength of just like the closed source
+nation that has invented it. But at the same time, America, I believe is so far ahead.
+And I think that it will continue to be so far ahead. And these technologies every single year
+are so much exponentially better than the last year that we have the head start. I think that
+we'll continue to have that start. And we have the world's best scientists, researchers and minds
+thinking about this and working out. Absolutely. And then we also have the best companies building
+on the app layer who are going to benefit from these models getting cheaper and cheaper.
+100% especially if they scale it in for us. So exactly. So next one, what's your favorite AI
+tool that's not named. I think my favorite tool right now is deep research, which was launched
+yesterday or the day before yesterday. Pretty new. Very new. It has changed the amount that I use
+AI and I use AI for everything. I try to automate everything. What have you used it for? What's
+will we with searches? I was looking at microplastics impacts on children. That's like a hot topic these
+days. Deep research goes deep. It's pretty inconclusive though. It's inconclusive. Really. We can get to
+the difference between deep research and ultimately what other agents over private data will be working
+on. And I think that this level of a gentic deep research is going to be one of the most exciting
+things that I can't quite disclose now that head via has proven out and is working on over private
+information. I think deep research allows you to experience what an agent can do for the first time.
+And it uses information retrieval over the web, which is very good. But I've used it for things
+like looking at a list of names of executives I'm about to meet and understanding everything
+about them. So almost like client prep. I've used it for building a competitive strategy around how
+I should approach a variety of different things strategically with partners in our ecosystem.
+And it's not as good. Deep research has been busy for you though. It's my number one employee.
+Don't take that wrong. It's not as good as the stuff we'd create internally. But it starts
+to be more fulsome. It's more than just a single step. And that's a really important piece of the
+future of applications. Well, you keep alluding to heavy so I think it's time we get there. Let's
+rewind the clock a little bit. Sure. You're a PhD student, you're studying neuroscience,
+engineering, applied physics, all the things. And then you decide you're going to build a company
+that sells into financial services. How do we get there? At Stanford, there's a class which is
+CS330, which I think it's probably still around. But it's like an introduction to meta learning
+and multitask learning. And when I was in grad school, I was completely captivated by this class.
+The idea and the promise of meta learning and what that means is teaching machines to learn how to
+learn was to me going to be the most important technology of all time. It was just the coolest
+thing in the world. And I was in my PhD. And I think around June of 2020,
+looking at all the research, keeping track on meta learning, multitask learning, opening
+out releases a paper. And it's a GPT three, large language models, pretty important. It was very
+important. But the title of the GPT three's paper was actually large language models are
+multitask and meta learners or something along those lines. And I remember thinking like, okay,
+that would have just completely botched this entire field of research that is like encapsulating
+all of my academic interest. And I played around with it. And I remember, you know, GPT three wasn't
+chaching petite. This is actually, I think over 12 months before chaching petite was like a year
+and a half almost 18 months, I guess. And I'm playing around with it. And I'm like, you know,
+holy shit, this is way better than anything I'd ever seen. And I remember, you know, I had one
+aha moment playing around with it where it's like, okay, it's definitely a multitask learner,
+another aha moment and I was like, you know, I, it's not going to be anyone working on this
+stuff at Stanford that is going to invent the most important technology of the next century.
+And I just became obsessed with understanding how to apply it and to build what I thought would be
+the most important product of the next century. And at the same time, you know, and this is kind
+of, you know, it's like, how do you get from that to building an AI platform for knowledge
+workers for financial services? A lot of my peers were, if they were smart and they were lucky,
+they were going into financial services jobs, you know, they would go and become an investor.
+And I realized that the early, like, incredibly, the smartest people in the world,
+incredibly smart kids were going and doing the stupidest tasks.
+So many tedious things on repetition night after night.
+And I saw pain, like I noticed in my friends that they literally hated their lives.
+And at Stanford, maybe the only other thing that I took from, like the relative entrepreneurship
+community there was build a company where there's pain. And you know, my, my 22 year old brain said,
+well, there's a lot of pain here. And there's the most important technology in the world that
+can solve it. Like that's where I'm going to go and build a business before anyone else sketches
+onto it. Yeah. You were talking about GBT three came out in summer of 2020. Fast forward a bit,
+chat GBT came out in, I think, November 2022, but not specific for financial services, right?
+So as you were building your product, what made you realize heavier is going to be
+much better for financial services use cases. There's a piece of the chat GBT experience,
+which is very magical, where it's very good at doing a single task. You can have it right at
+home, or you can have a do your kids homework. And it feels like the world's going to end and
+like everything's fixed and we've reached Nirvana AGI mode. And then you try to start to ask it to
+do complex tasks, things that would require multiple steps or like be differentiated.
+And you know, the, the, the responses of is as a large language model, I can't do that. And I think
+they've now, you know, changed the way it responds. It was always a response. And if you think about
+why it was broken, and it was good for things that were maybe like fun, like creative, generative,
+and bad for things that were requiring serious work, there's accuracy. It's not even just accuracy,
+though. There's some piece of it where it's trained only on public data, and the stuff that
+matters for financial services, but also for law, for all of knowledge work, is offline
+unstructured information. And there's a piece of it where the process that is required to work
+is a little bit too complex. And if you look at chat GBT and the limitations of like,
+you give it to a bunch of investors and you ask it to draft an IC memo for a company like Hebbia,
+every single VC would get the same IC memo. More or less. Yeah. More or less. I mean,
+it's not differentiated. It doesn't have a custom process, no alpha, no alpha.
+And the idea was, hey, financial services is a place where the onus of putting the right
+information and getting the right result and having your custom process and it being transparent,
+i.e. doing knowledge work was the most important. And if this technology was fundamentally as
+transformative as it should be, a tool that would fix the lives and workflows of investors
+would actually good market far faster than anything that would just be a value add and
+more ephemeral or like single step away. Yeah. I think an important piece there that you mentioned
+is the private data. So if I'm using Hebbia, I could upload all of Andreessen Horowitz's investment
+memos. And with that information, you could give me a very different result than if you were just
+searching on the web. That's right. Yeah. So you could put every single former IC memo in,
+structure that create a library over Hebbia has got like an infinite effective context window.
+And then when you look at a new opportunity, you could filter to a variety of other opportunities
+that were similar and actually begin to piece out how it's different, how it's similar,
+and all the pieces that would constitute an Andreessen Horowitz investment memo,
+you could start to recreate. And then with Hebbia, I think if you were to compare it to
+chat GPT, as you just did, but many of the most commonly used AI applications today,
+perplexity, cloud, maybe deep seek recently, they're all chat interfaces.
+You've taken a different approach, maybe share a little bit more about what you've done on the
+interface side. I think it's the biggest change in AI interfaces since the launch of chat GPT,
+where everything became a chat bot and everyone copied that. But Hebbia allows AI to do work and
+show its work. And to do that, we let it really put the sources first, where it builds a grid out,
+and that grid has every single document as a row, and every single column as a prompt,
+or some sort of agentic action. And so you could imagine that as an AI is going over data or
+pulling numbers or pulling different quotes from documents, when you're asking a bunch of
+different questions, it actually starts to build this piece of collateral that shows its work.
+And that collateral is effectively an agent orchestration system, an ability for humans
+to manage agents, every single row, and every cell is an agent. And it shows the complexity
+of what's happening with repeated tasks by an AI agent. They're very simple and elegant and
+human first way. And it's almost like the mind of the AI is opened up. And you can see how it's
+thinking. You could start to change the cells. It's almost like a sensitivity table. And so
+you're not only kind of telling the AI what to do and seeing its output, but you're working alongside
+it or co-working and collaborating with it. And right now, the limiting factor for much of AI,
+especially what we do in financial services, legal knowledge work more broadly, is information
+retrieval. And so it's very document centric. But we're already exploring and have built a multitude
+of interfaces where you can see inside the AI's mind doing different things.
+And that is a human first approach. It's human and AI kind of fusion together. So as you think
+about the new capabilities, there's computer use, there's reasoning. I think those are really
+instrumental in being able to drive more of these agentic workflows that you're referring to.
+How are you thinking about leveraging computer use and heaviest product?
+I think that the way we've designed our product is not to be just the interface to AI, but actually
+to be a tool that we would hope AI or AGI would choose to use. And so that's a bit of a meta
+statement, actually, it's saying, well, rather than try to build the AGI, how about we build the AI
+platform that is so good that if AGI were to complete a task, it would choose to use heavier
+to do that task. And to that end, I think computer use and a variety of these other tool use phenomena
+from the large language model providers are just creating universal APIs to other tools.
+Products like Instacart might still be the best way to deliver groceries if you're an AGI.
+You don't want the AGI to go build a robot and go get it in itself. And products like
+Hebbio would be probably the best way to do structured and unstructured data processing,
+the knowledge work tasks with sub-AIs. You wouldn't want an AGI to jam 100,000 documents into its
+context window and take an infinite amount of time to process that. You'd rather use
+and orchestrate a bunch of subagents. And that's a little bit of the philosophy behind what we do.
+And as you think about building for this world with financial services, a lot of what you just
+talked about is more around the infrastructure, the architecture of what you've built. There's
+also the interface layer, the application layer, the interfaces, the data that you're leveraging,
+the integrations, the workflows, maybe like go a layer deeper there. What are you specifically
+doing to make the whether it's an AI agent or today, a human that's in the loop most effective
+as a financial analyst? One of the big pieces and unlocks that Hebbio experience was coming to
+the realization that nobody knows what to use AI for. People pretend to go and create all
+these amazing demos, but nobody knows what to do with it. And you can actually look at our product
+today and you could argue that it could do almost any task that a junior analyst could do better
+than a junior analyst. But even knowing what tasks it should do becomes a problem, it's actually no
+longer a technology problem. It's really a sociology and change management problem.
+So there's an integrations piece. There's a process piece of making sure it works for
+specific workflows. But the real differentiator is actually knowing what to use it for,
+knowing what is best in class, and helping evolve the firms and do the change management
+required to create an AI-centric workforce. We're starting to see the first, you know,
+first year or second year out of college, analysts come out and be like Hebbio native,
+where they instead of doing it and reading every file by hand and then putting things into an
+Excel or making different documents. They're actually starting to use AI and incorporate it
+into their workflows. And it's making them like that much better. That all makes a ton of sense.
+For most AI applications, there's two vectors of the value proposition. There's one
+faster speed to get the same result. So what used to take four hours, now it takes four minutes.
+And then there's the second vector, which is net new results. Things that maybe with infinite
+workers, with infinite memory, you could figure out, but those are like the magical experience
+moments. What are the common use cases you're seeing today? You're right. I put it into two buckets.
+There's the time savings piece. And then there's like the stuff we wouldn't have done if we didn't
+have AI. And I'm way more excited about the second piece. You know, I think everyone is versus here,
+you know, your analyst is 80 times faster. Like on the buy side, we work with a lot of the
+largest asset managers in the world. And in very common use cases, they get a gnarly data room.
+It's got 48,000, maybe 100,000 files in it. It put it in heavy and it automatically builds out
+a variety of different analyses without having to do anything without having to even open your
+computer. You have, you know, a lot of the different things you're looking for, customer
+concentration. You have an understanding of all of their expert network calls, you know,
+actually does the analysis for you. That's a time saver. I mean, it saves probably 20 to 30 hours
+on a deal process, depending on how how disgusting these VDRs can get. But there's an even more
+beautiful piece of the puzzle, which is the net new piece. And on the net new side, I think a
+lot of the reason people become investors or work in finance is because they want to be discovering.
+They want to be doing the act of almost like a Sherlock Holmes looking through the data,
+looking through what the public markets are saying. You're constantly learning. You're constantly
+finding something new. That's like part of where you get your energy. It's scientific.
+And it's actually an empowering act if you're really like investing. And my favorite thing on
+the net new analysis side is when people are looking over more data than the otherwise would
+have looked over and drawing a journey. They will go into a bunch of expert calls and pull out the
+fact that maybe the customers are unhappy with one specific feature. Maybe based on that, they'll go
+into a variety of like technical documentation and pull out like what's changing about that feature.
+And notice that there's something in the supplier agreement that needs to also change and that
+is bottlenecking that. And they'll go on these journeys through the supplier agreements and through
+all the data public and private about a company and actually come up with feces or hypotheses
+that they otherwise could not have done. And the feeling of discovery is I think the best part
+of being an investor. And I think we now impart that with a variety of our use cases.
+But I want to make it very tangible in terms of the use cases. And I'll just give you two examples
+where I'll go into an asset manager and I'll say, hey, these are two things we know people do
+with heavier. And the first is, hey, people are reviewing, associates analysts are reviewing
+marketing materials every single week, sometimes like, you know, for entire days of the week,
+just going through opportunities, trying to figure out if something matches your investment
+criteria or not. And the most common outcome of reviewing a marketing material in private
+activity would be a sim and share and credit. It might be an offering memorandum is you come out
+and you say it's not qualified. It doesn't mean our investing criteria. And so you spend all this
+time researching a company reading through this like thing that a banker really tried to obfuscate
+to like tell you that it's worth your time. Beautiful opportunity. And the majority of
+engineers life could end up going and saying, hey, not worth our time, not worth our time.
+And the deal is just die. You can focus on something that actually is going to have legs.
+And what Hebi does is the minute you get marketing materials, just a simple use case you put into
+the platform, it'll compare it to every other opportunity you've looked at, it'll spread it out
+across your investing criteria and give you a go no go. So something that would used to be the
+bane of your existence, it's literally meaningless labor. You're just pushing the bowls are up the
+hill is now instantaneously done. And you can spend more time as you mentioned on the deals that
+matter. So that's one use case screening. We can screen 137% more opportunities, like in a given
+period of time, which is like, you know, and you it's with the same depth. Another use case,
+maybe a little bit later in the diligence process. Every time there's a lot of documents or a lot of
+the same document, like a lot of credit agreements or a lot of expert network calls,
+you often find juniors or even VP scouring a reading through every single one to
+understand and synthesize an insight across the entire thing. And with Hebiya, in seconds,
+what used to take 200, 300, 400 pages of reading, you can instantaneously get the insights on a
+per call basis, and then over every single call, or on a per credit agreement basis,
+and the entire capital structure of a company. And when people see that in the experience,
+that's not only like an emotional experience, they just realize that they've spent, you know,
+20 or 30 hours every single deal process doing something that can now be done fast and their eyes
+light up. It's amazing. One of my favorite parts when I'm using Hebiya is just leveraging the
+templates. And of course, you know, I can customize them. And maybe there's some questions that I
+want to ask that not everyone else does. But if it's my first time doing an earnings call review,
+using Hebiya, I can do it very quickly out of the box, like time devalues us.
+Yes. There's a library where 1000 different templates. I think it's like now closer to 2000
+different templates, which are all effectively agents. One of them is a credit agreement agent.
+One of them is a earnings call agent. One of them is a, you know, expert network agent or a
+screening agent. And those are the use cases. And that's actually why it's so measurable.
+If last year was a year of everyone experimenting with AI and not knowing what to use it for,
+now we have like a screening template where we can measure the amount of time it takes you
+with Hebiya and before Hebiya and prove to a financial services firm, this is tangible ROI.
+All these examples that we've gone through primarily on the buy side. I think you guys work
+with a bunch of advisors. What are their use cases look like? I can't speak to individual
+customers, but in general, if you can go in and understand not only from the materials that a
+client gives you, but then also the entire world, the internet of information and are able to pitch
+their company better, create better marketing materials. That's a massive use case. There's
+also just pieces in a standard deal process when you're responding to the buy side and
+responding to a due diligence questionnaire, being able to answer that. That's a perfect
+agentic workflow with checkpoint steps for every single piece. We can automate a really large
+part of that, which is traditionally one of the largest time sucks of a junior or first year out
+of college investment banking analyst. Eventually, we're going to put the logos on the slide in the
+right format and they'll be perfectly centered and everything else. A lot of the most tedious
+parts of the job in banking completely automated. On law, people are trying to use things like
+our infinite effective context window to actually look over entire libraries of formerly negotiated
+agreements and live during a negotiation actually come with better terms or a better
+understanding of what is market over previously, very obfuscated data where you'd have to be a
+partner of with many years of experience to understand exactly what the right thing was to land on
+for a client. So in 2023, certainly through much of 2024, AI was about experimentation.
+The board was fixated on what are you doing in AI? Today, we're in 2025. We've gotten to a place
+where it's kind of a given. We're assuming all of our companies are leveraging gen AI in some form.
+And so the question is becoming, where is the value? What is the value? What is the return I'm
+seeing and all this AI investment I'm making? Yeah, you're right. I'd say that 2023 and 2024
+really the year of experimenting with AI. And 2025, it's now like, hey, the boards are saying,
+what's the P and L impact of the sometimes $100 million investments that we're making
+on this experimental technology? And it's put the onus on Hebea and the way we engage with our
+customers to always have value cases and to always prove out value cases. And you start to get
+stories to go back to the credit agreement example, where firms are saving, if every single credit
+agreement, they're reviewed multiple hours and it costs $2,000 per hour for a lawyer to review them.
+And now they can review them in-house. They're saving on tens of thousands of dollars on a
+per deal basis, maybe hundreds of thousands of dollars for a significantly complex deal
+on credit agreements. And they're looking at hundreds or even thousands of deals a year.
+That's a meaningful ROI. There's other examples where AMLA 50 clients are onboarding new customers
+for their own clients. And they're basically saying, hey, what used to take five to eight hours
+of customer to onboard and pull up all the right data, we now can understand instantaneously, right?
+Lawyers sometimes will have to look at their clients' data room, figure out all the red flags,
+problems and everything else. And now they can do that in Hebea and know everything about their
+customer out of the box. And there's examples of private equity associates that are saving,
+you know, four to eight hours a week because they're building out libraries of their portfolio
+company's board decks and investor updates. And they're able to benchmark their portfolio much
+more accurately. You just mentioned the private equity associate. To get ROI, humans are in the
+loop. Humans are working with the software. They're involved in Hebea. They're there every day.
+Talk about the relationship between human and software and where that is today, where that's
+going. I think ultimately there's a lot of software and a lot of AI that seeks to replace humans.
+And the way that we design, the way that we conceive of new interfaces, and I think the way that I
+hope the larger industry does is in ways that empower humans, in ways that make humans better.
+And ultimately, I think Steve Jobs always talked about computers as bicycles for the mind,
+right? It's a way to just go down and basically explore or do whatever you want it to do.
+It's a simple machine that was a very elegant solution. And I think that it's easy to stop at
+chatbot and say, okay, this is our bicycle for the mind. But when you can start to explore other
+interfaces and still empower the user, that is empowering, that is software that is in service
+of the human and the human that's appreciating the software for what it can do.
+So as we think about humans in the loop, those humans can be senior investment professionals,
+who may be reading someone else's work. But the majority of your users,
+they're early career professionals. They are what you referred to earlier as AI literate,
+this next generation. How are you building your products for them?
+How is it designed? What's special for that demo?
+I think that the demographic of folks that are early in their career are, they're the ones that
+for the first time are AI native. They are the first analysts that are learning how to do the role
+where they're actually using technology that can do the mundane parts of it.
+And I think that it's funny because you'd think that only Gen Z would be really AI native,
+but there are even some MDs, like the one off MD, that will go in and actually check their
+analysts work with AI. So they'll create a matrix and pull out red flags or inconsistencies
+over something they're analysts in. But I think it's special because when you catch people early
+on in their career, obviously the banking analysts sometimes will become an investor,
+and the investor will sometimes go and work in a large corporation, or maybe they'll become
+the founder of their own firm one day. And I think that the change starts with the people that are
+the early adopters, with the people that have the most mundane workflows, and then it has to bubble
+out through the organization. But that can only happen with a lot of the C-suite executives and
+MDs and CIOs that support heavy. I mean, they love that they use it themselves, and they also have
+a change management mandate. And so it's kind of two-sided, and our best deployments are those,
+we're both the senior folks and the junior folks are online on using AI.
+As you think about the finance industry in five to 10 years, heavy AI, a lot of change coming
+the industry's way, do you dream the dream? What does the industry look like in a decade's time?
+I think this is my favorite question in the world, because I believe fundamentally
+a few different big things will happen. First, when AGI is here, there will be a massive correction
+in the financial markets. That is actually my Turing test, is if AGI is here, will it actually be able
+to make significantly more money than a human investor, better than human investing? And I think
+part of that will be uncovering fraud at massive scale, uncovering market inefficiencies and human
+behavior that is mispricing assets. And you'll actually start to see what happened with quantitative
+investing start to happen and really are about all of the qualitative alpha that exists or does
+not exist in the world, and everything will just turn to beta, levered beta, if you will, if you
+have leverage. On the other side of things, I also think that private investing will change
+way more than public investing. Why is that? If you look at public markets, you've got like a
+Bloomberg terminal, right? You can go in and you can look at every single number, and it's all
+perfectly formatted in every quarter, you have the file of the SEC, and you have all your numbers
+perfect. In the private markets, you have a data run. And the art of private market investing,
+especially in like the later stages, especially like private equity, private capital,
+is basically building a Bloomberg terminal for the private company. You want all the numbers,
+you want the charts, your IC memo is effectively the Bloomberg terminal for the private company.
+And there's, there might be some qualitative pieces, but you're trying to structure unstructured
+information. And what Heavy is trying to build is the Bloomberg terminal for private companies,
+not like a pitch book or a crunch base, which is really just for sourcing,
+but actually to go out and take all of the information private and public and
+pre-structure that. So the minute you get to a new company, or you can actually perfectly
+understand what it should be valued at, all of the numbers that you would look at on a Bloomberg
+terminal, like pulled out and ready to go for you for the private company. And I think that will
+change the way from a speed perspective, from an accuracy perspective, from the ability for
+LPs to want to invest in the asset class, from the ability or the, the proclivity for private
+companies to want to go public, all of that I think will change. And I think AI will really
+transform the capital markets. Does that mean that older firms who have the most data will be
+advantaged? Like how important is data, like private data towards winning?
+It's interesting from the perspective of firms that have lots of data, like megathons. When
+they come to Hebbia, they're able to say, "Hey, I have this history of 10,000 sims." And so,
+since 1975 and Hebbia can OCR, then pull out all, you know, look at all the graphs and table
+hands in an HP 12C. Now, but it can basically turn into this beautiful like sim library,
+and everyone's like, "Wow, this is amazing." But at the same time, I also think that as the
+market changes, you'll actually start to see new opportunities that like don't have comps,
+don't like the historical stuff won't actually matter. And so, perhaps, you know, spending too much
+time thinking about the historical deals that were pre-chatter GPT or pre-generative AI or
+pre-L-alems are not actually going to help you with a deal post-L-alems. It'll be even better if
+you don't have that much information. Yeah, it's like if you had all the software deals from like
+licensed maintenance mode to switching to subscription, the licensed maintenance ones are helpful to
+some degree. But what you actually care about is the subscription business model. And maybe,
+like, as in this transition, we're undergoing right now with AI, there's questions around
+business model. Like subscription is a default. A lot of companies are charging per seat,
+but some are starting to charge different things on an outcome basis, on volume. For
+Hebbio, like, you've got one model today. How do you think that evolves over time? How have you
+thought about pricing? Hebbio right now prices per seat because we're trying to build a product
+that incentivizes usage. And I think that as you start to have different AI agents that can do
+different things, it's very clear that you'll start to have people that are paying AI agents
+salaries or people that are paying AI agents on a consumption basis. And there will be lots of
+pricing arbitrage of how you want to wrap and package agents and agents ass, if you'll call it.
+And I think that we're still too early to do that arbitrage. And the reason is that you need
+to get to adoption first. You need to get to the usage first before you charge on consumption,
+because the minute you charge on consumption, or you charge on your number of agents and
+time to salary, you actually are disincentivizing the change that is required to build an AI native
+company and AI native firm. And that's a bad thing. So I think San Francisco, everyone's talking
+about different pricing strategies for AI agents. And I'm like, you know, outside of San Francisco,
+no one knows what an agent is at this point in time. So heavy today, to be to be a company,
+you work with some of the largest asset managers you mentioned. As you think about where to build
+features, how do you maintain like a great UI versus becoming the next sales force?
+I commonly feel like a tension between just building what the customer wants right now
+and building for the future or building the product that I think solves all the customer's
+needs. But maybe that the Henry Ford quote of, do you want a car or do you want a faster horse?
+And everyone would always say they want a faster horse. And sales force is a faster horse. You
+know, it's got components and a library for everything and everyone. And everyone at my company
+will tell you that when we prioritize features or when we ask for a feature, it's not something
+that we add on, but we actually look at the entire piece of software as a painting or as a
+composition, and we figure out how it fits together. And we continuously redesign versus a pen.
+A lot of B2B enterprise AI apps will have a billion different apps. And that would just be,
+you know, here's this feature. Here's this feature. Here's this feature. And it's already
+starting to look a little bit like sales force. We're taking a very different approach. We're
+saying, how does this feature integrate into this other feature? And how does that make sense
+to the user? All right, we got to wrap things up. Final question. As we think about AI into the
+future, what does success look like? For the industry writ large, there's a lot of models that are
+creating disinformation, they're generative. And so they're naturally creating a lot of noise.
+And I'm very hopeful. And I think I hope to be a voice of AI that doesn't only create information,
+but finds the signal in the noise or actually helps distill and make more concise and more
+cogent of the information that we receive. At the same time, I think you'll start to see
+the workforce change drastically. You'll start to see, one of my big predictions is that over 50%
+of the global GDP will be contributed by AI agents sometime in the next decade. And I don't
+think that's work that's replacing humans. I think that's actually net new value creation.
+I'm excited for that. And I think that you'll start to see humans, and my hope is that you'll
+start to see humans love work more. If you look at the jobs where people are the least satisfied,
+it's almost always these jobs where there are robotic automatons doing a task over and over again.
+And I think that humans, when they're taken out of the mundane execution and put in a seat of
+thinking and deciding and creating and discovering and moving from the objective to subjective and
+focusing time there. Exactly. I think that is my goal for the larger industry.
+And I'd be happy to live in a world where AI saves 1% of the world's population, 1% of their
+time. And if I can contribute to that, I don't think it'll be much more than 1%. I'll be very
+happy then. Prosperity. Thanks for spending time with us, George. Thank you for having me.
+With that, another episode is in the books. If you enjoyed it, please do rate and review the
+podcast, or at least share it among your friends, colleagues, and network. We'll be back with a
+new episode next week.
+
+

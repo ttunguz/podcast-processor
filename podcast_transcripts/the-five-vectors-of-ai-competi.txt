@@ -1,0 +1,480 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: The Five Vectors of AI Competi…
+Host: Unknown 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/the-five-vectors-of-ai-competition/id1680633614?i=1000709084288
+--- METADATA END ---
+
+1
+As we prepare for a big week with events from Anthropic, Google, and Microsoft, we get into five different ways to think about broader AI competition.
+2
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+3
+Thanks to today's sponsors, Blitzy.com, Bertiste Labs, and Super Intelligent.
+4
+And to get an ad-free version of the show, go to patreon.com/slash AI Daily Brief.
+5
+Hello, friends.
+6
+Quick note.
+7
+Like I said, we have a very big week coming up.
+8
+There is going to be a lot of news.
+9
+Today is a preview episode of what's going on, plus a potentially interesting framework for how to think about AI competition.
+10
+This crowded out the room for some of the headlines, but we will be back with a normal episode with both headlines and a main episode tomorrow.
+11
+I anticipate we'll probably be talking about what was announced at Microsoft Build for the main.
+12
+But in any case, that is the story with today's episode.
+13
+So without any further ado, let's dive in.
+14
+Welcome back to the AI Daily Brief.
+15
+Well, friends, we have a very big week of AI news coming up with us, or at least I should say, the context and setting where we would presumably have a big week of AI news.
+16
+So what's going on?
+17
+Well, first of all, we have Microsoft Build, which kicks off today in Seattle and runs throughout the week.
+18
+Then starting tomorrow, we have Google I.O., which is their annual developer conference.
+19
+Then at the end of the week on May 22nd, we have Anthropic's first developer conference, Code with Claude.
+20
+All of this, by the way, is why OpenAI tried to front-run some of this by launching Codex last week so that they didn't miss an entire cycle of new model announcements.
+21
+In any case, what we're going to do today is take a look at the state of where these companies are, see what we might glean about what might be coming.
+22
+And the context that I want to use for that is thinking about the competition for AI across five different vectors: consumer, enterprise, benchmarks, coding, agents.
+23
+This is far from scientific or even comprehensive.
+24
+It's just how I kind of think about things.
+25
+I will note that I think competition for developers is a really important thing, but I think it's kind of endemic across all of these and is especially honed in on coding and agents.
+26
+In any case, we're going to come back to that.
+27
+But to start, let's talk about where each of these companies are and let's actually do a quick summary of the codex announcement again, since it was chosen as a way to front-run the rest of this news.
+28
+So, what is codecs?
+29
+Talked about it a little bit on Friday, but basically it is a coding agent.
+30
+It's powered by a new model called Codex-1, that's a version of the O3 reasoning model that is optimized specifically for software engineering.
+31
+OpenAI claims that Codex-1 produces cleaner code than O3, is better at following instructions, and will run iterative tests on its code until it gets the results it wants.
+32
+Codex is built for power.
+33
+It can handle multiple tasks simultaneously, and people can use their computers or browsers even while it's running.
+34
+Codex is built into ChatGPT, which is different than clawed code or cursor or other things like that, which immediately gives it really wide distribution.
+35
+For example, boxes Aaron Levy points out: OpenAI Codex works on the mobile app.
+36
+We're entering a wild world where you can have AI agents coding anything while on your phone.
+37
+The ability to just have unlimited AI agents executing tasks on your behalf in the background is going to utterly change knowledge work.
+38
+Now, I wasn't using Codex, but I will say that I had a moment this weekend where I was walking around a nearby hiking trail and I had lovable vibe coding something just from Chrome on my phone, and I had OpenAI's deep research working on a different thing.
+39
+So, even though it's nascent and the UI is not exactly optimized, I think Aaron's exactly right here.
+40
+The reaction to Codex is a little muted.
+41
+Santiago writes, Literally, everyone is freaking out over Codex like they didn't do the exact same thing for Devin, Cursor, DeepSeek, and every GPT drop since 2.0.
+42
+The hype cycle resets every three weeks, and we all start everything all over again.
+43
+This is what we'll see over the next few days.
+44
+OpenAI employees will claim they've been using Codex for a while and it's writing all their code.
+45
+A few people will tell the story of how they casually asked Codex to finish an old project, and it did it all, and it was perfect.
+46
+AI influencers will literally.
+47
+Now, interestingly, I actually don't think that this has been what's going on.
+48
+I do think that you should mentally filter out every AI Think Boy post along the lines of these threads that he's talking about.
+49
+But I don't think people are really freaking out over a codex.
+50
+I think they're excited.
+51
+I think they're trying to figure it out.
+52
+Riley Brown, for example, who's building Vibecode, wrote a long post and shared a video called How to Test Codex as a Vibe Coder Non-Technical.
+53
+He says with Codex, you can spin up AI coding agents that edit your code.
+54
+This is like Devon, not Cursor.
+55
+You can run these AI agents in parallel.
+56
+He then goes through how he used it with other Vibe coding apps, including vZero, and shared a video of his work.
+57
+At the end, he said, P.S., this is probably not an efficient way to do it.
+58
+This is just how I tested it.
+59
+This is the type of post that I've seen a lot of surrounding Codex.
+60
+I think so far it's just too fast to know how it's going to fit in this whole ecosystem, although certainly it is validation that this ecosystem is incredibly important.
+61
+Another interesting thought came from Josh Tobin, who does agents at OpenAI, who said, My hot take is that codex increases the value of being technical.
+62
+If you can describe precisely what you want to build, you can get a massive amount done in parallel.
+63
+That's fundamentally a technical skill.
+64
+Professor Ethan Malik writes, Codex is neat, but I really wish that OpenAI had gone the extra step of making it accessible to non-coders.
+65
+Not that non-coders should expect to make complex or high-quality applications with today's software engineering agents, but democratizing making of small tools can make a big difference.
+66
+Anyways, Codex is out, it's now a part of this ecosystem, and I'm sure we'll see it start to integrate and interact with all these other tools soon.
+67
+But what about the companies that OpenAI was trying to front-run?
+68
+What can we expect from them?
+69
+Now, obviously, this is a big company that has a lot to talk about even beyond Copilot and AI, but Copilot is obviously expected to be a core part of the story.
+70
+Right now, it's not exactly clear.
+71
+Business Standard writes: Microsoft's Copilot AI assistant is expected to take center stage at the upcoming event.
+72
+The company has been steadily embedding Copilot across its key platforms, Windows, Office, and Azure, and further updates are anticipated this week.
+73
+New features such as semantic search abilities and settings, File Explorer, and the Windows search bar are likely on the way.
+74
+Additionally, Microsoft may announce enhancement to Copilot Agents, a feature introduced in April designed to streamline complex multi-step tasks using AI.
+75
+Now, Business Standard also expects Windows 11 and Azure to get some airtime, particularly around their AI dimensions, such as the recall feature in Windows 11.
+76
+But fascinatingly, they also call out Model Context Protocol as a major potential part of this.
+77
+If we see any sort of emphasis on MCP, like if it makes it into Satya Nadella's keynote, that would certainly suggest that Microsoft is really interested in competing around agents.
+78
+I think for me, what I'm watching with Microsoft is just how they position themselves in general in this AI battle.
+79
+They're very clearly not competing, at least right now, to push the boundaries of what's possible from a model standpoint, but they're still the default for enterprises.
+80
+And so, what they do potentially carries more heft in terms of what's available.
+81
+One of the infuriating things for people who work inside companies that are Microsoft shops is the disparity between the tools they can use in their personal life and what they have available.
+82
+So, to the extent that Microsoft can close those gaps, that would be a very powerful thing.
+83
+Remember, though, Microsoft is thinking in a big zoomed-out way.
+84
+We've talked a lot recently about their work trend index for 2025, where they declared that this was the year that the Frontier firm is born.
+85
+The Frontier Firm, you might remember, is where every employee becomes an agent boss managing swarms of AI agents.
+86
+And so, I'm going to be watching closely to see how Microsoft is painting a vision of how we get.
+87
+Unlike Microsoft, Google is still absolutely competing to be front and center and pushing the boundaries when it comes to actual AI models.
+88
+And even if one argues that they are still behind where one might have imagined Google would be relative to these upstarts, given how much AI talent they've had for so long, it's hard to argue that they've had anything but an extremely excellent year since last year's I.O.
+89
+Last year at this time, I know this sounds forever ago, but it was just one year ago, Gemini was doing things like suggesting glue as a pizza topping.
+90
+But since then, Google has staged an enormous comeback.
+91
+Gemini 2.5 Pro is a benchmark leader, with many people discussing how it for the first time pushed Anthropics Claude off the top of the heap when it came to coding use cases.
+92
+Gemini's product range is competitive at every price point.
+93
+Their agent previews have been impressive.
+94
+The question is one of users.
+95
+The company touts 1.5 billion users for AI overviews, but that's just embedded in Google search, not really a telling statistic.
+96
+They say they have 150 million subscribers through their Google One service, which is a 50% jump from last February, but that's also a shared product with their data services.
+97
+They claim 350 million monthly active Gemini users, but that could include a fair number of pre-installed handsets.
+98
+The double-edged sword of a company having big existing distribution is that there's some skepticism of how rich and deep the use actually is.
+99
+This is why people don't really pay attention when Zuckerberg touts how many people are using Meta's AI because it's just in your face inside Instagram and Messenger and WhatsApp.
+100
+And even at that 350 million number, that's still way behind ChatGPT.
+101
+Now, it's clear that Google is not just going to concede the battle for consumer to open AI.
+102
+In fact, in the lead, we've had a host of big releases.
+103
+The company launched an updated version of Gemini 2.5 Pro that significantly improves its coding ability.
+104
+We got a fascinating next-generation tease from DeepMind about a coding agent that can optimize algorithms.
+105
+They claim that the agent has cut Google's compute by 0.7% globally through code optimization.
+106
+We've also seen some big updates to fan-favorite Notebook LM, including the launch of a standalone app.
+107
+Now, all of those things could have been fodder for a major unveiling at the conference, but Google decided to roll them out early.
+108
+Meanwhile, the pre-show coverage is really dabbling around the edges.
+109
+It's sort of focused on new gadgets and features for Chrome and Android.
+110
+TechRadar, for example, bundles everything into quote, a ton of Gemini AI news, but it doesn't really seem like they're clear on what that might be.
+111
+Look, as I said, Google has done significant work over the last year to improve their place in the AI fight.
+112
+And I'm very excited to see what they push out at I.O.
+113
+and beyond.
+114
+I do think that they find themselves sort of uncomfortably between pure consumer and pure enterprise.
+115
+On one end of the spectrum, we have OpenAI, who's racing up to 800 million users thanks to Ghibli Images and is just super focused on consumer, although honestly making progress on enterprise in a way that we'll talk about in a minute.
+116
+And on the other end of the spectrum, we have Microsoft, which just feels like they have total lock-in among enterprise users.
+117
+Google sits somewhere in between.
+118
+They're the enterprise choice for consumer-type smaller companies, SMEs, mid-markets.
+119
+But I wonder if that middle space is actually making it harder for them to prioritize which AI stuff to care about.
+120
+And then there's Anthropic.
+121
+Back at the beginning of April, Anthropic announced that they were hosting their first ever developer conference called Code with Claude.
+122
+They wrote Code with Claude is a hands-on one-day event focused on exploring.
+123
+Now, they've given out almost no information aside from that.
+124
+And what we know for sure, and certainly if you've listened to this show, is that Anthropic has really cemented itself as the core choice for models to power coding tools and coding agents.
+125
+The company continues to grow, and if it weren't for the just utter juggernaut of OpenAI, their numbers would be getting way, way more attention.
+126
+In terms of expectations for what's coming this week, it's all about the new and updated models.
+127
+The Information reported last week that according to their sources, who were people who had used these new models, Anthropic was going to announce new versions of its two largest models, Claude Sonnet and Claude Opus, and that these models were supposed to be able to go back and forth between thinking and reasoning and tool use.
+128
+Writes the information.
+129
+The key point: if one of these models is using a tool to try and solve a problem but gets stuck, it can go back to reasoning mode to think about what's going wrong and self-correct.
+130
+Also, from the information, for people who use the new models to generate code, the models will automatically test the code they create to make sure it's running correctly.
+131
+If there's a mistake, the models can stop and think about what might have gone wrong and then correct it.
+132
+Continuing, they write: The new Anthropic models are thus supposed to handle more complex tasks with less input and corrections from their human customers.
+133
+That's useful in domains like software engineering, where you might want to provide a model with high-level instructions like make this app faster and let it run on its own to test out various ways of achieving that goal without a lot of hand-holding.
+134
+Now, if we get all of that from Anthropic, I think people will be extremely excited.
+135
+And I think it shows just how important right now the battle around coding is as a core part of the larger AI competition.
+136
+Today's episode is brought to you by Blitzy, the Enterprise Autonomous Software Development Platform with Infinite Code Context.
+137
+So, Blitzy is used alongside your favorite coding co-pilot as your batch software development platform for the enterprise, and it's meant for those who are seeking dramatic development acceleration on large-scale code bases.
+138
+Traditional co-pilots help developers with line-by-line completions and snippets, but Blitzy works ahead of the IDE, first documenting your entire code base, then deploying more than 3,000 coordinated AI agents working in parallel to batch-build millions of lines of high-quality code for large-scale software projects.
+139
+So, then, whether it's code-based refactors, modernizations, or bulk development of your product roadmap, the whole idea of Blitzy is to provide enterprises dramatic velocity improvement.
+140
+To put it in simpler terms, for every line of code eventually provided to the human engineering team, Blitzy will have written it hundreds of times, validating the output with different agents to get the highest quality code to the enterprise in batch.
+141
+Projects then that would normally require dozens of developers working for months can now be completed with a fraction of the team in weeks, empowering organizations to dramatically shorten development cycles and bring products to market faster than ever.
+142
+If your enterprise is looking to accelerate software development, whether it's large-scale modernization, refactoring, or just increasing the rate of your STLC, contact Blitzy at blitzy.com, that's B-L-I-T-Z-Y dot com, to book a custom demo, or just press get started and start using the product right away.
+143
+Today's episode is brought to you by Virtis Labs, the AI-native digital consulting firm specializing in product development and AI agents for small to medium-sized businesses.
+144
+Now, guys, this is a market that we have seen so much interest for, so much demand for, and many times great AI dev shops and builders out there just have so much business from the high end of the mid-market and big enterprises that this is a group of buyers that gets neglected.
+145
+Now, for Vertisse, AI-native means that they better know how to help you embed agents in your workflows.
+146
+And indeed, what they specialize in is building AI agents and agentic workflows that augment knowledge work, from customer support to internal ops, so that your team can focus on higher-value work.
+147
+Vertis wants to ensure that this is not just another co-pilot, but something that works end-to-end, translating business problems into working software in weeks, not quarters.
+148
+They have found that their clients typically see a 60% reduction in time and cost with significantly higher output than traditional technology partners.
+149
+So, if you are a founder, a CTO, a business leader, or you've just got a product idea to launch, check out VertisLabs.io.
+150
+That's V-E-R-T-I-C-E labs.io.
+151
+Today's episode is brought to you by SuperIntelligent.
+152
+Now, you have heard me talk about agent readiness audits probably numerous times at this point.
+153
+This is our system that uses voice agents and a hybrid human AI analysis process to benchmark your agent readiness and map your agent opportunities and give you some really pointed, actionable next steps to move farther down the path in your agentic journey.
+154
+But we are coming up on the slow time of the year.
+155
+And if you want to use this time to get out ahead of peers and competitors, we're excited to announce something we're calling Agent Summer.
+156
+The idea here isn't that complicated.
+157
+It's basically just an accelerated program to get you agentified and fast.
+158
+First of all, it's going to include an agent readiness audit, figuring out where your biggest agent opportunities are.
+159
+Next, we're going to support both your internal change management process, helping you figure out AI policy, data readiness, things like that, as well as doing action planning around the agent opportunities that are most relevant for you.
+160
+And finally, we're going to connect you to the right vendors to actually go and deliver this.
+161
+Now, for this, we want to work with a very small handful of companies that really want to move.
+162
+We're going to be bundling more than $50,000 of services for something that starts closer to $30,000.
+163
+And so, if you want to use this summer to jump ahead on your company's agent journey, email agent at bsuper.ai with summer in the subject line, claim one of these limited spots, and let's go have an agent summer.
+164
+Let's actually talk just briefly about each of these different areas of competition.
+165
+Like I said, coding is a huge one.
+166
+This is one of the most essential and breakout use cases.
+167
+It's a use case that enables other use cases.
+168
+It has dimensions both for technical people and developers because it's accelerating what they're able to do and the tools that they use to do whatever it is that they're doing tend to find their way into the tools that people use to interact with what they're doing.
+169
+But there's also the whole vibe coding piece of this, where we're also simultaneously seeing a massive expansion of who can participate in that sort of creation.
+170
+And so, all of a sudden, it's not just the developers or at least the traditional developers who have a stake in which of these models is best for coding, but also this new legion of vibe coders and solopreneurs.
+171
+Right now, we'll have to see if this new codex model starts to knock Anthropic's models off the top of the heap.
+172
+Interestingly, a couple of weeks ago when Google announced Gemini 2.5 Pro I/O, there was a lot of chatter about how the benchmarks were better than things like Claude.
+173
+And there was this whole question about whether we had a new king of AI coding.
+174
+And while there's certainly been some positive buzz since then, by and large, I don't think that we've seen habits really shift.
+175
+Now, again, it's only been a couple of weeks, but given that we are about to get another update from Anthropic, it seems likely to me that that company retains their top dog status, at least for developers.
+176
+But who knows?
+177
+This is going to be one of the most, if not the most dynamic areas of this competition.
+178
+It's also closely related to this other area of competition in agents.
+179
+And when I'm talking about agents, the end agents themselves, and the other are the platforms for building agents.
+180
+Now, on the platform side, this is the other area where Anthropic really has cemented its lead status.
+181
+We did a whole show built off of Latent Spaces post YMCP1.
+182
+That's a good primer on how essential model context protocol has become to the emerging field of agent building.
+183
+But there are other areas of the agent infrastructure stack that other people are trying to compete for as well.
+184
+For example, in the beginning of April, we got Google announcing the agent-to-agent protocol, which is basically an agent communication protocol.
+185
+You can tell how far MCP had come because Google, when they announced it, wrote, A2A is an open protocol that complements Anthropic's model context protocol, which provides helpful tools and context to agents.
+186
+So they are basically trying to build a different part of the agent infrastructure stack that MCP is not addressing.
+187
+As we are watching these announcements from this week, I would say watch to see what Anthropic says about MCP, watch to see what Google says about A2A, as well as any other agent infrastructure plays, and see if and how Microsoft talks about bringing any of these things into their ecosystem for enterprise builders, especially through Azure.
+188
+Enterprise and consumer actually make up another part of this competition.
+189
+I talked before about how Microsoft sort of has a default poll position, and of course they use their partnership with OpenAI to anchor that position in the early days of generative AI.
+190
+Interestingly, it does appear that OpenAI is making up some major ground with the enterprise.
+191
+Now, these stats are recent, but they do represent a particular slice of the market.
+192
+This comes from RAMP's AI Index, which basically estimates business adoption of AI products by using RAMP's card.
+193
+RAMP is not necessarily used by the biggest enterprises in the country, so this is going to represent more SMEs, startups, and some small mid-markets.
+194
+But at least in this cohort, OpenAI is flourishing.
+195
+There has been a massive increase in the percentage of U.S.
+196
+companies that are using OpenAI's business subscription from a little over 15% at the end of last year, all the way up to 32.4% now.
+197
+Anthropic has also jumped from around 4% at the end of the year, doubling to 8% now, but obviously still very far behind OpenAI.
+198
+And Google has absolutely fallen off a cliff.
+199
+Now, again, I want to caution that this is a very specific slice of the market.
+200
+It doesn't represent everything.
+201
+But the point for our purposes is that as we are thinking about AI competition, enterprise is a very particular subset of that competition.
+202
+Now, on consumer, we touched on it before, but here OpenAI just continues to be the absolute total leader.
+203
+It continues to be the case that for many normies, ChatGPT and AI are synonymous.
+204
+And OpenAI has recently had a burst of new users thanks to things like their new image model and the Ghibli style image generation meme, which exploded all over X and other platforms.
+205
+And basically, it sounds like OpenAI is somewhere around 800 million weekly active users right now.
+206
+And we don't know exactly what that number is and how much it's peeled off since the Ghibli trend ended, but it's still so much bigger than anything else out there.
+207
+What's more, OpenAI is very clearly doubling down on their consumer lead, announcing that they were bringing in Instacart CEO Fiji Simo as their new CEO of applications, basically their CEO for the actual business stuff.
+208
+Now, interestingly, coming back to agents, I said that there were two aspects of agent competition.
+209
+One was the infrastructure, things like MCP and HOA, but the other side is the end agents themselves.
+210
+And of the big labs, so far, OpenAI and Google seem like the two that really want to compete with end-agent products, and OpenAI even more strongly than Google.
+211
+I think that these companies understand that the moat is in owning the customer relationship and that there's going to be a huge amount of commoditization, volatility, and switching when it comes to models.
+212
+And so, I think that when OpenAI is thinking about agents, they're not just trying to be the models that power agents, they're also thinking about actually owning the agents themselves, having the best deep research agent, having the best computer use agent and operator, having the best coding agent now.
+213
+My sense is that that's a battle that they're trying to have, and it is actually directly related to their leadership in consumer.
+214
+Now, lastly, for the sake of completeness, as we think about AI competition, if you were just going by news articles, you might think that it was all about benchmarks.
+215
+However, as I record this, I don't think that benchmarks have ever had a lower place in the consideration of users.
+216
+Back a few months ago in a Reddit thread in the Lama community, a poster wrote something called, I'm starting to think AI benchmarks are useless.
+217
+Across every possible task I can think of, Claude beats all other models by a wide margin.
+218
+I have three AI agents that I've built that are tasked with researching, writing, and outreaching to clients.
+219
+Claude absolutely wipes the floor with every other model.
+220
+Yet, Claude is usually beaten benchmarks by OpenAI and Google models.
+221
+They then get into speculating on why, but this is definitely broadly the perception.
+222
+Now, interestingly, I think that we might be hitting sort of a floor or a nader on how much people don't care about benchmarks.
+223
+And I think that part of where we might go is starting to see more specific, discrete benchmarks or evals for particular use cases.
+224
+For example, very randomly as I was posting this, I saw that Tiny Foundation.5 Pro, which ranks number one on LegalBench.
+225
+Now, the rest of his tweet is about the disruption coming for lawyers.
+226
+But what's interesting is that he very clearly cared about accuracy benchmarks.
+227
+That did influence his choice as a builder.
+228
+And so I think that to the extent that benchmarks can actually be useful for entrepreneurs and developers, they have some utility.
+229
+It's just really not going to be around general consumers or even general enterprises, I think, switching between models because they scored higher on a benchmark.
+230
+Ultimately, proof is in the pudding and it's all about practice.
+231
+So summing up, we have a very big week coming: Microsoft Build, Google I.O., Anthropics Code with Claude, OpenAI trying to needle in and get their stamp on the conversation before.
+232
+And if you want to just keep a crib sheet of where they stand relative to AI competition, I'd encourage you to think about it in these dimensions.
+233
+Again, consumer, coding, agents, enterprise, and benchmarks.
+234
+For now, though, that is going to do it for today's AI Daily Brief.
+235
+Appreciate you listening or watching, as always.
+236
+And until next time, peace.

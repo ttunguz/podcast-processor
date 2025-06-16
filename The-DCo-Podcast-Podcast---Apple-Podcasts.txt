@@ -1,0 +1,177 @@
+
+Welcome to the Deco podcast where we bring you stories from founders and investors in Web3.
+Before we get started, this is not a financial or legal advice. It's just a conversation about
+things we find interesting in Web3. We use express our own personal opinions. Deco members or guests
+appearing on the show may have positions on assets they talk about.
+All right. Welcome to another episode. Today we have Isaz with us. I have been following Isaz for
+quite some time and his takes on AI, how deep he is into AI, his episodes with bankless as co-host
+on AI weekly roll-up, and he's also a co-founder of AI Saturday TOW. So I'm looking forward to this
+one. Welcome to the show, I guess. Thanks for having me, Sarah. We're looking forward to this one.
+All right. So let's start big, pretty zoomed out view. I want to understand the entire AI
+stack from you, right? I mean, you've been in the so-called trenches for a while. So make me
+understand the entire stack, right? From GPU marketplaces, to training, to inferences,
+to agents, and agent marketplaces. While explaining every stack as to what unique problems
+that crypto solves at every layer, and does crypto need to be there in every layer? I mean,
+should we be present across the layers, or if there are certain layers that we should be optimizing
+for? Yeah, yeah. Really good question. So I'll get into it. So the way I kind of view the stack
+as you described it would be at the bottom of this layer, you kind of have what I call AI
+resources. So these are like, you know, the minerals and the soil and the earth that you need to kind
+of build the foundations of a building, for example, right? So what are these things? You have data,
+you have compute, and then you have the model themselves, right? So think of a model as like a
+really intricate designed chip or a dam where you are about to allow water to flow through, right?
+You need to design it very precariously. You need to make sure that it's, you know, set up in a way
+that will allow, you know, intelligence to blossom from it, right? But a model in itself
+isn't very useful, right? So you need to feed it certain things in order for it to function,
+similar to water flowing through a dam, you know, you're not going to generate electricity, right?
+So what are those things? It's data, and it's compute. And so if we start off from this bottom
+stack, your question is like, you know, how can crypto help here? Well, on the data side of things,
+most data, almost valuable data is siloed. Where has it, where is it siloed? It's siloed
+with all your top social media platforms that you use every day. It's siloed with your hospital,
+medical provider, and all these different things. And this kind of like drives back to a very old
+adage within crypto and blockchain, which is, you know, you don't actually own any of your data,
+right? And blockchains kind of like help kind of like take that leap amongst like owning your data,
+whether that's as an asset or a token on a blockchain, or whether that's via encryption
+through ZK encryption and many other things, right? So that's how crypto can help on the
+data side of things. It can help aggregate, you know, crypto is very good at coordinating
+individuals. So if you were to coordinate a bunch of individuals to aggregate certain bits of data
+so that you can pull it together and you can have a very valuable resource that you can then feed
+through a model, that could be really useful. And there's a few examples of teams doing this,
+you know, you have grass protocol, which has been kind of like scraping the web for a while,
+and then you've got another kind of like perspective or approach to that is VANA, right,
+which is trying to tap into the personalized data side of things. And then another team could be
+MASA to subnet on Bitensor, which, you know, are taking another approach. But the point is,
+there are various different ways that crypto can help to get this data, this valuable data.
+On the compute side of things, think of this as like the electricity that is needed to allow
+your laptop or your terminal or your phone to work in the first place, right? Currently,
+the way that the web two way to do it is to, you know, tap into a cloud provider like AWS,
+Azure or Google Cloud, et cetera, right? But there's a few kind of like concerns that comes
+around with this. Number one is centralization, right? So what if AWS decides to shut off your
+cost or server or whatever that might be, right? Suddenly your model won't work anymore. You're
+relying and you're dependent on them, right? So that's why if you were to create a decentralized
+physical infrastructure network or deep in, for sure, you could kind of like coordinate all this
+compute around a specific thing, which is like maybe to provide enough compute to train a model
+or enough compute to in front or to allow model to inference and inference for those who are listening
+that don't know what that means. It's like querying basically. So when you type into Chad GBT,
+hey, can you give me an answer to this? Chad GBT queries the open AI model, right? It says,
+hey, like, this is the question this person asked, right? So that's on the compute side.
+And I think crypto networks can do a really good way of coordinating compute examples of this could
+be, I don't know, IONAT, render, prime intellect on the training side, new research on the training
+side, there's plenty of examples of these kind of companies, teams or infrastructures existing.
+Then on the third point around this, again, we're still on the fundamental layer, there's a lot to
+go through, right? Are the models themselves now the models are the trickiest, because typically
+you need a lot of research, AI and ML expertise, and just like a way to kind of like test these
+things out. And it's quite expensive to do, sorry, up if I'm being honest, right? But we're seeing
+kind of like open models kind of emerge, probably the most famous and most recent one is this model
+called deep seek, which came out of a Chinese team, essentially. And they decided to open source this
+another example is llama, which is a famous open source AI model, which came from the guys that
+matter. So the reason why open models are really important, it's a few reasons. Number one,
+you're able to see how it's designed, so you can make sure that it's not biased or censored
+in a certain way that might implicate or extract from the user, the person that's using it. Like
+an example I always go to here is like, imagine you're using a model and it's swaying you towards
+certain political beliefs that are necessarily true, or it's feeding you misinformation on the
+data that it's trained of. It's really important to know how that model is designed. Secondly,
+if that model is owned by a single party or a single person, then you're now under the assumptions
+and objectives of that individual and person, right? And that's why it's so important to potentially
+decentralize that ownership for that particular model, right? So I call that kind of like the
+fundamental, the base layer, right? Now moving up, it gets kind of easier to understand. The way I
+say it is it gets sexier, it gets less boring, right? So if you move up above that, you have
+something that I call the coordination layer, and this is where crypto kind of really shines.
+So if you think about this, you have the compute, you have the data, you have all the models,
+how do you know which one to hit at what time, and how do you know, like, which player within
+each one to hit at what time, it's kind of hard to figure out, right? So if you had something
+like a coordination layer, which can help, you know, route every single request that comes
+top down saying, hey, like, I need an AI to help me give me a recipe to cook for dinner tonight,
+or I need an AI to help sort my taxes out or whatever, it can route everything to the right
+model and use the right data and compute, et cetera, it can get better and better and better,
+iterative loops, right? The best example of this is probably Bitensor or a network called Alora,
+which currently just like helps route a bunch of these things. And they control compute,
+they have subnets or when I say a subnet, I'm describing like an app or a team to help with
+data and all these different kinds of things. So that's the coordination layer that sits just
+above the kind of like resource layer, but really the coordination layer hits across
+everywhere in the stack, but I'll get to that in a second. Above that, in my opinion, you have
+something called the middle layer layer. Now the middle layer layer is kind of like the most web
+two component of this and how it decentralizes and whether it needs crypto is a big question mark
+for me, right? So the things that would exist in this middle layer are things like AI agent
+frameworks that we've seen from the likes of AI 16 Z arc virtuals. And the reason or purpose for
+these frameworks is an open source way or toolkit for people to build the application layer and
+I'll get to the application layer in a second. But the reason why you need this middle layer is
+all the kind of like stuff that happens in the back end of these applications. So we're talking
+about a memory architecture of these agents. We're talking about data repositories, you know,
+what kind of databases do we use? How do we query them, etc. And that sits at the middle layer layer.
+Now whether this needs crypto is a big question mark for me, to be honest, I'm trying to figure it
+out. You would argue that if you wanted to create a fully decentralized application, you know,
+all the cypherpunks in the world would be like, yeah, like it has to be decentralized. How effective
+that is I actually don't know. So it's something that I'm exploring myself right now. And finally,
+at the top of the stack, you have the application layer, which in my opinion will materialize in
+the form of not traditional apps, not traditional websites, but these things call agents. And the
+way I would describe an agent is kind of like an autonomous software field entity that can think
+for itself in just data and act in real time, make its own decisions, right? And an agent is not
+something that I think is contained within a single loop. It's something that can think
+in an infinite loop, right, technically, or theoretically. And what I mean by this is it can
+think for itself very much like a human, they're digital humans. And the reason why I think the
+application layer will exist in the framework of agents is because in a world full of a million
+websites and a million apps and a million bits of data artifacts, you need a much newer interface
+to interface with all of these things. And I think just one terminal where I can kind of talk to it,
+speak to it, or even like look or point in a certain direction, or better yet, it reads my mind
+makes sense. So hopefully that makes sense. Yeah. Wonderful. Thanks a lot for that explanation.
+I really love it. Now, while thinking of these different layers, pretty sure that different
+layers have different value accruals, right? And therefore, different business models, right?
+One of the examples that comes very quickly to my mind is virtuals, right? When things were going
+all right, they were making enough fees. And we did not rely too much on inflationary token supply
+or those things, right? I mean, the application itself or the protocol or the framework itself
+was generating revenue to sustain itself, right? What are the examples or what are the business
+models of every layer? And have we seen early evidences of, okay, like this is the business model
+towards which like everyone is kind of gravitating along all layers? Yeah, I think that that is the
+golden question that no one has been able to answer. And I think if anyone gives you a straight answer
+to that, sorry, they're lying. And the reason why I say this is I think the crypto business model
+has only been figured out for a few things. And I mean really few things. You could argue that
+it's a monetary asset, which is Bitcoin, right? And you know, you get emissions from that. And,
+you know, eventually once that emissions schedule declines exponentially, as it were,
+you're hoping that fees on the Bitcoin network will be worthy enough for miners to do that thing,
+right? Or for people to transact and run nodes and validators. So that's one thing. The other
+thing is stable coins, right? It's stable coins is like, okay, cool, we'll take just a fee. It's
+like kind of like the visa model in a way. And in fact, visa actually makes, you know, a decent
+chunk of money off of fees from that. But I think when it comes to the AI stack, you can look at it
+in similar ways. So let's kind of like approach this. Well, let's look at the bottom layer of the
+stack. And let's look at the top layer of the stack, because there's two arguments for each one,
+right? Right. On the bottom layer of the stack, where it comes at the infra layer,
+you're kind of betting that the layers above it. So the coordination network,
+the middleware network and the app player are all paying some cost or fee back to that network,
+right? So it's like, okay, we're going to distill these components down to the most valuable things,
+compute data and models. Everyone's going to need it. And maybe I make all my money from inference
+costs or training costs that are fed down to me. And the reason why I say inference and training is,
+at the end of the day, what this stack has that's most valuable is the model itself, right?
+So if you're training a model, you need to pay the compute providers and the data providers.
+And maybe that's just like through their own token, right? And maybe it's just like a payments
+mechanism. That's what I'm seeing right now today. I don't know how useful that will be. Another
+kind of model that I'm seeing is like, you know, they pay each other or they pay for each of their
+resources in whatever currency, and then they buy back their token and burn it, right? But my question
+then becomes what happens when these tokens kind of like reach a certain point where it like becomes
+in order to be expensive to use or whatever that might be. And that's an open question for a lot
+of crypto protocols, right? And then if you look at the top of the stack, not specific to AI,
+I think that that is valid across the world. Yeah, 100%. It's not specific to AI at all. This
+is a crypto problem that needs to be resolved, right? And then on the application layer, if I'm
+being honest, you kind of see a similar thing, right? So all the AI apps that I've seen exist
+today in the form of agents use some kind of staking or payment model, right? And the common
+example is hey, pay to access this terminal where this agent will now give you alpha. That's AI
+XBT, right? Or stake a certain amount of this token. And now you can get different tiered access,
+right? That's cool and everything. And I'm seeing like, you know, there's potential buybacks and
+other agents and stuff like, I don't know, arspody bets and other stuff that aren't coming to mind
+right now. It's all cool. Whether it's sustainable in the future, I have no idea because most of these
+things aren't revenue positive yet, right? If you want to talk about revenue positive crypto apps,
+they're ones that either don't have a token or just had a token, right? I look at Kaito as the most
+obvious example, right? They're technically profitable, but they have an AI powered app versus a crypto
+native AI app, if that makes sense. Yeah, 100%. You know, when you were talking about this,
+I was thinking about how all of this is similar to blockchains themselves, right? For example,
+I think you have made this comparison in the past. I'm just extending that to what you said
+right now. So if you look at a value chain of layer ones to be precise, you have block producers
+that are pretty close to what the chain is, right? I mean chain is a bunch of nodes where
+some of the nodes are proposing and building blocks. That is the one end of the value chain.
+And the other end of the value chain is something that is pretty close to the user, right?
+Which are like applications like away and whatnot, right? Where user interacts with on a daily or
+regular basis. And if you see the distribution of value in the blockchain stack, you see that
+the value from adjacent layers kind of starts flowing back to either the block producer or
+at the top of the stack with applications. What I mean by that is if you look at bridges,
+if you look at solvers, if you look at any of the middlemen, when there is enough competition among
+them they have to bribe a block.
+

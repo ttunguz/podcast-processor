@@ -1,0 +1,728 @@
+
+Hi I'm Matt Turk from FirstMark. For this first episode of 2025 we are starting with a bang with
+an awesome conversation with Chip Huyen. Now Chip is a well-known writer and computer scientist who
+has taught AI at Stanford, worked as an AI engineer at places like NVIDIA, Netflix and Snorkel
+and has become a bit of a superstar in the AI community through our influential writing.
+In today's episode we discuss a brand new book titled AI Engineering, an impressive guide about
+how to build production AI applications on top of foundation models. This is a very
+meaty and educational conversation where we covered a lot of ground including what is
+different about AI engineering. Nowadays anyone who wants to really leverage AI to build applications
+can like just leverage one of those amazing available models to do so. How to evaluate AI systems.
+As a more intelligent AI becomes like the harder it is to evaluate it. A lot of the failures are
+silent. Why prompt engineering is underrated. People don't take prompt engineering seriously
+because they think this is like not much engineering to it. Anyone can do it but not many people can
+do so effectively. Why rag is here to stay, why planning for AI agents is so hard and so much more.
+There's tons to learn in this episode both for technical and non-technical folks so please sit
+back and enjoy this fantastic chat with Chip. Chip, welcome. Hey Matt, it's great seeing you again.
+Big fan of the work. Lots of jokes on Twitter. So it's really nice catching up again after
+like following you for so long. Appreciate it. So today we are going to talk about your brand new
+book published by O'Reilly which is just coming out entitled AI engineering building AI applications
+with foundation models which I must say is incredible works. I spent a good portion of
+last weekend reading it and I thought it was amazing. Absolutely a must read for anyone that's
+serious about the AI field and in particular what I found really interesting is that there's plenty
+for technical folks. There's like math, there's in the weeds kind of details but equally I've
+found it very approachable for non-technical people which is very hard to do. So again,
+re-enjoy the congrats and to jump to the punchline people should absolutely get the book.
+And what we're going to try today is give people a little bit of a flavor for what's in it. So
+obviously we're not going to cover everything because it's 500 pages of goodness but hopefully
+that will give people some some kind of a view. Does that sound good? Yeah thank you so much and
+everyone listen to Mark Matt he knows what he's talking about. So appreciate it.
+Alright so let's jump into it. So at the beginning of the book you make the point that while
+AI adoption seems new it's built upon techniques that have been around for a while like language
+models some of which came in the 1950s and then retrieval techniques but at the same time it
+feels like a new field. So what is new about AI engineering and how is that different from
+more traditional machine learning and MLOps techniques? Yeah I think that that's a great
+question and I get asked a question a lot and was like okay what is the engineering? Is it
+not a marketing term? How is it different from my traditional ML engineering? So they are not
+overlapped between these two roles and I think a lot of companies like even like people with the same
+title like and have very different functionality. So I think like any definition is like a little
+bit like fuzzy and like really depends on like where you work and what you're working on but in
+general I think of like an machine engineering is when you like how to build the models
+ourselves like before like before the availability of like large language models or
+foundation models that anyone can access. If you wanted to build ML applications you could need
+to build the models yourself and only a few organizations could do that but nowadays like
+anyone like anyone who wants to like leverage AI to build applications can like just leverage
+one of those amazing available models to do so and it just makes it so much more accessible and
+another thing is that like before I had thought that a small improvement of like AI capabilities
+could lead to a small like increase the number of available applications. So like we know for a
+long time we have known that if we put more data at more compute we'd get better models right but
+still like when treasury came out we were shocked like at least I was like I was in a group chat
+with a bunch of my friends and it was like really really shocked and the reason is that like we
+were shocked but like just a small improvement in capabilities can lead to so many many applications.
+So at the same time there's so many new ideas and that is the same time where like it's so easy
+for what you build applications just like the energy the company is just like growing like
+exponentially it's like really really exciting time. So there are like a lot of new things with that.
+One is that like evaluation it becomes so much harder so before with a lot of trash in ML we
+have like okay if you do like spam detection right like we know that's the app which is spam
+or not spam so if the models are put in not spam and the real email is a spam then we know that
+like the prediction is incorrect but now that you ask the models you say hey summarize a book
+right and the summary looks like quite recent like coherent you don't know if it's a good summary
+or not you might actually have to read the book to find out yourself and also like as
+a more intelligent AI becomes like the harder it is to evaluate it. So first of all I have for math
+problems so I think that most of us can tell if the solution to your first grade of math questions
+is wrong enough at least I hope at least I hope that most of us and with a lot of
+complaining about education going on I'm not sure if that's still the case but yeah but like
+for for for the PhD level math questions I think it's very few of us can actually tell
+so so it's just like now AI can just like have like questions like not very correct
+like a lot of so failures is silent so it's a really really hard to evaluate it and another
+aspect is a question of of like a product so I think like before right like you you knew what
+you were going to build because like you're part of the organization so once you leverage
+data and ML to like speed up whatsoever make more money so so you knew what we're going to build
+but but nowadays it's like you can start it can be anything so usually start like a product right
+like you start with an idea a demo and then it goes really well then you like you start
+like investing in in data to make it better and then if it's good really well and say okay now I
+want we are paying too much money for like open AI and anthropic Google so now we need to build our
+own model like and so so now we invest into the model so like the process now is like yeah like
+product to data is that the the reversed process compared to traditional machine learning where
+you would start with the data and then build the model and then build the product yes yes so so
+so it's a process like reverse and also like also leads to people like a lot closer like
+product people and ML people and data people like a lot closer like in some team you might have like
+to be like the same persons so like it requires engineers to have a much much better product sense
+so I complain often here just like okay the technical aspect of this application is really
+easy when understanding what users want it's like really really hard so does it mean that's a
+traditional machine learning engineer and an AI engineer maybe two different people two different
+professions what is the overlap between both um so I see it's like they're definitely at different
+companies so so for example I say a lot of companies they they only have an ML team so when
+they started adopting AI, functional models, native AI then they tasked this team to like okay go
+and explore and build stuff right so so I think this like this overlap I also see a lot of teams
+like hiring separately for a general AI um so it's really depends on organizations and organizations
+one thing I do notice is that um it's not a question of or like do I use like a classifier
+or a general AI right it's it's more of like and it's a vast majority of general AI systems have seen
+like you have you have like traditional or like electrical ML components with Java AI so let's
+study for example of a customer support chatbot so you have a request from customers and then you
+want to respond to like so maybe like you have like you employ a bunch of models maybe like a
+real difficult request you want to send it to like the strongest and most expensive model but like
+the easier request to send it to like maybe a locally hosted like open source model but some
+request like sensitive like a building complete so you might want to route to a human operator right
+or so so like when you get a request you need like an intent classifier to say hey what is this
+request about so and then you can route that accordingly so that intent uh intent classification
+model can be a traditional like ML like classifier or another thing is that like when you when the
+model maybe like a fancy model or generate a response what if you contain some like personal
+like pia information so so you might have like a detector like hey does this content pia or not
+so that can also be like a traditional machining model so I see that used together like in a lot
+of cases so I do think that there are a lot of overlap and I do think this like people can like
+if you traditional ML ML engineering background you can also like to learn more about foundation
+models and how to work with fashion model to become AI engineers and so see that people coming
+into AI engineering with absolutely no ML background because you can just like do an API call and
+you don't need like a lot of people don't can't really explain gradient descent and not necessarily
+I think it's a big debate on whether they would need to know that should come with an engineer
+or not but I definitely see a lot of people being very good applications without traditional ML background
+and to just to play it back what you're seeing in the field is hybrid systems that combine
+foundation models and generic AI systems and traditional machine learning models I'm just
+rebidding this because that seems something that just about every practitioner in the field sees
+and agrees with however in the general public that seems to be a narrative that generative
+AI is completely ripping and replacing all forms of AI that came before it but just to confirm
+that's not what you're seeing at all. I would love to see people unseeding actually boost I think
+like good uphill battle. So the generative AI stack that's the the foundation of of generative AI
+what are the different components that people should know? So when you look into like building
+applications we think about like maybe a developmental process and maybe the stack should be like
+evolved to like address like your needs right so so when you start with applications maybe you
+start building night thinking about like maybe you start with like a testing of the models
+so you might want to like do some programming engineering since you know how far it can get
+good programming engineering maybe you need to curate some evaluation metrics you definitely need
+to evaluate like to design some evaluation metrics so so I think it's like the application development
+layer right like the programming engineering maybe it will feel like how to like enforce like
+structure output security guardrails maybe like with definitely with evaluations and then like
+after you do a silicon application layer and then we go and then we max out that performance there
+and then we're going to hit maybe we need to change the model right like maybe we need to like
+fire tune the model we need to make the model smaller make it faster like inference optimizations
+so like that layer when you actually make some changes to the models itself so it connects like
+the model development or a fire tuning layer and then like after that I think we go into like
+in fresh structure that you deploy those applications and now we have a need to scale up right now
+to think about I compute you have to think about was it data restore so like that's like in fresh
+structure or like it's like starting building as a platform so that can make the the deployment
+and iterations like faster and more reliable so basically yeah like three I think it's almost
+like three layers like application layer application development layer on top and then model development
+layer and compassing both my definitely a model from scratch and my fire tuning I'm making changes
+to the models ideally you don't have to view a model from scratch and then as a bottom is like
+in fresh structures it's like powering everything so scale which you mentioned a second ago seems to
+be or is very much I should say at the heart of the entire generative AI approach what is it that's
+so special about language models that make them so reactive to the scaling approach that that led
+to the chat GPD moment yeah that is like a really good question and I feel like there's
+a question that I think today a lot of what tech for granted but but it was not obvious before
+stuff like language could be the way to scale intelligence right I think like in the early day
+at least like when I got into AI I was like in the 2014 people with studio bid and I was
+able to become divisions like language or reinforcement learning because computer vision was like oh
+because like we developed ways to see way before we started developing languages so maybe like
+seeing is a way we scale intelligence right so so it was not really obvious and I remember back in
+like 2017 I was at this open AI party and somebody told me it's like hey guess what we just like
+keep on throwing text and now this model is like pretty smart so so it is like it was like people
+just like start like realize it's like okay we just keep on getting more texts and we get like
+much much better models and well when language modeling is right because they want to like other
+text models like machine translations I was actually very bullish on a machine translation
+I thought it was a really difficult task back in 2014 2015 and now it was like pretty much like
+people are saying that machine translation is like pretty much sold for like major languages
+I mean we still have the long tail of like less lower resources and lower resource languages
+but but yeah so so the thing with language modeling is that it's a very simple task and it's like
+really elegant so the idea is that you can predict like the idea is like try to build like to get
+enough statistical information about the language so that you can predict like what comes next
+in in a sequence right the ideas I even say like hey my favorite color is then it should be what
+you predict that blue is going more likely than say car that's what you call the auto-regressive
+models is that right yeah so so I think that that auto-regressive is definitely one type of
+language models so I think that is the idea like all language models is that you encode like
+statistical informations and that concept issue and not new like I think like people employ that
+to to like decode like to break code doing what you write like people are using that like for
+games and it's very very interesting so so auto-regressive like you mentioned is like should predict
+what comes next whereas like the mass one is like you can have a context from both before and after
+and predict what is the middle and and both what kind of language modeling tasks are actually
+can the data is like abundant like if you have some tasks like machine translations
+you would have to like curate like here is the original sentence and here's the translations
+and it can be quite painful to curate that but for language modeling because you can just have any
+natural text like online like it's like so much of it online you can just use it and also like
+not just like a natural text you can use like programming languages like and use like code bases
+and and I think that is just like that's nature of it is like you don't need to curate like labels
+like reference data so that that you can use your train models that make language modeling like so
+so much easier to scale than advertise a task and maybe to put terms around it can you quickly
+define for us supervise versus unsupervised versus self-supervised yeah so so the approach
+of like you have been like purposefully like curating the labels for the model stream from
+my fried section right for example you you have to just turn it down maybe like here's the transactions
+here's a label and the label can be like fraught or not fraught but I spam a detection then the
+the data is an email and then the label is like spam and not spam so so you have to
+curating like creating those labels the process of manual creating like and it takes you to model
+like to like learn from those labels so that process is like it's like supervision so the other
+spectrum is like unsupervised it's like you don't need to tell the models like the models or the
+the labels and the model figure out first before clustering so even throw in a lot of like articles
+to the model and say hey try to like group this into like five groups so you don't need to tell
+the models like okay this group is technology or something like that right that you just like
+the model can can can do it and there's a lot of clustering algorithms are like unsupervised
+language modeling is somewhere in the middle it's like it's self supervised and the reason is that
+it's still like learned from some labels like first of all like the next word in a sequence is a label
+that you can need to learn to predict but these labels come like naturally like you don't need
+to manually curate it like you just like get any text and you can like generate a bunch of training
+samples so yes so that's at the self supervision and it's still on the topic of scale why does it
+matter how big a model is in terms of you know millions or billions of parameters what difference
+does it make that is very interesting question as well i love how you're asking is this very
+difficult questions and i feel like i really need a whiteboard to what you explain all of this
+so people if you don't understand me trust me my writing is better than my speaking
+so like why what does it matters as the model should have a lot of parameters so parameters like
+there's a number of parameters usually like approximates like the models learning capabilities
+so so it's just more like um with with more so you can think of like a big more parameters
+it's in more ways for the model to like learn information so so you can think um as i try i'm
+trying really hard not to use a term like neurons the brain having more more synopsis you can learn
+more it's just like it's it's not that equivalent but yeah so so basically you can think of like a
+number of parameters is more learning capabilities of of the learning capacity of the model so the
+more parameters the lavings of models should learn more um so so actually a very interesting
+question that that that um that is that like why do larger models need more data to learn
+because the idea is that if the model has more capacity to learn should it need less data
+to learn that does that make sense that if someone is smarter right it should
+learn faster from less data yeah yeah yeah so so i think the idea is it's like because
+it has more capacity to learn um it could be a waste of this kind of capacity if you don't
+think she's more so so like yes you can use a you can train a large model using very very
+smaller data set but that could be a waste of compute and the waste of that model of potential
+you might you might be achieve like much better performance it's like training a smaller model
+with that with a smaller data set so yes like larger models allows a more to learn more and
+give it more data allow it to like massive mind is learning potential and be able to do
+much much more powerful task could you um go into um some other approaches to make a smaller model
+very performant in particular i'm thinking of a mixture of experts can you maybe define
+for us what that is and what the general goal is so i do think it's like the goal of making the
+model smaller like making smaller model better it's actually like a very important goal and it's
+just what like everyone is trying to do so so one thing i want to point out that like
+this what we consider small or large is actually very time-dependent like what is considered like
+large uh 10 years ago is considered tiny today so i feel like what is considered like large today
+might be considered like smaller in the future um so so so and we have seen time and time again for
+some like uh the same llama model family right like the llama tree model the small model in
+llama tree family is probably perform better than the bigger the model in the first llama
+generations so so like it's it's like um it's like over time we actually learn more like how
+should make model perform better with like being smaller size um so so like how should make models
+smaller model better so i think like a lot of way and i was just one like we can use better data
+like we have seen this like higher quality data and it should lead to like better performance
+people like to show that a lot uh better training techniques um like new alignment techniques um
+also like maybe like um different architecture that you mentioned like make sure of experts
+so make sure experts are interesting term because it's like um it has been reused for different
+meanings over over the years right like before we have the expert systems um and make sure expert
+means different things from like what people call like the the mixture of expert models nowadays
+so so the ideas is that like um for example like you you can have like not quite human expert you
+can have like different um maybe like um okay maybe you can devise more into different hats
+right and h hat specialized into some things and then like this hat like instead of like training
+like experts like entirely from the beginning like which like have a lot of parameters you make this
+expert share some parameters and then you have some guy routed in the middle to determine like
+which hat is it is it is a it's a most uh suitable so as ideas as like these different components
+can share parameters to make it more efficient um like parameter efficient where I can do in my
+multiple kind of like complicated task yeah so so I think there's definitely like one
+one pretty interesting approach um but also like there are more it's harder to train so usually
+I don't see people saying hey I want to make a mixture of expert models today and people don't
+wake up and like want to do that you know it's it's pretty it's pretty hard um I think like
+for for a lot of people they could pretty use something like hey uh maybe like do like quantizations
+which is like very universally uh very uh working really well for a lot of tasks across model
+another people might try to do is just like doing like distillations so like I have like a bigger
+model teaching a smaller model like so that's a smaller model like learn to mimic the behavior
+of the of the bigger model um so yeah so so I think that's a very very very fascinating question
+that you asked um and I might write another book about it you're heard it here first okay um so
+speaking of training um walk us through you know nutshell the different phases of how you train
+uh those models and so there's a pre-training but like in particular I was very interested
+reading the book about the the post-training phase which is uh there's a lot more to it
+than I had read read about previously so yeah maybe walk us through the the steps please yeah
+I really cut before I go into it as long as like I hit the terms like cycle pre-training and post-training
+it's just like very a little bit like confusing and I feel like the other AI research community is
+really great in many things but like naming is clearly not one of those um so so so I think
+it's like the process of training or like creating a model like uh chat JPT has like has a pre-training
+phase is when you train a model on the language modeling task so during this phase the model gets
+really really good at predicting what what comes next right so so it's like completion so it's like
+you just say it's like um to be or not it would complete with like to be so so it's very good at
+that however people realize it's like okay completion is good but it's not very useful
+in in day to day because let's say it's like uh I asked it's like um how to make
+pizza it might answer with four six because it's trying to complete the center like how to make
+pizza for six right so so like a lot of time it's like completion is not always as like solving
+a task so like that's where the post-training come in it's like you teach this model who has like
+a lot of statistical statistical informations about like all the knowledge of the world now how
+to get it to respond in a way that is helpful to humans who are interacting with it so so in this
+phase like it's going to post-training um so we can do it like um people have like multiple
+techniques but like the um and what I'm going to say is not it's not all the way they see only
+where to do it but definitely come on where to do it so like in the first phase of like
+post-training um maybe like it's called like self supervision we can do self provisions um so so
+you can curate like a bunch of like here's the instruction for humans and here's how to complete
+the instructions so if the instruction is like write me an essay about how wonderful my talk is
+right you can write like an essay so here's as a response like construction so so so you train
+the model to like me makes that humans behaviors of like here here's the instructions and here's
+how to respond um another um and then like another phase is pretty common um it's when you actually
+like try to get the model to maximize the chance of it during good response and lower the chance
+of it's generating like bad response um so so like you can use techniques um like reinforcement
+learning um like um ioshev, advanced learning from human feedback or like DPO uh direct reference
+optimizations so so um so yeah so basically um then a lot of other techniques around and
+around this like post-training and unfortunately a lot of labs are doing it and not quite like
+publishing papers about it so a lot of works that we just need to be able to like know who to talk
+to interviewing the right people and trying to get them to say like after report uh but yeah um
+but yeah is that because uh that's a big part of the secret sauce that there's a commercial
+proprietary sort of labs want to want to preserve it yeah so um yeah i think about it like what makes
+a cloud model so different from JAGYPD and like Gemini so like the pre-tuning phase for a lot of
+companies they have the same data because everyone is scraping the internet uh right like everyone
+is getting basically the same data uh so there's a language modeling task like everyone is
+optimizing for like entropy like uh publicity right so so what makes like this models really
+difference during the post-training phase uh like so so like they corrected that differently
+they like have different ways of like collecting like human preference and like training for that
+so so i do think that the post-training is what makes this like really big lab models are like
+different you mentioned a term called sampling in in the book that is very interesting and you
+mentioned very very important in terms of understanding how those models behave can you maybe define
+that for us um sampling is really fascinating um i i think it's it's actually the writing session
+sampling is like one of those that bring me the most joy because i really like it um um so
+and i feel like the topic is really underrated um so sampling is a process of a language model um
+picks a positive like pick one output out of so many possible outputs right so so we talk about
+the language model like encode statistical information about language so let's say i said
+it's like um the answer to this question is 70 percent yes 30 percent maybe and 20 percent no
+and a 10 percent maybe right so so the model is like models and look at all these possibilities
+like hmm what should i pick next so maybe 70 percent of types in the pick yes and like
+30 percent of big notes and a 10 percent of big uh maybe so so that is a sampling process um
+and and um and the language model right you you don't just it doesn't just sample like
+each response is not just one token or like one word right you have to rest for like a sample like
+over and over and over again so sampling refers to like um different techniques so that you different
+strategy to like notch the model to pick the the the the the output that is more valuable to you
+um so so let's say just like um first of all like one one thing people do use like temperature
+so so so you can notch the model to like pick more frequent tokens for example like for every
+like in the simplest way right you you you are national order pick the most frequent
+most likely token um so so in that way you would notice that the models become quite boring
+because it wouldn't always pick like what is the what is the most uh frequently spoken
+like the most common phrases first way you can ask like hey what's a free color people like my
+free color is blue or my free color is red uh like it's it's big very simple it wouldn't
+be pretty unlikely to judge something like my free color is the color of uh blue sky reflected
+in the steel water whatever like something creative so so if it wasn't even more creative
+it wouldn't want to notch the model to sample some things that is like more um less less frequent
+but now the tricky part because if if you want some more to pick something that really rare
+it might become coherent incoherent as well so so basically sampling refers to this whole
+families of like different strategies to like notch the model to generate the responses
+like equip like like most suitable for the task um and i do think this like is fascinating uh and
+uh it's interesting and useful because um it's a nice it's a cheap way to improve some model like
+those applications performance without to retreat you're gonna have been to retreat in the model
+um it's also really useful for the the bucking's applications for example you can see like uh
+maybe it's a model like output like reasonable but you can look at like the probability for
+example like if you ask this a bunch of like is there no questions and the correct answer is yes
+but the probability for the yes is like really low so maybe the model is not a confident right
+so so you so you want to look into that um so so yes sampling is very cool all right so let's go
+into uh the general topic of evaluation which you know you mentioned upfront is one of the key things
+in designing those uh ai uh systems you actually have you have a sentence which i really liked in the
+book uh that summarizes it all that says as teams rush to adopt ai many quickly realize that the
+biggest hurdle to bringing ai applications to reality is evaluation for some applications figure
+out evaluation can take up the majority of the development effort um so you mentioned some of the
+specific challenges of uh of uh why is it so hard to evaluate how does uh one uh think about
+evaluating those models yeah evaluation is hard so i think like i realize this term like what i
+call um evaluation driven development so this comes from engineering the concept of like test
+driven development so the idea is that like um you develop uh applications that you can evaluate
+right so so um even those is like i think i see a lot of people i said it about like the latest
+marketing buzzwords i think it's like one thing i realized from working with a lot of tech executives
+is that they're actually really smart and i think like like surprise you become the SVP of this
+giant corporations because you're pretty smart um but but yeah so um i think a lot of business
+business decisions are still made based on return investment so that's like it's really hard for
+people should i say like double down on something if they can't say it's like hey this is making a
+real money for us so it's not a surprise it's not a coincidence that's some of the most popular
+ai application today are those that you can evaluate the output like pretty clearly so for
+example like recommender systems like everyone has a recommender system nowadays and it's because
+like with recommender system it can tell like how much money is bringing in but like whether it's
+increasing like say like click through rate or like push through rate right so like you say okay
+after we launch it's a familiar system now sadly our push is through rate and increase by like
+two or three percent and like of course i have student minus thinking but also confounding factors
+like campaign but maybe it's not going up very simplistically uh all like for free protections
+uh it's very common nowadays because you can tell very clearly that like uh oh uh like how many
+short fraudulent transactions of like you were born to like flag and i stopped um and like for
+jet of ai like one of the most common jet of ai use cases today is coding okay so there are many
+reasons why coding is popular and i said like one of the reasons is that it's very it's a lot easier
+to evaluate coding than i gather because like here's general code right you can evaluate like
+does it compare right and like this is general's uh expanded output and um testing code is not new
+and super engineering like people have been doing like all different type tests like unit tests
+integration tests so like generally so people know how to evaluate like general code so so yeah
+so like coding is like actually very important so so i do things it's like if like no matter how exciting
+a use case seem to be if enterprise like don't see a way to evaluate is is outcome it's very hard
+to like notch them to like adopt it um so so i do things like evaluation is the biggest bottleneck
+for ai adoptions because unless like if we can like if we can like develop a more reliable way
+to evaluate the application that application is not going to get adopted like or maybe maybe
+it can maybe be some billionaire to just like still like uh like uh fund it but uh but yeah it's
+challenging so what are the key concepts um around evaluation so you mentioned a couple of
+those terms uh like entropy and perplexity what are the criteria what are the methods what should
+people know about yeah um so um so so you mentioned like entropy and perplexity so those are very
+fascinating concept and the issue is a guy's development of language models but because most
+people today's are not going to build a language model from scratch it might redo it for fun but
+not going to be a scale where you can come pick up an AI um so so but so but so so i think like
+entropy and perplexity is useful to know but pretty not what you are going to use day to day to evaluate
+your applications um so so i can talk about like entropy and perplexity and things they're like
+really really really cool concept um so so one one one things i want you to mention about that is
+that's like um we really want like entropy to be like lower so so so like to make things like
+basically more predictable so so so for example like if the model is getting really good at predicting
+like the next token so so does that mean that's like now the journey that becomes like that language
+become like more predictable to the model right so the entropy is not below uh and over time
+people find out it's like hey if i could just decrease entropy somehow users are happier like
+on the user using the applications i become happy and then the question is like how far can i go
+like how low can the entropy go right because like absolutely it can't go to like zero i think
+people have been talking about like is there like a lower bound of like how and how how far can you
+go with entropy like how much room do we have left to push the performance of this language models
+and there's this concept like uh the reviewable or reducible loss so so like language has some
+certain aspect of like unpredictability right this is no i don't think we would ever respond like
+we can predict the next token like perfectly because there's always some like um some variations
+in the way we speak right um so so i do things just like there is this like a reviewable
+a reducible loss and i'm not sure you saw a bunch of people talking recently about like
+the end of like pre-training and i think i say um multiple reasons uh could be like once like
+when we didn't have data for pre-training the second is just like i was a perplexity like the entropy
+of this language were pretty pretty low and it might be like very very close to what could be like
+theoretically possible uh so letting uh went cost Shannon to introduce a concept of like entropy
+he did some pretty fun exercise like he was like he asked a question like hmm what is the entropy
+of the pre of the english language so like that could be like the the the lower bound like but
+like because he did it like in 1950s he did that based on like a very very short sequence of like
+maybe 10 character like 10 10 words um and the interesting thing about entropy is that like the
+more preceding um the longer the pre preceding sequence like the longer the context the easier
+they should predict the next token right now usually if i have like if you just tell me one word
+it'd be very hard for me to bring the next one if you just say like i right i was like i'm gonna
+go with i am i want i love i hate right but if say like if you give me like a sequence of like pretty
+long first of all like um first of all like uh even as in a today i would like to welcome my
+i can predict guess the next words can be guessed right so so the longer uh the the sequence the
+the easy more predictable the next uh the next token is and the lower the entropy so shek loshan
+and did in 1950s like the exercise could very short preceding sequence uh so i would really love
+to see like if somebody like today uh do that like study that but like for really really long
+sequences and so if if a concept like entropy is not um something that uh people that that build
+those AI systems in real life so not the model developers but like the AI engineers who deploy
+uh AI systems if that's not the kind of a topic that they need to um worry about who using the
+evaluations what what should they use what are some of the key techniques and key concepts
+to evaluate um AI systems in production in in real life yeah so i think like um as a lot of
+corporations go which you make money i think the ultimate metric is whether it's making you money
+or not but i feel like exactly right you brought right because many things can like cost whether
+company make money or not making money uh so so i think for applications um it's really
+really important to understand the use cases well so they can design like the set of metrics
+and then you can work backward from that and the map issue like uh the motor metrics uh that that
+you care about um so so so let's say like uh for example like you do a text to sequel uh model i feel
+like uh back in like 23 um i got like every way you could got some engineers it's like hey check
+out my new text to sequel model yeah pretty much it was like wow wow people would do anything to
+avoid running sequel queries um yeah so so so let's say it's like you you're you're like data
+companies right and i thought usually usually interact with your data using sequel and it was
+like oh my god running sequel is so painful so let's let's let help people write like natural language
+to write that so let's say have a text to sequel model then then how do you know as a model is good
+so so so maybe like you can start thinking from like from the user from like user perspective
+like from your perspective why do you want to develop this model first maybe you want to like
+improve user's productivity so like maybe you can use a metric of like uh time to like speed to
+complete like speech to completions so maybe before like with as a tool users would take light on
+average maybe like three minutes to write a sequel query but that was a tool it takes only one minute
+right so it's like having this kind of like metrics would be very useful or or like um another um
+like customer support you can also like similar for example like before um you can respond to
+i know uh users have to take like uh two hours for the agent to get to the users but now i can
+respond instantly but that's not always a case because by default if it responds automatically
+it will always like be fast right so so need to think more about the case of like ours is like
+happy uh and i or so so that is like the ultimate case and evaluation metrics and i do things like
+you it's really dependent on the use case in your companies and what you care about but then
+you look backward from that it's like okay now i don't want to deploy the application yet right
+because i want some validations offline to be able to like know whether this is good or not
+so so you want you need to like evaluate you can create sort of evaluations like systems to
+to evaluate that still on the topic of evaluation an interesting uh tidbit you talk about is a
+concept of uh AI as a judge so some somebody who something needs to evaluate the the semi could be
+a human it could be AI what are your thoughts on the the pros and cons of AI as a judge yeah um
+i do things it's like AI as a judge is a very promising approach um so so i do things that um
+i think when when AI first uh when judge we first came out AI as a judge was like AI is not reliable
+enough as uh to be entrusted with a crucial task but then nowadays you talk to like teams i think
+like most teams have like some variations of AI as a judge going on um so so AI is a judge it's
+pretty interesting the idea is that like you have a AI um evaluating the outputs of like other AI
+and it's especially useful in productions this is the idea is that like um let's say like the model
+you use a model to generate a response a lot of what like oh my god what if the response is like
+not safe what is the response is like crazy what if it's like saying something like get me sue
+so so maybe you can have another model it's like just you double check this one and give a score
+and send back um so so AI as a judge it's like um pretty it has been like
+able to show to work like very pretty strongly collated with like human uh human judgment
+um and the tricky thing about AI as a judge is that um AI as a judge is not as hard to say
+exact as it's not it's not um subjective as as a metric like f1 score or like uh so so what that
+means is that like when when everybody say f1 score you you know that you know what that means
+you know how it's defined right and if they run a calculation f1 score again
+even writing using my own f1 score code it will get the same f1 score ideally uh but for as a judge
+it really depends on what the judge is like which model is a judge model and what the prompt is
+and one thing I noticed is that like for a lot of um those those judges can like
+evolve over time so what evaluation is like ideally you want the evaluation method to be
+stationary so that it can benchmark so application over time so let's say that yesterday so evaluation
+metric was like maybe 90% and today it's like 92% and you know that okay so my application is
+getting better but with AI as a judge what could happen is as a judge is self-change so that like
+it's not comparable between 90% and 92% and um I was top of the team um who was like a pretty big
+company it's a pretty common scenario with a lot of companies it's like especially with their bigger
+is as they might have a team that's like devoloft AI judges like never likes it maybe nice and
+raise a prompt for AI just maybe the the job could be like a ff1 score or like a relevant score and
+now stream team to the user judge so like this one engineer came to me and said like hey we have
+this ff1 score of like 90% and I was like okay that's great so what is a prompt that you use for
+the judge and he was like I actually don't know I'm gonna just use this off of the shelf so so I
+do think it's really really tricky when you don't uh when you when you don't have control over the
+judge so we were just talking about prompts so let's turn to prompt engineering and uh you wrote
+that uh prompt engineering's ease of use can mislead people into thinking that there's not
+much to it um so maybe a quick reminder on uh what prompt engineering is in the first place
+and um how should the AI engineers think about it or approach it yeah yeah uh so I think like um
+when I mentioned that I wrote I have like a session of prompt engineering I did have few people
+on their own their eyes like oh my god I'm engineering so so a lot of things just like this that like
+people don't take a lot more don't take prompt engineering seriously because I think it's just
+like not much engineering to it so maybe like it go back to like maybe what is a prompt uh so it's
+a promise like how you communicate with a bit of model so so I think of it just like writing is
+just like writing does it make any sense or so like you're gonna have like writing promise like
+human to computer communications and just as like human to human communications like
+anyone can do it but not many people can do so effectively so so yeah so so like because like
+anyone can say okay I can just write this from people saying okay if anyone can can do that there's
+there's it's like it's so easy like this there's nothing about it and especially it's quite misleading
+in the early on when we had a lot of like hacky hackyness when it comes to write your prompt for
+some people say like some I think or as a funniest tip I saw on prompt engineering is just like if
+you set out the models like answer correctly I wouldn't give you two a dollars right it's just
+like it's just like yes writing the model or like um so so but what's like okay you just like do
+like stuff like that and get more to do things but even though there's a lot of like how to say
+tricking so a lot of like tricking the the tech and the instructions to get what you want
+I do things that it can be very systematic you know you should need to make it very systematic
+so if you consider like each prompt is a experiment it should be what you like version of the prompt
+you should be able to systematically track your progress with different prompts you don't want
+to just like you know like use a prompt and somebody makes random changes have no idea what's going
+on and the downstream people like just like have no idea like what change of applications and
+otherwise the app was different so so I do things it's like um yeah like prompting is very easy to
+get started but like to be to do so effectively does require a lot of practices and a lot of like
+discipline to do so like systematically what is in context learning when it comes to prompt
+engineering that is very by the way do you think the mostly audience would know like what in context
+learning is uh no but they're going to learn thanks to you okay so so in context learning is
+actually like pretty nowadays it's one of those things if we're granted but it was not it was a
+pretty novel idea when it came out so in context learning so so now like when you talk to a model
+right you give instructions give you some informations so some people call like a lot of corners the
+entire thing that you input the model input into the model to get the model to do what you want
+is the context right so the context I'm actually very confusing when I go into that later but yeah
+so like you get you give the model a bunch of like informations to get the model to do what you
+want so that is a context and if you give it some examples like um if I say uh let's say if I say
+car you say vehicles if I say button eyes you say fruit if I say house you say building right and
+it says it's the next thing maybe even people like if they trade maybe you can send it you
+would know how to output vehicle for example right so so so um I think I say you're going to
+input the examples into the models the model is able to learn from these examples and output the
+correct uh category or the correct output and that idea was now when we skim out because before
+if you want the model to be able to predict like to get the correct output we had to change
+to train the model especially for the task and before we want to like say like oh like predict
+the category of this object right we need to like curate the training data of like name to like
+category had to train the model on it but now with language model is it's like you can just like
+independent like you don't need to train the model from scratch you just need to input some
+examples in that and then you get each you know exhibits the behavior that you want so that is
+incandescent and it makes the model learn from the context different to it so so I have this whole
+term of like um future learning um zero shop learning zero shop learning is like when it can like
+do what you want without any examples at all for example it can say like um give me um tell me
+whether this email is spam or not spam and it's and give it as the email and no other examples
+than this zero shop learning but then you have like maybe like five emails each of them with like
+a label my spam on a spam and then they immediately want to classify so now I have like five examples
+for the models you learn from and now it's like five shop learning so it's a really big it's a
+really big deal right because like as you said like you don't have to go back and like retrain
+the whole model always like brand new data you can extend an existing model with knowledge without
+any kind of like coding or training okay interesting yeah it's a big deal because it makes language
+models so a versatile and I see these control applications so that's what make a general model
+before like if you want a model for a task you need to train a model for the task but now you
+have like a model train generally for language modeling and now you can just like adapt it to
+any task with like with incandescent learning and there's a part uh in the prompt engineering
+section that I thought was particularly interesting around defensive prompt engineering so defense
+around against jail breaking information extraction they're kind of thinking can you talk about that
+and maybe what what we have learned about making those AI systems resistant to that kind of those
+kind of attacks so I do think that the topic is getting increasingly important especially as AI
+is being like first AI is being used for more like high-stack task right in a more complex task
+and the second um is it's like it's now AI has increasing access to like more tools and it can
+make changes um so so I do things that like there are um so so we we do want AI like users to be
+safe like predict not just users but also like developers of those models nobody gets to um so
+so I think that um with um it's also like one reason that makes a lot of people like go through
+like proprietary models instead of open-source model because I say if you use like a model like
+developed by companies like through the API you you kind have some like um this is companies
+and responsible for like putting God real should make sure that model behave safely like it doesn't
+say anything racist sexy somebody asked this question about like praising Hitler maybe even say no I'm
+not gonna do it right like there's a lot of God real around this but if you use like an open-source
+model and you deploy yourself you're like responsible for it yourself so so so I do things just like
+of course open-source model developers and try the best to make to make the models like safe as
+well right but but they also have less visibility into like how the open-source models are being
+used so which gives them like less uh information for them to like make the model safe so so I do
+things just like um defensive like promise you doing is very important it's like it's just it
+refers to the process of like writing the prompts in a way that makes the model safe so for example
+like maybe um nobody actually knows what the chat GBD system prompt like cloud system prompt is
+but I I bet as I say contain a lot of like languages so it's like tells the model like
+do a response to the sky requests your assets like this do not be this do not be that do not
+be that right so so when you just maybe do to to make sure this is uh like every one understands
+so there's there's a user prompt but there's a concept of a system prompt which is like the prompt
+behind the scenes right like the prompt behind the prompt that that tells once you've uh you as a
+chat GBD user I've typed in something then there is a second layer that tells the the model to do
+and not do certain things is that is that fair yes matt matt you tell you you could be a great
+great teacher oh yeah no just because I read your book thank you yeah so so you do have like the
+user prompt and the system prompt so so the system prompt is like say i'm an application developer
+and I develop an app of like hey uh given a disclosures for for a house then you users can like ask
+question about the disclosures right so as an application developer I write to address the system
+prompt like hey model act like a real estate agent and given a disclosure the users on the
+R scale so act like professionally be nice be kind be brief and then users promise like here's a
+disclosure tell me how big is a lot like how how is that compare like in any noise complaints so
+your system prompt is like built by like created by the system like application developer and user
+promise like when users interact with the applications fire like whatever the like language they use
+so your system prompt is when you need to put in on this like languages to make sure that the
+application acts in a way you want to interact all right let's spend a couple of minutes on
+another very important part of AI application architecture which is rag maybe a quick reminder
+for folks about what rag is and then one specific question that the topic sentence that
+that caught my attention is when you wrote that many people think that a sufficiently long
+context or context window will be the end of rag but like you don't you don't think so so what do
+you mean what do you mean by that yeah uh so I think this like originally rag was developed to
+get around like shorter context right so so I think like original I hope in she did like pre-
+like 2017 or something maybe in she referred reference my book but but he has ideas as like
+for a lot of like knowledge base knowledge intensive applications or questions and where you cannot
+fit the entire knowledge needed in in the context then you need to retrieve it from some point
+first of all if you need to rely on Wikipedia and you cannot fit the entire Wikipedia in in your
+context so maybe you need to find like the article most relevant to the question retrieve it and
+put in the context instead so that's the idea of original it was like designed to like to get
+around that issue and then some people were like okay as the morals get a real long context maybe
+you don't need rag anymore because you can just dump the entire enterprise database into the
+context and you can just retrieve it um so so I do things just like the questions of like whether
+long context can make rag um oscillate is similar to like will like larger uh with larger
+uh computer like laptop memory we make it a center oscillate so I feel like no matter I feel
+like no matter how big my phone memory or my laptop memory is I would always run out memory
+so like people could we we're only gonna having more and more information so it's like I think
+we always experience our usage to fit in whatever context length that's going to be available and
+the second thing is that like just because a model I think the second reason may be actually
+more important uh at least for now it does just because a model can fit in a million
+con token context doesn't mean that it can process that million token efficiently um so I think
+this like first of all I was actually using um the cloud and just reading for like some of the
+novel writing I'm actually really want to write a math novel and what I felt out is that like
+because I read a write story right you need to keep track of like events in the past
+and I felt as like anything is like over like 10 if it input like any text is like around 10
+thousands tokens length like the model was just like company like forget like confused
+timeline it would think that it was this character actually method character instead
+like it is like really not efficient at all on my understanding large context and I feel like um
+some some model developers when they have the drag guidelines they have some guy like hey for
+anything that beyond these x things maybe tries to use rack it would shorter than that you can
+dump everything into it but really it really depends on the use case and I think it makes people like
+really need to test out the context efficiency for their for their application all right so as
+promised let's close with everyone's favorite topic of the day AI agents so I guess let's
+define the term first of all because everyone seems to be using different definitions for the
+term so like what is in the AI agent for you that is um I feel like if you like it's a track
+question you were like okay everyone disagree on the term not tell me what the term is um by the
+way mad do you invest in any Asian companies of course I'm a VC I have to uh the two things I need
+to do as if this is one I need to have a podcast two I need to invest in AI agents those are the
+rules so so I think it's like um I actually like um a lot of um of my of the early reviewers like
+they have a very very very extreme bible or opinions on an agent um so so I decided it's like okay
+for this case like agent is not a new term it's not like a term that's like no one has ever heard
+up and I should like a term used in AI for for a very very long time so I was like okay let's just
+go back to the basics and I just go I just take out some like AI textbook from the 80s and 90s
+and see how we modify agents and actually makes things a lot easier so actually based my definition
+in my books based on um pitanovics and um on rasos books uh from from the 90s it's like
+it's a really good book so basically they say they defy agents as anything that can uh that
+can perceive the environment and interact with the environment so so like it has like two components
+right like the the sensors like to get information from the environment and then it can perform
+actions in the environment so so what does it mean in the context of like AI power agent right
+so like AI power agents um already can interact with the environment for example if you are
+saying like hey search the internet that means it's like retrieving the the information from the
+internet and i even say it's like hey send an email then that is meant like acting on the
+environment by like sending out information so so like AI agents it basically like um
+it's defined first by the environment is operating so let's say like charge it be operating
+internet then it's like the environment is the internet if you have an agent in gmail then gmail
+is that environment if a coding assistant agent then the maybe whatever the coding uh editors that
+you use like VS code or whatever or a terminal is is the environment all like uh so so so like
+it's correct type as an environment it operates in and then like given users um given users task
+this agent uh leverage a tools like um like uh leverage the tools uh it has access to to perform
+the task and how does it do it it will need some type like a brain that determine like hey what task
+is this what tool should i use how do i evoke the executions and how do you determine this task
+if you're in a compilation so in terms of the AI powered agent that brain is lm like it's a model
+so we have like gbd4 power agents or like clawed powered agent so it's really so like everything
+about like AI power agents you basically think about like hey what what other tools that it has
+access to and second like how good is is planning mobility uh because as a aspect like the environment
+is pretty much defied by the agent developer and the user and the task is supplemented by the user
+and then there's a central concept to agent which is planning how do you think about it and what
+what is specific about planning from a model perspective? Planning is very very very hard
+um yeah so so I think it's like we uh basically say we talk about like agent has like two big
+components that we like like a lot of these like we need to work on is like the tool use right
+and a different set of tools so the agent has access to you and the planning and how to use the
+success of tools affectionately to solve the given task so tool use actually like in early
+days when we have a function calling so tool use what is the tool use like evo good tool
+we're by calling a function supplementing the parameters to like do the function right
+so function calling like um we're pretty much like understand a lot more about it but planning
+like how to use those tools effectively like how to come up with like a a roadmap an ally of
+plan to like zone the task it's like really really hard uh so like even like something very
+simple uh can require many a lot of like reasoning steps and like uh like a sequence of actions
+so so so planning um is also not a new problem maybe what is new is that using lm to zone planning
+but planning itself is not new uh so planning that is core uh you can think of it as like a
+search problem so what that means is like here given a task like hey if like you have a goal over
+there like there are many many different paths towards that goal maybe like maybe like uh maybe
+like uh you need to turn left first and right first or right like there are many different ways
+so like a planning is basically you search through like the entire possible like paths
+and choose the one that is most uh that is that this is that's the best path or if there's no path
+you can you need to determine that there's no path there's no possible way to solve this task
+so so so so planning is a it's a it's a search problem and i think in in many ai text books uh
+even the books i mentioned from chinaubic um yeah and rational they have like a huge session on
+planning um so so so the challenging um with for and for planning is that um i feel like i can
+pretty go into like multiple minutes here uh but but i think this is like um i do things it's like
+planning is you need to be able to like understand um not not just like generate a sequence like
+not just like knowing not just like saying what you do next but you should be able to like predict
+what could be the outcome of that doesn't make sense like for me it's pretty hard for me to decide
+should do a or b if i don't know what is the output of that what's the expected outcome
+so so so so i do think it's like there are certain techniques that make out and better planning
+so like for example like when um like not just like before it's trying to like do an action
+try to like predict like if i do this action what would happen like if i want like if if you turn
+left until left the cliff you probably don't want to do it right planning is incredibly hard and i do
+things i think in in my in my book i have a very long sessions on planning actually made it public
+on my website on on the session on planning so if what i'm saying is like a little bit too abstract
+the reader blog post is free and is online so so basically the idea is it's like can lm plan like
+is it any fundamental reason why lm's gonna plan because we have people like onto one side
+inspection my young lekun from meta who's incredible scientist but he also said that's like lm's
+like autoregressive lm's just cannot plan but and they can't disagree uh i think it's like maybe
+like we just don't give lm's enough like tools to be able to plan effectively or maybe like we
+just don't have the models good enough maybe like stronger models who make up a better planning
+uh so so i think this is that the session this uh discuss that and so discuss like different tips
+like how to get the models you plan more effectively uh so so for example like um to to plan well
+you need to understand the set of tools you have access you pretty well so any so like if the
+tools and it's too confusing to use uh that actually very hard for the models you go to
+like plan right so so you need to look at the tool set and what i have maybe you need to like
+change the name to make it more understandable or better recommendations or maybe it breaks a
+tool into like more simpler tasks uh one thing i want to say about planning is like actually
+quite not obvious and if i quite fascinating it's like actually hard for us to like create data
+to train models to become better planning and the reason is that like when we ask humans to
+generate like what they consider the best plan for actions for for a task is actually like not
+quite the best plan for AI because what is f uh what is easy or efficient for humans it's not
+the same as easy and efficient for AI right so for example like um if uh browsing it's like a
+thousand websites and summarize it and to summarize a thousand websites would be really boring and
+slow and tedious for humans and as humans i probably could not do it i shouldn't have did it for my
+for for my like uh i tracked a thousand ribo so i did it one point but it's like a very teated
+painful task but for AI it's actually really easy right it can just like browse a thousand website
+and like share summary at the same time so so one challenge to like generate data
+to train the models you can better planning is that we can't quite realize on human
+laborers uh like uh annotators to do so uh so so a lot so like there's a whole school of like
+how how do we come up how do we know like generate like good plans for AI to learn from so you can
+learn better than me all right so it's been wonderful uh there's uh more chapters more topics uh we could
+talk about data set engineering we talk could talk about inference optimization and and all the
+things uh but hopefully that gave listeners a good flavor for what you discuss in this book which
+again uh is amazing and i very much truly enjoyed and and fully recommend to anyone
+interested in the topic of AI in general and uh engineering in particular uh so there's the so
+the the book which is both in electronic format and starting to ship in physical copy my physical
+copy is gonna arrive uh soon i'm told uh there is a github repo which is uh associated with the
+book as well is that right yeah uh so so i think like uh in the in the process writing the book i
+went through like so many resources i think the book itself like referenced like over a thousand
+links and i myself personally went through like a lot more links um so so as i was like some a lot
+of it was very helpful and so like the github repo has about like a hundred like of the resources i
+found like the most helpful in the process writing the book so that like if you just go through the
+resources directly i think there's a lot of great learnings there uh from from like from
+everyone um and so there's a repo so it has like table contents and like summaries for each chapter
+uh and some prime examples uh and stuff like that yeah is this not a tutorial book so there are no
+coding examples um it's pretty i hope it's a good thing because i felt like all the frameworks today
+change so fast so i feel like any coding is simple using any of them so you're gonna go
+like i'll be able to dive pretty quickly wonderful thank you so much i think this book is going to be
+going to be a major hit uh really appreciate your uh you know coming on the part and uh telling us
+all about it and sharing some of the key insights it's uh really appreciated really enjoyed it thank
+you so much thank you hi it's Matt Turk again thanks for listening to this episode of the mad
+podcast if you enjoyed it would be very grateful if you would consider subscribing if you haven't
+already or leaving a positive review or comment on whichever platform you're watching this or
+listening to this episode from this really helps us build a podcast and get great guests thanks and
+see you at the next episode
+bye!
+
+

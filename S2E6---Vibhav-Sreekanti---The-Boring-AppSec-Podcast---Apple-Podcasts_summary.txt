@@ -1,0 +1,120 @@
+Here is the analysis of the podcast transcript following the specified format:
+
+1. EPISODE CONTEXT
+
+Podcast name and episode focus: 
+Boring AppSec Podcast - AI in cybersecurity, building AI agents for security operations
+
+Hosts and their backgrounds/roles:
+- Ashima (last name not provided), host
+- No additional background or role information provided for host
+
+Guests and their roles/backgrounds:
+Vebov Shrikanti, Founder & CEO of Profet Security
+- Leading development of an AI SOC analyst for security operations
+- Previously VP Engineering at StackRocks (Kubernetes native security platform acquired by Red Hat in 2021) 
+- Led object storage service and security products at Oracle Cloud (OCI)
+- Computer science degree from Carnegie Mellon University
+
+Featured company overview:
+Profet Security (stage and funding not specified)
+- Developing an AI SOC analyst for security operations
+- Using AI agents to automate SOC analysis and incident response
+
+2. KEY INSIGHTS
+
+1. Keeping up with the fast-moving AI/ML space requires actively following research, experimenting with new products/tools, and being open to change. Vebov uses Twitter extensively to stay up-to-date.
+
+   "Twitter is just incredibly useful for keeping up with what's going on, staying in the loop... Everything is happening on Twitter. I've just learned so much from being on Twitter and following the right folks."
+   
+   Significance: Highlights the rapid pace of AI development and the importance of constant learning and adaptation to leverage the latest capabilities.
+
+2. Skepticism around AI in security is warranted based on history, but ignoring advancements risks missing real solutions. The key is understanding how AI is actually solving problems vs. bolted-on features.
+
+   "I think skepticism doesn't mean we get to stick our head in the sand. I think ignoring advancements in AI, especially generative AI, is probably a mistake and I think we could be missing some real solutions to longstanding problems in the industry." 
+   
+   Significance: Balancing healthy skepticism with an open mind is crucial. AI must be thoughtfully and carefully implemented to genuinely improve security operations.
+
+3. AI agents offer the potential to handle repetitive security operations tasks and allow analysts to focus on what matters. But agents are complex, probabilistic systems that require extensive testing and human oversight.
+
+   "If thoughtfully and carefully implemented, you know, AI can improve security operations workflows. I think there is an opportunity to handle repetitive tasks and really help analysts focused on things that matter, but it's important to not throw the baby out with the bath water."
+
+   Significance: AI agents could revolutionize security operations, but robust evaluation frameworks, transparency, and human-in-the-loop safeguards are essential.
+
+4. SOAR platforms largely failed to live up to promises because security automation requires constant maintenance as environments evolve. AI agents may overcome this by emulating complex investigative processes.
+
+   "Very few security teams have the resources or bandwidth to really dedicate to [maintaining SOAR workflows]... Where SOAR falls short is in the hard part of the investigative side of incident response... And that's where, you know, to our prior point, we think there's a promise of AI agents."
+
+   Significance: AI agents could make security automation viable by dynamically adapting to changing contexts, but it remains a hard problem. Agent frameworks are still immature.
+
+5. Keeping humans in the loop is essential when deploying AI for security operations. Oversight, explainability, and feedback mechanisms allow AI to earn trust and improve over time.
+
+   "Our AI agents don't just provide conclusions, but they also show their reasoning... They show the evidence. They show how the evidence was gathered, which data sources were leveraged, what the query was, you know, users can trust but verify our work."
+
+   Significance: For AI to be accepted in high-stakes security settings, it must provide transparency into its reasoning and enable human validation and feedback. Black-box approaches will not be trusted.
+
+3. TECHNOLOGY & PRODUCT DEVELOPMENTS
+
+Key technical/product innovations discussed:
+- Profet Security is building an AI SOC analyst that can handle alert triage, investigation and response 
+- Uses a fleet of specialized AI agents that gather evidence from various tools and reason about incidents
+- Agents show their work and reasoning, allowing for human oversight and feedback
+- System is designed to learn and improve from analyst input over time
+
+Future development plans mentioned:
+- Continue enhancing the agent framework to provide more reliability and control for production deployments
+- Expand use cases and integrations with customer environments
+
+5. TEAM & CULTURE SIGNALS
+
+Leadership philosophy and approach:
+- Vebov emphasized the critical importance of having the right people and team as a prerequisite for startup success
+- Optimizes for caliber and integrity of the team over brand names and titles
+- Extends to investors and anyone else involved in the company's journey
+
+6. KEY METRICS & BUSINESS DETAILS
+
+Go-to-market insights:
+- Profet Security's AI SOC analyst aims to solve the alert fatigue problem plaguing security operations teams
+- Security teams are often skeptical of AI/ML solutions over-promising and under-delivering 
+- Product focuses on enhancing rather than replacing human analysts, with transparency and oversight being key
+
+7. NOTABLE TECHNOLOGIES
+
+New or emerging technologies mentioned:
+- Generative AI models and their potential to revolutionize various domains beyond security
+- AI agent frameworks like Langchain for prototyping agent-based systems
+- OpenAI's function calling and ReAct frameworks as ways to implement agent-like behaviors
+
+Novel technical approaches discussed:
+- Using fleets of specialized AI agents to gather and reason over evidence from disparate security tools
+- Providing transparency into agent reasoning and decisions to build trust
+- Learning from human analyst feedback to continuously improve agent performance
+
+8. COMPANIES MENTIONED
+
+Twitter: Used extensively by Vebov to keep up with the fast-moving AI/ML space
+"Twitter is just incredibly useful for keeping up with what's going on, staying in the loop."
+
+OpenAI: Released function calling support for GPT models which changed how developers implemented agent-like systems
+"I believe it was June of last year, or maybe it was May that OpenAI came out with first-class function calling support. And all of us got to go delete a bunch of code that we had written."
+
+Anthropic: Released a feature for parsing complex architecture diagrams using their AI models
+"I believe I saw Anthropic came up with this parsing feature sometime last week where I think you can have Anthropic's cloud model parse complex architecture diagrams and whatnot, right? Well, something like that is very relevant in the application security space, right?"
+
+StackRocks: Kubernetes security platform where Vebov was previously VP Engineering, acquired by Red Hat
+"We heard this problem from our customers at StackRocks that, hey, StackRocks generates too many alerts, right? Like, I don't know what to do with all of these. And I sometimes joke that, you know, we started this company to really repent for our sins."
+
+Oracle Cloud (OCI): Vebov previously led the object storage service and security products
+"Prior to that, he was part of the team that built Oracle's public cloud OCI where he led the object storage service and later managed the security products portfolio."
+
+9. PEOPLE MENTIONED
+
+Vebov Shrikanti [Founder & CEO, Profet Security]: Provided extensive commentary throughout as the main guest
+"Vebov is a founder and CEO of Profet Security where he is leading the development of an AI SOC analyst for security operations."
+
+Andy Rachleff: Referenced indirectly by Vebov regarding a quote on the importance of markets for startup success
+"I'm butchering this, but this is probably an old Andy Radcliffe saying around, you know, great teams meeting bad markets end up with bad results."
+
+Howard Marks: Referenced by Vebov regarding a quote about being too early to market
+"And I think Howard Marks says, you know, being too early is indistinguishable from being wrong."

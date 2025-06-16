@@ -1,0 +1,2578 @@
+--- METADATA START ---
+Show: Lenny's Podcast: Product | Growth | Career
+Episode: How to build a team that can “…
+Host: Lenny Rachitsky 
+Guests: Hillary Gridley
+Source URL: https://podcasts.apple.com/us/podcast/how-to-build-a-team-that-can-take-a-punch/id1627920305?i=1000712956634
+--- METADATA END ---
+
+1
+Product leadership is the type of role where if you are not in control of the voices in your head, they will eat you alive.
+2
+You spend a lot of time thinking about how to help your team learn to take a punch.
+3
+If they come to me and they're upset, I try to focus them less around how you litigate another person's impression of you and more on what is the action that you can take to counter-program the narrative that you are afraid that this other person has of you.
+4
+What are you going to do next to demonstrate that you are the person that yourself to be?
+5
+Do you have specific tactics that you teach your team to deal with hardship?
+6
+I would really love it if more people were, screw it.
+7
+I'm going to do something that's probably going to fail.
+8
+It's important and it's worth doing and I'm going to do it well.
+9
+Is there something you've learned about when your leader tells you to do something you disagree with?
+10
+People think that the game is all about influencing the CEO, influencing the people around them.
+11
+You come up thinking you're the protagonist, but in the story of work, you are probably not the protagonist.
+12
+You're not special.
+13
+Today, my guest is Hilary Gridley.
+14
+Hilary is head of core product at WOOP.
+15
+Previously, she was a senior director of product at Big Health and a senior product marketing manager at Dropbox.
+16
+Even more importantly, she wrote what is now the sixth most popular post of all time in my newsletter, How to Become a Super Manager with AI.
+17
+She's also the first ever crossover guest between this podcast and our sister podcast, How I AI with Claire Vaux.
+18
+And not just that, her episode with Claire is on track to be the most popular episode of the podcast.
+19
+So all that to say, Hillary is incredible, and I'm so excited to continue learning from her.
+20
+This conversation is packed with advice that will make you a better product leader, builder, and also just a better human.
+21
+If what's good for you, you don't want to miss this episode.
+22
+A big thank you to Sam Proppas, Danielle Raynel, and Kelvin Wong for sharing suggestions for this conversation.
+23
+If you enjoy this podcast, don't forget to subscribe and follow it in your favorite podcasting app or YouTube.
+24
+Also, if you become an annual subscriber of my newsletter, you get a year free of a bunch of incredible products, including Superhuman, Notion, Linear, Perplexity, and Granola.
+25
+Check it out at lennysnewsletter.com and click bundle.
+26
+With that, I bring you Hillary Gridley.
+27
+This episode is brought to you by WorkOS.
+28
+If you're building a SaaS app, at some point your customers will start asking for enterprise features SAML authentication and skim provisioning.
+29
+That's where WorkOS comes in, making it fast and painless to add enterprise features to your app.
+30
+Their APIs are easy to understand so that you can ship quickly and get back to building other features.
+31
+Today, hundreds of companies are already powered by WorkOS, including ones you probably know, Vercel, Webflow, and Loom.
+32
+WorkOS also recently acquired Warrant, the fine-grain authorization service.
+33
+Warrant's product is based on a groundbreaking authorization system called Zanzibar, which was originally designed for Google to power Google Docs and YouTube.
+34
+This enables fast authorization checks at enormous scale while maintaining a flexible model that can be adapted to even the most complex use cases.
+35
+If you're currently looking to build role-based access control or other enterprise features single sign-on, skim, or user management, you should consider WorkOS.
+36
+It's a drop-in replacement for Auth0 and supports up to 1 million monthly active users for free.
+37
+Check it out at workOS.com to learn more.
+38
+That's workos.com.
+39
+This episode is brought to you by Persona, the adaptable identity platform that helps businesses fight fraud, meet compliance requirements, and build trust.
+40
+While you're listening to this right now, how do that you're really listening to me, Lenny?
+41
+These days, it's easier than ever for fraudsters to steal PII, faces, and identities.
+42
+That's where Persona comes in.
+43
+Persona helps leading companies LinkedIn, Etsy, and Twilio securely verify individuals and businesses across the world.
+44
+What sets Persona apart is its configurability.
+45
+Every company has different needs depending on its industry, use cases, risk tolerance, and user demographics.
+46
+That's why Persona offers flexible building blocks that allow you to build tailored collection and verification flows that maximize conversion while minimizing risk.
+47
+Plus, Persona's orchestration tools automate your identity process so that you can fight rapidly shifting fraud and meet new waves of regulation.
+48
+Whether you're a startup or an enterprise business, Persona has a plan for you.
+49
+Learn more at withpersona.com/slash Lenny.
+50
+Again, that's with P-E-R-S-O-N-A dot com slash Lenny.
+51
+Hillary, thank you so much for being here and welcome to the podcast.
+52
+Thank you, Lenny.
+53
+I'm so excited to be here.
+54
+I talked to a bunch of people that have worked with you about what we should talk about and what you're amazing at.
+55
+First of all, every one of them loves working with you so much.
+56
+One of them is, I joined WOOP just to work with Hillary.
+57
+And of that, there's this theme that emerged that I think is a good overarching theme for our conversation.
+58
+And it's something that you spend a lot of time thinking about.
+59
+And it's how to help your team and how to help people within your company learn to take a punch.
+60
+Essentially, how to help them deal with hard stuff and do hard stuff and build hard things.
+61
+So I guess just broadly, does that ring a bell?
+62
+Does that resonate?
+63
+Yeah, absolutely it's it's something I care a lot about.
+64
+I've been, I think, pretty lucky in my career.
+65
+I've been very drawn to working on hard product problems, regulated areas, really hard business models things with pretty high emotional stakes for the users of the products you're really likely to run into a lot of setbacks along the way And I think this is really relevant today because I look out and I talk to a lot of people and I hear fear and I hear uncertainty.
+66
+And I think it comes from a few places.
+67
+I think, obviously, I'm really excited about AI and how it's transforming the way we work.
+68
+And I think a lot of people are, but I think a lot of people are scared too.
+69
+And they're embracing these tools, they're learning these tools.
+70
+But a lot of them have a question in the back of their mind,, what does this mean for the future of my job?
+71
+And in many cases, what does this mean for my identity, right?
+72, I think it makes people question even just how we provide value as humans in society.
+73
+And I also think,, people, especially young people today, haven't even necessarily been in a career environment where there wasn't always a threat of layoffs or things that.
+74
+And I think that's taken a real psychic toll on a lot of people.
+75
+And so I think all managers now really need to be able to lead their teams through uncertainty, through fear, through hard things.
+76
+And I love the concept of taking a punch.
+77
+I've got a couple other tools that I to use.
+78
+But I think it can teach people how to thrive in these environments.
+79
+And it's really important to me because I would love if more people took on hard things.
+80
+I think there's so many really hard, challenging problems out there to solve.
+81
+And the more people are fearful about the future of their careers or the future of work, I think the more they gravitate toward things that they feel they're likely to succeed at.
+82
+And I think that's wonderful.
+83
+We need that too.
+84
+But I would really love it if more people were, screw it.
+85
+I'm going to do something that's probably going to fail.
+86
+And it's important and it's worth doing, and I'm going to do it well.
+87
+There's so many end diagrams of why this skill is so important, especially today.
+88
+One is it feels the easy stuff is done.
+89 the stuff left to build is hard.
+90 it feels hardware, deep tech is where things are heading.
+91
+Also, just machine learning, AI skills, just stuff that's really hard.
+92
+And then the other is just AI is just changing so much.
+93
+It's just such a stressful time and hard time for a lot of people.
+94
+Let's walk through some of the things that you have learned about how to help people get good at these things, about how to help people learn to take a punch, aka do hard things, deal with struggle.
+95
+The first is you actively teach them.
+96 you have specific tactics that you teach your team to deal with hardship and to take a punch.
+97
+So what are some of those things?
+98
+What are some of the things that you teach your team and help them develop the skill?
+99
+So at its core, when I say take a punch, what is you're going to run into situations where something has gone wrong.
+100
+Maybe you have misstepped.
+101
+Maybe you are just hearing someone speak critically about your work, whatever it might be.
+102
+You're going to feel you have taken a punch.
+103 it's a very physical feeling.
+104
+And I think as managers, you spend a lot of time teaching your team how to be successful, right?
+105
+You want to prepare them to maximize the chances of a good outcome.
+106
+But if you don't also prepare them for what happens when that outcome isn't as good, you're going to run into some problems.
+107
+And so when I think about how to take a punch, what I say to my team is: if they come to me and they're upset because something has happened, maybe they said something in a meeting that wasn't received well, or again, they're hearing somebody else talk about them in some way, whatever it is, I try to focus them less around whatever happened and how you litigate another person's impression of you based on something that has already happened, and more on what is the action that you can take next to counter-program the narrative that you are afraid that this other person has of you.
+108
+And I think the counter-program piece is really important because whenever we feel our ego is injured, I think it's very natural for all of us to say,, well, that's not fair.
+109
+I want to correct the record.
+110
+When you do that, I think more than often, more often than not, you come off as just looking defensive and you start obsessing over things that you don't have control over, which is what another person thinks of you.
+111
+And you don't even necessarily have that information.
+112
+And so I always ask myself in these moments, what is one thing that I can do, small, that will demonstrate the opposite of what I'm afraid this person thinks of me.
+113
+And so I'll give you an example of this.
+114
+I was in a meeting a while ago, and we were talking about different things that we wanted to start tracking in the WOOC Journal.
+115
+And our chief technology officer suggested ketamine tracking.
+116
+And I thought she was making a joke and I laughed.
+117
+And she looked at me very seriously and was, this isn't funny, Hillary.
+118, this is a serious issue for a lot of people.
+119
+And it's an emerging problem in some cases.
+120
+And I think we should take it seriously.
+121
+I think there's a lot of value we could provide here.
+122
+And I was completely humiliated.
+123
+Humiliated because I take this stuff really seriously.
+124, I take addiction really seriously.
+125
+I have a ton of empathy for people who struggle with it.
+126
+And I also think of myself as somebody who embraces new ideas and wants to be on the forefront and would never laugh off something that seems a fringe issue that's, I think, becoming more and more a big part of what's happening today.
+127
+And so I realized that in that moment, I was having that reaction because of the feeling that it gave me about who I am as a person.
+128
+And I became so worried that this other person had the wrong impression of me.
+129
+And I wanted to follow up with her after and say,, let me explain myself.
+130, let me explain why I didn't mean that or whatever it is.
+131
+But I just, as I said, I think usually that you're fighting a losing battle when you're trying to do that.
+132
+And it draws attention to the thing that you did poorly.
+133
+You don't really want to draw more attention to it, right?
+134
+You want to move on, take action, move forward.
+135
+And so I thought about, well, what am I afraid that she thinks of me?
+136
+I'm afraid that she thinks that maybe I don't take some of these health issues seriously.
+137
+I'm afraid she thinks that maybe I'm somebody who laughs off emerging trends.
+138
+And so I thought about what's something that I could do to demonstrate the opposite of that.
+139
+And I did some research very, very quickly on,, what are some emerging public health concerns that people really aren't talking about that would be interesting to track.
+140
+And I found some interesting research about sports betting and especially young people in sports betting and it's becoming this thing that a lot of public health experts are very worried about.
+141
+And so I very quickly just sent her a note that said, wanted to build on this idea you had today.
+142
+I really liked that idea, by the way.
+143, I saw this article, I saw this research about this other emerging thing, sports betting.
+144
+And I think it'd be really interesting for us to start tracking that because we could maybe draw some correlations between people's stress.
+145
+We have stress monitoring whoop, we can track your stress.
+146
+We could draw interesting correlations between betting behaviors and stress levels.
+147
+And so that's all I did.
+148
+It took me five, ten minutes total.
+149
+But I think it's a great example of showing this idea of counter-programming that narrative, don't fight about the narrative.
+150
+And so when I teach this to my team, I'm always doing the same thing.
+151
+They come to me, they seem agitated about something, and I say to them,, it seems this is really bothering you.
+152
+What's going on in your head?
+153
+What are you afraid of?
+154
+What are you worried about?
+155
+And often it will emerge,, I'm worried that this other person thinks I'm bad at my job.
+156
+I'm worried that this person thinks I'm an idiot, whatever it is.
+157
+And I challenge that.
+158
+I think this is really important for managers too, to challenge this negative thinking when you see it happen and not just validate it and allow them to go down these negative spirals.
+159
+I challenge it and I say, first of all, I don't think there's evidence for that.
+160
+Is there evidence for that?
+161
+And,, even if there is, it doesn't really matter.
+162
+What's something that you could do to show them that it's not true?
+163
+Because it's not true.
+164
+And I think giving people that power to focus on the next step they can take and the action that they can take that helps them feel more secure in their identity and who they are because their action demonstrates that.
+165
+It just gets them out of that negative thinking and it gets them through that trough of despair that comes after you feel you took a punch.
+166
+So the idea here is when you're afraid somebody that matters in your career thinks ill of you, of something that you did, of you're not good at something, or you think something that they're not happy about.
+167, this is a version of getting punched, basically, is you just feeling someone thinks you're not doing a great job.
+168
+And so, the tactic here is how to change their mind almost about you and give you something tangible to do.
+169
+Exactly.
+170
+Okay.
+171
+And so, the question to ask, and I wrote this down as you were talking, is: this is what you ask of your reports: what is the one thing that you can do that demonstrates the opposite of what you think this person thinks about you?
+172
+Exactly.
+173
+And it's this concept all the time:, there will be narratives that emerge, some are good, some are bad, about you and your career.
+174
+And I think, especially when people get to a place where they're putting themselves out there more, right?
+175
+They're talking in more presentations, they're talking in more meetings, it's very natural for them to become concerned with the perception of themselves.
+176
+And it is scary because it feels something, as I said, you don't have control over.
+177
+And so, exactly, if instead of focusing people around what do these people think of me, you focus them around, well, what are you going to do next to demonstrate that you are the person that yourself to be?
+178
+I think that can just be incredibly effective at giving people more of a sense of agency.
+179
+I guess talk about the balance of I'm just gonna prove everyone wrong against what they think versus here's who I am, and I know this is me, and this person is mistaken, and instead of debating them, I'm gonna show them who I am.
+180
+Just not overstressing about everyone thinking things about you in different ways.
+181
+There is some value, I think, in having a little bit of a chip on your shoulder.
+182
+I think that that's definitely been you see that people who are really successful, they do have a little bit of, I'm gonna prove them wrong.
+183
+And so, I don't want to say that,, you shouldn't think about it at all, or you shouldn't care.
+184, of course, it's natural to care, and of course, it's fine to care.
+185
+But I do want to just help my team build this habit of doing the things that to be right and having conviction in that and, being open to learning along the way and calibrating as you go, but not becoming overly concerned with your fears of what other people are going to think of you.
+186
+Because I think, especially for otherwise, really thoughtful,, really the people who are hard on themselves, I think that that just holds them back from being the person that they can be.
+187
+So, a key part of this is this is going to help you stop just spiraling on thinking about what they think about you and gives you something to do that will change that.
+188
+And then the other key point here is don't try to convince them otherwise.
+189
+You're not going to go to your manager,, oh, I'm I really think ketamine therapy and addiction is really important, and I'm, I didn't mean to say it this way, and that thing.
+190, I'm not interested in litigating the things that happened already when we can move forward.
+191
+And I'm certainly not interested in litigating what another person thinks about a thing that happened.
+192
+I just feel I've spent so much time talking to people in meetings, whatever it is, where it's just this ruminating on something that has already happened.
+193, it's very anxious thinking pattern, I think.
+194
+And people can just get stuck in it.
+195
+And so,, let them let them do it.
+196, I often think about it's when you get bad feedback, right?
+197
+Or critical feedback.
+198
+And you naturally have this reaction of, oh, well,, that's not fair because they don't understand.
+199
+I have numbers I have to deliver on.
+200
+Or,, I only had 10 minutes to do this.
+201
+So, so, of course, it wasn't perfect.
+202, you naturally come up with these reasons why you're not wrong.
+203
+And that's fine.
+204, it's, I don't want to say,, you should feel bad for doing that.
+205, let yourself have the pity party.
+206
+Let yourself feel those things.
+207
+But then, but then you got to move on as quickly as possible because those feelings do tend to spiral and get worse if you're not actively working against them.
+208
+Oftentimes, these sorts of lessons come from the person experiencing this themselves.
+209
+Is this something that you dealt with when you were starting your career or even now?
+210
+Oh, absolutely.
+211
+100%.
+212
+And I think it is more than just my career, but just my general mental health and my life.
+213
+A lot of where this comes from is a concept in cognitive behavioral therapy called behavioral activation.
+214
+And in my former job, I was working for a company called Big Health, and I was, we make digital therapeutics.
+215
+So those are mobile apps that have been clinically validated to treat behavioral conditions insomnia, depression, anxiety.
+216
+And I was working on a new depression therapeutic.
+217
+And so I went very deep on this and was working with a really wonderful clinical team full of clinical psychologists who helped me understand the techniques that therapists use when they are working with people who have depression.
+218
+And so much of depression is characterized by these negative thinking patterns and this this feeling that I feel bad and I just need to wait until I feel better and then I'll start doing the things that are good for me, right?
+219
+I don't feel responding to this text, so I'm just not going to do it, but I'll respond when I feel better.
+220
+I don't feel working out, so I'm not going to do it, but I'll do it when I feel better.
+221
+And the truth is, that doesn't go away on its own, especially if you have depression.
+222
+And it's something that, again, the idea of behavioral activation is you have to identify these actions that you can take that will reverse that negative spiral and will improve your mood.
+223
+And so the misconception is, I'll feel better and then I'll act.
+224
+And the thing that therapists try to teach people when they're working with them in therapy is I will act and then I will feel better.
+225
+But acting is hard if you are in the throes of depression.
+226
+And so easier said than done.
+227
+And a lot of the work is in how you help people identify specific actions that they can take that will reliably lift their mood.
+228
+And, I have a list of myself.
+229
+I have a list on my phone of my behavioral activations.
+230
+And it's things that I know I can do if I start feeling the walls are closing around me, if I feel myself getting sucked into very low mood or negative thinking or whatever it is.
+231
+And you can see how effective that is at just getting you out of there versus the instinct to just go and lie in bed and feel bad for yourself, which I understand very well.
+232
+And so that understanding that concept, which is at its core, a therapeutic concept used in cognitive behavioral therapy.
+233
+But it changed how I see the entire world and how I see, especially as a manager, the ways that people on my team think and behave and how easy it is to get stuck in some of these downward spirals that you really need to actively push back on.
+234
+And as a manager, I want to help them do that.
+235
+I want to help them, A, see that, see the ways they are in some ways sabotaging themselves, getting in their own ways with whatever is going on in their head.
+236
+And then I want to help them counter-program it in themselves and also,, as I said, counter-program the things that you are worried about out there as well.
+237
+So interesting.
+238
+So the core of this technique is what's an action, and you said this, it could be very small that you can take that, in this case, shows someone else you're not who they think you are.
+239 you're worried they think about you in a certain way, and you want to take an action that helps them see you're not that.
+240
+So that, yes, that's the taking the punch concept.
+241
+The behavioral activation could be anything, right?
+242
+It can be picking up a piece of laundry off of the chair and putting it away.
+243
+And that's just enough to get you out of the downward thing you're in.
+244
+So behavioral activation just conceptually is,, how are you taking action to reverse the downward feeling or the negative feeling that you're feeling?
+245
+And then the take a punch concept is that applied in the context of I'm in a working environment.
+246
+I am very conscious of how I'm being perceived by other people.
+247
+That's causing me a great deal of stress.
+248
+I think especially for product people who are,, so much of their self-identity is wrapped up in having the answers, being competent, getting things done.
+249
+And so many of them have been people who have been really good at that for most of their careers, which is how they got into these jobs in the first place.
+250
+I think that can be an extremely stressful thing for them.
+251
+That in many cases can be the driver of burnout and the driver of, I can't really handle the stress of this job anymore.
+252
+And so I think of the take-a-punch concept is more just applied to that specific problem of I'm struggling at work and I'm struggling largely because of my perceptions of other people and I want to feel more agency in that situation.
+253
+This is so cool.
+254
+Okay.
+255
+On the idea of the specific take-a-punch concept, what impact have you seen this have on people's mood and careers?
+256
+Is this how big a deal is this specific tactic?
+257
+Well, I think it's a big deal,, on two levels.
+258
+One, it's a big deal because it can help you in a crisis or a minor crisis, but I think it's a bigger deal because I see so many people who don't put themselves out there because they're afraid of how it's going to go.
+259
+And so I think of the classic example of I'm often trying to encourage people to speak up in meetings more, to practice the skill of how you move a conversation forward in a way that contributes value, both because doing so I think is important because nobody wants to be in bad meetings, but also because it will help with your career, right?
+260 this is how you get on people's radar as somebody who's, oh, that person's got great ideas, thinks about things the right way, whatever it is.
+261
+I think it's just, it's one of these things that I talk to people about it and that,, they are interested in coming to the meeting and hearing about these big decisions are getting made, but they just want to sit there and observe.
+262
+And I'm, first of all, every additional person in a meeting has a cost because every additional person in a meeting makes the people in that meeting less candid than they would have been if there were fewer people in that meeting.
+263
+And so one key piece of a meeting is you usually have a problem you're trying to solve collectively as a group.
+264
+And it's really hard to do that if people are being overly cautious about what they're saying because there's too many people in there.
+265
+So when I tell people this, I'm,, it's really important that you earn your place in this meeting and let's work on how to do that.
+266
+And the core piece of that is you've got to say stuff that's valuable.
+267
+And people always come up with all these excuses for why they can't do it.
+268
+And one thing I've learned is that I think people are really good at coming up with very rational sounding reasons to not do things that just make them uncomfortable.
+269
+But in their head, they're, oh no,, I'm too junior.
+270 nobody wants to hear what I have to say, or everyone was already thinking it.
+271
+Or,, I to process things internally.
+272
+And by the time I say them, the conversation moved on, whatever it is.
+273
+And so much of that skill, it's a communication skill at its core.
+274
+It's just how to express yourself verbally.
+275
+But so much of the blocker of that is, I think, fear.
+276
+Fear of saying the wrong thing, fear of looking stupid, fear of just the discomfort of everyone in a room turning and looking at you, right, as you're trying to formulate a half-baked thought.
+277
+And so if you can help people be less afraid of that, that's 90% of the challenge of improving some of these skills.
+278
+And so I think when you give people the skills of taking a punch, you are helping them feel less afraid of getting the punch in the first place.
+279
+And that's why I think it's so important.
+280
+That's profound.
+281
+The second order effect of the skill.
+282
+There's something you mentioned when we were chatting earlier that stuck with me with this idea that too many PMs and too many people are playing on easy mode and not trying hard things.
+283
+Okay, let's say more.
+284
+I think this is my hot take.
+285,, you hear people talking about craft and taste and product management, and it's all very wonderful.
+286
+And I'm, totally on board.
+287, I love it.
+288
+I'm a soccer for that thing.
+289
+But I'm, well, if you are really in it just for pure love of the game, you just love product management, why are you building products for people exactly you who have all your exact same problems at a company that sells to other companies that doesn't worry about pricing?
+290 there's no real barrier.
+291, there's, I don't want to, I don't want to act I think this is easy, to be clear.
+292
+But in The grand scheme of things,, I wish that the people who have this pure love of product management and have this pure love of building things, that you would see more of that applied to building for low-income people, building for social services, things that, that really, really need that work.
+293
+And I think there's a level of prestige, obviously, associated with working in certain companies, and you get less of that in other industries.
+294
+And so people would naturally gravitate toward that.
+295
+And I totally get it.
+296
+I totally get it.
+297
+You get paid better.
+298
+No real judgment for me.
+299
+I just, I wish I saw more of it.
+300
+I wish you would see more people.
+301
+And I'll say this: I know there's a lot of you out there.
+302
+I know there's a ton of people out there doing really, really important work in really, really hard spaces.
+303
+And I see you and I appreciate it.
+304
+And shout out to you.
+305
+Awesome.
+306
+Okay.
+307
+I'm glad you shared that.
+308
+Thank you.
+309
+I think this will resonate with a lot of people.
+310
+I want to move on to another trait/slash habit/slash skill that you are good at and help people learn, which is being very transparent in what's happening within the organization, within your thinking.
+311
+It almost help people think the way you think and see the way you think so that they can operate at a higher level.
+312
+Just talk about that, what that looks, and why that's important.
+313
+It's interesting.
+314
+I think another thing I hear a lot of people complain about in organizations is the why do 10 people have to sign off on this email before I send it problem.
+315
+And I think the answer to that is because those 10 people all have different information, different context, and in many cases, completely different working models for how the CEO of the company and other strategic leaders in the company think.
+316
+And it makes things super inefficient.
+317
+I think people will often say,, oh, it's a process problem.
+318
+It's not a process problem.
+319
+It's not an approval process problem.
+320
+I think it's a transparency and it's a communication problem, downward communication, outward communication.
+321
+And what by that is when I think about artifact-based communication, so reading a strategy document, for example, everyone at the company reads a strategy document.
+322
+Great.
+323
+Everyone is working from the same idea of what the strategy is.
+324
+But then things change, right?
+325, especially if you're working in a really dynamic space, new competitive threats emerge, new opportunities emerge all the time.
+326
+This is especially true now with AI.
+327
+Obviously, everyone is lighting their strategies on fire and trying to figure out the best way to transform their organization.
+328
+And so if you're, if the way that you understand what's going on at the company is from reading a document that was written six months ago, you're going to be working from outdated information and you're not going to be able to think and respond to new things that happen.
+329
+And so what is what much more helpful than understanding what your CEO thinks is, I think, understanding how your CEO thinks.
+330
+And that goes for all sorts of levels of the company.
+331
+I want to understand how all the strategic leaders at my company think, and I want my team to understand how I think.
+332
+And when I feel confident that people on my team understand how I think,, I don't need to read their emails.
+333
+I don't need to approve things.
+334
+The times where I feel I need to do that is because I'm working with people where I'm, I don't...
+335
+I don't have confidence that these people understand how I think, or I don't have confidence that they understand how this email or whatever it Is going to be received by this important person.
+336
+And so I try to teach that to my team.
+337
+And the way that I do that is a few ways.
+338
+First, I'm in meetings with people, important people at the company.
+339
+So I'm constantly hearing the things that they're saying and paying attention to the note behind the note.
+340
+Why do I think they're saying this?
+341
+What insight do they have that they're bringing to this conversation that might not be obvious?
+342
+And I try to make an effort every week.
+343
+I don't always do it, but I try to send my team just a quick rundown and Slack of here are the most important conversations or the most interesting conversations I had this week.
+344
+Here's what that person said verbatim.
+345
+Again, I write a lot of notes, so I've got it.
+346
+If you've got a transcriber, maybe that'll help you.
+347
+And here's what I interpret that as.
+348
+Here's why I think they say that.
+349
+Here's where I think that's coming from.
+350
+And here's what I'm going to do differently as a result.
+351
+And these aren't long.
+352
+And sometimes if I don't have time, I'll just in a team meeting, I'll literally just go through my notes from the week and voice over stuff and editorialize it as I go.
+353
+And over time, I think my team has a pretty good sense of what people are saying and how to think about the thinking behind it and how this person thinks, how this person thinks, and how I think.
+354
+And I think when you get an entire organization working that way where everyone's working from the same models of what the CEO thinks matters, what level of risk tolerance the company has, things that.
+355
+then you can start to move much, much faster and communication becomes much, much, much less painful.
+356
+So the tactic here is to help your teams build a mental model of everyone in the company that matters so that it's the way you put it almost is when they're emailing them or asking for something, they already know how they're going to respond.
+357
+Is there an example you could share of something this of just something a person at whoop of how they think?
+358
+I don't know.
+359
+Maybe you can keep it anonymous.
+360
+Just to make this little reel of the mental model you might want to build around someone.
+361
+So our CEO, Will, is somebody who obsesses over pixels in a way that is challenging to get things through design review, but I think results in a product that is a thousand times better than it would be if he were accepting of small excuses here and there for, oh, well, this,, we had to cut scope here.
+362
+We couldn't quite do what they wanted here.
+363 he sets a high bar and he holds it and he doesn't compromise.
+364
+And I think this can sometimes get misconstrued.
+365
+And I think a lot of people might think that he just wants maximal scope on everything.
+366
+And I think that is a misunderstanding of what he cares about.
+367
+We often get feedback from him that's,, this doesn't feel the future.
+368
+And everything that we're building needs to feel the future.
+369
+A lot of people hear that and they're, oh gosh,,, we're never going to get this thing done on time.
+370, we can't make any sacrifices to scope or anything that.
+371
+But when I hear that,, what I hear is more that we have this AI coach in the product, we have all this amazing data in the product,, we're tracking every single one of your heartbeats, and we're pulling all this other data.
+372
+And we have every,, every screen is a moment to show that to people in a way that feels something that has never existed before.
+373
+And there are small ways to do that, right?
+374
+It's how you pull in, if you're explaining a concept VO2 max, which is the measure of your cardiovascular health, you can explain that to people with static content, or you can explain that to people by bringing their data into the method of explanation that you're using.
+375
+You can make it really conversational because you're using this AI coach.
+376
+You can make it feel more you're talking to a person.
+377
+And a person who, by the way, has all the data about you, which doesn't exist today.
+378 your doctor doesn't have that, your coach doesn't have that.
+379
+And that's not, oh, gosh, we've got to blow up the scope on this thing and make it 100x as big, but it's finding these little touches to say,, wow, that was really magical.
+380
+That was really thoughtful.
+381
+And this feels the future.
+382
+This feels I'm very conscious of the fact that this product knows so much about me and is able to sort out the signal from the noise on that in these really small and elegant ways.
+383
+And so for something that, I would get that feedback in a design review, or I'd hear that in a design review, and maybe one of my PMs would be in that design review.
+384
+And so, I bring that up to the team.
+385
+And I hear things that in a few different design reviews.
+386
+So, I bring those back to the team.
+387
+And I'm, I've noticed that recently we are consistently getting this type of feedback.
+388
+Here's why I think it's really important to Will, because I think he's really focused on building,, the health company of the future.
+389
+And I don't want you all to think that this just means we have to just throw AI at everything and we have to just throw maximum scope at everything.
+390
+I think the key is understanding,, on the matrix of cost and effort for impact,, what are those high-impact but low-cost ways that we can just find and sprinkle through the experience and really try to make that magical?
+391
+So, I'm connecting the dots for my team, right?
+392
+I'm saying, you weren't in all these meetings, but I saw it.
+393
+Here's what I heard.
+394
+Here's my interpretation of what I heard.
+395
+And here's how I'm thinking about how this other person thinks about it.
+396
+And so, as a result,, here are some things that I think we can do across our products going forward.
+397
+Essentially, these are principles, values, or tenants per person of what matters to them.
+398
+Exactly.
+399
+So, for Nick, it's this needs to feel we're living in the future.
+400
+You can't just be another heartbeat tracking app.
+401
+This is so cool.
+402
+And there's so much trickle-down benefit to this.
+403
+One is people feel they're aware of what's happening.
+404
+That's one of the most common, I think, pieces of feedback people have at big companies.
+405, I don't know what's happening.
+406
+So, there's so much visibility, all the secretive stuff happening in the meetings.
+407, I don't know what people are deciding next eights and all these discussions.
+408
+So, I think just even knowing that you're sharing all this is so powerful.
+409
+Well, and on that note, when I approach these conversations, I always try to think of them as: even if I don't agree with the feedback, if I don't agree with the decision,, what is the insight that I'm missing?
+410, how am I wrong about this?
+411
+In ways,, what would be true for this other person to be right?
+412
+And I'll go through that thought exercise, and I might not get to the other side and agree with it.
+413
+I might still,, think I'm right or whatever.
+414
+But oftentimes, it forcing myself to think that way forces me to think about how this other person thinks it.
+415
+And if I do that enough, I will be, oh, this makes sense.
+416
+I think this makes sense if.
+417
+I think this makes sense if.
+418
+And oh, maybe this other thing is true.
+419
+And I think when I hear the people, the people who are, I don't know what's going on with this company,, I think they do the opposite.
+420, I think they look for reasons to disagree and they look for holes to poke in, well, this decision doesn't make any sense because I came up with something that might be wrong about it.
+421
+And I think that's another thing, by the way, in terms of just helping your team have the emotional maturity to exist and thrive in an organization, is helping them think that way, helping them understand you have a point of view, your point of view is important.
+422
+But on some level, you do have to have respect for these other points of view and have the humility to think that maybe they're onto something that you're not onto.
+423
+And it's amazing how much you can learn and intuit without having to have all the facts just by doing that.
+424
+If you're, well, this person's behavior makes sense in a situation where X, Y, and Z is happening.
+425
+Oftentimes you will find that X, Y, and Z is happening.
+426
+I'm glad you went there.
+427
+I wanted to follow this thread, which is a different direction, but I think a lot of people are always struggling with this as a leader when your leader disagree, does say something that you completely disagree with, but you still need to represent that as, here's the thing we're doing.
+428
+But you don't want to be, oh, just because Nick said so,, because you lose power as a leader.
+429
+Do you have any just, is there something you've learned about how to do that well when your leader tells you to do something you disagree with and you still need to get your team to do it?
+430
+First, I do try to go through the what if I'm wrong exercise.
+431, I think a lot of people just expect that if you ask somebody an open-ended question, why are we doing this?
+432
+you're gonna get a straightforward answer.
+433
+And oftentimes, the answer is not straightforward for various reasons.
+434, maybe there's confidentiality reasons, maybe there's just, the somebody is acting on a hunch, but that hunch is informed by years or decades of reps of developing judgment, and they're probably really onto something.
+435
+It's not just this arbitrary gut feeling.
+436
+But whatever it is, I really try to get to the bottom of, let me really make sure that I have done my best to understand this person's point of view.
+437
+And I have some tools for doing that, which I can also talk about.
+438
+But if I've done that and I still disagree, I'm relatively candid about that, but candid in a way where it's still respectful.
+439, I think what you want to avoid is a situation where, as a manager, you're, ah, this,, I have no control.
+440
+This sucks.
+441
+This decision is so stupid, but, that's the job, so we have to do it.
+442, obviously, that's not going to,, set your team up for success or make anybody happy about it, but you do hear that.
+443
+You do see that happening.
+444
+And so I think what I try to do in those situations is separate out my opinion from it, from the, well, what is the insight that makes it make sense to this person?
+445
+And explain their rationale, even if I'm comfortable saying,,, I don't necessarily think this isn't how I would do it, or I don't even really agree with how they're thinking about it.
+446
+But from their point of view, from their perspective, their professional experience, whatever it is, I can see how this makes sense.
+447
+And, they might be right.
+448
+I don't think they're right, but they might be.
+449
+Let's find out.
+450, we're not going to find out if we are all squabbling about whether this is a good idea the whole time.
+451, the only way we're going to find out is if we give it the best shot that we have and try to do it.
+452
+And if we're wrong,, that happens sometimes and we try again.
+453
+I that this comes back to your mental model orientation of here's their mental model.
+454
+Here's what their experience has been.
+455
+Here's how they see the world, the trends, and then this is why they think the way they think.
+456
+And so instead of encouraging your team or yourself even to be, no, no, you're wrong here.
+457
+It's more, okay, here's their data set.
+458
+Let's try this.
+459
+And this will inform that data set and maybe change their mind.
+460
+Yeah, because I think in product, I to joke, there's no right answers, right?
+461
+You're just, there's only wrong answers, and you're just trying to execute well on the least wrong answer that's available to you.
+462
+And so I think it is,, the reasonable people can disagree about this of it all.
+463
+Of,,, this is what I think and this is how I would approach it.
+464
+I think this is what they think.
+465
+And I think this is why they would approach it this way.
+466
+And again,, the only chance we have of succeeding is not being torn apart on that.
+467
+And so at the end of the day,, if it's not a an obviously terrible answer, and sometimes even if it is an obviously terrible answer, you're still more likely to succeed if you just reorient yourself around a world where it's not a terrible answer and then just try to will that into existence.
+468
+You said that you have some tools to help you understand someone's point of view.
+469
+I can't help but ask more about that.
+470
+I talk about what I to call the magic questions.
+471
+But the thing about magic questions is they're not questions, they're statements.
+472
+And they end with, do you agree or is that right?
+473
+And so I have found this as the most helpful way for trying to understand a person's mental model is to just put facts in front of them and see what they say no to and what they say yes to and then if you can get them to explain great and if they're good communicators they often can but if they're not you don't have to let that stop you and so I'll do this even just as an example in a non-leadership context with if I'm working with legal teams or compliance teams or things that they are often working from a literal set of rules right there are laws there are regulations and you are trying to understand what if we were to take this path would that be okay would that not be okay and sometimes that's that's not straightforward sometimes there's regulatory areas that are up to interpretation and so when I first started working in a regulated space I would find this frustrating confusing because I would say can you just can you just give me the rules so I can understand what's right and what's left of it and they'd be oh well it depends depends and so I learned that if I flipped that and approached that well what if we did X Y and Z what if this is what it looked what if this is what the copy said would that be okay no yes if no why if yes why and so I'm teasing out the mental model rather than asking them to explain it to me and this is what I tell my team all the time to do this to me when they come to me and they say well what do you think I should do or what could I have done differently I'll say rephrase that as tell me what you think you could have done differently and then ask me if I agree.
+474
+And when I do this, I think it has a few benefits.
+475
+One, it helps them calibrate their judgment over time so they're they're forcing themselves to make this assertion, and then they're calibrating how close that was to how I would think about it, which will get you much faster, much further than just asking open-ended questions and getting the answer.
+476
+And then the second part of it is they don't become reliant on me for answering these questions.
+477
+I think that's a trap that a lot of managers fall into is you people come to you with questions, you want to help them, you answer the question, and then you find that they come to you with all their questions and you're, yeah, you got to solve some of these on your own.
+478
+So again, I think the magic questions to me, is that right?
+479
+Do you agree?
+480
+And anytime you find yourself tempted to ask an open-ended question to somebody whose brain you're trying to understand, stop yourself and say, let me just say that.
+481
+Let me say as a statement what I think, and then try to calibrate based on their reaction.
+482
+And, I think that's the fastest way to understand how another person thinks.
+483
+It makes me think about a lot of people.
+484 it sounds, it could come across as it's a weird manipulative way of asking someone stuff.
+485
+But it turns out that we're not good at really knowing what we think or know a lot of times.
+486
+And you need someone almost to interview you in a really effective way to get out all this knowledge.
+487
+And this is just a really simple way of getting that.
+488, it's funny because I've, when I talk about this, I get that reaction a lot where people are, well, doesn't it feel coercive?
+489
+And I'm, well, you got to go in pure of heart.
+490 you've got to go in open to being wrong and even expecting to be wrong.
+491
+And you have to make that clear to them, right?
+492 if you're coming in and you're, here's what I think, you agree, you agree?
+493, of course you're not getting the answer you want.
+494
+Or you might get the answer you want.
+495
+You might get a yes.
+496
+If your goal is to get to yes, that's not what I'm that's not what I'm talking about.
+497
+If your goal is to understand and you are coming from a help me understand how I'm wrong, help me understand what I'm getting wrong here, and approach it with that curiosity and humility and make sure that you're caring yourself and presenting yourself to this person in a way that shows that you're not coming in hostile or forceful or something.
+498
+Yeah, because there are absolutely circumstances where you're doing that and you're gonna get bad intel because you're making the person uncomfortable, so they're gonna lie to you.
+499
+But that's a, I think, a whole set of interpersonal skills that we probably don't have time to talk about today.
+500
+I wanted to come back to you said this interesting insight about your CEO that he wanted to build something that was felt the future.
+501
+I just wanted to share, there's a story that has always stuck with me at Airbnb.
+502
+There is a big launch coming up, and there was a designer sitting at late in the office trying to update the website to include this new product.
+503
+It was a launch of Airbnb Neighborhoods, I don't know, 10 years ago.
+504
+And she was just, hey, Joe, and this is Joe Gabby.
+505
+It was walking around the office.
+506
+And she's, hey, Joe, what do you think I should?
+507
+What do you want the website to be?
+508
+What do you want it to look?
+509
+What should we try to?
+510
+And it was going to launch in two days.
+511
+He's, build something the internet has never seen before.
+512
+And now this makes me, it's interesting because when I always think about that story and tell that story, it's, this is a crazy ask.
+513
+And now, as you share an approach for how to handle something that, it really changes my perspective to, okay, what's Joe's worldview?
+514
+Why is that the way he saw the world and why we needed to build a site that?
+515
+Which I could start thinking about, but that's a really interesting way to just handle things that sound absurd and out of nowhere.
+516
+I agree so much.
+517
+I'm a proud former English major, and so I'm a huge proponent of reading fiction and reading in general.
+518
+And I feel that's where so much of this comes from for me is just a curiosity for, in what world does this make sense for this person?
+519
+And it's so easy to look at another person's behaviors and another person's actions and what they say and just be, that doesn't make any sense.
+520
+And I just, I find that, I don't know, your relationships become so much richer, even just in a work context, when you approach it with that,, what, what is the world of this person where the thing that they're saying makes sense?
+521
+And I'd, I feel in my life, honestly, a lot of my frustration has come from being frustrated with other people.
+522
+And so this is something that I've had to learn over time because when I come home from work and I'm just, oh, this person said this and it didn't make any sense.
+523
+And this person's totally out to lunch and leadership doesn't know what's going on.
+524 all I was doing was making myself miserable.
+525
+And worse than that, I was making myself miserable and I was making myself pretty useless to the company.
+526
+And so I would get frustrated because I was,, no, nobody appreciates my perfect, unique, beautiful insight.
+527
+And all these other people have no unique, beautiful, perfect, concise, just wrong opinions.
+528
+And so I feel that's been a big area of growth for me, honestly, is learning to approach people that way.
+529
+It's not just, oh, this is a nice thing to do, but I think it genuinely makes me a happier person.
+530
+And yeah, I think a lot of it comes from reading fiction.
+531
+I love that we're just unpacking the onion of the power of this very specific habit of just helping you learn the mental model of the people around you.
+532
+I can't think this is just making me sound a crazy voice.
+533
+No, there's so much power to this.
+534, it's as you talk, I'm, wow, there's so much value here.
+535
+Because not only is it, you talk about how this is the source of a lot of burnout for a lot of people, where they're just so frustrated.
+536
+The CEO or the chief product officer, designers, just, I hate this.
+537
+Where are they?
+538
+Just asking all these ridiculous things, keeping the bar way too high.
+539
+It's just nothing's ever good enough.
+540
+But not only does it help you feel better about their asks because you can understand where they're coming from, it also helps you be more effective in helping them change their mind potentially and see a different perspective because now you see the data that informs their perspective and you could help adjust that or poke at it.
+541, hey, are you sure this is true?
+542
+Are you sure,, I don't know, your competitor, and this is how they see it?
+543
+Maybe it's not.
+544
+Let's look into that a little deeper.
+545
+Yeah, it's really interesting.
+546
+At my last company, when I started reporting to the CEO, they found various coaches for me to work with.
+547
+And one of them was the former chief product officer at Coinbase who's gone to found Bridge, which got acquired by Stripe for a ton of money.
+548
+And one thing that he said to me that really stuck with me is when you're reporting to the CEO, and if as a chief product officer, the big mistake that people make is they think that the game is all about getting what is inside their head and influencing the CEO, influencing the people around them to make it so.
+549
+And if you go into the role trying to do that, you're going to fail.
+550
+Because, what your job is to do is to understand what the CEO's vision is and what they care about, again, how they think about things, and figure out how to operationalize that in a way that results in the best possible manifestation of it in the form of product.
+551
+And that was just such a radically different way from what I ever thought my job was.
+552
+Again, to go back to the fiction example,, you come up thinking you're the protagonist, and you can be the protagonist in your life, you can be the protagonist in the story of your family, but in the story of your work, of a company, you are probably not the protagonist.
+553
+And as much as it,, it can feel weird to say that, I genuinely think some of the best advice I've got in my life in terms of things that have just not only transformed how I see the world and how I act in it, but just my own sense of happiness is you're not special.
+554
+And it's, I used to spend so much time and energy just being, oh, people aren't, people don't see it my way, and I have to convince them.
+555
+And when you're in an organization, it's an ecosystem, right?
+556 it's an organization full of people who are all trying to work together to get a thing done.
+557
+And if every single one of those people is operating from their own protagonist viewpoint of this is how I see the world, this is what I think we're here to do.
+558
+And I need to convince everyone around me at all times, it becomes extremely inefficient.
+559
+It becomes extremely painful because you're just everyone's just fighting all the time.
+560
+And so in some ways, it feels you're if it sounds almost defeatist, I'm always worried about this sounding, I'm just, yeah, just do whatever the boss says.
+561
+And that's not how I feel at all.
+562 I think it's incredibly important to bring your skills and your talents and your perspective to the job you have and really your taste and your craft and all of these things.
+563
+But I do think this idea of understanding how to build a shared mental model of everyone together that definitionally cannot be defined by your own narrow perspective just makes work a lot better for everybody.
+564
+So then a lot of people, you said, I love that you went there.
+565
+It's just, if you're, because it could sound, okay, your job is just to execute what the CEO tells you.
+566
+There's no value to your insights and perspectives, and you're just get out of the way.
+567
+You're just get everyone to do the thing the CEO wants.
+568
+Where do you, I guess, in your experience or just advice on where's the fulfillment for you then as a CPO, for example, or a director of product, where,, it's not that fun just to be there executing a CEO's vision and not have any input.
+569
+Well, and I think there's so many decisions all the way down, and there's so many micro places where you can zig where others would have zagged.
+570
+And I think I personally, a lot of where my fulfillment comes from, is from feeling if somebody else were in this job, it would be done differently.
+571
+And something about the product is different because I was the one who worked on it because I was in the job.
+572
+And that comes from my unique perspective, my unique point of view, the experiences I've had in the past, my various influences.
+573
+And I think it's trying to figure out the right level for it so that you're not pushing against an immovable force.
+574, it's almost if you're playing Jenga and you're trying to feel around to find, okay, well, where are the pieces that can move?
+575
+And when how somebody else thinks, A, you can find that there are immovable forces.
+576
+Those are not the battles worth fighting.
+577
+But there are also areas where maybe they don't know as much.
+578
+And there's also areas where maybe they're scared because they don't know as much.
+579
+And maybe that's an area where you have an interesting point of view.
+580
+And so you can step into that role and be tremendously valuable and have been tremendously influential.
+581
+But you can only do that if you have a good frame for what you're what the model is.
+582
+And where are the things where it's, okay, we are operating on a person's insight here that is itself extremely unique and extremely valuable.
+583
+And it is the reason this company even exists in the first place.
+584
+But that,, there's millions of decisions that have to get made, what?
+585
+And there's millions of different places that you can put yourself.
+586
+And so I think it's just constantly feeling out for, where are the places that I'm really spiky?
+587
+Where are the things that I think I do really well?
+588
+Where are the gaps?
+589
+And again, you can only find those if you're engaging in really good faith and engaging earnestly and really understanding how other people think.
+590
+There's two really interesting thoughts that I have as you're talking that I think will even further crystallize what you're saying.
+591
+One is that you're just saying this is the way the world works.
+592
+It makes me think about Jeffrey Pfeffer.
+593
+He was a guest on this podcast.
+594
+He teaches this class at Stanford Business School about how to gain power in the world.
+595
+It's the rules of power.
+596
+And he talks about,, it's, and it's all these ways to influence and win and achieve and gain status and all these things.
+597
+And he's,, this part doesn't sound fun and great, but I talk about here's the way the world works and is not the way you wish it would be.
+598
+And what you're describing is the way a company works is the CO is in charge.
+599
+And your job is to,, they're the boss.
+600
+And the sooner you understand their vision trumps your vision, the easier everything gets.
+601, you're not there to tell the CEO, here's what we should be building, right?
+602
+Their job is to own the vision of the business and the company.
+603
+Yeah, I think that's true.
+604
+And if you don't, if you disagree with it, you probably shouldn't be working at that company.
+605
+Yeah.
+606
+The other piece is it's just the vision.
+607 here's the vision of the future of where we are heading.
+608
+If we win, here's what will be true and the world will look.
+609
+But there's so much more that you need to figure out that is to achieve that vision.
+610
+And that's basically the role of the CPO and director of products, all those sorts of things.
+611
+And of everyone at every level.
+612
+And I think how you said it there was so right on because it is the vision is in many ways,, in some ways it's execution-based, but in many ways it's a vision of what the world is going to look in five years, in 10 years.
+613
+And so in some ways, I would say your job is, if you can understand that and you can understand, here's what this person thinks the world is going to look, assuming all that is true, what are the things that I can do to maximize the chances of that and becoming the actual future?
+614
+And then also what does that mean for a product?
+615 what does that mean for if it has to be true that,, take WOOP for example, if there's a vision of the future where you have all of your health data in one place and we're able to detect health issues before you even know you have them and we're able to do really hyper-personalized coaching to help you understand how your behaviors today are impacting how healthy you're going to be in in decades.
+616
+What does that mean for what WOOOP needs to be today?
+617
+And what does that mean for how it needs to evolve in the next couple of years in order to both make that a reality, but also win in that world?
+618
+And I do think that's exactly where the people in the rank and file can be tremendously influential.
+619
+It's that level of, I'm going to fight with you about how the world's going to work in five years, where I think you're just fighting a losing battle.
+620
+And if you don't the vision, you could leave, right?
+621
+It's, or try to change it.
+622, those are two options.
+623
+And I think to your point about pushing back, because you asked about this,, again, I never wanted to sound I'm just defeatist,, just accept it.
+624, I'm a very opinionated person.
+625, I go to the math for things that I think are true.
+626
+And so I teach my team,, you have to be really good at forming arguments.
+627
+And that can be, that can show up in different ways.
+628, some people are really good at doing that with data.
+629
+Some people are really good at doing that with,, the quality and the quant and moving it together.
+630
+But you have to be able to advocate for what you think is true in the most compelling way possible.
+631
+And you have an obligation to do it.
+632
+And if you have done it and you've done it well and it didn't work, that's when it's time to say, well, maybe there's something here that I wasn't seeing previously.
+633
+And that's where I think it's time to have some humility around it.
+634
+But this,, it's a journey.
+635
+You don't start from, well, I got nothing to say here.
+636
+So I think it's,, knowing where you are on that journey is important too.
+637
+This reminds me: there's a PM leader at Airbnb who ended up leading a new initiative and they ended up doing a bunch of stupid stuff.
+638
+And he's, I just, I'm realizing that it's me that needs to be pushing back on stuff now that I'm in charge of this product team.
+639
+I'm the person that needs to convince the CEO this is a bad idea.
+640
+And I'm just realizing that after doing a bunch of stuff that was stupid.
+641
+And you will see bad ideas, and you do have an obligation to try to convince them that it's a bad idea.
+642
+And you're going to be right sometimes, and you're not going to be right every time.
+643
+And I think that's why it's so hard to talk about these things in absolutes because sometimes you're right and sometimes you're not right.
+644
+And it is important to get really good at knowing the difference and knowing where you go from there.
+645
+This episode is brought to you by Attio, the AI native CRM.
+646
+Attio is built to scale with your business from day one.
+647
+Connect your email and calendar, and Attio instantly builds a CRM that matches your business model with all of your companies, contacts, and interactions enriched with actionable insights.
+648
+Sync in your product's usage, billing info, or any other data sources, and Attio's flexible data model will handle it all without any rigid templates or workarounds.
+649
+With Attio, AI isn't just a feature, it's the foundation.
+650
+You can do things instantly prospect and route leads with research agents, get real-time insights from AI using customer conversations, and build powerful AI automations for your most complex workloads.
+651
+Industry leaders Flatfile, Replicate, and Modal are already experiencing what's next for CRM.
+652
+Go to attio.com/slash Lenny to get 15% off your first year.
+653
+That's attio.com/slash Lenny.
+654
+I want to move on to another skill you really get at.
+655
+But first of all, something I noted that I wanted to touch on real quick.
+656
+You mentioned that WOOP now does VO2 Max, and that's not a promotion for WOOP, but that's so cool.
+657
+That's a huge thing to track.
+658
+This is the thing that Peter T and all these guys are always saying.
+659
+This is the thing you want to track to understand your health and progress is your VO2 Max.
+660
+It's your blood oxygen level.
+661
+I don't even know exactly what it is, but that's cool.
+662
+The new WOOP lets you want to do that.
+663
+There's so much cool stuff we're doing right now.
+664
+I'm, I don't know if I want to get into it all right now, but I can.
+665
+We'll get back to it.
+666
+We'll get back to it.
+667
+All right, let's get back to it.
+668
+Okay, cool.
+669
+Yeah.
+670
+Okay.
+671
+So, another habit/slash skill that you are really good at that I've heard from folks is, and you've mentioned this a couple times, is just building habits, helping your team build good habits.
+672
+And coming back to the CBT stuff, just behavior loops and things that.
+673
+Talk about just what that is, why that's important, what you help your team learn there.
+674
+Yeah, I'm obsessed with habit formation and reward loops and behavior change and all these things.
+675
+And when I think about trying to change behavior on your team or just trying to encourage your team to do more of the behaviors that you believe are associated with success, I think a lot of people think about it more of an education model where it's,, you teach the thing, you assess the thing, and then you, there's some accountability around the thing.
+676
+And I think if you if you think about it more in the context of behavioral psychology, it works a lot better.
+677
+And so I'll give you an example.
+678
+I, many leaders, have been trying to think about how to drive AI adoption, AI upskilling on my team, and what that can look.
+679
+And when I talk to people about this outside of the company, I'm always surprised because they're, well, how, how do you measure it and how do you enforce it?
+680
+And I don't really think about any of that stuff.
+681, I'm thinking about how am I creating habits around using this?
+682
+And for me, there's a couple things there.
+683
+So it's consistency.
+684
+How are you getting someone doing something every single day?
+685
+And to do that, it has to start small.
+686
+It has to start super easy.
+687
+You have to give them things that take no more than a minute or two to do.
+688
+And I have 30 days of GPT, I call it, of a list of 30 things to do one every single day.
+689
+That I don't know anyone who has gone through this and not come out the other side feeling a hundred times more confident in their skills and using it every day as a habit because it's built as a habit formation tool and not an education tool.
+690
+This is using a specific GPT built or building their own GPT or what's the habit there?
+691
+The habit is using ChatGPT or Claude or any of these tools to get their work done in just a generic get work done way.
+692
+And so I have this little tool.
+693
+If you sign up for my newsletter, I'll send it to you.
+694
+What's the URL of the newsletter?
+695
+Well, as you mentioned that?
+696
+Thanks for asking.
+697
+It is hills.substack.com, H-I-L-S.substack.com.
+698
+Sweet.
+699
+But basically, it's one little thing you can do every single day.
+700
+And the key with this is, again, consistency.
+701
+So you need to get people doing this thing every day.
+702
+Reducing friction.
+703
+I think a mistake a lot of people make when they start thinking about how to drive adoption is they're, oh, we have to show people how to do their work with these tools.
+704
+But I'm, well, work is hard.
+705
+And if you are on a deadline for something, you've got to get something done.
+706
+The last thing that you ever want is more friction associated with getting it done.
+707 it is so annoying when you're trying to get a thing done and your tools are being changed on you and you don't know how the thing works, and, the hotkeys are all different, or whatever.
+708
+And so, I think using it in situations that have nothing to do with your work are way easier because you're removing all of that friction of, oh, wait, I got to go think about all right, what's a project that I'm working on?
+709
+Oh, I put this into ChatGPT and I didn't really get a good answer, and now I'm frustrated because this thing's taking longer than I need it to take, or whatever.
+710
+And so,, I start with things that are just fun, simple use cases,, it might be coming up with times to take a vacation or plays into our vacation, or it might be uploading your calendar into ChatGPT and asking it for ideas for talking points for the meetings, or things where the person doesn't have to think because it's all just spelled out, and things where there's no external work pressure that you have to apply this to that's going to make it an unpleasant experience.
+711
+So, consistency, reduce friction, and then most importantly, designing reward loops.
+712
+And this is something that when I'm talking to people about designing for behavior change, the number one thing I always tell them is you are not thinking enough about the reward loop.
+713
+And the reward loop needs to be powerful, it needs to be immediate, and it needs to be emotional, so that when this person does the thing that you want them to do, they feel a million bucks.
+714
+And so, when I think about any habit I'm trying to build on my team, that's something that I'm always thinking about: is, how can I make sure that when a person does this, they feel really great?
+715
+And part of why I custom GPTs as a tool for helping people learn to use LLMs, and I talk about this on the podcast I did with Claire on how I AI, is because it, if you put in the prompt, you as the person building the custom GPT, you write the prompt, you put it in, you design it such that somebody can upload a specific document, and then they can get a specific output, feedback on that document, or, maybe something more fun than feedback, an improved written version of that document.
+716
+They get The joy of, oh, this helped me, this was cool, without any of the despair of, oh, I'm not very good at prompting and this didn't really work and I'm frustrated.
+717
+And so I just always think about that in general.
+718, if I'm trying to build any habit on my team, it's less about the accountability of how I'm enforcing this and more about how I make it so rewarding for people to do it that they do it naturally.
+719
+I wrote down notes as you were talking.
+720
+So the four parts of habits.
+721
+And I'm going to ask you for an example to help people see how this works in real life.
+722
+But basically, to help people build an actual habit, the three steps are consistent, the three things you want to focus on: consistency, friction, and reward loop.
+723
+And within reward loop, you want it to be powerful, immediate, and emotional.
+724
+What is an example of this?
+725
+Yeah, I can give some examples of how we do this in product if that would be interesting.
+726
+Absolutely.
+727
+Because I think this is something WOOP is really good at.
+728
+So I think one of the most interesting anti-reward loops on WOOOP is around alcohol.
+729
+WHOOP has this recovery system.
+730
+You get a recovery score every morning.
+731
+It's red, yellow, green, and it's basically how recovered you are and how ready you are to take on the day.
+732
+And if you drink and you're on WOOOP, you will very quickly learn that if you, anytime you drink, you get a red recovery.
+733
+And it's so interesting because it's not people who were drinking weren't getting hangovers before.
+734 they weren't, they knew that it was disrupting their sleep.
+735 none of this is news for people, but there's something about seeing that red score that just feels, it just feels bad.
+736
+It has this really profound emotional impact on people.
+737
+And when you see the green score, it feels great.
+738
+It's, oh, I'm.
+739
+I'm doing something well.
+740 I'm taking care of myself.
+741
+I'm a healthy person.
+742
+And I hear this when I talk to members all the time.
+743
+And I hear people say, I've been,, I've had problems with rent drinking for years.
+744
+And it wasn't until I got on whoop that I was really able to get a handle on my drinking.
+745
+And I'm always, again, amazed by this because I'm, you had all the information you needed before.
+746
+But there's something about the,, you wake up and you get that red score that's just, it manages to override whatever was driving people to do it in the first place.
+747
+And then I think continuing to have that data where you can look back at your data and you can see, oh, that was the red day.
+748
+That was the day that I did this thing.
+749
+And it's something that we've been trying to,, find ways to do this in a longer term way.
+750
+Because when you have these short reward loops, it's easier where it's, I did a thing and then I immediately either got a reward, green recovery, or got an anti-reward, red recovery, and that is changing my behavior as a result.
+751
+And we have this new feature health span that we just launched with our new hardware.
+752
+And basically what it's trying to do is help you have this reward loop between your behaviors and activities that you're doing today and what that means for how healthy you're going to be in,, 20, 30, 40 years.
+753
+And so we have something similar where we have this, we call it the amoeba.
+754
+It has your whoop age in it.
+755
+It's it has colors and moves around.
+756
+And that changes based on how your behaviors and your activities change every single day.
+757
+And the colors change when you're doing better and when you're doing worse.
+758
+And you can see it all broken down: how you sleep, your VO2 max, the consistency of your sleep, how much time you're spending in different heart rate zones, how much time you're spending strength training, things that.
+759
+And we found that again, it's just this incredibly powerful reward loop because we're taking something that historically has been really, really hard, which is when I make healthy changes today, not only do I not see the results of those for decades, but the short-term reward loop of those often feels pretty bad because change is hard and it feels bad before it feels good.
+760
+And trying to build that reward loop that is more rewarding for people to see those numbers change and to see those colors change so that they're able to make those changes and see that progress and feel really good about it.
+761
+I love that you're using all these habit building tactics that folks have been using historically to get you to check your Instagram likes and your Facebook posts for actual good, for helping people live longer and happier.
+762
+That makes me very happy.
+763
+Is there an example of doing this thing with your team, of helping them build?
+764
+And you talk about AI, learning to use,, Cloud Chat GPT.
+765
+Yeah, I think really, I think a lot of it is just shouting people out, right?
+766 when somebody is doing the, using AI to solve a problem that they wouldn't have used AI before, give them a shout out in the team meeting, let them demo that.
+767 again, make them feel a million bucks for doing the thing.
+768
+And people respond to that.
+769 people will see,, maybe it's because I work at WOOP and we're all obsessed with reward loops.
+770
+So we're all reward looping each other.
+771
+Here's your reward.
+772
+No, exactly.
+773
+But no, people see that and people respond to it.
+774
+But I think another example is something that I think about a lot and is relevant to our conversation about just how you build teams that can do hard things is how you encourage people to take care of themselves outside of work.
+775
+And it's something that I'm always trying to model for my team and make it really visible the ways that I'm doing this.
+776
+Then having my hobbies and my other various things.
+777
+And as a result, I also try to reward have these reward loops when I see people on my team doing the same thing.
+778
+Because I think people, bosses often inadvertently create reward loops for, oh, this person,, they had to stay up till two o'clock to get it done, but they got it done.
+779
+And when you create those reward loops, that's the behavior that people start mimicking.
+780
+And so I,, I try to do the opposite.
+781 I try to find ways that I really am impressed with my team and the ways that they take care of themselves outside of work because I think that makes them better at their jobs, frankly, and just happier humans.
+782
+And so there's a PM on my team, Emily, who teaches at Handlebar.
+783
+She's a fitness instructor in her spare time.
+784
+And so whenever we have a long meeting, I'll be, oh, Emily, why don't you lead stretches to get the energy level in the room up?
+785
+Just,, nothing serious, just for a minute before we start the meeting.
+786
+And it's fun.
+787
+Everyone has a laugh about it.
+788 Emily's doing her thing.
+789
+And I'll be,, everyone, everyone come check out Emily at Handlebar in Charlestown this Saturday, 10 a.m.
+790
+And by the way, you all out there in the podcast world should do that if you're in the Boston area.
+791
+She's great.
+792
+Shout out to Emily.
+793
+But it's things that.
+794 it's just, it's just finding these small ways to, because people are already laughing, people are already smiling.
+795
+We're doing this silly thing.
+796
+Everyone's in a good mood.
+797
+And I'm, boom, perfect time to give someone a shout out and make them feel a million bucks for doing something that in many cases they might think, oh, am I allowed to have this other job outside work?
+798, is this okay?
+799
+And so, yeah, you gotta, you gotta proactively build those reward loops.
+800
+I love the reward loop of Emily getting this shout out right now.
+801
+This is Ometa.
+802
+We have a full class coming up in Boston.
+803
+Is there anything else along those lines?
+804
+Because I thought it was really interesting.
+805
+And also, people,, I know managers already do this, just,, promoting.
+806
+But so I think the core lesson here is focus on things you want to encourage more.
+807
+Less so, hey, they worked the weekend.
+808
+They got it done.
+809
+So awesome.
+810
+Thank you for doing that.
+811, you're saying that's almost an anti-pattern because you don't necessarily want that as a habit.
+812
+So it's more shift your reward announcements to things you intentionally want to create.
+813
+Yeah, just be really, really thoughtful about it.
+814
+Okay, so let's come back to the taking care of yourself because there's something else that came up.
+815
+Almost everyone mentioned this.
+816
+So you're doing a good job with this of finding time to take care of yourself and modeling that for other people.
+817
+Specifically, a lot of people commented on how you create space for creativity.
+818
+And I think to a lot of people, a lot of PMs especially, it's just, I have no time for anything.
+819
+I just have meetings back to back all day.
+820
+I barely have time to go to the bathroom or eat.
+821
+And I'm curious to hear just how you do this.
+822
+How do you create space in your day for creative work and deep work and thinking outside of the meeting?
+823
+Yeah, it's funny.
+824
+I'm glad to hear people think I'm good at this because I'm, I'm terrible at organizing events.
+825 my team's always, oh, we should do a fun event.
+826
+I'm, yeah, that's a great idea.
+827
+And then I don't organize it.
+828
+So I to think I do this in other ways.
+829
+And I do think one of them is just in modeling how to carve out space for things.
+830
+And a couple of things.
+831
+I think there's the creativity, which for me is probably more outside of work.
+832
+And for me, it's creativity.
+833
+But again, it's a big part of me as a manager.
+834
+What I think I can help people with is back to the point of behavioral activation, understanding what the things are that a person needs to be happy, to be their best self, to be a high-functioning person.
+835
+And that is, that depends on their values.
+836
+It depends on a lot of things about them.
+837
+So,, for Emily, it's fitness.
+838
+It's teaching.
+839
+It's these things.
+840
+For me, it's having my crafts that I do, my illustration, my writing, my reading, all of these sorts of things.
+841
+I think that's the first step is just as a leader, understanding what those are for people on your team.
+842
+And then, as I said, modeling it.
+843, I try to always tell people,, here's how I'm doing these things.
+844, I talk about them so it's really normalized because I think,, a lot of PMs are, oh my gosh, I'm so busy.
+845
+I have no time.
+846
+I'm meetings all day.
+847
+But,, that's a little bit self-inflicted, I think.
+848, at some point,, you have to be the one responsible for getting yourself out of the weeds.
+849
+And it's hard to do, but it's doable.
+850
+And so I think just showing people that it's possible, showing people that you can do these things.
+851
+And I talk about them and I bring them to lessons.
+852
+I have a book club that I sometimes require at work.
+853
+And then I say maybe I don't need to require this anymore.
+854
+But, ways to just make it really visible, make sure people know that I'm doing it.
+855
+And then ask them about it.
+856
+And,, if I, in my one-on-ones, when I'm checking in with people, I'm asking them,, what do you do for joy?
+857, are you doing something every single day that's bringing you joy in your life?
+858
+And if they say no, I'm, that's a problem.
+859, how, what are we going to do about that?
+860
+And,, what do you do?
+861
+Even know what those things are?
+862
+Because I think a lot of people don't.
+863
+And, a lot of people, it's great.
+864, they're, oh, I need to be getting X number of hours of exercise, X hours of sleep.
+865, I know I need to eat lunch right at 12 or else I turn into a pumpkin.
+866
+And if it's somebody who knows what all those things are and you're just there to help them carve out time, that's one thing.
+867
+But I think in a lot of times,, people don't even know.
+868
+And then you behavioral activation them where you're, all right, well, why don't you try some things and get back to me and let me know what seemed to work, what seemed to make a difference.
+869
+But I do think so much of it is a permission structure because people feel the pressure to be, oh, I'm so busy.
+870
+I'm so busy.
+871
+I'm in meetings all day.
+872
+I can't decline these meetings.
+873
+I can't not do these things.
+874
+And so, in many ways, I think just modeling it gives them the permission structure to start to take back their life.
+875
+I could see why people love working for you.
+876
+Being asked in your one-on-one, have you done anything today that brings you joy?
+877
+And if you haven't, that's a problem.
+878
+Wow.
+879
+It's important,?
+880
+That's what life's all about.
+881, why are we here if it's just to toil and be miserable?
+882
+And also,,, they will be better people at work and they will do better at work.
+883
+I think that's, tell me, correct me if I'm wrong, but it feels that's an element of this.
+884
+Well, and, it's so funny because so much of this stuff, it's obvious when you apply it to an athletic context.
+885
+And obviously,, I talked about the recovery score.
+886
+This concept of athletes need to recover is very obvious.
+887, no one, I think, would argue with that.
+888
+If you're just pushing yourself at 100% of your physical capacity all the time,, not only are you going to burn out, but, you're literally going to suffer performance decline.
+889
+And,, in the same way,, I think in the athletic world, there's so much more just acceptance of i don't even want to say limits but just you have to take the time to do the things you need to be your best and that's not just running into the wall all day And I think we forget that at work, but I think,, the analog is 100% there.
+890
+I also think about this with in terms of being able to have creative breakthroughs of any kind, it's just so important to have active rest.
+891
+It's so important to have heads down time.
+892 this stuff is all very well documented.
+893
+We know it all.
+894
+But we just come up with excuses to not give it to ourselves.
+895
+I think it's self-sabotage at a certain point.
+896
+I definitely come up with excuses not to do that and work all the time.
+897
+So I could use this advice.
+898
+And that's why, here's the thing.
+899
+Here's the thing.
+900 the reason I'm so regimented about this is because if I'm not, I will fall apart.
+901 there's this quote, I can't remember where I saw this, but I love it.
+902
+It's,, I have exercised the demons from my head, but they are outside and they are doing push-ups.
+903 the threat of the demons coming back is always there.
+904
+And so I take this stuff really seriously because I know I, if I'm not, if I let myself start to slide into, I'm not doing the things I need to do to take care of myself, I'm going to have a bad time.
+905
+The walls are going to start closing in around me.
+906
+And I'm not, I'm not really shy about that.
+907
+And so to me, there's no point in torturing myself and just working so, so, so hard and having no room for joy and having no room for creativity, even just from a practical standpoint.
+908 it's not, I'm not, I'm just not going to succeed.
+909
+So.
+910
+This comes back to your point about, I think it was called behavioral activation of doing the thing instead of waiting for you to feel a certain feeling, do the thing that will make you feel that way.
+911
+Yeah.
+912
+Okay.
+913
+As maybe a final area, but I have a few more questions after this.
+914
+So maybe not the final area is AI.
+915
+I'm happy that we waited this long to get deep into AI.
+916
+We're not going to spend a lot of time here.
+917
+You wrote a whole guest post about this.
+918
+You did how I AI to talk through some of this stuff.
+919
+But when we were talking earlier, you said that you think people still are completely undervaluing the power AI could have on their ability to learn and improve themselves.
+920
+And I know you spent a lot of time on this with all these GPTs you've built.
+921
+Just talk about the sense of how much you think people still underappreciate how much power there is in AI and helping them become better.
+922
+Yeah, I think we are not being nearly creative enough when it comes to how to think about learning with AI.
+923
+And I think,, you hear people worry about entry-level jobs.
+924
+And when you think about an entry-level job, it is inefficient by design because you have taken an analyst, a classic entry-level role.
+925
+They're doing grunt work.
+926
+They're doing really tedious work.
+927
+But they're getting a lot of reps in because that's exactly how you learn the judgment to do higher-level jobs well.
+928
+And I hear this in creative fields too.
+929
+I hear this from every, I certainly feel this way.
+930 the work that I did in the beginning of my career, it didn't feel it was all that important in terms of the impact it was having, but it did feel it was transformative in terms of my own judgment and my own taste and how I think about just making very quick judgment calls now.
+931
+I just wouldn't have been able to do that if I didn't spend years learning.
+932,, I used to do social media, the skill of having to condense something that I want to say into 120 characters, whatever it used to be on old Twitter, 240.
+933
+I can't remember.
+934
+I forget.
+935
+Are they crazy?
+936, I forget what the original was.
+937
+I think it was 140.
+938
+Okay, 140.
+939
+140.
+940
+It was short.
+941
+And if you had to get a link in there,, good luck to you.
+942
+But oh my gosh, my ability to just look at something written today and just cut it, that text in half, a third, whatever it needs to fill the space, I can, I can do that in my sleep because I got all these reps very early in my career.
+943
+And so I think people see the way that,, there's a threat of companies not wanting to hire as much entry-level talent because,, it's, oh, this is the work that AI can do.
+944
+And so the fear that I hear at least is where if you're not getting those reps early in your career, maybe it's not contributing so much value to the company at that moment, but it's how you learn to be great later on.
+945
+And so there's a fear that in five, ten years, we're just not going to have that class of people who have learned to do the jobs well and who have built judgment in that way.
+946
+But what I think that misses is it assumes that,, you go and you do this analyst job for two years, and at the end of it, you have a person who knows how to make models really well, knows how to do a few things really well.
+947
+But,, why does that have to take two years?
+948
+And why does that model of you grind over this thing, you wait for feedback, eventually you get that feedback, maybe that feedback's good, maybe it's not.
+949
+You go back, you try again.
+950, it is really inefficient when you think about it.
+951
+And the learning applications around AI that I get really excited about are: how do you shrink that loop?
+952
+So, in my podcast with Claire, I showed her how,, I build these GPTs that think me.
+953
+And the purpose of that is so that my team can get feedback that is at least 80% close to the feedback that I would be giving them.
+954
+But instead of having to wait until I get to their message or until our one-on-one, they can get that on demand as many times as they want,, forever.
+955
+And I think there's a lot of things this: of ways that things that require other people just naturally slow things down, require getting feedback from other people just naturally slow things down.
+956
+We can build AI tools that,,, in my view, there's no reason why the amount of reps that you get at whatever task you're doing, you can be a film editor, just sitting there pouring over the film, deciding what to edit, what to cut, what to put into the trailer or whatever it is you're making.
+957
+That's an incredibly tedious job that takes forever.
+958
+And I think there's no reason we can't make that way more efficient with AI in ways that make the learning more fun.
+959
+And so, I just, yeah, I think that that's my hot take: is yes, it is there is this threat of a lot of these jobs that are things that seem you can just automate them away that might happen.
+960
+But, we absolutely still need to be investing in people's skills.
+961
+I just don't think we need to be investing in them historically in the way that we always have.
+962
+And I think in the future, we'll find that those ways seem quite inefficient compared to what's possible today.
+963
+It's such a powerful point.
+964
+And we're already seeing this.
+965
+I imagine you've seen these studies, I think it's in Nigeria, where they give students AI tutors and they just zoom to the next, they accelerate so quickly in their progression of just reading and math, I think.
+966 we're already seeing it.
+967
+And it's harder to measure in PM and product and all these things, but in school, it's a lot easier to measure and we're already seeing results there.
+968
+Yeah, 100%.
+969
+And to make this very real for people, you have this specific GPT, I think it's called Socrates, or what do you think?
+970
+Oh, Aristotle, yeah.
+971
+Aristotle, okay, no, we're going to edit that out.
+972
+Aristotle, Aristotle.
+973
+Where it gives you scenarios in a product scenario.
+974, give an example just to give people a sense of what this can do.
+975
+Yeah, so this came from, I was talking earlier about learning how to make a really strong logical argument or just a strong argument for your point of view in general.
+976
+And the fundamental skill for that, in my view, is logical thinking, logical reasoning.
+977
+And when I think about the best way we have to test that today, at least the best is maybe not the right word, but the standard way we have to test that, the LSAT, this, the test that you take to get into law school, that is what that tests.
+978
+And it gives you these different scenarios and will try to say,, if A is true, then which of the following is true, is not true?
+979 testing some of these different logical relationships.
+980
+And so what I did was I made a GPT that I basically told it,, create LSAT-style questions to test logical reasoning, but put them in the scenarios of things that a PM would encounter.
+981
+And I have a version of this that's very specific to WOOP and working in consumer health, but you could do it for anything, or you can just do generic,, however you want to do it.
+982
+And it's, it's fun because it gives you this scenario and it's,, you're the sales team is telling you that we need to invest in feature A and the, I don't know, the engineering team is telling you that we only have time to do feature B and the metrics are telling you that,, people who get this feature retain better.
+983 it just gives you these little things and it's, follow that logic, which is the, which is the logically best path from this?
+984
+And it gives you a little multiple choice answer.
+985
+You select one and then explains why you're right and wrong.
+986
+And so I think that's just another example of,, you can't, you can't create those hyper-personalized learnings where I can make one that is literally so specific to you and your life, but is testing and training you on this broader skill set.
+987
+And I think you can,, you can make things more fun that way, even in just the school context in terms of doing that in a way that's just relevant to a person's interests, relevant to the things they care about.
+988
+I think there's a ton of really interesting potential there too.
+989
+So we're going to link to this GPT that you're talking about, Beth, and people can try it out.
+990
+And once you see it, you're, holy shit, I should just be doing this all the time because you just get so many reps as a product builder.
+991
+And that's,, we were talking about a similar one with understanding engineering benchmarks.
+992
+I don't have an engineering background.
+993
+So this was really hard for me when I was moving into product is just getting an instinct for what types of things tend to be easier or harder for engineering teams.
+994
+And so we have one similar that's saying,, here's the scope that's being proposed.
+995
+If you had to t-shirt size this,, which one would you choose and why?
+996
+And you can say, oh,, this sounds small or whatever.
+997
+And it'll say, oh,,, these types of integrations tend to be complex for these reasons.
+998
+So it's probably going to end up being more a large.
+999
+And,, it doesn't have enough context to really inform you in the way that your tech stack at your company is.
+1000
+Although, I guess you could build it and give it that information and then it would.
+1001
+That would be cool.
+1002
+You should do that.
+1003
+But again, it's you do that as a PM.
+1004
+You might get a chance to do that, I don't know, a couple times a week, maybe, maybe less often than that.
+1005
+And when you have this little tool, you can do it infinity times.
+1006
+You can do it,, you can spend an afternoon doing it.
+1007
+And so, again, both the speed of those loops and The number of those loops that you're able to get is just radically different with AI compared to just when they come up in the course of your job.
+1008
+I think this is extremely cool.
+1009
+We're going to link to it.
+1010
+People should definitely play with this.
+1011
+Okay, I'm going to take us to two corners, recurring segments of the podcast, and then I want to talk about WOOOOH before we get to a very exciting lightning round.
+1012
+So this is a new segment I'm trying out.
+1013
+I'm going to call it Pivotal Corner.
+1014
+And here's the question: What's the most pivotal moment in your career?
+1015, I think it was at my former company at Big Health when my former boss left the company and I started reporting into the CEO.
+1016
+And again, I think it was my first time just having up close, working with a CEO so closely.
+1017
+And it just definitely trial by fire.
+1018
+But it made me understand so many things that seemed they didn't make sense to me before when I was just in the rank and file of a big tech company earlier in my career.
+1019
+You get in the room and you talk to these people and you're, oh, this this makes sense.
+1020 I understand why this person has come to these conclusions.
+1021
+And some of it's understanding the pressure they're under.
+1022
+Some of it's understanding again the way they view the world.
+1023
+But I think that was,, to get to our earlier point around the humility of understanding that maybe this person is right about something that I don't see.
+1024
+And maybe I can start by, if I start by giving them the benefit of the doubt, it is not only a nice thing to do, but it is also, it will get me, it will help me understand why they're doing the things that they are.
+1025
+And I think I would have been so much less frustrated earlier in my career if I understood that instead of just being, oh, this doesn't make any sense from where I'm sitting.
+1026
+So therefore it must not make any sense.
+1027
+It's so cool that this connects back to your habit of doing this, having seen it and being, oh, I see.
+1028
+This is why.
+1029
+Yeah, I guess maybe I'm wrong.
+1030
+Maybe I could be wrong.
+1031
+Well, that's,, that's what it is.
+1032, I feel I've had so many of those times where,, I don't know, when I was growing up, I was just so, I felt so confident in how I felt about everything.
+1033
+And then you get out there and you're just, oh, I was missing some things.
+1034
+And after a while, you're, okay, maybe I should, maybe I should approach these situations a little differently with the, with the possibility that maybe I'm missing something.
+1035
+So I asked your boss, Kelvin, which is an awesome name, by the way, Kelvin, about this moment.
+1036
+When I asked him what to ask you, and he brought this up,, and here's the way he described it.
+1037
+She may describe it as being thrown into the deep end or baptism by fire, but the reality is that she had the core skills, and this was simply an opportunity for her to let those shine even more.
+1038
+She was an incredible first principles thinker, quick to tune the framing of problems as she learned more context.
+1039
+It's a great example of luck is what happens when preparation meets opportunity.
+1040
+Thanks, Calvin.
+1041
+That's right.
+1042
+He also said, I wonder if she remembers how terrified she was now because she absolutely knocked it out of the park.
+1043
+And it felt it was an inflection point that grew her confidence significantly.
+1044
+Oh, I was terrified.
+1045
+Yeah.
+1046
+Big time terrified.
+1047
+And then,, this is also what I was saying about why it's so important to be regimented about having these things outside of work that allow you to continue to thrive, even in the face of just utter feelings of failure of, I am not doing a good job.
+1048
+This is not going well.
+1049
+I don't know what I'm doing.
+1050, a lot of it was that time.
+1051
+Kelvin gave me some great advice that was, that this is maybe scary advice, but when I asked him what his advice for me at the time was, and he said, product leadership is the type of role where if you are not in control of the voices in your head, they will eat you alive.
+1052
+And,, I think it's right.
+1053, as I said, it is so often this feeling there is not a clear right answer and not even necessarily a good answer.
+1054
+And everyone is looking to you for clarity and everyone is looking to you to make the right decisions.
+1055
+And everyone sees the errors, or at least everyone can spot the flaws in whatever decision you make or whatever recommendation you make.
+1056
+And,, you, as I said,, every path forward has flaws that can be poked in it.
+1057
+And so, understanding that,, the existence of potential ways to be criticized about something does not warrant criticism in a way that can I think often result in a lot of negative self-talk for people.
+1058
+So, yeah,, it had a tremendous impact on me.
+1059
+It's interesting how so much of these habits and skills you've built seem to,, it's clear where they come from, from all these experiences that you had.
+1060
+Well, and to the point of, when you, when you start talking to people and you start trying to build this mental model of how they think,, that's exactly what you learn, right?
+1061
+Is, well, I can see how this person,, worked at this company at this time.
+1062
+And I can see how this person had this relationship with this other person.
+1063
+And,, all of these things shape the way that we approach problems and the way that we try to,, just move through the world.
+1064
+And it is it is understanding those types of things that allow you to understand how a person thinks.
+1065
+I wonder if you could ask ChatGPT to build or Claude to build these mental models.
+1066, here's their LinkedIn, here's their bio, here's a few things.
+1067
+What's how do they see the world?
+1068
+I will admit that I have tried this.
+1069
+And I think it's a great idea.
+1070
+I think it does help.
+1071
+I have not gotten to a point where I'm comfortable sharing it with other people, nor have I told anyone that I have tried to do this for them, but I've certainly done it for myself.
+1072
+And I think it would be helpful because you could say things you could upload a doc or whatever and be, what are the three questions that this person's going to ask me about it?
+1073
+And then you could be prepared for the questions that that person's going to ask you.
+1074
+And that's great.
+1075
+In this hypothetical example, what do you context do you share with this model to help it be good?
+1076
+Great question.
+1077
+Hypothetically,, I told you that I take all these notes on here's what this person said and here's how I interpret it.
+1078
+And LLMs are really good at pattern matching and spotting the, you could feed all of those in and just say,, come up with the 10 criteria that this person is most likely to use to assess a possible recommendation or path forward.
+1079
+Or give me the top 10 ways that this person is likely to pick apart an argument or object to something and you're going to get a good answer.
+1080
+More reason to build this habit of taking notes and sharing with your team.
+1081
+On the other hand, this might also be a good use case for granola or something that where you have all these meeting notes and you could just feed it, here's all the things Hillary said and oh, what is she, what is she probably going to say about this?
+1082
+Wow, so cool.
+1083
+Okay.
+1084
+Next corner, I'm going to take us to Fail Corner.
+1085
+And in Fail Corner, the idea here is people come on this podcast, they share all these wins and success, everything's up and to the right and amazing.
+1086
+But in reality, things don't always go that smoothly.
+1087
+So the question is: just, is there a story you could share of failure in your career where things didn't go the way you hoped and what you learned from that experience?
+1088, I think the one that probably looms largest in my mind is:, I mentioned this depression therapeutic that I spent about a year working on, and ultimately, the company ended up acquiring a different depression therapeutic.
+1089
+And we ended up merging the two of them.
+1090
+And a lot of the stuff that we had initially built that I would have really loved about this product we were working on didn't really ever end up seeing the light of day beyond the testing that we had done around it.
+1091
+And it was heartbreaking because,, I still wish this product existed.
+1092, I look at it and I'm, this was a great product.
+1093
+And we put so much heart and soul into it.
+1094
+And I think the lesson that I learned from that is I think there's always a shot clock, right?
+1095
+When you're working, especially on a zero-to-one product, I think it can be very easy to feel you have the luxury of time of just,, we got to take the time to figure this out and get it right.
+1096
+And that's what's most important.
+1097
+But the build versus buy question is always live and it's always fair.
+1098
+And whether you want to admit it, if you're the one working on it, and you probably don't, I didn't want to admit this.
+1099
+There is a point at which it makes more sense for the company.
+1100 if it is taking too long to develop something and there is a solution out there that works, it is the right decision to acquire that.
+1101
+And, I worked at Dropbox for a while.
+1102
+I saw this happen all the time where we would acquire products that other teams internally have been working on.
+1103
+And it's just, it's heartbreaking when it happens.
+1104
+But I think there's an urgency that that has instilled in me that I think is really good and healthy, especially again, working in this era where there is this AI arms race and everyone's trying to move really quickly of, yeah, there's always a shot clock.
+1105
+And you might not be aware of it, but it's there.
+1106
+And you got to build your heart out and you got to ship and you got to get things out because at any time, that clock might run out.
+1107
+Speaking of shot clock, not necessarily, but I want to spend a little time on WOOOP.
+1108
+You guys just launched something that feels a really big deal.
+1109
+I'm excited.
+1110
+That's the reason I got it.
+1111
+There's all these really cool new features.
+1112
+I think you call it WOOP 5.0.
+1113
+What should people know?
+1114
+What's the newest, coolest thing that's happening with WOOP?
+1115
+Yeah, I'm really excited you got it.
+1116
+I know you tried it before.
+1117
+And people who have tried WHOOP in the past maybe felt it was very focused on elite athletes.
+1118
+And that is explained to the company.
+1119
+And I think what we've done with our new experience is we've really built something that can help everyone be healthier and live better.
+1120
+I think I would say we're no longer just for elite athletes.
+1121
+We're really now a health and performance companion for anybody who wants to feel their best.
+1122
+For the first time in our company's history, we've updated our mission.
+1123
+So we're now saying that WOOP exists to unlock human performance and health span.
+1124
+And HealthSpan, I think, is, I mentioned earlier, this feature I'm really excited about because I do think it is the most powerful version of a longevity type feature I have seen because it is so focused on your behaviors and your habits today.
+1125
+And we built it to be super, super actionable.
+1126
+So rather than just giving you a score that you're, okay, that's nice, if you start sleeping even 20 minutes more, 30 minutes more tonight, you're going to see how that changes your pace of aging.
+1127
+You're going to see how that changes your whoop age.
+1128
+And I think that, as I mentioned earlier, I think is really rewarding.
+1129
+We also have a lot of personalized coaching for our AI in terms of actions that you can take to improve your whoop age, to improve your sleep, to feel better.
+1130
+And it's all part of our broader aim to make health more actionable and accessible.
+1131
+I think one thing I'm really excited about is we have a bunch of new women's health features.
+1132
+So we have hormonal insights with improved menstrual cycle tracking.
+1133
+I'm pregnant, and I didn't know that.
+1134
+I have a big announcement.
+1135
+Wow, congratulations, Hillary.
+1136
+That's so exciting.
+1137
+But I, part of how I found out I was pregnant was in seeing my whooping.
+1138
+What?
+1139
+What?
+1140
+Which is pretty remarkable.
+1141
+And the way that we have this cycle tracking now, you can see the way that your different,, your HRV, your resting heart rate, things that, that's your heart rate variability in your resting heart rate, fluctuates throughout different times of your cycle.
+1142
+And even in the time leading up to that, I had a not straightforward pregnancy journey.
+1143
+And having these tools to really understand what was going on in my body was tremendously helpful and tremendously empowering for me and honestly really has changed my life.
+1144
+So I'm really excited about that.
+1145
+We have a lot of great new heart health features.
+1146
+We have a heart health screener with blood pressure insights and ECG.
+1147
+That's really cool.
+1148
+We got a lot of great stuff cooking.
+1149
+So even if you tried whoop in the past and thought it wasn't for you, I think the new experience is a real upgrade and it's something that I'm deeply proud of having worked on and really excited to have out in the world.
+1150
+I am generally very excited about this.
+1151 you could do, you said blood pressure and VO2 Max.
+1152
+And I know the battery is even longer too.
+1153
+There's just a 14-day battery life.
+1154
+I didn't even say we have these beautiful new leather bands.
+1155
+Oh, wow.
+1156
+Poor JD Valerie's life is insane.
+1157, I'm going on vacation tomorrow, and I'm, I don't even need to bring a charger.
+1158, this is fantastic.
+1159
+Oh, man.
+1160
+This sounds a whoop ad, but I'm very excited about this.
+1161
+But we'll say one more thing, which is we also have, we've opened a waitlist for advanced labs.
+1162
+And so pretty soon you're going to be able to have comprehensive lab work in the app.
+1163
+And I think,, we talk about the future of health of having control of all of your health data in one place.
+1164
+And then being able to not just find the signal in it and understand,, how your sleep is impacting your metabolic health or things that.
+1165
+But again, get really actionable coaching on actions that you can take to feel better and be your healthiest.
+1166
+And yeah, just pushing the limits of all the data that we're pulling into the Globe ecosystem.
+1167
+So really excited about that too.
+1168
+I'm hoping the WOOP can take my blood and labs.
+1169
+Is that where this is going?
+1170
+Because that would be so convenient.
+1171
+Okay.
+1172
+That'd be, it'd be weird, but also awesome.
+1173
+I don't have to go anywhere to do that.
+1174
+Halary, we covered so much ground.
+1175
+Okay, before we get to our very exciting lightning round, is there anything else that you wanted to touch on?
+1176
+Anything else that we haven't covered that you think, or last nugget you wanted to leave listeners with?
+1177
+I don't think so.
+1178
+I feel we covered everything.
+1179
+We did.
+1180
+We've covered so much in the best way possible.
+1181
+With that, we've reached our very exciting lightning round.
+1182
+Are you ready?
+1183
+I'm ready.
+1184
+What are two or three books that you find yourself recommending most to other people?
+1185
+Bunny, you can't call something a lightning round and then ask me about books.
+1186
+That's, we could go for a whole other podcast where we create a time box for it.
+1187
+Yeah, exactly.
+1188
+Okay, I'm going to go,, I'm going to say, I'm, I'm going to go full fiction on this.
+1189
+I'm going to say, if you're going to read a book,,, don't bother reading a business book.
+1190, even the business books I love the most that shaped how I think, I'm, I got the gist of them part way through.
+1191
+But fiction, I'm, everybody should read East of Eden by John Steinbeck, and everybody should read The Sun Also Rises by Ernest Hemingway, which is my comfort book.
+1192
+I think what I love about fiction is it just, it teaches you how to sit inside tension, right?
+1193
+I think so much of working in product is, as I said, you're in this fog and you just have to provide clarity and you have to be really good at providing structure to ambiguous things and finding the way forward.
+1194
+And to succeed at the job, you have to be able to do that.
+1195
+But I also think to succeed as a human in the job, you have to be able to sit in the mess and sit in the ambiguity.
+1196
+John Keats, the poet, talks about this concept of negative capability, which is the ability to remain in uncertainties, mysteries, doubts without any irritable reaching after fact and reason.
+1197
+And I love that.
+1198
+That sounds a perfect quote for LPMs too.
+1199
+Exactly.
+1200
+And it's, you got to be both, right?
+1201
+Again, fiction.
+1202
+I love dualities.
+1203
+There's a lot of dualities in fiction, a lot of warring forces within people that is,, can be so driving for people, but can also be the source of so much anguish.
+1204
+I think it is important to live in both.
+1205
+In the, I'm going to break down this problem.
+1206
+I'm going to structure it.
+1207
+I'm going to get out.
+1208
+But also,, I'm going to sit here and I'm going to accept that there is no right answer and there is no perfect answer.
+1209
+And I, I, that's life.
+1210
+So,, you don't learn that from, to the extent that you learn that from a book at all, which maybe you don't, but I think you can, I think you can learn it in fiction.
+1211
+I don't know how you feel about this book.
+1212
+I think you'll be proud of me.
+1213
+I'm reading Anna Karenena right now.
+1214
+Oh, I was, I literally, that's the book that I'm bringing on vacation with me tomorrow.
+1215
+Wow.
+1216
+So you've never read it?
+1217
+I've never read it.
+1218
+Cool.
+1219
+Me neither.
+1220
+Okay.
+1221
+We'll exchange some notes.
+1222
+It's very long.
+1223
+I'm realizing because I'm reading on the Kindle only 12%.
+1224
+Okay.
+1225
+Now I really have to read it.
+1226
+I was wavering.
+1227
+I was, is this really what I'm going to want to read when I'm sitting by the pool?
+1228
+But no, I've committed it.
+1229
+You got to do it.
+1230
+Another guest recommended it, and I saw it on some lists recently.
+1231
+And I'm, oh, I should read that.
+1232
+Right.
+1233
+So, yeah.
+1234
+Okay, great.
+1235
+Next question: Do you have a favorite recent movie or TV show that you've really enjoyed?
+1236
+I've been watching The Rehearsal with Nathan Fielder.
+1237
+Have you seen the show?
+1238
+I saw the first season.
+1239
+I've been a huge fan of Nathan Fielder for so long.
+1240
+I don't know if you saw his previous thing that he did.
+1241
+I forget what it's called.
+1242
+Okay.
+1243
+He's so hilarious and such a genius.
+1244
+Nathan, for you.
+1245
+Oh my God.
+1246
+I haven't seen The New Season though.
+1247
+The man is a freaky genius.
+1248, just when I thought that I had a good sense of all the human emotions that exist out there,, I watch this show and I feel things that I'm, I have no, I feel 10 different things.
+1249
+And I'm, I have no words for any of the things that I'm feeling right now.
+1250
+It's weird.
+1251
+It's weird stuff, but I'm enjoying it.
+1252
+You gotta watch it.
+1253
+Do you have a favorite product you've recently discovered that you really enjoyed other than the whoop?
+1254
+I love my Zwift.
+1255
+Zwift, it's a program that you can hook up a smart trainer to,, for an indoor cycling situation.
+1256
+And you bike around you're in Mario Kart and you're in these virtual worlds biking with other people.
+1257
+It's, I think, for very serious cyclists.
+1258
+I am not a very serious cyclist.
+1259
+For me, it's been amazing as somebody who really struggles to find time to exercise.
+1260
+They have, speak of reward loops, they have one of the most amazing reward loops, which is you're biking along and you get into this track and a ghost of your previous self breaks out from you and starts racing alongside you at your personal best for that track and you have to beat your personal self or you have to beat this ghost version of yourself and nothing has ever motivated me more in my life than past Hillary being, I'm coming for you.
+1261
+And I'm, I don't get that competitive with other people, but past Hillary comes for me and I'm, this I can't let happen.
+1262
+So I think it's a great product.
+1263
+I'm thinking about how to use that tech, that I don't know, mode for other use cases, the ghost version of something to motivate you.
+1264
+I've been in so many product meetings where I'm, can we make a ghost version of yourself?
+1265, shut up about the ghost.
+1266
+Okay, amazing.
+1267
+Okay, two more questions.
+1268
+Do you have a life motto that you often come back to find useful in work or in life?
+1269
+I'll say one that's been top of mind me recently because I was talking about the highbrow fiction.
+1270
+I also have to go lowbrow.
+1271
+I saw this clip of Beavis and Butthead online recently where they were watching a music video for Creep by Radiohead and it starts off really slow and one of them, I think maybe Butthead is, oh, this sucks.
+1272
+And then the chorus comes and it starts getting all hyped and they're, they're, oh, this rocks, this rocks.
+1273
+And then I'm not going to do my Beavis and Butthead impression.
+1274
+So then it gets back to the slow part.
+1275
+And they're, oh, wait, this sucks again.
+1276
+And then Butthead is, why don't they just play the cool part the entire time?
+1277
+And Beavis is, because if they didn't have the part of the song that sucked, the cool part wouldn't be as cool.
+1278
+And I was, that is so profound.
+1279, that is what life is all about.
+1280
+It's just, if it didn't have the parts that sucked, the cool parts wouldn't be as cool.
+1281
+And we're always chasing the cool parts.
+1282
+We want it all to be the cool parts, but it can't.
+1283
+So thank you, Beavis and Bahead.
+1284
+Thank you, Peeps and Pahead.
+1285
+Okay, final question.
+1286
+I love that you talk about fiction books because this is where my question was going to go.
+1287
+What's a fiction book that most impacted your product building approach or career or the way you think about product?
+1288
+Can I give a poem?
+1289
+Absolutely.
+1290
+Even better poem, extra credit.
+1291
+There's a poem by Derek Walcott about, it's called Sea Grapes, and it's about Odysseus.
+1292
+And he talks about Odysseus being driven by the ancient war between obsession and responsibility.
+1293
+And I read that line when I was 18 years old, and it has always stuck with me.
+1294
+And I,, I mentioned earlier, I think about these dualities that drive us.
+1295
+And I think as a product person, I always feel I'm living between these two, the obsession and the responsibility.
+1296 I just, I want to, I want to go so deep on this, and I want to, I want to spend as much time as I possibly can just sorting every little piece out.
+1297
+But we live in a society, we exist in a business.
+1298
+I am trying to create value for shareholders and trying to bring these two things together.
+1299
+I feel A has been a,, the defining struggle of my career, I think, of many people's careers is how you have something that you feel you can really obsess over and have that flow over or have that flow when you're working on.
+1300
+But then,, it's gotta, it's gotta work in this broader system as well.
+1301, and I think that that's been the thing that I think of as the guiding post for what I want to do with my career and with my life.
+1302, so I think it's got to be Derek Walcott.
+1303
+What a beautiful way to end it.
+1304
+Hillary, two final questions: where can folks find you online if they want to reach out, maybe follow up on stuff that you talked about?
+1305
+And how can listeners be useful to you?
+1306
+Great, thank you.
+1307, so as I mentioned, I have a newsletter: it's hills.substack.com.
+1308
+That's h-i-l-s.substack.com.
+1309, I'm also teaching a Maven class on being a super manager with AI.
+1310
+So, if you were listening to all this and you were, oh, Hillary, that sounds so great, but, I don't have time for any of that.
+1311
+How do you have time for all that?
+1312, honestly, hyper-leveraging myself with AI has been a big part of how I find time to do any of this stuff.
+1313
+And so, I share a bunch about how I do that, how I use AI as a manager, building on a lot of the stuff that I shared on Claire's podcast as well, on how I AI.
+1314
+So, you can find me on Maven there.
+1315
+We've got a couple cohorts coming up.
+1316
+And then, yeah, I encourage everyone to try out Whoop.
+1317
+You can get a free month on me at join.whoop.com/slash Hillary.
+1318
+That's Hillary with one L.
+1319
+And you can post at me or tweet at me on X and let me know what you think of it.
+1320
+And I would love everyone's feedback because we're really excited about it.
+1321
+As you were talking, I looked up your course just for make sure people can find it.
+1322
+So, you go to Maven.com, you just search for Hillary Gridley, and you'll find it.
+1323
+Yep, you can also watch it.
+1324
+I realize that if you Google Super Manager, you will find me.
+1325
+So, that is my new claim to fame.
+1326
+Oh, my god, that's so great.
+1327, 4.9 stars.
+1328
+Holy moly, there we go.
+1329
+Okay, Hillary, thank you so much.
+1330
+This was incredible.
+1331
+Covered everything I was hoping to.
+1332
+This was everything I wanted it to be.
+1333
+Thank you so much for being here.
+1334
+Thank you.
+1335
+Thank you for having me.
+1336
+This was so fun.
+1337
+So fun.
+1338
+Bye, everyone.
+1339
+Thank you so much for listening.
+1340
+If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app.
+1341
+Also, please consider giving us a rating or leaving a review, as that really helps other listeners find the podcast.
+1342
+You can find all past episodes or learn more about the show at lennyspodcast.com.
+1343
+See you in the next episode.

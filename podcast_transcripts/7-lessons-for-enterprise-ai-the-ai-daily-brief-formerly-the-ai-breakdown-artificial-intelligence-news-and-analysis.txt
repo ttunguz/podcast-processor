@@ -1,0 +1,343 @@
+--- METADATA START ---
+Show: N/A
+Episode: 7 Lessons for Enterprise AI - The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Host: Unknown
+GUESTS: None
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/7-lessons-for-enterprise-ai/id1680633614?i=1000706465739
+--- METADATA END ---
+
+ Today on the AI daily brief, seven lessons for Enterprise AI, before that in the headlines,
+ is Apple actually about to do something cool in AI?
+ The AI daily brief is a daily podcast and video about the most important news and
+ discussions in AI.
+ Thanks to today's sponsors KPMG, Blitzy.com, and Super Intelligent, and to get an ad-free
+ version of the podcast, go to patreon.com/ai-dailybrief.
+ Welcome back to the AI daily brief headlines edition, all the daily AI news you need
+ in around five minutes.
+ Now when it comes to Gen AI, Apple are certified bag fumblers.
+ It has just been mistake after mistake and error after error and delay after delay and
+ underwhelming thing after underwhelming thing when it comes to this company's AI
+ strategy.
+ So much so that in March, I did a podcast all about six Hail Marys Apple could do to
+ get back in the AI game.
+ And a big theme of that was to work with people who are not fumbling the bag.
+ Well, interestingly, we got reports at the end of last week that Apple is teaming up
+ with anthropic on an AI coding platform.
+ This comes from Bloomberg's Mark Gurman, who's maybe the best positioned source in
+ the mainstream media when it comes to Apple strategy.
+ He wrote that the two companies are working on vibe coding software that will write,
+ edit, and test code on behalf of software engineers.
+ Gurman sources say that the system is a new version of Xcode, which is Apple's
+ programming software, and it will integrate anthropics cloud sonnet model.
+ At least initially, the focus will be entirely internal, and Apple has not yet decided
+ whether to launch it publicly.
+ So it appears, at least from the limited information we have so far, that this is
+ Apple using AI, basically building its own version of cursor to speed up its own internal
+ product development.
+ And this follows from an announcement last year when Apple said that they were building
+ their own AI coding tool for Xcode called Swift Assist, that they ended up never rolling
+ out.
+ Now, keep in mind that not only is Apple now far behind when it comes to consumer
+ facing AI, both Google and Microsoft are saying up to about 30% of their code is
+ now written by AI.
+ And that's presumably driven by their own models, rather than being farmed out
+ to anthropic.
+ So again, not only is Apple now behind when it comes to AI for consumer purposes,
+ they're also just behind in using it themselves.
+ For the last couple of months, it has seemed like Apple is starting to make some moves
+ in this area.
+ They've shifted around a bunch of leadership, pulled over the people in charge of vision
+ pro and put them in charge of Siri and Tim Cook tried to put a positive spin on the
+ company's lackluster AI rollout on a recent earnings call.
+ Cook said we're very excited about the roadmap.
+ And we are pleased with the progress that we're making when it came to building their
+ own models or partnering with others.
+ Cook said I don't view it as an all or one or all of the other.
+ And yet still for every one of us outside, I think Alexandre Andrey and off's take
+ is pretty reflective when he writes Apple should buy anthropic before it's too late.
+ This was indeed the biggest Hail Mary that I had suggested back in March.
+ So will we see it actually come to fruition?
+ Well, like I said back then, I'm not particularly sure that anthropic is looking to be bought.
+ But if I were Apple, I would certainly be trying.
+ Next up, speaking oppositely of a big tech AI product that people actually love, Google's
+ notebook L.M. is getting its own app.
+ And that app is set to launch on May 20 on both iOS and Android.
+ The free standalone app is now available for preorder on both platforms.
+ Since its launch back in 2023, notebook L.M. has been only available via desktop.
+ And I think for fans of notebook L.M., this shows that Google is still investing in that
+ complete app experience rather than just ripping out the viral audio overviews feature.
+ Audio overviews recently moved out of notebook L.M. and into the main Gemini assistant as
+ well.
+ And some thought that maybe the plan was to integrate everything into the singular Gemini
+ experience rather than offering a range of interfaces.
+ But this does appear to suggest that Google is actually doubling down on notebook L.M.
+ in total as a major AI platform.
+ Now the May 20 launch lines up with the first day of the Google I/O conference.
+ So we'll probably get some more news about it then.
+ Lastly today, OpenAI continues to deal with the fallout from GPT 4O's sycophantic personality,
+ introducing a new framework for rolling out updates.
+ In an expanded post mortem published on Friday, OpenAI discussed their post training
+ and testing process.
+ They wrote that in building their latest update, the one that went a little haywire,
+ quote, "We had candidate improvements to better incorporate user feedback, memory,
+ and fresher data among others.
+ Our early assessment is that each of these changes which had looked beneficial individually
+ may have played a part in tipping the scales on sycophancy when combined."
+ Now as a result of these challenges, OpenAI has now changed the way that they'll introduce
+ model updates.
+ They will initially hold a public test with an opt-in alpha phase for new model post
+ training that could change its personality.
+ Transparency will also be increased with the company writing, "Because we expected
+ this to be a fairly subtle update, we didn't proactively announce it.
+ So our release notes didn't have enough information about the changes we'd made.
+ Going forward, we'll proactively communicate about the updates we're making to the models
+ in chat GPT, whether subtle or not.
+ And like we do with major model launches, when we announce incremental updates to chat
+ GPT, we'll now include an explanation of known limitations so users can understand
+ the good and the bad.
+ OpenAI has also committed to blocking model updates based on qualitative signals, even
+ in their words when metrics like A/B testing look good.
+ Indeed, this seems to have been a problem with the latest update, where OpenAI did
+ not defer to their model testers and instead relied on beta users who enjoyed the sycophantic
+ responses.
+ The company wrote, "Some expert testers had indicated that the model behavior felt
+ slightly off."
+ They continued, "We then had a decision to make.
+ Should we be withholding deploying this update despite positive evaluations and
+ A/B test results, based only on the subjective flags of the expert testers?
+ In the end, we decided to launch the model due to the positive signals from the users
+ who tried it out.
+ Unfortunately, this was the wrong call.
+ We built these models for our users and while user feedback is critical to our decisions,
+ it's ultimately are responsible to interpret that feedback correctly."
+ The entire episode demonstrates just how much model behavior can change with just
+ a small tweak to the system prompts.
+ It also shows that simple A/B testing shouldn't necessarily be the north star for building
+ useful models.
+ Andrew Maine, a former OpenAI employee, recalled a similar incident, demonstrating
+ how hard it is to get system prompts right.
+ He wrote, "Early on an OpenAI, I had a disagreement with a colleague, who is now
+ a founder of another lab, over using the word polite in a prompt example I wrote.
+ They argued polite was politically incorrect and wanted to swap it for helpful.
+ I pointed out that focusing only on helpfulness can make a model overly compliant.
+ So compliant in fact that it can be steered into sexual content within a few turns.
+ After I demonstrated that risk with a simple exchange, the prompt kept polite.
+ These models are weird."
+ Good news for us is that each of these challenges, when happening live, gives us
+ a chance to learn a little bit more about what's going on, and potentially steer
+ things in the right direction.
+ For now though, that is going to do it for today's AI Daily Brief Headlines edition.
+ Next up, the main episode.
+ Today's episode is brought to you by KPMG.
+ In today's fiercely competitive market, unlocking AI's potential could help give
+ you a competitive edge, foster growth, and drive new value.
+ But here's the key.
+ You don't need an AI strategy.
+ You need to embed AI into your overall business strategy to truly power it up.
+ KPMG can show you how to integrate AI and AI agents into your business strategy in
+ a way that truly works and is built on trusted AI principles and platforms.
+ Check out real stories from KPMG to hear how AI is driving success with its clients
+ at www.kpmg.us/ai.
+ Again that's www.kpmg.us/ai.
+ Today's episode is brought to you by Blitzy, the enterprise autonomous software development
+ platform with infinite code context.
+ Which if you don't know exactly what that means yet, do not worry we're going to
+ explain and it's awesome.
+ Now Blitzy is used alongside your favorite coding co-pilot as your batch software development
+ platform for the enterprise and it's meant for those who are seeking dramatic development
+ acceleration on large-scale code bases.
+ Traditional co-pilots help developers with line-by-line completions and snippets but
+ Blitzy works ahead of the IDE.
+ First documenting your entire code base then deploying more than 3,000 coordinated
+ AI agents working in parallel to batch build millions of lines of high quality code
+ for large-scale software projects.
+ So then whether it's code base refactors, modernizations, or bulk development of
+ your product roadmap, the whole idea of Blitzy is to provide enterprises dramatic
+ velocity improvement.
+ To put it in simpler terms, for every line of code eventually provided to the human
+ engineering team, Blitzy will have written it hundreds of times, validating the output
+ with different agents to get the highest quality code to the enterprise in batch.
+ Projects then that would normally require dozens of developers working for months
+ can now be completed with a fraction of the team in weeks, empowering organizations
+ to dramatically shorten development cycles and bring products to market faster than
+ ever.
+ If your enterprise is looking to accelerate software development, whether it's large-scale
+ modernization, refactoring, or just increasing the rate of your STLC, contact
+ Blitzy at Blitzy.com that's BLITZY.com to book a custom demo or just press get
+ started and start using the product right away.
+ Today's episode is brought to you by Super Intelligent and more specifically, our Agent
+ Readiness Audits.
+ Every company right now is in the midst of a discovery process trying to figure out
+ how autonomous agents are going to change both how they work internally, as well as
+ the way they service their customers, and even what products they actually offer.
+ Agent Readiness Audits are the fastest, most efficient way to find out where and how
+ agents can have the biggest impact on your business.
+ We deploy a custom-designed voice agent to interview teams and leaders, run that
+ through a hybrid human AI analysis process to produce an Agent Readiness Score, plus
+ a set of insights and actionable recommendations for both what Agent use cases are likely
+ to drive the most value and what you need to do internally to be most ready to seize
+ those opportunities.
+ After the audit, there are a variety of next steps.
+ We can dive deep and provide an action planning report on one or more of the specific use
+ cases.
+ We also provide leadership accountability, coaching to help support internal change
+ management, or you can turn your audits into RFPs on our marketplace.
+ So go to bsuper.ai or email us agents@bsuper.ai to learn more about Agent Readiness Audits.
+ Welcome back to the AI Daily Brief.
+ A couple of weeks ago, OpenAI dropped their first-ever AI in the Enterprise report.
+ Now, it was structured around seven different lessons from companies they've worked with,
+ and given how much time and energy OpenAI is spending inside the Enterprise, there's
+ a lot to learn here around what best practices look like currently.
+ As I mentioned, they organized this into seven lessons.
+ At a high level, the lessons are one, start with evals, two, embed AI into your products,
+ three, start now and invest early, four, customize and fine-tune your models, five,
+ get AI in the hands of experts, six, unblock your developers, and seven, set bold automation
+ goals.
+ What I like about this report is that it's not framed as seven case studies, even though
+ each of these lessons has a case study that goes with it, but instead, it can almost
+ serve as a blueprint.
+ And if you are looking for the one singular takeaway, it's that the time for pilots
+ and experimentation is in the past.
+ The companies that are thriving are viewing this as a full infrastructure shift, a total
+ transformation of how they operate and they're behaving as such.
+ Now, we'll come back to more of that at the end, but for now, let's briefly touch
+ on each of these different lessons.
+ Lesson one, start with evals.
+ Use a systematic evaluation process to measure how models perform against your use cases.
+ Now, here's how OpenAI defines evals.
+ They write, "evaluation is the process of validating and testing the outputs that
+ your models produce.
+ Rigorous evals lead to more stable, reliable applications that are resilient to change.
+ Evals are built around tasks that measure the quality of the output of a model against
+ a benchmark.
+ Is it more accurate, more compliant, safer?
+ Your key metrics will depend on what matters most for each use case."
+ Now, on the one hand, this sounds pretty obvious.
+ When you're trying to use software to get a particular result, you probably want
+ to measure whether it achieves that result.
+ And yet, at the same time, this is such a nascent area, and is frankly one of the
+ areas that many companies don't realize they need to invest in when they go out to build,
+ for example, agents.
+ In fact, it's one of the areas where we see people most want to skimp on cost that
+ we really, really don't recommend.
+ The case study for OpenAI was from Morgan Stanley.
+ As they looked to deploy AI models internally, they had three evals that they focused on.
+ Language translation measured by accuracy and quality, summarization, evaluating how
+ a model condensed information using agreed-upon metrics for accuracy relevance and coherence,
+ and human trainers comparing AI results to responses from expert advisors, graded
+ for accuracy and relevance.
+ Basically, by measuring their AI outputs based on these three different areas, they
+ were able to have confidence and roll out these tools more broadly.
+ To give you a little peek behind the curtain, when we were designing the voice agent that
+ powers the super intelligent agent readiness audit, we built a comprehensive evaluation
+ system into our work.
+ We evaluate the voice agent on a variety of different criteria, ranging from fidelity
+ to the interview, to wordiness and rabbit-holing and how off-topic it gets, to tonality,
+ and about a dozen other things as well.
+ Basically, all of the things that would go into making the experience feel either
+ good or bad for a user.
+ We also built a testing suite so that we can have different synthetically generated
+ personas do sample interviews in order to test the models at scale.
+ And by the way, if you look around in the AI community, there are so many people beating
+ the drum that we need to be paying more attention to, e-vals.
+ Brooke Hopkins, who it looks like has an agent evaluation startup, writes, "This lesson
+ couldn't be more relevant for voice and chat AI.
+ The risks of hallucinations, wrong escalations, or compliance slip-ups are an abstract.
+ There are lived consequences for customer experience and brand trust.
+ If you're deploying AI agents in customer support, e-vals are your safety net and
+ compass."
+ Let's move on to lesson two, embed AI into your products.
+ Now the example they use for this is indeed who integrated OpenAI models into their
+ product experience for job seekers to help better explain why a particular job was
+ recommended to them.
+ This led to a 20% increase in job applications started and a 13% uplift in downstream success.
+ And I think that the takeaway for other companies, and maybe what OpenAI is trying
+ to say here, is that AI is not just a productivity suite for your employees.
+ It's also something that can change your output in your relationship with your customers.
+ And not just in a customer service way, although that's part of it, but also by rethinking
+ how your products are designed from the ground up.
+ Lesson three, start now and invest early.
+ This one may be the most self-explanatory of all of them.
+ They use the example of Klarna to basically show how the benefits of AI are compounding.
+ You start small, and pretty soon you're seeing major progress and major value realized
+ that then just expands to even more types of value and even more savings and benefits.
+ The process, no matter how well intended you are, is going to take some time.
+ Point being that the best time to start investing in AI was yesterday, but the second best
+ time is today.
+ Lesson four, customize and fine-tune your models.
+ This is another sort of obvious one.
+ The idea of which is basically that, as good as these models are off the shelf, and
+ they really are.
+ There are lots of use cases where you can just zero-shot and go to town.
+ In general, especially for enterprise usage, the more context that you give it, with
+ of course, your context being data, the more you're going to be able to do with it.
+ The list of benefits that OpenAI associates with fine-tuning include improved accuracy,
+ domain expertise, i.e. fine-tuned models better understanding your industry's terminology
+ style and context, as well as consistent tone and style and faster outcomes.
+ Lesson five, getting your AI in the hands of experts is actually sort of a variant
+ in some ways of fine-tuning.
+ It's not the same ultimately, but it shares the common root of giving models more context
+ to get them to perform better and in more specific and discrete ways.
+ So the example they gave is BBVA, the global banking company that has more than 125,000
+ employees.
+ And basically the way that BBVA customized their experience was to allow their employees
+ to create custom GPTs, which embedded expertise in particular contextual knowledge.
+ Basically they recognized that the use cases for the credit risk team, the legal team
+ and the customer service team were not all going to be the same, and so they encouraged
+ people to actually build their custom implementations that had that context, and the expertise
+ and experience that existing employees had to bring to bear.
+ Lesson number six, unblock your developers.
+ Now the example here they give is from Mercado Libre.
+ That's Latin American's largest e-commerce and FinTech company, who works with OpenAI
+ to build a developer platform layer called Verde.
+ OpenAI writes that this platform helps 17,000 developers at Mercado Libre "unify
+ and accelerate their AI application builds."
+ Verde integrates language models, Python nodes, and APIs to create a scalable, consistent
+ platform that uses natural language as a central interface.
+ Developers now build consistently high quality apps faster without having to get into the
+ source code.
+ Security guardrails and routing logic are all built in.
+ Now this is an interesting one, because one of the things that we see all the time,
+ which is somewhat surprising, is that developers and engineers and engineering departments
+ are often some of the most hesitant to really fully embrace AI.
+ I've mentioned before that sometimes I think that's for not so good reasons, basically
+ people liking their relatively slow pace of work and not wanting to accelerate, but
+ there are also some very legitimate reasons, which have to do with the fact that a lot
+ of the AI coding tools and coding assistants, and certainly this new generation of vibe
+ coding platforms, were not really built with an enterprise use case in mind.
+ Now it is far from just OpenAI who's thinking about bringing this sort of updated coding
+ capability to enterprises.
+ This is exactly what new AI daily brief sponsor Blitzsy does, basically using specialized
+ AI agents to radically speed up and scale the enterprise development process.
+ Factory.ai is another company that's specifically trying to bring new agent to coding capabilities
+ to the enterprise.
+ And indeed, well, I think there's a lot of technical and product complexity here.
+ I also think it's going to be one of the richest areas for startups in the next couple
+ of years.
+ So I would expect a lot more activity to flood into this area.
+ Finally, Lesson seven set bold automation goals and for this open AI actually uses themselves.
+ They point out basically that even as the company behind the intelligence, they're
+ still constantly just figuring out new ways to automate their own work.
+ I think in many ways here, what they're proposing is a mindset more than a specific
+ use case.
+ It's basically to always be asking for any work stream that's challenging or slow
+ or just has opportunity that's left on the table, is there a way to automate it to make
+ it work faster, better or cheaper?
+ Or on the other end of the spectrum to do things that simply weren't possible before.
+ The point for them is not the specific examples, although they give a number.
+ It's about the underlying principle.
+ As they put it, setting bold automation goals from the start instead of accepting
+ inefficient processes as a cost of doing business.
+ I think Casper DeFi on Twitter does an awesome job of summarizing the big takeaway
+ from all of this when he writes, AI is not another IT upgrade.
+ It's a complete reset of how companies work.
+ After reviewing open AI seven lessons, he concludes the real lesson in 2025, experiment
+ carefully is code for move to slow.
+ The leaders are treating AI like infrastructure, not a pilot.
+ The future belongs to companies that build, tune, automate and iterate now, and as someone
+ who is living inside that every single day, day in and day out, I could not agree more.
+ For now, that's going to do it for today's AI Daily Brief.
+ Until next time, peace.
+ [MUSIC]
+ (upbeat music)

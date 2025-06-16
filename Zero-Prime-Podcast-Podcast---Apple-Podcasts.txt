@@ -1,0 +1,532 @@
+
+- I'm Pete Soderling and welcome to the Zero Prime Podcast, where we explore the early
+stories of top startups by the experiences of their engineer founders.
+This week I chat with Rob Wolin, the co-founder and CTO Sigma Computing.
+Rob is a longtime engineer who turned founder when he decided to attack the business intelligence
+space and started Sigma after a stint as an entrepreneur in residence at the storied firm
+Sutter Hill Adventures.
+Rob is a wealth of wisdom to bring to the podcast, and you'll hear his honest take
+on what it really takes to start a company as an engineer.
+Rob, welcome to the show.
+- Thank you.
+It's great to be here.
+- Rob, I was looking at your background and there were so many cool things that you've done
+from school and education at Princeton to working at BE Systems for many years.
+What a blast from the past in the first internet bubble.
+So that made me smile onto Salesforce for a bunch of years in many different roles of
+engineering management and EIR at Sutter Hill Adventures and finally, the co-founder
+of Sigma.
+So I think you and I are going to have a lot to talk about really fascinated in exploring
+your experience as an engineer or founder yourself.
+So let's dive in.
+- Sounds great.
+- So I wanted to ask you initially, tell me about your early days.
+You were actually at HP even before you were at BEA.
+What drew you enterprise software in the first place?
+And what lessons from those early days still influence you, would you say?
+- I mean, I think like, you know, many people coming out of school, I really didn't know
+anything about enterprise software and I don't think I particularly had some sort of passion
+for it.
+All my early career choices were frankly based on technology.
+So I joined HP because I love systems programming in college and the chance to work on their
+Unix kernel, HP UX, was what I did there.
+But then you can sort of look at the years, that whole internet bubble was happening.
+And so I felt like, you know, I was twiddling bits in the kernel.
+Everyone else I knew was like working at these exciting new.com companies.
+I'd also moved to San Francisco.
+And so I saw this opportunity to join this web logic team and they were in San Francisco
+and they were working with Java, which was like super cool technology here in the 90s.
+And I remember when I interviewed, they just talked about how they had this like automated
+testing suite and at the time, you know, that blew my mind.
+I'd never seen it before.
+And so it became clear to me that I was going to work with people that were going to teach
+me a bunch of things.
+I was going to work with exciting technology and I was going to be in a location that was
+much closer to where I lived.
+So I made the leap and I think the super interesting thing for me is that every job in
+my career, after that, including, you know, Sigma and the founding and the investors I
+have, is directly connected to that team at BEA and WebLogic.
+So the big takeaway for me was, you know, you can't always pick, you know, the company
+that's going to grow dramatically.
+That's like picking stocks.
+Right?
+It's, you make it lucky.
+I've been fortunate.
+But I think you can spot really smart people.
+You can spot people that are going to teach you things.
+And that team was just incredible.
+Since then, basically always been directly working with at least someone from that team.
+And as you'd imagine, you work with top people, they find other top people and you sort of
+grow your little collective.
+Yeah.
+That's amazing.
+And I really can't be overstated in my opinion.
+Just the fact that SF tends to be the mecca for enterprise software and really has been,
+you know, ever since those days and perhaps even before until now, in spite of various
+ups and downs of the city and the abs and flows, you know, during COVID and all kinds
+of challenges.
+I mean, I think you commented to me before we jumped on that you've literally worked
+in offices like in the same blocks, sort of locking distance of each other for many years.
+And I just, I want to emphasize that because I preach this to founders, be to be founders
+all the time.
+We invest in companies in Europe and in New York and all over the world and sort of believe
+in the equilibrium of software overall, but God has a special place in his heart, especially
+for infrastructure companies that started in San Francisco.
+And I think founders need to sort of at least understand that and acknowledge that even
+if they are trying to start companies outside the barrier, they really need to like spend
+a good amount of time here and probably build a team here and maybe live here, at least
+for a period.
+And there's just so many things that our hearts explain unless you've actually lived it.
+And so just your testimony of how this diaspora of folks coming out of BEA has been instrumental
+to your career and you continue to work with those people even today, I think is testament
+to that pocket and it just can't be overstated in my opinion.
+Yeah, it's a shockingly small world out there and especially as you're, you know, working
+in such a concentrated area and you can literally walk out the street and see a bunch of other
+amazing companies.
+And you learn so much from each other and that camaraderie is really real and palpable.
+Well, then tell us about your time at Salesforce because you worked many different roles at
+Salesforce.
+I know and it looks like mostly in the engineering management, but was there a progression in
+your career?
+Like, how did you sort of get into the engineering management side of things and was it difficult
+for you as an engineer to want to be a manager and like, were there sort of ups and downs
+with that process?
+I'm just curious to know a little bit more how that emerged for you personally.
+Sure.
+I mean, from a career side, I joined there as a principal architect role, so a senior technical
+architect.
+I took on roles there as being a CTO, I was the CTO of the platform group.
+I think the biggest leap I took was I moved from CTO role to running product management
+for the platform group.
+And at the time, it was a big risk, I think both for myself and for the company.
+I'd never been a product manager before.
+Obviously, it was a very product-focused person.
+I'd never managed people before, and I went from that to not only leading a group, but
+also a new discipline.
+I think that from a personal perspective, it was very challenging, you know, like many
+people in a new role, I made a lot of mistakes.
+On the other hand, I think it was one of the key things that helped me in the later years
+with Sigma because it took me out of the purely sort of engineering mindset, and I became
+much more focused on building relationships with the sales team, interacting with customers,
+even sort of dealing with crises.
+Anyone has a product nose.
+There's going to be times where there's bumps with customers, times there are situations
+you have to smooth over, you have to figure out how to sort of address those situations
+and being in the front line of that, super valuable for me from an experienced perspective.
+I also frankly learned a bunch about myself.
+I did it for, I think, almost two years, and then I had sort of the realization that like,
+I didn't love being only a product manager, and I went back to being a CTO in a different
+group at Salesforce, and I also think that's part of our career journey.
+Over time, you sort of learn things that you maybe can do, but don't love, and I like getting
+up every morning and love coming to work, and that's sort of something I've been blessed
+with throughout my career, and so I try to just focus on what's going to make me happy,
+and that's guided a lot of my career choices.
+I know we're moving through your career like fairly rapid fire, but I kind of want to
+understand like, when the mentality in you started to shift or emerge that you thought
+you might want to be a founder, because moving from all of these deeply technical or even
+product roles into an EIR role at Sutter Hill, which was your next stop, obviously there's
+some kind of awareness or sea change there, and so I'm wondering what the story is behind
+that switch specifically.
+I always had this desire to work at a startup, and I had the funny experience of actually
+interviewed with WebLogic when they were an independent company, and during the hiring
+process they got acquired, and I loved the team and the product so much that I went through
+and joined the acquiring company, BEA, which again grew dramatically, and so it was a great
+choice, but it was a different environment than the small startup that I planned to join.
+When I went to Salesforce, I had spent interviewing with mostly startups and looked at a bunch
+of different opportunities, and I fell in love with the cloud, and so when Salesforce
+and I talked about managing only one release and having just sort of continuous deployment,
+it was game-changing for me.
+That was coming from a company where 40 to 50% of my team was maintaining older versions,
+and this idea that we could, in one version, I'm like, "This is a game-changer," so that
+really is what, even beyond and obviously the people I knew there, that's what convinced
+me to leap to Salesforce, but I think I had this long-stained desire in the back of my
+mind to start a company, and it's funny because people ask me now, "Do me advice in starting
+a company," and I feel hypocritical about it, but my standard advice is, "Do not start
+a company," and I give them all the reasons, and it's all the ones you know, like it's
+super hard, your chance for success is very low, you can be the smartest person in the
+world, I know, name all these people I know that are incredibly smart, and did build incredible
+products and they went nowhere, and the reason I give them all this speech is because it's
+incredibly hard, and if I can convince you in 10 minutes, you should just not start a company,
+because I think resilience is one of the key things, and I was one of those people, you
+could have given me this whole speech, it went to matter, I would have told you at the
+after it, and now I still want to start a company.
+It's not logical, but it's something that was just deep inside me that I had to do.
+Yeah, it makes sense to me because, you know, my entrepreneur journey has been sort of,
+once I got the bug and I fought through the hardship and made a tiny amount of money,
+and then wanted to put that money into the next product, and then bootstrapped the next
+thing, and then failed, and then still couldn't stop, and sort of the third thing, you realize
+that this pattern of people throw around this term of serial founder, well, it's really,
+for me at least, it's sort of become the lifestyle, and the only reason it's been worth it for
+me in the end is because it was a lifestyle that I embraced, and I knew if it wasn't going
+to be the next startup, well, it was going to be the next one, or the next one, and I
+often tell people that, you know, zero prime is my fifth startup, it just happens to be
+a venture fund, and I think maybe not everyone has to be in it for one after the other, after
+the other, I feel that without a corporate job break and without a proper paycheck, and
+I think that's a valid path as well, but I think there is a thing where, at some point,
+to be really good at this, you know, it takes practice and work and experience, and it might
+take several companies, and I guess my flavor of that advice in the spirit of what you give
+to many folks is, do you think you want to start a startup, go work at a startup first,
+because many folks have never even worked at a proper startup, a proper small company,
+and at least start to like build this, you know, experience and muscle memory and familiarity
+with what the fire drills are actually going to look like, and what the challenges are
+actually going to be, because it can be an extremely grueling process, and it can change
+your life, it can change your family, it can change your relationships, it can change
+your marriage, there's all these sort of side effects, and you have to really sort of be
+committed and convince that, I think of it as a journey and not just a point in time
+where, oh, I'm going to start a startup, I think of it as sort of a lifetime achievement,
+and you know, maybe I'm a little extra opinionated about it, but I understand what you're saying,
+and I wish more people thought of it that way.
+Yeah, it resonates with me, I'll tell you, when I started Sigma, I had three small children,
+my youngest was, I think, five months old.
+There's no logical reason this was a great time in my life to go, you know, start a company,
+but it was like a burning fire within me, I had to do it, I understand agree with you,
+I think people that have the opportunity to work at a startup, they can then see so much
+of it, and there's no right decision, it's a right decision for you, what is the right
+match for you, and I think, you know, to me, people try to, you know, almost sort of glamorize
+starting a company, whereas I think it's really just about for you, what is the right decision?
+Absolutely, tell me about the experience at Sutter Hill, was that the incubation period
+for Sigma, and did Sigma come from directly from that opportunity at Sutter?
+You know, it's kind of an interesting path, I was leaving Salesforce, I knew I wanted
+to start a company, I felt like I needed advice, I needed someone to sort of, you know, guide
+me through a little bit of this, how do you leap from, you know, I worked at a public
+company with thousands of employees, how do you leap from that to like, start a company
+the next day, and I feel like entrepreneurship is such an interesting space, if you think
+about it, like, a lot of the people that are just the best at this in the world, they may
+have only started one company, right, like, I would love to have like, Jeff Bezos and Bill
+Gates advise me, but like, what if, you know, my company is very different than Amazon,
+or Microsoft, like, what if the patterns that they learned have nothing to do with my company?
+And so, what I found fascinating about the Sutter Hill team is they not only have a bunch
+of huge companies they've built, they built, they were early in NVIDIA, they were big early
+people that started Pure Storage, Snowflake had just been the previous sort of entrepreneurs
+and residents before I joined there.
+And so, to me it felt like this unique opportunity to work for someone, in this case, a partner
+Mike Spizer, who I think is arguably one of the best VCs in the world, but their specialty
+is not only that, you know, they've pattern matched and built a bunch of these big companies,
+it's that they were started it from day zero, so they've seen sort of that incubation period,
+and it just felt like such a unique opportunity for me that I took the leap and joined there,
+and then that's actually where I met my co-founder, he was the other entrepreneur in residence
+at time, there was only two of us, and I think it gave me sort of the white space of I disconnected
+from Salesforce, I hadn't, you know, taken on another job yet, you sit at some level
+in this kind of empty office and think about like, what should I do next and explore ideas?
+And one of the sort of inspirations we had then there really sort of became the genesis
+of Sigma, and, you know, while we took many different approaches to solving the problem,
+we've actually been focused on the same sort of initial problem since 2014.
+And what was the key insight that made you jump into the analytics space at the time?
+When I looked at my own career, it felt like, you know, if I look back at even at BEA,
+the way we deployed software, if I wanted to deploy 10 more machines, that would have
+been like a month-long endeavor of, you know, finding someone in, you know, if there's space
+in the data center, we've got to rack machines, wire them, you know, a purchasing department
+has to get involved, and if I did not want those 10 machines after an hour, like, that
+would be a big problem.
+And so for me, you know, with the advent of cloud, you know, elastic resources, the way
+we can spin up things, spin down them, even also just like the idea of open source, right?
+The fact that so many things, like, I didn't write the code myself, I built on someone
+else's work.
+All of these types of ideas, it felt like it had fundamentally changed how I as a developer
+had worked in the last 20-something years.
+When I was at Salesforce, and I looked at even, you know, how the preeminent cloud company
+ran, the business functions largely still ran on, hey, we've got some Excel spreadsheets,
+we've got really some, like, guesses or, you know, almost like tribal knowledge about,
+like, what we should do on different things.
+And they made huge decisions based on, like, essentially guesses and speculation without
+being able to actually leverage any of the data behind it.
+So the realization we had was that infrastructure had advanced pretty dramatically, to the point
+where it felt like so many of these decisions that are made in business should be able to
+leverage all of this massive amount of data that people have.
+But the technology barrier that, you know, having to know SQL or Python or something like
+that to actually crunch the numbers was keeping it so that, you know, the mass majority of
+people weren't actually benefiting from it.
+So the fundamental idea was to say, can we build something where the interface allows
+essentially the masses, all the people that, frankly, are making, you know, the most important
+decisions in companies to actually leverage all of this sort of infrastructure transformation
+that's happened in the last 20 years.
+And we left the VC firm with little more than that idea.
+It was quite a journey from there of figuring out how do you actually solve that problem.
+And what were the next steps?
+I think this manifested in some UX opinions and I'm sure a lot of product vision.
+What were sort of like some of the key moments along the formation of this idea into product
+form?
+Yeah.
+Well, I think back to sort of like, how do you even think about starting a company?
+I think you have to have almost an irrational confidence.
+And so, you know, in our minds, it was like, well, I'm sure within six months, we'll have
+built the great interface that will solve this problem that even though people have been
+thinking about it for, you know, probably 20 years, we're going to solve it very quickly.
+And as you can imagine, instead, it took almost three and a half years of building interfaces,
+trying them with people, trying them ourselves, throwing them away, starting over, trying
+dramatically different approaches, keeping on iterating.
+In a lot of ways, we're unique and that we went through several pivots as far as like
+completely starting over and, you know, rebooting the product, but we never pivoted from the
+problem we were trying to solve.
+We kept starting over and trying to solve the same thing over and over again, which on
+my hand, I think is interesting.
+You know, as you can imagine, it's a lot easier to talk about in the past.
+You know, in the moment, I think people talk about these pivots, like there was some, you
+know, sign in the sky that said, obviously, you should stop what you're working on and
+move to something else and frame when it's been through them.
+They're incredibly hard decisions, especially as you have even a small team, because you
+have convinced even a small team of like, we should throw away everything we've worked
+countless hours on, because it's not going to be the winning approach.
+And I think those are actually some of the hardest times, because, you know, in the end,
+those people are really just sort of betting on faith on you and they're betting on, you
+know, their jobs, their compensation, things like that, and I'm like, are you leading them
+down the right direction?
+And it's probably one of the hardest things as a founder, because those are the types
+of big decisions you have to make.
+And I assume your co-founder was also technical.
+Yeah, his background was actually in building databases.
+While we were at Sutter Hill, he was actually advising the Snowflake team and working with
+them when they were optimizer.
+So he was very deep into databases, you know, he built a lot of databases and wanted to
+try to build something where more people could actually leverage what he was working on.
+So he got really interested in kind of the same problem that I was thinking about from
+a different direction that actually led the partner and my advisor we were working with
+to say, like, I think you two were talking about the same thing.
+Maybe you guys want to work together.
+So that was how we sort of got paired up and started working together.
+Because I wanted to ask you about, I see that you're listed as the co-founder and CEO of
+the company.
+And so I've seen this pattern before where there's a couple of very smart technical people
+in the Bay Area that get together and turn a company and I'm always wondering like, did
+you draw the short straw?
+And that's why sort of you had to become the CEO and you probably would have preferred
+it the other way around.
+How did that go for you?
+That's a fabulous way to put it.
+You know, Jason had purely technical roles, right, and had not managed people had really
+sort of focused on being an architect and engineer his whole career.
+I had some experience, we talked about a sales force where I had managed and led teams.
+I had seen a little more of the products, I had a little more of the business side.
+So I think of the two of us, I was a little more suited to be the CEO and I took that
+role on, I will say somewhat reluctantly, when I envisioned starting a company, I did
+not envision myself as the CEO, but I think like many things in a startup, especially
+early on, someone's got to do the job, right?
+And you know, similar to like, I joke with people now about like, there was a year I
+filed our taxes, someone had to do it at a lot of, you know, sometimes the fun part
+about early startups are just stepping into things and figuring them out.
+So I did that for the early years at Sigma and as we started to get a real product together,
+I think both from a personal side of it just, it just wasn't me.
+I still loved to code and build product and, you know, no one wants to hear the CEO is
+busy today because he's jamming away on a PR.
+And so for me, it was just back to that sort of happiness thing.
+I felt like I wanted to still really just be focused on the product and learning how
+to scale sales teams, just either my expertise at all or, frankly, even, you know, my interest.
+And so we started a CEO search and it took us about nine months to find the right CEO.
+And then it happened to be that we were going through that right as the pandemic was starting.
+So the funny story often tell people is the last meeting, in person meeting I had before
+the pandemic, literally the day that, you know, they were like, everyone's got to be home
+by five.
+You know, the world's shutting down was I met like Palmer, our CEO for the first time in
+person because I was like, no way, we can hire a CEO without ever like physically meeting
+this person.
+And so I think I met him at like four o'clock on like that day of, you know, panic.
+You had taken the company like quite a ways by that point that had been six years of
+company building and several rounds of funding.
+Were you series C or so at the time or B?
+B.
+We'd raise eight million in series A and a 20 million series B. Yeah, we had had customers.
+We had, let's say, some early sites of product market fit, but not at scale.
+We had relatively trivial amounts of revenue.
+We had more sort of early fans than we had actually sort of figured out how to really
+frankly sell the product and all of sort of the success and scale of Sigma has happened
+since that transition, right?
+That's really where the company I think went from almost being sort of a interesting incubation
+lab to actually sort of figuring out how to get this in the hands of users and how to
+really sort of scale the product.
+So I want to ask you two other questions, sort of about the AI landscape because that's
+on everyone's mind these days and BI companies, you know, I think could be no less disrupted
+than other companies like one, how do you see the AI space affecting on BI overall?
+And then two, why are so many founders building these talk to your data companies?
+And is there a possible future where some small company can build a talk to your data
+layer via LM and get that integrated into multiple different like BI tools or are the
+BI tools themselves just kind of sort of like win that race and create their own features
+in that space and they have the distribution and there's no room for a third party, you
+know, service there.
+I guess those are two kind of separate questions from more broad to more specific, but curious
+to hear your take on those.
+Sure.
+Not surprising to anyone.
+We've been spending a lot of time on AI.
+I was spending some time recently with customers and walking them through sort of feature roadmap
+and I joke with them that our first slide was AI and that I thought every company they
+talked to their first slide was at AI.
+So I think everyone's sort of mindset is there and I think everyone sees the sort of
+potential for transformation and frankly, almost every industry.
+There's a lot of, I think, uncertainty about what exactly is going to happen.
+And this is true, I think, of a lot of technical transformations.
+I've told a story internally a number of times about, I lived through like the transformation
+to mobile phones and I remember when, you know, you first got a mobile phone, you thought
+of it literally as a mobile phone, like all I did with this device was I could walk around
+and call people.
+At the time, that was amazing.
+Now if you thought about it right now, the least interesting thing about my phone is that
+it can accept phone calls.
+If you told me I lost that feature, I'd be okay, you know, for me, the fact that it's
+a mobile internet is like insane, it's been way too much time on that device.
+So I think often it's secondary effects from technical transformations that actually are
+the long-term unlock.
+I don't think we're there yet on AI.
+I think we're only seeing sort of the first kind of wave of change and then we haven't
+really figured out actually all the changes going to happen from this technology, specifically
+in the BI space and the chat with your data.
+I think this is really an interesting case because, you know, yes, I've seen 30 companies
+whose pitches you're going to chat with your data and that is going to solve all the world's
+problems.
+And they largely seem to all show the same thing.
+It's an interface where you type in a question, which somehow you knew the right question
+to ask, which I think is frankly one of the first misses in this.
+I'm skeptical people know the right question is to ask.
+If I knew exactly the right questions to ask, I would have just built a dashboard that answered
+those questions.
+So I think the first problem is I think in general, people don't know what to ask.
+And I think the other problem I see in these interfaces is, you know, you type in a question,
+it answers it magically, shows you a chart, and if you're lucky, it shows you some sequel
+or Python that it generated for you.
+And the big problem is that sort of magic step.
+So it's super cool for demos that, you know, I typed in something and it magically knew
+what I wanted.
+But the big challenge is like, if I'm really trying to make decisions on this, how do I
+trust what it did, and how do I know even what it did?
+And if I'm a business user, I'm the type of person that I'm trying to solve things
+for at Sigma, showing them a wall of sequel or Python, not super helpful, even as a programmer,
+if you show me someone else's complex sequel query, it's an endeavor for me to figure out
+what this thing does.
+So when you're in an environment like we are today, where language models for very good
+reasons are only at best 90% correct, I mean, often it's going to be much lower than that.
+All these things, I think, mean that you have to think very carefully about the interface
+that you actually expose to people.
+And so, you know, oftentimes when I talk about Sigma with people, I try to explain to them
+that there's a bunch of things we do that are interesting technically, and there's a
+bunch of things we do interesting in the product side.
+But fundamentally, what we're focused on is building a better interface.
+And when I think about that specifically in the chat with the data space, one of the
+big things we're focused on is when you talk to our system, instead of it just saying,
+hey, magically, the answer is 47.
+It actually walks you through, here's all of the steps that I'm taking.
+And each of the steps, if that sort of chain of thought idea, it gives you lots of context
+about why it did these things or like why you might want to trust this decision or not
+trust it.
+So I'll give you an example.
+If you ask it some question and it tells you, hey, I chose this table in the warehouse
+to use to answer your question.
+It will actually tell you like, hey, this table is being heavily used by all these people
+in your data team and used by these, you know, most important dashboards that your team
+is looking at.
+If I told you that, you'd be like, it's probably a good bit of data for me to look
+at.
+It's probably a reasonable thing.
+Whereas if you imagine if I told you like, hey, the AI has gotten creative, it's picked
+this table over here.
+No one's looked at that in two years.
+You probably be like, well, I'm worried about, you know, this, that my magical friend here
+has chosen for me.
+And that's a bit of an extreme example.
+But like in each step here, you can sort of imagine like, what is the language I would
+communicate to a user so they can understand A, what the AI did, and B, have a lot of context
+on, is it actually doing what I expected?
+Because natural language is very ambiguous, right?
+You may have specified something that may have misunderstood or not understood your inclination.
+So long story short, I feel like there's a lot of these sort of very vanilla interfaces
+out there that I don't think are the long term right approach.
+We've tried to really take sort of a different path to building an interface that we think
+is a much stronger solution to it, but it's one of the most interesting areas.
+Yeah.
+And what you say is borne out even in the recent developments of 01 and now R1 deep seek model,
+because obviously these quote reasoning models have changed a thought behind the scenes and
+opening eye has been stubborn and refusing to show that work.
+You know, it's like you're doing your math work and the teacher wants you to show all
+your steps and you've done all the steps, but you're refused to like turn in that sheet
+of the paper and you just give them the answer instead.
+And probably because of proprietary concerns, open eyes refuse to do that, we'll now folks
+see that all that chain of reasoning and logic with R1 and it's all exposed to them.
+And I think that's been an aha moment for many people using these models, just generally
+speaking is to see the model doing that work and to understand what assumptions it's making
+and where it's pulling its data from and how one step is leading to the next is something
+that a human can quickly synthesize and it's light years, it's a quantum leap ahead or
+so it feels just in the UX of interacting with these models of these agents.
+So I think that's been pretty fascinating for everyone.
+It's such a simple truth, like we literally knew it from math class.
+Maps, you know, how you work with humans, right?
+If a human just came in and said the answer is $267 million, you wouldn't just say great
+and walk away, right?
+You want to understand how they got there and I think the best interfaces when we think
+about these things are going to be like, can we actually make it like a very usable
+interface, something that works just like we want to work.
+Well, Rob, it's been great chatting with you, really appreciate the time.
+I want to ask you one last question and sort of just an extension of this conversation.
+What do you think the future of the eye looks like?
+You've spent a lot of your career in the space now and I'm curious, what do you think
+is around the corner?
+Sure, absolutely.
+I think that, you know, one of the really sort of interesting transitions, I sort of
+often like look at, you know, what are the big changes you see in technology and then
+how that unlocks things.
+And we've talked to, you know, in the last few minutes a bunch about AI, obviously that's
+a big part of it.
+I'll sort of cite maybe another one that I think is super interesting.
+When we started the company, Data Warehouse is where, you know, very much looked at as
+like almost sort of like a read-only thing, right?
+People would essentially bring data into them.
+They looked at them for purely analytics.
+And if you look at where those platforms have transformed over the last, say, five years,
+they've gone from just being purely the sort of analytical stores to now people are actually
+thinking about them for operational applications.
+So, you know, if you think about the Data Warehouse, it's where you collect all of your
+company's information.
+And so increasingly it's like the only place where you may have all the data about your
+customer or your product because it's being brought in from all of the different systems
+that interact with those people.
+So if you want to build an application that, you know, works on your customers, it's going
+to be sort of natural that you'd want to do it in the place where you have all the information
+about your customers.
+So now this Data Warehouse becomes not just like a traditional OLAP analytical store and
+actually now becomes a foundation for applications, becomes a foundation for like where you run
+your business.
+And so we've thought a lot about traditionally Excel is the leading BI tool by far, right?
+People don't consider it a BI tool, but we all know this is the number one BI tool by
+far.
+One of the interesting things that goes on in Excel is that people essentially string
+together these applications or these workflows, right?
+That's the real joke that business runs on spreadsheets.
+We believe that, you know, as data scales, as people care a lot more about governance
+security, they can't have data just running around on people's PCs or flying back and
+forth an email.
+And so they want to have data, especially at scale, centralized in these systems.
+It then transforms it to how do I take all these workloads that people traditionally did
+in spreadsheets?
+And I want to build these quick applications on top of these warehouses.
+And so, you know, we see the sort of BI space broadening from just, hey, can I do, you know,
+traditional dashboarding and reporting to like, can I actually build workflows and applications
+and not just, you know, seed data in an dashboard, but actually like take action and change things
+and move.
+And so that's been sort of a big focus of ours over the last few years and one of the
+things I'm really excited about in the next few years.
+Yeah, it makes perfect sense and we're living in a data-driven world and I think the data
+is certainly -- we all talked about democratization of data for a long time, but it seems that
+data does want to live in these applications and be accessed by more people and we're entering
+into a whole other level of how to realize that with AI features and the cloud systems,
+you know, being widely and just sort of honestly to the business appetite and the utility of
+having data in multiple places.
+So it's going to be a very interesting couple of years on the application layer side.
+We've been sort of a data council, a zero prime and investing in the infra layer for
+a long time, but the realization of that infra layer is ultimately inside applications and
+so it'll be amazing to see what people start to build on.
+And infra, that is quite honestly becoming a little bit more table stakes or at least
+commonly deployed.
+I'm so excited about that future with you as well.
+Well, Rob, this was a really fun chat and thanks for jumping on with me and sharing your
+wisdom with the community.
+I really appreciate your time.
+Absolutely.
+Thank you for having me.
+Thanks for joining us for another episode of the zero prime podcast.
+I hope you enjoyed my chat with Rob Wolland.
+Don't forget to hit the like button and subscribe and your favorite podcast player to get more
+episodes from the zero prime podcast.
+If you like hearing from engineer founders on the cutting edge of enterprise startups
+and developer tools, please leave us a review on your favorite podcast app and subscribe
+to the show.
+We'll see you next time.
+(upbeat music)
+(upbeat music)
+

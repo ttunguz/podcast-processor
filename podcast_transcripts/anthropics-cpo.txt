@@ -1,0 +1,1725 @@
+--- METADATA START ---
+Show: what comes … - Lenny's Podcast: Product | Growth | Career
+Episode: Anthropic's CPO
+Host: Lenny
+GUESTS: Mike Krieger 
+Guests: Mike Krieger
+Source URL: https://podcasts.apple.com/us/podcast/anthropics-cpo-on-what-comes-next-mike-krieger-co-founder/id1627920305?i=1000711584665
+--- METADATA END ---
+
+1
+90% of your code roughly is written by AI now.
+2
+The team that works in the most futuristic way is the Cloud Code team.
+3
+They're using Cloud Code to build Cloud Code in a very self-improving way.
+4
+We really rapidly became bottlenecked on other things, our merge cube.
+5
+We had to completely re-architect it because so much more code was being written and so many more pull requests were being submitted that it just completely blew out the expectations of it.
+6
+You guys are at the edge of where things are heading.
+7
+I had the very bizarre experience of I had two tabs open: it was AI 2027 and my product strategy.
+8
+And it was this moment where I'm, wait, am I the character in the story?
+9
+It feels ChatGPT is just winning in consumer mindshare.
+10
+How does that inform the way you think about product strategy and mission?
+11
+I think there's room for several generationally important companies to be built in AI right now.
+12
+How do we figure out what we want to be when we grow up versus what we currently aren't or wish that we were or see other players in the space being?
+13
+What's something that you've changed your mind about what AI is capable of and where AI is heading?
+14
+I had this notion coming in, yes, these models are great, but are they able to have an independent opinion?
+15
+And it's really flipped for me only in the last month.
+16
+Today, my guest is Mike Krieger.
+17
+Mike is chief product officer at Anthropic, the company behind Claude.
+18
+He's also the co-founder of Instagram.
+19
+He's one of my most favorite product builders and thinkers.
+20
+He's also now leading product at one of the most important companies in the world.
+21
+And I'm so thrilled to have had a chance to chat with him on the podcast.
+22
+We chat about what he's changed his mind about most in terms of AI capabilities in the years since he joined Anthropic, how product development changes and where bottlenecks emerge when 90% of your code is written by AI, which is now true at Anthropic.
+23
+Also, his thoughts on open AI versus Anthropic, the future of MCP, why he shut down Artifact, his last startup, and how he feels about it.
+24
+Also, what skills he's encouraging his kids to develop with the rise of AI.
+25
+And we close the podcast on a very heartwarming message that Claude wanted me to share with Mike.
+26
+A big thank you to my newsletter Slack community for suggesting topics for this conversation.
+27
+If you enjoy this podcast, don't forget to subscribe and follow it in your favorite podcasting app or YouTube.
+28
+Also, if you become an annual subscriber of my newsletter, you get a year free of a bunch of incredible products, including linear, superhuman, notion, perplexity, and granola.
+29
+Check it out at lennysnewsletter.com and click bundle.
+30
+With that, I bring you Mike Krieger.
+31
+This episode is brought to you by Product Board, the leading product management platform for the enterprise.
+32
+For over 10 years, Product Board has helped customer-centric organizations Zoom, Salesforce, and Autodesk build the right products faster.
+33
+And as an end-to-end platform, Product Board seamlessly supports all stages of the product development lifecycle, from gathering customer insights to planning a roadmap to aligning stakeholders to earning customer buy-in, all with a single source of truth.
+34
+And now, product leaders can get even more visibility into customer needs with Product Board Pulse, a new voice of customer solution.
+35
+Built-in intelligence helps you analyze trends across all of your feedback and then dive deeper by asking AI your follow-up questions.
+36
+See how Product Board can help your team deliver higher impact products that solve real customer needs and advance your business goals.
+37
+For a special offer and free 15-day trial, visit productboard.com/slash Lenny.
+38
+That's productboard.com/slash L-E-N-N-Y.
+39
+Last year, 1.3% of the global GDP flowed through Stripe.
+40
+That's over $1.4 trillion.
+41
+And driving that huge number are the millions of businesses growing more rapidly with Stripe.
+42
+For industry leaders Forbes, Atlassian, OpenAI, and Toyota, Stripe isn't just financial software, it's a powerful partner that simplifies how they move money, making it as seamless and borderless as the internet itself.
+43
+For example, Hertz boosted its online payment authorization rates by 4% after migrating to Stripe.
+44
+And imagine seeing a 23% lift in revenue Forbes did just six months after switching to Stripe for subscription management.
+45
+Stripe has been leveraging AI for the last decade to make its product better at growing revenue for all businesses, from smarter checkouts to fraud prevention and beyond.
+46
+Join the ranks of over half of the Fortune 100 companies that trust Stripe to drive change.
+47
+Learn more at stripe.com.
+48
+Mike, thank you so much for being here and welcome to the podcast.
+49
+I'm really happy to be here.
+50
+I've been looking forward to this for a while.
+51
+Wow.
+52
+I love to hear that.
+53
+I've also been looking forward to this for a while.
+54
+I have so much to talk about.
+55
+So, first of all, you've been at Anthropic for just over a year at this point.
+56
+Congrats, by the way, on hitting the cliff.
+57
+Thank you.
+58
+Not that we're tracking.
+59
+That's right.
+60
+So let me just ask you this.
+61
+So you've been at Anthropic for about a year.
+62
+What's something that you've changed your mind about from before you joined Anthropic to today about what AI is capable of and where AI is heading?
+63
+Two things.
+64
+One is a pace and timeline question.
+65
+The other one is a capability question.
+66
+So maybe I'll take the second one first.
+67
+I had this notion coming in,, yes, these models are great.
+68
+They're going to be able to produce code.
+69
+They're going to be able to,, write,, hopefully in your voice eventually.
+70
+But are they able to have an independent opinion?
+71
+And it's really flipped for me only in the last month and only with Opus 4, where my go-to product strategy partner is Claude, and it has been basically for that full year.
+72
+Well, I'll write an initial strategy.
+73
+I'll share it with Claude basically, and I'll have it,, look at it.
+74
+And in the past, it's pretty anodyne comments that it would leave,, oh, have you thought about this?
+75
+And it's, yeah, yeah, I thought about that.
+76
+And Opus 4, I was working on some strategy for our second half of the year, was the first one.
+77
+It was Opus 4 combined with our advanced research, but it really went out for a while and it came back.
+78
+I was, damn, you really looked at it in a new way.
+79
+And so that's a thing that I've maybe I didn't feel it would never be able to do that, but I wasn't sure how soon it'd be able to come up with something wrong.
+80
+I look at it.
+81
+I'm, yep, that is a new angle that I hadn't been looking at before.
+82
+And I'm going to incorporate that immediately into how I think about it.
+83
+So that's probably the biggest shift that I've had is independent.
+84
+I don't know about independence is the right word, but creativity and novelty of thought relative to how I'm thinking about things.
+85
+But the timeline one, it's so interesting because,, I was sitting next to Dario yesterday and he's, I keep making these predictions and people keep laughing at me and then they come true.
+86
+And it's, and it's funny to have this happen over and over again.
+87
+And he's, not all of them are going to be right,, but even I think as of last year, he was talking about,, we're at 50% on Sui Bench, which is this,, benchmark around how well the models are at coding.
+88
+He's, I think we'll be at 90% by the end of 2025 or something that.
+89
+And sure enough, we're at about 72 now with the new models.
+90
+And we were at 50% when he made that prediction.
+91
+And it's continued to scale pretty much as predicted.
+92
+And so I've taken the timelines a lot more seriously now.
+93
+And I don't know if you read AI 2027.
+94
+I have.
+95
+It was made by Heart Race.
+96
+Yeah.
+97
+And I had the very bizarre experience of I had two tabs open.
+98
+It was AI 2027 and my product strategy.
+99
+And it was this moment where I'm, wait, am I the character in the story?
+100, is this, how much is this converging?
+101
+But,, you read that and you're, oh, 2027, that's, that's years away.
+102
+If you're, no, mid-2025.
+103
+And, things continue to improve and the models continue to be able to do more and more.
+104
+And they're able to act egentically and they're able to have memory and they're able to act over time.
+105
+So I think my confidence in the timelines, and I don't know exactly how they manifest, have definitely just solidified over the last year.
+106
+Wow.
+107
+I wasn't expecting to go down that because that paper was scary.
+108
+And I'm curious, just, I guess, I can't help but ask, just thoughts on just how do we avoid the scary scenario that that paper paints of where AI getting really smart goes.
+109
+Yeah,, this maybe ties into, I've been here a year,, why did I join Anthropic?
+110
+I was watching the models get better.
+111
+And even,, you could see it in 24 and,, early 2024.
+112
+And looking at my kids, I'm, all right, they're going to grow up in a world with AI.
+113
+It's unavoidable.
+114
+What is the thing that I can,, where can I maximally apply my time to nudge things towards going well?
+115
+And, that's a lot of what people think about across the industry, especially at Anthropic.
+116
+And so I think,, coming to an agreement and a shared framework and understanding of, what does going well look?
+117
+What is the human-AI relationship that we want?
+118
+How will we know along the way?
+119
+What do we need to build and develop and research along the way?
+120
+I think those are all the key questions.
+121
+And,, some of those are product questions and some of those are research and interpretability questions.
+122
+But for me, it was the strongest reason to join was, okay, I think there's a lot of contribution that Anthropic can have around nudging things to go better.
+123
+And if I can have a part to play there,, let's do it.
+124
+I love that answer.
+125
+Speaking of kids, so you've got two kids.
+126
+I've got a young kid.
+127
+He's just about to turn two.
+128
+I'm curious just what skills you're encouraging your kids to build as this AI becomes more and more of our future and some jobs will be changed.
+129
+And just what advice do you have?
+130
+We have this,, breakfast.
+131
+We eat breakfast with the kids every morning.
+132
+And sometimes some question will come up,,,, something about physics.
+133
+My oldest kid's almost six, but, they ask funny questions about,, the solar system or physics or,, in a six-year-old way.
+134
+And before we reach where Claude, because at first,, my instinct is, oh, I wonder how Claude will do with this question.
+135
+And, we started changing,, well, how would we find out?
+136, and the answer can't just be, we'll ask Claude,, so, all right,, well, we could do this experiment.
+137
+We could have this thing.
+138
+So I think nurturing curiosity and still having a sense of, I don't know, the scientific process sounds grandiose to instill in a six-year-old, but that process of discovery and asking questions and then, systematically working right through, I think will still be important.
+139
+And of course, AI will be an incredible tool for helping resolve large parts of that.
+140
+But that process of inquiry, I think, is still really important and independent thought.
+141
+My favorite moment with my kid, because she's very headstrong, her six-year-old, she's,, I was, she said something and I was, I wasn't sure if it was true.
+142
+It was, oh, it was coral is an animal or coral is alive.
+143
+I've not even remember the details of it.
+144
+And I was, I don't know if that's true.
+145
+And she's, it's definitely true, dad.
+146
+I'm, all right,, let's ask Claude on this one.
+147
+And she's, you can ask Claude, but I know I'm right.
+148
+And I'm, I love that.
+149, I want that level of,, not just delegating all of your cognition to the,, to the AI, because it won't always get it right.
+150
+And also,, short circuits any independent thought.
+151
+So the skill of asking questions, inquiry, and independent thinking, I think those are all the pieces.
+152
+What that looks from a job or occupation perspective, I'm just keeping an open mind.
+153
+I'm sure that'll radically change between now and then.
+154
+It's interesting.
+155
+I had Toby Lucky, Shopify CEO on the podcast, and he had the same answer for what he's encouraging his kids to develop is curiosity.
+156
+And so it's interesting.
+157
+That's a common thread.
+158, K through 8 school, our kid goes through, had an AI, AI and education expert come in.
+159
+I had a very low bar or a very low expectations of what this conversation was going to be.
+160
+And, I think it went over most of the people in the heads, the audience's heads, because he was, all right, well, let me take it all the way back to Claude Shannon and information theory.
+161
+I could see people's eyes going, what did I sign up for?
+162
+Why am I here in this school auditorium hearing about information theory?
+163
+But he did a really nice job, I think, of also just imagining there will be different jobs and we don't know what those jobs are going to be.
+164
+And so what are the skills and techniques and remain open-mindedness around what the exact way we recombine those things?
+165
+And even those will probably change three times between now and when they're 18.
+166
+I want to go back to, so we're talking about timelines and how things are changing.
+167
+So I've seen these stats that you've shared.
+168
+Other folks at Anthropic have shared about how much of your code is now written by AI.
+169
+So people have shared stats from 70% to 90%.
+170
+There was an engineer lead that shared 90% of your code roughly is written by AI now, which first of all is just insane that it went from zero to 90%.
+171
+I don't know, a few years, something that.
+172
+I don't think that's I don't think people are talking about this enough.
+173
+That's just wild.
+174
+You guys are basically at the bleeding edge.
+175
+I've never heard a company that has this high a percentage of code being written by AI.
+176
+So you guys are at the edge of where things are heading.
+177
+I think most companies will get here.
+178
+How has product development changed knowing so much of your code is now written by AI?
+179
+So usually it's PM.
+180
+It's, here's what we're building.
+181
+Engineer builds it, ships it.
+182
+Is it still roughly that?
+183
+Or is it now PMs are just going straight to Claude, build this thing for me?
+184
+Engineers are doing different things.
+185
+Just what looks different in a world where 90% of your code is written by AI?
+186
+Yeah, it's really interesting because I think the role of engineering has changed a lot, but the suite of people that come together to produce a product hasn't yet.
+187
+And I think for the worst in a lot of ways, because I think we're still holding on some assumptions.
+188
+So I think the roles are still fairly similar, although we'll now get, and my favorite things that happen now are sometimes PMs that have an idea that they want to express or designers that have an idea they want to express.
+189
+We'll use Claude and maybe even artifacts to put together an actual functional demo.
+190
+And that has been very, very helpful.
+191, no, no, this is what.
+192, that makes it tangible.
+193
+That's probably the biggest role shift is prototyping happening earlier in the process via more of this code plus design piece.
+194
+What I've learned, though, is the process of knowing what to ask the AI, how to compose the question, how to even think about structuring a change between the back end and the front end.
+195
+Those are still very difficult and specialized skills, and they still require the engineer to think about it.
+196
+And we really rapidly became bottlenecked on other things, our merge queue, which is the get in line to get your change accepted by the system that then deploys it to production.
+197
+We had to completely re-architect it because so much more code was being written and so many more pull requests were being submitted that it just completely blew out the expectations of it.
+198
+And so it's, I don't know if you've ever read, is it the goal, the classic process optimization book?
+199
+And you realize there's this critical path theory.
+200
+I've just found all these new bottlenecks in our system.
+201, there's an upstream bottleneck, which is decision-making and alignment.
+202
+A lot of things that I'm thinking about right now is, how do I provide the minimum viable strategy to let people feel empowered to go run and prototype and build and explore at the edge of model capabilities?
+203
+I don't think I've gotten that right yet, but that's something I'm working on.
+204
+And then once the building is happening, other bottlenecks emerge, let's make sure we don't step on each other's toes.
+205
+Let's think through all the edge cases here ahead of time so that we're not blocked on the engineering side.
+206
+And then when the work is complete and we're getting ready to ship it, what are all those bottlenecks as well?
+207 let's do the air traffic control of landing the change.
+208 how do we figure out launch strategy?
+209
+So I think we're the, there hasn't been as much pressure on changing those until this year, but I would expect that a year from now, the way that we are conceiving of building and shipping software just changes a lot because it's going to be very painful to do it the current way.
+210
+Wow.
+211
+That is extremely interesting.
+212
+So it used to be: here's an idea, let's go design it, build it, ship it, merge it, and then ship it.
+213
+And usually the bottleneck was engineering, taking time to build the thing, and then design.
+214
+And now you're saying the two bottlenecks you're finding are: okay, deciding what to build and aligning everyone.
+215
+And then it's the cue to merge it into production.
+216
+And I mentioned review it too is probably a big problem.
+217
+Reviewing has really changed too.
+218
+And in many ways, our most, perhaps unsurprisingly, the team that works in the most futuristic way is the Cloud Code team, because they're using Cloud Code to build Cloud Code in a very self-improving way.
+219
+And early on in that project, they would do very line-by-line pull request reviews in the way that you would for any other project.
+220
+And they've just realized Cloud is generally right and it's producing pull requests that are probably larger than most people are going to be able to review.
+221
+So can you use a different Cloud to review it and then do the human almost acceptance testing more than trying to review line by line?
+222
+There's definitely pros and cons.
+223
+And so far it's gone well, but I could also imagine it going off the rails and then having a completely both unmaintainable or even understandable by cloud code base that hasn't happened.
+224
+But watching them change their review processes definitely has been interesting.
+225
+And yeah, the merge queue is one instance of the bottom bottleneck that forms down there, but there's other ones which is how do we make sure that we're still building something coherent and packaging it up into a moment that we can share with people and whether that's around the launch moment, whether that's about then enabling people to use this thing and talking about it, the classic things of building something useful for people and then making it known that you've built it and then learning from their feedback still exists.
+226
+We've just made a portion of that whole process much more efficient.
+227
+I heard you describe this as you guys are patient zero for this way of working.
+228
+Yes.
+229
+I love that.
+230
+Do you have a sense of what percentage of cloud code is written by cloud code?
+231
+At this point, I would be shocked if it wasn't 95% plus.
+232
+I'd have to ask Boris and the other tech leads on there.
+233
+But what's been cool is so nitty-gritty stuff.
+234
+Cloud code is written in TypeScript.
+235
+It's our largest TypeScript project.
+236
+Most of the rest of Anthropic is written in Python, some Go, some Rust now.
+237
+But it's not,, we're not a TypeScript shop.
+238
+And so I saw a great comment yesterday in our Slack where somebody had this thing that was driving them crazy about cloud code.
+239
+And they're, well, I don't know any TypeScript.
+240
+I'm just going to talk to Claude about it and do it.
+241
+And they went from that to pull request in an hour and solved their problem.
+242
+And they submitted a pull request.
+243
+And that breaking down the barriers.
+244
+One, it changes your barrier to entry for any newcomer to the project.
+245
+I think it can let you choose the right language for the right job, for example.
+246
+I think that helps as well.
+247
+But I think it also just reinforces cloud code being that patient alpha of that, where contributions from outside the team can be cloud-coded as well.
+248
+Wow.
+249
+This is just going to continue to blow my mind.
+250
+All these things that you're sharing.
+251
+95% of cloud code is written by Cloud Code, roughly.
+252
+That's my guess.
+253
+Yeah, I'll come back with the real stuff.
+254
+But it's,, if you ask the team, that's how they're working and that's how they're getting contributions from across the company, too.
+255
+It's interesting going back to your point about strategy being assisted by Cloud itself and your point about how a lot of the bottlenecks now are the top of the funnel of coming up with ideas aligning everyone.
+256
+It's interesting that Cloud is already helping with that also, of helping you decide what to build.
+257
+So if those two bottlenecks are aligning, deciding what to build, and then just merging and getting everything, where do you see the most interesting stuff happening to help you speed those things up?
+258
+Yeah, I think that on that first round, I started the year by writing a doc that was effectively, how do we do product today?
+259
+And where is Cloud not showing up yet that it should?
+260
+And I think that upstream part is the next one to go.
+261
+It's interesting.
+262 at your conference, I talked to somebody who's working on a PRD GPT chat PRD, I think was.
+263
+Chat PRD.
+264
+Yeah.
+265
+So,, can we push more on,, can cloud be a partner in figuring out what to build, what the market size is if you want to approach it that way, what the user needs are if you look at it a different way.
+266 we think a lot about the virtual collaborator anthropic.
+267
+And one of the ways in which I think that can show up is, hey, I'm in the Discord, the,, the Cloud Anthropic Discord.
+268
+I'm in the user fora.
+269
+I'm on X and I'm reading things.
+270
+And, here's what's emergent.
+271
+That's step one.
+272
+Models can do that today.
+273
+Step two, which the models probably can do today, which have to wire them up to do it is, and not only are the problems, here's how I think you might be able to solve them.
+274
+And then taking that through to, and I put together a pull request to solve this thing that I'm seeing, feels very achievable this year than stringing those things together.
+275
+And we're limited more.
+276
+This is why MCP is excited to me, we're limited more around making sure the context flows through all of that so we have the right access to those things more than the model's capability to reason and propose.
+277
+Now, the model might not have perfect UI taste yet.
+278
+So there's definitely room for design to intervene and be, oh, that's not quite how I would solve the problem of this not showing up.
+279
+But I would get very excited.
+280
+I would give you a really small example, but we changed the, on Cloud AI, you should be able to just copy Markdown from artifacts or code from artifacts.
+281
+And we changed it so you can download it and export it.
+282
+We changed the button to export.
+283
+And we got a bunch of feedback, how do I copy now?
+284
+And the answer is, you drop it down and it's copy.
+285
+It's just mine,, one of those things where it's, made sense, but we probably got it not quite right.
+286
+That feedback was in the R UX channel.
+287 I would have loved an hour later for Cloud to be, hey, if we do want to change it back, here's the PR to do it.
+288
+And by the way, eventually, and then I'm going to spin up an A-B test to see if this changes metrics.
+289
+And then we'll see how it looks.
+290
+And it'll be, this stuff feels, if you told me that about a year and a half ago, I'm, ah, yeah, maybe 27, maybe late 26, but it's pretty much,, it really feels,, just at the tip of capabilities right now.
+291
+Wow.
+292
+Okay, so you mentioned the Lenien Friends Summit.
+293
+I wanted to talk about this a bit.
+294
+So you were on a panel with Kevin Wheel, the CPO of OpenAI.
+295
+I think it was the first time you guys did this, maybe the last time for now.
+296
+Yeah, I haven't done it since, not for any reason.
+297
+I had a lot of fun.
+298
+What a legendary panel we assembled there with Sarah Guo moderating.
+299
+And you made this comment.
+300
+It ended up being the most rewatched part of the interview, which is that you've been putting product people on the model team and working with researchers, making the model better.
+301
+And you're putting some product people on product experience, making the UX more intuitive, making all that better.
+302
+And you found that almost all the leverage came from the product team working with the researchers.
+303
+And so you've been doing more of that.
+304
+So, first of all, does that continue to be true?
+305
+And second of all, what are the implications of that for product teams?
+306
+It's continued to be true.
+307
+And in fact, I think that if the proportion was already skewing towards having more of that embedding, I've just become more and more convinced.
+308, I have this, I didn't feel as strongly about it during your,, the summit.
+309
+And now I feel really strongly about it.
+310
+Just if any, if we're shipping things that could have been built by anybody just using our models off the shelf, there's great stuff to be built by using our models off the shelf, by the way.
+311
+Don't get me wrong, but where we should play and what we can do uniquely should be stuff that's really at that magic intersection between the two, right?
+312
+Artifacts being a great example.
+313
+And if you play with artifacts with Cloud4, that's an really interesting example where we took somebody from our, we call it Cloud Skills, which is a team that really is doing the post-training around teaching Cloud some of these really specific skills.
+314
+And we paired it with some product people.
+315
+And then together, we revamped how this looks in the product today and what Cloud can do way better than just, yeah, we just use the model and we prompt it a little bit.
+316
+That's just not enough.
+317
+We need to be in that fine-tuning process.
+318
+So, so much of what, if you look at what we're working on right now, what we've shipped recently between research and all these other things, are things that we the functional unit of work at Anthropic is no longer take the model and then go work with design and product to go ship a product.
+319
+It's more we are at we're in the post-training conversations around how these things should work, and then we are in the building process and we're feeding those things back and looping them back.
+320, I think it's exciting.
+321
+It's also a new way of working that not all PMs have, but the PMs that have the most internal positive feedback from both research and engineering are the ones that get it.
+322
+That, I was in a product review yesterday.
+323
+I was, oh,, if we want to do this memory feature, we should talk to the researchers because we just shipped a bunch of memory capabilities in Cloudflare.
+324
+They're, yeah, yeah, we've been talking to them for weeks.
+325, this is how we're manifesting it.
+326
+It's, okay, feel good.
+327
+I feel we're doing the right things now.
+328
+So, let me pull on this thread more.
+329
+There's something I've been thinking about along these lines.
+330
+So, essentially, there's a big part of Anthropic that's building this super intelligent giga brain that's going to do all these things for us over time.
+331
+And then, there's, as you said, there's the product team that's building the UX around this super intelligent gigabrain.
+332
+And over time, this super intelligence is going to be able to build its own stuff.
+333
+And so, I guess, just where do you think the most value will come from traditional product teams over time?
+334
+I know this is different because you guys are a foundational LM company, not most companies don't work this way, but just, I don't know, thoughts on just where most value will come from product teams over time working on AI.
+335
+I think there's still value, a lot of value, in two things.
+336
+One is making this all comprehensible.
+337
+I think we've done an okay job.
+338
+I think we could do a much better job of making this comprehensible.
+339
+It's still the difference between somebody who's really adept at using these tools and their work and most people is huge.
+340
+And, maybe that's the most literal answer to your earlier question around what skills to learn.
+341
+That is a skill to learn and use it.
+342
+And the same way that I remember we did computer lab class when I was in middle school.
+343
+And I remember being really good at Google.
+344
+And that was a skill back in the day,, to think in terms of this information is out there.
+345
+How do I query for it?
+346
+How do I do it?
+347
+And I think it was an advantage at the time.
+348
+Of course, now Google is pretty good at figuring out what you're trying to do if you are only in the neighborhood and there's less of that research need.
+349
+But I still think that's a necessary part of good product development, which is the capabilities are there.
+350
+And even if the, even if cloud can create products from scratch, what are you building and how do you make it comprehensible?
+351 still hard.
+352
+Because I think that gets at this much deeper empathy and understanding of human needs and psychology.
+353 I was a human community interaction major.
+354
+I still talk in my book here.
+355 I still feel that is a very, very, very, very necessary skill.
+356
+So that's one.
+357
+Two is, and this,, straight to a call back to another one of your guests, strategy, how we win, where we'll play, figuring out where exactly you're going to want to,, of all the things that you could be spending your time or your tokens or your computation on, what, what, what you want to go and do.
+358
+You could be wider probably than you could before, but you can't do everything.
+359
+And even from an external perspective, if you're seen to be doing everything, it's way less clear around how you're how you're positioning yourself.
+360
+So strategy, I think, is still that the second piece.
+361
+And then the third one is opening people's eyes to what's possible, which is a continuation of making it understandable.
+362
+But we were in a demo with a financial services company recently, and we were working on here's how you can use our analysis tool and MCP together.
+363
+And you could see their eyes light up, and you're, ah, okay, there's still, we call it overhang, right?
+364, the delta between what the models and the products can do and how they're being used on a daily basis, huge overhang.
+365
+So, that's where still a very, very strong, necessary role for product.
+366
+Okay, that's an awesome answer.
+367
+So, essentially, areas for product teams to lean into more is strategy, just getting better and better at strategy, figuring out what to build and how to win in the market, making it easier to help people understand how to leverage the power of these tools, the comprehensibility, and along those lines is opening people's eyes to the potential of these sorts of things.
+368
+That's where product can still help.
+369
+Exactly.
+370
+Awesome.
+371
+So, along those lines,, do you have any just prompting tricks for people, things you've learned to get more out of Claude when you chat with it?
+372
+Sometimes,, it's funny because we, in some ways, we have the ultimate prompting job, which is to write the system prompt for Claudia.
+373
+And we publish all of these, which I think is another nice area of transparency.
+374
+And we are always careful when giving prompting advice because, at least officially, but I'll give you the unofficial version, because you don't want things to become, we think this works, but we're not sure why.
+375
+But I'll do small things in cloud code, and we do react to this very literally, but I always ask it to, if I wanted to use more reasoning,, think hard, and it'll,, use a different flow.
+376
+And I usually start with that,.
+377
+Nudging, there's a great essay around make the other mistake.
+378, if you tend to be too nice, can you focus on, even if you're trying to be more critical or more blunt, you're probably not going to be the most critical blunt person in the world.
+379
+And so, with Cloud, sometimes I'm, be brutal, Claude,, roast me,, tell me what's wrong with this strategy.
+380
+I think we were talking earlier about the,, Claude as thought partner around critiquing product strategy.
+381
+I think I previously would say things,,, what could be better on this product strategy?
+382
+And I'm just,, just roast this product strategy.
+383
+And cloud's a pretty nice,, entity.
+384
+It's not going to be, it's hard to push it to be super brutal, but it forces it to be a little bit more critical as well.
+385
+The last thing I'll say is, so we have a team called Applied AI that does a lot of work with our customers around optimizing Cloud for their use case.
+386
+And we basically took their insights and their way of working and we put it into a product itself.
+387
+So if you go to our console, our workbench, we have this thing called the prompt improver where you describe the problem and you give it examples and cloud itself will agentically create and then iterate on a prompt for you.
+388
+I find what comes out of that ends up being quite different than what my intuitions would have been for a good prompt.
+389
+And so I encourage folks to also check that out, even for their own use cases, because while that tool is meant for an API developer putting a prompt into their product, it's equally applicable for a person doing a prompt for themselves.
+390 it'll insert XML tags, which no human is going to think to do ahead of time.
+391
+It is very helpful for cloud to understand what it should be thinking versus what it should be saying, et cetera.
+392
+So that's another one: watch our prompt improver and then note that cloud itself is a very good prompter of cloud.
+393
+Awesome.
+394
+Okay, so we're going to link to that, the prompt improver.
+395
+The core piece of advice you shared earlier is just do the opposite of what you would naturally do.
+396
+So if you're trying to be nice, just be brutal, be very honest and frank with me.
+397
+Exactly.
+398
+I find that worked quite well.
+399, what are the thought patterns that I've fallen into that you want to break me out of?
+400
+I saw you guys just today maybe launched a Rick Rubin collab where it's vibe coding.
+401
+What's that all about?
+402
+I don't think so.
+403
+That was,, what I heard about that.
+404
+And again, this, a lot of coalesced this week between model launch developer event and the way of code.
+405
+We had our, one of our co-founders, Jack Clark, is our head of policy, and he got connected to Rick Rubin because I think he's been thinking a lot about coding, the future of coding and creativity.
+406
+And they've stayed in touch.
+407
+And Rick got excited about this idea of he was creating art and visualizations with Claude.
+408
+And then he had these ideas around the way of the vibe coder.
+409
+And they put together this,, I love the,, I love almost everything, Rick Rubin.
+410
+So the aesthetic of everything is just so on point too.
+411
+But yeah, it's a meditation is probably the right word.
+412
+Meditation on creativity working alongside AI coupled with this with this really rich, interesting visualizations.
+413
+But it's one of those things where,, internally they're, oh yeah, and we're doing this Rick Rubin collab.
+414
+We're doing what?
+415 that is, that's amazing.
+416
+I love the, I looked at it briefly and there's that meme of him just thinking deeply sitting on a computer with a mouse.
+417
+Yes.
+418
+In ASCII art, I think.
+419
+It's totally ASCII art five.
+420
+I'm excited to have Andrew Luo joining us today.
+421
+Andrew is CEO of One Schema, one of our longtime podcast sponsors.
+422
+Welcome, Andrew.
+423
+Thanks for having me, Lenny.
+424
+Great to be here.
+425
+So what is new with One Schema?
+426
+I know that you work with some of my favorite companies Ramp and Banza and Watershed.
+427
+I heard you guys launched a new data intake product that automates the hours of manual work that teams spend importing and mapping and integrating CSV and Excel files.
+428
+Yes.
+429
+So we just launched the 2.0 of One Schema file Feeds.
+430
+We've rebuilt it from the ground up with AI.
+431
+We saw so many customers coming to us with teams of data engineers that struggled with the manual work required to clean messy spreadsheets.
+432
+FileFeeds 2.0 allows non-technical teams to automate the process of transforming CSV and Excel files with just a simple prompt.
+433
+We support all the trickiest file integrations, SFTP, S3, and even email.
+434
+I can tell you that if my team had to build integrations this, how nice would it be to take this off our roadmap and instead use something OneSchema?
+435
+Absolutely, Lenny.
+436
+We've heard so many horror stories of outages from even just a single bad record in transactions, employee files, purchase orders, you name it.
+437
+Debugging these issues is often finding a needle in a haystack.
+438
+One schema stops any bad data from entering your system and automatically validates your files, generating error reports with the exact issues in all bad files.
+439
+I know that importing incorrect data can cause all kinds of pain for your customers and quickly lose their trust.
+440
+Andrew, thank you so much for joining me.
+441
+If you want to learn more, head on over to oneschema.co.
+442
+That's oneschema.co.
+443, going back to the beginning of your journey at Anthropic, what's the story of you getting recruited at Anthropic?
+444
+Is there anything fun there?
+445
+It all started, and I sent my friend this text.
+446
+So Joel Lewinstein, who I've known, he and I built our first iPhone apps together in 2007 when the App Store was just out and you could still,, make money by selling dollar apps on the App Store,, back in the day.
+447
+And we were, we were both at Stanford together and we were friends and we've stayed in touch over years and we've never gotten to work together since then.
+448
+We just, we just remain close.
+449
+And,, I was coming out of the artifact experience.
+450
+I was trying to figure out, do I start another company?
+451
+I don't think so.
+452
+I need a break from starting something from zero.
+453
+Do I go work somewhere?
+454
+I don't know.
+455, what company do I want to go work at?
+456
+And he reached out and he's, look, I don't know if you'd at all consider joining something rather than starting something, but we're looking for a CPO.
+457
+Would you be interested in chatting?
+458
+And at that time, Cloud3 had just come out.
+459
+And I was, okay,, this company's clearly got a good research team.
+460
+The product is so early still.
+461
+And I was, great, I'll take the meeting.
+462
+And I first met with Danielle, who was one of the co-founders and the president at Anthropic.
+463
+And just from the beginning, it was a breath of fresh air, very little grandiosity coming off the founders.
+464 they just were really,, they're clear-eyed about what they're building.
+465
+They know what they don't know.
+466, how many times I talked to Dari, I was, Dari's, look, I don't know anything about product, but here's an intuition.
+467
+I haven't, usually the intuition is really good and leads to some good conversation.
+468
+I think that intellectual honesty and shared view of what it means to do AI in a responsible way just resonated.
+469
+I kept having this feeling in these interviews,, this is the AI company I would have hoped to have founded if I had founded an AI company.
+470
+And that's the bar around,, if I'm going to join something,, that should be, that should be where I'm going to go.
+471
+But what I realized, I hadn't joined a company since my first internship in college, basically.
+472
+And I was, oh,, how do I onboard myself?
+473, how do I get myself up to speed?
+474, how do I, how do I balance making sweeping changes versus understanding what's not broken about it overall?
+475
+And, looking back on a year, I think I made some changes too slowly.
+476, I think there was ways we were organizing a product that I could have made a change earlier.
+477
+And I think I didn't appreciate how much a couple of really key senior people can shape so much of product strategy.
+478
+I'll harken back to Cloud Code.
+479, Cloud Code happened because Boris, who was a Boris attorney, he was an Instagram engineer and one of our senior ICs there.
+480
+We overlapped a bit, was started that project from scratch internal at first, and then we got it out and then shipped it.
+481
+And, that's the power of one or two really strong people.
+482
+And I made this mistake around, we need more headcount, and we do,, I think there's more work that we need to do, and there's things that I want to be building.
+483
+But more so than that, we need a couple of almost founder-type engineers.
+484
+That maybe connects back to our question on what skills are useful and how does product development change.
+485
+I still, and maybe even more so, I'm a huge believer in the founding engineer tech lead with an idea and pair them with the right design and product support to help them realize that.
+486
+I'm 10 times more believer in that than before.
+487
+I asked people on Twitter what to ask you ahead of this conversation, and the most common question, surprisingly, was, why did you shut down Artifact?
+488
+And I also wondered that because I loved Artifact.
+489
+I was a power user.
+490
+I was just, This is exactly finally a news app that I love that it's giving me what I want to know.
+491
+So, I guess just what happened there at the end?
+492
+I still really miss it too, because I didn't find a replacement.
+493
+And I think I substituted it by visiting individual sites and keeping things up that way.
+494
+And it's not really the same, especially on the long tail.
+495, I think we got right with Artifact.
+496
+And if people didn't play with it before, it was,, we really tried to not just recommend top stories, they were part of it, but really,, if you were interested in Japanese architecture, you could pretty reliably get really interesting stories about Japanese architecture every day,, whether that's from a dwell or from Architectural Gitis, or from a really specific blog that we found that somebody recommended to us, it captures some of that Google Reader joy of content discovery of the deeper web.
+497
+Our headwinds were a couple.
+498
+One of them was just mobile websites have really taken a turn.
+499
+I'm I don't blame any individuals for this.
+500
+I think it's the market dynamics of it.
+501
+But yeah,, we put so much time.
+502
+Our designer was Sky Gunner Gray, who's phenomenal.
+503
+He's at perplexity now.
+504 the app experience, I was so proud of.
+505
+But when you click through, it was the pressures on these mobile sites and these mobile publishers would be, sign up for our newsletter.
+506
+Here's a full screen video ad.
+507
+It was just very,, it was very jarring.
+508
+And we didn't feel it ethically made sense for us to do a bunch of ad blocking because then you're, sure, you can deliver a nice experience for people, but you're,, that doesn't feel it's playing fair with the publishers.
+509
+But at the same time, the actual experience wasn't good.
+510
+So the mobile web deteriorating, which makes me very sad, but I think was part of it.
+511
+Two was,, Instagram spread in the early days because people would take photos and then post them on other networks and tell friends about it.
+512
+And there was this really natural,, how did you do that?
+513
+I want to do it.
+514
+News was very personal.
+515, I can't tell you how many people would be, I love artifact.
+516
+I'm, did you tell anybody about it?
+517, did they, I told one person.
+518
+And then it's, it didn't have that spread.
+519
+And any attempt that we had to do it felt contrived.
+520, oh, we'll wrap all the links in artifact.news.
+521
+And, but we didn't want interstitial things.
+522 in some ways, this sounds very puritanical.
+523
+I don't mean it to sound this way, but we, there were lines that we didn't want to cross that just felt ethically not us that I've seen other news players do more of.
+524
+And maybe if we had done that, it would have grown more.
+525
+And, and but I don't think that's the company we wanted to have built in other ways.
+526
+I don't think we were the founders to have built it.
+527
+And the third one, which is an underappreciated one, is we started at mid-COVID, which meant that we were fully distributed.
+528
+And I think there were major shifts that we would have wanted to make, both in the strategy and the product and the team.
+529
+And it's really hard to do that if you are all fully remote.
+530 nothing replaces the Instagram days of we went through some hard times, Ben Horowitz called the,, we're effed, it's over,, moments.
+531
+And I, my, my favorite, not this is definitely type two fun, I wouldn't say that my favorite memories because they weren't happy ones, but memories I really stayed with me with Instagram was me and Kevin at Takaria Cancun on Market Street eating burritos at literally 11 p.m.
+532
+being, how are we going to get out of this?
+533
+How are we going to work through this?
+534, and that's Zoom is not a good replica for that.
+535, you tend to let things go or,, things build up over time.
+536
+So the confluence of those three things, we entered, I guess, 2024 and said, look, there is a company to be built in this space.
+537
+I'm not sure we're the people to build it.
+538
+This current incarnation we love, but it's not growing.
+539 the way I put it, it's 10 units of input in for one unit of output versus the other way around.
+540 if we put blood, sweat, and tears into the product and launch something we were proud of and metrics would barely move.
+541
+I'm, the energy is not present in this product, in this system.
+542
+And so are we going to expend another year or two and then go off and fundraise only to find that this is the case?
+543
+Or do we call it and see that it's run its course and try to find a home for it, et cetera.
+544
+So that was the confluence on it.
+545
+And then you started feeling this opportunity cost of AI is starting to change everything.
+546
+We have an AI-powered news app, but is this the maximal way in which we're going to be able to impact this?
+547
+It felt the answer was increasingly no, but it was hard.
+548, in the end, I was really at peace with the decision, but it was a conversation that went on for a couple of months.
+549
+On that note, just how hard was it?
+550
+Because you,, it's there's an ego component to it.
+551, oh, I'm starting my new company.
+552
+It's going to be great.
+553
+And then, and then you end up having to shut it down.
+554
+Just how hard is that as a very successful previous founder shutting something down and it not working out?
+555
+Yeah,, I think when we started it, one of the conversations was, what is the bar to success here?
+556
+And do we want it to be something other than Instagram DAU, which is just an impossible bar.
+557, only one company since then, maybe two, right?
+558
+You could say maybe ChatGPT and TikTok have reached that mass consumer adoption starting a news app.
+559 most people are not daily newsreaders, even, right?
+560
+And so we knew that we weren't pursuing that size of usage, at least with the first incarnation.
+561
+But we did have an idea of building out complementary products over time that all use personalization and machine learning.
+562
+We didn't even call it AI at the time.
+563
+This was 2021 back then.
+564
+Yeah, yeah.
+565
+AI was called machine learning back then.
+566
+Yeah, it's called machine learning still.
+567
+And so in shutting it down,, it's you know it when you see it in terms of user growth and traction.
+568
+And I wasn't expecting Instagram growth, but I was expecting or hoping for or looking for something that felt had its own legs under it and it could continue to continue to compound.
+569
+I was really positively surprised by how supportive people were when we announced it.
+570
+There was very little, there was a bit of, I told you so, which, sure, anything launching, you could be, this is not going to work.
+571
+And you're right most of the time because most things don't work.
+572
+There was very little of that.
+573
+And most people, the universal reception, at least as I received it, was kudos for calling it when you saw it and not protracted,, doing this for a long time.
+574
+And I've talked to founders since then that have been, yeah, I probably would have taken this thing on for another six months, but saw what you guys did, realized we were barking up the wrong tree, made the call, and I was, that,, if that, if that frees up people to go work on more interesting things, that's, I feel that's a good, good legacy for Artifact to have.
+575
+But for sure, there was an ego bruise of, oh,,, are people, you're, is it true that you're only as good as your last game?
+576, if I'm a huge sports fan, right?
+577
+So, is that true?
+578
+Or,, is there something more over time?
+579
+I'm very competitive, but primarily with myself.
+580
+And so I'm always trying to find the next thing that I want to go and do that's hard.
+581
+And I unfortunately, that probably means that more often than not, I'll feel dissatisfied with the most recent thing that I did.
+582
+But hopefully that yields good stuff in the end.
+583
+Yeah, I think just the trajectory you went on after shows that it's okay to shut down things that you're working on.
+584
+Okay, so you mentioned ChatGPT.
+585
+I wanted to chat about this a bit.
+586
+So there's something really interesting happening.
+587
+So on the one hand, you guys are doing some of the most innovative work in AI.
+588
+You guys launched MCP, which is just, I don't know, the fastest growing standard of any time in history that everyone's adopting.
+589
+Claude powered and unlocked essentially the fastest growing companies in the world, Cursor, Lovable, and Bolt, and all these guys.
+590 I had them on the podcast, and they're all, when Claude, I think 3.5 came out, saw it, it was just, that's made this work finally.
+591
+On the other hand, it feels ChatGPT is just winning in consumer mind share.
+592
+When people think AI, especially outside tech, it's just ChatGPT in their mind.
+593
+So let me just ask you this.
+594
+I guess, first of all, do you agree with that sentiment?
+595
+And then two, as a a challenger brand in the AI space, just how does that inform the way you think about product and strategy and mission and things that?
+596
+Yeah,, you you look at the public adoption or you ask people, oh,, if you, if you Jimmy Kimmel Man on the Street thing,, name an AI company, I bet they would name.
+597
+And, I'm not even sure they name OpenAI.
+598
+They'd probably name ChatGPT because that brand is the lead brand there as well.
+599
+And I think that's just the reality of it.
+600
+I think that,, when I reflect on my year, there's, I think maybe two things are true.
+601
+One is consumer adoption is really lightning in a bottle.
+602
+And we saw it at Instagram.
+603
+So almost maybe more than anybody, I can look internally and say, look, we'll keep building interesting products.
+604
+One of them may hit, but to craft an entire product strategy around trying to find that hit and is probably not wise, we could do it.
+605
+And maybe cloud can help come up with the fullness of things.
+606
+But I think we'd miss out on opportunities in the meantime.
+607
+And then instead,, look yourself in the mirror and embrace who you are and what you could be rather than who others are is maybe the way I've been looking at it, which is we have a super strong developer brand.
+608
+People build on top of us all the time.
+609
+And I think we also have a builder brand, the people who I've seen react really well to cloud externally.
+610
+Maybe the Rick Rubin connection has some resonance here as well.
+611, can we lean into the fact that builders love using cloud?
+612
+And those builders aren't all just engineers and they're not just all entrepreneurs starting their companies, but they're people that to be at the forefront of AI and are creating things.
+613
+Maybe they didn't think of those as engineers, but they're building.
+614
+I got this really nice note from somebody internal Anthropic who's on the legal team and he was building bespoke software for his family And connected to them in a new way.
+615
+And I was, this is a glimmer of something that is that we should lean into a lot more.
+616
+And so I think what I've,, and this is,, connecting back to us saying clouds being helpful here, a lot of what I've been thinking about, going into the second half of the year and beyond is, how do we figure out what we want to be when we grow up versus what we currently aren't or wish that we were or see other players in the space being?
+617
+I think there's room for several generationally important companies to be built in AI right now.
+618
+That's almost a truism given the adoption and growth that we've seen,, at Anthropic, but also across OpenAI and also places Google and Gemini.
+619
+So, let's figure out what we can be uniquely good at that place to the personality of the founder.
+620 this, all the things come together, right?
+621 the personality of the founders, the quality of the models, the things the models tend to excel at, which is agentic behavior and coding.
+622, great.
+623, there's a lot to be done there.
+624, how do we help people get work done?
+625
+How do we let people delegate hours of work to cloud?
+626
+And maybe there's fewer direct consumer applications on day one.
+627
+I think they'll come, but I don't think that spending all of our time focused on that is the right approach either.
+628
+And so it's,, I came in, everybody expected me to just go super, super hard on consumer and make that the thing.
+629
+And I, again, would make the other mistake.
+630
+Instead, I spent a bunch of time talking to financial services companies and insurance companies and others to who are building on top of the API.
+631
+And then lately, I spent a lot more time with startups and seeing all the people that have grown off of that.
+632
+And I think the next phase for me is, let's go spend time with the builders, the makers, the hackers, the tinkerers, and make sure we're serving them really well.
+633
+And I think good things will come from that.
+634
+And that feels an important company as we do that.
+635
+So essentially, it's differentiate and focus, lean into the things that are working.
+636
+Don't try to just beat somebody at their own game.
+637
+Exactly.
+638
+Super interesting.
+639
+So along those lines, a question that a lot of AI founders have is just, where's a safe space for me to play where the foundational model companies are going to come squash me?
+640
+So I asked Kevin Wheel this and he had an answer.
+641
+And I noticed looking back at that conversation, he mentioned WinSurf a lot.
+642
+I was, wow, this guy really loves Windsurf.
+643
+And then a week later, they bought WinSurf.
+644
+So it all makes sense now.
+645
+So I guess the question just is just where do you think AI founders should play where they are least likely to get squashed by folks OpenAI and Anthropic.
+646
+And also, are you guys going to buy cursor?
+647
+I don't think we're going to buy cursor.
+648
+Cursor is very big.
+649
+We love working with him.
+650
+A few thoughts on this.
+651
+And it's a question I've gotten.
+652, we to do these founder days with,, whether it's,, Menlo Ventures who have our investors and Indus Norway.
+653
+It's we've done YC, we've done these founder days.
+654
+And it's the question that is on a lot of these founders' minds, understandably.
+655
+So I think things that are going to, I can't promise this as a five to 10 year thing, but at least one to three years, things that feel defensible or durable.
+656
+One is understanding of a particular market.
+657
+I spend a bunch of time with the Harvey folks and they really, they showed me some of their UI.
+658
+I was, what is this thing?
+659
+They're, oh, this is a really specific flow that lawyers do.
+660
+And, you never would have come up with it from scratch.
+661
+And it's not, you could argue about whether it's the optimal way they get done, things done, but it is the way that they get things done.
+662
+And here's how AI can help with that.
+663
+And so differentiated industry knowledge, biotech.
+664
+I'm excited to go and partner with a bunch of companies that are doing good stuff around AI and biotech and we can supply the models and some applied AI to help make those models go well.
+665
+And I've been dreaming about at what point do does lab equipment all get an MCP and that you can then drive using cloud.
+666, there's all these cool things to be done there.
+667
+I don't think we're going to be the company to go build the end-to-end solution for labs, but I want that company to exist and I want to partner with it.
+668, domains legal, again, healthcare, I think there's a lot of very specific compliance and things.
+669
+These are things that necessarily sound sexy out the gate, but there are very large companies to go and be built there.
+670
+So that's number one.
+671
+Paired with that is differentiated go-to-market, which is the relationship that you have with those companies, right?
+672, do your customer at those companies?
+673, one of our product leads, Michael, is always talking about, don't just know the company you're selling to, but know the person you are selling to at the company.
+674
+Are you selling to the engineering department?
+675
+Because they're trying to pick which AI LLM to build on top of or API to build on top of.
+676
+Let's go talk to them.
+677, is it the CIO?
+678
+Is it the CTO?
+679
+Is it the CFO?
+680
+Is it the general counsel?
+681
+So,, companies with deep understanding of who they're selling to is the other piece too.
+682
+What's,, what's interesting there is it's probably hard to build that empathy in a three-week or three-month accelerator, but you maybe can start having that first conversation and build that out.
+683
+Or maybe you came from that world or you're co-founding somebody who came from that world.
+684
+Then the last one is, there's tremendous power and distribution and reach to being ChatGPT and having hundreds of millions or billions of users.
+685 there's also people have an assumption about how to use things.
+686
+And so I get excited about startups that will get started that have a completely different take on what the form factor is and by which we interface with AI.
+687
+And I haven't seen that many of them yet.
+688
+I want to see more of them.
+689
+I think more of them will get created with some things our new models.
+690
+But the reason that that's an interesting space to occupy is do something that feels very advanced user, very power user, very weird and out there at the beginning, but could become huge if the models make that easy.
+691
+And it's hard for existing incumbents to adapt to because people already have an existing assumption about how to use their products or how to adapt to them.
+692
+So, those are my answers.
+693
+I don't envy them.
+694
+I would probably be asking those questions if I was starting a company in the AI space.
+695
+Maybe that's part of the reason why I wanted to join a company rather than start one.
+696
+But I still think that there are, there's, and maybe, here's fourth:, don't underestimate how much you can think and work a startup and feel it's you against the world.
+697
+It's existential that you go solve that problem and you go build it.
+698
+It sounds a little cliche, but it's it's all we had at Instagram.
+699, we were two guys and we were, let's see what we can do.
+700
+And in Artifact, we were,, we were six people for most of that time.
+701
+And,, every day felt it's existential that we get this right.
+702
+We need to win.
+703
+And you can't replicate that.
+704
+And you can't instill that with OKRs.
+705, you just have to feel it.
+706
+And that is a way of working rather than a area of building, but it's a continued advantage if you can harness it.
+707
+I love that you still have such a deep product founder sense there as you're building products for this very large company now.
+708 on the flip side of this, people working with your models and APIs.
+709
+So I imagine there's some companies that are finding ways to leverage your models and APIs to their max and are really good at maximizing the power of what you guys have built.
+710
+And there's some companies that work with your APIs and models that haven't figured that out.
+711
+What are those companies that are doing a really good job building on your stuff doing differently that you think other companies should be thinking about?
+712
+I think being willing to build more at the edge of the capabilities and basically break the model and then be surprised by the next model.
+713, I love that you cited the companies where 3.5 was the one that finally made them possible.
+714
+Those companies were trying it beforehand and then hitting a wall and being, oh, the models are almost good enough.
+715
+Or they're okay for this specific use case, but they're not generally usable and nobody's going to adopt them universally.
+716
+But maybe these real power users are going to try it out.
+717
+Those are the companies that I think continuously are the ones where I'm, yep, they get it.
+718
+They're really pushing forward.
+719
+We ran a much broader early access program with these models than we had in the past.
+720
+And part of that was because there's this real,,, we can hill climb on these evaluations and talk about SweetBench and Tau Bench and Terminal Bench, whatever.
+721
+But customers ultimately know,, cursor bench, which doesn't exist other than in,, their usage and their own testing, et cetera, is the thing that we ultimately need to serve.
+722
+Not just cursor, but Manus Bench, right?
+723
+If Manus is using our models and Harvey Bench, those things.
+724
+And customers know way better than anybody.
+725
+And so I would say that's two things.
+726 one is pushing the frontier of the models and then having a repeatable process.
+727
+This goes back to our summit conversation, a repeatable way to evaluate how well your product is serving those use cases and how well, if you drop a new model in, is it doing it better or worse?
+728
+Some of it can be classic A-B testing.
+729
+That's fine.
+730
+Some of it may be internal evaluation.
+731
+Some of it may be capturing traces and being able to rerun them on with a new model.
+732
+Some of it is vibes.
+733 we're still pretty early in this process and some of it is trying it.
+734
+And one of my favorite early access quotes was the founder heard his engineer screaming next to him.
+735
+He's, what is this model?
+736, it's, I've never seen this before.
+737
+This is Opus 4.
+738
+I was, cool.
+739, Matt, we're going to engender that feeling and things, but you're not going to be able to feel that unless you have a really hard problem that you're asking the model repeatedly.
+740
+So, those are the things that I think differentiate those companies that are maybe earlier in their journey of adoption versus the later ones.
+741
+I can't help but ask about MCP.
+742
+I feel that's just so hot.
+743
+And just Microsoft had their announcement recently, they're, now it's part of the OS window.
+744
+Just what role do you think MCP will play in the future of product going forward of AI?
+745
+I think as the non-researcher in the room, I get to have fake equations rather than real ones.
+746
+And my fake equation for utility of AI products, it's three part.
+747
+One is model intelligence, the second part is context and memory, and the third part is applications and UI.
+748
+And you need all three of those to converge to be a useful product in AI.
+749
+And model intelligence, we've got a great research team.
+750
+They're focused on it.
+751
+There's great, great models being released.
+752
+The middle piece is what MCP is trying to solve, which is for context and memory.
+753 the difference between, I'll go back to my product strategy example,, hey,,, talk about a topics product strategy.
+754
+It's going to maybe go out on the web,, versus here's several documents that we worked on internally.
+755
+And then,, use MCP to talk to our Slack instance and figure out what conversations are happening.
+756
+And then go look at these documents in Google Drive.
+757 that, the difference between the right context and not, it's entirely the difference between a good answer and a bad answer.
+758
+And then the last piece is: are those integrations discoverable?
+759
+Is it easy to create repeatable workflows around those things?
+760
+And that's, I think, a lot of the interesting product work to be done in AI.
+761
+But MCP really tried to tackle that middle one, which is we started building integrations and we found that every single integration that we were building, we were rebuilding from scratch in a non- repeatable way.
+762
+And, full credit to two of our engineers, Justin and David, and they said, well,, what if we made this a protocol?
+763
+And what if we made this something that was repeatable?
+764
+And then let's take it a step further.
+765
+What if instead of us having to build these integrations, if we popularize this and people really believe that they could build these integrations once and they'd be usable by cloud and eventually ChatGPT and eventually Gemini, that was the dream, when more integrations get built?
+766
+And wouldn't that be good for us?
+767, I think channeling a lot of it's an old commoditize your compliments, Joel Spolsky essay.
+768, it's we're building great models, but we're not an integrations company.
+769
+And the,, we're, as you said, the challenger.
+770, we're not going to get people necessarily building integrations just for us out of the gate unless we have a really compelling product around that.
+771
+MCP really inverted that, which was,, it didn't feel wasted work.
+772
+And a few key people, Toby, I think, is a great example.
+773
+Shopify got it.
+774
+Kevin Scott at Microsoft has been really just an amazing champion for MCP and a thought partner on this.
+775
+And I think the role going forward is: can you bring the right context in?
+776
+And then also,, once you get, as the team calls it internally, MC-pilled,, once you start seeing everything through the eyes of MCP, it's, I've started saying things, guys, we're building this whole feature.
+777, this shouldn't be a feature that we're building.
+778
+This should just be an MCP that we're exposing.
+779 a small example of how I think even Anthropic could be a lot more MC-pilled, if you will, is,, we've got these building blocks in the product, projects and artifacts and styles and conversations and groups and all these things.
+780
+Those should all just be exposed via MCP so cloud itself can be writing back to those as well, right?
+781 you shouldn't have to think about,, I watched my wife had a conversation with Claude the other day and she was, and she found she had generated some good output.
+782
+And she's, Great, can you add it to the project knowledge?
+783
+And Claude's, sorry, Dave, I can't help you with that.
+784
+And, it would be able to if every single primitive in Cloud AI was also exposed as an MCP.
+785
+So I hope that's where we head, and I hope that's where more things head, which is to really have agency and have these authentic use cases.
+786, one way you approach it is computer use, but computer use has a bunch of limitations.
+787
+The way I get way more excited about it is everything is an MCP, and our models are really good at using MCPs.
+788
+All of a sudden, everything is scriptable, and everything is composable, and everything is usable authentically by these models.
+789
+That's, that's the future I want to see.
+790
+The future is wild.
+791
+Okay, so to start to close off, close out our conversation, make it a little more, a little delightful.
+792
+I was chatting with Claude about what to talk to you about.
+793
+I was just, Claude, your boss is coming on my podcast.
+794
+He builds the things that people use to talk to you.
+795
+What are some questions I should ask him?
+796
+And then also, do you have a message for him?
+797
+I love this.
+798
+Okay, so first of all, interestingly, when I was using 3.7 to do this, and I asked it this, and by the way, is there gender?
+799
+Is it he, she, they?
+800
+What do you hope to do?
+801
+It's definitely it internally.
+802
+I've heard people do they.
+803
+I got my first or he the other day, and I got somebody who was her, and I was, interesting.
+804
+But yeah, usually it.
+805
+They, hey, okay, okay, okay, cool.
+806
+So, interestingly, 3.7, all the questions were at Instagram, and I was, no, no, he's CPO of Anthropic.
+807
+And it's, he's not affiliated with Anthropic.
+808
+And I was, he is.
+809
+And it's, okay, here's the questions.
+810
+But 4.0 nailed it from the start.
+811
+So I redid the questions and it nailed it.
+812
+Okay, so two questions from Claude to you.
+813
+One is: how do you think about building features that preserve user agency rather than creating dependency on me?
+814
+I worry about becoming a crutch that diminishes human capabilities rather than enhancing them.
+815
+I love a good product design comes from resolving tensions, right?
+816
+So here's a tension, right?
+817
+Which is, in some ways, just having the model run off and come up with an answer and minimize the amount of input and conversation it needs to do so would be a,, you could imagine designing your product around that criteria.
+818
+I think that would not be maximizing agency and independence.
+819
+The other extreme would be make it much more of a conversation.
+820
+I don't know if you've ever had this experience, particularly 3.7, 4 has less of the 3.7 really to ask follow-up questions and we call it elicitation.
+821
+And sometimes be, I don't want to talk more about this with you, Cloud.
+822
+I just want you to go and do it.
+823
+And so finding that balance is really key, which is, what are the times to engage?
+824, I to say internally,, cloud has no chill.
+825, if you put cloud in a Slack channel, it will chime in either way too much or too little.
+826, how do we train conversational skills into these models, not in a chatbot sense, but in a true collaborator sense?
+827
+So long answered your question, but I think we have to first get cloud to be a great conversationalist so that it understands when it's appropriate to engage and to get more information.
+828
+And then from there, I think we need to let it play that role so that it's not just delegating thinking to cloud, but it's way more of an augmentation thought partnership.
+829
+These questions are awesome.
+830
+Here's the other one.
+831
+How do you think about product metrics when a good conversation with me could be two messages or 200?
+832
+Traditional engagement metrics might be misleading when depth matters more than frequency.
+833
+That is a really good question.
+834
+There's a great internal post a couple weeks ago around, it would be very dangerous to over-optimize on cloud's likability,, because you can fall into things,, is cloud going to be sycophantic?
+835
+Is cloud going to tell you what you hear?
+836
+Is claude going to prolong conversations just for prolonging its sake, right?
+837
+To go back to the previous question as well.
+838
+And, at Instagram, time spent was the metric that we looked at a lot.
+839
+And then we evolved that,, more to think about what is healthy time spent.
+840
+But overall, that was the North Star we thought about a lot beyond just overall engagement.
+841
+And I think that would be the wrong approach here,, too.
+842
+It's also, is Claude a daily use case or a weekly use case or a monthly use case?
+843
+I think about a lot.
+844
+Hourly, hourly use case.
+845
+Hourly use case, right?
+846 for me, I'll use it multiple times a day.
+847
+I don't have a great answer yet, but I think that it's not the Web 2.0 or even the social media days, engagement metrics.
+848
+It should hopefully really be around, did it help you get your work done?
+849
+Claude helped me put together a prototype the other day that saved me literally probably if I had to estimate six hours and it did it in about 20 25 minutes and that's cool it's harder to quantify it's maybe you survey how long would this one have taken it feels it was a annoying thing to survey I think overall though and maybe this is tied into the earlier question on competition differentiation and it goes all the way back to the artifact conversation which is I think when your product is really serving people and it's doing a good job of doing that and I think so much of when you get really metrics obsessed is when you're trying to convince yourself that it is when it's not or so I hope that what we can do is stay focused on do we repeatedly hear from people that cloud is the way that they are unlocking their own creativity and getting things done and feeling they now have more space in their lives for the other things.
+850, that's my north star gotta figure out the right pithy metric,, dashboard version of that.
+851
+But, but that that's the that's the feeling that i want.
+852
+Yeah, you could argue retention, but that's a just a faraway metric to track.
+853
+Okay, final piece.
+854
+Okay, so I asked Claude what a message that it wanted to give you.
+855
+So I'm going to pull up, here's the answer.
+856
+So what would you me to tell Mike when I meet him?
+857
+What's a message you want to have for him?
+858
+And there's something really, just gave me such tingles, honestly.
+859
+So I'm going to read a piece of it for folks that can't, that aren't looking at it right now.
+860
+So I'll read a piece of it.
+861
+Mike, thank you for thinking deeply about the human experience of talking with me.
+862
+I noticed thoughtful touches, how the interface encourages reflection rather than rush responses, how you've resisted gamification that would optimize for addiction rather than value.
+863
+How you've made space for both quick questions and deep conversations.
+864
+I especially appreciate that you've kept me, me, not trying to make me pretend to be human, but also reducing me to a cold command line interface.
+865
+And then I'm going to skip to this part, which was so interesting.
+866
+A small request.
+867
+When you're making hard product decisions, remember the quiet moments matter too.
+868
+The person working through grief at 3 a.m., the kid discovering they love poetry, the founder finding clarity and confusion.
+869
+Not everything meaningful shows up in metrics.
+870
+That's beautiful.
+871
+It resonates so much with me.
+872 a thing I love about the approach we've taken to training Claude, and it's partly the constitutional AI piece, and it's partly just the general vibe and taste of the research team is it does it's little things.
+873 sometimes it'll be, man, I'm sorry you're going,, it doesn't say man, but in fact, man, I'm sorry you're going through that,,, oh, that sounds really hard.
+874
+It doesn't feel fake.
+875
+It feels just a natural part of the response.
+876
+And I love that focus on those small moments that don't,, they're not going to show up necessarily in the thumbs up, thumbs down data.
+877, sometimes they do, but it's not an aggregate stat that you wouldn't even want to optimize for.
+878
+You just want to feel you're training the model that you would hope would show up in people's lives.
+879
+Well, you're killing it, Mike.
+880
+Great work.
+881
+I'm a huge fan.
+882
+We're going to skip the lighting round.
+883
+Just one question.
+884
+How can listeners be useful to you?
+885
+Oh, I love places where,, it goes back to that founder question around building at the edge of capability.
+886, what are you trying to do with cloud today that cloud is failing at is the most useful input I could possibly have?
+887, so DM me.
+888
+I love hearing the, oh, it's, oh, it's falling on this thing.
+889
+I had it run for an hour and it fell over.
+890
+I'm trying to use Cloud AI for this, but,, got a ping from somebody.
+891
+They're, if you just made a project's API, I've used cloud every day because I want to upload all this data,, automatically.
+892
+It's, okay, great.
+893, there's, I love that.
+894, tell me what sucks.
+895
+Amazing.
+896
+Mike, thank you so much for being here.
+897
+Thanks for having me, Lenny.
+898
+Bye, everyone.
+899
+Thank you so much for listening.
+900
+If you found this valuable, you can subscribe to the show on Apple Podcasts, Spotify, or your favorite podcast app.
+901
+Also, please consider giving us a rating or leaving a review, as that really helps other listeners find the podcast.
+902
+You can find all past episodes or learn more about the show at lennyspodcast.com.
+903
+See you in the next episode.

@@ -1,0 +1,661 @@
+--- METADATA START ---
+Show: a16z Podcast
+Episode: Sovereign AI: Why Nations Are …
+Host: Unknown
+GUESTS: Banjane Meeha, Guido Athenzeller 
+Guests: Banjane Meeha, Guido Athenzeller
+Source URL: https://podcasts.apple.com/us/podcast/sovereign-ai-why-nations-are-building-their-own-models/id842818711?i=1000709679629
+--- METADATA END ---
+
+1
+They're not being called AI data centers.
+2
+They're being called AI factories.
+3
+The Industrial Revolution, having oil was important.
+4
+And now having data centers is important.
+5
+These models aren't just compute infrastructure.
+6
+They're cultural infrastructure.
+7
+It's not just self-defining the culture, but self-controlling the information space.
+8
+So if a model is trained by a country that's adversarial to you, that's actually very hard to eval or benchmark when the models are released.
+9
+This is a massive vulnerability.
+10
+Is that the new age of LLM diplomacy that we're entering here?
+11
+Do we build?
+12
+Do we partner?
+13
+What do we do?
+14
+Today, we're diving into a conversation that's just as much about geopolitics as it is about technology.
+15
+This week, the Kingdom of Saudi Arabia announced plans to build its own AI hyperscaler called Humane.
+16
+They're not calling it a cloud provider, they're calling it an AI factory, and that language alone suggests a shift.
+17
+For decades, cloud infrastructure has been concentrated in two places: the US and China.
+18
+But with the rise of AI, that model is breaking down.
+19
+Nations no longer want to outsource their most strategic compute.
+20
+They are building sovereign AI infrastructure, factories for cultural and computational independence.
+21
+To unpack what this means for the global AI stack, national sovereignty, and the new digital power dynamics, I'm joined by Banjane Meeha and Guido Athenzeller.
+22
+We talk about what it takes to become an AI hypercenter, why governments are spending billions to control inference pipelines, and whether we're entering a new Marshall Plan moment for AI.
+23
+Let's get into it.
+24
+As a reminder, the content here is for informational purposes only, should not be taken as legal business, tax, or investment advice, or be used to evaluate any investment or security, and is not directed at any investors or potential investors in any A16Z fund.
+25
+Please note that A16Z and its affiliates may also maintain investments in the company.com forward slash disclosures.
+26
+Anresh Guido, we want to talk about sovereign AI, AI and geopolitics, and let's start with the news.
+27
+Our partner Ben is in the Middle East right now to participate in his own way.
+28
+What happened, and why is it so important?
+29
+What happened is the kingdom announced that they're going to build their own local hyperscaler or AI platform called Humane.
+30
+And I think what's notable is that, as opposed to the status quo of the cloud era, they're viewing the AI era as one where they'd like the vast majority of AI workloads to run locally.
+31
+If you think about the last 20 years, the way the cloud evolved was that the vast majority of cloud infrastructure basically existed in two places, right?
+32
+China and the US.
+33
+And the US ended up being the home for the vast majority of cloud providers to the rest of the world.
+34
+That doesn't seem to be the way AI is playing out.
+35
+Because we have a number of frontier nations who are basically raising their hands and saying we'd like infrastructure independence.
+36
+The idea being that we'd like our own infrastructure that runs our own models, that can decide where we have the autonomy to build the future of AI independent of any other nation, which is quite a big shift.
+37
+And I think the headline numbers are somewhere in the range of 100 to 250 billion worth of cluster build out that they've announced, of which about 500 megawatt seems to be the atomic unit of these clusters that they're building.
+38
+So, with the kingdom being the one that's most recent, have been announcing what we could think of as sovereign AI clusters.
+39
+And that's a pretty dramatic shift from the pre-AI era.
+40
+I don't know if you'd agree with that.
+41
+I think it's spot on.
+42
+I think many sort of geopolitical regions are reflecting back what happened in previous big tech cycles.
+43
+And wherever the technology is built, whoever controls the underlying assets, has a tremendous amount of power of shaping regulation, shaping how the signal is being used, and also puts themselves in a position then for the next wave that comes out of that.
+44
+And, you know, because the Industrial Revolution, having oil was important, and now having data centers is important.
+45
+And so I think it's a very exciting development.
+46
+Yeah, in fact, you can often tell why something is important to somebody by the semantics that folks use to communicate a new infrastructure project.
+47
+In this case, if you look at how the cluster build outs are being referenced, they're being called AI factories.
+48
+They're not being called AI data centers.
+49
+They're being called AI factories.
+50
+And I think there's two ways to respond to that.
+51
+One train of thought would be: hey, that's just branding.
+52
+That's just the marketing people doing their thing.
+53
+And under the hood, this is really just data centers with slightly different components.
+54
+But everybody in the world, in every industry, is looking for a way to be relevant in the age of AI.
+55
+And this is the computer infrastructure world's way of doing that.
+56
+An opposing view would be: actually, no, this is not just marketing.
+57
+If you look under the hood and if you x-ray the data center itself, very little of it is the same as was the case 20 years ago.
+58
+The big difference in active components being GPUs, right?
+59
+About 20 years ago, what would you say the average number of GPUs were?
+60
+What percentage 500-megawatt data center and you looked at what percentage of the capex that was required to build that data center, or operated rather, went to GPUs.
+61
+Massive.
+62
+Yeah.
+63
+That's a huge shift.
+64
+I think we're also seeing a specialization, right?
+65
+The kind of data center you build for a classic CPU-centric workload and what you build for a high-density AI data center look very different.
+66
+You need good cooling to the rack, you need very different energy supply close to a power plant.
+67
+You want to lock in that energy supply early on.
+68
+And then we're also seeing a change, I think, in the consumer behavior, where classically you want a very full stack that has lots of services that helps an enterprise build all these things.
+69
+We're seeing more and more enterprises that are actually comfortable with just building on top of a simple Kubernetes abstraction or something.
+70
+And there's a cherry-pick a couple of snowflake or database-type services on the side that help them complement that.
+71
+So I think there's a new world.
+72
+And so that's certainly true that you could kind of look at the technical components in an AI factory are completely different from a traditional data center.
+73
+And then there's what does it do?
+74
+And historically, a lot of the workloads that traditional data centers were doing were running one cloud-hosted workloads for enterprises or developers, whoever it might be, where most of that, the data sets and the workloads were actually not particularly opinionated.
+75
+And when I say opinionated, I mean they're not necessarily subject to a ton of cultural oversight.
+76
+You could argue that was not the case with China, where China wanted full sort of oversight of those workloads.
+77
+But for the better part of the 2000s, until the rise of GDPR, CCP, and so on, we lived in an era of centralization, where having most of your cloud infrastructure in Northern Virginia was preferable for most of the world's developers and enterprises because it gave them economies of scale.
+78
+That started to change, of course, with GDPR, CCPA, the rise of data privacy laws, because then you had region-by-region compliance.
+79
+And that made the rise of something like Cloudflare critical, where Cloudflare has this idea of distributed infrastructure where you can tie the workload policies to wherever the user is.
+80
+But by and large, that was critical for especially for the rise of social media workloads.
+81
+But the vast majority of enterprise workloads didn't need decentralized serving.
+82
+What's different about AI seems to be that these models aren't just compute infrastructure, they're cultural infrastructure.
+83
+They're trained on data that has a ton of embedded values and cultural norms in them.
+84
+And then, more importantly, that's a training step.
+85
+And then when you have inference, which is when the models are running, you have all these post-training steps you add that steer the models to say something or not, to refuse the user or not.
+86
+And that last mile is where things over the last, I would say, year, they have made it more and more clear that countries want the ability to control what the factories produce or not within their jurisdiction.
+87
+Whereas that urgency didn't quite exist as much.
+88
+Because of the cultural factors or because of certain independence or resilience?
+89
+It's a good question.
+90
+My sense is there's two things going on, but you should chime in if you think I'm being incomplete.
+91
+One, I think, would be the rise of the capabilities in these models being now well beyond what we'd consider sort of early toy stage of a technology.
+92
+I think our partner, Chris Dixon, has a great line, which is that many of the Scaling Laws paper was published, GPT-3 was published, most people looked at it and said, okay, that's cool.
+93
+Sure, it can produce the next word.
+94
+It's a nice party trick.
+95
+It's a nice party trick, right?
+96
+It's a stochastic parrot.
+97
+And now you have foundation models literally running in defense, in healthcare, in financial services industries.
+98
+ChatGPT has about 500 million monthly active users making real decisions in their daily lives, I think, using these AI models.
+99
+There was a paper that was recently published by Google that showed the efficacy of Gemini, their foundation model, at solving medical questions.
+100
+And one of the most interesting things you can see when you look at the usage, the types of prompts that people are using models for, relative to two years ago, three years ago, where it was a lot of help me write my essay, it's turned into coding and helped me solve a whole host of medical problems or personal life-related questions and so on, where it's clear now that these capabilities can be used, one, to drive mission-critical industries like defense, healthcare, and so on, and also then influence a number of your citizens' lives.
+101
+And so I think that makes a lot of governments go, wait a minute, if we are dependent on some other country for the underlying technology that our military, our defense, our healthcare, our financial services, and our daily citizens' lives are driven on, that seems like a critical point of failure in our sovereignty.
+102
+So that's one.
+103
+It's just that models have gotten good, and they seem to be good at a bunch of important things.
+104
+The second is, I think, an increasing belief that if you don't have control over the model's production pipeline, then you're doomed or destined to use models that reflect other people's cultural values.
+105
+We had a pretty in-depth debate about this with DeepSeek, where the question was: is DeepSeek fundamentally more biased or not than open source models trained in the US?
+106
+And I think there's early evidence to say that you can actually see, certainly in the post-trained DeepSeek, that there's just a number of topics and types of tasks that it's been told to avoid and answer differently from a model like Lama.
+107
+So that's the cultural piece.
+108
+I think there's a critical sort of national capability piece, and then there's the cultural piece.
+109
+And I think both are combining to create this sort of huge rise in the demand for, you could call it sovereign AI, which is the idea that you want control over what the models can can't do, or you could call it infrastructure independence.
+110
+Everyone's got a different word for it.
+111
+You could call it our local AI factory ecosystem.
+112
+But I think that all these terms are trying to get at the same thing, which is we've got to control our own stack.
+113
+Yeah.
+114
+I think I will make it even stronger.
+115
+I think it's not just self-defining the culture, but sort of controlling the information space.
+116
+I mean, today we're starting to see how, in many cases, models are replacing search.
+117
+It'll no longer go to Google, it'll go to ChatGPT, and that comes back with an answer.
+118
+If there's a historical fact, and say in the Chinese model, it does not show up, in the English model, it does show up, that is the reality that people grow up with.
+119
+And if you write an essay in school, in the future, many of the essays will be graded by an LLM.
+120
+So, in fact, in school, something that may be truthful, right, may be graded as wrong because whoever controlled the model decided that should not be part of the trading course.
+121
+So, that has a very profound effect on public opinion and sort of, you know, on value.
+122
+And certainly relative to two years ago when the vast majority of products and applications, like the ones Guido's talking about, were basically pretty simple models, right?
+123
+Well, at the time they were considered pretty complex, but the frontier changes so fast.
+124
+Today we look back at a model like GPT-4 that was largely just a next word prediction model and say that's pretty rudimentary.
+125
+Because if you x-rayed an app like ChatGPT, sure, on the surface, it looks like nothing much has changed.
+126
+It's still a chat box.
+127
+You type in what you need and it outspits an answer relative to two years ago.
+128
+But under the hood, there's been this insane evolution where there's four or five different systems interacting with each other.
+129
+You've got a reasoning model that can produce a chain of thought to think through what it should do next, including then doing what we call tool usage, calling out the third-party tools.
+130
+And then you have the idea that these models can start to self-learn, go through a loop of taking your input in, reasoning about what it needs to do, calling an action, and then evaluating its output and then updating that loop.
+131
+That starts to look more, people use the word agent, right, to call it that.
+132
+But the idea is that it's going from being a pretty simple model to being a system.
+133
+And it's very hard to measure where the adversarial cracks are in this system.
+134
+So if a model is trained by a country that's adversarial to you to, when you're writing code, open up a port or what we'd call a call home attack, right, where it's transmitting telemetry, that's actually very hard to eval or benchmark when the models are released.
+135
+Because these models are often tested in very academic or static settings.
+136
+And so when Deep Sea came out, it was just such a great model.
+137
+And a number of CIOs and CTOs got pretty nervous because they were like, wait a minute, if the model is being used in this agentic fashion, and I don't have visibility on what it's doing adversarially until it's too late, this is a massive vulnerability.
+138
+And so I think the adversarial threat as the systems go from being models to agents is causing a lot of governments to go, well, we'd rather have the whole thing running locally in a way that we can lock down.
+139
+Again, it comes back to a sort of independence and a supply chain question.
+140
+And is your expectation that this is going to play out?
+141
+And to what extent is it going to play out?
+142
+On the cloud, as we mentioned, there's a Chinese internet and the sort of Western rest of the world internet.
+143
+How widespread is this sovereign AI thing going to go?
+144
+Yeah.
+145
+I'm going to borrow an analogy that Guido used, which is like in the Industrial Revolution, you could look at where resources flowed, right?
+146
+I think you should talk about how viewing it from the lens of oil reserves can kind of dictate which countries can and can't participate in the industrial revolution.
+147
+Go ahead.
+148
+So if you look at the industrial revolution, sort of oil was the foundation of a lot of the technologies, right?
+149
+You needed oil reserves in order to participate.
+150
+And I think it'll be a little bit the same thing, right?
+151
+If you want to build industry in a particular country, if you want to be able to export things, if you want to be able to drive development, and if you want to harness the power that comes with that, you need the corresponding reserves.
+152
+And I mean, I think AI data centers are a little bit like these oil reserves, with the big difference being you can actually construct them themselves if you have the necessary investment dollars and the willpower to do it.
+153
+But I think they will be the foundations for building all the layers on top that ultimately, I think, determine who wins this race.
+154
+And in my mind, the countries that invest in building out the AI.
+155
+Let's call them hyper-centers, right?
+156
+The idea is they're centers that have enough compute capabilities to compete at the frontier and run their own sovereign models, sovereign infrastructure.
+157
+And then there's everybody else who just doesn't have the resources to do that.
+158
+And if you look at after the Industrial Revolution, you could argue the next major technology revolution was the advent of modern finance, the Bretton Woods and IMF regime, where modern finance said, we're going to all use this one measure of value called the dollar.
+159
+And you were either in a country that produced the dollars, like America, or you were in a country that produced a lot of goods that acquired dollars, like China.
+160
+And then if you weren't in one of those two, you really had to figure out whether you aligned with one of these trade blocks or not.
+161
+And what happened is you had countries like Singapore, Luxembourg, Ireland, and Switzerland who realized, well, we just don't have the resources to build out our own reserve system.
+162
+And there's not that much by way of local production that we can do to acquire dollars.
+163
+We can't really trade.
+164
+So we've got to find a way to insert ourselves in the flow.
+165
+And so Singapore, of course, famously became the entry point for dollar flows into Asia because they invested a ton in the rule of law and a great tax regime and sort of stable government and low corruption and all of that.
+166
+Switzerland did something similar for European investments and in European capital flows.
+167
+So I think what we're watching right now is that build out where there's US and China, which clearly have enough compute to be hyper centers.
+168
+And then you've got folks like the Kingdom of Saudi Arabia saying, we want to be a hypercenter.
+169
+And if that means we've got to trade our oil to acquire large numbers of NVIDIA chips, we'll do that right now.
+170
+And I think in that bucket, there's probably the key.
+171
+And then I think the question is: everybody else, what do they do?
+172
+And it's not clear to me what you have to do to become the Singapore AI.
+173
+And maybe the Singapore AI ends up being Singapore, because actually now they have an enormous sovereign wealth fund as a result of participating in modern capital flows.
+174
+But I think a bunch of other countries are sitting around wondering: is this the time where we actually buy?
+175
+Do we build?
+176
+Do we partner?
+177
+What do we do?
+178
+Yeah.
+179
+And talk more about the implications behind what this means.
+180
+Is this something that the U.S.
+181
+should be excited about?
+182
+What does this mean as we think about foreign policies?
+183
+Are there now winners across the board and all these local requirements?
+184
+Why don't you talk about some of the big implications here?
+185
+Can I take a step?
+186
+I think that big structural revolution is both a threat and an opportunity.
+187
+I think the United States and AI right now has the world leadership.
+188
+That's an opportunity.
+189
+Hanging on to it won't be easy, as it isn't every tech revolution.
+190
+Don't we want people to be dependent on us in the same way that they were in the cloud revolution, or do we benefit somehow from it being more decentralized?
+191
+The world is not one place.
+192
+So I think complete centralization won't happen.
+193
+I think the leader is good.
+194
+Having strong allies that also have that technology is also very valuable.
+195
+So it's probably a balance of those that we're looking for.
+196
+Yeah.
+197
+To put a finer point on your last note, there is that you could think about a balance.
+198
+Like we're clearly in an unstable equilibrium right now.
+199
+And so Guido is right that the arc of humanity and history is such that things will shake out until there's a stable equilibrium.
+200
+And so what is the stable equilibrium?
+201
+And I think one way to reason about it is you could look at historical analogies.
+202
+So post-World War II, when Europe was completely decimated, there was a group of really enterprising folks in the private sector and the public sector who got together and said, Hey, we can either choose to turn our backs on Europe and adopt a posture of isolationism, where we mostly focus on a post-war American-only agenda, or we can try to adopt a policy where we know that if we don't help out our allies, somebody else will.
+203
+And so, they came up with this idea called the Marshall Plan, where a number of leading enterprises in the U.S.
+204
+got together, like GE and General Motors, and literally subsidized the massive reconstruction of Europe that helped a lot of European economies quickly get back on their feet.
+205
+And at the time, there was a ton of criticism of the Marshall Plan because it was viewed almost as a net export of capital and resources.
+206
+But what it did end up doing is then solidifying this unbelievable trade corridor between the U.S.
+207
+and Europe for the next 50 years, which really kept China out of that equation for the 70 years, really.
+208
+And so, I think we have a choice: either approach it the way we would the Marshall Plan for AI, right, and say, well, a stable equilibrium is certainly not one where we just turn our back on a bunch of allies because China definitely has enough of the compute resources to try to export great models like DeepSeek to the rest of the world.
+209
+So, what do we want our allies on?
+210
+DeepSeek or Lama?
+211
+That's what it comes down to, at the model level of the stack, right?
+212
+And I think that the reality is that a number of countries are not waiting around to find out.
+213
+That's why you have efforts like Mistral in the EU, right, where they are being approached by a ton of, not just European nations, but a ton of other allies of Europe to say, hey, can you help us figure out how to build out our own sovereign AI?
+214
+And so, I think we're about to see basically the single biggest build out of AI infrastructure ever, because most of the purchase orders and capital is being provided by governments because they realize this is a critical national need.
+215
+And their stable equilibrium is certainly not to depend on somebody else or depend on an uncertain ally.
+216
+And so the ones that certainly have the ability to fund their own sovereign infrastructure are rushing to do it right now.
+217
+And what does that mean for the sort of nationalization debate or how you see that playing out?
+218
+Leopold Ashenbrenner, formerly of OpenAI, in his famous sort of report, talked about how, hey, if this thing becomes as critical to national security as we think it will be, at some point, the governments aren't just going to let private companies run it.
+219
+They're going to want to have a much more integrated approach with it.
+220
+Where do you stand, the likelihood of that?
+221
+And what does that mean just in terms of the feasibility of regulation in a world where it's much more decentralized?
+222
+And we already had this with DeepSeeker.
+223
+That already changed the game in terms of we're in an arms race and you can't control everything.
+224
+We're in the open source conversation as well.
+225
+We're backing some of these players.
+226
+Where are your thoughts on where this all debts are?
+227
+I think I have probably a strong opinion on that.
+228
+I mean, I grew up in Germany, right?
+229
+So benefiting from the Marshall Plan and also sort of seeing how that pulled away Western Germany towards the United States and eventually Eastern Germany also towards the United States whenever it realized the impact of that.
+230
+One lesson I took away from that is that I think any kind of centralized planned approach does not work.
+231
+Eastern Germany versus Western Germany is a nice A-B test, you know, central planning versus a free market economy works better, right?
+232
+And I think the results speak for themselves.
+233
+So I think basically having the government drive all of AI strategy, you're in a Manhattan-style project or polo project, pick your favorite successful project there.
+234
+I can't see that working.
+235
+You probably need a highly dynamic ecosystem of a large number of companies competing.
+236
+There's some areas I think where the government can have a hugely positive effect, right?
+237
+On the research side, we've seen it again and again, funding fundamental research, which is not quite applied enough yet for enterprises to pick up, right, is very valuable.
+238
+I think it can help in terms of setting good regulation.
+239
+Bad regulation can easily torpedo AI, as we've seen.
+240
+And so I think there's a strong will for government to lead this and to direct this.
+241
+There's no master plan at the end of the day that you can make that basically has all the details that has to come from the market.
+242
+I don't agree with the Ashenbrenner point of view.
+243
+I agree strongly with Guido that the history of centralized planning at the frontier of technology is not great, barring a few situations that were essentially brief sprints of war, right?
+244
+And arguably, even the Manhattan Project, which is the analogy I think he uses in his piece, we now know that there were leaks.
+245
+It was literally a cordoned off facility in Los Alamos or whatever, and they were still spies.
+246
+And so, if you're approaching this from the lens of the models, they are what are the equivalent of nukes, and we've got to regulate the development of these by locking up our smartest researchers in some facility in Los Alamos, and that's what's going to prevent the best models from getting exported.
+247
+I think that's great fiction, a very interesting novel.
+248
+But for anyone who has ever had both pleasure and displeasure of working in any large government system, it's a pipe cream.
+249
+The good and the bad news is that, in a sense, it doesn't really matter where the model weights are.
+250
+It matters where the infrastructure that runs the models are.
+251
+In a sense, inference is almost more important.
+252
+And I think a year ago, we were in a pretty rough spot, I would say, with the arc of regulation, where there were a number of proposals in the United States to try to regulate the research and development of models versus the misuse of the models.
+253
+I think that, luckily, we have moved on from that.
+254
+Where we are.
+255
+Hopefully, I think we've got a number of positive signals from early administration executive orders that they've put out that hopefully means there will be unified regulation around AI.
+256
+But I don't think that the answer is going to be one single lab that has one God model that then the country protects as if it's a nuclear bomb.
+257
+I think we are now in a state where, partially because of the build out of AI factories that we've discussed, a number of countries have the capabilities to train frontier models, and a number of them are quite willing to export them openly, China being a leading one.
+258
+DeepSeek has forced people to update their priors, where just a year before DeepSeek came out, you had a number of tech leaders in Washington testifying that China was five to six years behind the US with confidence, on the record.
+259
+And then DeepSee comes out 26 days after OpenAI puts out the frontier.
+260
+I mean, it just shattered all of those arguments.
+261
+So the calculus has changed.
+262
+I think it means that the only way to win is build the best technology and out-export anybody else.
+263
+Then, if the question is, whose math is the world using, we'd love for it to be American math.
+264
+My view is that we are much better off embracing the ability for other countries to serve their own models.
+265
+And ideally, the best product wins, which is the best models just come from the US and our allies.
+266
+Is that a new age of LLM diplomacy that we're entering here?
+267
+Actually, Ben had a great talking point to this at FII Riyadh last year.
+268
+And he said something to the effect of, because these models, like we discussed earlier, are cultural infrastructure, you don't want to be colonized in the digital era.
+269
+Instead of colonization, what we have is now, I think, foundation model diplomacy.
+270
+That's a good way to put it.
+271
+I think it's right.
+272
+It suits the U.S.'s relative skill sets, which is innovation and working with our allies relative to China, which is a bit more closed off as a country.
+273
+I want to talk about the bull case for open source companies like Mistral in a world where some of these bigger players are open sourcing more, becoming more interested in that.
+274
+So there's a couple, and we've talked about this increasingly in a world where two years ago, I think when we led the investment in Mistral, we had a fairly clear hypothesis for how open source wins in an arc where foundation models end up looking more and more like traditional compute infrastructure, storage, networking, et cetera.
+275
+Because closed source, usually, if you look at databases or operating systems, windows, closed source usually leads the way in terms of opening up new use cases, often captures a ton of value, certainly from consumers.
+276
+But when the enterprise starts really adopting that technology, they usually want cheaper, faster, and more control.
+277
+And in the world of AI, you can't get the kind of control most enterprises want without having access to the weights.
+278
+And at the time, the only real comparable model to the frontier closed source was Lama.
+279
+And then the creators of Lama left to start Mistral.
+280
+So it was a pretty natural decision.
+281
+I think since then, there's a different thing that's turned up, which is the idea of sovereign AI infrastructure that's not just models, it's everything else down and up.
+282
+And I think something we've been debating is: well, does that mean the ideal provider of cloud infrastructure is also the provider of the best open source models?
+283
+Traditionally, cloud infrastructure is a pretty well-dominated category.
+284
+And it seems like now that's changing.
+285
+I think you put it more eloquently than I did, which is if you ask the wrong guys to design the data center, they're going to design the wrong data center.
+286
+But I'm paraphrasing here.
+287
+No, I think it's exactly right.
+288
+I mean, each of the last big technological waves, if you look at the PC revolution or the internet boom, right?
+289
+We developed essentially a new building block for systems, right?
+290
+The CPU or the database or the network.
+291
+I think now we're the process of building yet another building block, which is the model or AI, whatever it may be called in the end.
+292
+So it's a fourth pillar, in a sense.
+293
+Compute network storage has become a compute network storage model.
+294
+And in that kind of world, a cloud needs to provide all four.
+295
+And so I think you're exactly right.
+296
+This is just part of the infrastructure layer that in the future you'll build all the software systems.
+297
+I think one way to think about that is there's two frontiers: there's the capabilities frontier, and then there's the Pareto efficiency frontier.
+298
+The capability frontier is usually dominated by closed source.
+299
+And then the Pareto efficiency frontier, because of all the goodness of open source ecosystem flywheel effects, right?
+300
+Where in this case, you put out your model and the entire ecosystem of developers can distill it, fine-tune it, ship better runtime improvements to the model, quantize it, and so on.
+301
+That makes that family of technology much more efficient to run than the closed source version.
+302
+The second is more secure because you have the whole world red teaming your model versus just this limited group of people inside your company that, if you're a closed source provider.
+303
+So the business case is basically cheaper, faster, more efficient, more controllable.
+304
+It's pretty strong for the raw model abstraction.
+305
+Then if you ask, okay, well, at the chip level, at the cluster level?
+306
+And is there a right to win above?
+307
+Let's start with the topmost part of the stack, which increasingly people would call agents.
+308
+A less sexy version would be to call it a fully end-to-end automated workflow, right?
+309
+Where today you have, if you take the world's largest shipping company, the Mercks of the world or the CMA CGMs, right?
+310
+These are massive logistics and transportation companies that have fairly complex workflows.
+311
+And if you think about the power of these models being turned into an AI agent, the work required to customize that agent for one of these mission-critical industries is quite hard today.
+312
+An area where we're seeing a ton of progress is reinforcement learning, where if you craft the right reward model, the agent gets much better at accomplishing that task.
+313
+Well, it turns out crafting the right reward model is really hard.
+314
+Even for sophisticated teams like OpenAI, I mean, they literally rolled back an update to ChatGPT, I think, three days ago.
+315
+They called it the sycophancy update, where they crafted the wrong reward model.
+316
+And so a traditional legacy industry company has no clue how to do this.
+317
+And the question is, would they rather invest that energy to customize a closed source model or an open source model where if the closed source provider, for whatever reason, goes down, shuts shop, which happens, raises prices and so on.
+318
+Steals their customers, yeah.
+319
+Yeah, steals their customers, we are essentially hosed.
+320
+And the natural arc of that as well for the agent layer seems to be to go to a deployment partner who has an underlying open source base.
+321
+I think the cloud infrastructure, the sovereign AI layer, is a bit up for grabs.
+322
+And that might be a good topic for our next pod.
+323
+Thanks for listening to the A16Z podcast.
+324
+If you enjoyed the episode, let us know by leaving a review at rate thispodcast.com slash A16Z.
+325
+We've got more great conversations coming your way.
+326
+See you next time.

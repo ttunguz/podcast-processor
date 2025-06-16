@@ -1,0 +1,2525 @@
+--- METADATA START ---
+Show: N/A
+Episode: How Palantir built the ultimat… - Lenny's Podcast: Product | Growth | Career
+Host: Lenny Rachitsky
+GUESTS: Nabil Koshaibi
+Guests: Nabil Koshaibi
+Source URL: https://podcasts.apple.com/us/podcast/how-palantir-built-the-ultimate-founder-factory/id1627920305?i=1000707982175
+--- METADATA END ---
+
+ 30% of PMs that we found here start at company.
+ Just give us a picture of what the people are like.
+ I feel like they're screened really hard for a few traits in particular.
+ One is like very independent minded people who weren't afraid to push back.
+ Two is people with broader intellectual interests.
+ What's the difference between say a PM at Palantier versus a traditional PM?
+ They were extremely powerful about only making people PMs
+ who had first proven themselves out as forward deployed engineers.
+ You basically could not become a PM any other way.
+ There's two types of engineer at Palantier.
+ So there's one that works on the cold products and the retraditional software engine.
+ There was a different type of engineer which you sent into the field, right?
+ You would spend maybe Monday to Thursday
+ and you would actually go into the building where the customer worked
+ and you would work alongside them.
+ You would literally get a dust bath.
+ And so that engineer became known as a forward deployed engineer.
+ What's something that you believe that most other people don't?
+ I think this is somewhat contrarian view within tech.
+ Today, my guest is Nabil Kureshi.
+ Nabil is a founder, a writer, a researcher and an engineer.
+ He was recently a visiting scholar researching AI policy
+ at the Mercatus Center alongside Tyler Cohen.
+ At one point, he worked with the National Institute of Health
+ and major clinical centers to create the largest medical data set in the world.
+ He worked at the Bank of England for a bit.
+ He was founding member and VP of business development at GoCardless,
+ one of Europe's biggest financial technology unicorns
+ and most related to the topic of this conversation.
+ Nabil spent almost eight years at Palantir as a forward deployed engineer,
+ working on public health projects with US federal agencies,
+ including public health services during the COVID-19 response
+ and applied AI in drug discovery.
+ Whether you are a fan of Palantir or hate everything that they do,
+ they are an important and fast-growing company
+ that is pumping out incredible product leaders
+ as you'll hear more than any other company in the world.
+ So it is worth studying and understanding.
+ I've never heard an in-depth conversation digging into how they operate,
+ built product, hire, and were able to scale from a primarily services business
+ to a software business.
+ So I am very excited to bring you this insight look.
+ In our conversation, we go deep into what the heck this Palantir even do,
+ why getting good at managing lots of data
+ is an under-appreciated secret to their success,
+ a look at the unique forward deployed engineer role that they innovated
+ and what other companies can borrow from their insights here,
+ also how they hire and how they build amazing product leaders,
+ plus a ton of advice on talking to customers, building products,
+ and starting companies.
+ If you enjoy this podcast, don't forget to subscribe
+ and follow it in your favorite podcasting app or YouTube.
+ Also, if you become an annual subscriber of my newsletter,
+ you get a bunch of amazing products for free for a year,
+ including superhuman, notion, linear, perplexity, granola, and more.
+ Check it out at lennysnewsletter.com and click bundle.
+ With that, I bring you, Nabil Karashi.
+ This episode is brought to you by WorkOS.
+ If you're building a SaaS app, at some point,
+ your customers will start asking for enterprise features
+ like SAML authentication and SKIM provisioning.
+ That's where WorkOS comes in, making it fast and painless
+ to add enterprise features to your app.
+ Their APIs are easy to understand
+ so that you can ship quickly and get back
+ to building other features.
+ Today, hundreds of companies are already powered by WorkOS,
+ including ones you probably know,
+ like Vercel, Webflow, and Loom.
+ WorkOS also recently acquired Warren's,
+ the Fine Grain Authorization Service.
+ Warren's product is based on a groundbreaking
+ authorization system called Zanzabar,
+ which was originally designed for Google
+ to power Google Docs and YouTube.
+ This enables fast authorization checks at enormous scale,
+ while maintaining a flexible model that can be adapted
+ to even the most complex use cases.
+ If you're currently looking to build role-based access control
+ or other enterprise features like single sign-on,
+ SKIM, or user management, you should consider WorkOS.
+ It's a drop-in replacement for Auth0
+ and supports up to one million monthly active users for free.
+ Check it out at WorkOS.com to learn more.
+ That's WorkOS.com.
+ This episode is brought to you by Atio, the AI Native CRM.
+ Atio is built to scale with your business from day one.
+ Connect your email and calendar,
+ and Atio instantly builds a CRM
+ that matches your business model,
+ with all of your companies, contacts,
+ and interactions enriched with actionable insights.
+ Sync in your product's usage, billing info,
+ or any other data sources,
+ and Atio's flexible data model will handle it all
+ without any rigid templates or workarounds.
+ With Atio, AI isn't just a feature.
+ It's the foundation.
+ You can do things like instantly prospect and route leads
+ with research agents, get real-time insights from AI
+ using customer conversations,
+ and build powerful AI automations
+ for your most complex Workos.
+ Industry leaders like Flatfile, Replicate, and Modal
+ are already experiencing what's next for CRM.
+ Go to attio.com/lenny to get 15% off your first year.
+ That's attio.com/lenny.
+ Nabil, thank you so much for being here.
+ Welcome to the podcast.
+ Thanks, honey. Glad to be here.
+ In our chat today,
+ I want to zero in on a post that you recently wrote,
+ where you shared your reflections on your time at Palantir.
+ You spent something maybe just under eight years there.
+ The reason I'm really interested in Palantir is
+ I've been doing a bunch of research recently,
+ looking into which companies hire the best product managers
+ and create the best product managers,
+ and Palantir just keeps coming up over and over
+ in the work that I'm doing.
+ I'll share a few stats real quick.
+ I looked at which companies produce the most founders,
+ especially out of their PM team,
+ and Palantir is by far number one.
+ 30% of PMs that leave Palantir start a company,
+ and that's like, and number two is 18% and that's intercom.
+ That's that stat.
+ I looked at which companies PMs that leave
+ get immediately promoted in their next role.
+ Palantir is number one of all companies in the world.
+ I looked at which companies PMs become the first PM
+ at another startup that they join.
+ Palantir is number two in the world.
+ And then I looked at which companies alumni PMs
+ become heads of product down later in their career.
+ Palantir is number three in the world.
+ Also, just the company is doing extremely well.
+ It's worth I think something like $200 billion these days.
+ So there's a lot to learn from Palantir.
+ I actually want to start a question that,
+ I imagine every employee to Palantir constantly gets that,
+ and I still don't think people totally have an answer in their head.
+ What does Palantir do?
+ That's a great question.
+ You started off with an easy one, Lenny.
+ So Palantir, the way I describe it, right,
+ is they achieve outcomes for their customers very tactically.
+ The way they do that tends to be through a data platform.
+ So they have what I consider to be the world's best data platform,
+ and I can go into what that means in a second.
+ And then there's a couple different versions of this.
+ So there's one that's optimized for intelligence and defense use cases.
+ That one is called Gotham.
+ And then there's one that's more optimized for commercial use cases,
+ and that one's called Foundry.
+ And that's kind of the classic, you know, explanation of what they do.
+ So they sell a data platform.
+ They typically work with very large customers is the other thing.
+ So it's going to be, you know, Fortune 50.
+ It's going to be governments around the world.
+ It's going to be those kinds of customers.
+ So that's the kind of capsule answer.
+ But there's lots to unpack in that.
+ Awesome. Okay.
+ And we're going to touch on a lot of this stuff, including the data piece.
+ I want to start with talking about just kind of the people and the culture of Palantir.
+ You shared a bunch of really funny stories of what it's like to come to work
+ and even even interview at Palantir.
+ There's a story you shared where, because maybe the co-founder,
+ you're walking by and he's chewing ice.
+ And that's like some benefits of cognition.
+ Just give us a picture of what the people are like,
+ especially early days Palantir and the culture and how unique it might seem.
+ Yeah. It's definitely, it's an end of one company.
+ I don't know how else you would stop this company
+ if you were not somebody like Peter Thiel.
+ And so far as it seems like, you know, there was a point at which they owned
+ the silly fraction of the office space in Palo Alto.
+ So you'd walk around Palo Alto and it would just be, you know,
+ Palantir, hoodies, Palantir buildings everywhere and so on.
+ And so I feel like what happened at some point is they raised a lot of money
+ and they resorted to all these really interesting ways of just getting top talent
+ out of places like Stanford and other, you know, other top schools,
+ and just people who knew the founders who tended to be very interesting
+ into actual people.
+ And I feel like they screened really hard for a few traits in particular, right?
+ I would say one is like very independent minded people,
+ people who weren't afraid to push back who, you know,
+ questioned the frame of everything and thought for themselves
+ and had sort of strong convictions.
+ Two is just like people with broader intellectual interests.
+ You know, cop, cop just released a new book.
+ And, you know, he's quoting Habamas and all these European intellectuals
+ and just things you don't typically see a tech CEO do.
+ And so I think there's that intellectual strand in the company.
+ Yeah, I think three is just people who are very intensely competitive.
+ There's a sort of winnable cost mentality to the company.
+ And so I think those were the kind of set of traits
+ that were like this gravity while in California at a certain time.
+ And so you just had a lot of really fascinating people
+ joining the company at that time.
+ The way they screened for this was interesting too, right?
+ So for the longest time they had, everyone does this now, I think,
+ but it's like, at the time it was a little bit rarer as a founder,
+ had to interview you in order for you to receive an offer.
+ And so a founder, it could have been Alex Karp.
+ It could have been Stefan Cohen.
+ Oh, you're on and might have been somebody electric once though,
+ but it was always like one of these people.
+ And the interviews were pretty strange.
+ So, you know, with Stefan, it would be,
+ you'd be chatting about philosophy for an hour and a half.
+ And it would very much just be like,
+ he would pick a topic out of thin air.
+ It was impossible to prepare for.
+ And then he would just go very, very deep and try and test the limits
+ of your understanding.
+ But it would really just be a fun conversation.
+ And then, you know, if he passed the vibe check, he'd be in.
+ And so there was that strong selection mechanism.
+ There was also the question of, you know,
+ I think it's, it might have been Teo who mentioned this,
+ but he thinks that a lot of the best recruiters in the world
+ will, like companies that attract talent,
+ they put out this kind of distinctive bat signal.
+ And it has to turn some people off.
+ That's kind of the key of a good bat signal.
+ Right?
+ So I think in the present day, open AI ads topic,
+ they're both sucking up like some of the best talent
+ that you and I know.
+ And I think one way they do do that,
+ and they are sincere in this,
+ but they do really attract people who are almost
+ messianic about the potential of artificial super intelligence.
+ Right?
+ And who really believe this is the only thing that matters
+ and it is going to be the biggest thing in the world.
+ I think Palantir's version of that was that, you know,
+ they were quite focused on things like preserving the West.
+ You know, there was a slogan of Save the Shire.
+ Right?
+ So they were talking about military and defense
+ and intelligence and the importance of that.
+ Well, before everybody else.
+ And bear in mind, this was during the era when it was like
+ social mobile local apps, right?
+ Like you had social media was on the rise.
+ You had, you know, the hot companies were like Facebook
+ and Pinterest and things like that.
+ And so this was at the time a very strange thing.
+ And so I think to be drawn to that, you had to look at
+ the other options and say, well, this is fine.
+ But what am I really doing in life, right?
+ There's other place that was like, hey, consult the hardest,
+ messiest problems in the world with us.
+ And I think just at that time that really drew some really
+ good people.
+ We're going to talk about the thing.
+ The reasons people don't necessarily like Palantir
+ and kind of the moral question of what they do.
+ But when people look at a company that is like, like,
+ I guess, open eyes, to your point is a good example
+ where they're just like so turned off by maybe their approach.
+ What you're missing is that's potentially intentional
+ because it actually draws in the people they really want.
+ And I think about, I was involved in creating the core values
+ that are being beat.
+ And something that we learned at going through that process
+ is when you define the values for your company,
+ it's really important to clarify who this is not for,
+ exactly as you described, which feels unnatural.
+ Like, oh, we're going to be inclusive.
+ We don't want to make people feel like them belong.
+ But the whole idea is to be clear on heaters who will
+ thrive here.
+ And here's who's aligned with our mission.
+ And when I'm hearing it's Palantir, and these companies
+ take it to the extreme.
+ 100%. Yeah, on my team at Palantir, one process that we followed,
+ I could talk about this more if it's interesting,
+ is you had to, when you started a new project,
+ you basically had to organize what they called a murder board
+ for it.
+ I think this is originally an army top, right?
+ So the idea is basically you write up kind of a two-page plan
+ for the project.
+ You invite three or four smart folks who don't know anything
+ about the project.
+ And their job is just to tear apart your plan.
+ Right.
+ And so you have to write, like, here's a vision for this.
+ They're the goals.
+ They're, like, tactics over the next three months.
+ And one section was principles that you're following for this
+ project.
+ And I remember giving this advice a lot.
+ It was just, like, when people joined, they would write
+ principles such as, you know, move fast.
+ And I would always be like, everyone likes to move fast.
+ So it's not a good principle, actually, because nobody can
+ really disagree with this reasonably.
+ Right.
+ You need something that actually a lot of people are going to
+ go, like, why are you, why are you taking this principle?
+ This seems wrong to me.
+ So you need something that people can disagree with.
+ I want to come back to the beginning of what you described
+ of what they look for, what balance your looks for in people.
+ You talked about independent minded, a lot of interest,
+ brought interest and competitive.
+ First of all, I think a lot of people hearing that,
+ especially last part, be like, I don't want to work there.
+ Why does this work?
+ Because this isn't naturally what you think of as how you build
+ the most amazing productive team.
+ Yeah.
+ I think it just draws people who want to win.
+ Right.
+ Right.
+ I think that's what was really important, though.
+ The other piece of it, I think, is that there's actually,
+ and this was much true a 10 years ago, right, is there was a lot
+ of talent that was a little bit outside of the tech ecosystem,
+ but could easily have been very successful within it.
+ So, you know, people who got out of the military or one of
+ the intelligence agencies, and they were doing, let's say,
+ an MBA somewhere to transition into the corporate world.
+ And I think typically they would have taken a position at a kind
+ of classic fortune 500 corporation and actually pound them
+ as to get a bunch of that talent.
+ And at the time, that was very undervalued.
+ You know, the people who succeed the most in the Marines
+ or the special forces or whatever it is tends to be
+ pretty smart people.
+ They tend to have accomplished very difficult goals in very
+ hostile environments.
+ And it turns out that when you're starting a somewhat
+ chaotic tech company, that's actually a very useful skill
+ to have.
+ Again, I think, you know, more companies are doing this now,
+ so scale AI, Andrew, et cetera.
+ But at the time, that was a very differentiated talent pool.
+ And so I think having those values as opposed to maybe the
+ values that were more in fashion than so talking about,
+ you know, how inclusive you are or, you know, the sushi that
+ you serve at lunch or whatever it is, it just drew a very
+ different crowd.
+ And I think the game that was being played there was one.
+ It's mission alignment, right?
+ Like you're doing a defense company.
+ It's the kind of person you want to attract.
+ But I think there's also two, which is just what is the
+ talent that maybe is a little bit of the value now?
+ And how do you actually draw those people to you?
+ And I think that game is always shifting.
+ This is definitely starting to explain why so many
+ Palantier alumni go on to start companies and become
+ leaders at other companies.
+ Like, these are leaders that you're hiring.
+ So it feels like a lot of it is just the talent you hire
+ are people that are naturally leaders.
+ I think you're right.
+ And we can go into it.
+ But I think there was also a very concrete set of ways
+ where that place was a training ground for founders.
+ I even think it turned a lot of people who might not
+ have become founders into good founders because of just
+ because of the way it works.
+ So I think there was a selection effect there, but
+ there is also some sort of training effect too.
+ But it's kind of unique to the way the company works.
+ And is that along the lines of the forward to play
+ engineer stuff or is that something else?
+ It is that.
+ Okay, cool.
+ We're going to get to that.
+ I love it.
+ The one last thing is something I've seen is that you guys
+ at Palantir don't have really have titles.
+ Everyone's kind of the same level and just like generic
+ titles for everyone.
+ Talk about that.
+ Why do you think that was important?
+ Why was that useful?
+ I don't know this for sure.
+ But I do know that Teal writes about this in zero to one.
+ And his take is just that as soon as you have these titles,
+ you have a thing that people are competing for.
+ And then you get these very unproductive conflicts.
+ You get people optimizing to game the system.
+ You get good hearts low everywhere.
+ It's like you have a metric.
+ And then people basically manage to the metrics.
+ There's a lot of interesting.
+ I don't want to pick on any one company.
+ But if you take Google, for example, there's a lot of
+ interesting posts by people who left Google.
+ And they cite this as a reason why they got a little bit
+ disgruntled is that there's a way to get promoted rather than
+ like, let's say, improving an existing product.
+ What you do is you start a completely new product.
+ And that has your name attached to it.
+ And then when it comes to promotion season,
+ you can say, hey, I did this new thing.
+ And then boom, you have a new Google product.
+ It's maybe confusing to the end users.
+ So I think they wanted to avoid all of these kinds of
+ dynamics, right?
+ And so the way that they did that was they said, well,
+ titles are not going to be this sort of mimatic totem that
+ everybody competes for.
+ Instead, everyone's just going to have the same slightly
+ meaningless title, which is for an engineer.
+ And the other people who did have titles were the CEO.
+ And then there were six directors.
+ And that was it.
+ And now I think it's a little bit more nuanced.
+ There are different teams.
+ There are some people with titles.
+ But honestly, it was almost like, we used to joke about it,
+ right?
+ It's like people would leave the company and then you'd see
+ them update their LinkedIn and they would be like, oh,
+ yeah, I was totally the SVP of, you know, XYZ.
+ And it's like, where you learn?
+ You just, you know, but then it's like, I totally understand
+ it, too, because when you leave the company, you have to
+ make your experience legible to the next person.
+ And so guess what?
+ Things like SVP actually do matter, right?
+ And so yeah, I think they didn't, they wanted to avoid this kind
+ of Intel competition.
+ There are downsides to doing this, right?
+ So maybe the competition isn't as explicit around a specific
+ title, but instead what it becomes about is, you know,
+ there's a particular exact or something and you want to
+ gain that favor.
+ And so it becomes more about, like, who can get in the
+ inner circle of this person or whatever it is.
+ And there were those dynamics, too.
+ I actually am a big fan of this philosophy, though, the
+ no titles one.
+ I think what it did do is that it basically said you, if you
+ are in, let's say you're in a role of you're leading a very
+ important project, right, which would happen.
+ What it said was, this is always fluid.
+ So you are in this role because you're very good.
+ And so it's a meritocratic thing.
+ But if you stop performing well, it's actually very easy to
+ shift that because there is no explicit, like, I am the
+ core manager of this project kind of title.
+ And so you always have to kind of earn your place in the
+ company.
+ You always have to earn the right to work on what you are
+ working on.
+ I think that was a good side effect.
+ Let's start talking about forward deployed engineers.
+ What is a forward deployed engineer?
+ Yeah.
+ So the way this originated was basically, you can think of
+ it as there's two types of engineer pounds.
+ So there's one that works on the core product.
+ So they don't necessarily leave the building in Palo Alto
+ or New York where the office is.
+ They're very much working on the core products and their
+ traditional software engineer because of the way the
+ company works.
+ We had these very large engagements with these large
+ entities.
+ There was a different type of engineer which you sent into
+ the field, right.
+ So what that meant was you would spend maybe Monday
+ Thursday and you would actually go into the building where
+ the customer worked and you would work alongside them.
+ You would literally get a desk there.
+ And so that engineer became known as a forward deployed
+ engineer.
+ So within the company, that function is known as business
+ development or BD.
+ And then PD is product development.
+ So it's where the product is made.
+ And so within BD, you had forward deployed engineers.
+ There are actually two types.
+ So there is one that is sort of a more technical software
+ engineer.
+ So you have to pass the software engineering interview
+ and prove your chops there.
+ And you would typically have a CS degree.
+ But there was actually a type of forward deployed engineer
+ that didn't have that.
+ So you would still, you would still get sort of a technical
+ interview, but it would be less about, you know, the
+ specifics of this C++ algorithm.
+ And it would be more about just like, can you reason about
+ data?
+ And we kind of didn't have that originally.
+ But it turns out that there's a lot of people who are, you
+ know, technical adjacent, shall we say, who you really
+ need in the room when you're working with these large
+ organizations, with these large companies.
+ Because, you know, translating what you're doing into
+ language that would resonate with an executive or being
+ able to kind of navigate a social dynamics in a room.
+ All of these are very valuable skills.
+ And so the hiring criteria that were a little different,
+ right.
+ It was a bit more about like all you savvy as a human.
+ But, you know, all of that was given the title of
+ forward deployed engineer.
+ And it's just an engineer who works with customers.
+ Okay.
+ So just to make this crystal clear for people, because a lot of
+ people hear this idea of talent you're having for
+ deployed engineers.
+ A few other companies have done this.
+ It's pretty radical.
+ So as you describe, you basically have a desk at a
+ company.
+ So you worked with Airbus and we'll talk about that.
+ We'll just make it real.
+ So you have a desk and a computer and login access and
+ all these things at Airbus at York.
+ You go to their office four times a week.
+ You're sitting there with their employees working, like
+ side by side, building a product for them versus what
+ most people do.
+ Or they just talk to customers and quotes.
+ Or they do an interview once in a while.
+ They do a Zoom.
+ They share mocks.
+ Things like that.
+ This is like that on steroids.
+ Is that roughly the way to think about it?
+ It is.
+ And so we would really be there a lot of the time.
+ And so the side effect of that was one, you learned to
+ live and breathe the customer's problems.
+ And you learned to speak their language.
+ And eventually they saw you sort of as one of them.
+ And so you develop these really close bonds with the
+ customers.
+ So Airbus, I would be at the factory where the planes
+ were produced.
+ Or I'd be sitting next to, you know, people diagnosing issues
+ with aircraft or whatever it was.
+ Similarly, later when I worked with the NIH, which was part
+ of the US government.
+ And I actually had a badge there.
+ And I would work with civil servants and biologists
+ and clinicians and people who were working there.
+ And so it's this pretty radical thing, as you suggest.
+ I think the key thing there from a business point of
+ view, right, is the average kind of deal that
+ Pounds I had was very large, right?
+ It's in the many, many millions of dollars, which means that
+ you could kind of pay for this as part of the thing that the
+ customer got.
+ And then it was sort of price according to the value that
+ the customer got, right?
+ So as a simple example, like if you're Airbus and you're,
+ let's say that you have an issue with one of your planes
+ and you need to fix it and fixing that as worth, you know,
+ $100 billion or something to you, that's how it would be
+ priced.
+ It would not be priced as, hey, you're buying data
+ infrastructure.
+ And it's similar to Snowflake or Databricks or one of these
+ other providers.
+ It's much more anchored to here is the outcome.
+ But then the job of the four deployed engineers, not just
+ to deploy software, it is not just to sell software.
+ It is to actually solve the problem.
+ And so you would have to be there.
+ You would have to meet the key stakeholders who are actually
+ in charge of reporting to the CEO about this specific issue.
+ You would have to become their friend.
+ You would have to gain that trust.
+ And you would have to, in some cases, create new software
+ such that it could actually solve the novel problem that
+ was in front of you, right?
+ So I would have friends who worked with one of our energy
+ company customers.
+ And they would have to learn the ins and outs of how oil
+ wells work, right?
+ And then out of that, it turns out that having streaming data
+ is actually very valuable for this use case.
+ And so boom, suddenly there's a product that can handle
+ streaming data that becomes part of the core platform.
+ But that would be the motion is you learn about the problem.
+ You figure out what software would best address it.
+ You build that software.
+ You use it to accomplish the goal.
+ And then eventually that kind of gets folded into the broader
+ product suite.
+ And so you can start to see why this would be a good
+ force for the founders, right?
+ And this was actually part of my thesis going in and
+ joining was I said, well, say I got five reps of this,
+ which I got more than that, right?
+ But to say you get five reps of doing this in five disparate
+ contexts, you actually become very good at this cycle of like,
+ okay, go into the building, gain the trust of the person,
+ meet the people that are going to become your users,
+ talk to them about their problems, make sure you're building
+ something that actually solves them.
+ And, you know, it's just a boom double.
+ Get really fast feedback and iteration loops, right?
+ So every week you would have like a cadence where it's like
+ Monday you go and you do your meetings.
+ Monday night you build something.
+ Tuesday you show it to somebody.
+ Tuesday you get the feedback.
+ Tuesday night you iterate on it.
+ Wednesday you show it to somebody.
+ Wednesday night you iterate on it.
+ So you get like four of these five of these cycles every
+ single week and you're moving incredibly fast.
+ And so this week's in, you've suddenly gone to, wow, this is
+ really valuable and somebody's willing to pay you whatever
+ $20 million for it.
+ And boom, like I think this is why you get so many kind of
+ founders coming out of this same process.
+ It's becoming very clear why so many founders emerge that
+ are bound here.
+ Okay, so an important element of this as you described is
+ that the idea here is build this as a one off solution to
+ solve a real problem at say Airbus or some government
+ organization.
+ And then the idea is you create something out of that, that
+ then volunteer consult other companies.
+ What's extra cool about that is you they pay you to solve
+ this problem for them.
+ And then that is funding this other product that
+ palantyr can now sell to everyone.
+ What a cool, what a cool business.
+ However, early days palantyr everyone thought it was
+ just the services business or just consultants building
+ software for companies like Airbus.
+ There's no way they can make this a platform that works
+ for a lot of people.
+ Clearly, that's what's happening and it worked out.
+ That's kind of like the holy grail, solve one
+ customer's problem and then sell it to everyone else.
+ Every, every SaaS business basically would love to do
+ this.
+ What, what do you think allowed them to actually achieve
+ this and be good at this?
+ What are some principles that, that worked?
+ Yeah, that's a great question.
+ And it's true.
+ I think that from what I joined until maybe until
+ IPO and a little bit after, you know, I was told,
+ hey, isn't this basically like a sparkling extension, right?
+ Isn't it a consulting business kind of laughing as a
+ product company?
+ And eventually it became undeniable.
+ One because, you know, I always laugh when people are
+ like, what does Palantyr do?
+ It's like, you can go onto YouTube and the search
+ palantyr demo and you'll get plenty of demos of how
+ the software looks.
+ Not many people know about this, but you can go and
+ sign up with the credit card right now and start using
+ it.
+ I can have a Palantyr account.
+ You actually can.
+ I did not know that.
+ Yeah.
+ I think it's called AIP now.
+ So it's not actually that mystical.
+ There is a product.
+ And if you look at the margins, they show that, right?
+ So they have like 80% plus margins, which is not really
+ what you would get if you were actually a consulting
+ company would be closer to 20 of those.
+ So then your question was, well, how did they actually
+ achieve this?
+ I think there was just incredible talent in the
+ product development organization.
+ Like really top tier, incredible talent.
+ And it took somebody, it took some really, really smart
+ people to take the set of internal tools that we were
+ using at the time to create value of customers.
+ And then go, what is the unified version of this?
+ What is the thing that?
+ What would this look like if this were a product?
+ And out of that process that I saw came foundry.
+ I assumed there was a similar process with Gotham a
+ while back.
+ But basically it's like the motion was that you would
+ go in and early on, you were basically armed with
+ Jupyter Notebooks and some kind of data integration
+ stuff.
+ But it was very primitive.
+ You had to create value that way.
+ But we kept building tooling that was useful for
+ forward deployed engineers.
+ So we were our first customers.
+ And at some point, there was this concept of, wait,
+ what if we take our internal tools and we let our
+ customers use them?
+ And I remember at the time, this is a really radical
+ idea.
+ And then Sean is one of his, I think he's a CTO.
+ Maybe he's a president now.
+ He just mandated like, okay, every customer deployment
+ you have to have a customer using this within three
+ months or whatever it is.
+ And so it was horrible at the time because these had
+ been built for these nerdy Silicon Valley engineers.
+ And so they weren't particularly usable.
+ They were crash all the time.
+ You'd have to debug spark errors or whatever it was.
+ But basically, that process brought a lot more rigor
+ to our thinking about the product.
+ And out of that kind of, I would say three or four
+ year process came the foundry product.
+ And then there was a lot of focus around things like
+ performance and reliability and so on.
+ That was all really painful.
+ And so, yeah, I think the answer was just talent.
+ And then there was this recognition that we do know
+ things that most people do not know about how data works
+ in large organizations.
+ That was the other thing.
+ We discovered a lot of, you know, quote unquote secrets
+ in this process of living with customers for so long.
+ The basic one was just data integration is massively
+ painful inside organizations.
+ This is very hard to understand unless you've worked
+ in a large organization, but it's actually impossible
+ to even now to get access to a lot of your own internal
+ data that you need to do your job, right?
+ So your history is of people being like, I'm trying to
+ calculate all sales, this quarter.
+ And I had to wait six weeks for some other analytics team
+ to get me this deliverable, right?
+ And so just the knowing problems like that and being able
+ to focus our product efforts around those problems
+ meant that we were able to build something
+ generalizable there.
+ Okay.
+ There's a lot here.
+ First of all, you talk about Gotham and foundry.
+ I know that we'll link to videos of people checking
+ these out, but just what's the simplest way to understand
+ what these two products do?
+ Yep.
+ So Gotham is optimized for military and defense use cases
+ and in tell as well.
+ I would say they both have some things in common, right?
+ So they both have -- I would describe this almost as a
+ pyramid where the bottom layer is data investment,
+ the middle layer is data mapping, and then the top layer
+ is anything that's user facing.
+ So any UI component, right?
+ And then if you think of foundry for a second, right,
+ there's different tools that allow you to ingest data to it.
+ There's different tools that allow you to easily build
+ data pipelines and clean up data, which everybody has to do.
+ And then there's a bunch of tooling that allows you to
+ build compelling UIs on top, do point-and-click analytics,
+ do, you know, notebook style workflows, which have a kind of
+ however technical you are.
+ And so that's what I mean when it's a platform.
+ It's a suite of things that has kind of a common data backing
+ but contains a bunch of different applications.
+ And so I think that is somewhat true of Gotham as well.
+ But you kind of, when you log in, you see this unified interface,
+ right?
+ So what is the actual difference then?
+ I would say with Gotham, you're looking much more at workflows
+ like that involve maps, for example, right?
+ So when you're doing a military operation, like a lot of the
+ time, you are going to be looking at a map and you are
+ going to be monitoring, you know, the movement of troops
+ or tanks or whatever it is.
+ Another big difference is the idea of graph-based analysis.
+ So Gotham, one of the kind of early use cases, right, was
+ finding, combing through networks of terrorists and basically
+ finding the bad guys.
+ And so being able to do queries that are sort of graph-based
+ was important, right?
+ So it's like, who is everybody that Lenny called in the last
+ week?
+ Imagine like all the nodes kind of fanning out from there.
+ And then it's like, okay, well, this one looks interesting.
+ Let's zoom in on that.
+ What is this person's location, right?
+ And so it's just like very graph-based way of thinking.
+ That also applies to things like fraud.
+ And so Gotham has been deployed against fraud.
+ But if you look at Foundry, it doesn't actually emphasize
+ that component so much because it turns out, you know, let's
+ say you're a B2B SAS company, you're probably not doing
+ that much graph-based analysis.
+ You're doing things that look a lot more like classic sequel
+ queries, tables, that kind of stuff.
+ And so Foundry is a lot more kind of traditional in that way.
+ That was an amazing explanation.
+ For the first time, I'm starting to understand what
+ these products do.
+ So basically it just sucks in a bunch of data, cleans it up so
+ you can actually trust it and then helps you interact with
+ it in various use cases, maps, graphs, tables.
+ Yes.
+ Okay.
+ Amazing.
+ The example you gave of what you worked on at Airbus,
+ you described it as basically a sauna for making planes.
+ Is that right?
+ Yes.
+ Yes.
+ So how much of that becomes like a part of this core
+ product versus stays this one-off thing?
+ Like is it elements?
+ Oh, that's a cool innovation.
+ Let's put that into Foundry.
+ How does that work?
+ This was a really interesting story, actually.
+ So the initial problem that we came into with Airbus was that
+ they had a new aircraft, probably a 350.
+ Beautiful aircraft, by the way.
+ If you get to, I think if you fly New York to Singapore,
+ it's often an F3, A350.
+ Really nice.
+ And so it was a relatively new aircraft at the time.
+ And their mandate to us was, okay, we need to ramp up
+ production of this really fast, much faster than we've ever
+ done it before.
+ So it's like the numbers are very approximate, right?
+ But it's like, okay, we're producing full of this month.
+ We need to do eight the next month, 16 the month after,
+ and so forth.
+ And you're going to help us do it.
+ And so this goes back to what I was saying earlier is the
+ mandate wasn't like, hey, we need to upgrade our data
+ infrastructure.
+ We thought you guys would be met the list of requirements.
+ It was much more just like, please help us accomplish
+ this mission.
+ This is like the big thing.
+ And so we went in.
+ It's good to have the problem.
+ There are a bunch of different things that we could build
+ that helped accelerate this.
+ But one of the basic problems that we figured out was that
+ without going too much into the weeds, the way the factory
+ would work is that there's a bunch of stations.
+ And you can think of the, the plane is literally moving
+ between each station.
+ And then each station would do a certain set of work on it.
+ Right.
+ So initially it's literally like a big fuselage.
+ And the fuselage is sitting there.
+ And then people are doing a bunch of work orders against
+ it.
+ They need parts in order to do that work.
+ And then at some point they say, okay, this is ready to move
+ to station 31.
+ And the plane is physically moved to the next station.
+ And then station 31 does its next thing.
+ So in order for the next station to do its work properly,
+ they need to know one, like what work was done at the
+ previous station and what work is remaining.
+ Two is just like if you think about this problem, like not
+ all work is going to get done on time.
+ And so things kind of carry over, right, to the next team
+ and the next team then has to kind of like.
+ And so when I'm describing this problem to you, you can
+ kind of start to visualize, okay, maybe I need some sort of
+ gap chart to this and I need the ability to click in and
+ say, okay, what it actually, what did station 30 do and what
+ work orders remained undone.
+ And then it's like, okay, for those work orders, what parts
+ do I need and where the factory might be.
+ And so this was very, very hard to do as it is.
+ A lot of it was just relying on people going and having
+ conversations with other people on the factory floor.
+ And, you know, coming from tech where it's maybe not
+ as complicated as building aircraft.
+ That is a phenomenally complicated process.
+ But it is easy to see, like, okay, you can actually improve
+ this problem with software, right.
+ They also, all that data was stored in SAP and, you know,
+ SAP is like established software.
+ It's good at what it does.
+ But it's not the most user friendly necessarily, especially
+ if you're not an expert in how it stores data.
+ The table names are very hard to understand and read.
+ And so one of the things we figured out was just if you
+ can pull in these tables that may as well be written in
+ completely alien language, like the table name would just be
+ like S3, F1, underscore Z or something like that, right.
+ And you'd have to know, like, okay, this is the table
+ where the part ID store does something.
+ If you could pull in those tables and join them in the
+ right ways and then just map them to human concepts that
+ humans can understand.
+ So things like a part, a work order, an aircraft, et
+ cetera, and basically build a kind of hierarchy or mapping
+ between them.
+ Then what you can do is for a user, a user can just log in
+ and say, okay, aircraft 79, where is that?
+ Okay, it's at station 31.
+ All right, these are the work orders, et cetera.
+ And so you've translated it into a more human-legible thing.
+ And so the thing we build, I mean, I kind of slightly
+ flippantly described it as a sauna.
+ It's a little different, but basically that's what it did.
+ Was it gave you a unified view of, okay, this is what's
+ going on inside the factory.
+ This is the work that needs to be done in this particular
+ plane.
+ And then me today, going to my job at station 31, what
+ work orders do I need to fulfill and where are the
+ parts that I need to do that.
+ And so it does directly become a part of Foundry, not
+ exactly because, you know, the way that other companies work
+ is not going to be using this same set of concepts.
+ But the overall idea of taking a bunch of tables
+ and then mapping them to human understandable concepts
+ was a very powerful one.
+ And so this actually resulted in a big piece of Foundry now,
+ which they call ontology.
+ You probably heard this, you know, term, as you've seen.
+ If you see patterns of presentations, they always talk
+ about ontology.
+ This is what they actually mean by that.
+ It is a set of concepts that is understandable to you as a
+ human.
+ And you're not having to go and dig around and do SQL queries.
+ You're just able to say, like, where is the aircraft now?
+ And where is it going next?
+ Right.
+ And so the ontology became a huge piece of Foundry.
+ It was directly informed by the learnings that we had
+ from building that application inside that factory.
+ And I would say it's still a very big differentiated
+ today.
+ Like, I don't think too many other companies ship this kind
+ of stuff yet.
+ Wow, I love how excited you still are about this.
+ Because I could see it being so fulfilling to solve this
+ big problem.
+ I saw a stat that I think you forexed their productivity.
+ What was the number there?
+ It was, yeah, I did recall the exact stat.
+ But we did ramp up production.
+ I think at least forex that one year, which, I mean,
+ obviously they did this and we just helped with it.
+ But, you know, that CEO said that we played a critical
+ pod.
+ Also, you moved to France, I think for this.
+ That was like how forward deployed you were.
+ You lived in France for how long?
+ Yeah.
+ I lived in France for about a year and a half.
+ The way they built their planes is they manufactured
+ different components around Europe.
+ So they built, you know, the tail in Spain.
+ And if he's large in part of the UK and Germany and so
+ forth.
+ Right.
+ And so they basically ship everything to France to be
+ assembled at the end.
+ But you can imagine this is a very messy process.
+ And so I was mostly in France, but there would be weeks
+ where I'd have to kind of fly between all these countries
+ just to kind of figure out where things were.
+ And your poster wrote about how just the life of
+ forward deployed engineers is pretty crazy.
+ You just get a call sometimes like, hey, you're
+ flying to this random country tomorrow.
+ Get ready.
+ Is that just life as a forward deployed engineer?
+ It is.
+ Yeah.
+ The company had a very, I would say, aggressive attitude
+ towards travel in the sense of when you join, you were
+ basically told, look, you have to be okay with travel.
+ Are you okay with that?
+ Right.
+ And the attitude, which again, I think is a very
+ founder-friendly one, is you need to be willing to just
+ jump on a plane that night, if that's the best thing to do
+ for this customer.
+ And if it's going to get us to where it needs to be to
+ win.
+ And so there were many times when it would be like, oh,
+ I need to take this cross continental flight tomorrow
+ for this particular thing, because it will be useful.
+ Right.
+ And so I think that's one of the kind of takeaways for me
+ was just like being a person is so, so, so valuable when
+ you are working with some external party.
+ Just going there for a few days and spending time with them,
+ maybe going out for dinner, you build so much more trust than
+ if you're trying to close a customer over Zoom or do
+ an engagement over Zoom.
+ It's just the vibe is completely different.
+ And so yeah, getting on a plane was a really cool part of
+ our job for a very long time.
+ This obviously changed around 2020 because COVID happened,
+ the company IPO, and so then it could be a bit more
+ internal controls around this.
+ But I would say pre 2020, this is like a very big part
+ of the culture.
+ I'm excited to have Andrew Luo joining us today.
+ Andrew is CEO of one schema, one of our long time
+ podcast sponsors.
+ Welcome, Andrew.
+ Thanks for having me, Lenny.
+ Great to be here.
+ So what is new with one schema?
+ I know that you work with some of my favorite companies
+ like Ramp and Vansa and Watershed.
+ I heard you guys launched a new data intake product that
+ automates the hours of manual work that teams spend
+ importing and mapping and integrating CSV and Excel files.
+ Yes.
+ So we just launched the 2.0 of one schema file feeds.
+ We have rebuilt it from the ground up with AI.
+ We saw so many customers coming to us with teams of
+ data engineers that struggled with the manual work
+ required to clean messy spreadsheets.
+ File feeds 2.0 allows non-technical teams to automate
+ the process of transforming CSV and Excel files with
+ just a simple prompt.
+ We support all of the trickiest file integrations,
+ SFTP, S3, and even email.
+ I can tell you that if my team had to build integrations
+ like this, how nice would it be to take this off our roadmap
+ and instead use something like one schema?
+ Absolutely, Lenny.
+ We've heard so many horror stories of outages from even
+ just a single bad record.
+ In transactions, employee files, purchase orders,
+ you name it.
+ Debugging these issues is often like finding a needle in
+ a haystack.
+ One schema stops any bad data from entering your system
+ and automatically validates your files, generating error
+ reports with the exact issues in all bad files.
+ I know that importing incorrect data can cause all
+ kinds of pain for your customers and quickly lose their trust.
+ Andrew, thank you so much for joining me.
+ If you want to learn more, head on over to one schema.co.
+ That's one schema.co.
+ There's a lot of founders listening to this and a
+ question that I'm thinking and they're probably thinking
+ and there's kind of two questions here.
+ One is just when to go, like how hardcore to go,
+ potentially with their own forward deployed sort of
+ operation.
+ And then two is just how, and a company I know is
+ actually doing this, how far to go with one company's
+ problem and invest in just like, we're going to nail
+ solving this one customer's problem with the hope that
+ this is something we can abstract and sell as a big
+ platform.
+ So let me start there and you're building a company.
+ And he just, I guess, insights or advice and just how far
+ to go down this road of we will solve customer one's
+ problem.
+ And we bet that this is going to be a big opportunity
+ for a lot of other companies.
+ So I would say on the, on the forward deployed piece,
+ my friend Barry McCardle, who's the CEO of Hex, the
+ analytics company, he wrote a really good post about this
+ actually.
+ And his take was just like, you probably don't need
+ forward deployed engineers.
+ It's very specific.
+ But I think basically the, the thing there is you have to
+ be willing to be quite almost wasteful.
+ Like you have to be willing to invest a lot in finding
+ the thing.
+ And for that, you just need a certain ticket size, right?
+ So you need each customer's revenue to be probably in
+ the billions of dollars.
+ If it's below that, you're probably not looking at a
+ traditional forward deployed engineer motion.
+ It's something a little bit different.
+ And so, you know, I think one thesis that a lot of people
+ left Palanté with and started companies around was there's
+ a lot of, a lot of customers that Palanté weren't served
+ because, you know, maybe they're too small a ticket size.
+ And so actually you could go and do something like Palanté
+ for those companies.
+ But instead of charging them $5 million, you're charging
+ them $250k.
+ And so in a scenario like that, you might still have
+ forward deployed engineers.
+ But they're not really, they're not going to France
+ and spending five days a week in a factory.
+ It's more like you'll have one person and they're looking
+ after, you know, five different customer accounts.
+ It's more of that ratio in order to make the numbers work.
+ And so I think a lot of the principles can be, can be
+ targeted from that experience.
+ But it is a really specific sales motion that depends on
+ a specific way of doing business.
+ I think it's your other question.
+ Yeah, I think there's, it's, it's obviously one something
+ that is very hard to give a general answer to.
+ My main thing here is just that you can definitely tell
+ when you are just doing consulting and when you are
+ closer to building a product.
+ And I think the error that people make more often than not
+ are actually too stuck on their own product vision.
+ That's the mistake I've seen a little bit more actually
+ than the other way around.
+ Right.
+ So if you, if you go to, I'm trying to give an example.
+ If you go to an enterprise customer and let's say you,
+ you think you're doing analytics software and it turns
+ out they don't actually care about internal analytics
+ this much.
+ They actually have this other massive burning problem
+ and they don't have a good solution to it.
+ Yeah.
+ I think a lot of people are unwilling to go and pivot
+ to the big problem because they're like, well, we're
+ analytics software.
+ And so maybe this customer is a fit for our thing.
+ And maybe that's the right call.
+ In some scenarios, that is the right call.
+ You should go find a different customer where you think
+ resonates more.
+ In other scenarios, it's actually the right call to
+ pivot and go just put everything on that big problem
+ instead and then go and find other customers for that thing.
+ There's no hard and fast rule.
+ I remember reading a really interesting post by,
+ I think it was David Sue from Retool who had this exact
+ thing.
+ And I think he worked at Pounder for a while too.
+ And he said that they had the Retool product and it wasn't
+ getting any traction at all.
+ And then he tried an outbound email campaign where he
+ literally just changed the subject line to build internal
+ tools easily.
+ And then suddenly they started getting all these
+ replies from CTOs who were just like, oh, yeah, this is
+ actually a huge pain point for me.
+ But the exact same solution, they were previously kind of
+ framing it as, I think it was like supercharged Excel or
+ something like that, and nobody was biting.
+ And so they just changed the way they framed it, found a
+ different set of buyers and succeeded that way.
+ So, yeah, no, no hard and fast rule.
+ But I think it's always, you need to kind of have this
+ matrix of options in your mind and be very deliberate
+ about which one you are going with and why.
+ I think your piece of advice is really important.
+ They're usually, in your experience, you're saying
+ people index too far too.
+ Like, no, what they're asking you to do is not kind of
+ what I think they need or what customers will need.
+ You're saying it's actually more likely that they're
+ right.
+ And that's maybe where you should be focusing more
+ versus this kind of abstract vision and original idea
+ you had.
+ I think so.
+ Yeah, I think it's very hard to not be anchored to your
+ own experience and your conceptions as a problem.
+ And one thing I've seen in really strong founders is
+ they're able to sort of drop a bunch of those assumptions
+ and almost treat something, a new opportunity as a
+ completely black slate.
+ And then just figure out how to reshape things so that
+ you're taking advantage of that.
+ And that's how you don't get stuck in a local maximum.
+ Your other piece of advice is also really great.
+ So people hear this and they're like, we can't afford an
+ engineer to sit at one customer per aspect office
+ and build stuff for them.
+ But your point is you can have one for five different
+ customers.
+ They're not there full time.
+ They kind of bounce around, but they're kind of,
+ it's almost like sales engineering, just like,
+ would you call it sparkling sales?
+ Or do they help make it successful?
+ I know Looker is a famous example.
+ They think they called them forward deployed engineers.
+ Do you know any other companies, by the way,
+ that did some version of forward deployed engineers?
+ There's a lot.
+ I mean, I know that the AR labs are hiring forward
+ deployed engineers now.
+ They're building forward deployed engineering teams.
+ And, you know, they could make it work, right?
+ But I think there's going to be key differences, right?
+ Like, I don't see anthropic going into an enterprise
+ customer and building some entirely from scratch solution
+ for them.
+ It's going to be something that leverages the anthropics
+ out of products.
+ So there's a lot of companies that have this label now,
+ but I think what's really confusing about it is just
+ that it means a few different things.
+ There's another close by Ted Maybury, who's, I think,
+ the head of commercial at Palantir.
+ And that's a very good one to point with this, too.
+ So say someone was, I want to try this sort of thing
+ in my company.
+ And what would be like, if you pull a point of things,
+ they should get right.
+ You're describing, kind of, the spectrum of what people
+ describe as forward deployed engineers.
+ If they were to try to do this, what do you think they
+ need to most do correctly for it to be successful?
+ The key things that made all model work were one.
+ They were actually real engineers who could build
+ product themselves.
+ That's a very big difference, right?
+ I think a lot of the time companies will say
+ this person's a forward deployed engineer.
+ But actually, obviously, that to be more of a solutions
+ effect, or they're not necessarily building anything
+ to no vote.
+ They're just listening and trying to find a way of
+ deploying the existing product.
+ They're not empowered to do new product.
+ And so the really radical thing Palantir said was no,
+ like, go in.
+ And if you need a completely new product to do this,
+ you can go ahead and build it.
+ And I think that's really the key difference.
+ The other stuff, you know, I've already mentioned
+ the value of being in person and I think building
+ close personal bonds with your customers.
+ I do think the better founders do this anyway, right?
+ Like, they're on texting terms with debt buyers.
+ They become friends with them outside of work.
+ And they see them as humans when they're trying to help.
+ I think that's very motivating.
+ Gaining a really deep understanding of the business
+ that your customers are in and knowing how
+ those dynamics work.
+ So, you know, a simple example might be, you know,
+ like, say, hospitals in America, right?
+ Like, I think if you go into it, it's very counter
+ intuitive to think of a hospital as a business,
+ people think of it as, you know, it's a place
+ where you get healthcare, right?
+ But actually, like, if you kind of view it the way a
+ CEO or a CMO views it, it's going to look very, very
+ different to, as a very simple example.
+ Sorry, this is a little bit dark, but, you know,
+ how kind of restaurants want to turn over tables as
+ fast as possible in order to kind of maximize their
+ revenue for the day.
+ Hospitals actually kind of want to do the same
+ patience, right?
+ They would like to treat you and then get you out of a bed
+ so you can free up the bed to get a new person in there.
+ And so, that's not super intuitive unless you kind
+ of think hard about how the revenue for that
+ hospital works.
+ But then once you think about it, you're like,
+ oh, this has a bunch of problems associated with it,
+ right?
+ And you start to go in really interesting directions.
+ So.
+ There's just like the words and memes and take you
+ a long way working and understanding it.
+ Okay, so essentially, things you want to get right,
+ make sure it's in person, make sure the person is
+ technical, make sure they have a deep understanding
+ of the business and the problems they're having.
+ The technical piece is interesting with AI tools
+ these days, making everyone technical in some sense.
+ You could argue this is going to become more common.
+ People can just, you know, open up cursor,
+ wouldn't serve and just start adding features.
+ I think this is a really interesting piece
+ that you've just hit on, and I expect to see a lot
+ more startups that take advantage of that insight.
+ It basically makes forward to playing engineers
+ cheaper.
+ Exactly.
+ What is the current state of forward
+ to play engineers in Palantir?
+ Like, how much has it changed over the past few years?
+ Like, have you joined now?
+ Is this still something you can do?
+ Yeah, of course.
+ I mean, I should obviously emphasize that one,
+ I left the company in 2023, and so this is just
+ my personal view, and I'd speak for them.
+ I think that, you know, if you think about it, right,
+ the thing that one of the kind of metrics that the
+ company had to measure its own success was essentially
+ revenue per engineer, right?
+ And so the more kind of, quote unquote,
+ product leverage you had, the higher that number was.
+ So if you had to throw a lot of people at every
+ marginal problem, then you weren't doing so well at
+ that because you're basically building a new thing
+ every single time, and you are, in fact, a consulting
+ business.
+ If, on the other hand, every time you encounter a new
+ customer, the product turns out to be kind of relevant
+ to them, then great.
+ And so this product leverage metric was actually a very
+ unique thing, and kind of a north star for the
+ company for the whole time others there.
+ If you reason that out, what that means is that in
+ the early state of the company, you will have a
+ customer, and then you might have five to 10 engineers
+ working at that customer, right?
+ And so over time, you want that ratio.
+ So you want it to be, you know, each customer,
+ because the product is so powerful, maybe AI
+ coding's got a lot better.
+ Each customer, you only need two people.
+ And then maybe you actually get to a point where you
+ can have one person looking after multiple customers.
+ And I think that's how the job has changed is now
+ it's a little bit more about you have multiple
+ customers, maybe you're spending less, like, deep
+ time with each individual, one of them.
+ But it's a lot clearer what problem you're solving
+ across multiple customers.
+ And you have more of a kind of defined offering.
+ And so I do think that has been a bit of a change.
+ But the company remains a very interesting and
+ dynamic place to be.
+ Like, in some sense, the stories are starting, right?
+ Because one lens through which you can view this
+ company is they spent 20 years basically building the
+ model of all data foundations for every important
+ institution world.
+ And guess what's very valuable now that AI models are
+ out is proprietary data that isn't public.
+ Suddenly you have access to that and you are in a
+ very privileged position to help your customers deploy
+ AI in a way that makes them successful and that
+ solves real business problems.
+ That is essentially the ball thesis for this
+ company and why it's probably going to, you know,
+ 100x again, right?
+ And so it's still a really interesting time to join.
+ But I do think the kind of nature of the ratio of
+ people to a customer, for example, is one big
+ difference now.
+ Not investment advice, but it might 100x.
+ That's, I totally understand why that might happen.
+ So let's talk about the data piece.
+ You said that this was one of the secrets of
+ volunteer success.
+ There's early insight into the power of ingesting
+ data, cleaning data, being able to analyze and work
+ with it.
+ What, what a marketing share there, just like what they
+ figured out about why this is so valuable, why it's
+ so hard and how they achieved it.
+ I think it's just very obvious as soon as you step
+ into a corporation and spend a couple of days there,
+ right, is you're like, all right, like, let's suppose
+ your job is to increase sales.
+ Okay.
+ So the first thing you want to do is get a clear
+ picture of what's going on.
+ All right.
+ So, like, let me go and query the sales database.
+ Oh, wait.
+ Where is the sales database?
+ I can't get access to this.
+ Okay.
+ I need to file an access ticket.
+ All right.
+ So you have to wait one week, right?
+ And so everywhere we went, this was the big
+ point was we have to wait six, eight weeks just to get
+ data access.
+ And then when you do get data access, it's not like
+ the data isn't easily queryable format.
+ You actually really have to know what you're doing in
+ order to get the right metrics out and so on and so
+ forth.
+ And so it turned out like, okay.
+ It's this iceberg analogy where the actual analysis is
+ actually just the tip of the iceberg.
+ It's kind of the last five or 10%.
+ And the 95% before that is I am gaining access to the
+ data.
+ I am cleaning the data.
+ I'm joining the data.
+ I'm normalizing it.
+ Putting it all the same for that.
+ And so once we spotted that, then it's like, okay, there's
+ actually a lot of product to be built there just to make
+ that process easier.
+ This is one way I think.
+ People don't think of Palantir as this place where
+ innovative new products and UX ideas come out, but I
+ actually think it's been one of the most generative
+ companies for that specifically in the last 20 years.
+ It's just that most of that didn't see the light of day.
+ And so people don't know.
+ But if you look at the product primitives that they
+ developed in order to make the things I just mentioned a lot
+ easier, they're actually really valuable and interesting and
+ could probably form the basis of independent companies
+ themselves.
+ And so, yeah.
+ Like, it just took like every single step of that
+ process became much, much easier once there was a software
+ solution around it, right?
+ So if you talk about data ingestion, there's essentially
+ a kind of universal data adapter that's part of
+ Foundry.
+ It can read anything.
+ So JDBC, S3 buckets, whatever you want.
+ And it can pull that, it allows you to kind of look into
+ the data, maybe preview the first 20 rows, and then it
+ allows you, when you're ready to set up a schedule and just
+ pull it in on some cadence.
+ So the process alone for an engineer used to take a
+ long time, especially pre-vibe coding, and managing all
+ those cron jobs and doing this on a little VM somewhere
+ inside the customer's tenant was a huge pain, right?
+ And so you productize that piece.
+ Then it's like, okay, once you have the data, it's like,
+ how do you actually join it?
+ What if you're non-technical?
+ Is there like a -- is there a way for a non-technical user to
+ be able to join tables and see what the result is?
+ And so there's all these, like, very fascinating business
+ problems that -- because I think the access was very
+ difficult to get and people hadn't really solved before.
+ And so there was a lot of white space to do some
+ product innovation.
+ So now I would say Foundry is definitely the best data
+ platform in the world, just because it has all these
+ different applications within it that solve these discrete
+ parts.
+ And it's just -- it came out of this years of painful
+ experience watching people have to clean data and join it
+ and figure out what this table name meant and so on and so
+ on.
+ >> You shared in your post this kind of evocative story of
+ some people's jobs is just kind of gate-keep the data.
+ Like, they're there to help you to give you access to this
+ very valuable data within the organization and how hard
+ it is to get -- like, that was a lot of this work is just
+ breaking through those political battles of, like,
+ okay, we need this data for the good of the company and
+ took a lot of work, I guess, anything there you want to add.
+ >> It is.
+ Yeah.
+ I mean, it's a huge pain.
+ And there are good reasons for it, right?
+ Like, it's not like folks are malicious here.
+ If you're IT or if you're an infosec type person, then your
+ goal is to prevent data breaches and to make sure that
+ sensitive information doesn't spread too wide.
+ And so what's the easiest way to do that is to lock the
+ data down and, you know, basically be a gatekeeper for
+ access, right?
+ >> I think where it got a little bit more interesting was
+ where your skills are valuable and depend on you
+ bank the gatekeeper.
+ So what I mean by that is, like, let's say I'm the guy
+ who understands the way the sales calculation pipeline
+ works, right?
+ And I write this equal for it.
+ Older requests from business SMEs come to me.
+ I have a big queue of them.
+ It takes me weeks to get through this queue.
+ I have a great job.
+ I have great job security.
+ And people depend on me, right?
+ And so now along comes this company and they're like,
+ hey, actually, we want to make sales data available to
+ everyone and we want to make it point and click.
+ Suddenly you're like, hey, like, hang on.
+ What am I going to do, right?
+ And so that's where I think there was a lot of difficulty.
+ And I always say, you know, people are like, what are
+ pounces competitors?
+ I don't think it's the ones you would think of
+ necessarily.
+ Pounces biggest competitor is a company rolling its
+ own solution.
+ Right?
+ And so the biggest difference would just be,
+ I see a CIO saying, I'm going to build my own data
+ infrastructure.
+ I'm going to own it.
+ It's going to be on top of one of the hyperscalers.
+ And we're all just going to do our own analytics
+ ourselves.
+ And what we came along with, which was quite disruptive to
+ this model, was saying, no, actually, all your data is
+ going to get ingested into this one platform and everybody
+ in your company is going to use it.
+ The tradeoff is going to be really, really easy for
+ everyone to do things.
+ But as you can imagine, some people weren't a huge fan of
+ that model.
+ It feels like glean is the biggest competitor to
+ volunteer after I hear this.
+ You know about that company?
+ I do.
+ Yeah, glean is, glean looks amazing from the outside.
+ I mean, you know, so many differences there.
+ I can typically see why you would stay this, but...
+ Clearly a different use case, but it feels like the
+ reason they've been successful is they figured out a lot of
+ this state ingestion permissions search stuff.
+ Totally.
+ That way.
+ Interesting.
+ Okay.
+ I want to talk about hiring.
+ You talked a bit about this.
+ You're starting a company again.
+ What are some of the kind of key lessons you've learned from
+ your time and panel until when you are hiring people
+ for your company.
+ I don't know if you're actually hiring people.
+ Yeah.
+ Maybe when you may start hiring.
+ Yeah.
+ We have six people at the moment.
+ So a really reasonably small team.
+ You know, I think with hiring, it's funny.
+ There's so much hiring advice on light.
+ You eat it.
+ You're like, yeah, this is super obvious.
+ And then when you live it, you're suddenly like, ah,
+ this is why people say this, right?
+ So a few simple examples are, I think the thing that
+ is really hard to find is somebody who really, really
+ has a lot about doing the thing and will go that kind of
+ extra 20%.
+ Like I think, I think when you hire out of, especially not to
+ pick on them, but I think if you hire out a fan, right?
+ It's like people, people want like a 400k a year job.
+ They would like to work a certain number of hours.
+ They would like to ship some code and then go home.
+ Like that's basically the model that you get accustomed to,
+ even if you don't intend to, when you work at a big company.
+ So if you hire out of that for a really small startup, it can
+ be really challenging because a lot of your successes as a
+ startup depends on each individual person being like,
+ no, I'm really going to, I'm going to work this evening.
+ That's what it takes to get this thing working.
+ And I'm not just going to check my boxes.
+ I'm actually going to look towards what is the real
+ outcome that this business is trying to achieve.
+ And everything I'm saying is feels kind of obvious.
+ But when you actually feel that difference between somebody
+ is just checking the boxes and somebody who's kind of an
+ animal in this way, like they'll actually go and
+ pursue and accomplish the end outcome.
+ That difference is very, very big and it matters so much for
+ your first 20 people, right?
+ And there's no science to finding these people.
+ It's not like you can just put like somebody who cares about
+ outcomes in your JD and then suddenly you'll get all these
+ people apply.
+ And so then it's like, okay, well, how do you
+ squeeze for that?
+ And how do you find those types of people?
+ And so that's where it gets really interesting.
+ I think that's where the mission alignment comes in.
+ And so you do have to find people who, for what you're
+ doing, have this extra, maybe private reason to care about
+ it a little bit more than the average person, right?
+ So I think for Palanto, they did hire a lot of vets,
+ for example, maybe people who were a little bit more
+ patriotic or pro-America than the average tech employee.
+ And that those people had an extra reason to join Palanto
+ and an extra reason to try that little bit harder.
+ And so what I'm doing is a little bit more in the kind of
+ medical and health space.
+ And so I think people who have themselves had experiences
+ with this system, have maybe had relatives go through
+ difficult experiences with things like cancer or whatever
+ it is.
+ They're just that extra bit motivated to really care about
+ the thing you're trying to do and then work that little bit
+ harder.
+ And so I think aggressively filtering early on for things
+ like mission fit, how much do you care about stuff in the
+ past and what's an example.
+ You ask questions like what's the hardest you've ever worked
+ to get something done and why, right?
+ And that does differentiate a lot of people.
+ A lot of people don't actually have a great answer to that.
+ So I would say that's been a really big learning.
+ It's less about testing for the right skills.
+ Yes, that's important too.
+ It's much more about just who has that extra 20%.
+ That is really interesting.
+ As you just said, everything you've shared is essentially
+ around motivation and drive and passion and kind of just
+ like commitment to working on this intently and almost like
+ it's almost like a second thought of just like, oh,
+ also they're like really smart and skilled at stuff.
+ Like it feels like that's just table stakes.
+ And this is actually what makes the difference in your
+ experience.
+ Yeah, I totally agree.
+ I think it's different for every business, right?
+ So I think if you're in a space like B2B SaaS where maybe
+ it's a little harder to tell the story of like, oh,
+ this is so mission critical, like whatever.
+ There are other ways of getting at this thing, right?
+ So for example, I know a lot of people, again,
+ it's a little played out now, but I know a lot of people who
+ for sales teams, they will explicitly go for people who
+ are professional athletes or played sports in college,
+ right?
+ And it's like, okay, what does that test for?
+ It's like you are very disciplined.
+ You're very, very goals and numbers oriented and you're
+ willing to just work really, really hard.
+ And so there's all these kind of lateral ways of getting at
+ these qualities that I think you just have to be kind of
+ intentional about as a founder, like as a personal
+ example, I'm a runner and so I actually love meeting fellow
+ runners and I always like to, I kind of joke like, oh, maybe
+ I'll go higher from like run clubs or something like that.
+ But it's just like same with, you know, I play a lot of
+ chess, like I love, I love meeting chess players.
+ I'm not necessarily saying that's the right kind of
+ hire for me, but I think having this thing of here are some
+ traits that seem uncorrelated, but which actually give you
+ good signal to this person's personality, those are actually
+ really important.
+ The last thing I'll say just as a funny illustration of
+ that concept is, I think back selection tells the story of
+ somebody interviewing a PayPal early on and he passed all
+ the skill interviews.
+ And then it just got to the final round and he said something
+ about liking to shoot hoops, like he liked to play
+ basketball and they were like instant returns.
+ And it was just like, the vibe here was just like, if
+ you're not like a mega Linux, not a hardcore computer
+ person, then we don't want you here even if you actually
+ passed all the tests just because you like to shoot hoops.
+ Now whether that was the right call or the wrong
+ call, I don't know.
+ But that's an example of what I'm talking about.
+ I think that's a great echo back.
+ Like people hearing this may be like, what the hell?
+ That's like, how dare they do that.
+ But this is exactly what you said at the beginning of our
+ conversation that if you're like an approach to building a
+ generational business is to be very clear about who this is not
+ for.
+ And that's okay.
+ It's your company.
+ Not everyone needs to work there.
+ And it's almost saving them time because they may, they
+ might realize this isn't for me.
+ This isn't the people I want to be around necessarily.
+ So I think it's important to see that side of it is like
+ it's your business.
+ It's important to be clear about who is a good fit for the
+ company and who's not speaking that.
+ Let's talk about product management for a bit.
+ I know Palantier PMs are like not very, not traditional
+ product managers.
+ What, what is like?
+ I imagine people have the title product manager Palantier.
+ Okay.
+ So if so, what, as far as you understand how, what's the
+ difference between say a PM at Palantier versus a traditional
+ PM, say it a thing company.
+ Palantier was, as far as I remember, quite NTPM for a while.
+ And eventually we did need them because we just got more
+ serious about.
+ Classic story.
+ Classic story.
+ Classic story.
+ Many companies.
+ The big difference or one big difference I noticed was that
+ they were extremely careful about only making people PMs who
+ had first proven themselves out as forward deployed
+ engineers.
+ You basically could not become a PM any other way.
+ So as an example, the, when I mentioned earlier, the thing
+ that we built for the plane factory, the person who was
+ managing that deployment, she later became the PM for
+ technology.
+ And it was just because she kind of proven her mental in the
+ field.
+ And, you know, the reason for that's pretty simple, right?
+ It's going to be someone who understand how customers work
+ and has that customer empathy.
+ And it's going to be someone who has this drive to get things
+ done because that's what we decided before.
+ I think the failure mode that they were very, very
+ averse to in traditional PMs was this kind of Google docs
+ syndrome of like, okay, I'm going to write my product
+ requirement documents and I'm going to kind of manage it in
+ this like very sort of sane rational way, I think.
+ So the company was really rigorous about that.
+ And so basically PMs were almost always internal
+ promotions and they always came from BD.
+ It was not like, I'm not aware of a single case where we took
+ somebody who was a PM at a place like Google which
+ produces many excellent PMs and hides them successfully
+ and pounds it just a very different vibe.
+ So I think that was one thing.
+ You know, this is, this is maybe more of a classic PM
+ trait, right?
+ But you just had to be either an engineer yourself or
+ extremely good at working with engineers.
+ And the ones I saw who succeeded the most were just
+ best friends with their engineering team, right?
+ And the team would always just be like one, you know,
+ it was called a group PM and then it would be a lot of
+ very, very good engineers.
+ And basically the successful failure mode was just like
+ do the engineers like and trust you.
+ And I mentioned before like how it's very kind of almost
+ agreeable personalities and so if you didn't get the
+ trust of engineering team pretty fast, you didn't
+ last very long.
+ I think we've cracked the problem.
+ The question of why are Palantier PMs so successful?
+ First of all, the hiring bar is just like basically
+ hiring for leaders in a lot of different ways to this,
+ like, I don't know, forge for founders where they're
+ working with a company solving a real problem,
+ building a real product that makes money.
+ And then those are the people that become the PMs
+ that balance here.
+ And then they go on to leave and that's why 30% of them
+ end up starting companies.
+ I'm surprised it's not higher or become first PMs at
+ other companies or heads of product.
+ Yeah, absolutely.
+ I mean, it's, it's crazy.
+ I was part of a pretty small team within Palantier.
+ I think it was 20 to 25 people and I joined.
+ And I think at least six of them now are either
+ unicorn or just pre unicorn founders from,
+ from that like group of 25 people, which is actually
+ a crazy ratio.
+ And then a bunch more have become founders recently at an
+ earlier stage.
+ So, yeah, there's all these little pockets of excellence
+ and it's been really interesting to see.
+ I think the other thing that's driving that a little bit
+ is, you know, when you leave, it's just such an interesting
+ company to work at that, you know, I think the retention
+ numbers were actually very high for that company.
+ Like, people would often stay a lot longer than maybe
+ the average average rally tenure.
+ And so when you left, it was really this decision of just
+ like something very specific is pulling you and you want to
+ kind of play the next level of the game.
+ And so it was very unusual for someone to leave and
+ then join maybe a more traditional tech company.
+ It's sort of like you're either going to become a
+ founder or why would you leave when there's so many
+ interesting different things to work on here.
+ And I know that sounds a little culty, but that's just,
+ that's what everyone thinks.
+ I could totally see that.
+ A lot of people that left Airbnb have never found
+ something more meaningful.
+ Yeah, right.
+ It's just hard, especially if you're early.
+ There's a stat that I didn't share that I think is really
+ interesting.
+ And when you look at YC founders and there where
+ they've come from, I think you may be shared in this in
+ your post that there's more YC X Palantir founders than
+ there are X Google founders in spite of Google being
+ something like 50 times bigger sample size.
+ Yeah.
+ Yeah.
+ Let's talk about the moral question of Palantir.
+ A lot of people probably seeing the title of this
+ episode hearing this or will not be excited about
+ Palantir being highlighted and promoted and a lot of
+ people kind of disagree with what Palantir is doing.
+ You know, builds products that kill people in some ways.
+ They work with governments.
+ They don't agree with.
+ I know you wrote a really insightful way of how you
+ approached this question when you decided to work
+ in Palantir and how you see people tackle with this.
+ You just talk about the kind of the framework that you
+ landed on and how you thought about this yourself.
+ Yeah.
+ It's a really interesting topic.
+ It's definitely very nuanced.
+ I think what I was trying to say in that post was a couple
+ of things.
+ One was that there was a lot of upside there, right?
+ So, you know, I worked on the US COVID response.
+ I have friends who, you know, worked on operation,
+ whooped speed and you know, these are all things that I
+ think saved a lot of lives.
+ And I was pretty focused while I was working at an age on
+ cancer research.
+ And so to me, these are just obviously good things and you
+ couldn't do them anywhere else.
+ And so that was a lot of reasons to say.
+ The question I had in that post was, well, okay,
+ there are definitely going to be other pieces of this
+ that people object to, right?
+ So during the kind of 2016 to 2020 era, it became a
+ pretty common thing to go into work in New York and you
+ have people protesting outside your office or, you know,
+ doing all kinds of things.
+ And so there was this question of, well, is this okay?
+ And I think the point I was trying to make was I don't
+ think that it's rather disengagement is the correct answer.
+ And I think it's more recognized now, but especially
+ then it went a bit too far, right?
+ So the famous example here is Google kind of disengaging
+ with a Pentagon AI project, just because some people
+ felt that working with a Pentagon was itself morally bad.
+ I think that's way to sort of the left of what the
+ median American would say.
+ I think the median American would say it's fine to work
+ on defense stuff, you know, within reason and,
+ assuming you're doing largely good things.
+ And so there was just this kind of almost arbitrage there
+ at some point of just, like, hang on, like, it's not
+ like working on defense is inherently evil.
+ It's actually a pretty interesting thing.
+ And then there's this question of, well, would you
+ rather be in the room and making this better or not, right?
+ And so in struggling with how much I can share here,
+ but like as a simple example, if you're doing even a
+ workflow which I think many people would not be
+ super comfortable with, like, let's say you're
+ targeting somebody for some kind of strike.
+ If you compare what the way it's done now to maybe the
+ way it was done in 2010, it's going to be a lot more
+ targeted, it's going to be a lot more accurate.
+ And so you've actually improved that process and
+ reduced the chance of error.
+ Maybe you should feel good about that, right?
+ Now, that is a bullet many people are not willing to
+ buy.
+ I didn't work on the defense side of the
+ company myself, but I think you have to be okay with these
+ kinds of grade zones and actually actively thinking
+ about what you are doing.
+ And that doesn't mean that it's always the right thing
+ to do to work on a defense company, right?
+ Maybe we go into a very dark future, we start being
+ the bad guys in some ways, and then it's probably not a
+ great idea to work on a defense company, right?
+ So it's a shifting landscape.
+ But I think I kind of felt pretty strongly that a lot
+ of people in tech just didn't want to think about this at
+ all, right?
+ So, like, you have engineers now who are working on
+ optimizing short form videos for higher engagement.
+ And you sort of want to say to them, like, hey, are you
+ thinking about what this is doing to the brains of
+ young children?
+ Or have you seen, you know, an 11 year old kind of
+ scrolling something for five hours and you think this
+ is a good thing?
+ And I think people don't want to think about this stuff
+ too much.
+ I'm not saying I know the answer, but there was almost
+ this refusal to look at what tech was doing from a
+ political lens for a very long time.
+ It was just like, hey, let us play with our toys.
+ Let us sit in Menlo Park and, like, don't bother us.
+ And we're just going to build cool stuff and watch it.
+ And 2025, we're in a very, very different state of the
+ world, right?
+ You know, tech is involved in politics now.
+ And politics basically came to tech, right?
+ There's this famous image of Mark Zuckerberg.
+ He's sitting in Congress and he kind of looks very pale and
+ he's like, why have they dragged me in here again, right?
+ But I think, I think tech went through this journey of
+ we're suddenly becoming important now.
+ Oh, we're really, really important now.
+ Oh, we better stop playing this game of politics.
+ And so I think what I'm saying now is a lot more
+ consensus than it was 10 years ago.
+ But at the time, the feeling was just like, look, what
+ we are doing is political, so you better engage with that.
+ I think when this became really real for a lot of
+ people is with the Korean War, like the government's running
+ out of certain vehicles and ammunition.
+ We're just like not able to produce it.
+ And then we're like, Oh, thank God, for coming.
+ Like Android and all these other tech companies that
+ are actually ahead and keeping us ahead.
+ Like, I think the only reason the US is ahead of the, of
+ trying in the space race is because SpaceX, just as a
+ one company that just has been doing this for a long
+ time.
+ So I think a lot of people have kind of realized, okay,
+ maybe, maybe we need these things.
+ Right.
+ Yeah, I would make this argument as well as like people
+ are like, well, you know, how can you feel good about
+ working in defense?
+ And it's like, well, you're not going to feel great
+ if China invites Taiwan.
+ Actually, you're not going to.
+ I think you're probably also not going to like that
+ outcome.
+ So we do just live in this world where you do need to
+ build up the turrets to these things.
+ And they better be good.
+ So to me, it didn't feel that difficult of a question.
+ I think when you zoom into particular things, they can
+ be very difficult questions.
+ And there have been a bunch of those in the last
+ couple of years.
+ But yeah, again, this engagement isn't the answer.
+ Yeah.
+ And again, it's not for everyone.
+ I think that's an important kind of theme through this.
+ Conversation is some companies like to build, sometimes
+ to build a generational, really successful company.
+ You need to turn some people off because that's what
+ brings in the best talent oftentimes.
+ Okay.
+ Just a few more questions.
+ Kind of like stepping back a little bit.
+ You're building a company again.
+ What are kind of like a few core pieces of advice that
+ you're bringing to your new startup that will inform
+ how you build this company from your experience of
+ Palantir.
+ We talked about a lot of stuff.
+ Is there anything?
+ I don't know if there are like three things that you
+ think are like, I'm definitely going to do these things
+ this way because it worked really well.
+ Palantir.
+ One thing is probably just really fast iteration
+ cycles.
+ So placing a lot of bets and then being really rigorous
+ about just going through that cycle very soon.
+ So I have this article with both of one of the things on there
+ is basically saying like your P successes goes up the
+ ball bets you make.
+ And it's sort of a function of how many bets you make
+ and the probability of successful as individual bets.
+ Right.
+ And so one easy way to almost guarantee that you'll hit
+ something is just to make a lot of bets.
+ And then just kind of like cycle through them very quickly.
+ Now, obviously this is difficult.
+ Often this question of, well, is this bet actually failing
+ or like, are we quitting too soon kind of thing?
+ But that's kind of one principle I take is just test this
+ thing very early.
+ You know, like a classic YC thing is just when you take
+ something to a customer, ask them to pay you a lot of
+ money.
+ If they know then find a new problem.
+ Like don't wait three weeks, which is what every
+ founding team typically does because you don't have
+ that kind of time.
+ I do think the importance of just like having a really tight
+ distinctive internal culture and building a strong feeling of
+ trust within a team is really important.
+ And kind of like you mentioned with Airbnb and, you know,
+ people have people definitely felt this a penalty.
+ There was this feeling of like, well, you worked here,
+ you must be good.
+ I trust you and all of that.
+ And I think it's so important to create that.
+ And you kind of know that feeling.
+ That's what like people ask me, you know, should I go
+ work at place?
+ Or should I just go be a founder straight away?
+ I don't know the answer for everyone, but I will say one
+ of the benefits of working at a place like that is you just
+ have all these internal benchmarks now.
+ Okay.
+ This is what this should feel like.
+ And if it doesn't feel like that, we're off.
+ And I can't imagine not having those benchmarks and just
+ kind of having to figure it out.
+ So yeah, I think that think too is just like distinctive
+ internal strong team culture.
+ And then I think maybe think three is just like working
+ with a really messy part of the real world.
+ So, you know, I kind of joked when I left.
+ Like, I'm excited to just do pure software.
+ I'm excited to, I don't know.
+ I want to build an ID or something and just like not
+ have a support email even and all of that.
+ But it turned out like, look, my comparative advantage in
+ a lot of ways was, you know, the networks I built and the
+ experience I'd had in engaging with the messy parts of the
+ world and they do need technology a lot, right?
+ Like, there is this horrifying thought I have sometimes
+ of just like maybe we'll get ATI in the next two years.
+ And, you know, the healthcare sector will still be broken
+ and it will still be impossible to afford rent in New York
+ City and build houses and all these things.
+ And that may well become true.
+ And so I think it's important to engage with those
+ parts of the world too, even though they're really,
+ really challenging.
+ And I think the really nice thing about LLM is that actually,
+ there's so many workflows now that are accessible to you,
+ the tech founder, and people are somehow more open to working
+ with tech companies than they ever were before.
+ Like, selling into this sector of the economy in 2015,
+ incredibly hard, I think now post the chat GPT moment,
+ people are willing to give chances to small startups that
+ they weren't willing to do previously.
+ As you mentioned earlier, the cost of doing things like
+ forward deployed engineering is fallen by maybe 5 to 10 X now,
+ at least.
+ And so there's a lot of new possibilities.
+ And I'm excited to engage with the best.
+ Wow, that is some alpha right there that you're finding that
+ some of these very large organizations are more open to
+ working with startups because, you know, classically
+ investors don't want to invest in companies that are going
+ after healthcare companies and governments and things like
+ that.
+ So it is really interesting actually to hear.
+ I'm going to, you're back the tips you just shared.
+ And there's actually like a secondary tip that I think is the
+ more interesting piece.
+ So the first thing you're taking away is iterate quickly,
+ but I love your tip of ask for lots of money quickly early to
+ see if it's an actual idea that people will pay lots of
+ money for.
+ And if not, move on.
+ I love that.
+ The other is build a very distinct culture.
+ But the piece you share there that I love even more is this
+ idea of knowing what a high bar looks like, knowing what
+ awesome A plus people look like.
+ And you need to work at a company like Palantir to
+ actually see that.
+ So the advice there I feel is they just like work at a
+ company that is amazing first with the best talent to
+ understand what that should look like.
+ Plus you build a network of those folks.
+ So I think that's really interesting.
+ And then the other pieces of advice you're pulling
+ away is work on like really hard messy problems because
+ that's where the biggest opportunities are.
+ And it's sounding like this is the easiest time to actually
+ do that.
+ Amazing.
+ Okay.
+ I'm going to take us to a recurring theme on the
+ podcast called AI Corner.
+ And what we do in AI corners is we share some way that you
+ and this is you sharing some way that you've found AI to be
+ useful in your day day to day to day either in life or in
+ work.
+ Is there any way you found some tool in a some AI tool
+ useful that you can share?
+ Oh, my gosh.
+ There are so many.
+ I'll give you a few examples.
+ So I use WISPA flow quite a bit.
+ This is the talk to your keyboard and it will
+ transcribe for you app.
+ Very good.
+ It's just great when you're iterating very quickly with an
+ LLM and you sometimes you have to do these paragraph long
+ prompts and it's just easier to speak into them.
+ Right.
+ So WISPA flow, I like.
+ Just if the double down in that there's like is like you
+ press a button and you start talking and it's writing
+ out what you're saying.
+ All right.
+ Cool.
+ And like there have been these products for a long time
+ and you can dictate on all these guys.
+ Is the difference now?
+ These are just like very, very good now at actually
+ transcribing what you're saying.
+ I think that's right.
+ Yeah.
+ You know, these, these are really good model and so it
+ rarely makes mistakes even when I think it's quite
+ challenging.
+ And then yeah, the UX I think they just nailed.
+ So that's a really good one.
+ I love Claude code for developing even though I have
+ my complaints about it.
+ There's something just very addictive about just telling
+ it what to do.
+ And it can, it's basically something that you run within
+ the terminal of your computer.
+ And so you just type Claude.
+ It opens up Claude interface.
+ It's very cute.
+ It's very beautifully designed.
+ And you just tell it what to do.
+ It actually operates on the file system directly.
+ So if you're like, hey, create a bunch of these files,
+ that'll just do it.
+ And you don't need to go and mock around inside
+ finding yourself.
+ And then it'll do these really complicated pull request.
+ And it'll basically execute them quite well.
+ So to me, this is like a very exciting kind of previewed
+ AI agents.
+ That's what I was going to ask.
+ So this is essentially like an AI agent engineer.
+ I didn't know that's what Claude code did.
+ Very cool.
+ It's sort of a guided agent.
+ But yes, it is really sweet.
+ And then yeah, I'm just enjoying, you know, every week
+ there's like a new wonderful view thing to play with.
+ Last seven days, I've been testing Gemini Pro 2.5.
+ Excellent models.
+ I don't love Google's UX sometimes.
+ But I was playing with that.
+ And I use LLM's every day for all kinds of things.
+ The other day I was doing taxes.
+ And I needed to classify a bunch of transactions based on some
+ metadata.
+ And so I just wrote a script up really quickly.
+ And it did that.
+ So I love just like the smile on your faces.
+ You're describing all these AI tools.
+ I think a lot of people are just like, holy shit.
+ I'm just overwhelmed with all the things I need to be paying
+ attention to all these things in here.
+ All these tools I got to try.
+ And I love just this vibe of just like this is incredible.
+ I'm so fun.
+ We need more of that.
+ Okay.
+ I'm going to take us to another recurring segment
+ down the podcast.
+ You're going to get a double Emmy contrarian corner.
+ So here's the question.
+ What's something that you believe that most other people
+ don't?
+ I think going to college is great.
+ I think this is somewhat contrarian view with a tag.
+ Maybe not in the broader economy.
+ But you know, I often see people saying just like, oh, if you
+ can just drop out when you're 18 and just start working, why
+ would you go to college?
+ And I think this is completely wrong.
+ But maybe it's good advice for 5% of the population who
+ probably would have been Teal Fellows anyway.
+ But college is one of the few times when you can just make
+ really, really deep friendships you are in, you know, typically
+ a nice campus.
+ If you're in North America, you get to spend all of your time
+ just thinking and writing papers and reading books and
+ hanging out with your friends.
+ And it's actually very precious.
+ And it's very hard to find that kind of time after you turn
+ 21 because, you know, you've got to pay your rent.
+ You've got to do all this stuff.
+ Even, you know, let's say you make a bunch of money.
+ You take a career break.
+ It's still like all your friends are working.
+ And you always feel like there's a taking time on top of
+ your head or something.
+ And so just taking those three or four years at the very
+ beginning and going really deep on lots of different
+ intellectual topics and being able to try different things
+ and discover more about yourself.
+ I'm a big college fan.
+ I can't comment on the ROI or whatever.
+ I personally think the ROI is great, even though the
+ ROI is kind of high in the US, but that's probably my kind
+ of contrarian within tech view is don't drop out of college
+ unless you have a really good reason.
+ It's so funny that that is contrarian and it does sound
+ contrarian.
+ I had a great time in college.
+ You're here.
+ Okay.
+ Is there anything else in the bill that you wanted to share or
+ leave listeners with before we get to our very exciting
+ lightning round?
+ No, I think it's just, it's, it's a really exciting time
+ in the world, right?
+ You know, I think AI can be exhausting, but it does
+ really just open up the possibility of building
+ about a world in all these ways.
+ And so I think just reassess what you're doing every couple
+ of months and make sure that it's aligned with where I think
+ AI is going and make sure that you are working on something
+ that you feel has very high potential if it succeeds.
+ And I think that's more of one than ever now, just because
+ the amount of leverage we have with technology is at the
+ highest point in history.
+ Let me double click on that real quick.
+ So for people that want to do what you're describing, what
+ helps you understand where AI is heading and just kind of
+ like align with it?
+ Are there like places of information and news you find
+ useful?
+ Is it just play with it kind of thing?
+ What would you recommend?
+ This is the big question.
+ I use X a lot to keep on top of AI.
+ So I just recommend finding a good Twitter list and maybe
+ following people off of that.
+ There's some good news that is really like latent space.
+ I know who's X handle it.
+ I can't remember his actual name.
+ But that one is very good and it's pretty technical.
+ I would recommend trying to stick to the more technical
+ news that is possible.
+ I think there's a lot of kind of philosophy about AI or
+ like AI policy type stuff.
+ And I think that's good if that's your area.
+ But it's an area where it's very easy to have a lot of
+ takes on it.
+ It's not necessarily learning a lot by reading those.
+ But I think it's important to know what's going on and make
+ sure you are revisiting your own workflows as often as
+ possible and just making sure that like the people who
+ went here are going to be the kind of hybrid cyborgs who
+ fused with the AI is right.
+ This actually played out in chess if I can take a slight
+ detour is the chess players who succeeded the most in the
+ mid 2010s especially were the ones who were really early
+ adopters of a neural network based chess engines.
+ So when DeepMind did that thing there was very quickly an
+ open source version of it called Leela.
+ And you find basically like the very top players like
+ Magnus Carlsson Fabiano they were the ones who kind of
+ minded melded the most with Leela and learned how it
+ played and then kind of started copying it.
+ So I think this like becoming a cyborg to the extent that
+ you can.
+ And then I think there's this barbell thing of like it's
+ also important to just leave everything at go touch
+ grass just for your own mental.
+ Mental sanity.
+ Excellent advice.
+ And with that Nabeel we've reached our very exciting
+ lightning round.
+ Are you ready?
+ Yes.
+ Here we go.
+ What are two or three books that you find yourself
+ recommending most to other people?
+ The first one that comes to mind is Emperor by
+ Keith Johnston.
+ This is actually I wrote about it in that essay.
+ It's one of the books that power tastes to send to
+ people.
+ I just think it's a really interesting book.
+ So normally speaking it's about improvisational theater
+ which I believe this guy was a pioneer of.
+ He was a British guy.
+ Keith Johnston active between the '60s and the '80s I think.
+ And Emperor is just this really interesting book about
+ creativity and how social behavior works and basically
+ just what he taught his improv students.
+ It's a very weird book.
+ It's full of these unbelievably strange ideas.
+ There's a lot of very tactical things he tells you to do
+ in the first chapter for example.
+ Just to break out of your own mental frameworks.
+ Like really just wild stuff.
+ Like he'll tell you to walk backwards while counting
+ down from 100 and think about some problem that you're
+ struggling with.
+ There's all these kind of odd things but the number of
+ ideas per page I've found on that book is extremely
+ high.
+ The concepts about how social interaction works and
+ how things like status and so on play into your social
+ behavior are super important and they made every kind of
+ fully deployed engineer read that.
+ For the simple reason that I think it just helps you kind of
+ read people better and interact with them better and
+ become more conscious of how you are coming across it.
+ Just modulate that.
+ What is the title again?
+ Impro.
+ Impro.
+ Okay cool.
+ We'll link to it in the show notes.
+ Yeah so.
+ Impro is number one.
+ I think just to go a little bit.
+ Maybe Shakespeare's history plays.
+ There's a set of them called the Henry ad.
+ I find most people don't read these.
+ They'll read Hamlet or Macbeth or whatever.
+ The Henryon is absolutely incredible.
+ You don't have to be interested in British Monarchy or
+ British history in order to enjoy them.
+ There are actually some of the most interesting and
+ insightful books I've read about power and how power works
+ and politics and kind of what the sacrifices that you might
+ have to make if you want to be a successful king in that case
+ but it transfers over.
+ I think it's worth thinking really hard about.
+ I think especially in a world where everything is kind of
+ organized around these prominent figures and
+ personalities now.
+ When you think about the current administration, you think
+ Trump, Elon, when you think about AI, you think of Sam,
+ Dario.
+ I think it's important to understand how do you think
+ about these personalities and the kind of game that they're
+ playing?
+ Henry is an incredible set of books around that.
+ They're also easy to read.
+ It sounds hilarious when I say it.
+ You can read a Shakespeare play in a day.
+ I don't know.
+ 50 pages long.
+ It's not that bad.
+ You have to get used to the language.
+ Yes.
+ I would recommend that for sure.
+ I guess you asked for two to three.
+ I love high output management by Andy Groove.
+ I just think that's a great business book and people sort of
+ tend to read summaries of it on the Internet more than they
+ actually read the book.
+ But the actual book has a lot of really interesting stories
+ and explanations about, like I think the most powerful thing
+ about that book is actually how Andy Groove thinks unless any
+ of the specific tactics that I think you don't get that unless
+ you read like how he came up with all these things.
+ Your first two books were extremely out there versus what
+ other people have recommended.
+ And the third book was the most recommended book on this
+ podcast.
+ So I love that spectrum that we just went on.
+ Perfect.
+ Okay.
+ Next question.
+ Do you have a favorite recent movie or TV show that you've
+ just really enjoyed?
+ The last movie I really loved was "Decision to Leave."
+ It's a Korean movie.
+ It's by the director of "Old Boy," which maybe some people
+ have heard of.
+ It's a great movie.
+ I think it was released a couple of years ago.
+ And the basic premise is there's a detective who is
+ investigating a woman who's accused of killing her husband
+ and he gradually starts falling for her.
+ It starts to affect his judgment totally its ways.
+ Just like a really fascinating, kind of psychological
+ thriller with a sort of romantic element to it.
+ Visually very beautiful.
+ Yeah.
+ I think a lot of the most interesting movies nowadays come
+ from abroad, actually.
+ So East Asia, South Asia, places like that.
+ TV, I don't watch so much yet.
+ It's been a while.
+ Totally understandable for a founder.
+ OK.
+ Next question.
+ Do you have a favorite product that you've recently
+ discovered that you just really love?
+ It could be an app.
+ It could be some physical.
+ It could be a water bottle.
+ I don't have a good answer to that one.
+ I guess it'd buy enough stuff.
+ It's totally acceptable.
+ There's no wrong answers in the lightning round.
+ Moving on.
+ Do you have a favorite life motto that you often
+ find useful in work and life that you share with your,
+ that you come back to, that you share with friends
+ or family?
+ So, so this is our technical Christopher Alexander
+ who wrote these beautiful books that are about, you know,
+ beauty and kind of more than architecture.
+ Right.
+ And he, he was a teacher at UC Berkeley and he got really
+ frustrated with the students because he just felt like
+ they were always turning in kind of like average work.
+ And so he would always tell them every week, like, imagine
+ the, there's a gothic cathedral in France called
+ chart and, and he would say you have to aim for
+ chart, like you have to make something that is better
+ than that.
+ That should be your goal.
+ Not just to like turn in something that's, that's sort of,
+ you know, what you feel is good enough.
+ You actually have to try and be better than the very,
+ very best that I've ever did it.
+ And I find myself just like repeating this a lot to
+ myself.
+ It's just like aim for, aim for that.
+ Like really try and do that.
+ Otherwise it's very easy to anchor on something right in
+ the middle.
+ And you just, you do this unconsciously all the time.
+ So is that the, is that the motto?
+ Just aim for charge?
+ Yeah.
+ Yeah.
+ I love that most people have no idea what that would
+ mean.
+ Yeah.
+ But with the context is quite powerful.
+ Final question.
+ What's a classic novel that would you think would be
+ most valuable for product builders?
+ I just, my favorite novel is Anna Karenina, and I
+ recommend that everyone read Erica.
+ I'm reading that right now.
+ I've never read it before.
+ No way.
+ Yeah.
+ So it's by Leo Tolstoy is, you know, it's this epic, like
+ 19th century Russian novel that follows a set of
+ characters across society.
+ And I think it's just extraordinary because what's,
+ what's amazing about him is he's just able to imagine
+ himself into the brain of anybody.
+ And so even like, he will briefly just go into the
+ consciousness of, I don't know, the, the servant who's
+ bringing the meal to the table or something like that.
+ And he'll just tell you a page of what they were thinking.
+ And then he'll just flip back into his main character's
+ head.
+ And I think that is the most impressive demonstration
+ of this kind of skill I've ever seen.
+ And I think like to connect it to your question, this is
+ what you have to do.
+ If you're going to be really good at products, you have to
+ really think yourself into the other person's head and you
+ have to be really seeing it the way that they do.
+ And it's so hard, especially as a founder or product
+ person, not to just get stuck on your own way of seeing
+ the problem, right?
+ It's like, you wrote up this dog.
+ You made these marks.
+ You're like, this is going to be great.
+ And then you take it to somebody they don't care that much.
+ You really have to like exercise your empathy and
+ why they see it that way and what they actually care about.
+ What a beautiful way to bring it all together.
+ Let me also add while I'm reading the book, something a tip
+ here is people talk about having chat, GPT voice mode,
+ just kind of sitting there next to you.
+ I found that extremely helpful with this book where I just
+ ask, like, what the hell does this thing mean?
+ Like, there's all these Russian dances and balls in
+ etiquette.
+ And you just ask and you're like, I'm reading Anacronina.
+ What does this mean?
+ And it just tells you.
+ Yeah.
+ So there's another cool tip for AI.
+ Okay.
+ With that.
+ Two final questions, in case people want to look you up.
+ Where can they find you online?
+ And how can listeners be useful to you?
+ Find me online.
+ My website is nebeocu.co.
+ And my X handle is nebeocu.
+ I'm probably most active on that.
+ But yeah, my website has all the links.
+ You know, a bunch of essays and interesting stuff.
+ How can you help me?
+ I would say send me an email.
+ My email is on my website.
+ Introduce yourself.
+ Say hi.
+ I love meeting people.
+ I don't always have time for coffees nowadays or things like that.
+ But I genuinely do get a lot of energy from just receiving emails from interesting people.
+ So please do reach out.
+ Awesome.
+ Definitely check out Nabil's principles.
+ Is that the term?
+ Is that the name of that post?
+ Yeah.
+ Great.
+ Okay.
+ That's one to start with.
+ And then also there's the Palantier post that we just talked through.
+ Okay.
+ Nabil, thank you so much for being here.
+ Thank you.
+ Appreciate it, Lenny.
+ Hi, everyone.
+ Thank you so much for listening.
+ If you found this valuable, you can subscribe to the show on Apple Podcast, Spotify or your
+ favorite podcast app.
+ Also, please consider giving us a rating or leaving a review as that really helps other
+ listeners find the podcast.
+ You can find all past episodes or learn more about the show at lenny'spodcast.com.
+ See you in the next episode.
+ episode.
+ (music fades)
+ [BLANK_AUDIO]

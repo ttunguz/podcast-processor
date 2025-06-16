@@ -1,0 +1,739 @@
+--- METADATA START ---
+Show: Data Engineering Podcast
+Episode: Scaling Data Operations With P…
+Host: Tobias Macy
+GUESTS: Chakravarti Kotaru 
+Guests: Chakravarti Kotaru
+Source URL: https://podcasts.apple.com/us/podcast/scaling-data-operations-with-platform-engineering/id1193040557?i=1000710364769
+--- METADATA END ---
+
+1
+Hello and welcome to the Data Engineering Podcast, the show about modern data management.
+2
+Data migrations are brutal.
+3
+They drag on for months, sometimes years, burning through resources and crushing team morale.
+4
+DataFold's AI-powered migration agent changes all that.
+5
+Their unique combination of AI code translation and automated data validation has helped companies complete migrations up to 10 times faster than manual approaches.
+6
+And they're so confident in their solution, they'll actually guarantee your timeline in writing.
+7
+Ready to turn your year-long migration into weeks?
+8
+Visit dataengineeringpodcast.com slash datafolds today for the details.
+9
+Your host is Tobias Macy, and today I'm interviewing Chakravarti Kotaru about scaling successful data operations through standardized platform offerings and being able to provide databases as a service at scale.
+10
+So Chakravarti, can you start by introducing yourself?
+11
+Sure.
+12
+Thanks for having me.
+13
+I'm Chakravarti Kotaru.
+14
+I work as a director of a data platform for a leading online travel company.
+15
+And I have nearly two decades of experience with scalable architectures, especially in data stores, data, governance, and security.
+16
+I have spent a big part of my career focusing on building data platforms in public and private clouds.
+17
+And do you remember how you first got started working in data?
+18
+It was right out of the recession.
+19
+I applied for like 1200 internships.
+20
+I got two.
+21
+One is from Walt Disney World, Florida.
+22
+That was like a really great experience.
+23
+So I started as an Oracle developer.
+24
+And after that, I joined a major insurance company as a database developer.
+25
+But then the project got cracked.
+26
+And my manager at that time gave me an option of ULAN operations, database administration, or go find another job.
+27
+At that time, I specifically remember I started React, which is bankrupt now.
+28
+It's similar to Cassandra.
+29
+But that's what gave me an opportunity to explore different NoSQL databases in addition to relational databases.
+30
+And that's where we started building private data platforms in the private cloud.
+31
+In terms of the idea of databases as a service, data platforms, obviously a lot of the cloud providers have that as one of their offerings, with generally the focus being I want a database to be able to use for whatever application I'm building.
+32
+Wondering if you can just start by giving some overview about some of the ways that those database as a service offerings that are part of that core offering from the cloud providers are maybe insufficient and some of the challenges that you ran into as the person responsible for that data layer and how that led to different failure modes for the teams that you were supporting.
+33
+Yes, so our philosophy is mostly like, you know, like we don't want to select a few databases and have use cases designed around them.
+34
+We wanted to specifically have a use case which solves a problem and figure out what is the right database for it.
+35
+So we don't want to put everything in relational or put LinemoDB or put everything in a select databases that you are comfortable with.
+36
+But if you are doing a search, if you are doing full-text search, we want to go and get the best search engine for that, which is Elasticsearch.
+37
+So specifically targeted databases for specific applications.
+38
+So, that's one reason why you use multiple databases.
+39
+Another reason is obviously, you know, big companies, mergers, and acquisitions, different companies use different things, and then when they come together, it's not straightforward overnight to change everything.
+40
+In terms of the different options for database types, database use cases, you mentioned things like Elasticsearch and DynamoDB.
+41
+Obviously, there are various relational databases that are on offer.
+42
+And in terms of the particular data use cases that you were supporting, I'm wondering if you can give a bit of an overview and some of the reasons why you think these various NoSQL offerings were the most relevant and effective options for the problems that you were looking to support.
+43
+Right.
+44
+So, the major ones that we support are like raper relational.
+45
+We have a lot of SQL Server that we are trying to migrate to a cloud-native database, but that is traditional.
+46
+Like, you know, 10 years back, mostly everything is relational.
+47
+So, we have a lot of tech depth on it.
+48
+Mostly transactional databases for payments and bookings, those kind of things.
+49
+And as we break those monolith and create more microservices and we transition to the cloud, we are exploring opportunities to what can be moved to MongoDB so that we have better decoupling the schema and giving more flexibility to developers.
+50
+At the same time, cache use cases heavily on Redis, which we are actively working on to migrate more.
+51
+So if you look into low-latency rights, like anytime we are working around use cases which really require low latency rights, we prefer Cassandra or SQL, Scylla DB, a key value database like that.
+52
+So there are different things to keep in mind when we are selecting these databases.
+53
+Obviously, the CAT theorem, what is important to you?
+54
+Is it like consistency or availability or partition tolerance?
+55
+Based on that, we pick and select a database for the best use case.
+56
+And in terms of the scale of challenge that you're supporting in your current role, I'm wondering if you can talk to some of the ways that the existing platform offerings were starting to run into challenges or some of the edge cases that you dealt with or some of the ways that the teams were maybe not using those systems to their best effect and the ways that you've thought about how to make that more of a standardized offering so that it was falling off a log easy.
+57
+Yes, so it's multiple things.
+58
+So the platform offering is one for scale and quicker adoption and is for governance and making sure all the best practices are followed.
+59
+So when we initially started, like let's say one org or one section of the company that we were supporting, when we started looking into databases, a few things are happening.
+60
+With the DevOps culture, everybody started building up their own MongoDB.
+61
+But when developers want to set it up, they set it up with an intention to quit.
+62
+They don't pay too much attention to is the database has the right parameters, does it have authentication?
+63
+Does it have SSL?
+64
+All of this very deep nitty-gritties of the databases.
+65
+So when we started looking into it, we found things like databases don't have basic authentication sometimes.
+66
+They don't use the right parameters for that specific access patterns.
+67
+So what ends up happening is either they six months after that, they come and say MongoDB is not the right use case because I'm not getting the performance I needed, or they will throw infrastructure at it and 10x the box to shield performance issues, which will increase the cost.
+68
+So to solve that problem, because it was one organization, we started using infrastructure as code, Terraform, and EC2 and all of that, and came up with a basic platform which creates all of these databases.
+69
+It was a simple implementation of a data platform because it's only like four different AWS accounts.
+70
+Okay, we have a Terraform template for MongoDB, a Terraform template for Cassandra, and once the developers use that, it creates that specific cluster.
+71
+For example, Cassandra, it creates a six-node cluster with all the right DC configurations and everything.
+72
+So it shields the developers from all the nitty-gritties of databases.
+73
+That itself is a right value, a value add right away, which saves their time.
+74
+And at the same time, it was able to give a lot of governance benefits for the company because now I have authentication as default.
+75
+Now I have VML TDC as default in case of disaster recovery and things like that.
+76
+But the scale, it was good, it worked.
+77
+But then, you know, at some point, the company started consolidating all of the platforms.
+78
+So we went from one org, which is four AWS accounts, to almost 400 AWS accounts, which is like.
+79
+So we started looking into a data platform that can work at scale.
+80
+That's when we started looking into Service Catalog and different cloud providers.
+81
+And with Service Catalog, we used that HubSpoke model where we were able to solve that scale issue.
+82
+Now it doesn't matter if it's 400 accounts or 4,000 accounts, or whether it's like 100 different database clusters or 8,000 clusters.
+83
+We were able to centrally deploy, manage, and monitor all of them at scale.
+84
+In terms of the teams that you were working with, what were some of the characteristics of the other engineers and their level of familiarity with these data layers and the level of attention that they wanted to pay to that aspect?
+85
+Because I know from working with teams of various compositions, developers, they just want to say, just give me something that I can throw data at.
+86
+I don't want to have to care about the rest of it.
+87
+Whereas if you're dealing with data engineers, they're going to be much more hands-on about selecting the actual storage layer technologies and the ways that they're interoperating.
+88
+We prefer the second one because on part of this platform building and everything, there is also a consultancy service, right?
+89
+We like to be involved from day one where you have a use case, the data side of folks get involved so that we can figure out what is the best database technology.
+90
+Because there were instances where a POC started and because before you realize the POC ended, it was productionized.
+91
+And by the time you figure out that this is not the right technology, maybe you can move from Redis to like, you know, some other database.
+92
+So because you are committed to release a product and you go to production with that, and just by changing the backend database, in some cases we were able to save like two billion dollars.
+93
+So it's very important to get the right database technology right.
+94
+So as far as what kind of mix we have, we have considering a big travel platform, online travel company, we have almost all kinds of teams.
+95
+Like some teams, they're really good at what they do and they have been managing some of these databases for a long time.
+96
+So they know all the integrity.
+97
+They are like, hey, we don't need to onboard to the data platform.
+98
+We are good at managing it ourselves.
+99
+We respect that.
+100
+So it's not that the whole point of data platform is not to impose something on everybody.
+101
+It's to help them unblock and move them quickly to reach their goal.
+102
+So, but majority of the company, like 90 to 95% of the company, they were like, wow, this is great.
+103
+I don't have to worry about infrastructure.
+104
+I don't have to worry about 24 by 7 support or performance tuning.
+105
+You take care of that.
+106
+I am happy writing code.
+107
+So majority of that, that's what I have seen across the industry as well.
+108
+Whenever I go and present this data platform-related issues, most of the developer community is happy offloading that to somebody else, and they focus on building the next signy thing.
+109
+And so, in terms of the options and offerings that you were building out to support those different styles of team, I'm wondering how you thought about the base case of I just want to be able to throw up a database and be able to start working with it and then having levels of complexity that you're able to expose for the teams that wanted to have more control and fine-tuning of the size or scale.
+110
+So, whenever we are providing these options, there are multiple parameters.
+111
+There will be an intake form where they will be able to write what is their latency expectations, what would be their throughput or the data size, and how it will grow in the next two years, three years, five years.
+112
+All of this information is collected.
+113
+Based on that, obviously, when you let them configure everything, it doesn't make sense.
+114
+Again, it adds a lot of complexity on their end.
+115
+So, we have different sizes: small-size database, mid-size database, or a large-sized database.
+116
+So, based on the information that they have entered, we output that, okay, for based on your information, you can go with a medium-sized infrastructure, which can be a six-Note case under cluster.
+117
+For example, if it's a large size, it can be like a 13-Note case center cluster.
+118
+So, abstracting all of the technical details also will help them.
+119
+They will say, hey, this is my requirement.
+120
+Tell me how big of a cluster I need.
+121
+And they will go and select that, and it deploys that big of a cluster.
+122
+And then, another aspect of providing these systems as a service is working to integrate into the standard workflow and tooling that the teams that you're supporting are already using.
+123
+You mentioned that you were using Terraform, at least initially, for provisioning these setups.
+124
+Not every team necessarily wants to get up to speed with Terraform.
+125
+They just want to be able to say, just click a button, the CI runs and everything's great.
+126
+And I'm wondering how you thought about managing the interfaces that you were exposing to these different teams to be able to provision the resources that they need for their use cases.
+127
+That's the beat of it, right?
+128
+So, earlier, they were writing Terraform to create a Cassandra cluster and all of that.
+129
+Now, we write the Terraform.
+130
+They have a JSON call with a set number of parameters like the cluster size or what kind of database technology and specific parameters that they want to tweak.
+131
+So, that so even writing Terraform or anything like that is abstracted.
+132
+So, when we move to the bigger phase two of the platform with Service Catalog, where we are using Service Catalog and CloudFormation, they don't have to even write any code.
+133
+They have two options.
+134
+They can go to Service Catalog UI and select I need a Cassandra database, six nodes, these parameters I want to tweak, or they have another option of we built an API on top of Service Catalog where they will just call the API.
+135
+And that they can integrate in their workflow.
+136
+And anytime they are using repetitive testing environments where they build and destroy the clusters, they can put it as part of their code and they can build the cluster, they do the testing, the code, or they productionalize it.
+137
+If it is a production cluster, they call it one time and that infrastructure is available.
+138
+Obviously, in order to be able to provide these different database engines as a service, it requires a decent amount of familiarity with their operational characteristics, the scaling considerations, the ways that you need to manage orchestration of the nodes entering or leaving the cluster, fine-tuning of the throughput, and that requires a lot of effort and time, investment, and usually a lot of errors that come up as a result.
+139
+I'm wondering if you can talk through some of the ways that you helped to build that operational familiarity and operational comfort of the different engines and the ways that you selected the engines.
+140
+Yes, so again, so when we are building the platform, the advantage is like, let's say a company has 20 different teams and they need at least like 10 different Cassandra.
+141
+If they're running Cassandra, they need 10 different DBAs in integrated in their own part.
+142
+That's the typical DevOps model.
+143
+Now, if we are bringing them all to the platform team, we only need like two or three who are experts.
+144
+So they set up everything, the configuration and everything, and everybody else uses it.
+145
+So we don't need every team expert embedded in their teams.
+146
+So the platform team abstracts all of that.
+147
+And once you have that, best practices are defined.
+148
+This is how you need to create secondary indexes, or like this is how you need to build your access patterns.
+149
+They are all defined.
+150
+And as I said, when we are involved from the day one, like let's say there is a use case and day one, we can help them make sure that they don't make costly mistakes which will hurt later, but adhere to those access patterns and the best practices.
+151
+And that will help for successful use case deployment.
+152
+And so talking a bit more about the implementation of the platform management.
+153
+You mentioned that you were using the AWS service catalog.
+154
+How did that help to enable the scaling of your platform offering and some of the other technologies that maybe you tried and failed with before you got to that solution?
+155
+Yes.
+156
+So like initially, as I said, we were using Terraform to manage four different accounts.
+157
+But with 400 accounts, it was not an option.
+158
+So we tried a few things like that.
+159
+But that's when, when we started doing the research, we saw that this is a readily available option.
+160
+Service Catalog is not just for a data platform or anything.
+161
+Any product, if you have an infrastructure as a code that you want to deploy, you can use Service Catalog.
+162
+It can be an EC2 instance to a network configuration to a database.
+163
+So, when we started researching, we came to know about Service Catalog.
+164
+So, we did a quick POC and it just took off.
+165
+Like, when we saw that, okay, we were able to manage 400 different accounts and create database clusters within those accounts from a central place with one set of template, that gave us the power to quickly onboard all of these brands to one central platform and manage them.
+166
+So, yeah.
+167
+This is a pharmaceutical ad for Soda data quality.
+168
+Do you suffer from chronic dashboard distrust?
+169
+Are broken pipelines and silent schema changes wreaking havoc on your analytics?
+170
+You may be experiencing symptoms of undiagnosed data quality syndrome, also known as UDQS.
+171
+Ask your data team about SODA.
+172
+With Soda Metrics Observability, you can track the health of your KPIs and metrics across the business, automatically detecting anomalies before your CEO does.
+173
+It's 70% more accurate than industry benchmarks and the fastest in the category, analyzing 1.1 billion rows in just 64 seconds.
+174
+And with collaborative data contracts, engineers and business can finally agree on what done looks like, so you can stop fighting over column names and start trusting your data again.
+175
+Whether you're a data engineer, analytics lead, or just someone who cries when a dashboard.
+176
+Side effects of implementing SODA may include increased trust in your metrics, reduced late-night Slack emergencies, spontaneous high-fives across departments, fewer meetings and less back-and-forth with business stakeholders, and in rare cases, a newfound love of data.
+177
+Sign up today to get a chance to win a $1,000-plus dollar custom mechanical keyboard.
+178
+Visit dataengineeringpodcast.com/slash Soda to sign up and follow Soda's launch week, which starts on June 9th.
+179
+And then another element of offering databases as a service is the consistency that you're offering in terms of the setup, the scalability, but also there's the security model and the requirements that exist around different types of data that you're working with, the ways that data can be propagated and moved between different systems.
+180
+And I'm curious how you worked through some of those elements of governance and setting expectations and requirements with the numerous teams that you were supporting and the organizational buy-in that you had to get as you started implementing those various controls and constraints.
+181
+Yes.
+182
+So we were focused on the data platform.
+183
+The data governance aspect, like a GDPR or like data scrubbing, we have a separate org, just focusing on that.
+184
+But basic data security like authentication, SSL on transit and SSL at rest, we can control that now because we are not leaving it to the developer to make sure that he's securing the data.
+185
+Once it is in the platform, all of these are guaranteed.
+186
+They are all free.
+187
+So encryption at rest, encryption and transit, authentication, logging, audit, all of that is enabled and it's all part of the best practices.
+188
+And in working with the different teams beyond just the core security elements, what were some of the challenges that they ran into as far as maybe they were running into limitations or various security constraints that you were enforcing and some of the ways that you worked to familiarize them and just document the standard practices and expectations that they would need to conform to to be able to use the platform that you were offering?
+189
+Yeah, so obviously there is a friction.
+190
+Like when you are already running a database, when we go and ask them to onboard to this platform, if it is a like-to-di-like onboarding, like if you are using one particular database and you are just going to the same database on the platform, it's pretty straightforward because you join to the cluster, steam the data and remove the old infrastructure.
+191
+But at the same time, we took the opportunity to modernize and update some of the database choices as well, like moving from SQL Server to Aurora or like, for example, sometimes MongoDB to DocumentDB for various reasons.
+192
+So that requires a lot of developer buy-in because some form of rewriting the code is involved.
+193
+But again, it is your organizational goals.
+194
+If they are aligned to your organizational goals, you can get enough traction for that and we were able to move.
+195
+The biggest challenge we have faced is like, I would say, developers worrying about losing control.
+196
+Now, if I have a performance issue, I can double the box and I don't have to talk to anybody.
+197
+But if you are moving to the platform, there is an additional layer.
+198
+That was a bigger culture change that we had to bring within the company that, hey, we are not somebody that is stopping you to do good stuff.
+199
+We are trying to accelerate you to do that good stuff.
+200
+We are not like, you know, the way I tell everybody is like, hey, we are just an extension of your team taking care of a specific aspect of it.
+201
+We are just your team focusing on this.
+202
+So, you don't have to worry about it.
+203
+That really helped us.
+204
+And obviously, a lot of communication, collaboration, and the team culture aspect of it.
+205
+A lot of times, platforms bring silos even without realizing.
+206
+But if you implement it right with great collaboration and building it with the interest of developers accelerating, it really works.
+207
+And then, from that migration perspective, where maybe you have a team that's using an existing database and they need to move to a different engine, or even if it's the same engine, obviously, there are various uptime considerations and various challenges that exist in any migration, particularly if you're moving from an unconstrained or an unopinionated approach to a more opinionated and constrained system.
+208
+And I'm curious how you worked through some of those challenges of doing that data migration, particularly with considerations around uptime.
+209
+That has still been a bigger challenge.
+210
+While we still run a lot of legacy, relational SQL stuff is because of the same thing.
+211
+How do we migrate to more modern databases without downtime?
+212
+And also, you know, how do we refactor all the code?
+213
+Which is, there is a code which is 15 years old, nobody wants to touch it, honestly.
+214
+Like, who wrote is gone?
+215
+Who wrote that code is gone.
+216
+People who are here, they're happy as long as it runs and they don't know what to do if it breaks.
+217
+So, that is still a challenge.
+218
+But mostly, it's like working with the mock team and setting up schedules.
+219
+We have monthly maintenance windows where we control how much downtime we make sure that we do everything, three steps, and everything.
+220
+And most of the time, it's just a flip.
+221
+The cluster will run in an expanded mode for a long time.
+222
+And when we are ready, we take the two minutes downtime and flip it in case.
+223
+But most of the time, the NoSQL databases like Cassandra's and Mongo's, they give us the flexibility to do all of this migration before any downtime.
+224
+In terms of the workloads, and you mentioned the relational engines, there are definitely a number of legitimate uses for relational systems.
+225
+They're not necessarily always adaptable to a NoSQL use case.
+226
+I'm wondering what your overall approach is as far as the relevance and utility of NoSQL compared to relational engines, and maybe some of the challenges of scale that you're experiencing with those relational engines that will maybe motivate you to doing something that is more of a NoSQL flavor.
+227
+So, again, as I said, we are not coming up with a pre-idea of this is the database you need to use.
+228
+There is a very valid use case still to use relational, and we still do a lot of our workloads run on Aurora and Postgres and MySQL, all of that.
+229
+What we are trying to do is migrate more from a SQL Oracle kind of on-prem setups to more cloud-native relational databases.
+230
+So, we still will continue to use heavily relational databases, but in a more cloud-native relational setup.
+231
+They need strict asset properties and things like that.
+232
+So we'll continue to use those on relational databases.
+233
+What we want to do is use the specific tool for the specific use case.
+234
+Also, how to run it with the least cost.
+235
+Like if there is an open source database out there which can solve my use case without paying any license cost, we want to use that instead of paying heavy licenses or overhead cost around this legacy databases.
+236
+So one of the other things that you mentioned earlier was the shift from a DevOps style approach to more of a platform engineering approach where to begin with you had these embedded experts who worked with all the different teams but maybe didn't have as distributed of a set of knowledge around the different database engines and now you've consolidated a lot of that expertise into your platform team with a focus on the data layer.
+237
+And I'm wondering how some of the ways that the lessons learned in that has maybe translated to other operational elements of your overall engineering stack to invest more in a platform versus DevOps style approach and some of the ways that those DevOps style resources have either shifted focus or some of the other types of work that they're still engaged in within those teams in an embedded fashion.
+238
+Yeah, so one thing is like platform engineering is not a replacement of DevOps, it's an enhancement of DevOps.
+239
+Like instead of DevOps team taking care of 100 different things, they just now take care of 10 different teams and let the platform teams worry about that.
+240
+So then we brought all of these engineers to data engineers to a central team and built the platform that really worked, it really freed up a lot of time for DevOps people to, because let's say you are a Java engineer or a CI CD engineer, you may not know all aspects of networking or database or you know how to set up 10 different services in AWS.
+241
+That will free them with fatigue of learning 100 things to make one thing work and make free up a lot of their time so that they can focus on what they are good at.
+242
+The lessons learned is like obviously, as I said, this is not a one-size-fits-all.
+243
+We don't want to build a platform and enforce on every organization in the company.
+244
+The way we want to do it is reverse.
+245
+We want to go and understand what are the current challenges, come and try to fix that using the platform.
+246
+That's the biggest lesson learned.
+247
+Like anytime that we are building other platforms or even in the future, I build a platform.
+248
+The fundamental concept is you don't start a platform team to build your own fort or your own org.
+249
+It's like identify a challenge in the organization and help them solve it, not to have like 20 different reports added to you.
+250
+Another aspect of having that platform team and that more centralized capability, as you mentioned, is it can be more scalable and more efficient, but it also requires organizational support to invest in that dedicated resource versus having everybody be more generalized and the expectation that everybody manages their own requirements.
+251
+And I'm wondering how you've seen some of the organizational investment and some of the ways that you've had to work with the broader organization to help promote the utility of having that centralized.
+252
+You can't just hire like 20 different people and say I'm starting a platform team.
+253
+But you start small and show the value.
+254
+That's what we did.
+255
+We just did it in one org.
+256
+where we started this platform concept and added value, showed the value in terms of monetary benefit, in terms of quality.
+257
+Like if you have a generalist in 20 different teams versus two or three specialists, that adds a lot of value, especially when you are having an incident.
+258
+When you're running an open source databases and you are having an incident, if you have a generalist, the probability of quickly solving it is less compared to when you have an expert.
+259
+So when we did the small setup for almost 18 months and we showed the company that this is the value add, that's when we started onboarding to different organizations and different brands and all of that.
+260
+It took almost like two, two and a half years to onboard all of the company because they were seeing value and like one dev team started using the platform.
+261
+They were like, okay, these are all the values that I'm getting.
+262
+Obviously, they all talk in the dev communities and that's how word of mouth.
+263
+We never enforced it in the company.
+264
+That's a duty.
+265
+Like we never went and say that you need to onboard to platform by so-and-so date.
+266
+We said this is available.
+267
+If you onboard, these are your benefits.
+268
+And that's how it has grown organically.
+269
+In your experience of building that capacity, working with the engineering teams and helping to promote your approach in various conference presentations and talking to other organizations, what are some of the most interesting or innovative or unexpected ways that you've seen that platform of capacity applied either within your own team and organization or as it translates to other teams and companies?
+270
+I initially thought this multi-account problem was specific to us because of the huge number of brands and accounts that we had.
+271
+But once I started going out and talking in various conferences, it's like it's a lot of large companies have the same problem because I think at one point AWS starts you to add more and more accounts because they start hitting limitations, IP limitations and resource limitations and things like that.
+272
+At least now they have increased their caps a lot.
+273
+But like five, six years back, we ran into IP limitations in a lot of accounts.
+274
+Like we were not able to provision new EC2 instances and things like that.
+275
+So that's when they said, hey, build a new account.
+276
+If you're a new team, build a new account.
+277
+That's how we ended up with like hundreds of accounts.
+278
+And a lot of companies, a lot of major companies that I spoke to have the same problem.
+279
+And they started looking into the similar HubSpoke model and centrally managing infrastructure, which gave them a lot of good results as well.
+280
+And in your own work of building out this capacity, investing in the engineering effort and the management effort required to bring the company along and see engineering success from it, what are some of the most interesting or unexpected or challenging lessons that you learned personally?
+281
+I would say like, you know, we should always focus on automating things.
+282
+This was true five years back, but this is more true with AI and ML catching up now.
+283
+But the biggest advantage that we saw from the operational aspect is once we had this platform, we thought about, hey, everybody in the team, if you are repeating this task, what can we do to automate it?
+284
+So we need to have having that automatic building automation around a lot of things has really helped us.
+285
+So if I can take like a few minutes to explain this, multiple things.
+286
+Okay, initially, okay, we had this infrastructure that is good.
+287
+We had monitoring everything set up.
+288
+Now, my engineers are spending at least four or five requests every week on scaling clusters.
+289
+Then we start, how can we automate it?
+290
+So we started building scalable infrastructure where click of a button, I can go from six nodes to 60 nodes and come back.
+291
+You know, whenever the marketing events and things like that are done instead of manually doing things.
+292
+Everything that we were doing every week, we were thinking, hey, what can we automate this week?
+293
+What can we automate next week?
+294
+That way we automated scaling.
+295
+We automated incident resolution.
+296
+That is one of the great things that we did.
+297
+Where, let's say you are getting disk space alerts.
+298
+If you page me at 2 o'clock in the night, that disk is filling up, what we will do.
+299
+You will go and expand the EBS.
+300
+So we thought, why can't we automate it?
+301
+So we used AWS Event Bridge and other services and built automation around these incidents.
+302
+Like if I get a page, the bot will get the page first.
+303
+And the bot will see, okay, this is a similar pattern of a page that I can automate.
+304
+And then based on the automation scripts that we provide, it will go and fix that page, like expand the EBS volume.
+305
+Or if a node is down, if an un60 node cluster, like a Sandra node is down due to whatever reason, you can just immediately bring it up, watch for five minutes, and if everything is okay, automatically close the page instead of paging a real person.
+306
+So by implementing this automation mindset for everything from incident resolution, scaling to all the aspects.
+307
+Today, at least 40% of our pages are handled by bot instead of a real DBA.
+308
+Obviously, we'll have a report next day and see, okay, these are the pages that the bot handled.
+309
+What when we do to enhance it more?
+310
+So, traditionally, DBAs were more setting up everything, traditional mindset with manually and all of that.
+311
+But I think right now, even DBAs, they need to focus on learning Python, they need to focus on learning different AI ML trends and analyzing what they can automate and reduce the manual workload.
+312
+That is the biggest thing that I have learned over the years, like automation first.
+313
+And also, knowing when automation is not feasible and you need to just get something done because there's the famous XKCD comic of the amount of time that you think it's going to take to automate something, and then the amount of time it would take to just do it manually, and they're not always in line with each other.
+314
+Yeah, definitely.
+315
+That's why, like, every week we think, hey, are these a repetitive task more than three times that you are doing?
+316
+So, if it is a one-off thing, that's no point, definitely.
+317
+But if you think that, okay, this is something that I will use four more times, definitely have a script around it.
+318
+And so, for people who are looking to invest in their own platform capacity or they're looking to invest more into non-relational engines, what are the cases where you would advise against either or both of those approaches?
+319
+If you're a small company with a set number of teams, I don't think investing in a platform helps.
+320
+Like, just have your DevOps engineers focus on best practices and things like that.
+321
+But if you are a large company with, and also like if you're not building infrastructure every day, okay, let's say it's a, I set up infrastructure for the next six months, I build my use case, I'm going to the market and it's sustainable.
+322
+It's okay.
+323
+You don't need to build a platform.
+324
+But if you're constantly creating infrastructure and scaling and evolving and you're a large or at least a mid-sized company, I would say you have to invest in a platform mindset.
+325
+But if it's a very small company, a startup, I think it's an overhead.
+326
+And I think the same thing with the NoSQL technologies.
+327
+I mean, the advantage you have if you are starting something new is you have an option.
+328
+Like, okay, you go and pick the best thing for it.
+329
+But if you are a legacy company, you are still in a lot of tech depth on old legacy stuff, you need to obviously do the return of investment analysis on what it takes to migrate and does it add any additional value.
+330
+And as you continue to invest in these automation capabilities, managing the scale and variety of offerings that you are supporting, what are some of the things you have planned for the near to medium term or any new technologies or new capabilities that you're looking to invest in?
+331
+Right now we are doing a lot of work on AML stuff around data infrastructure as well, where we can, if we have an incident, okay, it has to go and scrape all the previous incidents, come up with an action plan and tell me, okay, this is your problem, it happened this day, this is what you did, quickly fix it.
+332
+That's one example.
+333
+And automated scaling, where right now we go and let's say we have a marketing event and things like that, we say expand the cluster from six to 60 nodes.
+334
+So we want to also use AIML to make the decision.
+335
+whenever it's seeing some particular trends, it can auto-scale and come back to the original capacity later.
+336
+We are also investing a lot on, in addition to the data infrastructure, we also want to expand it to the app layer where you have a use case, you need like 10 app servers or 10 data infrastructure servers and all the aspects of it.
+337
+We want to tie everything into a pod instead of just the data portion of it.
+338
+Are there any other aspects of the work that you're doing, the overall approach of platform engineering for building these databases of service capabilities or the specific engineering challenges that you've been tackling in the process of building out that capacity that we didn't discuss yet that you'd like to cover before we close out the show?
+339
+A few things.
+340
+It's like, I think I want to emphasize again that platform engineering is not a replacement for DevOps.
+341
+It's mostly to enhance and amplify the DevOps culture.
+342
+And if done right, it gives a lot of self-service capabilities to the developers.
+343
+It reduces their complexity, standardizes a lot of tools and workflows within the company.
+344
+So it's a great investment if you're a mid-size or large-size company.
+345
+All right.
+346
+Well, for anybody who wants to get in touch with you and follow along with the work that you're doing, I'll have you add your preferred contact information to the show notes.
+347
+And as the final question, I'd like to get your perspective on what you see as being the biggest gap in the tooling or technology that's available for data management today.
+348
+I think there is a difficulty with Lindsay.
+349
+Like, as the data moves fast, especially with streaming, the ability to govern and manage it in real-time becomes really crucial.
+350
+So, many traditional governance and management tools are not built for that speed.
+351
+So, that's a big gap for as for me, it's like real-time enforcement of data with governance and everything on the streaming side is a gap, still a gap.
+352
+All right.
+353
+Well, thank you very much for taking the time today to join me and share the work that you've done and your experiences of building out this platform capability for databases as a service at your organization and some of the ways that you've addressed those challenges of scale and organizational buy-in.
+354
+It's definitely a very interesting problem space and definitely an important one as you scale your capabilities and scale the organizational complexity.
+355
+So, I appreciate the time and energy you're putting into that and for you sharing your insights.
+356
+I hope you enjoy the rest of your day.
+357
+Pleasure is mine.
+358
+Thanks, Trump.
+359
+Thank you for listening, and don't forget to check out our other shows.
+360
+Podcast.inet covers the Python language, its community, and the innovative ways it is being used.
+361
+And the AI Engineering Podcast is your guide to the fast-moving world of building AI systems.
+362
+Visit the site to subscribe to the show, sign up for the mailing list, and read the show notes.
+363
+And if you've learned something or tried out a project from the show, then tell us about it.
+364
+Email hosts at dataengineeringpodcast.com with your story.
+365
+Just to help other people find the show, please leave a review on Apple Podcasts and tell your friends and co-workers.

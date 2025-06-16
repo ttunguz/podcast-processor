@@ -1,0 +1,177 @@
+--- Podcast Metadata ---
+Show: Data Engineering Podcast
+Episode: From Data Discovery to AI: The…
+Host: Tobias Macy
+GUESTS: Shinji Kim
+Guests: Shinji Kim
+Source URL: https://podcasts.apple.com/us/podcast/from-data-discovery-to-ai-the-evolution-of-semantic-layers/id1193040557?i=1000709305644
+------------------------
+
+Here's a comprehensive summary of the podcast based on the transcript:
+
+**1. Podcast Overview & Key Segments:**
+
+**Overall Summary:** 
+This episode of the Data Engineering Podcast features a discussion with Shinji Kim, founder and CEO of SelectStar, about semantic layers and their role in the era of AI. The conversation covers the evolution of data discovery tools, the importance of semantic modeling in AI applications, and the challenges and opportunities in implementing semantic layers for data management and analysis.
+
+**Key Topics:**
+
+1. Evolution of Data Discovery and Metadata Management:
+   - The discussion traces the shift from centralized to decentralized data teams and back.
+   - There's a trend towards consolidation of features (documentation, data catalog, lineage) into platforms like Snowflake, Databricks, and DBT.
+   - SelectStar focuses on providing cross-platform visibility and metadata management.
+
+2. AI's Impact on Data Management:
+   - The rise of AI has led to new services like AI analysts and AI data engineers.
+   - SelectStar has incorporated AI for automatic documentation, semantic search, and SQL query assistance.
+   - The discussion explores how semantic layers can enhance AI's understanding of business logic and improve query generation.
+
+3. Semantic Modeling and Layers:
+   - The podcast delves into the differences between semantic layers, metric layers, and headless BI.
+   - It explores how semantic models differ from traditional data modeling approaches like star schema or data vault.
+   - The conversation covers various tools and approaches for implementing semantic layers, including offerings from Snowflake, Databricks, and third-party vendors.
+
+4. Challenges and Future of Semantic Modeling:
+   - The discussion highlights the difficulties in creating and maintaining semantic models.
+   - It explores the potential for AI to assist in the discovery and development of semantic models.
+   - The conversation touches on the future of semantic modeling becoming a native construct in data systems.
+
+**Conclusion:** 
+The podcast emphasizes the growing importance of semantic layers in enabling AI-driven data analysis and business intelligence. It highlights the need for continued innovation in tools and processes for creating, maintaining, and operationalizing semantic models, especially as AI becomes a primary consumer of these models.
+
+**2. Key Themes & Technological Insights:**
+
+1. AI-Driven Data Analysis: The podcast emphasizes how semantic layers are becoming crucial for enabling AI to understand and query business data effectively.
+   Quote: "We are starting to provide a lot more capabilities where you can truly manage and govern those information across platform and then also sharing certain metadata from one platform to another."
+
+2. Evolution of Data Discovery Tools: The discussion traces how data discovery and metadata management tools have evolved, with a trend towards platform consolidation.
+   Quote: "Both Snowflake, Databricks, DBT, a lot of these platforms are starting to provide a lot more capabilities than the specific data warehousing or the transformation capabilities, such as documentation, data catalog, lineage."
+
+3. Semantic Modeling Challenges: The conversation highlights the difficulties in creating and maintaining semantic models, especially as business needs change.
+   Quote: "Now the scaling side and actual governance and maintenance, like as your business models change, as you are starting to add more new data sets or creating more models underneath, how do you actually govern and maintain those? I think that is a real challenge that is upcoming."
+
+4. Future of Semantic Layers: The podcast explores how semantic layers might become more integrated into core data systems and potentially self-updating.
+   Quote: "So a way to self-update the model as well as maintain it so that it is more of a system instead of a YAML file, probably is where it needs to go."
+
+5. Importance of Business Context in Data Models: The discussion emphasizes how semantic layers can capture business logic that isn't always apparent in raw data structures.
+   Quote: "The part that I've noticed is that as you get to the business-level questions, there's a lot more nuance underneath the question that's not always defined in the SQL layer or the physical data layer."
+
+**3. Core Discussion Points & Debates:**
+
+1. Semantic Layer vs. Traditional Data Modeling:
+   The podcast explores how semantic modeling differs from traditional approaches like star schema or data vault.
+   Quote: "I would say the core difference that semantic layer and semantic modeling really brings on is the business logic perspective of how metrics should be calculated and what specific dimension, time dimensions, those can be applied to."
+
+2. Role of Semantic Layers in AI Applications:
+   The discussion highlights how semantic layers can improve AI's understanding of business data and query generation.
+   Quote: "Why semantic model is an important layer that you need to have if you want to invest in having an AI analyst that can generate and execute queries on behalf of business users."
+
+3. Implementation Approaches for Semantic Layers:
+   The conversation covers various tools and approaches for implementing semantic layers, including native database features and third-party tools.
+   Quote: "What Snowflake is doing is first they started with the YAML file as a semantic model to be fed into the Cortex analyst, and now they are moving towards allowing users to have a quote-unquote semantic view that contains all of the YAML file, the previous YAML file for semantic models."
+
+4. Challenges in Maintaining Semantic Models:
+   The podcast discusses the difficulties in keeping semantic models up-to-date and relevant as business needs change.
+   Quote: "Because we've also seen some of our customers that have implemented a semantic layer in the past, they've spent a lot of effort to model. But like, how much of their model is actually being leveraged and used today by AI or from their querying, you know, not 100%."
+
+5. Future of Semantic Modeling:
+   The discussion explores how semantic modeling might evolve, potentially becoming more integrated into core data systems and self-updating.
+   Quote: "Today semantic models are fully designed to be consumed and operated and edited by humans, not AI agents. So a way to self-update the model as well as maintain it so that it is more of a system instead of a YAML file, probably is where it needs to go."
+
+**4. Actionable Investment Theses (Early-Stage VC Focus):**
+
+1. AI-Powered Semantic Layer Management:
+   Problem: Maintaining semantic models is challenging and time-consuming.
+   Solution: AI-driven tools for automatically updating and maintaining semantic models.
+   Why compelling: As semantic layers become more crucial for AI applications, the need for efficient management tools will grow.
+   Quote: "So a way to self-update the model as well as maintain it so that it is more of a system instead of a YAML file, probably is where it needs to go."
+
+2. Cross-Platform Metadata Management:
+   Problem: Companies use multiple data platforms, making unified metadata management difficult.
+   Solution: Tools that provide cross-platform visibility and metadata management.
+   Why compelling: As data ecosystems become more complex, the need for unified management increases.
+   Quote: "We are starting to provide a lot more capabilities where you can truly manage and govern those information across platform and then also sharing certain metadata from one platform to another."
+
+3. AI-Assisted Semantic Model Creation:
+   Problem: Creating comprehensive semantic models requires significant effort and domain knowledge.
+   Solution: AI tools that can assist in discovering and defining semantic models from existing data and BI systems.
+   Why compelling: This could significantly reduce the time and expertise required to implement semantic layers.
+   Quote: "We've seen teams actually building their semantic layer just by feeding in how they are defining their metrics as well as like along with the list of tables and columns that exist to kind of get output the first version of YAML file that they wanted to create."
+
+**5. Noteworthy Observations & Unique Perspectives:**
+
+1. Semantic Layers as AI Guardrails:
+   Shinji suggests that semantic layers can act as configuration and guardrails for AI systems, improving their accuracy in understanding and querying business data.
+   Quote: "I think an easy way to think about semantic layer for AI is to think of it as it's like almost your configuration and guardrails that you're providing the AI to know how certain things should be calculated rather than letting it infer from all the raw metadata and queries that you might have had in the past."
+
+2. Reverse Engineering Semantic Models from BI Tools:
+   SelectStar is working on extracting semantic models from existing BI tools, which could provide a quick start for companies looking to implement semantic layers.
+   Quote: "Now, if we're talking about the third-party semantic layer, yes, like the ones that you've mentioned are primary ones. There is also a vendor called AtScale. I found the approach that Snowflake and Databricks are taking also very interesting."
+
+3. Importance of Relationships and Sample Values in Semantic Models:
+   Shinji emphasizes that including relationships between entities and sample values significantly improves the quality of AI-generated queries.
+   Quote: "I think anyone that's actually considering to make sure that they are also not just considering the definition of the tables, columns, and dimensions or metrics, but the other aspect that we also found very helpful and important to add into the semantic layer implementation were first the relationships of the entities or relationships between the columns, as well as the sample values of and the synonyms."
+
+4. Semantic Layers for AI Agents Beyond Analytics:
+   The podcast suggests that semantic layers could be valuable for AI agents embedded in applications, not just for analytics.
+   Quote: "The part that CN, the ones that we start envisioning with some of our customers, is how this semantic models to be utilized for not just for the AI analysts that they've defined, but for AI agents that they are building."
+
+5. The Risk of Over-Modeling in Semantic Layers:
+   Shinji warns about the potential pitfall of over-modeling when creating semantic layers, emphasizing the importance of practical application and iteration.
+   Quote: "I think related to that, I think the second part that I was also going to mention is just like any data modeling, I think the semantic model can also fall into this trap of over-modeling the data and that can be a big time suck."
+
+**6. Companies & Entities Mentioned:**
+
+1. SelectStar (https://www.selectstar.com/): Automated data discovery and governance platform.
+2. Snowflake (https://www.snowflake.com/): Cloud data platform.
+3. Databricks (https://www.databricks.com/): Data and AI company.
+4. DBT (https://www.getdbt.com/): Data transformation tool.
+5. Cube (https://cube.dev/): Headless BI platform.
+6. AtScale (https://www.atscale.com/): Data virtualization platform.
+7. Power BI (https://powerbi.microsoft.com/): Microsoft's business analytics service.
+8. Tableau (https://www.tableau.com/): Data visualization software.
+9. Soda Data (https://www.soda.io/): Data quality platform.
+10. Sun Microsystems (historical): Former computer company, now part of Oracle.
+11. Akamai (https://www.akamai.com/): Cloud and cybersecurity company.
+12. Concord Systems (historical): Shinji's previous company, acquired by Akamai.
+13. ChatGPT (https://openai.com/chatgpt): AI language model by OpenAI.
+
+**7. VC Follow-Up Research & Due Diligence:**
+
+1. Market Analysis: 
+   - Assess the current market size and growth projections for semantic layer technologies and AI-driven data analysis tools.
+   - Evaluate the adoption rates of semantic layers in different industries and company sizes.
+
+2. Competitive Landscape:
+   - Conduct a detailed analysis of existing semantic layer solutions, including those offered by major cloud providers and independent vendors.
+   - Identify any emerging startups in this space and assess their unique value propositions.
+
+3. Technical Due Diligence:
+   - Evaluate the technical approaches of different semantic layer implementations, particularly those that claim to be more native to data systems.
+   - Assess the scalability and performance implications of different semantic layer architectures.
+
+4. Customer Interviews:
+   - Conduct interviews with data teams at various companies to understand their current challenges with semantic modeling and their willingness to adopt new solutions.
+   - Gather insights on the actual ROI realized from implementing semantic layers, particularly in AI-driven use cases.
+
+5. AI Integration Assessment:
+   - Research the current capabilities of AI models in understanding and utilizing semantic layers.
+   - Evaluate the potential for AI to assist in creating and maintaining semantic models.
+
+6. Regulatory and Compliance Implications:
+   - Investigate any regulatory considerations around semantic layers, particularly in industries with strict data governance requirements.
+   - Assess how semantic layers might help or hinder compliance efforts.
+
+7. Open Source Landscape:
+   - Evaluate the state of open-source projects related to semantic modeling and their potential impact on the commercial market.
+
+8. Long-term Viability:
+   - Assess the long-term potential of semantic layer technologies, considering trends in data architecture and AI development.
+   - Evaluate the potential for semantic layers to become a standard feature in data platforms versus remaining a specialized tool.
+
+**8. Potential BestLens Companies:**
+
+No early-stage software companies were explicitly mentioned as potential fits for BestLens in this transcript. The discussion focused more on established players and general trends in the semantic layer and data discovery space, rather than specific startups.
+
+HOST: Tobias Macy
+GUESTS: Shinji Kim

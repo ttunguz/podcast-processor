@@ -1,0 +1,1542 @@
+
+[00:00:00.000 --> 00:00:03.440]   (upbeat music)
+[00:00:03.440 --> 00:00:05.200]   - Welcome back to the pod.
+[00:00:05.200 --> 00:00:06.920]   This is Tim from Essence VCN.
+[00:00:06.920 --> 00:00:08.020]   Let's go Ian.
+[00:00:08.020 --> 00:00:12.520]   - This is Ian Livingston, lover of dev tools and infrastructure.
+[00:00:12.520 --> 00:00:13.760]   And I'm super excited today.
+[00:00:13.760 --> 00:00:17.460]   We're joined by a good friend of mine, Guy Pajerni,
+[00:00:17.460 --> 00:00:20.440]   who is currently on his next company journey,
+[00:00:20.440 --> 00:00:23.220]   CEO of Tasshole Former.
+[00:00:23.220 --> 00:00:25.460]   Well, still founder of Snyk.
+[00:00:25.460 --> 00:00:28.560]   Guy, could you give us a little introduction to yourself?
+[00:00:28.560 --> 00:00:31.400]   - Yeah, well, thanks, Tim and Ian for having me on here.
+[00:00:31.400 --> 00:00:33.480]   I'm Guy Pajarni or Guypo.
+[00:00:33.480 --> 00:00:35.680]   Someone said I'm pulling a Madonna, you know, on the,
+[00:00:35.680 --> 00:00:39.040]   with the one name, I am indeed founded Snyk.
+[00:00:39.040 --> 00:00:41.020]   I founded Blaze before that and sold it to Akama,
+[00:00:41.020 --> 00:00:44.200]   with CTO there for a bunch of years before founding Snyk.
+[00:00:44.200 --> 00:00:46.880]   Now I'm the founder and CEO of Tasshole,
+[00:00:46.880 --> 00:00:48.760]   trying to reimagine software development.
+[00:00:48.760 --> 00:00:49.960]   I'm sure we're going to talk about that
+[00:00:49.960 --> 00:00:53.880]   a fair bit more here and it couldn't help it.
+[00:00:53.880 --> 00:00:55.040]   I'm an active angel investor.
+[00:00:55.040 --> 00:00:56.960]   I've got a little bit over a decade,
+[00:00:56.960 --> 00:00:58.560]   about a hundred angel investments.
+[00:00:58.560 --> 00:01:02.200]   You know, love the learnings and excitement that I,
+[00:01:02.200 --> 00:01:05.280]   that I felt from learning from all these other founders.
+[00:01:05.280 --> 00:01:06.280]   And yeah, that's me.
+[00:01:06.280 --> 00:01:09.240]   Also a lover of DevTools, a nerd and geek
+[00:01:09.240 --> 00:01:12.160]   about many, many, many topics, including Dev and AI.
+[00:01:12.160 --> 00:01:14.840]   - I mean, you've been kind of at it with Blaze
+[00:01:14.840 --> 00:01:15.920]   since the very beginning, right?
+[00:01:15.920 --> 00:01:18.400]   Like 2011, 2010, and before that, right?
+[00:01:18.400 --> 00:01:20.440]   Which watch fire, like you worked at Watch Fire,
+[00:01:20.440 --> 00:01:21.280]   I think as well.
+[00:01:21.280 --> 00:01:22.880]   So you've been here from the get-go
+[00:01:22.880 --> 00:01:24.960]   in terms of like the main take on the industry.
+[00:01:24.960 --> 00:01:27.320]   You've seen a lot of the different sort of like phases
+[00:01:27.320 --> 00:01:28.280]   of evolution as well.
+[00:01:28.280 --> 00:01:30.560]   So I'm super excited.
+[00:01:30.560 --> 00:01:33.400]   My main question though is, Guy Poe,
+[00:01:33.400 --> 00:01:35.800]   what is it that you saw that you said,
+[00:01:35.800 --> 00:01:38.400]   you know what I'm going to go and start another company?
+[00:01:38.400 --> 00:01:39.240]   Yeah, I think this is a question
+[00:01:39.240 --> 00:01:40.560]   every multi-time founder gets.
+[00:01:40.560 --> 00:01:42.720]   You're on company three now.
+[00:01:42.720 --> 00:01:44.600]   So what is it that made you say, you know,
+[00:01:44.600 --> 00:01:46.640]   after, especially after the success of sneak,
+[00:01:46.640 --> 00:01:47.480]   like what made you say, you know,
+[00:01:47.480 --> 00:01:49.080]   this is the moment where it's time for me to go
+[00:01:49.080 --> 00:01:50.840]   get back at it, I don't want to get in the trenches
+[00:01:50.840 --> 00:01:52.560]   and start from zero again.
+[00:01:52.560 --> 00:01:55.000]   Yeah, it wasn't an easy decision,
+[00:01:55.000 --> 00:01:57.080]   the sort of the push and pull maybe of it.
+[00:01:57.080 --> 00:01:58.880]   On one hand on the personal front,
+[00:01:58.880 --> 00:02:02.320]   I spent the last year and a bit at sneak
+[00:02:02.320 --> 00:02:05.240]   in a slightly more part-time function,
+[00:02:05.240 --> 00:02:07.120]   trying to figure out what it is that I do.
+[00:02:07.120 --> 00:02:09.480]   I started sneak and I was CEO and I brought
+[00:02:09.480 --> 00:02:11.480]   about five years in, brought in Peter McCabe,
+[00:02:11.480 --> 00:02:13.440]   who's done a great job and I kind of focused
+[00:02:13.440 --> 00:02:17.600]   or sort of took on the sort of product strategy role in there.
+[00:02:17.600 --> 00:02:20.440]   And then after a bunch of excitements and period of time,
+[00:02:20.440 --> 00:02:22.080]   I really kind of felt like I need to reassess
+[00:02:22.080 --> 00:02:24.040]   what is it that I'm doing in the company
+[00:02:24.040 --> 00:02:25.200]   and what is my role.
+[00:02:25.200 --> 00:02:28.120]   And so on one hand, I had my sort of personal journey.
+[00:02:28.120 --> 00:02:30.440]   We have a family charity, try to figure out,
+[00:02:30.440 --> 00:02:31.800]   do I want to do that full-time?
+[00:02:31.800 --> 00:02:33.000]   You know, I'm doing angel investment,
+[00:02:33.000 --> 00:02:34.600]   do I want to do that full-time?
+[00:02:34.600 --> 00:02:37.360]   Do I want the comfy life, sort of some part-time job
+[00:02:37.360 --> 00:02:40.480]   in the company I believe in and then promoting?
+[00:02:40.480 --> 00:02:43.240]   And during that time came to realize
+[00:02:43.240 --> 00:02:45.920]   that what I want to do is found another company
+[00:02:45.920 --> 00:02:48.360]   and it was resisting that conclusion.
+[00:02:48.360 --> 00:02:52.440]   This is a, it doesn't make sense from a practicality perspective.
+[00:02:52.440 --> 00:02:54.400]   You know, we're going to donate all the sort of the funds
+[00:02:54.400 --> 00:02:56.400]   they still have that sneak as we're doing it.
+[00:02:56.400 --> 00:02:58.880]   We're, you know, like I've got all the,
+[00:02:58.880 --> 00:03:00.440]   whatever access and such that I need.
+[00:03:00.440 --> 00:03:02.800]   So there's really no practicality to it.
+[00:03:02.800 --> 00:03:05.240]   So took a while to realize that it's okay to do it
+[00:03:05.240 --> 00:03:07.080]   because that's what I want to do.
+[00:03:07.080 --> 00:03:10.080]   And that's kind of where my passion came to this realization
+[00:03:10.080 --> 00:03:12.120]   that satisfaction comes out of struggle.
+[00:03:12.120 --> 00:03:14.360]   If you want to feel that satisfaction to feel, you know,
+[00:03:14.360 --> 00:03:16.400]   kind of that meaning, then you have to put yourself
+[00:03:16.400 --> 00:03:17.480]   into a thing you might fail in.
+[00:03:17.480 --> 00:03:20.520]   And, you know, while I learn a lot these journeys
+[00:03:20.520 --> 00:03:22.440]   with, with engine investing and such,
+[00:03:22.440 --> 00:03:23.760]   it's not the same when you don't own it,
+[00:03:23.760 --> 00:03:26.320]   when you're not in the trenches and needing to do it.
+[00:03:26.320 --> 00:03:27.560]   And I guess alongside that,
+[00:03:27.560 --> 00:03:30.280]   I was focusing a lot on SNIX AI strategy
+[00:03:30.280 --> 00:03:32.680]   and SNIX secures software development.
+[00:03:32.680 --> 00:03:36.560]   And so if you want to figure out what should SNIX do about AI,
+[00:03:36.560 --> 00:03:38.000]   you have to have some hypothesis
+[00:03:38.000 --> 00:03:40.440]   about where is software development going
+[00:03:40.440 --> 00:03:43.400]   because SNIX role very much relates to that.
+[00:03:43.400 --> 00:03:44.720]   And the more I dug into that
+[00:03:44.720 --> 00:03:47.720]   and the more the slot picture crystallized in my mind,
+[00:03:47.720 --> 00:03:50.240]   the more I felt, I want to build that.
+[00:03:50.240 --> 00:03:52.080]   That's what I want to do.
+[00:03:52.080 --> 00:03:55.080]   It also felt like a domain that matched my skills,
+[00:03:55.080 --> 00:03:57.920]   my passion, but was not competitive to SNIX.
+[00:03:57.920 --> 00:04:02.240]   And so yeah, the combination of those two made me make the leap.
+[00:04:02.240 --> 00:04:04.040]   And I will say my wife figured out
+[00:04:04.040 --> 00:04:04.880]   that that's what I'm going to do,
+[00:04:04.880 --> 00:04:07.680]   probably a good couple of months before I did.
+[00:04:07.680 --> 00:04:09.320]   I wanted to talk to her about it a little bit more.
+[00:04:09.320 --> 00:04:11.120]   So she was like with a smile saying,
+[00:04:11.120 --> 00:04:13.680]   yeah, go ahead, talk like, you know where it's leading,
+[00:04:13.680 --> 00:04:18.520]   but you know, sure, let's talk about it and here we are.
+[00:04:18.520 --> 00:04:19.360]   - That is incredible.
+[00:04:19.360 --> 00:04:23.680]   I've gone through some of that myself as well.
+[00:04:23.680 --> 00:04:26.200]   And I always come back to like builders just want to build
+[00:04:26.200 --> 00:04:27.640]   and you know, how do you enable that?
+[00:04:27.640 --> 00:04:28.480]   - Yeah.
+[00:04:28.480 --> 00:04:30.960]   - Was there some insight though that you saw as well
+[00:04:30.960 --> 00:04:34.480]   around at the time that you were thinking about starting the company
+[00:04:34.480 --> 00:04:35.840]   and making this transition, you know,
+[00:04:35.840 --> 00:04:37.760]   working on the SNIX strategy?
+[00:04:37.760 --> 00:04:41.320]   Like, what did you see and what you were learning that said,
+[00:04:41.320 --> 00:04:43.120]   okay, this is different.
+[00:04:43.120 --> 00:04:45.360]   This is an opportunity to do a generational shift.
+[00:04:45.360 --> 00:04:48.720]   Like I'm sure, you know, now third time founder,
+[00:04:48.720 --> 00:04:52.280]   you have learned a lot about like what to look for in terms of like,
+[00:04:52.280 --> 00:04:54.280]   okay, there's a big potential opportunity here
+[00:04:54.280 --> 00:04:58.480]   that I can kind of grab on to is like what built up over that time
+[00:04:58.480 --> 00:05:01.560]   that led to you saying, okay, I see the generational shift
+[00:05:01.560 --> 00:05:03.000]   or I see something I get attached to
+[00:05:03.000 --> 00:05:05.160]   that like gives me an opportunity to something, you know,
+[00:05:05.160 --> 00:05:06.000]   that's rewarding.
+[00:05:06.000 --> 00:05:08.240]   It is going to be really difficult, but the upside is there.
+[00:05:08.240 --> 00:05:10.760]   You know, whether it's personal or financial at this point,
+[00:05:10.760 --> 00:05:12.600]   you know, there has to be something, right?
+[00:05:12.600 --> 00:05:15.560]   So I'm really curious to sort of understand like it's, you know,
+[00:05:15.560 --> 00:05:16.680]   was there some unique insights,
+[00:05:16.680 --> 00:05:18.840]   some unique specific observation that got you to like,
+[00:05:18.840 --> 00:05:21.240]   okay, this is a place we're going to make the bet.
+[00:05:21.240 --> 00:05:25.600]   And I think first of all, like what drives me is impact, you know,
+[00:05:25.600 --> 00:05:26.800]   in terms of like, is it money?
+[00:05:26.800 --> 00:05:28.680]   Is it sort of product that like really,
+[00:05:28.680 --> 00:05:31.680]   I think what motivates me is leaving a dent on the universe
+[00:05:31.680 --> 00:05:33.440]   and sort of doing something that I think is significant.
+[00:05:33.440 --> 00:05:35.840]   I felt like with SNIX, we've done that, right?
+[00:05:35.840 --> 00:05:38.280]   There's a lot to still build on the business, a lot to still do,
+[00:05:38.280 --> 00:05:40.920]   but I feel like a core part of that mission
+[00:05:40.920 --> 00:05:44.000]   of like getting security more embedded into development
+[00:05:44.000 --> 00:05:46.640]   and making that be a norm of like a good practice in development.
+[00:05:46.640 --> 00:05:48.320]   Like I think a lot of that is achieved.
+[00:05:48.320 --> 00:05:50.720]   And so the driver is the impact.
+[00:05:50.720 --> 00:05:52.120]   And I saw a lot of things.
+[00:05:52.120 --> 00:05:55.040]   You mentioned like funding multiple companies several times,
+[00:05:55.040 --> 00:05:56.800]   like I learned a ton from that process,
+[00:05:56.800 --> 00:05:58.640]   but I also learned a ton from angel investments
+[00:05:58.640 --> 00:06:01.280]   and from working and accompanying those journeys.
+[00:06:01.280 --> 00:06:03.080]   Someone once told me that as a founder,
+[00:06:03.080 --> 00:06:06.600]   you learn in sequence and as an investor, you learn in parallel.
+[00:06:06.600 --> 00:06:08.160]   I think it depends on your level of involvement
+[00:06:08.160 --> 00:06:09.200]   with the companies and all that.
+[00:06:09.200 --> 00:06:10.960]   And I think the combo, at least for me,
+[00:06:10.960 --> 00:06:14.120]   proved very useful in building some pattern recognition
+[00:06:14.120 --> 00:06:17.280]   and seeing things that work and don't work.
+[00:06:17.280 --> 00:06:19.600]   And I guess what I've seen also through the angel investments
+[00:06:19.600 --> 00:06:21.840]   because I was investing in AI dev tools and such,
+[00:06:21.840 --> 00:06:24.720]   one is people are very short-term minded.
+[00:06:24.720 --> 00:06:26.080]   I think AI is full of that.
+[00:06:26.080 --> 00:06:30.440]   There's just so much opportunity to use AI to improve things
+[00:06:30.440 --> 00:06:33.000]   that people are drawn to the immediate.
+[00:06:33.000 --> 00:06:37.040]   Two is that things are just startups are just not differentiated.
+[00:06:37.040 --> 00:06:40.640]   You look around and you talk to two companies they're doing
+[00:06:40.640 --> 00:06:42.600]   and it's like they're really the same
+[00:06:42.600 --> 00:06:45.440]   and they have all these like false perspectives
+[00:06:45.440 --> 00:06:46.760]   of how they will differentiate.
+[00:06:46.760 --> 00:06:48.720]   They're talking about, hey, we'll have a data mode.
+[00:06:48.720 --> 00:06:51.040]   It's like, really, you're going against an incumbent.
+[00:06:51.040 --> 00:06:53.560]   You're gonna be around for a year doing this.
+[00:06:53.560 --> 00:06:56.600]   Maybe you've got seven customers, maybe 70 customers.
+[00:06:56.600 --> 00:06:58.280]   Yet somehow you will have a data mode
+[00:06:58.280 --> 00:07:00.400]   to an incumbent that has 70,000 of those.
+[00:07:00.400 --> 00:07:04.640]   And so poor differentiation, poor differentiation strategy
+[00:07:04.640 --> 00:07:06.240]   for like where would you build it
+[00:07:06.240 --> 00:07:08.560]   even if you are temporarily differentiated.
+[00:07:08.560 --> 00:07:10.440]   Very short-term orientation.
+[00:07:10.440 --> 00:07:14.360]   And I felt like everybody was just thinking small.
+[00:07:14.360 --> 00:07:16.360]   And the ones that we're thinking big,
+[00:07:16.360 --> 00:07:18.920]   we're thinking big from a tech perspective,
+[00:07:18.920 --> 00:07:20.120]   not a product perspective.
+[00:07:20.120 --> 00:07:22.520]   If you look at all the top companies,
+[00:07:22.520 --> 00:07:25.760]   like in terms of big names in the AI dev space
+[00:07:25.760 --> 00:07:28.720]   and the ones that are really like the go big players,
+[00:07:28.720 --> 00:07:31.680]   they're very tech-first versus product-first companies.
+[00:07:31.680 --> 00:07:35.240]   You see magic dev, you see cognition,
+[00:07:35.240 --> 00:07:38.120]   you see poolside, not diminished.
+[00:07:38.120 --> 00:07:39.560]   Like I think these are amazing companies
+[00:07:39.560 --> 00:07:42.200]   and amazing individuals building them.
+[00:07:42.200 --> 00:07:44.400]   But my sense is that for the most part,
+[00:07:44.400 --> 00:07:47.720]   they are building amazing technology
+[00:07:47.720 --> 00:07:49.360]   and then out of that building the product.
+[00:07:49.360 --> 00:07:50.440]   And I'm a product guy.
+[00:07:50.440 --> 00:07:53.760]   I think about what is the product that is needed?
+[00:07:53.760 --> 00:07:56.120]   You know, how do I anticipate users changing?
+[00:07:56.120 --> 00:07:59.440]   How do I anticipate ecosystems and markets change?
+[00:07:59.440 --> 00:08:03.520]   From there, I build technology in service of the product.
+[00:08:04.480 --> 00:08:07.440]   And so I felt these gaps were there,
+[00:08:07.440 --> 00:08:10.120]   the long-term orientation, thinking big,
+[00:08:10.120 --> 00:08:12.560]   thinking product-first, they were all lacking
+[00:08:12.560 --> 00:08:14.840]   and then strong differentiation.
+[00:08:14.840 --> 00:08:16.480]   And I guess I had an answer to all of those, right?
+[00:08:16.480 --> 00:08:19.040]   Like the picture that formed in my mind felt like,
+[00:08:19.040 --> 00:08:21.680]   I have a sense of what is the long-term destination,
+[00:08:21.680 --> 00:08:23.160]   how to build something towards it
+[00:08:23.160 --> 00:08:24.600]   that is good from a user perspective
+[00:08:24.600 --> 00:08:26.440]   and that would be sustainable.
+[00:08:26.440 --> 00:08:28.760]   Not all of it is stuff that I can share here on the podcast.
+[00:08:28.760 --> 00:08:30.920]   You know, some of those are still strategies
+[00:08:30.920 --> 00:08:32.080]   that are in-house.
+[00:08:32.080 --> 00:08:36.280]   But without that, I think founding an AI company right now
+[00:08:36.280 --> 00:08:39.560]   is actually more risky than founding a company
+[00:08:39.560 --> 00:08:41.840]   is in the inter-generic sense
+[00:08:41.840 --> 00:08:44.240]   because everything is changing,
+[00:08:44.240 --> 00:08:46.680]   the landscape is shifting from under you,
+[00:08:46.680 --> 00:08:48.200]   everything is overfunded.
+[00:08:48.200 --> 00:08:52.480]   And so it's actually a higher risk than typical.
+[00:08:52.480 --> 00:08:54.280]   - So I think you're already alluded to these topic
+[00:08:54.280 --> 00:08:57.200]   and I'm very, very interested to really go down
+[00:08:57.200 --> 00:08:59.280]   this rabbit hole as far as we can,
+[00:08:59.280 --> 00:09:03.640]   which is really about this AI-native developer theme
+[00:09:03.640 --> 00:09:05.800]   or we even call it transformation, right?
+[00:09:05.800 --> 00:09:08.520]   'Cause I'm reading really the two big blog posts you put out.
+[00:09:08.520 --> 00:09:12.600]   What is like AI-native, almost like AI-native developer?
+[00:09:12.600 --> 00:09:16.000]   And there's also like the cloud-native comparison.
+[00:09:16.000 --> 00:09:20.000]   So maybe we'll start with the AI-native developer,
+[00:09:20.000 --> 00:09:22.440]   sort of like transformation here.
+[00:09:22.440 --> 00:09:24.520]   You put up a two-by-two matrix, right?
+[00:09:24.520 --> 00:09:27.040]   Comparing like the existing tools
+[00:09:27.040 --> 00:09:30.640]   and existing AI, almost products and tools
+[00:09:30.640 --> 00:09:32.960]   and Tesla is on the far right.
+[00:09:32.960 --> 00:09:37.520]   This new category that there's nobody else is there, right?
+[00:09:37.520 --> 00:09:38.960]   Just, just you.
+[00:09:38.960 --> 00:09:40.760]   And I think it's intriguing.
+[00:09:40.760 --> 00:09:42.840]   Everybody read this will be super intriguing,
+[00:09:42.840 --> 00:09:45.240]   including me and I'm sure Ian as well.
+[00:09:45.240 --> 00:09:47.720]   And we really don't know what does that mean.
+[00:09:47.720 --> 00:09:50.280]   Of course, I think you have, like it's just alluded to,
+[00:09:50.280 --> 00:09:52.200]   you have strategies in your head.
+[00:09:52.200 --> 00:09:53.960]   So maybe it can help normal
+[00:09:53.960 --> 00:09:57.400]   and bystander developers like us.
+[00:09:57.400 --> 00:09:59.800]   Can it help us maybe give us a little bit of mental picture?
+[00:09:59.800 --> 00:10:03.360]   Okay, how did you, maybe can you quickly summarize
+[00:10:03.360 --> 00:10:05.640]   that what this two-by-two is?
+[00:10:05.640 --> 00:10:07.120]   'Cause I think a lot of people haven't really read
+[00:10:07.120 --> 00:10:08.880]   that post perhaps, right?
+[00:10:08.880 --> 00:10:10.360]   Well, how do you think about the world
+[00:10:10.360 --> 00:10:15.360]   and give us maybe that somewhat of a hint of,
+[00:10:15.360 --> 00:10:18.080]   okay, the current tools that is since
+[00:10:18.080 --> 00:10:21.040]   the truly paradigm shift we're looking for,
+[00:10:21.040 --> 00:10:22.760]   what could it be, right?
+[00:10:22.760 --> 00:10:24.000]   Maybe we can start a little bit from that.
+[00:10:24.000 --> 00:10:27.240]   But I think maybe you can kind of talk about this
+[00:10:27.240 --> 00:10:29.080]   magical two-by-two-by-two-by-two.
+[00:10:29.080 --> 00:10:32.000]   I think we'll be very on a good start here, yeah.
+[00:10:32.000 --> 00:10:33.520]   So I will sort of say this two-by-two,
+[00:10:33.520 --> 00:10:35.720]   and I published it under that title
+[00:10:35.720 --> 00:10:37.680]   of charting your AI native journey.
+[00:10:37.680 --> 00:10:40.520]   So AI native is dominant in its narrative.
+[00:10:40.520 --> 00:10:42.640]   It's something that I've sort of been brewing
+[00:10:42.640 --> 00:10:44.560]   on and evolving in my mind over the last really
+[00:10:44.560 --> 00:10:46.840]   almost two years of exploring investments
+[00:10:46.840 --> 00:10:49.880]   and thinking about ideas, then eventually a tessel.
+[00:10:49.880 --> 00:10:51.080]   And of course, it's neat.
+[00:10:51.080 --> 00:10:53.600]   There are many, many AI solutions out there.
+[00:10:53.600 --> 00:10:55.400]   And indeed, some of them are short-term, long-term,
+[00:10:55.400 --> 00:10:59.040]   and they oscillate between something that feels like,
+[00:10:59.040 --> 00:11:00.960]   wouldn't this just be the next feature
+[00:11:00.960 --> 00:11:03.000]   of open AI or anthropic or whatever?
+[00:11:03.000 --> 00:11:04.600]   The things that feel like science fiction,
+[00:11:04.600 --> 00:11:06.400]   it's like, no, this will never work.
+[00:11:06.400 --> 00:11:07.880]   And so the attempt here with the two-by-two
+[00:11:07.880 --> 00:11:10.200]   is to give us a little bit of a structure
+[00:11:10.200 --> 00:11:12.880]   to place companies or at least current offerings
+[00:11:12.880 --> 00:11:14.200]   of companies within that.
+[00:11:14.200 --> 00:11:16.040]   And so the two-by-two goes with two dimensions.
+[00:11:16.040 --> 00:11:18.120]   One is a dimension of change.
+[00:11:18.120 --> 00:11:21.120]   So how much does this new tool require me
+[00:11:21.120 --> 00:11:23.560]   to change the way I work to use it?
+[00:11:23.560 --> 00:11:25.680]   And then the second dimension is one of trust.
+[00:11:25.680 --> 00:11:27.880]   It goes from attended to autonomous.
+[00:11:27.880 --> 00:11:30.880]   How much do I need to trust it to get it right
+[00:11:30.880 --> 00:11:32.640]   for it to be useful?
+[00:11:32.640 --> 00:11:34.040]   So let's maybe look at some examples
+[00:11:34.040 --> 00:11:36.680]   in the different quadrants here that this creates, right?
+[00:11:36.680 --> 00:11:38.040]   If you draw it as a graph.
+[00:11:38.040 --> 00:11:40.520]   On the bottom left, what you'll see is the low change,
+[00:11:40.520 --> 00:11:42.120]   low trust environments.
+[00:11:42.120 --> 00:11:45.080]   And those are tools that are very easy to sort of slap on.
+[00:11:45.080 --> 00:11:47.520]   In the DevSpace, that might be code completion.
+[00:11:47.520 --> 00:11:48.560]   You're already typing.
+[00:11:48.560 --> 00:11:49.800]   Whether you're literally already typing.
+[00:11:49.800 --> 00:11:51.600]   In fact, you're already familiar to autocompletion
+[00:11:51.600 --> 00:11:53.240]   because of IntelliSense and such.
+[00:11:53.240 --> 00:11:55.200]   And so it's just a better autocomplete.
+[00:11:55.200 --> 00:11:57.320]   You eyeball it, you say if it's correct or not,
+[00:11:57.320 --> 00:11:58.200]   you just continue.
+[00:11:58.200 --> 00:11:59.520]   There's pros and cons to that.
+[00:11:59.520 --> 00:12:02.480]   But still very easy, very low trust.
+[00:12:02.480 --> 00:12:04.320]   Other domains, it might be something that points out
+[00:12:04.320 --> 00:12:08.480]   the potential problem on an X-ray or that writes a quick SDR,
+[00:12:08.480 --> 00:12:11.040]   like a cold outreach type email.
+[00:12:11.040 --> 00:12:13.160]   All of these things are like they're small units.
+[00:12:13.160 --> 00:12:15.080]   They are things you're already doing.
+[00:12:15.080 --> 00:12:17.360]   And therefore, you're just gonna prompt it.
+[00:12:17.360 --> 00:12:20.040]   This is the bottom left quadrant.
+[00:12:20.040 --> 00:12:21.480]   It's kind of the low friction.
+[00:12:21.480 --> 00:12:23.200]   Why wouldn't you use this?
+[00:12:23.200 --> 00:12:24.320]   It needs to be useful.
+[00:12:24.320 --> 00:12:26.200]   So like if it doesn't provide business value,
+[00:12:26.200 --> 00:12:30.240]   if it doesn't work well enough, still worthless,
+[00:12:30.240 --> 00:12:32.240]   if it does work, then why wouldn't use it, right?
+[00:12:32.240 --> 00:12:33.520]   It just makes you better.
+[00:12:33.520 --> 00:12:36.640]   That's the high adoption category as I see it.
+[00:12:36.640 --> 00:12:38.560]   And it's massively, massively competitive.
+[00:12:38.560 --> 00:12:40.440]   That's really where you would see
+[00:12:40.440 --> 00:12:42.320]   how is one coding assistant better
+[00:12:42.320 --> 00:12:43.440]   than the other coding assistant?
+[00:12:43.440 --> 00:12:44.760]   Like you're gonna have a million of them.
+[00:12:44.760 --> 00:12:47.960]   How is one tool that creates tests for me
+[00:12:47.960 --> 00:12:49.880]   or that captures the documentation?
+[00:12:49.880 --> 00:12:51.880]   Or like, oh, these things, like how is one different?
+[00:12:51.880 --> 00:12:54.440]   It's oftentimes hard because they don't really invent
+[00:12:54.440 --> 00:12:55.280]   any new methodology.
+[00:12:55.280 --> 00:12:56.720]   They're just doing legwork.
+[00:12:56.720 --> 00:12:58.200]   And they're doing legwork in small units,
+[00:12:58.200 --> 00:12:59.560]   so you can review them.
+[00:12:59.560 --> 00:13:00.640]   So that's sort of the bottom left.
+[00:13:00.640 --> 00:13:02.960]   If you go up the trust route,
+[00:13:02.960 --> 00:13:05.080]   that's really an IP evolution.
+[00:13:05.080 --> 00:13:07.000]   It goes from attendant to autonomous.
+[00:13:07.000 --> 00:13:08.760]   First maybe examples of like what needs
+[00:13:08.760 --> 00:13:09.760]   to show up over there.
+[00:13:09.760 --> 00:13:14.360]   So for example, Intercom have been their support chatbot.
+[00:13:14.360 --> 00:13:16.840]   And Finn tries to resolve tickets
+[00:13:16.840 --> 00:13:19.720]   when someone approaches a company autonomously.
+[00:13:19.720 --> 00:13:21.960]   If a human has to review every response
+[00:13:21.960 --> 00:13:23.880]   that Finn provides to confirm
+[00:13:23.880 --> 00:13:25.080]   that it doesn't hallucinate anything,
+[00:13:25.080 --> 00:13:26.920]   the product would be useless.
+[00:13:26.920 --> 00:13:28.520]   So you have to trust that it gets it right for you
+[00:13:28.520 --> 00:13:29.520]   to be useful.
+[00:13:29.520 --> 00:13:32.880]   Even more extreme version of that is Robotaxes.
+[00:13:32.880 --> 00:13:34.720]   Like they actually very little change.
+[00:13:34.720 --> 00:13:35.560]   Nothing changed.
+[00:13:35.560 --> 00:13:37.240]   You're still interacting, as you before,
+[00:13:37.240 --> 00:13:41.080]   interacted with someone on a chat support conversation.
+[00:13:41.080 --> 00:13:43.160]   Here in Robotaxes, you might open your Uber
+[00:13:43.160 --> 00:13:45.560]   and order a taxi and get in the car
+[00:13:45.560 --> 00:13:47.160]   and get dropped off elsewhere.
+[00:13:47.160 --> 00:13:50.040]   But might be the high trust that you need
+[00:13:50.040 --> 00:13:51.520]   to be able to do this.
+[00:13:51.520 --> 00:13:53.040]   So that's kind of up the trust route.
+[00:13:53.040 --> 00:13:54.080]   In development world,
+[00:13:54.080 --> 00:13:57.520]   that's a lot about this autonomous development world.
+[00:13:57.520 --> 00:13:58.960]   And I think it hasn't been cracked.
+[00:13:58.960 --> 00:14:01.240]   And that's a lot of what I think the sort of the magic devs
+[00:14:01.240 --> 00:14:04.560]   or the others like at least from outside statements
+[00:14:04.560 --> 00:14:05.400]   are trying to crack.
+[00:14:05.400 --> 00:14:07.760]   It's like, I will just resolve this for you.
+[00:14:07.760 --> 00:14:10.160]   And it's worth realizing or sort of highlighting
+[00:14:10.160 --> 00:14:14.520]   that there's an element of the magnitude of task involved
+[00:14:14.520 --> 00:14:15.760]   in that trust element, right?
+[00:14:15.760 --> 00:14:17.160]   So if you're writing the next line of code,
+[00:14:17.160 --> 00:14:19.360]   I can review it every single line.
+[00:14:19.360 --> 00:14:21.440]   But if you are writing full applications,
+[00:14:21.440 --> 00:14:23.120]   I can't review them every time.
+[00:14:23.120 --> 00:14:25.520]   So for you to be useful to me,
+[00:14:25.520 --> 00:14:28.720]   I need to trust that it works.
+[00:14:28.720 --> 00:14:29.960]   And if not, then it just,
+[00:14:29.960 --> 00:14:32.600]   it doesn't serve the use case you're trying to get me
+[00:14:32.600 --> 00:14:33.840]   to believe that it does, right?
+[00:14:33.840 --> 00:14:36.160]   Or a lot of workflow creations.
+[00:14:36.160 --> 00:14:39.240]   So I think a lot of these like autonomous AI engineer,
+[00:14:39.240 --> 00:14:42.360]   right, whatever AI engineer is now loaded,
+[00:14:42.360 --> 00:14:46.280]   an ambiguous term right by the agent engineer.
+[00:14:46.280 --> 00:14:49.840]   A lot of those are really up the trust axis
+[00:14:49.840 --> 00:14:52.400]   and because they're trying to do things more autonomously.
+[00:14:52.400 --> 00:14:54.840]   And I'll say again that this is an IP game.
+[00:14:54.840 --> 00:14:56.320]   And so if you were a company
+[00:14:56.320 --> 00:14:57.360]   and you're trying to build over there,
+[00:14:57.360 --> 00:14:59.720]   it's because you believe that there is an IP mode
+[00:14:59.720 --> 00:15:01.480]   that is really hard to replicate.
+[00:15:01.480 --> 00:15:04.040]   And I think in general now versus two years ago,
+[00:15:04.040 --> 00:15:06.800]   I think conviction that you can have a true IP mode
+[00:15:06.800 --> 00:15:09.320]   in AI implementations is different.
+[00:15:09.320 --> 00:15:10.160]   I think two years ago,
+[00:15:10.160 --> 00:15:11.200]   you might think that people are,
+[00:15:11.200 --> 00:15:13.200]   they can really be ahead of the game.
+[00:15:13.200 --> 00:15:15.280]   And now you see that every time someone is ahead,
+[00:15:15.280 --> 00:15:17.920]   they're just three months ahead or six months ahead.
+[00:15:17.920 --> 00:15:20.000]   But you still hear like you hear a cursor, for instance,
+[00:15:20.000 --> 00:15:22.000]   which is a different type of company,
+[00:15:22.000 --> 00:15:25.320]   talking about how all they need to be is ahead
+[00:15:25.320 --> 00:15:28.120]   on the next free podcast by a few months
+[00:15:28.120 --> 00:15:29.280]   and that can be significant.
+[00:15:29.280 --> 00:15:32.080]   So that is their strategy is to sort of try and remain ahead,
+[00:15:32.080 --> 00:15:34.320]   which I find to be challenging strategy.
+[00:15:34.320 --> 00:15:35.600]   Like you still aspire to that,
+[00:15:35.600 --> 00:15:37.840]   but it's hard for that to be your strategy.
+[00:15:37.840 --> 00:15:39.440]   So I guess that's like half,
+[00:15:39.440 --> 00:15:43.160]   I don't know if I fit the briefly comments,
+[00:15:43.160 --> 00:15:45.600]   but that's like half the quadrant.
+[00:15:45.600 --> 00:15:46.440]   - Yeah, yeah.
+[00:15:46.440 --> 00:15:48.560]   And I think it's a very helpful overview
+[00:15:48.560 --> 00:15:50.480]   because I think a lot of people,
+[00:15:50.480 --> 00:15:52.120]   we probably intuitively know about it,
+[00:15:52.120 --> 00:15:53.600]   but like what's helpful about it,
+[00:15:53.600 --> 00:15:55.880]   almost like a mental model is it really helps you
+[00:15:55.880 --> 00:15:58.440]   kind of like think about the existing world.
+[00:15:58.440 --> 00:16:00.000]   And of course, as you're helpful to think about
+[00:16:00.000 --> 00:16:01.880]   what your new world is being proposing.
+[00:16:01.880 --> 00:16:02.720]   - Exactly.
+[00:16:02.720 --> 00:16:04.160]   - Yeah, I know we're not able to get into
+[00:16:04.160 --> 00:16:05.600]   like the details of Tesla,
+[00:16:05.600 --> 00:16:06.840]   obviously about the product
+[00:16:06.840 --> 00:16:08.560]   because things are pretty early.
+[00:16:08.560 --> 00:16:12.960]   But I'm very interested because I think this whole new IP
+[00:16:12.960 --> 00:16:16.960]   transformation and sort of like high trust, right?
+[00:16:16.960 --> 00:16:18.520]   To be able to generate high trust,
+[00:16:18.520 --> 00:16:22.160]   it almost requires like this trust earning journey,
+[00:16:22.160 --> 00:16:24.880]   the product needs to require to get to the end.
+[00:16:24.880 --> 00:16:25.720]   - Right.
+[00:16:25.720 --> 00:16:27.480]   And maybe hold that thought a second.
+[00:16:27.480 --> 00:16:29.040]   Let me sort of talk about the change route
+[00:16:29.040 --> 00:16:30.800]   and then we come back precisely to that
+[00:16:30.800 --> 00:16:31.840]   sort of the journey.
+[00:16:31.840 --> 00:16:34.720]   So like the trust route, like you go into that car
+[00:16:34.720 --> 00:16:35.560]   and you need that trust
+[00:16:35.560 --> 00:16:36.800]   and there's a trust building exercise.
+[00:16:36.800 --> 00:16:38.320]   Maybe you'll take shorter rides
+[00:16:38.320 --> 00:16:39.720]   once it's sort of a small.
+[00:16:39.720 --> 00:16:41.760]   Maybe you would only do it after a friend of yours to get,
+[00:16:41.760 --> 00:16:43.680]   right? Like you might do all these things,
+[00:16:43.680 --> 00:16:45.760]   but it's still the trust route.
+[00:16:45.760 --> 00:16:49.440]   I think the bigger, harder path is one of change.
+[00:16:49.440 --> 00:16:51.120]   So change is about changing the way you work.
+[00:16:51.120 --> 00:16:52.920]   And I think probably the best analogy there
+[00:16:52.920 --> 00:16:56.960]   is the text video or text to image representation.
+[00:16:56.960 --> 00:16:59.880]   So I'm a fortunate to be an investor in Cynthia,
+[00:16:59.880 --> 00:17:02.440]   Cynthia is sort of a text to video solution
+[00:17:02.440 --> 00:17:04.080]   and the focus on training and things like that,
+[00:17:04.080 --> 00:17:05.520]   one of the leaders in the space.
+[00:17:05.520 --> 00:17:08.760]   And the way you create the video in Cynthia
+[00:17:08.760 --> 00:17:11.400]   is entirely different to the way you would create
+[00:17:11.400 --> 00:17:12.400]   a video pre-AI.
+[00:17:12.400 --> 00:17:14.840]   Like there's really nothing in common
+[00:17:14.840 --> 00:17:17.280]   about how you would sort of set up a studio
+[00:17:17.280 --> 00:17:19.320]   and get actors and shoot with a video and all that
+[00:17:19.320 --> 00:17:21.200]   and how you would sort of write that text.
+[00:17:21.200 --> 00:17:24.640]   And because of that, that is dramatic change
+[00:17:24.640 --> 00:17:27.880]   in who is it that would be able to operate that successfully?
+[00:17:27.880 --> 00:17:28.960]   You know, what are the skills?
+[00:17:28.960 --> 00:17:30.960]   What are the workflows in the business that you would build?
+[00:17:30.960 --> 00:17:33.240]   And there's effectively zero chance
+[00:17:33.240 --> 00:17:36.480]   that the winner in the like AI generated videos
+[00:17:36.480 --> 00:17:40.600]   will be the same companies that are the ones producing
+[00:17:40.600 --> 00:17:43.000]   the videos in person today.
+[00:17:43.000 --> 00:17:46.960]   But the difficulty over here is when would you start using it
+[00:17:46.960 --> 00:17:48.400]   and how would you use it?
+[00:17:48.400 --> 00:17:50.160]   And Cynthia, I've actually kind of figured out
+[00:17:50.160 --> 00:17:52.920]   a good specific niche or sort of slice.
+[00:17:52.920 --> 00:17:54.360]   So maybe that's a demonstration of a journey
+[00:17:54.360 --> 00:17:55.520]   around these training videos
+[00:17:55.520 --> 00:17:57.000]   that already were very methodical
+[00:17:57.000 --> 00:17:58.320]   in the different languages and such.
+[00:17:58.320 --> 00:18:00.600]   But when you go and you go to runway
+[00:18:00.600 --> 00:18:03.320]   or you go to the more loose form generations,
+[00:18:03.320 --> 00:18:06.800]   I mean, how do you generate a feature in that fashion?
+[00:18:06.800 --> 00:18:09.560]   I mean, there are new problems that you would need
+[00:18:09.560 --> 00:18:11.600]   to deal with that are brand new.
+[00:18:11.600 --> 00:18:14.080]   You don't really know how to overcome them
+[00:18:14.080 --> 00:18:16.080]   around, you know, character and consistency.
+[00:18:16.080 --> 00:18:17.120]   It's only a different person.
+[00:18:17.120 --> 00:18:18.840]   You don't get that problem, right?
+[00:18:18.840 --> 00:18:20.840]   When you're shooting a video and suddenly a doppelganger
+[00:18:20.840 --> 00:18:24.240]   of an actor shows up instead of the,
+[00:18:24.240 --> 00:18:28.400]   a re-elector, you know, someone similar, but not quite the same.
+[00:18:28.400 --> 00:18:31.480]   And so these are new problems, they're new workflows.
+[00:18:31.480 --> 00:18:34.400]   But if you succeed in building a new way
+[00:18:34.400 --> 00:18:36.960]   that is truly better and text the videos,
+[00:18:36.960 --> 00:18:39.840]   a good example of one in which there's like massive advantages.
+[00:18:39.840 --> 00:18:41.360]   If successful, it's like dramatically,
+[00:18:41.360 --> 00:18:43.160]   dramatically cheaper and faster,
+[00:18:43.160 --> 00:18:45.440]   then you can unlock tremendous value
+[00:18:45.440 --> 00:18:47.360]   and you can really win that space.
+[00:18:47.360 --> 00:18:49.240]   And so I think that's really the disruption corner.
+[00:18:49.240 --> 00:18:51.800]   That's the place in which you can really rethink an industry.
+[00:18:51.800 --> 00:18:54.000]   But the slowdown factor isn't just trust.
+[00:18:54.000 --> 00:18:56.840]   It's change and people are slow to change.
+[00:18:56.840 --> 00:18:59.160]   And so I think you can develop IP faster
+[00:18:59.160 --> 00:19:01.440]   than you can get people to change.
+[00:19:01.440 --> 00:19:02.760]   And it's actually quite hard,
+[00:19:02.760 --> 00:19:04.280]   like if I bring it back to developments,
+[00:19:04.280 --> 00:19:07.320]   quite hard to think about what does this mean in development.
+[00:19:07.320 --> 00:19:09.160]   I think a little bit of that is this notion
+[00:19:09.160 --> 00:19:11.000]   of chat based creation.
+[00:19:11.000 --> 00:19:14.480]   And so everybody immediately gets the code completion,
+[00:19:14.480 --> 00:19:17.560]   but you'd find conflicting and sometimes hostile opinions
+[00:19:17.560 --> 00:19:19.760]   about generation with chat.
+[00:19:19.760 --> 00:19:21.520]   Because that's a new way of doing it.
+[00:19:21.520 --> 00:19:22.960]   You know, it's a different methodology.
+[00:19:22.960 --> 00:19:25.080]   How do I talk about my document?
+[00:19:25.080 --> 00:19:26.800]   Like how do I work with that?
+[00:19:26.800 --> 00:19:28.120]   And so it takes longer to adopt.
+[00:19:28.120 --> 00:19:29.840]   Maybe it's better, maybe it's not,
+[00:19:29.840 --> 00:19:33.080]   but it takes longer to adopt and it's a difference.
+[00:19:33.080 --> 00:19:36.240]   I think the V0 or the sort of the bootstrap
+[00:19:36.240 --> 00:19:38.120]   of an application this way,
+[00:19:38.120 --> 00:19:39.880]   again, it's a different way of doing it.
+[00:19:39.880 --> 00:19:41.880]   So it gets you somewhere.
+[00:19:41.880 --> 00:19:43.480]   Is it the right where?
+[00:19:43.480 --> 00:19:45.760]   Is it the right starting point?
+[00:19:45.760 --> 00:19:47.200]   What do designers think about it?
+[00:19:47.200 --> 00:19:50.400]   Well, some of them have very kind of vicious opinions
+[00:19:50.400 --> 00:19:51.880]   about them and some of them are in love with it.
+[00:19:51.880 --> 00:19:55.200]   And so I think that change route is interesting.
+[00:19:55.200 --> 00:19:58.040]   And then let me kind of quickly talk about the top right,
+[00:19:58.040 --> 00:19:59.480]   which is really just a combination of those
+[00:19:59.480 --> 00:20:01.680]   in to an extent in what you sort of referred to
+[00:20:01.680 --> 00:20:04.080]   when you talk about how do you build the trust.
+[00:20:04.080 --> 00:20:05.760]   Like that's the hardest quadrant,
+[00:20:05.760 --> 00:20:06.640]   the sort of the top right.
+[00:20:06.640 --> 00:20:09.960]   It is a new way of doing it and assumes trust.
+[00:20:09.960 --> 00:20:11.560]   And so really at the moment,
+[00:20:11.560 --> 00:20:14.680]   if you just build for the top right, nobody would use it.
+[00:20:14.680 --> 00:20:17.840]   They require them to change and to trust at the same time.
+[00:20:17.840 --> 00:20:19.120]   It's just not going to happen.
+[00:20:19.120 --> 00:20:22.560]   But eventually every company should understand
+[00:20:22.560 --> 00:20:25.400]   what is its top right positioning, every market,
+[00:20:25.400 --> 00:20:28.160]   like if you're going to build a product,
+[00:20:28.160 --> 00:20:31.680]   like build a company, acquire a company to any domain,
+[00:20:31.680 --> 00:20:34.320]   you have to have a thesis about what is in the top right
+[00:20:34.320 --> 00:20:36.600]   because that is what we will eventually have
+[00:20:36.600 --> 00:20:38.880]   is when the technology is trusted
+[00:20:38.880 --> 00:20:42.440]   and whatever useful changes are there to be had,
+[00:20:42.440 --> 00:20:43.720]   they have been adopted.
+[00:20:43.720 --> 00:20:45.360]   And so we'll get back to sort of testament
+[00:20:45.360 --> 00:20:47.440]   and native development, but what we're talking about
+[00:20:47.440 --> 00:20:49.280]   in the AI and native development model is
+[00:20:49.280 --> 00:20:51.840]   let's start by imagining the top right
+[00:20:51.840 --> 00:20:54.800]   and then there will be many journeys to get there.
+[00:20:54.800 --> 00:20:58.800]   But you have to agree first directionally
+[00:20:58.800 --> 00:21:00.840]   about what we think that top right is
+[00:21:00.840 --> 00:21:03.480]   and you have to have that be a lively conversation
+[00:21:03.480 --> 00:21:05.840]   and have a lot of people engage and try things in it
+[00:21:05.840 --> 00:21:08.760]   and all that for us to be able to conform that destination.
+[00:21:08.760 --> 00:21:10.560]   And if all your building is for the bottom left,
+[00:21:10.560 --> 00:21:12.360]   you might get some immediate dollars,
+[00:21:12.360 --> 00:21:14.000]   but your company is going to become invalid
+[00:21:14.000 --> 00:21:14.900]   or irrelevant.
+[00:21:16.840 --> 00:21:19.160]   It's a short answer.
+[00:21:19.160 --> 00:21:20.640]   - But it was a great answer.
+[00:21:20.640 --> 00:21:23.400]   The way I think about this is self-driving car model, right?
+[00:21:23.400 --> 00:21:26.800]   Like, you know, in many ways, like the assisted
+[00:21:26.800 --> 00:21:28.800]   sort of driving cruise control, right?
+[00:21:28.800 --> 00:21:31.520]   Is a good example of a copilot, you know,
+[00:21:31.520 --> 00:21:33.320]   fully self-driving car we still have to have.
+[00:21:33.320 --> 00:21:34.960]   I have this thing on my Subaru or like,
+[00:21:34.960 --> 00:21:37.040]   if I have my hands on the wheel, the car will drive itself,
+[00:21:37.040 --> 00:21:38.080]   but I'm still like there.
+[00:21:38.080 --> 00:21:40.120]   And then there's, you know, the full self-driving version
+[00:21:40.120 --> 00:21:40.920]   which like Tesla's like,
+[00:21:40.920 --> 00:21:43.400]   gosh, you can just do everyone, right?
+[00:21:43.400 --> 00:21:44.760]   And then in future, you have, you know,
+[00:21:44.760 --> 00:21:45.920]   obviously the robo-taxis,
+[00:21:45.920 --> 00:21:48.320]   like my name has been a robo, that is incredible.
+[00:21:48.320 --> 00:21:49.800]   And that, though, if I were to think about it,
+[00:21:49.800 --> 00:21:51.880]   like the AI-native future in development
+[00:21:51.880 --> 00:21:53.360]   would be like the robo version
+[00:21:53.360 --> 00:21:55.680]   of whatever software development is.
+[00:21:55.680 --> 00:21:57.520]   One of the things I think about is, you know, today,
+[00:21:57.520 --> 00:21:59.800]   the example is the copilot, you know,
+[00:21:59.800 --> 00:22:02.200]   the auto-completion or the chat.
+[00:22:02.200 --> 00:22:05.120]   Basically like this change in how the developer works
+[00:22:05.120 --> 00:22:05.960]   inside the IDE.
+[00:22:05.960 --> 00:22:08.640]   And so we've seen, you know, 50% speedups.
+[00:22:08.640 --> 00:22:11.640]   What do you think an example of an AI-native future
+[00:22:11.640 --> 00:22:13.840]   for a software developer looks like?
+[00:22:13.840 --> 00:22:16.280]   Is there like a mental model you have
+[00:22:16.280 --> 00:22:18.880]   or like a gap in experience that you've been thinking about
+[00:22:18.880 --> 00:22:20.960]   that demonstrates the difference between,
+[00:22:20.960 --> 00:22:23.760]   I'm driving a car and I always have my eyes on the odometer
+[00:22:23.760 --> 00:22:26.680]   and the car in front of me to, oh, now the taxi is like,
+[00:22:26.680 --> 00:22:27.520]   driving me around.
+[00:22:27.520 --> 00:22:30.840]   Like have you thought about what that could look like?
+[00:22:30.840 --> 00:22:32.880]   - First of all, it's interesting that in the self-driving car,
+[00:22:32.880 --> 00:22:34.920]   there are actually examples of two big companies
+[00:22:34.920 --> 00:22:36.280]   that are taking different journeys to it.
+[00:22:36.280 --> 00:22:38.400]   Waymo is taking the IP route
+[00:22:38.400 --> 00:22:40.440]   and they're very much, they have no copilot.
+[00:22:40.440 --> 00:22:42.160]   You're jumping straight into self-driving.
+[00:22:42.160 --> 00:22:44.200]   Their only graduation is like the distances
+[00:22:44.200 --> 00:22:46.200]   of the cities they operate in.
+[00:22:46.200 --> 00:22:49.400]   While Tesla is taking the assisted driving route
+[00:22:49.400 --> 00:22:51.240]   and trying to evolve their features like that.
+[00:22:51.240 --> 00:22:52.560]   And time will tell what's better
+[00:22:52.560 --> 00:22:55.000]   and they might both be viable, but they're very different.
+[00:22:55.000 --> 00:22:56.640]   So it's interesting like these are two giants
+[00:22:56.640 --> 00:22:59.760]   and they're both taking very different routes to it.
+[00:22:59.760 --> 00:23:01.800]   I think the software analogy to self-driving cars
+[00:23:01.800 --> 00:23:03.920]   is a little bit tough because self-driving cars
+[00:23:03.920 --> 00:23:05.480]   have a physical limitation.
+[00:23:05.480 --> 00:23:09.280]   And so you can't really make a self-driving car
+[00:23:09.280 --> 00:23:10.840]   10 times faster, right?
+[00:23:10.840 --> 00:23:13.720]   Or you can make it much better in various ways.
+[00:23:13.720 --> 00:23:15.520]   And over time, you can create a reality
+[00:23:15.520 --> 00:23:17.160]   that is a hundred times better
+[00:23:17.160 --> 00:23:19.360]   if there's no parking lots anymore
+[00:23:19.360 --> 00:23:21.960]   and all that space has been reclaimed by cities.
+[00:23:21.960 --> 00:23:24.560]   And there are fewer accidents
+[00:23:24.560 --> 00:23:26.680]   and a car ownership, it becomes a non-issue
+[00:23:26.680 --> 00:23:30.320]   because everybody's just kind of reusing these cars.
+[00:23:30.320 --> 00:23:32.240]   And so you can imagine a better future
+[00:23:32.240 --> 00:23:35.640]   but the driving itself, the driving experience is shorter.
+[00:23:35.640 --> 00:23:37.440]   I think for software development,
+[00:23:37.440 --> 00:23:39.520]   there's actually a better opportunity
+[00:23:39.520 --> 00:23:43.760]   because you can both improve the journey itself, right?
+[00:23:43.760 --> 00:23:46.520]   I get from point A to point B by a hundred X
+[00:23:46.520 --> 00:23:48.720]   and you can improve the ecosystem
+[00:23:48.720 --> 00:23:52.480]   and the totality of it by another factor that is similar.
+[00:23:52.480 --> 00:23:53.680]   Maybe I can talk a little bit
+[00:23:53.680 --> 00:23:55.640]   about what I think is a native development.
+[00:23:55.640 --> 00:23:56.480]   Does that make sense?
+[00:23:56.480 --> 00:23:57.840]   - That'd be amazing, yeah.
+[00:23:57.840 --> 00:24:00.240]   - Again, I think this is a group definition, right?
+[00:24:00.240 --> 00:24:02.560]   Like in our community, it's a new paradigm
+[00:24:02.560 --> 00:24:04.680]   and we need to work together as a community to doing it.
+[00:24:04.680 --> 00:24:07.200]   And just sort of point out as a bit of a plug
+[00:24:07.200 --> 00:24:09.320]   that we do have a conference
+[00:24:09.320 --> 00:24:11.520]   that we're funding and operating and all that
+[00:24:11.520 --> 00:24:13.640]   but with a lot of kind of bright opinions about it
+[00:24:13.640 --> 00:24:16.640]   that is running what I think would be late the week
+[00:24:16.640 --> 00:24:20.240]   that this airs on November 21st called the Air Native DevCon
+[00:24:20.240 --> 00:24:22.440]   and we're going to have a lot of bright speakers
+[00:24:22.440 --> 00:24:24.480]   over there talking about all sorts of aspects
+[00:24:24.480 --> 00:24:26.120]   of a native development.
+[00:24:26.120 --> 00:24:27.600]   But with that said, let me talk a little bit
+[00:24:27.600 --> 00:24:28.440]   about our definition.
+[00:24:28.440 --> 00:24:30.880]   So I think software today,
+[00:24:30.880 --> 00:24:33.280]   software development is very code-centric.
+[00:24:33.280 --> 00:24:35.480]   You get some requirements, you write some code
+[00:24:35.480 --> 00:24:37.520]   where quickly you make 100 decisions in the code
+[00:24:37.520 --> 00:24:39.240]   that never make it anywhere else
+[00:24:39.240 --> 00:24:41.120]   or like it might be too low resolution.
+[00:24:41.120 --> 00:24:44.320]   They might have not been bothered to go out
+[00:24:44.320 --> 00:24:47.080]   and the code intertwines what needs to be done
+[00:24:47.080 --> 00:24:48.120]   with how to do it.
+[00:24:48.120 --> 00:24:49.920]   It's like literally in the same lines.
+[00:24:49.920 --> 00:24:53.000]   You read the code and you need to parse out
+[00:24:53.000 --> 00:24:55.120]   what is it doing and how is it doing it
+[00:24:55.120 --> 00:24:57.520]   and separate the two and the LLMs
+[00:24:57.520 --> 00:25:00.320]   that try to learn the code, they need to do the same.
+[00:25:00.320 --> 00:25:03.640]   And I believe that we will move to a world
+[00:25:03.640 --> 00:25:07.280]   that is spec-centric in which we can separate the two
+[00:25:07.280 --> 00:25:09.440]   and a user can specify what they want,
+[00:25:09.440 --> 00:25:11.200]   which is not a trivial problem
+[00:25:11.200 --> 00:25:13.480]   and AI will handle the implementation.
+[00:25:13.480 --> 00:25:18.160]   In that world where AI does the coding and the implementation,
+[00:25:18.160 --> 00:25:19.160]   there are many, many things
+[00:25:19.160 --> 00:25:21.160]   that suddenly become dramatically better.
+[00:25:21.160 --> 00:25:24.240]   For instance, AI native software
+[00:25:24.240 --> 00:25:26.400]   will be autonomously maintained.
+[00:25:26.400 --> 00:25:28.920]   I mean maintenance by definition
+[00:25:28.920 --> 00:25:31.800]   is change the software without changing the spec.
+[00:25:31.800 --> 00:25:33.080]   Keep it behaving the same way
+[00:25:33.080 --> 00:25:34.440]   but change the operating system,
+[00:25:34.440 --> 00:25:36.520]   change the dependency, fix that vulnerability
+[00:25:36.520 --> 00:25:37.960]   but don't change the spec.
+[00:25:37.960 --> 00:25:40.080]   And so if you start from anchoring on the spec
+[00:25:40.080 --> 00:25:41.680]   and have a good verification mechanism
+[00:25:41.680 --> 00:25:44.200]   to know that the software is working correctly,
+[00:25:44.200 --> 00:25:45.640]   you don't need to maintain that anymore.
+[00:25:45.640 --> 00:25:47.640]   And maintenance is like the productivity killer.
+[00:25:47.640 --> 00:25:50.560]   So that alone is like massively valuable.
+[00:25:50.560 --> 00:25:53.120]   It is dramatically more accessible
+[00:25:53.120 --> 00:25:55.200]   because there are just that many more people
+[00:25:55.200 --> 00:25:56.960]   that can specify what they want
+[00:25:56.960 --> 00:25:58.040]   and can be the judge of that.
+[00:25:58.040 --> 00:26:00.840]   And even sort of think architecturally sometimes
+[00:26:00.840 --> 00:26:03.240]   but are not able to write code.
+[00:26:03.240 --> 00:26:06.120]   It would be very adaptable to your environment.
+[00:26:06.120 --> 00:26:07.920]   So you'd be able to create software
+[00:26:07.920 --> 00:26:11.120]   that on Ian's infrastructure is optimized for that
+[00:26:11.120 --> 00:26:13.000]   and on Tim's infrastructure is optimized
+[00:26:13.000 --> 00:26:16.680]   for their environment or that learns from the data
+[00:26:16.680 --> 00:26:19.760]   and operations of how your specific users
+[00:26:19.760 --> 00:26:22.960]   are using the system and your specific business needs.
+[00:26:22.960 --> 00:26:24.800]   Are you kind of flush with cash
+[00:26:24.800 --> 00:26:27.320]   and you're really looking to provide the best experience
+[00:26:27.320 --> 00:26:30.800]   and you want to optimize for latency and such?
+[00:26:30.800 --> 00:26:33.760]   Or are you more worried about costs
+[00:26:33.760 --> 00:26:35.840]   and trying to do it or maybe different times a day
+[00:26:35.840 --> 00:26:38.160]   you want different things for different users?
+[00:26:38.160 --> 00:26:41.640]   And so like an extreme level of adaptability
+[00:26:41.640 --> 00:26:44.400]   and personalization and automation can be there.
+[00:26:44.400 --> 00:26:46.200]   It can have a deeper relationship with data.
+[00:26:46.200 --> 00:26:48.840]   I read some stats that I'm not sure if it's coherent
+[00:26:48.840 --> 00:26:50.880]   but it aligns with my general thinking
+[00:26:50.880 --> 00:26:52.800]   which is that software generally
+[00:26:52.800 --> 00:26:55.680]   is thought that it can be 10,000 times faster
+[00:26:55.680 --> 00:26:58.080]   if you really fully squeezed and optimized
+[00:26:58.080 --> 00:26:59.880]   every aspect of it.
+[00:26:59.880 --> 00:27:02.720]   But that's expensive 'cause like human time is expensive
+[00:27:02.720 --> 00:27:06.240]   but maybe with AI, if you're tied to it.
+[00:27:06.240 --> 00:27:08.880]   So it's just better on so many fronts.
+[00:27:08.880 --> 00:27:11.040]   And I guess our conviction is that building software
+[00:27:11.040 --> 00:27:13.480]   like that, being able to specify what you want,
+[00:27:13.480 --> 00:27:17.200]   being able to provide and then evolve
+[00:27:17.200 --> 00:27:20.400]   the verification mechanisms to know,
+[00:27:20.400 --> 00:27:23.600]   to trust that the software works the way you want.
+[00:27:23.600 --> 00:27:26.720]   And then thinking about how that software works over time,
+[00:27:26.720 --> 00:27:29.800]   like thinking about how do you write the specification,
+[00:27:29.800 --> 00:27:30.760]   how do you write the verification,
+[00:27:30.760 --> 00:27:33.480]   how do you edit to those in future versions of it?
+[00:27:33.480 --> 00:27:35.840]   How do you package those?
+[00:27:35.840 --> 00:27:37.320]   How do you version something like this?
+[00:27:37.320 --> 00:27:38.360]   This is language agnostic.
+[00:27:38.360 --> 00:27:39.440]   You can have a JavaScript version,
+[00:27:39.440 --> 00:27:40.480]   a Python version of it.
+[00:27:40.480 --> 00:27:42.000]   Like are they the same version?
+[00:27:42.000 --> 00:27:42.840]   How do I think about them?
+[00:27:42.840 --> 00:27:46.840]   What happens if they have some language specific ecosystem
+[00:27:46.840 --> 00:27:47.680]   change on it?
+[00:27:47.680 --> 00:27:48.640]   Is that a new version for both?
+[00:27:48.640 --> 00:27:52.000]   Is that how do you observe a system like that?
+[00:27:52.000 --> 00:27:53.640]   How do you know what has occurred?
+[00:27:53.640 --> 00:27:57.320]   And so all of those require a different software factory.
+[00:27:57.320 --> 00:28:00.840]   They require a different development paradigm and methodology
+[00:28:00.840 --> 00:28:03.680]   and they require a different development platform.
+[00:28:03.680 --> 00:28:04.800]   What we're sort of perceiving here
+[00:28:04.800 --> 00:28:09.040]   and we can go into each of these paths deeper if you'd like
+[00:28:09.040 --> 00:28:09.880]   is that on one hand,
+[00:28:09.880 --> 00:28:11.960]   we think this is a new development paradigm
+[00:28:11.960 --> 00:28:14.080]   and we think this is software development
+[00:28:14.080 --> 00:28:15.440]   and a lot of the answers,
+[00:28:15.440 --> 00:28:18.000]   like we will not be the ones thinking about them
+[00:28:18.000 --> 00:28:21.120]   and they would also not have one answer
+[00:28:21.120 --> 00:28:24.680]   both because of the complexity of software and the world.
+[00:28:24.680 --> 00:28:29.160]   So it could be that the way you would verify a mobile game
+[00:28:29.160 --> 00:28:31.120]   is just very different to the way you would verify
+[00:28:31.120 --> 00:28:34.520]   any commerce site and to the way that you would verify
+[00:28:34.520 --> 00:28:39.080]   an internal in-house application or any of these others.
+[00:28:39.080 --> 00:28:41.320]   But also because it's not gonna be a point in time, right?
+[00:28:41.320 --> 00:28:42.160]   Like it will change.
+[00:28:42.160 --> 00:28:44.920]   Now, maybe in some magical world,
+[00:28:44.920 --> 00:28:47.480]   we sort of figured out all the ways to doing it.
+[00:28:47.480 --> 00:28:49.800]   Like over time, you know, different organizational context
+[00:28:49.800 --> 00:28:51.280]   but also new technology comes along.
+[00:28:51.280 --> 00:28:52.120]   Things change.
+[00:28:52.120 --> 00:28:53.920]   There are opinions and multiple ways to do it.
+[00:28:53.920 --> 00:28:56.640]   And so we think this A&M development,
+[00:28:56.640 --> 00:28:58.840]   like this is a methodology and it has some,
+[00:28:58.840 --> 00:29:00.960]   like in DevOps, like in CICD,
+[00:29:00.960 --> 00:29:03.360]   there are some themes that are recurring.
+[00:29:03.360 --> 00:29:06.000]   There are some practices that span ecosystems
+[00:29:06.000 --> 00:29:08.040]   but there are many tools and they plug together
+[00:29:08.040 --> 00:29:09.360]   and they work together.
+[00:29:09.360 --> 00:29:11.600]   And so we think there's an importance
+[00:29:11.600 --> 00:29:13.840]   for a dev movement around it,
+[00:29:13.840 --> 00:29:15.360]   which is why we're running the conference,
+[00:29:15.360 --> 00:29:17.800]   which is why we're kind of looking to build
+[00:29:17.800 --> 00:29:20.920]   and help kind of foster a community around what is A&M
+[00:29:20.920 --> 00:29:23.520]   and what is that top right for development.
+[00:29:23.520 --> 00:29:25.320]   And on the other side, on the company side,
+[00:29:25.320 --> 00:29:27.280]   on the product side, is we're trying to think,
+[00:29:27.280 --> 00:29:30.520]   what does a development platform for that look like?
+[00:29:30.520 --> 00:29:32.160]   How do you write those specs?
+[00:29:32.160 --> 00:29:33.200]   How do you advance it?
+[00:29:33.200 --> 00:29:36.240]   And how do you plug tools along the way?
+[00:29:36.240 --> 00:29:37.920]   Clearly we, you know, to build a product
+[00:29:37.920 --> 00:29:40.840]   that has to be usable, it can be dependent on something else.
+[00:29:40.840 --> 00:29:43.040]   So it's useful in its own right.
+[00:29:43.040 --> 00:29:44.040]   But how do we think about that
+[00:29:44.040 --> 00:29:46.720]   as something that facilitates the participation
+[00:29:46.720 --> 00:29:48.720]   of others versus excluding them?
+[00:29:48.720 --> 00:29:50.920]   Yeah, so that's my view on A&M development.
+[00:29:50.920 --> 00:29:54.360]   And I've got many more, I can drill into any of these things.
+[00:29:54.360 --> 00:29:56.680]   I think they're all on the deep topics.
+[00:29:56.680 --> 00:30:00.400]   Yeah, I'm sure we can have a 24-hour podcast
+[00:30:00.400 --> 00:30:02.880]   because it is actually really exciting.
+[00:30:02.880 --> 00:30:04.560]   The more you mention it,
+[00:30:04.560 --> 00:30:06.000]   it gets a little bit clearer
+[00:30:06.000 --> 00:30:07.760]   where you're actually trying to achieve.
+[00:30:07.760 --> 00:30:09.280]   And you think about the future,
+[00:30:09.280 --> 00:30:11.320]   like you mentioned about Weimong,
+[00:30:11.320 --> 00:30:13.600]   once you're able to actually fully trust
+[00:30:13.600 --> 00:30:16.680]   that this car can actually get you from point to point B,
+[00:30:16.680 --> 00:30:18.960]   your whole life changes potentially, right?
+[00:30:18.960 --> 00:30:21.800]   The whole rules and everything around changes a lot.
+[00:30:21.800 --> 00:30:25.320]   So I think it's really exciting to think about
+[00:30:25.320 --> 00:30:26.640]   like the future development
+[00:30:26.640 --> 00:30:29.480]   if we can fully trust a particular spec
+[00:30:29.480 --> 00:30:32.240]   that is actually able to encapsulate
+[00:30:32.240 --> 00:30:34.120]   what we really want to achieve,
+[00:30:34.120 --> 00:30:35.560]   then the implementation tells,
+[00:30:35.560 --> 00:30:38.080]   implementation details may not matter as much.
+[00:30:38.080 --> 00:30:41.120]   But of course, the biggest challenge is the spec.
+[00:30:41.120 --> 00:30:43.440]   It's the creation, maintenance,
+[00:30:43.440 --> 00:30:44.800]   and the sort of iterations
+[00:30:44.800 --> 00:30:48.080]   and the team dynamics around the spec, right?
+[00:30:48.080 --> 00:30:51.320]   And so I'm sure there's so much details
+[00:30:51.320 --> 00:30:53.720]   and probably be able to go to most of it.
+[00:30:53.720 --> 00:30:54.840]   But you already mentioned like,
+[00:30:54.840 --> 00:30:58.320]   there is this specification of what it kind of does
+[00:30:58.320 --> 00:31:00.280]   and the specification of how it rerify,
+[00:31:00.280 --> 00:31:02.160]   it actually does the correct things.
+[00:31:02.160 --> 00:31:04.160]   And there's so many things in between.
+[00:31:04.160 --> 00:31:05.440]   Can we talk about,
+[00:31:05.440 --> 00:31:07.040]   you already looked a little bit,
+[00:31:07.040 --> 00:31:09.800]   I'm very curious about the spec aspect,
+[00:31:09.800 --> 00:31:11.800]   what are the major challenges
+[00:31:11.800 --> 00:31:15.160]   to make sure a spec can do what it does, you know?
+[00:31:15.160 --> 00:31:17.080]   Because right now, when I think about it,
+[00:31:17.080 --> 00:31:19.680]   we've gone from test-driven developments, right?
+[00:31:19.680 --> 00:31:22.240]   All these little small little paradigm shifts
+[00:31:22.240 --> 00:31:23.080]   of trying to make sure
+[00:31:23.080 --> 00:31:25.680]   we are getting the right thing to be delivered.
+[00:31:25.680 --> 00:31:28.440]   And but none of these are coverageable enough, right?
+[00:31:28.440 --> 00:31:30.240]   And cannot keep up with the changes
+[00:31:30.240 --> 00:31:32.680]   and all the complexity behind the systems.
+[00:31:32.680 --> 00:31:35.040]   So it's really hard to imagine there's a spec
+[00:31:35.040 --> 00:31:37.640]   that can actually take care of everything.
+[00:31:37.640 --> 00:31:42.680]   So is there a particular mind or pattern
+[00:31:42.680 --> 00:31:45.960]   or even like challenges we had to overcome
+[00:31:45.960 --> 00:31:47.280]   when it comes to actually figuring out
+[00:31:47.280 --> 00:31:49.120]   how to get the spec correct?
+[00:31:49.120 --> 00:31:52.040]   'Cause I think that could be something to highlight, right?
+[00:31:52.040 --> 00:31:53.440]   Just this is not easy thing at all.
+[00:31:53.440 --> 00:31:55.040]   Here's actually really hard things
+[00:31:55.040 --> 00:31:56.760]   we had to figure out along the way.
+[00:31:56.760 --> 00:31:59.960]   - Yeah, I think so, I think everything you say is correct.
+[00:31:59.960 --> 00:32:01.760]   It's hard to imagine this type of spec
+[00:32:01.760 --> 00:32:03.960]   and I'll share my thoughts in a sec.
+[00:32:03.960 --> 00:32:07.160]   I would also add how do you make it fun to write a spec?
+[00:32:07.160 --> 00:32:08.880]   'Cause like if it's an agonizing process,
+[00:32:08.880 --> 00:32:10.800]   it might be functional, but if it's not fun,
+[00:32:10.800 --> 00:32:11.880]   people are not gonna do it.
+[00:32:11.880 --> 00:32:15.040]   And so not only does it need to be a powerful spec,
+[00:32:15.040 --> 00:32:17.160]   it also needs to be one that is fun to create
+[00:32:17.160 --> 00:32:19.360]   or it is a process that makes it fun to create it.
+[00:32:19.360 --> 00:32:20.800]   There are actually two reasons
+[00:32:20.800 --> 00:32:22.560]   why I think we'll move to spec centric development.
+[00:32:22.560 --> 00:32:23.960]   The first one is probably most obvious,
+[00:32:23.960 --> 00:32:25.880]   which is machines can write code now.
+[00:32:25.880 --> 00:32:28.560]   But the second that is as important, if not more,
+[00:32:28.560 --> 00:32:30.960]   is that machines can fill out the spec.
+[00:32:30.960 --> 00:32:34.120]   If I tell an LLM, create a tic-tac-toe game.
+[00:32:34.120 --> 00:32:37.280]   That's a spec, it's a pretty terrible spec, but it's a spec.
+[00:32:37.280 --> 00:32:39.000]   And the reason it's a spec is because
+[00:32:39.000 --> 00:32:40.280]   the LLM can fill in the gaps.
+[00:32:40.280 --> 00:32:43.040]   It can decide whether it's a web game or a mobile game.
+[00:32:43.040 --> 00:32:46.240]   It can decide whether it follows the rules of tic-tac-toe
+[00:32:46.240 --> 00:32:47.640]   and what are those?
+[00:32:47.640 --> 00:32:50.920]   And whether there's a multiplayer or machine.
+[00:32:50.920 --> 00:32:54.320]   And hopefully in the smart system, it can interact with you
+[00:32:54.320 --> 00:32:56.280]   and know when to ask you questions as well.
+[00:32:56.280 --> 00:32:57.840]   And they say, well, tell me, do you want this
+[00:32:57.840 --> 00:32:59.640]   to be a web game or a mobile game?
+[00:32:59.640 --> 00:33:01.600]   But one or the other, it can figure out
+[00:33:01.600 --> 00:33:03.760]   which questions to ask and it can figure out
+[00:33:03.760 --> 00:33:05.440]   how to fill out the spec.
+[00:33:05.440 --> 00:33:08.720]   And I think that is a massive unlock
+[00:33:08.720 --> 00:33:11.080]   that allows us to break this mold that we have today.
+[00:33:11.080 --> 00:33:14.120]   We have either formal specifications,
+[00:33:14.120 --> 00:33:16.000]   which are such a nightmare to write,
+[00:33:16.000 --> 00:33:20.040]   that they only make sense in the most harsh conditions
+[00:33:20.040 --> 00:33:21.520]   where you really have to have that, right?
+[00:33:21.520 --> 00:33:23.360]   When it's a deep medical device or aerospace.
+[00:33:23.360 --> 00:33:24.800]   And even there, they're limited,
+[00:33:24.800 --> 00:33:26.080]   but they're very painful to write.
+[00:33:26.080 --> 00:33:27.760]   You'd prefer from an experienced perspective
+[00:33:27.760 --> 00:33:29.000]   to just write the code.
+[00:33:29.000 --> 00:33:31.160]   Or on the other side, you have no code,
+[00:33:31.160 --> 00:33:33.880]   which are kind of toys, like the really smart configurations.
+[00:33:33.880 --> 00:33:36.960]   All the activity, all the ideas have been pre-created.
+[00:33:36.960 --> 00:33:39.160]   And now you're just choosing how to organize them
+[00:33:39.160 --> 00:33:40.280]   and it watch flows to run them.
+[00:33:40.280 --> 00:33:41.640]   So it's always been very limited
+[00:33:41.640 --> 00:33:43.320]   and as they evolved, they become code,
+[00:33:43.320 --> 00:33:45.920]   like in Apex and Salesforce.
+[00:33:45.920 --> 00:33:49.920]   So I think the ability to fill out the gaps,
+[00:33:49.920 --> 00:33:51.920]   fill in the gaps is really the unlock
+[00:33:51.920 --> 00:33:53.600]   that LLMs kind of introduced,
+[00:33:53.600 --> 00:33:55.720]   that are as important, if not more important,
+[00:33:55.720 --> 00:33:57.880]   than the ability to create code.
+[00:33:57.880 --> 00:34:02.880]   And the ability of the system to fill in the gaps correctly
+[00:34:02.880 --> 00:34:05.080]   is going to be one of the strengths
+[00:34:05.080 --> 00:34:07.280]   of specific platforms as they come in.
+[00:34:07.280 --> 00:34:09.760]   So if you're a marketing agency
+[00:34:09.760 --> 00:34:11.800]   and you've already built five websites for me
+[00:34:11.800 --> 00:34:13.040]   and I'm coming to you and I'm asking you
+[00:34:13.040 --> 00:34:15.320]   to build the sixth website,
+[00:34:15.320 --> 00:34:16.960]   I only need to give you a very small spec
+[00:34:16.960 --> 00:34:18.720]   because you're well familiar with me,
+[00:34:18.720 --> 00:34:20.320]   you're well familiar with the domain
+[00:34:20.320 --> 00:34:22.920]   and you'd be able to fill in the gaps very well.
+[00:34:22.920 --> 00:34:27.640]   But if I try to come to the same individual
+[00:34:27.640 --> 00:34:29.960]   and I'm asking you to build a mobile game for me,
+[00:34:29.960 --> 00:34:32.600]   I might need to give you very detailed specifications.
+[00:34:32.600 --> 00:34:34.360]   If you're some sort of low cost agency
+[00:34:34.360 --> 00:34:36.680]   that I'm engaging that I've never worked with before
+[00:34:36.680 --> 00:34:38.080]   for the same marketing website,
+[00:34:38.080 --> 00:34:42.280]   I might need to provide very detailed specifications.
+[00:34:42.280 --> 00:34:46.080]   And so I think the ability to kind of fill in the gaps
+[00:34:46.080 --> 00:34:47.880]   is very important.
+[00:34:47.880 --> 00:34:50.280]   So that's one important bit about the spec.
+[00:34:50.280 --> 00:34:52.680]   The second is that I don't think there is a spec.
+[00:34:52.680 --> 00:34:53.960]   I think there will be multiple specs.
+[00:34:53.960 --> 00:34:56.640]   Once again, the way you would specify a mobile game
+[00:34:56.640 --> 00:34:57.680]   is probably very different
+[00:34:57.680 --> 00:35:00.320]   than the way you would specify, I don't know,
+[00:35:00.320 --> 00:35:03.440]   a software library, right, or a marketing website.
+[00:35:03.440 --> 00:35:06.040]   There will be shared traits,
+[00:35:06.040 --> 00:35:07.720]   but if it's more visual,
+[00:35:07.720 --> 00:35:09.720]   you might need something that's more visual.
+[00:35:09.720 --> 00:35:10.720]   If it's very algorithmic,
+[00:35:10.720 --> 00:35:13.400]   you might need an ability to provide those.
+[00:35:13.400 --> 00:35:15.800]   And it comes back to me thinking about this as a movement,
+[00:35:15.800 --> 00:35:17.480]   as a paradigm, as an ecosystem.
+[00:35:17.480 --> 00:35:19.520]   Like today, we don't have one,
+[00:35:19.520 --> 00:35:21.240]   like we have multiple languages,
+[00:35:21.240 --> 00:35:23.320]   we have multiple development environments,
+[00:35:23.320 --> 00:35:26.680]   we have methodologies that are different, right,
+[00:35:26.680 --> 00:35:28.480]   around their sort of strengths and weaknesses.
+[00:35:28.480 --> 00:35:31.240]   Is it more about iteration or is it more about safety?
+[00:35:31.240 --> 00:35:35.000]   And I don't think that that changes in the AI era.
+[00:35:35.000 --> 00:35:37.720]   You, everything becomes faster,
+[00:35:37.720 --> 00:35:40.320]   but you still need to choose your trade-offs.
+[00:35:40.320 --> 00:35:42.680]   You still need new platforms and systems
+[00:35:42.680 --> 00:35:45.040]   that are able to adapt to new technologies
+[00:35:45.040 --> 00:35:48.400]   and to new preferences and to the industry's preferences.
+[00:35:48.400 --> 00:35:50.360]   And so I think there will be multiple specs.
+[00:35:50.360 --> 00:35:52.360]   I think there will have many formats.
+[00:35:52.360 --> 00:35:54.920]   Verification is a subset of the spec
+[00:35:54.920 --> 00:35:57.040]   because it comes back again, like same statement,
+[00:35:57.040 --> 00:35:58.600]   right, the way you would verify a mobile game
+[00:35:58.600 --> 00:36:00.600]   is different than the way you would verify,
+[00:36:00.600 --> 00:36:02.280]   you know, an algorithm trading system
+[00:36:02.280 --> 00:36:04.920]   than the way you would verify a marketing website.
+[00:36:04.920 --> 00:36:07.120]   And so you need these verifications there.
+[00:36:07.120 --> 00:36:09.000]   I don't have a perfect answer to it.
+[00:36:09.000 --> 00:36:13.760]   I think the ability to state it is important.
+[00:36:13.760 --> 00:36:16.880]   And TDD helps us and like walks help us
+[00:36:16.880 --> 00:36:20.040]   and a bunch of history of what we've been building helps us.
+[00:36:20.040 --> 00:36:22.640]   I would also point out that just like regular software,
+[00:36:22.640 --> 00:36:24.080]   it doesn't have to be upfront
+[00:36:24.080 --> 00:36:26.480]   and there's an element of learning from data.
+[00:36:26.480 --> 00:36:29.200]   And do you build a system that works well enough
+[00:36:29.200 --> 00:36:30.640]   and that you engage with well enough?
+[00:36:30.640 --> 00:36:32.560]   And then with the data, that system can learn
+[00:36:32.560 --> 00:36:34.640]   and can evolve, it can become better
+[00:36:34.640 --> 00:36:36.400]   over time.
+[00:36:36.400 --> 00:36:38.720]   And yeah, a bunch of interesting topics here.
+[00:36:38.720 --> 00:36:42.000]   Like for instance, if you said I want a button
+[00:36:42.000 --> 00:36:45.080]   and the LLM decides that that button will be read
+[00:36:45.080 --> 00:36:47.160]   and you might be, well, I don't really care.
+[00:36:47.160 --> 00:36:49.200]   You know, it's fine, you know, if the button is red
+[00:36:49.200 --> 00:36:51.360]   or it's blue, I don't really care.
+[00:36:51.360 --> 00:36:54.400]   And, but for the next version that comes along,
+[00:36:54.400 --> 00:36:55.560]   you sort of changed the title.
+[00:36:55.560 --> 00:36:58.240]   You might not be okay without button changing now
+[00:36:58.240 --> 00:36:59.360]   from red to blue.
+[00:36:59.360 --> 00:37:01.040]   And so you might want some visibility
+[00:37:01.040 --> 00:37:05.640]   into the LLM's decisions and into the persistence of them
+[00:37:05.640 --> 00:37:09.000]   and whether they're about to change or usability.
+[00:37:09.000 --> 00:37:10.640]   And so all of those are the reason
+[00:37:10.640 --> 00:37:12.280]   we think this requires a different software factor.
+[00:37:12.280 --> 00:37:15.800]   These are not the types of problems that exist today
+[00:37:15.800 --> 00:37:17.720]   in the regular tools around software development.
+[00:37:17.720 --> 00:37:21.000]   They're not just another file in your Git repository.
+[00:37:21.000 --> 00:37:23.680]   They're not just another test in your build.
+[00:37:23.680 --> 00:37:25.840]   There are different types of interactions
+[00:37:25.840 --> 00:37:27.680]   and we think they need to be figured out.
+[00:37:29.240 --> 00:37:31.040]   - I am somewhat the dancer here.
+[00:37:31.040 --> 00:37:33.400]   - It's a long word answer, but it really helps.
+[00:37:33.400 --> 00:37:36.480]   I think it really helps, it will help me a lot, to be honest,
+[00:37:36.480 --> 00:37:38.520]   like fully understand sort of your thinking.
+[00:37:38.520 --> 00:37:40.880]   One of the things I wanted to like zoom in on
+[00:37:40.880 --> 00:37:42.880]   is you've talked about this being a community effort.
+[00:37:42.880 --> 00:37:45.960]   And so like a mental model for comparison of like
+[00:37:45.960 --> 00:37:48.120]   the cloud wave, right, that, you know, the 2010
+[00:37:48.120 --> 00:37:51.920]   to let's say 2020 period was what we collaborate on,
+[00:37:51.920 --> 00:37:54.680]   ultimately like this sort of runtime operating system
+[00:37:54.680 --> 00:37:56.960]   of the cloud became Kubernetes, right?
+[00:37:56.960 --> 00:37:59.520]   That was sort of the thing that became the community.
+[00:37:59.520 --> 00:38:01.880]   The core part of like was at the core of everyone's stack,
+[00:38:01.880 --> 00:38:03.200]   everyone kind of continued around it
+[00:38:03.200 --> 00:38:06.040]   with attachment to like GitHub and some type of CI/CD.
+[00:38:06.040 --> 00:38:08.680]   So talks to like, okay, there's some core pieces of software.
+[00:38:08.680 --> 00:38:10.640]   There's some core community movement
+[00:38:10.640 --> 00:38:12.440]   and that community movement is represented by
+[00:38:12.440 --> 00:38:15.840]   some shared platform that we're all building on top of.
+[00:38:15.840 --> 00:38:18.160]   I'm curious in your mental model,
+[00:38:18.160 --> 00:38:20.240]   is the spec like a community thing?
+[00:38:20.240 --> 00:38:21.640]   Is that company proprietary?
+[00:38:21.640 --> 00:38:25.040]   Like what parts of this of the sort of this community movement
+[00:38:25.040 --> 00:38:28.400]   do you think are let's say process methodology?
+[00:38:28.400 --> 00:38:31.360]   So we all believe that the future of software development
+[00:38:31.360 --> 00:38:33.440]   is, you know, this way and subscribing this manner
+[00:38:33.440 --> 00:38:35.120]   in the same way that like the agile manifesto
+[00:38:35.120 --> 00:38:36.920]   kind of describe a shift from waterfall
+[00:38:36.920 --> 00:38:39.360]   to sort of agile method and software development.
+[00:38:39.360 --> 00:38:41.800]   And what parts do you think need to be core software
+[00:38:41.800 --> 00:38:42.680]   that are collaborated upon?
+[00:38:42.680 --> 00:38:45.520]   Like things that just occur in the open source.
+[00:38:45.520 --> 00:38:47.600]   - I think it's just a combination of many of those.
+[00:38:47.600 --> 00:38:49.920]   I don't think spec is a single standard.
+[00:38:49.920 --> 00:38:51.040]   I think there will be multiples.
+[00:38:51.040 --> 00:38:54.400]   So some specific specs will be company specific
+[00:38:54.400 --> 00:38:55.880]   and will probably be a bit more closed.
+[00:38:55.880 --> 00:38:59.320]   They might have to be like maybe SAP
+[00:38:59.320 --> 00:39:01.720]   has their own specification methodology
+[00:39:01.720 --> 00:39:03.760]   that has to do with their systems, right?
+[00:39:03.760 --> 00:39:05.720]   And specs might compose over time, right?
+[00:39:05.720 --> 00:39:08.000]   And maybe they connect different formats.
+[00:39:08.000 --> 00:39:10.040]   So I don't know, I can't tell you all of the above,
+[00:39:10.040 --> 00:39:11.680]   but I think spec is a higher level comment.
+[00:39:11.680 --> 00:39:13.840]   It's like saying it's all code owned by,
+[00:39:13.840 --> 00:39:16.240]   I think there will be multiple standards
+[00:39:16.240 --> 00:39:17.960]   and some will not be standard
+[00:39:17.960 --> 00:39:19.960]   and some will wish they are standards.
+[00:39:19.960 --> 00:39:21.520]   There is a not.
+[00:39:21.520 --> 00:39:23.160]   So I think those will evolve.
+[00:39:23.160 --> 00:39:24.680]   But I think community collaboration,
+[00:39:24.680 --> 00:39:26.080]   even in the cloud is actually much bigger
+[00:39:26.080 --> 00:39:27.120]   than what you've described.
+[00:39:27.120 --> 00:39:29.560]   I mean, yes, we might have settled on Kubernetes,
+[00:39:29.560 --> 00:39:32.880]   but before that, maybe there's a settling on containers.
+[00:39:32.880 --> 00:39:34.680]   And what about microservices?
+[00:39:34.680 --> 00:39:36.880]   And what about mesh networks?
+[00:39:36.880 --> 00:39:39.720]   And how do they interact between them?
+[00:39:39.720 --> 00:39:43.240]   And what about API standards and how those communicate?
+[00:39:43.240 --> 00:39:45.720]   What about licensing for software?
+[00:39:45.720 --> 00:39:47.480]   Maybe that's even an active discussion yet
+[00:39:47.480 --> 00:39:51.040]   about hosting something on the cloud versus not,
+[00:39:51.040 --> 00:39:54.440]   about access permissions, and I am models now
+[00:39:54.440 --> 00:39:56.960]   and jumping like a bastion hosts.
+[00:39:56.960 --> 00:39:59.800]   So there are all these things that really are
+[00:39:59.800 --> 00:40:01.120]   heavy vaulted as a community.
+[00:40:01.120 --> 00:40:03.560]   And you can say, well, when I think about cloud,
+[00:40:03.560 --> 00:40:05.480]   I don't just think about specifically the infrastructure
+[00:40:05.480 --> 00:40:06.320]   as a service.
+[00:40:06.320 --> 00:40:08.400]   I think about CACD and microservices and DevOps
+[00:40:08.400 --> 00:40:10.960]   and the whole way that we develop software
+[00:40:10.960 --> 00:40:12.680]   that has changed dramatically.
+[00:40:12.680 --> 00:40:14.760]   There are methodologies there that are continuous.
+[00:40:14.760 --> 00:40:17.520]   Like you can say, generally the best practices,
+[00:40:17.520 --> 00:40:21.840]   frequent deployments or some frequent small builds
+[00:40:21.840 --> 00:40:25.560]   that get deployed and an ability to roll them back.
+[00:40:25.560 --> 00:40:27.120]   Not everybody achieves it all the way,
+[00:40:27.120 --> 00:40:30.040]   but I think it's generally accepted as the ideal.
+[00:40:30.040 --> 00:40:33.440]   You want immutable infrastructure is desirable.
+[00:40:33.440 --> 00:40:35.520]   Not everybody invested in it because it has some cost
+[00:40:35.520 --> 00:40:36.680]   and sometimes effort.
+[00:40:36.680 --> 00:40:38.600]   Observability is a thing you should have.
+[00:40:38.600 --> 00:40:42.320]   And so there are practices that are part of a high level,
+[00:40:42.320 --> 00:40:45.040]   best practice that has evolved.
+[00:40:45.040 --> 00:40:48.880]   And then there are specifics that are ecosystem specific
+[00:40:48.880 --> 00:40:50.080]   or just opinions.
+[00:40:50.080 --> 00:40:52.440]   If you talk about observability, many, many opinions.
+[00:40:52.440 --> 00:40:54.800]   If you talk about CACD and even maybe my comment
+[00:40:54.800 --> 00:40:58.480]   about frequency, talk about monorepos versus small repos,
+[00:40:58.480 --> 00:40:59.320]   and it's okay.
+[00:40:59.320 --> 00:41:02.040]   It's thriving as the way progress happens.
+[00:41:02.040 --> 00:41:05.720]   So when I think about my perception of, say,
+[00:41:05.720 --> 00:41:10.440]   like a cognition with Devon or many of these sort of platforms,
+[00:41:10.440 --> 00:41:11.960]   they're kind of closed environments.
+[00:41:11.960 --> 00:41:14.960]   They're maybe more the kind of the Microsoft of old,
+[00:41:14.960 --> 00:41:17.280]   of sort of saying, come into our world garden.
+[00:41:17.280 --> 00:41:19.520]   They might be building something that's very powerful,
+[00:41:19.520 --> 00:41:21.040]   but I don't think that's the thing that's
+[00:41:21.040 --> 00:41:22.440]   spent the test of time.
+[00:41:22.440 --> 00:41:25.160]   And so that openness comes both from an open methodology,
+[00:41:25.160 --> 00:41:26.600]   from some open source components,
+[00:41:26.600 --> 00:41:28.760]   which I think have to exist,
+[00:41:28.760 --> 00:41:32.880]   and from pluggable and composable infrastructure.
+[00:41:32.880 --> 00:41:34.880]   So I host what's called the ANA to dev.
+[00:41:34.880 --> 00:41:36.000]   I'm not very creative with names.
+[00:41:36.000 --> 00:41:38.760]   I had the secure developer before in the ANA to dev.
+[00:41:38.760 --> 00:41:41.120]   I guess that's what happens when you build dev movements.
+[00:41:42.120 --> 00:41:45.120]   And I had a Matt Billman from Netlify, the CEO
+[00:41:45.120 --> 00:41:47.160]   and co-founder of Netlify on it.
+[00:41:47.160 --> 00:41:49.760]   And he made a really, really interesting point
+[00:41:49.760 --> 00:41:54.440]   around how every new technology paradigm sort of challenges
+[00:41:54.440 --> 00:41:56.400]   the open web or the openness,
+[00:41:56.400 --> 00:41:57.680]   because they really kind of drive you
+[00:41:57.680 --> 00:41:58.800]   towards that closed environment.
+[00:41:58.800 --> 00:42:00.960]   You see this with mobile and you see this with,
+[00:42:00.960 --> 00:42:02.760]   I guess, kind of with the internet at the beginning,
+[00:42:02.760 --> 00:42:05.720]   with sort of the chat systems and social networks today.
+[00:42:05.720 --> 00:42:06.800]   And he points out that, you know,
+[00:42:06.800 --> 00:42:08.720]   I think we're going to need to deal with that now.
+[00:42:08.720 --> 00:42:10.720]   You're saying, I think in Matt's case,
+[00:42:10.720 --> 00:42:12.640]   he was referring maybe more to like the Vercel
+[00:42:12.640 --> 00:42:14.920]   versus the Netlify reality.
+[00:42:14.920 --> 00:42:15.760]   I'm not sure.
+[00:42:15.760 --> 00:42:17.000]   I'm putting more in his mouth here.
+[00:42:17.000 --> 00:42:20.840]   But okay, do we build these as features of an ecosystem?
+[00:42:20.840 --> 00:42:24.320]   Where is it that we built this as collaborative capabilities?
+[00:42:24.320 --> 00:42:27.080]   I mean, I mean, favor of the open web.
+[00:42:27.080 --> 00:42:29.240]   Like that's to continue and the,
+[00:42:29.240 --> 00:42:31.320]   so I think there's a big evolution there.
+[00:42:31.320 --> 00:42:32.880]   I want to say something,
+[00:42:32.880 --> 00:42:34.080]   if my answers weren't long enough,
+[00:42:34.080 --> 00:42:36.000]   you know, I've got something additional to add to it
+[00:42:36.000 --> 00:42:37.520]   that wasn't even in the question,
+[00:42:37.520 --> 00:42:39.240]   which is, I think eventually,
+[00:42:39.240 --> 00:42:42.400]   this notion of software creation that becomes so easy
+[00:42:42.400 --> 00:42:44.280]   because you just request what you want
+[00:42:44.280 --> 00:42:46.280]   and you're able to interact with the system
+[00:42:46.280 --> 00:42:48.520]   and it gets to learn you so it fills in the gaps,
+[00:42:48.520 --> 00:42:50.720]   I think it becomes like literacy.
+[00:42:50.720 --> 00:42:54.760]   And so the end goal here, which is far, it's far,
+[00:42:54.760 --> 00:42:58.360]   but the end goal here is really for software creation
+[00:42:58.360 --> 00:43:01.600]   to be a thing that is just accessible to anyone, right?
+[00:43:01.600 --> 00:43:03.000]   I mean, I think the two of you
+[00:43:03.000 --> 00:43:06.080]   and like many developers listening to the podcast
+[00:43:06.080 --> 00:43:07.200]   probably experienced, you know,
+[00:43:07.200 --> 00:43:09.960]   like encountering some annoyance in their day-to-day life
+[00:43:09.960 --> 00:43:12.200]   and sort of solving it with technology or building,
+[00:43:12.200 --> 00:43:14.560]   whether it's a hobbyist thing or just a small solution
+[00:43:14.560 --> 00:43:16.440]   or something, some have for themselves.
+[00:43:16.440 --> 00:43:18.880]   And you want that to just be accessible to just be a tool
+[00:43:18.880 --> 00:43:21.360]   that everybody has to solve their problems.
+[00:43:21.360 --> 00:43:24.120]   And so I do think that there's a long-term significant
+[00:43:24.120 --> 00:43:25.120]   importance over here.
+[00:43:25.120 --> 00:43:28.640]   And so above and beyond all of those productivity boosts
+[00:43:28.640 --> 00:43:31.720]   and, you know, whatever commercial advantage is,
+[00:43:31.720 --> 00:43:33.960]   I think there's a societal elements over here.
+[00:43:33.960 --> 00:43:36.880]   When you say that, I think it becomes even further clear
+[00:43:36.880 --> 00:43:39.280]   why it's important for this to remain open
+[00:43:39.280 --> 00:43:43.080]   and remain kind of connected and not be, you know,
+[00:43:43.080 --> 00:43:45.000]   just a platform.
+[00:43:45.000 --> 00:43:46.240]   So while I'm building a platform
+[00:43:46.240 --> 00:43:48.880]   that I hope will be the leading platform in this domain,
+[00:43:48.880 --> 00:43:50.760]   I think it's critical that it is a leading platform
+[00:43:50.760 --> 00:43:52.240]   in an open domain.
+[00:43:52.240 --> 00:43:53.080]   - Amazing.
+[00:43:53.080 --> 00:43:55.280]   I think you already got too close to what we actually want
+[00:43:55.280 --> 00:43:56.640]   to go for the next section,
+[00:43:56.640 --> 00:43:58.680]   which is a spicy future.
+[00:43:58.680 --> 00:44:00.200]   - Spicy futures.
+[00:44:00.200 --> 00:44:06.560]   - So as you know, we want to hear your hot take
+[00:44:06.560 --> 00:44:09.000]   about the future, I'm very curious.
+[00:44:09.000 --> 00:44:10.640]   What is your spicy hot take?
+[00:44:10.640 --> 00:44:13.320]   Maybe about this whole AI native developer.
+[00:44:13.320 --> 00:44:14.680]   What is some things you believe
+[00:44:14.680 --> 00:44:16.560]   that most people don't believe in yet?
+[00:44:16.560 --> 00:44:20.680]   - Maybe the one like that is a bit spicy to sort of people
+[00:44:20.680 --> 00:44:22.600]   is that I think coding goes away.
+[00:44:22.600 --> 00:44:25.640]   It's one of those things that I think many people
+[00:44:25.640 --> 00:44:28.800]   don't want to believe because coding is fun.
+[00:44:28.800 --> 00:44:29.640]   I love coding.
+[00:44:29.640 --> 00:44:32.920]   You know, coding has this sort of video game mentality
+[00:44:32.920 --> 00:44:34.680]   of, you know, like you can always level up, right?
+[00:44:34.680 --> 00:44:37.000]   You get a task, you do it, you complete it.
+[00:44:37.000 --> 00:44:39.560]   It's, you get your endorphin and kind of a hit on it.
+[00:44:39.560 --> 00:44:41.440]   You can always level up or you can do the same level.
+[00:44:41.440 --> 00:44:43.120]   It's amazing.
+[00:44:43.120 --> 00:44:44.520]   So super, super fun.
+[00:44:44.520 --> 00:44:48.040]   And so it's like a little bit unfortunate where you go away.
+[00:44:48.040 --> 00:44:49.000]   But I think coding goes away.
+[00:44:49.000 --> 00:44:53.640]   Coding is also the translation layer to the machines
+[00:44:53.640 --> 00:44:56.760]   and it is limiting us in so many ways.
+[00:44:56.760 --> 00:44:58.680]   I don't know precisely the timeline,
+[00:44:58.680 --> 00:45:01.800]   but I think it's effect happens faster than we think.
+[00:45:01.800 --> 00:45:04.240]   This is a world in which progress happens in leaps,
+[00:45:04.240 --> 00:45:05.560]   not in steps.
+[00:45:05.560 --> 00:45:09.040]   And so I don't think I am advising anyone who is currently
+[00:45:09.040 --> 00:45:10.760]   a developer to really kind of, you know,
+[00:45:10.760 --> 00:45:12.160]   reevaluate their life choices.
+[00:45:12.160 --> 00:45:15.360]   I think there's going to be work for a while for many times.
+[00:45:15.360 --> 00:45:17.800]   But do I want my kids to focus now on learning
+[00:45:17.800 --> 00:45:20.240]   how to code as a core competency?
+[00:45:20.240 --> 00:45:22.720]   I mean, five years ago, I would have said coding is literacy.
+[00:45:22.720 --> 00:45:25.520]   I would have really talked about that for the same goal
+[00:45:25.520 --> 00:45:27.120]   that I've mentioned right now.
+[00:45:27.120 --> 00:45:28.120]   Now I don't think so.
+[00:45:28.120 --> 00:45:32.320]   Now I think coding as a skill is a short-lived skill.
+[00:45:32.320 --> 00:45:35.800]   It would remain a hobby, it would remain a specialist skill,
+[00:45:35.800 --> 00:45:39.240]   but it would not be a prevalent skill.
+[00:45:39.240 --> 00:45:41.560]   I don't know, maybe in a matter of a decade,
+[00:45:41.560 --> 00:45:44.040]   something like that, maybe 10 to 20 years,
+[00:45:44.040 --> 00:45:46.640]   maybe a decade is a bit too fast.
+[00:45:46.640 --> 00:45:48.720]   - I have an opinion here, but I'm curious,
+[00:45:48.720 --> 00:45:50.880]   what do you think the limiting factors are today
+[00:45:50.880 --> 00:45:52.520]   in terms of reaching that reality?
+[00:45:52.520 --> 00:45:53.720]   Like what's holding us back?
+[00:45:53.720 --> 00:45:56.120]   What are we missing from the tool set?
+[00:45:56.120 --> 00:45:58.160]   What are the core on a mental problem
+[00:45:58.160 --> 00:45:59.720]   that we have to like isn't solved today,
+[00:45:59.720 --> 00:46:01.880]   but needs to be solved for us to actually get
+[00:46:01.880 --> 00:46:03.800]   this sort of the spec-based future,
+[00:46:03.800 --> 00:46:06.120]   where anyone can write code,
+[00:46:06.120 --> 00:46:08.000]   in the same way that anyone can write in a Word doc,
+[00:46:08.000 --> 00:46:10.600]   they can go and open a Word doc and type it
+[00:46:10.600 --> 00:46:12.000]   and it can help lead them through it.
+[00:46:12.000 --> 00:46:13.600]   I assume that's sort of a version of it
+[00:46:13.600 --> 00:46:15.040]   or a possible future.
+[00:46:15.040 --> 00:46:16.480]   Yeah, I'm really curious to understand
+[00:46:16.480 --> 00:46:17.800]   what you think is limiting us.
+[00:46:17.800 --> 00:46:18.800]   Like what are we missing?
+[00:46:18.800 --> 00:46:20.360]   There must be some fundamental problems
+[00:46:20.360 --> 00:46:21.920]   we have to solve to get there.
+[00:46:21.920 --> 00:46:26.480]   - Yeah, I mean, you need the Tesla platform to launch on the app.
+[00:46:26.480 --> 00:46:29.200]   No, maybe there's something a bit more sort of a substantive.
+[00:46:29.200 --> 00:46:30.800]   I think, well, I do think though,
+[00:46:30.800 --> 00:46:32.800]   what is the change in the trust that are sort of the axis
+[00:46:32.800 --> 00:46:34.320]   and both of them just need to evolve?
+[00:46:34.320 --> 00:46:36.160]   So on one hand, the tech isn't there.
+[00:46:36.160 --> 00:46:39.320]   Like this is at the edge of the possible today.
+[00:46:39.320 --> 00:46:44.240]   LLMs are too unreliable, too hard to kind of wrangle
+[00:46:44.240 --> 00:46:45.400]   and get to do what you want.
+[00:46:45.400 --> 00:46:46.760]   They're quite limited.
+[00:46:46.760 --> 00:46:48.440]   I think they're evolving very rapidly.
+[00:46:48.440 --> 00:46:52.200]   And so this will change, but they are not there today.
+[00:46:52.200 --> 00:46:53.680]   And it's a bit hard to state.
+[00:46:53.680 --> 00:46:55.960]   That's why I kind of use the bigger numbers
+[00:46:55.960 --> 00:46:58.360]   'cause it's hard to say whether, you know,
+[00:46:58.360 --> 00:47:02.560]   significant progress where GPT-5 arrives in a year or in five.
+[00:47:02.560 --> 00:47:03.840]   Probably not more than that,
+[00:47:03.840 --> 00:47:07.800]   or at least that's a decent guess, but it might take a while.
+[00:47:07.800 --> 00:47:10.680]   And then the second, then probably the bigger slowdown factor
+[00:47:10.680 --> 00:47:11.880]   is that of change.
+[00:47:11.880 --> 00:47:15.720]   And the notion of how do we interact with code like that?
+[00:47:15.720 --> 00:47:19.000]   And some of that is making the system work
+[00:47:19.000 --> 00:47:22.840]   to the assumptions that we perceive to be necessary today.
+[00:47:22.840 --> 00:47:26.840]   So like we're very used to machines being deterministic.
+[00:47:26.840 --> 00:47:28.760]   You should tell it something, it does the thing you want.
+[00:47:28.760 --> 00:47:31.280]   And by the way, like people that are less technical
+[00:47:31.280 --> 00:47:32.880]   oftentimes don't have that expectation.
+[00:47:32.880 --> 00:47:35.080]   They've encountered the finicky machines.
+[00:47:35.080 --> 00:47:38.440]   And for many of them, one or the other, it is kind of magic.
+[00:47:38.440 --> 00:47:39.960]   I mean, it works or it doesn't work.
+[00:47:39.960 --> 00:47:42.000]   And the computer doesn't let me do this
+[00:47:42.000 --> 00:47:44.280]   is a common perspective.
+[00:47:44.280 --> 00:47:46.560]   But so some of it is like getting the new machines
+[00:47:46.560 --> 00:47:48.720]   to behave to our expectation.
+[00:47:48.720 --> 00:47:52.320]   And some of it is learning how to adapt our expectations.
+[00:47:52.320 --> 00:47:54.840]   So if we're referring to yet another sort of episode
+[00:47:54.840 --> 00:47:56.480]   in the podcast, but like I spoke to Caleb Sima,
+[00:47:56.480 --> 00:47:59.040]   who's a big security guy, like love his thinking.
+[00:47:59.040 --> 00:48:00.600]   And we have this interesting conversation
+[00:48:00.600 --> 00:48:04.280]   about how to think about security scanning
+[00:48:04.280 --> 00:48:05.200]   in the lens of AI.
+[00:48:05.200 --> 00:48:08.920]   Like if you have an ability to scan your software
+[00:48:08.920 --> 00:48:12.760]   and it does, let's say typically does a better job
+[00:48:12.760 --> 00:48:14.720]   at finding vulnerabilities that are there
+[00:48:14.720 --> 00:48:16.400]   and not giving you alerts about vulnerabilities
+[00:48:16.400 --> 00:48:17.720]   that are not there.
+[00:48:17.720 --> 00:48:21.360]   But two times out of 10 or one time out of 10,
+[00:48:21.360 --> 00:48:24.040]   it misses things or it just sort of hallucinates code.
+[00:48:24.040 --> 00:48:26.160]   Like maybe for false positives or so, okay,
+[00:48:26.160 --> 00:48:27.800]   but let's just sort of say it misses things.
+[00:48:27.800 --> 00:48:30.120]   So you have code, you know, it's been blessed,
+[00:48:30.120 --> 00:48:31.240]   you've deployed it to production
+[00:48:31.240 --> 00:48:33.320]   and it turns out it just forgot to tell you
+[00:48:33.320 --> 00:48:35.480]   about something or sort of listening.
+[00:48:35.480 --> 00:48:37.880]   All in all, I think that's a better system
+[00:48:37.880 --> 00:48:41.560]   if it's better enough in its accuracy, but it's weird.
+[00:48:41.560 --> 00:48:43.480]   It's like it's sort of required really rethinking
+[00:48:43.480 --> 00:48:45.560]   how do you do the methodology for security?
+[00:48:45.560 --> 00:48:48.960]   So I think there are just many, many, many cases like that.
+[00:48:48.960 --> 00:48:51.040]   So if you go further into the society
+[00:48:51.040 --> 00:48:52.480]   and into people that are not coding today,
+[00:48:52.480 --> 00:48:55.680]   that change is even slower because you also have to remove fear
+[00:48:55.680 --> 00:48:56.840]   and you might need the generation.
+[00:48:56.840 --> 00:48:59.960]   You might need, you know, the kids that sort of grow up
+[00:48:59.960 --> 00:49:02.520]   with this type of tech and build them out.
+[00:49:02.520 --> 00:49:04.880]   So, you know, on top of that, there's regulations
+[00:49:04.880 --> 00:49:07.760]   and there's other things, but like change society humans,
+[00:49:07.760 --> 00:49:10.120]   they're the slowdown factors, not the tech.
+[00:49:10.120 --> 00:49:13.200]   - And I think we actually didn't really talk too much
+[00:49:13.200 --> 00:49:14.760]   about Tesla.
+[00:49:14.760 --> 00:49:16.840]   I know everything is early.
+[00:49:16.840 --> 00:49:18.000]   I think we got to the point now,
+[00:49:18.000 --> 00:49:20.520]   you're talking, working on something about spec
+[00:49:20.520 --> 00:49:23.040]   and you're working something around the community.
+[00:49:23.040 --> 00:49:24.160]   Maybe tied up both here.
+[00:49:24.160 --> 00:49:25.120]   What is Tesla?
+[00:49:25.120 --> 00:49:27.840]   How do you want to describe Tesla today to our audiences?
+[00:49:27.840 --> 00:49:30.040]   And I guess you were talking about the conference.
+[00:49:30.040 --> 00:49:33.520]   That's probably one big way to learn about your community.
+[00:49:33.520 --> 00:49:35.280]   But what will people wait to start getting to learn
+[00:49:35.280 --> 00:49:37.360]   more about your product as well?
+[00:49:37.360 --> 00:49:38.280]   - Yeah.
+[00:49:38.280 --> 00:49:40.920]   So, Tesla is two things maybe.
+[00:49:40.920 --> 00:49:44.400]   Like on one hand, we are looking to be a driving force
+[00:49:44.400 --> 00:49:47.480]   and getting this community that we call the AI native dev.
+[00:49:48.440 --> 00:49:50.880]   And so, you know, there's the podcast,
+[00:49:50.880 --> 00:49:52.240]   check in to sort of tune into that,
+[00:49:52.240 --> 00:49:55.040]   you know, join the conference on November 21st.
+[00:49:55.040 --> 00:49:56.720]   And we're going to have more and more activities
+[00:49:56.720 --> 00:49:59.480]   to just facilitate this conversation, right?
+[00:49:59.480 --> 00:50:01.400]   Get people thinking far ahead
+[00:50:01.400 --> 00:50:04.160]   because like so much of the conversation today is about today.
+[00:50:04.160 --> 00:50:06.640]   And by the way, a lot of the tools of today
+[00:50:06.640 --> 00:50:09.400]   are useful facilitators of the conversation but tomorrow.
+[00:50:09.400 --> 00:50:11.000]   You know, how do you, like when you think about tests,
+[00:50:11.000 --> 00:50:12.760]   you think about documentation generation.
+[00:50:12.760 --> 00:50:14.600]   Some tools I think are a little bit less so
+[00:50:14.600 --> 00:50:16.040]   like code completion, you know,
+[00:50:16.040 --> 00:50:17.600]   that's maybe a little bit less.
+[00:50:17.600 --> 00:50:19.880]   The other part of Tesla, the primary part of Tesla maybe,
+[00:50:19.880 --> 00:50:20.840]   is the platform.
+[00:50:20.840 --> 00:50:23.920]   And so what we're building is we're building a platform
+[00:50:23.920 --> 00:50:25.680]   for AI native development.
+[00:50:25.680 --> 00:50:28.480]   We want that platform to be open and usable by many.
+[00:50:28.480 --> 00:50:31.160]   And so we're building it with that line of sight.
+[00:50:31.160 --> 00:50:32.320]   It doesn't work yet.
+[00:50:32.320 --> 00:50:35.240]   It's still closed.
+[00:50:35.240 --> 00:50:37.680]   What you can do is you can go to tessel.io
+[00:50:37.680 --> 00:50:40.640]   or tessel.ai will route you to tessel.io,
+[00:50:40.640 --> 00:50:41.680]   and join the waitlist.
+[00:50:41.680 --> 00:50:45.600]   And we hope as soon as we can to make this,
+[00:50:45.600 --> 00:50:48.680]   to get more and more people in to produce software
+[00:50:48.680 --> 00:50:49.880]   in this fashion.
+[00:50:49.880 --> 00:50:52.360]   What I will say is it's a new paradigm.
+[00:50:52.360 --> 00:50:53.560]   And it's big.
+[00:50:53.560 --> 00:50:56.440]   And I'm a believer that you have to get the product out there
+[00:50:56.440 --> 00:50:59.440]   and give users the opportunity to tell you that it sucks
+[00:50:59.440 --> 00:51:01.760]   so that you can ask them why and you can fix that
+[00:51:01.760 --> 00:51:03.160]   and you can evolve it.
+[00:51:03.160 --> 00:51:06.640]   And in the case of a new development paradigm and platform,
+[00:51:06.640 --> 00:51:09.080]   it takes a while to build even that MVP.
+[00:51:09.080 --> 00:51:10.800]   But it's still that MVP that we're going to build
+[00:51:10.800 --> 00:51:11.640]   at the beginning.
+[00:51:11.640 --> 00:51:13.760]   And so what I would say is if this is interesting,
+[00:51:13.760 --> 00:51:16.560]   if you want to be part of what is the future of software
+[00:51:16.560 --> 00:51:18.200]   development, if you want to be a voice in it,
+[00:51:18.200 --> 00:51:20.160]   join the community, learn about it,
+[00:51:20.160 --> 00:51:21.680]   share your opinions and such.
+[00:51:21.680 --> 00:51:24.320]   If you want to try out what I think will be the first
+[00:51:24.320 --> 00:51:26.960]   and hopefully one of the key tools in the domain,
+[00:51:26.960 --> 00:51:29.960]   then join the waitlist and hopefully try out the product.
+[00:51:29.960 --> 00:51:32.800]   And just the expectation is we want the early adopters.
+[00:51:32.800 --> 00:51:34.480]   It's going to have some things that you'd say,
+[00:51:34.480 --> 00:51:35.400]   wow, this is awesome.
+[00:51:35.400 --> 00:51:36.360]   And it's going to have some things.
+[00:51:36.360 --> 00:51:38.160]   It's going to say, well, we'll have this sucks.
+[00:51:38.160 --> 00:51:40.720]   And I guess our hope is instead of just renting about it
+[00:51:40.720 --> 00:51:41.960]   or sort of shutting your browser window
+[00:51:41.960 --> 00:51:44.880]   and not returning again, you tell us this sucks
+[00:51:44.880 --> 00:51:46.040]   and work with us to fix it.
+[00:51:46.040 --> 00:51:48.640]   - I'm super excited to play around with myself.
+[00:51:48.640 --> 00:51:50.280]   I've been waiting for almost a year.
+[00:51:50.280 --> 00:51:52.040]   So it's going to be a good time.
+[00:51:52.040 --> 00:51:53.520]   I have one question.
+[00:51:53.520 --> 00:51:56.600]   We have a lot of entrepreneurs or one of the entrepreneurs
+[00:51:56.600 --> 00:51:58.720]   that are trying to figure out what to do.
+[00:51:58.720 --> 00:52:00.120]   I'm curious, as you build tests,
+[00:52:00.120 --> 00:52:01.520]   and as you thought about this,
+[00:52:01.520 --> 00:52:03.720]   do you think this wave or the shift
+[00:52:03.720 --> 00:52:04.880]   to AI native software development,
+[00:52:04.880 --> 00:52:06.920]   do you think this is a wave of creative destruction
+[00:52:06.920 --> 00:52:09.080]   that results in many new companies?
+[00:52:09.080 --> 00:52:12.520]   Or do you think this is a wave that gives you,
+[00:52:12.520 --> 00:52:14.520]   it basically becomes an enduring advantage
+[00:52:14.520 --> 00:52:15.560]   to the existing incumbents?
+[00:52:15.560 --> 00:52:17.360]   I'm kind of curious how you think about that
+[00:52:17.360 --> 00:52:19.640]   because there's lots of people who are very excited
+[00:52:19.640 --> 00:52:22.480]   about AI and there's an opportunity.
+[00:52:22.480 --> 00:52:24.600]   From my perspective, we reinvent a lot
+[00:52:24.600 --> 00:52:25.880]   of how we think about software development
+[00:52:25.880 --> 00:52:28.480]   and always represents an opportunity
+[00:52:28.480 --> 00:52:30.640]   for new company creation and new category creation.
+[00:52:30.640 --> 00:52:32.440]   So I'm kind of curious, for those aspiring folks
+[00:52:32.440 --> 00:52:33.440]   that are looking to go start
+[00:52:33.440 --> 00:52:35.160]   or looking to join a new company,
+[00:52:35.160 --> 00:52:36.280]   how's your mental model there?
+[00:52:36.280 --> 00:52:38.200]   In terms of, is it this a thing
+[00:52:38.200 --> 00:52:39.720]   that's going to really reward incumbents
+[00:52:39.720 --> 00:52:41.600]   or is this a thing that is a creative destruction
+[00:52:41.600 --> 00:52:44.760]   that's going to enable us to reinvent a lot of stuff?
+[00:52:44.760 --> 00:52:49.000]   Yeah, I think the trust axis
+[00:52:49.000 --> 00:52:51.360]   is more in favor of the incumbents
+[00:52:51.360 --> 00:52:55.520]   because fundamentally it boils down to building IP,
+[00:52:55.520 --> 00:52:56.840]   it boils down to having data
+[00:52:56.840 --> 00:52:59.000]   to be able to optimize that IP.
+[00:52:59.000 --> 00:53:01.680]   And so you can potentially win there,
+[00:53:01.680 --> 00:53:03.280]   but I think mostly if you're talking about something
+[00:53:03.280 --> 00:53:04.360]   that's at the bottom left
+[00:53:04.360 --> 00:53:06.320]   or going up the trust axis,
+[00:53:06.320 --> 00:53:07.920]   then I think you're better off thinking
+[00:53:07.920 --> 00:53:08.880]   about this as an acquisition.
+[00:53:08.880 --> 00:53:10.200]   All you're doing is you're outrunning
+[00:53:10.200 --> 00:53:12.040]   the big companies 'cause it's still bigger
+[00:53:12.040 --> 00:53:13.560]   and you're trying to be friendly to them
+[00:53:13.560 --> 00:53:14.400]   and they might acquire you
+[00:53:14.400 --> 00:53:15.240]   and the numbers are big.
+[00:53:15.240 --> 00:53:16.720]   You know, that's a legit strategy
+[00:53:16.720 --> 00:53:17.800]   for people finding a company.
+[00:53:17.800 --> 00:53:19.040]   It's sort of not interesting to me
+[00:53:19.040 --> 00:53:20.720]   as someone who's sort of found its niche
+[00:53:20.720 --> 00:53:22.000]   and looks to something big,
+[00:53:22.000 --> 00:53:25.280]   but it's legit, you can sort of say
+[00:53:25.280 --> 00:53:26.560]   that that's what I did when I first start up.
+[00:53:26.560 --> 00:53:29.120]   It wasn't as intentional, but it worked out
+[00:53:29.120 --> 00:53:30.840]   put me in a good place to start sneak.
+[00:53:30.840 --> 00:53:32.160]   So that's one path.
+[00:53:32.160 --> 00:53:35.120]   The change path, I think, is still favorable
+[00:53:35.120 --> 00:53:36.960]   to the disruptors.
+[00:53:36.960 --> 00:53:39.920]   And I think the mistakes that people make
+[00:53:39.920 --> 00:53:42.200]   or the most common mistake that people make
+[00:53:42.200 --> 00:53:43.320]   as they found company
+[00:53:43.320 --> 00:53:45.800]   is that they don't think long-term enough.
+[00:53:45.800 --> 00:53:49.280]   And this is just a very, very fast moving space.
+[00:53:49.280 --> 00:53:52.840]   And so you have to have a view that is a bit contrarian,
+[00:53:52.840 --> 00:53:54.080]   that is a bit hard to believe.
+[00:53:54.080 --> 00:53:57.240]   If everybody nods when you tell them about the story,
+[00:53:57.240 --> 00:53:59.720]   something is missing, something you're not thinking
+[00:53:59.720 --> 00:54:01.160]   far out enough.
+[00:54:01.160 --> 00:54:04.600]   And so I do think that there needs to be some boldness
+[00:54:04.600 --> 00:54:05.680]   and some long-term path,
+[00:54:05.680 --> 00:54:08.040]   but I think that change,
+[00:54:08.040 --> 00:54:10.840]   the same dynamics that always exist remain.
+[00:54:10.840 --> 00:54:13.760]   It is the existing players, the existing incumbents,
+[00:54:13.760 --> 00:54:16.040]   they control the existing workflows.
+[00:54:16.040 --> 00:54:18.200]   And it is in their best interest
+[00:54:18.200 --> 00:54:20.200]   to maintain these existing workflows
+[00:54:20.200 --> 00:54:21.200]   as long as possible.
+[00:54:21.200 --> 00:54:25.360]   And everything about those companies is wired to maintain it.
+[00:54:25.360 --> 00:54:27.840]   Of course, some of them will manage to kind of break out
+[00:54:27.840 --> 00:54:29.360]   of the innovators dilemma,
+[00:54:29.360 --> 00:54:31.600]   so this counter-positioning path.
+[00:54:31.600 --> 00:54:32.440]   But most won't.
+[00:54:32.440 --> 00:54:35.040]   And so I think those are the opportunities
+[00:54:35.040 --> 00:54:38.040]   to go after, they're scarier and they are harder.
+[00:54:38.040 --> 00:54:40.320]   And as I said, I think starting a company in the AI space
+[00:54:40.320 --> 00:54:45.360]   right now is actually higher risk than typical.
+[00:54:45.360 --> 00:54:49.240]   But I think the only two kind of truly viable paths
+[00:54:49.240 --> 00:54:52.560]   are one is build a company that outruns the big companies
+[00:54:52.560 --> 00:54:54.560]   in a plan to be acquired
+[00:54:54.560 --> 00:54:57.160]   or build something that's a bit wild
+[00:54:57.160 --> 00:54:59.160]   and that goes further out.
+[00:54:59.160 --> 00:55:00.640]   Some of this is true in general.
+[00:55:00.640 --> 00:55:02.040]   Like when I angel invest a day,
+[00:55:02.040 --> 00:55:03.800]   you know, 100 investments later,
+[00:55:03.800 --> 00:55:05.960]   then it kind of counts the leap to faith.
+[00:55:05.960 --> 00:55:08.160]   And clearly, if you talk to a company
+[00:55:08.160 --> 00:55:09.560]   and you need to have like 10 leaps of faith,
+[00:55:09.560 --> 00:55:13.120]   so whether to invest in them or not is a problem.
+[00:55:13.120 --> 00:55:14.680]   But if there are zero, that's a problem.
+[00:55:14.680 --> 00:55:17.680]   That to me is like a bad, something here is obvious.
+[00:55:17.680 --> 00:55:18.960]   And in the world of AI,
+[00:55:18.960 --> 00:55:22.120]   it probably means there's like 100 reasonably funded
+[00:55:22.120 --> 00:55:23.920]   companies that you just haven't heard of them
+[00:55:23.920 --> 00:55:25.840]   because they're too small, they're like you, right?
+[00:55:25.840 --> 00:55:28.040]   There might be, there hasn't been enough time
+[00:55:28.040 --> 00:55:30.720]   for any of them to become a player.
+[00:55:30.720 --> 00:55:32.160]   But rest assured, there's funding.
+[00:55:32.160 --> 00:55:34.320]   There are smart people and there's a lot of attention.
+[00:55:34.320 --> 00:55:35.760]   And so more companies will be around.
+[00:55:35.760 --> 00:55:38.520]   So you have to have something a bit wild,
+[00:55:38.520 --> 00:55:40.640]   a bit contrarian that, of course, you believe in,
+[00:55:40.640 --> 00:55:43.320]   you're not just like creating a funky tale
+[00:55:43.320 --> 00:55:46.320]   if you're committing your time to it for it to be worth it.
+[00:55:46.320 --> 00:55:47.600]   And I guess maybe like the other advice
+[00:55:47.600 --> 00:55:50.200]   that I would have is, you know, another common saying
+[00:55:50.200 --> 00:55:53.320]   that I have for founders is nobody cares about your product
+[00:55:53.320 --> 00:55:56.280]   and they care about the problem that you're solving for them.
+[00:55:56.280 --> 00:55:58.080]   And so in the world of AI,
+[00:55:58.080 --> 00:56:00.480]   you have to think about problems
+[00:56:00.480 --> 00:56:05.080]   that will become greater over time that they're real problems.
+[00:56:05.080 --> 00:56:07.400]   And I think a lot of people find problems today
+[00:56:07.400 --> 00:56:09.920]   in the AI ecosystem.
+[00:56:09.920 --> 00:56:11.600]   Those are the high execution mode.
+[00:56:11.600 --> 00:56:14.080]   Like it's obvious to many people that those are problems.
+[00:56:14.080 --> 00:56:15.840]   They might be solved by their platform,
+[00:56:15.840 --> 00:56:18.200]   might be a fix and shovels things.
+[00:56:18.200 --> 00:56:20.080]   So it's really an execution game over there
+[00:56:20.080 --> 00:56:21.760]   if you want to win that.
+[00:56:21.760 --> 00:56:23.760]   But I think the interesting ones is to think about,
+[00:56:23.760 --> 00:56:28.760]   okay, what would happen when legal reviews are very common
+[00:56:29.120 --> 00:56:32.160]   or like are done so much more easily because of AI?
+[00:56:32.160 --> 00:56:36.240]   Would it make the judicial system collapse?
+[00:56:36.240 --> 00:56:38.200]   So should I build something for judges
+[00:56:38.200 --> 00:56:39.960]   that sort of does this, but what about bias?
+[00:56:39.960 --> 00:56:42.480]   Or maybe what happens in the pharma, I don't know,
+[00:56:42.480 --> 00:56:44.320]   whatever it is that is in your space,
+[00:56:44.320 --> 00:56:47.440]   think about it from the lens of understand the ecosystem,
+[00:56:47.440 --> 00:56:50.440]   understand the pains, anticipate the best you can.
+[00:56:50.440 --> 00:56:52.840]   What would be the pains that evolve here?
+[00:56:52.840 --> 00:56:53.840]   Then try to figure it out.
+[00:56:53.840 --> 00:56:55.960]   Once again, many, many leaps of faith here.
+[00:56:55.960 --> 00:56:57.160]   You have to have some conviction in it.
+[00:56:57.160 --> 00:56:59.800]   You have to be convincing about that.
+[00:56:59.800 --> 00:57:01.920]   But then you can build a sustainable
+[00:57:01.920 --> 00:57:04.120]   kind of long-term differentiated company.
+[00:57:04.120 --> 00:57:05.880]   - Amazing.
+[00:57:05.880 --> 00:57:08.080]   I guess lasting for our audience.
+[00:57:08.080 --> 00:57:10.680]   Where can we all follow the center
+[00:57:10.680 --> 00:57:15.680]   of all AI developer movement, which is Guy and Tesla?
+[00:57:15.680 --> 00:57:18.440]   What social channels or places people should sign up for?
+[00:57:18.440 --> 00:57:24.520]   - So for the company, it's tessell.io, T-S-S-L-L-I-O.
+[00:57:25.200 --> 00:57:28.760]   You can also go to ainativedev.io.
+[00:57:28.760 --> 00:57:29.960]   I love the .io domain.
+[00:57:29.960 --> 00:57:32.240]   I find that represents development too.
+[00:57:32.240 --> 00:57:34.760]   So although we bought the .ai, again, it's not about
+[00:57:34.760 --> 00:57:35.600]   the fact that it's AI.
+[00:57:35.600 --> 00:57:38.040]   It's about the fact that it's a development.
+[00:57:38.040 --> 00:57:39.520]   So we routed there.
+[00:57:39.520 --> 00:57:41.840]   Me personally, I mean, Guy Pajarni,
+[00:57:41.840 --> 00:57:46.840]   there's unfortunately, Pajarni is sufficiently uncommon
+[00:57:46.840 --> 00:57:50.320]   that you can find me on the Twitter's and the LinkedIn's.
+[00:57:50.320 --> 00:57:52.880]   And I'm probably most active on LinkedIn.
+[00:57:52.880 --> 00:57:57.360]   So if you follow me on LinkedIn, that's probably best.
+[00:57:57.360 --> 00:57:58.920]   We do have a newsletter as well.
+[00:57:58.920 --> 00:58:01.680]   So if you go to tessell.io, you'll find yourself either
+[00:58:01.680 --> 00:58:04.840]   able to register at the newsletter or join the conference,
+[00:58:04.840 --> 00:58:07.240]   or you can sign for the waitlist.
+[00:58:07.240 --> 00:58:09.840]   All of those are in good cases to be involved.
+[00:58:09.840 --> 00:58:11.720]   Lots and lots and lots to discover.
+[00:58:11.720 --> 00:58:14.280]   And I think fascinating conversations.
+[00:58:14.280 --> 00:58:15.400]   Like you can be a believer.
+[00:58:15.400 --> 00:58:17.240]   You can be a non-believer.
+[00:58:17.240 --> 00:58:19.000]   You can think the path is not.
+[00:58:19.000 --> 00:58:21.760]   But I've yet to really find anybody that doesn't think
+[00:58:21.760 --> 00:58:24.040]   the conversation is interesting.
+[00:58:24.040 --> 00:58:24.880]   - Awesome.
+[00:58:24.880 --> 00:58:25.720]   Thank you so much Guy.
+[00:58:25.720 --> 00:58:27.880]   This has been really insightful.
+[00:58:27.880 --> 00:58:29.200]   And Tim and I really enjoyed it.
+[00:58:29.200 --> 00:58:31.280]   And I think this is a great one that we've done.
+[00:58:31.280 --> 00:58:34.240]   So I hope you have a, well, I can't wait for the AI native
+[00:58:34.240 --> 00:58:36.040]   DevCon to be honest.
+[00:58:36.040 --> 00:58:36.880]   - Thank you.
+[00:58:36.880 --> 00:58:37.720]   Thanks for having me on.
+[00:58:37.720 --> 00:58:40.300]   (upbeat music)
+[00:58:40.300 --> 00:58:42.880]   (upbeat music)
+[00:58:42.880 --> 00:58:50.540]   [BLANK_AUDIO]
+

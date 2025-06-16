@@ -1,0 +1,1826 @@
+1. EPISODE CONTEXT
+
+- Podcast Name and Episode Focus: Training Data podcast, focused on discussing Day AI, an AI-native CRM startup founded by Christopher O'Donnell.
+
+- Host: Alfred Lin (Partner at Sequoia Capital) 
+
+- Guest: Christopher O'Donnell (Co-founder & CEO of Day AI, former architect of HubSpot's CRM platform)
+
+- Featured Company Overview: Day AI is an early-stage startup building an AI-native CRM system that eliminates manual data entry by automatically capturing conversations and customer interactions across email, meetings, messaging platforms to construct a comprehensive customer database. The company is pre-launch/early stage.
+
+2. KEY INSIGHTS
+
+1) Traditional CRMs require extensive manual data entry, leading to incomplete data and cognitive overload for users trying to stay on top of customer relationships.
+
+"There just isn't canonical data and we can talk more about this 'cause it's a big topic and a really interesting one. But, you know, even the best CRM implementation on the planet is probably 40, 50% of the data that it even thinks that it should have, let alone what is now possible."
+
+Why it's significant: This highlights a key pain point that Day AI is trying to solve - making CRMs more comprehensive and less burdensome through automation.
+
+2) Current CRMs don't provide an integrated workflow for managing customer relationships from initial interaction to closing a deal.
+
+"Typically, if you see a heavy CRM user at work, you're gonna see 40 tabs open with that CRM, you know, all the way across. And so it's very easy to lose your place. It's very easy to lose the plot and you're not working back and forth with it to really understand a relationship."
+
+Why it's significant: By streamlining the entire workflow, Day AI aims to provide a better user experience and help salespeople be more effective.
+
+3) The vision for Day AI goes beyond just automating data entry - it's about transforming how people connect by allowing them to be fully present without operational overhead.
+
+"This needs to be that entire top level space. Every line of code needs to make every other line of code somehow more valuable...little patches and little feature things where you're doing it in a non-strategic way, you can't afford to do, that all goes away."  
+
+Why it's significant: This speaks to Day AI's ambition to fundamentally re-imagine the CRM experience through an "AI-native" approach vs. incremental improvements.
+
+4) Developing an AI-powered product requires new approaches to UI/UX focused on transparency, user control, and managing the inherent probabilistic nature.
+
+"You need to be able to manage the context that the system is using. You need to be able to undo, you know, and correct the data...you have to be able to approve the output, be able to have rules and instructions about the output so that it sort of fits your standards."
+
+Why it's significant: Navigating this new paradigm of probabilistic AI systems will be critical for providing a trusted user experience.
+
+5) Building a product like Day AI necessitates a very engaged, design-partner customer base to get the details right.
+
+"We're trying to build, and I would say at this point, really have a culture where, you know, here's this question from a customer...Pull the code up, you know? Pull the code up. It's not like this secret backroom thing."
+
+Why it's significant: Developing an AI-native system requires deep customer collaboration from the outset to understand workflows and requirements.
+
+3. TECHNOLOGY & PRODUCT DEVELOPMENTS 
+
+- Key Technical Innovations:
+    - Using large language models (LLMs) to automatically ingest and interpret natural language data from emails, meetings, etc. to construct the CRM database without manual entry
+    - Developing novel data models and architectures to store and connect all captured conversation/interaction data in a way that allows querying and reasoning
+    - Exploring approaches to provide transparency into the AI system's outputs/recommendations and allow user control/overrides
+
+- Core Differentiation: 
+    - Eliminates tedious data entry by automatically capturing all customer interactions
+    - Provides a much richer, contextualized view of the customer relationship
+    - Allows salespeople to interact with AI to get insights, prep materials, etc. in a seamless workflow
+    
+- Future Plans:
+    - Build out capabilities for the AI to draft emails, suggest next actions, etc. based on the context 
+    - Expand to a full "self-driving" CRM that handles most workflow automatically
+    - Develop frameworks to manage trust, control, and transparency as the AI makes more decisions
+
+- Emerging Technologies Mentioned:
+    - Large Language Models (LLMs) like GPT-3
+    - Technologies for explaining and managing AI system outputs (e.g. evaluation, citations)
+    - AI-assisted coding and "prompt engineering"
+
+4. COMPETITIVE LANDSCAPE
+
+- Salesforce is mentioned as the dominant incumbent player that HubSpot (where O'Donnell previously worked) successfully challenged to some degree with its CRM offering
+
+- O'Donnell acknowledges that incumbents like Salesforce can potentially build AI-native CRMs, but suggests their existing data models and approaches may not be suitable: 
+
+"The data model is gonna really need to change. So if we think about CRM traditionally, a really good way to think about it...we have compressed the data...legacy CRM data as, you know, a photograph that has been down sampled into pixel art."
+
+- He argues Day AI is taking a more ambitious, ground-up rebuild suited for the AI era rather than incremental improvements on legacy systems.
+
+5. TEAM & CULTURE SIGNALS
+
+- Leadership Philosophy:
+    - Customer-obsessed, literally reviewing customer feedback and pulling engineering code together
+    - Prioritizing a tight feedback loop - "same hour bug fixes and same day feature releases"
+    - Deliberate, high-quality product development over growth at all costs
+    
+- Team Building:
+    - Very small team of high caliber, emotionally intelligent folks 
+    - Directly exposed to customers - "everybody's following along on the plot"
+    - Pair programming and collaborative coding is a core practice
+
+- Values:
+    - Pursuit of excellence - "we're setting ourselves up for the very, very long term"
+    - Customer-centricity - "our customers are as much design partners as customers"  
+    - Having fun building transformative products
+
+6. KEY METRICS & BUSINESS DETAILS
+
+- No specific metrics on growth, revenue, users, etc. shared (likely still pre-launch)
+
+- Pricing/Monetization: No details provided, though O'Donnell mentions HubSpot's CRM launched initially with freemium/bottoms-up adoption before monetizing
+
+- Go-To-Market: Still determining precise segments, evaluated solo entrepreneurs, VC firms, and settled on engaging deeply with a embedded design partner customer base first
+
+7. NOTABLE TECHNOLOGIES 
+
+- Large Language Models (LLMs) like GPT-3, Claude, ChatGPT
+- AI-assisted coding tools like Cursor, Anthropic's tools
+- Prompt engineering for interacting with LLMs
+
+8. COMPANIES MENTIONED
+
+HubSpot: "HubSpot has the most beloved CRM product in the market with a billion plus of revenue growing at a nice clip with nice margins."
+
+Salesforce: "Salesforce has been a dominant force in CRM for a couple of decades." 
+
+Marketo: "Marketo was the big competitor. And they went public and then went private and have kind of faded away."
+
+Slack: "You know, Expensifying Atlassian. There are a bunch of examples in hindsight, but again, there was no real textbook."  
+
+ByteDance: "Record, I looked it up, by the way. What I can gather, ByteDance did it in eight, I think Meta did it in nine or something, which is insane."
+
+Meta: "What I can gather, ByteDance did it in eight, I think Meta did it in nine or something, which is insane."
+
+Netflix: "Netflix has done one, you know, a square, you name it." (Referring to data migrations)
+
+Datadog: "I like buying data dog and configuring it and learning how to, you know, have richer traces and doing all this kind of stuff."
+
+Y Combinator: "I like the Y Combinator wedge kind of thing."
+
+Rippling: "I don't know how Parker did rippling."
+
+9. PEOPLE MENTIONED
+
+Sarah Guo (Founder & Managing General Partner at Bakehouse): "Who do you admire most in the world of AI? Sarah Guo."
+
+Dario Amodei (Research Scientist at Anthropic): "I will give, I will give a lot of credit to Dario for what felt for a long time, like bubble wrapping his models, so much for safety, you know."
+
+Dan Chen (Founder of Intric): "To the question about designers knowing how to code. I mean, this is the greatest music producer, maybe of all time. It has no idea what any of the knobs or dials do."
+
+Whitney Sorensen (CTO at HubSpot): "Whitney Sorensen, who's CTO there to this day. And I kind of mounting this assault into marketing automation, marketing email."  
+
+Mike Peachey (Co-founder at Day AI): "It was, at the beginning, just me and Mike Peachy, my co-founder at Day AI."
+
+Mark Roberge (Former CRO at HubSpot): "And then Peechie and Mark Reberge, who was a huge part of this chapter, came in one day and had this spreadsheet..."
+
+Steve Jobs: "Certainly Steve Jobs. He's complicated...but you know, the results pretty impressive and the engagement I think is really impressive. The trust of knowing what's best for the user."
+
+Paul English (Co-founder of Kayak): "I'd put Paul English up there for similar reasons...Paul left a long shadow."
+
+Rick Rubin (Music Producer): "I'll throw in Rick Rubin...he's a really interesting guy because he's a Steve Jobs with a completely different vibe in a completely different level of humility."  
+
+Sarah Blakely (Founder of Spanx): "Sarah Blakely. Really? Yeah 100%...she just did it, man. She just did it and she had a belief that women's undergarments should not be designed by men who knew nothing about it."  
+
+Daphne Funston (Early employee at Day AI): "We have a document internally that Daphne made, Daphne Funston, and it's called The Rules of the Game."  
+
+Eric Munson (Co-founder & Principal Engineer at Day AI): "Eric Munson, our founding engineer, talks about it this way and I really like it..."
+
+# Named Entities
+
+## PERSON
+- ##chi
+- ##e
+- ##each
+- ##ee
+- ##io
+- ##llie
+- ##uo
+- Brian Halligan
+- Christopher
+- Christopher O ' Donnell
+- Claude
+- Claude Webb
+- Dan
+- Dan Chen
+- Daphne
+- Daphne Funston
+- Dar
+- Eric Munson
+- Gmail
+- Gwen
+- Mark Reberge
+- Mary
+- Met
+- Mike Peachy
+- O
+- P
+- Parker
+- Paul
+- Paul English
+- Rick Rubin
+- S
+- Sarah
+- Sarah Blakely
+- Sarah Guo
+- Se
+- Steve Job
+- Steve Jobs
+- Whitney
+- Whitney Sorensen
+
+## ORGANIZATION
+- ##B SAS
+- ##L
+- ##LG
+- ##bS
+- ##bSpot
+- ##den
+- ##force
+- ##ic
+- ##op
+- AI
+- B2
+- ByteDance
+- CS
+- CT
+- Chatsh
+- Facebook
+- GPT
+- Google Docs
+- Harvard Business School
+- HubSpot
+- ICP
+- LL
+- LinkedIn
+- Marketo
+- Meeting Bo
+- Navy Seal
+- Netflix
+- Not
+- P
+- R & D
+- SAS
+- Salesforce
+- Salesforce Tower
+- Spotify
+- Stanford
+
+## LOCATION
+- Boston
+- El
+- Mount Rushmore
+- New Hampshire
+- Ring
+- Rush
+- San Francisco
+- Slack
+
+## PRODUCT
+
+## EVENT
+
+## WORK_OF_ART
+
+## DATE
+
+## MONEY
+
+## QUANTITY
+
+
+
+# Transcript
+
+
+If you ask 100 CRM users, classic user interview questions
+to get to the core pain, it's always--
+100 of them will give you some flavor of,
+I'm scared about things falling through the cracks, all of them.
+Now, why would we care about something
+falling through the cracks?
+Makes us look bad.
+We're coming into work.
+We want to add value, but we want a sense of respect.
+You know what I mean?
+That's what's common across all of these departments,
+from engineering to sales, CS.
+Everybody just wants to feel like they belong,
+feel like they're worthy, they've earned their paycheck,
+they're respected by their peers,
+they're not going to get fired.
+And this whole new world allows us
+to operate at that level of belonging and respect
+and weighing in creatively on how we want these conversations
+to evolve without having to worry, just like taking notes.
+Like, I don't have to take notes in a meeting,
+I can make eye contact, oh my god, that's incredible.
+[MUSIC PLAYING]
+Today we're joined by Christopher O'Donnell,
+architect of HubSpot's CRM.
+The one competitor to successfully challenge
+Salesforce's dominance.
+Now Christopher is building Day AI, an AI native CRM,
+that reimagines how customer relationships are managed.
+What makes Day special is how it eliminates the data entry
+burden that plagues traditional CRMs.
+By automatically capturing conversations
+across email, meetings, and messaging platforms,
+it constructs a comprehensive customer database
+without manual input.
+It's essentially self-driving CRM that
+gives salespeople the superpower of perfect memory
+and preparation.
+Christopher's vision goes beyond automation.
+It's about transforming how people
+connect and make business relationships more human
+by allowing people to be fully present.
+[MUSIC PLAYING]
+All right, we've got a special edition of training data.
+We're on the road in Boston to see Christopher O'Donnell.
+Christopher, welcome to the show.
+Great to see you, thanks for coming out to Boston.
+OK, before we get going, OK, I'm going to set some context.
+Now, some of our listeners are aware of this.
+Some may not be.
+There are three categories of enterprise software
+that sit above all the rest.
+There are three kind of super categories.
+There's CRM, there's ERP, and there is productivity.
+And in the world of CRM, you've got
+this monster called Salesforce, which
+is the single most valuable company
+to have emerged from the cloud transition.
+Salesforce has been a dominant force in CRM
+for a couple of decades.
+With one exception, there is one company that
+has actually mounted a successful assault on Salesforce.
+And that one company is HubSpot.
+HubSpot has the most beloved CRM product in the market
+with a billion plus of revenue growing at a nice clip
+with nice margins.
+It's fundamentally changed the shape of the HubSpot business.
+And the reason I mention all of this
+is context is because the man who built that business at HubSpot
+is Christopher O'Donnell.
+So Christopher, can you start by giving us
+a little bit of the story of how the CRM product at HubSpot
+came to be?
+Yeah, sure, sure.
+So I joined HubSpot through an acquisition in 2011.
+And I had sort of three chapters at HubSpot.
+The first chapter was really on the heels
+of the famous ICP decision.
+This is what they teach at Harvard Business School
+and other business schools, the kind of HubSpot case
+around the owner Ollie versus marketing Mary.
+Yep.
+Your mission.
+You know this decision very well.
+And I think it worked out very nicely.
+So I came in right after the marketing
+Mary decision, the second contact--
+second access for contact pricing and so forth.
+And they really needed an email system.
+And so that was kind of the first chapter
+was Whitney Sorensen, who's CTO there to this day.
+And I kind of mounting this assault
+into marketing automation, marketing email.
+And it was from zero rewrite, replatform.
+We had about four months to get off
+of a well-known enterprise email app.
+And we managed to do it.
+I was hands-on.
+I built the front ends because there was no one really else
+to do it.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        And Whitney did all the back ends and everything.
+And we always kind of had an eye toward this universal contact
+database that felt like the vision and this sort of one
+stack unified way of doing it that felt like it was going
+to grow outside of marketing email.
+So about four months to using it internally, about seven
+months to bring it to market, we were
+able to take the company public and arguably win
+that category.
+Marketo was the big competitor.
+And they went public and then went private
+and have kind of faded away.
+The second part of my time there was what you're describing.
+And it was interesting.
+I started to build a product management practice.
+This is end of 2013.
+And as that kind of came online and I
+was able to give the marketing stuff
+that we had been working on to a team
+and let that start to scale out, kind of like the fishermen
+throwing the fish back in the water started over.
+We did a startup within a startup.
+Stanford's actually doing a case on it now, which is, I
+think, going to be really, really interesting.
+They have some folks there that study this kind of innovation.
+It was very innovators dilemma, literally from the book,
+ripped from the pages of the Clay Christensen.
+How do you get that, what Brian Halligan would call the
+second S-curve?
+How do you do that in an environment where incremental
+investment in the core product is going to yield margin?
+It's going to yield results.
+And HubSpot is one of the very few companies that pulled
+that off.
+And so what did you do to make that work?
+Because I think the default is that it doesn't work.
+And in HubSpot's case, it worked to wild success.
+Yeah, in hindsight, and talking to the Stanford people,
+in hindsight, it looks like it was very smooth
+and brilliant.
+And it was rocky and hard.
+It was really messy.
+I give credit to the founders for their decision to do a
+startup within a startup.
+So we did what the business school professors would call
+the skunk works.
+We literally hung up a pirate flag behind us.
+We had a small team.
+It was, at the beginning, just me and Mike Peachy, my co-founder
+at Day AI.
+And then kind of grew the team from there.
+We were on our own stack.
+It's a cool story.
+I mean, it's really neat how the strategy played out.
+There was a big question about core CRM versus sales
+acceleration.
+And we were seeing a lot of tools.
+You know this space extremely well.
+We were seeing a lot of wallet share going toward these
+kind of plug-ins to CRM that would maybe give you more
+enrichment data or help you do better presentations or write
+better emails.
+And so we started there and did email open notifications.
+The simplest possible thing.
+We did it on our own stack.
+We did our own stripe billing and had a lot of fun with it.
+Built that kind of into a sales acceleration suite.
+And a year or two into it also made the decision as a
+company to do core CRM system of record.
+This made a lot of sense to product and engineering.
+We were very on board with this and had built things in a
+way to set ourselves up to be able to do this.
+And so it kind of merged.
+It was a sales acceleration suite on top of CRM.
+We grew the team to about 100 people.
+Went from zero to about 40 million in revenue.
+And then were acquired back into the mothership.
+And that happened department by department, which I think
+is really interesting, which in a traditional normal
+acquisition of another company wouldn't be how it's done
+necessarily.
+Though it's actually not a bad idea, an interesting way to
+think about getting an acquisition to be successful.
+So sort of engineering went first, then product, up the
+stack through sales and finally to customer support.
+That was the last thing to kind of integrate.
+And part of our mandate had been to reinvent, go to market,
+and explore these bottoms up adoption methods, bottoms up,
+monetization.
+And there wasn't PLG back then, right?
+Nobody had a PLG blog.
+There was no such thing.
+And so we were kind of discovering that for ourselves
+while some other companies were as well, you know,
+Expensifying Atlassian.
+There are a bunch of examples in hindsight, but again,
+there was no real textbook.
+So we were sitting there like, oh, we could generate demand
+from this feature and rotate it to sales.
+And then Peechie and Mark Reberge, who was a huge part of
+this chapter, came in one day and had this spreadsheet where
+they had figured out the lifetime value by product area
+limit that people had hit.
+I still remember where I was sitting when they showed me
+this on a laptop.
+They're like, look at this model we made.
+And that was just a massive breakthrough.
+And that led into the third chapter where I was fortunate
+enough to be steward of the overall team.
+And did that for four or five years.
+So, yeah, it was really interesting.
+It was a great opportunity.
+- And on the CRM piece of that, because I think that's,
+I think that's exceptional in part because
+CRM is such a big, obvious category for people to go after.
+Nobody else has been successful.
+You guys were successful.
+I think that makes it really exceptional.
+The second thing that I think makes it really exceptional
+is the default is for Act 2 or a startup within a startup
+to fail.
+And basically what you just said, there were kind of three
+things I heard as maybe big strategic decisions
+or big principles that certainly didn't cause it to work
+but maybe helped set it up for success to some degree.
+One was the startup within a startup
+and that being a real thing.
+You guys were legitimately by yourselves as opposed
+to feeding off of the resources of the mothership.
+Second was a little bit of the end around,
+starting with the sales acceleration tools
+and getting the system of engagement, so to speak,
+before going into the system of record,
+which is course CRM, as opposed to a full frontal assault
+and starting with the system of record.
+And then the third thing is the PLG and to your point
+at the time, that wasn't necessarily a thing.
+So you kind of had to invent the playbook as you went.
+Let's transition a bit into day.
+And so with day, I see similarities and I see differences.
+One similarity I see is PLG.
+One difference I see is the full frontal assault.
+Because my understanding with day is that
+you're not sneaking around the edges
+and then popping out of a kick and saying,
+"Hey, we're a CRM," you're actually starting with the CRM.
+So maybe we start with that.
+Before we get into that, why does the world need
+an AI native CRM?
+Let's start with that.
+- Yeah, well, it's an incredible time
+to be doing this from scratch.
+And there are 14, 16, 17 fundamental things
+about all of the existing CRMs
+that are never gonna change and are huge drawbacks.
+You know, fundamentally these systems
+are supposed to be working for you.
+And they end up being things that we work for.
+There are a few fundamental problems.
+There's the data problem where there just
+isn't canonical data and we can talk more about this
+'cause it's a big topic and a really interesting one.
+But, you know, even the best CRM implementation
+on the planet is probably 40, 50% of the data
+that it even thinks that it should have,
+let alone what is now possible.
+So that's the first problem is how do you actually
+populate this thing so that it has all of the information
+so that you can do your job?
+The second problem is user workflow.
+You know, where do you start?
+How do you get something done?
+How do you answer a question?
+Typically, if you see a heavy CRM user at work,
+you're gonna see 40 tabs open with that CRM,
+you know, all the way across.
+And so it's very easy to lose your place.
+It's very easy to lose the plot
+and you're not working back and forth with it
+to really understand a relationship.
+And that leads into the third part,
+which is walking away from it with some sort of work product.
+- Yep.
+- You know, CRM users are not sitting down
+and doing things, asking questions, getting answers,
+and then walking away with an incredible internal memo
+or a knowledge base, you know, article
+or an email draft or prep notes for a meeting.
+You know, that's happening somewhere else.
+Maybe it's happening in Notion or, you know,
+Google Docs or something.
+And it seems like a really obvious thing
+that you should be able to sit down.
+The CRM has the full history of everything
+that's happened between the company and the customers.
+It's extremely obvious where to start.
+We can talk a lot more about that.
+And at the end of that thread, whatever it is,
+prepping for a meeting or following up on an email
+or reviewing all of the deals, if you're a sales manager,
+understanding what are you gonna do this week?
+Where are you gonna dive in?
+Where are you gonna help out?
+You know, I have a fundamental belief
+that people really do wanna buy things.
+- Yeah.
+- I've always built sales and marketing tools
+from the perspective of a buyer.
+I'm in those databases as like a decision maker.
+You know, I'm getting those calls more
+than I'm making those calls.
+And I'll tell you buyers, we love buying stuff.
+I love buying things, you know.
+I like buying data dog and configuring it
+and learning how to, you know, have richer traces
+and doing all this kind of stuff.
+I mean, these are, this is like Christmas.
+And it doesn't feel that way to reps, you know.
+I also like sales reps.
+I like working with a rep.
+I like building the rapport.
+And so it's this kind of combative relationship
+that I think is gunking up the economic engine
+of a bunch of earnest, good faith people
+trying to, you know, deliver value
+and push their companies forward.
+It doesn't need to be this hard.
+And a lot of it comes down to trust,
+improving relationships.
+That comes from keeping promises, remembering details.
+And there's a lot of fear there too.
+You know what I mean?
+Sales is a hard job.
+There's a lot of rejection.
+There's a lot of disappointment.
+And that bleeds into everything else.
+That bleeds into the life of that person and their family.
+So I think all this could be a lot more fun, frankly.
+You know, we're incredibly blessed
+to live in this age of software
+and be able to use cool things at work
+and have interesting conversations with interesting people.
+And we ought to be able to do it a lot better
+with no extra effort.
+- Yeah.
+I would bet there are a bunch of people
+sitting in Salesforce Tower in San Francisco
+thinking to themselves, wait a minute.
+We're gonna be the AI native CRM.
+What would your response to them be?
+Why can't Salesforce build this?
+- You know, look, I do think that anybody can do anything
+and there's nothing stopping anybody.
+I mean, we're just a handful of people with laptops.
+And, you know, the flip side of that is
+the data model is gonna really need to change.
+So if we think about CRM traditionally,
+a really good way to think about it.
+Eric Munson, our founding engineer,
+talks about it this way and I really like it,
+which is we have compressed the data, right?
+If you have a lot of data,
+one way to store it somewhere is to compress it down.
+So you can think of legacy CRM data as, you know,
+a photograph that has been down sampled into pixel art.
+And it's just a few little blocks.
+It's like, you know, one of those crypto apes.
+- Yeah, yeah.
+- Yeah, kind of thing.
+Maybe not as valuable.
+And so it's really radically down sampled.
+Why?
+Because people have to put this data in.
+And so you're really limited in terms
+of what you can ask for.
+You're only gonna add fields into the CRM
+to collect data if you think somebody is gonna have
+the wherewithal to actually fill it out.
+Otherwise it's gonna remain empty.
+And so that's kind of the fundamental principle.
+And I think the legacy CRM companies
+are going to do a pretty good job
+of going from kind of eight bit to 16 bit.
+But there's this opportunity to say,
+well, hold on a second.
+We now have what we need to build PlayStation 5
+with ray tracing, you know.
+It's like going from Super Mario Brothers
+to Elden Ring is really what's possible.
+You know, if I show my parents modern video games,
+they believe it is reality.
+They don't really immediately grasp
+that it is a video game.
+So that data decompression in the CRM,
+why is that happening?
+How is that happening?
+But in terms of expanding this, why do we need this?
+To understand relationships
+and to allow people to do these things,
+give them these workflows,
+allow them to ask questions,
+allow them to walk away with work product.
+You need as close to the actual reality
+of those conversations and relationships as possible.
+You need the full picture.
+You need to invent not just a camera to take a photograph.
+You need a 3D reality scanner.
+And you need a way to store that, right?
+And so that kind of pulls into a couple of elements.
+One is everything is about context.
+So if you want to build a chat interface
+where you can ask a CRM a bunch of questions,
+which we have, we are not the only people who will,
+you know, try to do this and build this.
+You need the data that you're working with
+to be of a certain type.
+It needs to be very detailed.
+It needs to be a natural language.
+It needs to not assume what's going to be valuable
+in a particular context in the future.
+And so the primary aspect of this compression of the data
+over time has been reducing it down to a checkbox,
+you know, reducing it down to a drop down.
+And with AI, you don't need to do any of that.
+You can just have all of the raw conversations
+and maybe you can transform them in some ways
+so that they're more convenient, more portable.
+But all of that needs to be interlinked.
+All of that needs to point back and forth
+with citations and sources.
+There needs to be provenance.
+You need to understand why an answer to a question is.
+You know, if you say, you know,
+what's my team going to do this quarter?
+And it shows you a chart.
+That chart can be absolutely perfect
+and it will not be a usable product.
+If you can't inspect that data and go into the details
+and understand all of the assumptions
+that the AI is making
+and point back to all of these different things, right?
+If a CRM is generating a to-do list for you,
+which we have, we won't be the only ones doing it,
+why was this generated, you know?
+Why is this bug in the support inbox?
+Oh, it's this moment in this call
+that generated this thing.
+And then we deduplicated against this thing
+that came from a Slack message
+where somebody said a similar thing.
+Here's how they said it, right?
+And so it's not just, you know,
+six tables and a relational database
+that have foreign keys that point to each other.
+It's this constellation endless kind of universe
+of data points that are all interlinked.
+So to the question of why can't somebody do it,
+they could, I think data migrations are extremely painful
+and large incumbent, you know,
+$100 billion, trillion companies have done them.
+Netflix has done one, you know, a square, you name it.
+You know, people have gone through these data migrations.
+They're generally moving from one technology
+to a relatively similar technology.
+The idea that the use cases around the core data
+of a company, a system of record company,
+is so wildly different.
+Yeah, so suddenly I don't think there's an example of that.
+And if I am a sales rep and an account executive,
+what's the biggest way in which my life will be different
+with AI native CRM versus whatever I was using before?
+I think the way to think about that would be, you know,
+how is life different with a meeting recorder
+and without a meeting recorder?
+If you, there are a bunch of these meeting recording bots
+out there, many of them are really, really good.
+And if you read the verbatim's, you know,
+they're largely five star reviewed.
+A lot of stuff is five star reviewed these days.
+I have a little skeptical, but these are great products.
+And if you read the verbatim's, it's not about this feature,
+it's not about that feature, it's,
+I can be present in a meeting now.
+Yeah.
+So that's the benefit.
+And that's a glimpse into the type of benefit
+that you're going to get across the entire business.
+And I think people are still tied to this idea
+of data entry as cumbersome.
+We should make data entry better.
+That's a little bit like the 16-bit Pac-Man.
+Yeah.
+You know, data entry as a concept will entirely go away.
+Now being able to shape things and sort of say,
+"Wow, this part of this is not quite right."
+Or, "I kind of agree with this take over here
+"in the system learning and adapting."
+I mean, we need to have control over these systems
+and with these systems and be able to work
+and coexist with them.
+But we don't need to be entering this data.
+All of that administrative work goes away.
+We don't need to be writing an email from scratch.
+We can be looking at the email and weighing in
+on what we think.
+We can be maybe developing as a team
+the way that we want to email.
+And it kind of moves up a level.
+And so everything becomes much more strategic
+and much more intentional.
+And we aren't going to forget things.
+You know, the classic thing,
+if you ask 100 CRM users, you know,
+classic user interview questions to get to the core pain,
+it's always, 100 of them will give you some flavor of,
+"I'm scared about things falling through the cracks."
+All of them.
+Now, why would we care about something
+falling through the cracks?
+Makes us look bad.
+You know, we're coming into work.
+We want to add value, but we want a sense of respect.
+You know what I mean?
+That's what's common across all of these departments
+from engineering to sales, CS.
+Everybody just wants to kind of feel like they belong,
+feel like they're worthy.
+They've earned their paycheck.
+They're respected by their peers.
+They're not going to get fired.
+And this whole new world allows us
+to operate kind of at that level of belonging and respect
+and weighing in creatively on kind of how we want
+these conversations to evolve without having to worry,
+just like taking notes.
+Like, I don't have to take notes in a meeting.
+I can make eye contact.
+Oh my God, that's incredible.
+Now take that to prepping for the next meeting.
+I'm prepared for the next meeting
+because I remember all of these details.
+And by the way, these other things have happened.
+And that's really valuable context.
+And I can incorporate that really easily,
+you know, just by asking the right question
+or clicking a button to meeting prep, right?
+- Yeah.
+- So the level of effort basically goes to zero.
+And the level of presence and human respectability
+and self-esteem, you know, shoots up.
+I think that's going to be the biggest change.
+- Yeah, it's interesting that a lot of the examples
+you gave have AI actually making people
+feel and behave more human.
+You know, it's a nice example of like AI enabling people,
+AI providing superpowers to people.
+I want to ask you a question about day itself.
+And specifically, you started the company,
+you and peachy started the company
+maybe five, six months after the chat GPT moment.
+You started, I think April 2023 or thereabouts.
+- What was it that inspired you to start a company?
+What did you see?
+What made you want to build from scratch again?
+Kind of what inspired that?
+- I think it was as far back as 2017 that I set out loud.
+I'm never building a product from scratch without PG.
+So he kind of came on the job market
+and I could kind of make that work.
+The chat GPT thing was capturing our imagination.
+And it just felt really good, like the stars aligned.
+In retrospect, I don't think we could have picked a better time.
+It was a little early.
+So it was that right at the end of the spring of '23
+and the chat GPT had its moment,
+but the fundamental stuff of what we're doing in this trade
+of taking natural language and building and editing
+and updating structured output that then gets used,
+you know, to sort of rinse and repeat,
+that was not possible yet.
+- Yeah.
+- That became possible in June of '24, 3.5 Sonnet.
+You started to see glimmers of it with GPT4
+and function calling and you could kind of coax it
+into returning JSON and that kind of thing.
+But we really had a year of understanding the problem space
+and starting to understand what was going to happen
+with the AI that had not yet.
+So that was that perfect window.
+It's kind of like if you're surfing,
+you catch the wave a little early
+and then you swim like hell to try to drop in on it.
+And I think we kind of maybe got lucky there.
+It's funny, I was looking at some old code
+that I was killing the other day
+and I was looking at the chat GPT3.5 Turbo era
+and the prompts that we had in there.
+And it's like all caps, just begging for a return,
+you know, a type safe object.
+And then, yeah, in June of last year,
+that became possible, you know.
+And you could say, hey, look, you know, Claude,
+here's what we're trying to do.
+Here's the context we have.
+This is the type of output that we need
+to be able to work with heuristically, right?
+And it's that hopping back and forth
+between heuristic and non-deterministic worlds
+that makes our days colorful and long.
+You know, that was when it was really possible
+and it was basically July 1st.
+I remember 'cause I took a few days before the 4th
+to just go deep.
+And, you know, I went up to New Hampshire
+and just opened up my laptop for 72 hours
+and started working on, you know,
+some of the pipeline stuff and actions to do stuff.
+So that's kind of when we let it rip.
+Before that, it was mostly the meeting recording aspect
+of the system, which we knew we needed
+for a bunch of reasons.
+As an entry point into user workflow,
+it's a really good one because it's that moment of contact.
+And so if we can, you know, have some seat at the table,
+we knew that would be strategically interesting.
+We knew that these were really easy to adopt.
+It turns out they're very sticky.
+We have basically 100% user retention.
+I don't think I've told you this,
+but maybe, no, I showed you some data on this.
+That's why you still hang out with me.
+But they are actually pretty sticky
+and people will try different ones,
+but have stuck with ours because of a few particular
+qualities of it and how it's integrated now
+into that deeper CRM stack.
+Principally, though, we needed to capture that data
+and we needed to be able to capture the raw data
+and massage it, transform it, you know,
+kind of cook it, chop the wood, as we say,
+and use that to start to feed the CRM.
+So that, and then Gmail.
+And we had been doing Gmail in that first year too,
+which is, you know, I wouldn't wish on anybody.
+It's hard, right?
+Google Calendar and Gmail ingestion is really tricky.
+And then we added Slack and continue to add data sources
+from there, but it was really July of '24
+that we started on Core CRM.
+- And the basic idea in what you said
+with the meeting recorder and Gmail and Slack
+is be present where your users are
+and ingest as much context and information as possible
+so that you can sort of auto-populate
+or even auto-construct this CRM that they need.
+Is that the basic idea?
+- 100%, you know, Peachy and I have had this idea
+for a long time of the Spotify of sales.
+- Yeah.
+- You know, the idea of somebody who grew up with Spotify
+that you would choose a CD to buy.
+- Yeah.
+- And then that would be your CD.
+- Yeah.
+- And, you know, the ones that you prefer,
+you would keep in your car.
+- So that of those eight discs, you could easily access them
+and, you know, and we all had the visors.
+If you have one of those visors, you know.
+- Oh, I had the thing that sat in the backseat.
+You know, the little binder full of discs
+that kind of sat on the floor in the backseat.
+- Yes.
+- Yeah, that's what I had.
+- Yeah, exactly.
+I think this stuff is gonna feel that ridiculous.
+You know, Dan Chen, one of our early users who you talk to
+and I think he made this comment to you as well,
+the next generation of people coming into the workforce,
+it's not gonna be this idea
+of data entry is too cumbersome.
+They're gonna look at these things
+and people are gonna explain something like Salesforce
+to them.
+- Yeah.
+- And they are going to think that they are on punked.
+You know, it's like, hold on a second.
+So I do these Zooms and I do these emails, yeah, yeah.
+Okay, and then I like DM with my prospects
+and we do all this, okay, cool.
+And then I tell the computer, all of that,
+but like I put that into the system.
+They're like, yep, right here.
+It's that button right there.
+And then there's a form and you gotta fill it out.
+You really have to fill it out.
+It's gonna be completely insane to people.
+So back to the ingestion, if you're going to do that,
+you know, Spotify had to go out and do contracts
+to get access to all of the data.
+For us, that is binding to these inputs
+and their natural language inputs.
+You know, it's plain text.
+And then bringing in some of what we know
+about the CRM data model,
+even though, as I've sort of hinted at,
+it under the covers looks totally different.
+You are gonna want to be able to see a list of people
+and a list of companies, you know,
+and you're going to want to be able to add a column.
+If for no other reason than inspecting it
+so that you can trust it, you know,
+you need to be able to do all of that.
+So that's all 100% automatic.
+You know, folks come in, they sign up,
+they invite a couple of co-workers,
+they off their Gmail, maybe they add the bot to Slack.
+And within half a day, you know, four hours, eight hours,
+the entire CRM is built.
+You know, contacts, companies, deals, tasks, everything.
+Deals is the interesting one,
+because you have to have this idea
+of like business process contacts.
+And that's kind of advanced mode, I think.
+You know, building company records, contact records,
+not that it's easy, but it's, you know,
+it's a lot of looking at the web,
+it's a lot of, you know, that type of thing
+and you have domain and email address to work with.
+When you start to get into to-dos
+and opportunity management and all the rest of it,
+it's like, whoa, okay, hold on a second.
+You know, what does this mean?
+What does due date mean?
+What does this stage in this pipeline mean?
+- Yeah.
+- And so getting it right requires a lot of input
+from the user and they may not show up
+having all of these answers.
+It's not like everybody shows up and says,
+the entrance criteria for our fourth stage
+of the business development partnership pipeline
+is the following, you know.
+They don't know, they don't know.
+And so you have to kind of get that metadata out of them
+and then use that as you're looking at all of this data
+and continually return to the data set as things change
+and reevaluate things, move a deal from one stage to another
+because a particular meeting happened
+where particular things were set.
+Like I said before, you need to show proof
+of why you did that.
+And then on top of all of that,
+the user has to be able to say, no, no, no.
+It should be over here.
+You know, let me weigh in on this
+or let me make a hard edit to this.
+And so it really is very, very different under the covers.
+- Yeah, it's almost like self-driving CRM.
+- It is self-driving CRM.
+And you know what we learned.
+You do know this.
+I know you know this (laughs)
+is that, so that was kind of that arc.
+From July through then we got into automated opportunity stuff
+in November and up through, you know,
+that I can't believe it was a month.
+Oh my God.
+So by December, what we were learning was
+full self-driving is too scary.
+- Yeah.
+- It's too scary.
+And so from New Year's to now,
+the big push for us, it's been getting that last 10%
+of data quality for sure, you know,
+avoiding false negatives on saying something's an opportunity,
+getting to-do's right.
+We call them actions, getting actions right.
+But it's really more about this control
+and configurability layer.
+- Yeah.
+- And getting the balance of the best of both worlds
+where, okay, the data is right
+and I can also correct it.
+I can also understand why it is,
+what it is and make sense of it.
+I can debug it.
+Sources and reasoning, right?
+- Yeah.
+- A very simple example of this is perplexity.
+You know, if you do a search on perplexity,
+it'll show you the web pages
+that it's using to build the answer.
+- Yep.
+- And this now becomes kind of the core product challenge,
+I think for all of these AI native apps across disciplines,
+is managing transparency and managing control
+as you are prompting and working with the LLM,
+being able to approve the output,
+being able to have rules and instructions about the output
+so that it sort of fits your standards, I think.
+- Yeah.
+- On some level, we're all in a similar game.
+- Yeah, yeah, which all comes back to trust.
+You know, can you trust what the AI is doing
+on your behalf?
+Let's talk about building with AI a little bit.
+Can you share maybe some of the surprises
+or some of the magical moments along the way?
+- Yeah, so I am a heavy personal user
+of the AI coding apps.
+I've tried, I can't say I've tried all of them
+because there are so many,
+but I'm regularly checking back in with most of them.
+I've most heavily used cursor
+and have been pretty deep in that for over a year.
+These things are evolving incredibly quickly.
+- Yeah.
+- Week by week, they will have not just pros and cons
+and sort of ones ahead of the other in the horse race,
+but they're dramatic movements.
+You know, one week, windsurf will do something kind of cool,
+but people don't really like the pricing model.
+And then the next week, cursor says, okay, well, here's,
+you know, a new way of doing rules management
+and system instructions that's way ahead
+of what anybody else is doing.
+But then a new model comes out
+and it responds to this stuff differently.
+And so it's like, oh, you actually shouldn't use any of that
+in these types of circumstances.
+So it's really a moving target.
+It's fascinating and thrilling to kind of watch.
+One of the things that's happening right now as we speak
+is that less context and less instruction layer
+in a lot of cases is better.
+And so apps that have less of that off the shelf, right?
+Like fewer features, fewer stuff going
+into particularly 3/7 Sonnet.
+You get a better result for a lot of questions.
+And so, you know, you have companies
+that have been adding all of these features
+to let you do all of these system instructions.
+And then it's like, oh, how do we respond to this?
+So, man, you know, long days and nights
+for everybody working in that field.
+You know, one interesting thing about that playing field,
+I will say, is that they are all working
+off of the same raw input.
+They are all able to look at a code base.
+- Yeah.
+- And what's interesting for us is there's no code base.
+You know, we have to create the code base
+and then we have to do the kind of coding stuff
+on top of it, which is really interesting.
+Can you talk about how going from a world of software
+that executes things deterministically
+to a world of software that is in some ways deterministic
+and in some ways probabilistic?
+How does that change the arts of building software products?
+- I will say that generally speaking,
+software engineers are not liking this.
+It's not the kind of curveball that they were hoping for,
+I think, you know, and there are ways
+to kind of coax it into being more deterministic.
+So in terms of surviving the day to day
+and really making progress, a lot of stuff, you know,
+you turn down the temperature and you kind of say,
+okay, you know, especially when you're doing natural language,
+just structured output, but it's still non-deterministic.
+- Yeah.
+- I think hallucinations are not nearly the problem
+that we would have thought a year ago.
+- Okay.
+- You know, a year ago having this conversation,
+saying, well, this chat GPT thing is just saying
+some nonsense, you know, what are we gonna do about this?
+A lot of that's gone away in this type of use case.
+I can't obviously speak for every use case,
+but if you're saying, here's a whole Gmail conversation,
+you know, is this a promotional email?
+Is this a cold email?
+What's going on?
+Are there pending action items and so forth?
+- There is an enormous amount of hallucination.
+You might get a slightly different result and it is tough
+because there isn't a lot of tooling out there
+for, you know, non-deterministic stuff.
+I think, you know, from a venture perspective and so forth,
+the new generation of tooling is super interesting.
+- For sure.
+- Because this idea of eval and obviously a lot of people
+kind of in this race, but you know,
+these are really interesting products that are really
+valuable to product builders like us.
+That are gonna do really well.
+So as that tooling matures,
+that's another kind of tailwind to it.
+But, you know, if nothing had changed
+from where things were a year ago,
+it would be very, very scary.
+- How have UX patterns evolved in a world of AI?
+- The UX patterns, I'll say a couple of things about.
+One is consumer grade.
+So we have talked in B2B SAS for a long time about,
+you know, consumer grade.
+And the truth is what we meant was kind of a code of paint,
+a design system, a big investment in information architecture
+and trying to arrange things in an intuitive way and so forth.
+We did not mean, you know, Facebook,
+native mobile app, level, transitions and auto scrolling
+and you know, all this kind of stuff.
+And so the work that folks at Inthropic and Chatsh EPT
+and Perplexity, you know, these types of companies,
+they're building consumer products.
+- Yeah.
+- And the quality is extremely high.
+They are very well funded.
+They have the best engineers.
+A lot of those engineers are coming from social media
+and consumer apps.
+And so the level of polish is insanely high,
+which only in the last, I would say month,
+am I coming to fully appreciate?
+Because I'm matching up our stuff against, you know,
+what's out there.
+And in the past, when you've done that
+and kind of looked at what's out there
+and where the bar is, you know,
+you can get over the bar and B2B SAS, you can do it.
+Maybe you need to invest more in design, you know,
+value it more, give them more of a seat at the table.
+Now it's a little different
+and things are gonna need to be unbelievably fast,
+unbelievably smooth.
+So that's one.
+In terms of UX, the second thing I would say is
+control and transparency balanced with automaticity
+is the core tension.
+So if you ask a user, do you want all of this to be done
+automatically for you?
+Of course they're gonna say yes.
+When you do it automatically for them,
+they then have a lot of questions
+of why things are a certain way,
+what they can do about it.
+And there are a lot of levels in there, you know,
+do you want to let the user just flag something as a miss?
+Maybe not that valuable.
+I mean, everybody's doing that, you know,
+but how often am I in Claude Webb saying thumbs down?
+It's never like a thumbs down in Claude Webb.
+It's, you know, let me push you in this direction.
+Let me, ah, you're missing this piece of context.
+Okay, yeah, let me paste this document in or whatever.
+And so you have to be able to do that.
+You have to be able to manage the context
+that the system is using.
+You need to be able to undo, you know,
+and correct the data.
+So we have a document internally that Daphne made,
+Daphne Funston, and it's called The Rules of the Game.
+And it outlines like, hey, anything we do,
+you have to see why the AI did what it did.
+You have to be able to override it as a person
+and know that you're overriding it,
+not have it flipped back.
+'Cause you'll run into that too, right?
+Oh, I moved this thing, you know, into this stage
+'cause, you know, I thought it was correct,
+but then the AI moved it back.
+- Yeah. - Okay.
+Well, what do you want?
+Do you want the AI to be able to continue
+the decision-making after the user has weighed in?
+Sometimes, not all the time.
+Again, the data model is sort of ridiculously involved
+to be able to give the user very basic things.
+Like, hey, if I say that, you know,
+the status on this thing is such and such,
+it needs to, what, update the status and never change it?
+Or take that piece of information into account
+for every status that it prints moving forward, you know?
+In that case, probably the latter.
+So, yeah, the UX patterns around control,
+progressive disclosure, you know,
+it's, show me the clean, shiny thing that's automatic,
+but then let me turn it around, you know,
+let me flip the hood and see what really happened
+leading up to this.
+And so I think that kind of modality
+is gonna be really interesting.
+- You mentioned the document that Gwen put together,
+which is a little bit of a glimpse
+into how the day the company works.
+Let's talk a little bit about day the company.
+- Yeah. - And maybe starting with
+two things that are on my mind.
+One is, I think you guys are a very good example
+of this idea that a lot of people have talked about,
+which is you can just do a lot more with a smaller team.
+And particularly now that we're in a world of AI,
+you can do a lot more with a smaller team.
+Team is very small, but it's very high caliber people
+and you work extremely well together.
+The second thing, which is what I wanna ask you about,
+is I tend to be a big believer in in office culture.
+You know, Sequoia, I've been back in the office
+since May of 2021, you know, we're five days a week.
+We think it works.
+You guys are not all in the office together
+and yet you seem to have extremely good flow.
+And so I guess the thing I'm curious about is,
+how do you achieve that?
+How do you get this small group of people
+in different corners of the country to come together
+and actually have extremely good flow?
+- Yeah, no, it's a great question.
+And the spoiler is, I bet we'll end up in the office.
+- Yeah.
+- I bet we will.
+You know, fewer sites, I think fewer time zones
+is generally good.
+And we've been kind of letting the universe sort that out
+for us and it may be that the universe just sorts it out
+and that we end up in an office together in Boston.
+And going into that office, I think having had
+the experience that we're having now,
+the flow will be very different.
+Peachy wrote a really cool post on LinkedIn
+about the offsite that we had recently.
+And a couple of things about it, characteristics,
+that I think are emblematic of the way that we work,
+you know, our company culture.
+But it's really just, you know, the way that we work.
+And to your point, I would say they are very high caliber
+people, there's a little bit of a thing
+to these particular people in terms of their level
+of emotional intelligence, how much they like
+the work for the work's sake, the willingness
+for everybody to be so directly exposed to customers.
+Like, this is not all for everybody.
+I, you know, I wouldn't, you know, stand on a soapbox
+and say everybody should do this.
+But it works really well for us.
+And it's the kind of people that we want around.
+You know, if an engineer never wants to reach out
+to a customer to verify that a bug is fixed,
+like they're just not going to have a ton of fun,
+you know what I mean?
+So that's a really important layer
+is that the primary source material,
+it's kind of what we're trying to do with the product, right?
+And we use our product for this too.
+If you say, you know, oh, that's a great idea,
+that would kind of get us the thing for Dan.
+- Yeah.
+- Everybody knows what you're talking about.
+And everybody's following along on the plot
+and seeing what you're synthesizing.
+So that's kind of an unwritten contract
+that we've all entered into, which is, you know,
+I am willing to hold an enormous amount
+of customer conversations in my head
+so that we can have these conversations.
+I find it makes it really fun.
+You know, it makes it possible to come in
+and do a day of work where you feel like
+you've actually made a difference for somebody.
+Now it's software, so making a difference for one person.
+If you've chosen the right person,
+you know, it's gonna make a difference for a lot of people.
+And the team's nice, you know, and Daphne joined.
+I asked her a few days in how it was going
+and she said, "Everybody's really nice."
+And that's part of it too.
+It's, I think part of that comes with seniority.
+It's the emotional intelligence part of it.
+It's the, you know, people are kind of here
+doing it for similar reasons.
+- What would, I don't know if you've codified
+the company's values.
+If you have, what are they?
+If you haven't, what would you say they are?
+For the people who are on the team,
+what's their lived experience
+of what the company cares about?
+- Yeah, the lived experience is very truly customer driven
+in a literal sense.
+- Yep.
+- You know, that our customers talk about
+the same hour bug fixes and same day feature releases.
+- Yeah.
+- It seems like the feedback cycle is incredibly fast.
+- That's the fun right there.
+- Yeah.
+- You know, if you're going to do something anyway
+and it's the right thing to do,
+you can do it right then and get word of mouth
+and get momentum and thank somebody.
+I mean, this is early software.
+This is early stage software.
+People are investing their time and energy into this
+and we need to reciprocate, you know?
+We need to show them that it's worth it.
+If we do that, it'll be really fun for them too
+and they'll feel like they're a part of something
+because they are a part of something
+and their feedback is creating this larger thing.
+It's one reason we've kept it a little bit
+on the smaller side because you can't do that forever
+with, you know, not even a certain volume of people
+because I think you can.
+I think you can do this with a very large volume of people
+but once the product is at a certain maturity
+and once you've really nailed who those people are,
+you know, this last year and a half has involved
+a lot of kind of understanding,
+okay, what's this like for solo preneurs?
+You know, there's a case to be made
+that we should try personal CRM
+or, you know, very small business founder CRM
+or that we should start with VCs, you know,
+because they're early adopters
+and boy, they're certainly willing to give it a try, you know?
+And so we've kind of been updating ICP
+and doing that staying focused on the people
+who we take the most seriously
+in terms of having strategic weight.
+- Yeah.
+- It's easy to take those people very seriously
+and build a thing for them that hour
+because you are giving them credit for being right
+in a very macro sense, like you have it.
+There isn't, you know, a product management offsite
+and, you know, sticky notes sorting exercise
+to be doing around it.
+It's like, you are the user, you know, you are correct.
+We will do the thing.
+And it happens to be really fun for them,
+which makes it fun for you.
+The other thing Peachy noticed about our offsite is
+we pull the work up, like, and I think the pithy answer
+to your question of how we've been getting by remotely,
+it's a lot of slack huddle.
+- Yeah. - It's a lot of slack huddle.
+Very low stakes.
+We don't have any recurring meetings.
+And when we get on huddle, I'll get on huddle with Gwen.
+We've had a bunch recently and we'll work for six hours,
+you know, and it's kind of magical to be able to do that.
+So, there's a whole practice of pair programming.
+I actually don't know anything about it
+and the body of knowledge.
+I should stop and probably read a book on it,
+but that is actually really great.
+You know, you don't want to go out
+for a huge hike or mountain climbing thing by yourself
+for a number of reasons.
+And, you know, diving in to do some of this data model stuff,
+buddy system, that's worked really well.
+And I don't think that the golf between the customer
+and the code needs to be as wide as it is.
+You know, we're used to these sort of senatorial trappings
+where you ultimately have go-to-market and R&D
+sort of as the Republicans and the Democrats, you know?
+And everything is some flavor of managing expectations
+for their frontline people who are the voting base
+that have all the power and assassins, right?
+And so there's a lot of distraction that comes with that.
+There's a lot of subtext,
+there's a lot of peeling it all back.
+Again, everybody having good intentions.
+Like everybody solving for the customer,
+like best possible case, you have this huge golf.
+And so we're trying to build,
+and I would say at this point, really have a culture
+where, you know, here's this question from a customer.
+Here's a doc on it, we do a lot with docs.
+We do a lot with the written word.
+You can't compete with the clarity of the written word,
+I think. - Yeah.
+- But pull the code up, you know?
+Pull the code up.
+It's not like this secret backroom thing
+for just the software engineers.
+Like look at how things are labeled.
+Look at the conditionals of when we show that button
+and when we don't. - Yep.
+- Let's look at it together.
+It's not, you know, rocket science.
+Some of it's gonna be pretty opaque
+if you show it at a company level.
+A lot of it isn't, you know?
+A lot of it isn't.
+And so that lets us get to technical decision-making
+and polish a lot faster too.
+And again, it's kind of fun and rewarding.
+- One more question and then we'll jump
+into the lightning round.
+So one of the mantras that applies to some businesses,
+and I think it applies to a day in some ways,
+which I believe is stolen maybe from the Navy Seals
+or some other branch of the military,
+is the idea that slow is smooth and smooth is fast.
+And you are anything but slow
+when it comes to working on the product,
+but you've resisted the temptation
+to juice the vanity metrics
+that a lot of startups feel pressure to juice.
+Said differently, your customers today
+are as much design partners as they are customers.
+And you've been very deliberate about crafting a product
+that meets a certain bar of excellence
+or a certain bar of quality
+before releasing it out into the world.
+And I guess the question is,
+where did that strategy come from?
+Is it AI specific?
+Is it just the way you like to build products?
+What's sort of the philosophy
+behind the slow is smooth, smooth is fast strategy?
+- It's not typically what I would do.
+It's not.
+I like the Y Combinator wedge kind of thing.
+I like incremental improvement.
+I like broad customer exposure.
+With the exception of when you are doing software
+that is of a certain scope and stake,
+that the investment that you need from somebody
+to get any feedback is very high.
+- Yeah.
+- And the scope is also very wide.
+Part of it is, I don't necessarily want the entire world
+to know how wide it is,
+but I guess they'll find out from this.
+You talked about the three main spaces.
+I mean, we're doing the entire CRM.
+It's every function.
+- A lot of surface area.
+- AI native, everything, you know.
+It's probably gonna happen faster than people expect.
+- Yeah.
+- So doing things in that way,
+where we are trying to meet this bar
+with a particular customer,
+this is system of record software, you know.
+I don't know how Parker did rippling.
+I'm guessing he didn't say,
+let's launch payroll in one state.
+Maybe he did.
+I'd actually be really, really curious
+to hear the story from him.
+If you're doing HR payroll, you know, benefits,
+there is a level of completeness
+that you need to get to even be in the game.
+CRM has some of that.
+CRM, you can get a little bit cute with some use cases
+and say, okay, here's a meeting recorder,
+but there's a contact sidebar
+and it has personal history and everything like that
+and it's a CRM record
+and you're sort of a Trojan horseing in.
+So it's not what I would typically do.
+I think it's very appropriate for us now.
+And I also think that, you know,
+we're setting ourselves up for the very, very long term.
+The thought experiment of, you know,
+if you are in a race to a million ARR,
+how do you think about things?
+Think about the Y Combinator Witch.
+Okay, when you say, all right, let me break your brain.
+You're in a race to a hundred million ARR from zero.
+How do you think about things?
+You immediately start to think about things differently
+and you think, okay, well, we're gonna need something
+that people just don't cancel,
+that has a certain ASP, a certain adoption pattern,
+you know, and so forth.
+It doesn't force you out of the way of thinking,
+go to market or SAS Economics or anything like that.
+So when you say, you're now in a race
+to 10 billion ARR from zero and you have seven years,
+you know, to beat the record, whatever.
+Record, I looked it up, by the way.
+What I can gather, ByteDance did it in eight,
+I think Meta did it in nine or something,
+which is insane.
+But if you say you're in a race from zero
+to 10 billion ARR, now you think about things
+in an extremely different way.
+You know, this needs to be that entire top level space.
+Every line of code needs to make every other line of code
+somehow more valuable.
+And so little patches and little feature things
+where you're doing it in a non-strategic way,
+you can't afford to do, that all goes away.
+And so, you know, if your number one feature request
+on Meeting Bot is output templates,
+because these other apps have output templates,
+maybe you resist doing it that way
+because output templates are a core part
+of interacting with LLMs.
+And when you do output templates,
+you're gonna do output templates.
+And it's gonna be legit and it's gonna be proper
+and make sense and be a permanent thing.
+So soon, we're gonna have this feature
+that people have been waiting for,
+having done it in that way, right?
+You can't say, let's draft an email with this email editor
+and not be thinking about marketing email
+and knowledge base, website, you know, internal wiki.
+You have to set yourself up to do things
+in that way as well.
+And that is kind of my style.
+Like I do like thinking that way,
+but that's the other big slow smooth, smooth as fast factor.
+All right, lightning round, all right.
+Who do you admire most in the world of AI, Sarah Guo?
+- All right, love it.
+- Yeah, who do I admire most more than--
+- I don't know, I think you already nailed it.
+- Yeah, no, I nailed it.
+Sarah's incredible, she's extremely, extremely helpful.
+I will give, I will give a lot of credit to Dario
+for what felt for a long time,
+like bubble wrapping his models,
+so much for safety, you know.
+And I think we're starting to forget that narrative.
+You know, Claude was, for a long time,
+unusably bubble wrapped.
+You know, you say, okay, now in the middle of this play,
+we're gonna have this, you know,
+choreographed martial arts thing.
+And Claude would say, like, I'm done.
+I'm out, you know.
+And people on Reddit, everywhere we're rolling their eyes
+and laughing, and this was before 3.5 saw it.
+- Yeah.
+- When they really, like, set everybody straight.
+And so you look at it today,
+and using those models,
+having grown up with them
+and the expectation of safety and ethics,
+is incredibly important.
+Like, we're doing so much for our customers automatically,
+and they can say anything they want into this system,
+and they could theoretically use it for any purpose.
+The fact that we can sleep at night knowing,
+a massive amount of that kind of ethical compliance
+is handled because we're using those particular models.
+I think it was courageous, you know,
+and I'm thankful, thankful to it, so I'd probably say him.
+- That's a good one.
+One of the topics that's been debated,
+I think recently in the Twitter sphere and elsewhere,
+should designers know how to code?
+And I think you're well positioned to answer this,
+because I almost think of you as an artist first and foremost.
+You know, crafting exactly the right experience
+for the person on the receiving end of the product.
+And so I think about you as coming toward engineering
+from very much a design and product lens,
+should designers know how to code?
+- I think the biggest change happening in product design,
+which as a field is radically changing,
+is writing.
+I think that's the biggest thing.
+I think that UX content,
+there's a big debate about whether that's a thing.
+Started to build these teams at Slack,
+HubSpot, other places started building out these writer teams
+to get all of the brand and tone and voice
+and button text and everything right.
+That's correct in that that is a real discipline.
+However, I think that is a major part
+of the product designer's job going forward.
+Because, you know, 10 years ago,
+it was asking the designer in Sketch,
+probably back in the day or Photoshop or whatever,
+to design a date picker.
+No one's going to design a date picker right now, right?
+You're going to use a component library,
+have a design system.
+That's a solved problem.
+Or like, you shouldn't be doing software
+if you're not doing that.
+And so it frees up a lot of career bandwidth for designers.
+And I think they're going to need to adapt.
+So I think they're going to need to get really good
+content, you know, micro copy, flows, you know,
+moving over time.
+That's a weak spot for design, I think, traditionally.
+It's kind of throughout time.
+And this is the consumer folks who are really good at this.
+So I think they're going to have to get really good
+at interaction design as well.
+In terms of coding, I don't know.
+I mean, I don't know if anybody's going to have to code.
+Outside of the world of AI,
+what is the most extraordinary product
+you have ever encountered?
+- The most extraordinary product, honestly,
+is the August stove.
+- Really?
+- Absolutely. - Tell us more.
+- I mean, look, it may be a good example
+because it's like completely functionless.
+It is just a hunk of cast iron with a pilot light
+that keeps it hot.
+That's it, there are like no moving parts at all in it.
+But what it does, the benefit to the user
+is create a sense of hearth in the home.
+And it has little features to it
+where if you have wet snow boots
+from your kids playing in puddles or whatever,
+it's meant for you to put those on the top of the stove.
+There's a place for that.
+It heats the home, you know?
+This idea that everybody kind of,
+however you lay your house out,
+everybody gravitates toward the kitchen.
+Well, the Aga is always on and it's hot, you know?
+And it's immediately accessible.
+It has four ovens that are always on.
+And so you think about things differently
+and you cook oatmeal over 24 hours
+and you cook a chicken over 16 hours
+and you make a sandwich and then you melt the cheese on it
+for a guest, you know?
+It's really kind of fun and cool.
+It's extremely safe for kids.
+So my kids are actually killer cooks
+and can make themselves, you know, whole meals,
+they cook meals for their grandparents and stuff
+at 10, 11 years old.
+So, and I like the example 'cause there's nothing to it.
+- Yeah. - Yeah.
+- Very cool.
+All right, last question.
+It's a Mount Rushmore question
+and you can take it in one of two ways.
+Number one, who is on your Mount Rushmore
+of product people or number two,
+who is on your Mount Rushmore of founders?
+- It's a tough one 'cause you have to walk the line
+of sycophancy, you know?
+(laughs)
+And I think for me, the answer is gonna be the same.
+You know, the founders that are on any kind
+of Mount Rushmore and I'm not really in any place
+to make a Mount Rushmore at this point at all
+but certainly Steve Jobs.
+- Yep.
+- He's complicated.
+I have an opportunity through a mutual friend of ours
+to be learning more about him
+and kind of how he interacted
+and what the experience was like for those around him.
+It's not a leadership style, I really wanna emulate
+but you know, the results pretty impressive
+and the engagement I think is really impressive.
+The trust of knowing what's best for the user.
+It's a little over my line.
+I still need to talk to people to figure out
+whether they like something or not
+but Steve Jobs is up there.
+I'd put Paul English up there
+for similar reasons.
+I would, I would because I think Paul,
+Boston guy, which is cool.
+You know, Paul left a long shadow.
+I'm not friends with Paul or anything.
+I've met him, I've hung out with him.
+He probably has no idea who I am
+but he will after he listens to it.
+- Yeah, well, I hope so.
+Hey, Paul, I hear you're a great dude.
+The one time we hung out, you said some really brilliant stuff.
+- The recruiting and the customer focus.
+I think that left a really long shadow.
+I hope he knows that.
+The story of the really loud annoying phone
+in the middle of the room.
+I mean, our culture is some version of that.
+It's really just the extension down from that
+and the diaspora of that kind of value system.
+So there's that.
+And then also the way he recruited
+and the way he talks about recruiting,
+I think is really understudied.
+You know, the idea that if you have the candidate,
+you have the right person.
+That's your only job.
+And you need to be in person with them
+with an offer letter within hours, you know, not weeks.
+And I think that's another advantage
+that we can have culturally over larger companies is,
+you know, moving very quickly with amazing people.
+So he's up there.
+And then I'll throw in Rick Rubin.
+I mean, he's probably founder of,
+he probably has some production company
+or something, I don't know.
+But he's a really interesting guy
+because he's a Steve Jobs
+with a completely different vibe
+in a completely different level of humility,
+which I think is interesting.
+So Rick Rubin has produced, you know,
+probably half the records we grew up liking and listening to.
+And, you know, and he's in the studio
+to the question about designers knowing how to code.
+I mean, this is the greatest music producer,
+maybe of all time.
+It has no idea what any of the knobs or dials do.
+Doesn't know a single chord on the piano
+and trusts himself in his taste completely and totally.
+There are no focus groups or anything like that.
+So I'd put him up there.
+I'd put those three guys up there.
+We have room for one more.
+Sarah Blakely.
+Really?
+Yeah.
+100%.
+I was just telling my daughter about this
+'cause my 10 year old daughter,
+she was dropping some science on me, man.
+She was saying, you know, what if we took maps
+in that Claude thing you were showing me?
+And, you know, and she starts riffing on it.
+I almost texted you.
+So I was like, you should get in on this one early.
+But I was telling her about Sarah Blakely and the idea,
+I mean, very humble, very approachable,
+really inbound kind of leader
+with a really positive message.
+But she just did it, man.
+She just did it and she had a belief
+that women's undergarments
+should not be designed by men who knew nothing about it.
+Like, dad is, okay, great.
+You are a billionaire, you know?
+And she's done a lot of good with it.
+So I put her up there as well.
+That's right, there are four on the knot right up there.
+She's up there too.
+Awesome.
+Christopher, thank you for coming on the show.
+All right, thanks for having me.
+Good to see you.
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(upbeat music)
+(gentle music)
+

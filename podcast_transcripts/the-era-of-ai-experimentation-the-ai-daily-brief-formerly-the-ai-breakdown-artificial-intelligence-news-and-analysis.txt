@@ -1,0 +1,391 @@
+--- METADATA START ---
+Show: N/A
+Episode: The Era of AI Experimentation … - The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Host: Unknown
+GUESTS: None
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/the-era-of-ai-experimentation-is-over/id1680633614?i=1000706745735
+--- METADATA END ---
+
+ Today on the AI Daily Brief, why the era of AI experimentation is over?
+ Before then in the headlines, do we have a new king of AI coding?
+ The AI Daily Brief is a daily podcast and video about the most important news and discussions
+ in AI.
+ Thanks to today's sponsors KPMG, Blitzy, and Super Intelligent, and to get an ad-free
+ version of the show, go to patreon.com/ai-dailybrief.
+ Welcome back to the AI Daily Brief Headlines Edition, all the daily AI news you need
+ in around 5 minutes.
+ Google has just announced a new version of its Gemini 2.5 Pro they're calling it the
+ I/O edition, and it is specifically aimed at coding and apparently does so very well.
+ So is Google's new update to Gemini 2.5 Pro, the top model for coding assistance?
+ Well, let's discuss it.
+ Since Curseur picked up steam late last year, there's been a pretty strong consensus that
+ anthropics cloud models are the ones to use for AI coding.
+ There was a brief scuffle at the end of last year with the release of O1, but anthropics
+ quickly answered with cloud 3.7s on it, which, for many, remains the standard.
+ Google's new Gemini 2.5 Pro I/O edition does seem to upset the leaderboard on the benchmarks
+ at least suggesting its head and shoulders above the competition.
+ Google DeepMind CEO Demisysabas announced the launch writing, "very excited to share
+ the best coding model we've ever built.
+ Today, we're launching Gemini 2.5 Pro Preview I/O edition with massively improved coding
+ capabilities.
+ It goes on and says, 'it's especially good at building interactive web apps, and then
+ shares a demo of an app that gets prototyped just from a simple line drawing.
+ Now the model is now ranked #1 on Ela Marina and Coding, as well as #1 on WebDev Arena.
+ Both of those benchmarks are subjective, with users selecting their favorite between
+ two competing outputs from rival models.
+ There's been a lot of criticism recently around how valid this method is for chat
+ bot outputs, with humans being easy to sway with things like emoji use and verbosity,
+ but it does feel like these could be a better strategy for rating the outputs from coding
+ assistance, with there being less of those sort of simple triggers shaping which output
+ users prefer.
+ What's more, the numbers are not particularly close.
+ Going from ELO scores on WebDev Arena, there's as much daylight between these two models
+ as there was between 3.7 Sonnet and the initial release of Gemini 2.5 Pro.
+ On Ela Marina, the model achieved the #1 ranking across all categories which is extremely
+ unusual.
+ The model is proprietary, so users can only access it through Google's Web Services.
+ Cost remains the same as the older version which is around 2/3 of the price of 3.7 Sonnet.
+ Users can get free access through the Gemini app if they enable Canvas 2, but you'll
+ need to pay if you want to plug the API into your IDE.
+ Now early reviews are very positive.
+ Google's Logan Kilpatrick shared a quote from Silas Elberti, a member of the founding
+ team of Cognition who said, "The updated Gemini 2.5 Pro achieves leading performance
+ on our junior Dev Evals.
+ It was the first ever model that solved one of our Evals involving a larger refractor
+ of a request routing back-end.
+ It felt more like a senior developer because it was able to make correct judgment calls
+ and choose good abstractions."
+ Ramesh R, Vibe-coded a candy-crush clone writing, "One-shot coding with sound effects.
+ The casual game industry is dead.
+ Took it less than a minute."
+ Pietro Chirano, the CEO of EverArt, coded up a 3D simulation of a guerrilla fighting
+ 100 men, latching onto a current meme.
+ In Hyperbolic Labs, CTO Yuchin Jin wrote, "This model is now my top coding model.
+ It beats O3 and Cloud 3.7 sawn it on several of my hard prompts."
+ Google, call it Gemini 3.
+ Ethan Molik did a practical test of the model's ultra long context window commenting,
+ pretty awesome results from the new version of Gemini 2.5.
+ I changed one line of War and Peace, inserting a sentence into Book 14, Chapter 10 about
+ Half-Where Through, where Princess Mary spoke to Crabman, the superhero.
+ Gemini 2.5 consistently found this reference among 860,000 tokens.
+ He did notes in weird quirks of prompting, adding, "If you don't tell it to read everything,
+ sometimes it is lazy, though, and doesn't go through the text."
+ AI is weird.
+ Now, not everyone is universally on the I/O train, software engineer Dylan Norman
+ Dinn writes, "I'm underwhelmed by the latest Gemini 2.5 Pro update, seems significantly
+ worse as a pair program in the previous version.
+ Same thing happened when we went from sawn at 3.5 to sawn at 3.7.
+ The technical ability of the AI may have improved, but the user experience suffered.
+ Maybe more damning is this tweet from Signal who writes, "Gemini is technically great,
+ but feels like talking to a corporate help desk that's read too many HR manuals.
+ No edge, no warmth, no subtext.
+ Lack of custom instructions doesn't help either.
+ For coding via third-party apps it's fine, but for anything that requires vibe, intuition,
+ or taste, I'll take clawed or GPT every time."
+ Still, if for some the vibes are off overall it seems like a great update, and this version
+ of course comes out ahead of Google's I/O conference which is kicking off in two weeks' time.
+ I'm always excited to see what Google shares at that event, and this is nothing but increase
+ that excitement.
+ Next up, open-source platform Huggingface has released a free computer use agent.
+ Called Open Computer Agent, the free tool is similar to OpenAI's operator and its
+ features.
+ It can access the web and tackle basic agent tasks.
+ However, at least currently, its performance leaves a lot to be desired.
+ TechCrunch reports that it got tripped on attempting to book flights and is generally
+ pretty sluggish.
+ Now, Huggingface, for their part, said that the goal wasn't to build the state-of-the-art
+ computer use agent, but rather to demonstrate that open-source models are becoming more
+ capable and are cheap to use on cloud infrastructure.
+ One of the big blockers during this early stage of agent deployment has been that the
+ cost can be unworkable for anything complex.
+ I'm Eric Ruscher from Huggingface wrote, "As vision models become more capable they
+ become able to power complex agentic workflows."
+ And ultimately it feels more like this is a proof of concept, and a demonstration
+ of the advancements in open-source agents than anything else.
+ Lasted today, an area of AI that we haven't checked in on for a while, AI Startup Light
+ Tricks has released a powerful new video model that can run on consumer hardware.
+ The new model called LTX Video is a 13 billion perimeter video model, which theoretically
+ operates 30 times faster than comparable models on consumer-grade GPUs.
+ That's a big enough jump to take video generation from impossible to functional
+ for workstation use.
+ It also means that cost has collapsed, with Light Tricks claiming roughly a 10x cost decrease
+ against leading competitors.
+ CEO Zev Farben writes, "The introduction of our 13 billion perimeter LTX Video Model
+ marks a pivotal moment in AI video generation with the ability to generate fast, high-quality
+ videos on consumer GPUs.
+ Our users can now create content with more consistency, better quality, and tighter
+ control."
+ The trick appears to be a feature called multi-scale rendering.
+ The model generates video in progressive layers of detail, massively increasing
+ efficiency.
+ As I explained, it allows the model to generate details gradually.
+ You're starting on the course-grade, getting a rough approximation of the scene, of the
+ motion, of the objects moving, et cetera.
+ And then the scene is kind of divided into tiles, and every tile is filled with progressively
+ more details.
+ This method allows the model to fit within the memory limits of consumer GPUs, while
+ rival models from Luma and Runway typically need beefier enterprise-grade hosted hardware.
+ Farben says that the memory limit restricts tile size, not the overall resolution as
+ it would with other models.
+ Quality seems up to scratch from the available samples.
+ Although at this point we're basically past the point where there's a big gap in quality
+ on video models, and many of the selling points have moved to cost and availability.
+ The model is now fully available as open-source so you can try it out on hugging face, or
+ take it for a spin at home if you have a reasonably powerful GPU.
+ For now though, that is going to do it for today's AI Daily Brief Headlines edition.
+ Next up, the main episode.
+ Today's episode is brought to you by KPMG.
+ In today's fiercely competitive market, unlocking AI's potential could help give
+ you a competitive edge, faster growth, and drive new value.
+ But here's the key.
+ You don't need an AI strategy.
+ You need to embed AI into your overall business strategy to truly power it up.
+ KPMG can show you how to integrate AI and AI agents into your business strategy in
+ a way that truly works and is built on trusted AI principles and platforms.
+ Check out real stories from KPMG to hear how AI is driving success with its clients
+ at www.kpmg.us/ai again, that's www.kpmg.us/ai
+ Today's episode is brought to you by Blitzy, the enterprise autonomous software development
+ platform with infinite code context, which if you don't know exactly what that means
+ yet, do not worry we're going to explain and it's awesome.
+ So Blitzy is used alongside your favorite code and co-pilot as your batch software
+ development platform for the enterprise, and it's meant for those who are seeking
+ dramatic development acceleration on large-scale code bases.
+ Traditional co-pilots help developers with line-by-line completions and snippets,
+ but Blitzy works ahead of the IDE.
+ First documenting your entire code base, then deploying more than 3,000 coordinated
+ AI agents working in parallel to batch build millions of lines of high-quality code
+ for large-scale software projects.
+ So then, whether it's code base refactors, modernizations, or bulk development of
+ your product roadmap, the whole idea of Blitzy is to provide enterprise's dramatic
+ velocity improvement.
+ To put it in simpler terms, for every line of code eventually provided to the human
+ engineering team, Blitzy will have written it hundreds of times, validating the output
+ with different agents to get the highest quality code to the enterprise in batch.
+ Projects then that would normally require dozens of developers working for months can
+ now be completed with a fraction of the team in weeks, empowering organizations to
+ dramatically shorten development cycles and bring products to market faster than ever.
+ If your enterprise is looking to accelerate software development, whether it's large-scale
+ modernization, refactoring, or just increasing the rate of your STLC, contact Blitzy at
+ Blitzy.com, that's BLITZY.com, to book a custom demo, or just press get started
+ and start using the product right away.
+ Today's episode is brought to you by Super Intelligent, and more specifically, our agent,
+ Readiness Audits.
+ Every company right now is in the midst of a discovery process trying to figure out
+ how autonomous agents are going to change both how they work internally, as well as
+ the way they service their customers, and even what products they actually offer.
+ Agent Readiness Audits are the fastest, most efficient way to find out where and how agents
+ can have the biggest impact on your business.
+ We deploy a custom-designed voice agent to interview teams and leaders, run that through
+ a hybrid human AI analysis process to produce an agent reading a score, plus a set of
+ insights and actionable recommendations for both what agent use cases are likely
+ to drive the most value, and what you need to do internally to be most ready to seize
+ those opportunities.
+ Under the audit, there are a variety of next steps.
+ We can dive deep and provide an action planning report on one or more of the specific use
+ cases.
+ We also provide leadership accountability, coaching, to help support internal change
+ management, or you can turn your audits into RFPs on our marketplace.
+ So go to bsuper.ai or email us agents@bsuper.ai to learn more about Agent Readiness Audits.
+ Welcome back to the AI Daily Brief.
+ Today we have an interesting show for you.
+ I'm going to try to take a couple of different news items from the last week or so and bring
+ them together to articulate or argue for a trend that I'm seeing.
+ And that is, in short, the shift in mentality, particularly among enterprises and businesses
+ when it comes to AI.
+ Briefly put, I think that we are moving out of a period where gen AI feels like an
+ exciting and important yet experimental and unproven and still unknown force into
+ something where it is inevitable, essential, and omnipresent.
+ And my argument is that this is a sense that's more broadly held.
+ This isn't just me arguing something.
+ It's something that I think you're seeing in the ether.
+ The thing that kicked this off for me and why I decided to talk about this today was
+ a post from IBM's VP of product for AI platform, Armand Ruiz, who writes, "The
+ era of AI experimentation is over.
+ It's time to operationalize AI agents in the enterprise."
+ Now the specific genesis for this is that IBM is now underway with its Think2025 conference.
+ And this is very much the theme.
+ IBM rolled out a full stack, agent, offering, including pre-built agents for HR sales
+ and procurement platforms for agent orchestration, observability, and governance.
+ The company also announced new partnerships with Cerribris and Oracle to make their
+ AI available on those platforms.
+ And while all that's awesome and great and you should check out what IBM has to
+ offer, that's not really the point of the show.
+ The point is that they are now arguing in explicit and clear terms that enterprises
+ should be past the point of tinkering with projects, throwing small teams at pilots,
+ and instead should be thinking about big structural changes to how they operate.
+ Now interestingly, IBM is also putting their money where their mouth is.
+ They are dogfooding this in a direct way.
+ CEO Arvind Krishna revealed that the company has used AI agents to replace a couple
+ of hundred HR workers entirely.
+ They're also making heavy use of the technology across their entire workforce.
+ Now Krishna emphasized that the adoption of agents so far has been additive rather
+ than viewed as a cost-cutting measure.
+ He said, "While we've done a huge amount of work inside IBM leveraging AI and automation
+ on certain enterprise workflows, our total employment has actually gone up.
+ Because what it does is it gives you more investment to put into other areas."
+ This touches on a theme that I talk about frequently, which is that the fact that
+ AI is coming for basically all of our jobs does not a priority mean that we're not
+ going to have jobs.
+ There is a decision that enterprises and organizations get to make on how to reinvest
+ the savings that they get from AI-related gains.
+ Some will, yes, just hack headcount.
+ It is inevitable, and that's going to be a part of what we discussed later.
+ But others are going to make a bet that the better play long-term is to reinvest
+ those savings into better products, better services, better support, basically all
+ the things that make them better able to compete and win new business.
+ So for example, in IBM's case, they reallocated resources from HR into hiring more sales
+ people and programmers.
+ Krishna commented that for them, these are critical thinking domains where people need
+ to do things that face up or against other humans as opposed to just doing rote process
+ work.
+ Krishna also highlighted just how fast the entire space is moving.
+ He commented, "Over the next few years, we expect there will be over a billion new
+ applications constructed using generative AI.
+ AI is one of the unique technologies that can hit at the intersection of productivity,
+ cost savings, and revenue scaling."
+ Effectively, he's arguing that there is essentially no wrong way to deploy AI at
+ the moment, whether your intent is to cut costs, push productivity, design new paths
+ to growth.
+ The only so-called wrong way to do AI is to get stuck in infinite pilots, rather
+ than really thinking at-scale operationalized terms.
+ Fenderbeat writes, "At the heart of IBM's announcement is a recognition that organizations
+ are shifting from isolated AI experiments to coordinated deployment strategies that
+ require enterprise-grade capabilities."
+ Vertica Gunnar, the general manager for data and AI at IBM, said we're trying to bridge
+ the gap from where we are today, which is thousands of experiments, into enterprise-grade
+ deployments, which require the same kind of security, governance, and standards that
+ we demand on mission-critical applications.
+ Gunnar believes that the next big challenge is moving from a place where you have a
+ handful of agents doing isolated tasks to operationalizing multi-agent systems that
+ can generate serious ROI.
+ He said we really believe that we're entering into an era of systems of true intelligence.
+ And yet already, AI is moving the needle.
+ IBM say that 94% of HR requests at the company are now handled by their agents, and they
+ also say that they've reduced procurement times by 70% using agentic workflows.
+ Now, okay, again, this was presented in the context of a big sales conference more
+ or less, and so one could be forgiven for being a little bit skeptical, right?
+ It is clearly in IBM's interest to have everyone believe that the era of AI experimentation
+ is over.
+ But there is plenty of other evidence of looking around that this sentiment is shared
+ more broadly.
+ We've covered extensively the results from the recent KPMG Q1 AI Pulse survey.
+ That survey, which focuses on companies of a billion dollars in revenue or more, found
+ that more than three quarters of organizations were piloting or deploying agents currently
+ with another 25% exploring the possibility.
+ But even more than that, there's been a total shift in the ubiquity and normalness
+ of individual employees using these tools as well.
+ Daily productivity tool use, in other words, people just using chat, GBT, or co-pilot
+ or whatever, is up from 22% last quarter to 58% this quarter.
+ Every other metric that they surveyed around this sort of regular usage was up as well.
+ The deployment of agents is also clearly starting to pick up.
+ 61% of companies said they now have call center agents, 68% said they have a customer
+ facing AI agent, and 66% said they have agents performing administrative tasks
+ like scheduling.
+ Those figures were all around 20% in Q4.
+ So again, big jumps.
+ Now let's go to market logic.
+ You might remember about a year ago, we had this barrage of articles about how maybe
+ AI was kind of a bubble.
+ This was probably best captured by the Goldman Sachs piece.
+ Gen AI, too much spend, too little benefit.
+ Meanwhile, fast forward a year, and Goldman analysts are looking at big tech earnings,
+ where AI revenue lines of business are all growing, and basically arguing that right
+ now is a buy the dip opportunity because of the pricing of AI stocks.
+ And then there's the shift in tonality around jobs.
+ One of my great frustrations, as many of you well know, has been the comfortable lives
+ we tell ourselves.
+ These are best expressed in phrases like AI won't take your job, a person using AI
+ will take your job.
+ And while yes, it is the case that everyone who performs well in the AI and agent economy
+ will be fully versed in using AI, I believe that this is to use a word like the kids
+ use cope.
+ I think that AI is coming for a huge portion of what we do.
+ The question is how fast and how well we redesign what we do to take advantage of
+ what AI offers, rather than clinging to these set of tasks that used to compromise
+ our jobs, increasingly, you are seeing this language in this recognition actually come
+ to market over the last month.
+ We had the CEO of Shopify write a long letter to his team talking about the AI revolution
+ and specifically noting that teams will have to show that they tried to use AI and couldn't
+ successfully do it before they get more budget for headcount.
+ Duolingo followed just last week, basically explicitly saying that they are going to
+ be moving from contractor generated content to AI generated content.
+ Now it wasn't like this was the first move for Duolingo here.
+ The company had cut 10% of its contractor workforce back at the end of 2023.
+ And there was reportedly another round of cuts in October of 2024, with both translators
+ and writers being replaced with AI.
+ But then we got maybe the most pointed expression of this from the CEO of Fiver.
+ Fivercy EO Mika Coffin wrote, "I've always believed in radical candor and despise those
+ who sugarcoat reality to avoid stating the unpleasant truth.
+ The very basis for radical candor is care.
+ You care enough about your friends and colleagues to tell the truth, because you want them
+ to be able to understand it, grow, and succeed."
+ So, here is the unpleasant truth.
+ AI is coming for your jobs.
+ Heck, it's coming for my job too.
+ This is a wake-up call.
+ It does not matter if you're a programmer, designer, product manager, data scientist,
+ lawyer, customer support rep, salesperson, or a finance person, AI is coming for you.
+ You must understand that what was once considered easy tasks will no longer exist.
+ What was considered hard tasks will be the new easy, and what was considered impossible
+ tasks will be the new hard.
+ If you do not become an exceptional talent at what you do, a master, you will face
+ the need for a career change in a matter of months.
+ I'm not trying to scare you.
+ I'm not talking about your job at Fiver.
+ I'm talking about your ability to stay in your profession in the industry.
+ Are we all doomed?
+ Not all of us, but those who will not wake up and understand the new reality fast,
+ are unfortunately doomed.
+ Now he then goes into a set of "suggestions" for what people can do, and interestingly,
+ in this case, he's not announcing some new policies alongside it.
+ He concludes his note, "If you don't like what I wrote, if you think I'm full
+ of poop or just an a-hole who's trying to scare you, be my guest in disregard
+ this message.
+ I love all of you and wish you nothing but good things, but I honestly don't think
+ that a promising professional future awaits you if you disregard reality.
+ If on the other hand you understand deep inside that I'm right and want all of
+ us to be on the winning side of history, join me in a conversation about where we
+ go from here as a company and as individual professionals.
+ We have a magnificent company and a bright future ahead of us.
+ We just need to wake up and understand that it won't be pretty or easy.
+ It will be hard and demanding but damn well worth it.
+ This message is food for thought.
+ I've asked Shelley to free up time on my calendar in the next few weeks so that
+ those of you who wish to sit with me and discuss our future can do so.
+ Now this is certainly the most assertive language that we've seen around this,
+ but I think that it reflects a lot of what leaders in companies are thinking.
+ So what does this all mean?
+ Well the good news is that there's a difference between organizations waking
+ up to a mindset shift.
+ And no longer questioning whether this is the future, but now actively and assertively
+ moving towards this future, and on the other hand actually being in the future.
+ Yes, that growth line for example in the KPMG survey is super strong and clear.
+ But 58% of people using productivity tools on a daily basis means that still 42% aren't.
+ There is a window.
+ There is a moment in time and this is what the CEO of Fiverr was articulating as well,
+ where there is an opportunity to start to adapt.
+ For me personally I find it quite encouraging that we're not having the conversation that
+ tiptoes into this future, but that is confronting it head on.
+ I think the only way that we assertively exert our control and our agency over the
+ shape of this future is to recognize it.
+ And we do have agency here.
+ What organizations don't get to decide is how the technology is going to develop and
+ whether it's going to change the shape of what they do and how they do it.
+ What they do get to decide is how proactively they transform themselves for that new future.
+ What they do get to decide is what their position vis-a-vis their own employees
+ is going to be.
+ What they do get to decide is how they're going to reinvest the inevitable savings
+ that come from robots doing a bunch of the jobs that people do now.
+ And none of those things leads to the dystopian nightmare scenarios that people
+ so often inevitably assume are true.
+ I continue to be incredibly bullish and optimistic about the future where we are all
+ super powered and super intelligent.
+ But the TLDR is that I agree with our mantra here.
+ The era of AI experimentation, at least from a mindset perspective and viewing it
+ simply as experimentation is over.
+ So friends, let's dive in all the way.
+ For now, that's going to do it for today's AI Daily Brief.
+ Appreciate you listening or watching, as always, and until next time, peace.
+ [MUSIC]
+ (upbeat music)

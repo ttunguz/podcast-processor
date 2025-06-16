@@ -1,0 +1,1809 @@
+--- METADATA START ---
+Show: Unchained
+Episode: Does High REV Signal a Blockch…
+Host: Laura Shin
+GUESTS: Tom Dunlevy, Austin Federa 
+Guests: Tom Dunlevy, Austin Federa
+Source URL: https://podcasts.apple.com/us/podcast/does-high-rev-signal-a-blockchains-strength-or-its/id1123922160?i=1000710129114
+--- METADATA END ---
+
+1
+So what are we arguing here?
+2
+That fees are going to go to zero and REV is a useless metric.
+3
+I don't think REV is a useless metric.
+4
+I also don't think it's the only thing you should value a network on, of course, right?
+5
+But like, look, if all I tell you about a country is you can be born in a high GDP country or a low GDP country, which one would you pick?
+6
+Generally speaking, you want to be in the place where there's more economic activity.
+7
+And that's why REV is important.
+8
+If you're thinking about like a discounted cash flow model or revenue model, you are never going to value these assets the way that I think this industry or folks in this industry think they should be valued.
+9
+Because I believe that these fees are across the board going to zero.
+10
+Hi, everyone.
+11
+Welcome to Unchained, your no-hype resource for all things crypto.
+12
+I'm your host, Laura Shin.
+13
+Are you leaving comments on social?
+14
+We read every one, and some of them end up on the show.
+15
+Today, we have some comments responding to my recent interview with NYU professor Austin Campbell on the stablecoin bill's ban on yields-bearing stable coins.
+16
+On X, AAMA in turn said, Stablecoins should innovate for user benefits, not just banks.
+17
+Also in X, Zero X RWA said, If the Senate allows yield-bearing stablecoins, credit costs in the entire USA economy will shoot up.
+18
+Not a great economic policy when T-bill yield is already flirting with 5% barrier.
+19
+To hear your comment on a future show, write a review of the podcast overall or leave a comment on our video on YouTube, Farcaster, or X.
+20
+This is the May 27th, 2025 episode of Unchained.
+21
+Crypto moves fast.
+22
+It's why Bitwise launched the weekly CIO memo, a jargon-free summary of what's moving crypto markets written by one of the best in business, CIO Matt Hogan.
+23
+Get up to speed in five minutes or less.
+24
+Check it out at bitwiseinvestments.com/slash CIO memo.
+25
+Carefully consider the extreme risks associated with crypto before.
+26
+Here to discuss are Tom Dunlevy, head of ventures at Various Capital, and Austin Federa, co-founder of DoubleZero.
+27
+Welcome, Tom and Austin.
+28
+Thanks for having us.
+29
+Hey, happy Memorial Day.
+30
+This podcast was sparked by a debate that Tom and Austin had on X, and they tagged Haseib Qureshi of Dragonfly Capital and the shopping block to moderate.
+31
+And we initially were going to co-moderate.
+32
+However, Hasib claimed that he was sick and asked if he could bail.
+33
+I actually also developed a gigantic headache after we had that conversation, so ended up sleeping a fair amount during the time that I was supposed to have been writing the script.
+34
+So we'll see how well I managed to do.
+35
+And Haseb also sent questions.
+36
+So, okay, before we dive into this debate, let's just define what REV or REV is.
+37
+Tom, do you want to start?
+38
+Sure.
+39
+For me, and I think for Blockworks, which really defines REV as the seminal metric that they like and others, I think, should use and have a lot of others have used, is MEV plus transaction fees on these networks, which primarily today is the execution fees they have on top of L1s and L2s.
+40
+Yeah, first let me start with the disclaimer that Dragonfly co-led are round.
+41
+So Hasib's questions, if they seem biased, you know, you can blame him for that.
+42
+And then I would say for Rev, like, it is an evolving metric, I will say.
+43
+We don't have great economic metrics in the macro standard world, let alone in the crypto world.
+44
+But yeah, it is a combination of MEV, it is a combination of transaction fees, priority fees, other protocol-native incentives on a protocol, or functionally protocol-native incentives like MEV systems.
+45
+And then, you know, depending on some metrics, you can include some form of app revenue on that as well.
+46
+But the standard basis usually doesn't include that.
+47
+Okay, so I'm actually going to reveal at this point that both Hasib and I, when we were kind of chatting about the questions, we were trying to look at everything, but actually, if anything, the bias was more the other way where we kind of landed on hmm, like it doesn't feel like it's stacking up that Rev is that important, but we'll get into all that.
+48
+So let's just actually talk about one other thing for a moment in terms of this definition or what's included.
+49
+And this is a question that comes from Hasib.
+50
+He said, why do we think it's appropriate to include out of protocol payments such as Jeeto tips if those payments aren't getting internalized by all holders of the native token?
+51
+Well, I guess let me start off with this.
+52
+Protocolization is just a fancy term for nationalizing stuff.
+53
+Ethereum has done this a lot.
+54
+There's stuff that starts out not partisan's core protocol spec and then it sort of gets nationalized, right?
+55
+The same way that the Mexican government might take over the railways because it's very important.
+56
+And we don't really do that in the United States.
+57
+And so, but we have a lot of things that are integral to the functioning of, say, the Department of Defense that are not part of the U.S.
+58
+government in the explicit sense.
+59
+And so I do think there's a little bit of wiggle room for things.
+60
+I mean, I think 85% of Solana's stake runs JETO at this point.
+61
+So, it is not a permission system or a protected system.
+62
+It is a system that any staker could participate in simply by choosing a validator running the software.
+63
+I think it's very different than including something like trading fees on Uniswap or pump.fun revenue or something like that, because those are fundamentally, they're not exactly permission environments, but they're much more restricted and they have kind of more verticalized benefits.
+64
+Tom, do you have any comment on that or further question?
+65
+Yeah, so I think more broadly, the point here is that if you're not staking, you're not getting a lot of these fees, right?
+66
+So, 65% or so of Solana folks are staking on a much lower validator set than someone like Ethereum, who has roughly 30% stake.
+67
+Other networks have varying degrees.
+68
+But I think the first caveat in a lot of these cash flow metrics is it's only going to a small portion, and potentially for some of these networks, a larger portion, but still not the whole portion of the network, which then does not have direct value accrual to the entire base of the asset, whether it be Ether, Soul, or whoever.
+69
+I mean, you could expand that out in a lot of different ways, right?
+70
+Like that in that method, we maybe shouldn't include staking.
+71
+We shouldn't include inflation as a cost, right?
+72
+Because that's only going to a certain percentage of holders, in a sense.
+73
+So, I think we have to kind of look at like opportunity and availability, right?
+74
+Like, you are like, the treasury rate is still meaningful in the United States, even though not everyone has exposure to treasury to get yield outside of staking and outside of exposure to these core protocol or almost core protocol systems.
+75
+Like, if you can get 14% on a lending pool, that's going to beat MEV and transaction fees and staking rewards on Solana.
+76
+That doesn't necessarily mean that there's no benefit to the protocol from that, right?
+77
+So, if we were to take your analogy there with the U.S.
+78
+government, I would say you actually would have a direct tie, even if you don't own treasuries, because you own dollars, which are effectively yield-bearing treasuries, which is how I like to think of these things more broadly, is effectively as nation-states.
+79
+And these are the underlying currencies for the nation states, perhaps with some commodity-like qualities that these things depend on.
+80
+And the underlying value generated by these little nation states is the economic activity built through the users, the transaction volume, et cetera, and all of the future volumes and values that you think will come in the future, but not just some one individual level of cash flow today, right?
+81
+Like, if you were to look the U.S.
+82
+government cash flow today, that would be a very sad story, and you would not want to invest in the U.S.
+83
+government and buy treasuries or buy dollars.
+84
+So, you have to think about the confluence of the economic activity on these networks and what is going to be there in the future.
+85
+Yeah, I guess just one other thing, too, is like the way you talked about the staking example, you know, that is inflating the supply, which is, it's like it's affecting the overall token.
+86
+It's not just going to the validators in some kind of like, like it is affecting all users rather than.
+87
+The way you described that, it seemed like you were saying, like, you know, this is only affecting these people, whereas like the JITO tips is, that's not quite the same thing.
+88
+JITO tips affect everyone who is staking to a validator using JITO, which is the majority of like the 25%.
+89
+Yes.
+90
+So I think maybe this is like a good place to draw like some definitions, right?
+91
+Because, you know, if we're thinking about what affects supply, right, there's inflation and there's burn.
+92
+And those are the only two things that go into that, right?
+93
+And so there was a world back in, and I guess like lost tokens, right, in some ways, but like there was a world back in like, you know, two years ago or so where the burn with Ethereum exceeded the inflation rate, right?
+94
+And that had an effect globally on token holders.
+95
+And that was a, you know, a deflationary pressure.
+96
+Now that's no longer the case, right?
+97
+So if what we're really talking about there is like the only things that we can include in a metric is net net token issuance, whether positive or negative after burn or inflation is applied.
+98
+I mean, that's sort of one way to look at it, but I don't think that tells like a complete economic story because there's a lot of networks that have that dynamic, that have functionally zero economic activity taking place on them.
+99
+And if we're going to call those like an apples-to-apples comparison, I don't think that's a useful metric at that point.
+100
+So I don't really think the inflation rate matters a whole lot, to be honest, which is like a contrarian point of view.
+101
+I think between two and six, seven percent, whatever we land on is fine.
+102
+That's the denominator of these assets.
+103
+I mean, that's the inflation rate of most.
+104
+Like, yes, it'll it'll matter, but this year, these are like high-tech growth startups or countries, whatever you want to call them.
+105
+So, the very small inflation rate you're going to have in single digits is not meaningful in my mind.
+106
+What is meaningful is understanding like what we're evaluating them on at the top level, so like disaggregating what we mean by those fees that we got in briefly in the beginning.
+107
+So, this is the part where I start to like break down what the folks who are looking at long-term fees and discounting them today and saying, Great, like, these are going to be investable assets based on this, um, these principles.
+108
+So, if I just look at transaction fees, today, globally, we have 200 to 250 million daily active transaction fees occurring in equities.
+109
+If we're charging a penny on that, like you know, roughly so on is today, the goal I think is a tenth of a penny.
+110
+That's two to three million in revenue in the future.
+111
+Great.
+112
+Yeah, so we get to a billion dollars.
+113
+Very low, very low.
+114
+If we expand that to all transactions, global credit card transactions worldwide, this is my recent Capital One study.
+115
+We have 2 billion in terms of aggregate transaction volume.
+116
+That's 20 million days in fee and a day in fees at a penny.
+117
+Again, probably going to go lower if that's the goal.
+118
+That's only $7 billion annually in fees.
+119
+So, we add those two together, we do all of the world's equities, all of the world's credit card transactions, we get to something like $10 billion annually in transaction fees in terms of just execution and fees.
+120
+And I'll pause there, but we can go to the MEV fees too.
+121
+And if we're looking at the aggregate value of all L1s today, which is $700 billion or so, if you're looking at $10 billion in fees in the future, steady state for everything, and versus $700 billion in assets, you can see why the numbers are really hard to make sense at a 70X revenue multiple.
+122
+Sure, but that's actually not what the transaction fees and equities are.
+123
+If you're looking at the exchange-build fees, certainly, but there are so many forms of ancillary monetization that are effectively fees in equities, right?
+124
+You get into lit pools and dark pools and HFT firms with what they're doing with both market making and trading.
+125
+And then you get even more than there into the infrastructure side of the actual investments and advantages and capital that goes into things like microwave towers, shortwave, private fiber.
+126
+I know I've gotten pretty deep in that in the last few years.
+127
+But, you know, but when we look at these types of things, I think it's not exactly like on centralized trading venues, what we see every time trading fees are lowered, volume skyrockets, right?
+128
+These are sort of, this is the thing you see on CME or NYC when they drop the fees.
+129
+And what that does, that creates a lot of revenue, a huge amount of revenue through things like HFT firms that are now able to make trades that wouldn't be economically profitable before because of the trading fees.
+130
+And so we can look at that and say, are we, if what we're doing here is trying to put a value on how valuable is the New York Stock Exchange as a company, not as a trading venue, but as a company, sure.
+131
+I think that's a totally viable way to look at it, which is why to get back to this whole thing where people are like, Ether needs to be worth a trillion dollars to have $999 billion of assets on it.
+132
+I think that's totally wrong because that's not the way that any centralized venues work on this.
+133
+Okay.
+134
+We've kind of moved past a little bit of just the rev, but I think these things are very related.
+135
+I do.
+136
+So let's do this.
+137
+I do have one more question.
+138
+And then I want to get, we've already kind of moved into the debate portion, but I want to officially move into it.
+139
+So, and this goes to where you were headed because it's sort of like you know, one other thing here to define is just how do we appropriately apply this metric to Ethereum, which also has all these roll-ups.
+140
+So, you know, what do you guys think on that score?
+141
+I could start by saying I don't think any L2 should have tokens.
+142
+Everything should be settled in Ethereum, should be one base layer.
+143
+You're already paying all the call data fees in Ethereum.
+144
+Eventually, the sequencers are all centralized.
+145
+We haven't made people argue with me, but I don't think we've made real meaningful progress on that in a very long time.
+146
+And all these tokens are not worth anything.
+147
+But that's a contrary view.
+148
+So I don't know.
+149
+How's it going?
+150
+I'm actually 100% aligned with you on this.
+151
+Spicy view.
+152
+No, I'm perfectly aligned with you on this.
+153
+On Twitter, and people will be mad at me for something that you said.
+154
+But anyway.
+155
+Well, that's always the whole point of the chopping block, isn't it?
+156
+But I actually completely agree.
+157
+If you're not going to use it as a gas token and you're not going to have any meaningful form of governance that isn't controlled by one centralized entity by virtue of running one sequencer, I'm not really sure what any of these tokens are doing.
+158
+I mean, base has got a run rate of, what, about $750 million in Ether fees in the last 12 months.
+159
+Like, sure, it would be nice for OP holders if some of that got burned.
+160
+Burn runs 80% of the volume right now on Ethereum L2s.
+161
+Yeah.
+162
+To go back to your definitional question, Laura.
+163
+Sorry, just on this piece.
+164
+Like, I think if, for example, that would be a slightly different story, right?
+165
+And that's where I actually think, like, the question is kind of like, what can your average Joe do if they deploy the native asset of the token using like pretty bog standard methods in order to generate some form of yield, income, revenue, however the tax people want to define this stuff?
+166
+That for me is like the fundamental question.
+167
+And we can bring that lens to bear on Ethereum, Solana, XRP, pretty much anything out there.
+168
+Okay.
+169
+Okay.
+170
+One last question, though, and maybe this is more for Tom.
+171
+Like, because we are in this world where there's all these L2 tokens, like, how would you account for that?
+172
+I said we should retire them all and denominate a native-based asset.
+173
+I mean, that's like, again, super controversial.
+174
+But, like, what purpose of these things?
+175
+I don't want to go off on the tangent, but what purpose of these things served before governance votes are really minimal?
+176
+They're accruing revenue directly to a handful of individuals.
+177
+Like, they're not sharing that.
+178
+Like, I just, they're not preserving any of the decentralization qualities that tokens are actually built for.
+179
+And they're effectively 90% profit margin on Ethereum right now.
+180
+So, like, I don't get it personally.
+181
+And so, would you, so Max Resnick was on the show and said something like: if Ethereum were a company, then a CEO would come in and quote-unquote fire all the L2s.
+182
+So, like, now that they exist and many of them have tokens, like, what would you propose?
+183
+So, actually, we're already firing the L2s in a sense that we're moving towards base roll-ups on Ethereum, which is natively enshrined execution and sequencing on the base layer.
+184
+So, like, they're sort of firing L2s, but it's just kind of taking time.
+185
+So, I don't know what the role of the L2s is going to be once base sequencing comes in a year or two.
+186
+There's some social consensus, I guess, advantages in having those, but I would do what Coinbase does effectively.
+187
+Like, Coinbase does not have a token or base does not have a token.
+188
+We should retire all the other ones, move to sort of the base model.
+189
+And that would be my view.
+190
+Interesting.
+191
+Okay, okay.
+192
+So, now we've spent like 17 minutes on just the definitional part, so we have to get to the debate.
+193
+But why don't you just each kind of lay out your main argument?
+194
+So, I'll just harken back to the initial post that sparked this whole thing, which was Tom's tweet, in which he said, Any L1 fees are a meme and going to zero, in my honest opinion, REV or otherwise.
+195
+What matters is the amount of value you secure as a chain and the downstream economic security needed for the L1 asset to justify that security.
+196
+So, go ahead and elaborate on your view on this.
+197
+Yeah, so it goes back to a little bit what I said earlier.
+198
+So, if you're thinking about like a discounted cash flow model or revenue model, you are never going to value these assets the way that I think this industry or folks in this industry think they should be valued.
+199
+Because I believe that these fees are across the board going to zero for some of the execution fees that we talked about, even priority fees, even MEV.
+200
+And we can unpack why I think that going forward.
+201
+So, if you think these assets have value more broadly, you have to come up with new and interesting frameworks.
+202
+These are brand new assets.
+203
+I think we should come up with new frameworks.
+204
+We are.
+205
+So, the only metric that I could come up with with why these total assets should be valued commensurate to billions or trillions of US dollars is they have to be tied to the economic security of the underlying assets that actually transact and are built on that network.
+206
+So, today, if you're building on Ethereum, as Austin noted, you know, does it matter if Ethereum has a billion dollars of economic security or 100 million or a trillion?
+207
+Well, the answer would depend on what you're actually building and what it's worth and what it's worth to attack Ethereum, the chain that you're actually building on, and affect consensus to meaningfully disrupt your business.
+208
+Now, that's not going to be a trillion dollars if Ethereum is worth a trillion dollars because it doesn't cost that much to affect consensus.
+209
+And presumably, it's almost impossible to try to do that, right?
+210
+So, like, there's some middle ground there.
+211
+So, is it if Ethereum secures a trillion, maybe it has to be worth 300 billion or 200 billion?
+212
+It's a moving target.
+213
+But tying the underlying value of the assets to the economic security of the chain is a pretty reasonable and meaningful metric to me, and it's not something you can do in equity world.
+214
+If I, you know, you can't say, if I acquire more Apple stock, I'm going to take over the company and stop producing all iPhones and have no revenue going forward, right?
+215
+You would maybe go in and say, Okay, I'm going to change some things about Apple and I'm going to keep it important.
+216
+I could presumably take over one-third of SUI or something, stop finality, maybe even get to 51%, and disrupt some of the biggest individual assets on that chain.
+217
+So I think the analogies are very different than equities.
+218
+The security portion is something that's very different in blockchains than it is in our great world.
+219
+So, I mean, I think you're right that we need to think of these things in slightly different ways.
+220
+But to me, this kind of just feels a little bit like digital mercantilism.
+221
+Like, we just need more of the thing because that's where the economic security comes from.
+222
+The economic security of Ethereum does not come from the market cap, right?
+223
+Like, here's the question.
+224
+Is Ethereum less secure today than it was in November of 2021?
+225
+Certainly not, but does it have the same amount of economic activity it does then as well as lower market cap, right?
+226
+It has lower economic security.
+227
+So this is the challenge.
+228
+Like when Ether was down at, what, $1,800 a few months ago, it was not half as secure as it is today, right?
+229
+These arguments don't actually scale.
+230
+Because in some ways, if you look at the cost to attack Ethereum, it is almost certainly not acquiring Ether.
+231
+It is almost certainly hiring enough hackers to find bugs.
+232
+It is a nation-state-level attack, which is code-based, it's not economic-based, because the vulnerabilities in all of these systems are undiscovered code exploits, which even Bitcoin has.
+233
+They're still patching Bitcoin Core every once in a while.
+234
+And so the cost to attack Ethereum or Solana or SUI or pick your smart contract network isn't actually acquiring enough hash power or acquiring enough asset to actually attack the chain.
+235
+It's acquiring enough software engineers, right?
+236
+It's still very hard to attack it, but as we've seen, North Korea is not a rich country.
+237
+They do not have a lot of economic force to put to bear to effect change, and yet they're actually quite effective at compromising a whole series of different types of protocols.
+238
+Now, there's a whole other way to look at this.
+239
+Social engineering, so it's not quite just somehow the way it is.
+240
+It's the same thing.
+241
+Like, if you hack the New York Stock Exchange because I find a code exploit in the exchange and it managed to steal a bunch of stuff, or because I stole someone's password via social engineering attack, they're both attacks on that institution.
+242
+It doesn't matter if I cracked the quantum security code to launch the nukes or if I did it because I social engineered someone.
+243
+What matters is there's suddenly nukes flying.
+244
+You were talking about it's a very direct linear relationship between price and like what the underlying asset should be valued.
+245
+I'm saying that underlying asset relationship to the market cap is certainly evolving.
+246
+But if Ethereum was worth less than the total value of the assets secured, or better said, if it's lower than the biggest asset it actually secures, then there is incentive to actually attack the network to presumably get some level of value from that asset.
+247
+I'm not saying it's a one-for-one.
+248
+I'm not saying it's a one-for-10.
+249
+I'm just saying there's a serious, there is a causal relationship there.
+250
+Yeah, I don't think I would deny that there's some form of causal relationship there, but I don't think, I mean, for starters, there's not that much Ether actually on the market, right?
+251
+So if you think about cost to attack as like, what would it actually take to acquire this much?
+252
+In theory, I can spin up enough hash power to attack Bitcoin, and no one knows until the moment I flip the switch live, right?
+253
+In theory, I could have an entire Kazakhstan of miners sitting out there somewhere.
+254
+But that's not possible on proof-of-stake networks, right?
+255
+The act of acquiring enough Ether to attack Ethereum or acquiring enough Sol to attack Solana would send the asset price so astronomically high that effectively you gain more economic security in the process.
+256
+And the cost to actually attack Ether, if you wanted to run a, let's say, a 30% attack on it, would drive the price up to $20,000 a token because there just isn't that much supply.
+257
+Which is why it's not one-for-one.
+258
+If it was only one-for-one, but that doesn't mean that the security necessitates a price increase, right?
+259
+This is the piece that I think is like, as an investment thesis, to say if we are going to have, let's say, $10 trillion come onto Ethereum and trade on Ethereum, ergo, the price must go up.
+260
+That's where I start running into issues.
+261
+As a reason to say that Ether is going to go up in price because there's more assets on the chain now, right?
+262
+This is especially not true for real-world assets where the assets aren't really even on the chain, right?
+263
+If you add up the sum total of like everything that trades on Ethereum today, let's exclude the L2s.
+264
+Let's just look at the L1s.
+265
+I would be pretty sure it's more valuable than the market cap of Ethereum.
+266
+Yeah, I'm not sure if we would have to look that up.
+267
+But I think so.
+268
+So the way that you responded to Tom in that tweet was: you want the sum total of stuff built on the network to be worth more than the network.
+269
+You want iron beams to be worth more than the mines their raw materials come from.
+270
+So you're saying that, like, I guess what I'm a little bit confused by here is: so, Tom is saying that he thinks like the security needs to have some kind of relationship to the economic activity or the value of the assets on the chain.
+271
+And you're also saying that you want the same, and it should be more than the value of the network.
+272
+Yeah, I'm saying that if you need Ethereum, Ether, the sum total of the market cap of Ether, to be more valuable than the, let's just say, like the largest BlackRock fiddle fund deployment or the largest stablecoin deployment on the chain, if those necessitate a direct relationship there, right, and that you need Ether to be worth more or 50% as much, this is extremely capital inefficient, right?
+273
+If we required banks to have one-to-one deposits or even 50% deposits, right, this is the fractional reserve banking is what generates huge amounts of wealth and capital liquidity and movement in America.
+274
+And if we, and that's because fundamentally, like the security of the banking institution is not the one bank that you're banked at, right?
+275
+And so it's a sort of, again, like I hate these analogies because they all start to break down pretty quickly.
+276
+But if it would be unsafe, right, effectively what the argument is, it would be unsafe to deploy multiples of Ethereum's market cap on Ethereum today.
+277
+I don't think that is a message that is accurate nor one we should be touting because like that it just these systems don't work that way.
+278
+Their security doesn't come just from that.
+279
+Yeah, let's take the converse of that, right?
+280
+If you were to have Ethereum be much, much, much less than individual assets that are built on the chain, then the attack vector is there to presumably attack those assets.
+281
+So, I agree with you.
+282
+It's pretty capital inefficient for that to be one-to-one, one to ten, one to a hundred.
+283
+I don't know.
+284
+And that's where the complication comes in these valuation models.
+285
+There is a tie there.
+286
+I think we agree on that.
+287
+And then the additional incremental value that Ethereum has at the asset to get to its monetary value, we need to add those things on, right?
+288
+It's commodity value.
+289
+Great.
+290
+It's using settlement on the L1 layer.
+291
+Great.
+292
+There's probably some monetary premium for holding that.
+293
+That's a little fuzzy.
+294
+There's probably some consensus premium there too.
+295
+But that's where you start to get the incremental things that you should value these assets on.
+296
+It's not the only thing.
+297
+It's one of the things.
+298
+The thing that I'm saying is less valuable than all those other things is fees.
+299
+Because fees, as you noted earlier, are detrimental to network effects, which overall grow the things that I think matter, which are growing users, growing applications, growing value on the network.
+300
+And so, Tom, just to understand, you know, if, as you said in your tweet, if you think fees are ultimately going to zero, then how will security be financed?
+301
+So security will be, so right now, you know, what are Ethereum stakers getting paid today?
+302
+It's effectively zero.
+303
+And there's still, there's still a million, roughly, of stakers who can, there's mining pools, whatever, right?
+304
+There's a there's a lot of them out there because they still have economic interest in securing this broad network that they're doing activity on.
+305
+And this, this, this then gets into the argument is: okay, how much economic security and how much decentralization is enough?
+306
+My argument would be we're probably there already.
+307
+At this point, you know, these people are not doing it for the percentage they're getting in terms of fees and revenue and you know, inflation or whatever.
+308
+They're doing it because they have an economic interest in the broader network.
+309
+And then there's, of course, other people who said, you know, are doing it because they believe in decentralization and all those properties, whatever.
+310
+There will always be people out there like that.
+311
+But I would argue we've already reached those levels.
+312
+Respectfully, I don't think that's why anyone's staking Ether.
+313
+I think they're staking because they think Ether is going to go up in price and they want direct exposure to the asset.
+314
+They don't want to hold something else.
+315
+And if they can get...
+316
+I wouldn't have to stake to do that.
+317
+I could just hold it.
+318
+I'm talking about the 0.5%, 1% yield.
+319
+Yeah, why would you not?
+320
+Right?
+321
+Like, this is, this is, like, there's no reason, if someone can offer you a 0% interest rate or a 1.5% interest rate, and again, because of the way this works, there's not very much risk in staking.
+322
+Like, no one's going to not take it, right?
+323
+Especially if you're a large institution that holds a significant balance sheet, that 1.5%, that covers your custody fees, suddenly.
+324
+How much did the Ethereum staking rate drop when it went from 7%, 8% to effectively 2%?
+325
+And the answer is it grew slightly.
+326
+So I think you going from 2 to 0 would...
+327
+Not too many.
+328
+Personally.
+329
+I could be wrong.
+330
+On inflation rate.
+331
+Sure.
+332
+But what I mean is, I don't think people are...
+333
+You sort of asserted that people are holding Ether because they want to secure the network that they do other, sorry, they're staking Ether because they want to secure the network they do other types of economic activity on.
+334
+I have seen nothing in the history of crypto that shows that altruistic self-interest, altruistic, let's better the network, you know, is pervasive in the space.
+335
+50% of Ethereum nodes are run on AWS or other cloud providers, right?
+336
+Like, you know, Lido has all the keys and can run away with your Ether at any moment, right?
+337
+There's a lot of these types of components where like what we what we don't actually see here is people acting out of some sort of altruistic value structure for this.
+338
+I think what they think is they think Ether is going to $10,000 and thinking at 1.5% yield versus 0% yield, they're going to do it.
+339
+So I don't think that's.
+340
+So I think the biggest stakers on Ethereum are the restaking providers, their Coinbase, a lot of those bigger entities.
+341
+And are they doing it?
+342
+They're doing it for their underlying customers, yes, but are they doing it because they're moonboys?
+343
+Like if they're doing it off their balance sheet, probably not.
+344
+I think a lot of these, almost all of these actors are doing it because they have some broader economic interest in securing the network.
+345
+So in a moment, we are going to talk more deeply about REV in particular.
+346
+But first, a quick word from the sponsors who make the show possible.
+347
+Hi, I'm Matt Hogan, CIO of Crypto Asset Manager BitWise.
+348
+Look, crypto can be confusing.
+349
+There's so much noise and the space changes so quickly.
+350
+That's why, every week, I write a five-minute memo on the biggest stories impacting crypto in plain English.
+351
+Why is Bitcoin up or down?
+352
+What are people missing?
+353
+Where should investors look next?
+354
+Hit the lowdown every week.
+355
+Sign up to get the weekly CIO memo delivered straight to your inbox.
+356
+Go to bitwiseinvestments.com/slash CIO memo.
+357
+That's bitwiseinvestments.com.
+358
+We have another listener comment in response to my interview with Austin Campbell on the stablecoin bills ban on yield-bearing stablecoins, in particular, our discussion on why older lawmakers don't get stablecoins.
+359
+On X, Mr.
+360
+Samuel, said, Imagine surviving the dot-com bubble just to fear a savings account on chain.
+361
+Senator Warren still thinks Venmo is cutting-edge tech.
+362
+Let us know your thoughts on the podcast overall or on a specific episode by writing a review on Apple Podcasts or with a comment on YouTube, Farcaster, or X.
+363
+Back to my conversation with Tom and Austin.
+364
+So I actually, I just, you know, I feel like we're veering a little bit away from this REV question.
+365
+And I'm just going to quote Zero X NGMI, the founder of DeFi Llama, who tweeted: quote, since Ethereum has roll-ups, many of which are first-come, first-serve, and do not have MEV.
+366
+Sorry, this is my paraphrasing.
+367
+It's not a quote.
+368
+And since Ethereum also has more MEV protection, such as on CowSwap, it's natural that Solana would have higher REV.
+369
+So, Austin, do you still feel that REV is a good metric to judge Ethereum by?
+370
+Like, his point was like, this is just apples to oranges.
+371
+That's what he was saying.
+372
+Ethereum used to have REV, right?
+373
+Like, it used to have significant amounts of it.
+374
+And then there was a conscious decision made to push execution off onto the L2s and to do a bunch of things that basically like pushed all of the value creation onto the L2s.
+375
+So I think Ethereum used to have REV.
+376
+I still think it actually is a decent metric to evaluate it by being.
+377
+It is giving you less than US dollar inflation.
+378
+Now, people hold it for mostly because they think the price is going to go up at some point, at least back to 2021 levels, if not way beyond that.
+379
+So you don't, like, there's another argument to be made here, which is that the high REV on Solana is a reflection of kind of like how immature the chain is, just how much newer it is in its development compared to Ethereum.
+380
+You know, things like I mentioned about the MEV protection on Cowswap and stuff.
+381
+You know, there's many ways that Ethereum is trying to protect against MEV.
+382
+And so, you know, do you would you expect that Solana's REV over time would go up or down?
+383
+And what would you want to happen?
+384
+Would you want it to go up or would you want it to go down?
+385
+It's a good question.
+386
+So there are right now, like Jeeto has a bunch of parasitic mev prevention systems that they use.
+387
+There are still what you would call sort of like, you know, rogue like relayers out there that are doing things like sandwich attacks.
+388
+It is a very low percentage of validators, but they can make a lot of money doing that, right?
+389
+Sandwich attacks are quite profitable and are just detrimental to pretty much everything on a network except those individuals.
+390
+MEV is not bad.
+391
+Like I don't know where this is, like as soon as Ethereum lost MEV, everyone decided it was bad, it feels like.
+392
+It's like saying HFT is bad, right?
+393
+High-frequency traders are not a negative.
+394
+So, I guess the question is, I'm one of those people that think it is negative for users, you know, by and large, for retail users, I should say.
+395
+You know, I know Tarun has his arguments about how if you don't try to exploit it, then you end up with inefficiencies.
+396
+But, you know, I do think basically, depending on where you're sitting, you know, and to my mind, like trying to prioritize the desires of like an everyday user over kind of like the more institutionals, I think, especially because like they just come in with inherent advantages.
+397
+And so, trying to lessen that gap rather than widen it is a worthy cause.
+398
+I mean, the fees that users pay on like name-brand DEXs on Solana or SUI or Ethereum nowadays, not in the old days, are lower than the fees retail pays on any centralized exchange.
+399
+So, I think we have to kind of be a little bit like, what are we really talking about here?
+400
+Like, we should be very mad at Coinbase and Binance if we're upset about MEV-related fees on other L1s, which is not to say that it's like the goal.
+401
+I think over the, like, look, it depends on what you're making fees on, right?
+402
+The fundamental reason that there are things like priority fees on Solana and the reason that what you see is you see like Geeto tips used to land specific transactions at specific moments are because you have fundamental hotspot problems in all of these systems, right?
+403
+And when you have it in the REV system, it's internalized.
+404
+When you have it in TradFa, it's externalized, right?
+405
+The priority fee that is paid at the New York Stock Exchange, first off, there's your co-location space, which is quite expensive.
+406
+And then there's your priority data feed from them, which is quite expensive.
+407
+But a lot of those costs are actually externalized onto things like private fiber, shortwave, and microwave tower providers.
+408
+And so basically, your argument is: if they're going to pay this money for these advantages, then it might as well go to the chain.
+409
+Is that what you're saying?
+410
+100%.
+411
+I would much rather have the sort of value chain of execution, especially for professional traders, be internalized into the economic system than externalized.
+412
+Yes.
+413
+Tom, do you want to respond?
+414
+A lot there.
+415
+A lot there to go into.
+416
+So I think MEV inherently, most of it, isn't that bad, and that is front-running and sandwich attacks, which is something like 50% plus of most MEV, at least on Ethereum and Solana today.
+417
+I think that is hard to argue.
+418
+It's not net bad for end users.
+419
+Things like SexDex Arbitrage and other things that have better price discovery, I think that presumably is good MEV.
+420
+And I don't think that goes away.
+421
+I think all of the quote-unquote bad MEV that I mentioned earlier goes pretty close to zero.
+422
+So you're having a lot of technological advantages that make this happen.
+423
+So you have private dark tools, as Austin mentioned earlier, coming on chain.
+424
+Private order books, ZKTAC is making a lot of these things obfuscated before they're actually entering the mempool.
+425
+So very, very close to going.
+426
+So, that is what I think Multicoin and others coined the gold standard of like, here's what MEV could be in the future.
+427
+So, across all of finance today, HFT firms in aggregate in revenue only make about seven to ten billion dollars every year.
+428
+And that's by a Chicago booth study.
+429
+That's not me just like pulling a number out of the air.
+430
+And there are a number of others who like range in that sort of range from seven to ten billion.
+431
+So, if that's like the gold standard in traditional firms and that's what we want to ascribe to, I still think that number falls very short of adding to the number I mentioned earlier on transaction fees and aggregate looking at how we provide some level of multiple to making this basis.
+432
+But again, to my earlier point, I don't think that that's going to happen.
+433
+I think these are going to, MEV in aggregate is going to be reduced pretty close to zero as we have a lot of these technological advances that we keep along with.
+434
+And Austin, just to make sure I understood, so over time, you want Solana's REV to go up?
+435
+Yes.
+436
+So, the short answer there is yes.
+437
+Okay, I do.
+438
+And there's more we can go into that.
+439
+I also agree that things like parasitic mev are going to very low percentages over the next few years.
+440
+Completely agree on that.
+441
+Okay.
+442
+And so basically, in that regard, like you're saying that you expect that things like sandwich attacks will lessen?
+443
+Yes, I do.
+444
+Okay, okay.
+445
+But I don't, I disagree that.
+446
+I also would say Jane Street's profits last year alone were, or revenue last year alone was $20 billion.
+447
+So there's no way that's all from high-frequency trading.
+448
+I mean, most of the stuff they do is prop, arbitrage, things like that.
+449
+Prop trading is still high frequency, but yes.
+450
+Not to be directional.
+451
+It doesn't have to be high frequency.
+452
+Totally.
+453
+Yeah, I mean, folks can look up the study I mentioned, just Booth, HFT, and you can look at the profit.
+454
+It's very hard to estimate these things, right?
+455
+They're all private firms.
+456
+As you mentioned, yeah, it's very hard.
+457
+Okay, well, so I guess, like, so you're saying that you would expect that even as Solana matures and infrastructure matures, that at that time, the trajectory for REV would not look the way it's looked for Ethereum where it's gone down.
+458
+You would hope.
+459
+Yes.
+460
+Okay.
+461
+I would say it would not, because Ethereum, like Ethereum chose to offload all of its execution onto layer twos.
+462
+And so if you look at, like, for example, where does the $750 million in sequencer fees that base takes in a year go, right?
+463
+That doesn't show up in your traditional way of looking at this stuff.
+464
+But if, for example, when we get back to based roll-ups, I expect the REV of Ethereum will go up when we switch everything to based roll-ups.
+465
+Tom, do you think that's not what's going to happen?
+466
+I agree.
+467
+That's my earlier point.
+468
+I totally think Dell 2 should come on board and.
+469
+I just think the fees are going to zero still.
+470
+It doesn't matter.
+471
+It's L2, L1, because it's net parasitic for the network.
+472
+And it's the history of literally every technological innovation ever.
+473
+So just to understand here, if we're all saying that sort of the parasitic MEV will go away, but you're also saying the fees will go away, then where is the security coming from?
+474
+So there will be, I think when I said it's going to zero, I meant very, very close to zero.
+475
+And to our earlier point, the security, I think, is already at a baseline level that is sufficient in my mind.
+476
+And I don't think folks are doing it for the net revenue they're actually gaining from staking right now.
+477
+And stinkers are the owners of the network.
+478
+So you would say that the security budget of Ethereum comes from charity in the future.
+479
+Absolutely not charity.
+480
+It is based on the economic aligned interests of the individuals who are staking.
+481
+That's charity.
+482
+How is that charity?
+483
+Because if I'm in Coinbase, and I have, you know.
+484
+It's not in Coinbase's interest to stake their Ether, then, right?
+485
+Like, you have to assume that these are rational, self-interested actors, in which case, if I can have someone else secure the network and not have to do anything myself, as a profit-driven corporation, I will always pick that.
+486
+As a self-interested actor, I will always pick that, right?
+487
+This is like, if that were the case, like, we would have solved climate change in the 80s.
+488
+So I think there's a lot of consensus broadly to figure out here, but there's already a broad level of security on the Ethereum.
+489
+And the reason, to me, is that they have an economic interest and they need to secure, who want to secure, these huge assets that are already building on top of it with many, many more coming.
+490
+So, I mean, that I think is secondary, though, to the broader point of do you think these fees are going to zero for the two major buckets, which are revenue and MEV?
+491
+And it sounds like you think they're going to grow, and I'm not sure why.
+492
+So I think if you think they're going to zero, you also have to think the price of Ether is going to crash, right?
+493
+Because there's, look, people hold these assets because they think they're going to be more valuable than they are today.
+494
+If you polled institutions in crypto, if you polled individuals who hold crypto, like please, in the comments section, let me know if you hold Ether because you think it's going to go down and you want to secure other assets you're building on the network.
+495
+That makes no sense.
+496
+That's not my argument at all.
+497
+I'm saying if Ethereum one day holds $100 trillion, let's call it, let's go extreme.
+498
+Why would the price go up?
+499
+Why would the price of Ether go up if?
+500
+Because you need to secure the $100 trillion attack vector that is there.
+501
+So that could be $100 trillion.
+502
+It could be $10 trillion.
+503
+I don't know what that is.
+504
+But I'm just saying, it can't be zero.
+505
+It can't be zero.
+506
+That's an argument.
+507
+We'd all be on private blockchains.
+508
+I know we wouldn't even have crypto.
+509
+Correct.
+510
+So this is an argument not to say, this is not an argument not to say the price of Ether needs to go up.
+511
+This is an argument to say institutions will not feel comfortable deploying significant amounts of capital until the price goes up.
+512
+Those are two very different things.
+513
+Like you've created a causal link here that says if more assets come on chain, therefore the price will go up to secure it.
+514
+Why would the price go up?
+515
+Are institutions buying Ether to secure other assets they're bringing on chain?
+516
+That's extremely capital inefficient.
+517
+So, okay, here's a positively reflexive argument, right?
+518
+So, if I wanted to bring assets on chain today for all of the advantages we know blockchains have, what are my choices?
+519
+And this has become an Ethereum versus Solana argument, which I didn't want it to be.
+520
+But could I bring it to Ethereum?
+521
+Could I bring it to Solana?
+522
+Okay, where am I going, right?
+523
+If I've made the decision to go on chain, I'm already going to say which chain am I going to use.
+524
+So, that's the first decision point that these folks are making.
+525
+Or I could do a private blockchain, which doesn't have a token, holds everything, right?
+526
+So, but the decision point is between these ecosystems.
+527
+So, I think they're making that decision already, regardless of the other people.
+528
+I mean, Securitize just announced support for Solana as well, right?
+529
+Like, these institutions, there are like PayPal's building stuff on Solana, right?
+530
+They're building stuff on other networks as well.
+531
+Like, I don't think it's fair to say that just because someone started on a specific network means that's where they're necessarily going to keep deploying everything.
+532
+But, this is, again, these arguments are, I think, structurally backwards, right?
+533
+Like, if we require security for something to be deployed, right?
+534
+It's like, you know, if you decide, look, I'm going to move my family to Cape Town, because it'll mean Cape Town has to get safer.
+535
+That's not the way it works, right?
+536
+You move to a place because you think it's safe, not because your presence necessitates an increase in.
+537
+It's I'm moving to Africa.
+538
+Where do I want to move in Africa?
+539
+Cape Town's the best town.
+540
+Great.
+541
+That's exactly, I mean, you know, Cape Town has better restaurants.
+542
+Cape Town has better infrastructure because more people are paying taxes.
+543
+Suddenly, Cape Town is fantastic.
+544
+But the decision was: hey, I want to move to Africa.
+545
+And guess what?
+546
+There's a lot of people moving to Africa.
+547
+Taxes are a form of revenue that are net, they reduce economic activity.
+548
+They're a way to press the break, right?
+549
+And that is what transaction fees are.
+550
+That is what MEV is.
+551
+They're pressing the break on the ecosystem.
+552
+So let's say we, so let's go back to the exact example that, you know, I think illustrated this in my mind.
+553
+And why I first got in this industry, I looked at Ethereum's revenues in 2021 and I started doing DCFs and I got all excited.
+554
+These revenue multiples are going to go crazy, right?
+555
+And you could look at the same chart today with Solana's REV from late December of this year.
+556
+And it's, wow, if you just model these things out, look at some growth rates, this is going to be fantastic going forward.
+557
+But what did that do?
+558
+It actually constrained the network, at least on Ethereum in 2021, because the fees were way too high.
+559
+Now, Solana has certainly solved a lot of those challenges, which is super exciting.
+560
+But if the fees go up commensurate with network activity, it constrains network activity.
+561
+That's not what I'm saying, though.
+562
+The fees on Solana, actually, the median fee paid on Solana is not higher than it was in 2021, right?
+563
+Because Solana is doing something Ethereum never did, which is scale capacity.
+564
+And so as long as what you have, this is the classic Oracle versus Salesforce or AWS argument that you would much rather sell small transaction values to a significantly larger market.
+565
+And so my argument is not that you have.
+566
+What we will see is a massive scaling of capacity, which then leads to higher REV than we have today without necessitating an increase in fees.
+567
+I actually, sorry, just to be very clear, I don't think fees should go up.
+568
+I think fees on Solana are probably a little too high right now compared to what they really should be.
+569
+But we have 100x capacity available to scale the software package.
+570
+So I do want to ask one question, which is, do you also feel like REV is high on Solana now because so much more of the transactions come from meme coin traders than on Ethereum?
+571
+Meaning retail is like more subject to paying this than an institution.
+572
+So isn't that a reflection just of kind of like the user base and sort of that maturity issue that I was talking about?
+573
+I think it's a reflection of economic opportunity.
+574
+Right?
+575
+So the reason people are willing to pay high fees on meme coins is because they believe, rightly or wrongly, usually wrongly, that they're going to make generational wealth on a specific trade, right?
+576
+But if you really think like that.
+577
+Right.
+578
+So there's like a lack of sophistication or like an insensitivity to price because it's not, it's more like a, you know, for lack of a better term, more of a gambling type of situation than some kind of like more strategic, you know, here we are, this big institution, we've done like all kinds of math.
+579
+We've analyzed all kinds of things and like we're doing these bigger trades that are more efficient.
+580
+Like, am I wrong?
+581
+I think you see the exact same dynamic on Ethereum with FrontTech.
+582
+Like, this is not like a Solana thing, right?
+583
+Right, but what I'm saying is, like, as a percentage of all activity, that's a greater percentage on Solana.
+584
+So that's why Solana has higher REV than Ethereum does now.
+585
+That's what I'm saying.
+586
+No, I would say the reason Ethereum has low REV is that they intentionally offloaded execution to the L2s.
+587
+There's no way they should bring back on to the L1s.
+588
+Yeah, 100%.
+589
+Right.
+590
+So, for example, if all of the base meme coins, Zara, whatever they're promoting nowadays stuff was happening on the Ethereum L1, there would be more fees on the Ethereum L1, and we'd probably be back to the Apecoin-level airdrop fees, which were not good, but that's because Ethereum has not scaled, right?
+591
+So I think.
+592
+But isn't that the same argument that I'm making?
+593
+That, again, a greater percentage of the activity on Solana comes from retail than on Ethereum.
+594
+It's basically the same thing I'm saying.
+595
+Oh, yes.
+596
+I would say that retail has been forced off of the Ethereum mainnet.
+597
+Yes, definitely.
+598
+Okay.
+599
+But so this goes back to my question of over time, you still feel like Solana would want to maximize that, even though, like, for instance, Hosep sent this question and he said, one way to think of REV is that this is a lower bound on the value provided by the blockchain.
+600
+But if we want to measure user surplus, REV is more like the blockchain surplus, or in other words, a measure of user pain.
+601
+And so then he felt like REV is more like a measure of the unhealthiness of a blockchain rather than its health.
+602
+But I think this is like a very, very like, I hate to use this term, but I can't think of it, but it's like a very ivory tower way to look at one of these systems.
+603
+Because it's not like there's alternative access channels that retail has for these types of things, right?
+604
+Like, if you look at Robin Hood, right, or you look at credit card fees, transaction fees, and you think of these as predatory, right?
+605
+There's a world in which you can say that those are quote-unquote predatory compared to what you may be able to access through alternative ways of buying equities or options fees or something along those lines.
+606
+But the thing about Solana is that the institutional users and the retail users are on the same chain, right?
+607
+They're in the same market with one another.
+608
+And that does create differences in access and differences in ability to transact, right?
+609
+All these different types of things.
+610
+But it captures everything on that one layer.
+611
+And so I don't think this means fees are going to go down.
+612
+If this were the case, then the sequencer fees on base should be functionally zero.
+613
+So how much does it cost to create block space today?
+614
+Effectively too much.
+615
+Yeah, I would say effectively zero, right?
+616
+I mean, you can, how many chains are there out there right now?
+617
+L ones.
+618
+Apto, SUI, you know, literally, you can name 50, 60, whatever.
+619
+So block space is already effectively zero, and it's a competition on user growth and adoption.
+620
+And you don't get user growth and adoption by charging high fees.
+621
+It's state contention.
+622
+That is what people pay for.
+623
+The reason it is so cheap and so, you can create new block space.
+624
+Anyone, like S3 has tons of block space, right?
+625
+Block space is fine.
+626
+The thing is state contention.
+627
+And state contention is the thing people are always willing to pay for, whether in charge of the control.
+628
+What would you call state contention?
+629
+Is that security?
+630
+When two people want to do the same thing at the same time, one of them will pay more to go first.
+631
+That right contention, right?
+632
+When you have an NFT meant it is sequential and there are a fixed number of them, when you have an arbitrage opportunity, if it's a $10,000 arbitrage, there's always someone willing to pay $9,990 to make sure they get it, right?
+633
+This is like the whole thesis of HFT as well, is that mass volume, small margins.
+634
+And so you can have these things coexisting in the same place because there's competition for state does not box out other things, right?
+635
+You can have your Apecoin airdrop moment where gas goes to $3,300, but if you have a parallelized network like Solana, that spike in fees is limited to just that state that the fees spike in, and you can have USTC transfers continue to go through for fractions of a penny.
+636
+And that is how you see REV increase on these chains without the median fee increasing in these systems, is that you have good old-fashioned capitalism fighting it out for economic opportunity, and everyone else can keep doing their thing at the same time.
+637
+Agreed.
+638
+So I think there will be some level of fees close enough to zero, is what I'm saying.
+639
+Now, taking it to the logical extreme that I said before, doing out all of the numbers in terms of like looking at all equity transaction volumes more broadly, all transaction volumes on credit cards, we still get to a number that makes no sense for the current level of multiple that even just Solana is at.
+640
+So I just struggle to see, like, if you believe that these networks are so amazing and enormous that they're going to net 10x world GDP and transactions and bring on board the third world, like totally amazing.
+641
+But just doing it, even on 100% of the world's transaction volume today, you don't even get close to the numbers that you need.
+642
+I mean, I'm not arguing that, though.
+643
+So, what are we arguing here?
+644
+That fees are going to go to zero and REV is a useless metric.
+645
+I don't think REV is a useless metric.
+646
+I also don't think it's the only thing you should value a network on, of course, right?
+647
+But look, if all I tell you about a country is you can be born in a high GDP country or a low GDP country, which one would you pick?
+648
+The quality of life in a high GDP country, you could be in an authoritarian country that's quite wealthy, like Singapore.
+649
+You could be in the United States, right?
+650
+There's a huge amount of differences between those.
+651
+But generally speaking, you want to be in the place where there's more economic activity.
+652
+But yeah, I guess like this goes back to our earlier point about how a lot of the activities that kind of are trying to accomplish the same thing of like paying more for some kind of advantage that they're not necessarily being captured on the chain, but they are happening.
+653
+It's not like this one metric, because of the way it's defined, it's not capturing all the activities in the same realm on Ethereum.
+654
+But I just wanted to ask Tom about, you know, you talked about the base roll-ups for Ethereum as like being something that you feel like will help bring more economic activity back to the chain.
+655
+So do you feel like it would be better if those had centralized or decentralized sequencers?
+656
+And I just, for context, I just want to point out, you know, Jesse from Pollock, sorry, Jesse Pollock from base tweeted, since base launched 18 months ago, swappers have lost zero dollars to sandwich attacks.
+657
+And, you know, obviously, the timing of his tweet was in the context of this whole discussion.
+658
+So.
+659
+Yeah.
+660
+So I think like all, I think they'll start off centralized, but need to move to decentralized, because the reality is, I think, for base roll-ups, you're going to have to have some level of involvement from the L2s that exist today, which have centralized sequencers.
+661
+But the end goal should be decentralization, or I'm not sure we're doing it, right?
+662
+Like centralized servers will always be faster and cheaper than we are today.
+663
+Always.
+664
+It's decentralization, it's censorship resistance.
+665
+That's the whole reasons blockchain, the whole reason blockchains exist.
+666
+So having those be centralized as a major portion of the biggest network on blockchains doesn't make sense to me.
+667
+It's also just not true.
+668
+Like, how are they protecting against blind sandwiching?
+669
+Wait, I'm sorry.
+670
+You're saying that on base, you think people are doing what?
+671
+There's absolutely sandwiching going on on base.
+672
+And that they're not protecting against it?
+673
+Yeah, because it's extremely hard to protect against blind sandwiching.
+674
+And so just define blind sandwiching?
+675
+So, you know, your typical attack structure is bad transaction, user transaction, bad transaction.
+676
+You can space these things apart with a bunch of things in between, and it's much harder to identify.
+677
+But in the case of somebody who's transacting on base, they're doing it without knowing about the middle transaction?
+678
+Is that yeah?
+679
+So if you control the RPC that someone's going through here, you can still choose the ordering that you send transactions in on.
+680
+You can still create price movements, all sorts of these things, right?
+681
+Can still happen.
+682
+It isn't necessarily determined on just simply, you know, like a sandwich attack, if it is explicit, you know, is very easy to detect.
+683
+It is much harder to detect these types of things if there is some amount of spacing between the various sandwich attacks that are being run on these things.
+684
+So look, when you run a centralized sequencer, yes, you have a lot more control over what goes into the block, but it also doesn't mean that you're perfect, right?
+685
+Just because someone's in charge of a thing doesn't mean they have perfect observability over infinite time horizons.
+686
+As far as I know, base has not put out any data or information on how they actually enforce this to back up these claims.
+687
+I'd love to see it if that is out there.
+688
+Okay, interesting.
+689
+One other question I had for you was: there's this proposal by Anza to create a consensus change, Alpenglow, on Solana.
+690
+How do you think REV would change if Solana goes forward with that?
+691
+I think part of the goal of Alpenglow is to make things like parasitic mev harder to do.
+692
+This is part of this whole system with like relays where the whole data package is not actually reconstructable until execution.
+693
+And so there would be some effect of decreasing sandwiches and other types of parasitic mev because of that.
+694
+I think that is definitely the case.
+695
+The best data we can see is that it's.
+696
+So it may have a small decrease, but certainly not going to zero or effectively zero.
+697
+Okay.
+698
+So basically trying to make things more efficient while not necessarily taking away from what you were talking about in terms of like the value of MAV activities being captured on Solana.
+699
+Yeah, I think there's this like, there's this fundamental, I think the point of maybe contention or disagreement or misunderstanding in this conversation revolves around how scale impacts REV.
+700
+Right?
+701
+Is that like, you know, if I 100x a chain's capacity and I drop the fees down by 10x, I have still 10x fees.
+702
+Right?
+703
+And that's kind of what I mean by like, I don't think, I think in a vacuum where you look at block space as a fixed supply and you look at the scalability of a network as a fixed unit, like, yes, you could look at a system and say, like, okay, fees have to keep, you know, decreasing or something along those lines.
+704
+But you can actually build systems nowadays for users where their average fee, the median fee paid on chain, goes down and the aggregate fees to the network do continue to go up, in part because you have a mix of high-value transactions.
+705
+You look at like, like, Dan Smith from Blockworks had a really good tweet a few weeks ago about this, where he was looking at like the fees paid in a base block.
+706
+And 65% of the fees were, I think, the first like 10 transactions in a base block.
+707
+And so you can have this dynamic where you have a mix of high economic value, high opportunity.
+708
+And then the end of the block is just a numbers game.
+709
+It's charge every user $2 per month for the app subscription, and suddenly you have a huge amount of revenue that comes in on these things.
+710
+So I'm somewhat sympathetic to that argument.
+711
+In terms of like, okay, I said, what would happen if we did all of the transaction volume today in the world?
+712
+I think the argument from Washington is we could grow that volume with more new and efficient systems.
+713
+Certainly sympathetic to that.
+714
+I don't think anywhere in the near term that is realistic, right?
+715
+If we have 10,000, 100,000 TPS per second, is it realistic to think that that demand will be there every second going forward, or even some meaningful portion of seconds?
+716
+And my contention is no, because if there was that demand, we would have much more transaction volume than I quoted earlier on credit cards, on equities, on whatever you want to, whatever you want to say, right?
+717
+Like the volume is not there yet.
+718
+So if we onboard the 30 to 40% of the world that's unbanked today through crypto, 100% could have the transaction volumes we're talking about.
+719
+Then we'd have to assign, okay, what portion goes to Solana, Ethereum, maybe it all goes to one, whatever.
+720
+There's some world there where you could probably get to those numbers.
+721
+I don't think those numbers are very realistic to have in any meaningful timeframe that you could discount to some level of revenue or cash flow analysis.
+722
+Yeah, I guess I'm not like that's a fair position.
+723
+I don't think I've made that argument or making that argument.
+724
+I just don't think REV is going to zero.
+725
+The question is more: not is it going to zero?
+726
+It's more: is this one of the most important metrics by which to value blockchains?
+727
+I think it's hard to argue that assets secured by the L1 is a better metric for the future financial performance of an asset than REV.
+728
+Okay, but here's one thing that just is kind of a little bit weird to me in this whole conversation.
+729
+So, a number of people, including Matt Wong of Paradigm, who is saying he thinks it's important to maximize REV, a number of these people, or just like anybody, say that REV doesn't apply to Bitcoin.
+730
+So, what do you guys think of that?
+731
+Do you agree?
+732
+And why or why not?
+733
+Like, there are people saying this is so important, and then they're like, but it doesn't apply to the most important crypto asset.
+734
+I think Bitcoin's like always been in a lane of its own.
+735
+Like, I'm kind of curious to see what happens if some of the programmability layers on Bitcoin actually come to fruition.
+736
+Are we going to see suddenly DeFi quote-unquote on Bitcoin in some way?
+737
+You know, who knows, right?
+738
+I think it's very hard to predict.
+739
+I don't, like, I think REV does apply to Bitcoin, right?
+740
+I think if Bitcoin had more REV, it would be more valuable.
+741
+I don't think that means the lack of REV does not mean Bitcoin is not valuable, though, right?
+742
+So, like, it can be an important, like, this is like any metric that you rely on as your sole metric for a decision-making point is very flawed, right?
+743
+All models are wrong, some models are useful.
+744
+It's entirely possible that when you're looking at Bitcoin, we can say, look, zero REV.
+745
+Does that mean it's a useless asset?
+746
+No.
+747
+Does that mean that if it had REV, it would maybe be valued more than it is today?
+748
+Potentially.
+749
+How much is that?
+750
+So, you are saying you still think it's important, but just not for Bitcoin.
+751
+Is that kind of like the short way to argue that?
+752
+No, I wouldn't say it's not important for Bitcoin.
+753
+I'd say it doesn't exist on Bitcoin, right?
+754
+These are like two different things.
+755
+Like, how much does Bitcoin, quote-unquote, secure on top of it?
+756
+Right?
+757
+To go back to Tom's preferred metric, there's nothing deployed on top of Bitcoin.
+758
+It doesn't secure anything.
+759
+It secures Bitcoin.
+760
+Sure, right?
+761
+But that's like a tautology.
+762
+Yeah.
+763
+Yeah.
+764
+So, Bitcoin, as usual, is the special, and I've always thought of this and somebody described it as like if there's Bitcoin, then there's the rest of crypto.
+765
+Like, I just think it's so different, right?
+766
+It was first, it's digital gold, it's marketed that way, it's bought that way, it's you know, secured that way, it's very different.
+767
+So, I don't think Bitcoin L2s are enormously useful because there's inherent social consensus advantage problems that are going to happen there to actually get those advanced.
+768
+And I don't think that's what the network is built for.
+769
+People want to buy and hold Bitcoin to have more Bitcoin because it's the thing.
+770
+It's like, why do I buy and hold more gold?
+771
+It's because I have this thing gold.
+772
+That's it.
+773
+And so, I think REV is effectively useless there.
+774
+I don't think it makes the same sense.
+775
+Okay, so we're already past an hour, but I just want to talk about like just let's talk about other metrics for a moment.
+776
+So, this is a question by Haseib.
+777
+If REV becomes the dominant metric that everyone decides to value blockchains on, as we used to do with TVL, then how can it be gamed?
+778
+What are the degenerate cases for REV?
+779
+Yeah, I mean, there's tons, right?
+780
+GDP can be gamed as well, right?
+781
+Like, if I give you 20 bucks, you give me 20 bucks back, that's $40 of GDP, right?
+782
+You can, so like all metrics are gameable, right?
+783
+As we saw in the last in the last cycle, TVL stacking became like a huge problem on like both Ethereum and Solana, and like DeFi Llama actually changed how they count as a result of gaming of that, of that metric.
+784
+Um, I think REV is absolutely gonna be susceptible to the same things.
+785
+Um, the difference with it is if the if the fee paid involves burning of an asset, I it's much harder to game it, right?
+786
+So, for example, like base fees on Solana, 50% are burned, 50% are not.
+787
+It's very hard to game that without losing money.
+788
+Um, that's not necessarily, you know, with Jito, there's a take rate on the tips, but it's only about 2.5% or so.
+789
+So, there are some costs to doing this.
+790
+Priority fees on Solana, weirdly, there's actually no burn on those, and the validator receives 100% of it.
+791
+So, that is something that certainly could be gamed from that perspective.
+792
+So, I think it's like the quick way to do this is if you look at REV that has some sort of fee attached to it, the gaming becomes at least expensive.
+793
+Doesn't mean, I mean, look, the Shanghai attacks took place on Ethereum where people just paid for block space and effectively DDoSed the network.
+794
+Like, that wasn't economically optimal.
+795
+The question is: how much is a potential person trying to fake metrics willing to pay to fake those metrics?
+796
+Tom, what do you think?
+797
+How can REV be gamed?
+798
+I would say, since I believe fees are going to zero, I think I've made that very clear.
+799
+I think the MEV avenue, I would say it's effectively, if you're using it as a metric today, it's already been gamed.
+800
+So, if you look at Solana Q4 of this year and you use that to project forward what REV would be going forward, that would be gaming, right?
+801
+If you are launching all of these.
+802
+Or January.
+803
+Launching, treating, washing meme coins.
+804
+Yes.
+805
+So, 60, roughly 60 to 70%, or it's around 60 most days of Solana volume based on the Blockworks dashboard I'm looking at right now is meme coins.
+806
+So, if you believe that meme coins are an avenue through that, you could very easily say that it's already being gamed today.
+807
+Why are meme coins not legitimate?
+808
+So, I think, I guess I'm in somewhat of a minority here.
+809
+I think they're actually really effective actors to stress test the network, particularly on Solana, to show it can do a huge amount of economic activity.
+810
+So, I don't think they're completely meaningless, but if you're using them inherently as a long-term sustainable metric, I feel like they're inherently as useful as NFTs were.
+811
+I think when something happens on Solana, it's usually seen as short-term and gameable and something that's not to be taken as seriously.
+812
+And then, when it happens on an Ethereum chain, it's like the next great wave.
+813
+I mean, like, I don't know if Friend Tech had any greater staying power.
+814
+I mean, meme coins have probably performed just as poorly.
+815
+Or you go back to all of the DeFi protocols that were launched in 2020 that went to zero or just got hacked.
+816
+So, I don't know.
+817
+Like, is it going, are meme coins going to be a part of every like the majority of everything forever?
+818
+No, the same way NFTs are, but NFTs aren't like completely gone either.
+819
+The same way DeFi is not completely gone either.
+820
+Yeah, I don't know.
+821
+Like, yeah, I think there's certain advantages that I probably should have disclosed in minute one of this episode that actually holds slightly more Solana than Ethereum, which you wouldn't probably think from a lot of my comments here.
+822
+That's why you don't think Ethereum is going to go up from staking.
+823
+Slightly more, very, very slightly more.
+824
+But I think both networks have inherent advantages.
+825
+And I think the arguments are that for a lot of these, or PVP, when I think we're going to grow a whole lot from here as a community, 10, 50, 100x, whatever it is, and there's going to be a lot of winners.
+826
+And I think these were probably going to be the two biggest.
+827
+But it should be about growing the aggregate pie, and you do that through lower fees and more useful applications.
+828
+Importantly, in this discussion, I didn't hit on as well that I think L1 fees should go to zero or close to zero to incentivize broader user activity.
+829
+But application layer revenue and metrics is immensely important.
+830
+I think we should be valuing these things more like companies than we should be for the L1 layer.
+831
+So like great hyperliquid and others that are making a ton of money, like super impressive, like more power to you.
+832
+We need more of those.
+833
+So at that level, I think that's where we should actually be looking at cash flows and revenue.
+834
+Okay.
+835
+Well, so if you don't believe REV is the best metric for valuing a blockchain, then what do you think are some of the better metrics?
+836
+Or whatever.
+837
+And hopefully that's what this discussion has brought out: we need to have a more blended metric of what these things are, which is some GDP kind of aggregate scoring plus some level of other things, right?
+838
+Add-on models of monetary premium, other things that folks have railed against that I think are somewhat useful.
+839
+They need to be sort of add-on models because these aren't just equities.
+840
+They're not just commodities.
+841
+They're not just assets.
+842
+They're sort of all three.
+843
+And they're not just networks, right?
+844
+They're sort of like all three or four.
+845
+So they need to be sort of add-on models of what you think each one of those pieces are, which is using one simple metric that, again, I think is going to be very low, lower.
+846
+If you follow this metric, I think it's going to be much lower in the future.
+847
+You're going to be very disappointed.
+848
+Well, I think the value in these chains is growing.
+849
+So we have to come up with new metrics to actually effectively do that.
+850
+I don't think we've been there yet.
+851
+And Austin, what other metrics do you think are important?
+852
+Yeah, I mean, I guess there's just a few things I think are worth kind of like responding to directly, which is like Solana has lower fees and higher rev.
+853
+Like you can have your cake and eat it too to some extent with some of these types of systems where you can decrease user fees and you can increase chain revenue.
+854
+Solana also over the last seven days, I think it's 53% of app revenue as well.
+855
+The app revenue is actually higher than the rev on Solana.
+856
+And so like things are very much trending, I think, in the right direction when we look at this stuff.
+857
+I also think it's hard to look at hyperliquid and say all that REV is bad.
+858
+It's clearly very helpful for Hyperliquid to have the second highest REV in the industry at the moment.
+859
+And so if we look at what metrics really matter, the outcome you are looking to determine determines what you measure and what you care about, right?
+860
+If you're trying to assess what chain is going to have the broadest base of user adoption, you look at one type of metric.
+861
+If you're trying to look at what asset may perform best over a certain financial time horizon, you look at a different kind of metric.
+862
+And so, like, what metrics are we missing here when we look at this stuff?
+863
+I mean, I really do think we need some metric around how isolated can fees be from users, right?
+864
+Like, when a chain gets congested due to a Trump airdrop or an Apecoin airdrop or something like that, like, will that impact other businesses building on it?
+865
+Will the fees to trade the biddle fund go to $500 if there's a big airdrop?
+866
+Well, that's suddenly, that's like extremely business hostile, right?
+867
+It's extremely hostile to trying to get like Visa or a MasterCard to build something on a blockchain if fees can't be at least fairly predictable for them over that time period.
+868
+I haven't seen a good quantification of like almost some type of installation metric.
+869
+I think that would be really interesting to see as well into the future.
+870
+But I really like stablecoins deploying, right?
+871
+Stablecoin volume and stablecoin deployment.
+872
+I think right now, if I have to hang my hat on one important metric, and if I'm only allowed to pick one metric, that might be it.
+873
+Interesting.
+874
+Okay, okay.
+875
+Well, any last thoughts that either of you didn't get to say during the episode that you want to mention?
+876
+I think Austin and I agree on a lot of things directionally.
+877
+I think we're both in the space because we think it's going to grow a lot, and we just want to better understand the metrics that folks should be looking at when making these investment decisions.
+878
+My vocal support is for folks to dig deeper.
+879
+And I think we're right now still at the surface level understanding of where these things are.
+880
+And as we get more data points, and that's naturally just been a problem: we don't have a lot of data points, and most of them have been pretty noisy and short sample size and all that.
+881
+But as we get more data, we should be more diligent in trying to actively back into these things and how to effectively sell them to bigger participants who are going to come into the space.
+882
+Yeah, I think the only thing, I totally agree that we're mostly aligned on a bunch of stuff.
+883
+We just differ on where we think fees are going over the long term.
+884
+I would also say, as we get into a little bit more bully, a little bit more frothy market, the signal-to-noise ratio goes almost incomprehensible pretty quickly in this industry.
+885
+And so I would almost say that positive metrics are not worth looking at anymore.
+886
+If you really want to figure out how something is going to do or where it's going, look out for metrics you would consider to be like five alarm fires and track those.
+887
+Because the positive ones get gamed, but no one ever games the negative metrics.
+888
+Okay, that's a good point.
+889
+Although I think some of us differ on whether RAV is a positive or negative metric.
+890
+But anyway, okay, well, where can people learn about each of you and your work?
+891
+Dunley V89 on Twitter, and lots of thoughts and analysis there.
+892
+Barries.capital for.xyz is the project me and my co-founders are working on, which is a physical fiber infrastructure network for high-performance distributed systems.
+893
+Perfect.
+894
+It's been a pleasure having you both on Unchained.
+895
+Thank you.
+896
+Thanks, Laura.
+897
+Thanks so much for joining us today.
+898
+To learn more about Austin, Tom, and REV, check out the show notes for this episode.
+899
+Unchained is produced by me, Laura Shin, with help from Matt Pilchard, Juani Redwich, Pemajumdar, and Mark Akuria.
+900
+Thanks for listening.

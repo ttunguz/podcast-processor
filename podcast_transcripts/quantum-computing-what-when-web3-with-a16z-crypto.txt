@@ -1,0 +1,2099 @@
+--- METADATA START ---
+Show: N/A
+Episode: Quantum Computing: What, When,… - web3 with a16z crypto
+Host: Sonal
+GUESTS: Dan Benet, Justin Thaler
+Guests: Dan Benet, Justin Thaler
+Source URL: https://podcasts.apple.com/us/podcast/quantum-computing-what-when-where-how/id1622312549?i=1000706896699
+--- METADATA END ---
+
+ (upbeat music)
+ - Hi, everyone.
+ Welcome to this week's episode of Web 3 with A6 and Z,
+ our show about building the next generation of the internet.
+ I'm Sonal, and today's episode is all about quantum computing,
+ the what, where, when, why,
+ and also how it applies to blockchains.
+ As always, we tease apart the signal
+ versus the noise in science by press release,
+ especially given ongoing quantum computing milestone
+ announcements.
+ We also discuss timelines for quantum computing
+ becoming a reality, in particular when it comes
+ to breaking classic computing-based cryptography systems.
+ And so we also help answer questions
+ on when do builders need to plan their switch
+ to a post-quantum crypto world,
+ what pitfalls to avoid there,
+ and what the community needs to do
+ to upgrade blockchains to be quantum resistant,
+ which are unique from encryption-based systems.
+ We briefly cover different approaches
+ to post-quantum crypto,
+ and also dig deeper towards the end on zero knowledge,
+ or succinct proof systems and post-quantum crypto.
+ Our expert guests are Stanford University Professor
+ and Applied Cryptography Expert,
+ and pioneer Dan Benet, also senior research advisor
+ to A6 and C crypto, and Justin Thaler.
+ Research partner at A6 and Z, Professor at Georgetown,
+ and longtime expert in pioneer in interactive
+ and CK proof systems.
+ As a reminder, none of the following
+ is investment business legal or tax advice,
+ please see A6 and C.com/disclosures
+ for more important information,
+ including a link to our investments.
+ Dan, I'll have you kick off with explaining quickly
+ what is quantum computing at as much of a high level
+ as you can, and why cryptographers worry about it.
+ And Justin, I'll have you jump in after
+ to share what quantum computers are good for.
+ - You know, it gets kind of technical pretty quickly,
+ but it's at a high level.
+ We can say that the idea actually dates back
+ to Richard Feynman.
+ He realized that there are some quantum experiments
+ that are very difficult to simulate
+ on a classical computer.
+ You'd like to do the computations
+ to figure out what the quantum system does,
+ but it just turned out to be very, very difficult to do.
+ So he had this brilliant insight that said,
+ "Ah, you know, maybe the reason it's difficult
+ to simulate quantum experiments on a classical computer
+ is because these quantum experiments
+ are able to do computations that classical computers can't."
+ And boy was he right.
+ It turned out there really are things
+ that you can do using a quantum experiment
+ that you cannot do using a classical computer
+ as far as we know.
+ So for those who don't know,
+ Richard Feynman, famous Nobel Prize-winning laureate,
+ I mean, I remember he did those famous lectures in physics.
+ - He was a phenomenal lecturer, yes.
+ - Yeah, I wish we had him on this podcast
+ 'cause he was known to be the great explainer,
+ but you are also a great explainer.
+ So tell me more about why those experiments matter.
+ - Yeah, so this is where it's a little bit technical,
+ like how do you use a quantum experiment
+ to calculate things that you can't do
+ on a classical computer?
+ I don't think I'll be able to go all the way down
+ and explain it completely,
+ but maybe it just gives a little bit of intuition.
+ - Right, so I guess everybody's heard of shorting this cat.
+ Yes, you've heard of shorting this cat.
+ The cat is both dead and alive at the same time.
+ We'd say that it's in a superposition of two states.
+ It turns out quantum mechanics basically assigns
+ what's called an amplitude to each one of these states.
+ That alive has an amplitude,
+ the dead has an amplitude,
+ the amplitude is just some complex number.
+ What matters is really that the numbers
+ can be both positive and negative.
+ You can have a positive or a negative number assigned
+ to one state and a positive or a negative number
+ assigned to the other state.
+ That's kind of the fundamentals of how this works.
+ And then when it gets interesting
+ is if you don't just have one cat,
+ but say you have a hundred cats
+ and each one of them could be simultaneously dead or alive.
+ So all of a sudden now,
+ instead of just having two states,
+ you have two to the power of one hundred states.
+ So with sort of one hundred physical objects,
+ you can simulate exponentially many states.
+ Now that is nothing new.
+ There are other ways to do that.
+ Just as an example,
+ if you flip a hundred coins,
+ you define a probability space
+ over an exponential size state.
+ But what's new here,
+ each one of these two to the hundred states,
+ again, can have a positive or a negative amplitude.
+ And it turns out we can manipulate
+ this exponential size vector.
+ Yeah, exponentially many states.
+ We can manipulate all of them together
+ in some new ways.
+ For those listeners who are a bit more technical,
+ I can say in particular,
+ what's interesting is we can perform
+ what's called a fast Fourier transform,
+ this exponential size vector.
+ And the fact that we can do that quickly
+ is actually the basis of Schor's algorithm.
+ And to be clear,
+ this is the same Schor that's used in all cryptography.
+ I mean, this is very obvious to you,
+ but can you make that more clear?
+ Yeah, so Schor's algorithm
+ has lots of applications in cryptography.
+ But the two that stand out
+ is that Schor's algorithm
+ is able to factor large numbers relatively quickly.
+ It can factor large numbers in polynomial time.
+ And it can also solve the discrete log problem
+ in any group.
+ These two problems,
+ factoring and discrete log,
+ they're the basis of many classical cryptosets.
+ For example, RSA and Elgomile for encryption
+ and RSA and ECDSA for signatures.
+ So Schor's algorithm can both be used
+ to break encryption systems
+ and key exchange systems,
+ like what's used in TLS on the internet.
+ And Schor's algorithm can also be used
+ to break classical signature schemes
+ like ECDSA and RSA that are used in certificates
+ and are also used in cryptocurrencies
+ to ensure that people issue valid transactions.
+ So if you have an implementation of Schor's algorithm
+ on a large enough quantum computer,
+ you can actually break these public key systems
+ and then potentially eavesdrop on what's was said
+ or potentially issue transactions
+ that were never actually issued by the owner of the assets.
+ People always wonder why is it that quantum computers
+ are able to accelerate computation
+ and solve certain problems faster
+ than we can solve them on a classical computer.
+ And it all boils down to the fact
+ that we can do these fast Fourier transforms
+ on these very large quantum states.
+ These computers are very good
+ at finding periods of functions, for example.
+ And it turns out if you can find periods of functions,
+ there are certain problems you can do
+ that are harder to do on a classical computer
+ as far as we know.
+ So you might be wondering why they're so good
+ at finding periods of functions.
+ One way I like to explain it is,
+ classically machines can emulate
+ what's called a probabilistic computation
+ where the machine sort of draws random bits
+ as it's computing, but probabilities are always positive.
+ There are numbers between zero and one,
+ and you can kind of sum up probabilities
+ and you get other probabilities.
+ In effect, what happens in a quantum computer,
+ some of these states are not just positive.
+ They can be positive, they can be negative,
+ they can even be complex numbers.
+ But more importantly, they can be negative.
+ And as a result, you get these interference patterns
+ where you can have sums of numbers.
+ If you sum a positive number and a negative number,
+ all of a sudden you get a negative number
+ or a very small result.
+ So you get constructive and destructive interference.
+ And it turns out that actually is very useful
+ for computing things that we can't do
+ normally on a classical computer.
+ In particular, like we said,
+ it's very good for finding periods of functions.
+ And that has a lot of cryptographic implications.
+ Now, I don't know if this is helpful to people,
+ but intuitively why they're able to do things
+ that we can't do classically yet
+ is exactly because of these constructive
+ and destructive patterns.
+ - Amazing.
+ I've never heard the dots connected that way.
+ - Quantum computing is often sort of caricatured
+ and popsized as giving people the ability to do,
+ you know, insane amounts of work in parallel.
+ And that's really not true.
+ We believe that they can't like solve arbitrary
+ search problems all that much faster
+ than laptops can today, like maybe a little bit faster,
+ but not a crazy amount faster.
+ So that is a major misconception.
+ But, you know, everyone I think in the community
+ knows that's a misconception,
+ even though it persists anyway.
+ There are a lot of open questions still
+ about what problems quantum computers
+ actually would be useful for.
+ One thing we've known for several decades now,
+ they would be useful for,
+ which is the main topic for today,
+ is that they would break a lot of the cryptography
+ that blockchains and internet commerce uses today.
+ So that's the biggest concern.
+ It's actually not clear exactly what they'd be useful for
+ outside of that yet.
+ There's a lot of hype around, you know,
+ AI and optimization.
+ And I think that's much less understood
+ than many people are led to believe.
+ - One question for you is,
+ when people talk about quantum computing advances
+ in the news and the media,
+ and a lot of these projects like at Google
+ and Microsoft and big companies
+ are doing, you know, quantum computing work,
+ it's not clear to me, like,
+ what are they actually building?
+ Like what it is, like, what is it, the thing?
+ And the other question I have maybe connected to this
+ is like, are they just working on like noise reduction?
+ Are they actually building things
+ that you can actually run quantum algorithms?
+ Like, what are we talking about
+ when these projects out there in the world are doing
+ when they're trying to build a quote quantum computer?
+ What is the it?
+ - So blockchain purposes,
+ I think what's important is a cryptographically relevant
+ quantum computer.
+ And this is a quantum computer
+ that can run Shores algorithm
+ that can break these cryptosystems
+ based on factoring or discrete log.
+ The path to go there has many, many steps along the way.
+ I'm really just, you know, hitting like step one,
+ you know, today.
+ And we, you know, we need to kind of scale
+ in multiple directions to be able to run something
+ like Shores algorithm.
+ So one is we need more quantum bits.
+ That's like, you know, information.
+ - Yeah.
+ - The quantum computer can operate on.
+ Yeah.
+ And we need that information to kind of be stable
+ and not like turn into just garbage noise
+ as the computer works.
+ And so it's both like kind of more qubits
+ that's like quantum information
+ and the ability for that information
+ to actually persist and not degrade.
+ And that's like noise reduction.
+ The other thing you can say is that there's a number
+ of different approaches that different teams
+ are pursuing to achieve this.
+ I'm not an expert on this, but you have like trapped ions,
+ trapped topological quantum computing.
+ There's several.
+ And they're each making great progress.
+ They're each also kind of in their infancy
+ to varying degrees.
+ And so progress on one does not imply progress
+ on the other, but only one of them needs to succeed
+ in the end for, you know, all of our crypto systems
+ that we use today to be broken.
+ - That was a great explanation, Justin.
+ This is maybe a good segue to the news.
+ And what do people mean when they say quantum supremacy,
+ which also comes up?
+ Is that just the number of qubits?
+ Like what is the thing that they're really trying to achieve
+ when they say that?
+ - So quantum supremacy refers to a quantum computer
+ that solves some task and it could be a completely
+ useless task significantly faster
+ than any non-quantum computer could.
+ Ideally, the quantum computer solves the task
+ in a matter of milliseconds.
+ And we think any laptop would take billions of years,
+ you know, some kind of gap that big.
+ But a key point here is the task is allowed to be easy
+ for quantum computers and hard for laptops.
+ And it can be totally useless
+ as long as it achieves that separation.
+ So, you know, I think this was one of the sources
+ of confusion that followed Google's Willow announcements
+ is they announced a task that they thought
+ this ship Willow was six Septillion times faster
+ than any classic computer could be for.
+ But a lot of people didn't get the message
+ that that task is just specifically designed
+ in a contrived way to reach that six Septillion number.
+ - Well, actually, I just want to push back on that,
+ though, to make sure we understand this.
+ And this is super helpful for teasing apart
+ the signal versus the science by press release,
+ which is obviously the task.
+ So to your point, okay, there is an element of,
+ quote, teaching to the task, like you're designing
+ this task, which is designed to be beat,
+ which is designed to be able to say
+ we've achieved this milestone.
+ That said, is there a value?
+ And Dan, do you think that they're doing this
+ because they can progress?
+ And that's the way they start?
+ Or it's so ridiculously arbitrary,
+ or just so far off that it's almost silly to do that.
+ Like, just to kind of understand a little bit more
+ about what we're talking about here.
+ - Yeah, so first of all, these tasks,
+ what they are is typically sampling
+ from some distribution that you get a sample
+ and that something would have been very difficult
+ for a classical computer to do.
+ But one question is, you know,
+ is quantum computing at all possible, right?
+ I mean, maybe quantum physics is wrong.
+ Maybe nature doesn't work in the way we think it works.
+ So let's zoom out for one second.
+ Quantum mechanics is a theory that's been with us
+ for over a hundred years.
+ It's extremely successful.
+ If you believe that quantum mechanics is correct,
+ then quantum computing should work.
+ It's just an engineering problem, just in big quotes.
+ It's just an engineering problem.
+ The theory basically predicts
+ the quantum computing should work.
+ - That's amazing.
+ - And so the fact that we can do these experiments
+ and actually even do things that we can't do
+ on a classical computer,
+ that's a very interesting fact in its own right,
+ just to kind of validate the fact
+ that the approach overall is at all feasible, right?
+ There's something that a quantum computer
+ can do that a classical computer can't do.
+ - Yes.
+ - For one thing that's very interesting here
+ is exactly because a classical computer
+ cannot do this task,
+ it's very difficult to verify
+ that the result of the quantum experiment
+ actually gave us is actually correct, right?
+ That classical computer will take a siptillion amount
+ of time to verify this was done correctly.
+ So I think it's really interesting
+ that we can actually presumably do things
+ that we can't do on a classical computer.
+ But just instead of there's actually a long way to go.
+ - Right, so Justin, you're basically saying
+ it's not pure vapor, they did something,
+ they're meeting a step,
+ but there's a big gap in how many more steps
+ there are to go and what it's gonna take to get there.
+ - Yeah, exactly.
+ And I would add two things.
+ So one is, I would call this like step zero
+ for an interesting quantum system,
+ where if you can't meet this goal,
+ it's not, you know, you can't talk about quantum benefits.
+ And the second thing I'd say is this goal has sparked,
+ you know, a tremendous amount
+ of valuable scientific work as people have tried
+ to figure out like which problems could demonstrate
+ quote quantum supremacy in a reasonable amount of time,
+ what we can build it.
+ So just a lot of interesting science.
+ Where you run into issues is where the press releases
+ convey the impression that we're like closer
+ to an actually useful quantum computer,
+ much less a cryptographically relevant one than we are.
+ So I mean, there were two related but distinct aspects
+ of the Google willow announcement.
+ Well, one was the quantum supremacy
+ in the six septillion number,
+ where a lot of people reading the announcement kind of
+ miss that the task that the six septillion speed up
+ was a contrived one specifically designed
+ to exhibit a six septillion speed up.
+ The other aspect of the announcement
+ was achieving some kind of quantum error correction
+ for what's called a logical qubit.
+ - I'm gonna just quote your summary for that new paper
+ and have you quickly parse it.
+ It shows that they used about 100 physical qubits
+ to form a distant seven surface code.
+ So basically 50 data qubits plus 50 measurement qubits
+ to encode a single logical qubit that can then idle,
+ i.e. not anything useful or logically useful
+ for 100 cycles with acceptable error.
+ - There, the clarification I was pointing out
+ to our research and engineering group
+ was that this logical qubit,
+ it's not capable right now of actually doing
+ any computation, right?
+ So this is still a major milestone
+ from an engineering and technological perspective
+ that they were able to achieve this level
+ of stability and error correction for this qubit.
+ But the error is very high still.
+ And on top of that, the qubit just sits there
+ in idols, right?
+ There's no one able to like set the qubit
+ to a particular value and then use that value later
+ in a computation.
+ It's just sitting there and not degrading, that's it.
+ - I would add that a little bit, which is the impressive
+ part was exactly the fact that they were able to get
+ to the point where error correction now kicked in.
+ Basically, they managed to get the physical error rate
+ low enough that they could apply error correction
+ and then get a logical qubit.
+ That was not possible before, that was a big step.
+ Now, for now, of course, they only got one qubit,
+ which is not enough to do much interesting
+ and how there's a matter of scaling it, right?
+ So so far, it took them 105 physical qubits
+ to apply error correction and get one corrected bits.
+ But the fact that they demonstrated the error correction
+ can be applied, that is a fairly significant step.
+ I think it's an important milestone in development
+ of quantum computing.
+ - Yeah. - Of course, by itself,
+ it's not useful, but now we have to scale it.
+ - And the other small point to mention is,
+ our understanding of what classical computers
+ are capable of doing is always getting better, right?
+ So I think Google first claimed quantum supremacy
+ five years ago and it turned out they hadn't achieved it
+ because shortly after the announcement came out,
+ better classical algorithms were found for the same task.
+ And that's wonderful when we improve our understanding,
+ even if that improved understanding means
+ the original claim didn't hold up.
+ This is all how science should work.
+ The problematic part is if it leads people to switch over
+ in settings that they don't have to switch so soon
+ and they do, and then something goes wrong
+ because they switch too soon and they switch too soon
+ because they thought we were close to a cryptographically
+ relevant quantum computer that we actually are,
+ that's where you run into problems.
+ - Right, that's where it really has implications
+ for builders making judgments based off this news.
+ So we'll definitely dig into that
+ and then I'll be a big focus,
+ especially for the blockchain community.
+ But before we go into that,
+ let's do one more news announcement
+ 'cause there was also the Microsoft news.
+ What was really different about their announcement
+ from the Google Willow one was this notion
+ of a topological qubit.
+ And I'd love to have you just quickly say
+ 'cause we are talking about quantum bits and qubits.
+ What was Microsoft's announcement?
+ What was the there, there?
+ What was the signal versus noise?
+ And what is the topological qubit?
+ - So the way I would put it is the topological
+ approach of quantum computing is a distinct one
+ from what Google Willow is pursuing,
+ which roughly kind of seeks to make qubits
+ that are intrinsically more stable.
+ And therefore the error correction stuff
+ doesn't have to work as hard or as much overhead.
+ And this is well beyond my expertise.
+ And I've heard that topological computing,
+ just if it actually is buildable,
+ largely eliminates the need for error correction,
+ maybe that's too strong a statement.
+ Now, Microsoft actually, this sort of a running theme
+ of major announcements being made in the past
+ that then had to be walked back a bit.
+ Topological computing is based on something called
+ the Majorana particle.
+ - Yeah, yeah, Majorana zero modes or something.
+ - Yeah, and Microsoft thought that they had confirmed
+ it's a theorized particle whose existence
+ has not been confirmed yet.
+ And several years ago, Microsoft announced
+ that they had confirmed it.
+ And then it turns out that that was a little bit
+ of an overclaim, which is of course,
+ how science works all the time.
+ And this is not, you know, any kind of blame game.
+ So the new announcement is kind of putting us once again
+ back where we thought we were several years ago.
+ - Yeah, yeah, I think, no, this is good.
+ I mean, Google is going down the superconducting
+ qubits approach, which is one approach,
+ which is quite noisy.
+ And, you know, they have to get the noise down
+ to be able to do error correction.
+ Microsoft is taking a different approach,
+ which like Justin says is gonna be more resistant to noise.
+ So it'll be here to build and scale
+ and keep the decoherence time sufficiently high.
+ So we can actually do long computations.
+ For what I understand, the nature paper is old.
+ The nature paper was submitted a year ago.
+ And it doesn't quite contain evidence
+ that they actually achieved this, am I around a state?
+ - That's right.
+ The editors actually even put a note and a qualifier
+ in the paper.
+ - Yeah, hopefully they'll, they will be compelling evidence
+ to say that they achieved it.
+ And then that's another path to building
+ a scalable computer.
+ Of course, again, this is if they've achieved one.
+ So the next step would be can they scale it up
+ and build multiple qubits.
+ So this is the beginning of a very, very long process.
+ - By the way, we're saying that there are a couple
+ of large companies investing in this effort.
+ So IBM, Microsoft, Amazon, and so on.
+ There's a whole bunch of startups
+ that are investing in these efforts.
+ IronCue, Regitti side.
+ They're all taking very different approaches.
+ And this is great, right?
+ There's like four or five different approaches
+ to trying to build these stable qubits.
+ We have to explore all of them.
+ And by the way, it's pretty important
+ to be built in the US, yeah?
+ And so we have to explore all these approaches
+ to building it.
+ And so I think that all these groups should be commended.
+ - I agree.
+ - And you know, science progresses in small steps.
+ And it's wonderful to kind of be able to live through it.
+ - I was gonna say when you said that, you know,
+ keep in mind that there's all these people
+ trying these incredibly different approaches,
+ it made me think of these like, in my mind,
+ glory days, like hundreds of years ago
+ when people are trying to figure out how to fly,
+ how to drive, how to do anything.
+ Like you don't even know where to start.
+ So you all have to take these like
+ tremendously divergent approaches
+ so you get to the things.
+ So I do think we're living in a very exciting moment.
+ Back to the signal to noise on the Microsoft announcement.
+ I will point out in IEEE Spectrum,
+ they had a very funny article
+ based on the retraction that Microsoft had to do in 2018
+ about the Major Ana Quasi Particle.
+ And the headline is major parentheses,
+ Ana, kind of a play on Major Ana,
+ but major back battling.
+ Microsoft backed quantum computer research retracted.
+ Controversial evidence for elusive, hypothesized,
+ Quasi Particles debunked.
+ So do you know why they retracted
+ and now they're making a different claim
+ about topological qubits?
+ Yeah, I think the issue is just,
+ is there enough evidence to say
+ that they achieved these Major Ana states, right?
+ It's not the attitude that before,
+ it turns out there wasn't insufficient evidence.
+ And even in the Nature article,
+ there is not enough evidence to say did it.
+ And so that's where it is.
+ Great. And do you want to say anything really quick
+ about the other approaches that the other groups are taking?
+ So I did even Google are both taking
+ the superconducting approach.
+ Those seem to work, they're just quite noisy,
+ but those are fairly well understood.
+ Okay, great. Yeah.
+ I find it very interesting,
+ because there's always like this really interesting tension.
+ This is, I mean, this is an abstract concept,
+ but just something I always think about
+ when I think about technological process.
+ You know, it's not linear,
+ but if you think about it in a linear way,
+ that there's these moments where people can move forward,
+ move forward, move forward,
+ they move backward, they move forward,
+ they move backward, they move forward.
+ So they might be accelerating along a certain way,
+ and then they hit sudden like almost insurmountable block.
+ And then there are other approaches where in science
+ where you can move much more slowly in the beginning
+ and it feels almost daunting and impossible.
+ And then you actually have an easier path
+ later on in the trajectory.
+ So now this is a great segue to talk about
+ what are the timelines we're talking about
+ and this will lay us up for the next section
+ where we really will talk about
+ what blockchain builders need to do.
+ So let's talk timelines.
+ Justin, do you want to kick it off with NIST?
+ Yeah, okay.
+ So NIST put out a document in I think the last few months.
+ I think it's in like the request for comments stage still,
+ but that roughly said they plan to stop supporting
+ elliptic curve based cryptographic schemes
+ as well as RSA based cryptographic schemes.
+ These are things that if quantum computers
+ could be built, they would attack and break.
+ Stop supporting in five years
+ and fully deprecate in 10 years of 2030
+ and then 2035.
+ They did not actually discuss any timelines
+ or predictions for a graphically relevant quantum computer.
+ They just discussed what one they would basically
+ try to do away with non quantum resistance cryptosystems
+ in government systems or whatever they have purview over.
+ One thing I want to clarify there
+ is that NIST has several considerations
+ that they mentioned explicitly in the document
+ that other applications like blockchains may not have.
+ And so I'll mention two of them.
+ So one is store now the crypto later attacks
+ to like the government wants to keep some information secret
+ for 70 years or something.
+ And you know, China today is probably
+ hoovering up all encrypted US government communications
+ that they can get.
+ They can't read it today.
+ They'll just sit on it until sometime in the future
+ they have a quantum computer that can decrypt it
+ and then they'll read it all.
+ And if that computer just comes along 30 years from now,
+ well, they'll learn all the secrets that we send today,
+ 30 years from now, and that'll still be valuable to them.
+ Blockchains don't have to deal with that.
+ - So that's the store now.
+ Do you crypto later use that?
+ - Yes. - Okay.
+ - Okay, so that's one thing.
+ The other thing NIST has to worry about
+ is some devices go out there in the world
+ and basically can never be updated.
+ So, you know, some box out there
+ is taking sensitive measurements,
+ I don't know, Dan would know more than me,
+ and sending those measurements back to home base
+ encrypted.
+ And, you know, once that box is out there in the world,
+ you just can't change its encryption scheme.
+ And maybe that box will be out there for 50 years
+ or something, right?
+ So those are two things that blockchains
+ don't necessarily have to worry about.
+ Now, blockchains, we kind of do want them to ossify
+ eventually, but you ask different people
+ what eventually means and they'll give you different
+ timelines.
+ And so blockchain ossification is a thing,
+ but that's very different than putting a physical box
+ out there in the world that literally
+ you'll never be able to access again.
+ So that's been this document.
+ In terms of timelines, NIST didn't comment
+ on predicted timelines.
+ You can try to make inferences.
+ If you want to keep a secret like 70 years,
+ that is consistent potentially with NIST
+ thinking that a cryptographically relevant quantum
+ computer won't be around for 80 years, right?
+ 'Cause they'll switch 10 years and then they want
+ the secret to stay secret 70 more years than that.
+ But anyways, there's a lot of guesswork there.
+ - Just to clarify, so we are all talking about NIST.
+ I don't know if everyone knows that they're the
+ National Institutes of Standards and Technology,
+ and they're part of the US Department of Commerce.
+ They do all the measurement and important standards.
+ Like, I remember coming across them
+ when we were talking about nanoparticles
+ and nano computing back in the day.
+ So that's what they do.
+ Just quick questions on that.
+ Is it possible NIST, like, do they know maybe
+ from the NSA that that's a potential?
+ Do those government agencies talk to each other?
+ And is that why maybe they are sick?
+ I mean, is there any context there that they may have?
+ - So Dan will know the history of interaction
+ between NIST and the NSA more than I have.
+ There has been controversy before with the NSA
+ potentially having input to that they shouldn't have had
+ on NIST standards and wielding that input
+ in a way that they shouldn't wield it.
+ I'd say in this case, we certainly cannot rule out
+ the possibility that NIST or people NIST talks to
+ have non-public information about the state
+ of quantum computing engineering.
+ You know, I would personally speculate that, you know,
+ enough tech giants are working on this,
+ that the public is, you know, probably at the same state
+ or in front of the government,
+ but just speculating here.
+ - Look, I mean, the fundamental issue
+ is that it takes a long time to change
+ how our encryption algorithms work, right?
+ So if they're thinking, if we move away from RSA
+ and discrete log type systems,
+ it's going to take a long time.
+ You know, this happened to us before with hash functions.
+ There was this popular hash function in SHA-1
+ that people knew was going to get broken
+ and we need to move away from it.
+ And to figure out who is using SHA-1,
+ just to find out which systems are using SHA-1
+ and need to be updated.
+ That actually took quite a long time.
+ And in fact, even now, even though we know now,
+ SHA-1 is completely broken,
+ there are still systems that use SHA-1
+ and it's very difficult to change.
+ So given that it's so difficult
+ to change so many deployed systems,
+ they're saying the thinking is,
+ we have to start at some point so we can have a target.
+ The number that is being thrown out is 2035.
+ And this is not just, this is the NSA and SISA.
+ There are many federal agencies that are saying
+ by 2035, effectively, if you want to sell equipment
+ or software or devices to the government,
+ it has to have post-quantum security built into it.
+ - So that's 10 years.
+ - So the reality is this is probably two shorts.
+ Yeah, they're still being very optimistic
+ and they're thinking they'll be able to switch by 2035.
+ Probably not going to happen.
+ It's probably going to take longer than that,
+ just based on what happened with hash functions
+ did it took longer than that to switch.
+ But you have to start somewhere.
+ They're setting up a target
+ to get everybody thinking about the problem
+ and some sense to start the process.
+ By the way, the technical term is harvest now decripulator,
+ HMDL, these are called HMDL attacks,
+ harvest now decripulator.
+ Now, I totally agree.
+ I mean, the fear is, as Justin said,
+ somebody might be collecting encrypted data
+ and then they'll be able to decrypt it
+ in whatever 20, 30, 40, 50 years, potentially.
+ So they're really, for encryption purposes,
+ if you talk about encryption of TLS,
+ there is kind of a need to start thinking about
+ how to do post-quantum security.
+ - And sorry, just acronyms,
+ when you said TLS, you mean transport layer security
+ on internet systems, communication, yeah.
+ - Yeah, it really all that protects web traffic
+ and many other things.
+ Now, what's interesting is even the fact
+ that NIST has standardized post-quantum algorithms,
+ there's still a lot of work in seeing exactly
+ how to integrate this into TLS
+ so that the web can start to benefit from these things.
+ The IETF moves very slowly.
+ It takes a long time.
+ It's all consensus-based.
+ People keep making arguments in one way or another.
+ So it takes a very long time for these standards
+ to even reach security.
+ So it's gonna take a while.
+ By the way, there's a big debate now.
+ Should we directly deploy these post-quantum systems
+ or should we deploy them in conjunction
+ with pre-quantum systems
+ to both pre and post at the same time
+ so we don't harm security?
+ So yeah, there are debates both directions.
+ That's not even clear.
+ One thing that I would say that
+ for the folks in the blockchain spaces,
+ the Ethereum Foundation has taken a very productive approach
+ here in that they are obviously using
+ a lot of pre-quantum systems,
+ but they make sure that for everything they deploy,
+ they actually have a post-quantum equivalent.
+ I'm not talking about building a quantum computer.
+ I'm talking about building an equivalent version
+ of a cryptographic system that they want to deploy,
+ building one that is gonna be secure,
+ even if a quantum computer appears.
+ So if they need to move quickly
+ from pre-quantum to the post-quantum,
+ they know how to do it.
+ They're not deploying the post-quantum stuff just yet,
+ but it's good to have it in your pockets.
+ So I thought that would be a very mature way
+ of doing things that also help the research community,
+ because for every advanced primitive they want to build,
+ they challenge us to come up
+ with a post-quantum version of it
+ just so they have it in their pocket.
+ So there are lots of things that need to happen before 2035.
+ And if we wait 10 years to even get the process started,
+ it's gonna take so much longer to do the transition.
+ But there is a transition.
+ - Yeah, I see.
+ And how can you make something post-quantum secure
+ if you don't have a quantum computer?
+ - Good.
+ So the two things that are unrelated to one another.
+ So post-quantum cryptography refers
+ to a regular cryptographic system
+ that you can run on your laptop, on your phone.
+ But we believe it is secure even against an adversary
+ that has access to a large-scale quantum computer.
+ Pre-quantum cryptography is a classical cryptographic system,
+ but one that can be broken by an adversary
+ that has access to a large-scale quantum computer.
+ So RSA and elliptic curves kind of fall
+ in the pre-quantum category.
+ And in the post-quantum category,
+ we have a couple of candidates.
+ This is where lattice-based cryptography,
+ code-based cryptography, hash-based cryptography,
+ and so on.
+ - Got it.
+ But I don't want to take for granted
+ that everyone listening actually knows
+ how blockchains work.
+ Like, why don't blockchains have to worry about it?
+ - Yeah, however this now decrypt later applies to encryption.
+ Blockchains not using encryption.
+ Blockchains use signatures.
+ So HNDL by and large does not apply to blockchains.
+ Of course, there are niche cases where they do use encryption.
+ By and large, they do not use encryption.
+ They use signatures.
+ So HNDL is just not applicable.
+ - So this is when you want to send your Bitcoin
+ to another address, you authorize the transaction.
+ And that tells the blockchain,
+ you and not someone who wants to steal your Bitcoin
+ is agreeing for the Bitcoin to be transferred, right?
+ And the digital signature schemes that we use today,
+ and that Bitcoin uses, for example,
+ as Ethereum and other blockchains,
+ a quantum computer in the hands of an adversary
+ could forge digital signatures.
+ And that means someone who wants to steal your Bitcoin,
+ you know, if you don't change the digital signature scheme
+ before they have a quantum computer,
+ will just submit a transaction.
+ It'll look like you authorized it,
+ what in fact it was the thief,
+ and the thief will now have all your Bitcoin,
+ even though you didn't authorize it.
+ So that is the most basic place, like the digital signatures,
+ that blockchains ultimately need to switch
+ to post quantum photography.
+ There are other places that blockchains use cryptography.
+ Bitcoin is based on proof of work
+ that is based on a problem that requires a lot of work,
+ a lot of computational effort to solve.
+ We can talk about to what extent
+ quantum computers change that.
+ You know, Ethereum and other blockchains
+ are trying to deploy zero-knowledge proofs
+ for scalability and privacy.
+ We can talk about to what extent.
+ So each individual cryptographic primitive
+ there's a whole different story to unearth about,
+ do they have to worry about quantum computers,
+ for what reasons, to what extent.
+ The story is very different for each of them.
+ - Great, got it.
+ - So now I'll just say a third thing
+ that I would say blockchains don't have to deal with.
+ It's just that the process that NIST has to worry about
+ for upgrading is like so much slower
+ than what blockchains today have to worry about.
+ - So every time Ethereum wants to change something
+ about how people process new transactions,
+ whether it's what digital signatures scheme is used,
+ people check that the transaction's being processed
+ are actually authorized by the relevant party and so forth.
+ This is done via a hard fork,
+ which basically means like everybody on the Ethereum network
+ just agrees to make the change and they all do it, right?
+ And as of today, there is like a hard fork
+ roughly once a year or something
+ and you have to be very careful about the process.
+ It's not that easy to coordinate
+ but it's doable, it's happening once a year.
+ Bitcoin, it's very hard to make changes to Bitcoin now.
+ And so the transition into post quantum digital signatures
+ or whatever I'd say is more of a concern
+ for Bitcoin than anyone else
+ 'cause it's just harder to get that network
+ that would agree on major changes.
+ Whereas NIST has to get the standard making bodies
+ to agree and then every single entity in the world
+ that's deploying these protocols
+ that the standard making bodies set the standards for
+ to upgrade is just a, it's a much more,
+ it's a more decentralized environment
+ than these decentralized blockchains are today, if you will.
+ But yeah, that's the situation.
+ - Great.
+ So basically, because blockchains use signatures,
+ they aren't as vulnerable in some of these other things.
+ And then to Justin, your point,
+ you're adding that they can upgrade faster
+ than like a lot of these other groups can.
+ So they have less issues on that front.
+ - Yes, and the other thing I'd add to Dan's comment
+ is like, let's say I authorize a blockchain transaction
+ today using elliptic curve based digital signature scheme.
+ As long as that authorization is somehow time stamped
+ so you knew it came now, it doesn't matter
+ if there's a quantum computer 30 years from now.
+ That quantum computer can't go back in time 30 years
+ and like steal my money.
+ So like as long as you know,
+ this happens a lot in blockchains is ZK, it's a case as well,
+ that as long as you know, there's no quantum computer
+ at the time the cryptography was used,
+ there's no kind of retroactive break 30 years
+ in the future.
+ You have to be a little careful,
+ but yeah, you can typically prevent this.
+ Whereas with encryption, it's like China decrypts
+ some message that the NSA sends today.
+ If they decrypt it 30 years from now,
+ that's still a problem.
+ - Right, okay, if you guys.
+ So now we're about to switch into what are the actual
+ implications to blockchains and then what builders
+ have to think about before we do.
+ I still wanna hear your guys' projected timelines now
+ 'cause we talked about what NIST
+ and the US government is pushing towards.
+ And obviously, Dan, you mentioned this briefly,
+ there is a race around the world.
+ I mean, China, people are really working hard
+ to make this happen.
+ It's like the next base race.
+ So the US government has put this mandate,
+ but Dan, you're saying that even if they're saying
+ by 2035, it's probably gonna take longer
+ and we're not even there yet.
+ So where do you guys fall on the timelines?
+ - Yeah, so, okay, first point that's kind of interesting
+ is that in some sense, blockchains are a great bug bounty
+ for this.
+ So when somebody finally builds a quantum computer,
+ it's quite possible that they might use it actually
+ to start moving money around on a blockchain
+ without the owner's permission.
+ So once we start hearing about people complaining
+ that money is moving, tokens are moving
+ without the owner's permission,
+ maybe that's kind of a good indication
+ that a quantum computer has been built,
+ at least if it's an arc real.
+ So in some sense, once a quantum computer is built,
+ well, a cryptographically relevant quantum computer is built,
+ we'll know about it because there's this bug bounty out there.
+ So that's one interesting point.
+ Now 2035 is, again, when the expectation
+ for using post quantum crypto kicks in,
+ that doesn't mean that's when the quantum computer
+ will be built.
+ - Absolutely, but one of the things
+ that we've been talking about in this episode
+ is like what's real, what's fact, what's fiction?
+ Let's tease apart the signal from the noise,
+ especially when it comes to, oh my God, quantum computing
+ or when we need to be ready for a post quantum crypto world
+ is here, like when does this happen?
+ When do we plan?
+ How do we think about it?
+ Dan, how would you give us the timelines?
+ - Yeah, so everybody always wants to know
+ when are we gonna have a large enough quantum computer
+ to run Shor's algorithm
+ and actually affect deployed cryptography.
+ So nobody has a crystal ball.
+ We don't really know how quickly
+ this technology is gonna develop.
+ So predictions are very dangerous to make.
+ I don't wanna just make up numbers out of thin air.
+ So I try to be a little bit scientific about it.
+ And so one way to do a calculation
+ is you can say, well, to have a cryptographically
+ relevant quantum computer, the estimate is today
+ you need around 10 million qubits.
+ Some recent results that say maybe 10 million
+ is not quite the right number, but let's, again,
+ for the ballpark, let's go with this 10 million figure.
+ - If we use Moore's law as a guiding stick for this,
+ Moore's law says that computing power doubles
+ every 18 months.
+ So let's suppose quantum computing power doubles
+ every 18 months.
+ The reality is that we need something like 10
+ to 15 doublings of what we have today
+ in order to affect cryptography.
+ So today we're on the order of like 100 physical qubits.
+ We need many, many more to affect cryptography.
+ If we need 10 to the 15 doublings,
+ that would mean that we are 15 to 22 years away
+ from a large enough computer that might affect cryptography.
+ But when you plug in these numbers,
+ you get somewhere around 20 years.
+ Yeah, this could be way off, could be less,
+ could be more, we don't really know,
+ but at least calculate the number.
+ - Yeah, and you're using Moore's law,
+ which I know you're just using as like
+ some kind of grounding to do some kind of estimate,
+ but let's obviously not also forget
+ that we're talking quantum here,
+ which is entirely different behaviorally
+ than anything Moore's law has modeled off.
+ And so you could hit an unexpected complexity break.
+ So things could become crazy,
+ like a new thing can happen at a certain threshold.
+ We don't know.
+ So that could be another thing
+ that would maybe even slow that down.
+ - Yeah, we don't know if Moore's law
+ is gonna apply to quantum computing.
+ In the classical computing industry,
+ every doubling introduced completely new applications.
+ - So Jessen, where do you fall
+ on your estimates of timing?
+ - Yeah, so I mean, I just say,
+ I think Dan's methodology is about as good as anything else.
+ But you can look at the roadmaps
+ that the major projects put out.
+ And I guess in a sentence,
+ I would say none of the roadmaps suggest
+ that we'll be close to a cryptographically relevant
+ quantum computer within 10 years.
+ And typically these roadmaps are overly optimistic
+ and while it's possible that some breakthrough happens
+ and you actually do better than the roadmap
+ most likely will be even slower.
+ I can also raise some subtlety in various announcements
+ that I actually only learned a bit out recently.
+ So Dan talked about already the difference
+ between physical qubits and logical qubits.
+ Logical qubits are like some error corrected thing
+ you can control if physical qubit takes many physical qubits
+ to get the error corrected thing you can control.
+ There's another distinction
+ that I actually wasn't familiar with, which is the following.
+ So to run Shor's factoring algorithm
+ on a quantum computer.
+ Yeah, I think you need 1500 to several thousand
+ logical qubits, something like that.
+ And so I've been tracking projections
+ from these projects about how many years
+ so X logical qubits, okay.
+ But actually it turns out that when people
+ report logical qubits those qubits they reporting
+ can only do what are called Clifford operations.
+ The details aren't important.
+ What is important is to run something like Shor's algorithm
+ you need at least one non-clifford operation.
+ Typically it's called a T-gate.
+ And so you don't just need a logical qubits
+ that support the Clifford operations.
+ You also need some number of error corrected T-gates.
+ And a lot of the roadmaps don't even talk about T-gates.
+ So IBM they project 2000 logical qubits by 2033, right?
+ But I suspect that that's not referring
+ to anything about T-gates.
+ So even if they achieve that, and I hope they do,
+ that doesn't mean that they're cryptographically relevant
+ in 2033.
+ And just two more data points
+ 'cause I'm only listening to the experts on this.
+ So Scott Aronson has blogged that like 20 years
+ could be right, but he's just seen technology
+ in other areas like AI proceed so surprisingly quickly
+ that he would not be shocked if it's less than 20 years.
+ There was also an excellent talk
+ at a quantum cryptography conference recently
+ where the speaker said two things.
+ So one is he does not expect AES 128,
+ which is the sort of crypto system
+ we don't think quantum computers can break that well.
+ He doesn't expect that to be broken
+ in his lifetime possibly ever.
+ I don't think that's a very controversial statement
+ just 'cause quantum computers can at best get
+ what's called a quadratic speed up there.
+ But the other thing he said is he expects and hopes RSA
+ to be broken by the time he retires.
+ And this is a new assistant professor, right?
+ I suppose 30 years is when he retires.
+ So the experts expect 30 years as like an upper bound,
+ but like if we're extrapolating from the road maps
+ or what we see today, there's no reason
+ to think it'd be like less than 15 years minimum.
+ And so yeah, I would say 20 years
+ is roughly right over under.
+ And I don't think that anyone sees a path today
+ to way under 20 years, like something surprising
+ would have to happen to be way under 20 years.
+ Yeah, because when you mentioned Scott Aronson's point
+ that you wouldn't be surprised if it's less than 20 years,
+ he also said, I think in that same post,
+ that more than five years
+ is ridiculously aggressive or something.
+ He wouldn't be surprised only
+ because he expects surprises, right?
+ Yeah, so a lot of these guesses, honestly,
+ a lot of them are motivated
+ by how much effort we put into it.
+ How fast it will happen really depends on,
+ if this for some reason just becomes a national priority
+ and there's a huge of, it's like the Manhattan Project.
+ Yeah, we'll get it done probably faster, right?
+ But most likely it's not gonna be,
+ there's not gonna be a Manhattan Project for this.
+ The truth is that this is gonna happen
+ at the speed of business.
+ There was huge business pressure
+ on the classical hardware companies
+ to scale up their computing efforts.
+ There was a huge pressure on industry
+ to keep doubling the amount of compute power.
+ - That's actually really a good point,
+ 'cause that's true.
+ We always talk about this on this podcast too,
+ that Moore's Law is not actually a law of physics.
+ It's a lot of people of human intent
+ and will of engineering and making something happen.
+ So that's the point about the business pressure as well.
+ - Right, the reason Moore's Law happened
+ was because there was a lot of demand
+ for increased computing capacity.
+ For quantum, we're not quite seeing the strong business
+ demands and the strong business drive
+ for such large quantum computers.
+ The quantum computing space,
+ there isn't any commercial applications yet.
+ So not clear that the same investment will take place.
+ So things might take a little bit longer
+ and Moore's Law might be a little bit optimistic.
+ - Again, keep in mind these are just guesses.
+ We might be off by a decade in either direction.
+ - However, to your point,
+ it could even be here in 10 years,
+ but you don't buy the whole five years argument
+ that some people make.
+ - Well, 10 years is if we devote
+ like a substantial fraction of US budgets to this problem,
+ like the Moonshot Apollo program.
+ - Yep.
+ - Right now, there's no indication
+ that we're actually gonna do that.
+ So I would say that even 10 years is highly optimistic.
+ - Got it.
+ And by the way, you don't think
+ like some of the private enterprises,
+ like Google, IBM, this kind of inter-corporate race
+ to be the first to get quantum matters,
+ 'cause even though just playing out your analogy further,
+ no one, quote, needs quantum computing
+ because they can't do anything better
+ than classical computers currently can.
+ And even when we think they do classical computers,
+ quickly catch up and do something better.
+ So it doesn't create that drive.
+ - So the US corporate groups
+ that are building these quantum computers
+ are not very large groups.
+ So not significant budgets
+ that are being devoted to this right now.
+ - Yeah, that's true.
+ - There might even be a situation where Google
+ at some point says, you know,
+ we've invested in this stuff for so many years,
+ we're not gonna invest anymore,
+ in which case it'll take a lot longer.
+ - Let's still just take a moment to really pause
+ and reflect on the power of surprise and science,
+ which is regardless of what we make happen
+ or what the pressure is,
+ the reality is that you both have stated to me
+ on this podcast and outside how surprised you were
+ at the progress in zero knowledge proofs, for example,
+ like people 10 years ago would never believe
+ where we are today.
+ We could be having this exact conversation
+ 10 years from now and you may have to be like,
+ I never could have believed.
+ I mean, that's on the topic of ZK.
+ Granted, that was in a classic computing paradigm
+ and we're not talking about something completely new
+ and different at the same time, but it was a surprise.
+ So that's one.
+ And two, the other point is,
+ I'm just thinking about my time at Xerox park
+ and I was there where they're the pioneers
+ in natural language processing, NLP type researchers,
+ the people who came up with LFGs,
+ lexical functional grammars, like the technology
+ that powered spell checks and early natural language systems
+ all across the board.
+ And it was also the time when Google's big data
+ was starting to take off.
+ And literally, it feels like all their work,
+ it didn't go out the window,
+ but they came up in a time where they were working
+ within the constraints of what computing couldn't do.
+ And then when Google came with like lots of big data
+ that literally changed the NLP game,
+ it just changed how natural language worked.
+ And so things surprise you.
+ And this goes back to the whole nature
+ of technological progress,
+ which is the most fascinating through line to me of all.
+ But tell me if you disagree with any of that.
+ - Oh, I think your ZK analogy is a good one.
+ I mean, the reason it progressed so quickly
+ and now we have such wonderful frameworks
+ to do ZK is because there was a lot of business pressure.
+ - Well, the black chain community
+ needed things like that, right?
+ - Yeah, I would say I'm less surprised by the progress
+ in ZK than what really surprised me
+ was that people found compelling applications
+ for ZK given its primitive state.
+ - Wow, that is a good point, that's great.
+ - Before I knew about blockchains,
+ it was impossible to imagine that it'd be useful
+ to prove statements you could actually run the Prover on,
+ but then blockchains made statements
+ that are simple enough to run the very slow Provers on,
+ very valuable.
+ And so that's more surprising to me.
+ And then of course, that sparked all the investments,
+ which is why the old is where it is today.
+ - I just got goosebumps when you said that.
+ 'Cause I think this is so beautiful
+ about how technology and innovation work.
+ Okay, so now we have this context.
+ We put the news in context.
+ We talked about a little bit of fact and fiction,
+ some of the timelines and projections.
+ One of the key points you made, Justin,
+ when you were just talking about
+ all these various quantum engineering projects
+ out in the world, Microsoft, Google, IBM, et cetera,
+ government, whoever, whatever they may put in their roadmap,
+ it doesn't actually translate to the actual timelines.
+ And we talked a bit about what the timelines
+ could look like and also the surprises that are possible.
+ So now let's talk about this problem
+ or maybe opportunity for the community.
+ If blockchains have this unique feature
+ where they can upgrade quickly
+ and they're not tied to classic encryption
+ and they have signatures,
+ what do they need to worry about?
+ And more importantly, when?
+ When you talk to crypto founders and technologists
+ trying to figure out how to plan for a post-quantum world.
+ Are they jumping too soon?
+ Are they jumping too late?
+ Do they not to worry at all?
+ How much should they worry?
+ What do they need to worry?
+ Let's start talking about that.
+ - Right, okay.
+ So let's go through each of the kinds of cryptography
+ that are used.
+ So digital signatures, they're going to need to change.
+ But the question is when and what are,
+ are there risks of switching too early?
+ And so I think there are two risks or costs
+ of switching too early.
+ So one is all the post-quantum signatures we have
+ are just more expensive in some ways.
+ So most, the ones that are kind of most popular,
+ they're just like an order magnitude bigger,
+ like just downloading and storing the signature
+ and just a much bigger signature.
+ There's another approach where the signatures are small,
+ but the public keys are a hundred times bigger, right?
+ - Yeah.
+ - So pick your poison, right?
+ So that is a cost, right?
+ The network gets more bloated
+ and the nodes need more compute and storage.
+ And so you run into decentralization issues from that.
+ That is a real cost.
+ But the bigger concern is like we're still trying
+ to understand what post-quantum cryptographic schemes
+ are actually secure and like what the right balance is
+ between performance and security.
+ And the longer we wait, the more we'll understand
+ and the less likely we are to switch to something
+ that's just like totally insecure.
+ Dan mentioned before, there's debate about whether
+ we just switch to something like purely post-quantum
+ or whether we have both like a classically secure
+ and a post-quantum one running.
+ The reason, one reason to have both is the post-quantum one
+ might just turn out to be totally insecure
+ or even to classical computers.
+ - Which by the way, it happened multiple times.
+ Multiple proposed post-quantum schemes turned out
+ to be insecure to pre-quantum attacks.
+ - Okay, so your point is when you talk about these costs
+ and people preemptively switching,
+ it's really about the danger of not preparing
+ for the real security threats.
+ - Well, people are trying to prepare
+ and they shoot themselves in the foot
+ and actually just something that's not even secured a day
+ much less when the quantum computer does arrive.
+ And so my view is if you can afford to wait longer,
+ go ahead and prepare.
+ So like when you do need to switch, you can switch.
+ But don't switch before you really have to
+ because it has its own risks that come along with it.
+ - So that's the digital signatures part?
+ - Absolutely.
+ - So I think it would be interesting to talk a little bit
+ about the implications for Bitcoin.
+ So what would it mean for Bitcoin to switch
+ to a different digital signature scheme?
+ One thing to note first of all is in Bitcoin,
+ when you create a new address and somebody sends you funds,
+ the only thing that's public about your address
+ is the hash of your public key.
+ And the hash of your public key is actually not enough
+ to mount a quantum attack.
+ You're all vulnerable once you start to spend
+ from that address that forces you then
+ to reveal your actual public key.
+ And you're only vulnerable to a quantum attack
+ under very specific scenarios where you have already
+ spent from an address and that address still has funds
+ associated with it.
+ So not all addresses are gonna be vulnerable in Bitcoin.
+ Now, the other interesting thing is,
+ so Bitcoin is very hard to make changes to.
+ It takes forever to make a change to Bitcoin.
+ Moving to a new signature scheme is a pretty major change.
+ I think they've only done it once when they've enabled
+ short signatures in addition to ECDSA.
+ And so now they're gonna have to introduce
+ a new signature scheme.
+ So they would wanna be sure that they're actually
+ introducing the right one.
+ Probably that means waiting a few more years
+ until we have confidence in the signature schemes they use.
+ And then what's even more interesting is once they move,
+ there's gonna have to be some sort of a flag day
+ in Bitcoin, which is that all accounts
+ that have not transitioned will be deprecated.
+ Otherwise, there's potentially a lot of funds
+ that could be stolen and destabilized the Bitcoin economy.
+ - Got it. - Yeah.
+ So they have to somehow agree on a date, 2035, 2040, 2050,
+ whatever that is, but there's gonna have to be some date
+ after which if you haven't transitioned,
+ we declare your address as abandoned
+ and all the coins are associated with that address
+ basically would be deprecated.
+ And from that point onwards,
+ the system will be post-quantum secure.
+ So there's a lot of debates on how to do all this.
+ There's a lot of engineering.
+ They would have to go into all of it.
+ - What's a little surprising is that there isn't too much
+ discussion on the Bitcoin community over this.
+ - Actually, it's not surprising because I was just thinking
+ when you were saying that there's this engineering part,
+ I was like, well, this is a social thing, right?
+ That it's a very distributed,
+ this is a very thing people love about Bitcoin is,
+ I mean, we're talking about all these systems
+ eventually being fully decentralized, et cetera,
+ but there's different layers of groups of people
+ coordinating than the amount of coordination.
+ So it's actually a very social problem at that point.
+ - Yeah, that's right.
+ But it's very interesting that for the L1s,
+ basically to kind of move to this post-quantum world,
+ in many situations,
+ people actually have to move their funds
+ from the pre-quantum address to a post-quantum address.
+ - Right, right.
+ - So there is one more thing
+ we're trying to computing is relevant for Bitcoin.
+ So proof of work.
+ So Bitcoin uses hashing for proof of work.
+ That's how miners mine more blocks.
+ And the miner that solves this puzzle
+ that requires a lot of hash computations
+ is the one that puts in the next block.
+ And today they get rewarded for it.
+ And the reward keeps getting halved every four years
+ in Bitcoin terms.
+ Okay, so today, if you are a miner
+ and you put in 10 times as much work,
+ you will have 10 times the likelihood
+ of using the next block.
+ And this sort of linear scaling is important
+ for decentralization of the proof of work,
+ which is not really that decentralized.
+ - Right, 'cause there's like Bitcoin mining pools,
+ et cetera, et cetera,
+ to get that very successful rate.
+ - Right, but if you're a small miner,
+ you're not really at a disadvantage to the big miners.
+ Yeah, you have a small probability of winning a block.
+ Maybe your probability is 1/1000 of the big miner,
+ but you also have 1/1000 of the cost.
+ With quantum computers,
+ if you put in 10 times as much work,
+ your success for the probability of choosing the next block
+ goes up by more than a factor of 10.
+ So this is a centralizing force for proof of work,
+ at least for the proof of work Bitcoin uses today.
+ And people have looked at other alternative proofs of work
+ that might retain the old property.
+ And I'm also referring to like a theoretically,
+ perfect quantum computer.
+ So this is something,
+ and the scheme of things Bitcoin needs to worry about,
+ it's like digital signatures are up here
+ and proof of work centralization
+ is like not even in the same country.
+ But I think that is something worth mentioning.
+ - That is so interesting.
+ - And just a few more minutes,
+ I'm gonna say one thing.
+ So Bitcoin's proof of work uses a hash function
+ called SHA-256.
+ - Yeah.
+ - And I saw a lot of tweets
+ after the Google Willow announcement,
+ about quantum computers,
+ potentially breaking SHA-256.
+ - Oh, okay.
+ - We have just talked about how we believe,
+ hashing is post-quantum, right?
+ And so what's going on here is,
+ quantum computers can give a marginal speed up
+ to attacking hash functions.
+ But it's pretty marginal.
+ And actually, I told you there was a talk recently
+ by an expert who said he doesn't expect AES-128
+ to be broken in his lifetime and maybe ever.
+ And that's referring to the fact that,
+ not only is the speed up marginal,
+ but there's enough concrete overhead that in practice,
+ it might not really even be a speed up at all,
+ or really really really marginal.
+ And so that's sort of what's going on
+ with this proof of work comment that just made.
+ I was referring to the marginal speed up.
+ The marginal speed up is what gets you the centralizing force,
+ where doing 10 times as much work
+ is more than a 10-fold improvement in success probability.
+ With all of the complications in a real quantum computer,
+ it might be quite marginal the centralizing force in the end.
+ No one is going to completely break shot to 56,
+ even once they have a scalable quantum computer.
+ Not only do we not have those and probably won't have them
+ for more than a decade, but even once we do,
+ it's not completely breaking shot to 56.
+ - Got it.
+ Okay, that's a very helpful clarification and nuance.
+ So we're talking about several different approaches.
+ So that was all about digital signatures
+ and the implications.
+ What are some of the other ones?
+ - Okay, so that's the digital signatures.
+ Another major cryptographic primitive
+ that is central to the future of some blockchains
+ is zero-knowledge proofs or succinct proofs
+ for scalability of blockchains as well as privacy.
+ So ZK is of misuse today where people use it
+ as a synonym for succinct proofs
+ that might not actually be zero-knowledge.
+ - Sorry, Justin, just reminding people
+ what zero-knowledge is at a high level.
+ Even though we take it so for granted,
+ I realized we never did that.
+ - Okay, so zero-knowledge is actually a misnomer.
+ It's used to refer to proof systems
+ that might or might not be zero-knowledge.
+ So I'm going to talk about both.
+ - Okay, great.
+ - So zero-knowledge proof is a proof that you know some data
+ and the proof leaks no information about the data
+ besides that you know it, right?
+ So I might prove that I know the secret key
+ controlling a Bitcoin wallet,
+ but the proof doesn't leak any information about the key.
+ It'd be a big problem if it did
+ because someone gets enough information about the key.
+ Now they can take my Bitcoin, right?
+ So that's zero-knowledge, that's about privacy.
+ The other property is zero-knowledge proofs is a synchness.
+ This is proofs that are very short and very fast to check.
+ So this property lets you kind of offload
+ hard computational work to anyone in the world
+ who you might not trust.
+ And they'll prove they did the work correctly
+ and the proof is really short
+ and the proof is like really fast to check.
+ So they do all the hard work
+ and all you do is check this proof
+ and it's like way, way, way, way, way, way cheaper
+ than if you did the work yourself.
+ - That's fantastic.
+ And I actually want to make a plug
+ for your book proofs arguments and zero-knowledge.
+ And while you don't have a dedicated chapter
+ to post-quantum crypto,
+ you do reference quantum computing
+ and post-quantum security in multiple places
+ throughout the book.
+ I actually believe it or not did skim that book
+ when you joined Justin
+ 'cause it was so useful.
+ The first three chapters were so useful
+ for understanding the work and editing.
+ So like I just want to shout out for that book.
+ - Yeah, thanks a lot.
+ - So we want to demystify that a little bit.
+ Justin, dig in on ZK a bit.
+ - So here there are a couple of things to say.
+ So one is some of the zero-knowledge proof systems
+ that are popular today are already post-quantum.
+ So that's a very nice thing.
+ Now, a downside of the post-quantum ones
+ is they tend to have bigger proofs,
+ higher verifier costs,
+ but they're faster for the provers
+ or they have a reputation for that anyway.
+ One thing I want to say is zero-knowledge proofs,
+ they have two security properties.
+ One is zero-knowledge,
+ which is about protecting privacy.
+ And the other is soundness,
+ which is about security that you can't prove false statements.
+ I can't prove that you authorized a transaction
+ to me if you actually didn't, right?
+ And so the thing that's susceptible to quantum attack
+ is the soundness, not the privacy.
+ So what this means is if you post a zero-knowledge proof
+ today, even with a non-post-quantum
+ secure zero-knowledge proof system,
+ you have nothing to worry about
+ if there's a quantum computer 30 years in the future.
+ That quantum computer 30 years in the future
+ is not gonna look at your proof from today
+ and violate your privacy.
+ That's not gonna happen.
+ And what that means is we don't really have to switch
+ the ZK proof systems until we're really worried
+ that there's already a quantum computer.
+ 'Cause it's secure today if the proof is generated today
+ and there's no quantum computer today.
+ And we don't have to worry about future violations
+ of privacy from old proofs.
+ Yeah, that's up there.
+ - No, I mean, if you have more to say,
+ Justin, it's okay if you wanna say more on that.
+ - Yeah, so I mean, okay, let's see.
+ The post-quantum systems,
+ they have a reputation for the fastest proofers.
+ And I think that will persist,
+ although I think the reputation is a little bit overstated.
+ But they definitely have bigger proofs,
+ up to two orders and magnitude bigger.
+ And so what most projects do today
+ is they'll take this post-quantum proof
+ and it's too big,
+ they don't wanna post it to the blockchain,
+ that'd be too expensive.
+ So they use the non-post-quantum thing
+ to prove they know the post-quantum proof.
+ And the community is really worried
+ that the quantum computer might come six years from now.
+ I've encountered a lot of people who really think
+ the quantum computers might be breaking cryptography
+ in a few years.
+ And so they're like, you know,
+ we're gonna, a year from now, we're switching.
+ That means everyone's gonna skip this wrapping step
+ to bash the proof size down because it's not post-quantum secure.
+ And now all of the proofs will be two orders
+ and magnitude bigger than they have to be.
+ That is like a meaningful cost to the blockchain
+ to do that switch when we really could wait
+ to the last minute for the reasons I just said.
+ - Right, well, especially because we're also still
+ working out the size and efficiency.
+ It's not like this is an incredibly advanced technology
+ 20 years then.
+ - Right, and in fact, my own work is making major strides
+ and speeding up the provers
+ for the non-post-quantum secure things.
+ So it's all a moving target.
+ And I do worry that some of the L1s will make a decision
+ to switch to some kind of system that turns out
+ to be the wrong decision because stuff is changing
+ and we don't understand everything yet.
+ So in my view for the next 10 years, minimum five years,
+ but let's say most likely 10 and up,
+ at least with these ZK proofs,
+ which are very complicated sophisticated
+ cryptographic protocols, the real thing to worry about
+ is not quantum computers, it bugs.
+ It's like you're gonna get hit by a car
+ because you're looking up for the asteroid or something.
+ So for any time in the next 10 years,
+ if I had the choice between a simpler non-post-quantum thing
+ and a less simple post-quantum thing,
+ I'm gonna go with the simpler one for sure.
+ And we're trying to address the complicatedness
+ with techniques like formal verification and stuff.
+ And if something's formally verified,
+ it really doesn't matter how complicated it is.
+ But that's all in progress.
+ And those efforts are gonna also take years.
+ Okay, that's up there.
+ That's very good context.
+ So Dan, what more is there to say then
+ to several different approaches
+ to addressing post-quantum security?
+ I think you probably the best person
+ to talk about lattice-based cryptography.
+ Yeah, maybe I'll just say a few words about that.
+ So there are a couple of approaches
+ to building these post-quantum systems.
+ Lattices are these nice geometric objects.
+ And there are computational problems on lattices
+ that we believe are hard for a quantum computer to solve.
+ Why it's hard is because we've been trying to break it
+ for the last 20 years and we haven't been able to.
+ In cryptography, we're always looking for a hard problem.
+ 'Cause the minute we have a hard problem,
+ we can try to build cryptosystems
+ that are as secure as breaking the hard problem.
+ So these have inherently problems that seem to be hard
+ for a quantum computer to solve.
+ There's hope that we can build cryptosystems
+ from these problems that will also be hard
+ for a quantum computer to solve.
+ So can I ask you this, though?
+ How does the community address skepticism?
+ Like what's the kind of work that people are doing
+ to essentially prove out and ensure
+ that these things can be secure?
+ - I mean, the question is, how do we choose the bedrock
+ in which we base our cryptography in the world?
+ - That's right.
+ - And the way we do that is we choose problems
+ that have been studied for a long time.
+ And the community has reached consensus
+ that enough time has passed by that we have some confidence
+ that these problems seem to be difficult.
+ That's how we came up with AES.
+ We believe AES is a good cipher,
+ not because there's a theorem that said that,
+ but because a lot of people have tried to break AES
+ and nobody succeeded.
+ - Right.
+ - Why we ended up with ECDSA or Schnorr signatures
+ is based on discrete log and elliptic curves.
+ Classically, people have tried to break it
+ for a long time, nobody succeeded.
+ So we gained confidence in the system.
+ And the same thing happens with lattices, right?
+ So I guess people have started studying
+ the quantum complexity of lattices shortly
+ after Schor's algorithm.
+ Shortly after 1994, people already started wondering
+ how hard are these lattice problems for a quantum computer?
+ And it's been, what is it, 30 years now
+ that people have studied quantum algorithms for lattices.
+ And nobody's been able to find a very fast algorithm.
+ And so the more time goes by,
+ the more confidence we have that these problems
+ are difficult.
+ Now, that doesn't mean tomorrow
+ somebody could come up with a brilliant idea
+ and change our worldview.
+ And that's happened in the past, right?
+ There have been systems that we thought were secure.
+ In fact, people offered bug bounties for breaking them.
+ And then it turned out there was a mathematical breakthrough
+ and it turned out the systems were not secure.
+ We don't have a mathematical theorem
+ that says that these things are hard.
+ Unfortunately, we can't prove any hard these days.
+ That's related to the P versus NP question,
+ which is an open problem.
+ And since we can't prove that things are hard,
+ we basically have to speculate that they're hard.
+ And the only way we can speculate is if enough people
+ have tried to attack them and fail.
+ Yep, that's great.
+ Now, what I will say is that that is a never-ending process.
+ We do need more people to study the quantum hardness
+ of lattices, specifically lattices that are being used
+ in the NIST standards.
+ And so we should encourage more people in the community
+ to study these problems and come up with algorithms,
+ even if they can not completely solve
+ and come up with fast algorithms,
+ even if they can shave off the security a little bit,
+ that would already be a huge result.
+ So there is incentive for people to go and study
+ these questions, but until somebody makes a breakthrough,
+ we go with the current consensus,
+ which is that these problems are quantum secure.
+ That's super interesting.
+ Were there any others you want to quickly mention?
+ Yeah, so NIST actually recently standardized
+ on a whole suite of post-quantum systems.
+ These are systems that people can use
+ if they want to move to a post-quantum environment.
+ And so they have, for example, a key exchange mechanism.
+ It's based on a system called Kiber.
+ Technically, if the name for these things
+ is maybe not so important, but they--
+ Well, I want to hear what it's called technically.
+ What is it?
+ Yeah, it's called MLChem.
+ The ML stands for a module, lattice,
+ and it's basically standardized a key exchange mechanism
+ based on a post-quantum system.
+ Yeah, Kiber.
+ Kiber.
+ But I think it's important for listeners
+ to understand the cost of these things.
+ So Kiber, they particularly recommend
+ using what's called Kiber 768.
+ The public key in a normal pre-quantum key exchange system.
+ Basically, the public key is like 64 bytes.
+ The messages are like 64 bytes.
+ Everything is nice and small.
+ With Kiber, the public key all of a sudden
+ becomes over a kilobyte.
+ The messages that have to be exchanged
+ are over a kilobyte.
+ So we go from 64 bytes to a kilobyte of data
+ that now has to be sent back and forth.
+ And that has a lot of implication in the blockchain
+ space because, again, if you have to store encrypted data
+ on the blockchain, blockchain space is very expensive.
+ If you go from 64 bytes to a kilobyte,
+ that's a heck of a lot more you have to pay
+ for now storing this data on chain.
+ So there's costs to these things.
+ Definitely.
+ And this also standardized three signature algorithms.
+ Two of them are actually based on lattice-based systems.
+ And one of them is based on hash-based schemes.
+ The hash-based one, there's one point
+ that I would like to make there.
+ The hash-based one is very interesting.
+ It's called SLH DSA.
+ SLH stands for stateless hash.
+ But the scheme itself is interesting in that security
+ of the scheme is based on security
+ of the underlying hash function.
+ Now hash functions we believe we can make secure
+ against quantum computer.
+ So in some sense, SLH DSA has the least risk
+ associated with it because it's very unlikely
+ that the quantum computer will break those systems.
+ The problem with those systems is
+ that the signatures tend to be relatively large.
+ So in SLH DSA, the signature is about seven kilobytes.
+ 64 by signatures to seven kilobyte signatures.
+ That's very difficult for a blockchain to do.
+ But it's even difficult for the web to do.
+ Even for HTTPS, it would be very difficult to use
+ if we have certificates where every certificate
+ has a seven kilobyte signature inside of it.
+ It would take you a while to download
+ the front pages of New York Times
+ 'cause you have to get all these signatures
+ onto your computer.
+ But there is one environment where I think it is really
+ important to try and get these signatures adopted quickly,
+ which is the software update environment.
+ So every time you download a software update to your laptop,
+ that software update is signed by a signature scheme.
+ And that's how your laptop knows
+ that the software update came from Apple
+ or Microsoft or every operating system you're using.
+ Now, if we are surprised in a year from now,
+ somebody announces that they built a quantum computer,
+ we are in some sense in the water
+ because I can't send you a software update at this point
+ that you will believe is valid
+ because that software update could have been forged
+ and signed by this person who has a quantum computer.
+ And so in some sense, software update systems
+ are the ones that have to be updated first
+ so that if we're surprised
+ and a quantum computer is built early,
+ we can have confidence that those software patches are secure.
+ - So this should be the one
+ that people are really focusing on?
+ - Exactly.
+ So this is in some sense a high priority,
+ at least for software update systems,
+ we do need to use post-quantum signatures relatively soon
+ so we can update it as of an emergency.
+ And the one that's recommended to use there
+ is exactly this hash-based signature scheme.
+ For software update, it doesn't matter if the signature is large
+ 'cause you're already downloading like 100 megabyte updates.
+ - Great, does this one have an easy name
+ like the other one did for Kyber, the stateless hash one?
+ Does it have a shorthand as well
+ or is it just a bunch of letters?
+ - Okay, the jumble there is it's called SLH GSA
+ but it's based on a system called Sphinx.
+ - Okay, there we go, it's based on Sphinx.
+ Okay, and then just one takeaway,
+ what does it take away based on these NIST options
+ for builders, both in general
+ and in the blockchain crypto space?
+ Like what should they be thinking about
+ when they hear you say this?
+ - Okay, well, so software updates,
+ do we need to start using the system soon?
+ Or HTTPS, the mandate is 2035,
+ we have to update our encryption algorithms.
+ - Yep.
+ - We don't have to update our signature algorithms
+ so certificates can continue
+ to use pre-quantum signatures for quite a while
+ in the web space and probably also in the blockchain space.
+ - That was a great bottom line.
+ So Justin, this is a good segue to begin
+ to a little bit more nuance on some of the ZK stuff
+ 'cause speaking of lattice based folding schemes,
+ there's a paper that Trenut saidy,
+ who's one of your collaborators from Microsoft Research
+ and Wilson Nguyen from Stanford University
+ wrote very recently called NEO,
+ lattice based folding scheme for CCS over small fields
+ and paper bit commitments.
+ So let's talk about that briefly
+ and how that applies in the ZK world.
+ - Sounds good, so it's not being used today,
+ it's like a hot off the press, like research advance.
+ And it's also, by the way,
+ shortly before that paper came out, Dan
+ and his postdoc, Bin Yuchen,
+ posted a related paper that's also trying to design
+ more efficient folding schemes from lattices.
+ So look, I will characterize things as follows.
+ Today, most of public key cryptography
+ is based on elliptic curves, right?
+ And unfortunately, they're not post-quantum.
+ I would say lattices, like the way I think about them
+ is they mimic a lot of the nice properties
+ that make elliptic curves so useful today,
+ while still being, we hope, post-quantum secure.
+ And so I mentioned that some of the more popular ZK proofs
+ today are post-quantum, they're based on hashing,
+ just like the signature scheme Dan mentioned.
+ And others are based on elliptic curves.
+ And it's not like one is strictly better
+ than the other even ignoring post-quantum, right?
+ Like people think that the post-quantum
+ one's actually a factor provers,
+ and I think that's still up for debate.
+ But one thing is for sure,
+ the elliptic curve ones have shorter proofs.
+ And some other nice properties,
+ like the most efficient folding schemes by far,
+ built from elliptic curves.
+ And we don't know how to even approach that efficiency
+ with hashing, despite significant efforts.
+ The new papers from Sreenoff and William and Dan and Vinnie,
+ they are trying to do some of the cool stuff
+ in the ZK space that we can do with elliptic curves,
+ but instead with lattices.
+ - Ah, got it, okay.
+ - Right, and so when I saw these new papers,
+ I suddenly became optimistic.
+ My plan to get a post-quantum version of jolt,
+ that I also think will be faster for the prover,
+ but it's a little bit TBD,
+ was to go through the hashing based thing.
+ But I think that introduces a lot of complications
+ and headaches.
+ And so the lattice stuff offers an alternative path
+ to a post-quantum version of jolt,
+ which there's still some issues to deal with.
+ But if they get resolved,
+ it could be much simpler and just as performative
+ as the hashing root I was previously considering.
+ - Got it, okay.
+ And then is there anything else you wanted to add on ZK
+ in particular, as it applies to post-quantum crypto
+ that we missed?
+ I know there's a million things you can say,
+ but is there anything else?
+ - No, yeah, I think I hit the high points there.
+ - Okay.
+ - One thing I wanna say is that elliptic curve cryptography
+ has a lot of nice properties that in the ZK context
+ in particular, we're still like making discoveries
+ about how those nice properties can be exploited
+ for like major efficiency gains.
+ And I wouldn't write off the elliptic curve schemes
+ because they're not post-quantum,
+ especially given that further advancements using lattices
+ might get us the same benefits while being post-quantum.
+ Now, another benefit of the elliptic curve schemes
+ is that we have these ways,
+ and this is where folding schemes come up,
+ where they can potentially use significantly less memory.
+ So generating a proof takes less memory.
+ This is essential if you want the prober
+ to run on a phone.
+ And so if you really want the proofs to run on phones today,
+ I think elliptic curve-based things
+ give the best path for that
+ and possibly lattices in the future.
+ And that's exactly what these new papers
+ on lattice-based folding are looking at.
+ And I guess the final thing I'll say,
+ I think wrapping a post-quantum proof
+ and a non-post-quantum thing is silly.
+ I think people are forced to do that today.
+ Like they just have no choice.
+ But I don't like it because it's bug-prone,
+ it's complicated.
+ And the proofs we generate without the wrapping,
+ I think they're small enough.
+ They're not like megabytes.
+ They're as little as like a dozen kilobytes or something,
+ maybe up to 100 kilobytes.
+ And so the reason everyone's doing this wrapping today
+ that's like complicated and error prone
+ is because it's so expensive to post data on blockchains
+ and run computations checking proofs on blockchains.
+ And if the blockchains scale up a little bit,
+ I hope we won't have to do it in the future.
+ It's adding surface area for bugs and complications
+ and all sorts of things.
+ - Yeah, it's a little like wrapping a secret inside
+ like a public bus stop or something else totally.
+ And actually to your point,
+ this is a recurring theme I keep hearing you saying
+ throughout this episode, Justin,
+ is you're not saying don't worry
+ about post-quantum crypto.
+ People have to do it at the right time.
+ But you're also saying don't lose a bigger picture
+ and destroy your security.
+ And the fact that you actually have to worry about bugs.
+ And that's actually the real or problem right now
+ is what you're saying.
+ - Right now, yeah, absolutely.
+ If you have no choice but to switch soon
+ because you're nist and it's gonna take 20 years
+ to do the switch, do what you gotta do.
+ But if you do have a choice,
+ don't rush in and take all these risks
+ and make everything buggier than it already is.
+ The bug's easier to find and all that.
+ Yeah, that would be my caution.
+ - Great. All right.
+ That's another wrap up, tell me what is your device
+ or how to think about when and what to do?
+ Like how should builders approach this?
+ - Okay, so again, zero knowledge proofs kind of have
+ two orthogonal security properties.
+ So one is protecting privacy of the prover
+ if they're proving they know some sensitive data.
+ And the other is kind of security that no one can prove
+ they know data that they don't actually know, right?
+ And the post-quantum concern is just doesn't affect
+ that all the privacy property.
+ And it does affect the other security property.
+ But as long as you know that the attacker didn't have access
+ to a scalable quantum computer,
+ when they generated the proof, everything's fine.
+ The privacy is still there as long as you know
+ that the prover at the time they generated the proof
+ did not have a quantum computer, then everything's fine.
+ So what I would say is, look, I do fully expect us
+ to have, we'd rather than quantum computers
+ in the coming decades.
+ And so what I would say is it's not cost free
+ or risk free to switch.
+ And it's a cost benefit analysis thing.
+ Like we do eventually have to switch for sure.
+ There's lots of debate, not only about
+ how long will it take to get the computer,
+ but will we see it coming, right?
+ Will it be like a bunch of progress in the year before
+ we actually get cryptographic relevance?
+ Or will it be like an overnight thing?
+ - Yes, yes.
+ - And so I think people should be prepared.
+ I just think that they also should carefully consider
+ the benefits of waiting and weigh everything carefully
+ and not just panic, basically.
+ - So think about it, prepare.
+ But don't jump and definitely don't buy the hype
+ and the news media and suddenly change your thing
+ overnight before you talk about upgrading blockchains.
+ Which by the way, I don't think people even realize
+ that blockchain upgrading is actually much easier
+ as we talked about in this episode than--
+ - Upgrading like the internet infrastructure?
+ - Yeah, exactly.
+ - It's much easier.
+ - It's much easier.
+ - Yeah.
+ - That's a great note to end on.
+ Justin, thank you so much for your patience
+ and for explaining this.
+ - I'm glad we finally got to record
+ one of these together.
+ - Thank you, I know, and we'll have more.
+ - Well, I look forward to it.
+ Thanks for having me.
+ I hope the conversation is educational
+ and generally useful, and it was a pleasure.
+ - So no, thanks for running this.
+ Super, super interesting.
+ I hope this was educational
+ and help for your audience.
+ - Super educational.
+ I feel like you secretly work for the NSA, CIA,
+ and you like secretly have a quantum computer
+ you're making, and we'll talk more about this later.
+ But our next thought site,
+ we love talking about three-body problem trilogy.
+ I want you to tell me about these things
+ that the topological qubits are based on,
+ 'cause they sound like alien so far.
+ Actually, anyway, thanks, Dan.
+ - Thanks for joining us.
+ - Thanks for all.
+ - You too.
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (upbeat music)
+ (dramatic music)
+ [BLANK_AUDIO]

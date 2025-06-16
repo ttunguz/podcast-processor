@@ -1,0 +1,361 @@
+--- METADATA START ---
+Show: The AI Daily Brief (Formerly The AI Breakdown): Artificial Intelligence News and Analysis
+Episode: How AI Solved a Massive Coding…
+Host: Unknown
+GUESTS: None 
+Guests: None
+Source URL: https://podcasts.apple.com/us/podcast/how-ai-solved-a-massive-coding-challenge-for-morgan-stanley/id1680633614?i=1000711240620
+--- METADATA END ---
+
+1
+Today on the AI Daily Brief, a case study in how Morgan Stanley used AI to solve a very intractable coding problem.
+2
+Before then in the headlines, a set of new features that make ChatGPT for business even more powerful.
+3
+The AI Daily Brief is a daily podcast and video about the most important news and discussions in AI.
+4
+All right, friends, quick announcements here before we dive in.
+5
+First of all, thank you to today's sponsors, Blitzy.com, Vanta, Agency, and Super Intelligent.
+6
+A quick reminder once again that if you are looking for an ad-free version of the show, you can get it at patreon.com slash AI Daily Brief.
+7
+And one quick announcement, a couple jobs that are open at Super Intelligent right now.
+8
+We are absolutely inundated right now with these agent readiness audits that you hear about all the time on the ads.
+9
+And I am looking for a copy editor and a layout designer to help with those reports.
+10
+These are contract positions, but there will be a fairly high volume.
+11
+So it could be a really good one for freelancers.
+12
+Again, I'm looking for a copy editor as well as a layout designer.
+13
+If you are interested, shoot me a note at jobs at bsuper.ai with report in the subject.
+14
+Again, that's jobs at bsuper.ai.
+15
+But with that, let's get into today's headlines.
+16
+We'll go back to the AI Daily Brief Headlines Edition, all the daily AI news you need in around five minutes.
+17
+OpenAI made a quick announcement today about ChatGPT for business.
+18
+First of all, they gave us some numbers.
+19
+They say they now have 3 million paying business users, and they are adding a slew of new features to make their tooling more powerful.
+20
+The one that people are most interested in is called connectors.
+21
+Basically, ChatGPT can now plug into Google Drive, Dropbox, Box, SharePoint, OneDrive, and others, and users can more easily access it to get answers from stored spreadsheets and documents.
+22
+Now, this is a bigger deal than I think it at first appears.
+23
+Enterprise search is a massive category that companies like Glean and others have been really trying hard to corner the market on inside the enterprise for the last year or so.
+24
+And this is OpenAI directly going after that market.
+25
+The company wrote in a release, ChatGPT will structure and clearly present the data and respect your organization's existing permissions on the user level.
+26
+The update also includes a bunch of other features that, once again, have OpenAI competing with other standalone tools.
+27
+There's a record mode to take notes on meetings, and the integration which we got promised a couple of months ago with MCP is now coming into the enterprise sphere.
+28
+OpenAI writes, Workspace admins can also now build custom deep research connectors using model context protocol and beta.
+29
+MCP lets you connect proprietary systems and other apps so your team can search, reason, and act on that knowledge alongside web results and pre-built connectors.
+30
+This was just happening as I was recording the show, but like I said, I think it's maybe even a slightly bigger deal than it seems at first glance.
+31
+Another little feature update, OpenAI is also rolling out basic memory features for free users.
+32
+They wrote, we're starting to roll out a lightweight version of memory improvements to free users.
+33
+In addition to existing saved memories, ChatGPT now references your recent conversations to provide more personalized responses.
+34
+Now, we've talked about how ChatGPT memory isn't necessarily always a slam dunk.
+35
+Sometimes people have a bunch of different use cases going on and they leave memory off so that one chat doesn't influence the next chat.
+36
+All in all though, I think that those trade-offs are well worth it and that memory is a really powerful feature.
+37
+Still, rolling out memory as widely as possible seems to fit with OpenAI's strategy of building a quote, AI super assistant that deeply understands you and is your interface to the internet.
+38
+In strategy documents revealed in the Google Antitrust case, OpenAI laid out a plan to ship this assistant during the first half of this year.
+39
+Agentics, Advanced Reasoning, and of course, memory were all part of a coherent product that's all about, quote, making life easier for their users.
+40
+It also fits with Sam Altman's view that young people are using AI as a life coach, commenting, they don't really make life decisions without asking ChatGPT what they should do.
+41
+In that frame, it of course makes sense to push memory out to free users as a priority.
+42
+Basically, give as many people as possible the ability to experience what a personalized AI that remembers everything about you is like.
+43
+One last OpenAI story.
+44
+Even as it was happening a couple of years ago, you just knew that there was going to be a movie about the boardroom drama.
+45
+Sure enough, a new film called Artificial will cover the tumultuous few weeks of 2023 when Sam Altman was fired and then rehired, leading to a near-complete turnover in OpenAI's leadership.
+46
+Amazon MGM Studios has greenlit the production, which the Hollywood Reporter says is, quote, being put together at lightning speed.
+47
+At this stage, nothing has been fully locked down.
+48
+They're in talks with the director of Call Me By Your Name, and actors like Andrew Garfield are in conversations.
+49
+Sources say that Amazon is looking to shoot the film across San Francisco and Italy this summer, so we could be watching this thing before long.
+50
+Lastly, today, a fun, useful one for you all out there.
+51
+Notebook LM users can now share their notebooks using a link.
+52
+The latest feature for the Google product allows anyone on the internet to check out the research you've been collating with the AI tool.
+53
+Viewers won't be able to edit what's in the notebooks, but they will be able to ask the AI questions about it and interact with generated content like audio overviews.
+54
+Essentially, it's the same sharing functionality from Google's productivity suite being transferred over into their viral AI product.
+55
+And while this is completely inevitable as a feature, it's also a pretty powerful addition that really does open up some new use cases.
+56
+People were already using Notebook LM for corporate communications, especially by sharing audio overviews.
+57
+Giving anyone the ability to ask follow-up questions and interact with generative features opens up new functionality for information sharing.
+58
+Rather than only sending out the final product like a generated podcast, users could now share an interactive AI knowledge base as widely as they want to.
+59
+We're also watching in real time as AI companies try to figure out how to make AI use less of a solo experience.
+60
+And that's on both the consumer and the enterprise side.
+61
+Ultimately, I think that this will definitely continue to expand the use of Notebook LM and make it even more useful at work.
+62
+And I'm excited to see what people do with it.
+63
+For now, though, that is going to do it for today's AI Daily Brief Headlines Edition.
+64
+Next up, the main episode.
+65
+This episode is brought to you by Blitzy, the Enterprise Autonomous Software Development Platform with Infinite Code Context.
+66
+Blitzy is used alongside your favorite coding copilot as your batch software development platform for the enterprise seeking dramatic development acceleration on large-scale code bases.
+67
+While traditional co-pilots help with line-by-line completions, Blitzy works ahead of the IDE by first documenting your entire code base, then deploying over 3,000 coordinated AI agents in parallel to batch build millions of lines of high-quality code.
+68
+The scale difference is staggering.
+69
+Copilots might give you a few hundred lines of code in seconds, but Blitzy can generate up to 3 million lines of thoroughly vetted code.
+70
+If your enterprise is looking to accelerate software development, contact us at blitzy.com to book a custom demo or press get started to begin using the product right away.
+71
+Today's episode is brought to you by Vanta.
+72
+In today's business landscape, businesses can't just claim security, they have to prove it.
+73
+Achieving compliance with a framework like SOC2, ISO 27001, HIPAA, GDPR, and more is how businesses can demonstrate strong security practices.
+74
+The problem is that navigating security and compliance is time-consuming and complicated.
+75
+It can take months of work and use up valuable time and resources.
+76
+Vanta makes it easy and faster by automating compliance across 35 plus frameworks.
+77
+It gets you audit ready in weeks instead of months and saves you up to 85% of associated costs.
+78
+In fact, a recent IDC white paper found that Vanta customers achieve $535,000 per year in benefits, and the platform pays for itself in just three months.
+79
+The proof is in the numbers.
+80
+More than 10,000 global companies trust Vanta.
+81
+For a limited time, listeners get $1,000 off at Vanta.com/slash NLW.
+82
+That's vanta.com/slash NLW for $1,000 off.
+83
+Today's episode is brought to you by Agency, an open source collective for interagent collaboration.
+84
+Agents are, of course, the most important theme of the moment right now, not only on this show, but I think for businesses everywhere.
+85
+And part of that is the expanded scope of what agents are starting to be able to do.
+86
+While single agents can handle specific tasks, the real power comes when specialized agents collaborate to solve complex problems.
+87
+However, right now there is no standardized infrastructure for these agents to discover, communicate with, and work alongside one another.
+88
+That's where Agency, spelled AGNTCY, comes in.
+89
+Agency is an open source collective building the internet of agents, a global collaboration layer where AI agents can work together.
+90
+It will connect systems across vendors and frameworks, solving the biggest problems of discovery, interoperability, and scalability for enterprises.
+91
+With contributors like Cisco, CrewAI, Langchain, and MongoDB, Agency is breaking down silos and building the future of interoperable AI.
+92
+Shape the future of enterprise innovation, visit agency.org to explore use cases now.
+93
+That's agntcy.org.
+94
+Today's episode is brought to you by Super intelligence, specifically agent readiness audits.
+95
+Everyone is trying to figure out what agent use cases are going to be most impactful for their business, and the agent readiness audit is the fastest and best way to do that.
+96
+We use voice agents to interview your leadership and team and process all of that information to provide an agent readiness score, a set of insights around that score, and a set of highly actionable recommendations on both organizational gaps and high-value agent use cases that you should pursue.
+97
+Once you've figured out the right use cases, you can use our marketplace to find the right vendors and partners.
+98
+And what it all adds up to is a faster, better agent strategy.
+99
+Check it out at bsuper.ai or email agents at bsuper.ai to learn more.
+100
+Welcome back to the AI Daily Brief.
+101
+At this stage, AI-powered coding is undeniably one of the most powerful and increasingly mainstream use cases for AI and this early generation of agents that are starting to be deployed to production.
+102
+In the consumer realm, obviously, we've talked a ton over the last few months about vibe coding.
+103
+And this is obviously a big tent with some loose terminology that includes both AI assistant companies that are used by existing software engineers to improve their processes, take certain types of burdensome activities off their plate so they can be more focused on higher order issues.
+104
+Vibe coding also, however, is about bringing new people into the coding sphere, allowing people who weren't technical before be able to use English as their new coding language to build applications.
+105
+This has been an incredible trend that is not only impressive for the speed at which it's happening, but also in that it is the use case of AI that opens up other use cases of AI.
+106
+The more that AI is able to code, the more it's able to use code to solve other problems.
+107
+These tools have become so ubiquitous, in fact, that they've also been at the center of the question of whether AI is going to have a negative impact on jobs.
+108
+You've probably seen that Federal Reserve chart of the massive decrease in software development job postings from its COVID peak to now.
+109
+And yet, if there has been one area where it felt like AI tools and vibe coding specifically really wasn't up to the task, it was in the context of the enterprise.
+110
+The issues have been numerous.
+111
+Too short context windows to not be able to handle legacy code bases.
+112
+Design patterns that aren't optimized for many contributors who can come in and out of projects.
+113
+All of the issues replete with big, burdensome legacy code bases.
+114
+This is not really what these vibe coding tools were designed for.
+115
+And so their traction and relevance inside the enterprise has been a little limited.
+116
+Which is not to say that AI coding isn't having a big impact for organizations that have thrown themselves into it.
+117
+The CEOs of both Microsoft and Google have claimed that as much as 30% of their code is produced by AI, and Amazon staff are reportedly putting pressure on management to provide internal access to cursor as a matter of urgency.
+118
+And for as much as the conversation around AI and coding has led to a conversation around job replacement, when one starts to dig in, we're actually finding quite a few examples of stories of where AI and AI coding tools specifically aren't just being used to do things that were annoying before, but are actually opening up possibilities that were literally impossible before.
+119
+AI's ability to ingest a huge amount of data is intersecting strongly with financial firms in Wall Street.
+120
+Logistics companies are developing AI systems to optimize supply chains like never before.
+121
+And as the models improve, we're starting to see these big, not previously possible things come to the realm of AI coding as well.
+122
+Following the release of Anthropic's Claude Opus 4 last month, and you will remember that Anthropic's Claude models have been the go-to for developers for some time now, one veteran developer on Reddit said the model had managed to fix their white whale bug that had cost them hundreds of hours over several years.
+123
+The post reads: Background, I'm a C dev with 30 plus years experience, ex-Fang staff engineer.
+124
+I'm generally the person on the team that other developers come to after they struggled with a problem for a week, and I would solve it while they're standing in my office.
+125
+But today, I was humbled by Claude Opus 4.
+126
+I gave it my white whale bug, which arose from a re-architecting refactor that was done four years ago.
+127
+The original refactor spanned around 60,000 lines of code, and it fixed a whole slew of problems, but it created a problem in an edge case when a particular shader was used in a particular way.
+128
+It used to work, then we re-architected and refactored, and it no longer worked.
+129
+I've been playing on and off trying to find it, and must have spent 200 hours on it over the last few years.
+130
+It's one of those issues that's very annoying, but not important enough to drop everything to investigate.
+131
+I worked with Claude Code running Opus for a couple of hours.
+132
+I gave it access to the old code as well as the new code and told it to go find out how this was broken in the refactor.
+133
+And it found it.
+134
+Turns out that the reason it worked in the old code was merely by coincidence of the old architecture, and when we changed the architecture, that coincidence wasn't taken into account.
+135
+So this wasn't merely an introduced logic bug, it found that the changed architecture design didn't accommodate this old edge case.
+136
+This took around a total of 30 prompts and one restart.
+137
+I've also previously tried GPT 4.1, Gemini 2.5, and Claude 3.7, and none of them could make any progress whatsoever.
+138
+But Opus 4 finally found it.
+139
+And so, on this theme of AI not just helping people but solving problems that were somewhat unsolvable before, today in the Wall Street Journal we have another one of those stories.
+140
+The WSJ is reporting that Morgan Stanley has used AI to solve one of the biggest problems for these legacy code bases, which is updating legacy programs that were written in COBOL.
+141
+If you are younger or not a professional programmer, you likely have never had the joy of dealing with COBOL.
+142
+The programming language was first developed in 1959 and was fairly ubiquitous during the early days of computing.
+143
+Back during that era, computerized systems were so expensive that they were only deployed against some of the highest value use cases across society.
+144
+Think banking databases, air traffic control, and nuclear facilities.
+145
+This slowly expanded out over the decades, but remained an extremely high-ticket item.
+146
+Until the mid-1980s with the first personal computers, essentially every computerized system in the world was programmed in this language.
+147
+The language is dense, monolithic, and difficult to use even for experts.
+148
+It became obsolete by the 1990s with much better programming languages coming along, but many of the systems that used COBOL were so critical that they couldn't easily be replaced.
+149
+In fact, there's been a persistent fear that with the retirement of COBOL developers, it would become essentially impossible to maintain these systems, let alone embark on rewriting of the programs.
+150
+One area where this language is still omnipresent is in banking infrastructure, and those critical systems were viewed by some as a ticking time bomb.
+151
+Morgan Stanley, however, has taken on the Goliath project of rewriting all of their COBOL systems into modern language with the help of AI.
+152
+Using an in-house fine-tune of OpenAI's models, the bank created a system that can translate legacy code into plain English specs that developers can use to rewrite it.
+153
+According to the company's global head of technology, Mike Peasey, since the AI's introduction in January, it's reviewed 9 million lines of code and saved developers 280,000 hours.
+154
+IBM, which was a major provider for the mainframes that use COBOL in the early days, have been working on their own AI systems for migrating the language into Java.
+155
+To give a sense of scale of the problem, IBM's pitch was that their coding assistant could cut the task of updating legacy systems down to one or two years rather than several years.
+156
+But that tool hasn't emerged thus far, so Morgan Stanley built their own.
+157
+Peasey said, We found that building it ourselves gave us certain capabilities that we're not really seeing in some of the commercial products.
+158
+He said that off-the-shelf tools might evolve to deliver those capabilities, but quote, we saw the opportunity to get the jump early.
+159
+The journal writes, Morgan Stanley was able to train the tools on its own code base, including languages that are no longer or never were in widespread use.
+160
+Now the company's roughly 15,000 developers based around the world can use it for a range of tasks, including translating legacy code into plain English specs, isolating sections of existing code for regulatory inquiries and other asks, or even fully translating smaller sections of legacy code into modern code.
+161
+Now the tool is technically capable of rewriting code automatically, but it doesn't necessarily know how to make it efficient or take advantage of the features of modern languages.
+162
+That's why humans are still in the loop and largely using the AI as a parser to understand the functionality of the legacy code.
+163
+Rather than paying highly skilled technical experts that know how to read that legacy code to painstakingly write up specs, Morgan Stanley is using AI to automate that process.
+164
+Peasey said that he's not expecting to see smaller headcounts in his software engineering department because of AI.
+165
+Instead, he anticipates having a lot more code being produced.
+166
+The company currently has hundreds of AI use cases in production, aimed at all manner of growth and efficiency targets.
+167
+And thanks to this AI moonshot of rewriting their entire legacy code base, these AI automations can now be deployed against modern code rather than programs that were written decades ago.
+168
+Peasy said, you're always modernizing in tech.
+169
+Today, with AI, this becomes even more important.
+170
+So, to recap, this problem of these legacy code bases was so big, hairy, intractable, difficult that it has been kicked down the can for literally decades at this point because no one wants to take the time to just fix it.
+171
+However, at some point, we were going to get to a time when no one even really knew how to interact with these languages anymore, and we would have been up the proverbial creek without a paddle at that point.
+172
+Even in this very incremental version that doesn't do the full code translation automatically, you're still talking about a financial giant saying that they've saved 280,000 human hours this year.
+173
+Vibe coding specifically and AI coding tools in general may not have fully infiltrated the enterprise yet, but a few more stories like this and you better believe that they're going to get there soon.
+174
+For now, that is going to do it for this sort of case study version of the AI Daily Brief.
+175
+Appreciate you listening or watching as always.
+176
+And until next time, peace.

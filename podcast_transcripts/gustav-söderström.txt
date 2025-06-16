@@ -1,0 +1,2391 @@
+--- METADATA START ---
+Show: How Spotif… - Invest Like the Best with Patrick O'Shaughnessy
+Episode: Gustav Söderström
+Host: Patrick O'Shaughnessy
+GUESTS: Gustav Söderström 
+Guests: Gustav Söderström
+Source URL: https://podcasts.apple.com/us/podcast/gustav-s%C3%B6derstr%C3%B6m-how-spotify-thinks/id1154105909?i=1000709108581
+--- METADATA END ---
+
+1
+Something I speak about frequently on Invest Like the Best is the idea of life's work.
+2
+A more fun way to think about it is that I'm looking for maniacs on a mission.
+3
+This is the basis for our investment firm Positive Sum, and it's the reason why I'm so enthusiastic about our presenting sponsor, RAMP.
+4
+Not only are the founders, Kareem and Eric, life's work-level founders, certainly maniacs on a mission, they have created a product that is effectively an unlock for founders and finance team to do more of their life's work by streamlining financial operations, saving everyone their most precious resource, time.
+5
+RAMP has built a command and control system for corporate cards and expense management.
+6
+You can issue cards, manage approvals, make vendor payments of all kinds, and even automate closing your books all in one place.
+7
+Speaking from my own experience using RAMP for my business, the product is wildly intuitive, simplistic, and makes life so much easier that you'll feel bad for any company who hasn't yet made the switch.
+8
+The RAMP team is relentless, and the product continues to evolve to save you time that you would never have dreamed of getting back.
+9
+To me, there is nothing more interesting than technologies that reduce friction for other entrepreneurs to be able to build the thing that they want to.
+10
+So much attention has gone to cloud computing, APIs, and other ways of making life easy for founders.
+11
+What RAMP has done and is doing is build yet another set of tools in this category.
+12
+To get started, go to ramp.com.
+13
+Cards issued by Celtic Bank and Sutton Bank, member FTIC.
+14
+Terms and conditions apply.
+15
+Hey everyone, Patrick O'Shaughnessy here.
+16
+If you've been thinking about the infrastructure behind AI, what's powering it, where capital is flowing, and how to stay ahead of the curve, you'll want to join me for a live webcast I'm hosting with AlphaSense.
+17
+It's called What's Next for AI and Data Centers, and we're diving into the future of cloud compute, data center investment, and the cybersecurity landscape that's forming around it.
+18
+I'll be joined by Michelle Brophy from AlphaSense and Gary Michel, formerly of AWS, to break down the most important forces shaping this space.
+19
+We'll also get into topics like the investment impact of Google's acquisition of Wiz and how tools like DeepSeek are influencing spend.com slash invest to register.
+20
+Again, that's alpha-sense.com slash invest.
+21
+Hope to see you there.
+22
+Ridgeline gets me so excited because every investment professional knows the core challenge that they solve.
+23
+You love the core work of investing, but operational complexities eat up valuable time and energy.
+24
+That's where Ridgeline comes in.
+25
+Ridgeline is an all-in-one operating system designed specifically for investment managers, and their momentum has been incredible, with about $350 billion now committed to the platform and a 60% increase in customers since just October.
+26
+Firms are flocking to Ridgeline for a good reason.
+27
+They've been leading the investment management tech industry in AI for over a year with 100% of their users opting into their AI capabilities, putting them light years ahead of other vendors thanks to their single source of data.
+28
+And they recently released the industry's first AI agents, digital coworkers that can operate independently.
+29
+Their customers are already using this highly innovative technology and calling it mind-blowing.
+30
+You don't have to put up with the juggling multiple legacy systems and spending endless quarter ends compiling reports.
+31
+Ridgeline has created a comprehensive cloud platform that handles everything in real time, from trading and portfolio management to compliance and client reporting.
+32
+It's worth reaching out to Ridgeline to see what the experience can be like with a single platform.
+33
+Visit RidgeLineApps.com to schedule a demo.
+34
+Hello and welcome everyone.
+35
+I'm Patrick O'Shaughnessy and this is Invest Like the Best.
+36
+This show is an open-ended exploration of markets, ideas, stories, and strategies that will help you better invest both your time and your money.
+37
+If you enjoy these conversations and want to go deeper, check out Colossus Review, our quarterly publication with in-depth profiles of the people shaping business and investing.
+38
+Patrick O'Shaughnessy is the CEO of Positive Summit.
+39
+All opinions expressed by Patrick and podcast guests are solely their own opinions and do not reflect the opinion of Positive Sum.
+40
+This podcast is for informational purposes only and should not be relied upon as a basis for investment decisions.
+41
+Clients of Positive Sum may maintain positions in the securities discussed in this podcast.
+42
+To learn more, visit psum.vc.
+43
+My guest today is Gustav Soderstrom.
+44
+Gustav is the co-president, chief product officer, and chief technology officer at Spotify.
+45
+Gustav lets us behind the scenes on how Spotify thinks about the future of audio and video and what leadership lessons he's learned from making mistakes and taking risks in a rapidly changing technology landscape.
+46
+He shares fascinating insights on their synchronized team structure and how they've positioned themselves as the RD department for the entire music industry.
+47
+We discuss their integration of AI, their unique Betsboard process for allocating resources, and how they've evolved from a music service into a multimedia platform with over 650 million users.
+48
+Please enjoy my great conversation with Gustav Soderstrom.
+49
+Maybe a fun place to begin is the obvious place.
+50
+Everyone is facing this giant shift in technology.
+51
+My friend Ravi Gupta calls this imperative AI or die, that companies, even the big, sexy, established technology companies, need to find ways to embrace and use this new technology as it unfolds or face elimination.
+52
+I would love to hear how you and Spotify are thinking about this.
+53
+I know you've embraced it very quickly and you were very early to using machine learning and data science all over the product.
+54
+But this is a big shift and you and Daniel and the team are some of the most thoughtful people about addressing shifts like this and you've done it before.
+55
+Walk us through in some detail how you first felt it, what you did about it, what it's like to be at a big company and process something like this.
+56
+Yeah, it's a great question.
+57
+I think it's the right description, at least in the longer term, I think it is AI or DAI.
+58
+Just like it was smartphone or die and before that internet or die, computer or die.
+59
+This is one of those shifts that it's not your choice whether you adopt it or not.
+60
+It's going to happen to you.
+61
+It's the epitome of a macro window.
+62
+And usually when these macro winds come, we have a saying internally that you can have the macro wind blow in your face.
+63
+It's not going to change its direction.
+64
+So you basically need to reposition yourself so you get the wind at your back and can surf this macro wind or some people call it macrowave the usurping.
+65
+So we've been through a few of these.
+66
+The first one was really the smartphone when that came along.
+67
+Spotify was really well positioned for the internet before the smartphone, where we had a free tier on desktop and that's where we acquired users and they built a playlist and they retained themselves.
+68
+And then mobility to listen on the go was a paid feature on Spotify.
+69
+And that was fine when the majority was computers and the minority was smartphones.
+70
+And then when smartphones took off, we faced an existential crisis where there started to be consumers who didn't have a desktop.
+71
+They only had a phone.
+72
+So they had no free experience and our entire model died.
+73
+So that was one of those moments.
+74
+We had to reposition the entire business model actually and figure out how do we do a free tier on mobile that doesn't cannibalize the paid feature, which was one of those examples.
+75
+And I think this is a similar one.
+76
+The big question to me is does this require a business model change or is it quote unquote just a product change?
+77
+The other thing that is different I think about AI is that it's not going to touch one thing.
+78
+It touches the consumer product but it also touches your productivity and competitiveness as a company.
+79
+So there are lots of different angles to start.
+80
+But as you said, we were quite early with machine learning.
+81
+The journey we had was we saw users coming on Spotify and then they started playlisting and that retained themselves.
+82
+But it was only a certain amount of people who were good at playlisting because you have to know the catalog in your head, the new releases, the back catalog.
+83
+So some people retain themselves really well.
+84
+And then we tried to scale that behavior by having editors who created playlists for people who couldn't playlist that well.
+85
+And we saw people using social to find inspiration.
+86
+Eventually, machine learning started happening.
+87
+We saw this opportunity of building a music friend for everyone.
+88
+So that's where we started.
+89
+And we started investing in that and got quite good at that.
+90
+I think some people say that AI is just machine learning, it's just a new word.
+91
+And it's an interesting question.
+92
+What is the difference?
+93
+I think the difference between what people used to call machine learning and what we call generative AI is that the statistical machine learning was an output mechanism.
+94
+And I think the epitome of that age is the full screen TikTok feed.
+95
+UIs shape themselves after technology that powers them to maximize metrics.
+96
+And I think that is the UI that maximizes the statistical explore-exploit paradigm of old school machine learning.
+97
+What happens with generative AI, I think the big shift is that you can take natural language inputs.
+98
+And the big shift is that it's two-way.
+99
+If you think about Spotify, for example, this consumer product, the way it looks, it's almost like an old-school broadband.
+100
+The broadband where you have maybe one megabit downlink, but only 150-kilobit uplink.
+101
+So, a lot of bandwidth down, but not a lot of feedback.
+102
+This is what most consumer services look like.
+103
+You have streaming video on the downlink, a lot of information per second, but the uplink is only a few clicks and swipes.
+104
+It's very, very narrow signal.
+105
+And this is what the previous machine learning age focused on.
+106
+I think what changes in the age of generative AI is that the uplink can now be English language.
+107
+It can be almost as rich as the downlink.
+108
+And I think that requires all of us consumer companies to, in the limit, totally rethink the product.
+109
+So, if you just do the deduction of what I said, if the full-screen TikTok feed is the epitome of the ML paradigm, the asymmetric downlink-uplink paradigm, what are the chances that that is also the epitome of this generative AI age?
+110
+I don't think so.
+111
+I think consumer products are going to change fundamentally.
+112
+I can't predict exactly how.
+113
+I think they're going to be much more symmetric in terms of information you receive versus information you give.
+114
+And I think if you fast forward five to ten years, almost all big consumer products are going to be a conversation to some extent rather than this service that you use.
+115
+So, really, the job for us on the product side is to try to figure out what is the next paradigm.
+116
+And I don't know exactly what it is yet.
+117
+We're experimenting.
+118
+And if I did know, I probably wouldn't tell you right now and sit on it for a bit.
+119
+But this is where on the product side.
+120
+And then we can talk a bit about the productivity side as well, where there are the obvious gains in terms of.
+121
+But as a big company, there are a few differences from the startups.
+122
+Because so far, generative AI encoding has had the most impact when you write net new code, which is a lot of what you do as a startup and a tiny bit of what you do as a big company.
+123
+Most of it is just refactoring, et cetera.
+124
+And I think I saw some statistics that in a big company, you basically code one out of every eight hours in a day.
+125
+So not only is coding only one-eighth of the time, of that one-eighth of the time, net new code is very small.
+126
+So I actually think the biggest impact is yet to come when it comes to coding.
+127
+That's two things.
+128
+These models are getting big enough to understand really large and complex code bases like Spotify's.
+129
+And we're not quite there where these things can refactor our code base.
+130
+It doesn't have quite that deep understanding, but it will.
+131
+And that will be a big shift.
+132
+The other is doing automatic peer review.
+133
+We're just on the verge of that working.
+134
+It's not quite good enough that you can trust it.
+135
+So a lot of developers sit and wait for the code to be in review and come back.
+136
+So I think we're seeing that ramp.
+137
+I think we're going to see it ramp a lot in the next few years.
+138
+But then the really interesting side is these other seven hours, what a developer does, which is a lot of communication, planning, working with designers, prototyping, meetings.
+139
+Those things I think will actually have as big or even more impact than the coding itself.
+140
+I'm going to start with this downlink, uplink part.
+141
+What have you learned about consumers' willingness to put a lot of effort into the uplink?
+142
+It seems like the chat interfaces, the GPTs of the world, we know that people are willing to do a lot of back and forth because it's the native interface.
+143
+In an app like Spotify, how willing are people to get not lazy and really descriptive about what they actually want?
+144
+What have you learned about the nature of people's laziness versus willing to put a lot of work in to get the thing that they want via that more rich uplink?
+145
+Yeah, so that's probably the most exciting thing for us of this generative AI age and the dual uplink paradigm.
+146
+So previously, we mostly relied on some explicit input when you playlist.
+147
+That's high-value information.
+148
+You are sitting there thinking this song goes really well with this song and that song.
+149
+So if you think about it as labeling, even though you're playlisting for yourself, you're sort of labeling these tracks, at least in relation to each other, and you're putting a lot of effort in it.
+150
+And that was and is our big advantage in music recommendations, even though generative recommendation systems are starting to take over from these more old school collaborative systems.
+151
+So we had some really strong signal like that, where you quite seldomly invested a lot of time in producing a data set that described you about playlisting.
+152
+But most of the time, we just had skips.
+153
+And the challenge for us is the phone is in the pocket.
+154
+So even if we had the thumbs up down, you're not going to take out the phone every time and say, I didn't like this because of that.
+155
+Or even do a thumbs up, thumbs down.
+156
+It requires you to take up your phone, unlock it, open Spotify.
+157
+What you can do from your earphone is to skip.
+158
+So we have the skip signal, but that is a very blunt signal.
+159
+So we play your song and you skip it.
+160
+That could be because you absolutely hated it.
+161
+It could be because you love it, but it's 100 times.
+162
+You're tired of it.
+163
+It could be that you love it.
+164
+You're not tired of it, but you're at the gym.
+165
+So jazz is not the right thing.
+166
+All of those just look like a skip to us.
+167
+We have a lot of that signal, but it's blunt.
+168
+And you will never get to a perfect personalization.
+169
+Now, what we find with generative AI, one of the first services that we've launched that is live now in 40 countries, is something called AI playlisting.
+170
+We literally use an LLM that is trained on your listening data and world knowledge and so forth.
+171
+And you can literally tell us in English what kind of playlist you want.
+172
+Previously, you could playlist songs and maybe put a title on it and we could guess.
+173
+This is probably a running playlist.
+174
+So we could do something.
+175
+Now you can say, I want a running playlist that is EDM.
+176
+I want big drops.
+177
+I want it to be 160 BPM.
+178
+And then you get a suggestion from the LLM and then you can keep a few tracks and say, these were good, these were not good.
+179
+Now refine it.
+180
+I don't like these artists, but I want more of that.
+181
+So for us, it's the first time that we get that kind of fidelity of what is actually in the user's mind.
+182
+One way to think about Spotify is we always try to reproduce a small part of your neural cortex on our servers.
+183
+It was just very hard with a click stream of skips.
+184
+Now when you tell us what is in your mind, it gets easier to approximate you as a person.
+185
+So this is really the first time that we have that signal.
+186
+One way I like to think about it is when we do user research, we do two things.
+187
+We do quantitative testing, A-B test, but before that, we do qualitative testing.
+188
+We interview a few people deeply to understand the need.
+189
+Then we build a product and then we A-B test to see if we're right.
+190
+The promise of generative AI is really a deep, ongoing qualitative user research with almost 700 million users all the time.
+191
+It sounds big, but if you squint at it, that's kind of what it is.
+192
+It's interesting how many different ways you could take the product with this new technology.
+193
+I would be really curious to know the apparatus inside of Spotify, the leadership team, the product team, and literally how you run the process of deciding what to do with your big team, obviously, but no matter what, you have limited effort, limited units of effort.
+194
+So, there's a huge space of stuff you could do with this technology and the exciting advantage that you have of the 700 million users.
+195
+What is the literal meeting by meetings process, the setup process look like?
+196
+And the reason I'm asking this question is so many companies face this same challenge.
+197
+It's exciting, but also scary that they need to get the innovation before somebody else does and disrupts them.
+198
+So, what is the background process for how you arrive at the things you might try?
+199
+There are really two things.
+200
+We have a very structured process that I want to talk through how it works, but there are also some concepts that we use.
+201
+And over the years, I've introduced some strategic frameworks to the company, which I know you're passionate about, like Seven Powers, Half-N-Hammer, Bundling Framework, Shishimoshira.
+202
+He's on the board, right?
+203
+He's on the board.
+204
+Secret weapon.
+205
+Exactly.
+206
+Very good secret weapon.
+207
+And also, I found Better, Simpler Strategy by Felix Oberhausen-Geet to be very good.
+208
+What's that one?
+209
+I don't know.
+210
+It's a concept of the value stick where you have willingness to pay, which is very important for us.
+211
+The way we measure values, the willingness to pay.
+212
+But what it introduces is also the willingness to sell.
+213
+If you think about your staff, what is their willingness to sell their services to you?
+214
+And everyone focuses on increasing the willingness to pay, but you can also increase, or depending on how you think about, decrease the willingness to sell.
+215
+And it turns out the best companies in the world are not necessarily the ones who actually pay the most, it's the ones with the most interesting mission, the best culture, et cetera.
+216
+So, because we're a bundled service where we try to just give users more and more value all the time, we put in lots of music, that's value.
+217
+Then we put in more podcasts, that's value.
+218
+Now we put in books, it's more value.
+219
+This framework of willingness to pay and willingness to sell fits our business really well.
+220
+And the job of us is to keep the willingness to pay.
+221
+And our goal as a service is to make sure that this Spotify is just an amazing deal.
+222
+You're always going to feel the willingness to pay, the actual value you perceive, is way over the price that we have.
+223
+So we use that framework quite a lot.
+224
+So introducing these frameworks, not just in the business world, but also in the product and technology world, makes people think in more structured ways.
+225
+It makes people have a vocabulary.
+226
+We can talk about network effects, amortization, brand power, all of these things.
+227
+So I spend a lot of time getting the teams to use these frameworks so that we have structured strategic thinking.
+228
+And the other thing I'll try to push as a thesis is that I'm a big fan of Socratic debate.
+229
+I'm amazed, like many other people, how far the Greeks and the Romans came with just discussion, even though they didn't have science, just reasoning.
+230
+Strong reasoning is very useful.
+231
+So I'll try to push this provocative line of talk is cheap, so we should do a lot of it.
+232
+That's a counter to like moving fast and breaking things.
+233
+It's so cheap to talk, so we should actually do a bit more of it.
+234
+It took the Greeks to the concept of the atom.
+235
+So we do a lot of talking and ideation that is quite structured.
+236
+And I do that with my leadership team and often the leadership team sort of plus one, which means the VP layer and sort of the director plus.
+237
+I don't have a lot of time just for discussing concepts.
+238
+Back to one of my heroes in life, David Deutsch.
+239
+His book, The Beginning of Infinity and the Fabric of Reality, shaped me quite a lot.
+240
+And he talks about something called good explanations.
+241
+And he has a list of what a good explanation is.
+242
+It obviously needs to be falsifiable and so forth, but it also needs to have reach.
+243
+It needs to scale.
+244
+An okay explanation explains this phenomenon, but it's the solar system to the planets but it's also very hard to vary which i think is often underestimated if you have an explanation and you can switch it out for another explanation that explains the same thing.
+245
+If you explain the weather using gods, you can switch out this god for that god.
+246
+It's probably not a good explanation.
+247
+It needs to be very hard to vary.
+248
+If you vary it, it doesn't explain it anymore.
+249
+The last thing he says is that explanations should not just be predicted.
+250
+That's not an explanation, that's a model.
+251
+An explanation needs to explain why.
+252
+So I try to push my teams.
+253
+Even if something works in an A-B test, I tend to say like, I don't want to launch it until you have a good theory of why it works.
+254
+Because if you figure out the why, it's the difference between pattern recognition and actually understanding something.
+255
+Pattern recognition is useful.
+256
+That's called seniority.
+257
+A lot of people good pattern recognition, but if they can explain why it works, it scales to the entire org.
+258
+Other people can use that knowledge.
+259
+It's much, much more valuable.
+260
+So those are some of the concepts that I've tried to put into the org over time.
+261
+So I think that's important because that shapes the culture.
+262
+Then we have the structured process, which is we execute for six months at a time.
+263
+We have something called a bets process where all the VPs, which is about 14, so one of the benefits of Spotify is they're so small that all the VPs, the entire company, can fit in one room.
+264
+And we meet three hours every Tuesday.
+265
+So the company is completely synchronized, for good and bad.
+266
+And we can talk about that later.
+267
+But so every six months, these VPs, they pitch, literally pitch, as if we were a VC and they were a startup.
+268
+The bets that they think the company should do and why.
+269
+It's very much like a startup process.
+270
+You don't get to use the fact that Gustav or Alex or Daniel may like you.
+271
+Then me and the other co-president, Alex Nordstrom, we decide based on these pitches a global stack rank.
+272
+This time we have 44 bets.
+273
+That's usually between 30 and maybe 50.
+274
+We stack rank them from one to 44.
+275
+Then we go out to the organs.
+276
+They now try to resource this.
+277
+And they start from the top and then maybe they get to 30 and say this is what we can do in the next six months.
+278
+And then they commit to those things and we start executing.
+279
+And it's a good mix of bottoms-up innovation where you leverage not just Daniel, not just me and Alex, but all the VPs and the layers below to come up with good ideas because they're closest to the user.
+280
+But then there is global synchronization.
+281
+We stack rank them, make sure that they fit a single strategy, and it's back to the organ.
+282
+They commit.
+283
+As I think, you know, you're going to be much better at delivering something if you were the one who said, I can do this.
+284
+Then if your boss said, you can do this.
+285
+So that's the process.
+286
+But leading up to that, we have something called a prototyping phase.
+287
+So the previous six months, we prototype in the combination of Figma and increasingly Gen AI tools, what Spotify should look like after the next six months or could look like.
+288
+And this prototype also helps synchronize the entire company.
+289
+What I found previously was that when people submitted these bets, everyone had in their mind what their great feature would be.
+290
+You start building and then down the line you realize that you are not actually aligned.
+291
+And then you get a lot of fighting towards the end of the cycle where this thing doesn't work with that thing and things don't work out so well.
+292
+What I've tried to do now, together with Alex Nordstrom, we synchronize the entire company.
+293
+Alex and I don't have our direct reports team.
+294
+We meet as a single team three hours every Tuesday and we try to use the fact that we're small as an advantage instead of as a disadvantage versus our competitors.
+295
+So all the so-called quote-unquote fighting happens before you actually commit to doing something and you have something you can hold in your hand.
+296
+Say, this is what Spotify would look like if we pull this off.
+297
+So that's a combination of cultural input and then a very structured process for actually making it work.
+298
+I have so many questions about process.
+299
+The first is how that three-hour meeting on Tuesday works.
+300
+What is the structure of that meeting?
+301
+It's called the E-Team, execution team.
+302
+So it's very focused on execution of the company.
+303
+And the idea is that if you have five-day working weeks, there's never on average more than two and a half days before you, if you're blocked on something, can escalate to me, Alex, and all the other VPs.
+304
+So the idea is you should never be blocked more than max two and a half days.
+305
+Because we run this synchronized ship, if you're blocked, it gets very expensive because everyone else is downstream of you.
+306
+So if you're running a synchronized operation the way we're doing, escalation processes are very important and resolution is very important.
+307
+So a big part of that meeting is people say, we're off track here.
+308
+I'm dependent on this man or woman over there who hasn't done what they said.
+309
+And the beautiful thing about being able to have all the VPs in the same room is so many meetings that I'm sure you've been in, people said, okay, we'll take that offline.
+310
+I'll talk later.
+311
+And what we said is you're not allowed to say the word offline or later because that person is in the room.
+312
+I'm dependent on maybe Anna over there for this.
+313
+But then Anna is actually there.
+314
+And then Anna can say, okay, I didn't know that or I'm going to solve that.
+315
+So it's real-time resolution.
+316
+Very simple in theory, but incredibly powerful in practice.
+317
+Most companies don't do it.
+318
+So this notion of no, taking it offline, taking it later, real-time resolution.
+319
+That's why it's three hours.
+320
+So that's one thing of this meeting.
+321
+Another principle we have in that meeting, except nothing goes offline, is you actually can't bring your direct reports for good and bad.
+322
+The idea is that if you bring in a lot of direct reports, two things are going to happen.
+323
+One is the VP is not going to get forced to know the details as much.
+324
+So, I'm trying to literally force the VPs to solve it themselves, because I want them to be in the details.
+325
+So, you're not allowed to bring anyone else in to explain your thing.
+326
+You have to be on top of it enough to explain it yourself.
+327
+The other benefit of that is, over time, these groups get very tight because you don't switch people out all the time.
+328
+So, you build strong rapport, people can be honest, no one is afraid.
+329
+It's a very strong and high-functioning team.
+330
+So, that's a lot of what we do.
+331
+The other part is strategy and looking forward.
+332
+So, let's say that something we've been working on for some time now that is public, we wanted to introduce music videos, and the team goes off and says, what does that take in terms of licensing product?
+333
+What is the cost implications for the company, for the PL?
+334
+They come and present to the team.
+335
+This is what we want to do.
+336
+This is how long we think it should take.
+337
+So, it's a combination of keeping the engine running and never stopping, and also planning for the future.
+338
+But we don't really plan in that.
+339
+It's too big to have detailed planning.
+340
+That happens in focus rooms with smaller groups, with experts.
+341
+And then they come and present to that team.
+342
+We're not the only company that does this.
+343
+I know Airbnb does something similar.
+344
+I spoke a lot to Bronceski about it.
+345
+I think Netflix may have had something similar at a time, but they're now divided into content, the business, and product.
+346
+What I think is important about this is it's both the business and the product side.
+347
+And we talk a lot of product there.
+348
+So, the business people in Spotify, they know an awful lot about A High, about what a monorepo is.
+349
+They're there for the privatization of technology.
+350
+But on the flip side, they know exactly what the P<unk>L looks like.
+351
+They know our goals.
+352
+They know what gross margin is.
+353
+They know everything.
+354
+So that's quite unique.
+355
+And that gives them the CEO perspective.
+356
+that I think disappears in many companies because we put on these roles of you're a product person, so you're not supposed to understand finance.
+357
+That's not true.
+358
+If you're the CEO, you have to understand all of it.
+359
+If people are listening and are curious about this bets board process where you can submit projects and it seems like a really elegant way to allocate capital, what advice would you give them about the pros and cons of this process?
+360
+And I know you've been doing it a long time, how it's changed over time to reflect the learnings of what makes it work or fail?
+361
+So the concept itself is actually really straightforward.
+362
+It comes from the Kandan board.
+363
+It comes from the developer community, which actually comes from car manufacturing eventually.
+364
+It's just like, it's really the concept of stack ranking, which is very easy in theory and very hard in practice.
+365
+Very few people manage to say, this is actually more important than that.
+366
+They're just saying these things are very important, both of them.
+367
+And when you press them, they say, no, they're equally important.
+368
+But then they're not ranked.
+369
+So the real secret is to stack rank.
+370
+And say, you have your two darlings, but if you have to kill one of them, which do you kill first in reverse order?
+371
+So very easy, but hard to do across the entire company to agree on that.
+372
+But once you have it, it gives so much clarity to the org.
+373
+Because what happens when you say these three things are equally important, but they're not really.
+374
+They never are.
+375
+You're going to have to choose.
+376
+Is you just push the decision down the org.
+377
+And this VPU is on the hook for that thing.
+378
+It's going to start fighting.
+379
+This VPU is on the hook for the other thing.
+380
+And if you as a leader don't bring clarity, you're going to set your org up for fighting.
+381
+And people are very nice.
+382
+They're going to think that they don't like each other.
+383
+So just the stack ranking and being completely transparent across the entire company means that if I come to you, we should do this.
+384
+It's very simple but very effective.
+385
+And when you do that, there are a bunch of things you run into.
+386
+Theoretical questions of, okay, once you have this that board done, do you resource it globally?
+387
+Do you go through every developer and say, Oh, let's just try to get as far as we can?
+388
+That planning process is hell if everyone is up for grabs.
+389
+None of my VPs have any estimate of what resources they will have.
+390
+You basically disempower your entire VPs.
+391
+It's effective in a sense because you do perfect resourcing, but it's incredibly inefficient to do the planning.
+392
+So, then the question is: how do you divide it into blocks?
+393
+The structure we have is: we have a platform organization, they work with GCP and the cloud and the developer tools and so forth, and security, and all of that.
+394
+Then, we have an experience organization who's responsible for the entire consumer product across mobile, car, desktop, et cetera.
+395
+Then, a personalization organization, because that's so important to us, that does all the AI and the recommendations and balances between books, music, podcasts, video, etc.
+396
+And then we have three business verticals: music, podcast, and books.
+397
+So, they have their own resources.
+398
+And what we do is we start by asking them to resource as far as they can with the resources they have without stealing from each other.
+399
+And then we get as far as we can because you need to give them predictability for them to be able to plan their own work.
+400
+And then, at the end of that process, you may move some people around globally to make sure that you don't have something really important and there are two people missing.
+401
+That's not optimal for the companies.
+402
+You may move some people around, but largely, we try to let people keep the resourcing.
+403
+So, lots of those problems that you run into.
+404
+But I would say the biggest risk with this model, it sounds nice if you're perfectly synchronized.
+405
+And we've had to build our own tooling.
+406
+We tried some external tooling for planning that wasn't good enough.
+407
+And if the planning doesn't work, the overhead just grows very quickly versus execution.
+408
+We execute for six months in order for the overhead to not get too big, but we can't go to a year, then you can't react.
+409
+A quarter is too short, it's too much planning overhead versus execution.
+410
+So, the planning is the thing that you have to get really good at.
+411
+And I'm not going to say we're really good, but we're getting better all the time.
+412
+It's the thing that I care the most about, making sure that the planning is reasonably big.
+413
+If you can do it, for us, it's critical because the whole of Spotify's product strategy is that we have large distribution closing in on 700 million MEUs for a single application.
+414
+And our entire strategy is basically, we decided this many years ago before it was popular, but you saw the Chinese starting to build super apps, whereas the Western world built one app per use case.
+415
+We adopted the Chinese super app idea and said the hardest thing is going to be to get installs.
+416
+You could see the average number of installs from the app store dropping below one on average.
+417
+So, distribution became the most important thing.
+418
+And then we chose when we did podcasts and later books and videos, we're going to build it in the same application because then we can leverage our own distribution.
+419
+But that has drawbacks.
+420
+You have to have an organization because then everything is dependent on each other.
+421
+You're going to ship one app to the app store, and everyone is a stakeholder.
+422
+So, you cannot divide and conquer.
+423
+You cannot say, well, the book team, you can run ahead, or the music team, you do this.
+424
+No, everyone has to wait for everyone.
+425
+So, because of our consumer strategy, the company needed to be synchronized, and because it needed to be synchronized, we needed a really strong planning process.
+426
+We're good at doing global changes, like changing the entire UI because we're synchronized.
+427
+But we're probably much slower than other companies at trying something because it needs to go through a lot of planning.
+428
+I don't think you can win in planning.
+429
+The best you can hope for is to be quite good at the important things and not so good at the less important things.
+430
+I want to come back to something very interesting you said around the adoption of some of the tooling that's at the most cutting edge.
+431
+So, let's take Cursor as an example of a company that now everyone's familiar with, $10 billion valuation.
+432
+Seems like every software engineer is using Cursor to make themselves better.
+433
+But the way you framed it was so cool that, yeah, sure, but that's new code primarily.
+434
+That's a fraction of one-eighth of their time.
+435
+In the pie chart, it's a very small sliver that's being addressed by Cursor at big companies.
+436
+Can you describe how you think this will play out?
+437
+Because it feels like the public markets, especially, I guess, private markets too, are very curious about how AI companies and products and tools will address this much bigger part of the pie that sounds like really hasn't been hit too directly yet.
+438
+There are a couple of things that are interesting that I don't think are super obvious.
+439
+One is it used to be that every developer started using cursor, but now I'm starting to see a lot more non-developers using cursor.
+440
+That's partially because the industry is starting to agree on this protocol called MCP, Modern Context Protocol, which means that if you take your internal services and you wrap them in an MCP, you can speak English to your infrastructure.
+441
+So, if you're a developer now, or if you're a designer, for example, or a product person, let's say you want to prototype a feature in Spotify, one workflow is you take the existing Spotify.
+442
+And then, if your services are wrapped in MCP, you could theoretically say, now wire this up to my like songs feed or something.
+443
+And you can prototype, even though you're not a developer, because the infrastructure is wrapped in English language now through MCP.
+444
+I think that's an important thing.
+445
+So, I think you're going to see many more people using cursor than just developers.
+446
+I'm starting to see, I had one of my PMs who is in Sweden, she's from New Zealand, doesn't speak Swedish, she did her taxes in Cursor, managed to wrap the Swedish tax authority in MCP.
+447
+Not a developer.
+448
+So, I think it's going to grow outside of developers, but I think this points to what is actually happening in many of these big companies, which is why the startups can move faster.
+449
+So, if you think of a company like Spotify, it has tons of infrastructure.
+450
+You have the database with play history going 15 years back, you have who was in the family plan, that's one server, this is one data set somewhere, your taste graph is the data set, and so forth.
+451
+Now, here comes the big AI companies, and they give you this reasoning engine.
+452
+Some of them are open source.
+453
+So, basically, for free, you get what is getting close to Age I.
+454
+So, now you have this thing that you thought would be incredibly expensive, and you get it almost for free.
+455
+It's a gift.
+456
+You start using it.
+457
+What is the first problem you run into?
+458
+You say, How has my music listening changed over the last year?
+459
+That's not exposed as an API because, in the previous machine learning world, that data, the listening data 15 years back, it's on cold storage somewhere.
+460
+And an engineer would have had to do an SQL job that may have taken a week to pull it up.
+461
+Then you would have trained a model, then you put it back in cold storage.
+462
+Now, you want to be able to reason over that in real time.
+463
+You need to expose all your data as APIs in real time.
+464
+So, actually, my biggest job to enable AI is not AI engineering, it's old school engineering, exposing all this data that we have so that you can have a reasoning engine reason for you as a product person or actually for me as a consumer potentially over my own data in real time.
+465
+So, I think that's what's happening.
+466
+So, the combination of now there's a standard MCPs that you can wrap these APIs in, and many of these companies, at least us trying to expose all of this data, means that a business person, a lawyer, a product person, a designer will be able to use cursor without having to code.
+467
+And they can actually at least prototype or talk to real services.
+468
+That, I think, is the journey that we're on.
+469
+It started with developers, but I think as you expose the infrastructure and wrap it in APIs, I think it's going to have to go outside.
+470
+There's a way to say that and lose a lot, but summarize it: that what we've seen happen with developers is going to happen.
+471
+I'm surprised that it's cursor that they're using, that's quite interesting, but with other similar tools.
+472
+And that just more of our work is going to feel like we're working with a team, speaking to a team, using natural language to prototype things, to try things.
+473
+And that will diffuse slowly through the entire, not only just the hours of the software developer, but the hours of each of the other functional areas.
+474
+Yeah, I think so.
+475
+It's hard to see where it's going to land because you're somewhere right now, but we're pretty certain that that somewhere is on this curve.
+476
+So, you can be pretty certain that the workflows you see right now are not going to be the same.
+477
+That's actually one of the problems.
+478
+How much are we going to build for what we see right now when you know the models are going to be more capable, they're going to be different tooling very soon?
+479
+So, you don't want to overfit too much to the moment.
+480
+A reasonable view of a modern company is that all of its data is exposed in real time, and you have some tool on top, like Kercher or something else, maybe different tools for different skills, maybe a tool more.
+481
+The licensing team at Spotify may have a different tool to reason over all the contracts and quickly say, Do we think we can do this in that market?
+482
+And what do we need to license to do this?
+483
+But also, the product team could ask that licensing engine.
+484
+We have 15 years of contracts, both current and previous, so this AI has a lot of insight into what music licensing looks like more than any single person in Spotify, if you train it that way.
+485
+There will probably be slightly custom interfaces for different skills.
+486
+I'm not sure which is going to win out, but I think it's going to look something like that.
+487
+Right now, what we see people doing is they're sharing examples of prompts they used for the workflows and then prototypes that they've used.
+488
+And that feels like very much a point in time.
+489
+It's kind of hacky and different things.
+490
+If you were to calibrate the world out there, so few people have the inside view that you do, where you're excited by this technology, you're trying to embrace it, you're only able to embrace it so fast in the ways that we've described, on a one to ten-point scale or something like this.
+491
+What score would you give how much this is impacting you so far and how crazy this might get?
+492
+People are very excited that this is going to literally change everything.
+493
+And there are some people that are actually worried about how much, how powerful it might be.
+494
+From a practical real-world standpoint, could you calibrate us a little bit as one of the few people that actually is both excited about it and also faces reality on a daily basis?
+495
+If you want to be as realistic as possible about it, you take the developer use case.
+496
+I've seen studies from other big companies that if you actually measure out of the developer's time, the speed up is 7% or something, which sounds very disappointing because of all these things.
+497
+So I think right now it's a bit overhyped in terms of actual impact, at least for these big companies.
+498
+But I think it's going to turn it into the opposite.
+499
+And I think right now, people are overexcited versus the actual impact.
+500
+But I think the opposite is going to happen.
+501
+I think it's going to have tremendous impact over the longer term.
+502
+What I see people doing right now, it depends.
+503
+I mean, I use it a lot personally.
+504
+I see a lot of my developers and product people and designers use it all the time for just productivity purposes.
+505
+Putting things into an engine, asking it for the summary and so forth.
+506
+Those things happen all the time.
+507
+It's hard for me to estimate how much that speeds them up already.
+508
+It certainly does.
+509
+But I think the really big impact comes as you reshape these companies from this technology.
+510
+Right now, we're just tacking it on top.
+511
+But as I said, you have to reshape it and rebuild it for this world, where a reasoning engine can reason in real time over the entire company's data.
+512
+That requires actually a lot of retooling.
+513
+That's why startups are ahead.
+514
+They don't have to rebuild.
+515
+They don't have 15 years of data.
+516
+So they're probably in the future, which is why they feel like, no, no, Gusta is wrong.
+517
+The impact is really big already.
+518
+And I think it is for a startup.
+519
+I think it takes a bit longer for big companies.
+520
+And big companies like us, we have to shape up and accelerate in order to not be behind.
+521
+I'm sure they would all like to have 700 million monthly active users to experiment with, though.
+522
+On that topic, you mentioned going through mobile and the experience of not only was everything was changing as a result of mobile, but actually the business model also needed to change.
+523
+We've really talked about product so far, and there's more to ask about product.
+524
+But talk about business model.
+525
+What would be the world in which, as a result of this technology, Spotify's whole business model?
+526
+We've seen a few of those examples of business models, and I tend to tell my product teams, and everyone says that the world is disrupted and changed by technology.
+527
+And I think that's true in the sense that the underlying force is technology itself.
+528
+And it's this gift that keeps on giving.
+529
+It gives you computers, internet, smartphones, ML, AI, quantum computing.
+530
+And these gifts keep coming almost on a schedule and they actually come closer and closer.
+531
+Previously, technology companies were not called technology companies.
+532
+As a side note, they were called car companies, but it was a technology companies or pharmaceutical companies.
+533
+That was the state-of-the-art technology right then.
+534
+But because these macrowaves came so far apart, they called themselves a car company.
+535
+They never became ubiquitous technology companies.
+536
+They overfitted to that.
+537
+I think somewhere in the 90s around Google, Amazon, et cetera, these macrowaves started coming so fast that people tried to pin them down.
+538
+Amazon is that books company and they were like, nah, not really.
+539
+We're doing books, but here's other stuff we're selling.
+540
+And then, okay, you're the everything store company.
+541
+It's like, nah, not really.
+542
+Now we're selling Amazon web services over here.
+543
+So I think these companies are the first set of companies to have technology as the strategy.
+544
+The previous ones took one wave as the strategy.
+545
+And then IBM comes along and does computers as a strategy or first memory and so forth.
+546
+I think this is the first wave of general technology companies, which interestingly might mean that they could be, I mean, companies almost always die after a while.
+547
+These could be the first companies that never die because they're ubiquitous technology companies.
+548
+Whatever the technology gift is, just try to have a company that can quickly wrap around it, figure out the product and business model.
+549
+So I think that's interesting.
+550
+And that's how I think about Spotify.
+551
+Yes, we're a user company and then a podcast company and then a book company and a video company.
+552
+But it's really about trying to anticipate technology.
+553
+So I said mobile was one of these things where we need to change the business model.
+554
+And I think what happens when one of these technology gifts comes along is there is a big change when the technology happens.
+555
+Piracy, big havoc.
+556
+But the real change happens when someone also figures out the business model.
+557
+So I tell my product teams: technology can do good things, and then your business model can really change the world.
+558
+But without a business model, there's seldom like large-scale change.
+559
+You can destroy a lot of things, but you never really create value.
+560
+So mobile was the first where we need to figure out a free tier on mobile without cannibalizing our pay tier.
+561
+And what we did there was we looked at our data and saw that 50% of premium users were listening in shuffle mode.
+562
+So we said, what if we take shuffle as a feature, give that away for free?
+563
+It should be 50% of premium consumption, so very valuable, but it's not going to be 100% of anyone's premium consumption, so no cannibalization.
+564
+And we managed to create a tier where you could playlist all your favorite songs in a playlist, press play, put the phone in your pocket, and listen forever for free in the background.
+565
+So that was a business model innovation along with technology.
+566
+The most previous one was audiobooks, where there were audiobooks in the US, a la carte.
+567
+And sure, we did some nice innovation around being able to stream that book, but the real thing is not to stream a book.
+568
+You've been able to stream audio for a long time.
+569
+The real innovation there was the business model, to be able to bundle audiobooks into Spotify Premium.
+570
+It's almost like music.
+571
+Music was also a la carte and quite niche.
+572
+And once we made it an access model with no marginal cost, it got way larger.
+573
+And that's what we think about audiobooks as well.
+574
+So we've seen a few of those and managed to adopt them.
+575
+To your question, is AI going to do that?
+576
+Do we need to change the business model?
+577
+I'm not sure.
+578
+I think there is one glaring thing that is different, which is the previous VC model coming all the way back from chips and silicon was you make a big upfront investment and then you amortize and you get to almost zero marginal cost.
+579
+That's how software worked.
+580
+It's not how AI worked.
+581
+The marginal cost is high and you need to cover it.
+582
+So you could say that that should change everyone's business model.
+583
+You're going to need to somehow either monetize very effectively through ads or charge users.
+584
+And you see OpenAI being a subscription product.
+585
+And I think you're going to see more of those.
+586
+So the marginal cost is a net new thing.
+587
+For Spotify, it's interesting because we're like the one technology company that always had a marginal cost.
+588
+One more stream was a marginal cost to labels.
+589
+So we grew up in a world where if we were too successful on the free tear, we could go bankrupt overnight, which was never true for Twitter or Facebook, which is why VC said, just go crazy, worry about monetization later.
+590
+Spotify could never do that because we could go bankrupt overnight.
+591
+So we always had to worry about monetization and the balance between free tear and pay tear conversion and free tear monetization.
+592
+So the good thing for us is we're fairly used to marginal cost in our business model.
+593
+I think you're going to see those things.
+594
+It's very likely that some consumers are going to want tons and tons of inference.
+595
+And because that's a marginal cost, you're probably going to have to pay somehow for that as a consumer.
+596
+So I think you're going to see more tiering of consumer products based on how much inference you want.
+597
+But for us, that's not that new.
+598
+We've had several tiers already.
+599
+I'm curious because I'm an investor in a company called Etch that's going to be one of these companies that pushes down that inference cost.
+600
+Like the history of compute, you're going to see this incredible consumer surplus and consumer benefit that comes from cheaper and cheaper unit-by-unit inference cost.
+601
+But the countervailing force is that we would just use more of it.
+602
+So it makes me wonder how much more you can imagine better models being useful to you.
+603
+It seems like if we just froze reasoning and model capabilities today, we probably still have a decade plus of digestion to do of how we could use these models to make better products, better features, whatever.
+604
+Can you imagine another couple orders of magnitude better models opening up lots of features that you can't currently do?
+605
+Is that a thing?
+606
+Or do you think we have what we need?
+607
+And therefore inference we could expect to be really cheap.
+608
+So I both subscribe to the product overhang idea that there's a huge product overhang.
+609
+And if we froze, I think we would see products shipped that look amazing for several years before we exhausted what we have.
+610
+So I subscribe to that.
+611
+But I also subscribe to that there is no limit for compute.
+612
+Eventually you get to computronium.
+613
+But if you look at just the physics of computronium, what's computronium?
+614
+It's the most computational universe could do, theoretically.
+615
+We're very far from that limit.
+616
+So I think we're going to go all the way there before we stop.
+617
+And I think we're going to be very inventive.
+618
+There is a nice analogy.
+619
+I don't know who came up with it, but I think Ben Evans talks about it quite often.
+620
+You know, when the spreadsheet came along, the idea was the same.
+621
+Now all accountants are going to go out of business.
+622
+What happened was we could just not imagine if calculation cost went to zero.
+623
+What's going to happen is you could imagine that the value of doing that is going to go to zero because there were so many accountants in the world.
+624
+So what happened was we just started doing massively more accounting.
+625
+When there's no cost to spreadsheeting, you're going to start to do models to predict the futures of this asset or good or something into the future forever.
+626
+We just came up with so much more spreadsheeting.
+627
+I think from a financial point of view, when the cost of something drops, the demand usually increases more than the drop.
+628
+And I think that's bound to happen with intelligence.
+629
+It is the ultimate thing.
+630
+And to say, like, now I have enough intelligence, it's not interesting.
+631
+I think we're going to be ashamed of how mundane things we spend inference on.
+632
+Could my coffee be one degree warmer tomorrow?
+633
+If it's truly no cost asking the questions, I think people will.
+634
+Maybe now's the time to ask you about sitting in the back garden with David Deutsch and talking to him about this concept of the beginning of infinity.
+635
+Computronium made me think of your interest in this topic and your answer there that there's no end point here.
+636
+It's just going to keep going.
+637
+We're going to keep learning, keep deploying our new technology.
+638
+Can you talk about that book, why it influenced you, your conversation with him?
+639
+Yeah, so David Deutsch has been a hero of mine since I read The Beginning of Infinity, and then he wrote another book called The Fabric of Reality.
+640
+He's considered the father of quantum computing.
+641
+Obviously, quantum computing is one of these gifts that technology is going to give us, and it's about to get very real, I think, very soon.
+642
+So I've always been interested because quantum mechanics is the most insane thing on this planet.
+643
+We live in what we considered as reality, but if you go to the bottom layer, this is not reality.
+644
+It's just some three-dimensional projection that we live in.
+645
+The fabric of reality had a big impact on me.
+646
+He's an Everettian.
+647
+He believes in multiple words scenario.
+648
+I read that book and it blew my mind.
+649
+Then, The Beginning of Infinity is maybe his most famous book, whereas Fabric of Reality is really about quantum computing and how quantum computer works.
+650
+Beginning of Infinity is very philosophical, and he has a bunch of big ideas there.
+651
+He's a very positive person.
+652
+And now at seven, distanced.
+653
+And everyone is very negative on the future.
+654
+There's so many problems.
+655
+The air could go wrong and all things could go wrong.
+656
+Climate.
+657
+He's actually very positive about the future.
+658
+He's clear that there are risks, but he sees us going out there into the stars.
+659
+I asked him, where do you think we are in a million years?
+660
+And he's like, well, maybe we're this far outside of the solar system, but not quite there.
+661
+He's very certain we're going to get there.
+662
+He's a very positive person.
+663
+And when I asked him about his life, he's very content with his life.
+664
+He's very happy.
+665
+So he's just an inspiring person still at this age.
+666
+I wish I will be like him in that age.
+667
+But this book has a few concepts that I've tried to apply at Spotify.
+668
+And one of them is he talks about the power of explanations.
+669
+And he thinks the human mind is infinitely scalable.
+670
+He does not think there's a limit to what we can understand because of explanations.
+671
+And I think this is something that a lot of people, I agree with that, but a lot of people disagree.
+672
+Certainly, there are things we could never understand.
+673
+His view is: no, there is no limit to what we can understand.
+674
+We are the only species who broke that barrier because we have explanations.
+675
+Other species have pattern recognition.
+676
+They can do things and learn the pattern that this works.
+677
+There's some cultural transfer, maybe, of looking at someone else doing that pattern, a bird can see another bird.
+678
+Some species can teach their kids, but they never produce explanations.
+679
+He has a definition of a good explanation.
+680
+He's very inspired by Karl Popper as a philosopher.
+681
+It's his house god.
+682
+So he takes a bit from Popper.
+683
+He takes a bit from science.
+684
+So he says, obviously, that a good explanation has to be falsifiable.
+685
+But he says a few other things that I think are obvious in retrospect, but not before.
+686
+He says that a good explanation has to scale.
+687
+You can have an explanation about, for example, the sun revolving around the Earth, which explains a bunch of stuff, but it doesn't scale to other planets.
+688
+It's a better explanation, is to have the Earth revolving around the Sun.
+689
+It just scales better to different scales.
+690
+So a good explanation has to scale up and down.
+691
+A good explanation has to be compatible with all the previous explanations.
+692
+But most interestingly, he says that a good explanation has to be hard to vary.
+693
+This I find very obvious, but also very non-obvious to people.
+694
+So what does he mean with a good explanation has to be hard to vary?
+695
+He means that, for example, if your explanation for the weather on the planet is that now Thor is angry, so there's thunder there, it's an explanation, but it's too easy to vary.
+696
+You can say, well, now someone else is angry.
+697
+They also had a hammer.
+698
+It's too easy to vary and get the same result.
+699
+A good explanation, if you move one of the parameters, the entire thing is not predictive anymore.
+700
+Then you're probably close to the truth.
+701
+I think this is so interesting because the problem with most conspiracy theories that people love is they're so easy to vary.
+702
+You can just exchange that character for another crazy person and did something crazy, and it's still going to produce the same thing.
+703
+So if it's too easy to change people in a conspiracy theory, it's probably not true.
+704
+So I think that's something very powerful.
+705
+Like good explanations need to be very hard to vary.
+706
+So this is something I've tried to instill in my org.
+707
+And I think there's an interesting meta point here, which is people asking as a product person how much of product development is magic and how much is science.
+708
+And I try to be provocative and saying, I think it's exactly 100% science and 0% magic.
+709
+And people get provoked because it implies that there's no.
+710
+What I mean is that certainly people are going to have pattern recognition in this neural network.
+711
+They've seen a lot of examples.
+712
+That's what we call seniority.
+713
+And people have seen a lot of things.
+714
+They're going to get instinctively to the right conclusion faster than others.
+715
+So that is valuable.
+716
+And I want lots of seniority.
+717
+I don't discard seniority.
+718
+And it brings you a lot of value.
+719
+You can save a lot of time, a lot of mistakes.
+720
+But the reason you call it magic is because that person can't explain it.
+721
+It isn't actually magic.
+722
+It's just science.
+723
+It's just you are not smart enough to explain yourself.
+724
+If you could think even further and explain it and come up with an explanation for what you see, the way David Dodge does, it's so much more valuable for the company.
+725
+If you have a theory, instead of saying, no, Patrick, my intuition is this, you're not smart enough to understand it, so I'm not going to tell you, just do what I say.
+726
+Maybe I'm right, maybe I'm wrong, but it's not very helpful for you.
+727
+When I leave the company, you're going to take over.
+728
+You're like, I have no idea why they did that.
+729
+You have to develop your own intuition and your own pattern recognition.
+730
+But if I come up with an explanation, which is, I think the psychological behavior of people, you know, it's like Kahneman's loss adversity or prospect theory.
+731
+I think people value losing something one and a half times the value of getting it.
+732
+So therefore, we should not just launch feature and test it because it's 1.5x hard, more expensive to remove it.
+733
+Then you have a theory and it can spread across the company in a week.
+734
+And now everyone has that.
+735
+So I really want to force people in my company, even if we see something working in an A-B test, I try to tell them that I don't want to launch it until we at least have a theory of why it works.
+736
+Even if it's super clear, there's a lot of pressure to launch it because there's engagement, value, and monetization.
+737
+But I want you to at least have a theory because then over time the company builds up a consumer theory.
+738
+And if you have a strong consumer theory, then you can predict things.
+739
+What David Deutsch also says is that pattern recognition will iteratively get you more on the same path, but it's never going to jump all the way from the geocentric to the heliocentric model.
+740
+Only an explanation can take you to quantum physics, entirely unintuitive.
+741
+No pattern recognition gets you to maybe it's a wave and a part of that scene.
+742
+What's an example internally of a great explanation that then led to the geo-to-heliocentric type of jump?
+743
+What's an example of how that actually played out?
+744
+I think a good example that is public is the free tier that I told you about.
+745
+We only had a paid mobile tier.
+746
+You actually paid to get mobility on Spotify.
+747
+Now smartphones are scaling, users don't have a computer.
+748
+We need a free tier.
+749
+The competition that was YouTube, they were foreground on demand with video.
+750
+The pattern recognition, the obvious thing would have been to say, let's do that.
+751
+It's proven.
+752
+But what we did instead, and specifically attributed to a person named Charlie Hellman, was to reason around it from first principles and say, okay, let's look at our usage of Spotify.
+753
+If we limited our license to the same thing, it only works in the foreground.
+754
+As soon as you look at the screen, the music stops.
+755
+How much of the listening is in the foreground?
+756
+Turns out back then it was 9% or something.
+757
+So you have 91% of the use case being in the background.
+758
+We probably want to get something else.
+759
+The user needs there is probably background listening.
+760
+And then you look at the app store.
+761
+Is there a way to listen to music for free in the background in the app store?
+762
+The closest thing was Pandora, but that was radio.
+763
+You could not listen to your favorite songs.
+764
+So then we said, we would like a consumer product where you can listen to your favorite songs with your phone in the pocket forever for free.
+765
+So the problem with that is that's almost the premium use case.
+766
+If we just launch that, it's going to cannibalize.
+767
+So what do we do?
+768
+Then we looked at the premium usage and we saw that premium users, about 50% of the time, they were shuffling their playlist.
+769
+They were using on-demand features, searching and clicking and playing specific songs 50% of the time, but they were shuffling playlists 50%.
+770
+So then we thought, what if we take this, that seems to be something that even when you have on-demand, you voluntarily shuffle, it's a big use case.
+771
+We give that away for free.
+772
+That should mean that none of the premium users convert back to free because they still want their 50% on demand, but you're giving a lot of value away for free.
+773
+So we try to model the consumer need, reason around it, came up with this shuffle background tier that was very, very, very unintuitive.
+774
+Even the people inside the company say that's a terrible idea.
+775
+But we trusted the data, and I was even skeptical of it myself.
+776
+I was like, look at this on-demand.
+777
+Shouldn't we try time caps?
+778
+A lot of people just want us to try long free trials.
+779
+But the problem with the free trial is, even if Nokia, I think Nokia comes with music, they tried a year-long free trial.
+780
+But even then, the user knew that if I start investing in playlists now, a year from now, my playlist investment is going to disappear.
+781
+So they never started investing.
+782
+So we went with this shuffle tier, and this is what made growth explode.
+783
+And to this day, that's our differentiation against the other services.
+784
+It's the only way to listen to music for free forever with your phone and investors.
+785
+So that's an example of theorizing and explaining rather than patent recognition.
+786
+I would love to talk about the evolution of the relationship with the music industry.
+787
+It's a company that unquestionably has wholesale changed music, which is so interesting and so cool.
+788
+You've been here a long time.
+789
+Thinking back to the early days, it's amazing the impact that it's had.
+790
+And from an investor's perspective, one of the things that many were always key in on is just the gross margin of the business, just how much transfer pricing problem are you always going to have?
+791
+That no matter how big you get, the music industry that owns the IP is just going to always take their same cut of the meat.
+792
+Talk about how you've thought about that change over time.
+793
+It seems like it's been both a good relationship for them, but also a very patient path for Spotify.
+794
+Maybe just give us the insight into how it's worked and how you think about it.
+795
+Yeah, for sure.
+796
+I grew up, and Spotify grew up in the era of piracy in Sweden, which was the worst market.
+797
+And there's this famous quote from a UK label exec to a Swedish label exec around early 2000.
+798
+The Swedish label exec showed the PL of one of these Swedish companies and they said, that's not a business, that's a hobby.
+799
+That's how broken it was.
+800
+And that's actually why Spotify could happen because the music industry was prepared to take risks in Sweden.
+801
+And I want to give a lot of credit to the music industry.
+802
+They took a lot of risk with Spotify.
+803
+Spotify took an enormous amount of risk, an enormous amount of capital risk.
+804
+We MG'd a lot.
+805
+We ate a lot of the risk, but certainly they took a lot of risk.
+806
+I think the music industry certainly deserves the success, as does Spotify.
+807
+I joined in 2008, somewhere around 2012 or something.
+808
+I started saying that my team, the RD team, and all of Spotify, we are the RD department of the music industry.
+809
+And at first, people were like, what do you mean?
+810
+And I'm like, look at it.
+811
+It's an entire industry that doesn't have an RD department.
+812
+Mobile phones has an RD department.
+813
+It's called, you know, Apple or Google.
+814
+Everyone has a lot of RD, but there's no RD spend in the music industry.
+815
+And I think that's turned out to be true.
+816
+And if you look at the trajectory, this year is the first year of profitability for Spotify since its founding.
+817
+People say that there's a lot of talk about Spotify sharing enough of the revenue.
+818
+We share about 70%.
+819
+But the truth is, the other 30%.
+820
+We just invested, invested, and invested.
+821
+So a ton of patience.
+822
+And at the same time, actually, the music industry has been profitable.
+823
+Spotify has been unprofitable.
+824
+I think it's fair to say we are literally the RD department of the music industry.
+825
+We invested and have had losses for 15 years, and the music industry has been gaining profit.
+826
+Now, that is not sustainable forever.
+827
+We needed to get profitable.
+828
+We can't beat the RD department of the music industry unless we can have the best machine learning engineers, the best product people, developers, et cetera.
+829
+And for that, you need to be profitable.
+830
+Turns out these people are expensive because they're sought after.
+831
+We are a very, very patient and long-term company, and we invested for a long time.
+832
+But it was just time.
+833
+About two years ago, we decided now it's time for us to become profitable, to take control of our own fate in terms of being able to invest in ourselves.
+834
+So, yes, we're profitable, but we're actually investing almost all of that back into more people, more product, more AI.
+835
+Now we just have our own investment vehicle instead of having to ask private investors initially or the street for more money.
+836
+So that's how I think about it.
+837
+Really, as the RD department of the music industry, I think we've done a good job.
+838
+This year, we paid out over 10 billion, and that's up from 1 billion, I think, almost 10 years ago.
+839
+It's just steadily increased.
+840
+The music industry is bigger than it ever was.
+841
+People still talk about the heyday of the CDs, the CD era.
+842
+The truth is, the music business is bigger than it was back then.
+843
+So this is the best it's ever been.
+844
+It is better than ever, more money than ever.
+845
+The pie is both bigger and higher, but it's also getting sliced up.
+846
+But that's because more people take a shot.
+847
+And it feels very wrong for us to say, no, the creators up until 2020, they were good, but no one should be able to.
+848
+And I think a way to think about this is people talk about the per-stream payouts and so forth a lot.
+849
+And Spotify should share more per stream.
+850
+There are two things that are happening.
+851
+When other companies say that they share more per stream, the industry doesn't pay per stream.
+852
+They pay per subscriber.
+853
+We have more than twice the engagement of our competitive services.
+854
+So if you take the same $10, you listen twice as much as Spotify, the per stream is half.
+855
+So these other companies have higher per stream because they have a worse product.
+856
+We've learned from the labels that we have twice the engagement and half the churn of competing services.
+857
+So that's a curse.
+858
+We're the per stream model, just the better we are as a product, the lower the per stream is going to look.
+859
+But we're looking at the aggregate number and we're leading everyone else there.
+860
+We're the vast majority of these payouts.
+861
+So I think if you look overall, the model is working.
+862
+We took a lot of investment and now the industry is getting a huge return.
+863
+And Spotify also is profitable now.
+864
+And the way to grow this pie is now we are closing in on 300 million page subscribers, closing in on 700 million MEUs.
+865
+There's about 500 million page subscribers, I think, in the world.
+866
+We're almost 300 of those.
+867
+But that's half a billion out of the world's population.
+868
+If you look at markets like Sweden, on average, you can just look at the public numbers, we convert about 40%.
+869
+But if you look at the mature markets, I won't give you the exact number, but it is much higher.
+870
+And if you look at the emerging, it's lower.
+871
+So the average is 40%.
+872
+That's not the average across the world.
+873
+That's a blend of low and high converting.
+874
+And so far, throughout our history, everything starts to look more and more like Sweden the more time passes.
+875
+So the solution to this is just to scale it faster.
+876
+Better free tailor that gets more people on, that converts to premium.
+877
+We think there should be billions.
+878
+So, let's say that we share 70% today-ish, let's say two-thirds, to make it easier.
+879
+Even if we were a charity and we paid out 100%, that would only be 1.5x what you get today.
+880
+So, if you think X pennies per stream is too little, even if we were a charity, it would be 1.5.
+881
+The solution is not the rev share.
+882
+We're giving away the vast majority.
+883
+The solution is to quickly scale the amount of people paying for music.
+884
+And if you just look at the numbers, you just have to keep going, and it's going to get to billions of users paying, and then several billions.
+885
+Then, the music industry is absolutely massive.
+886
+I just think the music industry is undervalued.
+887
+The terminal is going to be much bigger than it looks.
+888
+I'm curious how you're thinking about the podcasting world.
+889
+This is something that we're sitting here doing right now.
+890
+I've been doing for a long time.
+891
+Now, it seems we've entered this interesting new era where when I started doing this, I remember it was quite, I would call it low status.
+892
+When I told people about it in 2016, they either didn't know what it was or thought it was silly.
+893
+And now, especially in the U.S.
+894
+with what happened around the election and the importance of podcasts in the election, it seems as though it's hit some tipping point where basically anybody that might make sense to have a podcast now has one or is launching one.
+895
+And it's the corporate marketing strategy is to get a podcast, and it's the communication strategy is to go on them.
+896
+So, it's really exploded in importance and visibility.
+897
+What role has and will Spotify play in all this?
+898
+And just what do you think about podcasting and its importance?
+899
+The reason we went into podcasting, one thing that I'm very precious about when it comes to Spotify, and so is Daniel and the other co-president, Alex, who's.
+900
+And I think your business model to some extent steers you.
+901
+If you're an advertising business model, mostly you're going to be steered towards any additional engagement.
+902
+Fortunately for us, we're mostly a subscription-based business model.
+903
+So we focus more on retention.
+904
+And you're going to vote with your wallet every month if you want to keep paying for us.
+905
+We're not as steered towards engagement at any cost.
+906
+So having been at Spotify for a long time when this happened, one of the things that made me feel very good about Spotify was that when people used it, when they lost an hour on Spotify, they felt very good about it.
+907
+If you lost an hour on music, you come out feeling like that was a good hour.
+908
+One of the reasons I really pushed quite hard for podcasting the company was that I was using it myself and a lot of our developers were using it.
+909
+And I saw it being hacked into the product at Hack Week every year.
+910
+People wanted them there.
+911
+We just said, our developers is like a small sample of the world.
+912
+What if they're a good sample of the world?
+913
+So that was one push.
+914
+We saw people using it internally and hacking it.
+915
+But what made us decide on it was that it was this format.
+916
+Everything in the world was getting more and more short form.
+917
+People were bite-sized and attention spans were going down.
+918
+And it was this counter force, which was long-form discussions, deep.
+919
+People spoke in full sentences about quantum physics or whatever.
+920
+And that just felt like something very important and good for the world.
+921
+And so we looked at it.
+922
+We saw that it seemed to be growing from a small base.
+923
+We saw the biggest competitors being asleep at the wheel.
+924
+We did basically the Peter Thiel idea of it's better to go after small markets early, embed on organic growth than to try to take a small share of a mature market.
+925
+It looks less risk in the mature market to get 1%.
+926
+But the thing people miss is the customer acquisition cost in the mature market.
+927
+So we decided to go for it because we thought it was something that was in line with music.
+928
+If you lose an hour in a deep podcast, you come out feeling like you learned something.
+929
+And this is the reason we also went into books because it's in line with that.
+930
+We want to be this nutritious service.
+931
+There are two litmus tests for this.
+932
+One is: if you lose an hour on Spotify, how do you come out feeling versus if you lose an hour doom scrolling in the bathroom?
+933
+How do you feel about that?
+934
+In one case, you feel like you ate a lot of candy, like you had a lot of energy in you, but it's bad calories.
+935
+In the case of Spotify, you feel like you've learned something.
+936
+The other litmus test that we have is: see a lot of parents restricting screen time for their kids and saying go to Spotify instead, which means that expresses how they feel about it and how we feel about it.
+937
+So that was one of the reasons to go into podcasts.
+938
+It was part philosophical, but we also saw the market opportunity of a small market that was poised to grow.
+939
+And we saw need in early adopters trying to hack it in.
+940
+And then we did this bet on leveraging our own distribution, combining it with music, saying that the market is this big right now, but what if we could expose podcasts to people who listen to music?
+941
+Could we grow the market?
+942
+So that's the bet we did.
+943
+And the truth is, audiobook is something similar.
+944
+In the U.S., audiobooks was a very niche behavior, 10, 11 million or something.
+945
+People who paid for them a la carte.
+946
+And the idea was that's a limitation because of the business model.
+947
+When you pay a la carte, you're not going to explore new books at $15 per book cost.
+948
+Just as in music, when you pay 99 cents per song, you're not going to soundtrack your sleep.
+949
+It's too expensive at 99 cents per three minutes.
+950
+But what if we have no marginal cost model where you can just explore?
+951
+Is audiobook much better?
+952
+So, again, it was seeing a market that looked pretty small, but you can see in the Nordics where you have the access model that it's getting very mainstream.
+953
+So, a bet on the market, but it was the same philosophical discussion.
+954
+Are these good calories?
+955
+Is this nutritious?
+956
+Is this in line with Spotify's mission of being the place where you go when you want to feel good about yourself instead of when you want to feel bad about yourself?
+957
+I remember the very first time I ever talked to Daniel walking along the West Side Highway here many years ago, he talked about this notion of Spotify needing to be better than free.
+958
+It was a cool idea.
+959
+If you think about podcasting, it's very different than music.
+960
+When someone listens to this show on Spotify, you don't owe me anything.
+961
+How do you think about the way that podcasting, and then obviously books is a little bit maybe more like music, and I'd like to hear how you think about it.
+962
+How do you think about if that's the supply of the stuff that people are listening to on Spotify or watching on Spotify?
+963
+The ways in which that affects your business model and the bundle?
+964
+We didn't know before we started if podcasting and later audiobooks would be cannibalistic to the other media types or not.
+965
+But it turns out it's not.
+966
+So, the easiest model to think about it is: Spotify is a bundle now.
+967
+You pay some price, or you have the advertising based here, and you get a bunch of value.
+968
+And our job is to try to increase the value you get so you value it more.
+969
+And then, over time, maybe we can capture some of that value by price raising.
+970
+We price raised a few times, which is part of why we're profitable now.
+971
+But that's because we had user surplus in value.
+972
+That's because we kept just stacking value.
+973
+And value are two things: value are features like personalization and just a really good product.
+974
+But the other value is different types of media.
+975
+So, what we see is that you have a user that uses music, they have a certain amount of control.
+976
+We haven't run out of time in the background yet.
+977
+Then, when you add audiobooks, it's just more retention, more time spent, and more willingness to pay.
+978
+So, that's how we think about it as a business model.
+979
+Then, on the back end, they have very different business models.
+980
+I think we may be one of the most complex companies in the world on the back end, because music is a pool-based royalty model.
+981
+Podcast, as you know, is advertising-based largely, but now we also have this Spotify partner program where you don't have Spotify ads in the premium tier if you're paying, so you get more uninterrupted.
+982
+So, that's another business model, which is part of the premium bundle.
+983
+And then you have audiobooks, which the publishing industry works in a third way, very different, where we also have a certain amount of time included in the premium tier, and then a top-up if you run over that.
+984
+One of the really complicated things about Spotify, I don't think it's appreciated, is on the front end, it's one app, one consumer, you just go between them.
+985
+But there are very different implications of where you click in that UI in terms of triggering different business models and so forth.
+986
+So, to model a company financially, it's actually quite hard.
+987
+We have to predict your user behavior, where you click matters.
+988
+And we have the personalization that has different impacts in terms of cost and so forth.
+989
+So, we've had to build a system, we call it the Spotify machine, and that's why I said I have one experience organization, and the job of this experience organization is to make sure that all of this complexity, all of these teams who theoretically could be set up to compete with each other to fix their PL, that never ships to the user.
+990
+There's one person who is the responsible person for the consumer experience, and that person's job is to make sure that as you go between mobile and desktop, and speakers, the thing makes sense.
+991
+It's like the gatekeeper against the org, holding them back from the user behind them, protecting the user.
+992
+But it's also the same in personalization.
+993
+I have a personalization organization.
+994
+Because you have the same incentives of programming music versus podcast versus books.
+995
+Everyone wants to take market share and so forth.
+996
+So it's the same problem.
+997
+We have to optimize for the user and sort of protect the user from the internal incentives of teams and business models.
+998
+That makes Spotify a pretty unique company.
+999
+We're like one thing on the front end and we're many different things on the back end with different products.
+1000
+If you think about, let's say, five years from now and you dream as big as you can possibly dream for where Spotify might go from where it is today to where it will be in five years, paint us that picture.
+1001
+Certainly, I hope we've cracked the billion user line, but as a subscription, I hope we're becoming one of the biggest media subscriptions in the world and we add more and more value to that.
+1002
+So hopefully music is bigger than it ever was.
+1003
+I'm hoping that audiobooks is a mainstream phenomenon as it is in Scandinavia where there's almost as many people listen to music as audiobooks.
+1004
+I think that would be a net good for the world.
+1005
+But I also hope we've added a few more of these verticals.
+1006
+We can't say what they are.
+1007
+The subscription model, the bundling model that we didn't talk so much about, we can differentiate on product or on content, but largely we tend to license commodity content.
+1008
+We don't work with exclusivities, at least not anymore.
+1009
+We tried in podcasts for a while.
+1010
+So you can differentiate on the product and consumption of the commodity content, but you can also differentiate on the offering.
+1011
+So for example, if you look at Spotify now versus other offerings, some other offerings have the same music, some other offerings have some on the same podcast.
+1012
+So, to use bundling theory to create more and more of a differentiated, unique thing that is Spotify, I think is very exciting.
+1013
+And I think you will see more innovation on the bundling business model in addition to the product.
+1014
+I'm the product guy, but I'm very interested in business models.
+1015
+I've been a CEO myself.
+1016
+So, I think you will see a lot of innovation there.
+1017
+What's the key to a good bundle?
+1018
+And I'm also curious, you said you experimented with exclusive content that was only available on platform and less of that now.
+1019
+What drives a decision like that?
+1020
+And how do you think about other people that might want to create a bundle somewhere else?
+1021
+When we looked at podcasts, you look at something like Netflix, and it's this beautiful business model and insanely good execution as well on top of that.
+1022
+And it looked to us like that could be interesting.
+1023
+I think when you're a product company that works with commodity content, you always have this environment of what if we could differentiate through content, then life is going to be super easy.
+1024
+You always think the other thing that someone else is doing is easy and your thing is hard, and it's usually very hard to do the other thing.
+1025
+So, we tried exclusivity in podcasts as a way to differentiate this service, but I think it was ultimately a bad bet because the macro trend for the whole thing with podcasts was that the production cost was so low.
+1026
+Joe Rogan was initially sitting in this trailer, the production cost was low.
+1027
+And then go in and do exclusivities on top of that is kind of counter-purpose in a way.
+1028
+The whole point is more like YouTube, in that this is very cheap content, so you can get a lot of it.
+1029
+You don't have to be right.
+1030
+As soon as you go into the exclusivity game, you got to be right.
+1031
+You got to be a content picker.
+1032
+And that's a very hard skill that Netflix does extremely well.
+1033
+But we have this opportunity.
+1034
+And there wasn't this capital-intensive need there that there is in producing costume dramas.
+1035
+This is a bad strategic decision that we did.
+1036
+We also betted a lot on celebrities, and they are celebrities, but they're not always good podcast hosts.
+1037
+And the podcast hosts that were really good, they grew up through this organic system.
+1038
+So there are two ways to always be right.
+1039
+One is to always guess right.
+1040
+The other is to just change your mind whenever you're wrong.
+1041
+So we decided to change our mind and say, this looks like the age of syndication.
+1042
+Creators actually want to be everywhere.
+1043
+They create a video or they create music.
+1044
+They want to be everywhere.
+1045
+Okay, let's embrace that.
+1046
+I mean, music, we were always a platform.
+1047
+We never played with exclusivity.
+1048
+We said, we want the maximum catalog.
+1049
+Books, we're doing maximum catalog.
+1050
+Let's just embrace that in podcasts as well.
+1051
+So we pivoted strategy.
+1052
+Save us a lot of cost, which is part of what we're doing well.
+1053
+And it's also improved the catalog greatly.
+1054
+And now we're on a really good trajectory with our podcast viewing.
+1055
+So it was an example of that strategy.
+1056
+And I think the important thing is to admit it and change your mind.
+1057
+The real cost is when you try to defend your past experience.
+1058
+It's a bad idea.
+1059
+What things do you do outside of Spotify in your life that most prepare you or make you capable to do the best job that you can in Spotify?
+1060
+I think the world is moving very fast.
+1061
+So a lot of my time is just trying to keep up with what is happening.
+1062
+I was on a vacation in Lisbon with my family recently.
+1063
+And I spent a lot of time with them, seeing Lisbon, which is a beautiful city.
+1064
+Then I asked them for one day off from work and off from the family to just indulge myself.
+1065
+This time it was going back to trying to code a bit, use all these new tools, stay on top of what's happening.
+1066
+It's a combination of keeping up with what is happening, which is hard because it's moving so fast, but also stimulate myself mentally.
+1067
+I have to have something that I'm excited about at any point in time.
+1068
+And it can be new things, like AI and what it would mean.
+1069
+But it can be age-old things that I just didn't know, like learning more about physics or math or something.
+1070
+I've read a lot of philosophy for a while because it's just an interesting area.
+1071
+You think through all the big questions of intelligence and consciousness and all of those things.
+1072
+And you can spend 10 years there just reading all of that.
+1073
+And now I feel capped out a little bit.
+1074
+When you start reading, you're like, yeah, I'm going to crack this.
+1075
+And then it turns out I didn't crack it.
+1076
+People have been trying to crack consciousness for a while, but it's so deeply interesting.
+1077
+It kept me excited about life for a very long time.
+1078
+I was never a big math person in school.
+1079
+I was okay, but not great.
+1080
+But I found myself getting very excited about math the older I got.
+1081
+As you start reading a bit of philosophy, you get into things like Goethe's incompleteness theorem and constructive mathematics and these things that they're loosely related to work.
+1082
+But they keep you energized.
+1083
+But they keep me energized.
+1084
+Actually, it turns out a lot of my product people and engineers are deeply interested in these things.
+1085
+So I just have something very interesting to talk to people around me about.
+1086
+And then I do sports.
+1087
+I do Brazilian Jiu-Jitsu with my kids, which is very rewarding.
+1088
+What does that tell you?
+1089
+Humbleness.
+1090
+You come in and you think you do something and you get absolutely smashed by someone half your size and they're not even sweating.
+1091
+And you're like, okay, technique matters.
+1092
+It's technique.
+1093
+It's leverage.
+1094
+Yeah.
+1095
+The beautiful thing about Brazilian Jiu-Jitsu is that the belt thing is real.
+1096
+There's a long story behind it, but the net is that Japanese person both.
+1097
+There was one brother that was just underdeveloped versus the others.
+1098
+He was just not very strong.
+1099
+So he could not beat his brothers.
+1100
+So he started taking Japanese jiu-jitsu and figuring out how he could just use physics, just leverage.
+1101
+And slowly, slowly, he started beating all his brothers, and that became Brazilian Jiu-Jitsu.
+1102
+So it was literally, he had to solve the problem.
+1103
+He could not use power.
+1104
+I didn't know that.
+1105
+And then this family put up all these competitions.
+1106
+I like it from an evolutionary product point of view.
+1107
+They said, okay, anyone come here, karate, kickboxing, just try it.
+1108
+Open.
+1109
+They fought in these basements, just evolving the sport, proving that it was real.
+1110
+A lot of martial arts, it's magic and secret, and they never test their skills.
+1111
+It works very well in practice.
+1112
+The other thing I like about it is that I've done a lot of other martial arts, boxing and tieboxing and stuff.
+1113
+Those things are great as exercise, but for self-protection, it's not very good.
+1114
+You cannot punch someone in the face.
+1115
+You're going to get sued.
+1116
+That's protection.
+1117
+The beautiful thing about martial arts, which is called the gentle sport, is you control people, you constrain them, and you can adapt the level of violence.
+1118
+This is why police use jiu-jitsu and not tieboxing, because you can regulate the violence to the other person.
+1119
+You can control them without hurting them.
+1120
+So that's why I think everyone should use it and practice it.
+1121
+It's good both for self-discipline because you get humbled, it's also actually useful and you can use it without harming other people.
+1122
+People probably don't know this because how would they?
+1123
+But Spotify, you and Daniel especially, have been probably the most influential people and certainly the company on me and how I've thought about building our businesses over time.
+1124
+And a lot of that comes back to the stuff that you don't see.
+1125
+You were the first person years ago to describe the Betsboard concept to me, and we've used that very effectively.
+1126
+And so many lessons from Daniel on how to think about what matters to users.
+1127
+And I think Spotify is not only an incredible product, but it's also one where the product is a reflection of the company behind it.
+1128
+And I think it's one worth studying by listening to conversations like this one.
+1129
+Because for me, what it's done is raised the bar of ambition and the standard for excellence of how a company should be constructed to mirror the needs that it has, its unique needs, but also just the character and the discipline of the people running it.
+1130
+So it's been so fun to do this with you.
+1131
+And thank you so much for all the lessons over the years.
+1132
+Well, you know, the closing question that I have for everyone: what is the kindest thing that anyone's ever done for you?
+1133
+The thing that made me really excel in my role was being allowed to take a lot of risk by Daniel.
+1134
+So I've actually screwed up a bunch of things in Spotify that didn't work.
+1135
+And I never felt that I was going to get fired for it.
+1136
+And he actually encouraged that, and I got the second chance.
+1137
+And that's what made me have the higher ambition instead of holding back for risk or failure.
+1138
+So I think it's a series of those things, being allowed to mess up things, that has probably had the biggest impact on my professional career.
+1139
+Can you give an example of a bad mistake that you made and how he and the org made you feel through that process so that you could be re-emboldened to take more risk again?
+1140
+I was interested in new user interfaces.
+1141
+Many years ago, I took the company very hard on a journey for an interface that at the time was very provocative.
+1142
+The idea was Spotify just starts playing things.
+1143
+You swipe up to get to the next genre, and you swipe left or right to get other things within the same genre.
+1144
+And now you would say that sounds almost like TikTok.
+1145
+This was before musically.
+1146
+But two things happened.
+1147
+It was very...
+1148
+provocative.
+1149
+It started playing things without you asking.
+1150
+So people were upset, but I pushed pretty hard because I was convinced that immediacy, the idea was you just sound your way to what you want to hear in a very low-friction interface.
+1151
+And it was maybe a decent idea, but it was before machine learning.
+1152
+It just did not work at all.
+1153
+You could just not get there.
+1154
+And we built this.
+1155
+It was called Moments, the UI.
+1156
+We used editors on the back end, which just did not work at all.
+1157
+So the idea was far, far ahead of where the technology was.
+1158
+And it costed a lot of money.
+1159
+We actually announced it.
+1160
+There is a video of us presenting this user interface and so forth.
+1161
+People luckily forgot it, but it just didn't work.
+1162
+We had A-B tested it, and it looked okay, which is what we launched.
+1163
+Then we discovered there was a bug in the A-B test.
+1164
+Oh my God.
+1165
+And when it was live, and it actually underperformed drastically what we had.
+1166
+So we had to roll it back.
+1167
+And I had taken the entire organization on this excursion at lost a year or something in a very competitive business.
+1168
+That was a good opportunity to get fired.
+1169
+And I didn't.
+1170
+Daniel was like, I understand, I agree with the thoughts and the ideas.
+1171
+What was the mistake?
+1172
+And the mistake was the machine learning was not there.
+1173
+We were not good enough to get you there in enough swipes.
+1174
+And he was more like Jeff Bezos.
+1175
+And that's just the inputs, not the outputs.
+1176
+If the inputs are bad, if the ideas are fuzzy and stupid, that's a problem.
+1177
+But you're not going to be always right, even with good ideas.
+1178
+And I heard him say this, Jeff Bezos' quote, I judge you by the inputs you had, not the outputs.
+1179
+Because the problem with judging the outputs is you could just get lucky.
+1180
+If they're structured ideation and execution, events you can get right.
+1181
+So it just got more chances.
+1182
+And that made me actually take more risk instead of scaling down on the risk.
+1183
+But I felt very, very, very burned for a long time.
+1184
+There are jokes internally about moments.
+1185
+What a powerful story and mindset for us all to adopt.
+1186
+Such a great closing story, Gustav.
+1187
+Thanks so much for your time.
+1188
+Thanks for having me.
+1189
+If you enjoyed this episode, visit joincolossus.com where you'll find every episode of this podcast complete with hand-edited transcripts.
+1190
+You can also subscribe to Colossus Review, our quarterly print, digital, and private audio publication featuring in-depth profiles of the founders, investors, and companies that we admire most.
+1191
+Learn more at joincolossus.com/slash subscribe.

@@ -1,0 +1,3007 @@
+Here is the analysis with relevant sections based on the transcript:
+
+EPISODE CONTEXT
+- The episode focuses on a discussion with Jeff Dean and Noam Shazir from Google about the past, present and future of AI technology at Google.
+- Jeff Dean is Google's Senior Fellow and SVP of Google Research and Google Health. Noam Shazir is a software engineer focused on AI/ML at Google. Together they co-lead Project Gemini at Google DeepMind.
+- No specific guest company is featured. The discussion centers around AI developments and future directions at Google.
+
+KEY INSIGHTS
+1. Google's ambition has always been something that would require advanced AI - to organize the world's information and make it universally accessible and useful. This provides a broad mandate for the company beyond any one specific thing.
+"I like about Google is our ambition has always been sort of something that would kind of require pretty advanced AI. Organizing the world's information to make it universally accessible and useful. Like actually, there's a really broad mandate in there."
+
+2. The trend in AI hardware is moving from general-purpose CPUs to more specialized devices like ML accelerators and GPUs that provide high performance and efficiency for modern AI workloads. This is an important transition to support the computational needs of advanced AI systems.
+"The architectural improvements in multi-core processors and so on are not giving you the same boost that we were getting 20 to 10 years ago. But I think at the same time, you were seeing much more specialized computational devices like machine learning accelerators, GPUs, very ML focused GPUs more recently, are making it so that we can actually get, you know, really high performance and good efficiency out of the more modern kinds of computations we want to run."
+
+3. Google is exploring ways to dramatically speed up the chip design process through automation, potentially shrinking design time from 12-18 months down to a few months. This could enable much faster hardware improvement cycles to keep pace with algorithmic advances.
+"If you could shrink that to a few people with a much more automated search process exploring the whole design space of chips and getting feedback from all aspects of the chip design process for the kind of choices that the system is trying to explore at the high level. Then I think you could get perhaps much more exploration and more rapid design of something that you actually want to give to a fab and that would be great."
+
+4. Google is moving towards a future "pathways" architecture for AI models that allows for much more flexible, modular and dynamic composition of AI capabilities - an "organically" evolving AI system tailored to the structure of the underlying hardware. This is seen as a major paradigm shift from current regular, monolithic model architectures.
+"I feel like this kind of more organic growth of expertise and when you want more expertise of that, you kind of add some more capacity to the model there and let it learn a bit more on that kind of thing. And also this notion of like adapting the connectivity of the model to the connectivity of the hardware is a good one."
+
+5. AI models are expected to become much more capable in the near future, able to break down very high-level tasks into hundreds or thousands of steps and get the right answer 90%+ of the time. This would be a major step up from today's models.  
+"So that means the models to say two to three generations from now are gonna be capable of, you know, let's go back to the example of breaking down a simple task into 10 sub pieces and doing it 80% of the time to something that can break down a task, a very high level task into 100 or 1000 pieces and get that right 90% of the time, right? That's a major, major step up in what the models are capable of."
+
+TECHNOLOGY & PRODUCT DEVELOPMENTS
+- Google is working on scaling inference-time compute by 10-1000X to enable much more sophisticated question-answering and task completion abilities in AI models. The cost of AI inference is expected to be trivial compared to human labor for many tasks.
+- New training objectives beyond next-word prediction are being explored, such as training on visual data, encouraging the model to work harder to extract information (e.g. guessing from partial data), and learning from taking actions and observing results. 
+- Techniques like mixture-of-expert models allow conditionally activating only small parts of a giant model that are relevant to a given input. This enables very high capacity models that are still efficient at runtime.
+- Modular model architectures are envisioned where sub-networks can be developed and updated independently by different teams, and dynamically composed at inference time based on the task.
+
+TEAM & CULTURE SIGNALS
+- Psychological safety to propose and explore unconventional ideas is important. Dean maintains an internal "wacky ideas" slide deck to spark discussion on potential new directions.
+- Incentive structures that encourage research flexibility and abandon unproductive lines of work in favor of more promising ones are key to making progress. A mix of top-down and bottom-up resourcing achieves a balance of collaboration and agility.
+- Expertise sharing through multi-disciplinary collaboration is a powerful mechanism for researchers to expand their skills and knowledge into new domains. Working closely with experts in other fields enables tackling challenges that no individual could solve alone.
+
+KEY METRICS & BUSINESS DETAILS  
+- Google's capital expenditures and investments in compute infrastructure continue to grow significantly to support the company's AI ambitions, though no specific figures are shared.
+- AI models are expected to become an increasingly central backbone across all of Google's products and services in the coming years as their capabilities grow. Search in particular will likely shift from pure information retrieval to more task-completion oriented interactions.
+
+COMPANIES MENTIONED
+Google: The majority of the discussion centers around AI research and engineering work at Google.
+Google DeepMind: "Together they co-lead Project Gemini at Google DeepMind."
+
+PEOPLE MENTIONED
+Jeff Dean (Google Senior Fellow and SVP): "Jeff Dean is Google's Senior Fellow and SVP of Google Research and Google Health." Extensively quoted throughout on his perspectives on AI progress at Google.
+
+Noam Shazir (Google software engineer): "Noam Shazir is a software engineer focused on AI/ML at Google." Extensively quoted throughout on his perspectives on AI progress at Google.
+
+Franz Och: "So that we had a machine translation research team at Google, led by Franz Och, who joined Google maybe a year before, and a bunch of other people, and every year they competed in a, I guess it's a DARPA contest on translating a couple of different languages to English."
+
+Chris Ola: "I really like some of the work that my former intern, Chris Ola and others did at Enthropike where they could kind of, they trained a very sparse auto encoder and were able to deduce, you know, what characteristics does some particular neuron and a large language about."
+
+# Transcript
+
+
+Today, I have the honor of chatting with Jeff Dean and Noam Shazir.
+Jeff is Google's chief scientist,
+and through his 25 years at the company,
+he has worked on basically the most transformative systems
+in modern computing from MapReduce, BigTable, TensorFlow,
+AlphaShift.
+Genuinely, the list doesn't end.
+Gemini now.
+And Noam is the single person most responsible
+for the current AI revolution.
+He has been the inventor or the co-inventor
+of all the main architectures and techniques
+that are used for modern LMs, from the transformer itself
+to a mixture of experts to mesh TensorFlow
+to many other things.
+And there are two of the three co-leads of Gemini
+at Google DeepMind.
+Awesome, thanks so much for coming on.
+- Thanks for having us.
+- Super excited to be here.
+- Okay, first question.
+Both of you have been in Google for 25 or close to 25 years.
+At some point early on in the company,
+you probably understood how everything worked.
+When did that stop being the case?
+Do you feel like there was a clear moment that happened?
+- I mean, I know I joined, and like at that point,
+this was like end of 2000,
+and they had this thing, everybody gets a mentor.
+And, you know, so, you know, I knew nothing.
+I would just ask my mentor everything,
+and my mentor knew everything.
+It turned out my mentor was Jeff.
+(laughing)
+And it was not the case that everyone at Google knew
+everything it was just the case that Jeff knew everything.
+'Cause he has basically written everything.
+- You're very kind.
+I mean, I think as companies grow,
+you kind of go through these phases.
+Like when I joined, you know, we were 25 people,
+26 people, something like that.
+And so you eventually learned everyone's name,
+and even though we were growing,
+you kept track of all the people who were joining.
+At some point, then you kind of lose track
+of everyone's name of the company,
+but you still know everyone working on, you know,
+software engineering things.
+Then you sort of lose track of, you know,
+all the names of people in the software engineering group,
+but, you know, you at least know all the different projects
+that everyone's working on.
+And then at some point, the company gets big enough
+that, you know, you get an email that Project Platypus
+is launching on Friday, and you're like,
+"What the heck is Project Platypus?"
+So I think...
+- Usually it's a very good surprise.
+Like you're like, "Wow, Project Platypus."
+Like, I have no idea we were doing that,
+and it turns out brilliant.
+- It is good to keep track of like what's going on
+in the company, even at a very high level,
+even if you don't know every last detail.
+And it's good to know lots of people
+throughout the company so that you can go ask someone
+for more details or figure out who to talk to.
+I think like with one level of indirection,
+you can usually find the right person in the company
+if you have a good internet work of people
+that you've built up over time.
+- How did Google recruit you, by the way?
+- I kind of reached out to them, actually.
+- And know him, how did you get recruited?
+- Yeah, I mean, I actually saw Google
+at a job fair in like 1999.
+And I assumed that it was like already this huge company
+that no point in joining.
+Because everyone I knew used Google,
+I guess that was because I was a grad student at Berkeley
+at the time, I guess I've dropped out of grad programs
+a few times, but you know, it turns out
+that like actually it wasn't really that large.
+So it turns out I did not apply in 1999,
+but like just kind of sent them a resume on a whim in 2000
+'cause I figured I should let,
+it was like my favorite search engine
+and figured I should apply to multiple places for a job.
+But then yeah, it turned out to be really, really fun.
+Looked like a bunch of smart people doing good stuff
+and they had this really nice crayon chart
+on the wall of the daily number of search queries
+that somebody had just been maintaining
+and yeah, it looked very exponential.
+It's like these guys are going to be very successful.
+And it looks like they have a lot of good problems
+to work on.
+So it's like, okay, maybe I'll yeah, go work there
+for a little while and then have enough money
+to just go work on AI for as long as I want to after that.
+- Yeah, in a way you did that, right?
+- Yeah, yeah, it totally worked out exactly according to the play.
+- Sorry, you were thinking about AI in 1999?
+- Yeah, this was like 2000.
+Yeah, I remember in grad school,
+a friend of mine at the time had told me
+that his New Year's resolution for 2000
+was to live to see the year 3,000
+and that he was going to achieve this by inventing AI.
+So I was like, oh, that sounds like a good idea.
+But then I didn't get the idea at the time
+that, oh, you could go do it at a big company,
+but I figured, hey, a bunch of people
+seem to be making a ton of money at startups.
+Maybe I'll just make some money
+and then I'll have enough to live on,
+just work on AI research for a long time.
+But yeah, it actually turned out
+that Google was a terrific place to work in AI.
+- I mean, one of the things I like about Google is our ambition
+has always been sort of something
+that would kind of require pretty advanced AI.
+Organizing the world's information
+to make it universally accessible and useful.
+Like actually, there's a really broad mandate in there.
+So it's not like the company was going to do this one little thing
+and stay doing that.
+And also, you could see that what we were doing initially
+was in that direction,
+but you could do so much more in that direction.
+- How has Moore's Law, over the last two, three decades,
+changed the kinds of considerations
+you have to take on board?
+When you design new systems,
+when you figure out what projects are feasible,
+what are still the limitations?
+What are the things you can now do
+that you obviously couldn't do before?
+- I mean, I think of it as actually changing quite a bit
+in the last couple of decades.
+So like the two decades ago to one decade ago,
+it was awesome 'cause you just like wait
+and like 18 months later,
+you get much faster hardware
+and you don't have to do anything.
+And then more recently,
+I feel like the general purpose CPU-based machines scaling
+has not been as good.
+Like the fabrication processes improvements
+are now taking three years
+instead of every two years.
+The architectural improvements
+in multi-core processors and so on
+are not giving you the same boost
+that we were getting 20 to 10 years ago.
+But I think at the same time,
+you were seeing much more specialized computational devices
+like machine learning accelerators,
+GPUs, very ML focused GPUs more recently,
+are making it so that we can actually get,
+you know, really high performance and good efficiency
+out of the more modern kinds of computations
+we want to run that are different
+than, you know, a twisty pile of C++ code
+trying to run Microsoft Office.
+- Yeah, yeah.
+I mean, it feels like the algorithms
+are following the hardware.
+Basically, like what's happened is
+that at this point, arithmetic is very, very cheap
+and moving data around is comparatively
+like much more expensive.
+So pretty much all of deep learning
+has taken off roughly because of that
+because it, you can build it out of matrix multiplications
+that are, you know, and cubed operations
+and squared bytes of data communication, basically.
+- Well, I would say that the pivot to hardware
+oriented around that was an important transition
+because before that we had CPUs
+and GPUs that were not, you know,
+especially well-suited for deep learning.
+And then, you know, we started to build,
+say, TPUs at Google that were really just
+reduced precision linear algebra machines.
+- Yeah. - And then once you have that,
+then you want to-- - Right.
+You have to see the insight that seems like
+it's all about kind of identifying opportunity costs.
+Like, okay, this is something like Larry Tage,
+I think used to always say, like our second biggest cost
+is taxes and our biggest cost is opportunity costs.
+And if he didn't say that,
+then I've been misquoting him for years,
+but basically it's like, you know,
+what is the opportunity that you have
+that you're missing out on?
+And like, in this case, I guess it was that,
+okay, you've got all of this chip area
+and you're putting a very small number
+of arithmetic units on it.
+Like, fill the thing up with arithmetic units,
+you could have orders of magnitude,
+more arithmetic getting done.
+Now, what else has to change, okay?
+The algorithms and the data flow and everything else.
+- I know, by the way, the arithmetic
+can be like really low precision,
+so then you can squeeze even more multiplier units in.
+- No, I want to follow up on what you said
+that the algorithms have been following the hardware.
+If you imagine a counterfactual world
+where suppose that the cost of memory had to climb more
+than arithmetic or just like in the dynamic you saw.
+- Yeah, yeah, that, okay, data flow is extremely cheap
+and the arithmetic is not cheap.
+- What would AI look like today?
+- That's interesting.
+- You've got a lot more lookups into very large memories.
+(laughing)
+- Yeah, I mean, I think it might look more like AI looked like
+20 years ago, but in the opposite direction.
+I'm not sure.
+I guess I joined the Google Brain in 2012.
+I left Google for a few years,
+happened to go back for lunch to visit my wife.
+And we happened to sit down next to Jeff
+and the early Google Brain team.
+And I thought, wow, that's a smart group of people.
+- You should think about the real next.
+We're making some pretty good progress, that sounds fun.
+So, okay, so I jumped back in.
+- I moved back.
+- It was great.
+- To join Jeff, that was like 2012.
+I seem to join Google every 12 years.
+I rejoined Google in 2012 and 2024.
+- But what's gonna happen in the 2036?
+- I don't know, I guess we shall see.
+- Well, what are the trade offs that you're considering
+changing for future versions of TPU,
+to integrate how you think about algorithms definitely?
+- I mean, I think one general trend is we're getting better
+at quantizing or having much more reduced precision models.
+We started with TPU V1.
+We weren't even quite sure we could quantize
+a model for serving with 8-bit integers,
+but we sort of had some early evidence
+that seemed like it might be possible.
+So we're like, great, let's build the whole chip around that.
+And then over time, I think you've seen people
+able to use much lower precision for training as well,
+but also the inference precision has gone.
+People are not using int4 or FP4, which sounded like,
+if you said to someone,
+I'm like, we're gonna use FP4,
+just like a super computing voting point person
+in front of yours.
+They'll be like, what?
+It's crazy, we like 64 bits in Fletch.
+Or even below that, some people are quantizing models
+to two bits or one bit.
+And I think that's a trend to definitely pay attention
+to just like a zero or one.
+Yeah, a zero or one.
+And then you have like a sign bit for a group of bits,
+which really has to be a co-design thing
+because if the algorithm designer
+doesn't realize that he can get greatly improved performance
+throughput with the lower precision,
+of course the algorithm designer is going to say,
+of course I don't want low precision,
+that introduces risk and then it adds irritation.
+And then if you ask the chip designer,
+okay, what do you wanna build?
+And then they'll ask the person who's writing
+the algorithms today who's gonna say,
+no, I don't like quantization, it's irritating.
+So you actually need to basically see the whole picture
+and figure out, wait a minute,
+we can increase our throughput,
+the cost ratio by a lot, by quantizing.
+Then you're like, yes, quantization is irritating,
+but your model's gonna be three times faster,
+so you're gonna have to deal.
+Through your careers at various times,
+you've had sort of an uncanny,
+you worked on things that have an uncanny resemblance
+to what is actually, what we're actually using now
+for generative AI.
+In 1990, Jeff, your senior thesis was about backprogiation,
+and in 2007, so this is the thing I didn't realize
+until I was working for this episode, in 2007,
+you guys trained a two trillion token NREL model,
+four language modeling.
+I just walked me through,
+when you were developing that model,
+what was this kind of thing in your head?
+What did you think you guys were doing at the time?
+- Yeah, so, I mean, let me start with the undergrad thesis,
+so I kind of got introduced to neural nets
+in one section of one class on parallel computing
+that I was taking in my senior year,
+and I needed to do a thesis to graduate,
+I like an honors thesis, and so I approached the professor
+and I said, oh, it'd be really fun
+to do something around neural nets,
+so he and I decided I would sort of implement
+a couple of different ways of parallelizing
+backpropagation training for neural nets in 1990,
+and I called him something funny in my thesis,
+like pattern partitioning or something,
+but really, I implemented a model parallelism
+and data parallelism on 32 processor hypercube machine.
+In one, you split all the examples into different batches
+and every CPU has a copy of the model,
+and in the other one, you kind of pipeline
+a bunch of examples along to processors
+that have different parts of the model,
+and I compared and contrasted them,
+and it was interesting.
+I was really excited about the abstraction
+'cause it felt like neural nets were the right abstraction,
+they could solve tiny toy problems
+that no other approach could solve at the time,
+but, and I thought, oh, naive me, oh, 32 tech processors,
+we'll be able to train like really awesome neural nets,
+but it turned out we needed about a million times
+more compute before they really started to work
+for real problems, but then starting in the late 2008,
+2009, 2010 time frame,
+we started to have enough compute thanks to Moore's Law
+to actually make neural nets work for real things,
+and that was when I sort of re-entered looking at neural nets.
+But prior to that in 2007--
+- So actually, I can ask you this--
+- Sure, yeah.
+- First of all, unlike other artifacts of academia,
+it's actually like a really, like it's like four pages,
+and you can just like read it, and--
+- Yeah, there's four pages, and then like 30 pages of secret.
+(laughing)
+- But it's like a well-produced sort of artifact.
+And then, yeah, tell me about how the 2007 paper came together.
+- Oh, yeah, so that we had a machine translation
+research team at Google,
+led by Franz Och, who joined Google maybe a year before,
+and a bunch of other people,
+and every year they competed in a,
+I guess it's a DARPA contest on translating
+a couple of different languages to English.
+I think Chinese, English, and Arabic, English, I think.
+And the Google team had submitted an entry,
+and the way this works is you get like, I don't know,
+500 sentences on Monday,
+and you have to submit the answer on Friday.
+And so, I saw the results of this,
+and we'd won the contest,
+and by a pretty substantial margin measured in blue score,
+which is like a measure of translation quality.
+And so, I reached out to Franz,
+the head of the spinning team,
+I'm like, this is great, when are we going to launch it?
+And he's like, oh, well, we can't launch this,
+it's not really very practical,
+'cause it takes 12 hours to translate a sentence.
+(laughing)
+I'm like, well, that seems like a long time.
+How could we fix that?
+So, it turned out, you know,
+they'd not really designed it for high throughput,
+obviously. (laughing)
+And so, it was doing like 100,000 disk seeks
+in a large language model
+that they sort of computed statistics over.
+I wouldn't say train, really.
+And, you know, for each word that it wanted to translate.
+So, like, obviously, doing 100,000 disk seeks is not
+super speedy. (laughing)
+But I said, okay, well, let's dive into this,
+since I spent about two or three months with them,
+designing an in-memory compressed representation
+of N-gram data.
+And we were using, and N-gram is basically statistics
+for how often every N-word sequence occurs
+in a large corpus.
+So, you basically have, in this case,
+we had like two trillion words.
+And most N-gram models of the day
+were like using two grams, or maybe three grams.
+But we decided we would use five grams.
+So, how often every five-word sequence occurs in,
+basically, as much of the web as we could process that
+in that day.
+And then you have a data structure that's okay, you know,
+I really like this restaurant occurs, you know,
+17 times in the web or something.
+And so, I built like a data structure
+that would let you store all those in memory on 200 machines
+and then have sort of a batched API where you could say,
+here are the 100,000 things I need to look up
+in this round for this word,
+and it would give you them all back in parallel.
+And that enabled us to go from taking a night
+to translate a sentence to basically doing something
+and, you know, a hundred milliseconds, really.
+- There's this list of Jeff Dean facts,
+like Chuck Norris facts, like, for example,
+that for Jeff Dean, N-P equals no pro of lemo.
+And one of them, it's funny,
+'cause now that I hear you say it's like,
+actually, it's kind of true.
+One of them is the speed of light was 35 miles an hour
+until Jeff Dean decided to optimize it over a weekend.
+(all laughing)
+- Just going from 12 hours to 100 milliseconds or whatever,
+it's like, I gotta do the orders of magnitude there,
+but--
+- All of these are very flattering.
+They're pretty funny.
+They're like an April Fool's joke got to ride
+by my colleagues.
+- Okay, so obviously, in retrospect,
+this idea that you can develop a latent representation
+of the entire internet through just considering
+relationships between words is like,
+yeah, this is large language models, this is Gemini.
+At the time, was it just a translation idea
+or did you see that as being the beginning
+of a different kind of paradigm?
+- I think once we built that for translation,
+the serving of large language models
+started to be used for other things,
+like completion of, you know, you start to type
+and it suggests like what completions make sense.
+- Right.
+So it was definitely the start of a lot of uses
+of language models in Google,
+and you know, Gnome has worked on a number of other things
+at Google, like spelling correction systems
+that use language models for many types.
+- Yeah, I think, yeah, that was like 2000, 2001.
+And there, I think it was just all a memory on one machine.
+- Yeah, I think it was one machine.
+- Yeah, but his spelling correction system he built
+in 2001 was amazing.
+Like, he sent out this demo link to the whole company,
+and like, I just tried every butchered spelling
+of every butchered query I could get,
+I like, scrumbled, UGGS-bundict.
+(laughing)
+- I would have heard that one, yeah.
+- Instead of scrambled eggs benedict,
+and like, it just nailed it every time.
+- Yeah, and I guess that was language modeling.
+- Yeah, yeah.
+- But at the time, when you were developing these systems,
+did you have this sense of,
+look, you make these things more and more sophisticated,
+you don't consider five words,
+but if you consider 100 words, 1000 words,
+then the lane representation is intelligence,
+or was that, like, basically, when did that insight hit?
+- Not really.
+I mean, like, I don't think I ever felt like,
+okay, N-gram models are going to,
+you know, are going to sweep the world.
+- Yeah, the artificial intelligence.
+I think at the time, I was, a lot of people were excited
+about the Bayesian networks.
+That was, that seemed exciting.
+Definitely seeing like those early neural language models,
+you know, there's both the magic in that,
+okay, this is doing something extremely cool,
+and also it's just, struck me as like,
+the best problem in the world.
+Like, in that, like, for one,
+it is very, very simple to state.
+Like, give me a probability distribution over the next word.
+Also, there's roughly infinite training data out there.
+There's like, the text of the web,
+you have like, trillions of training examples,
+like, you know, of unsupervised data.
+- Yeah, self-supervised, yeah, it's nice.
+'Cause you then have the right answer,
+and then you can train on like all but the current word,
+and try to predict the current word,
+and it's this kind of amazing, you know,
+ability to just learn from observations of the world.
+- And then to say I complete,
+if you can do a great job of that,
+then you can pretty much, pretty much do anything.
+- I'm excited to introduce our new sponsor, Meter.
+They're a networking company that is behind a growing fraction
+of the world's internet infrastructure.
+Fun fact, about three to four years ago,
+in the very early days of the podcast,
+I ran this podcast from a donation from Meter CEO Anil,
+and I continue to benefit enormously
+from his advice to this day.
+The modern world runs on networks.
+Progress and fuels this diverse as self-driving cars
+to giant LLM training runs,
+to even broadcasting a podcast like this around the world,
+is bottlenecked on designing and debugging
+large complex networks.
+Meter wants to give network engineers a hundred x multiplier
+by training a large end-to-end foundation model
+using time series packet data and support tickets,
+and networking textbooks,
+and all the other proprietary data they have
+as a result of themselves building every layer
+of the networking stack in house.
+Meter just announced a long-term compute partnership
+with Microsoft for access to tens of thousands of GPUs.
+They're currently recruiting a world-class AI research team.
+Their goal is to build autonomous networks
+that radically improve the digital world
+that we take for granted.
+To learn more, go to meter.com/barkesh.
+All right, back to Jeff and Noam.
+- There's this interesting discussion
+in the history of science about whether ideas
+are just in the air,
+and there's a sort of inevitability to big ideas,
+or whether it's sort of plugged out
+of some tangential direction.
+In this case, this way in which you're laying it out
+very logically, does that imply?
+Like, basically, how inevitable does this--
+- It does feel like it's in the air.
+There were definitely some,
+there was like this neural Turing machine.
+So, yeah, a bunch of ideas around this attention
+slash there's like having these key value stores
+that could be useful in neural networks
+to kind of focus on things.
+So, yeah, I think in some sense in the air,
+and in some sense, you need some group to go do it.
+- I mean, I like to think of a lot of ideas
+as they're kind of partially in the air,
+where there's like a few different, maybe,
+separate research ideas that one is kind of squinting at
+when you're trying to solve a new problem,
+and you kind of draw on those for some inspiration,
+and then there's like some aspect that is not solved,
+and you sort of need to figure out how to solve that,
+and then the combination of like,
+some morphing of the things that already exist,
+and some new things lead to some new breakthrough
+or new research result that didn't exist before.
+- Were there key moments to stand out to you
+where you're looking at our research area,
+and you come up with this idea,
+and you have this feeling of like,
+"Holy shit, I can't believe that worked."
+- One thing I remember was we'd been,
+in the early days of the brain team,
+we were focused on, let's see if we can build
+some infrastructure that lets us train
+really, really big neural nets,
+and at that time, we didn't have GPUs in our data centers,
+we just had CPUs, but we know how to make lots of CPUs
+work together, so we built a system that enabled us
+to train pretty large neural nets
+through both model and data parallelism,
+so we had a system for unsupervised learning
+on actually 10 million randomly selected YouTube frames,
+and it was kind of a spatially local representation,
+so it'd build up unsupervised representations
+based on trying to reconstruct the thing
+from the high-level representations,
+and so we got that working and training
+on 2,000 computers using 16,000 cores,
+and after a little while,
+that model was actually able to build a representation
+at the highest level where one neuron would get excited
+by images of cats that it had never been told what a cat was,
+but it sort of had seen enough examples of them
+in the training data of head-on facial views of cats
+that that neuron would turn on for that
+and not for much else, and similarly,
+you'd have other ones for human faces
+and backs of pedestrians and this kind of thing,
+and so that was kind of cool
+'cause it's sort of from unsupervised learning principles
+building up these really high-level representations,
+and then we were able to get very good results
+on the supervised ImageNet 20,000 category challenge
+that advanced the state of the art
+by like 60% relative improvement,
+which was quite good at the time,
+and that neural net was probably 50x bigger
+than one that had been trained previously,
+and it got good results, so that sort of said to me,
+hey, actually scaling up neural nets seems like a,
+I thought it would be a good idea,
+and it seems to be, so we should keep pushing on that.
+- So these examples illustrate how these AI systems
+fit into what you were just mentioning,
+that Google is sort of a company
+that organizes information fundamentally,
+and then you can, basically, what AI is doing
+in this context is finding relationships
+between information between concepts
+to help get ideas to you faster,
+information you want to you faster.
+Now we're moving with current AI models.
+Like, obviously, you can use Bird and Google search,
+and you can ask these things questions,
+and they obviously are still good
+at information retrieval.
+But more fundamentally, they can write
+your entire code base for you,
+and do all kinds of things more like an actual worker,
+which is going beyond just information retrieval.
+So how are you thinking about,
+is Google still an information retrieval company
+if you're building an AGI?
+AGI can do information retrieval,
+but it can do many other things as well, right?
+- I think we're an organized,
+the world's information company,
+and that's broader than information retrieval, right?
+That's maybe organizing and creating new information
+from some guidance you give it.
+Can you help me write a letter to my veterinarian
+about my dog, it's got these symptoms,
+and it'll drop that, or can you feed in this video,
+and can you produce a summary
+of what's happening in the video every few minutes?
+And I think our sort of multimodal capabilities
+are showing that it's more than just text,
+it's about understanding the world
+and all the different kind of modalities
+that information exists in,
+both kind of human ones, but also kind of nonhuman oriented ones,
+like weird LIDAR sensors on autonomous vehicles,
+or genomic information, or health information,
+and then how do you extract and transform that
+into useful insights for people,
+and make use of that in helping them
+do all kinds of things they want to do,
+and that's, you know, sometimes it's,
+I want to be entertained by chatting with a chat bot.
+Sometimes it's, I want answers
+to this really complicated question,
+there is no single source to retrieve from,
+it's you need to pull information from like 100 web pages
+and like figure out what's going on
+and make a organized, synthesized version of that data,
+and then dealing with, you know, multimodal things
+or coding related problems.
+I think it's super exciting
+what these models are capable of,
+and they're improving fast, so I'm excited to see where we go.
+I don't know what to do.
+- I am also excited to see where we go,
+and, you know, yeah, I think definitely the organizing,
+organizing information, you know,
+is clearly like a, you know, a trillion dollar opportunity,
+but, you know, a trillion dollars is not cool anymore.
+What's cool is a quadrillion dollars.
+(laughing)
+I mean, and obviously the idea is not to just pile
+up some giant pile of money, but it's to just,
+it's create value in the world, you know,
+and so much more value can be created
+when these systems can actually like go
+and do something for you, write your code
+or figure out problems that you wouldn't have been able
+to figure out yourself and to do that at scale.
+So I mean, we're going to have to be very, very flexible
+and dynamic as we improve the capabilities
+of these models to--
+- Yeah, I guess I'm pretty excited
+about kind of a lot of fundamental research questions
+that sort of come about because you see something
+that we're doing could be substantially improved
+if we tried, you know, this approach or things
+in this rough direction, and, you know,
+maybe that'll work, maybe it won't.
+But I also think there's value in seeing
+what we could achieve for end users
+and then how can we work backwards from that
+to actually build systems that are able to do that.
+So as one example, you know, organizing information,
+that should mean any information of the world
+should be usable by anyone regardless
+of what language they speak.
+And that I think, you know, we've done some amount of,
+but it's not nearly the full vision
+of, you know, no matter what language you speak
+out of thousands of languages,
+we can make any piece of content available to you
+and make it usable by you and, you know, any video
+could be watched in any language.
+I think that would be pretty awesome.
+And, you know, we're not quite there yet,
+but that's definitely things I see on the horizon
+that should be possible.
+- Speaking of different architectures you might try,
+I know one thing you're working on right now
+is longer context.
+If you think of Google search as like,
+it's got the entire index of the internet in its context,
+but it's like sort of very like shallow search.
+And then obviously language models
+have like a limited context right now,
+but they can like really think,
+it's like dark magic like in context learning, right?
+They just like couldn't really think about what it's seeing.
+How do you think about what it would be like
+to merge something like Google search
+and something like in context learning?
+- Yeah, maybe I'll take a first stab at it.
+I mean, 'cause I've thought about this for a bit.
+I mean, I think one of the things you see
+with these models is they're quite good,
+but they do hallucinate and, you know,
+have a factuality issue sometimes.
+And part about is, you know, you've trained on say,
+tens of trillions of tokens,
+and you've stirred all that together
+in your tens or hundreds of billions of parameters,
+but it's all a bit squishy
+'cause you've like churned all these tokens together.
+And so the model has like a reasonably clear view
+of that data, but it sometimes like gets confused
+and will give the wrong date for something.
+Whereas information in the context window,
+in the input of the model is like really sharp and clear
+'cause we have this really nice attention mechanism
+in transformers that the model can pay attention to things
+and it knows kind of the exact text
+or the exact frames of the video or audio or whatever
+that it's processing.
+And so right now we have a model that can deal
+with kind of millions of tokens of context,
+which is quite a lot.
+It's like, you know, hundreds of pages of PDF
+or, you know, 50 research papers or, you know,
+hours of video or tens of hours of audio
+or some combination of those things, which is pretty cool.
+But it would be really nice
+if the model could attend to trillions of tokens, right?
+Could it attend to the entire internet
+and find the right stuff for you?
+Could it attend to all your personal information for you?
+I would love a model that has access to all my emails
+and all my documents and all my photos.
+And when I ask it to do something,
+it can sort of make use of that with my permission
+to sort of help solve what it is I'm wanting it to do.
+But that's gonna be a big computational challenge
+'cause the naive attention algorithm is quite radish.
+And you can kind of barely make it work
+on a fair bit of hardware for millions of tokens,
+but there's no hope of making that
+just naively go to trillions of tokens.
+So we need a whole bunch of interesting algorithmic
+approximations to what you would really want
+to make a way for the model to attend kind of conceptually
+to lots and lots of more tokens to trillions of tokens
+and attend to your tokens.
+Maybe we can put all of the Google code base in context
+for every Google developer,
+all the world's source code in context
+for any open source developer.
+That would be amazing.
+- It would be, it would be incredible.
+Yeah, I mean, right, yeah, the beautiful thing
+about model parameters is they are quite memory efficient
+at sort of memorizing facts.
+Maybe you can probably memorize order of one fact
+or something per model parameter,
+whereas if you have some token in context,
+there are lots of keys and values of every layer.
+It could be a kilobyte, a megabyte of memory per token.
+- Yeah, you take a word and you blow it up
+to 10 kilobyte to show me.
+- Yes, yes, so there are some,
+there's actually a lot of innovation going on around,
+okay, A, how do you minimize that and B,
+okay, what words do you need to have there?
+There are better ways of accessing bits of that information
+and Jeff seems like the right person to figure this out.
+Like, okay, what does our memory hierarchy look like?
+You know, from the SRAM all the way up the data center
+worldwide level.
+- I wanna talk more about the thing you mentioned about,
+look, Google was a company with like lots of code
+and lots of examples, right?
+If you just think about that one use case
+and what that implies.
+So you've got like the Google Monoripo
+and if you maybe you figure out the long context thing,
+you can put the whole thing in context
+or you fine tune on it.
+Yeah, basically like, why hasn't this been already done
+because you can imagine like the amount of code
+that Google has proprietary access to just like me,
+even if you're just using it internally
+for it to make your developers more efficient and productive.
+- Oh, to be clear, we have actually already done further
+training on a Gemini model on our internal code base
+for our internal developers.
+But that's different than attending to all of it.
+- Right.
+- Because it sort of stirs together the code base
+into a bunch of parameters.
+And I think having it in context
+makes things clearer.
+But even the sort of further trained model internally
+is incredibly useful.
+Like Sundar, I think has said that 25% of the characters
+that were checking into our code base these days
+are generated by our AI based coding models
+with kind of human kind of.
+- How do you imagine in a year or two
+based on the capabilities you see around in the horizon?
+Your own personal work, what will it be like
+to be a researcher at Google?
+You have a new idea or something
+with the way in which you're an actor
+in these models in a year.
+What does that look like?
+- Well, I mean, I assume we will have these models
+a lot better and hopefully be able
+to be much, much more productive.
+- Yeah, I mean, I think one of the,
+in addition to kind of researchy context,
+like anytime you're seeing these models used,
+I think they're able to make software developers
+more productive because they can kind of take
+sort of a high level spec or in sentence description
+of what you want done and give a pretty approximate,
+pretty reasonable first cut at that.
+And so from a research perspective,
+maybe you can say, I'd really like you to explore
+this kind of idea like similar to the one in this paper,
+but maybe like let's try making it convolutional
+or something like that.
+If you could do that and have the system
+automatically sort of generate a bunch
+of experimental code and maybe you look at it
+and you're like, yeah, that looks good, run that.
+Like that seems like a nice dream direction to go in
+and seems plausible in the next year or two years
+that you might make a lot of progress on that.
+- Seems under hyped because you've got like,
+you could have like literally millions of extra employees
+and you can immediately check their output,
+but employees can check either each other's output.
+They like immediately stream tokens.
+- Yeah, so I didn't mean none to hype it.
+I think it's super exciting.
+- I just don't like to hype things that aren't done yet.
+(all laughing)
+- Yeah, so let's, I do want to play with this idea more
+'cause it seems like it would be a deal like you have
+something like kind of like an autonomous software engineer,
+especially from the perspective of a researcher
+who's like, I want to build the system.
+Again, okay, so you'll literally let this idea,
+like as somebody who has worked on developing
+transformative systems through your careers,
+did you add that instead of having to code something
+like whatever the today's equivalent of map reduces
+or TensorFlow is just like, here's how I would want
+like distributed AI library to look like,
+write it up for me, do you imagine you could be like
+10x more productive, 100x more productive?
+- I was pretty impressed.
+I think it was on Reddit that I saw like we have a new
+experimental coding like model that's much better
+at coding and math and so on.
+And someone external tried it and they basically prompted it
+and said, I'd like you to implement a SQL processing
+database system with no external dependencies.
+And please do that and see.
+And from what the person said, it actually did a quite
+good job, like it generated a SQL parser and a tokenizer
+and a query planning system and some stored format
+for the data on disk and actually was able
+to handle simple queries.
+So from that prompt, which is like a paragraph of text
+or something to get even an initial cut at that,
+seems like a big boost in productivity
+for software developers.
+And I think you might end up with other kinds of systems
+that maybe don't try to do that in a single semi interactive,
+respond in 42nd kind of thing, but might go off
+for 10 minutes and like might interrupt you
+after five minutes saying, I've done a lot of this
+but now I need to get some input.
+Do you care about handling video or just images
+or something?
+And that seems like you'll need ways of managing
+the workflow if you have a lot of these kind of
+background activities happening.
+- Yeah, actually, can you talk more about that?
+So what interface do you imagine we might need
+if you could literally have like millions of employees
+you could spin up, hundreds of thousands of employees
+you could spin up on command who are able to type
+incredibly fast and who, so it's almost like you go
+from like 1930s like trading of like tickets or something
+to now modern and like, you know, chain suit or something.
+You know, like you need some interface to keep track
+of all of the sets going on for the AIs to integrate
+into this big mono repo and leverage their own
+like strengths for humans to keep track of what's happening.
+What is it like to be Jeff or Noam in three years
+working day to day?
+- It might be kind of similar to what we have now
+'cause we already have sort of parallelization
+as a major issue 'cause you know, we have like lots
+and lots of really, really brilliant machine learning
+researchers and we want them to work all work together
+and build AI, you know, so actually the parallelization
+among people might be similar to parallelization
+among machines, but I think there definitely it should be
+good for things that require like a lot of exploration,
+you know, like come up with the next breakthrough
+because, you know, if you have a brilliant idea
+that it's just certain to work, you know, the ML domain
+then, you know, it has a 2% chance of working
+if you're brilliant and, you know, mostly these things fail
+but if you try a hundred things or a thousand things
+or a million things, then you might hit on something amazing
+and we have plenty of compute, like modern, you know,
+top labs these days have probably a million times
+as much compute as it took the trained transformer, so--
+- Yeah, actually, so that's a really interesting idea.
+If you have, like suppose in the world today,
+there's like on the order of 10,000 AI researchers
+and this community coming up with a breakthrough--
+- Probably more than that, there were 15,000
+in an Earth spud.
+(laughing)
+- 100,000, I don't know.
+- Yeah, maybe.
+- Sorry.
+- No, no, it's good to have, (laughing)
+I think we're right, we're behind it too.
+And the odds of this community every year comes up
+with a breakthrough on the scale of a transformer
+is, let's say, 10%.
+Now, suppose this community is 1,000 times bigger
+and it is, in some sense, like the sort of parallel search
+of better architectures, better techniques.
+Do we just like get like--
+- A breakthrough a day?
+- A breakthrough breakthroughs every year or every day?
+- Maybe.
+Sounds potentially good, you know?
+(laughing)
+- But does that feel like what ML researchers like
+is just, if you are able to try all these experiments?
+- It's a good question, 'cause we, you know,
+I don't know that folks haven't been doing that as much.
+I mean, we definitely have lots of great ideas coming along.
+Everyone seems to want to run their experiment
+at maximum scale, but I think that's, you know,
+that's a human problem.
+(laughing)
+Yeah, it's very helpful to have a 1/1,000 scale problem
+and then vet, like, 100,000 ideas on that
+and then scale up the ones that are the team promising.
+- Yeah.
+A quick word from our sponsor, Scale AI.
+Publicly available data is running out,
+so major labs like Meta and Google DeepMind and OpenAI
+all partner with scale to push the boundaries
+of what's possible.
+Through Scale's data foundry, major labs get access
+to high-quality data to fuel post-training,
+including advanced reasoning capabilities.
+As AI races forward, we must also strengthen human sovereignty.
+Scale's research team, Seal,
+provides practical AI safety frameworks,
+evaluates frontier AI system safety via public leader boards,
+and creates foundations for integrating advanced AI
+into society.
+Most recently, in collaboration with the Center for AI Safety,
+Scale published Humanities Last Exam,
+a groundbreaking new AI benchmark
+for evaluating AI systems, expert level,
+knowledge and reasoning across a wide range of fields.
+If you're an AI researcher or an engineer
+and you want to learn more about how Scale's data foundry
+and research team can help you go
+beyond the current frontier of capabilities,
+go to scale.com/doarkash.
+All right, back to Jeff and Nome.
+- So I think one thing the world might not be taking seriously,
+people are aware that it's exponentially harder
+to make, like, to do the scale, like, make a model
+that's 100x bigger, is like 100x more compute, right?
+There's, like, people are aware that's, like,
+an exponentially harder problem
+to go from Gemini 2 to 3 or so forth.
+But maybe people aren't aware of this other trend
+where Gemini 3 is coming up
+with all these different architectural ideas
+and trying them out, and you see what works,
+and you're constantly coming up with these algorithmic progress
+that makes training the next one easier and easier.
+- Yeah.
+- How far could you take that feedback loop?
+- I mean, I think one thing people should be aware of
+is the improvements from generation to generation
+of these models often are partially driven
+by hardware and larger scale,
+but equally and perhaps even more so driven
+by major algorithmic improvements
+and major changes in the model architecture
+and the training data mix and so on
+that really make the model better per flop
+that is applied to the model.
+So I think that's a good realization.
+And then I think if we have automated exploration of ideas,
+we'll be able to vet a lot more ideas
+and bring them into the actual production training
+for next generations of these models.
+And that's gonna be really helpful
+'cause that's sort of what we're currently doing
+with a lot of machine learning research,
+brilliant machine learning researchers
+is looking at lots of ideas,
+winnowing ones that seem to work well at small scale,
+seeing if they work well at medium scale,
+bringing them into larger scale experiments
+and then settling on adding a whole bunch of new
+and interesting things to the final model recipe.
+And then I think if we can do that 100 times faster
+through those machine learning researchers
+just gently steering a more automated search process
+rather than sort of hand babysitting
+lots of experiments themselves,
+that's gonna be really, really good.
+- Yeah, the one thing that doesn't speed up
+is like experiments at the largest scale
+'cause you still end up doing like these
+N equals one experiments in there.
+Really just try to put a bunch of really brilliant people
+in the room and have 'em stare at and stare at the thing,
+figure out why this is working,
+why this is not working-- - For that, more hardware
+is a good solution and better hardware--
+- Yes, yes, we're counting on you.
+(laughing)
+- So, okay, naively, I would, so there's a software,
+there's like algorithmic side improvement
+the future I ask and make.
+There's also the stuff you're working on, on off a chip,
+I'll let you describe it, but if you get into a situation
+where just from a software level you can be making better
+and better chips in a matter of weeks and months
+and better AI's can presumably do that better.
+Basically, I'm wondering how does this feedback loop
+not just end up in like Gemini 3 takes a two years
+and Gemini 4 is like a six,
+or the equivalent level jump is now six months
+then like the level five is like three months
+then one month and you get to like superhuman intelligence
+much more rapidly than you might naively think
+because of this software both on the hardware side
+and from the algorithmic side improvements.
+- Yeah, I mean, I've been pretty excited lately
+about how could we dramatically speed up
+the chip design process? - Yeah.
+- 'Cause as we were talking earlier,
+the current way in which you design a chip
+takes you roughly 18 months to go from
+we should build a chip to something that you then hand over
+to TSMC and then TSMC takes for four months to fab it
+and then you get it back and you put it in your data centers.
+So that's a pretty lengthy cycle
+and the fab time in there is a pretty small portion of it today
+but if you could make that the dominant portion
+so that instead of taking 12 to 18 months to design the chip
+you could shrink and with 150 people
+you could shrink that to a few people
+with a much more automated search process
+exploring the whole design space of chips
+and getting feedback from all aspects
+of the chip design process for the kind of choices
+that the system is trying to explore at the high level.
+Then I think you could get perhaps much more exploration
+and more rapid design of something
+that you actually want to give to a fab
+and that would be great 'cause you can shrink that time
+you can shrink the deployment time
+by kind of designing the hardware in the right way
+so that you just get the chips back
+and you just plug them in to some system
+and that will then I think enable a lot more specialization
+and it will enable a shorter timeframe for the hardware design
+so that you don't have to look out quite as far
+into what kind of ML algorithms would be interesting.
+Instead it's like you're looking at six to nine months
+from now what should it be rather than two and a half years
+and that would be pretty cool.
+I do think that fabrication time
+is if that's in your inner loop of improvement
+you're gonna like how long is it?
+The leading edge nodes unfortunately
+you're taking longer and longer
+'cause they have more metal layers
+than previous older nodes
+so that tends to make it take anywhere
+from three to five months.
+But that's how long training runs take anyways, right?
+So you could potentially do both at the same time.
+Yeah, that's fine.
+Okay, so I guess you can't get sooner than three to five months
+but the idea that you could get like
+but also yeah you're rapidly developing new algorithmic ideas
+between this time.
+That can move fast.
+That can move fast.
+That can run on existing chips
+and explore lots of cool ideas.
+Yeah.
+So isn't that like a situation in which you're like
+I think people sort of expect like
+ah there's gonna be a sigmoid.
+Again this is not a sure thing
+but just like is this a possibility?
+The idea that you have like sort of an explosion
+of capabilities very rapidly towards a tail end
+of human intelligence that you know gets like
+a smarter and smarter and more and more rapid rate.
+Quite possibly, yeah.
+I mean I think I like to think of it like this, right?
+Like right now we have models
+that can take a pretty complicated problem
+and can break it down you know internally in the model
+into a bunch of steps.
+Can sort of puzzle together the solutions for those steps
+and can often give you a solution
+to the entire problem that you're asking in.
+But it you know isn't super reliable
+and it's good at breaking things down
+into you know five to 10 steps
+not a hundred to a thousand steps.
+So if you could go from yeah 80% of the time
+it can give you a perfect answer
+to something that's 10 steps long
+to something that you know 90% of the time
+can give you a perfect answer
+to something that's a hundred to a thousand steps
+of sub problem long.
+That would be an amazing improvement
+and capability of these models.
+And you know we're not there yet
+but I think that's what we're aspirationally trying
+to get to here is.
+Yeah we don't need new hardware for that.
+But I mean we'll take it.
+Yeah exactly.
+Never looked new hardware in the mouth.
+One of the you know like one of the big areas
+of improvement I think you know in the near future
+is this entrance time compute.
+Like applying more compute you know at inference time
+and I guess the way I've like to describe it is that
+you know a like even some giant language model you know
+even if you're doing say a trillion operations per token
+which is you know more than more than most people are doing
+these days you know operations cost something like 10
+to the negative 18 dollars.
+And so you're getting like a million tokens to the dollar
+right so I mean compare that to like a relatively cheap
+past time like you you go out and you buy a paper book
+and read it you're paying like 10,000 tokens to the dollar.
+So it's so like talking to a language model could be like
+you know is like a hundred times cheaper
+than reading a paperback.
+So there is a huge amount of headroom there to say okay
+if we can make this thing more expensive but smarter
+because we're like you know like a hundred X cheaper
+than reading a paperback we're like 10,000 times cheaper
+than like talking to a customer support agent
+who are like a million times or more cheaper
+than you know hiring a software engineer
+or talking to your doctor or lawyer.
+Like can we add you know add computation
+and make it make it smarter.
+So like I think a lot of a lot of the takeoff
+that we're going to see in the very near future
+is of this form like we've been exploiting
+and improving pre-training a lot in the past
+and post-training and those things will continue to improve
+but like taking advantage of you know think harder
+at inference time is going to just be an explosion.
+- Yeah and an aspect of inference time is I think
+you want the system to be actively exploring
+a bunch of different potential solutions
+you know maybe it does some searches on its own
+and get some information back and like consumes
+that information and figures out
+oh now I would really like to know more about this thing
+so now it kind of iteratively kind of explores
+how to best solve the high level problem
+you pose to this system.
+And I think having a dial where you can make the model
+give you better answers with more inference time compute
+seems like we have a bunch of techniques now
+that seem like they can kind of do that
+and the more you crank up the dial the more it costs you
+in terms of compute but the better the answers get
+that seems like a nice trade off to have
+'cause sometimes you want to think really hard
+'cause there's a super important problem
+sometimes you probably don't want to spend
+enormous amounts of compute to compute you know one plus
+what's the answer to one plus one.
+Maybe the system should decide.
+- You take that to 100 and it comes up with like
+new actions of set theory or something.
+- So this idea is a calculator tool or something
+instead of you know a very large language model.
+- Are there any impediments to taking inference time
+like having some way in which you can just linearly scale
+up inference time compute or is this basically a problem
+that sort of solved and we know how to sort of like
+a hundred ex-compute a thousand ex-compute
+and get correspondingly better results.
+- Well we're working out the algorithms as we speak
+so I believe you know we'll see better and better solutions
+to this as these many more than 10,000 researchers
+are hacking at it at Google.
+- I mean I think we do see some examples
+in our own sort of experimental work of things
+where if you apply more inference time compute
+the answers are better than if you just apply you know
+x you know if you apply 10x you can get better answers
+than x amount of computed inference time
+and that seems useful and important.
+But I think what we would like is when you apply 10x
+to get you know even a bigger improvement
+in the quality of the answers than we're getting today.
+And so that's about you know designing new algorithms
+trying to approaches you know figuring out how best
+to spend that 10x instead of x to improve things.
+- Does it look more like search or does it look more like
+to keep you going in the linear direction for a longer time.
+- I mean I think search is I really like rich Sutton's paper
+that he wrote about the bitter lesson
+and the bitter lesson effectively is this nice one page paper
+but the essence of it is you can try lots of approaches
+but the two techniques that are incredibly effective
+are learning and search.
+And you can apply and scale those algorithmic
+or you know computationally and you often will then get
+better results than any other kind of approach
+you can apply to a pretty broad variety of problems.
+And so I think search has got to be part of the solution
+to spending more inference time as you want to maybe explore
+a few different ways of solving this problem.
+And like oh that one didn't work but this one worked better
+so now I'm going to explore that a bit more.
+- How does this change your plans for future data center
+planning and so forth where if you know can this kind
+of search be done asynchronously does it have to be online
+offline, how does that change, how big of a campus you need
+and those kinds of considerations?
+- I mean I think one general trend is it's clear
+that inference time compute you know
+you have a model that's pretty much already trained
+and you want to do inference on it
+is going to be a growing and important class of computation
+that maybe you want to specialize hardware
+or more around that.
+You know actually the first TPU was specialized
+for inference and wasn't really designed for training
+and then subsequent TPUs were really designed more
+around training and also for inference.
+But it may be that you know when you have something
+where you really want to crank up the amount
+of compute you use at inference time
+that even more specialized solutions
+won't make a lot of sense.
+- Does that mean you're going to accommodate
+more asynchronous training?
+- Training your inference.
+- Or just you can have the different data centers
+don't need to talk to each other.
+You can just like have them do a bunch of.
+- Oh yeah I mean I think I like to think of it as
+is the inference that you're trying to do latency sensitive
+like the user's actively waiting for it
+or is it kind of a background thing?
+And maybe that's I have some inference tasks
+that I'm trying to run over a whole batch of data
+but it's not for a particular user
+is just I want to you know run inference on it
+and extract some information.
+And then there's probably a bunch of things
+that we don't really have very much of right now
+but you're seeing inklings of it in our deep research
+like tool that we just released
+I forget exactly when like a week ago
+where you can give it a pretty complicated high level task
+like hey can you go off and research the history
+of renewable energy and all the trends and costs
+for wind and solar and other kinds of techniques
+and put it in a table and give me a full eight page report.
+And it will come back with an eight page report
+with like 50 entries in the bibliographies
+but it's pretty remarkable
+but you're not actively waiting for that for one second
+it takes like you know a minute or two day go go do that.
+And I think there's going to be a fair bit
+of that kind of compute and that's the kind of thing
+where you have some UI questions around okay
+if you're going to have a user with 20 of these
+kind of asynchronous tasks in the background happening
+and maybe each one of them needs to like get
+from our more information from the user
+like I found your flights to Berlin
+but there's no nonstop ones is you are you okay
+with a nonstop one how does that flow work
+when you kind of need a bit more information
+and then you want to put it back in the background
+for it to continue doing finding the hotels in Berlin
+or whatever I think it's going to be pretty interesting
+and inference will be useful.
+- Reference will be useful.
+I mean there's also a compute efficiency thing
+and inference that you don't have in training
+and that general transformers can use the sequence length
+as a batch during training,
+but they can't really in inference
+because when you're generating one token at a time
+so there may be different hardware
+and inference algorithms that we design
+for the purposes of being efficient at inference.
+- Yeah like as a good example of an algorithmic improvement
+is like the use of drafter models.
+So you have like a really small language model
+that you do one token at a time
+when you're decoding and predict like four tokens
+and then you give that to the big model
+and you say okay here's the four tokens
+the little model came up with check which ones you agree with
+and if you agree with the first three
+then you just advance and then you've basically been able
+to do a four token with parallel computation
+instead of a one token with thing in the big model.
+And so those are the kinds of things
+that people are looking at to improve inference efficiency.
+So you don't have this single token decode bottleneck.
+- Basically the big models being used as a verifier
+as opposed to a generator in the verification you can do.
+- Hello, how are you?
+- That sounds great to me.
+I'm gonna like advance past that.
+- So a big discussion has been about,
+you know, we're already tapping out like nuclear power plants
+in terms of delivering power into one single campus.
+And so do we have to like have just like
+two gigawatts in one place, five gigawatts in one place
+or can it be more distributed
+and still be able to train a model?
+Does this new regime of inference scaling
+make different considerations there plausible
+or how are you thinking about multi-data center training now?
+- I mean, we're already doing it.
+So we're pro multi-data center training.
+I think in the Gemini 1.5 tech report
+we said we use multiple metro areas
+and trained with some of the compute in each place.
+And then a pretty long latency
+but high bandwidth connection between those data centers.
+And that works fine.
+- Yeah.
+- It's great actually training is kind of interesting
+'cause each step in a training process is usually
+for a large model is a few seconds or something at least.
+So the latency of it being 50 milliseconds away
+doesn't matter that much.
+- Just the bandwidth, you know.
+- Yeah, just bandwidth.
+As long as you can sync all of the parameters of the model
+across the different data centers
+and then accumulate all the gradients.
+So it's in the time it takes to do one step.
+You're pretty good.
+- Yeah, and then we have a bunch of work on
+in even early brain days
+when we were using CPU machines and they were really slow.
+So we needed to do asynchronous training to help scale
+where each copy of the model would kind of do
+some local computation and then send gradient updates
+to a centralized system and then apply them asynchronously.
+And another copy of the model would be doing the same thing.
+You know, it makes your model parameters
+kind of wiggle around a bit
+and it makes people uncomfortable
+with the theoretical guarantees
+but it actually seems to work in practice.
+- In practice, it works.
+- It was so pleasant to go from async to sync
+because your experiments are now replicable,
+like rather than like your result depend on
+like whether there was like a web crawler
+running on the same machine,
+it's like one of your computes.
+So I am so the chap you're running on my TPU font.
+- I love async data.
+It just lets you scale some of my phones
+in an Xbox or whatever it was but like.
+- Yeah.
+- What if we could give you asynchronous
+but replicatable results?
+- Ooh.
+- So one way to do that is you effectively record
+the sequence of operations.
+So like which gradient update happened
+and when and on which batch of data
+you don't necessarily record the actual gradient update
+in a log or something.
+But you could replay that log of operations
+so that you get repeatability.
+Then I think you'd be happy.
+- That's the truth thing.
+- Then possibly.
+- At least you could debug what happened.
+But then you wouldn't be able to like compare
+to necessarily two training runs because.
+- Okay, I made one change in the hyper parameter
+but also like I had like a.
+- A crawler.
+(laughing)
+- Like messing up.
+(laughing)
+- And there were like a lot of people screaming
+the Super Bowl at the same time.
+(laughing)
+- I mean the thing that let us go
+from asynchronous training on CPUs
+to fully synchronous training is the fact
+that we have these super fast TPU hardware chips
+and then pods which have incredible amounts
+of bandwidth between the chips and a pod.
+And then scaling beyond that we have
+like really good data center networks
+and even cross metro area networks
+that enable us to scale to many, many pods
+in multiple metro areas for our largest training runs.
+And we can do that fully synchronously
+as known said as long as the gradient accumulation
+and communication of the parameters across metro areas
+happens fast enough relative to the step time,
+you're golden, you don't really care.
+But I think as you scale up
+there may be a push to have a bit more asynchrony
+in our system than we have now
+'cause like we can make it work.
+I've been, our ML researchers have been really happy
+how far we've been able to push synchronous training
+'cause it is easier mental model to understand.
+You know, you just have your algorithm
+sort of fighting you rather than the asynchrony
+and the algorithm kind of battling you.
+- As you scale up there are more things fighting you.
+You know, like there's, I mean, right,
+that's the problem with scaling
+that you don't actually always know what it is
+that that's fighting you.
+Is it, you know, the fact that you've pushed
+like quantization a little too far
+in some place or another or is it your data or is it?
+- Maybe it's your adversarial machine,
+MUQQ 17 that it's like setting the seventh bit
+of your exponent and all your radians or something.
+- Right, and all of these things just make the model
+slightly worse so you don't even know
+that the thing is going on.
+So that's actually a bit of a problem with, you know,
+that's, is there so tolerant of noise?
+You can have things set up kind of wrong in a lot of ways
+and they just kind of figure out ways
+to work around that or learn.
+- Yeah, you could have bugs in your code.
+Most of the time that does nothing,
+some of the time it makes your model worse,
+some of the time it makes your model better.
+- And then you discovered something new
+because you never tried this bug at scale before
+'cause you didn't have, it didn't have the budget for it.
+- What practically does it look like actually to debug
+or decode what the, like you've got these things,
+some of which are making a model is better,
+some of which are making it worse.
+You, when you go into work tomorrow, you're like,
+all right, what's going on here?
+How do you figure out what the most salient inputs are?
+- Right, I mean, well, at small scale,
+you do lots of experiments.
+So, I mean, there's, I think one part of the research
+that involves, okay, I want to like invent these improvements
+or breakthroughs kind of in the isolation,
+in which case you want a nice simple code base
+that you can fork and hack and like some baselines
+and you know, my dream is I wake up in the morning,
+come up with an idea, hack it up in the day,
+run some experiments, get some initial results in the day,
+like, okay, this looks promising, these things work,
+these things worked and didn't work.
+And I think that is very achievable because, okay.
+- That's small scale.
+- That's small scale, as long as you keep your,
+you know, keep a nice experimental code base and--
+- Maybe an experiment takes an hour to run
+or two hours or something, not two weeks.
+- It's great, it's great.
+So, there's that part of the research
+and then there's some amount of scaling up
+and then you have the part which is like integrating
+where you want to stack all the improvements
+on top of each other and see if they work at large scale
+and see if they work all in conjunction with each other.
+- How do they interact?
+- Right, you think maybe they're independent
+but actually maybe there's some funny interaction
+between, you know, improving the way in which we handle
+video data input and the way in which we, you know,
+update the model parameters and that interacts more
+for video data than some other thing.
+You know, there's all kinds of interactions that can happen
+that you maybe don't anticipate.
+And so you want to run these experiments
+where you're then putting a bunch of things together
+and then periodically making sure that all the things
+you think are good, are good together.
+And if not, understanding why they're not playing nicely.
+- Two questions.
+One, how often does it end up being the case
+that things don't stack up well together?
+Is it like a rare thing or does it happen all the time?
+- It happens all the time.
+- Yeah, I mean, I think most things you don't even try
+to stack 'cause they, you know, the initial experiment
+didn't work that well or it showed results
+that aren't that promising relative to the baseline.
+And then you sort of take those things
+and you try to scale them up individually
+and then you're like, oh, yeah, these ones seem
+really promising.
+So I'm gonna now include them in something
+that I'm gonna now bundle together
+and try to advance, you know, what,
+and combine with other things that seem promising.
+And then you run the experiments and then you're like,
+oh, well, they didn't really work that well.
+Like let's try to debug why.
+- And then there are trade-offs
+'cause you want to keep your like integrated system,
+you know, as clean as you can
+because, you know, complexity makes things slower
+and introduces more risk.
+And then, you know, at the same time,
+you want it to be as good as possible.
+And of course, every individual researcher
+wants his inventions to go into it.
+So there are definitely challenges there,
+but we've been working together quite well.
+- My sponsors, Jane Street,
+invented a card game called Figgy
+in order to teach their new traders
+the basics of markets and trading.
+I'm a poker fan, and I'd say that Figgy is like poker
+in the sense that there's hidden information,
+but it's much more intense and social.
+In poker, you're usually just sitting around
+waiting for your turn, whereas in Figgy,
+you spend the whole time just shouting bids
+and asking the other players.
+The game is set up such that there's a winner
+in the end of course, but during each turn,
+you are incentivized to find mutually beneficial trades
+with the other players.
+And in fact, that's the main skill that the game rewards.
+Figgy simulates the most exciting parts of trading.
+Jane Streeters enjoy it so much
+that they hold an inner office Figgy championship
+every single year.
+You can play it yourself by downloading it on the app store
+or you can find it on desktop at F-I-G-G-I-E.com.
+All right, back to Jeff and Noam.
+- Okay, so then going back to the whole dynamic of
+you find better and better algorithm thinking improvements
+and the models get better and better over time,
+even if you take the hardware part out of it,
+should the world be thinking more about,
+and should you guys be thinking more about this?
+There's one world where you just like AI is a thing
+that takes like two decades to slowly get better over time
+and you can sort of like refine things over,
+you know, if like you've kind of messed something up,
+you fix it and it's like not that big a deal, right?
+It's like not that much better
+than the previous version you released.
+There's another world where you have this big feedback loop,
+which means that the two years between Gemini 4
+and Gemini 5 are the most important years in human history
+because you go from a pretty good ML researcher
+to superhuman intelligence because of this feedback loop
+to the extent that you think that second world is plausible,
+how does that change how you sort of approach
+these greater and greater levels of intelligence?
+- I've stopped cleaning my garage
+'cause I'm waiting for the robots.
+So probably I'm more in the second camp
+of what we're gonna see a lot of acceleration.
+- Yeah, I mean, I think it's super important
+to understand what's going on and what the trends are.
+And I think right now the trends are,
+the models are getting substantially better
+generation over generation.
+And I don't see that slowing down
+in the next few generations probably.
+So that means the models to say two to three generations
+from now are gonna be capable of, you know,
+let's go back to the example of breaking down
+a simple task into 10 sub pieces
+and doing it 80% of the time
+to something that can break down a task,
+a very high level task into 100 or 1000 pieces
+and get that right 90% of the time, right?
+That's a major, major step up
+in what the models are capable of.
+So I think it's important for people to understand,
+you know, what's happening in the progress in the field.
+And then those models are gonna be applied
+in a bunch of different domains.
+And I think it's really good to make sure
+that we as society get the maximal benefits
+from what these models can do to improve things in,
+you know, I'm super excited about areas like education
+and healthcare, you know, making information accessible
+to all people.
+But we also realized that they could be used
+for misinformation, they could be used
+for, you know, automated hacking of computer systems.
+And we wanna sort of put as many safeguards
+and mitigations and understand the capabilities
+of the models in place as we can.
+And that's kind of, you know, I think Google as a whole
+has a really, you know, good view
+to how we should approach this.
+You know, our responsible AI principles
+actually are a pretty nice framework
+for how to think about trade offs of making, you know,
+better and better AI systems available
+in different context and settings,
+while also sort of making sure that we're doing
+the right thing in terms of, you know,
+making sure they're safe and, you know,
+not saying toxic things and things like that.
+- I guess the thing that stands out to me
+if you were like zooming out
+and looking at like this sort of human history,
+if we're in the world where like, look,
+maybe if you do post-training on Gemini 3 badly,
+it can do some misinformation,
+but then you like fix the post-training
+and like, it's gonna start doing them.
+Is it, it's a bad mistake, but it's a fixable mistake, right?
+- Right.
+- If you have this feedback loop dynamic,
+which is a possibility, then the sort of like mistake
+of like the thing that catapults this intelligence explosion
+is like misaligned is like not trying
+to write the code you think it's trying to write
+and optimizing for some other objective.
+And on the other end of this very rapid process
+that lasts a couple of years, maybe less,
+you have things that are approaching Jeff Dean
+or beyond the level, or no, which is your beyond level.
+And then you have like millions of copies
+of Jeff Dean level programmers and anyways,
+that seems like a harder to recover mistake
+and that seems like a much more salient.
+- Yeah.
+- You really gotta make sure we're going
+to the intelligence explosion.
+- As these systems do get more powerful,
+you have, you know, you gotta be more and more careful.
+- I mean, one thing I would say is
+there's like the extreme views on either end.
+There's like, oh my goodness, these systems
+are gonna like be so much better than humans at all things
+and we're gonna be kind of overwhelmed.
+And then there's the, like these systems are gonna be amazing
+and we don't have to worry about them at all.
+I think I'm somewhere in the middle
+and I'm a co-author on a paper called Shaping AI,
+which is, you know, those two extreme views
+often kind of view our role as kind of laissez-faire.
+Like we're just gonna have the AI develop
+in the path that it takes.
+And I think there's actually a really good argument
+to be made that what we're going to do is try to shape
+and steer the way in which AI is deployed in the world
+so that it is, you know, maximally beneficial
+in the areas that we want to capture and benefit from
+in education, you know, if some of the areas
+I mentioned, healthcare and steer it
+as much as we can away, maybe with policy related things,
+maybe with, you know, technical measures and safeguards
+away from, you know, the computer will, you know,
+take over and have unlimited control of what it can do.
+So I think that's an engineering problem
+is how do you engineer safe systems?
+I think it's kind of the modern equivalent
+of what we've done in kind of older style software development.
+Like if you look at, you know, airplane software development
+that has a pretty good record of how do you rigorously
+develop safe and secure systems for doing a pretty,
+pretty risky task.
+- The difficulty there is that there's not some feedback loop
+for the 737.
+You like put it in a box with a bunch of compute
+for a couple of years and it comes out with like
+the version 1000.
+- I think the good news, the good news is that
+analyzing text seems to be easier than generating text.
+So I believe that the sort of ability of language models
+to actually analyze language model output
+and, you know, and figure out what is problematic
+or dangerous, you know, will actually be the solution
+to a lot of these control issues.
+We are definitely working on this stuff.
+We've got a bunch of brilliant folks at Google,
+you know, we're working on this now.
+And, you know, I think it's just going to be more
+and more important both from, you know,
+both from a, you know, do something good for people
+standpoint, but, you know, also from a business standpoint
+that, you know, you are a lot of the time,
+like limited in, you know, limited in what you can deploy
+based on, you know, based on keeping things safe.
+And it's, you know, so it becomes very important
+to be really, really good at that.
+- Yeah, obviously I know you guys take
+the potential benefits and costs here seriously.
+And you guys get credit for it, but not enough,
+I think first of all, it's like,
+there's so many different applications
+that you have put out for using these models
+to make the different areas you talked about better.
+But I do think that there are, again,
+if you have a situation where plausibly
+there's some feedback loop process,
+on the other end, you have like a model
+that is as good as, no options here, as good as Jeff Dean.
+If like, if there's an evil version of you running around,
+and suppose there's like a million of them.
+- Yes.
+- I think that's like really, really bad.
+- Yeah, that's nice.
+- That could be like much, much worse
+than any other risk, maybe short like nuclear war or something.
+It's like, just think about it,
+like a million evil Jeff Deans or something.
+- Where did we get the training?
+(laughing)
+- Yeah.
+- But to the extent that you think that's like,
+a plausible output of some quick feedback loop process,
+what is your plan of like, okay,
+we've got Gemini three or Gemini four,
+and we think it's like helping us do better job
+of training future versions.
+It's writing a bunch of the training code for us
+from this point forward,
+we just kind of like look over it, verify it.
+Even the verifiers you talked about of looking
+at the output of these models will eventually be trained by,
+or you know, a lot of the code will be written by
+the AIs you make.
+You know, like, what do you wanna know for sure
+before we like have the Gemini four help us with AI research?
+We really wanna make sure we wanna run this test on it
+before we like let it write our AI code for us.
+- I mean, I think having the system explore
+algorithmic research ideas seems like something
+where there's still a human in charge of that
+that gets exploring space and then it's gonna like
+get a bunch of results and we're gonna make a decision
+and like are we gonna incorporate this particular,
+you know, learning algorithm or change to the AI system
+in into kind of the core code base.
+And so I think you can put in safeguards like that
+that enable us to get the benefits of the system
+that can sort of improve or kind of self improve
+with human oversight without necessarily letting the system
+go full on self improving without any notion
+of a person looking at what is doing, right?
+That's the kind of engineering safeguards I'm talking about
+where you want to be kind of looking at the characteristics
+of the systems you're deploying, not deploy ones
+that are harmful by some measures
+and some ways you have and understanding
+what its capabilities are and what it's likely to do
+in certain scenarios.
+- So, you know, I think it's not an easy problem
+by any means, but I do think it is possible
+to make these systems safe.
+- Yeah, I mean, I think we are also going to use
+these systems a lot to check themselves,
+check other systems, you know, it's,
+I mean, even as a human, it is easier to recognize
+something than to generate it.
+So, you know--
+- One thing I would say is if you expose the model's capabilities
+through an API or through a user interface
+that people interact with, you know,
+I think then you have a level of control to understand
+how is it being used and sort of put some boundaries
+on what it can do, and that I think is one of the tools
+in the arsenal of like how do you make sure
+that what it's going to do is sort of acceptable
+by some set of standards you've set out in your mind.
+- Yeah, I mean, I think our goal is to empower people,
+but, you know, so for the most part, you know,
+we should be mostly letting people do things
+with these systems that make sense
+and, you know, closing off as few parts of the space
+as we can, but, you know, yeah, if you let somebody
+take your thing and create a million evil software
+engineers, then that doesn't empower people
+because they're going to hurt others
+with a million evil software engineers,
+so I'm against that.
+- Me too, me too, I'll go on together.
+- All right, let's talk about a few more fun topics.
+- I don't know, I was making it a little like I've heard.
+- Over the last 25 years, what was the most fun time?
+What period of time do you have the most nostalgia over?
+- I mean, I think the early sort of four or five years
+at Google, when I was sort of one of a handful
+of people working on search and crawling in search
+and indexing systems, and our traffic was growing
+tremendously fast, and we were trying to expand
+our index size and make it so we updated it, you know,
+every minute instead of every, you know,
+month or two months, something went wrong.
+And seeing kind of the growth and usage of our systems
+was really just personally satisfying, you know,
+building something that is used by, you know,
+today, two billion people a day, I think,
+is pretty incredible.
+But I would also say, equally exciting is sort of working
+with people in the Gemini team today.
+And I think the progress we've been making
+in what these models can do over the last, you know,
+a year and a half or whatever is really fun.
+People are really dedicated, really excited
+about what we're doing.
+I think the models are getting better and better
+at, you know, pretty complex tasks.
+Like if you showed someone using a computer 20 years ago,
+what these models are capable of, they wouldn't believe it,
+right? And even five years ago, they might not believe it.
+And that's pretty, pretty satisfying.
+And I think we'll see a similar, you know,
+growth and usage of these models and impact in the world.
+- Yeah, I'm with you. - I'm with you.
+Early days were super fun, you know.
+Just, I mean, part of that is just like knowing everybody
+and, you know, in the social aspect and the fact
+that you're just building something that millions
+and millions of people are using and, you know what I'm saying?
+Same thing today, we got that whole nice micro-kitchen area
+where you get like lots of people hanging out with, you know,
+so I love being in person.
+It's work with a bunch of great people and build something
+that's helping millions to billions of people.
+Like, yeah, what could be better?
+- What's this micro-kitchen?
+- Oh, we have a micro-kitchen area in the building
+we both sit in.
+It's the new so-named gradient canopy.
+It used to be named Charleston East and we decided
+we needed a more exciting name because it's a lot of like
+machine learning researchers and AI research happening in there.
+And there's a micro-kitchen area that we've set up with, you know,
+normally it's just like a espresso machine and a bunch of snacks,
+but this particular one has a bunch of space in it.
+So we've set up like maybe 50 desks in there.
+And so people are just hanging out in there, you know,
+it's a little noisy because people are always like grinding beans
+and really espresso, but, you know,
+you also get a lot of like face-to-face ideas of connections.
+Like, oh, I've tried that.
+Like, did you try to think about trying this in your idea?
+Or, you know, oh, we're gonna launch this thing next week.
+Like, how's the load test looking?
+There's just like lots of feedback that happens.
+And then we have our Gemini chat rooms for people who are not
+in that micro-kitchen, you know,
+we have a team all over the world.
+And, you know, there's probably 120 chat rooms I mean
+related to Gemini, right, things and, you know,
+this particular very focused topic.
+We have like seven people working on this
+and there's like exciting results being shared
+by the London colleagues.
+And when you wake up, you see like what's happening in there
+or it's a big group of like people focused on data
+and there's all kinds of issues, you know, happening in there.
+It's just fun.
+- What I find remarkable about some of the calls you guys have made
+is you're anticipating a level of demand for compute,
+which at the time wasn't obvious or evident.
+TPUs being a famous example of this,
+or the first TPU being an example of this.
+That thinking you had in, I guess, 2013 or earlier,
+if you think about it that way today
+and you do an estimate of, look,
+we're gonna have these models that are gonna be a backbone
+of our services and we're gonna be doing constantly inference
+for them, we're gonna be trading future versions.
+And you think about the amount of compute we'll need
+by 2030 to accommodate all these use cases.
+Where does the Fermi estimate get you?
+- Yeah, I mean, I think you're gonna want a lot
+of inference compute is the rough highest level view
+of these capable models because if one of the techniques
+for improving their quality is scaling up
+the amount of inference compute you use,
+then all of a sudden what's currently like one request
+to generate some tokens now becomes 50 or 100
+or 1,000 times as computationally intensive,
+even though it's producing the same amount of output.
+And you're also gonna then see tremendous scaling up
+of the uses of these services as not everyone in the world
+has discovered these chat based conversational interfaces
+where you can get them to do all kinds of amazing things.
+Probably 10% of the computer users in the world
+have discovered that today or 20%
+as that pushes towards 100%
+and people make heavier use of it,
+that's gonna be another order of magnitude or two of scaling.
+And so you're now gonna have two orders of magnitude
+from that, two orders of magnitude from that,
+models are probably gonna be bigger,
+you'll get another order of magnitude or two from that.
+And there's a lot of inference compute you want.
+So you want extremely efficient hardware for inference
+for models you care about in FLOPS,
+the global total global inference in 2030.
+- I think just more is always going to be better.
+Like if you just kind of think about,
+okay, like what fraction of world GDP will be,
+you know, will people decide to spend on AI?
+- On AI at that point.
+And then like, okay, what do the AI systems look like?
+Well, maybe it's some sort of personal assistant like thing
+that is in your glasses and can see everything around you
+and has access to all your digital information
+and the world's digital information.
+And like maybe it's like your Joe Biden
+and you have the earpiece in the cabinet
+that can advise you about anything in real time
+and solve problems for you and give you helpful pointers
+or you could talk to it.
+And you know, it wants to analyze like anything
+that it sees around you for any potential useful impact
+that it has on you.
+So, I mean, I can imagine, okay.
+And then say it's like your, okay, your personal assistant
+or your personal cabinet or something.
+And that every time you spend two X's much money on compute,
+the thing gets like five, 10 IQ points smarter
+or something like that.
+And okay, would you rather spend like $10 a day
+and have an assistant or $20 a day
+and have a smarter assistant, you know,
+and not only is it an assistant in life,
+but an assistant in getting your job done better
+because now it makes you from a 10 X engineer
+to a hundred X or 10 million X engineer.
+I mean, okay, okay, so let's see.
+From first principles, right.
+So people are going to want to spend some fraction
+of world GDP on this thing.
+The world GDP is almost certainly going to go way, way up
+to like orders of magnitude higher than it is today
+due to the fact that we have all of these
+artificial engineers like working on improving things.
+Probably we'll have solved unlimited energy
+and like carbon issues by that point.
+So we should be able to have lots of energy.
+We should be able to have millions to billions of robots
+like building us data centers.
+Like let's see, like the sun is what, 10 to the 26 lots
+or something like that.
+You know, I mean, I'm guessing that the amount of compute
+at the, you know, being used for AI to help each person
+will be astronomical.
+(laughing)
+- I mean, I would add on to that.
+I'm not sure I agree completely,
+but it's a pretty interesting thought experiment
+to go in that direction.
+And even if you get partway there,
+it's definitely going to be a lot of compute.
+And this is why it's super important to have
+as cheap and a hardware platform for using these models
+and applying them to problems that I'm described
+so that you can then make it accessible to everyone
+in some form and have, you know, as low a cost
+for access to these capabilities as you possibly can.
+And I think that's achievable by focusing on, you know,
+hardware and model code design kinds of things.
+And we should be able to make these things
+much, much more efficient than they are today.
+- Is Google's data center build-up plan
+over the next few years aggressive enough
+given this increase in demand you're expecting?
+- I'm not going to comment on our future capital spending
+because our CEO and CFO would prefer it all probably,
+but I will say, you know, you can look at our past
+capital expenditures over the last few years
+and see that we're definitely investing in this area
+'cause we think it's important.
+And that we're, you know, we're continuing to build
+new and interesting innovative hardware
+that we think really helps us have an edge
+in deploying these systems to more and more people,
+both training and also how do we make them usable
+by people for inference?
+- One thing I've heard you talk a lot about
+is continual learning, the idea that you could just
+have a model which improves over time rather
+than having to start from scratch.
+- Is there any fundamental impediment to that?
+'Cause theoretically you should just be able to
+keep fine tuning a model or yeah,
+what does that future look like to you?
+- Yeah, I've been thinking about this more and more
+and I've been a big fan of models that are sparse
+because I think you want different parts of the model
+to be good at different things.
+And we have, you know, our Gemini 1.5 Pro model
+and other models are mixture of expert style models
+where you now have parts of the model
+that are activated for some token
+and parts that are not activated at all
+because you decided this is a math oriented thing
+and this part's good at math and this part's good
+at like understanding cat images.
+So that gives you this ability to have a much more capable
+model that's still quite efficient at inference time
+because it has very large capacity
+but you activate a small part of it.
+But I think the current problem, well, one limitation
+of what we're doing today is it's still a very regular structure
+where each of the experts is kind of the same size.
+You know, the paths kind of merge back together very fast.
+They don't sort of go off and sort of have lots
+of different branches for math-y things
+that don't merge back together with the kind
+of cat image thing.
+And I think we should probably have a more organic structure
+in these things.
+I also would like it if the pieces of the model
+could be developed a little bit independently.
+Like right now, I think we have this issue
+where we're going to train a model.
+So we do a bunch of preparation work
+on deciding the most awesome algorithms we can come up with
+and the most awesome data mix we can come up with
+but there's always trade-offs there.
+Like we'd love to include more multilingual data
+but that might come at the expense
+of including less coding data
+and so the model's less good at coding
+but better at multilingual or vice versa.
+- And I think it would be really great if we could have
+like a small set of people who care about
+a particular subset of languages go off
+and create really good training data,
+train a modular piece of a model
+that we can then hook up to a larger model
+that improves its capability in say Southeast Asian languages
+or in reasoning about Haskell code or something.
+And then you then also have a nice software engineering benefit
+where you've decomposed the problem of it
+compared to what we do today
+which is we have this kind of a whole bunch of people working
+but then we have this kind of monolithic process
+of starting to do pre-training on this model.
+And if we could do that,
+you could have a hundred teams around Google,
+you could have people all around the world
+working to improve languages they care about
+or particular problems they care about
+and all collectively work on improving the model.
+And that's a kind of a form of continual learning.
+- That would be so nice.
+You could just like glue models together
+or rip out pieces of models and shove them into other
+like doctor.
+- Upgrade the piece without the kind of thing
+or like you just attach a fire hose
+and you suck all the information out of this model.
+Shove it into another model.
+There is, I mean, the countervailing interest there
+is sort of science in terms of like,
+okay, we're still in the period of rapid progress.
+So if you want to do sort of controlled experiments
+and okay, I want to compare this thing to that thing
+because that is helping us figure out,
+okay, what do you want to build?
+So for things, in that interest,
+it's often best to just start from scratch.
+So you can compare one complete training run
+to another complete training run sort of at the practical level
+because it kind of helps us figure out
+what to build in the future.
+And it's less exciting,
+but does lead to rapid progress.
+- Yeah, I think there may be ways
+to get a lot of the benefits of that
+with kind of a version system of modularity.
+Like I have a frozen version of my model
+and then I include a different variant
+of some particular module
+and I want to compare its performance
+or train it a bit more.
+And then I compare it to the baseline of this thing
+with now version and prime of this particular module
+that does Haskell interpretation.
+- Actually, that could lead to faster research progress, right?
+You've got some system and you do something to improve it.
+And if that thing you're doing to improve it
+is relatively cheap compared to training the system
+from scratch, then it could actually make,
+yeah, it could actually make research
+much, much cheaper and faster.
+- Yeah.
+- So, okay, and also more parallelizable, I think.
+- Yeah.
+Okay, 'cause I'll cross people.
+- Okay, let's figure it out and do that next.
+- Yeah.
+(laughing)
+- So this is, the idea that it's sort of casually laid out
+there is actually would be a big regime shift.
+- Yeah, exactly.
+- You think this is the way things are headed.
+This is like, this is a sort of like very interesting
+prediction about, you just have this like blob
+where things are getting pipeline back and forth.
+Then if you want to make something better
+you can do like a sort of surgical incision almost.
+- Right.
+- Or grow the model, add another little bit of it here.
+Yeah, I've been sort of sketching out this vision
+for a while in the sort of pathways.
+- Yeah, right.
+- Under Pathways name.
+- Yeah, you've been building the infrastructure for it.
+So a lot of what Pathways, the system can support
+is this kind of twisty weird model with like asynchronous
+updates to different pieces.
+- Yeah, we should get that.
+- And figure it out.
+- And we're using Pathways to train our Gemini models,
+but we're not making use of some of its capabilities yet.
+- Yeah, but maybe we should.
+- Maybe.
+There have been times like, you know, like the way
+the TPU paths were set up.
+I don't know who did that, but they did a pretty brilliant
+job, you know, the low level software stack
+and the hardware stack that, okay, you've got your,
+you know, you've got your nice regular high performance
+hardware, you've got these great torus shaped interconnect.
+And then you've got the right low level collectives,
+you know, the all reduces, et cetera,
+which I guess came from super computing,
+but it turned out to be kind of just the right thing
+to build, to build distributed deep learning on top of.
+- The, okay, so a couple of questions.
+One, suppose you do figure, suppose no one makes
+another break through and now we've got a better architecture.
+Would you just take each compartment and distill it
+into this better architecture?
+And that's how it keeps improving over time.
+- Yeah, I mean, I do think distillation is a really useful
+tool because it enables you to kind of transform a model
+in its current model architecture form into a different form.
+You know, often you use it to take a really capable,
+but kind of large and unwieldy model and distill it
+into a smaller one that maybe you want to serve
+with really good, fast latency inference characteristics.
+But I think you can also view this as something
+that's happening at the modularity, at the module level.
+Like maybe there'd be a continual process
+where you have each module and it has a few different
+representations of itself.
+It has a really big one.
+It's got a much smaller one that is continually distilling
+into the small version.
+And then the small version, once that's finished,
+then you sort of delete the big one
+and then you add a bunch more parameter capacity
+and now start to learn all the things
+that the distilled small one doesn't know
+by training it on more data.
+And then you kind of repeat that process.
+And if you have that kind of running a thousand different
+places in your modular model in the background,
+that seems like it would work reasonably well.
+- This would be what you're doing in front of scaling,
+like the router decides how much do you want the big one?
+- Yeah, you're gonna have multiple versions
+and like, you know, this is an easy math problem.
+So I'm in a router to the really tiny math distilled thing
+and oh, this one's really hard.
+So at least from public researchers seems like
+it's often hard to decode what each expert is doing
+and mixture of expert type models.
+If you have something like this,
+how would you enforce the kind of modularity
+that would be visible and understandable to us?
+- Actually, in the past, I found experts
+to be relatively easy to understand.
+I mean, I don't know.
+The first mixture of experts paper,
+you could just like look at the expert.
+- I don't know, I'm willing to even mender
+and make sure I make sure.
+(laughing)
+- Like, yeah, you could just see, okay, like this expert,
+like we did like, you know, a thousand, two thousand experts.
+Okay, and this expert, like all of the,
+it was getting words referring to cylindrical objects.
+And you know, like--
+- That's been super good at dates.
+- Yeah, talking about time.
+- It was actually pretty, yeah, pretty easy to do.
+But I mean, like, not that you would need
+that human understanding to like figure out
+how to like work the thing at runtime
+because you just have like some sort of learned router
+that's looking at the example and--
+- I mean, one thing I would say is like,
+there is a bunch of work on interpretability of models
+and what are they doing inside?
+And sort of expert level interpretability
+is a sub problem of that broader area.
+I really like some of the work that my former intern,
+Chris Ola and others did at Enthropike
+where they could kind of, they trained
+a very sparse auto encoder and were able to deduce,
+you know, what characteristics does some particular neuron
+and a large language about.
+So they found like a Golden Gate Bridge neuron
+that's activated when you're talking
+about the Golden Gate Bridge.
+And I think, you know, you could do that at the expert level,
+you could do that at a variety of different levels
+and get pretty interpretable results.
+And it's a little unclear if you necessarily need that.
+If the model's just really good at stuff,
+you know, we don't necessarily care
+what every neuron in the Gemini model is doing
+as long as the collective output and characteristics
+of the overall system are good.
+You know, that's one of the beauties of deep learning
+is you don't need to understand
+or hand engineer every last feature.
+- Man, there's so many interesting implications of this
+that we could just keep asking you about this.
+One implication is currently if you have a model
+that has some tens or hundreds of billions of parameters,
+you can serve it on like a handful of GPUs.
+In this system where any one query
+might only make its way through a small fraction
+of the total parameters,
+but you need the whole thing sort of loaded into memory.
+The specific kind of infrastructure
+that Google has invested in with these TPUs
+that exist in pods of hundreds or thousands
+would be like immensely valuable, right?
+- I mean, for any sort of even existing mixtures of experts,
+you want the whole thing in memory.
+I mean, basically if you are,
+I guess there's kind of this misconception
+running around with like mixture of experts
+that, okay, the benefit is that, you know,
+you don't even have to like go through those weights
+in the model, you know, if some expert is unused,
+it doesn't mean that you don't have to retrieve that memory
+because really in order to be efficient,
+you're serving at very large batch sizes.
+So it's--
+- Independent requests.
+- Right, independent requests.
+So it's not really the case that, okay,
+at this step, you're either looking at this expert
+or you're not looking at this expert
+because if that were the case,
+then when you did look at the expert,
+you would be running it at batch size one,
+which is like massively inefficient.
+Like you've got like modern hardware.
+The operational intensities are whatever,
+hundreds or, you know, so that's not what's happening.
+It's that you are looking at all the experts,
+but you only have to send a small fraction
+of the batch through each one.
+- Right, but you still have a smaller batch at each expert
+that I didn't go through.
+And in order to get kind of reasonable balance,
+like one of the things that the current models typically do
+is they have all the experts
+be roughly the same compute cost.
+And then you run roughly the same size batches
+through them in order to sort of propagate
+the very large batch you're doing at inference time
+in and have good efficiency.
+But I think, you know, you often, in the future,
+might want experts that vary in computational cost
+by factors of 100 or 1,000 or maybe paths
+that go for many layers on one case
+and, you know, a single layer
+or even a skip connection in the other case.
+And there I think you're gonna want very large batches still,
+but you're gonna want to kind of push things
+through the model a little bit asynchronously
+at inference time, which is a little easier
+than training time.
+And, you know, that's part of kind of one of the things
+that PathWave was designed to support is, you know,
+you have these components
+and the components can be variable cost.
+And you kind of can say, for this particular example,
+I want to go through this subset of the model.
+And for this example, I want to go through this subset
+of the model and have them kind of the system
+kind of orchestrate that.
+- It also would mean that it would take companies
+of a certain size and sophistication to be able to,
+like right now, you know,
+anybody can train a sufficiently small enough model.
+But if we, if it ends up being the case
+that this is the best way to train future models,
+then you would need a company that can basically have
+a data center size, a data center serving a single quote-unquote
+blob or, you know, model.
+So it would be an interesting change
+in paradigms in that way as well.
+- You definitely want to have at least enough HBM
+to put your whole model.
+So depending on the size of your model,
+most likely that's how much, you know,
+that's how much HBM you'd want to have at the minimum.
+I mean, yeah.
+- But it also means, I think you don't necessarily need
+to grow your entire model footprint
+to be the size of the data center.
+You might want it to be a bit below that and then have,
+you know, potentially many replicated copies
+of one particular expert that is being used a lot
+so that you get better load balancing.
+- Right, interesting.
+- So like this one's being used a lot
+'cause we get a lot of math questions
+and this one on, you know, maybe it's an expert on
+Tahitian dance and it is called on really rarely.
+That one, maybe you even page out to DRAM
+rather than putting it in HBM.
+But you want the system to kind of figure all this stuff out
+based on load characteristics.
+- How, right now, language models, obviously,
+like you put in language, you get language out,
+obviously it's multi-modal, but you could imagine,
+the Pathways blog post talks about like every,
+sort of like so many different use cases
+that are not obviously of this kind of auto-aggressive nature
+going through the same model.
+So could you imagine like basically Google as a company,
+the product is like Google search goes through this,
+Google images goes through this, Gmail goes through it,
+just like the server, the entire server is just this huge
+and extra experts specialize.
+- I mean, you're starting to see some of this
+by having a lot of uses of Gemini models across Google
+that are not necessarily fine-tuned,
+they're just sort of, you know, given instructions
+for this particular use case in this feature,
+in this product setting.
+So I definitely see a lot more sharing
+of what the underlying models are capable of
+across more and more services.
+You know, I do think that's a pretty interesting direction
+to go, for sure.
+- I feel like you're listening might not sort of
+register how, yeah, like how interesting
+your prediction this is about where you guys,
+it's like sort of like getting like no amount of product
+'cause in 2018 and being like, yeah.
+So I think like, you know, language models will be a thing.
+It's like, it's just where things go.
+This is actually, yeah, that's incredibly interesting.
+- Yeah, and I think you might see
+that might be a big base model,
+and then you might want customized versions
+of that model with different modules
+that are added onto it for different settings
+that maybe have access restrictions.
+Like maybe we have an internal one for Google use
+for Google employees that we've trained some modules
+on internal data and we don't allow anyone else
+to use those modules, but we can make use of it.
+And maybe other companies you add on other modules
+that are useful for that company setting
+and serve it in our cloud APIs.
+- What is a bottleneck to making this sort of system viable?
+Is it like systems engineering?
+Is it ML?
+- I mean, it's a pretty different way of operating
+than our current Gemini development.
+So I think, you know, we will explore these kinds of areas
+and I think it makes some progress on them,
+but we need to sort of really see evidence
+that it's the right way, you know,
+that it has a lot of benefits.
+Some of those benefits may be improved quality.
+Some may be sort of less concretely measurable,
+like this ability to have lots of parallel development
+of different modules and I think that would,
+but that's still a pretty exciting improvement
+'cause I think that would enable us to make faster progress
+on improving the model's capabilities
+for lots of different distinct areas.
+- I mean, even the data control modularity stuff
+seems like really cool because then you could have
+like the piece of the model that's just trained for me.
+- Yeah, like a personal module for you would be useful.
+Another thing might be you can use certain data
+in some settings, but not in other settings.
+And, you know, maybe we have some YouTube data
+that's only usable in a YouTube product surface,
+but not in other settings that we can have a module
+that is trained on that data for that particular purpose.
+- We are going to need like a million automated researchers
+to invent all of this stuff.
+(laughing)
+It's gonna be great.
+- Well, the thing itself, you know, it's like,
+you build the vlog and it like tells you
+how to make the vlog better and...
+(laughing)
+- Blob 2.0, or maybe they're not even version,
+it's just like a incrementally growing vlog.
+- Yeah, okay, Jeff, motivate for me big picture.
+Why is this a good idea?
+Why is this the next direction?
+- Yeah, I mean, I guess this kind of like notion
+of an organic like kind of not quite so carefully
+mathematically constructed machine learning model
+is one that's been with you for a little while.
+And I feel like in the development of neural nets,
+like the biological analog, the artificial neurons,
+you know, inspiration from biological neurons
+is a good one and has served us well
+in the deep learning field.
+And we've been able to make a lot of progress with that.
+But I feel like we're not necessarily looking at other things
+that real brains do as much as we perhaps could.
+And that's not to say we should exactly mimic that
+because silicon and, you know,
+wet wear have very different characteristics and strengths.
+But I do think one thing we could draw inspiration,
+more inspiration from is this notion
+of having different specialized portions,
+part sort of areas of a model of a brain
+that are good at different things.
+So we have a little bit of that
+and mixture of experts models,
+but it's still very kind of structured.
+And I feel like this kind of more organic growth of expertise
+and when you want more expertise of that,
+you kind of add some more capacity to the model there
+and let it learn a bit more on that kind of thing.
+And also this notion of like adapting the connectivity
+of the model to the connectivity of the hardware
+is a good one.
+So I think you want incredibly dense connections
+between artificial neurons in sort of the same chip
+and the same HBM because that doesn't cost you that much.
+But then you want a smaller number
+of connections to nearby neurons.
+So like a chip away,
+you should have some amount of connections.
+And then like many, many chips away,
+you should have a smaller number of connections
+where you send over a very limited kind of bottleneck thing,
+the most important things for that this part of the model
+is learning for other parts of the model to make use of.
+And even across multiple TPU pods,
+you'd like to send even less information,
+but the most salient kind of representations.
+And then across metro areas, you'd like to send even less.
+- Yeah.
+And then that emerges organically.
+- Yeah, I'd like that to emerge organically.
+You could hand specify these characteristics,
+but I think you don't know exactly what the right proportions
+of these kinds of connections.
+And so you should just let the hardware dictate things
+a little bit.
+Like if you're communicating over here
+and this data always shows up really early,
+you should add some more connections.
+Then it'll make it take longer
+and show up at just the right time.
+- Oh, here's another interesting implication potentially.
+Right now we think about the growth in AI use
+as a sort of horizontal.
+So suppose you're like, how many AI engineers
+will Google have working for it?
+You think about like, how many instances of Gemini 3
+will be working at one time?
+If you have this, whatever you wanna call this like blob,
+and it can sort of like organically decide
+how much of itself to activate,
+then it's more of like, you know,
+if you want like 10 engineers worth of output,
+it just activates a different pattern or a larger pattern.
+If you want a hundred engineers about,
+but it's not like calling more agents or witnesses.
+It's just calling different subsets.
+- Yeah, I think there's a notion of like,
+how much compute do you wanna spend
+on this particular inference?
+And that should vary by like factors of 10,000
+more really easy things and really hard things,
+maybe even a million.
+And it might be iterative, right?
+You might make a pass through the model
+and get some stuff and then decide,
+you now need to call on some other parts of the model
+as another, you know, aspect of it.
+The other thing I would say is,
+like this sounds super complicated to deploy
+'cause it's like this weird, you know,
+constantly evolving thing with maybe not
+super optimized ways of communicating between pieces,
+but you can always distill from that, right?
+Like, so if you say, this is the kind of task
+I really care about, let me distill
+from the this giant kind of like the organically thing
+into something that I know can be served really efficiently.
+And you could do that distillation process,
+you know, whenever you want.
+Once a day, once an hour.
+And that seems like it could be kind of good.
+- Yeah, we need better distillation.
+- Yeah.
+- Anyone out there and that's amazing distillation techniques
+that instantly distill from a giant blob onto your phone.
+That would be wonderful.
+- How would you characterize
+what's missing from current distillation techniques?
+- Well, I just wanted to work faster.
+- Yeah.
+- The related thing is I feel like we need interesting
+learning techniques during pre-training.
+Like I'm not sure we're extracting the maximal value
+from every token we look at with the current training objective.
+Like maybe we should think a lot harder about some tokens.
+You know, when you get to the answer is,
+maybe the model should at training time
+do a lot more work than when it gets to the.
+- Right, right.
+- Yeah, right, there's got to be some way
+to get more from the same data,
+make it learn it forwards and backwards.
+- Yeah, every which way, hide some stuff this way,
+hide some stuff that way, make it infer
+from like partial information, you know,
+these kinds of things.
+I think people have been doing this
+in vision models for a while.
+Like you distort the model or you hide parts of it
+and try to make it guess the bird from half,
+like that it's a bird from this upper corner of the image
+or the lower left corner of the image.
+And that makes the task harder.
+And I feel like there's an analog
+for kind of more textual or coding related data
+where you want to, you know,
+force the model to work harder
+and you'll get more interesting observations from it.
+- Yeah, the image people didn't have enough labeled data.
+So they had to, and that's all this.
+- Yeah, and like, I mean, dropout was invented on images,
+but we're not really using it for text mostly.
+That's one way you could get a lot more learning
+and a more large scale model without overfitting
+is just make like a hundred epochs
+over the world's text data and use dropout.
+- Yeah, we...
+- But that's pretty computationally expensive,
+but it does mean we won't run it.
+Like even though people are saying,
+oh no, we're almost out of like textual data.
+I don't really believe that
+'cause I think we can get a lot more capable models
+out of the text data that does exist.
+I mean, like a person has seen like a billion tokens.
+- Yeah, and they're pretty good at a lot of stuff, yeah.
+- Obviously, human data efficiency sets a lower bound
+on how, or guess upper bound, one of them on...
+- Maybe it's an interesting data point.
+- Yes.
+So there's a sort of like modus ponens, modus tollens thing here
+of one way to look at it is,
+look, LLMs have so much further to go,
+therefore we project orders of magnitude improvement
+in sample efficiency, just if they could match humans.
+Another is maybe they're doing something clearly different
+given the orders of magnitude difference.
+What's your intuition of what it would take
+to make these models as sample efficient as humans are?
+- Yeah, I mean, I think we should consider changing
+the training objective a little bit,
+like just predicting the next token
+from the previous ones you've seen
+seems like not how people learn.
+- Right.
+- It's a little bit related to how people learn, I think,
+but not entirely, like a person might
+read a whole chapter of a book
+and then try to answer questions at the back.
+And that's a kind of different kind of thing.
+I also think we're not learning from visual data very much.
+We're training a little bit on video data,
+but we're definitely not anywhere close to thinking
+about training on all the visual inputs you could get.
+So you have visual data that we haven't really
+begun to train on.
+And then I think we get extract a lot more information
+from every bit of data we do see.
+I think one of the ways people are so sample efficient
+is they explore the world and take actions in the world
+and observe what happens, right?
+Like you see it with very small infants
+like picking things up and dropping them,
+they learn about gravity from that.
+And that's a much harder thing to learn
+when you're not initiating the action.
+And I think having a model that can take actions
+as part of its learning process would be just a lot better
+than just sort of passively observing strategies.
+- Is Gato the future then?
+- He's something where the model can observe
+and take actions and observe the corresponding results
+seems pretty useful.
+- I mean, people can learn a lot from thought experiments
+that don't even involve expert input.
+And Einstein learned a lot of the stuff
+from thought experiments or like went into quarantine
+and got an apple, dropped on his head or something
+and invented gravity and like mathematicians,
+like map didn't have any extra input, chess, like, okay,
+like you have the thing play chess against itself
+and it gets good at chess that was deep-mind,
+but also like all it needs is the rules of chess.
+So like there's actually probably a lot of,
+somehow a lot of learning that you can do
+even without external data.
+- Yeah.
+- And then you can make it in exactly the fields
+that you care about.
+Of course there's learning that will require external data,
+but probably maybe you can just have this thing
+talk to itself and make itself smarter.
+- So here's a question I have.
+- Yeah.
+- What you've just laid out over the last hour
+is potentially just like the big next paradigm shift
+in AI that's like a tremendously valuable insight,
+potentially.
+How do you know in 2017 you released the transformer paper
+on which tens, if not hundreds of billions of dollars
+of market value is based in other companies,
+not to mention all this other research
+that Google has released over time,
+which you've been like relatively generous with.
+In retrospect, when you think about divulging this information
+that has been helpful to your competitors,
+in retrospect, is it like, yeah, we'd still do it,
+or would it be like,
+ah, we didn't realize how the deal was,
+we should have kept it indoors.
+How do you think about that?
+- That's a good question.
+'Cause I think probably,
+we did need to see the size of the opportunity
+like often reflected in what other companies are doing.
+And also it's not a fixed pie.
+Like this is like the current state of the world
+is pretty much as far from fixed pies you can get.
+I think we're going to see orders of magnitude
+of improvements in GDP, health, well,
+and anything else you can think of.
+So I think it's definitely been nice
+that the transformer has got around
+then you know, thank God. (laughing)
+- Thank God, Google's doing well as well.
+So you know, these days we do publish a little less
+of what we're doing, but you know.
+- Yeah, I mean, I think there's always this trade off
+and of, you know, should we publish exactly what we're doing
+right away, should we put it in, you know,
+the next stages of research and then roll it out
+into like production Gemini models
+and not publish it at all?
+Or is there some intermediate point?
+And for example, in our computational photography work
+in pixel cameras, you know, we've often taken the decision
+to develop interesting new techniques
+like the ability to do, you know, super, super good
+night sight vision for low light situations
+or whatever, put that into the product
+and then published, you know, a real research paper
+about the system that does that after the product
+is released.
+And I think, you know, different techniques
+and developments have different treatments, right?
+Like so some things we think are super critical,
+we might not publish some things we think
+are really interesting, but important for improving
+our products, we'll get them out into our products
+and then make a decision, you know,
+whether we publish this or do we give kind of a lightweight,
+you know, discussion of it, but maybe not every last detail.
+And then other things I think we publish openly
+and try to advance the field in the community
+'cause that's how we all kind of benefit
+from, you know, participating, you know,
+I think it's great to go to conferences like NURPs last week
+with like 15,000 people, you know,
+all sharing lots and lots of great ideas.
+And, you know, we publish a lot of papers there
+as we have in the past.
+And, you know, see the field of dance is super exciting.
+- How would you account for?
+So obviously Google had all these insights
+internally rather early on, including the top researchers
+and now as of 2024, you know, Gemini 2 is out,
+we didn't get a chance much to talk about,
+but people will know, like it's a really great model.
+- Yeah, it's good. - It's really good.
+- As we say around the micro kitchen,
+such a good model. - Such a good model.
+- So it's top in LMSIS, chat about arena.
+And so now Google's on top, but how would you account
+for basically coming up with all the great insights
+for a couple of years, other competitors had models
+that were better for a while, despite that?
+- Can we take us out? - Sure.
+- I mean, I think, yeah, we've been working
+on language models for a long time.
+You know, no, early work on spelling correction in 2001,
+the work on translation, very large scale language models
+in 2007 and seek to seek and work to work
+and, you know, more recently, transformers,
+and then BERT and things like the internal MENA system
+for that was actually a chat bot-based system designed
+to kind of engage people in, you know,
+interesting conversations.
+We actually had an internal chat bot system
+that Google could play with, even before chat2PT came out
+and actually during the pandemic,
+a lot of Googlers would enjoy spent, you know,
+everyone's locked down at home.
+And so they'd enjoy spending time chatting with MENA
+during lunch because it was like a nice and big led partner.
+And, you know, I think one of the things we were a little,
+you know, our view of things from a search perspective
+was like these models hallucinate a lot
+and they don't get things right,
+correct, you know, a lot of the time, a similar time.
+And that means that they aren't as useful as they could be.
+And so we'd like to make that better.
+And, you know, from a search perspective,
+you want to get the right answer at, you know,
+at a percent of the time, ideally,
+you're going to be very high on factuality
+and these models were not near that bar.
+But they, I think what we were a little unsure about
+is that they were incredibly useful.
+Oh, and they also had all kinds of safety issues.
+Like they might say, offensive things
+and you had to work on that aspect
+and get that to a point
+where we were comfortable releasing the model.
+But I think what we kind of didn't quite appreciate
+was how useful they could be
+for things you wouldn't ask a search engine, right?
+Like help me write a note to my veterinarian
+or like, you know, can you take this text
+and give me a quick summary of it or whatever?
+And I think that's the kind of thing we've seen people really,
+you know, flock to in terms of using chatbots
+as amazing new capabilities rather than as a pure search engine.
+And so I think we took our time and got to the point
+where we actually released, you know,
+quite capable chatbots and have been improving them
+through Gemini models quite a bit.
+And I think that's actually not a bad path to have taken
+would be like to have released a chatbot earlier maybe,
+but I think, you know, we have a pretty awesome chatbot
+with awesome Gemini models that are getting better all the time
+and that's, that's cool.
+- Yeah, so we've discussed some of the things you guys
+have worked on over the last 25 years
+and there's so many different fields, right?
+You start off with search and indexing
+to distributed systems, to hardware, to AI algorithms
+and generally there's like a thousand more.
+Just go ahead, either of their Google Scholar pages
+or something.
+What is a trick to having this level of
+not only career along Gemini where you're having,
+you have many decades of making breakthroughs
+but also the breadth of different fields.
+I, both of you, if you need a order of available
+with strict career along Joe, you have breadth.
+- Yeah, I mean, I think one thing that I have
+that I like to do is to find out about a new and interesting
+area and one of the best ways through that is to pay attention
+to what's going on, talk to colleagues,
+like pay attention to research papers that are being published,
+look at the kind of research landscape as it's evolving,
+you know, be willing to say, oh, you know, check design.
+I wonder if we could use reinforcement learning
+for some aspect of that and be able to dive into a new area,
+work with people who know a lot about a different domain
+or health, AI for healthcare or something,
+act on a bit of work, any, you know, working with clinicians
+about what are the real problems, you know,
+how could AI help, you know, it wouldn't be that useful
+for this thing, but it would be super useful for this,
+getting those insights and often working with like a set
+of five or six colleagues who have different expertise
+than you do, it enables you to collectively do something
+that none of you could do individually.
+And then some of their expertise rubs off on you
+and some of your expertise rubs off on them.
+And now you have like this bigger set of tools
+in your tool belt as an engineering researcher
+to go tackle the next thing.
+And I think that's one of the beauties of, you know,
+continuing to learn on the job.
+It's something I treasure and I really like to enjoy
+diving into new things and see what we can do.
+- I'd say like, probably a big thing is like humility,
+like, I'd say I'm like the most carnival a very,
+(laughing)
+but seriously, you know, there's, you know,
+to say, hey, you know, what I just did
+is not compared to what I can do or what can be done
+and to be able to like drop an idea
+as soon as you see something,
+as soon as you see something better,
+like you hear somebody, you know, with some better idea
+and you see how maybe, maybe what you're thinking about,
+what they're thinking about
+or something totally different can, you know,
+it could conceivably work better.
+'Cause I think there's a drive, in some sense,
+to say, hey, the thing I just invented
+is awesome, like, give me more chips.
+(laughing)
+Particularly if there's a lot of top-down resource assignment,
+but I think we also need to, you know,
+you know, incentivize people to say,
+hey, this thing I am doing is not work.
+Oh, let me just drop it completely
+and, you know, try something else,
+which I think a cool brain did quite well
+with the very kind of bottoms up UBI,
+kind of chip allocation where it would be out here.
+- Yeah, like basically everyone had one credit
+and you could pool them.
+- Ah, yeah, it's a good idea.
+- Yeah, and then Shamanai, I mean,
+it has been like mostly top-down,
+which has been very good in some sense
+because it has led to a lot more collaboration
+and, you know, people working together.
+You less often have, like, five groups of people
+all building the same thing
+or building interchangeable things.
+And, but on the other hand,
+it does lead to some incentive to,
+to say, hey, what I'm doing is working great.
+And then, then, like, as a lead,
+you hear, like, hundreds of groups
+and everything is appropriate.
+(laughing)
+So, you should give them more chips
+and there's less of an incentive to say,
+hey, what I'm doing is not actually working that well.
+Let me try something different.
+So, I think going forward,
+we're gonna have, you know, some amount of top-down,
+some amount of bottom-up.
+So as to incentivize sort of both of these behaviors,
+collaboration and, like, flexibility
+'cause I think both of those things lead to,
+you know, a lot of innovation.
+- Yeah, I think it's also good to kind of articulate
+interesting directions you think we should go.
+And, you know, I have an internal slide deck
+called Go Jeff Whacky Ideas.
+(laughing)
+- Yeah, I see that.
+- But I think it's like, they're a little bit more,
+like, product-y oriented things of like,
+hey, I think now that we have these capabilities,
+we could do these, you know, 17 things.
+And, you know, I think that's a good thing
+'cause sometimes people get excited about that
+and want to start working with you on one or more of them.
+And I think that's a good way to kind of bootstrap, you know,
+where we should go without necessarily
+ordering people, we must go here.
+- Yeah.
+- Hey, this is great.
+- Yeah, we did.
+- Thank you guys.
+- Appreciate you taking the time,
+and it was great, great job.
+

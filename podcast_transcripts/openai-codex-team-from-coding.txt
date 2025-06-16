@@ -1,0 +1,942 @@
+--- METADATA START ---
+Show: Training Data
+Episode: OpenAI Codex Team: From Coding…
+Host: Unknown 
+Guests: Hanson Wang, Alexander Embaricos
+Source URL: https://podcasts.apple.com/us/podcast/openai-codex-team-from-coding-autocomplete-to-asynchronous/id1750736528?i=1000712236598
+--- METADATA END ---
+
+1
+In my opinion, the easier it is to write software, then the more software we can have.
+2
+Right now, if we think of like, I bet you if we look up our phones, well, you folks are investors.
+3
+But if you're not an investor, I bet you if you pull up your phone, most of the apps on it are apps that are built by large teams for millions of users.
+4
+And there's very few apps that are built like just for us and the specific thing that we need.
+5
+And so I think as it becomes more and more practical to build like bespoke software for people or teams, we'll end up having higher and higher demand for software.
+6
+Welcome to Training Data.
+7
+Today we're joined by Hanson Wang and Alexander Embaricos from OpenAI's Codex team for a fascinating look at the future of software development.
+8
+Codex is OpenAI's series of AI coding tools that helps developers delegate tasks to cloud and local coding agents.
+9
+Unlike the original OpenAI Codex, which was developed in 2021 to auto-complete lines of code, the latest evolution of Codex can complete entire tasks for you autonomously in the background.
+10
+The key difference between O3 and Codex is that while O3 is great at competitive programming, Codex has been RL-tuned to be great at day-to-day enterprise development tasks.
+11
+Alexander and Hansen share more about the backstory for Codex and the broader paradigm shift from snappy autocomplete to longer-running background agents.
+12
+Plus, they share their surprising vision for how developers will interact with AI in the future as sync and async experiences merge.
+13
+Hint, it might look more like TikTok than your current IDE.
+14
+Thank you guys for joining us.
+15
+It's wonderful to have you here.
+16
+Hey, thanks for having me.
+17
+Great to be here.
+18
+We'd love to hear a little bit more about what you guys work on.
+19
+Tell us about the Codex team and your story.
+20
+Well, yeah, I'm Hansen.
+21
+I'm one of the researchers that helped train the Codex One model.
+22
+And I'm Alex, the product lead.
+23
+I think for me, the name Codex is such a great callback to the original Codex model.
+24
+That was kind of like a aha moment for me when it first came out, because I think GPT-3 was really cool.
+25
+But then Codex was like the first moment where I felt like, wow, this can really do something that is going to change the world.
+26
+And that's actually kind of like how I got into the whole startup space.
+27
+One of the first couple demos I did was using Codex to do data analysis.
+28
+I think it's actually a funny story.
+29
+I was here for as part of Sequoia's ARC program.
+30
+That's how I met Lauren.
+31
+And then one of the demos we did, we actually used OpenAI Codex to do data analysis.
+32
+And that's how I started in the startup space.
+33
+And I think as time went on, as the later versions of GPT came out, it became super clear that using AI for agentic use cases was going to be the future.
+34
+And so I joined the company to work on agentic coding efforts.
+35
+Yeah, and this was per standard OpenAI style where we like the naming to be as easy to follow as possible.
+36
+This is the Codex of I think it was 2021.
+37
+Yeah, this is pre-Chat GPT, right?
+38
+Exactly, yeah.
+39
+So it was actually like the model powering GitHub Copilot.
+40
+And then recently, as we were working on this product, which we'll talk about, we thought, you know, this is like a super fun brand, also a very apt name, you know, code, codex, code execution.
+41
+So like we decided to sort of like resuscitate the brand and like keep using it.
+42
+You said resuscitate.
+43
+So was Codex dormant for a while and then you all resuscitated it for a little bit?
+44
+We haven't used the brand like recently.
+45
+Okay, okay.
+46
+Really cool.
+47
+Can you tell us a little bit about Codex, the agent, and what it does?
+48
+Yeah, I think so.
+49
+Basically, Codex is a coding agent that has its own container and its own terminal, kind of like fully in the cloud.
+50
+You give it a task, and it comes back to you with a PR in this sort of like one-shot style.
+51
+And we actually experimented with a lot of different form factors kind of along the way, but kind of in the end decided to settle on this one.
+52
+Yeah, so we've been working on a bunch of agents and we've been working on a bunch of coding products as well.
+53
+And basically, in our mind, Codex is like this thought experiment for how would it work to code with AI, but where we sort of put all our effort into thinking about what that would feel like if the AI is working on its own computer, independently from you, and so you're delegating to it rather than pairing with it.
+54
+And so, you know, some of the things that we're really proud of with this Codex launch are thinking about the compute environment and how do we set it up so that the agent can actually work on its own, but be productive, and creating the model, which I'll talk more about, basically that isn't just good at writing code that looks good or is functional, but also is really good at writing code that is useful for professional software engineers and mergeable ideally without even touching their own computer.
+55
+So what is the difference between Codex and Codex CLI?
+56
+Yeah, we've definitely gotten some questions about that.
+57
+I promise this is all going to make even more sense over time.
+58
+So basically, Codex for us is our brand for agentic coding.
+59
+And we have this vision of we're going to have this agent and mostly the agent will work on its own computer, but it should also be able to meet you in any of the tools that you use wherever you work, be that your terminal or your IDE or your issue management tool.
+60
+So Codex CLI is basically a codec in your terminal.
+61
+So CLI stands for command line interface.
+62
+So it's like in your terminal, you can work with codecs.
+63
+That's your environment.
+64
+And then codecs or codecs in ChatGPT is basically a codec working on its own computer.
+65
+Today, those are just distinct things.
+66
+As a brief aside, one of my favorite things about working at OpenAI is how willing we are to cut scope and just launch things quickly.
+67
+But over time, we'll actually bring those things closer together.
+68
+So you can really think of it as just like, it's just like Codex, and it can be in ChatGPT or it can be in your CLI.
+69
+Very cool.
+70
+And so what did you have to do differently for the model to make it useful beyond just writing the next line of code?
+71
+Yeah, so I think one of the most interesting progressions, so if you go back to the O1, the first reasoning model that we launched, we highlighted how good it is at math and even coding competitions.
+72
+As of now, I used to be a competitive coder and it's better than me at competitive coding.
+73
+It's better than most, almost all people at OpenAI at that.
+74
+But I think one of the things that we saw was that despite being good at these programming competitions, it wasn't actually that good at producing mergeable code.
+75
+And so we even highlighted this in the blog post with models like O3, the code that it generates often isn't quite to the taste or style that a professional software engineer would expect.
+76
+So a lot of the effort that we spent on training this model was aligning the model to basically the taste or the preferences of professional software engineers.
+77
+And that's something that took a lot of, I guess, specialized training.
+78
+Yeah, I have this very product-y analogy that I like, which is like, if you take our RESIG models, which are great at coding, they're great at coding, but it's kind of like this really precocious competitive programmer college grad who doesn't have many years of job experience being a professional software engineer on a team.
+79
+And so a lot of the work we did to go from O3 to Codex 1 was actually the equivalent of those first three years of job experience, where it's like, hey, what does a good PR description look like?
+80
+PR titles, how do you read the style of the code base and then make sure your code is in the same style?
+81
+How do you like test well?
+82
+How do you show that you tested well?
+83
+Stuff like that.
+84
+What's typically the aha moment for when somebody uses codecs?
+85
+Yeah, I think one of the things we have in the onboarding is find and fix a bug in the code base.
+86
+I think that's one of the areas where codecs really shines is specifically bug fixing.
+87
+Just because it can actually independently try not just to see if something looks a bit off, but it can actually go and then verify that, okay, I can try and reproduce a particular issue.
+88
+And so I think even leading up to the codecs launch, there were a couple of bugs where we were sitting there kind of like wondering what's going on.
+89
+And honestly, sometimes the easiest thing to do is just paste in a description of the issue into codecs.
+90
+And we were surprised how frequently that would actually end up with a usable fix.
+91
+Yeah, fun story here.
+92
+Hopefully this doesn't give away too much, but at 1 a.m.
+93
+the night before launch or the morning of launch, at 1 a.m.
+94
+we were looking at a bug with an animation, a Laudi animation.
+95
+And this is the kind of thing, okay, I guess we could cut it from launch scope.
+96
+It'd be okay to launch without it.
+97
+But we really wanted to get in and we just couldn't figure this out.
+98
+And so an engineer ended up describing what the bug was and putting it into Codex.
+99
+And actually a fun pro tip for anyone who's using Codex is that if there's a really hard task, it can be useful to ask Codex to take multiple cracks at it.
+100
+So they pasted that description in and ran it four times.
+101
+Like, hey, there's this bug, we can't figure out what's going on.
+102
+And three of those rollouts did not work.
+103
+And then one of the four was just the fixed of the bug that we were stuck on for hours at 1 a.m.
+104
+before launch.
+105
+And so landed the fix, deployed the code, and the animation was in for launch.
+106
+That's awesome.
+107
+Maybe tell us more about how you all are using it internally at OpenAI.
+108
+Is every engineer, is every researcher using Codex now in their workflows?
+109
+Yeah, and actually, can I give you the other kind of magic moment?
+110
+Oh, yeah, please do.
+111
+Definitely.
+112
+So, one of the interesting things about Codex is that it's a very different form factor from maybe what people are used to, right?
+113
+Like a lot of the AI products that people are used to, especially in software, maybe GitHub Copilot was the first really good one.
+114
+They're really things that work with you in flow, and you're just kind of seamlessly going back and forth.
+115
+You're kind of pairing, right?
+116
+And it's flavors on pairing.
+117
+And we think that's awesome, and the codec CLI is a tool that you can use in that way.
+118
+But for Codex, we really wanted to push this idea of you're delegating.
+119
+Because in the future, we imagine that actually the vast majority of coding is actually going to be done independently from the human working on their computer who can only do one thing at a time.
+120
+And so basically, it'll be done by agents working on their own computer.
+121
+And so that is a very different thing to delegate to an agent than it is to pair with sort of an AI model that's in your tooling.
+122
+And so you have to kind of use it differently.
+123
+And so when we actually were working on an alpha before launch, we would just give this agent to people and be like, hey, just use this however you want.
+124
+And we noticed that many, many of the people trying to use our alpha of codecs were just not really finding it super useful.
+125
+And then we're like, huh, that's interesting.
+126
+Let's look at how people at OpenAI are using internal tooling like Codex.
+127
+And we realized there was a big difference, which is the mindset of using it.
+128
+The mindset that works really well for Codex is this abundance mindset and hey, let's try anything.
+129
+Let's try anything even multiple times and see what works.
+130
+It saves me time.
+131
+And so we've kind of shifted the way that we even onboard people into the product to try to create this aha moment, which is running many tasks in parallel.
+132
+So for us, if we see someone trying it out and they've run 20 tasks in a day or an hour, that's amazing.
+133
+And they're probably going to, they've understood basically how to use the tool.
+134
+Fascinating.
+135
+How does that change the role of the human when you have to review all of this code?
+136
+If two of the three work, then what do you do?
+137
+Yeah, I think we put a lot of focus on also making the outputs easy for people to review.
+138
+So one of the things that we're proud of is we haven't seen this in too many other tools, is the ability for the model to cite its own work.
+139
+So not just the files that it changed, but also even the terminal outputs.
+140
+So if it ran a test and for some reason test wouldn't work, it actually tells you that and it tells you here's the exact kind of terminal command I ran, here's the output.
+141
+It makes it much easier to verify the outputs.
+142
+But it is a great point.
+143
+I think we're shifting to a world where a lot of the time that we spend normally coding, a lot of that's going to shift to actually reviewing the code.
+144
+Do you need humans to review the code?
+145
+Because I think of code as one of those things where it compiles or it doesn't.
+146
+And once it compiles, you can go and check if it does the thing it was supposed to do.
+147
+Do you even need humans to do the code review?
+148
+I think, yeah, I mean, for the foreseeable future at least, I do see that to be the case.
+149
+I mean, I think a lot of it's also just building trust with early users.
+150
+I think people really need to have a feeling for what things are working well, what things are not.
+151
+And I think there's always just some external context about what makes this code correct that might be beyond what you initially provided as context.
+152
+Yeah, if you think of what a developer does, and this is obviously oversimplifying, but there's like, okay, there's coming up with what things maybe should be done, discussing them with the team, maybe, deciding what to do.
+153
+You call that ideation.
+154
+You know, maybe then there's design, like, okay, what are we actually doing?
+155
+And then, like, planning, how are we going to do it?
+156
+Then there's implementing, and then validating, you know, testing those changes.
+157
+And that's basically a loop.
+158
+And that small loop of implementing and then testing is what Codex is great at right now.
+159
+Although we can talk about how you can use it for planning too.
+160
+And then there's actually deploying the code and then maybe maintaining the code, writing documentation, et cetera.
+161
+And so I forget the exact stack, but I feel like a stat I remember recently is like engineers spend like maybe like 35% of their time coding.
+162
+It's not actually the majority of even what engineers do.
+163
+And so the future that we're trying to build towards is that is one where if you're a software developer or even like in any profession, all the work that is like easily automatable, that's usually the grungier type of work, you're not doing.
+164
+You're delegating that.
+165
+And then the work that is more interesting because maybe it's ambiguous or maybe because it's really hard, that's the work that you're driving.
+166
+So we're trying to build towards that work, that world.
+167
+And I think we have to get there iteratively.
+168
+So for example, right now, if you're a human and you write code, another human's going to review that code.
+169
+And so we're not going to come in and just try to change that.
+170
+We're like, okay, let's plug into that.
+171
+So the way the product works right now is you, the developer, are being accelerated by the tool.
+172
+You ask for some code to be written.
+173
+You decide if it's good and you want to push it out to your team, and then your team can review it.
+174
+And then over time, we'll basically kind of expand what we can do.
+175
+So we'll help more and more with planning, maybe even designing, maybe even thinking about what to do in response to things that are happening in your app or at work.
+176
+And then we'll push to make review easier and easier, as Hansen was describing.
+177
+Yeah, and do you think I see a future where you have multiple agents collaborating together?
+178
+So you have Codex, the Codex agent writes the code, and then maybe the operator agent's the one that's testing it, and all of the things that all the different agents that we've been working on at the company can kind of like come together.
+179
+That's awesome.
+180
+Have you seen people, now that you can delegate doing writing code, people beyond the engineering team start to use Codex?
+181
+And as we get into the world of vibe coding.
+182
+You guys are helping us bring us further down that hole.
+183
+Yeah, this is actually super funny.
+184
+We were, so the answer is yes, but I'll tell you a story.
+185
+We were working on our launch blog post with Lindsay here, and we were talking about what quotes to you know to quote from customers.
+186
+And we had a customer that wanted to say, Yeah, like we on the engineering team love this, and also it's like a power tool for PMs.
+187
+And I remember looking at that quote and being like, This is a really cool quote, because I'm on the product team, and I use it to just like avoid having to bug an engineer about things or to answer questions.
+188
+But I remember looking at that quote and being like, Do we want that in the launch blog post?
+189
+Because the target audience for what we're building is like specifically professional software engineers, not VIBE coders.
+190
+So I think we ended up not including that exact line.
+191
+But I think over time, like as we have agents that can help us code, I would expect more and more people to be able to contribute to code bases.
+192
+You think the number of professional software developers goes up or down over time?
+193
+This is just my opinion, but I think it goes way up.
+194
+Huh?
+195
+I think.
+196
+And not VIBES coders, professional software developers.
+197
+Yeah, I think so.
+198
+But yeah, in my opinion, the easier it is to write software, then the more software we can have.
+199
+Right now, if we think of, I bet you if we look, pull up our phones, well, you folks are investors.
+200
+But if you're not an investor, I bet you if you pull up your phone, most of the apps on it are apps that are built by large teams for millions of users.
+201
+And there's very few apps that are built just for us and the specific thing that we need.
+202
+And so I think as it becomes more and more practical to build like bespoke software for people or teams, we'll end up having higher and higher demand for software.
+203
+Yeah, as I think about how I use it, I think it just really is a multiplicative factor right now rather than any kind of any sort of replacement.
+204
+Just like, especially looking at the patterns of our internal power users, there's like a really dramatic difference.
+205
+And like the top users of codecs are like doing 10 plus PRs every day.
+206
+It's just really such a multiplicative factor that I can't see a world in which it's like lowering the bar to creating software so much.
+207
+That's it.
+208
+I mean I think this is a really important question.
+209
+And to be completely honest, we don't know.
+210
+And so this is something that we as a company pay a lot of attention to.
+211
+I want to talk a little bit about the, you know, what's happening under the hood on the technology side.
+212
+So you mentioned that the model itself, one of the things that makes it different from competitive programming is you've made it more, you know, be good at the things that a professional software developer would do.
+213
+Is that the biggest difference on the model side?
+214
+Or should we think of it as a close cousin of O3?
+215
+Yeah.
+216
+So it's definitely the same model as O3 with additional reinforcement fine-tuning.
+217
+But that's it.
+218
+Yeah, I think so part of it is kind of like these more qualitative aspects of what makes a good software engineer versus simply like a good, let's say, like coder, you know, like style, even like how it writes comments.
+219
+I think that's like one of the things that people have noticed with other models.
+220
+And then on top of that, I also want to highlight one of the big challenges was like making good environments for the agent to kind of learn in.
+221
+And so if you think about real world software repositories, it's like so varied and complicated.
+222
+Think about how much DevOps has to go into setting up a repository.
+223
+And that's something we were kind of learning the hard way with our environment setups.
+224
+Should we talk about the multi-repo I was showing you yesterday?
+225
+Oh, yeah.
+226
+Like, I was showing Hansen the repo for the startup that OpenAI acquired, and so we joined.
+227
+And so, we were looking at that repo together, thinking about it for use as an environment.
+228
+And Hansen's like, so like, where are the unit tests?
+229
+You know, because the agent uses unit tests to verify.
+230
+And I was like, this is a real startup that has no unit tests.
+231
+I mean, so I can't complain.
+232
+So, yeah, like, you have all these really messy environments.
+233
+So, we, yeah, we have to, over the course of training, like, we have to basically generate these really realistic environments for the agent to learn from.
+234
+And I think one of the reasons that we're able to make such an end-to-end product work is that we have the same environments that we use during training and the same basically this containerization infrastructure that we're using to serve in production.
+235
+So, our users are, we're running our own computer environments.
+236
+When users use codecs, they're running in the exact same environments that we're using in training.
+237
+So, you don't have the agent saying, but it works on my machine.
+238
+Exactly.
+239
+Okay.
+240
+Okay.
+241
+I think these are also the longest running agents I've seen out of OpenAI.
+242
+Deep Research maybe was the previous one that was longest running.
+243
+And my understanding is, you know, codecs can sometimes spend 30 minutes on different tasks.
+244
+Are there any kind of surprising challenges and things you've encountered just getting inference time to scale up on a query for so long?
+245
+Maybe I'll start with the product side, and then there's many on the moment side.
+246
+But on the product side, actually, the thing that I think the most about is user intent.
+247
+It's like, actually, if you imagine someone using autocomplete in their IDE, it's like not super hard necessarily.
+248
+I mean, obviously it's difficult, but it's not super hard to predict what are they trying to do right now for the next microsecond.
+249
+But for doing a task that takes 30 minutes, it's actually fairly difficult to help a user describe the task.
+250
+They may not even know exactly what they want for 30 minutes worth of work.
+251
+And so something that we spent a while debating, and it's still a thing we debate, is what is the right granularity of a task for someone to give to Codex, and how can we make it easy so that Codex can be really flexible where you can use it for one-line changes, you can use it for big refactors that you know exactly what you want, or like larger features where you know what you want.
+252
+Or maybe can you use Codex when you don't know exactly what you want?
+253
+And so maybe you should ask Codex for a plan, and then you can have it, Codex suggest tasks, and then do those tasks afterwards.
+254
+So that's still a topic of debate and iteration for us.
+255
+Yeah, I think that's actually a good pro tip for using it.
+256
+It's actually really good at coming up with its own plans.
+257
+And then sometimes it's really tedious to specify everything you want up front.
+258
+And that's kind of one of the unique challenges about working.
+259
+If you want it to work for an hour at a time, then you kind of do have to specify a lot up front, which means that you have to spend, I don't know, 10, 20 minutes coming up with that.
+260
+But if you use actually the ask mode to first generate a high-level plan of what you want to do, and then you can iterate on that with the model before you send it off for an hour.
+261
+It really is like working with an intern.
+262
+Little bit on the model side, anything that's surprising in terms of model behavior as it starts to run for so long?
+263
+Yeah, I think our models have gotten a lot better at sticking on task, especially with these longer rollouts.
+264
+I will say, like, there are cases where, you know, like, even the, there is a limit to the model's patience, even though it's quite high.
+265
+So it can be frustrating sometimes.
+266
+You know, it's like it goes off for like 30 minutes and then this is a case that we're working to get better at where it's like, you know, it's kind of like just like a human comes back to you.
+267
+It's like, sorry, I don't, this is too much.
+268
+I don't have enough time to do this, actually.
+269
+Like, that's one of the things it says.
+270
+I'll just let you answer.
+271
+So very, very human-like, yeah, in any way.
+272
+Yeah.
+273
+I'm curious how you think about the right interaction patterns and how they evolve and how the suite of products around this evolve over time.
+274
+We have Codex, we have Codex CLI.
+275
+What else do you think is out there in the design space for engineering and building products?
+276
+Yeah, so the Codex as we launched it is really just like, you know, it's a research preview, it's a thought experiment, a useful one, but it's still very early.
+277
+And what we're most proud of with Codex is the model and the beginning of this foundation for computer environments.
+278
+And the UI we shipped is one that we iterated towards, and there's some fun stories there.
+279
+But it's definitely not the final form factor.
+280
+And for those listening, basically the UI we shipped is an interface in ChatGPT where you can like submit a task and ask Codex to either answer your question or write code.
+281
+And then you kind of have this something that looks a little bit like a to-do list of things that you can go look at merging.
+282
+Really, I think for so we built that to really lean hard into this idea of like an asynchronous agent that you delegate to.
+283
+But what we want to build towards is a setup where you don't have to think about whether you're delegating or whether you're pairing with an agent.
+284
+And it's really, it should just feel like working with a teammate and where that teammate is like ubiquitously present in all the tools you work with.
+285
+So you should be able to pull up any tool that you're working in, be it your terminal, your IDE, your issue management tool, maybe your alerting tool or your errors, you know, the tool that shows you errors, and just ask for help.
+286
+Maybe even Codex has already taken a look before you even got there and it has an opinion there.
+287
+And you could be able to ask something, be it a short question or a long question, it'll just appropriately decide how much time to spend before answering you and just help you land those changes.
+288
+So basically, we want to kind of blend this idea of pairing and delegation, but the first thing we shipped was just the purest thought experiment.
+289
+The other thing I'll add to this is like one of the unique things about working at OpenAI is that we are the makers of ChatGPT, which is sort of the AI system that the most people use.
+290
+And so we don't actually see a future where as you go about your day, you're deciding whether to use the codec agent or I don't know, your shopping agent, or like the taxi ordering agent.
+291
+By the way, I'm just naming random things here, or your marketing agent.
+292
+Actually, the way we think this should work is you should just have one assistant that you talk to and you can ask it anything about anything and it can just do the things you need.
+293
+And so that's ChatGPT that will become our assistant.
+294
+And then if you're a power user of a certain type of tool, so let's say you're a software developer, you spend a lot of time in certain functional tools, then you can go into that tool and have a bespoke interface with buttons, with lists that you can use to efficiently go about your day.
+295
+Do you think we'll still use IDEs?
+296
+Yeah, for sure, but they'll evolve.
+297
+Right now, they're very focused on writing code.
+298
+And as Hansen was saying, probably agents will be writing more and more code.
+299
+And so it's going to become like there'll be a shift in emphasis towards landing code or reviewing code or validating them.
+300
+Or maybe even a shift in emphasis towards planning bigger arcs.
+301
+Yeah, I think we're already seeing a lot of people on the team.
+302
+They kind of like, first thing in the morning, they come in, they make coffee, and then they kick off a few tasks just to kind of get a starting point.
+303
+And then they come back after their breakfast and they look at the tasks or the PRs that got generated, then they'll take those.
+304
+And the IDE is kind of like the place where you take, maybe it will get you 80% of the way there, hopefully, or even more.
+305
+But then there's always this last mile where you go in and really fine-tune based on kind of like your own vibes.
+306
+How do you see the broader market evolving?
+307
+Within OpenAI, you have so many different strategies here.
+308
+And as you think about async tasks, as you think about some of the things that you mentioned moving into ChatGPT, we're seeing an explosion of other tools and specialized models.
+309
+You obviously are biased, but I'm curious what your read is of the broader market.
+310
+Yeah, it's a crazy time to be a developer right now.
+311
+There are just so many new tools that are just so helpful.
+312
+A fun story recently is I was in the airplane and there was no Wi-Fi and I had thought that I was gonna maybe write some code and like build a thing and there was no Wi-Fi and I was like, you know what, screw it.
+313
+It's just not worth my time to even try to write code anymore.
+314
+Whereas the startup that I was working on many years ago, part of the genesis of that startup was me writing some code without Wi-Fi in an airplane.
+315
+And I just wouldn't even do that anymore because the market is just like it's just changed so much.
+316
+And I think we're gonna see an equivalent shift in an equivalent amount of time.
+317
+So in the next few years, coding will look completely different.
+318
+I think right now, most of the tools that people spend, you know, that people find the most value from are tools that work really closely with you, like in your development environment, you know, like basically pairing.
+319
+And I think the shift that we're gonna see, but we have to figure out how this will happen, but the shift that we're gonna see is that actually the majority of code will be written by agents.
+320
+And those agents won't be working in your environment where you can do one thing at a time, but they'll be working in their own environments.
+321
+And they won't just be triggered by you thinking of specific tasks, but they'll be connected into the tools you use doing work there.
+322
+And so I think we'll see basically that shift towards agents.
+323
+I think we're gonna have to figure out a lot about code review, as you were asking about.
+324
+Personally, I don't exactly know how that's gonna work, but I do know that even already at OpenAI, we're seeing much more code is merged by agents, but actually also even more code is generated by agents as folks are kicking off tasks four times to choose their favorite implementation.
+325
+And so it's not 100% clear how we should even manage all this code that is being written.
+326
+Some things that I will say though, in case it's useful to the audience, is that there are definitely things you can do to your code base to make it more addressable for agents.
+327
+This isn't necessarily particularly novel, but obviously using typed languages is really helpful.
+328
+Another thing that's very helpful is having smaller modules that are tested.
+329
+Having good tests at all, yeah.
+330
+Yeah, having tests.
+331
+Like we joke about my startups repo, but I bet you we would have written it differently if we were writing it today.
+332
+And even there's small things like the code name for this project is WAM.
+333
+This is the code name for Codex.
+334
+It's like W-H-A-M.
+335
+And when we named it, we were very intentional in doing so because we knew we would have code in the server, for the website, in various other places.
+336
+And we wanted it to be really easy for the agent to search for WAM-related code and find it.
+337
+And so we named the project WAM, and we grep the code base first to figure out how often it was there.
+338
+If we would have called it something like code or codex or agent, you can imagine it would have been really hard for the agent to now you've called it codex and now the agent's gonna be confused.
+339
+Well, so in the code, this is kind of my point, right?
+340
+Like intentional design.
+341
+Like in the code, we use the term WAM a lot because that's actually much easier for the agent to find.
+342
+Obviously, if we didn't use a word like that, the agent could still find its way, but it would have to spend much more time to find the right files.
+343
+Yeah, it is cool that a lot of the things that actually make the code base easier for humans too also tends to make it easier for the agents.
+344
+Like good tests, for example.
+345
+Writing good docs is another good example, where now I think there's even more of an incentive to do that because not only does it make your life easier, it makes the agent's life easier.
+346
+Okay, sorry to be the annoying VC, but Claude Code and Jules are also agentic coding experiences from others.
+347
+Do you think the mark, I'm curious how you think your experiences compare today?
+348
+And then do you think the market is probably going to converge towards the same vision of what sync and async coding look like?
+349
+And in that version of the future, what do you think OpenAI wins on?
+350
+I think we're going to see a little bit of everything, right?
+351
+Like even in what you mentioned, there's tools that are working on your computer.
+352
+There's tools that are working on their own computer.
+353
+As I mentioned, I think we're going to see the majority of work being written where the agent has its own computer.
+354
+But it will still be really important for us to invest in accelerating developers who are doing work on their own computer too.
+355
+So ideally, we get the best of both worlds there.
+356
+But most work is done in agent compute.
+357
+I think the way I see it as well is I think one of the hardest part of software engineering really is taking all the context from the world and encoding it in these requirements, these design docs.
+358
+And then the implementation, I think, as we alluded to earlier, is not actually that much of the life cycle is spent on physical coding.
+359
+And so I think where ChatGPT shines is it is this assistant that has memories now, it has access to a lot of different connectors, to all the different tools you use.
+360
+We have operator, deep research that have all these different capabilities.
+361
+And so I think the vision where that all comes together is where a tool like Codex can really shine once it has access to all that knowledge.
+362
+It's able to make use of that.
+363
+And I think with that, it should be able to do a much more effective job at just the coding part.
+364
+Yeah, imagine hiring a software engineer, and the only thing that that software engineer can do is take a task from you and produce a PR.
+365
+Or it has these very well-defined features and it can exactly do those things.
+366
+And then you ask for a random thing, oh, hey, the team is getting together.
+367
+Do you mind also, I don't know, getting a meeting room and leading a brainstorming?
+368
+It would just be so frustrating if you hired a teammate and they refused to do that kind of work.
+369
+And so similarly, I think it's really, we're building towards a future where agents that you're working with are a little bit more generalized.
+370
+To reference, Hanson was talking about operator and deep research.
+371
+If you think operator has a web browser, deep research has a different flavor of a web browser, Codex has a terminal, really your teammate has pretty similar tools, like a human teammate.
+372
+And so the goal for us eventually is to pick places where we want to really invest in a specific audience to make rapid progress.
+373
+So obviously we're doing that with coding, with Codex or GPT 4.1, where we generated specific evals for that audience and then made a better model for them, for developers.
+374
+But then over time, generalize these things into simple things that everyone can use.
+375
+So I think, again, with us, with OpenAI and ChatGPT, I feel like that's a place where the products we build will look very different from something that's very only specifically for coding.
+376
+What do you think will be the primary UI that developers use to interact with codecs?
+377
+Do you think it'll be ChatGPT, the CLI, the IDE, all the above?
+378
+Yeah, I think a mix of all the above.
+379
+I think we just kind of want to meet developers where they are in that moment.
+380
+So it might not even be in the editor or in the terminal.
+381
+It might be on Slack.
+382
+Someone messages you, hey, there's a bug, and you're just like, hey, go fix it.
+383
+I'll give you my fun future UI that is not at all serious.
+384
+But maybe the future of working with agents, if you're a startup founder in the future and you have a team of just you or you and a couple of co-founders and a many agents, actually looks like TikTok.
+385
+Maybe you have vertical feed and it's basically an agent has produced video that you can watch with an idea, like, hey, a customer wrote in with this request.
+386
+I think we should fix it.
+387
+And then you swipe right to say, yeah, let's fix this.
+388
+Let's do this.
+389
+You swipe left to say no, we should fix it.
+390
+Sorry, it's a hybrid.
+391
+It's a hybrid.
+392
+I didn't say this was going to make a lot of sense.
+393
+I like it.
+394
+And then you press and hold to provide feedback.
+395
+So you go like, yes, do it, but make sure the font is in italic.
+396
+And so basically, you have all these agents who are subscribed to information at your company or on your team.
+397
+And they're proactively coming up with ideas and doing them and then giving you updates.
+398
+And you're kind of just curating the work that is being done.
+399
+And then show you little previews of what the world could look like.
+400
+Yeah.
+401
+Obviously, that's a half joke, though.
+402
+I think that'll be kind of the arm's length working with agents.
+403
+And then you're there's like it's definitely going to be really important for people to be able to like go do the work themselves and like pair with agents.
+404
+I get that it's a half joke, but it is like, it's a really cool visual because I think everyone agrees conceptually with this idea of, you know collaborating and reviewing all the different changes that an agent makes is going to look very different from how we code today.
+405
+But like, nobody's actually given me a visual of what that might look like, so that's a really cool idea.
+406
+I love it.
+407
+Awesome.
+408
+Should we wrap with lightning rounds?
+409
+Let's do it.
+410
+Okay.
+411
+Recommended piece of content or reading for AI fans.
+412
+For me, that's like immediate.
+413
+It's like The Culture by Ian Banks.
+414
+Have you read it?
+415
+Yes, it's amazing.
+416
+Yeah.
+417
+It is a science fiction series, started being written in the 80s, and it is unusually positive in its view of how a future space-faring human and non-human race could kind of look.
+418
+And there's a lot of questioning about what is the purpose and meaning of life when we have AGI.
+419
+Yeah, I think for me, it's like anything by Richard Sutton.
+420
+I think that was my introduction to reinforcement learning.
+421
+And I think it's like it's kind of a joke here that we read the bitter lesson every single day.
+422
+That's kind of the philosophy of OpenAI.
+423
+I think even with Codex, we give it a terminal and it literally uses POSIX tools.
+424
+That's the most bitter lesson way of working with the computer.
+425
+And your favorite AI apps?
+426
+Gotta be ChatGPT.
+427
+Not ChatGPT.
+428
+Come on.
+429
+You're so boring.
+430
+Either it could be a new feature that you guys have released other than Codex or something outside of OpenAI.
+431
+Okay, so I guess it's funny.
+432
+I don't really think of AI apps, but I do like it when my life gets easier.
+433
+So some things that I like are like when you're using AI, but it's kind of invisible.
+434
+So, like, just I'm in product, so I often like file bugs.
+435
+And, like, Linear has a really elegant integration where when you file a bug from a Slack conversation, it just generates the bug from the Slack conversation.
+436
+But they never say AI anywhere.
+437
+Just like you actually kind of don't even notice that it's using AI.
+438
+Oh, wait, I came up with an answer for favorite AI app, Waymo.
+439
+Ah, there we go.
+440
+Yeah, I mean, I think for me, like, Copilot has definitely been the thing that keeps delivering value every single day for me.
+441
+Okay, robotics, bullish, bearish.
+442
+Bullish?
+443
+Yeah.
+444
+Which new application or application category do you think will break out in 2025?
+445
+Other than coding?
+446
+Yeah, I mean, I think when you had Issa and Josh on, it's kind of the same answer, but 2025 is definitely the year of agents.
+447
+I think we're going to see agents take off in a lot of different categories.
+448
+Yeah, have to agree with that.
+449
+What type of agents are you most excited about?
+450
+Aside from coding agents.
+451
+That's a good question.
+452
+Well, so my take would be like, you know, if we, I know this meant to be rapid fire, right, but like kind of the way we think of agents is you have reasoning models, right?
+453
+And then you give those reasoning models like access to tools of the trade.
+454
+And then you figure out how to train that agent to do the sort of specific function, right?
+455
+So it's like not just about writing, it's about journalism, or it's not just about coding, it's about software engineering, right?
+456
+So that's kind of what we're doing.
+457
+And in my mind, the reason I'm so excited about agents this year is because we now have a few agents shipped from OpenAI and other companies are shipping agents too.
+458
+And so we're starting to see what kind of the shape of this is and starting to identify the primitives.
+459
+And so specifically what I've been excited about is as we bring this together and you come up with like an agent that you don't have to provision like separately for every single function, but it's an agent with a computer that has a browser and has a terminal, and it can do multiple things without you having to exactly specify like you are my coding agent or something.
+460
+Really cool.
+461
+Thank you so much for joining us.
+462
+Congratulations on what you've built at Codex and thank you for giving us a preview of how you think the coding market will evolve and also giving us a peek into how long-running async agentic experiences will play out.
+463
+Really appreciate it.
+464
+Thank you.
+465
+Thanks a lot.
+466
+Thanks for having us.
+467
+Thank you.

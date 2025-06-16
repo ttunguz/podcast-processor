@@ -1,0 +1,1715 @@
+--- METADATA START ---
+Show: The Generalist
+Episode: How Anduril Is Reimagining the…
+Host: Mario
+GUESTS: Trey Stevens 
+Guests: Trey Stevens
+Source URL: https://podcasts.apple.com/us/podcast/how-anduril-is-reimagining-the-defense-industry/id1805868710?i=1000709127541
+--- METADATA END ---
+
+1
+I think most Americans have this faulty belief that we have this insurmountable advantage against any adversary and no one would ever mess with us.
+2
+And the closer you get to the problem, the more you realize how not true this is.
+3
+And we are incredibly vulnerable.
+4
+When you look at U.S.-China capabilities today, how do you think we stack up?
+5
+There are definitely areas where they've taken a big leap in advantage.
+6
+You know, as Chris Burrow said in the kill chain, there is a commonality in all of the war games that are conducted between the U.S.
+7
+and China, and it's that China wins every time.
+8
+There could be thousands of things in a battle space, and that just fundamentally demands a better command and control platform to orchestrate the movements of your allied forces inside of that environment.
+9
+And that's what we're building.
+10
+Hey, I'm Mario, and this is the Generalist Podcast.
+11
+You've probably heard the saying, the future is already here.
+12
+It's just not evenly distributed.
+13
+Each week, I sit down with the founders, investors, and thinkers who are living in the future to help you understand it sooner, see it more clearly, and find your place in it.
+14
+Today, I'm speaking with Trey Stevens, a general partner at Founders Fund and co-founder and executive chairman of Andreal Industries.
+15
+Since its founding in 2017, Andrew has grown into one of tech's most valuable private companies and one of the world's most important.
+16
+It is at the vanguard of the new defense tech movement, bringing Silicon Valley innovation to warfare to compete head-on with incumbent primes like Lockheed Martin and Raytheon.
+17
+As we enter a period of even greater global uncertainty, companies like Andrew will only become more important and influential.
+18
+In my conversation with Trey, we discuss building the Avengers of Defense Tech, how Trey assembled an extraordinary founding team, including the visionary Palmer Luckey, practical innovation in defense, why even groundbreaking technologies must respect operational constraints, and the philosophy behind Andrew.
+19
+I learned a ton from this conversation, and I hope you'll walk away with practical insights about the intersection of technology, defense, and geopolitics that will help you understand one of the most critical sectors shaping the future.
+20
+This is a new podcast, so if you like it, I hope you'll consider subscribing and joining us for some of the incredible episodes we have coming up.
+21
+Now, here's my conversation with Trey Stevens.
+22
+This episode is brought to you by Vanta.
+23
+Warren Buffett once said, it takes 20 years to build a reputation and five minutes to ruin it.
+24
+For today's digital companies, those five minutes have shrunk to milliseconds.
+25
+This asymmetry is why trust isn't just earned, it's demanded.
+26
+If you're building a business, you likely know that proving compliance is needed to win bigger deals, enter new markets, and deepen trust with customers.
+27
+But that it can cost you real time and money.
+28
+By automating up to 90% of the work needed for SOC2, ISO 27001, HIPAA, and more, Vanta gets you compliant fast, opening doors to next-level growth opportunities.
+29
+Not only does Vanta save you time, it also saves you money.
+30
+A new IDC white paper found that Vanta customers achieve $535,000 per year in benefits, and that the platform pays for itself in just three months.
+31
+Over 10,000 companies like Atlassian, Factory, and Chili Piper use Vanta to manage risk and prove security in real time.
+32
+My listeners can get $1,000 off Vanta at Vanta.com/slash Mario.
+33
+That's Vanta.com.
+34
+This episode is brought to you by WorkOS.
+35
+What do companies like OpenAI, Cursor, Perplexity, Webflow, Plaid, and Vercel all have in common?
+36
+They use WorkOS to power enterprise features like single sign-on, direct resync, and multi-factor authentication.
+37
+WorkOS is set apart by its modern APIs and SDKs for seamless enterprise integrations.
+38
+Plus, it's free to get started.
+39
+Whether you're a scrappy startup or rapidly scaling, WorkOS has the solutions you need to secure enterprise deals.
+40
+Future-proof your authentication stack with the identity layer best suited to meet the evolving demands of enterprise environments.
+41
+Find out how at workOS.com.
+42
+Trey, it's so fantastic to have you here today.
+43
+I always really enjoy our conversations and learn something new every time.
+44
+Today we're going to spend our conversation talking about Andrew and modern warfare, and maybe to just sort of level set a little bit, I suspect a lot of folks will know Andrew very well, but for those that don't, maybe you can tell us a bit about the business and its scale today.
+45
+Yeah, so Andrew is a next-generation defense contractor.
+46
+We build primarily software-defined and hardware-enabled autonomous systems for the United States and our allies and partners.
+47
+So that includes everything from intelligence, surveillance, and reconnaissance systems all the way out to low-cost, attributable munitions of various types.
+48
+And there are some very, very far-out and futuristic and sort of incredibly fascinating different technologies that you guys have.
+49
+I'd love to start with a story that I think sort of frames you and describes you as a person in such a compelling way.
+50
+And funnily enough, I had the chance to ask your co-founder, Matt Grimm, what questions he would ask you in this circumstance.
+51
+And the one that he picked was also one that I especially love, which is a simple one.
+52
+How did you get into Georgetown?
+53
+Yeah, you know, I grew up in kind of a rural public school in Ohio.
+54
+You know, had all the traditional measures of academic success, had great test scores, had great grades all the way through, did extracurriculars.
+55
+So I was a varsity athlete, multi-sport varsity athlete, kind of did a bunch of the things that you would expect that you would need to do to get into the best colleges.
+56
+And that ended up not working for me.
+57
+I got denied to everywhere that I applied with the exception of one public state university.
+58
+Didn't really understand why.
+59
+It was kind of this horrible, this horrible moment of time where I had like built up this expectation for what I thought I was going to be doing and then ended up just having that disappear.
+60
+Now, you know, the crazy kind of story version of this is that I was probably just going to go to the state school.
+61
+And my girlfriend, who I had, my high school girlfriend, who I had been with for like two years at the time, she broke up with me the same day that I got all the skinny envelopes in the mail.
+62
+And so I went home and I'm just like devastated, just like laying on the couch in my living room.
+63
+And my mom came over and put her hand on my back and she was like, where do you want to go to school?
+64
+And I'm like, mom, I don't think that's how this works.
+65
+Like, I just got.
+66
+That's really what I want to do.
+67
+And she was like, well, then you should fly to Georgetown.
+68
+and tell them that you're going to go to school there.
+69
+And gee golly, they're going to let you in.
+70
+And, you know, I packed up my bags and got on a plane, flew to Washington, D.C.
+71
+I collected some additional recommendation letters from other adults in my direct network, put them in my backpack and went to campus and sat on the doorstep of the admissions office, refusing to leave until the dean agreed to meet me.
+72
+And it didn't take that long.
+73
+You know, I think the story gets over-dramatized with this idea that I had like a tent or something and I stayed for multiple days.
+74
+But it was really more like a couple of hours until the dean came out and he's like, I don't know who you are, but I guess come inside and let's talk for a minute.
+75
+And he specifically said, like, there are cracks in the meritocracy.
+76
+I had nothing to offer Georgetown.
+77
+You know, a lot of these schools publish statistics on valedictorians that they reject.
+78
+I was that guy.
+79
+I was the guy that, you know, demographically added nothing.
+80
+Experience-wise, added nothing.
+81
+There was no like relationship cost for them to deny me, unlike the guidance counselors at the big schools that they have good relationships with.
+82
+And so it was just an easy no.
+83
+And so me flying out there, I think, made it a not easy no.
+84
+It put them in a situation where they had to actually address the crack that was in the meritocracy.
+85
+And to my surprise, the dean said, I love the courage that you had to come out here.
+86
+And, you know, we're going to put you on the top of the wait list and you'll be the first person that we pull off.
+87
+And so I flew back to rural Ohio and a couple weeks later got the call letting me know that I was in.
+88
+Interestingly, I was in an AP exam when the call came in.
+89
+And my principal came to the room and said to the proctor, like, I need to take Trey Stevens out.
+90
+And they were like, well, he can't leave because he's in the middle of an AB exam.
+91
+And he's like, I'm the principal.
+92
+He has to come out with me right now.
+93
+And the admissions office of Georgetown was on the phone.
+94
+And we three-way called in my mom.
+95
+And they said, you know, we're giving you a spot, but we have to know right now.
+96
+You have to commit right now on the phone.
+97
+And there's no scholarship.
+98
+It's going to be incredibly expensive, as all these schools are.
+99
+And I was like, mom, can I do this?
+100
+And she's like, yeah, you can, we'll figure it out.
+101
+And I committed on the spot and the rest is history.
+102
+I love that story so much.
+103
+And I think about it honestly probably a weird amount since you initially told it to me because it's just such an amazing example, one of the crack in the meritocracy piece, that there are these systems that miss talent.
+104
+And we can so often think of them as infallible from afar.
+105
+And two, just like how often we must be the Trey who, instead of getting on a plane, just gives up in that moment.
+106
+And actually, if you do something just a little irrational and that certainly could have, I imagine, felt very, very vulnerable, you can force your way into these things and tip the world to your advantage.
+107
+Yeah, and I think this is like, you know, Vice President Vance wrote a book called Hillbilly Elegy about a decade ago now, it's been.
+108
+These are kind of like, you know, rust belt towns that were devastated by globalization.
+109
+And his story is not that different.
+110
+It's kind of this idea of, you know, you grow up doing everything you can that you think you're supposed to do, and all the adults around you think that it's just going to work out.
+111
+It's like this kid's smart, they're ambitious, they're hustling.
+112
+Yes.
+113
+And it turns out that the whole system is just kind of set up to make it impossible, really, for people in these communities to succeed.
+114
+And as you said, like most of them just give up.
+115
+And I think that's why you see, you know, opioid crises in the Midwest and disillusionment of young men in those communities.
+116
+And obviously, you can't fix all of the injustices that exist simultaneously, but we at least need to recognize that there's a cost to the way that we've been addressing systemic injustice and it's creating issues in other parts of our demographic, other demographic parts of society.
+117
+And I'm not saying that I have a solution for how to fix that.
+118
+I'm just saying it is, we're replacing one problem with another in many ways.
+119
+Yes.
+120
+And for you, Georgetown, I think, as I recall, and you can correct me otherwise, it was really a springboard for a lot of the work you've ended up doing in government and the intersection of sort of government, defense, tech, and bringing you to Angevil today.
+121
+Starting, as I recall, doing computational translation.
+122
+You'll have to remind me the exact phrasing there.
+123
+Yeah, computational linguistics.
+124
+My job was figuring out in the intelligence community how to connect.
+125
+Obviously, in the English language, the most common name across English-speaking men is John.
+126
+It represents around 3%, 3.5% of men in the English-speaking world have the name John either as a first or middle name.
+127
+And in the Arabic-speaking world, Muhammad is 18%.
+128
+Wow.
+129
+So you end up having this massive problem with disambiguation.
+130
+And on top of that, you also have transliteration as an issue.
+131
+So if just matching Muhammad's is complicated enough, there are 132 common ways to transliterate the name Muhammad.
+132
+M-U-H-A-M-E-D, M-O-H-A-M-E-D, M-O-H-A-A, M-M-E-D.
+133
+There's all of these different ways that you can transliterate it.
+134
+And so figuring out computationally how to link all of those things together was a real problem, especially for, you know, doing intelligence analysis and targeting in the war on terror.
+135
+Fascinating.
+136
+Well, I want to talk more about what sort of drove you to build Andrew.
+137
+But before we do that, I think it might be worthwhile talking about just why Andrew matters so much.
+138
+And I think there's more and more understanding broadly in the U.S.
+139
+and in the West about how vital it is to have a really strong military.
+140
+But I think back to an essay that maybe you read, which was by the historian George Packer talking about the four different Americas.
+141
+This is a 2021 essay.
+142
+He talks about free America, smart America, real American.
+143
+And Smart America was folks who are kind of worldly, a bit urbane, well-educated, folks that went to Georgetown or Columbia.
+144
+And I find, and I'd be interested in your view, that folks that are still sort of maybe in that bracket can still have some heavy skepticism towards defense companies and the importance of really investing in this as a capacity.
+145
+Is that something that you still find today?
+146
+Yeah, it was certainly true when we started the company in 2017.
+147
+You know, we were coming off this kind of crazy hangover from almost 20 years of forever wars in the Middle East.
+148
+And I think there was this increasing belief that we just don't get it right, that the West has made these kind of critical analytical errors in how we approach deterrence and conflict resolution and things like that.
+149
+I think a lot of those problems have gone away with the combination of the war in Ukraine and the conflict between Israel and Gaza.
+150
+I think even Smart America has figured out that we are moving past the kind of non-state actor version of conflict and into a great power system for conflict.
+151
+And in a world in which we're competing with great powers, whether it's China, Russia, Iran, North Korea, our ability to deter is paramount because we can't risk accelerating a conflict into a civilization-ending outcome.
+152
+And so definitely not popular.
+153
+Honestly, if I'm honest with myself, I would have bet that me in 2017 would have felt some resistance to that idea.
+154
+Me as a sort of 27-year-old, educated in a very sort of liberal environment, very, very worldly.
+155
+I think I would have felt, yeah, some kind of way about it without really having examined it.
+156
+And so, yeah, I suspect you had to deal with a huge amount of that starting it back in those days.
+157
+Maybe we can begin a little bit with why you felt the need to build the company and why you felt that the current sort of system was broken at the time, such that it really did require starting from scratch.
+158
+Yeah, you know, I was a senior in high school when 9/11 happened, which is why, incidentally, I wanted to go to Georgetown and School of Foreign Service and go into the intelligence community.
+159
+I felt a deep kind of duty to do something that had a mission orientation rather than just going into whatever, you know, well-to-do thing that I probably should have done, like management consulting or investment banking or something like that.
+160
+And, you know, when I landed in the intelligence community, I had this belief at the time that someone was going to hand me the keys to an Aston Martin and I was going to have like a supercomputer at my fingertips.
+161
+And man, it was just could not have been further from the truth.
+162
+Like, the tech that I had in my college dorm room was better than the tech that I had access to on day one in a government office.
+163
+And, you know, I think most Americans have this kind of faulty belief that there are these underground bunkers all over the country filled with extraterrestrial technology and we have this insurmountable advantage against any adversary and no one would ever mess with us.
+164
+And the closer you get to the problem, the more you realize how not true this is.
+165
+And we are incredibly vulnerable.
+166
+So going from the intelligence community to Palantir, I was one of the first handful of people that worked at Palantir.
+167
+It became really clear that, you know, we have all of these interesting programs that are running on the harbor side of the house.
+168
+You know, maybe they take way too long, maybe they run way over budget.
+169
+But, you know, the F-35 is a pretty good airplane, you know, 30 years after the program started, but it's a pretty good airplane.
+170
+Our aircraft carriers are great for force projection.
+171
+We've done a good job of building up, especially during the Cold War, our capacity to project power globally.
+172
+But software is just this really, really weak spot in the middle where all the people that you want working on these programs are optimizing ads at Google or Facebook or whatever.
+173
+They're not going and sitting in government basements without Windows, making a fifth of what they would in the private sector, writing really complex software.
+174
+And the government doesn't really realize that.
+175
+Like the decision makers are kind of historically have been really slow to realize how far ahead private industry is on software.
+176
+But as Ash Carter, the Secretary of Defense under Barack Obama, he launched this thing called the Third Offset Initiative internally.
+177
+And basically, the first offset was nuclear weapons.
+178
+Second offset is precision weapons.
+179
+And then the new offset is like, what's next?
+180
+And as I was looking through all the third offset stuff, it became really clear that they're mostly software.
+181
+It's like autonomy, applied artificial intelligence, next-generation command and control of like massive swarms of things in a battle space.
+182
+And I kind of got concerned during the Palantir days that, man, we have no ability to actually execute on any of the weapons side of these.
+183
+Like, Palantir is doing a lot of the kind of back-end data side of things and doing it incredibly well, I would add.
+184
+But, like, somebody has to figure out how to put these software brains onto our core weapon systems and doing that in a way that reduces the risk to service members.
+185
+So, you're taking humans out of the dull, dirty, dangerous jobs, and that gives us a better ability to project force and deter conflict.
+186
+And so, about two, two and a half years into being at Founders Fund, after my run at Palantir, I had looked at every company I could find, hoping that someone was out there with this vision for the world.
+187
+Ended up not making any investments, and then decided that maybe I was the person that needed to go and pull together the Avengers to figure out how to address it.
+188
+And that's what went down in 2017.
+189
+Yes, incredible.
+190
+And yeah, what a group of Avengers you did assemble.
+191
+One of the things that I also found so fascinating when I first started studying Palantir a couple years ago at this point was just how broken sort of the defense industry was from these large primes, how consolidated it was, how the sort of business models really didn't incentivize the right type of behavior.
+192
+What were those things that really stood out?
+193
+Yeah, most of these weapons programs are run on what's called cost-plus contracts, which means that the developer is paid to research and develop it.
+194
+They're paid to acquire units of the thing, and then they're paid to sustain those systems over very, very long periods, like 50 to 100 years.
+195
+And the incentive structure just doesn't actually work.
+196
+Like, it's kind of remarkable if you look at like, you know, the entire market.
+197
+Everyone kind of understands that, you know, there's an incentive to move quickly and to have competitive prices and to do research and development.
+198
+So you own the IP so that then you can get margins on those things.
+199
+Like all these, this is the way the normal market works.
+200
+But the most communist part of the United States economy is the defense industry.
+201
+They've just decided that they need to create this completely perfect competition model where nobody is making any profit and everyone's incentivized to take as long as they possibly can because they're just getting a tiny margin on top of whatever they're able to build back to the customer.
+202
+Maybe that works somewhat well for things like aircraft carriers where there's exactly one buyer.
+203
+It's a $15 billion program.
+204
+Everyone expects it's going to take a really long time.
+205
+But for attributable, low-cost modular systems, like this is not the right way to build things.
+206
+We should be incentivizing the market to show up, privately funding an open competition where people can stand out and they can win.
+207
+And that would be better for the taxpayer.
+208
+It would be better for the warfighter.
+209
+And I think this is the direction we're heading it.
+210
+But man, in 2017, it was a long way off, or at least it seemed a long way off when we first started this.
+211
+Yes.
+212
+And when you think about the Avengers that you did assemble, how did that come together?
+213
+And how did you know, you know, this is my Spider-Man, this is my Iron Man.
+214
+You know, what were you looking for in terms of extreme outlier abilities?
+215
+Yeah, no, I mean, I had known Palmer for a while.
+216
+Founder-son was the first institutional investor in Oculus, which he founded.
+217
+And I knew that he was really interested in defense.
+218
+So he and I had been talking about this for years.
+219
+You know, at the time when I first started talking to him about defense, he was literally building a ramjet in his swimming pool in Woodside.
+220
+He had drained this swimming pool and he was just like building a ramjet.
+221
+And I felt like he was exactly the type of person that would be able to rally others around this important mission.
+222
+He's, as you know, and as I'm sure a lot of listeners of the podcast know, he's incredibly charismatic.
+223
+And he's kind of an engineer's engineer.
+224
+Like people just love working with him.
+225
+He has all sorts of crazy ideas.
+226
+And then I knew that we needed a killer executor, somebody that was just an operational wizard.
+227
+And that was my co-founder, Matt Grimm, who has been the COO, kind of the man behind the curtain for the entire history of the company.
+228
+And then Brian Schimpf was running engineering at Palantir.
+229
+He's a brilliant software engineer, which is great, but he's also an incredible manager, which if anyone has worked with software engineers knows, it is really hard to find someone who's both brilliant on their own right from a software perspective, but also incredibly talented at running programs, managing people.
+230
+And so, you know, there are a lot of businesses, especially today.
+231
+You know, people talk a lot about starting AI application companies, and you could run a billion-dollar business with one person.
+232
+Defense is not an industry.
+233
+It does not work that way.
+234
+You can't build a massive defense hardware company with one really talented person.
+235
+And so we knew that we needed a deep bench, and that's been a big focus for the company since the very beginning.
+236
+So, even beyond just the founders, we have an incredibly, incredibly deep executive bench, whether it's our CFO, Bob Alexiovashi, or our president who runs Strategy, Chris Burrows, who was the staff director of the Senate Armed Services Committee under McCain, Matt Steckman, who was running the sales team at Palantir, is our chief revenue officer.
+237
+We just have an incredibly deep bench.
+238
+And every single one of those people is necessary to pull off this vision.
+239
+Like, there's just no way you could do it with one or two people.
+240
+You have to go and get the best people in 15 different categories.
+241
+Yes, absolutely.
+242
+One of the things that I came across recently on X was, I think it was Matt Grimm, posted some pictures of your first Andrew office.
+243
+And it's not the most glamorous office.
+244
+It's almost Spartan in its bareness, but it has some amazing whiteboards on the wall talking about sort of, it's almost a checklist of the things that you guys want to work through first.
+245
+And I thought it was such an interesting artifact of how the company began, but also raised a lot of really interesting questions.
+246
+One of the bullet points was about sort of.
+247
+What were the sort of core tenets for you of the culture that you knew, you know, from day one or, you know, very, very early on that you knew how to be a part of the business?
+248
+Yeah, you know, a funny kind of story about the office before we talk about culture.
+249
+So when Matt Grimm and I went down to Orange County, we were doing this like recruiting day where everyone was meeting at Palmer's house and we were just going to like kind of run through the pitch with our most talented friends to see who we can convince to quit their jobs to start this with us.
+250
+You know, the morning that we were going down, Palmer's like, why don't we meet at the office?
+251
+And we're like, what are you talking about?
+252
+He's like, yeah, I signed a lease.
+253
+Like, there's just this place.
+254
+I know the guy that owns the building.
+255
+I signed a lease and this is where we're going to do it.
+256
+So we're like, okay, I guess we've already decided where the office is.
+257
+And we get out there and it's literally an old American Airlines baggage facility.
+258
+And it has this like paper thin wall separating it from the John Wayne Airport pet like kennel facility where they like stage the animals before they put them on the planes to take them out.
+259
+And so all day there's just dogs barking like when you're in the office.
+260
+But on top of that, there was also a helipad on top of the building.
+261
+So like the roof of the building was a helipad.
+262
+The next door was a kennel with a bunch of dogs.
+263
+And so we made the most of it.
+264
+I think everyone was super happy when we got another office and moved out of that space.
+265
+But yeah, it was very Spartan.
+266
+I guess from a culture perspective, you know, there are a lot of things that we're looking for.
+267
+You know, we want people who want to get their hands dirty.
+268
+We don't want divas.
+269
+We don't want people that are going to be high drama.
+270
+Like there's a sense of mission that everyone is bought in on.
+271
+We're super transparent.
+272
+We just tell people what it is that we're going to do.
+273
+There's no surprises.
+274
+You know, no one shows up and says, like, oh, wow, I didn't know we were building things that had lethal potential.
+275
+It's like, no, everyone knows.
+276
+Everyone knows.
+277
+You're here.
+278
+We're going to tell you exactly what it is that we're going to do.
+279
+And I think that's led to the company being filled with a lot of very, you know, sober-minded, mission-oriented people.
+280
+And that's not partisan at all.
+281
+You know, I think a lot of people try to make this some sort of weird partisan conversation.
+282
+Defense is super bipartisan.
+283
+I would guess that like maybe a slim majority of the company lean more left than right, just like any tech company.
+284
+You know, we don't care.
+285
+I don't care about anyone's politics.
+286
+I just care that people are focused on the mission at hand.
+287
+And I think we've imbued that culture into the business since Daywild.
+288
+There's, you know, when I was studying Traba, a founders fund company, the CEO, Mike Shabbat, mentioned why he has a big American flag in his office.
+289
+And I thought it was so interesting and clever.
+290
+Basically, the way he described it was: it's like vampires for the worst kind of people, which is, you know, people who are not going to really be that sort of maybe low-ego, get their hands dirty, maybe will be sort of obsessed around politics and things like that.
+291
+And I think he said that, you know, he really got it from some of the other Founders Fund's companies.
+292
+And when I look at that office, there is a huge American flag.
+293
+Was that something that you guys?
+294
+I wouldn't say so much as a filtering mechanism.
+295
+I mean, like, in the Trava case, it's like there's something novel about a software company that's doing labor marketplaces, like having an American flag on the wall.
+296
+We're a defense company.
+297
+Like, whether or not we had a big American flag on the wall, like, the American flag would be there in a figurative sense anyway.
+298
+So it doesn't really matter.
+299
+And you know, we work very closely with our country's allies and partner nations.
+300
+So we have, you know, large contracts in Australia and the United Kingdom and a variety of other places.
+301
+And so I wouldn't even say that the culture is particularly like gung-ho, like super, you know, Team America.
+302
+We definitely believe in Western values, and we're going to do what we can to support our government and the governments of our allies and partners.
+303
+And I think, you know, because we're transparent with what it is that we're doing, that filter is incredibly strong.
+304
+Like, it would be very hard to go through the interview process at Andrew and come out of it feeling like, I'm not really sure what they stand for.
+305
+Totally surprised.
+306
+You need to be very, very clear what it is that we stand for.
+307
+This is a question that I'm sort of just curious about.
+308
+When I look at the whiteboard from those early days, there's one of the bullets that's listed is also reading list.
+309
+And it made me wonder: what is on the reading list that you wanted people to come in with and have context on when building Andrew?
+310
+Yeah, I mean, we take this very seriously.
+311
+I mean, we're very open with telling people that there's a ton of material out there that can give you context on what it is that we're doing and why we believe that it's important.
+312
+The obvious ones were like we all were required to read The Looming Tower, which is a book about 9-11.
+313
+You know, Palantir was very much a like child of 9-11 as a company.
+314
+But we also had to read this book called Impro, which was about improvisational comedy.
+315
+And it talked about how to project status and how to cast scenes, which for us were meetings.
+316
+And there was so much that we learned from that process.
+317
+And it was something that Dr.
+318
+Karp was really keen on teaching us.
+319
+In the Andrew context, we're very lucky in that Chris Burroughs, our president and chief strategy officer, wrote kind of the seminal text on the next generation of warfare called The Kill Chain.
+320
+And so obviously, we encourage everyone to read The Kill Chain.
+321
+But then there's also science fiction, which I think a lot of the lessons that we've learned over time have been first worn out in the pages of fiction.
+322
+And so there are a bunch of books that we tell people about everything from Ver Revenge Peace War Trilogy, which talks about these kind of impenetrable time-freezing force fields.
+323
+Obviously, we're a long way away from that.
+324
+There's a book called David's Sling that talks about counter-air systems as well as Rods from God, which is this concept of like dropping tungsten rods out of orbit and as kind of like a space-based weapon.
+325
+Like a spear, essentially.
+326
+Yeah, yeah.
+327
+I mean, when you drop a tungsten rod out of orbit, you don't even need a munition payload.
+328
+Like it's just a hunk of metal that hits the ground at really, really high speeds.
+329
+And you can obviously like guide these things with sensors and fins.
+330
+Um, and then we also uh have historical nonfiction.
+331
+Probably the favorite of the company is uh the book Skunk Works by Ben Rich, who's one of the form directors of Skunk Works.
+332
+And it kind of tells the history of how we got the U-2, how we got the SR-71, how we got the F-117A.
+333
+You know, it's kind of a true tale of both the rise and decline of the U.S.
+334
+defense industry.
+335
+And I think it's good to have shared contexts across everyone in the company.
+336
+Um, and most of the best performing companies that you know I've had exposure to at Founders Fund or directly in my own work at Palantir and Andrew have a culture of shared reading lists.
+337
+So, for the founders that are listening, I highly encourage you to find some shared contexts that you can get everyone on the same page with.
+338
+Yeah, I love that.
+339
+It really builds state across the organization that you can all just have that in your heads at all times.
+340
+Yeah, I'm sure sort of creates higher fidelity conversations between people on a repeated basis.
+341
+I think that's a nice segue into a little bit of the product that Andrew builds.
+342
+And maybe before we talk about sort of the specific pieces, I'd love to hear sort of a bit about the philosophy because you've talked about how important software was and how behind the eight ball historically the defense industry has been.
+343
+And that's been a really critical part to the way that you guys do things.
+344
+I mean, the core thing that we have thought about since the very beginning is we want to build a like a software system of record that connects to all of the different pieces of hardware that we build for command and control.
+345
+So, we started that with this.
+346
+It was just, you know, sensors on a stick that was doing critical infrastructure, forward operating base, national border, kind of situational awareness.
+347
+It just looks around itself and tells you there's a person, there's a car, there's an aircraft, and then allows the user to determine what their interface with that should be.
+348
+Let's say like, ignore it, it's not something I'm interested in, or let's go and pursue to a potential apprehension, whatever it might be.
+349
+That same exact software platform, Lattice, ended up being used again for unmanned aerial systems.
+350
+At first, our Ghost platform and then Anvil, which is our counter-air system, our first kind of counter-air interceptor.
+351
+And that's gone into every platform that we built, whether it's undersea systems like the dive platforms or our more advanced aerial systems like Fury, which is our collaborative combat aircraft.
+352
+And basically, we see this as like an amortization of platform that gives all of these systems kind of the core sensor fusion, computer vision, command and control that is shared across all of them.
+353
+And that philosophy will continue into the future.
+354
+You know, I think that we're going to continue building out the capabilities of Lattice, and we're going to continue using that as a supercharger for all of the platforms that we put it on.
+355
+One of the fascinating stories I heard about Lattice, I think it was in the American Vulcan piece by Tablet on Palmer, was that it was inspired by a French polymaths sort of thought experiment, which I think is called Laplace's Demon.
+356
+And the idea is, you know, having a demon, you know, being in an entirely deterministic system, this demon could predict fundamentally anything that would happen.
+357
+Am I butchering that or how close did I get?
+358
+No, that's very close, yes.
+359
+It's sort of, yeah, you know, if everything is a series of billiard balls, you can chart the movement of people and machines and actors through the end of time.
+360
+And Lattice is sort of, yeah, the software instantiation aspirationally of that idea, of that sort of full visibility.
+361
+Yeah, and this becomes increasingly important as we move into higher volumes of low-cost attritable systems.
+362
+You know, right now, command and control for, you know, a carrier battle group, there's dozens of things, maybe.
+363
+You know, you have like the aircraft carrier, you have destroyers, you have the fighter planes that are launching off the deck.
+364
+But this is like a fairly small quantity of objects that you would be required to track.
+365
+In the world of future warfare, there could be thousands of things in a battle space.
+366
+Like you could have swarms of drones, you could have swarms of unmanned ground vehicles, you could have swarms of low-cost cruise missiles that are entering the airspace, you could have interceptors that are firing off to take off, take out all of those things.
+367
+And that just fundamentally demands a better command and control platform to orchestrate the movements of your allied forces inside of that environment.
+368
+And that's what we're building.
+369
+We're building that operating brain for a more complicated future warfare scenario.
+370
+Yeah, there's no sort of fundamental way that without that software, a human could realistically keep track of these thousands of different bits and pieces and move them in the right order.
+371
+In terms of adding to the product, you guys have sort of, as you outlined, land, air, sea, built out these different products.
+372
+How do you think about that strategy?
+373
+When do you decide, hey, we think this is the right next thing?
+374
+Is that responsive to government?
+375
+Is it inspiration first and then looking from that vantage?
+376
+Like, what is the sort of right pull versus push part of the equation there?
+377
+Yeah, I think one of the kind of critical mistakes that a lot of defense tech startups have made kind of in the wake of Andoril's success is that they've approached this more as like a field of dreams.
+378
+Like if I build this cool product, the customer will come.
+379
+I just don't think that's true.
+380
+I'm just not sure that you can just build any old thing and be like, look, I've solved some sort of problem.
+381
+You should allocate budget against this.
+382
+It just doesn't really work like that.
+383
+And so our approach is we want to find programs that have stated goals, that have an existing budget, that has a line item that's fulfilled by congressional authorization.
+384
+And we want to go and compete with the major defense crimes, the Lockheed Martins, Northrop Grummans, Raytheons of the world, to deliver the next generation capability that is in the roadmap for these program offices.
+385
+And that requires much more inside knowledge than just approaching it as an engineering problem.
+386
+That means that we actually have to be on the ground, interfacing with the program offices a long time before they ever issue a solicitation for a capability.
+387
+And so we kind of know, roughly speaking, over the next five years, what the Department of Defense is going to be spending money on.
+388
+Obviously, there's political wins that shift that, you know, like the 8% budget cut that the president is pushing into the DOD.
+389
+But generally speaking, we kind of know what those buckets of money are going to be used to procure.
+390
+And then we need to figure out: do we have some novel ideas from a technology perspective that will put us in a position where when we go and compete for this, we'll be significantly better on capability or significantly better on speed to deployment or significantly better on cost or some combination of those three.
+391
+And it turns out that the ecosystem has seen so much entropy in the last 30 years that it's not difficult to find really great places that we can take at-bats and hopefully hit some home runs.
+392
+And that strategy has worked incredibly well for us for the last seven and a half years.
+393
+Because the approach is sort of responsive to the line items of government, is there any part of you that worries that, well, you have to sort of believe that the government or the military is picking the right things to build, right?
+394
+Do you ever worry, hey, actually, the things that they're requesting are not actually going to be the weapons that win the next global conflict should it ever come to that?
+395
+Is that something that you have to sort of balance at some level?
+396
+Yeah, you know, my co-founder, CEO, Brian Schimpf, has taught me a lot about this, actually.
+397
+I think left unfettered, Palmer and I would have been running off in all sorts of crazy directions.
+398
+You know, Palmer has a lot of really crazy ideas that I would love to work on.
+399
+But Brian's view on this, which I think we've all come to agree is correct, is that the government can stand innovation in one vector, but not more than one.
+400
+And so, for instance, we build this reusable interceptor called Roadrunner, and it's vertical takeoff and landing, kind of like a Falcon 9 rocket.
+401
+And, you know, you can basically, if you have a single aerial threat, you can send up 10 of them.
+402
+And one of them will go terminal and take out the threat, but then the other nine can return and land and be refueled for use again.
+403
+And the alternative to this, of course, is like sending an interceptor missile.
+404
+But when it, you know, if you send up two interceptor missiles, one of them takes it out, the other one just has to be trashed.
+405
+Like it needs to be ditched into the ocean or into a place where it's not going to create any casualties or damage.
+406
+You know, that's basically the way that we've been doing this for almost 100 years.
+407
+Like we know what the like the course of action looks like for an intercept.
+408
+So if we had gone in with Roadrunner and said, not only can this be returned to base and landed, but it can also be fully reusable.
+409
+So you'll send it up and it will eject the payload into the target and then the vehicle itself will return.
+410
+It's like, it's almost too much to stomach.
+411
+They're like, that's not really how we do ops.
+412
+Like we can innovate in one vector.
+413
+Maybe it's like it's less expensive or it's faster to manufacture or the ones that you don't use for the intercept can be returned and refueled.
+414
+But you can really only choose one of these because otherwise they're just going to be like, we don't understand.
+415
+Yeah, we don't know what to do with this.
+416
+And so I think, again, it doesn't really make sense to be running around building perpetual motion machines.
+417
+This episode is brought to you by Brex.
+418
+Fred Adler, the influential venture capitalist of the 1970s, was known for displaying decorative pillows in his office that featured a signature business philosophy.
+419
+Corporate happiness is positive cash flow.
+420
+In today's post-SERP environment, Adler's wisdom feels particularly relevant as founders need to make every dollar work harder.
+421
+That's exactly what Brex delivers.
+422
+Their modern finance platform was built specifically for startups like yours and designed to help extend your runway when capital efficiency matters most.
+423
+With Brex, you get global corporate cards with up to 20x higher credit limits and no personal guarantee required.
+424
+Their banking solution has no minimums and no transaction fees, while letting you earn high yield from day one with same-day liquidity.
+425
+Best of all, Brex knows you were born to build, not juggle spreadsheets and finance tools.
+426
+Their AI-powered platform brings cards, banking, expense management, and travel all in one place.
+427
+It's simple, scalable, and designed to get you back to what you do best: building.
+428
+More than 30,000 companies, including one in three U.S.
+429
+venture-backed startups, trust Brex to help make every dollar count toward their mission.
+430
+Join them at brex.com/slash Mario.
+431
+One of the innovations that you guys are working on are, and that really ties to Palmer's history, are sort of mixed-reality headsets for soldiers.
+432
+And I loved the quote that Palmer ended a blog post announcing this project with, which was, whatever you are imagining, however crazy you imagine I am, multiply it by 10 and then do it again.
+433
+I am back and I am only getting started.
+434
+As much as you can, share about this project.
+435
+Like, what might this look like and how might it impact the future of war?
+436
+Yeah, I mean, when we first started, Andrew, the most common question that Palmer and I would get at pitch meetings is, Palmer, why aren't you building a head-mounted display for soldiers?
+437
+That's like, it's the obvious thing.
+438
+It's like you're passionate about defense, but you're VR boy number one.
+439
+Like, surely you're the guy to do this.
+440
+VR boy number one.
+441
+Yes, exactly.
+442
+And he would just tell people, like, I don't think it's possible.
+443
+The basic research that would be required to make this viable in combat has not been done.
+444
+I'm not going to be the one that does it.
+445
+I'm really passionate about it at some point, but right now is not the time.
+446
+There's other things that we can build.
+447
+And in the meantime, Microsoft went out and won this like $20 plus billion dollar contract called IBAS, where they were going to be delivering augmented mixed reality capabilities to the Army.
+448
+And, you know, I remember in the very earliest days of that, Palmer's like, this is not going to work.
+449
+I can't believe that this is happening and that they're going to make billions and billions of dollars selling Halloweens.
+450
+But he just didn't believe that this was the thing that was going to work.
+451
+Now, fast forward seven and a half years, and I think the view is very different.
+452
+Like, Palmer believes that he can deliver something that is of great utility to the soldiers, that's all tied in with the kind of software-defined architectures that we were pointing to as a company more broadly.
+453
+And so we had that conversation with Microsoft and I think came up with a really good plan to take over the program and utilize some of the IP that they are bringing to the table, that they brought to the table in the last half a decade or whatever, but also give us kind of the keys to run off and try to execute the strategy that Palmer's been willing to do since the very beginning.
+454
+So, we're really excited.
+455
+I can't say much more than that about what the specific strategy is, but stay tuned.
+456
+It'll be really cool to watch.
+457
+I can't wait.
+458
+When you think about the future of warfare more broadly, what do you sort of think of as the critical weapons for this next era?
+459
+And if it's not particular weapons, maybe there are some principles that being able to produce much more cheaply or autonomy.
+460
+I've heard Palmer maybe discuss the possibility of subterranean warfare, you know, fighting in the sort of deep earth crust.
+461
+Like, what might we be looking at?
+462
+Yeah, I mean, everything just boils down to sensors and shooters.
+463
+That's like the way that you should think about this.
+464
+If you look at like the way that we architected the F-35, so the F-35 program started in 1994, so we're about 31 years into that program now.
+465
+You know, it's a multi-role fighter.
+466
+Like, in theory, it should be really good at dog fighting and all this stuff that traditional fighter planes have been.
+467
+But, like, is that practically speaking, like, how this thing is being deployed?
+468
+No.
+469
+We're putting the best sensors on it so that we can see our enemy before they can see us.
+470
+And we have to load it with weapons that can strike our enemy before our enemy can strike us.
+471
+And so, everything just comes down to like, what do you see?
+472
+How much intelligence do you have?
+473
+And do you have the capabilities to execute against that before you put yourself at risk?
+474
+And there are, you know, certainly ways that we could do that with improving sensor tech and making these platforms more and more and more advanced and exquisite to put human meat sacks in the cockpit.
+475
+But from a scale perspective, from a risk to human life perspective, this is probably not the right strategy moving forward.
+476
+What we really need are low-cost systems that enable us to extend our reach, extend our vision, extend our ability to strike at incredibly low cost and no risks to our soldiers in uniform.
+477
+Like that's what we want to accomplish.
+478
+And so one example of this, we won a contract called the Collaborative Combat Aircraft, which you can kind of think of as like a low wingman to a manned fighter plane, where you can fly these in formation and the pilot can, just using human language, say like, you know, hey, go out 100 miles and tell me what you see, get eyes on a target, and then filter that back to me so I can make a decision about what to do against that.
+479
+And if the enemy, you know, catches sight of the CCA, you know, maybe they shoot down this airplane, but it's an order of magnitude, if not more, lower cost with no human in the cockpit.
+480
+It just changes the way that you engage.
+481
+And I think this goes for like every domain.
+482
+It's like, you know, do we need to build a bunch of super, super expensive submarines, manned submarines?
+483
+There's still very clearly a role for a manned undersea system, but there's also a bunch of roles that you can do unmanned at much lower cost.
+484
+Same thing with surface vessels.
+485
+It turns out that an aircraft carrier in the South China Sea, not super helpful because there's 5,000 service members that are on board.
+486
+And so we really need to distribute our force and do it in an unmanned way where we're projecting without massive cost of both dollars as well as human lives.
+487
+So that's kind of like the strategic thing that we're thinking a lot about: how do we get to mass production scale with autonomy and do it as inexpensively as possible for the U.S.
+488
+taxpayer?
+489
+Fascinating.
+490
+One of the domains that is becoming maybe more and more important is space and how there are obviously more expensive assets going up into space, satellites and so forth.
+491
+And you can certainly imagine a world in which there are routes in space that are more valuable to control.
+492
+How do you think about defense and Andrew's role in that potential arena?
+493
+Yeah, I mean, we view our roles as being all domain.
+494
+So we're going to have platforms in space, we'll have platforms in air, we'll have platforms on the ground, on the surface of the sea, undersea, and if Palmer gets his way, subterranean as well.
+495
+And so, you know, we're kind of thinking hard about all of those things.
+496
+Most of the things that we're doing in space are classified.
+497
+So I really hate the secret squirrel thing.
+498
+Like, this is not me trying to provide some sort of status game to tell you how important I am.
+499
+Quite frankly, I'm not written in the programs.
+500
+I don't even know what they are.
+501
+So it can't be a status game.
+502
+They are classified in a way in which I don't know what's going on.
+503
+So that's kind of the nature of that domain for us at the moment.
+504
+Well, we'll both wait and see in that case to see what happens.
+505
+One of the things that Andrew has done to grow is a sort of mix of building and buying.
+506
+And I'm curious how you've thought about sort of the company strategy piece of like, when does it make sense to do MA and bring a team on board?
+507
+And when does it make sense for us to really own this from the start?
+508
+Yeah, I mean, there are a lot of really interesting defense capabilities that are out there, particularly in hardware, that have kind of advanced through the prototyping phase.
+509
+Like there are capabilities that have been funded with research dollars.
+510
+They're platforms that are incredibly interesting and potentially valuable.
+511
+They're not necessarily highly integrated on the software autonomy, you know, artificial intelligence side of things.
+512
+It makes a lot of sense for us to go in and say, if we were to make this part of the Andrew suite of capabilities, it would be more valuable than standing alone.
+513
+And it would also give us a head start to be able to develop and deploy this system into production much more quickly for the warfighter than if we just started from scratch internally.
+514
+These companies are not traditionally venture-backed companies.
+515
+These are businesses that are older than Andrew that have persisted or they have subsisted on government funding to bring the products over the finish line for tests and evaluation.
+516
+And we're not buying them at venture capital software multiples.
+517
+We're buying them in defense multiples.
+518
+And I think we found a tremendous amount of success in identifying those platforms that the government's bullish on, but they need deeper pockets of capital to get those things fielded in production ready at scale.
+519
+Now, the risk here is that if you see what Andrew is doing are, I think we've done eight or nine acquisitions to date.
+520
+If you see what we've done in this space, it would be easy to say, like, oh, there are like all these very cool exit opportunities if you were to start a defense company.
+521
+I just don't think that's true.
+522
+You know, if you're a defense company out there raising it like 20, 50, 100x multiples on in-year revenues, like we are not a buyer of those companies.
+523
+And I think that there's tremendous opportunity in the non-venture space.
+524
+And we're going to stay really aggressive by finding the capabilities that we can integrate into our platform and do some cool things with our customer.
+525
+Taking the multiples out of it, are there opportunities or parts of the defense space that you're particularly excited about from a venture perspective?
+526
+That could be on the infrastructure side, it could become on the manufacturing side, wherever it feels like you see opportunity, maybe more with your Founders Fund hat on.
+527
+Yeah, I mean, there are definitely companies that we've even invested in at Founders Fund that I think are great contributors to the defense tech ecosystem.
+528
+On the advanced manufacturing side, you have companies like Hadrian that are doing kind of next generation manufacturing via Center Systems that's doing wire harness manufacturing.
+529
+There's companies like Dirac that are doing assembly instructions, like automating the process of generating assembly instructions for factories.
+530
+So there's all sorts of like enabling technologies that I think are super, super interesting and important.
+531
+You know, the nature of Andorroll is that we're going to be pretty focused on building the platforms themselves.
+532
+And so there are a lot of companies that are building really cool products in single domains.
+533
+I think it's much harder to win as a defense player if you're kind of a single product company.
+534
+I mean, we're building dozens, if not hundreds, of different SKUs, and we're getting the benefit of amortization on the software and production side of things, which I think gives is a huge advantage in this sector in particular.
+535
+And beyond that, that software amortization piece that you mentioned, why is it so difficult to win as a single product or sort of single domain company?
+536
+Is it because you just, I don't know, don't have the manpower to do the amount of sales you need to do or lobbying?
+537
+Or what are the pieces that really constrain you?
+538
+Yeah, I mean, the overhead is like pretty fixed.
+539
+So there's only so much that you can spend on lobbying.
+540
+And we're doing that across all of our products with our government relations team.
+541
+There's only so much that you can spend on like the Jedi Master level program business development stuff, like actually knowing how to identify the programs where you can win really big multi, like kind of generational contracts.
+542
+That's sort of fixed.
+543
+And we have that in place.
+544
+Certainly from a factory perspective, the customer is not going to be buying an unlimited supply of a single product.
+545
+They're going to build up inventories and then your factory needs to be flexible and modular enough to move to producing something else that's necessary to resupply.
+546
+And so all these things just like lend themselves really well to economies of scale.
+547
+And, you know, do I think that there's going to be like 10 andrews?
+548
+Probably not.
+549
+You know, if you look at the way that every category works in venture capital, it's like, if you're a space investor and you didn't invest in SpaceX, you probably lost money.
+550
+If you're a social media investor and you didn't invest in Facebook, you probably lost money.
+551
+If you're a crypto investor, you didn't invest in Coinbase.
+552
+Like there's not going to be 100 winners.
+553
+There's going to be a very small set.
+554
+Even like in ride-sharing, like people always talk about Lyft as this like really successful number two, but they have 20% of the market.
+555
+I think Uber has like 76, 80% of that market.
+556
+Same thing in social media, you know, like Snapchat.
+557
+I don't know what the market cap of Snapchat is, but I think it's like less than $20 billion.
+558
+Like, you know, Facebook's over a trillion or whatever.
+559
+So I think like even the number two players in these markets don't have anything near the performance of the real wearer.
+560
+Yeah, there's some real separation even when you get to the far right tail of things.
+561
+Totally, yeah.
+562
+We started some of this conversation with why Andrew is so important and great power conflict as the backdrop in our lives.
+563
+When you look at sort of U.S.-China capabilities today, how do you think we stack up?
+564
+You know, I know that Rand used to almost publish scorecards of how the U.S.
+565
+is rating on different dimensions.
+566
+How does that look to you right now?
+567
+Yeah, I mean, we don't have perfect knowledge, of course.
+568
+You know, neither of us are breaking out our top capabilities to support these international forever wars.
+569
+Most of the things that we're sending to Ukraine are things that have been in inventory since literally the Cold War, like Patriots, Stingers, Javelins, Hymars, Gimlers.
+570
+These are capabilities that have existed for decades that were sitting in inventory.
+571
+I think there's a lot of great intelligence product that's being put together by our civilian agencies in the intelligence space that are critical to understanding how we're competing, how we're aligned, where there are potential risks to our insurance posture.
+572
+Obviously, all that stuff is deep inside the bowels of the CIA and the NSA and the DIA and things like that.
+573
+But there are definitely areas where they've taken a big leap and advantage.
+574
+As Chris Burrow said in the kill chain, there is a commonality in all of the war games that are conducted between the U.S.
+575
+and China, and it's that China wins every time.
+576
+That's the commonality.
+577
+They're running way out in front of us on hypersonics.
+578
+They have an incredible engine around industrial espionage.
+579
+So they don't have to spend the same amount of money that we do to research and development because they're getting whatever it is that we're building and then just modifying or improving it for their own uses.
+580
+So they have mandatory conscription.
+581
+They can force people, the best people in their society, to work on the most important problems.
+582
+Obviously, I'm not advocating that we should be doing that internally, but there are at least structural advantages in some cases to authoritarianism.
+583
+And we're in a democratic society, which I'm glad that we're in, but that means that we have to convince people to do things, which is certainly much harder.
+584
+Yes.
+585
+Also, when we talk about sort of cheaper autonomous systems, China's manufacturing history, you know, gives it an advantage in mass producing a lot of its materials in a way that the U.S.
+586
+is maybe industrializing more over these last few years and maybe in the few years to come.
+587
+But it seems like there's a large gap on that front, certainly.
+588
+No doubt.
+589
+I mean, production scale is, this is the name of the game for Andrew in 2025, 2026.
+590
+We, the United States, like sold our right to produce largely to China over the last 30 years.
+591
+And, you know, if we were ever to get into a hot conflict with them, we would be out of munitions in like seven days.
+592
+Not an exaggeration.
+593
+We would just run out.
+594
+And we don't have the ability to snap our fingers and restock these inventories in really in short time frames.
+595
+You know, it often is forgotten that during World War II, our production engine was the private industry stepped up and started building things.
+596
+You know, Ford was building bombers.
+597
+Everyone kind of stepped up to the plate.
+598
+Today, like, most of the big American companies that build things, physical things, they're not even sure that they're American companies.
+599
+They're kind of like global companies in the way that they think about the world.
+600
+And so this is even more true on software.
+601
+Like, I think most of the big tech companies where you have kind of legions of really talented software engineers, I'm not sure that they even believe that they're American companies at all.
+602
+I think that it would be very difficult to convince them to get involved in an effort if something were to happen.
+603
+So our take on this at Andrew is like we need to own as much of that supply chain as possible.
+604
+And we need to restore confidence in the Department of Defense that if we needed to resupply a bunch of cruise missile interceptors, we can do that.
+605
+We have the capacity to ramp quickly.
+606
+If we need to build a bunch of CCAs, we can do that.
+607
+We have the capacity to ramp and build.
+608
+And that's really been the focus over the last year and will continue to be the focus.
+609
+If you had the power to get the U.S.
+610
+apparatus to greenlight something that would help us catch up there, what might that look like?
+611
+Is it just about really investing in this and putting money towards the problem?
+612
+Is it certain types of manufacturing that we need to focus on most in certain areas?
+613
+I mean, I'm sure it's specific rather than broad.
+614
+Yeah, yeah.
+615
+Well, I mean, there's definitely like the government understanding that they have a responsibility through the Defense Production Act, DPA funding, that they can put cash towards reshoring the refinement of critical metals.
+616
+There's a lot of DPA funding that goes into things like that.
+617
+They could DPA fund factory builds, shipyard builds, and I think that is a clear responsibility that they understand.
+618
+I also think that it's incumbent upon the private sector to put money alongside the government to do these things.
+619
+And that goes from everything from critical industries like semiconductors, where we can have a 90-minute conversation just about semiconductors.
+620
+That seems like a pretty big strategic place that we need to focus.
+621
+But really, the government's responsibility in that is not subsidizing entirely through DPA.
+622
+It's buying things.
+623
+And I believe that private investors, private industry, will show up and they will put money into capitalizing the production facilities if they know that the government is a willing buyer of the things that they're putting that money towards.
+624
+And this has been a big part of our story for the last two rounds of financing that we've taken in, where our investors fully believe that we are going to build out these production facilities and the government is going to buy the supply that we show up with.
+625
+And I think that's the biggest role that they have: saying, you know, we don't want the taxpayer to own all the responsibility for this, but that means that we have to be a good customer as well.
+626
+Yes, de-risking that demand piece of the puzzle.
+627
+As we think about, you know, the next decade, perhaps, and even beyond, and think about it in the framing of the current presidency, what do you think the Trump presidency has changed from a great power conflict perspective?
+628
+What might be different now that wasn't the case before?
+629
+You know, I'm thinking of things like European sovereignty maybe being more important, maybe a different stance as the U.S.
+630
+relates to Russia, as some folks have suggested.
+631
+But what do you view the current status as?
+632
+Yeah, I think the Trump administration very clearly understands the transition to great power conflict.
+633
+I think there's just no doubt about it.
+634
+They understand that there is a strategic priority to build capabilities that are going to deter conflict, or in the craze a chance that we don't have to deter conflict, to bring conflict to a rapid end.
+635
+You know, I think what that means is that the forever war thing is not really going to work.
+636
+That's not the strategy that we're going to be taking.
+637
+We're going to push nations in conflict to resolve those conflicts as quickly as possible.
+638
+We have this 20-some-year history right now in the West of believing for some reason that the most ethical way that we can prosecute violent conflict is in this sort of low-intensity, you know, long-running kind of empire building thing.
+639
+And I think that this is just fundamentally misunderstanding human psychology and how these outcomes pop out over time.
+640
+Like, is it actually more ethical?
+641
+to drag millions of people through two, three, four years of conflict in Ukraine?
+642
+Or is it better if we just go all in, take care of business, and then get it resolved much more quickly?
+643
+Incidentally, there's actually a line in, I think it's chapter four of Peter Thiel's book, Zero to One.
+644
+And actually, I have a copy.
+645
+Let me see.
+646
+He says this is in reference to businesses competing.
+647
+So not nation states, but businesses competing.
+648
+He says, sometimes you do have to fight.
+649
+Where that's true, you should fight and win.
+650
+There is no middle ground.
+651
+Either don't throw any punches or strike hard and end it quickly.
+652
+And I think that that is actually the lesson that applies equally to geopolitics.
+653
+And I think that is what the Trump administration understands that prior administrations did not.
+654
+If we're going to enter conflicts, strike fast, end it quickly.
+655
+We'll see how that plays out.
+656
+And I certainly think there's more of a credible threat to nations of playing games than there has been in the last few years.
+657
+And, you know, Trump at the end of the day is a negotiator.
+658
+That is his core personality trait, is that he wants to get good deals for America.
+659
+And that, I think, will mean that our allies are going to have to realize that he's going to play to win.
+660
+How do you expect Angel's role in Europe to arguably change as part of this?
+661
+Does that make you sort of more active or prioritize working in the region more aggressively?
+662
+Or is it really sort of the same plan as always?
+663
+I wouldn't say it's the same.
+664
+The more made in America America becomes, the more made in the EU the EU is going to become.
+665
+And so they're going to want their own domestic champions to work in the defense space, which probably means that any work that we do there is likely going to be driven through partner relationships where we're subcontracting for legacy players or working with startups that are in the space.
+666
+I don't expect that there's going to be like great opportunities for us to go direct, with the exception of the Anglosphere.
+667
+Obviously, like UK, Australia, very different situation.
+668
+Interesting.
+669
+And your co-founder, Matt, teased something on social media, which I think was suggesting you have an office in Taiwan.
+670
+Is that right?
+671
+I can not confirm nor deny our current presence in Taiwan.
+672
+Understood.
+673
+Matt was literally sanctioned because of our work in Taiwan.
+674
+So I'm going to be careful on his behalf, if nothing else.
+675
+Excellent.
+676
+That seems very reasonable.
+677
+We talked about Lattice and how Palmer took inspiration from Laplace's demon, the all-seeing sort of deterministic demon.
+678
+And I'm curious what your more philosophical and spiritual views are, namely as they relate to free will.
+679
+Do you believe in free will?
+680
+Wow, that was a hard right turn.
+681
+Yes, I believe that humans and our earthly spirits and physical embodiments here on the planet Earth, I believe that we have free will.
+682
+Yes.
+683
+It's a hard right turn because I think one of the things that I was excited also to talk to you about was your faith, which I think is a really big part of, seems like a big part of what motivates you and your mission.
+684
+And you are, I think, one of the most mission-driven people on like multiple dimensions that I can think of.
+685
+I'm curious how you think about your faith and how that intersects with Andrew and entrepreneurship.
+686
+Yeah, I mean, definitely very personally motivated by my faith.
+687
+I don't particularly feel like I have to like drag everyone along with me on the faith journey unwittingly, but I do think that everything that we understand about ethics and warfare is actually learned from just war theory, like from the era of St.
+688
+Augustine.
+689
+And I believe that as we continue to work as humanity in figuring out ways to reduce the loss of life from violent action by states or non-state actors, we can really lean into that just war tradition philosophically.
+690
+And, you know, a lot of these concepts around human rights were, they didn't exist before the person of Jesus Christ walked to the face of the earth.
+691
+And, you know, I'm glad that Western society has benefited from Judeo-Christian thought that's contributed to this, whether or not they realize that that's where these ideas came from.
+692
+But I certainly don't think that there's like this crazy disconnectivity between the fact that I'm both a Christian and an arms dealer.
+693
+I think that actually, like, that is a just cause.
+694
+And if we care about the people that are oppressed, that are living every day at risk of violence by their own government or another government, we have a moral obligation to answer to that.
+695
+Maybe your answer is absolute pacifism and neutrality, but that is a moral answer.
+696
+And you're allowing for horrible atrocities to happen to people.
+697
+And I don't believe you're absolved of that moral decision just because you choose to remain neutral.
+698
+And so I think these two things for me, Andrew and my personal faith, are, I think, very tied together philosophically.
+699
+Yes.
+700
+And yeah, I think you put it extremely eloquently.
+701
+For those who are not familiar with just war theory, what would be a sort of quick distillation of that?
+702
+Because I do think it's really at the heart of why Andrew is so important and why companies like this must exist in our world.
+703
+Yeah, I mean, there are different principles that St.
+704
+Augustine talked about when he first laid this out.
+705
+There's like the principle of just cause.
+706
+It's like, do you actually know what it is that you're doing?
+707
+Do you have the data that you need to make a good decision about whether or not you should do this?
+708
+There's the principle of discrimination, which means when you're taking an action, a lethal strike or whatever, are you doing that with the best ability possible to avoid the loss of innocent life?
+709
+There's the principle of proportionality, which means that if someone throws a rock at you, are you dropping a nuke?
+710
+That's probably not good.
+711
+Like, we should figure out ways to engage in combat proportionally.
+712
+There's all sorts of these principles that kind of play into the way that we think about technology development.
+713
+And if you think about from the very beginning of time, like the first murder came the age.
+714
+And then like people figured out how to make like pointy sticks and knives and bone arrows.
+715
+And eventually you got to this point where you were able to like strike and deliver casualties in multitudes.
+716
+So it's like catapults, trébiches, figuring out how to use gunpowder.
+717
+And that built and built and built and built until the atom bomb.
+718
+And that was kind of like the ultimate, you know, mass-scale, very difficult to make the argument around proportionality and discrimination.
+719
+And ever since then, ever since 1945, we've been crawling our way back down this curve.
+720
+Like we're building precision-guided munitions.
+721
+We're much more targeted in our strikes.
+722
+The terrorism organization strikes that we've been conducting, in fact, over the last few years, have been using these missiles called AIM9X Ginsus that are non-explosive.
+723
+They're literally just like, you know, projectiles that can hit a target incredibly accurately with almost no collateral damage.
+724
+Oh, wow.
+725
+It's incredibly accurate, non-explosive.
+726
+And so we're continuing to work our way back down the curve.
+727
+Now, when you add in things like autonomy, you add in really precise targeting with applied artificial intelligence.
+728
+We have better data than we've ever had about what's happening in an environment because of advanced sensors that are advancing just cause.
+729
+I believe we can get to the point where when things unfortunately do happen, because there is evil in the world and there are people that are going to make decisions that are not respecting the humanity and abundance that we want everyone on earth to enjoy, I believe that.
+730
+And that's really the goal of really everything that we're building.
+731
+You've worked with three of the most interesting minds alive today, and probably many others that I'm not listing, but Peter Thiel, Alex Karp, Palmer Lucky, real out-of-distribution style intellects here.
+732
+What would you say is maybe one lesson from each of them that you've learned, or something that they've instilled in you that really stays with you?
+733
+I guess I'll give one example for each of the three of them.
+734
+The Peter one that kind of breathes out in everything that he talks about is this idea of memetic theory, which is that humanity is we're imitating machines.
+735
+We love kind of walking the line of consensus, doing the very like programmed things that everyone expects us to do.
+736
+You know, I think one of the things that really stands out about all three people that you just said, you know, Peter, Palmer, and Karp, is that they're not consensus-minded people.
+737
+They didn't like go to business school and build the most trendy, most consensus companies that they could have possibly built.
+738
+They think differently, and that means that there's like some social awareness maybe with them.
+739
+But that's, I think, in startups, it's an advantage, not a disadvantage.
+740
+And this is really what Peter talks about at great length in his book, Zero to One, which I just read the passage out of.
+741
+The Karp lesson is really about finding your advantages.
+742
+And he was just unbelievably talented at figuring out how to put the right ingredients in a soup to convince people that what you're doing was the best possible thing that they could do to solve a problem internally.
+743
+And this goes back to, as I said, the book Impro that we all had to read.
+744
+It's like, you know, you have the ability to cast when you walk into a meeting.
+745
+Like, you can be whoever you want to be.
+746
+And all the people around the table can, you know, they're each playing a role in a drama.
+747
+And the way that you project status is going to matter depending on who it is that you're meeting with.
+748
+And, you know, we figured out in really incredible ways how to leverage those things as we were growing the business at Palantir.
+749
+And he's kind of like, you know, the ultimate Jedi master of company growth.
+750
+And I have a great deal of admiration and indebtedness to him for that.
+751
+Palmer is an idea factory.
+752
+And, you know, I feel like so many people in the world are really good at collecting and collating information.
+753
+You know, maybe smart people read a lot and then they like organize their thoughts and then they regurgitate them at dinner parties and interesting ways.
+754
+Palmer doesn't really do that.
+755
+Like he's not collecting and collating information like a normal person.
+756
+There's something in his brain that like leads him down paths that you would never think to go down.
+757
+And most of the things that we build at Andrew have started as nuggets inside of Palmer's brain.
+758
+And I think, you know, you don't want to put someone like that on a leash.
+759
+Like I want Palmer to be Palmer.
+760
+He has superpowers and just like anyone else, he has weaknesses.
+761
+I think the most unique thing about Palmer is that he's actually acutely aware of his weaknesses and he tries to stay in his creative genius.
+762
+And I think that's what has made him so important.
+763
+I would say, absolutely critical, actually, to Andrew's success.
+764
+Incredible.
+765
+Trey, we'd like to end the episodes with a few philosophical questions.
+766
+We've already sort of done a couple of them, talking about free will and so forth.
+767
+But yeah, two quick ones.
+768
+One is the second question that Macarim said I should ask you.
+769
+He says, You ask everyone else this question, so he would like to hear you answer it, and as would I.
+770
+What important truth do very few people agree with you on?
+771
+I mean, this is like the classic Peter Thiel interview question.
+772
+I can't claim credit for that, but I do come up with some incredible responses.
+773
+I actually have a spreadsheet, a Google sheet that I have been managing for a decade where I log the answers of everyone that I ask this question to in interviews.
+774
+There are hundreds of entities, entries, rather.
+775
+This is not a joke.
+776
+40%, around 40% of the people that I've asked this question to have said the same thing.
+777
+No way.
+778
+Which tells you that it's actually super consensus and that they don't even have a good understanding of what a contrarian answer to this question would be.
+779
+Most people say, or 40% of people say they believe people are inherently good.
+780
+Oh, wow.
+781
+So if someone asks you that question and the answer that you come up with is people are inherently good, you are not, this is not a contrarian idea.
+782
+Think harder.
+783
+Yeah, think harder.
+784
+This is a really bad answer to the question.
+785
+I have a bunch of answers to this question, but I have the unfair advantage of like working with Peter every day.
+786
+So I'm kind of forced into it.
+787
+I think the one that's probably the most connected to specifically what we've been talking about with Andrew today is I believe some form of mandatory conscription will be good for Western society.
+788
+Like I don't know exactly what that should look like, but man, I would love to see every American teenager that graduates from high school go and serve two years working for the government.
+789
+Maybe it could be local governments.
+790
+You can go work for Parks and Rec if you want.
+791
+Totally.
+792
+Different flexible things.
+793
+Yeah, yeah.
+794
+It doesn't have to be like an infantry role in the military.
+795
+But I think we would have a lot more empathy for our government and a lot less tolerance for waste if everyone was forced into these roles where they could see just how broken these bureaucracies are and how important it is to fix them.
+796
+I know that that doesn't super align with free will, given that I'm saying that we force everyone to do a specific job for two years.
+797
+But yeah, I'm fairly convinced that this would be good for society.
+798
+I like it.
+799
+I'm on board with that.
+800
+Because I can't help myself, what are maybe one or two others that you've heard other people say that you think are excellent answers?
+801
+Yeah, I've heard some good ones about like religion, where people have really strong views on like inclusivity or exclusivity regarding religion.
+802
+Most of these things I wouldn't say that I agree with, which is the nature of the question.
+803
+I would hope that I wouldn't agree with them.
+804
+There are some really good answers, I think, about government spending.
+805
+I've had some people answer questions around how we should be doing entitlement programs that I found are really interesting.
+806
+I think the hardest thing about these questions is that the nature of important truths is that you, in our culture, you are not encouraged to think about important truths.
+807
+And so, you know, you'll get people saying just like completely crazy things that are not true.
+808
+They're explicitly not true, but they're very socially acceptable to believe.
+809
+You know, there's this famous artist named Ed Rushka that I don't know if people that are into modern art might be familiar with.
+810
+And he made this piece during COVID that it was like a limited edition print that he sold.
+811
+And it just has these words that say, science is truth found out.
+812
+And I think this is this version of social acceptedness that like you read that and it's like, oh, that seems fairly benign.
+813
+Like, yeah, wherever.
+814
+But no, science is not truth found out.
+815
+Science is the pursuit of truth.
+816
+But to say that, to say, like, I'm not saying that I don't believe science.
+817
+I'm saying that we are pursuing truth.
+818
+And like, if somebody says something that I don't think is correct that deserves further exploration, that doesn't mean that I don't believe science.
+819
+That means that I believe that we are constantly in pursuit of better information and a better understanding of the physical world.
+820
+And that's the sort of thing that at different times over the last five years would have been an incredibly contrarian thing to say, to say, like, you know, actually, I don't believe that Alzheimer's is caused by plaques in the brain.
+821
+I think it's caused by gingerbitus or whatever.
+822
+And you should be able to ask those questions.
+823
+I think that's really important.
+824
+And so most of the answers to these questions should make people feel really uncomfortable because it's not questioning some like super measurable objective reality.
+825
+It's just kind of checking the social effectiveness of these important things that we should all be thinking about, like the destiny of our soul or the concepts of governance in a democracy.
+826
+And these are the things you're not supposed to talk about.
+827
+Amazing.
+828
+Well, final question: if you had the power to assign a book to everyone on earth to read and understand, what are you assigning?
+829
+I mean, such an obviously the Bible, but like.
+830
+Ah, yeah, yeah.
+831
+I was thinking maybe you would pick the kill chain.
+832
+No, no, it's such a cop-out answer.
+833
+I do think everyone should read the Bible.
+834
+I think that there's, you know, 10,000 years of wisdom that you can gather by reading 2,000 pages.
+835
+Like, I don't know of a whole lot of source material quite as dense.
+836
+That seems like a pretty good use of your time.
+837
+But as far as a less cop-out answer, I love science fiction.
+838
+I think if you're working in tech, if you're working in venture capital, not reading science fiction, you're just doing yourself a massive disservice because this is how we unearth ideas about what we might want the future to look like.
+839
+There are a bunch of books that I would probably recommend in the science fiction genre, but the ones that I have enjoyed the most tend to have like some overlap with theology.
+840
+And so books like Dune is really a book about theology, Stranger in a Strange Land is about the formation of religion.
+841
+I would encourage checking some of those out.
+842
+I think they're really fun to kind of understand both human psychology as well as technology kind of interwoven very tightly.
+843
+Amazing.
+844
+Trey, thank you so much.
+845
+It's been fantastic to chat and I learned so much as always.
+846
+Great.
+847
+Thanks for having me, Mario.
+848
+That's it.
+849
+Please subscribe on Apple Podcasts, Spotify, or your preferred podcast app.
+850
+Ratings and reviews help others discover these discussions.
+851
+So if you enjoyed the conversation, I'd be grateful if you could take a moment to leave one.
+852
+For all past episodes and more, visit us at thegeneralist.substack.com.
+853
+See you next time as we continue to explore the future.

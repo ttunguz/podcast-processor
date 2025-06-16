@@ -1,0 +1,775 @@
+
+Hello, AI engineers.
+In 2023, we heard that pedantic is all you need at the first AI engineer summit.
+In 2024, we heard again that pedantic is still all you need at the world's fair.
+Since then, that opinion has become consensus,
+with OpenAI and others officially recommending pedantic in their SDK and docs,
+as we covered on our Michelle Parkress episode on OpenAI's Structured Output.
+Now in 2025, we're back to complete the epic trilogy with Samuel Colvin,
+creator of pedantic and logfire, who has just launched his pedantic AI framework
+that will extend the principles and sublime developer experience of pedantic to your building
+of agents. We are very proud to also announce the new workshops track for the second AI
+engineer summit in New York City on February 22. This is a brand new day added to the schedule
+because we had so many great workshop signups and is available at no extra charge to everyone
+who already bought tickets. We are honoured that Samuel will be teaching his first ever workshop
+on pedantic AI there alongside other luminaries from OpenAI, Anthropic, DeepMind, Vercell,
+AWS, Neo4j, Letter, Solana Foundation and more.
+25 tickets remain for the workshop day. Full schedules have now been released.
+Our new website now lists our speakers and talks from DeepMind, Anthropic, OpenAI,
+Meta, Jane Street, Bloomberg, BlackRock, LinkedIn and more.
+Sponsorships have sold out but you can still apply for a late ticket at apply.ai.engineer.
+See you in two weeks. Watch out and take care.
+Hey everyone. Welcome to the latest base podcast. This is Alessio, partner and Soutillo,
+accessible partners and I'm joined by my co-host Swix, founder of SmallAI.
+Good morning. And today we're very excited to have San Colvin join us from pedantic.ai. Welcome.
+Thank you so much for having me. Yeah, it's great to be here.
+Sam, I heard that pedantic is all we need. Is that true?
+I would say you might need pedantic.ai and log fire as well. But it gets you a long way. That's
+for sure. Pedantic almost basically needs no introduction. It's almost 300 million downloads
+in December and obviously in the previous podcast and discussions we've had with Jason
+Liu, he's been a big fan and promoter of pedantic in AI.
+Yeah, it's weird because obviously I didn't create pedantic originally for users in AI,
+opposite predates LLMs. But it's like we've been lucky that it's been picked up by that community
+and you so, so widely. Actually, maybe, maybe we'll hear it right from you. What is pedantic
+and maybe a little bit of the origin story? The best name for it, which is not quite right,
+is a validation library. And I, we get some tension around that name because it doesn't
+just do validation. It will do coercion by default. We now have strict modes or you can disable that
+coercion. But like by default, if you say you want an integer field and you get in a string
+of one, two, three, it will convert it to 123 and a bunch of other sensible conversions.
+And as you can imagine, they're like semantics around exactly when you convert and when you don't
+is complicated. But because of that, it's more than just validation. Back in 2017, when I first
+started it, the like different thing it was doing was using type int to define your schema.
+That was controversial at the time. It was like genuinely disapproved off by some people. I think
+the success of pedantic and libraries like fast API that build on top of it means that today,
+that's no longer controversial in Python. And indeed, lots of other people have
+like copied that route. But yeah, it's a data validation library that uses type ints for the
+for the most part. And obviously does all the other stuff you want like serialization
+on top of that. But yeah, that's the core. Do you have any fun stories on how Jason's chemos
+ended up being kind of like the structure output standard for LLamps and we're involved in any
+of these discussions because I know opening eye was one of the early adopters. So did they reach
+out to you? Was there kind of like a structural council on that in open source that people were
+talking about? Or was it just at random? No, very much not. So I originally didn't implement
+Jason's schema inside pedantic. And then Sebastian Sebastian Ramirez fast API came along.
+And like the first I ever heard of him was over a weekend, like like 50 emails from him or 50
+like emails as he was committing to panantic adding Jason schema long pre version one.
+So the reason it was added was for open API, which is obviously close to the akin to Jason
+schema. And then yeah, I don't know why it was just that got picked up and used by open AI.
+It was obviously very convenient for us because it meant that not only can you do the validation,
+but because pedantic will generate you the Jason schema, it will it kind of can be one source of
+source of truth for structured outputs and tools. Before we dive in further on the on the AI side
+of things, something mildly curious about, you know, obviously there's a sod in JavaScript land.
+Every now and then there's a new sort of invoke validation library that takes over for quite a
+few years. And then maybe like some something else comes along is pedantic done, like the core
+pedantic. I've just come off a call where we were redesigning some of the internal bits.
+There will be a v3 at some point, which will not break people's code half as much as v2 as in v2
+was the was the massive rewrite into rust, but also fixing all the stuff that was broken back
+from like version zero point something that we didn't fix in v1 because it was a side project.
+We have plans to move some of the basically store the data in rust types after validation,
+not convert them to Python types. So then if you were doing like validation and then serialization,
+you would never have to go via Python type. We reckon that can give us somewhere between three
+and five times another three to five times speed up. That's probably like the biggest thing. Also,
+like changing how easy it is to basically extend pedantic and define how particular types like,
+for example, NumPy arrays are validated and serialized. But there's also stuff going on,
+for example, jitter, the JSON library that does in rust that does the the JSON parsing
+has SIMD implementation at the moment only for AMD 64. So they were like, we can add that,
+we need to go and add SIMD for other other instruction sets. So like, there's a bunch more we can do
+on performance. I don't think we're going to go and revolutionize pedantic, but it's going to
+continue to get faster, continue hopefully to get allow people to do more advanced things.
+We might add a binary format like seaboard for serialization for when you'll just want to put
+the data into a database and probably load it again from pedantic. So there are some things
+that will come along. But like, for the most part, it will just get should just get faster and cleaner.
+From a focus perspective, I guess, like as a founder too, like, how did you think about the
+AI interest writing and then how do you kind of prioritize, okay, this is worth going into more
+the and we'll talk about pedantic AI and all of that. What was maybe your early experience with
+Ella Lampton? When did you figure out, okay, this is like something we should like take seriously
+and focus more resources on it? I'll answer that, but I'll answer which I think is like a kind of
+parallel question, which is pedantic's weird, because pedantic existed obviously before I was
+starting a company, I was working on it in my spare time. And then beginning of 22, I started
+working on the rewrite in Rust. And I worked on it full time for a year and a half. And then
+once we started the company, people came and joined. And it's a weird project because that
+would never get signed off inside a startup. Like we're going to go off and three engineers are
+going to work full on for a year and Python and Rust writing like 30,000 lines of Rust just to
+release open source free Python library. The result of that has been excellent for us as a company,
+right? And it's made us remain entirely relevant. It's like, pedantic is not just used in the SDKs
+of all of the AI libraries, but I can't say which one, but one of the big foundational model
+companies, when they upgraded from Python to V one to V two, their number one internal metric
+of performance is time to first token that went down by 20%. So you think about all of the actual
+AI going on inside and yet at least 20% of the CPU or at least the latency inside requests was
+actually pedantic, which shows like how widely it's used. So we've benefited from doing that work,
+although it didn't would have never have made financial sense in most companies.
+In answer to your question about like, how do we prioritize AI? I mean, the honest truth is we've
+spent a lot of the last year and a half building good general purpose observability inside log
+fire and making pedantic good for general purpose use cases. And the AI has kind of come to us like
+we just, not that we want to get away from it, but like the appetite, both in pedantic and in log
+fire to go and build with AI is enormous, because it kind of makes sense, right? Like if you're
+starting a new greenfield project in Python today, what's the chance that you're using gen AI?
+80% let's say, globally, obviously it's like 100% in California, but even worldwide, it's probably
+80%. And so everyone needs that stuff. And there's so much yet to be figured out so much like space
+to do things better in the ecosystem in a way that like to go and implement a database that's
+better than Postgres is a like sissifium task, whereas building tools that are better for gen
+AI than some of the stuff that's about now is not very difficult, putting the actual models
+themselves to one side. And then at the same time, then you release pedantic AI recently,
+which is a, you know, agent framework. And early on, I would say everybody, like, you know,
+line chain and like a pedantic kind of like a first class report, a lot of these frameworks
+were trying to use you to be better. What was the decision behind we should do our own framework?
+Were there any design decisions that you disagree with, any workloads that you think people didn't
+support? Wasn't so much like design and workflow, although I think there were some things we've
+done differently. I think looking in general at the ecosystem of agent frameworks, the engineering
+quality is far below that of the rest of the Python ecosystem. There's a bunch of stuff that
+we have learned how to do over the last 20 years of building Python libraries and writing Python code
+that seems to be abandoned by people when they build agent frameworks. Now, I can kind of respect
+particularly in the very first agent frameworks like line chain, where they were literally figuring
+out how to go and do this stuff. It's completely understandable that you would like basically
+skip some standard best practice to kind of get something built. I'm shocked by the like quality
+of some of the agent frameworks have come out recently from like well respected names,
+which just seems to be opportunism. And I have little time for that. But like the early ones,
+like I think they were just figuring out how to do stuff. And just as lots of people have learned
+from pedantic, we were able to learn a bit from them. I think from like the gap we saw and the
+thing we were frustrated by was the production readiness. And that means things like type checking,
+even if type checking makes it hard. Like pedantic AI, I will put my hand up now and say it has a
+lot of generics. And you need to it's probably easier to use it if you've written a bit of rust and
+you really understand generics. But like, and that is we're not claiming that that makes it the
+easiest thing to use in all cases. We think it makes it good for production applications in big
+systems where type checking is a no brainer and Python. But there are also a bunch of stuff we've
+learned from maintaining pedantic over the years that we've gone and done. So every single example
+in pedantic AI's documentation is run as part of tests. And every single print output within an
+example is checked during tests. So it will always be up to date. And then a bunch of things that
+like I say are standard best practice within the rest of the Python ecosystem. But I'm not followed
+surprisingly, by some AI libraries, like coverage, linting, type checking, etc, etc, where I think
+these are no brainers, but like, weirdly, they're not followed by some of the other libraries.
+And can you just give a overview of the framework itself? I think there's kind of like the LLM
+calling frameworks that are the multi agent frameworks. There's the workflow frameworks,
+like what does pedantic I do? I glaze over a bit when I hear all of the different sorts of
+frameworks. But like, and I will tell you, when I build pedantic, when I build log file, and when
+I build pedantic AI, my methodology is not to go and like, research and review all of the other
+things, like kind of work out what I want, and I go and build it and then feedback comes and we
+adjust. So the fundamental building block of pedantic AI is agents. The exact definition of
+agents and how you wanted to find them is obviously ambiguous. And our things are probably sort of
+agentlets, not that we would want to go and rename them to agent lit, but like the point is you
+probably build them together to build something and most people will call an agent. So an agent
+in our case has, you know, things like a prompt, like system prompt, and some tools and a structured
+return type if you want it. That covers the vast majority of cases. There are situations
+where you want to go further and the most complex workflows where you want graphs. And I resisted
+graphs for quite a long time. I was sort of of the opinion, you need them and you could use standard,
+like Python flow control to do all of that stuff. I had a few arguments for people that I basically
+came around. Yeah, I can totally see why graphs are useful. But then we have the problem that by
+default, they're not type safe. Because if you have a like ad edge method, where you give the names
+of two different edges, there's no type checking, right? Even if you go and do some, I'm not all the
+grass libraries that AI specific. So there's a graph library called, but it does like, I basically
+does runtime type checking, ironically, using pedantic to try and make up for the fact that,
+like, fundamentally, their graphs are not type safe. Well, I like pedantic, but that's not a real
+solution to have to go and run the code to see if it's safe. There's a reason that starting type
+checking is so powerful. And so we kind of from a lot of iteration eventually came up with a system
+of using normally data classes to define nodes, where you return the next node you want to call,
+and where we're able to go and introspect the return type of a node to basically build the graph.
+And so the graph is inherently type safe. And once we got that right, I was, and I'm incredibly
+excited about graphs. I think there's like masses of use cases for them, both in JNI and other
+development. But also, software is all going to have interact with JNI, right? It's going to be
+like web. There's no going to be like a web department in a company is that there's just like,
+all the developers are building for web building with databases. The same is going to be true for
+JNI. Yeah, I think on your docs, you call an agent container that contains a system
+prompt function tool structure result dependency type model and then model settings.
+Are the graphs in your mind different agents? Are they different prompts for the same agent? What
+are like the structures in your mind? So we were compelled enough by graphs once we got them right
+that we actually managed to appear this morning. That means our agent implementation without
+changing its API at all is now actually a graph under the hood, as it is built using our graph
+library. So graphs are basically a lower level tool that allow you to build these complex workflows.
+Our agents are technically one of the many graphs you could go and build. And we just
+happen to build that one for you because it's a very common commonplace one. But obviously,
+there are cases where you need more complex workflows where the current agent assumptions
+don't work. And that's where you can then go and use graphs to build more complex things.
+You said you were cynical about graphs. What changed your mind specifically?
+I guess people kept giving me examples of things that they wanted to use graphs for. And my like,
+yeah, you could do that in standard flow control in Python became a like less and less compelling
+argument to me because I've maintained those systems that end up with like spaghetti code.
+And I could see the appeal of this like structured way of defining the workflow of my code.
+And it's really neat that like just from your code, just from your type hints,
+you can get out a mermaid diagram that defines exactly what can go and happen.
+Right. Yeah, you do have very neat implementation of sort of inferring the graph from type hints,
+I guess, is what I would call it. Yeah, I think the question always is I have gone back and forth.
+I used to work at temporal where we would actually spend a lot of time complaining about graph-based
+workflow solutions, like AWS that functions. And we would actually say that we were better
+because you could use normal control flow that you were already new and worked with.
+Yours, I guess it's like a little bit of a nice compromise. Like, it looks like normal
+Pythonic code, but you just have to keep in mind what the type hints actually do with the
+quote-unquote magic that the graph construction does. Yeah, exactly. And if you look at the internal
+logic of actually running a graph, it's incredibly simple. It's basically call a node, get a node
+back, call that node, get a node back, call that node. If you get an end, you're done.
+We will add in soon support for, well, basically storage so that you can store the state between
+each node that's run. And then you be the idea is you can then distribute the graph and run it
+across compute. And also, I mean, the other way, the other bit that's really valuable is across time,
+because it's all very well. If you look at like lots of the graph examples that like
+Claude will give you, if it gives you an example, it gives you this lovely enormous mermaid chart
+of like the workflow, for example, managing returns if you're an e-commerce company.
+But what you realize is some of those lines are literally one function calls another function.
+And some of those lines are wait six days for the customer to print their like piece of paper and
+put it in the post. And if you're writing like your demo project or you're like proof of concept,
+that's fine, because you can just say, and now we call this function. But when you're building,
+when you're in real in real life, that doesn't work. And now how do we manage that concept to
+basically be able to start somewhere else in our code? Well, this graph implementation makes it
+incredibly easy, because you just pass the node that is the start point for carrying on the graph,
+and it continues to run. So it's things like that, where I'm just like, yeah, I can just imagine how
+things I've done in the past would be fundamentally easier to understand if we had done them with
+graphs. You say imagine, but like right now, this pedantic, I actually resume, you know, six days
+later, like you said, or it says it's just like a theoretical thing we can go someday. I think it's
+basically Q&A. So there's an AI just asking the user a question. And effectively, you then call
+the CLI again to continue the conversation. And it basically instantiates the node and calls the
+graph without node again. Now, we don't have the logic yet for effectively storing state in the
+database between individual nodes that we're going to add soon. But like the rest of it is
+basically there. It does make me think that not only are you competing with line chain now,
+and obviously instructor. And now you're going into sort of the more like orchestrating things,
+like airflow, prefect, Daxter, those guys. Yeah, I mean, we're good friends with the prefect,
+guys. And temporal have the same investors as us. And I'm sure that my investor, Bogomol,
+would not be too happy if I was like, Oh, yeah, by the way, as well as trying to take on Datadog.
+We're also going off and trying to take on temporal and temporal than everyone else doing that.
+Obviously, we're not doing all of the infrastructure of deploying that, right? Yeah, at least. We're,
+you know, we're just building a Python library. And like, what's crazy about our graph implementation
+is sure there's a bit of magic in like, introspecting the return type, you know, extracting things from
+union stuff like that. But like, the actual calls, as I say, is literally call a function and get
+back a thing and call out. It's like incredibly simple and therefore easy to maintain. The question
+is how useful is it? Well, I don't know. Yeah, I think we have to go and find out. We have a whole,
+we've had a like slew of people joining our Slack over the last few days and saying,
+tell me how good pedantic AI is, how good is pedantic AI versus Langchain?
+And I refuse to answer. That's your job to go and find that out. Not mine. We've built a thing.
+I'm compelled by it, but I'm obviously biased. The ecosystem will work out what the useful tools are.
+Bogumil was my board member when I was at Temporal. And I think, I think just generally,
+also having been a workflow engine investor and participant in this space, it's a big space.
+Like everyone needs different flavors or orchestration. Yeah. The one thing that I would say, like yours,
+as a library, you don't have that much control over the infrastructure. I do like the idea that
+each new agent or whatever unit of work, whatever you call that, should spin up in its sort of
+isolated boundaries. Whereas yours, I think, around everything runs in the same process.
+But you ideally want to sort of spin out its own little container of things.
+I agree with you 100%. And it would work now, right? As in theory, you're just like, as long
+as you can serialize the calls to the next node, you just have to, all of the different containers,
+basically have to have the same code. I mean, I'm super excited about Cloudflow workers running
+Python and being able to install dependencies. And if Cloudflow could only give me my invitation
+to the private beta of that, we would be exploring that right now. Because I'm super excited about
+that as a compute level for some of this stuff, where exactly what you're saying, basically.
+You can run everything as an individual, like worker function and distributor,
+and it's resilient to failure, et cetera, et cetera.
+And it spins up like 1,000. This is simultaneously, you know, you want it to be sort of truly
+serverless at once. Actually, I know we have some Cloud Play friends who are listening,
+so hopefully they'll get you from the line. Especially.
+I was in Cloudflow's office last week shouting out them about other things that frustrate me.
+I have a love-hate relationship with Cloudflow. Their tech is awesome, but because I use it the
+whole time, I then get frustrated. So, yeah, I'm sure I will get there soon.
+The site engine on Cloudflow is Python supported for? Actually, I wasn't fully aware of what the
+status of that thing is. Yeah, so so Pyur died, which is Python running inside the browser in
+scripting is supported now by Cloudflow. They basically, they're having some struggles working
+out how to manage, ironically, dependencies that have binaries, in particular,
+pedantic, because these workers, where you can have thousands of them on a given
+metal machine, you don't want to have a different, you basically want to be able to have a shared
+memory for all the different pedantic installations effectively. That's the thing they work out.
+They're working out, but who's my friend, who is the primary maintainer of Pyur died,
+works for Cloudflow. And that's basically what he's doing is working out how to get Python running
+on running on Cloudflow's network. I mean, the nice thing is that your binary is really written
+in Rust, right? Which also compiles the web assembly. So maybe there's a way that you build,
+you have just a different build of pedantic and that ships with whatever your distro for Cloudflow
+workers. Yeah, so that's exactly what so Pyur died has built for for Python to call and for
+things like NumPy and basically all of the popular like binary libraries. Yeah, it's just
+basic. And you're doing exactly that, right? You're using Rust to compile the web assembly,
+and then you're calling that shared library from Python. And it's unbelievably complicated,
+but it works. Okay, staying on graphs a little bit more. And then I wanted to go to some of the
+other features that you have in pedantic AI. I see in your docs, there are sort of four levels
+of agents, there's single agents, this agent delegation, programmatic agent handoff. That seems
+to be what open AI swarms would be like. And then the last one in graph base control flow,
+would you say that those are sort of the mental hierarchy of how these things go?
+Yeah, roughly. Okay, you had some of the expression around open AI swarms.
+Well, and indeed, open AI have gotten in touch with me and basically, maybe I'm not supposed
+to say this, but basically says that Python's AI looks like what swarms would become if it was
+production ready. So yeah, I mean, like, yeah, which makes sense. Yeah, I mean, in fact,
+it was specifically saying how can we give people the same feeling that they were getting from
+swarms that led us to go and implement graphs, because my like just call the next agent with
+Python code was not a satisfactory answer to people. So it was like, okay,
+we've got to go and have a better answer for that that led us to get to graphs.
+Yeah, I mean, it's a minimal viable graph in some sense. So what are the shapes of graphs that
+people would should know? So the way that I would phrase this is I think anthropic did a very good
+public service and also kind of surprisingly influential blog posts, I would say, when they
+wrote Building Effective Agents, we actually have the authors coming to speak at my conference in
+New York, which I think you're giving a workshop at. Yeah, I'm trying to work on that, but yes,
+I think so. Tell me if you're not. But yeah, I mean, that was the first, I think, authoritative
+view of like what kinds of graphs exist in agents and let's give each of them a name so that everyone
+is on the same page. So I'm just kind of curious if you have community names or top five patterns
+of graphs. I don't have top five patterns of graphs. I would love to see what people are
+building with them. But but like it's been it's only been a couple of weeks. And of course,
+there's a point is that they because they're relatively unappinionated about what you can
+go and do with them, they don't suit like you can go and do lots of lots of things with them,
+but they don't have the structure to go and have like specific names as much as perhaps like
+some other systems do. I think what our agents are, which you have a name, like I'm at what it is,
+but this basically system of like decide what tools to call, go back to the center, decide what
+tools to call, go back to the center and then exit one form of graph, which as I say, like our
+agents are effectively one implementation of a graph, which is why under the hood, they are now
+using graphs. It'll be interesting to see over the next few years, whether we end up with these
+like predefined graph names or graph structures or whether it's just like, yep, I built a graph,
+or whether graphs just turn out not to match people's mental image of what they want and
+die away, we'll see. I think there is always a appeal, every developer eventually gets graph
+religion and goes, oh yeah, everything's a graph and then they probably over rotate and go go
+too far into graphs and then they have to learn a whole bunch of DSLs and then they're like,
+actually I didn't need this and they scaled back. I'm at the beginning of that process, I'm currently
+a graph maximalist, although I haven't cut out for actually any introduction yet, but yeah.
+This has a lot of philosophical connections with other work coming out of UC Berkeley
+on Compounding I systems. I don't know if you know of or care, this is the
+Gartner world of things where they need some kind of industry terminology to
+sell it to enterprises. I don't know if you know about any of that stuff.
+I haven't, I probably should, I should probably do it because I should probably get better at
+selling to enterprises, but no, no, I don't, not right now.
+This is really the argument is that instead of putting everything in one model,
+you have more control and maybe observability to, if you break everything out into composing
+little models and chaining them together, and obviously then you'll need an orchestration
+framework to do that. Yeah, and it makes complete sense. And one of the things we've seen with
+agents is they work well and they work well, but when they, even if you have the observability
+through log five that you can see what was going on, if you don't have a nice hook point to say,
+hang on, this has all gone wrong, you have a relatively blunt instrument of basically
+erroring when you exceed some kind of limit. But like, what you need to be able to do is
+effectively iterate through these runs so that you can have your own control flow where you're like,
+okay, we've gone too far. And that's where one of the neat things about our graph implementation
+is you can basically call next in a loop rather than just running the full graph. And therefore,
+you have this opportunity to, to break out of it. But yeah, basically, it's the same point,
+which is like, if you have too big a unit of work, to some extent, whether or not it
+involves J&A, but obviously it's particularly problematic in J&A, you only find out our foods
+when you've spent quite a lot of time and all money when it's gone off and done the wrong thing.
+Oh, drop on this. We're not going to resolve this here, but I'll drop this and then we can move on
+to the next thing. This is the common way that we developers talk about this. And then the machine
+learning researchers look at us and laugh and say, that's cute. And then they just train a bigger
+model and they wipe us out in the next training run. So I think there's a certain amount of,
+we are fighting the bitter lesson here. We're fighting AGI. And you know, when AGI arrives,
+this will all go away. Obviously, on lane space, we don't really discuss that because I think AGI
+is kind of this hand-wavy concept that isn't super relevant. But I think we have to respect that,
+for example, you could do a chain of thoughts with graphs and you could manually orchestrate
+a nice little graph that does reflect. Think about it if you need more inference-time
+compute. That's the hot term now. And then think again and scale that up. Or you could
+train strawberry and deep-seeker one. Right. I saw someone saying recently they were really
+optimistic about agents because models are getting faster exponentially. And I took a certain amount
+of self-control not to describe that it wasn't exponential. But my main point was, if models
+are getting faster as quickly as you say they are, then we don't need agents. And we don't really need
+any of these abstraction layers. We can just give our model and access to the internet across our
+fingers and hope for the best. Agents, agent frameworks, graphs, all of this stuff is basically
+making up for the fact that right now the models are not that clever. In the same way that if you're
+running a customer service business and you have loads of people sitting answering telephones,
+the less well-trained they are, the less that you trust them, the more that you need to give them
+a script to go through. Whereas, you know, so if you're running a bank and you have the lots of
+customer service people who you don't trust that much, then you tell them exactly what to say. If
+you have good and high net worth banking, you just employ people who you think are going to be charming
+to other rich people and set them off to go and have coffee with people, right? And the same is
+true of models, right? The more intelligent they are, the less we need to tell them like structure
+what they go and do and constrain the routes in which they take. Yeah, yeah, agree with that.
+So I'm happy to move on. There's sort of other parts of my identity I that are
+worth commenting on. And this is like my last rant, I promise. So obviously, every framework
+needs to do its sort of model adapter layer, which is, oh, you can easily swap from OpenAI,
+to Cloud, to Grok. You also have, which I didn't know about, Google GLA, which I didn't really
+know about until I saw this in your docs, which is generative language API. I assume that's AI studio?
+Yes, Google don't have good names for it. So Vertex is very clear. That seems to be the API that
+like some of the things use, although it returns five or three about 20% of the time. So Vertex?
+No, Vertex, fine. But yeah, I agree with that. I think we go the extra mile in terms of
+engineering is we run on every commit, at least commit to main. We run tests against the live
+models, not just about like a handful of them. And we had a point last week where, yeah, GLA
+one was failing every single run, one of their tests would fail. And we, I think we might even
+have commented out that one at the moment. So like all of the models fail more often than you
+might expect. But like, that one seems to be particularly likely to fail. But Vertex is the
+same API, but much more reliable. My rant here is that, you know, versions of this appear in
+Langchain and all every single framework has to have its own middle version of that.
+I would put to you and then, you know, this is this can be agreed to disagree that this is not
+needed in pathetic AI. I would much rather you adopt a layer like light LM or what's the other
+one in JavaScript port key. And that's their job. They focus on that one thing. And they normalize
+APIs for you, all new models are automatically added. And you don't have to duplicate this inside
+of your framework. So for example, if I wanted to use deep-seak, I'm out of luck because
+pedantic AI doesn't have deep-seak yet. Yeah, it does. Oh, it does. Okay, I'm sorry. Yeah,
+but you know what I mean? Should this live in your code? Or should it live in a layer that's
+kind of your API gateway that's a defined piece of infrastructure that people have?
+And I think if a company who are well like respected by everyone had come along and done this at the
+right time, maybe we should have done it a year and a half ago and said we're going to be the
+like universal AI layer, that would have been a like credible thing to do. I've heard varying
+reports of light LM is the truth. And it didn't seem to have exactly the type safety that we needed.
+Also, as I understand it, and again, I haven't looked into it in great detail, part of their
+business model is proxying the request through their own system to do the generalization.
+That would be an enormous put off to an awful lot of people. Honestly, the truth is I don't
+think it is that much work unifying the model. I get we are coming from, I kind of see your point.
+I think the truth is that everyone is centralizing around OpenAI's API as the one to do. So deep-seak
+support that. Grok with okay support that. Oh, llama also does it. Well, I mean, if there is that
+library right now, it's more or less the OpenAI SDK. And it's a very high quality. It's well
+type checked that uses pedantic. So I'm biased, but I mean, I think it's I think it's pretty well
+respected anyway. There's different ways to do this because also like, it's not just about
+normalizing APIs, you have to do secret management and all that stuff.
+Yeah. And there's also because the vertex, well, there's vertex and bedrock, which to one extent
+or another, effectively they host multiple models, but they don't unify the API, but they do unify
+the auth as I understand it, although we're halfway through doing bedrock. So I don't know
+about it that well, but like they're kind of weird hybrids because they support multiple models,
+but like I say, the auth is centralized. Yeah, I'm surprised they don't unify the API. That's
+seems like something that I would do. We can discuss all this all day. There's a lot of APIs.
+I agree. It would be nice if there was a universal one that we didn't have to go about.
+And I guess the other side of writing model and picking models like Ivels,
+how do you actually figure out which one you should be using? I know you have once.
+First of all, you have very good support for mocking in unit tests, which is something that
+a lot of other frameworks don't do. So my favorite Ruby libraries, VCR, because it just
+lets me store the HTTP requests and replay them. That part, I'll kind of skip. I think you have
+busy like this test model where like just through Python, you try and figure out what the model might
+respond without actually calling the model. And then you have the function model where people can
+kind of customize outputs. Any other fun stories, maybe from there, or is it just what you see
+is what you get, so to speak? On those two, I think what you see is what you get. On the Ivels,
+I think watch this space. I think it's something that like again, I was somewhat cynical about
+for some time, still have my criticisms about some of the, well, it's unfortunate that there's
+so many different things that call Ivels. It would be nice if we could agree what they are and what
+they're not. But look, I think it's a really important space. I think it's something that we're
+going to be working on soon, both in Python to AI and in log fire to try and support better,
+because like it's an unsolved problem. Yeah, you do say in your doc that anyone who claims to know
+for sure exactly how your Ivels should be defined can safely be ignored.
+We'll leave that sentence when we tell people how to do the request.
+Exactly. I was like, we need a snapshot of this today.
+And so let's talk about Ivel. So there's kind of like the vibe Ivels, which is what you do when
+you're building, right? Because you cannot really like test it that many times to get statistical
+significance. And then there's the production Ivel. So you also have log fire, which is kind of
+like your observability product, which I tried before. It's very nice. What are some of the
+learnings of that from building an observability tool for our lamps? And yeah, as people think about
+Ivels, even like what are the right things to measure? What are like the right number of samples
+that you need to actually start making decisions? I'm not the best person to answer that is the
+truth. So I'm not going to come in here and tell you that I think I know the answer
+on the exact number. I mean, we can do some back of the envelope statistics calculations to work out
+that like having 30 probably gets you most of the statistical value of having 200 for
+by definition, 15% of the work, but the exact like, how many examples do you need? For example,
+that's a much harder question to answer because it's, you know, it's deep within the how models
+operate. In terms of log fire, one of the reasons we've built log fire the way we have,
+and we allow you to write SQL directly against your data, and we're trying to build the like
+powerful fundamentals of observability is precisely because we know we don't know the answers. And
+so allowing people to go and innovate on how they're going to consume that stuff and how they're
+going to process it isn't we think that's valuable, because even if we come along and offer you an
+EVAR framework on top of log fire, it won't be right in all regards. And we want people to be
+able to go and innovate and being able to write their own SQL connect to the API and effectively
+query the data like it's a database, but SQL allows people to innovate on that stuff. And then
+that's what, you know, allows us to do it as well. I mean, we do a bunch of like testing
+what's possible by basically writing SQL directly against log fire as any user could.
+I think the other the other really interesting bit that's going on in observability is open
+to the imagery is centralizing around semantic attributes for JNI. So it's a relatively new project,
+a lot of it's still being added at the moment, but basically the idea that like they unify how
+both SDKs and or Asian frameworks send observability data to to any open telemetry endpoint. And so
+again, we can go and having that unification allows us to go and like basically compare different
+libraries compared different models much better. That stuff is in a very like early stage of
+development. One of the things we're going to be working on pretty soon is basically,
+I suspect, I will be the first Asian framework that implements those semantic attributes properly,
+because again, we control head and we can say this is important for observability, whereas
+most of the other Asian frameworks are not maintained by people who are trying to do
+observability with the exception of Langchain where they have the observability platform,
+but they chose not to go down the open telemetry route. So they're like
+planning their own far out and there's you know, there are a lot there even further away from
+standardization. Can you maybe just get a quick overview of how hotel ties into the AI workflows?
+There's kind of like the question of is, you know, a trace and a span like a LLM call, is it
+the agent is kind of like the broader thing you're you're tracking? How should people think about it?
+Yeah, so they have a there's a PR that I think may have now been merged from someone at IBM
+talking about remote agents and trying to support this concept of remote agents within
+JNI. I am not particularly compelled by that because I don't think that like that's actually
+did by any means the common use case, but like I suppose it's fine for it to be there.
+The majority of the stuff in hotel is basically defining how you would instrument
+a given calls when LLM. So basically the actual LLM call, what data you would
+send to your telemetry provider, how you would structure that. Apart from this slightly odd stuff
+on remote agents, most of the like agent level consideration is not yet implemented in is not
+yet decided effectively. And so there's a bit of ambiguity. Obviously what's good about hotel is
+you can in the end send whatever actually you like. But yeah, there's quite a lot of churn in that
+space and exactly how we store the data. I think that one of the most interesting things though is
+that if you think about observability traditionally, it was sure everyone would say our observability
+data is very important. We must keep it safe. But actually companies work very hard to basically
+not have anything that sensitive in their observability data. So if you're a doctor in a hospital and
+you search for a drug for an STI, the sequel might be sent to the observability provider,
+but none of the parameters would say it wouldn't have the patient number or their name or the drug.
+With JNI, that that distinction doesn't exist because it's all just like messed up in the text.
+If you have that same patient asking LLM how to what drug they should take or how to stop smoking,
+you can't extract the PII and not send it to the observability platform. So the sensitivity
+of the data that's going to end up in observability platforms is going to be a basically different
+order of magnitude to what you would normally send to Datadog. Of course, you can make a mistake
+and send someone's password or their card number to Datadog. But that would be seen as a mistake
+whereas in JNI, a lot of data is going to be sent. But I think that's why companies like
+Langsmith and are trying hard to offer observability on-prem because there's a bunch of companies who
+are happy for Datadog to be cloud hosted but once self-hosted self-hosting for this observability
+stuff with JNI. And are you doing any of that today because I know in each of the spans you have
+like the number of tokens, you have the context, you're just storing everything and then you're
+going to offer kind of like a self-hosting for the platform basically. So we have scrubbing
+roughly equivalent to what the other observability platforms have. So if we see password is the key,
+we won't send the value. But like I said, that doesn't really work in JNI. So we're accepting,
+we're going to have to store a lot of data and then we'll offer self-hosting for those people who
+can afford it and who need it. And then this is I think the first time that most of the workloads
+performance is depending on a third party. If you're looking at Datadog data, usually it's your app
+that is driving the latency and like the memory usage and all of that, here you can have spans
+that maybe take a long time to perform because the GLA API is not working or because like OpenAI
+is kind of like overwhelmed. Do you do anything there since like the provider is almost like the
+same across customers, you know, like are you trying to surface these things for people and say,
+hey, this was like a very slow span but actually all customers using OpenAI right now are seeing
+the same thing. So maybe don't worry about it or not yet. We do a few things that people
+don't generally do in hotels. So we send, we send information at the beginning of a trace as well
+as sorry at the beginning of a span as well as when it finishes. By default, the hotel only
+sends you data when the span finishes. So if you think about a request which might take like 20 seconds,
+even if some of the intermediate spans finished earlier, you can't basically place them on the page
+until you get the top level span. And so if you're using standard hotel, you can't show anything
+until those requests are finished. When those requests are taking a few hundred milliseconds,
+it doesn't really matter. But when you're doing gen AI calls or when you're like running a batch
+job that might take 30 minutes, that like latency of not being able to see the span is like crippling
+to understanding your application. And so we've, we do a bunch of study complex stuff to basically
+send data about a span as it starts, which is closely related. Yeah, any thoughts on all the other
+people turn build on top of open telemetry in different languages, too? There's like the
+open and the imagery project, which doesn't really roll off the tongue. But how do you see the future
+of this kind of tool says everybody going to have to build? Why does everybody want to build their
+own open source observability thing to then tell? I mean, we are not going off and trying to instrument
+the likes of the OpenAI SDK with the new semantic attributes, because at some point that's going
+to happen and it's going to live inside hotel and we might help with it. But we're a tiny team,
+we don't have time to go and do all of that work. So open an elementary like interesting project,
+but I suspect eventually most of those semantic like that instrumentation of the big of the SDKs
+will live, like I say, inside the main open telemetry repos. What happens to the agent frameworks?
+What data you basically need at the framework level to get the context is kind of unclear.
+I don't think we know the answer yet. But I mean, I was on the, I guess this is kind of semi-public
+as it was on, I was on the call with the open telemetry call last week talking about JNI,
+and there was someone from her eyes talking about the challenges they have trying to get
+open telemetry data out of Langchain where it's not like natively implemented. And obviously,
+they're having quite a tough time. And I was realizing, hadn't really realized this before,
+but how lucky we are to primarily be talking about our own agent framework where we have the
+control rather than trying to go and instrument other people's.
+Sorry, I actually didn't know about this semantic conventions thing. It looks like,
+yeah, it's merged into main hotel. What should people know about this? I had never heard of it before.
+Yeah, I think it looks like a great start. I think there's some unknowns around how you send
+the messages that go back and forth, which is kind of the most important thing of all.
+And that has moved out of attributes and into hotel events. Hotel events in turn are moving from
+being on a span to being their own top level API where you send data. So there's a bunch of churn
+still going on. I'm impressed by how fast the hotel community is moving on this project.
+I guess everyone else gets that this is important. And it's something that people crying out to get
+instrumentation off. So I'm pleasantly surprised at how fast they're moving, but it makes sense.
+I'm just going to browsing through the specification. I can already see that this basically bakes in
+whatever the previous paradigm was. So now they have like, you know, jennyius.usage.pront tokens
+and jennyi.usage.completion tokens. And obviously now we have reasoning tokens as well.
+And then only one form of sampling, which is top P. You're basically baking in sort of
+reifying things that you think are important today, but like it's not a super foolproof way of
+doing this for a future. Yeah, I mean, that's what's neat about hotels. You can always go
+and send another attribute. And that's fine. It's just there were a bunch that are agreed on.
+But I would say, you know, to come back to your previous point about whether or not we should be
+relying on one centralized abstraction layer, this stuff is moving so fast that if you start
+relying on someone else's standard, you risk basically falling behind because you're relying
+on someone else to keep things up to date or you fall behind because you got other things going on.
+Yeah, yeah. That's fair. That's fair. Any other observations just about building log
+fire actually? Let's just talk about this. You would say announced log fire. I was kind of
+only familiar with the log fire because of your series A announcement. I actually thought you were
+making a separate company. I remember some amount of confusion with you when that came out. So to
+be clear, it's a gigantic log fire. And the company is one company that has kind of two products,
+an open source thing and an observability thing, correct? Yeah. I was just kind of curious,
+like any learning is building log fire. So classic question is do you use Clickhouse?
+Is this like the standard persistence layer? Any learning is doing that?
+We don't use Clickhouse. We started building our database with Clickhouse, moved off Clickhouse
+onto timescale, which is a Postgres extension to do analytical databases. Wow. And then moved
+off timescale onto data fusion. And we're basically now building a waste. It's it's data fusion,
+but it's kind of our own database. Bogamel is not entirely happy that we went through three
+databases before we chose one. I'll say that. But like we've got to the right one in the end.
+I think we could have realized that timescale wasn't right. I think Clickhouse, they both
+thought us a lot. And we we're in a great place now. But like, yeah, it's been, it's been a real
+journey on the database in particular. Okay. So, you know, as a database nerd, I have to like
+double click on this, right? Like, so Clickhouse is supposed to be the ideal back end for anything
+like this. And then moving from Clickhouse to timescale is another counterintuitive move that I
+didn't expect because, you know, timescale is like an extension on top of Postgres,
+not super meant to for like high volume logging. But like, yeah, tell us tell us that those decisions.
+So at the time, Clickhouse did not have good support for post for Jason. I was speaking to
+someone yesterday and said Clickhouse doesn't have good support for Jason and got roundly
+stepped on because apparently it does now. So they've obviously gone and built their proper
+Jason support. But like back when we were trying to use it, I guess a year ago or a bit more than
+a year ago, everything happened to be a map. And maps are a pain to try and do like looking
+up Jason type data and obviously all these attributes, everything you're talking about there in terms
+of the gen AI stuff, you can choose to make them top level columns if you want. But the simplest
+thing is just to put them all into a big Jason pile. And that was a problem with Clickhouse.
+Also, Clickhouse had some really ugly edge cases like by default, or at least until I complained
+about it a lot, Clickhouse thought about two nanoseconds was longer than one second,
+because they compared intervals just by the number, not the unit. And I complained about that a lot,
+and then they caused it to raise an error and just so you have to have the same unit.
+Then I complained a bit more on event. I think as I understand it now, they have some,
+they convert between units, but like stuff like that when all you're looking at is
+when a lot of what you're doing is comparing the duration of spans was really painful.
+Also things like you can't subtract two date times to get an interval, you have to use the date
+sub function. But like the fundamental thing is because we want our end users to write SQL,
+the quality of a SQL, how easy it is to write matters way more to us than if you're building
+like a platform on top where your developers are going to write the SQL and once it's written and
+it's working, you don't mind too much. So I think that's like one of the fundamental differences.
+The other problem that I have with the Clickhouse and in fact timescale is that like the ultimate
+architecture, the like snowflake architecture of binary data in object store queried with
+some kind of cache from nearby, they both have it, but it's closed source and you only get it if
+you go and use their hosted versions. And so even if we had got through all the problems with
+timescale or Clickhouse, we would end up like, you know, they would want to be taking their
+80% margin and then we would be wanting to take that would basically leave us less space for margin.
+Whereas data fusion, properly open source, all of that same tooling is open source and for us as
+a team of people with a lot of rust expertise, data fusion, which is implemented in Rust, we can
+literally dive into it and go and change it. So for example, I found that there were some
+slowdowns in data fusions, string comparison kernel for doing like string contains,
+and it's just rust code and I could go and rewrite the string comparison kernel to be faster.
+Or for example, data fusion, when we started using it, didn't have JSON support.
+So obviously, as I said, it's something we needed. We were able to go and implement that in a weekend
+using our JSON parser that we built for primary core. So it's the fact that like data,
+data fusion is like for us, the perfect mixture of a toolbox to build a database with not a database.
+And we can go and implement stuff on top of it in a way that like,
+if you were trying to do that in Postgres or in click out, I mean, click out to be easier
+because it's C++ relatively modern C++. But like, as a team of people who are not C++ experts,
+that's much scarier than data fusion for us. Yeah, that's a beautiful rent.
+That's funny. Most people don't think they have agency on these projects. They're kind of like,
+oh, I actually use this. They're actually used that. They're not really like,
+what should I pick so that I can attribute the most back to it, you know? So, but I think like,
+you obviously have a open source first mindset. So that makes a lot of sense.
+I think if we were probably better as a starter, we're a better startup and faster moving and
+just like, like a headlong determined to get in front of customers as fast as possible,
+we should just start with clickouts. I hope that long term we're in a better place for having
+work with data fusion. And we like, we're quite engaged now with the data fusion community.
+Andrew Lamb, who maintains data fusion is an advisor to us. We're in a really good place now,
+but yeah, it's definitely slow to style, relative to just like building on clickouts and moving
+as fast as we can. Okay, we're about to zoom out and do pedantic run and all the other stuff. But,
+you know, my last question on log fire is really, you know, at some point, you run out sort of
+community goodwill just because like, oh, I use pedantic. I love pedantic. I'm going to use log
+fire. Okay, then you start entering the territory of the data dogs, the centuries and the honeycombs.
+Yeah. So where are you going to really spike here? What differentiator here?
+I wasn't writing code in 2001, but I'm assuming that there were people talking about like web
+observability, and then web observability, stopping a thing, not because the web stopping a thing,
+but because all observability had to do web. If you were talking to people in 2010 or 2012,
+they would have talked about cloud observability. Now that's not a term because all observability
+is towel first, the same is going to happen to gen AI. And so whether or not you're trying to
+compete with data dog or with a rise in Langsmith, you've got to do first class, you got to general
+purpose observability with first class support for AI. And as far as I know, we're the only people
+really trying to do that. I mean, I think data dog is starting in that direction. And to be honest,
+I think data dog is a much like scarier company to compete with than the AI specific observability
+platforms. Because in my opinion, and I've also heard this from lots of lots of customers,
+AI specific observability, where you don't see everything else going on in your app is not
+actually that useful. Our hope is that we can build the first general purpose observability platform
+with first class support for AI. And that we have this open source heritage of putting developer
+experience first that other companies haven't done for all. I'm like a fan of data dog and what
+they've done. If you search data dog logging Python, and you just try as a like a non observability
+expert to get something up and running with data dog and Python, it's not trivial, right? That's
+something sentry found amazingly well. But like there's an enormous space in most of observability
+to do DX better. Since you mentioned sentry, I'm curious how you thought about licensing and all
+of that obviously your MIT license, you don't have any rolling license like sentry has, where like
+you can only use an open source like the one year old version of it. Was that a hard decision?
+So to be clear, log fire is co-sourced. So pedantic and pedantic AI MIT licensed and like
+properly open source and then and then log fire for now is is completely close source. And in fact,
+the the struggles that sentry have had with licensing and the like weird pushback the community
+gives when they take something as close source and make it source available. We just meant that
+we just avoided that whole whole subject matter. I think the other way to look at it is like in
+terms of either headcount or revenue or dollars in the bank, the amount of open source we do as a
+company is we've got to be up there with the with the most prolific open source companies and like
+I said per head. And so we didn't feel like we were morally obligated to make log fire open source.
+We have pedantic, pedantic is the you know, a foundational library in a Python that and
+now pedantic AI are our contribution to open source and then log fire is like openly for profit,
+right? As in we're not claiming otherwise, we're not sort of trying to walk a line of
+its open source, but we really we want to make it hard to deploy. So you probably want to pay us.
+We're trying to be straight that it's to pay for. We could change that at some point in future,
+but it's not an immediate plan. All right. So the first one, I saw this new, I don't know if it's
+like a product you're building the pedantic that run, which is a Python browser sandbox.
+What was the inspiration behind that? We talk a lot about code interpreter for for a lamps.
+I'm an investor in a company called e2b, which is a code sandbox is as a service for remote
+execution. Yep. What's the pedantic that runs? Sorry. So I'm going to run this again completely
+open source. I have no interest in making it into a product. We just needed a sandbox to be able to
+demo log fire in particular, but also pedantic AI. So it doesn't have it yet, but I'm going to add
+basically a proxy to opening eye in the other models so that you can run pedantic AI in the
+browser, see how it works, tweak the prompts, et cetera, et cetera. And we'll have some kind of
+limit per day of what you can spend on it or like what what spend is the other thing we wanted to
+be able to do was to be able to when you log in to log fire, we have quite a lot of drop off of
+like a lot of people sign up find it interesting and then don't go and create a project. And my
+intuition is that they're like, Oh, okay, cool. But now I have to go and like open up my development
+environment, create a new project, do something with the right token. I can't be bothered. And
+then they drop off and they forget to come back. And so we wanted a really nice way of being able
+to say click here and you can run it in the browser and see what it does. As I think happens to all
+of this, I sort of started starting to think if I could do it a week and a half ago, got something
+to run and then ended up, you know, improving it and suddenly aspect, it spent a week on it. But
+I think it's useful. Yeah, I remember maybe a couple two, three years ago, there were a couple
+companies trying to build in the browser terminals. Exactly where this is like, you know, you go on
+GitHub, you see a project that is interesting. But now you get like cloned and running on your
+machine. Sometimes it can be sketchy. This is cool, especially since you already make
+all the docs runnable in your docs. Like you said, you kind of test them. It sounds like you
+might just have. So yeah, the plan is that on every example in finance, there's a button that
+basically says run, which takes you in to pedantic.run has that code there. And depending on how hard
+we want to push, we can also have it like hooks out to logfire automatically. So there's a like,
+hey, just come and join the project. And you can see what that looks like in logfire.
+That's super cool. Yeah, I think that's one of the biggest, personally for me, one of the biggest
+drop offs from open source projects is kind of like do this and then as long as something as soon
+as something doesn't work, I just drop off. So it takes some discipline, you know, like there's been
+very many versions of this that I've been through in my career where you have to extract this code
+and run it and it always falls out of date. Often we would have this concept of transclusion,
+where we have a separate code examples repo that we want to eat that and they'll be pulled into our
+docs and it never works, never really works. It takes a lot of discipline. So kudos to you on this.
+And it was years of maintaining pedantic and people complaining, hey, that example is out of date
+now that eventually we went and built PyTest examples, which is another the hardest to search
+for open source project we ever built because obviously, as you can imagine, if you search PyTest
+examples, you get examples of how to use PyTest, but the PyTest examples will basically go through
+both your code inside your doc strings to look for Python code and to mark down in your docs
+and extract that code and then run it for you and run linting over it and soon run type checking
+over it. So and that's how we keep our examples up to date. But now, now we have these like hundreds
+of examples, all of which are runnable and self contained, or if they if they refer to the previous
+example, it's already structured that they have to be able to import the code from the previous
+example. So why don't we give someone a nice place to just be able to actually run that using
+open AI and see what the output is. Lovely. All right, so that's kind of
+about anti and the notes here, I just like going through people's x account not Twitter.
+So for four years, you've been saying we need a plain tax successor to Jupiter notebooks.
+Yeah. I think people may be a gun the other way, which may get even more opinionated like with
+a x and like all these kind of like notebook companies. Well, yes. So in reply to that,
+someone replied and said, Marimo is that? And sure enough, Marimo is really impressive.
+And I've subsequently spoken to spoken to the Marimo guys and got to angel invest in there.
+I think it's see ground. So like, Marimo is very cool. It's doing that. And they,
+Marimo also, no books also run in the browser again, using pie diet. In fact,
+I nearly didn't build by anti dot run because we were just going to use Marimo. But my concern
+was that people would think log fire was only to be used in notebooks. And I wanted something that
+like, I really felt more basic, felt more like a Tamilnalton so that no one thought it was like,
+just the notebooks. Yeah, there's a lot of no book haters out there.
+And indeed, I have very strong opinions about that, you know, proper like Jupiter notebooks,
+this idea that like, you have to run the cells in the right order. I mean, a whole bunch of things.
+It's basically like worse than Excel or similarly bad to Excel. Oh, so you are a no book hater,
+then invested in a notebook. I have this rant called notebook, which was like, my attempt to
+build more tones if there is mostly just a rant about the 10 reasons why no books are just as bad
+as Excel. But Marimo et al, the new ones that are text based at least solve a whole bunch of
+those problems. Agree with that. Yes. I was kind of wishing for something like a better notebook.
+And then I saw Marimo, I was like, Oh, yeah, these guys have our head of me on this.
+I don't know if I would do the sort of annotation based thing. Like, you know, a lot of people
+love the, Oh, annotate this function. And it just adds magic. I think similarly to what Jeremy Howard
+does with his stuff, it seems a little bit too magical still. But hey, it's a big improvement
+from notebooks. Yeah. Yeah, great. Just as on the L M usage, like the ipi MB file, it just not,
+it's just not good to put in the, you know, lamps. So yeah, just let alone, I think should be
+out. It's not good to put an ellipse. It's really not they freak out.
+And get either. I mean, okay, well, we will, we will kill ipi MB at some point. And yeah, any
+other takes, I was going to ask you just like brought now just about the London scene, you know,
+what's it like building out there, you know, over over the pond? I'm an evening person. And the
+good thing is that I can get up late and then work late because I'm speaking to people in the US a
+lot of the time. So I got invited just earlier today to some drinks reception about AI at 10
+Downing Street with the Prime Minister. So I'm feeling positive about the UK right now and AI.
+But I think, look, like everywhere that isn't the US and China knows that we're like way behind on
+AI. I think it's good that the UK is like beginning to say this is an opportunity, not just a risk.
+I keep being told you should be at more events. You should be like, you know, hanging out with AI
+people more. My instinct is like, I'd rather sit on my computer and write code. I think that like
+it's probably a more effective way of getting people's attention. I'm like, a bit of me thinks
+I should be sitting on Twitter, not on not in San Francisco, just into people. I think it's
+probably a bit of a bit of a mixture and I could probably do with being in the in the States a bit
+more. I think I'm going to be over there a bit more this year. But like, there's definitely
+the risk if you're in somewhere where everyone wants to chat to you about about code where you
+don't write any code and that's a fairly mode. I would say definitely for sure there is a scene
+and one way to really fail at this is to just be involved in that scene and have that eat up your
+time. But be at the right events and the ones that I'm running are good events, hopefully.
+What I say is like, use those things to produce high quality content that travels
+in a different medium than you normally would be able to. Because there's some selectivity,
+because there's a broad there's a focus community on that thing, they will discover your work more,
+it will be highly produced, you know, that's a pitch over there on why at least I do conferences.
+And then in terms of talking to people, I always think about there's a three strikes role. So,
+after a while it gets repetitive, but maybe like the first 10, 20 conversations you have
+about people, if the same stuff he's coming up, that is an indication to you that people like want
+a thing and it helps you prioritize in a more long form way, then you can get in shallow
+interactions online, right? So that in person, eye to eye, like, this is my pain at work and you
+see the pain and you're like, oh, okay, like if I do this for you, you will love our tool and like,
+you can't really replace that. It's customer interviews, really.
+Yeah, I agree entirely with that. I think that I think you're right on a lot of that.
+And I think it's very easy to get distracted by what people are saying on Twitter and LinkedIn.
+That's another thing. It's hard to correct for which of those people are actually
+building this stuff in production in like serious companies on which of them are
+on day four of learning to coach because they have equally strident opinions. And in like a few
+characters, they see equally valid, but which one's real and which one's not or which one is from
+someone who really knows their stuff is hard to know. Anything else, Sam?
+What do you want to get off your chest? Nothing in particular. I think I really enjoyed our conversation.
+I would say, I think if anyone who has like looked at a finance AI, we know it's not complete yet.
+We know there's a bunch of things that are missing, embeddings, like storage, MCP and
+tool sets and stuff like that. We're trying to be deliberate and do stuff well. And that involves
+not being feature complete yet. But like, keep coming back and looking in a few months because
+we're pretty determined to get that. We know that this stuff is like, whether or not you think
+that AI is going to be the next Excel, the next internet or the next industrial revolution
+is going to affect all of us enormously. And so as a company, we get that like,
+making play down to AI, the best station framework is existential for us.
+You're also the first seriously company I see that has no open rules for now. Every
+founder that comes in our podcast, the goal to action is like, please come work with us.
+We are not hiring right now. I would love,
+blood me for love fire to have a bit more commercial traction and a bit more revenue before I,
+before I hire some more people. It's quite nice having a few years of runway, not a few months of
+runway. So I'm not in any any great appetite to go and like destroy that runway overnight by
+hiring another another 10 people, even if like the whole team is like rushed off their feet,
+kind of doing, as you said, like three to four startups at the same time.
+Awesome, man. Thank you for joining us.
+Thank you very much.
+

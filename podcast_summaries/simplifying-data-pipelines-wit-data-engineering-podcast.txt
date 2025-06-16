@@ -1,0 +1,59 @@
+Here's a structured summary based on the podcast transcript:
+
+1. **Major Themes & Technology Trends:**
+
+   a) Durable Execution: A concept focused on ensuring software does what it's supposed to do, exactly once, especially in distributed systems.
+   
+   Quote: "Durable execution is a concept that's very old but the term is fairly new. You've probably dealt with it with reliable pipelines or error correction, things like that. But really all it means is executing in a way where the software does what it's supposed to do and in our case, exactly once."
+
+   b) Simplification of Data Pipelines: DBOS aims to reduce complexity in data pipeline management.
+   
+   Quote: "By using debossed and the concepts of durable compute, you can eliminate a lot of the extra things that you need to do on your data pipeline. You can eliminate the check at the end, whether the data got through. You can eliminate a lot of the cues."
+
+2. **Areas of Discussion/Debate:**
+
+   a) Versioning in Long-Running Workflows: Managing code versions for workflows that may take weeks or months to complete.
+   
+   Quote: "Versioning is key, and versioning is a first class citizen within the transact library because of the exact reason that you just pointed out is you don't want your workflow to change versions in the middle or maybe you do, but you want to have control over that."
+
+   b) Database Choice for Durable Execution: The selection of PostgreSQL as the core database for DBOS.
+   
+   Quote: "Postgres was settled on mostly because it's just it's bullet proof. It's known to be bullet proof. It's been around a long time. There's a lot of research that has gone into making it stronger and better and a lot of people attacking it to make sure that it works."
+
+3. **Potential Investment Ideas:**
+
+   a) Durable Execution Platforms: Tools that provide exactly-once semantics and failure recovery for distributed systems could be a growing market.
+
+   b) AI Workflow Management: Systems that can handle long-running AI workflows with human-in-the-loop components.
+
+4. **Surprising/Counterintuitive Observations:**
+
+   a) Code Reduction: The use of durable execution can significantly reduce the amount of code needed.
+   
+   Quote: "In some cases we've seen it reduces code by over 90% because you don't need all of those edge cases, branches, error corrections."
+
+   b) Time Travel Debugging: DBOS offers a unique debugging capability due to its state storage approach.
+   
+   Quote: "Because of the way that we store every input and output, you can step forward and backward through actual inputs and outputs. So you can use this for testing locally, debugging something that didn't work right."
+
+5. **Companies Named & URLs:**
+
+   - DBOS (no URL provided)
+   - Reddit (www.reddit.com)
+   - Netflix (www.netflix.com)
+   - PayPal (www.paypal.com)
+   - Apple (www.apple.com)
+   - eBay (www.ebay.com)
+   - Amazon (www.amazon.com)
+   - Superbase (likely meant Supabase - supabase.com)
+   - NeonDB (neon.tech)
+   - CockroachDB (www.cockroachlabs.com)
+   - Yugabyte (www.yugabyte.com)
+   - MongoDB (www.mongodb.com)
+
+HOST: Tobias Macy
+GUESTS: Jeremy Edberg
+
+## Potential Early-Stage VC Investments (via Harmonic Filter)
+
+No valid domains found in the summary to query Harmonic.

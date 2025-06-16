@@ -1,0 +1,1276 @@
+ Our whole team is only like 1500 years, you know, we use a ton of Devin when we're building Devin.
+ Most folks on the team are definitely working with up to five Devin's at once.
+ And so Devin merges like several hundred pull requests into production in the Devin code bases every month.
+ What percentage of your PRs are Devin versus humans right now?
+ It's in the neighborhood of a quarter or so.
+ Where do you think this will be at the end of the year?
+ Honestly, we expect it to be a decent bit more than half.
+ You guys are so ahead of how companies work with AI engineers.
+ AI is going to be the biggest technology shift of our lives.
+ So most of the big tech revolutions that we've had over the last 50 years,
+ like personal computer and the internet and mobile phone,
+ they all had this big hardware component that was a big part of the distribution.
+ Folks who were building for those industries kind of saw their market grow and grow and grow,
+ basically steadily year over year as the number of people with mobile phones increased, right?
+ As the number of people connected to the internet increase.
+ One of the things which is already I'd say different in AI is just how explosive the technology can be.
+ There's no weight on hardware distribution.
+ It means that the space is just growing so exponentially.
+ How is it the fact of being an engineer and building changing?
+ I think there's going to be way more programmers and way more engineers.
+ A few years from now, pretty quickly, the foreign factor of what it means to be a programmer,
+ obviously, is going to change.
+ But at the end of the day, of course, the discipline is all about just being able to tell your computer what to do.
+ And so in that lens, I really think that programming is only going to become more and more important
+ as AI gets more powerful.
+ Today, my guest is Scott Wu.
+ Scott is the co-founder and CEO of Cognition, which makes a product called Devin.
+ The world's first autonomous AI software engineer.
+ Unlike other AI tools that I've highlighted on this podcast, Devin is designed to act like an actual remote engineer
+ that you chat with like you would with any other human engineer through Slack or through its dedicated website.
+ When Devin launched about a year ago, it was very much a junior engineer.
+ Over the past year, they've made a lot of progress and Devin is now being used by tons of companies in production.
+ We chat about how their engineering team of 15 uses Devin's to build Devin,
+ including how every engineer uses about five Devin's each to help them code and move faster,
+ how a quarter of their pull requests today are committed by Devin's,
+ and that they expect this to be over 50% by the end of the year.
+ We also talk about how Scott imagines software engineering is going to look in the future
+ and how the role of an engineer changes from a coder to an architect.
+ We also get into the eight pivots that they went through before landing on this path,
+ why Scott believes AI tools like this will lead to more engineering hiring versus less.
+ Also where the name Devin comes from and so much more, this episode is going to blow your mind.
+ I highly recommend you listen to it.
+ If you're at all interested about where engineering product building and AI is going,
+ a huge thank you to Claire Vo for suggesting a bunch of great questions for this conversation.
+ If you enjoy this podcast, don't forget to subscribe and follow it in your favorite podcasting app or YouTube.
+ Also, if you become an annual subscriber of my newsletter, you get a year free
+ of linear superhuman notion for plexity and granola. Check it out at lennysnewsletter.com and click
+ bundle. With that, I bring you Scott Woo. This episode is brought to you by interpret.
+ Interpret unifies all your customer interactions from gong calls to zendes tickets to twitter
+ threads to app store reviews and makes it available for analysis. It's trusted by leading product
+ orgs like Canva, Notion, Loom, Linear, Monday.com, and Strava to bring the voice of the customer
+ into the product development process, helping you build best in class products faster.
+ What makes interpret special is its ability to build and update customer specific AI models
+ that provide the most granular and accurate insights into your business, connect customer
+ insights to revenue and operational data in your CRM or data warehouse to map the business
+ impact of each customer need and prioritize confidently, and empower your entire team
+ to easily take action on use cases like win loss analysis, critical bug detection,
+ and identifying drivers of churn with interpret AI assistant wisdom. Looking to automate your
+ feedback loops and prioritize your roadmap with confidence like Notion, Canva, and Linear?
+ Visit enter.com/lenny to connect with the team and get two free months when you sign
+ up for an annual plan. This is a limited time offer that's interpret.com/lenny.
+ Many of you are building AI products, which is why I am very excited to chat with
+ Brandon Fu, founder and CEO of Paragon. Hey, Brandon.
+ Hey, Lenny. Thanks for having me. So, integrations have become a big deal for AI products.
+ Why is that? Integrations are mission critical for AI for two reasons. First,
+ AI products need contacts from the customer's business data, such as Google Drive files,
+ Slack messages, or CRM records. Second, for AI products to automate work on behalf of users,
+ AI agents need to be able to take action across these different third-party tools.
+ So, where does Paragon fit into all this?
+ Well, these integrations are a pain to build, and that's why Paragon provides an embedded
+ platform that enables engineers to ship these product integrations in just days instead of
+ months across every use case, from rag data ingestion to agentic actions.
+ And I know from firsthand experience that maintenance is even harder than just building
+ it for the first time. Exactly. We believe product teams should focus engineering efforts
+ and competitive advantages, not integrations. That's why companies like u.com, AI21,
+ and hundreds of others use Paragon to accelerate their integration strategy.
+ If you want to avoid wasting months of engineering on integrations that your customers need,
+ check out Paragon@useparagon.com/lenny.
+ Scott, thank you so much for being here, and welcome to the podcast.
+ Thanks so much for having me. Excited to be on.
+ I'm really excited to have you here because you are building, and you've been building,
+ something that is very different from what a lot of other AI companies have been doing for a
+ long time. Although they are starting to converge to where you guys are now, we're going to talk
+ about that. And it's also just such a unique point in the history of AI and just the journey
+ of AI. And so it's really cool to be chatting right now. And I feel like we're going to
+ chat again in a few years and be like, "Wow, we were so right about so much and so wrong about
+ so much." Yeah. And so I'm excited to have you here.
+ Let's start with talking about Devin, giving people understanding just what the heck Devin
+ is. This is the main product that you guys build. What is the simplest way to understand
+ what is Devin? Absolutely. And so Devin is a fully autonomous software engineer that is
+ going to work on tasks end to end. And so there are a lot of great tools for all parts of the
+ stack of the AI code workflow. What Devin does is it is a full asynchronous workflow. And so
+ you can tag Devin on an issue in Slack. You know, you're talking about an issue and you tag Devin.
+ You can tag Devin in linear, you can have Devin. And Devin will make pull requests in your
+ GitHub. And so it's very much built to work with engineering teams as your junior engineer.
+ Amazing. Okay. So I remember when you guys launched this, there was like this big
+ pitch of this is your new AI engineer. And it was really good at a lot of stuff. It wasn't
+ great at other things. It's been a year now about since you guys launched. Is that right?
+ Yeah. Yeah. What's the best way to think about like the level of seniority that engineer had
+ back in the day when you guys launched? And then the level of seniority of engineer today,
+ if that's, I don't know, measure of how to think about Devin.
+ Yeah. And it's crazy to think about, by the way, because a year ago when we did the initial
+ launch, I mean, people didn't really believe that an agent was possible. And it was a very,
+ I mean, it was a very different time. It's like start of 2024. Things with model capabilities
+ were definitely quite a bit earlier on reasoning, especially was quite a bit earlier on.
+ And yeah, I mean, in the time since then, it's obviously developed a lot. I think in terms of
+ practical skills, you know, we, there are some comparisons we make. Sometimes we kind of say,
+ well, when we got started, it was kind of like a high school CS student. And then as time
+ went on, it became more of like a college intern. And now it's like a junior engineer.
+ But I would say though that those are more like rough guidelines, because I really like
+ the phrase jagged intelligence, for example, because there are obviously there are certain
+ things that it is much better at than a human. There are certain things that are, it's much
+ worse at than a human. And I think over the last year, we've, we've learned a lot, especially
+ about not just coding agents, but agents in general, just like really building out like
+ how all of us should be working and interacting with agents as part of our flow.
+ And so a lot of the things that we built, I mean, it's, you know, there was no Slack,
+ there was no GitHub integration, there was no linear, there was no interactive planning
+ phase working back and forth, there was no way to touch up Devin's code.
+ And so a lot of the features that we've built on the product sites and some have really been
+ about basically figuring out how to, how to make working with Devin and handing off tasks to
+ Devin as smooth of an experience as possible. That's so interesting. So a lot of the work
+ has gone not into how do we just make Devin the best possible engineer, but it's had to
+ work with this new type of entity that we haven't ever worked with.
+ I think it's a 50/50 of both. You know, I think the, the capabilities, obviously, you know, have
+ improved a ton and we've seen these get better and get measurably better. But I think the
+ other side of it is everything to do with, yeah, really the product interface and the tools and
+ so on. And I think, you know, I think today, folks generally know how to use chatbots and
+ to work with chatbots, right? And that's an interface that that people are familiar with.
+ And obviously with agents, it's, you know, it's, it's, it's, it's still like a real curve, I think,
+ to learn how to use them and how to get the most out of them. And so it's, it's really
+ exciting to see a lot of others starting to build and do a lot more in the agent space as well.
+ But I think this is the kind of thing that we're all really figuring out together as a space.
+ What can you share about just the scale of Devin at this point, whatever you're
+ comfortable sharing? And then just where do you think the level of Devin's coding abilities
+ will be in a year?
+ So we work with companies of all stages and sizes. You know, on the smallest end,
+ it goes to, you know, startups of just one or two people who are using Devin to,
+ to build out a lot of their kind of like an initial prototype or initial product all the
+ way up to, you know, big public companies, Fortune 100 companies, or, or public banks
+ or things like that who are using Devin, like across their, across their engineering teams.
+ In general, it's, you know, we've seen a huge range of, of the use cases there.
+ And obviously the kinds of engineering work that you're doing at a one or two person
+ startup is very different from the kind of work that you're doing at a, at a public bank.
+ But, but throughout, it's all been basically, yeah, being, being that junior body of yours,
+ that, that, that, that makes you go faster and, and really multiplies you, I would say.
+ You know, I think there's a, it can multiply you as an engineer, obviously, by just like,
+ letting you work with your own team of Devin's, instead of having to be kind of like fully
+ sacredness on a single task. And then it's also kind of like, multiplying your team and
+ multiplying your, your team's knowledge base, because Devin really accumulates a lot of the
+ knowledge, uh, from, from working with every member of your team and is able to bring that
+ into each new session. Awesome. We're going to show people how to actually work later in
+ the podcast. We're going to do a few live demos. But let's actually go to the beginning
+ of the journey. What's just the origin story of Devin? How did this all begin?
+ The, the founding team, I mean, most of us have known each other for, for years and years and
+ years, actually. And, and for, for almost everyone, this is our first time working together. But
+ we've known each other a long time. And we all actually had our own kind of journeys in AI
+ for the last, last decade or so. Um, and so for myself, you know, I, I ran a company called this,
+ before this called Lunch Club, which was an AI for a professional networking product.
+ And I ran that for about five years. And, you know, my co-founders, one of my co-founders,
+ Stephen, was, was one of the first engineers at a company called Scale AI, which has obviously
+ grown a lot and done very well. My other co-founder, Walden, was an early engineer at a company
+ called Cursor, which has also obviously grown a lot and done really well. And, and our whole
+ team kind of like, was kind of like that, you know, many of us knew each other from,
+ from, from competitive programming and math competitions. But we had stayed very closely
+ in touch, you know, in the, in the decades since then. And we've all kind of all had
+ our own journeys. And so, you know, we had, we had one person who was running teams at
+ Nuro, we had one person who was at Waymo, someone who had their own YC tools start up
+ for, for machine learning. And, and we were really excited to build something together.
+ And, and this was around like late 2023. So about a year and a half ago at this point.
+ And yeah, when we got started, I mean, I think there, there were a couple things that we felt
+ really strongly about. And one was that reinforcement learning was really working and was going
+ to be the next big paradigm shift in capabilities. You know, back then, it was, you know,
+ the initial chat GPT launch in 2022. And, and, and those models were to first order where,
+ you know, what we would call imitation learning in AI, right, which is basically, you know,
+ you have the model read all the text that you can find on the internet and then train it to
+ talk like somebody on the internet would talk. Right. And, and they're, they're kind of,
+ obviously a lot more details on top of that. But that's, that's kind of the first order
+ pass of what was really done. And it was amazing. Right. I mean, it passed a Turing test.
+ It was able to respond and to have encycloped knowledge about a lot of things. And I think
+ this new paradigm, which we've gotten into over this last year or year and a half is,
+ is really high compute RL, which is, which is a very different paradigm, right, which is
+ basically the ability to go and do work on tasks and put something together and then
+ be evaluated on whether that was correct or incorrect and use that knowledge to decide
+ what to do and, and, and to learn from that. Right. And so, you know, we felt very strongly
+ that that was going to happen. I think it for us is code was the natural thing to work on
+ for a couple of reasons. One, because, you know, we're all programming nerds ourselves and so
+ teaching you how to code is about as close as it gets for us. But, but also because, you know,
+ code has this whole automated feedback loop, right, where you can run the code. And, and
+ that is the kind of automated feedback that really feeds into the RL, which makes these
+ models so great at coding. And then the other thing that we felt very strongly about was that
+ the product experience was going to shift from, you know, what I'll call like text completion
+ to agents, basically. Right. And, and, and to first order, I would kind of say, you know,
+ there's been a lot of great experiences in text completion. You know, it's been used
+ for marketing. It's been used for customer support. It's been used for education.
+ And in CODA, obviously as well as, you know, the GitHub co-pilot was, was, was kind of really
+ that the, the, the dominant product of that, that initial wave, right. But I think that,
+ the big shift that we really felt we would see is moving from kind of this, this text-to-text
+ model to an actual autonomous system that can make decisions, that can interact with
+ the real world that can take in feedback, that can iterate and, and take multiple steps to solve
+ problems. And, you know, now we call that agents, but, but, but that was what we were really
+ excited about at the time. So it was always coding. It was always agents. And in some ways,
+ that kind of feels like it's, it should have been, you know, like, been, been clear from the start,
+ but even with that, it's, I feel like we've pivoted like eight times or something within
+ coding agents, you know, over the last year and a half. So I just noticed recently all the AI,
+ top AI companies, sort of not all, but many of them, the product that is winning is different,
+ has a different name from the company, which is not typical cursors, any spheres,
+ bold to stack blitz, you guys are cognition labs, like V zero is for self. And it just
+ tells me like, these all emerged later in the company's journey. And they tried a bunch of
+ stuff and like, oh, wow, this thing worked. And it's so interesting that it's so common
+ amongst these. Yeah. And there's even, I mean, opening eye and chat should be tee and
+ anthropic and flawed. And yeah, it's funny. Yeah. Yeah, I agree. So, so, you know, when we got
+ started, it wasn't even really a company. I mean, it's more like a project or a hack is on
+ almost, you know, we got a bunch of, we booked an Airbnb basically for a couple of weeks is
+ around Thanksgiving time. And, and just got a bunch of people together who were just excited
+ to hack on some projects and build something cool. And it's funny. Actually, the first,
+ the first thing that we were building for actually was more like solving like,
+ these more like contest programming problems and using like an agentic loop to really do
+ better on that. And so obviously, if you run your code on the test cases, you can evaluate,
+ you know, that there's a lot of agent work that you can do there to try and do better. And,
+ and that we spent some time on that initially. And then, you know, we, we kind of gone from,
+ I mean, the story of the whole company for us in some sense has been going from hacker
+ house to hacker house, you know. So, so, so after that, you know, we had another hacker
+ house. And that's where kind of some of the initial ideas for Devin came and really
+ building like a software engineering agent and not just like a coding agent and having
+ it interact with a lot of these tools. But, but even then, there were so many iterations and,
+ you know, even like the idea of talking to Devin, for example, was like, you know,
+ it was something that we had to come up with, right? Initially, it was just like, you hand
+ off a task. And then it works. And then it shows you like this whole finished code, right?
+ And now obviously, it's like, you can jump in at any time, you can get feedback on the plan,
+ you guys can scope out the task together, you know, when you're working with Devin.
+ And a lot of these things we had to develop, obviously. And certainly, we've learned a lot
+ about the use cases, the form factor. We've made a lot of big improvements and step
+ function improvements on the capabilities and and Devin's ability to use tools and
+ debug and make decisions. And so it's, yeah, it's been a fun journey. I mean, I think like,
+ I would say that the grounding question for us really, which is one that we think about all
+ the time, is, is really just like, what, what is the future of software engineering, you know,
+ and how, how should we be working with AI to write code? Because I think at the end of the
+ day, of course, that's, that's, that's what underlines all of the product decisions that we make.
+ So yeah, I like that you're asking the juicy question I wanted to get to before I ask it,
+ just for the history books, how, when did you guys start kind of hacking around and when
+ did Devin launch? Or was that how long was that period? Yeah. So we started in November of
+ 2023, which was then, yeah, just like hackathon mode. We officially made it into a company
+ around the start of 2024. And then our initial launch was in March. And so it was like, non,
+ I mean, it's been nonstop for the entire last, you know, 17 months. But you know, it's getting,
+ getting to the launch and then obviously working with enterprises and developing the
+ product a lot more, building in building and getting it to work for a lot of practical use
+ cases. And then going, you know, getting it, making it fully available self serve in December
+ of last year. And, and now we've rolled out 2.0, obviously just a few weeks ago. And so it's
+ been a, been a very busy time for us understatement of the century.
+ Let me ask this question, because you touched on a bit, this whole idea of Devin as a person
+ and this idea of creating a personality for Devin, it's unlike any other, I believe AI app,
+ no one else has like a name and like a, you don't think of it as a person,
+ what made you guys decide to go that approach and just how do you design it to work well that
+ way? I would say it's a decision we're pretty proud of. I would say, I mean, I think there's
+ a lot of different product experiences out there. And I think the thing that really makes Devin
+ unique in what it does is that you can really hand off. And, and more and more what we've
+ seen, honestly, is that, that I think a lot of kind of explaining that the Devin experience
+ to folks is really just explaining it to explain it as, yeah, this is your junior body, you know,
+ and, and that goes for a lot of the parts of the flow where in the onboarding, for example,
+ you know, initially, I would say like, we've definitely had a lot of users come in and just
+ kind of see the blank screen and not really know or, or they'd ask, hey, like, I'm going to do
+ this whole big re-architecture of the whole code base. And, and basically, you know, what,
+ what we've learned over time is to basically get folks to think more like, whoa, whoa, whoa,
+ you know, let's work on getting the repository set up first. Like, let's make sure we hand
+ Devin a couple of one pointer tasks so it can get familiar with the code base.
+ You know, let's get it the thing. If Devin needs to be able to test the code or run the
+ linter or CI or things like that, obviously, we want to make sure Devin's got its own virtual
+ machine set up to be able to do that. And similarly, like, I think the usage pattern,
+ you know, I think often it wasn't clear. And obviously, you can sit and just kind of watch
+ Devin do it action by action and work that way. But, but we, we found that the, you know,
+ the best workflow, really, as a team building off stuff, was to, to work with multiple
+ Devin's and to run them asynchronously and to, to kick them off and to only jump in,
+ basically, as you needed to provide feedback or, or, or, or steer the plan or anything like that.
+ And so in many ways, I think it's, I think Devin, as a name, really, is our attempt to
+ kind of capture the soul of that as a product where it really is, you know, treating it like
+ a bit more of an autonomous entity that, that you can, you can hand off tasks that you can
+ work with that you should be teaching and learning with over time.
+ I want to come back to an area you started us down. And then I took us away from, which is
+ impact on software engineering and then how a software engineering is going to change.
+ So there's kind of two parts of this, just like when people are using Devin today,
+ say in the, like this year, how, how is it the active being an engineer and building
+ changing for those companies? What does that look like?
+ You know, by the way, we're all, we're all software engineers ourselves. You know,
+ it's like, I, I'm a programmer by training and still a programmer at heart, certainly.
+ And, and, you know, I, I think the way that we've always thought about it is there's
+ layers of abstraction and there's tools. And one way I would say it at a high level is kind of,
+ you know, I think of AI in general as, yeah, I mean, computers are obviously getting more
+ and more intelligence and are able to do more and more. And, you know, it's, it's possible
+ there may come a day where computers truly do everything that we do. And humans are not
+ responsible for any of it. You know, I don't expect that to come particularly soon.
+ But, but, but I guess what I would say is, you know, until that point,
+ for as long as we're still part of the equation, one of the most important things to do, obviously,
+ is, you know, for, for us, as humans is, is to instruct our computers on what we want and
+ what we want to build and what we want to do. Right. And, and software engineering is,
+ you know, we think of it today, obviously, as Python and C++ and JavaScript and, and all
+ these things. But at the end of the day, of course, the discipline is all about just
+ being able to tell your computer what's to do. And so in that lens, I really think that
+ programming is, if anything is only going to become more and more important as AI gets
+ more powerful. And, and I think the thing that's really, that's, that's, that's really exciting
+ for us is, yeah, it's, it's like really like seeing that, that kind of iterative transformation.
+ And so you asked how, what things look like today. And I would say, yeah, it's, it really
+ is like having like a junior buddy or really a team of junior buddies that you can work with,
+ right. And so every engineer on our team, you know, we use a ton of Devin when we're
+ building Devin. And so Devin merges like several hundred pull requests into production
+ in the Devin code bases every month, you know, which is, I mean, our whole team is only like
+ 1500 years since it's, it's a pretty sizable fraction of all the code that we write.
+ And, and the way that we use it is basically, yeah, everyone's got their whole team of
+ devins. You know, if, if you're going to be like looking through various issues,
+ if you're going through feature requests, if you're going through bugs, if you're going
+ through new paradigms that you want to build, then it is naturally the case that there's a
+ lot of handoff points where you just say, Hey, at Devin, here's what's going on. Can you
+ please take a, take a pass at this, right? And sometimes Devin will be able to do the task
+ 100% autonomously and just makes the PR and then you merge the PR. And that's great.
+ Sometimes you want to be able to jump in for the 10 or 20% that really needs your help.
+ Maybe there's a few details with how exactly you want to scope it or how you're architecting
+ this feature, or maybe you want to go and test the front end at the end yourself to
+ make sure it looks exactly the way that you want and give your your one or two lines of
+ feedback after that, right? But a lot of it is, is really, yes, it's kind of like,
+ yeah, learning, learning to, learning to work with Devin to be able to just do more in
+ parallel and build more. What percentage of your PRs are Devin versus humans right now?
+ Yeah, I'd have to look, but it's in the neighborhood of a quarter or so of all of us.
+ Yeah. Yeah. That's, and then what was it like six months ago?
+ Oh, it's, yeah, it's grown. It's time for, I mean, we've seen it growing exponentially
+ internally ourselves as well. And so it's, you know, it's kind of an interesting one where,
+ again, it's always both the capabilities and the product interface. And so, I think the
+ intelligence has increased a lot. But the other thing, of course, is that, you know,
+ we've spent a lot of time in figuring out how to build and to really kind of build for an
+ interface where you can get Devin's value on tasks where Devin is able to do the 80 or 90%.
+ So Devin's obviously not, you know, it's obviously not perfect and it'll make mistakes and so
+ on. And a lot of the question is basically, yeah, how do you scope out your initial task
+ with Devin and then just kind of set Devin off and, and have it go and do the things that
+ you want to do? You know, how do you come in at the end and review and give feedback?
+ How do you make sure Devin learns over time? How are you able to kind of just check in as,
+ as needed and of course correct if you want to?
+ Okay. So today about quarter of your PRs are Devin's, where do you think this will be
+ at the end of the year? What would you guess?
+ I think by the end of this year, we expect it to be more than half. And I mean, as time
+ goes on, you know, one of the things that we've seen is just it's, you're able to do more
+ and more and more work asynchronously, right? And you're able to hand off more and more.
+ You know, I think the soul of programming and the soul of software engineering has really been
+ about through, through all the areas, you know, not just now, but you know, even when it was
+ assembly, right? And even when it was, it was Pascal and even when it was punch cards or
+ whatever. I think the soul of it has really been basically just about defining the problem
+ that you're, you're facing and really thinking through exactly what is the solution that
+ you want to build, you know, thinking through the architecture, thinking through the details
+ and really kind of mapping out in your mind exactly what you want to build, basically,
+ and what you want to have your computer do. And I think that's, you know, that's, that's what
+ makes software engineering really great. And I think that's like the funnest part of software
+ engineering. I think at the same time, that's probably, you know, in the neighborhood of 10%
+ of the average software engineer's time, right? Because 90% of the time is, you know, you've
+ got this Kubernetes error that you've got to debug and you have to see what went wrong
+ into the system crash or, you know, you left some port open and this is, you know, messing up
+ or, you know, there's a bug report that you have to take care of or you've got to migrate
+ your code or you got to upgrade to a new version or, or things like that, you know,
+ a lot more kind of like implementation. And one of the ways that we've kind of thought
+ about Devin and building Devin is really allowing engineers to go from brick later
+ to architect, so to speak. And a lot of it is, yeah, just like getting to the point where,
+ where you can do the high level directing and you can basically specify things exactly
+ how you want. You know, I think it is very much about still having the human in control
+ and having the human able to do the full specification, but just multiplying the magnitude
+ of, of what you can do and what you can build, you know, in one day or what hour or however long.
+ So in the future, say someone is trying to get into software engineering thinking
+ about becoming an engineer, first of all, do you think people should, you know,
+ classic question, if it was getting these days, should you still learn to code? So it's just,
+ I'd love your perspective there. And then two, four people that are engineers today,
+ what skills do you think will be more and more important and then less important
+ in this discussion of moving from brick later to architect?
+ Yeah, for sure. I love this question. And first of all, the question of, you know,
+ whether you should still learn to code, my answer would be absolutely yes.
+ I think to a large extent, you know, computer science, when you take computer science
+ classes and when you learn these fundamentals, sure, you're learning a little bit about,
+ you know, how a particular language is syntax works or something like that. But honestly,
+ most of what you're learning really is about the ability to logically break down problems for
+ number one. And two, I would say is just yet the model of a computer and a lot of these
+ decisions and a lot of the abstractions that we've built over time, right? Like what is a
+ database and how should you think about a database, you know, what is a garbage collection system
+ and how do those work and all of these different pieces. And the reason I think that's important
+ is because it's the same with a lot of these other, you know, arguably, we've already kind of
+ gone through these phases in programming. And I think this next one is going to be,
+ you know, somewhat faster and somewhat bigger. But in many ways, a similar flavor,
+ which is, you know, when you work with Python today, obviously, a lot of things are already
+ abstracted away from you. And in some sense, you know, someone from 50 years ago might already
+ call Python, you know, you just get to explain in English what you want. And now the computer
+ does it for you, right? And that's great. And I think it's really powerful. It's opened it
+ up. I mean, we have far more programmers, obviously, than we ever have before because of that.
+ But but I would say, certainly, you know, as you're building your skills as an engineer,
+ it really helps a lot to understand the abstractions and to be able to peel the layers beneath,
+ right? And so, you know, folks will use the assembly, for example, if they're really
+ performance optimizing a piece of code. But also, you know, it's in order to build good
+ systems and to understand these things, you certainly want to understand these abstractions
+ of, you know, how, how does networking work? What is TCP/IP, like exactly, or what happens
+ with this Python code when it gets interpreted or or all of these details? And I think similarly,
+ I think we will get to a state where, yeah, you know, with with no experience at all,
+ you're going to be able to build some pretty cool stuff and and to do some pretty amazing
+ work just by explaining what it is that you want. But I think that, you know, for
+ quite some time, you'll really want to be able to to think precisely about the details,
+ to peel back the abstractions, to be very, very, very precise about what it is that you
+ want to build and how. And then, for skills that you think are more and more valuable for
+ engineers, like, where should engineers today be leaning more and more into and versus like,
+ you know, forget, forget this, I don't need to think about this anymore.
+ For sure. And I think architect, I mean, you know, we already have a term for architect
+ and engineering. And I think it is directly the directionally, the right term. And I think
+ a lot of it is really, you know, it's, it's, I think, one thing to kind of just do a routine
+ implementation and and write boilerplate code and things like that. And I would say that,
+ you know, in many ways, AI coding has already made us much faster at that,
+ right? But I think a lot of the core questions of understanding very complex systems and
+ working in the context of the whole company and thinking about, you know, the product that
+ you're building or the work that you're doing and understanding, okay, what are the problems
+ that we want to solve? How do we want to solve those problems? What is exactly the
+ solution that we want to build? What are all these key decisions and trade-offs that we're
+ going to be making? Basically, I think folks who are able to do that really, really well
+ are just going to be, be able to leverage themselves more and more. And so if anything,
+ I think there's going to be, I think there's going to be way more pro-, way more programmers
+ and way more engineers, you know, a few years from now than there are today. And I think,
+ I think pretty quickly, the form factor of what it means to be a programmer, obviously,
+ is going to change. In some sense, it already has. But, but, but I, I think there's just
+ going to be so much more for us to build. You know, I think one of the great things folks
+ talk about Jevin's Paradox all time. I mean, software is truly the, the kind of the shining
+ example of Jevin's Paradox where we have always managed as a society to, to find more and
+ more things that we want to build software for and build more code for it. And, and I
+ really think there's, there's, there's a lot more out there to do. For people that don't know
+ Jevin's Paradox, can you briefly explain it? Absolutely. Yeah. So Jevin's Paradox just says
+ that as the, the price of something goes down, it can still be the case that the total
+ spend on it actually goes up. And, and, and so, you know, you can think about this with money,
+ you can think about this with time or resources. But, but the direct version here is, I think,
+ as it becomes easier and easier to program and as programming becomes more and more effective,
+ I think we're going to have a lot more programmers. You know, it's, it's, I think in a kind of zero
+ some view, you might say, well, we're going to be, we're going to be 10 times faster at software
+ sharing. And so it means that we're going to need 10 times to share software shares, right?
+ But I think in practice, what really is going to happen is actually, we're going to build
+ even more than 10 times as much code. And because, you know, all, all of the work that we do is
+ so capped, obviously, on, on our ability to actually build and execute and iterate,
+ we're going to have so many great ideas out there. We're going to have so many great products
+ out there. People are going to build a lot more personalized experiences, for example,
+ and, and, and, and there's going to be a lot to do. Going back to the way you guys use
+ Devin, so he said that every engineer has kind of this fleet of Devin's. How many Devin's
+ per engineer do you find most people are working with these days at, at your company?
+ Yeah, so it's very asynchronous. And so obviously you can kick them up,
+ and start them up and shut them down, basically, as you see fit. But, but most folks on the team
+ are definitely, yeah, is, are, are often working with, with up to five Devin's at once, I would
+ say. And it's nice flow where it's, you know, it's, you think through, all right, what are the
+ five things that we want to get done today? One, two, three, four, five, you have Devin
+ one, do number one, you have Devin two, do number two, done three. And the thing about it is,
+ a lot of it is, it, it, for what it's worth, you know, I think it's, it's taken us some time to,
+ to really kind of like, to, to adjust to it and get to the point where it's,
+ it's really intuitive for us. But I think it's, yeah, it's, it's, it's definitely a different
+ experience where you're, you're handing off most things asynchronously. And the goal for each
+ of your tasks is to be there for the parts that really need your expertise, where either,
+ you really, really need to define exactly what it is that you're solving for and what you're
+ building, or maybe some of the more complex parts where you want to, to, to see your Devin
+ towards, you know, particularly what kinds of changes you want to make. You know, I want the
+ class to be set up this way. And I want, you know, we should go and change all the downstream
+ references to this as well, or whatever. But basically having, having Devin do the bulk of
+ the work asynchronously with you. And then how many engineers do you guys have roughly?
+ Yeah. So our engineering team today is about 15 people. 15, one five.
+ One five. Holy moly. Okay. And then each one has five-ish Devin's. Yeah. So there's five times
+ the number of Devin's as engineers. What I love about this is this is just like a glimpse into
+ where the future is going. You guys are so ahead of how companies work with AI engineers.
+ And so seeing how you operate is going to be, it's essentially how most companies will end
+ up operating. Yeah. And for what it's worth, you know, it's, we've, we've already seen
+ the shift I would say ourselves where it's, in terms of the team, obviously it's, you know,
+ folks don't spend that much of their time just writing out boilerplate or just kind of doing
+ pure like implementation of features. And people get to spend like much more of their time
+ focused on really just thinking about the core questions of, yeah, how do we make Devin better?
+ What is the right interface for Devin? You know, what is the right flow or the right
+ set of features that's really going to make this as creative an experience as possible.
+ And that's, that's how we like things. When is the point you reach where you're, there's take-off
+ of this being the bif, you know, like your Devin starts moving so much further ahead of
+ everyone else. Like, once you have enough Devin's doing all these things, they're just like
+ wherever and your 10 years, 20 years, 30 years, 100 years ahead. Honestly, I think as a community,
+ you know, I think the kind of all of us as engineers around the world that I think we're
+ going to have to think about this and build for this and kind of adapt to these new technologies.
+ But what I would say is, yeah, I think more and more, and especially as capabilities get better,
+ but certainly, you know, even in steady state today, I think, you know, I think more and more,
+ I think things are going to shift towards this kind of asynchronous flow. And one of the reasons
+ I would say for that is, in the real world, you're just capped by real world constraints,
+ right? And I think that one way to put it is kind of like, and don't take these numbers
+ exactly, but, but you know, it's kind of like the first word of math of it is, of course,
+ you know, being able to write files or to complete this function or complete this line or things
+ like that, you know, it helps a ton. And so it's a really great experience, right? There's a lot
+ of parts of building software that obviously are almost not that at all, right? It's, you know,
+ if you have a bug that you're trying to fix, and so you, you spin up the local server,
+ you click around on your own products on the front end and try to reproduce the bug yourself,
+ you know, once you have the error, you take a look at data dog, and you see what happened,
+ and you try to find other errors in the logs, you know, you look at those files and you see
+ what went wrong, you make some edits, maybe you go and like rerun the whole process again,
+ now that you, you know, just to make sure your change looks right, right? And that's a lot of,
+ you know, what it means to be a software engineer, right? And, you know, these are
+ processes that take real time. I think we're going to shift more and more towards this
+ agentic workflow, because, you know, that's in some ways, it's kind of like that the way to
+ really get to that, you know, 200%, 500%, 1000% gains that that that will be getting to you
+ with software engineering over the next few years. Okay, enough talk. Let's show people what
+ the heck this actually looks like. Let's, you've got a couple of demos prep that show a few
+ use cases that you found helpful. So you're going to pull up your screen and then we'll
+ kick it off and then we'll talk as it's happening. And so, so the whole process, obviously,
+ of working with Devin is working a synchronously. And so I thought it'd be cool for us to actually
+ just watch Devin a little bit in action. And then, you know, we can, we can go through some
+ other examples of work that Devin's done or things that Devin does for us, even on our team,
+ for example, but, but, but then we can check back in a synchronously with our, with our
+ Devin after. So I'll share this real quick. And the, the key thing, you know, that I would
+ just emphasize here is a lot of it, obviously, is really just about, yeah, thinking about,
+ as a software engineer or as engineers ourselves or engineering teams,
+ engineering teams, PMs and so on, you know, what are the, what are the things that we would
+ want to build that we would want to hand off. And so, you know, we have Devin set up with our own
+ Devin code base, for example. So I'll go ahead and kick off a Devin for that. And so I'll just
+ say, hey, add Devin. I'm on with my friend, Lenny. Hi, Devin. Can you modify Devin Webat?
+ Two. Let's, let's, let's feature. Let's feature your, your, your newsletter as part of the,
+ yeah, as part of the Devin, uh, was to do it. Like I'm the real Devin Web site.
+ Lenny's site. And so we're going to kick this off. As you can see, Devin gets started
+ instantly and, and, and, and goes ahead and respond. And again, you can work with this
+ asynchronously. You can work with it synchronously as well. For, for this, we'll, we'll just kind
+ of go in a little bit and see exactly what's going on. But, as you can see here, Devin's
+ going through files and, uh, and taking a look through a lot of stuff. And so we, we can,
+ we can follow here basically as we need to and see what makes sense. You can see Devin's already,
+ called out a few particular pieces, right? Where there's the sidebar, uh, which we have
+ implemented on the, on the front end. And there's pieces there. And we're going to have a new
+ component. And that component's going to link to Lenny's website. That all sounds good.
+ Devin's asking us any questions. If there's anything that we have here, same story here,
+ where it's kind of, you can let Devin make its own decisions and, and hand off. Or you can,
+ uh, you can go in and be, uh, kind of, kind of give some more thoughts, right? Um,
+ should the button open in a new tab or within the application? I'll say, let's, let's open it
+ in a new tab. And you could answer these at any point. Like, is there waiting for you to answer?
+ At any point, you can hand off, hand, back off. But it's not going to be like, just
+ goddamn it. I just wrote it this way. What's right. Yeah. One, one of the, one of the big pieces,
+ you know, with, with Devin is Devin will always be enthusiastic. You know, we'll always be
+ ready to put in the hours, uh, and scope. Thanks. Uh, and so, so we'll, we'll give Devin a
+ chance to work and it's going to go through these files and it'll make a pull request for
+ us. And we'll see, uh, and go from there. But I, I thought it'd be fun to, to show some other
+ examples of, of Devin in action as well. One of the, uh, the, the example is actually,
+ this morning, which I just used Devin for is I asked Devin to help me brush my own facts up,
+ uh, for this podcast. Um, and so obviously a huge fan of the podcast and the newsletter,
+ uh, I asked Devin, Hey, Devin, gonna be on the podcast. Could you please research everything
+ you can about him and make a nice website quiz for me so that I can make sure I know
+ my facts. Right. And so Devin, this was just this morning, uh, I asked Devin to do this
+ and I'll kind of just show what Devin did. It looks like, yeah, went to Wikipedia first.
+ Unfortunately, it's not a page on Wikipedia, which is, uh, Lenny will work on that.
+ I guess we could not feel yet. Hey, they, they did you dirty. I mean, we need that.
+ We need a patience. And, and so then, you know, then it went in, and found it on Spotify, uh,
+ so you're watching what it's researching live. Yeah. Yeah. Yeah. So this is, uh, this was this
+ morning. Obviously, and this is a playback of what Devin did. This is like part, this is
+ part of Devin. You could just like watch what it did. Yep. Yeah. Uh, and so, you know,
+ especially when you're building engineering products or something like that, you can see
+ kind of like using steps that Devin was doing or if Devin tested the code locally, obviously,
+ you want to be able to go and look and see, you know, what, what, what Devin was cooking
+ around with and testing or, or things like that. So it found the newsletter.
+ It's going and looking at this, right. And it's, it's going and reading all of this.
+ And then it says, okay, let's get started with that, with, with putting the code together.
+ Right. And so it says, Hey, I've researched, you know, it's, it's going through and writing
+ all of this, putting the app together. It plays its own quiz itself. Actually,
+ which we should just, we should just play this quiz. Actually, let's, let's see.
+ Let's see how much I know. What is the name?
+ What is the name of the podcast? Lenny's podcast. Let's, for people that watching,
+ so to say, approximately how many subscribers, a million, very good. Yeah. Yeah. What is,
+ what are three main topics Lenny's focus on? Oh, product growth and career. Very good.
+ It's like a quiz. What does Lenny's do? Besides podcasting. Okay.
+ I'd say writing, investing, and advising. How often does Lenny publish once a week, right?
+ And so yeah. So, so we can, we can go through all of these and do all of these. And I took this
+ quiz, by the way, obviously, to, to make sure that I was well prepped. But yeah, this is kind
+ of one of the more fun examples, obviously, of just like Scott, how many, how many subscribers
+ do I have at my newsletter? Over a million actually.
+ And then one, one last one I'll show. And then maybe we can come back to our initial run
+ after, but is, is, you know, like I was saying, like a lot of this is really built to work with
+ all of the existing code workflows out there. And so, you know, for example, we were doing
+ some exploration with the deep seek repository on GitHub. And we, we imported it into Devin,
+ and we got our own fork of it set up in Devin. And a couple of things I just wanted to show
+ here. You know, one is Devin sets up its whole wiki with all of its internal understanding.
+ And so when Devin indexes the code base, obviously, building a representation of the
+ code base and learning it and improving it over time is one of the big things that Devin does.
+ And, and, and funnily enough, we found that naturally humans really are interested to
+ understand this code base representation as well. And so, so, so, you know, Devin wiki is
+ something that we built here. And you can take a look at all of these different pieces and,
+ and see each of these sort of things. Here, here are the FPA operations. You know,
+ here's an SG leg integration. There's diagrams of how the different layers are built and put
+ together. There's, you know, deployment operations. There's a lot of details about the architecture
+ as well. And you can ask questions about it as well. And so, for example, you can say,
+ how does deep seek handle multi token prediction design for spec deck.
+ And it'll go through and it's, it's able to kind of search through the entire code base
+ and give you an informed answer based off of that. And so, so we use this a lot. And, you know,
+ it's, it, it helps when you're, when you're scoping out a task for Devin and doing an
+ initial prompt. It also helps, obviously, just in a vacuum, like you often have questions
+ about your code base that are really nice, right? This episode is brought to you by
+ Atio, the AI native CRM. Atio is built to scale with your business from day one.
+ Connect your email and calendar and Atio instantly builds a CRM that matches your business model.
+ With all of your companies, contacts and interactions enriched with actionable insights,
+ sync in your products usage, billing info, or any other data sources. And Atio's flexible data
+ model will handle it all without any rigid templates or workarounds. With Atio, AI isn't
+ just a feature. It's the foundation. You can do things like instantly prospect
+ and route leads with research agents, get real-time insights from AI using customer
+ conversations, and build powerful AI automations for your most complex workloads.
+ Industry leaders like Flatfile, Replicate, and Modal are already experiencing what's next
+ for CRM. Go to attio.com/lenny to get 15% off your first year. That's attio.com/lenny.
+ Something that I've learned as I've been talking to more and more AI,
+ building companies and apps is there's a big difference in how large of a code base they
+ could integrate into. Yeah. And that's a big deal for companies that are existing versus
+ startups, people that have large existing code base. What's the, how should people think about
+ what kind of code base Devin can plug into? Yeah. So we go all the way to the biggest code base
+ is possible. And one way I'd kind of put it is the way that we as engineers would think
+ about a large code base is certainly when you're making changes or when you're thinking about a
+ particular task, you're not bringing in every single line of the code base at once. You have
+ a high level of abstraction that you're able to think about and look into. And then you're
+ obviously able to zoom in and get to kind of higher resolution on each of these different
+ things. Right. And so Devin works in much the same way where the first thing it'll do is it's
+ going to kind of figure out the high level architecture of what's going on here and what
+ this is built for and so on. But within each of the components, it's obviously also going to be
+ able to zoom in and give some more detail about each of these. And so here's FBA to be
+ float 16 and how exactly a lot of that is set up. Right. Here's each of the different parts of
+ the code base. And so similarly, it's, you know, we've built this to be scalable.
+ It's essentially going back to the engineers architect is now it's helping you understand
+ the architecture. Yeah. It's kind of circling back to that. Yeah. Yeah. Exactly. And one of
+ the fun use cases that we've seen actually with folks is they'll often actually use Devin
+ get Devin's help to onboard new engineers on the team. Right. And you know, when you're new
+ and you're joining, there's obviously a lot of questions that you have about the code base or
+ about how things are set up. It also sometimes can be a little bit awkward to, you know, to ask
+ your mentor or your manager to the questions. And if you're worried that they're going to be
+ really dumb questions. Right. And so it's nice to just be able to ask Devin and to go through
+ Devin's wiki and to understand these internal representations. Right.
+ I think that's really interesting because it comes back to your point that Devin is not
+ just a junior engineer. It's what you call a jagged. Jagged engineer. Jagged intelligence.
+ Where it like, it's almost like a staff engineer at understanding the code base. Usually you have
+ to ask an engineer that's been there a long time. What does this do? Where's this thing? How does
+ this work? And it feels like Devin's very good at that. Yeah. Yeah. Yeah. Obviously in the
+ retrieval and kind of processing a lot of code and a lot of tokens at once is, you know,
+ something that that language models are really great at. Right. And so basically,
+ being able to get those gains and the places that you need them is really great. Yeah.
+ Sweet. All right. You've got a couple more. Yeah. Yeah. One last flow I'll show is just,
+ you know, we just rolled this out last week, actually, but it's a full kind of Devin automation
+ setup with linear. Right. And so, you know, if you have tasks that you're doing on the deep
+ secret repository, for example, and it's all set up, all you have to do is you just add
+ the Devin label and Devin will come through and it'll give you this. Right. And it's going
+ to give you its thoughts on what the tasks looks like. And, you know, you can take a look at
+ each of the particular files that you see or it'll point out snippets that it thinks are important.
+ And from there, if you feel good about, if you feel good about what was built,
+ or the conclusions that we came to, then you can just start off a Devin session that will go
+ and actually do that work. So. That is insane. Like, that sounds like such a simple idea,
+ but essentially what you're saying is there are tasks in linear that are fixes and features.
+ And now Devin just goes off and can just do them for you. Yeah. Yeah. And so,
+ so it's definitely like it's a hands-on process. You know, you certainly want to be involved
+ when Devin is scoping out the task or giving you its thoughts. And the nice thing, too,
+ by the way, is Devin will give you its confidence level. And, you know, here's how likely I think
+ I am to really understand this piece or that piece or whatever. But it helps make things
+ a lot faster. Right. And to your point, you know, it's like a lot of product managers,
+ for example, obviously, I love to be able to use Devin and linear to understand things
+ better that could be better or things like that. And, you know, clairvoy, for example, from
+ LaunchDarkly is a big Devin user. And she loves basically going and scoping out tasks or
+ asking data questions or asking, hey, what's going on? Or like, is this merge into production
+ yet? Or, you know, is this a feature flag right now? Or what percent of people are getting this
+ or that feature? And it's a clean way, basically, to make that intelligence much more accessible.
+ I love just, like, with the integration with linear that you can still keep it really simple.
+ You know, you add a little ticket, like, hey, this link to this homepage would do this. And
+ Devin will be really good at understanding what you mean, and then show you here's what I'm
+ thinking is this right? Yeah. Yeah. Cool. Okay. So, so, yeah. So Devin did finish working. It
+ seems like there's something going on with the CI and it's debugging that right now. But it
+ went ahead and put up the initial first pass pull request and we can take a look. And it's,
+ this is the Devin website, obviously, in this custom deploy. And we have Lenny's newsletter
+ right here. Let's ship this to production. We're going to be so confused. Yeah. That's
+ amazing. Okay. Show it again real quick. So just added it to the homepage of, of, of Devin's
+ signature lab. So, Devin, obviously, has access to our Devin codebase. It does a lot here.
+ And so it's super familiar with all pieces here. Beautiful. And it said, yeah,
+ I like how that looks. We've got demonstrations on Devin, and we've got
+ ladies' letter. All into your site. You link to my site. We'll get some page rank going.
+ Yeah. Yeah. Yeah. Okay. Is that a good example? There it is. What a beautiful website to
+ remind me of the letter. Is that just like a good example of the kind of thing Devin is
+ very good at? Like here is a very specific thing to change on the website. How to ship
+ people think about what Devin is very good at and maybe where it starts to fall apart.
+ You know, the way that we often describe it is, I think Devin is best when
+ it is working on tasks that are well defined. You know, it's one way to put it is you want to
+ be giving Devin tasks, not problems. Right. And a lot of these things, you know, like what,
+ what you just saw, which was kind of like a, a quick front-ten feature request or bug fix or
+ adding testing and documentation or, or things like that. You know, one of the things that,
+ that makes the loop really nice, obviously, is a quick way to iterate and test.
+ And so with something like this, obviously, super easy for us, for example, to just go
+ pull up the preview and see that the link works, right? Obviously, it would be easy for Devin
+ to do as well. Devin will often go and log in to Devin and start a Devin session and make
+ sure it's, you know, when it's working on our own code base, which is kind of hilarious.
+ But yeah, you generally want something that is kind of like easy to verify and easy to test,
+ is the main thing. And you can work on bigger projects or bigger asks as well,
+ obviously. But in that case, you should certainly expect to need to steer Devin
+ more to make sure you're really, you know, to make sure it's going the right direction.
+ It's interesting because that's very similar to the way people talk about synthetic data and
+ reinforcement learning, creating data that's very easy. There's like a very definitive answer,
+ yes and no. Yeah. And it's very clear. Yeah. Yeah. Okay.
+ Let me ask you this question. What's something that you guys debated a lot as you were just
+ designing and building Devin? I'll give a couple that comes to mind. You know, one I would say
+ is, yeah, a question of, I'll call it like, how opinionated we should be. You know,
+ we had the workflows that we used to Devin for, which was very much, as you can see,
+ for, you know, basically integrating to our Slack and GitHub and making pull requests
+ for us in our repos, responding to issue reports or things like that. And naturally,
+ you know, we've had certainly a lot of other, you know, kind of different things that have
+ come up that folks have tried. I mean, we have with folks who like order their door
+ dash with Devin, for example, even we have folks who certainly, you know, a lot of people who
+ are kind of building cool websites from scratch or working on things like that.
+ And yeah, I mean, it's been an interesting trade-off for us where I think the way that I would
+ describe it is, you know, in our products, certainly, you know, the large bulk of the features
+ that we build are for this kind of like, you know, making pull requests and engineering teams
+ use case. But I think basically our kind of general stance with the other is, obviously,
+ if folks want to use Devin for that, that's great. And we want to just kind of make sure
+ that they're fully aware about the limitations and about where things get caught up.
+ It's funny with AI, especially because, you know, I would say one of the, I would say,
+ the most common pieces of startup advice out there, I'd say is, you know, focus on a really
+ niche cohort, you know, do things that don't scale, you know, make one use case that's really
+ great, right? And then you grow from there. And I think that's, you know, I think that's
+ great advice across the board. But yeah, it's kind of interesting because, you know, I think
+ with generative AI, you naturally see this where a lot of product experiences can turn out to be
+ more general, right? And so it's an interesting trade-off for us. You know, this is something
+ that we still always go back and forth on, and how much do we want to, you know,
+ yeah, to do more to support all the other kind of use cases out there and to handle
+ other things that folks might want to do with Devin. I think another one that comes to mind
+ is how much Devin should be, let's say, like a single comprehensive product experience versus
+ like a suite of tools. And as you can see here, you know, we have Devin Surge, we have Devin
+ Wiki, you know, we have the linear ticket scooping. And certainly, you know, these tools interact
+ with each other. But I think as time has gone on, we have we've seen it more and more as really
+ building this suite of tools. And I think that, you know, I think the core Asian experience and
+ the core kind of agent that will go off and build each of these build things for you, for
+ example, is always, of course, going to be, you know, that's Devin. And that is like the core
+ piece. I think that will always be what's really special about our work. But I think that
+ all of the other features out there, you know, there is a complex suite of work that's required
+ for real world software sharing. And engineering is just messy at the end of the day, right?
+ And so I think there are a lot of different flows and a lot of different use cases that
+ makes sense. And you know, an obvious thing to point out is you could ask the same questions
+ to Devin Surge as you could to Devin, right? And Devin will go through and do the same thing.
+ It'll go through and look through the files and give you an answer and stuff. But with
+ that said, you know, on the one hand, I think on the capability side, there's certainly
+ a lot you can do to really optimize things for very specifically question answer about
+ this repository. And that made sense to really kind of build into a specific kind of feature.
+ And then on the other side, I would say, we found that users actually really,
+ really like having this, this axis of control, right? Sometimes you sometimes you have a task
+ that you're thinking about, but you actually don't want Devin to get started on the task
+ just yet. You want to ask Devin and understand what parts of the code base might be relevant,
+ right? And so you want to be very direct about saying like, this is just an ask.
+ And I just want to see the snippets of code base that really, right? Or I just want to
+ look at the wiki and understand the existing representation. And so it's kind of on both
+ the capabilities and on the UX side, we've found that that's kind of what's naturally
+ made sense over time. Let's talk about the landscape then of just other companies in
+ this space, which is something a lot of people are always thinking about. There's all these
+ different approaches. You guys are going full on AI engineer. There's obviously ID companies.
+ There's also just like models being built that are really good at engineering.
+ Everyone's kind of starting to build agents now. You guys were ahead on this in a lot of ways.
+ Like open AI just recently said they're going to build a software engineering agent.
+ Anthropics got something there. You know, cursor and windsurf have their own little
+ agents and replit. Thoughts on just kind of where you guys fit in in the landscape.
+ And then where you, how do you think you win long term? How do you think about that?
+ Yeah. Yeah. And for what it's worth, you know, I think all of these are incredible teams. I
+ think, you know, really smart and really forward thinking folks who are building a lot of great
+ products out there. And it's, I think there's a lot to do honestly, you know, over the next few
+ years with the advent of AGI or whatever you want to call it. You know, I think one of the
+ quotes that I love is, in 2017, if you asked if we had AGI, the answer is no. And in 2025,
+ if you asked, we have AGI, the answer is, well, you have to define AGI and, you know, it depends
+ on your subject. Yeah. Right. And I think it does kind of get to the point of, I mean,
+ there is a lot of really amazing stuff happening. You know, I think that it's easy to under rate,
+ I would say, just just how big of a shift it is that we're seeing, right, where I think there
+ are a lot of great products out there, for example, over the last 10 years, 20 years, 30 years,
+ that have made each of these kind of like, kind of these different niches of the life cycle
+ of building a product a little bit easier, for example, right? There's great products
+ out there, for instant responses, great products out there, logging, there's great products out
+ there, billing, there's, you know, all these different tools, right? And the obvious thing is,
+ you know, what we're seeing with AI is all of these spaces are going to be moving multiple
+ times faster, you know, and this is going to be like an order of magnitude shift, if anything,
+ right? And so I think from our perspective, you know, we've obviously had a very specific
+ lens that we've bet on this whole time. And that is, you know, autonomous coding agents.
+ And there's, there's a lot of problems to solve there, to be honest, right? Like the,
+ the, there's still a ton to do on the core capabilities, certainly. And, you know,
+ we see cases all the time where it's like, wow, why did Devin make that decision? That
+ seems, you know, no, human engineer would have ever done that. You know, there's, there's
+ all sorts of spots where, you know, with the product interface, there's obviously a lot to
+ think about. And I think it's, it's, by the way, not just like a single thing that, that we're
+ working towards, but something that will change with every addition of capabilities. Like,
+ I kind of think of it as like, there's, there's 20 generations of agent product,
+ you know, agent coding experiences to come. You know, I think that I think the one that
+ we'll get to over the course of several years is probably something where you don't even look
+ at the code at all. Right. And you're actually just looking at your own product and you're
+ just able to look and specify and say, Hey, you know, this button should be a little bit
+ rounder. Let's do that. And by the way, let's add a new tab here. And maybe we should save
+ this information. Let's, let's start up a database table and let's index it on x, y, and z
+ columns. And you're just, you know, basically working with your products in real time. And
+ having your agent build out those things for you. Obviously, there's going to be a lot of
+ generations, you know, in between that here and there. But, but I think the product experience
+ itself is going to change every single time. And then obviously, you know, there's, there's
+ all the practicality of just getting it out there in the world. And so, you know, folks,
+ obviously you need to need to learn how to use the new technology. There's a lot to do to,
+ to deploy and to all of the messiness of real world software. You know, there's a lot of
+ cobalt out there. Still, there's a lot of portrait out there. Still, there's, you know,
+ there's lots of kind of abstractions and details that folks have done. And so I think from our
+ perspective, you know, we have, we have been, been since the beginning have been laser focused
+ on agent coding. And that is the one thing that we've really believed in. It's the one
+ thing that we've designed for. And, you know, that goes all the way to even the revenue model
+ with ACUs and, and having the usage based setup, it goes into obviously all the product
+ experiences of thinking how, okay, like where do you want to talk to Devin, you know,
+ you want to be able to talk to Devin and Slack, you want to be able to, to spin this up from
+ your issue tracker, you want to be able to all of these things. And then, of course,
+ capabilities. And so I think it's, I don't think there's any one easy answer. I think
+ it's obviously a combination of things. But, but this is really that this is, this has been
+ the space that we've lived in and spent all of our time in for, for the last year and a half.
+ And it's, it's going to be that way for the next five or 10 years too.
+ So, along these lines, a big question everyone always has in AI is moats and
+ defensibility. It's a question I've been asking every founder that comes on. How do you just
+ think about how to build a moat in the space when it's so much easier to build and these
+ models are, you know, so much is built on these models that are themselves advancing so quickly.
+ I'd give one slight kind of tweak on that, which is I think it's often less about moats
+ and more about stickiness. And what I mean by that is, you know, moats are in some sense,
+ typically what folks mean by a moat is something that means that a competitor couldn't even enter,
+ you know, the market. And, and I agree that at a high level, you know, a lot of different
+ folks had different layers of the AI spectrum, you know, the, the foundation labs or the
+ application layer or so on. You know, I don't think there's any kind of like hard barrier
+ that would prevent others from entering. I think what does exist is stickiness,
+ which I would kind of define as, you know, once you have a product experience that you really
+ like, are you excited to keep using that experience? Or is there kind of like, you know,
+ is there an effect where it is just as easy from now on to just switch on to a new one and
+ learn a new one and so on. Right. And I think from that perspective, I think there's a few
+ things that are really great about coding agents in particular. You know, one I would say is
+ there is a lot of just inherent kind of stickiness and learning and build up over time,
+ which is that as you use Devin and as your whole team uses Devin, it's the same thing with
+ an engineer, right? If you're joining on day one versus, you know, since you've been at
+ the company for five years, you wrote half the code yourself. You've touched every file,
+ you've built every single piece, right? You know, all the engineers. And so similarly,
+ it's like Devin will really learn and build its representation of your code base and of
+ your stack and of your process over time. And we'll be able to do a lot more with that.
+ And then the other piece of it, which I think is really exciting, I'd say, is
+ there really is a lot to do of what I would kind of call like a multiplayer aspect of code,
+ which if you think about it, is how a lot of things get done in the real world, certainly,
+ right? And so, you know, it's one thing to have, you know, your own experience, which you use
+ yourself as just an engineer. But for example, ourselves, like we see this all the time where
+ some engineers are working with Devin and teaching Devin things. And as I mentioned,
+ like folks will have Devin on board their new engineers and kind of convey that knowledge
+ to them, right? Or similarly, it's like, you know, I'll start a session with Devin and Slack.
+ And I'll say, hey, you know, it'd be cool if we could do this thing. And some other
+ engineer will chime in and say, oh, by the way, like the reason we did it initially was X and Y.
+ And so Devin, just make sure when you do this change that you, you know, still support that
+ workflow. And Devin will say, okay, sounds great, right? Or Devin will make a PR, you know,
+ I'll be working with Devin, we'll make pull requests and GitHub and somebody else will
+ be reviewing that PR or give some comments. And Devin will work on that too, right?
+ You know, you'll be in linear. And so, so all these kinds of spaces, it really does just kind of
+ set up for an experience where basically where Devin can just grow in the value that it can
+ provide for your whole work over time. And so I think from that perspective, like, if anything,
+ you know, it's, we want there to be a lot of innovation and a lot of new products and
+ and so on. You know, I don't think that the goal is to try to lock other people out of
+ building, you know, there's a lot of stuff to build. I think there's going to be a lot of
+ different experiences. I think from our perspective, what we think about is more like,
+ how can we make Devin more and more and more useful as you're using it more?
+ It's very similar. We had Michael from Cursor, the CF cursor on the podcast, and he had a similar
+ point of just, he thinks Mozart just kind of like consumer, like Google is the way he thinks
+ it's like Google, where people can easily switch. You just have to stay the best.
+ And that's the answer. Yeah. And it feels like you're adding to that of just like, but also,
+ if you can create some stickiness where it is very hard to leave because it's so good at what
+ it's doing and it's built knowledge and and integrated to your workflows that and builds on that.
+ Yeah. And I think one of the things that's that's that's, you know, that's nice about our
+ space, too, is software engineering for better for worse is is is has a very clear tide of
+ value. And what it means is, I guess one way to put it is, is there is always kind of like
+ a clear next level, at least for the next while, you know, I think there could be some point
+ where you're just like, all right, just build the entirety of YouTube for me. You know,
+ and Devin just does the whole it's like, there's probably been like 100 million hours of human
+ engineering time built building YouTube, building the algorithm, building all the infrastructure,
+ all of the everything, every little detail. And like, you know, maybe there's some time
+ where Devin just does that out of the box, you know, that that's obviously going to be a
+ long time from now. I think on the interim on every level in between, obviously, it's,
+ you know, it makes a difference that the quality of software engineering. And I think one of the
+ cool things with developers, obviously, is developers are really willing to, to learn new
+ experiences and to put an effort if it means that they're able to have a higher and higher
+ quality experience. So awesome. I'm going to spend a little time on the tech that enables
+ Devin without divulging trade secrets, just what would allow you to make Devin so good?
+ Was there like an unlock with a certain model? A lot of some folks have shared like three
+ points on it. 3.5 was a huge unlock for a lot of their products. It's just what,
+ what's kind of the key to the way you've architected or build Devin that makes it work so well.
+ We obviously, you know, we've been betting on agents for a long time. I think that agents
+ were, were doable and workable, like a lot earlier than most folks might have thought.
+ But certainly, I think as the, as the community has really rallied around it,
+ I mean, you see the impacts of that in the pre training, you see the impacts of that in
+ a lot of the work that's, that's done with these models. I actually don't think there's been any,
+ like, from our perspective, I don't think there's been any single like step function
+ base model shift or anything that has been kind of like a night and day difference in Devin.
+ But I certainly think that the curve of, you know, every, every point on the chart,
+ I mean, there's a new model that comes out every, like, every week now,
+ has, has, has, has obviously made a big difference in terms of what we've been able to do.
+ And then obviously on top of that, you know, we work with, with, with the research teams at
+ all these foundation labs to, to, to do a lot of artwork on top.
+ And so I think that my, my hot take here at which I would give is I think the,
+ I think in terms of base intelligence, we're honestly, basically already there.
+ And, and I think a lot of what we see actually, and what we spend our time on,
+ is less so obviously we don't pre train our own models or things like that.
+ You know, it's, it's, it's less so like increasing the base IQ of a model, for example,
+ and more about kind of like teaching it, all of the idiosyncrasy is a real world engineering,
+ right? And, and thinking about, here's how you use data dog and do this.
+ And, and here's how you might die.
+ Can notice this error and here are the different things that you could run into.
+ And here's how you handle each of those.
+ And when you're ready, here's how you make a get up PR.
+ And, you know, this is true in engineering.
+ It's true in every other space as well.
+ I mean, there's so much detail in idiosyncrasies to, to the work that we all do, obviously,
+ a day to day. And, and the lot of it is kind of like, like teaching the model to mirror the
+ complexity of the real world, I would say, rather than, rather than kind of like getting
+ it to some, some higher fundamental level of problem solving, which I think the foundation
+ labs are doing a really great job.
+ There's something you shared when we were chatting before we started recording around the growth
+ of previous kind of transformative technologies were very hardware oriented.
+ And there was like a limiting factor to their growth and AI is not that you share that insight.
+ For a number of reasons, I think AI is going to be the, the, the biggest technology
+ shift of our lives. But, but I think one thing, which is what we were just talking about before
+ this, which is, is, is, you know, most of the big tech revolutions that we've had over the
+ last 50 years, I mean, I'm thinking about like personal computer and the internet
+ and the mobile phone. And so, you know, they, they all had this, this, this big hardware
+ component that was, that was a big part of the distribution, right? And so, you know, you have
+ the internet and initially it was just these universities that we're talking with one another.
+ But obviously, over time, we got the whole world plugged into the internet and it took years
+ and years and years. Same thing was true with mobile phones. Same thing was true with PC,
+ right? And the, you know, the, the, the thing that's interesting about that in particular,
+ which is, I would say we're already seeing the effects of that, is, you know, in these hardware
+ distribution regimes, you're obviously, there's a lot that pens on real time, right? And so,
+ you know, folks who were building for those industries kind of saw their market grow
+ and grow and grow basically steadily year over year as the number of people with mobile phones
+ increased, right? As the number of people connected to the internet increased, right?
+ And, and many of those businesses, it's, it's still crazy to take a minute, but many of those
+ businesses got started right in the beginning, having like Apple and Microsoft were started
+ like right around the same time, you know, and it's the same is true for a lot of the great
+ internet businesses or wherever. But, but, but certainly it was kind of like a, it was a,
+ it was something that touched the whole world, you know, with time or a large fraction of the
+ whole world. And it had a really massive impact, but, but it took place over several years,
+ right? Because of the time that it took. And I think one of the things which is already,
+ I'd say different in AI is just how explosive the technology can be. You know, once,
+ once AI could, you know, and I think we're firmly in that, you know, in past the
+ inflection point in AI code, right? Where it's as an engineer, you know, if you're not using AI
+ at all, right? Good. I mean, you're, you know, you're falling behind, honestly. And it is a
+ technology that everyone should have and should be using. And, and there's no kind of like,
+ there's no weight on hardware distribution that, that just causing that. And it means that,
+ that it means that the space is just growing so exponentially, basically.
+ Michael Ballon has this interesting point that cliches are cliches because they're so true.
+ And that's why you, they're like cliches. Like I heard that a million times.
+ And I think it's like, people hear this like, yeah, I know, but like, it's actually insane.
+ What is happening? Yeah. That's what, that's what you're here to help us through this
+ transition. Yeah. No, I mean, it's, it's a fun time. And I think there will be, you know,
+ real, real investment and real work that it takes. But, but I think from the perspective of
+ us as engineers, for example, I think it just means it's, it's, it's so important to, to,
+ to stay in the loop with everything that's happening. And it's, you know, as we're seeing,
+ it's not only because of your learning and your ability to work these technologies,
+ but it's also, you know, about basically like teaching, teaching the AI, you know,
+ what, what there is to know about your code base in order to make it really
+ effective at building with you and, and doing more of the things that you would want it to do.
+ So, so long as lines for company, people listening that they're like,
+ hey, we should be using DevNet or company. What are, what are things you found to be
+ helpful in helping an engineer at a company get adoption and be able to use DevNet either
+ culturally or logistically? So, so a pattern which we often see with folks is there will be a
+ few folks at the team who are really excited and want to try out the new thing and they want to
+ put in the investment and, and, and are really excited to get it going. And they'll go through
+ all the setup, you know, they'll give DevNet the repose, they'll teach DevNet how to run
+ the Lint and the CI and, and all of those details, right? And they'll start off by,
+ by giving it those initial tasks and kind of like help DevNet build a foothold, basically.
+ And as time goes on, eventually folks will see, wow, DevNet is writing all these PRs,
+ DevNet is kind of doing this. This is DevNet person that joins the company is just knocking
+ out PRs. Yeah. And they'll see that and then naturally they'll get on and they'll get an
+ account. And one of the cool things, of course, is by the time they join, DevNet already knows
+ a good amount of detail about the repositories that they're already working in. And they're
+ working with that. And so, so one of the, the really cool things which we often see is,
+ yeah, that they, the early adopters themselves can really pave the way, I think for, for everyone
+ else on the team. But, but yeah, I think the main thing I would just kind of call out is,
+ yeah, it really does take, it's a very different product experience, right? And I think it's,
+ for what it's worth, you know, I think there's still a lot more that we should be, you know,
+ that we can do to, to make it as intuitive and as clear as possible to folks like how to use
+ DevNet and, and what the right steps are and how to really maximize value out of DevNet.
+ But I think that, yeah, it's, it's the kind of thing where if you, if you put in the investment
+ and understand exactly, you know, what it takes to, to get DevNet to be successful,
+ it's like, you know, we, we found ourselves that as time has gone on, we just used DevNet
+ more and more and more with, with every, with every kind of every next update. So,
+ so let me follow that thread. There is a question I ask every AI building founder,
+ which is if you could sit next to every new user of DevNet and whisper something in their
+ ear to help them be successful with DevNet, like one or two tips. What would those tips be?
+ I think the biggest thing I would say is it really is just, you know, treat DevNet like
+ your new junior engineer. I think that's, that's the biggest thing. I think folks come in and,
+ you know, they, they see the, the blank, the blank page and they think of all sorts of
+ kind of like various things that they want to try out. They think of lots of, where, you know,
+ I think typically the flow that we see that works best is obviously, you know,
+ you can try demos or you can, you can do things. But, but a lot of it is just like, yeah, let's,
+ let's figure out what tickets we want to get done today or this week. And let's have,
+ definitely get started on those. And, you know, let's start with the, kind of the, the, the
+ easier ones and then work with DevNet and understands like what, what things DevNet needs to get
+ set up to be able to test its own code and do this well. And then let's, let's scale up over
+ time. And then obviously it's, you know, as you work with your engineer, you understand better
+ kind of how to communicate with them or, or what, what are the right tasks or projects to bring
+ them in on. But I think that's, that, that, that really is the one liner for us.
+ Okay. There's a question that I'd be meeting to ask. I just want to get back to this because
+ it's something I think a lot about with, with Devins, everyone's going to have five Devins.
+ Let's say 10 Devins, everyone's kind of turning into a, basically an end manager
+ with a bunch of junior engineers. Yeah. Which isn't necessarily the best job in the world.
+ It's just a bunch of review, at least you don't have to do performance reviews and
+ ones. But you know, it's like sitting around, checking a lot of PRs all day. There's a sense
+ of you become an architect, and which is kind of what every engineer wants to become eventually,
+ right? They're like, I just want to think about the architecture. I don't want to code all
+ these stupid fixed bugs. So I get that that's, you know, there's a good part, sorry to that.
+ But just how do you, I imagine you're thinking a lot about this, just like, how do you make
+ life pleasant and fun and enjoyable as basically an end manager of say, 500 Devins in the future?
+ Yeah, I can just imagine the performance. You know, it's Devin, you've done a really great job
+ on your task. I really would like you to be more proactive in the team meetings.
+ It's just, you know, so what I'd say, it's funny actually, because this is something that,
+ you know, in terms of the wording that we thought a lot about as well, it's just,
+ you know, we've used the term like manager of Devins in the past, which, which of course,
+ I think is, is a big part of it. But, but I think that the only thing I would point out
+ here is, I do think, I think that the bricklayer versus architect is closer to the
+ experience than being a manager, because I think a lot of the difficulty of, you know,
+ management or, you know, the reason that, you know, that people shy away from it is more because
+ of, you know, a lot of the kind of various, let's say, like, there's, there's kind of like,
+ all of the kind of like the context and the ownership and kind of like the responsibility
+ and stuff. And then there's also kind of all of the, the, the, the emotional aspects of it,
+ right, where I think working with Devin is a little more like just being kind of like having
+ more as like having an interface to, to hand off tasks and build tasks. Right.
+ And so, so, you know, the, the, the parallel that I would kind of draw is, you know,
+ when we invented Python, obviously, like, we, we didn't, you know, it's, it's like, in many
+ ways, you know, the description of the outlining of tasks, it was obviously was like a different
+ paradigm. But, but I think it certainly was, it was nowhere near, you know, what,
+ what folks typically think of as kind of like management, we're hard to see today, right.
+ And I think that with Devin, a lot of it is just kind of like, it's, it's more like finding
+ the right levels of abstraction that you could work with Devin on and, and just kind of like
+ finding the workplace that work really well. And, and, and the obvious thing to say here is,
+ is it's, it's, it's a very, you know, it's, it's like you can always have Devin take
+ a first pass at things, right. And so, you know, you, you can take the first pass,
+ you have Devin take the first pass, you know, if it's great, you merge it right away, if it's,
+ you know, if it needs some touch up, you can obviously give that feedback, for example.
+ But, but, but a lot of it is, is like, it's more about basically like making Devin
+ part of your flow than it is, you know, losing control, which I think is the, is,
+ the main thing that, that folks are scared of with, with, with management.
+ Are you thinking about a manager, Devin, like a Devin that manages other Devins?
+ Yeah, yeah. So, so for what it's worth, Devin can start other Devins through the API,
+ right. And so, so we've seen this happen quite a bit of times where, naturally,
+ if you have some big tasks that you want to do, like, you know, Devin will do this all the time,
+ it'll, it'll chunk up and, and then I'm paralyzed into smaller Devins.
+ And so it's the kind of thing that you need to give down the credentials to be
+ able to do that. It's not currently something that is kind of like default enabled.
+ But, but I could certainly imagine as time goes on that there's more and more of that.
+ Devin's all the way down.
+ Yeah. Yeah. I think the thing that's kind of interesting to you is like,
+ you know, with humans, the way I almost say it in, in, in, in technical terms is like,
+ there's this coupling of a context and a thread.
+ And what I mean by that is, is like, basically, each human can only operate,
+ you know, single threaded on, on the work that they do, and they have their set of context.
+ And then there's other humans, obviously, who can do other stuff at the same time,
+ but they have their own context, right. With agents, one of the cool things
+ is you can have an agent that's doing multiple lines of exploration at once,
+ but is sharing all of the context of everything that they find.
+ And so I think that this is very early and I think we'll see this, but, but, but folks,
+ obviously, love to talk about basically like systems of agents communicating with one another.
+ And I think that there will be a lot of new paradigms to build for once, once we get there.
+ And it's so interesting what you said about the decision between having one Devin
+ and only one Devin do all the things and you just tell them things and they kind of fire
+ off jobs versus you have five Devin's and they're each doing individual things.
+ It's such an interesting decision to make.
+ Yeah. Yeah. Yeah, for sure.
+ Okay. Two more questions. What's maybe the most counterintuitive thing you've learned
+ so far building Devin that maybe goes against startup wisdom, common startup wisdom.
+ Something I've thought about a lot lately as we've built this is, you know,
+ this is not my first company. Actually, for a lot of us, it's, it's, it's not our first company.
+ Like, I think of, of our 26 or 27 people total on the team, like, I think 18 of us have started
+ our own company before this. And, and yeah, like one of the things I think about is, you know,
+ there's actually your point about cliches, I think really, really spoke to me as well,
+ which is there's kind of the, the, the really common things, which you hear all the time in
+ startups where you're like, you know, you got to move fast or you got to hire great people.
+ It's like, okay, well, obviously you do, you know, like, I wasn't planning on not hiring great
+ people. You know, I wasn't planning on going slow. And similarly, it's like, yeah, you,
+ you really had to build, build something that, that people want. Right. And there's kind of
+ these like three to five things, which are always repeated. And there are always the,
+ the, the common wisdom in startups. And I definitely had this, this idea as a founder
+ when I was starting initially that. All right. So those are the kind of the three to five
+ basic things. But as you get really deep into it, you spend a lot of years into it, you know,
+ you, you learn all of the thousands of other things that you have to learn
+ to be, you know, to build a company. Right. And I think to some extent, that's, of course,
+ true. And there's lots of little details that you'll get into with all these different things,
+ right, including, including team building and product and strategy and engineering
+ decision making and fundraising and, and sales and every other component. Right. But, but I,
+ I also realized that as time has gone on more and more, I felt like building companies,
+ well, sometimes just comes down to doing those three to five things, just even more than you
+ could possibly expect. And so with us, it's like, you know, it's, everyone says to go fast,
+ you know, but it's like, yeah, we had an hackathon in November. We had another hackathon in
+ December. We started the company officially in January. We like, got the prototypes out to
+ initial users in February. We did launch in March. We got our first customers in April.
+ You know, it's just like, basically like truly pushing the pace in every spot where we possibly
+ could has really made a difference for us. And similarly, it's like, yeah, everyone always says,
+ you know, you should hire great people. But I think that the truth within that truth is basically
+ like, you should fight to, to all ends, basically, you know, to, to, to get the folks that you
+ really want to, to, to bring in. And it's, you know, one of my favorite stories to share is we had,
+ we had a candidate who came and interviewed. He was a junior at MIT. So he was very, very
+ young. And we gave him our interview. He, he did way better than almost any of the full-time,
+ like the, the, the, the full-time candidates that we had ever talked to. And so we said,
+ hey, you know, what do you think about, take some time off of school and, and working with
+ us and building out Devon? Like, we really think you're just going to be able to come in and
+ just have a ton of impact already from day one. And he thought about it for a while,
+ he came back, he said, you know what? Like, I, I'm down. I want to do it. But
+ my parents really want me to graduate from school. And I'm just not sure there's a way
+ to make it work. And so he, and, and so, so we talked in more and kind of just understood the
+ situation. And then, you know, and then we, we flew to North Carolina, went straight from
+ the airport to his parents' house, had dinner with him and his parents, who talked a lot,
+ and you know, it's a really, really nice, Gujarati family. We kind of gave them some
+ gifts and just talked to them about it and tried to understand it. Like, what, what,
+ what would it take and what, what would we need to make work? And they just said, you know,
+ it's, it sounds like a great opportunity, but we really want our son to be able to graduate,
+ right? And, and, and we talked that through, and we figured out a set up way, basically,
+ where he could work for us essentially full-time, but then come in for his required classes and,
+ and do what he needed to do to get the diploma, basically, but no more than that.
+ And, and we talked that through, and then, you know, we got to a point where, where,
+ where everyone was happy with that. And then, you know, went straight back to the airport
+ and flew right back, basically. And that was, you know, that was, it was the, the
+ first and only time that I've ever been in North Carolina. It was just a great trip, you know,
+ and it's the kind of thing where it's like, you know, hiring great people is one thing,
+ but truly just never, never giving up and, and, and really giving it everything that you can to,
+ to make it work for, for people who really make sense to be on the team. And, you know,
+ he's been with us on the team for, for over a year now. And he's been an incredible, incredible
+ engineer. And we wouldn't be here without him. And similarly, we had someone else who is,
+ again, really, really talented candidate, you know, did amazingly well, very young,
+ and, and had a lot of great offers at a lot of other companies. And, you know, we were
+ talking to them about, you know, he, he wanted to start his own company some day as well. And
+ we were talking to him about, you know, certainly, you know, a lot of the obvious things, which
+ are kind of like having him meet our investors or work with, you know, get to do work with
+ customers or see a lot of these other components so that when the time came, you know, that,
+ that he would have all the experience he needed to start his own company.
+ But the other thing that, you know, that one of one of the other things that was big is like,
+ he really, you know, he, he was, he was talking with a lot of great companies already. He
+ didn't want to burn any bridges. And so we actually worked with him. And, and basically,
+ hand wrote all of his rejection responses to each of the other companies and kind of
+ worked with him on it to say like, you know, here's how you should say it in a way that's,
+ you know, good, going to come off as like, you know, that, that you really did appreciate
+ the time with them and that you obviously, you know, you want to remain close with them and
+ stay in touch. And it was the kind of thing, obviously, where it's like, look, obviously,
+ it's our job is to make sure that he's happy enough that he doesn't want to leave at any
+ time in the near future. But I think it's the kind of thing where, you know, the way that
+ you put together a really, really great team is by, is by really what's, what's, by fighting
+ for, for what's right for them too. Wow. Those are incredible stories. And it makes so real,
+ these, you know, as you say, cliches, hire the best people. Like, this is what it sounds like
+ to hire the best people. This is what it takes. Yeah, no. And I was just, yeah, it's just like,
+ you know, a lot of things. Yeah, we've, we've fought very hard to just kind of like,
+ yeah, like reimagine things from the ground up because it's, you know, a lot of it really
+ is just thinking about like, yeah, like, what, where, where do we think the technology is
+ going over the next five to 10 years? And, you know, what is that the place that we
+ want to have in the future? So, I wonder if people are going to be fighting for
+ the best Devin someday. I'll give you over time pay and benefits, you know, free healthcare
+ and everything. And then it's like, yeah. Great Devin's like magic, the gathering cards.
+ Yeah. And then just going back to your three to five things. So essentially,
+ this is an incredible advice. Essentially, it's like, you always here hire the best people,
+ move fast, build things people want. Yeah, build, build something people want, you know,
+ stay as close as possible to your customers. Right. And then I think the other thing is just
+ always think about where things are going, not where they are today. I feel like those are kind
+ of like the five things, which is, you know, especially in AI with things moving so fast,
+ and there's so much great talent. You know, I feel like a lot of these are even more true,
+ where it's kind of like, you know, it's not just thinking about where things are going to be
+ in 10 years, it's like thinking about what's going to happen next week, you know, and it's,
+ obviously, things are moving very quickly. And it is very hard to predict, but you really have to,
+ you really have to be very rigorous with yourself, I'd say, about like thinking through those things
+ and evaluating all of the kind of the decisions that you make in that lens.
+ And staying focused is the big takeaway to me here is like, it ends up feeling like there's
+ a thousand things you should do, but it's always these five things. Yeah. Scott,
+ we covered a lot of ground. We went through every question I had, which is great.
+ Is there anything else that you want to share or anything else you want to leave
+ those listeners with, maybe a final nugget or something really, you want to double down on
+ that we set before we let you go. The biggest thing that comes to mind for me is, you know,
+ there's a lot of different perceptions about AI, right? There's, there's, I think, every
+ basically, every emotion under the sun right now, you know, there's, there's a lot of fear,
+ for example. There's also a lot of skepticism and, you know, we're very skeptical types as
+ well. And we always want to kind of try it ourselves to really see it and believe in.
+ I think the main thing that that comes to mind for me is, you know, I, I, I, I'm honestly
+ really optimistic about what we're building here with AI and, you know, not just with code and
+ with Devin, but, but the whole space and everything that's getting done. And I think one of the
+ cool things that is, is really actively happening is just the ability for everyone to multiply
+ themselves. And that's, that's how we've always thought about it. It's how we've thought about
+ what we're building. And it's, you know, I think the, there is a lot more to do out there in the
+ world. You know, I'm not too worried about us running out of things to do. And from that lens,
+ it's, it's, I think that the thing that we've always been most excited about is, is,
+ how can we all do more?
+ I hear you, Scott. Well, with that optimism, we've reached our very exciting lightning round.
+ Are you ready? Yeah, let's do it.
+ Okay, here we go. First question. What are two or three books that you find yourself recommending
+ most to other people? In terms of nonfiction, I think, uh, for, for, for folks in startups,
+ I think one of the things that I've really enjoyed is just learning and understanding
+ the history of Silicon Valley. And there's shut, you know, it's all, all of these things
+ that we think about. Somebody invented them. I mean, it's, it's one of the great realizations.
+ I feel like it's like, you know, it's somebody invented the idea of a seed route, right?
+ Somebody invented the idea of venture capital. Somebody invented the idea of like product
+ market fit, you know, all of these different principles that we talk about. And, and so for
+ that, there's a book called the power law by Sebastian Malaby, which I, I really like,
+ it basically is just kind of like a, yeah, a tour of, of many of the, the, the great
+ businesses and the great products that have been built over the last 60, 70 years in Silicon
+ Valley, which I really love. I think in terms of fiction, it's a, I actually have always
+ really liked the, the great Gatsby by F Scott Fitzgerald. It's, it's one of my personal favorites as,
+ as a fiction book. Do you have a favorite recent movie or TV show that you really enjoyed?
+ I have to admit, I have not watched, I can't think of a single movie or TV show that I have
+ watched in the last while. So I, I'm sure there's, I, I, I'm looking forward to watching a lot of
+ great ones post AGI. That's got to be in the trailer. That's great. I like that. And that
+ should just shows how hard you're working, just how much it is going on and how fast
+ everything's moving. Do you have a favorite product you've recently discovered that you
+ really love, could be an app, could be something physical, could be toothbrush.
+ One I would say is, uh, you know, I have an, I got an aura frame recently. It's just like,
+ uh, you know, a frame that shows photos and you can, you can show new photo every day or
+ every hour or, you know, every 15 minutes or whatever you like. I've actually, I've, I've,
+ I've really enjoyed it a lot. I think it's a, it's a, it's a nice way to just have, basically
+ to have picture frame memories that come up. And then the other thing I would say is, as like
+ a general purpose thing, you know, it's, it's not particularly new, but I would say, I think
+ AirPods are actually extremely well built and well designed. I realize now that it's like,
+ I basically use them for all sort of, you know, I'm taking calls on a walk and I'm using
+ AirPods. I'm, I'm obviously, I'm like doing work at my computer at my desk. I'm, I'm collecting
+ into AirPods. And it's, it works quite well. I don't see for, for a lot of different situations.
+ And it's, it's, it's, they're very comfortable that they're very consistent.
+ Yeah. I'm going to double click on the, or double down on the aura frame. I also,
+ I got one of these for my mom and my mother-in-law. And they're so great for just like sharing
+ photos of your kids with your family. And people have like, you know, they've heard
+ of picture, like digital picture, picture frames, but the aura just does it really well.
+ And it's really easy to add photos. And they're just really nice looking.
+ You can imagine, you know, not that long from now, we'll have the aura frame accepted, you know,
+ studio givelifies every photo that you have in it. And then, you know, it's,
+ yeah, we're just imagines things you've done that are really cool.
+ Yeah. Cool. And it's, or it's a, you are a, I believe this is how you spell it.
+ Folks want to check it out. We'll link to it. Not affiliated. Okay. Two more questions.
+ Do you have a favorite life motto that you often come back to and find useful
+ in worker and light? Yeah. You know, something I've thought about a lot is
+ a lot of the, a lot of the proverbs out there are actually contradictions, right?
+ It's like, you know, birds of a feather. And then you also have like opposites to
+ try. You have, you know, and it's kind of funny because it's, you feel that both of them are
+ true. And often they both are true. And a lot of it is about like, understanding why.
+ And one of those that, that I feel, especially in the world of startups that I think about,
+ like all the time is, I think it is very important to be focused and driven and to
+ really kind of maximize your potential. And then at the same time, it's also very important
+ to not let your own personal emotion get tied up in your success or failure, you know.
+ And I think especially with startups, because there's always ups and downs,
+ honestly, even in the most successful companies ever, like it is, it is just like, you know,
+ it's, it's a rocky road. There's, there's a lot that happens and a lot that, that goes down.
+ And I think one of the things which I've, I've thought a lot about is that somehow it's,
+ you know, you really want to do your best and put your, put everything you can into it and,
+ and, and do everything you can to basically, you want to put it all out on the field,
+ you know, but at the same time, you want to be okay with, with, with both wins and losses,
+ right? And you want to be able to, to, to, to, to, to, to, to, to, to move on and go into the
+ next one with each time. And, and something, yeah, I mean, it's, it's funny, but what I've found
+ personally is that obviously it's, you know, it's, it's really important for your, your own
+ emotional state and mental state to be able to do that. And we've had lots of mistakes and,
+ you know, I've had a lot of, you know, I had my first company, which is obviously,
+ which was cool. But, but, you know, there are a lot of like tricky spots there and then over
+ the course of cognition. I mean, it's been, it feels like it's been already like eight years
+ compressed since like one year. And, you know, it's still going at that pace. But, but it's,
+ it's, it's somehow it also actually makes you more successful. I think too. You know, it's,
+ it's like you, you are just more able to, to give it your best and, and, and to do the things
+ that will lead to success if you're not tying it up in your own personal worth.
+ So, that is so interesting. I just had a podcast recording recently where,
+ with an executive coach Jerry Kelowna that I think will come out before this might be after this,
+ that he has one of his big pieces of advice. And it's a, it's a very Buddhist approach of
+ just not a clinging and attaching to, to an outcome. Yeah.
+ Okay. Final question. I'm curious if there's a story here,
+ but we could keep it short. Is there a story behind Devin as the name and, or,
+ or is there another contender for Devin being the Asian?
+ Devin was the name from pretty early on. We were interested. I have to, you know,
+ we were working on coding agents from the beginning and, you know, my co-founders are
+ Steven and Walden, for example, and we had this idea. All right. Let's get started. And, you know,
+ let's not, uh, let's, let's try to kind of like, uh, kind of like expand the box as much as we
+ can. So have everyone kind of think out of the box and do their own thing. And let's have
+ everyone do their own thing first for a bit. And then we'll kind of like consolidate and take
+ everything that we've learned. And so, you know, Walden made a virtual, you know, developer version
+ of him, which was called Dev Walden. And then Steven made one of him, which is called Dev
+ Steven. And you know, we had all these. And then, and then we were kind of combining it all into
+ one thing. And we're like, okay, you know what? It's, it's Devin. And that was the thing. And
+ so, so Devin was like, yeah, Devin stuck for us like quite early on, I would say. One thing,
+ which we did have a big decision on there actually is what the, what the image of Devin
+ would be. And so as folks know, there's the, the hexagons. And then people might have seen
+ this more recently, but there's actually also an otter, like a little otter with laptop and,
+ and its lap. And that, that is, that is Devin as well. And, and we had this debate over, over
+ what to go with and what not to go with and stuff and news. It's, it's been a while now,
+ but somehow we still have, we still have both the hexagons and the otter.
+ You've sept over where the Devin's like, did you just have just? Oh, so it's definitely
+ is. It's, it's, it's, it's a dev. Yeah. And so it's kind of like when you were
+ right, it's consolidating all the names. It just kind of seems clear then that this would be the
+ universal dev that we all wanted to work with. Yeah. Incredible. Scott, this was so much fun.
+ Oh my God. I learned a ton, which is always a really good sign. Two final questions,
+ where can folks find you slash Devin slash anything else you want to point them to?
+ And how can listeners be useful to you? Awesome. Yeah. No, we're at, we're at app.dev.ai.
+ And, you know, you can, you can find us as well on Twitter or a lot of other social media.
+ We'd, we'd obviously love to hear any feedback you have about the Devin product.
+ Like there's, there's so much to figure out. And I think the, like I said,
+ I think we're all still like 20 steps away from really the, the future of software engineering.
+ And so, so it really means a lot to hear what folks think of about the product as they're
+ trying it out. And so please, please let us know any time if there's things that we
+ can do to make it better. Scott, thank you so much for being here.
+ Thank you so much for having me. I had a great time. Me too. Bye, everyone.
+ Thank you so much for listening. If you found this valuable, you can subscribe to the show on
+ Apple podcast, Spotify, or your favorite podcast app. Also, please consider giving us a rating or
+ leaving a review as that really helps other listeners find the podcast. You can find all
+ past episodes or learn more about the show at lennyspodcast.com. See you in the next episode.
+ [BLANK_AUDIO]
