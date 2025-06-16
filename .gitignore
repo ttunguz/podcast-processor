@@ -60,3 +60,93 @@ cmake-build-debug/
 local.properties
 
 **/.claude/settings.local.json
+
+# Audio files - we don't need to store these
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.ogg
+
+# Database files
+*.duckdb
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+temp_*
+output_*
+
+# Log files
+*.log
+*.err
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Ruby gems
+*.gem
+tmp/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.o
+*.a
+*.dylib
+*.so
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Large model files
+*.bin
+*.ggml
+*.gguf
+
+# Backup files
+*.bak
+*.backup
+*~
