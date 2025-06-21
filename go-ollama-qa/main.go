@@ -197,12 +197,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.err = msg
 	}
 
-	// Only update components that haven't been handled above
-	if !m.textarea.Focused() {
-		m.viewport, vpCmd = m.viewport.Update(msg)
-	}
-
-	return m, vpCmd
+	return m, nil
 }
 
 func (m model) View() string {
