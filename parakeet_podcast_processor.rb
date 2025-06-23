@@ -162,54 +162,51 @@ def sanitize_filename(name)
   sanitized
 end
 
-def download_audio(page_url) # From claude_podcast_processor
-  puts "[DEBUG] Starting download_audio with URL: #{page_url}"
-  temp_file_base = "temp_audio_download"
+def stream_and_convert_audio(page_url)
+  puts "[DEBUG] Starting audio stream and conversion from URL: #{page_url}"
+  output_wav_file = "temp_audio_for_transcription.wav"
+
+  # Find the audio URL from the page content first
   page_content = fetch_html(page_url)
   unless page_content
-      puts "[WARN] Could not fetch page content to find audio link for #{page_url}. Cannot download."
+      puts "[WARN] Could not fetch page content to find audio link for #{page_url}. Cannot stream."
       return nil
   end
-  audio_url_match = page_content.match(/(https?:\/\/[^"'\s]+\.(mp3|m4a|wav|aac))/) # Basic regex
-  if audio_url_match
-    audio_url = audio_url_match[0]
-    file_ext = audio_url_match[2]
-    puts "Found audio URL: #{audio_url}"
-    downloaded_file_path = "#{temp_file_base}.#{file_ext}"
-    begin
-      File.delete(downloaded_file_path) if File.exist?(downloaded_file_path)
-      File.open(downloaded_file_path, 'wb') do |file|
-        URI.open(audio_url) { |remote_file| file.write(remote_file.read) }
-      end
-      puts "[DEBUG] Successfully downloaded audio to #{downloaded_file_path}, size: #{File.size(downloaded_file_path)} bytes"
-      return downloaded_file_path
-    rescue => e
-      puts "Error downloading audio file: #{e.message}"
-      File.delete(downloaded_file_path) if File.exist?(downloaded_file_path)
-      return nil
-    end
-  else
-    puts "Error: Could not find a direct audio link (.mp3, .m4a, .wav, .aac) on the page: #{page_url}"
+  
+  audio_url_match = page_content.match(/(https?:\/\/[^"'\s]+\.(mp3|m4a|wav|aac))/)
+  unless audio_url_match
+    puts "[ERROR] Could not find a direct audio link (.mp3, .m4a, .wav, .aac) on the page: #{page_url}"
     return nil
   end
-end
-
-def convert_to_wav(input_audio_file) # From claude_podcast_processor
-  puts "[DEBUG] Starting convert_to_wav with file: #{input_audio_file}"
-  output_wav_file = "temp_audio_for_transcription.wav" # Consistent name
-  unless File.exist?(input_audio_file)
-    puts "Error: Input file #{input_audio_file} does not exist."
-    return nil
-  end
+  audio_url = audio_url_match[0]
+  puts "[INFO] Found audio stream URL: #{audio_url}"
+  
+  # Ensure the temp WAV file is clean before starting
   File.delete(output_wav_file) if File.exist?(output_wav_file)
-  cmd = "ffmpeg -y -threads 0 -i #{Shellwords.escape(input_audio_file)} -ar 16000 -ac 1 -c:a pcm_s16le -f wav #{Shellwords.escape(output_wav_file)}"
-  puts "[DEBUG] Running command: #{cmd}"
-  output = `#{cmd} 2>&1`
-  if File.exist?(output_wav_file) && File.size(output_wav_file) > 0
-    puts "[DEBUG] WAV file created successfully: #{output_wav_file}, size: #{File.size(output_wav_file)} bytes"
+
+  # Use FFmpeg to read directly from the URL and convert to WAV
+  # This avoids saving the initial download to disk.
+  command = [
+    'ffmpeg',
+    '-y',
+    '-i', audio_url, # Read directly from the audio URL
+    '-ar', '16000',
+    '-ac', '1',
+    '-c:a', 'pcm_s16le',
+    '-f', 'wav',
+    output_wav_file
+  ].shelljoin
+
+  puts "[DEBUG] Running FFmpeg stream and conversion command: #{command}"
+
+  # Use system to show live output from FFmpeg.
+  success = system("#{command} 2>&1")
+
+  if success && File.exist?(output_wav_file) && File.size(output_wav_file) > 0
+    puts "\n[INFO] Audio successfully streamed and converted to #{output_wav_file}"
     return output_wav_file
   else
-    puts "Error: WAV file creation failed or is empty! ffmpeg output: #{output}"
+    puts "\n[ERROR] Audio streaming or conversion pipeline failed for #{audio_url}."
     return nil
   end
 end
@@ -419,55 +416,16 @@ def generate_summary(transcript_content, metadata)
   * Duration: #{duration}
   * Source URL: #{source_url}
 
-  **TRANSCRIPT FORMAT NOTE:** This transcript is formatted as numbered sentences from a podcast conversation. The conversation flows between the host and guest(s), though speakers are not explicitly labeled. Please analyze the content to understand the conversational flow and main topics discussed.
+  **Instructions:**
+  Please analyze the following podcast transcript and provide a two-part summary tailored for an early-stage venture capitalist.
 
-  Please analyze the following podcast transcript and provide a comprehensive, structured summary. Your audience is an early-stage venture capital firm. For each analytical point or observation made in sections 2, 3, 4, and 5, please include a direct, representative quote from the transcript to support it.
+  **Part 1: Detailed Summary with Quotes**
+  Provide a comprehensive summary of the conversation. It should flow like a well-written article, integrating key quotes naturally to support the narrative. The summary should capture the main arguments, insights, and critical points of the discussion.
 
-  **1. Podcast Overview & Key Segments:**
-     *   **Overall Summary:** Provide a brief overview of the podcast's main topic and key takeaways (3-4 sentences).
-     *   **Key Topics:** Identify 3-5 main topics discussed. For each topic:
-         *   Provide a more detailed summary of the discussion around this topic (e.g., 4-5 sentences).
-     *   **Conclusion:** Summarize the podcast's conclusion or final thoughts.
+  **Part 2: Key Entities for VC Radar**
+  List the most important companies, people, and technologies mentioned that would be relevant to an early-stage venture capitalist. For each entity, provide a brief (one-sentence) description of its relevance in the context of the conversation.
 
-  **2. Key Themes, Technological Insights & Core Discussion Points:**
-     Identify 5-7 major themes, significant technological insights, or noteworthy debates/discussion points raised in the episode. For each item:
-       * Provide a concise explanation (1-2 sentences).
-       * Include an illustrative quote from the transcript (or two if contrasting viewpoints are presented).
-
-  **3. Key Metrics & Numbers:**
-     Extract and highlight important quantitative data mentioned in the episode:
-       * Revenue figures, growth rates, user counts, market sizes
-       * Valuations, funding amounts, financial metrics
-       * Performance data, conversion rates, scale metrics
-       * Any other significant numbers that provide business context
-     Format each as a clear, standalone metric with context.
-
-  **4. Follow-Up Resources:**
-     Identify valuable resources mentioned or referenced in the conversation:
-       * Books, papers, studies, or research cited
-       * Tools, platforms, or software discussed
-       * People worth following (with their roles/companies)
-       * Websites, blogs, or other content sources mentioned
-     Categorize each resource type clearly.
-
-  **5. Companies & Entities Mentioned:**
-     List all companies, organizations, or significant projects explicitly named. If available and relevant to the discussion, provide their URLs and a brief note on their context in the podcast.
-
-  **6. Twitter Post Suggestions:**
-     Create 5 compelling Twitter post suggestions based on this podcast content. For each post:
-       * Include a direct quote from the transcript (keep it punchy and under 200 characters)
-       * Add a unique hook with an unexpected observation or contrarian take
-       * Include a link to the podcast: #{source_url}
-       * Keep the total post under 280 characters
-       * Make it engaging for a tech/VC Twitter audience
-
-  **7. TomTunguz.com Style Blog Post Ideas:**
-     Based on the content of this podcast, suggest three distinct blog post ideas that would align with the analytical and data-driven style often found on TomTunguz.com. For each idea:
-       * Propose a catchy, insightful title.
-       * Briefly outline the core argument or thesis of the post (2-3 sentences).
-       * Include one or two direct quotes from the transcript that could serve as a compelling hook or key piece of evidence for the post.
-
-  Format the response clearly using Markdown, with distinct sections for each point.
+  Format the response clearly using Markdown.
 
   **BEGIN TRANSCRIPT**
 
@@ -486,32 +444,55 @@ def generate_summary(transcript_content, metadata)
   extracted_host = 'Unknown'
   extracted_guests = 'None'
   full_response_text = nil
+  
+  max_retries = 3
+  retry_delay = 5 # seconds
 
-  begin
-    # Claude API call using Anthropic gem
-    client = Anthropic::Client.new(api_key: ENV.fetch("ANTHROPIC_API_KEY"))
-    response = client.messages.create(
-        model: "claude-3-5-sonnet-20240620",
-        messages: [{ role: "user", content: summary_prompt }],
-        max_tokens: 8192, # Using max for safety
-        temperature: 0.1
-    )
+  max_retries.times do |i|
+    begin
+      # Claude API call using Anthropic gem
+      client = Anthropic::Client.new(api_key: ENV.fetch("ANTHROPIC_API_KEY"))
+      response = client.messages.create(
+          model: "claude-3-5-sonnet-20240620",
+          messages: [{ role: "user", content: summary_prompt }],
+          max_tokens: 8192, # Using max for safety
+          temperature: 0.1
+      )
 
-    if response && response.content && response.content[0] && response.content[0].text
-      full_response_text = response.content[0].text
-      
-      # Regex to find HOST and GUESTS
-      host_match = full_response_text.match(/^HOST: (.*)$/i)
-      guests_match = full_response_text.match(/^GUESTS: (.*)$/i)
-      extracted_host = host_match[1].strip if host_match && host_match[1]
-      extracted_guests = guests_match[1].strip if guests_match && guests_match[1]
-    else
-      puts "[ERROR] Invalid response structure from Claude API. Full Response: #{response.inspect}"
-      return "Error: Could not generate summary due to invalid API response.", extracted_host, extracted_guests
+      if response && response.content && response.content[0] && response.content[0].text
+        full_response_text = response.content[0].text
+        
+        # Regex to find HOST and GUESTS
+        host_match = full_response_text.match(/^HOST: (.*)$/i)
+        guests_match = full_response_text.match(/^GUESTS: (.*)$/i)
+        extracted_host = host_match[1].strip if host_match && host_match[1]
+        extracted_guests = guests_match[1].strip if guests_match && guests_match[1]
+        
+        # If we get a successful response, we break the loop
+        break
+      else
+        puts "[WARN] API call successful but response was empty. Retrying... (#{i + 1}/#{max_retries})"
+      end
+    rescue Anthropic::Errors::APIError => e
+      if e.message.include?("529") || e.message.include?("overloaded")
+        puts "[WARN] API Overloaded (529). Retrying in #{retry_delay} seconds... (#{i + 1}/#{max_retries})"
+        sleep(retry_delay)
+        retry_delay *= 2 # Exponential backoff
+        next # Move to the next iteration of the loop
+      else
+        # For other API errors, we fail immediately
+        puts "[ERROR] Unrecoverable API Error in summary generation: #{e.message}"
+        return "Error: Could not generate summary. #{e.message}", extracted_host, extracted_guests
+      end
+    rescue => e
+      puts "[ERROR] A non-API error occurred during summary generation: #{e.message}"
+      return "Error: Could not generate summary. #{e.message}", extracted_host, extracted_guests
     end
-  rescue => e
-    puts "[ERROR] API Error in summary generation: #{e.message}"
-    return "Error: Could not generate summary. #{e.message}", extracted_host, extracted_guests
+  end
+
+  # If the loop finishes without a successful response, return an error
+  unless full_response_text
+    return "Error: Could not generate summary after #{max_retries} attempts.", extracted_host, extracted_guests
   end
   
   return full_response_text, extracted_host, extracted_guests
@@ -527,7 +508,6 @@ def main
 
   podcast_url = ARGV[0]
   output_dir_summaries = "podcast_summaries" # For Claude summaries
-  temp_downloaded_file = nil
   temp_wav_file = nil
   metadata = {}
 
@@ -556,21 +536,14 @@ def main
     puts "[DEBUG] Permanent transcript file will be: #{permanent_transcript_path}"
     puts "[DEBUG] Summary output file will be: #{output_summary_path}"
 
-    puts "\n--- Step 1: Downloading Audio ---"
-    temp_downloaded_file = download_audio(podcast_url)
-    unless temp_downloaded_file
-      puts "[ERROR] Failed to download audio."
-      exit 1
-    end
-
-    puts "\n--- Step 2: Converting to WAV ---"
-    temp_wav_file = convert_to_wav(temp_downloaded_file)
+    puts "\n--- Step 1: Streaming and Converting Audio ---"
+    temp_wav_file = stream_and_convert_audio(podcast_url)
     unless temp_wav_file
-      puts "[ERROR] Failed to convert audio to WAV."
+      puts "[ERROR] Failed to stream and convert audio."
       exit 1
     end
 
-    puts "\n--- Step 3: Transcribing Audio with Parakeet ---"
+    puts "\n--- Step 2: Transcribing Audio with Parakeet ---"
     raw_transcript_content = transcribe_audio_with_parakeet(temp_wav_file)
     unless raw_transcript_content
       puts "[ERROR] Failed to transcribe audio using Parakeet."
@@ -635,10 +608,6 @@ def main
     exit 1
   ensure
     puts "\n--- Step 7: Cleaning Up Temporary Files ---"
-    if temp_downloaded_file && File.exist?(temp_downloaded_file)
-      puts "[DEBUG] Deleting downloaded file: #{temp_downloaded_file}"
-      File.delete(temp_downloaded_file)
-    end
     if temp_wav_file && File.exist?(temp_wav_file)
       puts "[DEBUG] Deleting WAV file: #{temp_wav_file}"
       File.delete(temp_wav_file)
